@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Lottie
 
 public enum FeedbackStyle {
 	case success

@@ -1,6 +1,6 @@
 //
 //  ProfileButtonView.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by Pablo on 21/02/2020.
 //  Copyright © 2020 Tuenti Technologies S.L. All rights reserved.
@@ -86,12 +86,12 @@ extension ProfileButtonView: ProfileButtonViewProtocol {
 
 	public func showBadge() {
 		badgeView.isHidden = false
-		button.accessibilityLabel = "\(SettingsTranslations.settingWithBadgeLabel) \(HomeTranslations.buttonProfileTitle)"
+		button.accessibilityLabel = "\(MisticaTranslations.settingWithBadgeLabel) \(MisticaTranslations.buttonProfileTitle)"
 	}
 
 	public func hideBadge() {
 		badgeView.isHidden = true
-		button.accessibilityLabel = HomeTranslations.buttonProfileTitle
+		button.accessibilityLabel = MisticaTranslations.buttonProfileTitle
 	}
 
 	public func setAccessibilityIdentifier(_ accessibilityIdentifier: String) {

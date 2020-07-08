@@ -1,6 +1,6 @@
 //
 //  CloseBarButtonItem.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by Pablo Bartolome on 3/18/20.
 //  Copyright © 2020 Tuenti Technologies S.L. All rights reserved.

@@ -17,7 +17,7 @@ public class EmailInputFieldValidationStrategy: InputFieldValidationStrategy {
 		if text?.looksLikeAnEmail == true {
 			result = .success
 		} else {
-			result = .failure(message: PersonalDataTranslations.changeEmailMalformedMailError)
+			result = .failure(message: MisticaTranslations.changeEmailMalformedMailError)
 		}
 
 		return result

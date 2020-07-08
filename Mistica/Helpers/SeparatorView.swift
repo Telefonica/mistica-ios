@@ -1,6 +1,6 @@
 //
 //  SeparatorView.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by Guille Gonzalez on 22/11/2017.
 //  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.

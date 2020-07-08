@@ -1,6 +1,6 @@
 ////
 ////  CommonFloatingTooltipViewConfiguration.swift
-////  Tuenti
+////  Mistica
 ////
 ////  Created by Alejandro Megías on 4/5/18.
 ////  Copyright © 2018 Tuenti Technologies S.L. All rights reserved.

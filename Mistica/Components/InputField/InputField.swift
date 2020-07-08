@@ -430,6 +430,11 @@ public extension InputField {
 	var endOfDocument: UITextPosition {
 		textInputView.endOfDocument
 	}
+    
+    var isSecureTextEntry: Bool {
+        get { textInputView.isSecureTextEntry }
+        set { textInputView.isSecureTextEntry = newValue }
+    }
 
 	var selectedTextRange: UITextRange? {
 		get { textInputView.selectedTextRange }
@@ -669,7 +674,7 @@ private extension InputField {
 
 	func validationResult() -> InputFieldValidationResult {
 		if !isOptional && text.isEmpty {
-			return InputFieldValidationResult.failure(message: CommonTranslations.formNonOptionalFieldText)
+			return InputFieldValidationResult.failure(message: MisticaTranslations.formNonOptionalFieldText)
 		} else {
 			return validationStrategy?.validate(text: text) ?? .success
 		}
@@ -867,12 +872,6 @@ private extension InputField {
 		horizontalTextInputStackView.addArrangedSubview(textInputView)
 
 		textInputView.isSecureTextEntry = style.secureTextEntry == .enabled
-
-		#if DEBUG
-			if isRunningTests {
-				textInputView.isSecureTextEntry = false
-			}
-		#endif
 
 		switch style.textInputKeyboardStyle {
 		case .picker:

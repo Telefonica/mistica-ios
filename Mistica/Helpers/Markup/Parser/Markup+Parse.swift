@@ -1,6 +1,6 @@
 //
 //  Markup+Parse.swift
-//  Messenger
+//  Mistica
 //
 //  Created by Guille Gonzalez on 29/05/2017.
 //  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.

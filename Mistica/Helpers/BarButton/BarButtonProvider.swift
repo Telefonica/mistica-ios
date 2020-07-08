@@ -1,6 +1,6 @@
 //
 //  BarButtonProvider.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by Pablo on 21/02/2020.
 //  Copyright © 2020 Tuenti Technologies S.L. All rights reserved.

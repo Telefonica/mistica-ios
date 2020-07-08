@@ -1,6 +1,6 @@
 //
 //  CheckBox.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by cestebanez on 25/03/2020.
 //  Copyright © 2020 Tuenti Technologies S.L. All rights reserved.
@@ -90,7 +90,7 @@ public class CheckBox: UIView {
 
 	private lazy var errorLabel: PaddingLabel = {
 		let label = PaddingLabel()
-		label.text = CommonTranslations.formNonOptionalFieldText
+		label.text = MisticaTranslations.formNonOptionalFieldText
 		label.textAlignment = .left
 		label.font = .caption1
 		label.textColor = .textInputLabelError

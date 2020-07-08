@@ -1,6 +1,6 @@
 //
 //  BoundsChangeInvalidatingFlowLayout.swift
-//  Messenger
+//  Mistica
 //
 //  Created by Pablo Carcelén on 11/08/2017.
 //  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.

@@ -78,14 +78,12 @@ public class SegmentSelector: UIView {
 	///  component.
 	private var segmentsContentMode: SegmentsContentMode = .leading
 
-	public init(segments: [Segment], themeToolkitDelegate: MulticastDelegate<UpdateThemeVariantDelegate>) {
+	public init(segments: [Segment]) {
 		self.segments = segments
 		collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		bottomSeparator = UIImageView(image: UIImage(color: .navigationBarDivider))
 
 		super.init(frame: .zero)
-
-		themeToolkitDelegate.add(onMainThread: self)
 
 		commonInit()
 	}
@@ -341,13 +339,5 @@ private extension SegmentSelector {
 	func segment(atIndex index: Int) -> Segment? {
 		guard segments.indices.contains(index) else { return nil }
 		return segments[index]
-	}
-}
-
-extension SegmentSelector: UpdateThemeVariantDelegate {
-	public func themeDidChange() {
-		collectionView.backgroundColor = .navigationBarBackground
-		bottomSeparator.image = UIImage(color: .navigationBarDivider)
-		reloadContent()
 	}
 }

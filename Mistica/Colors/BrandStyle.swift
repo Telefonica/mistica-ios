@@ -9,7 +9,7 @@
 import Foundation
 
 public enum BrandStyle: CaseIterable {
-    case movistarES
+    case movistar
     case vivo
     case o2
 }

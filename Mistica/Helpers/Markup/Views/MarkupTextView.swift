@@ -1,6 +1,6 @@
 //
 //  MarkupTextView.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by Guille Gonzalez on 22/03/2018.
 //  Copyright © 2018 Tuenti Technologies S.L. All rights reserved.

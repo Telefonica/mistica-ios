@@ -1,6 +1,6 @@
 //
 //  CGSize+Utils.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by pbartolome on 26/09/2019.
 //  Copyright © 2019 Tuenti Technologies S.L. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  BackBarButtonItem.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by Pablo Bartolome on 3/18/20.
 //  Copyright © 2020 Tuenti Technologies S.L. All rights reserved.
@@ -24,7 +24,7 @@ public class BackBarButtonItem: UIBarButtonItem {
 		style = .plain
 		target = presenter
 		action = #selector(BackBarButtonItemPresenterProtocol.didTapBackButtonItem(sender:))
-		accessibilityLabel = NavigationTranslations.backButtonText
+		accessibilityLabel = MisticaTranslations.backButtonText
 	}
 
 	required init?(coder: NSCoder) {

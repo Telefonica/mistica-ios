@@ -1,6 +1,6 @@
 //
 //  UIImage+Utils.swift
-//  Messenger
+//  Mistica
 //
 //  Created by Víctor Pimentel on 03/01/2017.
 //  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.

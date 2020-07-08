@@ -1,6 +1,6 @@
 //
 //  FontToolkit.swift
-//  Messenger
+//  Mistica
 //
 //  Created by Víctor Pimentel on 13/12/2016.
 //  Copyright © 2016 Tuenti Technologies S.L. All rights reserved.

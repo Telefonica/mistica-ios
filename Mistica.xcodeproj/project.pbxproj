@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4D8EB8424B46B91002F3AD5 /* Mistica.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D8EB8224B46B91002F3AD5 /* Mistica.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4D8EC4D24B4CB33002F3AD5 /* TMFloatingTooltipView.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D8EBB124B4CB31002F3AD5 /* TMFloatingTooltipView.h */; };
 		B4D8EC4F24B4CB33002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB324B4CB31002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift */; };
 		B4D8EC5024B4CB33002F3AD5 /* TMFloatingTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB424B4CB31002F3AD5 /* TMFloatingTooltipView.m */; };
 		B4D8EC5124B4CB33002F3AD5 /* FeedbackStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */; };
@@ -68,9 +66,8 @@
 		B4D8ECC224B4CFB7002F3AD5 /* O2ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECBD24B4CFB7002F3AD5 /* O2ColorPalette.swift */; };
 		B4D8ECC424B4D05D002F3AD5 /* BrandStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC324B4D05D002F3AD5 /* BrandStyle.swift */; };
 		B4D8ECC624B4D0DC002F3AD5 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */; };
-		B4D8ECCB24B4D26B002F3AD5 /* ThemeToolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC824B4D26B002F3AD5 /* ThemeToolkit.swift */; };
+		B4D8ECCB24B4D26B002F3AD5 /* ThemeVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC824B4D26B002F3AD5 /* ThemeVariant.swift */; };
 		B4D8ECCC24B4D26B002F3AD5 /* UI+Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC924B4D26B002F3AD5 /* UI+Themed.swift */; };
-		B4D8ECCD24B4D26B002F3AD5 /* UpdateThemeVariantDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECCA24B4D26B002F3AD5 /* UpdateThemeVariantDelegate.swift */; };
 		B4D8ECD224B4D721002F3AD5 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECCF24B4D721002F3AD5 /* FontSize.swift */; };
 		B4D8ECD324B4D721002F3AD5 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECD024B4D721002F3AD5 /* FontStyle.swift */; };
 		B4D8ECD424B4D721002F3AD5 /* FontToolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECD124B4D721002F3AD5 /* FontToolkit.swift */; };
@@ -116,11 +113,12 @@
 		B4D8ED3024B5C819002F3AD5 /* UITableViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED2F24B5C819002F3AD5 /* UITableViewCell+Utils.swift */; };
 		B4D8ED3224B5C844002F3AD5 /* UICollectionViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */; };
 		B4D8ED3424B5D650002F3AD5 /* Array+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */; };
+		B4D8ED3824B5EF85002F3AD5 /* Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */; };
+		B4D8ED3A24B5F0C5002F3AD5 /* MisticaTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3924B5F0C5002F3AD5 /* MisticaTranslations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mistica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4D8EB8224B46B91002F3AD5 /* Mistica.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mistica.h; sourceTree = "<group>"; };
 		B4D8EB8324B46B91002F3AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D8EB8A24B47869002F3AD5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B4D8EB8B24B498F4002F3AD5 /* Mistica.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Mistica.xcconfig; sourceTree = "<group>"; };
@@ -184,9 +182,8 @@
 		B4D8ECBD24B4CFB7002F3AD5 /* O2ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = O2ColorPalette.swift; sourceTree = "<group>"; };
 		B4D8ECC324B4D05D002F3AD5 /* BrandStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandStyle.swift; sourceTree = "<group>"; };
 		B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
-		B4D8ECC824B4D26B002F3AD5 /* ThemeToolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeToolkit.swift; sourceTree = "<group>"; };
+		B4D8ECC824B4D26B002F3AD5 /* ThemeVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeVariant.swift; sourceTree = "<group>"; };
 		B4D8ECC924B4D26B002F3AD5 /* UI+Themed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UI+Themed.swift"; sourceTree = "<group>"; };
-		B4D8ECCA24B4D26B002F3AD5 /* UpdateThemeVariantDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateThemeVariantDelegate.swift; sourceTree = "<group>"; };
 		B4D8ECCF24B4D721002F3AD5 /* FontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 		B4D8ECD024B4D721002F3AD5 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		B4D8ECD124B4D721002F3AD5 /* FontToolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontToolkit.swift; sourceTree = "<group>"; };
@@ -232,6 +229,8 @@
 		B4D8ED2F24B5C819002F3AD5 /* UITableViewCell+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Utils.swift"; sourceTree = "<group>"; };
 		B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Utils.swift"; sourceTree = "<group>"; };
 		B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+NSAttributedString.swift"; sourceTree = "<group>"; };
+		B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mistica.swift; sourceTree = "<group>"; };
+		B4D8ED3924B5F0C5002F3AD5 /* MisticaTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisticaTranslations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,8 +263,9 @@
 		B4D8EB8124B46B91002F3AD5 /* Mistica */ = {
 			isa = PBXGroup;
 			children = (
-				B4D8EB8224B46B91002F3AD5 /* Mistica.h */,
 				B4D8EB8A24B47869002F3AD5 /* README.md */,
+				B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */,
+				B4D8ED3924B5F0C5002F3AD5 /* MisticaTranslations.swift */,
 				B4D8ED0E24B5B655002F3AD5 /* Assets */,
 				B4D8ECB724B4CD11002F3AD5 /* Utils */,
 				B4D8ECB824B4CFB7002F3AD5 /* Colors */,
@@ -582,9 +582,8 @@
 		B4D8ECC724B4D26B002F3AD5 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				B4D8ECC824B4D26B002F3AD5 /* ThemeToolkit.swift */,
+				B4D8ECC824B4D26B002F3AD5 /* ThemeVariant.swift */,
 				B4D8ECC924B4D26B002F3AD5 /* UI+Themed.swift */,
-				B4D8ECCA24B4D26B002F3AD5 /* UpdateThemeVariantDelegate.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -715,8 +714,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4D8EC4D24B4CB33002F3AD5 /* TMFloatingTooltipView.h in Headers */,
-				B4D8EB8424B46B91002F3AD5 /* Mistica.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,14 +834,13 @@
 				B4D8EC6524B4CB33002F3AD5 /* InputFieldStyle+Toolkit.swift in Sources */,
 				B4D8EC9A24B4CB33002F3AD5 /* LoadErrorViewControllerDelegate.swift in Sources */,
 				B4D8ECAB24B4CB33002F3AD5 /* ListCellView.swift in Sources */,
-				B4D8ECCB24B4D26B002F3AD5 /* ThemeToolkit.swift in Sources */,
+				B4D8ECCB24B4D26B002F3AD5 /* ThemeVariant.swift in Sources */,
 				B4D8ECFC24B5B4F6002F3AD5 /* FormatToken.swift in Sources */,
 				B4D8EC6B24B4CB33002F3AD5 /* TextInput.swift in Sources */,
 				B4D8ECA424B4CB33002F3AD5 /* VerticallyCenteredPresetView.swift in Sources */,
 				B4D8EC5E24B4CB33002F3AD5 /* FeedbackView.swift in Sources */,
 				B4D8ED3224B5C844002F3AD5 /* UICollectionViewCell+Utils.swift in Sources */,
 				B4D8ECA924B4CB33002F3AD5 /* CellCenterSectionView.swift in Sources */,
-				B4D8ECCD24B4D26B002F3AD5 /* UpdateThemeVariantDelegate.swift in Sources */,
 				B4D8EC6F24B4CB33002F3AD5 /* PhoneNumberInputFieldValidationStrategy.swift in Sources */,
 				B4D8ECBE24B4CFB7002F3AD5 /* MovistarColorPalette.swift in Sources */,
 				B4D8ED2424B5C5AA002F3AD5 /* KeyboardInfo.swift in Sources */,
@@ -867,6 +863,7 @@
 				B4D8EC8A24B4CB33002F3AD5 /* CroutonController.swift in Sources */,
 				B4D8EC9824B4CB33002F3AD5 /* LoadErrorViewController.swift in Sources */,
 				B4D8ECC224B4CFB7002F3AD5 /* O2ColorPalette.swift in Sources */,
+				B4D8ED3A24B5F0C5002F3AD5 /* MisticaTranslations.swift in Sources */,
 				B4D8EC8224B4CB33002F3AD5 /* IntrinsictHeightLabel.swift in Sources */,
 				B4D8ECAA24B4CB33002F3AD5 /* CellLeftSectionView.swift in Sources */,
 				B4D8ED1224B5B6E9002F3AD5 /* String+Utils.swift in Sources */,
@@ -886,6 +883,7 @@
 				B4D8EC6424B4CB33002F3AD5 /* UIViewPropertyAnimator+InputField.swift in Sources */,
 				B4D8ED0024B5B513002F3AD5 /* PaddingLabel.swift in Sources */,
 				B4D8ED1F24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift in Sources */,
+				B4D8ED3824B5EF85002F3AD5 /* Mistica.swift in Sources */,
 				B4D8EC9324B4CB33002F3AD5 /* Segment.swift in Sources */,
 				B4D8EC8C24B4CB33002F3AD5 /* SegmentCell.swift in Sources */,
 				B4D8ECAC24B4CB33002F3AD5 /* ListCellStyle+Toolkit.swift in Sources */,

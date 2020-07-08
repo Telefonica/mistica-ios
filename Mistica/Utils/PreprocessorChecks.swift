@@ -1,6 +1,6 @@
 //
 //  PreprocessorChecks.swift
-//  Messenger
+//  Mistica
 //
 //  Created by asantos on 23/09/15.
 //  Copyright © 2015 Tuenti Technologies S.L. All rights reserved.

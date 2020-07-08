@@ -29,7 +29,7 @@ public class LoadErrorViewController: UIViewController {
 
 	private let titleTextLabel = UILabel()
 	private let descriptionLabel = UILabel()
-	private let actionButton = Button(style: .secondary, title: CommonTranslations.retryButtonText)
+	private let actionButton = Button(style: .secondary, title: MisticaTranslations.retryButtonText)
 
 	private let titleText: String?
 	private let descriptionText: String
@@ -63,7 +63,7 @@ public class LoadErrorViewController: UIViewController {
 	}
 
 	public override var preferredStatusBarStyle: UIStatusBarStyle {
-		tu_preferredStatusBarStyle
+        Mistica.brandStyle.preferredStatusBarStyle
 	}
 }
 

@@ -1,6 +1,6 @@
 //
 //  ScrollStackView.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by pbartolome on 01/10/2019.
 //  Copyright © 2019 Tuenti Technologies S.L. All rights reserved.

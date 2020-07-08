@@ -1,6 +1,6 @@
 //
 //  RefreshBarButtonItem.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by Jose Maria Puerta on 11/06/2020.
 //  Copyright © 2020 Tuenti Technologies S.L. All rights reserved.
@@ -24,7 +24,7 @@ public class RefreshBarButtonItem: UIBarButtonItem {
 		style = .plain
 		target = presenter
 		action = #selector(RefreshBarButtonItemPresenterProtocol.didTapRefreshButtonItem(sender:))
-		accessibilityLabel = WebBrowserTranslations.reloadButtonLabel
+		accessibilityLabel = MisticaTranslations.reloadButtonLabel
 	}
 
 	required init?(coder: NSCoder) {

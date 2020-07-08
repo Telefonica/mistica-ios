@@ -21,7 +21,7 @@ public class PasswordInputFieldValidationStrategy: InputFieldValidationStrategy 
 		let result: InputFieldValidationResult
 
 		if passwordLength < Constants.minPasswordLength {
-			result = .failure(message: PersonalDataTranslations.passwordTooShortError)
+			result = .failure(message: MisticaTranslations.passwordTooShortError)
 		} else {
 			result = .success
 		}

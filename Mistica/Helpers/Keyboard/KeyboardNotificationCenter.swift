@@ -1,6 +1,6 @@
 //
 //  KeyboardNotificationCenter.swift
-//  Messenger
+//  Mistica
 //
 //  Created by Enrique de la Torre Fernandez on 5/25/16.
 //  Copyright © 2016 Tuenti Technologies S.L. All rights reserved.

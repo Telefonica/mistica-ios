@@ -1,6 +1,6 @@
 //
 //  UI+Themed.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by pbartolome on 22/07/2019.
 //  Copyright © 2019 Tuenti Technologies S.L. All rights reserved.
@@ -11,7 +11,7 @@ import UIKit
 
 public extension UIImage {
 	convenience init?(themedImageNamed: String) {
-		let name = UIImage.imageName(themedImageNamed, for: ThemeToolkit.currentVariant)
+		let name = UIImage.imageName(themedImageNamed, for: Mistica.themeVariant)
 		self.init(named: name)
 	}
 
@@ -27,7 +27,7 @@ public extension UIImage {
 
 public extension UIColor {
 	convenience init(_ defaultColor: UIColor, variants: [ThemeVariant: UIColor]) {
-		if let current = variants[ThemeToolkit.currentVariant] {
+		if let current = variants[Mistica.themeVariant] {
 			self.init(cgColor: current.cgColor)
 		} else {
 			self.init(cgColor: defaultColor.cgColor)

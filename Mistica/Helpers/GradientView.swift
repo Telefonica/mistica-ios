@@ -1,6 +1,6 @@
 //
 //  GradientView.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by Guille Gonzalez on 25/08/2017.
 //  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.

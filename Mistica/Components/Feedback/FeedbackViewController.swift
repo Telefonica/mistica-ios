@@ -62,7 +62,7 @@ public extension FeedbackViewController {
 	}
 
 	override var preferredStatusBarStyle: UIStatusBarStyle {
-		tu_preferredStatusBarStyle
+		Mistica.brandStyle.preferredStatusBarStyle
 	}
 }
 

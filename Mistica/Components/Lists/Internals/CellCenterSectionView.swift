@@ -1,6 +1,6 @@
 //
 //  CellContentView.swift
-//  Lists&Rows
+//  Mistica
 //
 //  Created by Jose Miguel Brocal on 19/05/2020.
 //  Copyright © 2020 Jose Miguel Brocal. All rights reserved.

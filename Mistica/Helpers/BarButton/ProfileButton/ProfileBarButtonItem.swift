@@ -1,6 +1,6 @@
 //
 //  ProfileBarButtonItem.swift
-//  CommonUIKit
+//  Mistica
 //
 //  Created by Pablo Carcelén on 05/02/2020.
 //  Copyright © 2020 Tuenti Technologies S.L. All rights reserved.

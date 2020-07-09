@@ -11,7 +11,7 @@ import Foundation
 public struct Mistica {
     static var currentColorPalette: ColorPalette = MovistarColorPalette()
 
-    // MARK: Setup
+    // MARK: Public Setup
     
     public static var brandStyle: BrandStyle = .movistar {
         didSet {

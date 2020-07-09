@@ -17,7 +17,7 @@ public class PhoneNumberInputFieldValidationStrategy: InputFieldValidationStrate
 		if text?.looksLikeAPhoneNumber == true {
 			result = .success
 		} else {
-			result = .failure(message: MisticaTranslations.malformedPhoneErrorMessage)
+			result = .failure(message: Translations.malformedPhoneErrorMessage)
 		}
 
 		return result

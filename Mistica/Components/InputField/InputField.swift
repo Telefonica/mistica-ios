@@ -674,7 +674,7 @@ private extension InputField {
 
 	func validationResult() -> InputFieldValidationResult {
 		if !isOptional && text.isEmpty {
-			return InputFieldValidationResult.failure(message: MisticaTranslations.formNonOptionalFieldText)
+			return InputFieldValidationResult.failure(message: Translations.formNonOptionalFieldText)
 		} else {
 			return validationStrategy?.validate(text: text) ?? .success
 		}

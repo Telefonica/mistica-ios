@@ -86,12 +86,12 @@ extension ProfileButtonView: ProfileButtonViewProtocol {
 
 	public func showBadge() {
 		badgeView.isHidden = false
-		button.accessibilityLabel = "\(MisticaTranslations.settingWithBadgeLabel) \(MisticaTranslations.buttonProfileTitle)"
+		button.accessibilityLabel = "\(Translations.settingWithBadgeLabel) \(Translations.buttonProfileTitle)"
 	}
 
 	public func hideBadge() {
 		badgeView.isHidden = true
-		button.accessibilityLabel = MisticaTranslations.buttonProfileTitle
+		button.accessibilityLabel = Translations.buttonProfileTitle
 	}
 
 	public func setAccessibilityIdentifier(_ accessibilityIdentifier: String) {

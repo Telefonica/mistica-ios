@@ -90,7 +90,7 @@ public class CheckBox: UIView {
 
 	private lazy var errorLabel: PaddingLabel = {
 		let label = PaddingLabel()
-		label.text = MisticaTranslations.formNonOptionalFieldText
+		label.text = Translations.formNonOptionalFieldText
 		label.textAlignment = .left
 		label.font = .caption1
 		label.textColor = .textInputLabelError

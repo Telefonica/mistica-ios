@@ -6,6 +6,10 @@
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 
+// Versioning
+VERSION_NUMBER = 0.1.0
+CURRENT_PROJECT_VERSION = 1 //Build
+
 // Deployment
 
 INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks

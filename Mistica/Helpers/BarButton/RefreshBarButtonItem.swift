@@ -24,7 +24,7 @@ public class RefreshBarButtonItem: UIBarButtonItem {
 		style = .plain
 		target = presenter
 		action = #selector(RefreshBarButtonItemPresenterProtocol.didTapRefreshButtonItem(sender:))
-		accessibilityLabel = MisticaTranslations.reloadButtonLabel
+		accessibilityLabel = Translations.reloadButtonLabel
 	}
 
 	required init?(coder: NSCoder) {

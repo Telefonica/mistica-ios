@@ -1,5 +1,5 @@
 //
-//  MisticaTranslations.swift
+//  Translations.swift
 //  Mistica
 //
 //  Created by Pablo Bartolome on 08/07/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MisticaTranslations {
+struct Translations {
     // Form
     static let malformedPhoneErrorMessage = "Hmm, looks like the phone is written incorrectly."
     static let changeEmailMalformedMailError = "Hmm, looks like the email is written incorrectly"

@@ -1,5 +1,10 @@
 #  Mistica
 
+[![Platform](https://img.shields.io/badge/platforms-iOS-orange.svg)](https://github.com/Telefonica/mistica-ios)
+[![Languages](https://img.shields.io/badge/languages-ObjC%20%7C%20Swift-orange.svg)](https://github.com/Telefonica/mistica-ios)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-59C939.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Cocoapods compatible](https://img.shields.io/badge/CocoaPods-compatible-59C939.svg?style=flat)](https://cocoapods.org/)
+
 Mistica is a framework that contains reusable UI components and utilities.
 
 ## Instalation
@@ -9,6 +14,8 @@ Mistica is a framework that contains reusable UI components and utilities.
 
 
 ### Cocoapods
+
+
 
 
 ### Swift Package Manager
@@ -32,18 +39,18 @@ Not yet supported
 
 ## Components
 
-* [Button](./Components/Button/)
-* [Crouton](./Components/Crouton/)
-* [SegmentSelector](./Components/SegmentSelector/)
-* [Feedbacks](./Components/Feedback/)
-* [Tooltip](./Components/Tooltip/)
-* [ViewStates](./Components/ViewStates/)
-* [Badge](./Components/Badge/)
-* [InputFields](./Components/InputField/)
-* [ScrollContentIndicator](./Components/ScrollContentIndicator/)
-* [Lists](./Components/Lists/)
-* [SectionTitle](./Components/SectionTitle/)
-* [Header](./Components/Header/)
+* [Button](./Mistica/Components/Button/)
+* [Crouton](./Mistica/Components/Crouton/)
+* [SegmentSelector](./Mistica/Components/SegmentSelector/)
+* [Feedbacks](./Mistica/Components/Feedback/)
+* [Tooltip](./Mistica/Components/Tooltip/)
+* [ViewStates](./Mistica/Components/ViewStates/)
+* [Badge](./Mistica/Components/Badge/)
+* [InputFields](./Mistica/Components/InputField/)
+* [ScrollContentIndicator](./Mistica/Components/ScrollContentIndicator/)
+* [Lists](./Mistica/Components/Lists/)
+* [SectionTitle](./Mistica/Components/SectionTitle/)
+* [Header](./Mistica/Components/Header/)
 
 
 ## Contributing

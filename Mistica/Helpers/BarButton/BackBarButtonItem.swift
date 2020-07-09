@@ -24,7 +24,7 @@ public class BackBarButtonItem: UIBarButtonItem {
 		style = .plain
 		target = presenter
 		action = #selector(BackBarButtonItemPresenterProtocol.didTapBackButtonItem(sender:))
-		accessibilityLabel = MisticaTranslations.backButtonText
+		accessibilityLabel = Translations.backButtonText
 	}
 
 	required init?(coder: NSCoder) {

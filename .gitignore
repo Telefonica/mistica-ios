@@ -32,3 +32,6 @@ local/
 /out/
 .idea_modules/
 atlassian-ide-plugin.xml
+
+# Carthage
+Carthage/

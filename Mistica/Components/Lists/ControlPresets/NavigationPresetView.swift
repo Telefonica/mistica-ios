@@ -9,7 +9,7 @@
 import UIKit
 
 public class NavigationPresetView: UIStackView {
-	private let imageView = UIImageView(image: UIImage(named: "icn_arrow_right")!)
+    private let imageView = UIImageView(image: .arrowRight)
 
 	public let badgeView = BadgeView()
 

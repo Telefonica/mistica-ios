@@ -115,6 +115,8 @@
 		B4D8ED3424B5D650002F3AD5 /* Array+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */; };
 		B4D8ED3824B5EF85002F3AD5 /* Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */; };
 		B4D8ED3A24B5F0C5002F3AD5 /* MisticaTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3924B5F0C5002F3AD5 /* MisticaTranslations.swift */; };
+		B4DFA1D224B723C1004C908E /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DFA1D124B723C1004C908E /* Lottie.framework */; };
+		B4DFA1D424B724DA004C908E /* ListsAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DFA1D324B724DA004C908E /* ListsAssets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -231,6 +233,8 @@
 		B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+NSAttributedString.swift"; sourceTree = "<group>"; };
 		B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mistica.swift; sourceTree = "<group>"; };
 		B4D8ED3924B5F0C5002F3AD5 /* MisticaTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisticaTranslations.swift; sourceTree = "<group>"; };
+		B4DFA1D124B723C1004C908E /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = SOURCE_ROOT; };
+		B4DFA1D324B724DA004C908E /* ListsAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsAssets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DFA1D224B723C1004C908E /* Lottie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +288,7 @@
 			children = (
 				B4D8EB8324B46B91002F3AD5 /* Info.plist */,
 				B4D8EB8B24B498F4002F3AD5 /* Mistica.xcconfig */,
+				B4DFA1D124B723C1004C908E /* Lottie.framework */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -302,7 +308,6 @@
 			children = (
 				B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */,
 				B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */,
-				B4D8EBB824B4CB31002F3AD5 /* FeedbackUIAssets.swift */,
 				B4D8EBC324B4CB32002F3AD5 /* Model */,
 				B4D8EBC524B4CB32002F3AD5 /* Navigator */,
 				B4D8EBC724B4CB32002F3AD5 /* FeedbackView.swift */,
@@ -340,7 +345,6 @@
 			children = (
 				B4D8EBD124B4CB32002F3AD5 /* UIViewPropertyAnimator+InputField.swift */,
 				B4D8EBD224B4CB32002F3AD5 /* InputFieldStyle+Toolkit.swift */,
-				B4D8EBD324B4CB32002F3AD5 /* InputFieldAssets.swift */,
 				B4D8EBD424B4CB32002F3AD5 /* InputFieldDelegate.swift */,
 				B4D8EBDA24B4CB32002F3AD5 /* TextInput.swift */,
 				B4D8EBDB24B4CB32002F3AD5 /* InputField.swift */,
@@ -684,6 +688,9 @@
 			children = (
 				B4D8ED0F24B5B66D002F3AD5 /* UIBarButtonAssets.swift */,
 				B4D8ED2524B5C5FE002F3AD5 /* CheckBoxAssets.swift */,
+				B4D8EBB824B4CB31002F3AD5 /* FeedbackUIAssets.swift */,
+				B4D8EBD324B4CB32002F3AD5 /* InputFieldAssets.swift */,
+				B4DFA1D324B724DA004C908E /* ListsAssets.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -809,6 +816,7 @@
 				B4D8ED1724B5B7F8002F3AD5 /* ProfileButtonView.swift in Sources */,
 				B4D8ED2624B5C5FE002F3AD5 /* CheckBoxAssets.swift in Sources */,
 				B4D8EC7524B4CB33002F3AD5 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
+				B4DFA1D424B724DA004C908E /* ListsAssets.swift in Sources */,
 				B4D8EC5024B4CB33002F3AD5 /* TMFloatingTooltipView.m in Sources */,
 				B4D8ECF824B5B4F6002F3AD5 /* NSTextCheckingResult+String.swift in Sources */,
 				B4D8ED2C24B5C718002F3AD5 /* PreprocessorChecks.swift in Sources */,
@@ -1023,6 +1031,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B4D8EB8B24B498F4002F3AD5 /* Mistica.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 			};
 			name = Debug;
 		};
@@ -1030,6 +1042,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B4D8EB8B24B498F4002F3AD5 /* Mistica.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 			};
 			name = Release;
 		};

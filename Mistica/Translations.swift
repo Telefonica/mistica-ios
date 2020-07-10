@@ -16,9 +16,5 @@ struct Translations {
     static let formNonOptionalFieldText = "This field is required"
     
     // Buttons
-    static let reloadButtonLabel = "Reload"
     static let retryButtonText = "Retry"
-    static let backButtonText = "Back"
-    static let buttonProfileTitle = "Profile"
-    static let settingWithBadgeLabel = "Badge"
 }

@@ -101,6 +101,9 @@ public class SegmentSelector: UIView {
 		setUpSegmentsContentMode(for: traitCollection)
 		setUpLayout(for: segmentsContentMode)
 		setUpCollectionView()
+        
+        // Listen to theme variant changes
+        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChange, object: nil)
 	}
 
 	public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -340,4 +343,14 @@ private extension SegmentSelector {
 		guard segments.indices.contains(index) else { return nil }
 		return segments[index]
 	}
+}
+
+// MARK: Theme Variant did change notification
+
+@objc extension SegmentSelector {
+    func themeDidChange() {
+        collectionView.backgroundColor = .navigationBarBackground
+        bottomSeparator.image = UIImage(color: .navigationBarDivider)
+        reloadContent()
+    }
 }

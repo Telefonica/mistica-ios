@@ -10,6 +10,7 @@
 		B413033724B75D6700212D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B413033624B75D6700212D16 /* Assets.xcassets */; };
 		B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036A24B78C2200212D16 /* Bundle+Mistica.swift */; };
 		B413036F24B84F8900212D16 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036E24B84F8900212D16 /* AssetType.swift */; };
+		B41303CE24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41303CD24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift */; };
 		B4D8EC4F24B4CB33002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB324B4CB31002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift */; };
 		B4D8EC5124B4CB33002F3AD5 /* FeedbackStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */; };
 		B4D8EC5224B4CB33002F3AD5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */; };
@@ -129,6 +130,7 @@
 		B413037B24B85A9400212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B413037C24B85AB000212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B413037D24B85AC300212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B41303CD24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Utils.swift"; sourceTree = "<group>"; };
 		B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mistica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D8EB8324B46B91002F3AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D8EB8A24B47869002F3AD5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -562,20 +564,21 @@
 		B4D8ECB724B4CD11002F3AD5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B4D8ED1124B5B6E9002F3AD5 /* String+Utils.swift */,
 				B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */,
-				B4D8ED1C24B5B92F002F3AD5 /* CGSize+Utils.swift */,
-				B4D8ECD524B4D9B1002F3AD5 /* UIView+Utils.swift */,
-				B4D8ED2724B5C674002F3AD5 /* UIButton+Utils.swift */,
-				B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */,
-				B4D8ED2924B5C6C2002F3AD5 /* UIImage+Utils.swift */,
-				B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */,
-				B4D8ED1A24B5B8BF002F3AD5 /* UIStackView+Utils.swift */,
-				B4D8ED2D24B5C7A4002F3AD5 /* Optional+Utils.swift */,
-				B4D8ED2F24B5C819002F3AD5 /* UITableViewCell+Utils.swift */,
-				B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */,
 				B413036A24B78C2200212D16 /* Bundle+Mistica.swift */,
+				B4D8ED1C24B5B92F002F3AD5 /* CGSize+Utils.swift */,
+				B4D8ED2D24B5C7A4002F3AD5 /* Optional+Utils.swift */,
 				B4D8ED2B24B5C718002F3AD5 /* PreprocessorChecks.swift */,
+				B4D8ED1124B5B6E9002F3AD5 /* String+Utils.swift */,
+				B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */,
+				B4D8ED2724B5C674002F3AD5 /* UIButton+Utils.swift */,
+				B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */,
+				B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */,
+				B4D8ED2924B5C6C2002F3AD5 /* UIImage+Utils.swift */,
+				B4D8ED1A24B5B8BF002F3AD5 /* UIStackView+Utils.swift */,
+				B4D8ED2F24B5C819002F3AD5 /* UITableViewCell+Utils.swift */,
+				B41303CD24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift */,
+				B4D8ECD524B4D9B1002F3AD5 /* UIView+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -866,6 +869,7 @@
 				B4D8EC8224B4CB33002F3AD5 /* IntrinsictHeightLabel.swift in Sources */,
 				B4D8ECAA24B4CB33002F3AD5 /* CellLeftSectionView.swift in Sources */,
 				B4D8ED1224B5B6E9002F3AD5 /* String+Utils.swift in Sources */,
+				B41303CE24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift in Sources */,
 				B4D8EC9B24B4CB33002F3AD5 /* ButtonContentView.swift in Sources */,
 				B4D8EC9624B4CB33002F3AD5 /* LoadErrorViewControllerLifecycleDelegate.swift in Sources */,
 				B4D8EC7024B4CB33002F3AD5 /* PasswordInputFieldValidationStrategy.swift in Sources */,

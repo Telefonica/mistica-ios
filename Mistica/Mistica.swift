@@ -21,7 +21,7 @@ public struct Mistica {
     
     public static var themeVariant: ThemeVariant = .standard {
         didSet {
-            // trigger a notification to update UI components
+            NotificationCenter.default.post(name: .themeVariantDidChange, object: nil)
         }
     }
 }

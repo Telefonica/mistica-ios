@@ -31,7 +31,7 @@ public class CroutonController: NSObject {
 	private var showingToken: Token?
 	private let window: UIWindow
 
-	init(window: UIWindow) {
+	public init(window: UIWindow) {
 		self.window = window
 	}
 }

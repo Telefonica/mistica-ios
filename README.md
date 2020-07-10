@@ -23,15 +23,17 @@ github "Telefonica/mistica-ios" "master"
 And then run:
 
 ```
-carthage update --platform iOS
+carthage update --platform iOS --use-ssh
 ```
+
+> More information about Carthage integration [here](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
 
 ### Cocoapods
 
 Add Mistica to your `Podfile`:
 
 ```
-pod 'Mistica', :git => 'https://github.com/Telefonica/mistica-ios'
+pod 'Mistica', :git => 'git@github.com:Telefonica/mistica-ios.git'
 ```
 
 And then run:

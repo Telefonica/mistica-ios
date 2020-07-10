@@ -11,7 +11,6 @@
 		B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036A24B78C2200212D16 /* Bundle+Mistica.swift */; };
 		B413036F24B84F8900212D16 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036E24B84F8900212D16 /* AssetType.swift */; };
 		B4D8EC4F24B4CB33002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB324B4CB31002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift */; };
-		B4D8EC5024B4CB33002F3AD5 /* TMFloatingTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB424B4CB31002F3AD5 /* TMFloatingTooltipView.m */; };
 		B4D8EC5124B4CB33002F3AD5 /* FeedbackStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */; };
 		B4D8EC5224B4CB33002F3AD5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */; };
 		B4D8EC5324B4CB33002F3AD5 /* FeedbackUIAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB824B4CB31002F3AD5 /* FeedbackUIAssets.swift */; };
@@ -117,6 +116,19 @@
 		B413033624B75D6700212D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B413036A24B78C2200212D16 /* Bundle+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Mistica.swift"; sourceTree = "<group>"; };
 		B413036E24B84F8900212D16 /* AssetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetType.swift; sourceTree = "<group>"; };
+		B413037024B85A0400212D16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037224B85A3200212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037324B85A3D00212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037424B85A4700212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037524B85A5200212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037624B85A5D00212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037724B85A6700212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037824B85A7200212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037924B85A8100212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037A24B85A8B00212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037B24B85A9400212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037C24B85AB000212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B413037D24B85AC300212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mistica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D8EB8324B46B91002F3AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D8EB8A24B47869002F3AD5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -289,6 +301,7 @@
 		B4D8EBAD24B4CB31002F3AD5 /* Tooltip */ = {
 			isa = PBXGroup;
 			children = (
+				B413037C24B85AB000212D16 /* README.md */,
 				B4D8EBB124B4CB31002F3AD5 /* TMFloatingTooltipView.h */,
 				B4D8EBB324B4CB31002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift */,
 				B4D8EBB424B4CB31002F3AD5 /* TMFloatingTooltipView.m */,
@@ -299,6 +312,7 @@
 		B4D8EBB524B4CB31002F3AD5 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
+				B413037324B85A3D00212D16 /* README.md */,
 				B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */,
 				B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */,
 				B4D8EBC324B4CB32002F3AD5 /* Model */,
@@ -327,6 +341,7 @@
 		B4D8EBC824B4CB32002F3AD5 /* ScrollContentIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				B413037824B85A7200212D16 /* README.md */,
 				B4D8EBC924B4CB32002F3AD5 /* ScrollContentIndicatorStyle.swift */,
 				B4D8EBCF24B4CB32002F3AD5 /* ScrollContentIndicator.swift */,
 			);
@@ -336,6 +351,7 @@
 		B4D8EBD024B4CB32002F3AD5 /* InputField */ = {
 			isa = PBXGroup;
 			children = (
+				B413037624B85A5D00212D16 /* README.md */,
 				B4D8EBD124B4CB32002F3AD5 /* UIViewPropertyAnimator+InputField.swift */,
 				B4D8EBD224B4CB32002F3AD5 /* InputFieldStyle+Toolkit.swift */,
 				B4D8EBD424B4CB32002F3AD5 /* InputFieldDelegate.swift */,
@@ -360,6 +376,7 @@
 		B4D8EBE224B4CB32002F3AD5 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				B413037524B85A5200212D16 /* README.md */,
 				B4D8EBE824B4CB32002F3AD5 /* Internals */,
 				B4D8EBEA24B4CB32002F3AD5 /* HeaderView.swift */,
 				B4D8EBEB24B4CB32002F3AD5 /* HeaderViewStyle.swift */,
@@ -378,6 +395,7 @@
 		B4D8EBEC24B4CB32002F3AD5 /* SectionTitle */ = {
 			isa = PBXGroup;
 			children = (
+				B413037924B85A8100212D16 /* README.md */,
 				B4D8EBED24B4CB32002F3AD5 /* SectionTitleHeaderView.swift */,
 			);
 			path = SectionTitle;
@@ -386,24 +404,17 @@
 		B4D8EBF224B4CB32002F3AD5 /* Badge */ = {
 			isa = PBXGroup;
 			children = (
+				B413037024B85A0400212D16 /* README.md */,
 				B4D8EBF324B4CB32002F3AD5 /* BadgeView.swift */,
 				B4D8EBF424B4CB32002F3AD5 /* NovumBarButtonItem.swift */,
 			);
 			path = Badge;
 			sourceTree = "<group>";
 		};
-		B4D8EBFB24B4CB32002F3AD5 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8EBFC24B4CB32002F3AD5 /* IntrinsictImageView.swift */,
-				B4D8EBFD24B4CB32002F3AD5 /* IntrinsictHeightLabel.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		B4D8EBFE24B4CB32002F3AD5 /* Crouton */ = {
 			isa = PBXGroup;
 			children = (
+				B413037224B85A3200212D16 /* README.md */,
 				B4D8EC0624B4CB32002F3AD5 /* Domain */,
 				B4D8EC0824B4CB32002F3AD5 /* Presentation */,
 			);
@@ -431,6 +442,7 @@
 		B4D8EC0C24B4CB32002F3AD5 /* SegmentSelector */ = {
 			isa = PBXGroup;
 			children = (
+				B413037A24B85A8B00212D16 /* README.md */,
 				B4D8EC0D24B4CB32002F3AD5 /* SegmentCell.swift */,
 				B4D8EC0E24B4CB32002F3AD5 /* SegmentSelector.swift */,
 				B4D8EC1624B4CB33002F3AD5 /* Segment.swift */,
@@ -450,6 +462,7 @@
 		B4D8EC1A24B4CB33002F3AD5 /* ViewStates */ = {
 			isa = PBXGroup;
 			children = (
+				B413037D24B85AC300212D16 /* README.md */,
 				B4D8EC1B24B4CB33002F3AD5 /* LoadErrorViewControllerLifecycleDelegate.swift */,
 				B4D8EC1F24B4CB33002F3AD5 /* LoadErrorViewController.swift */,
 				B4D8EC2124B4CB33002F3AD5 /* LoadErrorViewControllerDelegate.swift */,
@@ -470,6 +483,7 @@
 		B4D8EC2C24B4CB33002F3AD5 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
+				B413037724B85A6700212D16 /* README.md */,
 				B4D8EC2D24B4CB33002F3AD5 /* ListView.swift */,
 				B4D8EC2E24B4CB33002F3AD5 /* ControlPresets */,
 				B4D8EC3724B4CB33002F3AD5 /* Internals */,
@@ -500,6 +514,7 @@
 		B4D8EC3C24B4CB33002F3AD5 /* Tag */ = {
 			isa = PBXGroup;
 			children = (
+				B413037B24B85A9400212D16 /* README.md */,
 				B4D8EC4324B4CB33002F3AD5 /* TagView.swift */,
 			);
 			path = Tag;
@@ -516,6 +531,7 @@
 		B4D8EC4624B4CB33002F3AD5 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				B413037424B85A4700212D16 /* README.md */,
 				B4D8EC4B24B4CB33002F3AD5 /* FormView.swift */,
 			);
 			path = Form;
@@ -526,7 +542,6 @@
 			children = (
 				B4D8EBF224B4CB32002F3AD5 /* Badge */,
 				B4D8EC2224B4CB33002F3AD5 /* Button */,
-				B4D8EBFB24B4CB32002F3AD5 /* Common */,
 				B4D8EBFE24B4CB32002F3AD5 /* Crouton */,
 				B4D8EBB524B4CB31002F3AD5 /* Feedback */,
 				B4D8EC4624B4CB33002F3AD5 /* Form */,
@@ -605,6 +620,8 @@
 				B4D8ECE424B5B4F6002F3AD5 /* Markup */,
 				B4D8ECE024B4DD38002F3AD5 /* CheckBox.swift */,
 				B4D8ED1E24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift */,
+				B4D8EBFC24B4CB32002F3AD5 /* IntrinsictImageView.swift */,
+				B4D8EBFD24B4CB32002F3AD5 /* IntrinsictHeightLabel.swift */,
 				B4D8ECDE24B4DD2D002F3AD5 /* GradientView.swift */,
 				B4D8ECE224B4DD60002F3AD5 /* SeparatorView.swift */,
 				B4D8ECFF24B5B512002F3AD5 /* PaddingLabel.swift */,
@@ -795,7 +812,6 @@
 				B4D8ED2624B5C5FE002F3AD5 /* CheckBoxAssets.swift in Sources */,
 				B4D8EC7524B4CB33002F3AD5 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
 				B4DFA1D424B724DA004C908E /* ListsAssets.swift in Sources */,
-				B4D8EC5024B4CB33002F3AD5 /* TMFloatingTooltipView.m in Sources */,
 				B4D8ECF824B5B4F6002F3AD5 /* NSTextCheckingResult+String.swift in Sources */,
 				B4D8ED2C24B5C718002F3AD5 /* PreprocessorChecks.swift in Sources */,
 				B4D8EC6724B4CB33002F3AD5 /* InputFieldDelegate.swift in Sources */,

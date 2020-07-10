@@ -11,6 +11,6 @@ import UIKit
 
 extension UIImage {
     static var arrowRight: UIImage {
-        UIImage(named: "icn_arrow_right")!
+        UIImage(named: "icn_arrow_right", type: .common)!
     }
 }

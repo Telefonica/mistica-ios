@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B413033724B75D6700212D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B413033624B75D6700212D16 /* Assets.xcassets */; };
+		B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036A24B78C2200212D16 /* Bundle+Mistica.swift */; };
+		B413036F24B84F8900212D16 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036E24B84F8900212D16 /* AssetType.swift */; };
 		B4D8EC4F24B4CB33002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB324B4CB31002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift */; };
 		B4D8EC5024B4CB33002F3AD5 /* TMFloatingTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB424B4CB31002F3AD5 /* TMFloatingTooltipView.m */; };
 		B4D8EC5124B4CB33002F3AD5 /* FeedbackStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */; };
@@ -68,7 +70,7 @@
 		B4D8ECC424B4D05D002F3AD5 /* BrandStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC324B4D05D002F3AD5 /* BrandStyle.swift */; };
 		B4D8ECC624B4D0DC002F3AD5 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */; };
 		B4D8ECCB24B4D26B002F3AD5 /* ThemeVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC824B4D26B002F3AD5 /* ThemeVariant.swift */; };
-		B4D8ECCC24B4D26B002F3AD5 /* UI+Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC924B4D26B002F3AD5 /* UI+Themed.swift */; };
+		B4D8ECCC24B4D26B002F3AD5 /* AssetCatalog+Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC924B4D26B002F3AD5 /* AssetCatalog+Themed.swift */; };
 		B4D8ECD224B4D721002F3AD5 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECCF24B4D721002F3AD5 /* FontSize.swift */; };
 		B4D8ECD324B4D721002F3AD5 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECD024B4D721002F3AD5 /* FontStyle.swift */; };
 		B4D8ECD424B4D721002F3AD5 /* FontToolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECD124B4D721002F3AD5 /* FontToolkit.swift */; };
@@ -90,17 +92,8 @@
 		B4D8ECFD24B5B4F6002F3AD5 /* Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECF224B5B4F6002F3AD5 /* Markup.swift */; };
 		B4D8ECFE24B5B4F6002F3AD5 /* MarkupActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECF324B5B4F6002F3AD5 /* MarkupActionFactory.swift */; };
 		B4D8ED0024B5B513002F3AD5 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECFF24B5B512002F3AD5 /* PaddingLabel.swift */; };
-		B4D8ED0824B5B596002F3AD5 /* CloseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED0224B5B596002F3AD5 /* CloseBarButtonItem.swift */; };
 		B4D8ED0924B5B596002F3AD5 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */; };
-		B4D8ED0A24B5B596002F3AD5 /* BarButtonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED0424B5B596002F3AD5 /* BarButtonProvider.swift */; };
-		B4D8ED0B24B5B596002F3AD5 /* BackBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED0524B5B596002F3AD5 /* BackBarButtonItem.swift */; };
-		B4D8ED0C24B5B596002F3AD5 /* BarButtonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED0624B5B596002F3AD5 /* BarButtonIcon.swift */; };
-		B4D8ED0D24B5B596002F3AD5 /* RefreshBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED0724B5B596002F3AD5 /* RefreshBarButtonItem.swift */; };
-		B4D8ED1024B5B66E002F3AD5 /* UIBarButtonAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED0F24B5B66D002F3AD5 /* UIBarButtonAssets.swift */; };
 		B4D8ED1224B5B6E9002F3AD5 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED1124B5B6E9002F3AD5 /* String+Utils.swift */; };
-		B4D8ED1724B5B7F8002F3AD5 /* ProfileButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED1424B5B7F8002F3AD5 /* ProfileButtonView.swift */; };
-		B4D8ED1824B5B7F8002F3AD5 /* ProfileBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED1524B5B7F8002F3AD5 /* ProfileBarButtonItem.swift */; };
-		B4D8ED1924B5B7F8002F3AD5 /* ProfileButtonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED1624B5B7F8002F3AD5 /* ProfileButtonPresenter.swift */; };
 		B4D8ED1B24B5B8C0002F3AD5 /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED1A24B5B8BF002F3AD5 /* UIStackView+Utils.swift */; };
 		B4D8ED1D24B5B92F002F3AD5 /* CGSize+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED1C24B5B92F002F3AD5 /* CGSize+Utils.swift */; };
 		B4D8ED1F24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED1E24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift */; };
@@ -122,6 +115,8 @@
 
 /* Begin PBXFileReference section */
 		B413033624B75D6700212D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B413036A24B78C2200212D16 /* Bundle+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Mistica.swift"; sourceTree = "<group>"; };
+		B413036E24B84F8900212D16 /* AssetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetType.swift; sourceTree = "<group>"; };
 		B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mistica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D8EB8324B46B91002F3AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D8EB8A24B47869002F3AD5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -187,7 +182,7 @@
 		B4D8ECC324B4D05D002F3AD5 /* BrandStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandStyle.swift; sourceTree = "<group>"; };
 		B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		B4D8ECC824B4D26B002F3AD5 /* ThemeVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeVariant.swift; sourceTree = "<group>"; };
-		B4D8ECC924B4D26B002F3AD5 /* UI+Themed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UI+Themed.swift"; sourceTree = "<group>"; };
+		B4D8ECC924B4D26B002F3AD5 /* AssetCatalog+Themed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AssetCatalog+Themed.swift"; sourceTree = "<group>"; };
 		B4D8ECCF24B4D721002F3AD5 /* FontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 		B4D8ECD024B4D721002F3AD5 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		B4D8ECD124B4D721002F3AD5 /* FontToolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontToolkit.swift; sourceTree = "<group>"; };
@@ -209,17 +204,8 @@
 		B4D8ECF224B5B4F6002F3AD5 /* Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markup.swift; sourceTree = "<group>"; };
 		B4D8ECF324B5B4F6002F3AD5 /* MarkupActionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupActionFactory.swift; sourceTree = "<group>"; };
 		B4D8ECFF24B5B512002F3AD5 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
-		B4D8ED0224B5B596002F3AD5 /* CloseBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseBarButtonItem.swift; sourceTree = "<group>"; };
 		B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Utils.swift"; sourceTree = "<group>"; };
-		B4D8ED0424B5B596002F3AD5 /* BarButtonProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonProvider.swift; sourceTree = "<group>"; };
-		B4D8ED0524B5B596002F3AD5 /* BackBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackBarButtonItem.swift; sourceTree = "<group>"; };
-		B4D8ED0624B5B596002F3AD5 /* BarButtonIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonIcon.swift; sourceTree = "<group>"; };
-		B4D8ED0724B5B596002F3AD5 /* RefreshBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshBarButtonItem.swift; sourceTree = "<group>"; };
-		B4D8ED0F24B5B66D002F3AD5 /* UIBarButtonAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonAssets.swift; sourceTree = "<group>"; };
 		B4D8ED1124B5B6E9002F3AD5 /* String+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
-		B4D8ED1424B5B7F8002F3AD5 /* ProfileButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileButtonView.swift; sourceTree = "<group>"; };
-		B4D8ED1524B5B7F8002F3AD5 /* ProfileBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileBarButtonItem.swift; sourceTree = "<group>"; };
-		B4D8ED1624B5B7F8002F3AD5 /* ProfileButtonPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileButtonPresenter.swift; sourceTree = "<group>"; };
 		B4D8ED1A24B5B8BF002F3AD5 /* UIStackView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
 		B4D8ED1C24B5B92F002F3AD5 /* CGSize+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Utils.swift"; sourceTree = "<group>"; };
 		B4D8ED1E24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntrinsicHeightTextView.swift; sourceTree = "<group>"; };
@@ -276,15 +262,14 @@
 			isa = PBXGroup;
 			children = (
 				B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */,
-				B4D8ECC324B4D05D002F3AD5 /* BrandStyle.swift */,
 				B4D8ED3924B5F0C5002F3AD5 /* Translations.swift */,
+				B4D8ECC724B4D26B002F3AD5 /* Styles */,
 				B4D8ED0E24B5B655002F3AD5 /* Assets */,
 				B4D8ECB724B4CD11002F3AD5 /* Utils */,
 				B4D8ECB824B4CFB7002F3AD5 /* Colors */,
 				B4D8ECB624B4CD04002F3AD5 /* Components */,
 				B4D8ECD724B4DA60002F3AD5 /* Helpers */,
 				B4D8ECCE24B4D721002F3AD5 /* Fonts */,
-				B4D8ECC724B4D26B002F3AD5 /* Theme */,
 				B4DFA20824B7575C004C908E /* Resources */,
 				B4D8EB8C24B499D9002F3AD5 /* SupportFiles */,
 			);
@@ -567,12 +552,14 @@
 				B4D8ED1C24B5B92F002F3AD5 /* CGSize+Utils.swift */,
 				B4D8ECD524B4D9B1002F3AD5 /* UIView+Utils.swift */,
 				B4D8ED2724B5C674002F3AD5 /* UIButton+Utils.swift */,
+				B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */,
 				B4D8ED2924B5C6C2002F3AD5 /* UIImage+Utils.swift */,
 				B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */,
 				B4D8ED1A24B5B8BF002F3AD5 /* UIStackView+Utils.swift */,
 				B4D8ED2D24B5C7A4002F3AD5 /* Optional+Utils.swift */,
 				B4D8ED2F24B5C819002F3AD5 /* UITableViewCell+Utils.swift */,
 				B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */,
+				B413036A24B78C2200212D16 /* Bundle+Mistica.swift */,
 				B4D8ED2B24B5C718002F3AD5 /* PreprocessorChecks.swift */,
 			);
 			path = Utils;
@@ -590,13 +577,15 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		B4D8ECC724B4D26B002F3AD5 /* Theme */ = {
+		B4D8ECC724B4D26B002F3AD5 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				B4D8ECC324B4D05D002F3AD5 /* BrandStyle.swift */,
 				B4D8ECC824B4D26B002F3AD5 /* ThemeVariant.swift */,
-				B4D8ECC924B4D26B002F3AD5 /* UI+Themed.swift */,
+				B4D8ECC924B4D26B002F3AD5 /* AssetCatalog+Themed.swift */,
+				B413036E24B84F8900212D16 /* AssetType.swift */,
 			);
-			path = Theme;
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		B4D8ECCE24B4D721002F3AD5 /* Fonts */ = {
@@ -614,7 +603,6 @@
 			children = (
 				B4D8ED2024B5C59A002F3AD5 /* Keyboard */,
 				B4D8ECE424B5B4F6002F3AD5 /* Markup */,
-				B4D8ED0124B5B596002F3AD5 /* BarButton */,
 				B4D8ECE024B4DD38002F3AD5 /* CheckBox.swift */,
 				B4D8ED1E24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift */,
 				B4D8ECDE24B4DD2D002F3AD5 /* GradientView.swift */,
@@ -676,40 +664,15 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		B4D8ED0124B5B596002F3AD5 /* BarButton */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8ED1324B5B7F8002F3AD5 /* ProfileButton */,
-				B4D8ED0524B5B596002F3AD5 /* BackBarButtonItem.swift */,
-				B4D8ED0224B5B596002F3AD5 /* CloseBarButtonItem.swift */,
-				B4D8ED0724B5B596002F3AD5 /* RefreshBarButtonItem.swift */,
-				B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */,
-				B4D8ED0424B5B596002F3AD5 /* BarButtonProvider.swift */,
-				B4D8ED0624B5B596002F3AD5 /* BarButtonIcon.swift */,
-			);
-			path = BarButton;
-			sourceTree = "<group>";
-		};
 		B4D8ED0E24B5B655002F3AD5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				B4D8ED0F24B5B66D002F3AD5 /* UIBarButtonAssets.swift */,
 				B4D8ED2524B5C5FE002F3AD5 /* CheckBoxAssets.swift */,
 				B4D8EBB824B4CB31002F3AD5 /* FeedbackUIAssets.swift */,
 				B4D8EBD324B4CB32002F3AD5 /* InputFieldAssets.swift */,
 				B4DFA1D324B724DA004C908E /* ListsAssets.swift */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		B4D8ED1324B5B7F8002F3AD5 /* ProfileButton */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8ED1424B5B7F8002F3AD5 /* ProfileButtonView.swift */,
-				B4D8ED1524B5B7F8002F3AD5 /* ProfileBarButtonItem.swift */,
-				B4D8ED1624B5B7F8002F3AD5 /* ProfileButtonPresenter.swift */,
-			);
-			path = ProfileButton;
 			sourceTree = "<group>";
 		};
 		B4D8ED2024B5C59A002F3AD5 /* Keyboard */ = {
@@ -808,6 +771,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */,
 				B4D8ECB524B4CB33002F3AD5 /* FormView.swift in Sources */,
 				B4D8ED2E24B5C7A4002F3AD5 /* Optional+Utils.swift in Sources */,
 				B4D8ECF924B5B4F6002F3AD5 /* String+Markup.swift in Sources */,
@@ -818,7 +782,6 @@
 				B4D8EC8924B4CB33002F3AD5 /* CroutonView.swift in Sources */,
 				B4D8EC5C24B4CB33002F3AD5 /* FeedbackConfiguration.swift in Sources */,
 				B4D8EC7C24B4CB33002F3AD5 /* NovumBarButtonItem.swift in Sources */,
-				B4D8ED0C24B5B596002F3AD5 /* BarButtonIcon.swift in Sources */,
 				B4D8EC5124B4CB33002F3AD5 /* FeedbackStyle+Toolkit.swift in Sources */,
 				B4D8EC6E24B4CB33002F3AD5 /* EmailInputFieldValidationStrategy.swift in Sources */,
 				B4D8EC8124B4CB33002F3AD5 /* IntrinsictImageView.swift in Sources */,
@@ -829,7 +792,6 @@
 				B4D8ECD624B4D9B1002F3AD5 /* UIView+Utils.swift in Sources */,
 				B4D8ECA124B4CB33002F3AD5 /* Button.swift in Sources */,
 				B4D8ECA024B4CB33002F3AD5 /* ButtonStyle+Toolkit.swift in Sources */,
-				B4D8ED1724B5B7F8002F3AD5 /* ProfileButtonView.swift in Sources */,
 				B4D8ED2624B5C5FE002F3AD5 /* CheckBoxAssets.swift in Sources */,
 				B4D8EC7524B4CB33002F3AD5 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
 				B4DFA1D424B724DA004C908E /* ListsAssets.swift in Sources */,
@@ -847,8 +809,7 @@
 				B4D8ED1B24B5B8C0002F3AD5 /* UIStackView+Utils.swift in Sources */,
 				B4D8ECFA24B5B4F6002F3AD5 /* MarkupTextView.swift in Sources */,
 				B4D8ECB224B4CB33002F3AD5 /* ValidatableView.swift in Sources */,
-				B4D8ED0A24B5B596002F3AD5 /* BarButtonProvider.swift in Sources */,
-				B4D8ECCC24B4D26B002F3AD5 /* UI+Themed.swift in Sources */,
+				B4D8ECCC24B4D26B002F3AD5 /* AssetCatalog+Themed.swift in Sources */,
 				B4D8ECC424B4D05D002F3AD5 /* BrandStyle.swift in Sources */,
 				B4D8ECE124B4DD39002F3AD5 /* CheckBox.swift in Sources */,
 				B4D8ECDD24B4DAB6002F3AD5 /* ScrollStackView.swift in Sources */,
@@ -870,12 +831,10 @@
 				B4D8ED2424B5C5AA002F3AD5 /* KeyboardInfo.swift in Sources */,
 				B4D8EC7724B4CB33002F3AD5 /* HeaderViewStyle.swift in Sources */,
 				B4D8EC5324B4CB33002F3AD5 /* FeedbackUIAssets.swift in Sources */,
-				B4D8ED0B24B5B596002F3AD5 /* BackBarButtonItem.swift in Sources */,
 				B4D8EC6624B4CB33002F3AD5 /* InputFieldAssets.swift in Sources */,
 				B4D8EC7824B4CB33002F3AD5 /* SectionTitleHeaderView.swift in Sources */,
 				B4D8ECBF24B4CFB7002F3AD5 /* VivoColorPalette.swift in Sources */,
 				B4D8ECDA24B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift in Sources */,
-				B4D8ED1024B5B66E002F3AD5 /* UIBarButtonAssets.swift in Sources */,
 				B4D8ECFD24B5B4F6002F3AD5 /* Markup.swift in Sources */,
 				B4D8ECC124B4CFB7002F3AD5 /* ColorPalette.swift in Sources */,
 				B4D8EC5F24B4CB33002F3AD5 /* ScrollContentIndicatorStyle.swift in Sources */,
@@ -883,10 +842,10 @@
 				B4D8ED2824B5C674002F3AD5 /* UIButton+Utils.swift in Sources */,
 				B4D8ECB124B4CB33002F3AD5 /* TagView.swift in Sources */,
 				B4D8ECDF24B4DD2D002F3AD5 /* GradientView.swift in Sources */,
-				B4D8ED0D24B5B596002F3AD5 /* RefreshBarButtonItem.swift in Sources */,
 				B4D8EC8A24B4CB33002F3AD5 /* CroutonController.swift in Sources */,
 				B4D8EC9824B4CB33002F3AD5 /* LoadErrorViewController.swift in Sources */,
 				B4D8ECC224B4CFB7002F3AD5 /* O2ColorPalette.swift in Sources */,
+				B413036F24B84F8900212D16 /* AssetType.swift in Sources */,
 				B4D8ED3A24B5F0C5002F3AD5 /* Translations.swift in Sources */,
 				B4D8EC8224B4CB33002F3AD5 /* IntrinsictHeightLabel.swift in Sources */,
 				B4D8ECAA24B4CB33002F3AD5 /* CellLeftSectionView.swift in Sources */,
@@ -897,13 +856,11 @@
 				B4D8EC8824B4CB33002F3AD5 /* CroutonConfig.swift in Sources */,
 				B4D8ECF624B5B4F6002F3AD5 /* Markup+Parse.swift in Sources */,
 				B4D8ECE324B4DD60002F3AD5 /* SeparatorView.swift in Sources */,
-				B4D8ED0824B5B596002F3AD5 /* CloseBarButtonItem.swift in Sources */,
 				B4D8EC7B24B4CB33002F3AD5 /* BadgeView.swift in Sources */,
 				B4D8EC8D24B4CB33002F3AD5 /* SegmentSelector.swift in Sources */,
 				B4D8EC5D24B4CB33002F3AD5 /* FeedbackNavigator.swift in Sources */,
 				B4D8ECF424B5B4F6002F3AD5 /* MarkupRenderer.swift in Sources */,
 				B4D8ECD224B4D721002F3AD5 /* FontSize.swift in Sources */,
-				B4D8ED1924B5B7F8002F3AD5 /* ProfileButtonPresenter.swift in Sources */,
 				B4D8EC6424B4CB33002F3AD5 /* UIViewPropertyAnimator+InputField.swift in Sources */,
 				B4D8ED0024B5B513002F3AD5 /* PaddingLabel.swift in Sources */,
 				B4D8ED1F24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift in Sources */,
@@ -916,7 +873,6 @@
 				B4D8EC8B24B4CB33002F3AD5 /* CustomCroutonContainer.swift in Sources */,
 				B4D8ECD424B4D721002F3AD5 /* FontToolkit.swift in Sources */,
 				B4D8ECA324B4CB33002F3AD5 /* NavigationPresetView.swift in Sources */,
-				B4D8ED1824B5B7F8002F3AD5 /* ProfileBarButtonItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

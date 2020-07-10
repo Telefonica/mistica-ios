@@ -11,6 +11,6 @@ import UIKit
 
 extension UIImage {
     static var checkmarkIconSmall: UIImage {
-        UIImage(named: "icn_check_selected_small")!
+        UIImage(named: "icn_check_selected_small", type: .common)!
     }
 }

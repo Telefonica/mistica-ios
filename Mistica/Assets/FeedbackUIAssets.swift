@@ -11,16 +11,16 @@ import UIKit
 
 extension UIImage {
 	static var iconNotificationInfo: UIImage? {
-		UIImage(themedImageNamed: "icnNotificationInfo")
+        UIImage(named: "icnNotificationInfo", type: .brandedAndThemed)
 	}
 }
 
 extension NSDataAsset {
 	static var successAnimation: NSDataAsset? {
-		NSDataAsset(name: "FeedbackSuccess")
+        NSDataAsset(named: "FeedbackSuccess", type: .branded)
 	}
 
 	static var errorAnimation: NSDataAsset? {
-		NSDataAsset(name: "FeedbackError")
+		NSDataAsset(named: "FeedbackError", type: .branded)
 	}
 }

@@ -17,14 +17,17 @@ public class FeedbackViewController: UIViewController {
 	private let style: FeedbackStyle
 	private let shouldHideCloseButton: Bool
 
-	private unowned let barButtonProvider: BarButtonProvider
+	private let backButton: UIBarButtonItem?
+    private let closeButton: UIBarButtonItem?
 
-	public init(barButtonProvider: BarButtonProvider,
-	            configuration: FeedbackConfiguration) {
+	public init(configuration: FeedbackConfiguration,
+                backButton: UIBarButtonItem? = nil,
+                closeButton: UIBarButtonItem? = nil) {
 		style = configuration.style
 		shouldHideCloseButton = configuration.shouldHideCloseButton
 		feedbackView = FeedbackView(configuration: configuration)
-		self.barButtonProvider = barButtonProvider
+        self.backButton = backButton
+        self.closeButton = closeButton
 		super.init(nibName: nil, bundle: nil)
 
 		if let modalPresentationStyle = configuration.modalPresentationStyle {
@@ -69,11 +72,11 @@ public extension FeedbackViewController {
 private extension FeedbackViewController {
 	private func setupNavigationBar() {
 		if shouldShowCloseButton {
-			navigationItem.rightBarButtonItem = barButtonProvider.closeBarButtonItem(responder: self)
+			navigationItem.rightBarButtonItem = closeButton
 		}
 
 		if shouldShowBackButton {
-			navigationItem.leftBarButtonItem = barButtonProvider.backBarButtonItem(responder: self)
+			navigationItem.leftBarButtonItem = backButton
 		} else {
 			navigationItem.hidesBackButton = true
 		}
@@ -88,17 +91,5 @@ private extension FeedbackViewController {
 		guard style != .success else { return false }
 		guard let navigationController = navigationController else { return false }
 		return navigationController.viewControllers.count > 1
-	}
-}
-
-extension FeedbackViewController: CloseBarButtonResponder {
-	public func didTapCloseButton(_ sender: UIBarButtonItem) {
-		dismiss(animated: true)
-	}
-}
-
-extension FeedbackViewController: BackBarButtonResponder {
-	public func didTapBackButton(_ sender: UIBarButtonItem) {
-		navigationController?.popViewController(animated: true)
 	}
 }

@@ -8,13 +8,13 @@
 
 import UIKit
 
-public extension UIBarButtonItem {
-	@objc convenience init(icon: BarButtonIcon,
+extension UIBarButtonItem {
+	@objc convenience init(icon: UIImage,
 	                       accessibilityLabel: String,
 	                       target: AnyObject,
 	                       action: Selector) {
 		self.init()
-		image = icon.image
+		image = image
 		self.target = target
 		self.action = action
 		style = .plain

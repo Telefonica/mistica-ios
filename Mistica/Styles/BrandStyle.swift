@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum BrandStyle: CaseIterable {
+public enum BrandStyle: String, CaseIterable {
     case movistar
     case vivo
     case o2

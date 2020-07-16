@@ -84,7 +84,7 @@ public class FormView: UIView {
 	}
 }
 
-@objc public extension FormView {
+public extension FormView {
 	var isValid: Bool {
 		validatableViews.reduce(true) { $0 && $1.isValid() }
 	}
@@ -102,13 +102,13 @@ public class FormView: UIView {
 		inputFields.forEach(removeInputField)
 	}
 
-	func addCheckBoxes(_ checkBoxes: [CheckBox]) {
-		checkBoxes.forEach(addCheckBox)
+	func addValidatableViews(_ views: [ValidatableView]) {
+		views.forEach(addValidatableView)
 		arrangeViews()
 	}
 
-	func removeCheckBoxes(_ checkBoxes: [CheckBox]) {
-		checkBoxes.forEach(removeCheckBox)
+	func removeValidatableViews(_ views: [ValidatableView]) {
+		views.forEach(removeValidatableView)
 	}
 
 	func addHeaderView(_ headerView: UIView) {
@@ -190,17 +190,17 @@ private extension FormView {
 		inputField.delegate = nil
 	}
 
-	func addCheckBox(_ checkBox: CheckBox) {
+	func addValidatableView(_ view: ValidatableView) {
 		// Use isEqual to compare instances of the UIView should be enough, since ValidatableView cannot conform to Equatable
-		guard !validatableViews.contains(where: checkBox.isEqual) else { return }
-		validatableViews.append(checkBox)
+		guard !validatableViews.contains(where: view.isEqual) else { return }
+		validatableViews.append(view)
 	}
 
-	func removeCheckBox(_ checkBox: CheckBox) {
+	func removeValidatableView(_ view: ValidatableView) {
 		// Use isEqual to compare instances of the UIView should be enough, since ValidatableView cannot conform to Equatable
-		guard let index = validatableViews.firstIndex(where: checkBox.isEqual) else { return }
+		guard let index = validatableViews.firstIndex(where: view.isEqual) else { return }
 		validatableViews.remove(at: index)
-		checkBox.removeFromSuperview()
+		view.removeFromSuperview()
 	}
 
 	func startListeningKeyboardNotifications() {

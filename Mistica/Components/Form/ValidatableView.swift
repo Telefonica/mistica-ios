@@ -13,5 +13,4 @@ public protocol Validatable: AnyObject {
 	func validate()
 }
 
-typealias ValidatableView = UIView & Validatable
-typealias ValidatableInputField = InputField & Validatable
+public typealias ValidatableView = UIView & Validatable

@@ -78,19 +78,7 @@
 		B4D8ECDA24B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECD924B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift */; };
 		B4D8ECDD24B4DAB6002F3AD5 /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECDC24B4DAB6002F3AD5 /* ScrollStackView.swift */; };
 		B4D8ECDF24B4DD2D002F3AD5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECDE24B4DD2D002F3AD5 /* GradientView.swift */; };
-		B4D8ECE124B4DD39002F3AD5 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECE024B4DD38002F3AD5 /* CheckBox.swift */; };
 		B4D8ECE324B4DD60002F3AD5 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECE224B4DD60002F3AD5 /* SeparatorView.swift */; };
-		B4D8ECF424B5B4F6002F3AD5 /* MarkupRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECE624B5B4F6002F3AD5 /* MarkupRenderer.swift */; };
-		B4D8ECF524B5B4F6002F3AD5 /* FormatTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECE824B5B4F6002F3AD5 /* FormatTokenizer.swift */; };
-		B4D8ECF624B5B4F6002F3AD5 /* Markup+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECE924B5B4F6002F3AD5 /* Markup+Parse.swift */; };
-		B4D8ECF724B5B4F6002F3AD5 /* FormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECEA24B5B4F6002F3AD5 /* FormatParser.swift */; };
-		B4D8ECF824B5B4F6002F3AD5 /* NSTextCheckingResult+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECEB24B5B4F6002F3AD5 /* NSTextCheckingResult+String.swift */; };
-		B4D8ECF924B5B4F6002F3AD5 /* String+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECEC24B5B4F6002F3AD5 /* String+Markup.swift */; };
-		B4D8ECFA24B5B4F6002F3AD5 /* MarkupTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECEE24B5B4F6002F3AD5 /* MarkupTextView.swift */; };
-		B4D8ECFB24B5B4F6002F3AD5 /* MarkupAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECF024B5B4F6002F3AD5 /* MarkupAction.swift */; };
-		B4D8ECFC24B5B4F6002F3AD5 /* FormatToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECF124B5B4F6002F3AD5 /* FormatToken.swift */; };
-		B4D8ECFD24B5B4F6002F3AD5 /* Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECF224B5B4F6002F3AD5 /* Markup.swift */; };
-		B4D8ECFE24B5B4F6002F3AD5 /* MarkupActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECF324B5B4F6002F3AD5 /* MarkupActionFactory.swift */; };
 		B4D8ED0024B5B513002F3AD5 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECFF24B5B512002F3AD5 /* PaddingLabel.swift */; };
 		B4D8ED0924B5B596002F3AD5 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */; };
 		B4D8ED1224B5B6E9002F3AD5 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED1124B5B6E9002F3AD5 /* String+Utils.swift */; };
@@ -204,19 +192,7 @@
 		B4D8ECD924B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundsChangeInvalidatingFlowLayout.swift; sourceTree = "<group>"; };
 		B4D8ECDC24B4DAB6002F3AD5 /* ScrollStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollStackView.swift; sourceTree = "<group>"; };
 		B4D8ECDE24B4DD2D002F3AD5 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		B4D8ECE024B4DD38002F3AD5 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		B4D8ECE224B4DD60002F3AD5 /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
-		B4D8ECE624B5B4F6002F3AD5 /* MarkupRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupRenderer.swift; sourceTree = "<group>"; };
-		B4D8ECE824B5B4F6002F3AD5 /* FormatTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatTokenizer.swift; sourceTree = "<group>"; };
-		B4D8ECE924B5B4F6002F3AD5 /* Markup+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Markup+Parse.swift"; sourceTree = "<group>"; };
-		B4D8ECEA24B5B4F6002F3AD5 /* FormatParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatParser.swift; sourceTree = "<group>"; };
-		B4D8ECEB24B5B4F6002F3AD5 /* NSTextCheckingResult+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextCheckingResult+String.swift"; sourceTree = "<group>"; };
-		B4D8ECEC24B5B4F6002F3AD5 /* String+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Markup.swift"; sourceTree = "<group>"; };
-		B4D8ECEE24B5B4F6002F3AD5 /* MarkupTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupTextView.swift; sourceTree = "<group>"; };
-		B4D8ECF024B5B4F6002F3AD5 /* MarkupAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupAction.swift; sourceTree = "<group>"; };
-		B4D8ECF124B5B4F6002F3AD5 /* FormatToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatToken.swift; sourceTree = "<group>"; };
-		B4D8ECF224B5B4F6002F3AD5 /* Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markup.swift; sourceTree = "<group>"; };
-		B4D8ECF324B5B4F6002F3AD5 /* MarkupActionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupActionFactory.swift; sourceTree = "<group>"; };
 		B4D8ECFF24B5B512002F3AD5 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Utils.swift"; sourceTree = "<group>"; };
 		B4D8ED1124B5B6E9002F3AD5 /* String+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
@@ -522,18 +498,11 @@
 			path = Tag;
 			sourceTree = "<group>";
 		};
-		B4D8EC4424B4CB33002F3AD5 /* ValidatableView */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8EC4524B4CB33002F3AD5 /* ValidatableView.swift */,
-			);
-			path = ValidatableView;
-			sourceTree = "<group>";
-		};
 		B4D8EC4624B4CB33002F3AD5 /* Form */ = {
 			isa = PBXGroup;
 			children = (
 				B413037424B85A4700212D16 /* README.md */,
+				B4D8EC4524B4CB33002F3AD5 /* ValidatableView.swift */,
 				B4D8EC4B24B4CB33002F3AD5 /* FormView.swift */,
 			);
 			path = Form;
@@ -555,7 +524,6 @@
 				B4D8EC0C24B4CB32002F3AD5 /* SegmentSelector */,
 				B4D8EC3C24B4CB33002F3AD5 /* Tag */,
 				B4D8EBAD24B4CB31002F3AD5 /* Tooltip */,
-				B4D8EC4424B4CB33002F3AD5 /* ValidatableView */,
 				B4D8EC1A24B4CB33002F3AD5 /* ViewStates */,
 			);
 			path = Components;
@@ -620,8 +588,6 @@
 			isa = PBXGroup;
 			children = (
 				B4D8ED2024B5C59A002F3AD5 /* Keyboard */,
-				B4D8ECE424B5B4F6002F3AD5 /* Markup */,
-				B4D8ECE024B4DD38002F3AD5 /* CheckBox.swift */,
 				B4D8ED1E24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift */,
 				B4D8EBFC24B4CB32002F3AD5 /* IntrinsictImageView.swift */,
 				B4D8EBFD24B4CB32002F3AD5 /* IntrinsictHeightLabel.swift */,
@@ -632,56 +598,6 @@
 				B4D8ECD924B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		B4D8ECE424B5B4F6002F3AD5 /* Markup */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8ECE524B5B4F6002F3AD5 /* Renderer */,
-				B4D8ECE724B5B4F6002F3AD5 /* Parser */,
-				B4D8ECED24B5B4F6002F3AD5 /* Views */,
-				B4D8ECEF24B5B4F6002F3AD5 /* Domain */,
-			);
-			path = Markup;
-			sourceTree = "<group>";
-		};
-		B4D8ECE524B5B4F6002F3AD5 /* Renderer */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8ECE624B5B4F6002F3AD5 /* MarkupRenderer.swift */,
-			);
-			path = Renderer;
-			sourceTree = "<group>";
-		};
-		B4D8ECE724B5B4F6002F3AD5 /* Parser */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8ECE824B5B4F6002F3AD5 /* FormatTokenizer.swift */,
-				B4D8ECE924B5B4F6002F3AD5 /* Markup+Parse.swift */,
-				B4D8ECEA24B5B4F6002F3AD5 /* FormatParser.swift */,
-				B4D8ECEB24B5B4F6002F3AD5 /* NSTextCheckingResult+String.swift */,
-				B4D8ECEC24B5B4F6002F3AD5 /* String+Markup.swift */,
-			);
-			path = Parser;
-			sourceTree = "<group>";
-		};
-		B4D8ECED24B5B4F6002F3AD5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8ECEE24B5B4F6002F3AD5 /* MarkupTextView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B4D8ECEF24B5B4F6002F3AD5 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8ECF024B5B4F6002F3AD5 /* MarkupAction.swift */,
-				B4D8ECF124B5B4F6002F3AD5 /* FormatToken.swift */,
-				B4D8ECF224B5B4F6002F3AD5 /* Markup.swift */,
-				B4D8ECF324B5B4F6002F3AD5 /* MarkupActionFactory.swift */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		B4D8ED0E24B5B655002F3AD5 /* Assets */ = {
@@ -794,9 +710,7 @@
 				B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */,
 				B4D8ECB524B4CB33002F3AD5 /* FormView.swift in Sources */,
 				B4D8ED2E24B5C7A4002F3AD5 /* Optional+Utils.swift in Sources */,
-				B4D8ECF924B5B4F6002F3AD5 /* String+Markup.swift in Sources */,
 				B4D8EC4F24B4CB33002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift in Sources */,
-				B4D8ECFB24B5B4F6002F3AD5 /* MarkupAction.swift in Sources */,
 				B4D8ED2324B5C5AA002F3AD5 /* KeyboardNotificationCenter.swift in Sources */,
 				B4D8ECC624B4D0DC002F3AD5 /* UIColor+Utils.swift in Sources */,
 				B4D8EC8924B4CB33002F3AD5 /* CroutonView.swift in Sources */,
@@ -806,16 +720,13 @@
 				B4D8EC6E24B4CB33002F3AD5 /* EmailInputFieldValidationStrategy.swift in Sources */,
 				B4D8EC8124B4CB33002F3AD5 /* IntrinsictImageView.swift in Sources */,
 				B4D8ECA224B4CB33002F3AD5 /* ListView.swift in Sources */,
-				B4D8ECF524B5B4F6002F3AD5 /* FormatTokenizer.swift in Sources */,
 				B4D8ED1D24B5B92F002F3AD5 /* CGSize+Utils.swift in Sources */,
-				B4D8ECF724B5B4F6002F3AD5 /* FormatParser.swift in Sources */,
 				B4D8ECD624B4D9B1002F3AD5 /* UIView+Utils.swift in Sources */,
 				B4D8ECA124B4CB33002F3AD5 /* Button.swift in Sources */,
 				B4D8ECA024B4CB33002F3AD5 /* ButtonStyle+Toolkit.swift in Sources */,
 				B4D8ED2624B5C5FE002F3AD5 /* CheckBoxAssets.swift in Sources */,
 				B4D8EC7524B4CB33002F3AD5 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
 				B4DFA1D424B724DA004C908E /* ListsAssets.swift in Sources */,
-				B4D8ECF824B5B4F6002F3AD5 /* NSTextCheckingResult+String.swift in Sources */,
 				B4D8ED2C24B5C718002F3AD5 /* PreprocessorChecks.swift in Sources */,
 				B4D8EC6724B4CB33002F3AD5 /* InputFieldDelegate.swift in Sources */,
 				B4D8EC7624B4CB33002F3AD5 /* HeaderView.swift in Sources */,
@@ -826,20 +737,16 @@
 				B4D8ECD324B4D721002F3AD5 /* FontStyle.swift in Sources */,
 				B4D8EC9524B4CB33002F3AD5 /* SegmentSelectorCenteredContentLayout.swift in Sources */,
 				B4D8ED1B24B5B8C0002F3AD5 /* UIStackView+Utils.swift in Sources */,
-				B4D8ECFA24B5B4F6002F3AD5 /* MarkupTextView.swift in Sources */,
 				B4D8ECB224B4CB33002F3AD5 /* ValidatableView.swift in Sources */,
 				B4D8ECCC24B4D26B002F3AD5 /* AssetCatalog+Themed.swift in Sources */,
 				B4D8ECC424B4D05D002F3AD5 /* BrandStyle.swift in Sources */,
-				B4D8ECE124B4DD39002F3AD5 /* CheckBox.swift in Sources */,
 				B4D8ECDD24B4DAB6002F3AD5 /* ScrollStackView.swift in Sources */,
 				B4D8EC7124B4CB33002F3AD5 /* InputFieldValidationStrategy.swift in Sources */,
 				B4D8EC5224B4CB33002F3AD5 /* FeedbackViewController.swift in Sources */,
-				B4D8ECFE24B5B4F6002F3AD5 /* MarkupActionFactory.swift in Sources */,
 				B4D8EC6524B4CB33002F3AD5 /* InputFieldStyle+Toolkit.swift in Sources */,
 				B4D8EC9A24B4CB33002F3AD5 /* LoadErrorViewControllerDelegate.swift in Sources */,
 				B4D8ECAB24B4CB33002F3AD5 /* ListCellView.swift in Sources */,
 				B4D8ECCB24B4D26B002F3AD5 /* ThemeVariant.swift in Sources */,
-				B4D8ECFC24B5B4F6002F3AD5 /* FormatToken.swift in Sources */,
 				B4D8EC6B24B4CB33002F3AD5 /* TextInput.swift in Sources */,
 				B4D8ECA424B4CB33002F3AD5 /* VerticallyCenteredPresetView.swift in Sources */,
 				B4D8EC5E24B4CB33002F3AD5 /* FeedbackView.swift in Sources */,
@@ -854,7 +761,6 @@
 				B4D8EC7824B4CB33002F3AD5 /* SectionTitleHeaderView.swift in Sources */,
 				B4D8ECBF24B4CFB7002F3AD5 /* VivoColorPalette.swift in Sources */,
 				B4D8ECDA24B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift in Sources */,
-				B4D8ECFD24B5B4F6002F3AD5 /* Markup.swift in Sources */,
 				B4D8ECC124B4CFB7002F3AD5 /* ColorPalette.swift in Sources */,
 				B4D8EC5F24B4CB33002F3AD5 /* ScrollContentIndicatorStyle.swift in Sources */,
 				B4D8ED3424B5D650002F3AD5 /* Array+NSAttributedString.swift in Sources */,
@@ -874,12 +780,10 @@
 				B4D8EC9624B4CB33002F3AD5 /* LoadErrorViewControllerLifecycleDelegate.swift in Sources */,
 				B4D8EC7024B4CB33002F3AD5 /* PasswordInputFieldValidationStrategy.swift in Sources */,
 				B4D8EC8824B4CB33002F3AD5 /* CroutonConfig.swift in Sources */,
-				B4D8ECF624B5B4F6002F3AD5 /* Markup+Parse.swift in Sources */,
 				B4D8ECE324B4DD60002F3AD5 /* SeparatorView.swift in Sources */,
 				B4D8EC7B24B4CB33002F3AD5 /* BadgeView.swift in Sources */,
 				B4D8EC8D24B4CB33002F3AD5 /* SegmentSelector.swift in Sources */,
 				B4D8EC5D24B4CB33002F3AD5 /* FeedbackNavigator.swift in Sources */,
-				B4D8ECF424B5B4F6002F3AD5 /* MarkupRenderer.swift in Sources */,
 				B4D8ECD224B4D721002F3AD5 /* FontSize.swift in Sources */,
 				B4D8EC6424B4CB33002F3AD5 /* UIViewPropertyAnimator+InputField.swift in Sources */,
 				B4D8ED0024B5B513002F3AD5 /* PaddingLabel.swift in Sources */,

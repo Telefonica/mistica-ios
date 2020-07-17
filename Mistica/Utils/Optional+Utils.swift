@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Optional where Wrapped: Collection {
+extension Optional where Wrapped: Collection {
 	var isEmpty: Bool {
 		switch self {
 		case .none:

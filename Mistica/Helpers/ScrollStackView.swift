@@ -13,7 +13,7 @@ import UIKit
 /// and arranges elements vertically. The scroll will be disabled if the size of
 /// the elements inside the stack view is smaller than the scrollView.
 @dynamicMemberLookup
-public class ScrollStackView: UIScrollView {
+class ScrollStackView: UIScrollView {
 	public lazy var stackView: UIStackView = {
 		let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
 		stackView.axis = .vertical
@@ -37,7 +37,7 @@ public class ScrollStackView: UIScrollView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	public subscript<T>(dynamicMember keyPath: WritableKeyPath<UIStackView, T>) -> T {
+	subscript<T>(dynamicMember keyPath: WritableKeyPath<UIStackView, T>) -> T {
 		get {
 			stackView[keyPath: keyPath]
 		}
@@ -46,11 +46,11 @@ public class ScrollStackView: UIScrollView {
 		}
 	}
 
-	public func removeArrangedSubviews() {
+	func removeArrangedSubviews() {
 		stackView.removeArrangedSubviews()
 	}
 
-	public func addArrangedSubview(_ view: UIView) {
+	func addArrangedSubview(_ view: UIView) {
 		stackView.addArrangedSubview(view)
 	}
 }

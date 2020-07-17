@@ -9,6 +9,6 @@
 import Foundation
 
 // Assert for checking that the current code is being run in the main queue
-public func assertMainThread() {
+func assertMainThread() {
 	assert(Thread.isMainThread, "Not in main queue!")
 }

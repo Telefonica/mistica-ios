@@ -15,7 +15,7 @@ private let domainEmailRegex = (try? NSRegularExpression(pattern: "^([-A-Za-z0-9
 private let weirdCharactersForPhoneRegex = (try? NSRegularExpression(pattern: "[a-z:]+",
                                                                      options: .caseInsensitive))!
 
-public extension String {
+extension String {
 	var trimmingWhiteSpace: String {
 		trimmingCharacters(in: .whitespacesAndNewlines)
 	}

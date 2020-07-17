@@ -8,18 +8,15 @@
 
 import UIKit
 
-public extension UICollectionViewCell {
-	@objc(registerClassOnCollectionView:)
+extension UICollectionViewCell {
 	class func registerClassForCell(to collectionView: UICollectionView) {
 		collectionView.register(self, forCellWithReuseIdentifier: cellReuseIdentifier())
 	}
 
-	@objc(registerNibOnCollectionView:)
 	class func registerNibForCell(to collectionView: UICollectionView) {
 		collectionView.register(nib(), forCellWithReuseIdentifier: cellReuseIdentifier())
 	}
 
-	@objc(dequeueReusableCellForIndexPath:fromCollectionView:)
 	class func dequeueReusableCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> Self {
 		internalDequeueReusableCell(for: indexPath, from: collectionView)
 	}

@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 /// This UITextView subclass will size itself based on a fixed valud for it's height.
-public class IntrinsicHeightTextView: UITextView {
-	public var intrinsicHeight: CGFloat = 128
-	public override var intrinsicContentSize: CGSize {
+class IntrinsicHeightTextView: UITextView {
+	var intrinsicHeight: CGFloat = 128
+	override var intrinsicContentSize: CGSize {
 		let width = super.intrinsicContentSize.width
 		let height = max(intrinsicHeight, super.intrinsicContentSize.height)
 		return CGSize(width: width, height: height)

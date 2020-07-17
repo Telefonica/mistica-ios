@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Array where Element: NSAttributedString {
+extension Array where Element: NSAttributedString {
 	func joined() -> NSAttributedString {
 		let result = NSMutableAttributedString()
 		for element in self {

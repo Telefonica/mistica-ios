@@ -8,12 +8,12 @@
 
 import UIKit
 
-public class BoundsChangeInvalidatingFlowLayout: UICollectionViewFlowLayout {
+class BoundsChangeInvalidatingFlowLayout: UICollectionViewFlowLayout {
 	private var lastLayoutSize: CGSize?
 
 	// Note that this method will also be called when scrolling as the origin will change
 	// Only the size matters to us
-	public override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+	override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
 		defer { lastLayoutSize = newBounds.size }
 		if newBounds.size == lastLayoutSize {
 			return super.shouldInvalidateLayout(forBoundsChange: newBounds)
@@ -22,7 +22,7 @@ public class BoundsChangeInvalidatingFlowLayout: UICollectionViewFlowLayout {
 		}
 	}
 
-	public override func invalidationContext(forBoundsChange newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
+	override func invalidationContext(forBoundsChange newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
 		let invalidationContext = super.invalidationContext(forBoundsChange: newBounds)
 
 		if let flowInvalidationContext = invalidationContext as? UICollectionViewFlowLayoutInvalidationContext {

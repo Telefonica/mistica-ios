@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc public extension UIView {
+extension UIView {
 	static let defaultAnimationDuration: TimeInterval = 0.25
 
 	// MARK: Blur effect
@@ -161,7 +161,6 @@ import UIKit
 		}
 	}
 
-	@objc(animationOptionsFromAnimationCurve:)
 	class func animationOptions(from curve: UIView.AnimationCurve) -> UIView.AnimationOptions {
 		switch curve.rawValue {
 		case UIView.AnimationCurve.linear.rawValue:
@@ -329,7 +328,7 @@ extension UIView {
 
 // MARK: Visual Effect
 
-public extension UIView {
+extension UIView {
 	func embedInVisualEffectView(effect: UIVisualEffect) -> UIVisualEffectView {
 		let visualEffectView = UIVisualEffectView(effect: effect)
 

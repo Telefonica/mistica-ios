@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-public struct KeyboardInfo {
+struct KeyboardInfo {
 	public let duration: TimeInterval
 	public let curve: UIView.AnimationCurve
 	public let frameEnd: CGRect
 	public let frameBegin: CGRect
 
-	public var animationOptions: UIView.AnimationOptions {
+	var animationOptions: UIView.AnimationOptions {
 		UIView.AnimationOptions(rawValue: UInt(curve.rawValue) << 16)
 	}
 

@@ -9,7 +9,7 @@
 import UIKit
 
 /// One point separator view.
-public final class SeparatorView: UIView {
+final class SeparatorView: UIView {
 	private enum Constants {
 		static let thickness: CGFloat = 1
 	}
@@ -22,7 +22,7 @@ public final class SeparatorView: UIView {
 		}
 	}
 
-	public override var intrinsicContentSize: CGSize {
+	override var intrinsicContentSize: CGSize {
 		switch axis {
 		case .horizontal:
 			return CGSize(width: UIView.noIntrinsicMetric, height: height)
@@ -33,7 +33,7 @@ public final class SeparatorView: UIView {
 		}
 	}
 
-	public init(axis: NSLayoutConstraint.Axis) {
+	init(axis: NSLayoutConstraint.Axis) {
 		self.axis = axis
 		super.init(frame: .zero)
 		commonInit()

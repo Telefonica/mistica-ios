@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public extension CGSize {
+extension CGSize {
 	func inset(by insets: UIEdgeInsets) -> CGSize {
 		CGSize(width: width + insets.left + insets.right, height: height + insets.bottom + insets.top)
 	}

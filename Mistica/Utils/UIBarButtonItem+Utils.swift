@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIBarButtonItem {
-	@objc convenience init(icon: UIImage,
+	convenience init(icon: UIImage,
 	                       accessibilityLabel: String,
 	                       target: AnyObject,
 	                       action: Selector) {
@@ -21,7 +21,7 @@ extension UIBarButtonItem {
 		self.accessibilityLabel = accessibilityLabel
 	}
 
-	@objc convenience init(title: String,
+	convenience init(title: String,
 	                       target: AnyObject,
 	                       action: Selector) {
 		let button = UIButton(title: title,

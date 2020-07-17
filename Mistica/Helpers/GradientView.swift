@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct GradientStyle {
+struct GradientStyle {
 	let alpha: CGFloat
 	let colors: [UIColor]
 	let locations: [NSNumber]
@@ -16,7 +16,7 @@ public struct GradientStyle {
 	let end: CGPoint
 	let isOpaque: Bool
 
-	public static var assistant: GradientStyle {
+	static var assistant: GradientStyle {
 		GradientStyle(alpha: 0.92,
 		              colors: [
 		              	UIColor.gradientBackgroundFirst,
@@ -30,7 +30,7 @@ public struct GradientStyle {
 		              isOpaque: false)
 	}
 
-	public static var backgroundBrand: GradientStyle {
+	static var backgroundBrand: GradientStyle {
 		GradientStyle(alpha: 1,
 		              colors: [
 		              	UIColor.backgroundBrandFirst,
@@ -44,7 +44,7 @@ public struct GradientStyle {
 		              isOpaque: false)
 	}
 
-	public static var scrollContentIndicator: GradientStyle {
+	static var scrollContentIndicator: GradientStyle {
 		GradientStyle(alpha: 1,
 		              colors: [
 		              	UIColor.scrollContentIndicatorBackgroundFirst,
@@ -57,33 +57,33 @@ public struct GradientStyle {
 	}
 }
 
-public final class GradientView: UIView {
-	public var colors: [UIColor] = [] {
+final class GradientView: UIView {
+	var colors: [UIColor] = [] {
 		didSet {
 			gradientLayer.colors = colors.map { $0.cgColor }
 		}
 	}
 
-	public var start: CGPoint {
+	var start: CGPoint {
 		get { return gradientLayer.startPoint }
 		set { gradientLayer.startPoint = newValue }
 	}
 
-	public var end: CGPoint {
+	var end: CGPoint {
 		get { return gradientLayer.endPoint }
 		set { gradientLayer.endPoint = newValue }
 	}
 
-	public var locations: [NSNumber]? {
+	var locations: [NSNumber]? {
 		get { return gradientLayer.locations }
 		set { gradientLayer.locations = newValue }
 	}
 
-	public override class var layerClass: AnyClass {
+	override class var layerClass: AnyClass {
 		CAGradientLayer.self
 	}
 
-	public func applyStyle(_ style: GradientStyle) {
+	func applyStyle(_ style: GradientStyle) {
 		colors = style.colors
 		start = style.start
 		end = style.end

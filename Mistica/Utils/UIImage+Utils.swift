@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc public extension UIImage {
+extension UIImage {
 	convenience init(color: UIColor) {
 		let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
 

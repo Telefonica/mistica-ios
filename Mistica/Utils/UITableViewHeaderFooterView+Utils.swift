@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UITableViewHeaderFooterView {
+extension UITableViewHeaderFooterView {
 	class func register(on tableView: UITableView) {
 		tableView.register(self, forHeaderFooterViewReuseIdentifier: headerFooterReuseIdentifier())
 	}

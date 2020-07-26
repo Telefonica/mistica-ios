@@ -201,7 +201,7 @@ open class ListCellView: UITableViewCell {
 		if highlighted {
 			highlightedView.backgroundColor = .rowBackgroundHighlighted
 		} else {
-			highlightedView.backgroundColor = .clear
+			highlightedView.backgroundColor = .background
 		}
 	}
 
@@ -277,6 +277,7 @@ private extension ListCellView {
 		cellContentView.isLayoutMarginsRelativeArrangement = true
 		cellContentView.directionalLayoutMargins = listCellStyle.mainStackViewLayoutMargins
 
+        cellBorderView.backgroundColor = .background
 		cellBorderView.layer.cornerRadius = listCellStyle.cornerRadius
 		cellBorderView.layer.borderColor = listCellStyle.borderColor
 		cellBorderView.layer.borderWidth = listCellStyle.borderWidth

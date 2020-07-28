@@ -82,7 +82,14 @@ To create or modify components from the Mistica library follow the next steps:
 
 1. Clone this repo
 
-2. Use carthage to update Mistica's dependencies (Lottie) and be able to build locally:
+2. Install SwiftFormat, if you already have installed Homebrew:
+```
+brew install swiftformat
+```
+
+or read the [documentation](https://github.com/nicklockwood/SwiftFormat#command-line-tool).
+
+3. Use carthage to update Mistica's dependencies (Lottie) and be able to build locally:
 
 ```swift
 carthage update --platform iOS

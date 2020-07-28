@@ -1,0 +1,15 @@
+# file options
+
+--exclude Carthage,**/Resources,scripts
+
+# format options
+
+--stripunusedargs closure-only
+--decimalgrouping 3,4
+--commas inline
+--maxwidth none
+--stripunusedargs always
+
+# rules
+
+--disable hoistPatternLet,redundantRawValues,andOperator,redundantNilInit,wrapArguments

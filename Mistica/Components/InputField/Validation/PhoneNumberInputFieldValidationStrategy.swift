@@ -9,23 +9,23 @@
 import Foundation
 
 public class PhoneNumberInputFieldValidationStrategy: InputFieldValidationStrategy {
-	public init() {}
+    public init() {}
 
-	public func validate(text: String?) -> InputFieldValidationResult {
-		let result: InputFieldValidationResult
+    public func validate(text: String?) -> InputFieldValidationResult {
+        let result: InputFieldValidationResult
 
-		if text?.looksLikeAPhoneNumber == true {
-			result = .success
-		} else {
-			result = .failure(message: Translations.malformedPhoneErrorMessage)
-		}
+        if text?.looksLikeAPhoneNumber == true {
+            result = .success
+        } else {
+            result = .failure(message: Translations.malformedPhoneErrorMessage)
+        }
 
-		return result
-	}
+        return result
+    }
 }
 
 @objc public extension InputField {
-	func objc_setPhoneNumberInputFieldValidationStrategy() {
-		validationStrategy = PhoneNumberInputFieldValidationStrategy()
-	}
+    func objc_setPhoneNumberInputFieldValidationStrategy() {
+        validationStrategy = PhoneNumberInputFieldValidationStrategy()
+    }
 }

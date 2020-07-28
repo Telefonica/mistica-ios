@@ -9,17 +9,17 @@
 import Foundation
 
 public class EmailInputFieldValidationStrategy: InputFieldValidationStrategy {
-	public init() {}
+    public init() {}
 
-	public func validate(text: String?) -> InputFieldValidationResult {
-		let result: InputFieldValidationResult
+    public func validate(text: String?) -> InputFieldValidationResult {
+        let result: InputFieldValidationResult
 
-		if text?.looksLikeAnEmail == true {
-			result = .success
-		} else {
-			result = .failure(message: Translations.changeEmailMalformedMailError)
-		}
+        if text?.looksLikeAnEmail == true {
+            result = .success
+        } else {
+            result = .failure(message: Translations.changeEmailMalformedMailError)
+        }
 
-		return result
-	}
+        return result
+    }
 }

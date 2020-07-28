@@ -9,8 +9,8 @@
 import Foundation
 
 public enum ThemeVariant: String, CaseIterable {
-	case standard
-	case prominent
+    case standard
+    case prominent
 }
 
 public extension Notification.Name {

@@ -59,13 +59,13 @@ private extension BrandStyle {
     ///   - variant: brand style variant
     /// - Returns: path to asset inside the asset catalog
     func assetPath(_ name: String, variant: ThemeVariant) -> String {
-		switch variant {
-		case .standard:
+        switch variant {
+        case .standard:
             return "\(rawValue)/\(name)"
-		default:
+        default:
             return "\(rawValue)/\(variant.rawValue)/\(name)"
-		}
-	}
+        }
+    }
 }
 
 private extension AssetType {
@@ -84,5 +84,4 @@ private extension AssetType {
             return Mistica.brandStyle.assetPath(name, variant: Mistica.themeVariant)
         }
     }
-    
 }

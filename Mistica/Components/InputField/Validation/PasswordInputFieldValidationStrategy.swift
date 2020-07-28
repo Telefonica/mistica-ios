@@ -9,23 +9,23 @@
 import Foundation
 
 public class PasswordInputFieldValidationStrategy: InputFieldValidationStrategy {
-	enum Constants {
-		static let minPasswordLength = 8
-	}
+    enum Constants {
+        static let minPasswordLength = 8
+    }
 
-	public init() {}
+    public init() {}
 
-	public func validate(text: String?) -> InputFieldValidationResult {
-		let passwordLength = text?.count ?? 0
+    public func validate(text: String?) -> InputFieldValidationResult {
+        let passwordLength = text?.count ?? 0
 
-		let result: InputFieldValidationResult
+        let result: InputFieldValidationResult
 
-		if passwordLength < Constants.minPasswordLength {
-			result = .failure(message: Translations.passwordTooShortError)
-		} else {
-			result = .success
-		}
+        if passwordLength < Constants.minPasswordLength {
+            result = .failure(message: Translations.passwordTooShortError)
+        } else {
+            result = .success
+        }
 
-		return result
-	}
+        return result
+    }
 }

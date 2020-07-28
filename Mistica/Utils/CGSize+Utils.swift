@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 extension CGSize {
-	func inset(by insets: UIEdgeInsets) -> CGSize {
-		CGSize(width: width + insets.left + insets.right, height: height + insets.bottom + insets.top)
-	}
+    func inset(by insets: UIEdgeInsets) -> CGSize {
+        CGSize(width: width + insets.left + insets.right, height: height + insets.bottom + insets.top)
+    }
 
-	func area() -> CGFloat {
-		width * height
-	}
+    func area() -> CGFloat {
+        width * height
+    }
 }

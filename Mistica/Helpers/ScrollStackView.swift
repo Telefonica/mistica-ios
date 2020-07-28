@@ -14,43 +14,43 @@ import UIKit
 /// the elements inside the stack view is smaller than the scrollView.
 @dynamicMemberLookup
 class ScrollStackView: UIScrollView {
-	public lazy var stackView: UIStackView = {
-		let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
-		stackView.axis = .vertical
-		stackView.preservesSuperviewLayoutMargins = true
-		stackView.isLayoutMarginsRelativeArrangement = true
-		return stackView
-	}()
+    public lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
+        stackView.axis = .vertical
+        stackView.preservesSuperviewLayoutMargins = true
+        stackView.isLayoutMarginsRelativeArrangement = true
+        return stackView
+    }()
 
-	private let arrangedSubviews: [UIView]
+    private let arrangedSubviews: [UIView]
 
-	public init(arrangedSubviews: [UIView]) {
-		self.arrangedSubviews = arrangedSubviews
-		super.init(frame: .zero)
+    public init(arrangedSubviews: [UIView]) {
+        self.arrangedSubviews = arrangedSubviews
+        super.init(frame: .zero)
 
-		addSubview(withDefaultConstraints: stackView)
-		widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
-		preservesSuperviewLayoutMargins = true
-	}
+        addSubview(withDefaultConstraints: stackView)
+        widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        preservesSuperviewLayoutMargins = true
+    }
 
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-	subscript<T>(dynamicMember keyPath: WritableKeyPath<UIStackView, T>) -> T {
-		get {
-			stackView[keyPath: keyPath]
-		}
-		set {
-			stackView[keyPath: keyPath] = newValue
-		}
-	}
+    subscript<T>(dynamicMember keyPath: WritableKeyPath<UIStackView, T>) -> T {
+        get {
+            stackView[keyPath: keyPath]
+        }
+        set {
+            stackView[keyPath: keyPath] = newValue
+        }
+    }
 
-	func removeArrangedSubviews() {
-		stackView.removeArrangedSubviews()
-	}
+    func removeArrangedSubviews() {
+        stackView.removeArrangedSubviews()
+    }
 
-	func addArrangedSubview(_ view: UIView) {
-		stackView.addArrangedSubview(view)
-	}
+    func addArrangedSubview(_ view: UIView) {
+        stackView.addArrangedSubview(view)
+    }
 }

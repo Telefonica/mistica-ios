@@ -9,147 +9,147 @@
 import UIKit
 
 private enum Constants {
-	static let maximumValue = 9
+    static let maximumValue = 9
 }
 
 public class BadgeView: UIView {
-	/// Specifies the style of a badge
-	public enum Style {
-		/// A red oval with a white number
-		case numeric
-		/// A small red oval, without number.
-		case flag
-	}
+    /// Specifies the style of a badge
+    public enum Style {
+        /// A red oval with a white number
+        case numeric
+        /// A small red oval, without number.
+        case flag
+    }
 
-	public var style: Style {
-		didSet {
-			updateStyle()
-			invalidateIntrinsicContentSize()
-			setNeedsDisplay()
-		}
-	}
+    public var style: Style {
+        didSet {
+            updateStyle()
+            invalidateIntrinsicContentSize()
+            setNeedsDisplay()
+        }
+    }
 
-	public var value: Int = 0 {
-		didSet {
-			guard style == .numeric else { return }
+    public var value: Int = 0 {
+        didSet {
+            guard style == .numeric else { return }
 
-			if value > Constants.maximumValue {
-				label.text = "+9"
-			} else {
-				label.text = "\(value)"
-			}
+            if value > Constants.maximumValue {
+                label.text = "+9"
+            } else {
+                label.text = "\(value)"
+            }
 
-			invalidateIntrinsicContentSize()
-			setNeedsDisplay()
-		}
-	}
+            invalidateIntrinsicContentSize()
+            setNeedsDisplay()
+        }
+    }
 
-	private lazy var label: UILabel = {
-		let label = UILabel()
-		label.textAlignment = .center
-		label.textColor = .textPrimaryInverse
-		label.font = .caption2
-		return label
-	}()
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .textPrimaryInverse
+        label.font = .caption2
+        return label
+    }()
 
-	public required init?(coder: NSCoder) {
-		style = .flag
+    public required init?(coder: NSCoder) {
+        style = .flag
 
-		super.init(coder: coder)
+        super.init(coder: coder)
 
-		commonInit()
-	}
+        commonInit()
+    }
 
-	public init(style: Style) {
-		self.style = style
+    public init(style: Style) {
+        self.style = style
 
-		super.init(frame: .zero)
+        super.init(frame: .zero)
 
-		commonInit()
-	}
+        commonInit()
+    }
 
-	convenience init() {
-		self.init(style: .flag)
-	}
+    convenience init() {
+        self.init(style: .flag)
+    }
 
-	convenience override init(frame: CGRect) {
-		fatalError("init(frame:) has not been implemented, please use init(style:)")
-	}
+    override convenience init(frame _: CGRect) {
+        fatalError("init(frame:) has not been implemented, please use init(style:)")
+    }
 
-	public override var intrinsicContentSize: CGSize {
-		switch style {
-		case .flag:
-			return CGSize(width: 8, height: 8)
-		case .numeric:
-			if value > Constants.maximumValue {
-				let textIntrinsicContentSize = label.intrinsicContentSize
-				return CGSize(width: textIntrinsicContentSize.width + 12, height: 20)
-			} else {
-				return CGSize(width: 20, height: 20)
-			}
-		}
-	}
+    override public var intrinsicContentSize: CGSize {
+        switch style {
+        case .flag:
+            return CGSize(width: 8, height: 8)
+        case .numeric:
+            if value > Constants.maximumValue {
+                let textIntrinsicContentSize = label.intrinsicContentSize
+                return CGSize(width: textIntrinsicContentSize.width + 12, height: 20)
+            } else {
+                return CGSize(width: 20, height: 20)
+            }
+        }
+    }
 
-	public override func draw(_ rect: CGRect) {
-		let bezierPath: UIBezierPath
+    override public func draw(_ rect: CGRect) {
+        let bezierPath: UIBezierPath
 
-		if value > Constants.maximumValue {
-			bezierPath = UIBezierPath(roundedRect: rect, cornerRadius: rect.height / 2)
-		} else {
-			bezierPath = UIBezierPath(ovalIn: rect)
-		}
+        if value > Constants.maximumValue {
+            bezierPath = UIBezierPath(roundedRect: rect, cornerRadius: rect.height / 2)
+        } else {
+            bezierPath = UIBezierPath(ovalIn: rect)
+        }
 
-		UIColor.badgeColor.setFill()
-		bezierPath.fill()
+        UIColor.badgeColor.setFill()
+        bezierPath.fill()
 
-		super.draw(rect)
-	}
+        super.draw(rect)
+    }
 
-	public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-		super.traitCollectionDidChange(previousTraitCollection)
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
 
-		if traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory {
-			setUpLabelStyle()
-		}
-	}
+        if traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory {
+            setUpLabelStyle()
+        }
+    }
 }
 
 private extension BadgeView {
-	func commonInit() {
-		backgroundColor = .clear
+    func commonInit() {
+        backgroundColor = .clear
 
-		setUpView()
-		setUpLabel()
-		updateStyle()
-	}
+        setUpView()
+        setUpLabel()
+        updateStyle()
+    }
 
-	func setUpView() {
-		// The badge cannot be shrunken or expanded
-		translatesAutoresizingMaskIntoConstraints = false
-		setContentHuggingPriority(.required, for: .horizontal)
-		setContentHuggingPriority(.required, for: .vertical)
-		setContentCompressionResistancePriority(.required, for: .horizontal)
-		setContentCompressionResistancePriority(.required, for: .vertical)
-	}
+    func setUpView() {
+        // The badge cannot be shrunken or expanded
+        translatesAutoresizingMaskIntoConstraints = false
+        setContentHuggingPriority(.required, for: .horizontal)
+        setContentHuggingPriority(.required, for: .vertical)
+        setContentCompressionResistancePriority(.required, for: .horizontal)
+        setContentCompressionResistancePriority(.required, for: .vertical)
+    }
 
-	func setUpLabel() {
-		addSubview(withDefaultConstraints: label)
-		setUpLabelStyle()
-	}
+    func setUpLabel() {
+        addSubview(withDefaultConstraints: label)
+        setUpLabelStyle()
+    }
 
-	func setUpLabelStyle() {
-		label.textAlignment = .center
-		label.textColor = .textPrimaryInverse
-		label.font = .caption2
-	}
+    func setUpLabelStyle() {
+        label.textAlignment = .center
+        label.textColor = .textPrimaryInverse
+        label.font = .caption2
+    }
 
-	func updateStyle() {
-		switch style {
-		case .flag:
-			label.isHidden = true
-			value = 0
-		case .numeric:
-			label.isHidden = false
-		}
-	}
+    func updateStyle() {
+        switch style {
+        case .flag:
+            label.isHidden = true
+            value = 0
+        case .numeric:
+            label.isHidden = false
+        }
+    }
 }

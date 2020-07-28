@@ -12,21 +12,21 @@ import UIKit
 /// - Parameters:
 ///   - badgeValue: The number to show in the badge or 0 for do not display it.
 public func createNovumTabBarItem(badgeValue: UInt = 0) -> UITabBarItem {
-	let item = UITabBarItem()
-	item.badgeColor = .badgeColor
+    let item = UITabBarItem()
+    item.badgeColor = .badgeColor
 
-	if badgeValue > 0 && badgeValue < 10 {
-		item.badgeValue = String(badgeValue)
-	} else if badgeValue >= 10 {
-		item.badgeValue = "+9"
-	}
+    if badgeValue > 0 && badgeValue < 10 {
+        item.badgeValue = String(badgeValue)
+    } else if badgeValue >= 10 {
+        item.badgeValue = "+9"
+    }
 
-	let badgeTextAttributes = [
-		NSAttributedString.Key.font: UIFont.caption2,
-		NSAttributedString.Key.foregroundColor: UIColor.textPrimaryInverse
-	]
+    let badgeTextAttributes = [
+        NSAttributedString.Key.font: UIFont.caption2,
+        NSAttributedString.Key.foregroundColor: UIColor.textPrimaryInverse
+    ]
 
-	item.setBadgeTextAttributes(badgeTextAttributes, for: .normal)
+    item.setBadgeTextAttributes(badgeTextAttributes, for: .normal)
 
-	return item
+    return item
 }

@@ -9,328 +9,328 @@
 import UIKit
 
 public class Button: UIView {
-	private enum Constants {
-		static let animationDuration: TimeInterval = 0.3
-		static let animationCurveControlPoint1 = CGPoint(x: 0.77, y: 0)
-		static let animationCurveControlPoint2 = CGPoint(x: 0.175, y: 1)
-		static let cornerRadius: CGFloat = 4
-		static let borderWidth: CGFloat = 1.5
-	}
+    private enum Constants {
+        static let animationDuration: TimeInterval = 0.3
+        static let animationCurveControlPoint1 = CGPoint(x: 0.77, y: 0)
+        static let animationCurveControlPoint2 = CGPoint(x: 0.175, y: 1)
+        static let cornerRadius: CGFloat = 4
+        static let borderWidth: CGFloat = 1.5
+    }
 
-	public enum State {
-		case normal
-		case selected
-		case disabled
-		case loading
-	}
+    public enum State {
+        case normal
+        case selected
+        case disabled
+        case loading
+    }
 
-	public struct Style {
-		let allowsBleedingAlignment: Bool
-		let stateStyleByState: [State: StateStyle]
-		var overriddenSizes: OverriddenSizes?
+    public struct Style {
+        let allowsBleedingAlignment: Bool
+        let stateStyleByState: [State: StateStyle]
+        var overriddenSizes: OverriddenSizes?
 
-		struct OverriddenSizes {
-			let insets: UIEdgeInsets
-			let minimumWidth: CGFloat
-			let font: UIFont
-		}
-	}
+        struct OverriddenSizes {
+            let insets: UIEdgeInsets
+            let minimumWidth: CGFloat
+            let font: UIFont
+        }
+    }
 
-	public struct StateStyle {
-		let textColor: UIColor
-		let backgroundColor: UIColor
-		let borderColor: UIColor
-	}
+    public struct StateStyle {
+        let textColor: UIColor
+        let backgroundColor: UIColor
+        let borderColor: UIColor
+    }
 
-	public var style: Style {
-		didSet {
-			updateStyle()
-		}
-	}
+    public var style: Style {
+        didSet {
+            updateStyle()
+        }
+    }
 
-	public var isSmall: Bool {
-		didSet {
-			updateStyle()
-		}
-	}
+    public var isSmall: Bool {
+        didSet {
+            updateStyle()
+        }
+    }
 
-	@objc public var title: String? {
-		get { return container.title }
-		set { container.title = newValue }
-	}
+    @objc public var title: String? {
+        get { container.title }
+        set { container.title = newValue }
+    }
 
-	@objc public var loadingTitle: String? {
-		get { return container.loadingTitle }
-		set { container.loadingTitle = newValue }
-	}
+    @objc public var loadingTitle: String? {
+        get { container.loadingTitle }
+        set { container.loadingTitle = newValue }
+    }
 
-	public var state: State = .normal {
-		didSet {
-			didUpdateState(previousState: oldValue)
-		}
-	}
+    public var state: State = .normal {
+        didSet {
+            didUpdateState(previousState: oldValue)
+        }
+    }
 
-	private var overridenAccessibilityLabel: String?
+    private var overridenAccessibilityLabel: String?
 
-	private lazy var animator = UIViewPropertyAnimator(duration: Constants.animationDuration,
-	                                                   controlPoint1: Constants.animationCurveControlPoint1,
-	                                                   controlPoint2: Constants.animationCurveControlPoint2)
+    private lazy var animator = UIViewPropertyAnimator(duration: Constants.animationDuration,
+                                                       controlPoint1: Constants.animationCurveControlPoint1,
+                                                       controlPoint2: Constants.animationCurveControlPoint2)
 
-	private lazy var backingButton = BackingButton()
-	private lazy var container = ButtonContentView()
+    private lazy var backingButton = BackingButton()
+    private lazy var container = ButtonContentView()
 
-	public convenience init() {
-		self.init(title: "")
-	}
+    public convenience init() {
+        self.init(title: "")
+    }
 
-	public init(style: Style = .primary, title: String, loadingTitle: String? = nil, isSmall: Bool = false) {
-		self.style = style
-		self.isSmall = isSmall
+    public init(style: Style = .primary, title: String, loadingTitle: String? = nil, isSmall: Bool = false) {
+        self.style = style
+        self.isSmall = isSmall
 
-		super.init(frame: .zero)
+        super.init(frame: .zero)
 
-		self.title = title
-		self.loadingTitle = loadingTitle
+        self.title = title
+        self.loadingTitle = loadingTitle
 
-		commonInit()
-	}
+        commonInit()
+    }
 
-	required init?(coder: NSCoder) {
-		style = .primary
-		isSmall = false
+    required init?(coder: NSCoder) {
+        style = .primary
+        isSmall = false
 
-		super.init(coder: coder)
+        super.init(coder: coder)
 
-		commonInit()
-	}
+        commonInit()
+    }
 
-	public override var contentMode: UIView.ContentMode {
-		get { return super.contentMode }
-		set {
-			super.contentMode = newValue
-			updateInsets()
-		}
-	}
+    override public var contentMode: UIView.ContentMode {
+        get { super.contentMode }
+        set {
+            super.contentMode = newValue
+            updateInsets()
+        }
+    }
 
-	public override var alignmentRectInsets: UIEdgeInsets {
-		UIEdgeInsets(top: 0, left: leftBleedingInsets, bottom: 0, right: rightBleedingInsets)
-	}
+    override public var alignmentRectInsets: UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: leftBleedingInsets, bottom: 0, right: rightBleedingInsets)
+    }
 
-	public override var tag: Int {
-		get { backingButton.tag }
-		set { backingButton.tag = newValue }
-	}
+    override public var tag: Int {
+        get { backingButton.tag }
+        set { backingButton.tag = newValue }
+    }
 
-	public override var intrinsicContentSize: CGSize {
-		container.intrinsicContentSize
-	}
+    override public var intrinsicContentSize: CGSize {
+        container.intrinsicContentSize
+    }
 }
 
 @objc public extension Button {
-	func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
-		backingButton.addTarget(target, action: action, for: controlEvents)
-	}
+    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
+        backingButton.addTarget(target, action: action, for: controlEvents)
+    }
 
-	override var accessibilityLabel: String? {
-		get {
-			if state == .loading {
-				return loadingTitle
-			} else if overridenAccessibilityLabel != nil {
-				return overridenAccessibilityLabel
-			} else {
-				return title
-			}
-		}
-		set {
-			overridenAccessibilityLabel = newValue
-		}
-	}
+    override var accessibilityLabel: String? {
+        get {
+            if state == .loading {
+                return loadingTitle
+            } else if overridenAccessibilityLabel != nil {
+                return overridenAccessibilityLabel
+            } else {
+                return title
+            }
+        }
+        set {
+            overridenAccessibilityLabel = newValue
+        }
+    }
 
-	override func accessibilityActivate() -> Bool {
-		if state.shouldBackingButtonBeEnabled {
-			backingButton.sendActions(for: .touchUpInside)
-			return true
-		} else {
-			return false
-		}
-	}
+    override func accessibilityActivate() -> Bool {
+        if state.shouldBackingButtonBeEnabled {
+            backingButton.sendActions(for: .touchUpInside)
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 private extension Button {
-	var styleInsets: UIEdgeInsets {
-		style.insets(isSmall: isSmall)
-	}
+    var styleInsets: UIEdgeInsets {
+        style.insets(isSmall: isSmall)
+    }
 
-	var leftBleedingInsets: CGFloat {
-		guard style.allowsBleedingAlignment else { return 0 }
-		guard contentMode == .left else { return 0 }
+    var leftBleedingInsets: CGFloat {
+        guard style.allowsBleedingAlignment else { return 0 }
+        guard contentMode == .left else { return 0 }
 
-		return styleInsets.left
-	}
+        return styleInsets.left
+    }
 
-	var rightBleedingInsets: CGFloat {
-		guard style.allowsBleedingAlignment else { return 0 }
-		guard contentMode == .right else { return 0 }
+    var rightBleedingInsets: CGFloat {
+        guard style.allowsBleedingAlignment else { return 0 }
+        guard contentMode == .right else { return 0 }
 
-		return styleInsets.right
-	}
+        return styleInsets.right
+    }
 
-	func updateInsets() {
-		var insets = styleInsets
-		insets.left -= leftBleedingInsets
-		insets.right -= rightBleedingInsets
-		container.layoutMargins = insets
-		invalidateIntrinsicContentSize()
-	}
+    func updateInsets() {
+        var insets = styleInsets
+        insets.left -= leftBleedingInsets
+        insets.right -= rightBleedingInsets
+        container.layoutMargins = insets
+        invalidateIntrinsicContentSize()
+    }
 
-	func updateStyle() {
-		applyStyleColors()
-		updateInsets()
-		container.minimumWidth = style.minimumWidth(isSmall: isSmall)
-		container.font = style.font(isSmall: isSmall)
-	}
+    func updateStyle() {
+        applyStyleColors()
+        updateInsets()
+        container.minimumWidth = style.minimumWidth(isSmall: isSmall)
+        container.font = style.font(isSmall: isSmall)
+    }
 
-	func commonInit() {
-		setUpView()
-		setUpContainer()
-		setUpBackingButton()
-		updateStyle()
-	}
+    func commonInit() {
+        setUpView()
+        setUpContainer()
+        setUpBackingButton()
+        updateStyle()
+    }
 
-	func setUpView() {
-		layer.cornerRadius = Constants.cornerRadius
+    func setUpView() {
+        layer.cornerRadius = Constants.cornerRadius
         if #available(iOS 13.0, *) {
-			layer.cornerCurve = .continuous
-		}
-		layer.borderWidth = Constants.borderWidth
-		isAccessibilityElement = true
-	}
+            layer.cornerCurve = .continuous
+        }
+        layer.borderWidth = Constants.borderWidth
+        isAccessibilityElement = true
+    }
 
-	func setUpContainer() {
-		addSubview(withDefaultConstraints: container)
-	}
+    func setUpContainer() {
+        addSubview(withDefaultConstraints: container)
+    }
 
-	func setUpBackingButton() {
-		updateBackingButtonEnabled()
-		backingButton.setContentHuggingPriority(UILayoutPriority(rawValue: 1), for: .horizontal)
-		backingButton.setContentHuggingPriority(UILayoutPriority(rawValue: 1), for: .vertical)
-		addSubview(withDefaultConstraints: backingButton)
-		backingButton.isHighlightedDidChangeHandler = { [weak self] in
-			self?.updateStateBasedOnBackingButton()
-		}
-	}
+    func setUpBackingButton() {
+        updateBackingButtonEnabled()
+        backingButton.setContentHuggingPriority(UILayoutPriority(rawValue: 1), for: .horizontal)
+        backingButton.setContentHuggingPriority(UILayoutPriority(rawValue: 1), for: .vertical)
+        addSubview(withDefaultConstraints: backingButton)
+        backingButton.isHighlightedDidChangeHandler = { [weak self] in
+            self?.updateStateBasedOnBackingButton()
+        }
+    }
 
-	func applyStyleColors() {
-		guard let stateStyle = style.stateStyleByState[state] else {
-			preconditionFailure("Style \(style) does not have stateStyle for state \(state). Check that the current style is defined properly.")
-		}
-		container.textColor = stateStyle.textColor
-		backgroundColor = stateStyle.backgroundColor
-		layer.borderColor = stateStyle.borderColor.cgColor
-	}
+    func applyStyleColors() {
+        guard let stateStyle = style.stateStyleByState[state] else {
+            preconditionFailure("Style \(style) does not have stateStyle for state \(state). Check that the current style is defined properly.")
+        }
+        container.textColor = stateStyle.textColor
+        backgroundColor = stateStyle.backgroundColor
+        layer.borderColor = stateStyle.borderColor.cgColor
+    }
 
-	func didUpdateState(previousState: State) {
-		if state == .loading {
-			animator.stopAnimation(true)
+    func didUpdateState(previousState: State) {
+        if state == .loading {
+            animator.stopAnimation(true)
 
-			// transition to loading
-			UIAccessibility.post(notification: .layoutChanged, argument: loadingTitle)
+            // transition to loading
+            UIAccessibility.post(notification: .layoutChanged, argument: loadingTitle)
 
-			container.willTransitionToLoading()
-			animator.addAnimations { [weak self] in
-				self?.container.transitionToLoading()
-				self?.applyStyleColors()
-			}
-			updateBackingButtonEnabled()
-			animator.startAnimation()
-		} else if previousState == .loading {
-			animator.stopAnimation(true)
+            container.willTransitionToLoading()
+            animator.addAnimations { [weak self] in
+                self?.container.transitionToLoading()
+                self?.applyStyleColors()
+            }
+            updateBackingButtonEnabled()
+            animator.startAnimation()
+        } else if previousState == .loading {
+            animator.stopAnimation(true)
 
-			// transition to normal
-			animator.addAnimations { [weak self] in
-				self?.container.transitionToNormal()
-				self?.applyStyleColors()
-			}
-			animator.addCompletion { [weak self] _ in
-				guard let s = self else { return }
-				UIAccessibility.post(notification: .layoutChanged, argument: s.accessibilityLabel)
-				s.updateBackingButtonEnabled()
-			}
-			animator.startAnimation()
-		} else {
-			applyStyleColors()
-			updateBackingButtonEnabled()
-		}
-	}
+            // transition to normal
+            animator.addAnimations { [weak self] in
+                self?.container.transitionToNormal()
+                self?.applyStyleColors()
+            }
+            animator.addCompletion { [weak self] _ in
+                guard let s = self else { return }
+                UIAccessibility.post(notification: .layoutChanged, argument: s.accessibilityLabel)
+                s.updateBackingButtonEnabled()
+            }
+            animator.startAnimation()
+        } else {
+            applyStyleColors()
+            updateBackingButtonEnabled()
+        }
+    }
 
-	func updateBackingButtonEnabled() {
-		accessibilityTraits = state.accesibilityTraits
-		backingButton.isEnabled = state.shouldBackingButtonBeEnabled
-	}
+    func updateBackingButtonEnabled() {
+        accessibilityTraits = state.accesibilityTraits
+        backingButton.isEnabled = state.shouldBackingButtonBeEnabled
+    }
 
-	func updateStateBasedOnBackingButton() {
-		if backingButton.isHighlighted && state == .normal {
-			state = .selected
-		} else if !backingButton.isHighlighted && state == .selected {
-			state = .normal
-		}
-	}
+    func updateStateBasedOnBackingButton() {
+        if backingButton.isHighlighted && state == .normal {
+            state = .selected
+        } else if !backingButton.isHighlighted && state == .selected {
+            state = .normal
+        }
+    }
 }
 
 private extension Button.State {
-	var shouldBackingButtonBeEnabled: Bool {
-		switch self {
-		case .disabled, .loading: return false
-		case .normal, .selected: return true
-		}
-	}
+    var shouldBackingButtonBeEnabled: Bool {
+        switch self {
+        case .disabled, .loading: return false
+        case .normal, .selected: return true
+        }
+    }
 
-	var accesibilityTraits: UIAccessibilityTraits {
-		if shouldBackingButtonBeEnabled {
-			return .button
-		} else {
-			return [.button, .notEnabled]
-		}
-	}
+    var accesibilityTraits: UIAccessibilityTraits {
+        if shouldBackingButtonBeEnabled {
+            return .button
+        } else {
+            return [.button, .notEnabled]
+        }
+    }
 }
 
 // MARK: Dummy button
 
 private class BackingButton: UIButton {
-	var isHighlightedDidChangeHandler: (() -> Void)?
+    var isHighlightedDidChangeHandler: (() -> Void)?
 
-	override var isHighlighted: Bool {
-		didSet {
-			isHighlightedDidChangeHandler?()
-		}
-	}
+    override var isHighlighted: Bool {
+        didSet {
+            isHighlightedDidChangeHandler?()
+        }
+    }
 
-	init() {
-		super.init(frame: .zero)
-		accessibilityElementsHidden = true
-	}
+    init() {
+        super.init(frame: .zero)
+        accessibilityElementsHidden = true
+    }
 
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 // MARK: Objective-C API
 
 @objc public extension Button {
-	func objc_setNormalState() {
-		state = .normal
-	}
+    func objc_setNormalState() {
+        state = .normal
+    }
 
-	func objc_setLoadingState() {
-		state = .loading
-	}
+    func objc_setLoadingState() {
+        state = .loading
+    }
 
-	func objc_setDisabledState() {
-		state = .disabled
-	}
+    func objc_setDisabledState() {
+        state = .disabled
+    }
 
-	func objc_setLinkStyle() {
-		style = .link
-	}
+    func objc_setLinkStyle() {
+        style = .link
+    }
 }

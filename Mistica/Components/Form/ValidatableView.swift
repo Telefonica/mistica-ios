@@ -9,8 +9,8 @@
 import UIKit
 
 public protocol Validatable: AnyObject {
-	func isValid() -> Bool
-	func validate()
+    func isValid() -> Bool
+    func validate()
 }
 
 public typealias ValidatableView = UIView & Validatable

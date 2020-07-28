@@ -9,18 +9,18 @@
 import UIKit
 
 extension UIButton {
-	func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
-		setBackgroundImage(UIImage(color: color), for: state)
-	}
+    func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
+        setBackgroundImage(UIImage(color: color), for: state)
+    }
 
-	private var states: [UIControl.State] {
-		[.normal, .selected, .highlighted, .disabled]
-	}
+    private var states: [UIControl.State] {
+        [.normal, .selected, .highlighted, .disabled]
+    }
 
-	/// Set image for all states.
-	///
-	/// - Parameter image: UIImage.
-	func setImageForAllStates(_ image: UIImage) {
-		states.forEach { self.setImage(image, for: $0) }
-	}
+    /// Set image for all states.
+    ///
+    /// - Parameter image: UIImage.
+    func setImageForAllStates(_ image: UIImage) {
+        states.forEach { self.setImage(image, for: $0) }
+    }
 }

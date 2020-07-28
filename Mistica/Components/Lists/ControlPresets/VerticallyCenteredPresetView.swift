@@ -10,42 +10,42 @@ import UIKit
 
 /// VerticallyCenteredPresetView aligns the center of its arranged view with its center of the cell view.
 public class VerticallyCenteredPresetView: UIView {
-	private let stackView = UIStackView()
+    private let stackView = UIStackView()
 
-	public var arrangedSubview: UIView? {
-		didSet {
-			oldValue?.removeFromSuperview()
+    public var arrangedSubview: UIView? {
+        didSet {
+            oldValue?.removeFromSuperview()
 
-			if let view = arrangedSubview {
-				stackView.addArrangedSubview(view)
-			}
-		}
-	}
+            if let view = arrangedSubview {
+                stackView.addArrangedSubview(view)
+            }
+        }
+    }
 
-	public convenience init(arrangedSubview: UIView) {
-		self.init(frame: .zero)
+    public convenience init(arrangedSubview: UIView) {
+        self.init(frame: .zero)
 
-		stackView.addArrangedSubview(arrangedSubview)
-	}
+        stackView.addArrangedSubview(arrangedSubview)
+    }
 
-	public override init(frame: CGRect) {
-		super.init(frame: frame)
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
 
-		commonInit()
-	}
+        commonInit()
+    }
 
-	required init?(coder: NSCoder) {
-		super.init(coder: coder)
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
 
-		commonInit()
-	}
+        commonInit()
+    }
 }
 
 private extension VerticallyCenteredPresetView {
-	func commonInit() {
-		addSubview(withDefaultConstraints: stackView)
+    func commonInit() {
+        addSubview(withDefaultConstraints: stackView)
 
-		stackView.axis = .horizontal
-		stackView.alignment = .center
-	}
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+    }
 }

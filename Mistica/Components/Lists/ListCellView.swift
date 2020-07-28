@@ -10,301 +10,301 @@ import UIKit
 // MARK: View Styles
 
 private enum ViewStyles {
-	static let horizontalPadding: CGFloat = 16
+    static let horizontalPadding: CGFloat = 16
 }
 
 // MARK: ListCellView
 
 open class ListCellView: UITableViewCell {
-	public enum AssetSize {
-		case none
-		case large
-		case small
-	}
+    public enum AssetSize {
+        case none
+        case large
+        case small
+    }
 
-	// MARK: Initializers
+    // MARK: Initializers
 
-	public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-		commonInit()
-	}
+        commonInit()
+    }
 
-	public required init?(coder: NSCoder) {
-		super.init(coder: coder)
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
 
-		commonInit()
-	}
+        commonInit()
+    }
 
-	// MARK: SubViews
+    // MARK: SubViews
 
-	/// View used in `ListCellStyle.boxed` style for show a rounded border arround the content
-	private lazy var cellBorderView = UIView()
-	private lazy var cellContentView = UIStackView()
-	/// A cell separator visible only in` ListCellStyle.fullWidth`
-	private lazy var cellSeparatorView = SeparatorView(axis: .horizontal)
-	private lazy var leftSection = CellLeftSectionView()
-	private lazy var centerSection = CellCenterSectionView()
+    /// View used in `ListCellStyle.boxed` style for show a rounded border arround the content
+    private lazy var cellBorderView = UIView()
+    private lazy var cellContentView = UIStackView()
+    /// A cell separator visible only in` ListCellStyle.fullWidth`
+    private lazy var cellSeparatorView = SeparatorView(axis: .horizontal)
+    private lazy var leftSection = CellLeftSectionView()
+    private lazy var centerSection = CellCenterSectionView()
 
-	// MARK: Public
+    // MARK: Public
 
-	public var title: String? {
-		get {
-			centerSection.titleLabel.text
-		}
-		set {
-			centerSection.titleLabel.text = newValue
-			updateAssetAligment()
-		}
-	}
+    public var title: String? {
+        get {
+            centerSection.titleLabel.text
+        }
+        set {
+            centerSection.titleLabel.text = newValue
+            updateAssetAligment()
+        }
+    }
 
-	public var titleNumberOfLines: Int {
-		get {
-			centerSection.titleLabel.numberOfLines
-		}
-		set {
-			centerSection.titleLabel.numberOfLines = newValue
-		}
-	}
+    public var titleNumberOfLines: Int {
+        get {
+            centerSection.titleLabel.numberOfLines
+        }
+        set {
+            centerSection.titleLabel.numberOfLines = newValue
+        }
+    }
 
-	public var titleAttributedText: NSAttributedString? {
-		get {
-			centerSection.titleLabel.attributedText
-		}
-		set {
-			centerSection.titleLabel.attributedText = newValue
-		}
-	}
+    public var titleAttributedText: NSAttributedString? {
+        get {
+            centerSection.titleLabel.attributedText
+        }
+        set {
+            centerSection.titleLabel.attributedText = newValue
+        }
+    }
 
-	public var subtitle: String? {
-		get {
-			centerSection.subtitleLabel.text
-		}
-		set {
-			centerSection.subtitleLabel.text = newValue
-			centerSection.didSetTextToSubtitleLabel()
-			updateAssetView()
-		}
-	}
+    public var subtitle: String? {
+        get {
+            centerSection.subtitleLabel.text
+        }
+        set {
+            centerSection.subtitleLabel.text = newValue
+            centerSection.didSetTextToSubtitleLabel()
+            updateAssetView()
+        }
+    }
 
-	public var subtitleNumberOfLines: Int {
-		get {
-			centerSection.subtitleLabel.numberOfLines
-		}
-		set {
-			centerSection.subtitleLabel.numberOfLines = newValue
-		}
-	}
+    public var subtitleNumberOfLines: Int {
+        get {
+            centerSection.subtitleLabel.numberOfLines
+        }
+        set {
+            centerSection.subtitleLabel.numberOfLines = newValue
+        }
+    }
 
-	public var subtitleAttributedText: NSAttributedString? {
-		get {
-			centerSection.subtitleLabel.attributedText
-		}
-		set {
-			centerSection.subtitleLabel.attributedText = newValue
-			centerSection.didSetTextToSubtitleLabel()
-		}
-	}
+    public var subtitleAttributedText: NSAttributedString? {
+        get {
+            centerSection.subtitleLabel.attributedText
+        }
+        set {
+            centerSection.subtitleLabel.attributedText = newValue
+            centerSection.didSetTextToSubtitleLabel()
+        }
+    }
 
-	public var detailText: String? {
-		get {
-			centerSection.detailLabel.text
-		}
-		set {
-			centerSection.detailLabel.text = newValue
-			centerSection.didSetTexToDetailText()
-			updateAssetView()
-		}
-	}
+    public var detailText: String? {
+        get {
+            centerSection.detailLabel.text
+        }
+        set {
+            centerSection.detailLabel.text = newValue
+            centerSection.didSetTexToDetailText()
+            updateAssetView()
+        }
+    }
 
-	public var detailTextNumberOfLines: Int {
-		get {
-			centerSection.detailLabel.numberOfLines
-		}
-		set {
-			centerSection.detailLabel.numberOfLines = newValue
-		}
-	}
+    public var detailTextNumberOfLines: Int {
+        get {
+            centerSection.detailLabel.numberOfLines
+        }
+        set {
+            centerSection.detailLabel.numberOfLines = newValue
+        }
+    }
 
-	public var detailTextAttributedText: NSAttributedString? {
-		get {
-			centerSection.detailLabel.attributedText
-		}
-		set {
-			centerSection.detailLabel.attributedText = newValue
-			centerSection.didSetTexToDetailText()
-		}
-	}
+    public var detailTextAttributedText: NSAttributedString? {
+        get {
+            centerSection.detailLabel.attributedText
+        }
+        set {
+            centerSection.detailLabel.attributedText = newValue
+            centerSection.didSetTexToDetailText()
+        }
+    }
 
-	public var headlineView: UIView? {
-		get {
-			centerSection.headlineView
-		}
-		set {
-			centerSection.headlineView = newValue
-			updateAssetView()
-		}
-	}
+    public var headlineView: UIView? {
+        get {
+            centerSection.headlineView
+        }
+        set {
+            centerSection.headlineView = newValue
+            updateAssetView()
+        }
+    }
 
-	public var assetImage: UIImage? {
-		get {
-			leftSection.imageView.image
-		}
-		set {
-			leftSection.imageView.image = newValue
-		}
-	}
+    public var assetImage: UIImage? {
+        get {
+            leftSection.imageView.image
+        }
+        set {
+            leftSection.imageView.image = newValue
+        }
+    }
 
-	public var listCellStyle = ListCellStyle.fullWidth {
-		didSet {
-			updateCellStyle()
-		}
-	}
+    public var listCellStyle = ListCellStyle.fullWidth {
+        didSet {
+            updateCellStyle()
+        }
+    }
 
-	public var assetSize: AssetSize = .none {
-		didSet {
-			updateAssetView()
-		}
-	}
+    public var assetSize: AssetSize = .none {
+        didSet {
+            updateAssetView()
+        }
+    }
 
-	public var controlView: UIView? {
-		didSet {
-			oldValue?.removeFromSuperview()
+    public var controlView: UIView? {
+        didSet {
+            oldValue?.removeFromSuperview()
 
-			if let view = controlView {
-				cellContentView.addArrangedSubview(view)
-			}
-		}
-	}
+            if let view = controlView {
+                cellContentView.addArrangedSubview(view)
+            }
+        }
+    }
 
-	public var isCellSeparatorHidden: Bool = true {
-		didSet {
-			guard listCellStyle != .boxed else { return }
+    public var isCellSeparatorHidden: Bool = true {
+        didSet {
+            guard listCellStyle != .boxed else { return }
 
-			cellSeparatorView.isHidden = isCellSeparatorHidden
-		}
-	}
+            cellSeparatorView.isHidden = isCellSeparatorHidden
+        }
+    }
 
-	// MARK: UITableViewCell Overrides
+    // MARK: UITableViewCell Overrides
 
-	public override func systemLayoutSizeFitting(_ targetSize: CGSize,
-	                                             withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
-	                                             verticalFittingPriority: UILayoutPriority) -> CGSize {
-		let size = super.systemLayoutSizeFitting(targetSize,
-		                                         withHorizontalFittingPriority: horizontalFittingPriority,
-		                                         verticalFittingPriority: verticalFittingPriority)
+    override public func systemLayoutSizeFitting(_ targetSize: CGSize,
+                                                 withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
+                                                 verticalFittingPriority: UILayoutPriority) -> CGSize {
+        let size = super.systemLayoutSizeFitting(targetSize,
+                                                 withHorizontalFittingPriority: horizontalFittingPriority,
+                                                 verticalFittingPriority: verticalFittingPriority)
 
-		return CGSize(width: size.width, height: max(size.height, listCellStyle.minHeight))
-	}
+        return CGSize(width: size.width, height: max(size.height, listCellStyle.minHeight))
+    }
 
-	public override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-		if highlighted {
-			highlightedView.backgroundColor = .rowBackgroundHighlighted
-		} else {
-			highlightedView.backgroundColor = .background
-		}
-	}
+    override public func setHighlighted(_ highlighted: Bool, animated _: Bool) {
+        if highlighted {
+            highlightedView.backgroundColor = .rowBackgroundHighlighted
+        } else {
+            highlightedView.backgroundColor = .background
+        }
+    }
 
-	public override func setSelected(_ selected: Bool, animated: Bool) {
-		// Do nothing
-	}
+    override public func setSelected(_: Bool, animated _: Bool) {
+        // Do nothing
+    }
 
-	open override var isUserInteractionEnabled: Bool {
-		didSet {
-			centerSection.isUserInteractionEnabled = isUserInteractionEnabled
-		}
-	}
+    override open var isUserInteractionEnabled: Bool {
+        didSet {
+            centerSection.isUserInteractionEnabled = isUserInteractionEnabled
+        }
+    }
 }
 
 // MARK: Custom Accessibilities
 
 public extension ListCellView {
-	var assetAccessibilityLabel: String? {
-		get {
-			leftSection.imageView.accessibilityLabel
-		}
-		set {
-			leftSection.imageView.accessibilityLabel = newValue
-		}
-	}
+    var assetAccessibilityLabel: String? {
+        get {
+            leftSection.imageView.accessibilityLabel
+        }
+        set {
+            leftSection.imageView.accessibilityLabel = newValue
+        }
+    }
 
-	var assetAccessibilityIdentifier: String? {
-		get {
-			leftSection.imageView.accessibilityIdentifier
-		}
-		set {
-			leftSection.imageView.accessibilityIdentifier = newValue
-		}
-	}
+    var assetAccessibilityIdentifier: String? {
+        get {
+            leftSection.imageView.accessibilityIdentifier
+        }
+        set {
+            leftSection.imageView.accessibilityIdentifier = newValue
+        }
+    }
 }
 
 // MARK: Private
 
 private extension ListCellView {
-	var highlightedView: UIView {
-		switch listCellStyle {
-		case .fullWidth:
-			return contentView
-		case .boxed:
-			return cellBorderView
-		}
-	}
+    var highlightedView: UIView {
+        switch listCellStyle {
+        case .fullWidth:
+            return contentView
+        case .boxed:
+            return cellBorderView
+        }
+    }
 
-	func commonInit() {
-		layoutViews()
-		updateCellStyle()
-	}
+    func commonInit() {
+        layoutViews()
+        updateCellStyle()
+    }
 
-	func layoutViews() {
-		contentView.addSubview(constrainedToLayoutMarginsGuideOf: cellBorderView)
-		contentView.addSubview(constrainedToLayoutMarginsGuideOf: cellContentView)
+    func layoutViews() {
+        contentView.addSubview(constrainedToLayoutMarginsGuideOf: cellBorderView)
+        contentView.addSubview(constrainedToLayoutMarginsGuideOf: cellContentView)
 
-		contentView.addSubview(cellSeparatorView, constraints: [
-			cellSeparatorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-			cellSeparatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ViewStyles.horizontalPadding),
-			cellSeparatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewStyles.horizontalPadding),
-			cellSeparatorView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-		])
+        contentView.addSubview(cellSeparatorView, constraints: [
+            cellSeparatorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            cellSeparatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ViewStyles.horizontalPadding),
+            cellSeparatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewStyles.horizontalPadding),
+            cellSeparatorView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+        ])
 
-		cellContentView.addArrangedSubview(centerSection)
-		cellContentView.spacing = ViewStyles.horizontalPadding
-	}
+        cellContentView.addArrangedSubview(centerSection)
+        cellContentView.spacing = ViewStyles.horizontalPadding
+    }
 
-	func updateCellStyle() {
-		contentView.directionalLayoutMargins = listCellStyle.contentViewLayoutMargins
-		contentView.preservesSuperviewLayoutMargins = false
+    func updateCellStyle() {
+        contentView.directionalLayoutMargins = listCellStyle.contentViewLayoutMargins
+        contentView.preservesSuperviewLayoutMargins = false
 
-		cellContentView.isLayoutMarginsRelativeArrangement = true
-		cellContentView.directionalLayoutMargins = listCellStyle.mainStackViewLayoutMargins
+        cellContentView.isLayoutMarginsRelativeArrangement = true
+        cellContentView.directionalLayoutMargins = listCellStyle.mainStackViewLayoutMargins
 
         cellBorderView.backgroundColor = .background
-		cellBorderView.layer.cornerRadius = listCellStyle.cornerRadius
-		cellBorderView.layer.borderColor = listCellStyle.borderColor
-		cellBorderView.layer.borderWidth = listCellStyle.borderWidth
+        cellBorderView.layer.cornerRadius = listCellStyle.cornerRadius
+        cellBorderView.layer.borderColor = listCellStyle.borderColor
+        cellBorderView.layer.borderWidth = listCellStyle.borderWidth
 
-		cellSeparatorView.isHidden = listCellStyle.cellSeparatorIsHidden
-	}
+        cellSeparatorView.isHidden = listCellStyle.cellSeparatorIsHidden
+    }
 
-	func updateAssetView() {
-		guard assetSize != .none else {
-			leftSection.removeFromSuperview()
-			return
-		}
+    func updateAssetView() {
+        guard assetSize != .none else {
+            leftSection.removeFromSuperview()
+            return
+        }
 
-		updateAssetAligment()
+        updateAssetAligment()
 
-		leftSection.assetIsSmall = assetSize == .small
+        leftSection.assetIsSmall = assetSize == .small
 
-		if leftSection.superview == nil {
-			cellContentView.insertArrangedSubview(leftSection, at: 0)
-		}
-	}
+        if leftSection.superview == nil {
+            cellContentView.insertArrangedSubview(leftSection, at: 0)
+        }
+    }
 
-	func updateAssetAligment() {
-		if centerSection.headlineView == nil, !centerSection.hasSubtitleText, !centerSection.hasDetailText {
-			leftSection.centerAlignment()
-		} else {
-			leftSection.topAlignment()
-		}
-	}
+    func updateAssetAligment() {
+        if centerSection.headlineView == nil, !centerSection.hasSubtitleText, !centerSection.hasDetailText {
+            leftSection.centerAlignment()
+        } else {
+            leftSection.topAlignment()
+        }
+    }
 }

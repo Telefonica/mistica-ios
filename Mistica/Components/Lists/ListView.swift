@@ -8,37 +8,37 @@
 import UIKit
 
 public class ListView: UITableView {
-	public init() {
-		super.init(frame: .zero, style: .plain)
+    public init() {
+        super.init(frame: .zero, style: .plain)
 
-		setUp()
-	}
+        setUp()
+    }
 
-	public override init(frame: CGRect, style: UITableView.Style) {
-		super.init(frame: frame, style: style)
+    override public init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
 
-		setUp()
-	}
+        setUp()
+    }
 
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
 
-		setUp()
-	}
+        setUp()
+    }
 
-	private func setUp() {
-		rowHeight = UITableView.automaticDimension
-		estimatedRowHeight = UITableView.automaticDimension
-		sectionHeaderHeight = UITableView.automaticDimension
-		estimatedSectionHeaderHeight = UITableView.automaticDimension
+    private func setUp() {
+        rowHeight = UITableView.automaticDimension
+        estimatedRowHeight = UITableView.automaticDimension
+        sectionHeaderHeight = UITableView.automaticDimension
+        estimatedSectionHeaderHeight = UITableView.automaticDimension
 
-		backgroundColor = .background
-	}
+        backgroundColor = .background
+    }
 
-	public override func didMoveToWindow() {
-		super.didMoveToWindow()
+    override public func didMoveToWindow() {
+        super.didMoveToWindow()
 
-		// We need to change the separatorStyle here because changing it from the init has no effect ¯\_(ツ)_/¯
-		separatorStyle = .none
-	}
+        // We need to change the separatorStyle here because changing it from the init has no effect ¯\_(ツ)_/¯
+        separatorStyle = .none
+    }
 }

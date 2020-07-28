@@ -10,6 +10,6 @@ import Foundation
 
 // A helper to access the framework bundle
 extension Bundle {
-	private final class Internal {}
-	static let mistica = Bundle(for: Internal.self)
+    private final class Internal {}
+    static let mistica = Bundle(for: Internal.self)
 }

@@ -9,44 +9,44 @@
 import UIKit
 
 extension UIImage {
-	convenience init(color: UIColor) {
-		let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+    convenience init(color: UIColor) {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
 
-		UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
 
-		let context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
 
-		context?.setFillColor(color.cgColor)
-		context?.fill(rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
 
-		let image = UIGraphicsGetImageFromCurrentImageContext()
+        let image = UIGraphicsGetImageFromCurrentImageContext()
 
-		UIGraphicsEndImageContext()
+        UIGraphicsEndImageContext()
 
-		if let image = image,
-			let cgImage = image.cgImage {
-			self.init(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
-		} else {
-			self.init()
-		}
-	}
+        if let image = image,
+            let cgImage = image.cgImage {
+            self.init(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
+        } else {
+            self.init()
+        }
+    }
 
-	var rounded: UIImage {
-		let bounds = CGRect(origin: .zero, size: size)
-		let cornerRadius = CGFloat(bounds.size.height / 2)
+    var rounded: UIImage {
+        let bounds = CGRect(origin: .zero, size: size)
+        let cornerRadius = CGFloat(bounds.size.height / 2)
 
-		let circularPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
+        let circularPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
 
-		UIGraphicsBeginImageContext(bounds.size)
+        UIGraphicsBeginImageContext(bounds.size)
 
-		circularPath.addClip()
+        circularPath.addClip()
 
-		draw(in: bounds)
+        draw(in: bounds)
 
-		let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
 
-		UIGraphicsEndImageContext()
+        UIGraphicsEndImageContext()
 
-		return roundedImage!
-	}
+        return roundedImage!
+    }
 }

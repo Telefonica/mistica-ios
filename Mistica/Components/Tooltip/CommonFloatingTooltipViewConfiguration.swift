@@ -6,9 +6,9 @@
 ////  Copyright © 2018 Tuenti Technologies S.L. All rights reserved.
 ////
 //
-//import Foundation
+// import Foundation
 //
-//public class CommonFloatingTooltipViewConfiguration: TMFloatingTooltipViewConfiguration {
+// public class CommonFloatingTooltipViewConfiguration: TMFloatingTooltipViewConfiguration {
 //	public override var titleFont: UIFont {
 //		.body2
 //	}
@@ -32,4 +32,4 @@
 //	public override var closeButtonImage: UIImage {
 //		.closeButtonBlackSmallIcon
 //	}
-//}
+// }

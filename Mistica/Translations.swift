@@ -14,7 +14,7 @@ struct Translations {
     static let changeEmailMalformedMailError = "Hmm, looks like the email is written incorrectly"
     static let passwordTooShortError = "Oops! That's too short. It has to have at lest 8 characters"
     static let formNonOptionalFieldText = "This field is required"
-    
+
     // Buttons
     static let retryButtonText = "Retry"
 }

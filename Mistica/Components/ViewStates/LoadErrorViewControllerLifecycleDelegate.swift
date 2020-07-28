@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol LoadErrorViewControllerLifecycleDelegate: AnyObject {
-	func loadErrorViewControllerDidAppear(_ viewController: LoadErrorViewController)
+    func loadErrorViewControllerDidAppear(_ viewController: LoadErrorViewController)
 }

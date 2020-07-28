@@ -9,14 +9,14 @@
 import Foundation
 
 public protocol FeedbackNavigator {
-	func dismissFeedback()
-	func popFeedback()
-	func pushFeedback(configuration: FeedbackConfiguration)
-	func presentFeedback(configuration: FeedbackConfiguration, completion: (() -> Void)?)
+    func dismissFeedback()
+    func popFeedback()
+    func pushFeedback(configuration: FeedbackConfiguration)
+    func presentFeedback(configuration: FeedbackConfiguration, completion: (() -> Void)?)
 }
 
 public extension FeedbackNavigator {
-	func presentFeedback(configuration: FeedbackConfiguration) {
-		presentFeedback(configuration: configuration, completion: nil)
-	}
+    func presentFeedback(configuration: FeedbackConfiguration) {
+        presentFeedback(configuration: configuration, completion: nil)
+    }
 }

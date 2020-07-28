@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol LoadErrorViewControllerDelegate: AnyObject {
-	func loadErrorViewControllerDidTapRetry(_ viewController: LoadErrorViewController)
+    func loadErrorViewControllerDidTapRetry(_ viewController: LoadErrorViewController)
 }

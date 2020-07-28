@@ -12,13 +12,13 @@ public struct Mistica {
     static var currentColorPalette: ColorPalette = MovistarColorPalette()
 
     // MARK: Public Setup
-    
+
     public static var brandStyle: BrandStyle = .movistar {
         didSet {
             configureColorPalette(for: brandStyle)
         }
     }
-    
+
     public static var themeVariant: ThemeVariant = .standard {
         didSet {
             NotificationCenter.default.post(name: .themeVariantDidChange, object: nil)
@@ -27,7 +27,7 @@ public struct Mistica {
 }
 
 private extension Mistica {
-    static func configureColorPalette(for style: BrandStyle) {
+    static func configureColorPalette(for _: BrandStyle) {
         switch brandStyle {
         case .movistar:
             currentColorPalette = MovistarColorPalette()

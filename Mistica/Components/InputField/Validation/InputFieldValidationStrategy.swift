@@ -9,10 +9,10 @@
 import Foundation
 
 public enum InputFieldValidationResult: Equatable {
-	case success
-	case failure(message: String)
+    case success
+    case failure(message: String)
 }
 
 public protocol InputFieldValidationStrategy {
-	func validate(text: String?) -> InputFieldValidationResult
+    func validate(text: String?) -> InputFieldValidationResult
 }

@@ -967,10 +967,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B4D8EB8B24B498F4002F3AD5 /* Mistica.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Debug;
 		};
@@ -978,10 +980,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B4D8EB8B24B498F4002F3AD5 /* Mistica.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				SUPPORTS_MACCATALYST = NO;
 			};
 			name = Release;
 		};

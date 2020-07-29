@@ -324,6 +324,10 @@ extension UIView {
                        animations: { [self] in self.layoutIfNeeded() },
                        completion: completion)
     }
+
+    func hasSuperview(_ superview: UIView) -> Bool {
+        viewHasSuperview(self, superview: superview)
+    }
 }
 
 // MARK: Visual Effect
@@ -336,5 +340,19 @@ extension UIView {
         visualEffectView.contentView.addSubview(withDefaultConstraints: self)
 
         return visualEffectView
+    }
+}
+
+private extension UIView {
+    func viewHasSuperview(_ view: UIView, superview: UIView) -> Bool {
+        if let sview = view.superview {
+            if sview === superview {
+                return true
+            } else {
+                return viewHasSuperview(sview, superview: superview)
+            }
+        } else {
+            return false
+        }
     }
 }

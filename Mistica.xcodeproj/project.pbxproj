@@ -11,7 +11,6 @@
 		B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036A24B78C2200212D16 /* Bundle+Mistica.swift */; };
 		B413036F24B84F8900212D16 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036E24B84F8900212D16 /* AssetType.swift */; };
 		B41303CE24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41303CD24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift */; };
-		B4D8EC4F24B4CB33002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB324B4CB31002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift */; };
 		B4D8EC5124B4CB33002F3AD5 /* FeedbackStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */; };
 		B4D8EC5224B4CB33002F3AD5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */; };
 		B4D8EC5324B4CB33002F3AD5 /* FeedbackUIAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB824B4CB31002F3AD5 /* FeedbackUIAssets.swift */; };
@@ -99,6 +98,13 @@
 		B4D8ED3A24B5F0C5002F3AD5 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3924B5F0C5002F3AD5 /* Translations.swift */; };
 		B4DFA1D224B723C1004C908E /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DFA1D124B723C1004C908E /* Lottie.framework */; };
 		B4DFA1D424B724DA004C908E /* ListsAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DFA1D324B724DA004C908E /* ListsAssets.swift */; };
+		B8DD218124D17BBD0096D68C /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD217B24D17BBD0096D68C /* PopoverView.swift */; };
+		B8DD218224D17BBD0096D68C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B8DD217C24D17BBD0096D68C /* README.md */; };
+		B8DD218324D17BBD0096D68C /* PopoverConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD217D24D17BBD0096D68C /* PopoverConfiguration.swift */; };
+		B8DD218424D17BBD0096D68C /* PopoverMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD217F24D17BBD0096D68C /* PopoverMessageView.swift */; };
+		B8DD218524D17BBD0096D68C /* PopoverContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD218024D17BBD0096D68C /* PopoverContentView.swift */; };
+		B8DD218724D17BFE0096D68C /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD218624D17BFD0096D68C /* SpacerView.swift */; };
+		B8DD218924D17C4F0096D68C /* PopoverAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD218824D17C4F0096D68C /* PopoverAssets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,16 +122,12 @@
 		B413037924B85A8100212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B413037A24B85A8B00212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B413037B24B85A9400212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B413037C24B85AB000212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B413037D24B85AC300212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B41303CD24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Utils.swift"; sourceTree = "<group>"; };
 		B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mistica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D8EB8324B46B91002F3AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D8EB8A24B47869002F3AD5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B4D8EB8B24B498F4002F3AD5 /* Mistica.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Mistica.xcconfig; sourceTree = "<group>"; };
-		B4D8EBB124B4CB31002F3AD5 /* TMFloatingTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMFloatingTooltipView.h; sourceTree = "<group>"; };
-		B4D8EBB324B4CB31002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonFloatingTooltipViewConfiguration.swift; sourceTree = "<group>"; };
-		B4D8EBB424B4CB31002F3AD5 /* TMFloatingTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMFloatingTooltipView.m; sourceTree = "<group>"; };
 		B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedbackStyle+Toolkit.swift"; sourceTree = "<group>"; };
 		B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		B4D8EBB824B4CB31002F3AD5 /* FeedbackUIAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackUIAssets.swift; sourceTree = "<group>"; };
@@ -215,6 +217,13 @@
 		B4DFA1D324B724DA004C908E /* ListsAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsAssets.swift; sourceTree = "<group>"; };
 		B4DFA20324B74F11004C908E /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		B4DFA20524B74F11004C908E /* Mistica.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Mistica.podspec; sourceTree = SOURCE_ROOT; };
+		B8DD217B24D17BBD0096D68C /* PopoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		B8DD217C24D17BBD0096D68C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B8DD217D24D17BBD0096D68C /* PopoverConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverConfiguration.swift; sourceTree = "<group>"; };
+		B8DD217F24D17BBD0096D68C /* PopoverMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverMessageView.swift; sourceTree = "<group>"; };
+		B8DD218024D17BBD0096D68C /* PopoverContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverContentView.swift; sourceTree = "<group>"; };
+		B8DD218624D17BFD0096D68C /* SpacerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
+		B8DD218824D17C4F0096D68C /* PopoverAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAssets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,15 +285,15 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
-		B4D8EBAD24B4CB31002F3AD5 /* Tooltip */ = {
+		B4D8EBAD24B4CB31002F3AD5 /* Popover */ = {
 			isa = PBXGroup;
 			children = (
-				B413037C24B85AB000212D16 /* README.md */,
-				B4D8EBB124B4CB31002F3AD5 /* TMFloatingTooltipView.h */,
-				B4D8EBB324B4CB31002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift */,
-				B4D8EBB424B4CB31002F3AD5 /* TMFloatingTooltipView.m */,
+				B8DD217C24D17BBD0096D68C /* README.md */,
+				B8DD217B24D17BBD0096D68C /* PopoverView.swift */,
+				B8DD217D24D17BBD0096D68C /* PopoverConfiguration.swift */,
+				B8DD217E24D17BBD0096D68C /* Internals */,
 			);
-			path = Tooltip;
+			path = Popover;
 			sourceTree = "<group>";
 		};
 		B4D8EBB524B4CB31002F3AD5 /* Feedback */ = {
@@ -523,7 +532,7 @@
 				B4D8EBEC24B4CB32002F3AD5 /* SectionTitle */,
 				B4D8EC0C24B4CB32002F3AD5 /* SegmentSelector */,
 				B4D8EC3C24B4CB33002F3AD5 /* Tag */,
-				B4D8EBAD24B4CB31002F3AD5 /* Tooltip */,
+				B4D8EBAD24B4CB31002F3AD5 /* Popover */,
 				B4D8EC1A24B4CB33002F3AD5 /* ViewStates */,
 			);
 			path = Components;
@@ -596,6 +605,7 @@
 				B4D8ECFF24B5B512002F3AD5 /* PaddingLabel.swift */,
 				B4D8ECDC24B4DAB6002F3AD5 /* ScrollStackView.swift */,
 				B4D8ECD924B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift */,
+				B8DD218624D17BFD0096D68C /* SpacerView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -607,6 +617,7 @@
 				B4D8EBB824B4CB31002F3AD5 /* FeedbackUIAssets.swift */,
 				B4D8EBD324B4CB32002F3AD5 /* InputFieldAssets.swift */,
 				B4DFA1D324B724DA004C908E /* ListsAssets.swift */,
+				B8DD218824D17C4F0096D68C /* PopoverAssets.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -626,6 +637,15 @@
 				B413033624B75D6700212D16 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B8DD217E24D17BBD0096D68C /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				B8DD217F24D17BBD0096D68C /* PopoverMessageView.swift */,
+				B8DD218024D17BBD0096D68C /* PopoverContentView.swift */,
+			);
+			path = Internals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -697,6 +717,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DD218224D17BBD0096D68C /* README.md in Resources */,
 				B413033724B75D6700212D16 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,7 +753,6 @@
 				B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */,
 				B4D8ECB524B4CB33002F3AD5 /* FormView.swift in Sources */,
 				B4D8ED2E24B5C7A4002F3AD5 /* Optional+Utils.swift in Sources */,
-				B4D8EC4F24B4CB33002F3AD5 /* CommonFloatingTooltipViewConfiguration.swift in Sources */,
 				B4D8ED2324B5C5AA002F3AD5 /* KeyboardNotificationCenter.swift in Sources */,
 				B4D8ECC624B4D0DC002F3AD5 /* UIColor+Utils.swift in Sources */,
 				B4D8EC8924B4CB33002F3AD5 /* CroutonView.swift in Sources */,
@@ -741,6 +761,7 @@
 				B4D8EC5124B4CB33002F3AD5 /* FeedbackStyle+Toolkit.swift in Sources */,
 				B4D8EC6E24B4CB33002F3AD5 /* EmailInputFieldValidationStrategy.swift in Sources */,
 				B4D8EC8124B4CB33002F3AD5 /* IntrinsictImageView.swift in Sources */,
+				B8DD218524D17BBD0096D68C /* PopoverContentView.swift in Sources */,
 				B4D8ECA224B4CB33002F3AD5 /* ListView.swift in Sources */,
 				B4D8ED1D24B5B92F002F3AD5 /* CGSize+Utils.swift in Sources */,
 				B4D8ECD624B4D9B1002F3AD5 /* UIView+Utils.swift in Sources */,
@@ -757,6 +778,7 @@
 				B4D8EC6324B4CB33002F3AD5 /* ScrollContentIndicator.swift in Sources */,
 				B4D8ED2A24B5C6C2002F3AD5 /* UIImage+Utils.swift in Sources */,
 				B4D8ECD324B4D721002F3AD5 /* FontStyle.swift in Sources */,
+				B8DD218724D17BFE0096D68C /* SpacerView.swift in Sources */,
 				B4D8EC9524B4CB33002F3AD5 /* SegmentSelectorCenteredContentLayout.swift in Sources */,
 				B4D8ED1B24B5B8C0002F3AD5 /* UIStackView+Utils.swift in Sources */,
 				B4D8ECB224B4CB33002F3AD5 /* ValidatableView.swift in Sources */,
@@ -772,6 +794,8 @@
 				B4D8EC6B24B4CB33002F3AD5 /* TextInput.swift in Sources */,
 				B4D8ECA424B4CB33002F3AD5 /* VerticallyCenteredPresetView.swift in Sources */,
 				B4D8EC5E24B4CB33002F3AD5 /* FeedbackView.swift in Sources */,
+				B8DD218424D17BBD0096D68C /* PopoverMessageView.swift in Sources */,
+				B8DD218924D17C4F0096D68C /* PopoverAssets.swift in Sources */,
 				B4D8ED3224B5C844002F3AD5 /* UICollectionViewCell+Utils.swift in Sources */,
 				B4D8ECA924B4CB33002F3AD5 /* CellCenterSectionView.swift in Sources */,
 				B4D8EC6F24B4CB33002F3AD5 /* PhoneNumberInputFieldValidationStrategy.swift in Sources */,
@@ -808,6 +832,7 @@
 				B4D8EC5D24B4CB33002F3AD5 /* FeedbackNavigator.swift in Sources */,
 				B4D8ECD224B4D721002F3AD5 /* FontSize.swift in Sources */,
 				B4D8EC6424B4CB33002F3AD5 /* UIViewPropertyAnimator+InputField.swift in Sources */,
+				B8DD218124D17BBD0096D68C /* PopoverView.swift in Sources */,
 				B4D8ED0024B5B513002F3AD5 /* PaddingLabel.swift in Sources */,
 				B4D8ED1F24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift in Sources */,
 				B4D8ED3824B5EF85002F3AD5 /* Mistica.swift in Sources */,
@@ -819,6 +844,7 @@
 				B4D8EC8B24B4CB33002F3AD5 /* CustomCroutonContainer.swift in Sources */,
 				B4D8ECD424B4D721002F3AD5 /* FontToolkit.swift in Sources */,
 				B4D8ECA324B4CB33002F3AD5 /* NavigationPresetView.swift in Sources */,
+				B8DD218324D17BBD0096D68C /* PopoverConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

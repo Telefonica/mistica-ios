@@ -9,7 +9,15 @@
 import Foundation
 
 public class EmailInputFieldValidationStrategy: InputFieldValidationStrategy {
-    public init() {}
+    public var failureMessage: String
+
+    private init() {
+        fatalError("Init constructor is not allowed")
+    }
+
+    public init(failureMessage: String) {
+        self.failureMessage = failureMessage
+    }
 
     public func validate(text: String?) -> InputFieldValidationResult {
         let result: InputFieldValidationResult
@@ -17,7 +25,7 @@ public class EmailInputFieldValidationStrategy: InputFieldValidationStrategy {
         if text?.looksLikeAnEmail == true {
             result = .success
         } else {
-            result = .failure(message: Translations.changeEmailMalformedMailError)
+            result = .failure(message: failureMessage)
         }
 
         return result

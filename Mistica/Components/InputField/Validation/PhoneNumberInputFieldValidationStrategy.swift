@@ -9,7 +9,15 @@
 import Foundation
 
 public class PhoneNumberInputFieldValidationStrategy: InputFieldValidationStrategy {
-    public init() {}
+    public var failureMessage: String
+
+    private init() {
+        fatalError("Init constructor is not allowed")
+    }
+
+    public init(failureMessage: String) {
+        self.failureMessage = failureMessage
+    }
 
     public func validate(text: String?) -> InputFieldValidationResult {
         let result: InputFieldValidationResult
@@ -17,15 +25,9 @@ public class PhoneNumberInputFieldValidationStrategy: InputFieldValidationStrate
         if text?.looksLikeAPhoneNumber == true {
             result = .success
         } else {
-            result = .failure(message: Translations.malformedPhoneErrorMessage)
+            result = .failure(message: failureMessage)
         }
 
         return result
-    }
-}
-
-@objc public extension InputField {
-    func objc_setPhoneNumberInputFieldValidationStrategy() {
-        validationStrategy = PhoneNumberInputFieldValidationStrategy()
     }
 }

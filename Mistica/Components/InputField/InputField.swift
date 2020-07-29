@@ -311,9 +311,10 @@ public class InputField: UIView {
     public var isOptional = false
     public var automaticallyRemoveAssistiveTextOnTyping = true
     public var validationStrategy: InputFieldValidationStrategy?
+    public var nonOptionalFieldFailureMessage: String?
 
     public weak var delegate: InputFieldDelegate?
-    @objc public weak var dataSource: InputFieldDataSource?
+    public weak var dataSource: InputFieldDataSource?
 
     public init() {
         style = .default
@@ -339,12 +340,14 @@ public class InputField: UIView {
     public init(style: Style = .default,
                 text: String? = nil,
                 placeholderText: String? = nil,
-                assistiveText: String? = nil) {
+                assistiveText: String? = nil,
+                nonOptionalFieldFailureMessage: String? = nil) {
         self.style = style
         super.init(frame: .zero)
         self.text = text
         self.placeholderText = placeholderText
         self.assistiveText = assistiveText
+        self.nonOptionalFieldFailureMessage = nonOptionalFieldFailureMessage
 
         commonInit()
     }
@@ -674,7 +677,7 @@ private extension InputField {
 
     func validationResult() -> InputFieldValidationResult {
         if !isOptional && text.isEmpty {
-            return InputFieldValidationResult.failure(message: Translations.formNonOptionalFieldText)
+            return InputFieldValidationResult.failure(message: nonOptionalFieldFailureMessage ?? "")
         } else {
             return validationStrategy?.validate(text: text) ?? .success
         }

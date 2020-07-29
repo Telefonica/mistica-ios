@@ -29,7 +29,7 @@ public class LoadErrorViewController: UIViewController {
 
     private let titleTextLabel = UILabel()
     private let descriptionLabel = UILabel()
-    private let actionButton = Button(style: .secondary, title: Translations.retryButtonText)
+    private let actionButton: Button
 
     private let titleText: String?
     private let descriptionText: String
@@ -42,7 +42,8 @@ public class LoadErrorViewController: UIViewController {
         titleText = title
         self.descriptionText = descriptionText
         self.showActionButton = showActionButton
-        actionButton.title = actionButtonTitle
+        actionButton = Button(style: .secondary, title: actionButtonTitle)
+
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
 

@@ -13,7 +13,15 @@ public class PasswordInputFieldValidationStrategy: InputFieldValidationStrategy 
         static let minPasswordLength = 8
     }
 
-    public init() {}
+    public var failureMessage: String
+
+    private init() {
+        fatalError("Init constructor is not allowed")
+    }
+
+    public init(failureMessage: String) {
+        self.failureMessage = failureMessage
+    }
 
     public func validate(text: String?) -> InputFieldValidationResult {
         let passwordLength = text?.count ?? 0
@@ -21,7 +29,7 @@ public class PasswordInputFieldValidationStrategy: InputFieldValidationStrategy 
         let result: InputFieldValidationResult
 
         if passwordLength < Constants.minPasswordLength {
-            result = .failure(message: Translations.passwordTooShortError)
+            result = .failure(message: failureMessage)
         } else {
             result = .success
         }

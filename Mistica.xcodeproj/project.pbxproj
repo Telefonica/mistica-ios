@@ -95,7 +95,6 @@
 		B4D8ED3224B5C844002F3AD5 /* UICollectionViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */; };
 		B4D8ED3424B5D650002F3AD5 /* Array+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */; };
 		B4D8ED3824B5EF85002F3AD5 /* Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */; };
-		B4D8ED3A24B5F0C5002F3AD5 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3924B5F0C5002F3AD5 /* Translations.swift */; };
 		B4DFA1D224B723C1004C908E /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DFA1D124B723C1004C908E /* Lottie.framework */; };
 		B4DFA1D424B724DA004C908E /* ListsAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DFA1D324B724DA004C908E /* ListsAssets.swift */; };
 		B8DD218124D17BBD0096D68C /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD217B24D17BBD0096D68C /* PopoverView.swift */; };
@@ -212,7 +211,6 @@
 		B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Utils.swift"; sourceTree = "<group>"; };
 		B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+NSAttributedString.swift"; sourceTree = "<group>"; };
 		B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mistica.swift; sourceTree = "<group>"; };
-		B4D8ED3924B5F0C5002F3AD5 /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
 		B4DFA1D124B723C1004C908E /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = SOURCE_ROOT; };
 		B4DFA1D324B724DA004C908E /* ListsAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsAssets.swift; sourceTree = "<group>"; };
 		B4DFA20324B74F11004C908E /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
@@ -261,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */,
-				B4D8ED3924B5F0C5002F3AD5 /* Translations.swift */,
 				B4D8ECC724B4D26B002F3AD5 /* Styles */,
 				B4D8ED0E24B5B655002F3AD5 /* Assets */,
 				B4D8ECB724B4CD11002F3AD5 /* Utils */,
@@ -817,7 +814,6 @@
 				B4D8EC9824B4CB33002F3AD5 /* LoadErrorViewController.swift in Sources */,
 				B4D8ECC224B4CFB7002F3AD5 /* O2ColorPalette.swift in Sources */,
 				B413036F24B84F8900212D16 /* AssetType.swift in Sources */,
-				B4D8ED3A24B5F0C5002F3AD5 /* Translations.swift in Sources */,
 				B4D8EC8224B4CB33002F3AD5 /* IntrinsictHeightLabel.swift in Sources */,
 				B4D8ECAA24B4CB33002F3AD5 /* CellLeftSectionView.swift in Sources */,
 				B4D8ED1224B5B6E9002F3AD5 /* String+Utils.swift in Sources */,

@@ -66,7 +66,7 @@ Not yet supported
 * [Crouton](./Mistica/Components/Crouton/)
 * [SegmentSelector](./Mistica/Components/SegmentSelector/)
 * [Feedbacks](./Mistica/Components/Feedback/)
-* [Tooltip](./Mistica/Components/Tooltip/)
+* [Popover](./Mistica/Components/Popover/)
 * [ViewStates](./Mistica/Components/ViewStates/)
 * [Badge](./Mistica/Components/Badge/)
 * [InputFields](./Mistica/Components/InputField/)

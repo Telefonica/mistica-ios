@@ -15,7 +15,6 @@
 		B4D8EC5224B4CB33002F3AD5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */; };
 		B4D8EC5324B4CB33002F3AD5 /* FeedbackUIAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB824B4CB31002F3AD5 /* FeedbackUIAssets.swift */; };
 		B4D8EC5C24B4CB33002F3AD5 /* FeedbackConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBC424B4CB32002F3AD5 /* FeedbackConfiguration.swift */; };
-		B4D8EC5D24B4CB33002F3AD5 /* FeedbackNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBC624B4CB32002F3AD5 /* FeedbackNavigator.swift */; };
 		B4D8EC5E24B4CB33002F3AD5 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBC724B4CB32002F3AD5 /* FeedbackView.swift */; };
 		B4D8EC5F24B4CB33002F3AD5 /* ScrollContentIndicatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBC924B4CB32002F3AD5 /* ScrollContentIndicatorStyle.swift */; };
 		B4D8EC6324B4CB33002F3AD5 /* ScrollContentIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBCF24B4CB32002F3AD5 /* ScrollContentIndicator.swift */; };
@@ -131,7 +130,6 @@
 		B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		B4D8EBB824B4CB31002F3AD5 /* FeedbackUIAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackUIAssets.swift; sourceTree = "<group>"; };
 		B4D8EBC424B4CB32002F3AD5 /* FeedbackConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackConfiguration.swift; sourceTree = "<group>"; };
-		B4D8EBC624B4CB32002F3AD5 /* FeedbackNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackNavigator.swift; sourceTree = "<group>"; };
 		B4D8EBC724B4CB32002F3AD5 /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		B4D8EBC924B4CB32002F3AD5 /* ScrollContentIndicatorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollContentIndicatorStyle.swift; sourceTree = "<group>"; };
 		B4D8EBCF24B4CB32002F3AD5 /* ScrollContentIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollContentIndicator.swift; sourceTree = "<group>"; };
@@ -297,11 +295,10 @@
 			isa = PBXGroup;
 			children = (
 				B413037324B85A3D00212D16 /* README.md */,
+				B4D8EBC724B4CB32002F3AD5 /* FeedbackView.swift */,
 				B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */,
 				B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */,
 				B4D8EBC324B4CB32002F3AD5 /* Model */,
-				B4D8EBC524B4CB32002F3AD5 /* Navigator */,
-				B4D8EBC724B4CB32002F3AD5 /* FeedbackView.swift */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -312,14 +309,6 @@
 				B4D8EBC424B4CB32002F3AD5 /* FeedbackConfiguration.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B4D8EBC524B4CB32002F3AD5 /* Navigator */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8EBC624B4CB32002F3AD5 /* FeedbackNavigator.swift */,
-			);
-			path = Navigator;
 			sourceTree = "<group>";
 		};
 		B4D8EBC824B4CB32002F3AD5 /* ScrollContentIndicator */ = {
@@ -825,7 +814,6 @@
 				B4D8ECE324B4DD60002F3AD5 /* SeparatorView.swift in Sources */,
 				B4D8EC7B24B4CB33002F3AD5 /* BadgeView.swift in Sources */,
 				B4D8EC8D24B4CB33002F3AD5 /* SegmentSelector.swift in Sources */,
-				B4D8EC5D24B4CB33002F3AD5 /* FeedbackNavigator.swift in Sources */,
 				B4D8ECD224B4D721002F3AD5 /* FontSize.swift in Sources */,
 				B4D8EC6424B4CB33002F3AD5 /* UIViewPropertyAnimator+InputField.swift in Sources */,
 				B8DD218124D17BBD0096D68C /* PopoverView.swift in Sources */,

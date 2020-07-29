@@ -35,6 +35,8 @@ private extension Mistica {
             currentColorPalette = VivoColorPalette()
         case .o2:
             currentColorPalette = O2ColorPalette()
+        case .o2Classic:
+            currentColorPalette = O2ClassicColorPalette()
         }
     }
 }

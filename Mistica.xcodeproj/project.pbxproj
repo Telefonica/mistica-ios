@@ -103,6 +103,7 @@
 		B8DD218524D17BBD0096D68C /* PopoverContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD218024D17BBD0096D68C /* PopoverContentView.swift */; };
 		B8DD218724D17BFE0096D68C /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD218624D17BFD0096D68C /* SpacerView.swift */; };
 		B8DD218924D17C4F0096D68C /* PopoverAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD218824D17C4F0096D68C /* PopoverAssets.swift */; };
+		B8DD21B024D19ED70096D68C /* O2ClassicColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD21AF24D19ED70096D68C /* O2ClassicColorPalette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -220,6 +221,7 @@
 		B8DD218024D17BBD0096D68C /* PopoverContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverContentView.swift; sourceTree = "<group>"; };
 		B8DD218624D17BFD0096D68C /* SpacerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
 		B8DD218824D17C4F0096D68C /* PopoverAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAssets.swift; sourceTree = "<group>"; };
+		B8DD21AF24D19ED70096D68C /* O2ClassicColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = O2ClassicColorPalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +542,7 @@
 				B4D8ECB924B4CFB7002F3AD5 /* MovistarColorPalette.swift */,
 				B4D8ECBD24B4CFB7002F3AD5 /* O2ColorPalette.swift */,
 				B4D8ECBA24B4CFB7002F3AD5 /* VivoColorPalette.swift */,
+				B8DD21AF24D19ED70096D68C /* O2ClassicColorPalette.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				B413036F24B84F8900212D16 /* AssetType.swift in Sources */,
 				B4D8EC8224B4CB33002F3AD5 /* IntrinsictHeightLabel.swift in Sources */,
 				B4D8ECAA24B4CB33002F3AD5 /* CellLeftSectionView.swift in Sources */,
+				B8DD21B024D19ED70096D68C /* O2ClassicColorPalette.swift in Sources */,
 				B4D8ED1224B5B6E9002F3AD5 /* String+Utils.swift in Sources */,
 				B41303CE24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift in Sources */,
 				B4D8EC9B24B4CB33002F3AD5 /* ButtonContentView.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOSApplicationExtension, unavailable)
 public class CroutonController: NSObject {
     public struct Token: Equatable {
         private let identifier: ObjectIdentifier
@@ -29,15 +30,15 @@ public class CroutonController: NSObject {
 
     private var croutonViewList = [CroutonView]()
     private var showingToken: Token?
-    private let window: UIWindow
 
-    public init(window: UIWindow) {
-        self.window = window
-    }
+    public static let shared = CroutonController()
+
+    override init() {}
 }
 
 // MARK: Public functions
 
+@available(iOSApplicationExtension, unavailable)
 public extension CroutonController {
     /// Show a crouton (or enqueue one if there is already a crouton shown)
     /// - Parameters:
@@ -104,6 +105,7 @@ public extension CroutonController {
 
 // MARK: Private methods
 
+@available(iOSApplicationExtension, unavailable)
 private extension CroutonController {
     func show(_ crouton: CroutonView) {
         enqueue(crouton)
@@ -163,6 +165,11 @@ private extension CroutonController {
     }
 
     func visibleViewController() -> UIViewController? {
+        guard let window = UIApplication.shared.keyWindow else {
+            assertionFailure("Could not find the app's key window.")
+            return nil
+        }
+
         if let rootVC = window.rootViewController as? UINavigationController {
             return visibleViewController(from: rootVC.topViewController!)
         } else if let homeVC = window.rootViewController?.tabBarController,

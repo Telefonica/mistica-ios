@@ -6,7 +6,6 @@
 //  Copyright © 2016 Tuenti Technologies S.L. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // MARK: CroutonViewDelegate definition
@@ -207,7 +206,11 @@ private extension CroutonView {
         let dismissInterval = (action == nil) ? Constants.actionlessDismissInterval
             : Constants.withActionDismissInterval
 
-        timer = Timer.scheduledTimer(timeInterval: dismissInterval, target: self, selector: #selector(invokeDismissHandler), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: dismissInterval,
+                                     target: self,
+                                     selector: #selector(invokeDismissHandler),
+                                     userInfo: nil,
+                                     repeats: false)
     }
 
     func adjustStackViewLayout(traitCollection: UITraitCollection) {

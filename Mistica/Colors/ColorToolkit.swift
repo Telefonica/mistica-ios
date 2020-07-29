@@ -827,18 +827,16 @@ public extension BrandStyle {
     /// This will be removed in the future and use the new tinting style for every brand
     var shouldUseLegacyTintForControls: Bool {
         switch self {
-        case .movistar:
+        case .movistar, .vivo, .o2:
             return false
-        case .vivo:
-            return false
-        case .o2:
+        case .o2Classic:
             return true
         }
     }
 
     var preferredStatusBarStyle: UIStatusBarStyle {
         switch self {
-        case .movistar, .vivo, .o2:
+        case .movistar, .vivo, .o2, .o2Classic:
             return .lightContent
         }
     }

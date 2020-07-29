@@ -257,15 +257,14 @@
 			isa = PBXGroup;
 			children = (
 				B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */,
-				B4D8ECC724B4D26B002F3AD5 /* Styles */,
 				B4D8ED0E24B5B655002F3AD5 /* Assets */,
-				B4D8ECB724B4CD11002F3AD5 /* Utils */,
 				B4D8ECB824B4CFB7002F3AD5 /* Colors */,
 				B4D8ECB624B4CD04002F3AD5 /* Components */,
-				B4D8ECD724B4DA60002F3AD5 /* Helpers */,
 				B4D8ECCE24B4D721002F3AD5 /* Fonts */,
 				B4DFA20824B7575C004C908E /* Resources */,
+				B4D8ECC724B4D26B002F3AD5 /* Styles */,
 				B4D8EB8C24B499D9002F3AD5 /* SupportFiles */,
+				B4D8ECB724B4CD11002F3AD5 /* Utils */,
 			);
 			path = Mistica;
 			sourceTree = "<group>";
@@ -514,11 +513,11 @@
 				B4D8EBE224B4CB32002F3AD5 /* Header */,
 				B4D8EBD024B4CB32002F3AD5 /* InputField */,
 				B4D8EC2C24B4CB33002F3AD5 /* Lists */,
+				B4D8EBAD24B4CB31002F3AD5 /* Popover */,
 				B4D8EBC824B4CB32002F3AD5 /* ScrollContentIndicator */,
 				B4D8EBEC24B4CB32002F3AD5 /* SectionTitle */,
 				B4D8EC0C24B4CB32002F3AD5 /* SegmentSelector */,
 				B4D8EC3C24B4CB33002F3AD5 /* Tag */,
-				B4D8EBAD24B4CB31002F3AD5 /* Popover */,
 				B4D8EC1A24B4CB33002F3AD5 /* ViewStates */,
 			);
 			path = Components;
@@ -527,21 +526,8 @@
 		B4D8ECB724B4CD11002F3AD5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */,
-				B413036A24B78C2200212D16 /* Bundle+Mistica.swift */,
-				B4D8ED1C24B5B92F002F3AD5 /* CGSize+Utils.swift */,
-				B4D8ED2D24B5C7A4002F3AD5 /* Optional+Utils.swift */,
-				B4D8ED2B24B5C718002F3AD5 /* PreprocessorChecks.swift */,
-				B4D8ED1124B5B6E9002F3AD5 /* String+Utils.swift */,
-				B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */,
-				B4D8ED2724B5C674002F3AD5 /* UIButton+Utils.swift */,
-				B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */,
-				B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */,
-				B4D8ED2924B5C6C2002F3AD5 /* UIImage+Utils.swift */,
-				B4D8ED1A24B5B8BF002F3AD5 /* UIStackView+Utils.swift */,
-				B4D8ED2F24B5C819002F3AD5 /* UITableViewCell+Utils.swift */,
-				B41303CD24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift */,
-				B4D8ECD524B4D9B1002F3AD5 /* UIView+Utils.swift */,
+				B8DD218B24D180DD0096D68C /* Extensions */,
+				B8DD218A24D180D80096D68C /* Views */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -549,11 +535,11 @@
 		B4D8ECB824B4CFB7002F3AD5 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
-				B4D8ECB924B4CFB7002F3AD5 /* MovistarColorPalette.swift */,
-				B4D8ECBA24B4CFB7002F3AD5 /* VivoColorPalette.swift */,
-				B4D8ECBB24B4CFB7002F3AD5 /* ColorToolkit.swift */,
 				B4D8ECBC24B4CFB7002F3AD5 /* ColorPalette.swift */,
+				B4D8ECBB24B4CFB7002F3AD5 /* ColorToolkit.swift */,
+				B4D8ECB924B4CFB7002F3AD5 /* MovistarColorPalette.swift */,
 				B4D8ECBD24B4CFB7002F3AD5 /* O2ColorPalette.swift */,
+				B4D8ECBA24B4CFB7002F3AD5 /* VivoColorPalette.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -577,23 +563,6 @@
 				B4D8ECD124B4D721002F3AD5 /* FontToolkit.swift */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		B4D8ECD724B4DA60002F3AD5 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				B4D8ED2024B5C59A002F3AD5 /* Keyboard */,
-				B4D8ED1E24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift */,
-				B4D8EBFC24B4CB32002F3AD5 /* IntrinsictImageView.swift */,
-				B4D8EBFD24B4CB32002F3AD5 /* IntrinsictHeightLabel.swift */,
-				B4D8ECDE24B4DD2D002F3AD5 /* GradientView.swift */,
-				B4D8ECE224B4DD60002F3AD5 /* SeparatorView.swift */,
-				B4D8ECFF24B5B512002F3AD5 /* PaddingLabel.swift */,
-				B4D8ECDC24B4DAB6002F3AD5 /* ScrollStackView.swift */,
-				B4D8ECD924B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift */,
-				B8DD218624D17BFD0096D68C /* SpacerView.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B4D8ED0E24B5B655002F3AD5 /* Assets */ = {
@@ -632,6 +601,45 @@
 				B8DD218024D17BBD0096D68C /* PopoverContentView.swift */,
 			);
 			path = Internals;
+			sourceTree = "<group>";
+		};
+		B8DD218A24D180D80096D68C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4D8ED2024B5C59A002F3AD5 /* Keyboard */,
+				B4D8ED1E24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift */,
+				B4D8EBFC24B4CB32002F3AD5 /* IntrinsictImageView.swift */,
+				B4D8EBFD24B4CB32002F3AD5 /* IntrinsictHeightLabel.swift */,
+				B4D8ECDE24B4DD2D002F3AD5 /* GradientView.swift */,
+				B4D8ECE224B4DD60002F3AD5 /* SeparatorView.swift */,
+				B4D8ECFF24B5B512002F3AD5 /* PaddingLabel.swift */,
+				B4D8ECDC24B4DAB6002F3AD5 /* ScrollStackView.swift */,
+				B4D8ECD924B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift */,
+				B8DD218624D17BFD0096D68C /* SpacerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B8DD218B24D180DD0096D68C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */,
+				B413036A24B78C2200212D16 /* Bundle+Mistica.swift */,
+				B4D8ED1C24B5B92F002F3AD5 /* CGSize+Utils.swift */,
+				B4D8ED2D24B5C7A4002F3AD5 /* Optional+Utils.swift */,
+				B4D8ED2B24B5C718002F3AD5 /* PreprocessorChecks.swift */,
+				B4D8ED1124B5B6E9002F3AD5 /* String+Utils.swift */,
+				B4D8ED0324B5B596002F3AD5 /* UIBarButtonItem+Utils.swift */,
+				B4D8ED2724B5C674002F3AD5 /* UIButton+Utils.swift */,
+				B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */,
+				B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */,
+				B4D8ED2924B5C6C2002F3AD5 /* UIImage+Utils.swift */,
+				B4D8ED1A24B5B8BF002F3AD5 /* UIStackView+Utils.swift */,
+				B4D8ED2F24B5C819002F3AD5 /* UITableViewCell+Utils.swift */,
+				B41303CD24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift */,
+				B4D8ECD524B4D9B1002F3AD5 /* UIView+Utils.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -8,6 +8,7 @@
 
 import Foundation
 
+@frozen
 public enum ThemeVariant: String, CaseIterable {
     case standard
     case prominent

@@ -18,7 +18,6 @@ public struct FeedbackConfiguration {
     let extraContent: UIView?
     let shouldHideCloseButton: Bool
     let modalPresentationStyle: UIModalPresentationStyle?
-    public let screenName: UInt?
 
     public init(style: FeedbackStyle,
                 title: String,
@@ -27,8 +26,7 @@ public struct FeedbackConfiguration {
                 secondaryAction: FeedbackSecondaryAction = .none,
                 extraContent: UIView? = nil,
                 shouldHideCloseButton: Bool = false,
-                modalPresentationStyle: UIModalPresentationStyle? = nil,
-                screenName: UInt? = nil) {
+                modalPresentationStyle: UIModalPresentationStyle? = nil) {
         self.style = style
         self.title = title
         self.subtitle = subtitle
@@ -37,6 +35,5 @@ public struct FeedbackConfiguration {
         self.extraContent = extraContent
         self.shouldHideCloseButton = shouldHideCloseButton
         self.modalPresentationStyle = modalPresentationStyle
-        self.screenName = screenName
     }
 }

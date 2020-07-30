@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Creates a UITabBarItem with the Badge style of Nocum
+/// Creates a UITabBarItem with the Badge style of Novum
 /// - Parameters:
 ///   - badgeValue: The number to show in the badge or 0 for do not display it.
 public func createNovumTabBarItem(badgeValue: UInt = 0) -> UITabBarItem {

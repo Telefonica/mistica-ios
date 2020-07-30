@@ -219,6 +219,24 @@ open class ListCellView: UITableViewCell {
 // MARK: Custom Accessibilities
 
 public extension ListCellView {
+    var titleAccessibilityLabel: String? {
+        get {
+            centerSection.titleLabel.accessibilityLabel
+        }
+        set {
+            centerSection.titleLabel.accessibilityLabel = newValue
+        }
+    }
+
+    var titleAccessibilityIdentifier: String? {
+        get {
+            centerSection.titleLabel.accessibilityIdentifier
+        }
+        set {
+            centerSection.titleLabel.accessibilityIdentifier = newValue
+        }
+    }
+
     var assetAccessibilityLabel: String? {
         get {
             leftSection.imageView.accessibilityLabel

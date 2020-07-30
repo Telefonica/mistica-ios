@@ -10,25 +10,14 @@ import UIKit
 
 @available(iOSApplicationExtension, unavailable)
 public class CroutonController: NSObject {
-    public struct Token: Equatable {
-        private let identifier: ObjectIdentifier
-        fileprivate init(_ croutonView: CroutonView) {
-            identifier = ObjectIdentifier(croutonView)
-        }
-
-        #if DEBUG
-            static var stub: Token {
-                Token(CroutonView(text: "", config: CroutonConfig(style: .info)))
-            }
-        #endif
-    }
-
+    public typealias Token = UUID
     public typealias ActionConfig = (text: String, handler: DidTapActionBlock)
+    fileprivate typealias OngoingCrouton = (token: Token, croutonView: CroutonView)
 
     public typealias DismissHandlerBlock = () -> Void
     public typealias DidTapActionBlock = () -> Void
 
-    private var croutonViewList = [CroutonView]()
+    private var croutonViewList = [OngoingCrouton]()
     private var showingToken: Token?
 
     public static let shared = CroutonController()
@@ -68,14 +57,15 @@ public extension CroutonController {
             })
         }
 
+        let token = Token()
         let crouton = CroutonView(text: text,
                                   action: overwrittenAction,
                                   config: config,
                                   dismissHandler: dismissHandler)
 
-        show(crouton)
+        show(crouton, token: token)
 
-        return Token(crouton)
+        return token
     }
 
     var isShowingACrouton: Bool {
@@ -92,7 +82,7 @@ public extension CroutonController {
 
         if showingToken == token {
             dismissCurrentCrouton()
-        } else if let index = croutonViewList.firstIndex(where: { token == Token($0) }) {
+        } else if let index = croutonViewList.firstIndex(where: { token == $0.token }) {
             croutonViewList.remove(at: index)
         }
     }
@@ -107,8 +97,8 @@ public extension CroutonController {
 
 @available(iOSApplicationExtension, unavailable)
 private extension CroutonController {
-    func show(_ crouton: CroutonView) {
-        enqueue(crouton)
+    func show(_ crouton: CroutonView, token: Token) {
+        enqueue(OngoingCrouton(token: token, croutonView: crouton))
 
         showEnqueuedCrouton()
     }
@@ -116,29 +106,29 @@ private extension CroutonController {
     func dismissCurrentCrouton() {
         guard let crouton = dequeue() else { return }
 
-        crouton.dismiss {
+        crouton.croutonView.dismiss {
             self.showingToken = nil
             self.showEnqueuedCrouton()
         }
     }
 
     func dismissAllFromCurrentCrouton() {
-        guard let crouton = dequeue() else { return }
+        guard let ongoingCrouton = dequeue() else { return }
 
-        crouton.dismiss {
+        ongoingCrouton.croutonView.dismiss {
             self.showingToken = nil
 
-            while let crouton = self.dequeue() {
-                crouton.dismiss()
+            while let ongoingCrouton = self.dequeue() {
+                ongoingCrouton.croutonView.dismiss()
             }
         }
     }
 
-    func enqueue(_ crouton: CroutonView) {
-        croutonViewList.append(crouton)
+    func enqueue(_ ongoingCrouton: OngoingCrouton) {
+        croutonViewList.append(ongoingCrouton)
     }
 
-    func dequeue() -> CroutonView? {
+    func dequeue() -> OngoingCrouton? {
         guard !croutonViewList.isEmpty else { return nil }
 
         return croutonViewList.remove(at: 0)
@@ -146,12 +136,12 @@ private extension CroutonController {
 
     func showEnqueuedCrouton() {
         guard showingToken == nil else { return }
-        guard let crouton = croutonViewList.first else { return }
+        guard let ongoingCrouton = croutonViewList.first else { return }
         guard let containerView = visibleContainerView() else { return }
 
-        showingToken = Token(crouton)
+        showingToken = ongoingCrouton.token
 
-        crouton.show(in: containerView)
+        ongoingCrouton.croutonView.show(in: containerView)
     }
 
     func visibleContainerView() -> UIView? {

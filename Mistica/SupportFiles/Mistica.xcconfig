@@ -10,6 +10,10 @@
 VERSION_NUMBER = 1.0.0
 CURRENT_PROJECT_VERSION = 1 //Build
 
+// Build options
+
+ENABLE_BITCODE = NO
+
 // Deployment
 
 INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks

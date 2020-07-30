@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Button: UIView {
+open class Button: UIView {
     private enum Constants {
         static let animationDuration: TimeInterval = 0.3
         static let animationCurveControlPoint1 = CGPoint(x: 0.77, y: 0)
@@ -25,21 +25,41 @@ public class Button: UIView {
     }
 
     public struct Style {
-        let allowsBleedingAlignment: Bool
-        let stateStyleByState: [State: StateStyle]
-        var overriddenSizes: OverriddenSizes?
+        public let allowsBleedingAlignment: Bool
+        public let stateStyleByState: [State: StateStyle]
+        public var overriddenSizes: OverriddenSizes?
 
-        struct OverriddenSizes {
-            let insets: UIEdgeInsets
-            let minimumWidth: CGFloat
-            let font: UIFont
+        public struct OverriddenSizes {
+            public let insets: UIEdgeInsets
+            public let minimumWidth: CGFloat
+            public let font: UIFont
+
+            public init(insets: UIEdgeInsets, minimumWidth: CGFloat, font: UIFont) {
+                self.insets = insets
+                self.minimumWidth = minimumWidth
+                self.font = font
+            }
+        }
+
+        public init(allowsBleedingAlignment: Bool,
+                    stateStyleByState: [Button.State: Button.StateStyle],
+                    overriddenSizes: Button.Style.OverriddenSizes? = nil) {
+            self.allowsBleedingAlignment = allowsBleedingAlignment
+            self.stateStyleByState = stateStyleByState
+            self.overriddenSizes = overriddenSizes
         }
     }
 
     public struct StateStyle {
-        let textColor: UIColor
-        let backgroundColor: UIColor
-        let borderColor: UIColor
+        public let textColor: UIColor
+        public let backgroundColor: UIColor
+        public let borderColor: UIColor
+
+        public init(textColor: UIColor, backgroundColor: UIColor, borderColor: UIColor) {
+            self.textColor = textColor
+            self.backgroundColor = backgroundColor
+            self.borderColor = borderColor
+        }
     }
 
     public var style: Style {
@@ -95,7 +115,7 @@ public class Button: UIView {
         commonInit()
     }
 
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         style = .primary
         isSmall = false
 

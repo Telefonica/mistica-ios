@@ -9,7 +9,7 @@
 import UIKit
 
 public class TagView: UIView {
-    private enum Style {
+    public enum Style {
         public static let horizontalMargin: CGFloat = 8
         public static let verticalMargin: CGFloat = 2
         public static let minWidth: CGFloat = 48

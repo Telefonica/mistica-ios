@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct FeedbackConfiguration {
+public struct FeedbackConfiguration: Equatable {
     let style: FeedbackStyle
     let title: String
     let subtitle: String?

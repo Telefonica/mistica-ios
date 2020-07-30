@@ -10,7 +10,7 @@ import Foundation
 import Lottie
 import UIKit
 
-public enum FeedbackStyle {
+public enum FeedbackStyle: Equatable {
     case success
     case informative
     case error

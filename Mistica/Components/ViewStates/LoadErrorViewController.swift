@@ -8,18 +8,6 @@
 
 import UIKit
 
-public protocol LoadErrorViewControllerProvider: AnyObject {
-    func loadErrorViewController(descriptionText: String) -> LoadErrorViewController
-    func loadErrorViewController(title: String?,
-                                 descriptionText: String,
-                                 showActionButton: Bool) -> LoadErrorViewController
-
-    func loadErrorViewController(title: String?,
-                                 descriptionText: String,
-                                 actionButtonTitle: String,
-                                 showActionButton: Bool) -> LoadErrorViewController
-}
-
 /// Manages the view hierarchy for the load error view.
 public class LoadErrorViewController: UIViewController {
     // MARK: - Properties

@@ -8,10 +8,6 @@
 
 import UIKit
 
-public protocol FeedbackViewControllerProvider: AnyObject {
-    func feedbackViewController(configuration: FeedbackConfiguration) -> FeedbackViewController
-}
-
 public class FeedbackViewController: UIViewController {
     private let feedbackView: FeedbackView
     private let style: FeedbackStyle

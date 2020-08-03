@@ -16,11 +16,13 @@ public struct Mistica {
     public static var brandStyle: BrandStyle = .movistar {
         didSet {
             configureColorPalette(for: brandStyle)
+            MisticaAppearance.configure()
         }
     }
 
     public static var themeVariant: ThemeVariant = .standard {
         didSet {
+            MisticaAppearance.configure()
             NotificationCenter.default.post(name: .themeVariantDidChange, object: nil)
         }
     }

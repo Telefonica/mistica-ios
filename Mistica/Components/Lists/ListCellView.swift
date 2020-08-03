@@ -167,6 +167,15 @@ open class ListCellView: UITableViewCell {
         }
     }
 
+    public var assetTintColor: UIColor? {
+        get {
+            leftSection.imageView.tintColor
+        }
+        set {
+            leftSection.imageView.tintColor = newValue
+        }
+    }
+
     public var controlView: UIView? {
         didSet {
             oldValue?.removeFromSuperview()

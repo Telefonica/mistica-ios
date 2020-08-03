@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B413033724B75D6700212D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B413033624B75D6700212D16 /* Assets.xcassets */; };
 		B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036A24B78C2200212D16 /* Bundle+Mistica.swift */; };
-		B413036F24B84F8900212D16 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036E24B84F8900212D16 /* AssetType.swift */; };
 		B41303CE24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41303CD24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift */; };
 		B4D8EC5124B4CB33002F3AD5 /* FeedbackStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB624B4CB31002F3AD5 /* FeedbackStyle+Toolkit.swift */; };
 		B4D8EC5224B4CB33002F3AD5 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8EBB724B4CB31002F3AD5 /* FeedbackViewController.swift */; };
@@ -94,8 +93,35 @@
 		B4D8ED3224B5C844002F3AD5 /* UICollectionViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3124B5C843002F3AD5 /* UICollectionViewCell+Utils.swift */; };
 		B4D8ED3424B5D650002F3AD5 /* Array+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3324B5D650002F3AD5 /* Array+NSAttributedString.swift */; };
 		B4D8ED3824B5EF85002F3AD5 /* Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ED3724B5EF85002F3AD5 /* Mistica.swift */; };
-		B4DFA1D224B723C1004C908E /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DFA1D124B723C1004C908E /* Lottie.framework */; };
 		B4DFA1D424B724DA004C908E /* ListsAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DFA1D324B724DA004C908E /* ListsAssets.swift */; };
+		B83050BA24D8719200C7EAA2 /* MisticaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83050B924D8719200C7EAA2 /* MisticaAppearance.swift */; };
+		B83050BE24D8763100C7EAA2 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83050BD24D8763100C7EAA2 /* AssetType.swift */; };
+		B89E6CD924D811CE0029D8EE /* UICatalogScrollContentIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CC924D811CD0029D8EE /* UICatalogScrollContentIndicatorViewController.swift */; };
+		B89E6CDA24D811CE0029D8EE /* UICatalogTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCA24D811CD0029D8EE /* UICatalogTagsViewController.swift */; };
+		B89E6CDB24D811CE0029D8EE /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCB24D811CD0029D8EE /* UICatalogBadgeViewController.swift */; };
+		B89E6CDC24D811CE0029D8EE /* UICatalogInputFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCC24D811CD0029D8EE /* UICatalogInputFieldsViewController.swift */; };
+		B89E6CDD24D811CE0029D8EE /* UICatalogFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCD24D811CD0029D8EE /* UICatalogFormViewController.swift */; };
+		B89E6CDE24D811CE0029D8EE /* UICatalogViewStatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCE24D811CE0029D8EE /* UICatalogViewStatesViewController.swift */; };
+		B89E6CDF24D811CE0029D8EE /* UICatalogHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCF24D811CE0029D8EE /* UICatalogHeaderViewController.swift */; };
+		B89E6CE024D811CE0029D8EE /* UICatalogFeedbacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CD024D811CE0029D8EE /* UICatalogFeedbacksViewController.swift */; };
+		B89E6CE124D811CE0029D8EE /* UICatalogButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CD124D811CE0029D8EE /* UICatalogButtonsViewController.swift */; };
+		B89E6CE224D811CE0029D8EE /* UICatalogPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CD224D811CE0029D8EE /* UICatalogPopoverViewController.swift */; };
+		B89E6CE324D811CE0029D8EE /* UICatalogSegmentSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CD324D811CE0029D8EE /* UICatalogSegmentSelectorViewController.swift */; };
+		B89E6CE424D811CE0029D8EE /* UICatalogSectionTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CD424D811CE0029D8EE /* UICatalogSectionTitleViewController.swift */; };
+		B89E6CE524D811CE0029D8EE /* UICatalogFontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CD524D811CE0029D8EE /* UICatalogFontsViewController.swift */; };
+		B89E6CE624D811CE0029D8EE /* UICatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CD624D811CE0029D8EE /* UICatalogViewController.swift */; };
+		B89E6CE724D811CE0029D8EE /* UICatalogListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CD724D811CE0029D8EE /* UICatalogListsViewController.swift */; };
+		B89E6CE824D811CE0029D8EE /* UICatalogCroutonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CD824D811CE0029D8EE /* UICatalogCroutonViewController.swift */; };
+		B89E6CF624D8196D0029D8EE /* NavigationBar+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CF524D8196D0029D8EE /* NavigationBar+Toolkit.swift */; };
+		B89E6CFA24D81B510029D8EE /* UITextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CF724D81B510029D8EE /* UITextFieldTableViewCell.swift */; };
+		B89E6CFB24D81B510029D8EE /* UISegmentedControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CF824D81B510029D8EE /* UISegmentedControlTableViewCell.swift */; };
+		B89E6CFC24D81B510029D8EE /* UISwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CF924D81B510029D8EE /* UISwitchTableViewCell.swift */; };
+		B89E6CFF24D81B640029D8EE /* UITableViewCell+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CFD24D81B640029D8EE /* UITableViewCell+Utils.swift */; };
+		B89E6D0024D81B640029D8EE /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CFE24D81B640029D8EE /* UIView+Utils.swift */; };
+		B89E6D0224D81B9E0029D8EE /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6D0124D81B9E0029D8EE /* UITableView+Utils.swift */; };
+		B89E6D0424D81CAB0029D8EE /* Optional+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6D0324D81CAB0029D8EE /* Optional+Utils.swift */; };
+		B89E6D0624D81D070029D8EE /* DefaultTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6D0524D81D070029D8EE /* DefaultTableHeaderView.swift */; };
+		B89E6D0824D8208B0029D8EE /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6D0724D8208B0029D8EE /* UIImage+Utils.swift */; };
 		B8DD218124D17BBD0096D68C /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD217B24D17BBD0096D68C /* PopoverView.swift */; };
 		B8DD218224D17BBD0096D68C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B8DD217C24D17BBD0096D68C /* README.md */; };
 		B8DD218324D17BBD0096D68C /* PopoverConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD217D24D17BBD0096D68C /* PopoverConfiguration.swift */; };
@@ -104,12 +130,25 @@
 		B8DD218724D17BFE0096D68C /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD218624D17BFD0096D68C /* SpacerView.swift */; };
 		B8DD218924D17C4F0096D68C /* PopoverAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD218824D17C4F0096D68C /* PopoverAssets.swift */; };
 		B8DD21B024D19ED70096D68C /* O2ClassicColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD21AF24D19ED70096D68C /* O2ClassicColorPalette.swift */; };
+		B8EAAFF224D83CA500EBE54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8EAAFF124D83CA500EBE54A /* Assets.xcassets */; };
+		B8EAAFF424D83F3D00EBE54A /* Bundle+MisticaCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAAFF324D83F3D00EBE54A /* Bundle+MisticaCatalog.swift */; };
+		B8EAAFF724D8407F00EBE54A /* CatalogAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAAFF624D8407F00EBE54A /* CatalogAssets.swift */; };
+		B8EAAFF924D8555B00EBE54A /* UICatalogHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EAAFF824D8555B00EBE54A /* UICatalogHeaderView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B89E6D0924D8223D0029D8EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4D8EB7624B46B91002F3AD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4D8EB7E24B46B91002F3AD5;
+			remoteInfo = Mistica;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B413033624B75D6700212D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B413036A24B78C2200212D16 /* Bundle+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Mistica.swift"; sourceTree = "<group>"; };
-		B413036E24B84F8900212D16 /* AssetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetType.swift; sourceTree = "<group>"; };
 		B413037024B85A0400212D16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B413037224B85A3200212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B413037324B85A3D00212D16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -214,6 +253,37 @@
 		B4DFA1D324B724DA004C908E /* ListsAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsAssets.swift; sourceTree = "<group>"; };
 		B4DFA20324B74F11004C908E /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		B4DFA20524B74F11004C908E /* Mistica.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Mistica.podspec; sourceTree = SOURCE_ROOT; };
+		B83050B924D8719200C7EAA2 /* MisticaAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisticaAppearance.swift; sourceTree = "<group>"; };
+		B83050BD24D8763100C7EAA2 /* AssetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetType.swift; sourceTree = "<group>"; };
+		B89E6CB524D80F260029D8EE /* MisticaCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MisticaCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MisticaCatalog.xcconfig; sourceTree = "<group>"; };
+		B89E6CC524D8113E0029D8EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B89E6CC924D811CD0029D8EE /* UICatalogScrollContentIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogScrollContentIndicatorViewController.swift; sourceTree = "<group>"; };
+		B89E6CCA24D811CD0029D8EE /* UICatalogTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogTagsViewController.swift; sourceTree = "<group>"; };
+		B89E6CCB24D811CD0029D8EE /* UICatalogBadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogBadgeViewController.swift; sourceTree = "<group>"; };
+		B89E6CCC24D811CD0029D8EE /* UICatalogInputFieldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogInputFieldsViewController.swift; sourceTree = "<group>"; };
+		B89E6CCD24D811CD0029D8EE /* UICatalogFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFormViewController.swift; sourceTree = "<group>"; };
+		B89E6CCE24D811CE0029D8EE /* UICatalogViewStatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogViewStatesViewController.swift; sourceTree = "<group>"; };
+		B89E6CCF24D811CE0029D8EE /* UICatalogHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHeaderViewController.swift; sourceTree = "<group>"; };
+		B89E6CD024D811CE0029D8EE /* UICatalogFeedbacksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFeedbacksViewController.swift; sourceTree = "<group>"; };
+		B89E6CD124D811CE0029D8EE /* UICatalogButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogButtonsViewController.swift; sourceTree = "<group>"; };
+		B89E6CD224D811CE0029D8EE /* UICatalogPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogPopoverViewController.swift; sourceTree = "<group>"; };
+		B89E6CD324D811CE0029D8EE /* UICatalogSegmentSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogSegmentSelectorViewController.swift; sourceTree = "<group>"; };
+		B89E6CD424D811CE0029D8EE /* UICatalogSectionTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogSectionTitleViewController.swift; sourceTree = "<group>"; };
+		B89E6CD524D811CE0029D8EE /* UICatalogFontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFontsViewController.swift; sourceTree = "<group>"; };
+		B89E6CD624D811CE0029D8EE /* UICatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogViewController.swift; sourceTree = "<group>"; };
+		B89E6CD724D811CE0029D8EE /* UICatalogListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogListsViewController.swift; sourceTree = "<group>"; };
+		B89E6CD824D811CE0029D8EE /* UICatalogCroutonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCroutonViewController.swift; sourceTree = "<group>"; };
+		B89E6CF524D8196D0029D8EE /* NavigationBar+Toolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationBar+Toolkit.swift"; sourceTree = "<group>"; };
+		B89E6CF724D81B510029D8EE /* UITextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		B89E6CF824D81B510029D8EE /* UISegmentedControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlTableViewCell.swift; sourceTree = "<group>"; };
+		B89E6CF924D81B510029D8EE /* UISwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchTableViewCell.swift; sourceTree = "<group>"; };
+		B89E6CFD24D81B640029D8EE /* UITableViewCell+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Utils.swift"; sourceTree = "<group>"; };
+		B89E6CFE24D81B640029D8EE /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		B89E6D0124D81B9E0029D8EE /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
+		B89E6D0324D81CAB0029D8EE /* Optional+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Utils.swift"; sourceTree = "<group>"; };
+		B89E6D0524D81D070029D8EE /* DefaultTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTableHeaderView.swift; sourceTree = "<group>"; };
+		B89E6D0724D8208B0029D8EE /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		B8DD217B24D17BBD0096D68C /* PopoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		B8DD217C24D17BBD0096D68C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B8DD217D24D17BBD0096D68C /* PopoverConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverConfiguration.swift; sourceTree = "<group>"; };
@@ -222,6 +292,10 @@
 		B8DD218624D17BFD0096D68C /* SpacerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
 		B8DD218824D17C4F0096D68C /* PopoverAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAssets.swift; sourceTree = "<group>"; };
 		B8DD21AF24D19ED70096D68C /* O2ClassicColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = O2ClassicColorPalette.swift; sourceTree = "<group>"; };
+		B8EAAFF124D83CA500EBE54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8EAAFF324D83F3D00EBE54A /* Bundle+MisticaCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+MisticaCatalog.swift"; sourceTree = "<group>"; };
+		B8EAAFF624D8407F00EBE54A /* CatalogAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogAssets.swift; sourceTree = "<group>"; };
+		B8EAAFF824D8555B00EBE54A /* UICatalogHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +303,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4DFA1D224B723C1004C908E /* Lottie.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89E6CB224D80F260029D8EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +323,7 @@
 				B4D8EB8A24B47869002F3AD5 /* README.md */,
 				B4DFA20324B74F11004C908E /* Cartfile */,
 				B4D8EB8124B46B91002F3AD5 /* Mistica */,
+				B89E6CB624D80F260029D8EE /* MisticaCatalog */,
 				B4D8EB8024B46B91002F3AD5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -251,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */,
+				B89E6CB524D80F260029D8EE /* MisticaCatalog.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -507,6 +589,7 @@
 		B4D8ECB624B4CD04002F3AD5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B83050B824D8715200C7EAA2 /* Appearance */,
 				B4D8EBF224B4CB32002F3AD5 /* Badge */,
 				B4D8EC2224B4CB33002F3AD5 /* Button */,
 				B4D8EBFE24B4CB32002F3AD5 /* Crouton */,
@@ -550,10 +633,10 @@
 		B4D8ECC724B4D26B002F3AD5 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				B83050BD24D8763100C7EAA2 /* AssetType.swift */,
 				B4D8ECC324B4D05D002F3AD5 /* BrandStyle.swift */,
 				B4D8ECC824B4D26B002F3AD5 /* ThemeVariant.swift */,
 				B4D8ECC924B4D26B002F3AD5 /* AssetCatalog+Themed.swift */,
-				B413036E24B84F8900212D16 /* AssetType.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -595,6 +678,79 @@
 				B413033624B75D6700212D16 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B83050B824D8715200C7EAA2 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				B83050B924D8719200C7EAA2 /* MisticaAppearance.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		B89E6CB624D80F260029D8EE /* MisticaCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				B89E6CC824D811AF0029D8EE /* Source */,
+				B8EAAFF024D83C9500EBE54A /* Resources */,
+				B89E6CC324D8113E0029D8EE /* SupportFiles */,
+			);
+			path = MisticaCatalog;
+			sourceTree = "<group>";
+		};
+		B89E6CC324D8113E0029D8EE /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */,
+				B89E6CC524D8113E0029D8EE /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		B89E6CC824D811AF0029D8EE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B89E6CD624D811CE0029D8EE /* UICatalogViewController.swift */,
+				B8EAAFF824D8555B00EBE54A /* UICatalogHeaderView.swift */,
+				B8EAAFF624D8407F00EBE54A /* CatalogAssets.swift */,
+				B8EAAFF524D83FA500EBE54A /* ComponentsCatalogs */,
+				B89E6CEA24D817620029D8EE /* Common */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		B89E6CEA24D817620029D8EE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B89E6CF424D819590029D8EE /* Extensions */,
+				B89E6CF324D817A90029D8EE /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B89E6CF324D817A90029D8EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B89E6CF824D81B510029D8EE /* UISegmentedControlTableViewCell.swift */,
+				B89E6CF924D81B510029D8EE /* UISwitchTableViewCell.swift */,
+				B89E6CF724D81B510029D8EE /* UITextFieldTableViewCell.swift */,
+				B89E6D0524D81D070029D8EE /* DefaultTableHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B89E6CF424D819590029D8EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B8EAAFF324D83F3D00EBE54A /* Bundle+MisticaCatalog.swift */,
+				B89E6CFD24D81B640029D8EE /* UITableViewCell+Utils.swift */,
+				B89E6CFE24D81B640029D8EE /* UIView+Utils.swift */,
+				B89E6CF524D8196D0029D8EE /* NavigationBar+Toolkit.swift */,
+				B89E6D0124D81B9E0029D8EE /* UITableView+Utils.swift */,
+				B89E6D0324D81CAB0029D8EE /* Optional+Utils.swift */,
+				B89E6D0724D8208B0029D8EE /* UIImage+Utils.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B8DD217E24D17BBD0096D68C /* Internals */ = {
@@ -645,10 +801,47 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B8EAAFF024D83C9500EBE54A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8EAAFF124D83CA500EBE54A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B8EAAFF524D83FA500EBE54A /* ComponentsCatalogs */ = {
+			isa = PBXGroup;
+			children = (
+				B89E6CCB24D811CD0029D8EE /* UICatalogBadgeViewController.swift */,
+				B89E6CD124D811CE0029D8EE /* UICatalogButtonsViewController.swift */,
+				B89E6CD824D811CE0029D8EE /* UICatalogCroutonViewController.swift */,
+				B89E6CD024D811CE0029D8EE /* UICatalogFeedbacksViewController.swift */,
+				B89E6CD524D811CE0029D8EE /* UICatalogFontsViewController.swift */,
+				B89E6CCD24D811CD0029D8EE /* UICatalogFormViewController.swift */,
+				B89E6CCF24D811CE0029D8EE /* UICatalogHeaderViewController.swift */,
+				B89E6CCC24D811CD0029D8EE /* UICatalogInputFieldsViewController.swift */,
+				B89E6CD724D811CE0029D8EE /* UICatalogListsViewController.swift */,
+				B89E6CD224D811CE0029D8EE /* UICatalogPopoverViewController.swift */,
+				B89E6CC924D811CD0029D8EE /* UICatalogScrollContentIndicatorViewController.swift */,
+				B89E6CD424D811CE0029D8EE /* UICatalogSectionTitleViewController.swift */,
+				B89E6CD324D811CE0029D8EE /* UICatalogSegmentSelectorViewController.swift */,
+				B89E6CCA24D811CD0029D8EE /* UICatalogTagsViewController.swift */,
+				B89E6CCE24D811CE0029D8EE /* UICatalogViewStatesViewController.swift */,
+			);
+			path = ComponentsCatalogs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		B4D8EB7A24B46B91002F3AD5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89E6CB024D80F260029D8EE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -677,6 +870,25 @@
 			productReference = B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B89E6CB424D80F260029D8EE /* MisticaCatalog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B89E6CBC24D80F260029D8EE /* Build configuration list for PBXNativeTarget "MisticaCatalog" */;
+			buildPhases = (
+				B89E6CB024D80F260029D8EE /* Headers */,
+				B89E6CB124D80F260029D8EE /* Sources */,
+				B89E6CB224D80F260029D8EE /* Frameworks */,
+				B89E6CB324D80F260029D8EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B89E6D0A24D8223D0029D8EE /* PBXTargetDependency */,
+			);
+			name = MisticaCatalog;
+			productName = MisticaCatalog;
+			productReference = B89E6CB524D80F260029D8EE /* MisticaCatalog.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -688,6 +900,10 @@
 				TargetAttributes = {
 					B4D8EB7E24B46B91002F3AD5 = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					B89E6CB424D80F260029D8EE = {
+						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -705,6 +921,7 @@
 			projectRoot = "";
 			targets = (
 				B4D8EB7E24B46B91002F3AD5 /* Mistica */,
+				B89E6CB424D80F260029D8EE /* MisticaCatalog */,
 			);
 		};
 /* End PBXProject section */
@@ -716,6 +933,14 @@
 			files = (
 				B8DD218224D17BBD0096D68C /* README.md in Resources */,
 				B413033724B75D6700212D16 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89E6CB324D80F260029D8EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8EAAFF224D83CA500EBE54A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +987,7 @@
 				B4D8ECA224B4CB33002F3AD5 /* ListView.swift in Sources */,
 				B4D8ED1D24B5B92F002F3AD5 /* CGSize+Utils.swift in Sources */,
 				B4D8ECD624B4D9B1002F3AD5 /* UIView+Utils.swift in Sources */,
+				B83050BA24D8719200C7EAA2 /* MisticaAppearance.swift in Sources */,
 				B4D8ECA124B4CB33002F3AD5 /* Button.swift in Sources */,
 				B4D8ECA024B4CB33002F3AD5 /* ButtonStyle+Toolkit.swift in Sources */,
 				B4D8ED2624B5C5FE002F3AD5 /* CheckBoxAssets.swift in Sources */,
@@ -801,6 +1027,7 @@
 				B4D8EC7724B4CB33002F3AD5 /* HeaderViewStyle.swift in Sources */,
 				B4D8EC5324B4CB33002F3AD5 /* FeedbackUIAssets.swift in Sources */,
 				B4D8EC6624B4CB33002F3AD5 /* InputFieldAssets.swift in Sources */,
+				B83050BE24D8763100C7EAA2 /* AssetType.swift in Sources */,
 				B4D8EC7824B4CB33002F3AD5 /* SectionTitleHeaderView.swift in Sources */,
 				B4D8ECBF24B4CFB7002F3AD5 /* VivoColorPalette.swift in Sources */,
 				B4D8ECDA24B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift in Sources */,
@@ -813,7 +1040,6 @@
 				B4D8EC8A24B4CB33002F3AD5 /* CroutonController.swift in Sources */,
 				B4D8EC9824B4CB33002F3AD5 /* LoadErrorViewController.swift in Sources */,
 				B4D8ECC224B4CFB7002F3AD5 /* O2ColorPalette.swift in Sources */,
-				B413036F24B84F8900212D16 /* AssetType.swift in Sources */,
 				B4D8EC8224B4CB33002F3AD5 /* IntrinsictHeightLabel.swift in Sources */,
 				B4D8ECAA24B4CB33002F3AD5 /* CellLeftSectionView.swift in Sources */,
 				B8DD21B024D19ED70096D68C /* O2ClassicColorPalette.swift in Sources */,
@@ -844,7 +1070,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B89E6CB124D80F260029D8EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89E6CDD24D811CE0029D8EE /* UICatalogFormViewController.swift in Sources */,
+				B89E6D0824D8208B0029D8EE /* UIImage+Utils.swift in Sources */,
+				B89E6CFC24D81B510029D8EE /* UISwitchTableViewCell.swift in Sources */,
+				B89E6CE824D811CE0029D8EE /* UICatalogCroutonViewController.swift in Sources */,
+				B89E6CE024D811CE0029D8EE /* UICatalogFeedbacksViewController.swift in Sources */,
+				B89E6CE624D811CE0029D8EE /* UICatalogViewController.swift in Sources */,
+				B89E6CDF24D811CE0029D8EE /* UICatalogHeaderViewController.swift in Sources */,
+				B89E6CFB24D81B510029D8EE /* UISegmentedControlTableViewCell.swift in Sources */,
+				B8EAAFF924D8555B00EBE54A /* UICatalogHeaderView.swift in Sources */,
+				B89E6CFA24D81B510029D8EE /* UITextFieldTableViewCell.swift in Sources */,
+				B89E6CFF24D81B640029D8EE /* UITableViewCell+Utils.swift in Sources */,
+				B8EAAFF424D83F3D00EBE54A /* Bundle+MisticaCatalog.swift in Sources */,
+				B89E6D0424D81CAB0029D8EE /* Optional+Utils.swift in Sources */,
+				B89E6CE724D811CE0029D8EE /* UICatalogListsViewController.swift in Sources */,
+				B89E6D0024D81B640029D8EE /* UIView+Utils.swift in Sources */,
+				B89E6CE524D811CE0029D8EE /* UICatalogFontsViewController.swift in Sources */,
+				B89E6CE424D811CE0029D8EE /* UICatalogSectionTitleViewController.swift in Sources */,
+				B89E6CE124D811CE0029D8EE /* UICatalogButtonsViewController.swift in Sources */,
+				B89E6CE224D811CE0029D8EE /* UICatalogPopoverViewController.swift in Sources */,
+				B89E6CD924D811CE0029D8EE /* UICatalogScrollContentIndicatorViewController.swift in Sources */,
+				B89E6CE324D811CE0029D8EE /* UICatalogSegmentSelectorViewController.swift in Sources */,
+				B89E6CDB24D811CE0029D8EE /* UICatalogBadgeViewController.swift in Sources */,
+				B89E6CDC24D811CE0029D8EE /* UICatalogInputFieldsViewController.swift in Sources */,
+				B8EAAFF724D8407F00EBE54A /* CatalogAssets.swift in Sources */,
+				B89E6D0624D81D070029D8EE /* DefaultTableHeaderView.swift in Sources */,
+				B89E6CF624D8196D0029D8EE /* NavigationBar+Toolkit.swift in Sources */,
+				B89E6CDA24D811CE0029D8EE /* UICatalogTagsViewController.swift in Sources */,
+				B89E6CDE24D811CE0029D8EE /* UICatalogViewStatesViewController.swift in Sources */,
+				B89E6D0224D81B9E0029D8EE /* UITableView+Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B89E6D0A24D8223D0029D8EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4D8EB7E24B46B91002F3AD5 /* Mistica */;
+			targetProxy = B89E6D0924D8223D0029D8EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B4D8EB8524B46B91002F3AD5 /* Debug */ = {
@@ -993,6 +1263,20 @@
 			};
 			name = Release;
 		};
+		B89E6CBA24D80F260029D8EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		B89E6CBB24D80F260029D8EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1010,6 +1294,15 @@
 			buildConfigurations = (
 				B4D8EB8824B46B91002F3AD5 /* Debug */,
 				B4D8EB8924B46B91002F3AD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B89E6CBC24D80F260029D8EE /* Build configuration list for PBXNativeTarget "MisticaCatalog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B89E6CBA24D80F260029D8EE /* Debug */,
+				B89E6CBB24D80F260029D8EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

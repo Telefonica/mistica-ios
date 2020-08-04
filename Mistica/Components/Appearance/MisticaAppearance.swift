@@ -12,6 +12,7 @@ class MisticaAppearance {
     static func configure() {
         setUpAppearanceOfUITabBar()
         setUpAppearanceOfUISegmentedControl()
+        setUpSegmentedControlAppearanceInSearchBar()
         setUpAppearanceOfPageIndicator()
         setUpAppearanceOfSwitch()
     }
@@ -59,6 +60,15 @@ private extension MisticaAppearance {
                                           tintColor: .segmentedControlBackgroundSelected,
                                           textColor: .textSegmentedControl,
                                           selectedTextColor: .textSegmentedControlSelected)
+        
+    }
+
+    static func setUpSegmentedControlAppearanceInSearchBar() {
+        let scopeButtonsAppearance = UISegmentedControl.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+        setUpAppearanceOfSegmentedControl(withAppearance: scopeButtonsAppearance,
+                                          tintColor: .segmentedControlBackgroundInverseSelected,
+                                          textColor: .textSegmentedControlInverse,
+                                          selectedTextColor: .textSegmentedControlInverseSelected)
     }
 
     static func setUpAppearanceOfPageIndicator() {

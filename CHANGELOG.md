@@ -1,3 +1,11 @@
+# v.2.0.0 - 2020-07-31
+
+### Added
+
+- Added MisticaCatalog components.
+- Added sample app
+- Configure UIAppearance of UITabBar, UISegmentedControl, UIPageControl and UISwitch with the active brand style
+
 # v.1.0.1 - 2020-07-31
 
 ### Changed

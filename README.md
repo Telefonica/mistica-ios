@@ -1,6 +1,6 @@
 <br>
-<br>
 <img height="64" alt="Mística for iOS" src="./mistica-logo.svg">
+<br>
 
 #  Mistica for iOS
 

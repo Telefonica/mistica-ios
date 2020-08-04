@@ -1,4 +1,4 @@
-![Mistica for iOS](./mistica-logo.svg)
+<img height="64" alt="Mística for iOS" src="./mistica-logo.svg">
 
 #  Mistica for iOS
 

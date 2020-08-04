@@ -55,10 +55,29 @@ Mistica.brandStyle = .o2
 Mistica.themeVariant = .prominent
 ```
 
-### Override translations
+Remember to initialize Mistica with you desired brand style before the initialize the UI of your app.
 
-Not yet supported
+In applications before iOS 13, the initialziation should be done in **UIApplicationDelegate**,
 
+```swift
+func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // Set up Mistica
+    Mistica.brandStyle = .vivo
+    
+    return true
+}
+```
+
+For applications in iOS 13 and above, the initialization should be done in **SceneDelegate**
+
+```swift
+func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
+    guard let windowScene = (scene as? UIWindowScene) else { return }
+
+    // Configure brand style before initializing the UI
+    Mistica.brandStyle = .movistar
+}
+```
 
 ## Components
 
@@ -75,6 +94,14 @@ Not yet supported
 * [SectionTitle](./Mistica/Components/SectionTitle/)
 * [Header](./Mistica/Components/Header/)
 
+
+## Components Catalog
+
+In `MisticaCatalog.framework` you can find a catalog with all the components of Mistica. In this catalog you can see the components in action.
+
+The instalation process is the same than for `Mistica.framework`.
+
+And for showing the catalog you only need to show **UICatalogViewController**.
 
 ## Contributing
 

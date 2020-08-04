@@ -60,7 +60,6 @@ private extension MisticaAppearance {
                                           tintColor: .segmentedControlBackgroundSelected,
                                           textColor: .textSegmentedControl,
                                           selectedTextColor: .textSegmentedControlSelected)
-        
     }
 
     static func setUpSegmentedControlAppearanceInSearchBar() {

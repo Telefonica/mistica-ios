@@ -102,6 +102,10 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 
 In `MisticaCatalog.framework` you can find a catalog with all the components of Mistica. In this catalog you can see the components in action.
 
+<div align="center">
+<img src="./doc/images/catalog.png" height=600/>
+</div>
+
 The instalation process is the same than for `Mistica.framework`.
 
 And for showing the catalog you only need to show **UICatalogViewController**.

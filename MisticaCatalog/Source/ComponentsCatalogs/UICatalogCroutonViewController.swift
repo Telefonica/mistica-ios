@@ -116,7 +116,7 @@ private extension CroutonStyle {
         case .critical:
             return "Critical"
         case .info:
-            fallthrough
+            return "Default"
 		@unknown default:
             return "Default"
         }

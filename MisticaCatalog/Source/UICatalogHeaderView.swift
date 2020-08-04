@@ -16,6 +16,11 @@ class BrandStyleSelectorView: UIView {
     private let segment = UISegmentedControl()
 
     var didSelectBrandStyle: ((BrandStyle) -> Void)?
+    var showBrandSelector = true {
+        didSet {
+            segment.isHidden = !showBrandSelector
+        }
+    }
 
     init() {
         super.init(frame: .zero)

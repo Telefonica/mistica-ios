@@ -35,6 +35,13 @@ public class UICatalogViewController: UIViewController {
     private let headerView = BrandStyleSelectorView()
     private let tableView = ListView()
 
+    public var showBrandSelector = true {
+        didSet {
+            headerView.showBrandSelector = showBrandSelector
+            view.setNeedsLayout()
+        }
+    }
+
     public init() {
         super.init(nibName: nil, bundle: nil)
     }

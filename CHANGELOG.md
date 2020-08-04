@@ -1,4 +1,11 @@
-# v.2.0.0 - 2020-07-31
+# v.2.0.1 - 2020-08-04
+
+### Changed
+
+- Update README
+- Update icons of components catalog
+
+# v.2.0.0 - 2020-08-04
 
 ### Added
 

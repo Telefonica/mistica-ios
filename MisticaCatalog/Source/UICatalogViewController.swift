@@ -74,8 +74,7 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
         let catalogRow = UICatalogRow(rawValue: indexPath.row)!
 
         cell.title = catalogRow.title
-        cell.assetImage = catalogRow.icon.withRenderingMode(.alwaysTemplate)
-        cell.assetTintColor = .backgroundBrandFirst
+        cell.assetImage = catalogRow.icon
         cell.assetSize = .small
         cell.controlView = NavigationPresetView()
 

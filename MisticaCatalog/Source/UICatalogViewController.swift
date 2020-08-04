@@ -35,6 +35,8 @@ public class UICatalogViewController: UIViewController {
     private let headerView = BrandStyleSelectorView()
     private let tableView = ListView()
 
+    private let oldBrandStyle: BrandStyle
+    
     public var showBrandSelector = true {
         didSet {
             headerView.showBrandSelector = showBrandSelector
@@ -43,6 +45,8 @@ public class UICatalogViewController: UIViewController {
     }
 
     public init() {
+        oldBrandStyle = Mistica.brandStyle
+        
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -53,9 +57,13 @@ public class UICatalogViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        Mistica.brandStyle = .movistar
-
         setUp()
+    }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        Mistica.brandStyle = oldBrandStyle
     }
 }
 

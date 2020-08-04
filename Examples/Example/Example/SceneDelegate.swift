@@ -6,6 +6,7 @@
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 
+import Mistica
 import MisticaCatalog
 import UIKit
 
@@ -15,6 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        // Configure brand style before initializing the UI
+        Mistica.brandStyle = .movistar
+
+        // Setup the UI
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UINavigationController(rootViewController: UICatalogViewController())
         window?.makeKeyAndVisible()

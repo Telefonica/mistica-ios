@@ -123,16 +123,16 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
 private extension UICatalogViewController {
     func setUp() {
         view.addSubview(headerView, constraints: [
-            headerView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            headerView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             headerView.heightAnchor.constraint(equalToConstant: 200)
         ])
         view.addSubview(tableView, constraints: [
-            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 5),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
         tableView.dataSource = self

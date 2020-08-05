@@ -36,7 +36,7 @@ private extension BrandStyleSelectorView {
     func setUp() {
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = 5
+        stackView.spacing = 10
 
         misticaLogoImageView.contentMode = .scaleAspectFit
 

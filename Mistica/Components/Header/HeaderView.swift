@@ -231,14 +231,6 @@ public class HeaderView: UIView {
 
         setUpView()
     }
-
-    // MARK: - UIView overrides
-
-    override public var intrinsicContentSize: CGSize {
-        let stackViewHeight = stackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-
-        return CGSize(width: UIView.noIntrinsicMetric, height: max(stackViewHeight, 88))
-    }
 }
 
 // MARK: - Private

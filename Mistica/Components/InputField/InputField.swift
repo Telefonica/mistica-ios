@@ -958,6 +958,11 @@ extension InputField {
         get { overridenAccessibilityHint ?? assistiveText }
         set { overridenAccessibilityHint = newValue }
     }
+
+    public var assistiveAccessibilityIdentifier: String? {
+        get { assistiveLabel.accessibilityIdentifier }
+        set { assistiveLabel.accessibilityIdentifier = newValue }
+    }
 }
 
 // MARK: Objc API

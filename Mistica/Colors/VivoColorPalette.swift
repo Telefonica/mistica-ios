@@ -74,7 +74,7 @@ struct VivoColorPalette: ColorPalette {
     // MARK: Icons
 
     let iconPrimary = Colors.grey0
-    let iconAccent = Colors.vivoPurple
+    let iconAccent = Colors.vivoGreen
     let iconDisabled = Colors.grey3
     let iconSecondary = Colors.grey2
     let iconTertiary = Colors.vivoBlue

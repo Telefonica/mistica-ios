@@ -10,21 +10,26 @@ import Foundation
 
 public struct Mistica {
     static var currentColorPalette: ColorPalette = MovistarColorPalette()
+    static var currentStyledControls = [MisticaControlStyle]()
 
     // MARK: Public Setup
 
     public static var brandStyle: BrandStyle = .movistar {
         didSet {
             configureColorPalette(for: brandStyle)
-            MisticaAppearance.configure()
         }
     }
 
     public static var themeVariant: ThemeVariant = .standard {
         didSet {
-            MisticaAppearance.configure()
             NotificationCenter.default.post(name: .themeVariantDidChange, object: nil)
+            MisticaAppearance.setUp(controls: currentStyledControls)
         }
+    }
+
+    public static func styleControls(_ controls: [MisticaControlStyle]) {
+        currentStyledControls = controls
+        MisticaAppearance.setUp(controls: controls)
     }
 }
 

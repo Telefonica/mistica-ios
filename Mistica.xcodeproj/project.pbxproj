@@ -96,6 +96,7 @@
 		B4DFA1D424B724DA004C908E /* ListsAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DFA1D324B724DA004C908E /* ListsAssets.swift */; };
 		B83050BA24D8719200C7EAA2 /* MisticaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83050B924D8719200C7EAA2 /* MisticaAppearance.swift */; };
 		B83050BE24D8763100C7EAA2 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83050BD24D8763100C7EAA2 /* AssetType.swift */; };
+		B83050C324DBFDDE00C7EAA2 /* UICatalogControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83050C224DBFDDE00C7EAA2 /* UICatalogControlsViewController.swift */; };
 		B89E6CD924D811CE0029D8EE /* UICatalogScrollContentIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CC924D811CD0029D8EE /* UICatalogScrollContentIndicatorViewController.swift */; };
 		B89E6CDA24D811CE0029D8EE /* UICatalogTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCA24D811CD0029D8EE /* UICatalogTagsViewController.swift */; };
 		B89E6CDB24D811CE0029D8EE /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCB24D811CD0029D8EE /* UICatalogBadgeViewController.swift */; };
@@ -255,6 +256,8 @@
 		B4DFA20524B74F11004C908E /* Mistica.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Mistica.podspec; sourceTree = SOURCE_ROOT; };
 		B83050B924D8719200C7EAA2 /* MisticaAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisticaAppearance.swift; sourceTree = "<group>"; };
 		B83050BD24D8763100C7EAA2 /* AssetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetType.swift; sourceTree = "<group>"; };
+		B83050C224DBFDDE00C7EAA2 /* UICatalogControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogControlsViewController.swift; sourceTree = "<group>"; };
+		B83050C424DC5E7700C7EAA2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B89E6CB524D80F260029D8EE /* MisticaCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MisticaCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MisticaCatalog.xcconfig; sourceTree = "<group>"; };
 		B89E6CC524D8113E0029D8EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -589,7 +592,7 @@
 		B4D8ECB624B4CD04002F3AD5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B83050B824D8715200C7EAA2 /* Appearance */,
+				B83050B824D8715200C7EAA2 /* Controls */,
 				B4D8EBF224B4CB32002F3AD5 /* Badge */,
 				B4D8EC2224B4CB33002F3AD5 /* Button */,
 				B4D8EBFE24B4CB32002F3AD5 /* Crouton */,
@@ -680,12 +683,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		B83050B824D8715200C7EAA2 /* Appearance */ = {
+		B83050B824D8715200C7EAA2 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				B83050C424DC5E7700C7EAA2 /* README.md */,
 				B83050B924D8719200C7EAA2 /* MisticaAppearance.swift */,
 			);
-			path = Appearance;
+			path = Controls;
 			sourceTree = "<group>";
 		};
 		B89E6CB624D80F260029D8EE /* MisticaCatalog */ = {
@@ -827,6 +831,7 @@
 				B89E6CD324D811CE0029D8EE /* UICatalogSegmentSelectorViewController.swift */,
 				B89E6CCA24D811CD0029D8EE /* UICatalogTagsViewController.swift */,
 				B89E6CCE24D811CE0029D8EE /* UICatalogViewStatesViewController.swift */,
+				B83050C224DBFDDE00C7EAA2 /* UICatalogControlsViewController.swift */,
 			);
 			path = ComponentsCatalogs;
 			sourceTree = "<group>";
@@ -1102,6 +1107,7 @@
 				B89E6CF624D8196D0029D8EE /* NavigationBar+Toolkit.swift in Sources */,
 				B89E6CDA24D811CE0029D8EE /* UICatalogTagsViewController.swift in Sources */,
 				B89E6CDE24D811CE0029D8EE /* UICatalogViewStatesViewController.swift in Sources */,
+				B83050C324DBFDDE00C7EAA2 /* UICatalogControlsViewController.swift in Sources */,
 				B89E6D0224D81B9E0029D8EE /* UITableView+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

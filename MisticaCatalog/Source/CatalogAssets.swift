@@ -26,4 +26,7 @@ extension UIImage {
     static let tagsIcon = UIImage(named: "Labels", in: .misticaCatalog, with: nil)!
     static let viewStatesIcon = UIImage(named: "EmptyStates", in: .misticaCatalog, with: nil)!
     static let badgeIcon = UIImage(named: "Notifications", in: .misticaCatalog, with: nil)!
+    static let controlsIcon = UIImage(named: "Controls", in: .misticaCatalog, with: nil)!
+
+    static let tabItemIcon = UIImage(named: "tabItem", in: .misticaCatalog, with: nil)!
 }

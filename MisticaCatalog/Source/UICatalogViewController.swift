@@ -10,21 +10,22 @@ import Mistica
 import UIKit
 
 private enum UICatalogRow: Int, CaseIterable {
+    case badge
     case buttons
-    case feedbacks
+    case controls
     case crouton
+    case feedbacks
+    case fonts
+    case forms
+    case header
+    case inputFields
+    case lists
+    case scrollContentIndicator
+    case sectionTitle
     case segmentSelector
+    case tag
     case tooltip
     case viewStates
-    case fonts
-    case badge
-    case inputFields
-    case forms
-    case scrollContentIndicator
-    case tag
-    case lists
-    case sectionTitle
-    case header
 }
 
 private enum Constants {
@@ -116,6 +117,8 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogSectionTitleViewController(), sender: self)
         case .header:
             show(UICatalogHeaderViewController(), sender: self)
+        case .controls:
+            show(UICatalogControlsViewController(), sender: self)
         }
     }
 }
@@ -143,6 +146,7 @@ private extension UICatalogViewController {
 
         headerView.didSelectBrandStyle = { [weak self] newValue in
             Mistica.brandStyle = newValue
+            Mistica.styleControls(MisticaControlStyle.allCases)
             self?.tableView.reloadData()
 
             // Force update `UIAppearance` changes
@@ -188,6 +192,8 @@ private extension UICatalogRow {
             return "Section Title"
         case .header:
             return "Headers"
+        case .controls:
+            return "Controls"
         }
     }
 
@@ -223,6 +229,8 @@ private extension UICatalogRow {
             return .sectionTitleIcon
         case .header:
             return .headerIcon
+        case .controls:
+            return .controlsIcon
         }
     }
 }

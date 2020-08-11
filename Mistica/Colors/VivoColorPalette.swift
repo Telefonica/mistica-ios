@@ -162,7 +162,7 @@ struct VivoColorPalette: ColorPalette {
     let bubbleTimeBackground = Colors.grey0
     let bubbleMeBackground = Colors.grey4
     let bubbleMeBackgroundSelected = Colors.grey3
-    let bubbleOtherBackground = Colors.vivoPurpleLight40
+    let bubbleOtherBackground = Colors.vivoPurpleLight10
     let bubbleOtherBackgroundSelected = Colors.vivoPurpleLight80
     let buttonBot = Colors.white
     let buttonBotSelected = Colors.vivoGreen

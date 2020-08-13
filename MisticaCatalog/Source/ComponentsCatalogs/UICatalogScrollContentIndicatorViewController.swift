@@ -32,8 +32,6 @@ class UICatalogScrollContentIndicatorViewController: UIViewController {
         view.backgroundColor = .background
         title = "Content Indicator"
 
-        navigationController?.navigationBar.applyOpaqueStyleWithoutShadow()
-
         setUpTable()
         setUpContentIndicatorButtons()
     }

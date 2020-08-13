@@ -54,7 +54,19 @@ public class UICatalogViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.applyOpaqueStyleWithoutShadow()
+
         setUp()
+    }
+
+    override public func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+    }
+
+    override public func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
     }
 }
 

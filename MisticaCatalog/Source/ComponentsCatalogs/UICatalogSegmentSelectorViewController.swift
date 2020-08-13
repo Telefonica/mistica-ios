@@ -93,8 +93,6 @@ class UICatalogSegmentSelectorViewController: UIViewController {
         view.backgroundColor = .background
         title = "Segment Selector"
 
-        navigationController?.navigationBar.applyOpaqueStyleWithoutShadow()
-
         setUpSegmentSelector()
         setUpConsole()
         setUpOptionsTable()

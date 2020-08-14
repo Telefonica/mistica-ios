@@ -49,7 +49,7 @@ private extension Button.Style {
                                      .selected: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: .buttonLinkBackgroundSelectedInverse, borderColor: backgroundColor),
                                      .disabled: Button.StateStyle(textColor: .textLinkInverseDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
                                      .loading: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor)
-        ])
+                                 ])
 
         style.overriddenSizes = croutonOverriddenSizes
 

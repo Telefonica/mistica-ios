@@ -153,7 +153,7 @@ extension SegmentSelector: UICollectionViewDataSource {
         let segmentCell = SegmentCell.dequeueReusableCell(for: indexPath, from: collectionView)
         segmentCell.show(title: segment.title)
         segmentCell.isSelected ? segmentCell.showSelected() : segmentCell.showDeselected()
-        segmentCell.accessibilityIdentifier = segment.id
+        segmentCell.accessibilityIdentifier = segment.accessibilityIdentifier
         return segmentCell
     }
 }

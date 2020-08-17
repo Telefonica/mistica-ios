@@ -60,9 +60,10 @@ public class TagView: UIView {
         commonInit()
     }
 
-    public init(text: String? = nil) {
+    public init(text: String? = nil, accessibilityIdentifier: String? = nil) {
         super.init(frame: .zero)
         self.text = text
+        label.accessibilityIdentifier = accessibilityIdentifier
         textDidSet()
 
         commonInit()

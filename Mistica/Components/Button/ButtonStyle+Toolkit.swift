@@ -30,7 +30,7 @@ public extension Button.Style {
                                 .selected: Button.StateStyle(textColor: textColor, backgroundColor: .buttonPrimaryBackgroundSelected, borderColor: .buttonPrimaryBackgroundSelected),
                                 .disabled: Button.StateStyle(textColor: textColor, backgroundColor: .buttonPrimaryBackgroundDisabled, borderColor: .buttonPrimaryBackgroundDisabled),
                                 .loading: Button.StateStyle(textColor: textColor, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground)
-        ])
+                            ])
     }
 
     static var secondary: Button.Style {
@@ -42,7 +42,7 @@ public extension Button.Style {
                                 .selected: Button.StateStyle(textColor: .textButtonSecondarySelected, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackgroundSelected),
                                 .disabled: Button.StateStyle(textColor: .textButtonSecondaryDisabled, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackgroundDisabled),
                                 .loading: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackground)
-        ])
+                            ])
     }
 
     static var danger: Button.Style {
@@ -54,7 +54,7 @@ public extension Button.Style {
                                 .selected: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerSelected, borderColor: .buttonDangerSelected),
                                 .disabled: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerDisabled, borderColor: .buttonDangerDisabled),
                                 .loading: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDanger, borderColor: .buttonDanger)
-        ])
+                            ])
     }
 
     static var link: Button.Style {
@@ -66,7 +66,7 @@ public extension Button.Style {
                                      .selected: Button.StateStyle(textColor: .textLinkSelected, backgroundColor: .buttonLinkBackgroundSelected, borderColor: backgroundColor),
                                      .disabled: Button.StateStyle(textColor: .textLinkDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
                                      .loading: Button.StateStyle(textColor: .textLink, backgroundColor: backgroundColor, borderColor: backgroundColor)
-        ])
+                                 ])
 
         style.overriddenSizes = linkOverriddenSizes
 
@@ -80,7 +80,7 @@ public extension Button.Style {
                          .selected: Button.StateStyle(textColor: .textButtonPrimaryInverseSelected, backgroundColor: .buttonPrimaryBackgroundSelectedInverse, borderColor: .buttonPrimaryBackgroundSelectedInverse),
                          .disabled: Button.StateStyle(textColor: .textButtonPrimaryInverseDisabled, backgroundColor: .buttonPrimaryBackgroundDisabledInverse, borderColor: .buttonPrimaryBackgroundDisabledInverse),
                          .loading: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse)
-        ])
+                     ])
     }
 
     static var secondaryInverse: Button.Style {
@@ -90,7 +90,7 @@ public extension Button.Style {
                          .selected: Button.StateStyle(textColor: .textButtonSecondaryInverseSelected, backgroundColor: .clear, borderColor: .buttonSecondaryBorderSelectedInverse),
                          .disabled: Button.StateStyle(textColor: .textButtonSecondaryInverseDisabled, backgroundColor: .clear, borderColor: .buttonSecondaryBorderDisabledInverse),
                          .loading: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse)
-        ])
+                     ])
     }
 
     static var linkInverse: Button.Style {
@@ -102,7 +102,7 @@ public extension Button.Style {
                                      .selected: Button.StateStyle(textColor: .textLinkInverseSelected, backgroundColor: .buttonLinkBackgroundSelectedInverse, borderColor: backgroundColor),
                                      .disabled: Button.StateStyle(textColor: .textLinkInverseDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
                                      .loading: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
-        ])
+                                 ])
 
         style.overriddenSizes = linkOverriddenSizes
 

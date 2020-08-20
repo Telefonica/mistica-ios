@@ -154,6 +154,13 @@ public class HighlightedCard: UIView {
         closeButton.imageView?.backgroundColor = UIColor.white.withAlphaComponent(0.7)
         closeButton.imageView?.makeRounded()
     }
+    
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory else { return }
+        updateFonts()
+        updateRightImageViewVisibility()
+    }
 }
 
 // MARK: Custom Accessibilities
@@ -277,13 +284,15 @@ private extension HighlightedCard {
         styleViews()
         updateTapGesture()
         updateColors()
+        updateFonts()
     }
 
     func addViews() {
         addSubview(backgroundImageView, constraints: [
             backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            backgroundImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
+            backgroundImageView.bottomAnchor.constraint(greaterThanOrEqualTo: bottomAnchor),
         ])
         
         addSubview(withDefaultConstraints: horizontalStackView)
@@ -299,13 +308,12 @@ private extension HighlightedCard {
             rightImageViewContainer.widthAnchor.constraint(equalToConstant: 100),
             rightImageView.leadingAnchor.constraint(equalTo: rightImageViewContainer.leadingAnchor),
             rightImageView.trailingAnchor.constraint(equalTo: rightImageViewContainer.trailingAnchor),
-            rightImageView.centerYAnchor.constraint(equalTo: rightImageViewContainer.centerYAnchor),
+            rightImageView.bottomAnchor.constraint(equalTo: rightImageViewContainer.bottomAnchor),
         ])
     }
     
     func layoutView() {
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(lessThanOrEqualToConstant: 188),
             heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
         ])
 
@@ -327,10 +335,8 @@ private extension HighlightedCard {
     }
 
     func styleViews() {
-        titleLabel.font = .title1
         titleLabel.numberOfLines = 2
 
-        subtitleLabel.font = .sub1
         subtitleLabel.numberOfLines = 3
         
         actionButton.isSmall = true
@@ -343,7 +349,7 @@ private extension HighlightedCard {
         rightImageViewContainer.clipsToBounds = true
         rightImageViewContainer.isHidden = true
 
-        backgroundImageView.contentMode = .center
+        backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.clipsToBounds = true
         backgroundImageView.isHidden = true
         
@@ -358,7 +364,11 @@ private extension HighlightedCard {
     }
     
     func updateRightImageViewVisibility() {
-        rightImageViewContainer.isHidden = rightImageView.image == nil
+        if traitCollection.preferredContentSizeCategory.isAccessibilityCategory {
+            rightImageViewContainer.isHidden = true
+        } else {
+            rightImageViewContainer.isHidden = rightImageView.image == nil
+        }
     }
     
     func updateBackgroundImageViewVisibility() {
@@ -369,6 +379,10 @@ private extension HighlightedCard {
         backgroundColor = _style.backgroundColor
         titleLabel.textColor = _style.titleColor
         subtitleLabel.textColor = _style.subtitleColor
+        updateButtonStyle()
+    }
+    
+    func updateButtonStyle() {
         switch actionButtonStyle {
         case .primary:
             actionButton.style = _style.primaryButtonStyle
@@ -377,6 +391,12 @@ private extension HighlightedCard {
         case .link:
             actionButton.style = _style.linkButtonStyle
         }
+    }
+    
+    func updateFonts() {
+        titleLabel.font = .title1
+        subtitleLabel.font = .sub1
+        updateButtonStyle()
     }
     
     func updateTapGesture() {

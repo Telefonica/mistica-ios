@@ -1,4 +1,8 @@
-# v.1.1 - 2020-08-17
+# v.1.1.1 - 2020-08-20
+
+- Fix Movistar prominent colors.
+
+# v.1.1.0 - 2020-08-17
 
 - Add `accessibilityIdentifier` to `SegmentSelector` and `TagView`.
 - Take advantage of updating SwiftFormat rules to avoid conflicts with SwiftFormat 0.45.6.

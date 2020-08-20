@@ -97,11 +97,28 @@ class UICatalogHighlightedCardViewController: UIViewController {
         return cell
     }()
     
-    private lazy var showImageCell: UISegmentedControlTableViewCell = {
+    private lazy var showRightImageCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "ShowImageCell")
         
         cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Yes", at: 1, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = 0
+        cell.segmentedControl.addTarget(self, action: #selector(showRightImagSegmentedControlValueChanged), for: .valueChanged)
+        
+        return cell
+    }()
+    
+    @objc func showRightImagSegmentedControlValueChanged(sender: UISegmentedControl) {
+        let hasImage = sender.selectedSegmentIndex == 1
+        rightImageStyleCell.segmentedControl.isEnabled = hasImage
+    }
+    
+    private lazy var rightImageStyleCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "RightImageStyleCell")
+        
+        cell.segmentedControl.insertSegment(withTitle: "Fit", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Fill", at: 1, animated: false)
+        cell.segmentedControl.isEnabled = showRightImageCell.segmentedControl.selectedSegmentIndex == 1
         cell.segmentedControl.selectedSegmentIndex = 0
         
         return cell
@@ -130,7 +147,7 @@ class UICatalogHighlightedCardViewController: UIViewController {
         [titleCell],
         [subtitleCell],
         [showActionButtonCell, actionButtonCell, actionButtonStyleCell],
-        [showImageCell],
+        [showRightImageCell, rightImageStyleCell],
         [showCloseButtonCell],
         [showCardCell]
     ]
@@ -218,8 +235,14 @@ extension UICatalogHighlightedCardViewController: UITableViewDataSource, UITable
             vc.highlightedCard.showCloseButton = false
         }
         
-        if showImageCell.segmentedControl.selectedSegmentIndex > 0 {
+        if showRightImageCell.segmentedControl.selectedSegmentIndex > 0 {
             vc.highlightedCard.rightImage = .highlightedCardImageSample
+        }
+        
+        if rightImageStyleCell.segmentedControl.selectedSegmentIndex == 0 {
+            vc.highlightedCard.rightImageStyle = .fit
+        } else {
+            vc.highlightedCard.rightImageStyle = .fill
         }
         
         show(vc, sender: self)

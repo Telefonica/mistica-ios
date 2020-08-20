@@ -10,6 +10,11 @@
 import UIKit
 
 public class HighlightedCard: UIView {
+    public enum RightImageStyle {
+        case fit
+        case fill
+    }
+    
     public enum ButtonStyle {
         case link
         case primary
@@ -18,16 +23,23 @@ public class HighlightedCard: UIView {
     
     private lazy var verticalStackView = UIStackView()
     private lazy var horizontalStackView = UIStackView()
-
+    
     private lazy var titleLabel = UILabel()
     private lazy var subtitleLabel = UILabel()
     private lazy var actionButton = Button()
     private lazy var closeButton = UIButton()
-    private lazy var rightImageViewContainer = UIView()
-    private lazy var rightImageView = UIImageView()
+    private lazy var rightImageView = AlignmentImageView()
     private lazy var backgroundImageView = UIImageView()
     private lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(actionButtonTapped))
-
+    
+    private lazy var fitRightImageViewConstraints = [
+        rightImageView.widthAnchor.constraint(lessThanOrEqualToConstant: 100),
+    ]
+    
+    private lazy var fillRightImageViewConstraints = [
+        rightImageView.heightAnchor.constraint(equalTo: rightImageView.widthAnchor, multiplier: 3/2),
+    ]
+    
     public var title: String? {
         get {
             titleLabel.text
@@ -52,6 +64,12 @@ public class HighlightedCard: UIView {
         }
         set {
             subtitleLabel.attributedText = newValue
+        }
+    }
+    
+    public var rightImageStyle: RightImageStyle = .fill {
+        didSet {
+            updateRightImageViewStyle()
         }
     }
     
@@ -88,7 +106,7 @@ public class HighlightedCard: UIView {
     
     public var actionButtonStyle: ButtonStyle = .primary {
         didSet {
-            updateColors()
+            updateActionButtonStyle()
             updateTapGesture()
         }
     }
@@ -124,7 +142,7 @@ public class HighlightedCard: UIView {
             updateColors()
         }
     }
-
+    
     public convenience init(title: String? = nil,
                             subtitle: String? = nil,
                             rightImage: UIImage? = nil,
@@ -135,16 +153,17 @@ public class HighlightedCard: UIView {
         self.rightImage = rightImage
         self.actionButtonStyle = actionButtonStyle
     }
-
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+        rightImageView.backgroundColor = .yellow
     }
-
+    
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override public var intrinsicContentSize: CGSize {
         horizontalStackView.intrinsicContentSize
     }
@@ -174,7 +193,7 @@ public extension HighlightedCard {
             titleLabel.accessibilityLabel = newValue
         }
     }
-
+    
     var titleAccessibilityIdentifier: String? {
         get {
             titleLabel.accessibilityIdentifier
@@ -192,7 +211,7 @@ public extension HighlightedCard {
             subtitleLabel.accessibilityLabel = newValue
         }
     }
-
+    
     var subtitleAccessibilityIdentifier: String? {
         get {
             subtitleLabel.accessibilityIdentifier
@@ -201,7 +220,7 @@ public extension HighlightedCard {
             subtitleLabel.accessibilityIdentifier = newValue
         }
     }
-
+    
     var actionButtonAccessibilityLabel: String? {
         get {
             actionButton.accessibilityLabel
@@ -210,7 +229,7 @@ public extension HighlightedCard {
             actionButton.accessibilityLabel = newValue
         }
     }
-
+    
     var actionButtonAccessibilityIdentifier: String? {
         get {
             actionButton.accessibilityIdentifier
@@ -228,7 +247,7 @@ public extension HighlightedCard {
             closeButton.accessibilityLabel = newValue
         }
     }
-
+    
     var closeButtonAccessibilityIdentifier: String? {
         get {
             closeButton.accessibilityIdentifier
@@ -246,7 +265,7 @@ public extension HighlightedCard {
             rightImageView.accessibilityLabel = newValue
         }
     }
-
+    
     var imageAccessibilityIdentifier: String? {
         get {
             rightImageView.accessibilityIdentifier
@@ -264,7 +283,7 @@ public extension HighlightedCard {
             backgroundImageView.accessibilityLabel = newValue
         }
     }
-
+    
     var backgroundImageAccessibilityIdentifier: String? {
         get {
             backgroundImageView.accessibilityIdentifier
@@ -286,7 +305,7 @@ private extension HighlightedCard {
         updateColors()
         updateFonts()
     }
-
+    
     func addViews() {
         addSubview(backgroundImageView, constraints: [
             backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -303,20 +322,13 @@ private extension HighlightedCard {
             closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor),
             closeButton.heightAnchor.constraint(equalToConstant: 48),
         ])
-        
-        rightImageViewContainer.addSubview(rightImageView, constraints: [
-            rightImageViewContainer.widthAnchor.constraint(equalToConstant: 100),
-            rightImageView.leadingAnchor.constraint(equalTo: rightImageViewContainer.leadingAnchor),
-            rightImageView.trailingAnchor.constraint(equalTo: rightImageViewContainer.trailingAnchor),
-            rightImageView.bottomAnchor.constraint(equalTo: rightImageViewContainer.bottomAnchor),
-        ])
     }
     
     func layoutView() {
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
         ])
-
+        
         verticalStackView.axis = .vertical
         verticalStackView.alignment = .leading
         verticalStackView.isLayoutMarginsRelativeArrangement = true
@@ -331,27 +343,30 @@ private extension HighlightedCard {
         horizontalStackView.axis = .horizontal
         horizontalStackView.spacing = 8
         horizontalStackView.addArrangedSubview(verticalStackView)
-        horizontalStackView.addArrangedSubview(rightImageViewContainer)
+        horizontalStackView.addArrangedSubview(rightImageView)
     }
-
+    
     func styleViews() {
         titleLabel.numberOfLines = 2
-
+        titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        titleLabel.setContentHuggingPriority(.required, for: .vertical)
+        
         subtitleLabel.numberOfLines = 3
+        subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        subtitleLabel.setContentHuggingPriority(.required, for: .vertical)
         
         actionButton.isSmall = true
         actionButton.contentMode = .left
         actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
-
-        rightImageView.contentMode = .scaleAspectFill
+        
         rightImageView.backgroundColor = .clear
-
-        rightImageViewContainer.clipsToBounds = true
-        rightImageViewContainer.isHidden = true
-
-        backgroundImageView.contentMode = .scaleAspectFill
+        rightImageView.clipsToBounds = true
+        rightImageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        updateRightImageViewVisibility()
+        updateRightImageViewStyle()
+        
         backgroundImageView.clipsToBounds = true
-        backgroundImageView.isHidden = true
+        updateBackgroundImageViewVisibility()
         
         closeButton.setImage(.closeButtonBlackSmallIcon, for: .normal)
         closeButton.imageEdgeInsets.left = 8
@@ -365,9 +380,26 @@ private extension HighlightedCard {
     
     func updateRightImageViewVisibility() {
         if traitCollection.preferredContentSizeCategory.isAccessibilityCategory {
-            rightImageViewContainer.isHidden = true
+            rightImageView.isHidden = true
         } else {
-            rightImageViewContainer.isHidden = rightImageView.image == nil
+            rightImageView.isHidden = rightImageView.image == nil
+        }
+    }
+    
+    func updateRightImageViewStyle() {
+        switch rightImageStyle {
+        case .fit:
+            rightImageView.contentMode = .bottomRight
+            rightImageView.horizontalAlignment = .center
+            rightImageView.verticalAlignment = .center
+            NSLayoutConstraint.deactivate(fillRightImageViewConstraints)
+            NSLayoutConstraint.activate(fitRightImageViewConstraints)
+        case .fill:
+            rightImageView.contentMode = .scaleAspectFill
+            rightImageView.horizontalAlignment = .right
+            rightImageView.verticalAlignment = .center
+            NSLayoutConstraint.deactivate(fitRightImageViewConstraints)
+            NSLayoutConstraint.activate(fillRightImageViewConstraints)
         }
     }
     
@@ -379,10 +411,10 @@ private extension HighlightedCard {
         backgroundColor = _style.backgroundColor
         titleLabel.textColor = _style.titleColor
         subtitleLabel.textColor = _style.subtitleColor
-        updateButtonStyle()
+        updateActionButtonStyle()
     }
     
-    func updateButtonStyle() {
+    func updateActionButtonStyle() {
         switch actionButtonStyle {
         case .primary:
             actionButton.style = _style.primaryButtonStyle
@@ -396,7 +428,7 @@ private extension HighlightedCard {
     func updateFonts() {
         titleLabel.font = .title1
         subtitleLabel.font = .sub1
-        updateButtonStyle()
+        updateActionButtonStyle()
     }
     
     func updateTapGesture() {
@@ -406,4 +438,81 @@ private extension HighlightedCard {
     @objc func actionButtonTapped() {
         actionButtonCallback?()
     }
+}
+
+
+class AlignmentImageView: UIImageView {
+    enum HorizontalAlignment {
+        case left, center, right
+    }
+    
+    enum VerticalAlignment {
+        case top, center, bottom
+    }
+    
+    var horizontalAlignment: HorizontalAlignment = .center
+    var verticalAlignment: VerticalAlignment = .center
+    
+    // MARK: Overrides
+    
+    override var image: UIImage? {
+        didSet {
+            updateContentsRect()
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateContentsRect()
+    }
+    
+    
+    // MARK: Content layout
+    
+    private func updateContentsRect() {
+        var contentsRect = CGRect(origin: .zero, size: CGSize(width: 1, height: 1))
+        
+        guard let imageSize = image?.size else {
+            layer.contentsRect = contentsRect
+            return
+        }
+        
+        let viewBounds = bounds
+        let imageViewFactor = viewBounds.size.width / viewBounds.size.height
+        let imageFactor = imageSize.width / imageSize.height
+        
+        if imageFactor > imageViewFactor {
+            // Image is wider than the view, so height will match
+            let scaledImageWidth = viewBounds.size.height * imageFactor
+            let xOffset: CGFloat
+            
+            switch horizontalAlignment {
+            case .left:
+                xOffset = -(scaledImageWidth - viewBounds.size.width) / 2
+            case .right:
+                xOffset = (scaledImageWidth - viewBounds.size.width) / 2
+            case .center:
+                xOffset = 0.0
+            }
+            
+            contentsRect.origin.x = xOffset / scaledImageWidth
+        } else {
+            let scaledImageHeight = viewBounds.size.width / imageFactor
+            let yOffset: CGFloat
+            
+            switch verticalAlignment {
+            case .top:
+                yOffset = -(scaledImageHeight - viewBounds.size.height) / 2
+            case .bottom:
+                yOffset = (scaledImageHeight - viewBounds.size.height) / 2
+            case .center:
+                yOffset = 0.0
+            }
+            
+            contentsRect.origin.y = yOffset / scaledImageHeight
+        }
+        
+        layer.contentsRect = contentsRect
+    }
+    
 }

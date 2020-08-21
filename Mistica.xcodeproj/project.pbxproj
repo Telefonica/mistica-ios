@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6C36487424EC187C008F67A0 /* HighlightedCardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C36487324EC187C008F67A0 /* HighlightedCardStyle.swift */; };
+		6CEAB67124EFD40E004283BE /* AlignmentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEAB67024EFD40E004283BE /* AlignmentImageView.swift */; };
 		6CFFC24424EBCCF40036DB34 /* HighlightedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFFC24324EBCCF40036DB34 /* HighlightedCard.swift */; };
 		6CFFC24624EBCD350036DB34 /* UICatalogHighlightedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFFC24524EBCD350036DB34 /* UICatalogHighlightedCardViewController.swift */; };
 		B413033724B75D6700212D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B413033624B75D6700212D16 /* Assets.xcassets */; };
@@ -152,6 +153,7 @@
 
 /* Begin PBXFileReference section */
 		6C36487324EC187C008F67A0 /* HighlightedCardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardStyle.swift; sourceTree = "<group>"; };
+		6CEAB67024EFD40E004283BE /* AlignmentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentImageView.swift; sourceTree = "<group>"; };
 		6CFFC24224EBCCE60036DB34 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6CFFC24324EBCCF40036DB34 /* HighlightedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCard.swift; sourceTree = "<group>"; };
 		6CFFC24524EBCD350036DB34 /* UICatalogHighlightedCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogHighlightedCardViewController.swift; sourceTree = "<group>"; };
@@ -797,6 +799,7 @@
 				B4D8ECDC24B4DAB6002F3AD5 /* ScrollStackView.swift */,
 				B4D8ECD924B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift */,
 				B8DD218624D17BFD0096D68C /* SpacerView.swift */,
+				6CEAB67024EFD40E004283BE /* AlignmentImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -998,6 +1001,7 @@
 			files = (
 				B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */,
 				B4D8ECB524B4CB33002F3AD5 /* FormView.swift in Sources */,
+				6CEAB67124EFD40E004283BE /* AlignmentImageView.swift in Sources */,
 				B4D8ED2E24B5C7A4002F3AD5 /* Optional+Utils.swift in Sources */,
 				B4D8ED2324B5C5AA002F3AD5 /* KeyboardNotificationCenter.swift in Sources */,
 				B4D8ECC624B4D0DC002F3AD5 /* UIColor+Utils.swift in Sources */,

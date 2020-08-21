@@ -32,14 +32,6 @@ public class HighlightedCard: UIView {
     private lazy var backgroundImageView = UIImageView()
     private lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(actionButtonTapped))
     
-    private lazy var fitRightImageViewConstraints = [
-        rightImageView.widthAnchor.constraint(lessThanOrEqualToConstant: 100),
-    ]
-    
-    private lazy var fillRightImageViewConstraints = [
-        rightImageView.heightAnchor.constraint(equalTo: rightImageView.widthAnchor, multiplier: 3/2),
-    ]
-    
     public var title: String? {
         get {
             titleLabel.text
@@ -157,7 +149,6 @@ public class HighlightedCard: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        rightImageView.backgroundColor = .yellow
     }
     
     required init?(coder _: NSCoder) {
@@ -327,6 +318,7 @@ private extension HighlightedCard {
     func layoutView() {
         NSLayoutConstraint.activate([
             heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
+            rightImageView.widthAnchor.constraint(lessThanOrEqualToConstant: 100)
         ])
         
         verticalStackView.axis = .vertical
@@ -361,7 +353,7 @@ private extension HighlightedCard {
         
         rightImageView.backgroundColor = .clear
         rightImageView.clipsToBounds = true
-        rightImageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+
         updateRightImageViewVisibility()
         updateRightImageViewStyle()
         
@@ -389,17 +381,13 @@ private extension HighlightedCard {
     func updateRightImageViewStyle() {
         switch rightImageStyle {
         case .fit:
-            rightImageView.contentMode = .bottomRight
-            rightImageView.horizontalAlignment = .center
-            rightImageView.verticalAlignment = .center
-            NSLayoutConstraint.deactivate(fillRightImageViewConstraints)
-            NSLayoutConstraint.activate(fitRightImageViewConstraints)
+            rightImageView.contentMode = .scaleAspectFit
+            rightImageView.verticalAlignment = .bottom
+            rightImageView.horizontalAlignment = .right
         case .fill:
             rightImageView.contentMode = .scaleAspectFill
-            rightImageView.horizontalAlignment = .right
             rightImageView.verticalAlignment = .center
-            NSLayoutConstraint.deactivate(fitRightImageViewConstraints)
-            NSLayoutConstraint.activate(fillRightImageViewConstraints)
+            rightImageView.horizontalAlignment = .center
         }
     }
     
@@ -438,81 +426,4 @@ private extension HighlightedCard {
     @objc func actionButtonTapped() {
         actionButtonCallback?()
     }
-}
-
-
-class AlignmentImageView: UIImageView {
-    enum HorizontalAlignment {
-        case left, center, right
-    }
-    
-    enum VerticalAlignment {
-        case top, center, bottom
-    }
-    
-    var horizontalAlignment: HorizontalAlignment = .center
-    var verticalAlignment: VerticalAlignment = .center
-    
-    // MARK: Overrides
-    
-    override var image: UIImage? {
-        didSet {
-            updateContentsRect()
-        }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        updateContentsRect()
-    }
-    
-    
-    // MARK: Content layout
-    
-    private func updateContentsRect() {
-        var contentsRect = CGRect(origin: .zero, size: CGSize(width: 1, height: 1))
-        
-        guard let imageSize = image?.size else {
-            layer.contentsRect = contentsRect
-            return
-        }
-        
-        let viewBounds = bounds
-        let imageViewFactor = viewBounds.size.width / viewBounds.size.height
-        let imageFactor = imageSize.width / imageSize.height
-        
-        if imageFactor > imageViewFactor {
-            // Image is wider than the view, so height will match
-            let scaledImageWidth = viewBounds.size.height * imageFactor
-            let xOffset: CGFloat
-            
-            switch horizontalAlignment {
-            case .left:
-                xOffset = -(scaledImageWidth - viewBounds.size.width) / 2
-            case .right:
-                xOffset = (scaledImageWidth - viewBounds.size.width) / 2
-            case .center:
-                xOffset = 0.0
-            }
-            
-            contentsRect.origin.x = xOffset / scaledImageWidth
-        } else {
-            let scaledImageHeight = viewBounds.size.width / imageFactor
-            let yOffset: CGFloat
-            
-            switch verticalAlignment {
-            case .top:
-                yOffset = -(scaledImageHeight - viewBounds.size.height) / 2
-            case .bottom:
-                yOffset = (scaledImageHeight - viewBounds.size.height) / 2
-            case .center:
-                yOffset = 0.0
-            }
-            
-            contentsRect.origin.y = yOffset / scaledImageHeight
-        }
-        
-        layer.contentsRect = contentsRect
-    }
-    
 }

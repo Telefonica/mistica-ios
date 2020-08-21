@@ -48,7 +48,7 @@ class UICatalogHighlightedCardViewController: UIViewController {
     
     private lazy var subtitleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Subtitle")
-        cell.textField.text = "Use our tools to resolve your technical problems"
+        cell.textField.text = "Use our tool to solve your technical problems"
         return cell
     }()
     

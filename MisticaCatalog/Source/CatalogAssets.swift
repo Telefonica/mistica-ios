@@ -32,5 +32,5 @@ extension UIImage {
     static let tabItemIcon = UIImage(named: "tabItem", in: .misticaCatalog, compatibleWith: nil)!
     
     static let highlightedCardImageSample = UIImage(named: "HighlightedCardImageSample", in: .misticaCatalog, compatibleWith: nil)!
-    static let highlightedCardSpaceImageSample = UIImage(named: "HighlightedCardSpaceImageSample", in: .misticaCatalog, compatibleWith: nil)!
+    static let highlightedCardBackgroundImageSample = UIImage(named: "HighlightedCardBackgroundSample", in: .misticaCatalog, compatibleWith: nil)!
 }

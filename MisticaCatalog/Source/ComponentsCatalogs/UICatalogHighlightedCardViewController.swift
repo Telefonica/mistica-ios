@@ -224,7 +224,7 @@ extension UICatalogHighlightedCardViewController: UITableViewDataSource, UITable
         }
         
         if showBackgrounImageCell.segmentedControl.selectedSegmentIndex > 0 {
-            vc.highlightedCard.backgroundImage = .highlightedCardSpaceImageSample
+            vc.highlightedCard.backgroundImage = .highlightedCardBackgroundImageSample
         }
         
         if showActionButtonCell.segmentedControl.selectedSegmentIndex > 0 {

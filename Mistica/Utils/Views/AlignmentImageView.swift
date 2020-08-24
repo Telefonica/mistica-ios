@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Acts as a `UIImageView`  that can be aligned both vertically and horizontally based on the `contentMode`,
+/// Acts as a `UIImageView` that can be aligned both vertically and horizontally based on the `contentMode`.
 @dynamicMemberLookup
 class AlignmentImageView: UIView {
     enum HorizontalAlignment {

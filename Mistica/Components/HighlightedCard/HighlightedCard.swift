@@ -9,6 +9,14 @@
 import UIKit
 
 public class HighlightedCard: UIView {
+    private enum Constants {
+        static let cornerRadius: CGFloat = 4
+        static let closeButtonAlpha: CGFloat = 0.7
+        static let closeButtonHeight: CGFloat = 48
+        static let minHeight: CGFloat = 100
+        static let maxRightImageWidth: CGFloat = 100
+    }
+    
     public enum RightImageStyle {
         case fit
         case fill
@@ -160,7 +168,7 @@ public class HighlightedCard: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        closeButton.imageView?.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+        closeButton.imageView?.backgroundColor = UIColor.white.withAlphaComponent(Constants.closeButtonAlpha)
         closeButton.imageView?.makeRounded()
     }
     
@@ -310,14 +318,14 @@ private extension HighlightedCard {
             closeButton.topAnchor.constraint(equalTo: topAnchor),
             closeButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor),
-            closeButton.heightAnchor.constraint(equalToConstant: 48),
+            closeButton.heightAnchor.constraint(equalToConstant: Constants.closeButtonHeight),
         ])
     }
     
     func layoutView() {
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
-            rightImageView.widthAnchor.constraint(lessThanOrEqualToConstant: 100)
+            heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.minHeight),
+            rightImageView.widthAnchor.constraint(lessThanOrEqualToConstant: Constants.maxRightImageWidth)
         ])
         
         verticalStackView.axis = .vertical
@@ -366,7 +374,7 @@ private extension HighlightedCard {
         closeButton.isHidden = true
         
         addBorder()
-        makeRounded(cornerRadius: 4)
+        makeRounded(cornerRadius: Constants.cornerRadius)
     }
     
     func updateRightImageViewVisibility() {

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 
-
 import UIKit
 
 public class HighlightedCard: UIView {

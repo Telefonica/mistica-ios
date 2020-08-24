@@ -153,6 +153,7 @@
 
 /* Begin PBXFileReference section */
 		6C36487324EC187C008F67A0 /* HighlightedCardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardStyle.swift; sourceTree = "<group>"; };
+		6C5AF19624F3CB290017145D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		6CEAB67024EFD40E004283BE /* AlignmentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentImageView.swift; sourceTree = "<group>"; };
 		6CFFC24224EBCCE60036DB34 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6CFFC24324EBCCF40036DB34 /* HighlightedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCard.swift; sourceTree = "<group>"; };
@@ -342,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				B4DFA20524B74F11004C908E /* Mistica.podspec */,
+				6C5AF19624F3CB290017145D /* CHANGELOG.md */,
 				B4D8EB8A24B47869002F3AD5 /* README.md */,
 				B4DFA20324B74F11004C908E /* Cartfile */,
 				B4D8EB8124B46B91002F3AD5 /* Mistica */,

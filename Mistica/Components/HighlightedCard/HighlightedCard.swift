@@ -248,7 +248,7 @@ public extension HighlightedCard {
         }
     }
     
-    var imageAccessibilityLabel: String? {
+    var rightImageAccessibilityLabel: String? {
         get {
             rightImageView.accessibilityLabel
         }
@@ -257,7 +257,7 @@ public extension HighlightedCard {
         }
     }
     
-    var imageAccessibilityIdentifier: String? {
+    var rightImageAccessibilityIdentifier: String? {
         get {
             rightImageView.accessibilityIdentifier
         }

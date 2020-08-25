@@ -267,7 +267,7 @@ private class HighlightedCardViewSampleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Header"
+        title = "HighlightedCard"
     }
 }
 

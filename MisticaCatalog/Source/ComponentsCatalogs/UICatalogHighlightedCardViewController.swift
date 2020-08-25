@@ -257,9 +257,9 @@ private class HighlightedCardViewSampleViewController: UIViewController {
         view.backgroundColor = .background
         
         view.addSubview(highlightedCard, constraints: [
-            highlightedCard.topAnchor.constraint(equalTo: view.topAnchor, constant: 24),
-            highlightedCard.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-            highlightedCard.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)
+            highlightedCard.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            highlightedCard.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
+            highlightedCard.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24)
         ])
         
         self.view = view

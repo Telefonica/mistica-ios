@@ -326,7 +326,8 @@ private extension HighlightedCard {
         verticalStackView.axis = .vertical
         verticalStackView.alignment = .leading
         verticalStackView.isLayoutMarginsRelativeArrangement = true
-        verticalStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 0)
+        verticalStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16)
+        verticalStackView.insetsLayoutMarginsFromSafeArea = false
         verticalStackView.addArrangedSubview(titleLabel)
         verticalStackView.addArrangedSubview(subtitleLabel)
         verticalStackView.addArrangedSubview(actionButton)
@@ -355,6 +356,7 @@ private extension HighlightedCard {
         
         rightImageView.backgroundColor = .clear
         rightImageView.clipsToBounds = true
+        rightImageView.setContentCompressionResistancePriority(.required, for: .horizontal)
 
         updateRightImageViewVisibility()
         updateRightImageViewStyle()

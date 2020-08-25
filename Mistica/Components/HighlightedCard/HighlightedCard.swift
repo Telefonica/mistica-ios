@@ -131,13 +131,8 @@ public class HighlightedCard: UIView {
         }
     }
     
-    private var _style: HighlightedCardStyle = .normal
     public var style: HighlightedCardStyle {
-        get {
-            _style
-        }
-        set {
-            _style = newValue
+        didSet {
             updateColors()
         }
     }

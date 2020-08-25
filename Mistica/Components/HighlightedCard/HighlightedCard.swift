@@ -131,7 +131,7 @@ public class HighlightedCard: UIView {
         }
     }
     
-    public var style: HighlightedCardStyle {
+    public var style: HighlightedCardStyle = .normal {
         didSet {
             updateColors()
         }
@@ -398,20 +398,20 @@ private extension HighlightedCard {
     }
     
     func updateColors() {
-        backgroundColor = _style.backgroundColor
-        titleLabel.textColor = _style.titleColor
-        subtitleLabel.textColor = _style.subtitleColor
+        backgroundColor = style.backgroundColor
+        titleLabel.textColor = style.titleColor
+        subtitleLabel.textColor = style.subtitleColor
         updateActionButtonStyle()
     }
     
     func updateActionButtonStyle() {
         switch actionButtonStyle {
         case .primary:
-            actionButton.style = _style.primaryButtonStyle
+            actionButton.style = style.primaryButtonStyle
         case .secondary:
-            actionButton.style = _style.secondaryButtonStyle
+            actionButton.style = style.secondaryButtonStyle
         case .link:
-            actionButton.style = _style.linkButtonStyle
+            actionButton.style = style.linkButtonStyle
         }
     }
     

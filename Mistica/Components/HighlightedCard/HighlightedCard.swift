@@ -15,6 +15,7 @@ public class HighlightedCard: UIView {
         static let closeButtonHeight: CGFloat = 48
         static let minHeight: CGFloat = 100
         static let maxRightImageWidth: CGFloat = 100
+        static let defaultTextEdgeInsets = NSDirectionalEdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16)
     }
     
     public enum RightImageStyle {
@@ -326,7 +327,7 @@ private extension HighlightedCard {
         verticalStackView.axis = .vertical
         verticalStackView.alignment = .leading
         verticalStackView.isLayoutMarginsRelativeArrangement = true
-        verticalStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16)
+        verticalStackView.directionalLayoutMargins = Constants.defaultTextEdgeInsets
         verticalStackView.insetsLayoutMarginsFromSafeArea = false
         verticalStackView.addArrangedSubview(titleLabel)
         verticalStackView.addArrangedSubview(subtitleLabel)
@@ -379,6 +380,12 @@ private extension HighlightedCard {
             rightImageView.isHidden = true
         } else {
             rightImageView.isHidden = rightImageView.image == nil
+        }
+        
+        if rightImageView.isHidden {
+            verticalStackView.directionalLayoutMargins.trailing = Constants.defaultTextEdgeInsets.trailing
+        } else {
+            verticalStackView.directionalLayoutMargins.trailing = 0
         }
     }
     

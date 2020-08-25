@@ -18,6 +18,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case fonts
     case forms
     case header
+    case highlightedCard
     case inputFields
     case lists
     case scrollContentIndicator
@@ -26,7 +27,6 @@ private enum UICatalogRow: Int, CaseIterable {
     case tag
     case tooltip
     case viewStates
-    case highlightedCard
 }
 
 private enum Constants {

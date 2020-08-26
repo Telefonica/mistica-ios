@@ -26,7 +26,7 @@ All styles, if presented modally, will show a 'close' button. If they are presen
 For the primary action, there are three different options: 
 
 - **Button:** `FeedbackPrimaryAction.button(title: "Primary button", completion: { ... })`
-- **Retry Button:** `FeedbackPrimaryAction.retryButton(title: "Primary button", retryCompletion: { completionHanlder in ... })`
+- **Retry Button:** `FeedbackPrimaryAction.retryButton(title: "Primary button", loadingTitle: nil, retryCompletion: { completionHanlder in ... })`
 - **No button:** `FeedbackPrimaryAction.none`
 
 | Button    | Retry Button     |

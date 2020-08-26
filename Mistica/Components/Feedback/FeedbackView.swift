@@ -15,7 +15,7 @@ public typealias FeedbackRetryCompletion = (@escaping () -> Void) -> Void
 public enum FeedbackPrimaryAction {
     case none
     case button(title: String, completion: FeedbackCompletion)
-    case retryButton(title: String, retryCompletion: FeedbackRetryCompletion)
+    case retryButton(title: String, loadingTitle: String?, retryCompletion: FeedbackRetryCompletion)
 }
 
 extension FeedbackPrimaryAction: Equatable {
@@ -25,8 +25,8 @@ extension FeedbackPrimaryAction: Equatable {
             return true
         case (.button(let lhsTitle, _), .button(let rhsTitle, _)):
             return lhsTitle == rhsTitle
-        case (.retryButton(let lhsTitle, _), .retryButton(let rhsTitle, _)):
-            return lhsTitle == rhsTitle
+        case (.retryButton(let lhsTitle, let lhsLoadingTitle, _), .retryButton(let rhsTitle, let rhsLoadingTitle, _)):
+            return lhsTitle == rhsTitle && lhsLoadingTitle == rhsLoadingTitle
         default:
             return false
         }
@@ -118,8 +118,8 @@ public class FeedbackView: UIView {
         switch primaryAction {
         case .button(let title, _):
             button = Button(style: style.feedbackPrimary, title: title)
-        case .retryButton(let title, _):
-            button = Button(style: style.feedbackPrimary, title: title)
+        case .retryButton(let title, let loadingTitle, _):
+            button = Button(style: style.feedbackPrimary, title: title, loadingTitle: loadingTitle)
         case .none:
             button = nil
         }
@@ -288,7 +288,7 @@ private extension FeedbackView {
         switch primaryAction {
         case .button(_, let completion):
             completion()
-        case .retryButton(let title, let completion):
+        case .retryButton(let title, _, let completion):
             primaryButton?.state = .loading
             prepareHapticFeedback()
             completion { [weak self] in

@@ -35,8 +35,8 @@ extension FeedbackPrimaryAction: Equatable {
 
 public enum FeedbackSecondaryAction {
     case none
-    case button(title: String, completion: () -> Void)
-    case link(title: String, completion: () -> Void)
+    case button(title: String, completion: FeedbackCompletion)
+    case link(title: String, completion: FeedbackCompletion)
 }
 
 extension FeedbackSecondaryAction: Equatable {

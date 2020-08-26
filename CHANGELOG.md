@@ -1,6 +1,7 @@
 # v.1.2 - 2020-08-24
 
 - Add `HighlightedCard` component.
+- Add app icon to example app.
 
 # v.1.1 - 2020-08-17
 

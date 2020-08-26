@@ -18,6 +18,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case fonts
     case forms
     case header
+    case highlightedCard
     case inputFields
     case lists
     case scrollContentIndicator
@@ -131,6 +132,8 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogHeaderViewController(), sender: self)
         case .controls:
             show(UICatalogControlsViewController(), sender: self)
+        case .highlightedCard:
+            show(UICatalogHighlightedCardViewController(), sender: self)
         }
     }
 }
@@ -206,6 +209,8 @@ private extension UICatalogRow {
             return "Headers"
         case .controls:
             return "Controls"
+        case .highlightedCard:
+            return "HighlightedCard"
         }
     }
 
@@ -243,6 +248,8 @@ private extension UICatalogRow {
             return .headerIcon
         case .controls:
             return .controlsIcon
+        case .highlightedCard:
+            return .highlightedCardIcon
         }
     }
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C36487424EC187C008F67A0 /* HighlightedCardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C36487324EC187C008F67A0 /* HighlightedCardStyle.swift */; };
+		6CEAB67124EFD40E004283BE /* AlignmentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEAB67024EFD40E004283BE /* AlignmentImageView.swift */; };
+		6CFFC24424EBCCF40036DB34 /* HighlightedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFFC24324EBCCF40036DB34 /* HighlightedCard.swift */; };
+		6CFFC24624EBCD350036DB34 /* UICatalogHighlightedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFFC24524EBCD350036DB34 /* UICatalogHighlightedCardViewController.swift */; };
 		B413033724B75D6700212D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B413033624B75D6700212D16 /* Assets.xcassets */; };
 		B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413036A24B78C2200212D16 /* Bundle+Mistica.swift */; };
 		B41303CE24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41303CD24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift */; };
@@ -148,6 +152,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C36487324EC187C008F67A0 /* HighlightedCardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardStyle.swift; sourceTree = "<group>"; };
+		6C5AF19624F3CB290017145D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		6CEAB67024EFD40E004283BE /* AlignmentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentImageView.swift; sourceTree = "<group>"; };
+		6CFFC24224EBCCE60036DB34 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6CFFC24324EBCCF40036DB34 /* HighlightedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCard.swift; sourceTree = "<group>"; };
+		6CFFC24524EBCD350036DB34 /* UICatalogHighlightedCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogHighlightedCardViewController.swift; sourceTree = "<group>"; };
 		B413033624B75D6700212D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B413036A24B78C2200212D16 /* Bundle+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Mistica.swift"; sourceTree = "<group>"; };
 		B413037024B85A0400212D16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -319,10 +329,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CFFC24124EBCCC60036DB34 /* HighlightedCard */ = {
+			isa = PBXGroup;
+			children = (
+				6CFFC24224EBCCE60036DB34 /* README.md */,
+				6CFFC24324EBCCF40036DB34 /* HighlightedCard.swift */,
+				6C36487324EC187C008F67A0 /* HighlightedCardStyle.swift */,
+			);
+			path = HighlightedCard;
+			sourceTree = "<group>";
+		};
 		B4D8EB7524B46B91002F3AD5 = {
 			isa = PBXGroup;
 			children = (
 				B4DFA20524B74F11004C908E /* Mistica.podspec */,
+				6C5AF19624F3CB290017145D /* CHANGELOG.md */,
 				B4D8EB8A24B47869002F3AD5 /* README.md */,
 				B4DFA20324B74F11004C908E /* Cartfile */,
 				B4D8EB8124B46B91002F3AD5 /* Mistica */,
@@ -599,6 +620,7 @@
 				B4D8EBB524B4CB31002F3AD5 /* Feedback */,
 				B4D8EC4624B4CB33002F3AD5 /* Form */,
 				B4D8EBE224B4CB32002F3AD5 /* Header */,
+				6CFFC24124EBCCC60036DB34 /* HighlightedCard */,
 				B4D8EBD024B4CB32002F3AD5 /* InputField */,
 				B4D8EC2C24B4CB33002F3AD5 /* Lists */,
 				B4D8EBAD24B4CB31002F3AD5 /* Popover */,
@@ -779,6 +801,7 @@
 				B4D8ECDC24B4DAB6002F3AD5 /* ScrollStackView.swift */,
 				B4D8ECD924B4DA87002F3AD5 /* BoundsChangeInvalidatingFlowLayout.swift */,
 				B8DD218624D17BFD0096D68C /* SpacerView.swift */,
+				6CEAB67024EFD40E004283BE /* AlignmentImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -832,6 +855,7 @@
 				B89E6CCA24D811CD0029D8EE /* UICatalogTagsViewController.swift */,
 				B89E6CCE24D811CE0029D8EE /* UICatalogViewStatesViewController.swift */,
 				B83050C224DBFDDE00C7EAA2 /* UICatalogControlsViewController.swift */,
+				6CFFC24524EBCD350036DB34 /* UICatalogHighlightedCardViewController.swift */,
 			);
 			path = ComponentsCatalogs;
 			sourceTree = "<group>";
@@ -979,6 +1003,7 @@
 			files = (
 				B413036B24B78C2200212D16 /* Bundle+Mistica.swift in Sources */,
 				B4D8ECB524B4CB33002F3AD5 /* FormView.swift in Sources */,
+				6CEAB67124EFD40E004283BE /* AlignmentImageView.swift in Sources */,
 				B4D8ED2E24B5C7A4002F3AD5 /* Optional+Utils.swift in Sources */,
 				B4D8ED2324B5C5AA002F3AD5 /* KeyboardNotificationCenter.swift in Sources */,
 				B4D8ECC624B4D0DC002F3AD5 /* UIColor+Utils.swift in Sources */,
@@ -1052,6 +1077,7 @@
 				B41303CE24B8637C00212D16 /* UITableViewHeaderFooterView+Utils.swift in Sources */,
 				B4D8EC9B24B4CB33002F3AD5 /* ButtonContentView.swift in Sources */,
 				B4D8EC9624B4CB33002F3AD5 /* LoadErrorViewControllerLifecycleDelegate.swift in Sources */,
+				6CFFC24424EBCCF40036DB34 /* HighlightedCard.swift in Sources */,
 				B4D8EC7024B4CB33002F3AD5 /* PasswordInputFieldValidationStrategy.swift in Sources */,
 				B4D8EC8824B4CB33002F3AD5 /* CroutonConfig.swift in Sources */,
 				B4D8ECE324B4DD60002F3AD5 /* SeparatorView.swift in Sources */,
@@ -1062,6 +1088,7 @@
 				B8DD218124D17BBD0096D68C /* PopoverView.swift in Sources */,
 				B4D8ED0024B5B513002F3AD5 /* PaddingLabel.swift in Sources */,
 				B4D8ED1F24B5BA53002F3AD5 /* IntrinsicHeightTextView.swift in Sources */,
+				6C36487424EC187C008F67A0 /* HighlightedCardStyle.swift in Sources */,
 				B4D8ED3824B5EF85002F3AD5 /* Mistica.swift in Sources */,
 				B4D8EC9324B4CB33002F3AD5 /* Segment.swift in Sources */,
 				B4D8EC8C24B4CB33002F3AD5 /* SegmentCell.swift in Sources */,
@@ -1080,6 +1107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B89E6CDD24D811CE0029D8EE /* UICatalogFormViewController.swift in Sources */,
+				6CFFC24624EBCD350036DB34 /* UICatalogHighlightedCardViewController.swift in Sources */,
 				B89E6D0824D8208B0029D8EE /* UIImage+Utils.swift in Sources */,
 				B89E6CFC24D81B510029D8EE /* UISwitchTableViewCell.swift in Sources */,
 				B89E6CE824D811CE0029D8EE /* UICatalogCroutonViewController.swift in Sources */,

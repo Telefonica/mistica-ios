@@ -1,3 +1,8 @@
+# v.1.2.0 - 2020-08-26
+
+- Add `HighlightedCard` component.
+- Add app icon to example app.
+
 # v.1.1.1 - 2020-08-20
 
 - Fix Movistar prominent colors.

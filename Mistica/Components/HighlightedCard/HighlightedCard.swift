@@ -15,7 +15,7 @@ public class HighlightedCard: UIView {
         static let closeButtonHeight: CGFloat = 48
         static let minHeight: CGFloat = 100
         static let maxRightImageWidth: CGFloat = 100
-        static let defaultTextEdgeInsets = NSDirectionalEdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16)
+        static let defaultTextEdgeInsets = NSDirectionalEdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 56)
     }
     
     public enum RightImageStyle {

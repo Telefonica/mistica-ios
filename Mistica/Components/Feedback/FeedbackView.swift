@@ -10,10 +10,12 @@ import Lottie
 import UIKit
 
 public typealias FeedbackCompletion = () -> Void
+public typealias FeedbackRetryCompletion = (@escaping () -> Void) -> Void
 
 public enum FeedbackPrimaryAction {
     case none
     case button(title: String, completion: FeedbackCompletion)
+    case retryButton(title: String, loadingTitle: String?, retryCompletion: FeedbackRetryCompletion)
 }
 
 extension FeedbackPrimaryAction: Equatable {
@@ -23,6 +25,8 @@ extension FeedbackPrimaryAction: Equatable {
             return true
         case (.button(let lhsTitle, _), .button(let rhsTitle, _)):
             return lhsTitle == rhsTitle
+        case (.retryButton(let lhsTitle, let lhsLoadingTitle, _), .retryButton(let rhsTitle, let rhsLoadingTitle, _)):
+            return lhsTitle == rhsTitle && lhsLoadingTitle == rhsLoadingTitle
         default:
             return false
         }
@@ -110,14 +114,17 @@ public class FeedbackView: UIView {
     }()
 
     private lazy var primaryButton: Button? = {
+        let button: Button?
         switch primaryAction {
-        case .none:
-            return nil
         case .button(let title, _):
-            let button = Button(style: style.feedbackPrimary, title: title)
-            button.addTarget(self, action: #selector(primaryButtonTapped), for: .touchUpInside)
-            return button
+            button = Button(style: style.feedbackPrimary, title: title)
+        case .retryButton(let title, let loadingTitle, _):
+            button = Button(style: style.feedbackPrimary, title: title, loadingTitle: loadingTitle)
+        case .none:
+            button = nil
         }
+        button?.addTarget(self, action: #selector(primaryButtonTapped), for: .touchUpInside)
+        return button
     }()
 
     private lazy var secondaryButton: Button? = {
@@ -197,10 +204,7 @@ public extension FeedbackView {
             self.animationFired = true
             self.animator.startAnimation(afterDelay: Constants.animationDelay)
             self.animatedIcon.play()
-            Timer.scheduledTimer(withTimeInterval: self.style.hapticFeedbackDelay, repeats: false) { _ in
-                self.feedbackGenerator?.notificationOccurred(self.style.hapticFeedbackStyle)
-                self.feedbackGenerator = nil
-            }
+            self.triggerHapticFeedback()
         }
     }
 }
@@ -265,13 +269,35 @@ private extension FeedbackView {
             self.contentContainerStackView.alpha = 1
             self.contentContainerStackView.transform = CGAffineTransform(translationX: 0, y: 0)
         }
+        prepareHapticFeedback()
+    }
+
+    func prepareHapticFeedback() {
         feedbackGenerator?.prepare()
+    }
+
+    func triggerHapticFeedback() {
+        Timer.scheduledTimer(withTimeInterval: style.hapticFeedbackDelay, repeats: false) { [weak self] _ in
+            guard let self = self else { return }
+            self.feedbackGenerator?.notificationOccurred(self.style.hapticFeedbackStyle)
+            self.feedbackGenerator = nil
+        }
     }
 
     @objc func primaryButtonTapped() {
         switch primaryAction {
         case .button(_, let completion):
             completion()
+        case .retryButton(let title, _, let completion):
+            primaryButton?.state = .loading
+            prepareHapticFeedback()
+            completion { [weak self] in
+                self?.primaryButton?.title = title
+                self?.primaryButton?.state = .normal
+                DispatchQueue.main.async {
+                    self?.triggerHapticFeedback()
+                }
+            }
         case .none:
             break
         }

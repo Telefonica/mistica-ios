@@ -39,6 +39,29 @@ class UICatalogFeedbacksViewController: UITableViewController {
         return cell
     }()
 
+    private lazy var primaryActionLoadingTitleCell: UITextFieldTableViewCell = {
+        let cell = UITextFieldTableViewCell(reuseIdentifier: "primaryActionLoadingTitleCell")
+        cell.textField.text = "Loading Title"
+        cell.textField.placeholder = "Primary Loading Title"
+        return cell
+    }()
+
+    private lazy var primaryActionLoadingTitleVisibleCell: UISwitchTableViewCell = {
+        let cell = UISwitchTableViewCell(reuseIdentifier: "primaryActionLoadingTitleVisibleCell")
+        cell.isOn = true
+        cell.textLabel?.text = "Show Primary Loading Title"
+        return cell
+    }()
+
+    private lazy var primaryActionStyleCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "primaryActionStyleCell")
+        cell.segmentedControl.insertSegment(withTitle: "None", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Button", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Retry Button", at: 2, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = 1
+        return cell
+    }()
+
     private lazy var secondaryActionStyleCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "secondaryActionStyleCell")
         cell.segmentedControl.insertSegment(withTitle: "None", at: 0, animated: false)
@@ -88,7 +111,7 @@ class UICatalogFeedbacksViewController: UITableViewController {
     private lazy var cells = [
         [titleCell],
         [subtitleCell],
-        [primaryActionTitleCell],
+        [primaryActionStyleCell, primaryActionTitleCell, primaryActionLoadingTitleCell, primaryActionLoadingTitleVisibleCell],
         [secondaryActionStyleCell, secondaryActionTitleCell],
         [extraContentCell],
         [feedbackStyleCell],
@@ -152,7 +175,9 @@ extension UICatalogFeedbacksViewController {
 
 private extension UICatalogFeedbacksViewController {
     func buildConfiguration() -> FeedbackConfiguration {
-        let primaryAction = buildPrimaryAction(title: primaryActionTitleCell.textField.text ?? "")
+        let primaryAction = buildPrimaryAction(for: primaryActionStyleCell.segmentedControl.selectedSegmentIndex,
+                                               title: primaryActionTitleCell.textField.text ?? "",
+                                               loadingTitle: primaryActionLoadingTitleVisibleCell.isOn ? primaryActionLoadingTitleCell.textField.text : nil)
         let secondaryAction = buildSecondaryAction(for: secondaryActionStyleCell.segmentedControl.selectedSegmentIndex,
                                                    title: secondaryActionTitleCell.textField.text ?? "")
         let shouldUseExtraContent = extraContentCell.segmentedControl.selectedSegmentIndex == 1
@@ -193,11 +218,28 @@ private extension UICatalogFeedbacksViewController {
         return stackView
     }
 
-    func buildPrimaryAction(title: String) -> FeedbackPrimaryAction {
-        let primaryActionCompletion: FeedbackCompletion = { [weak self] in
-            self?.showAlert(withTitle: "Primary Action", message: nil, cancelActionTitle: "OK")
+    func buildPrimaryAction(for selectedIndex: Int, title: String, loadingTitle: String? = nil) -> FeedbackPrimaryAction {
+        switch selectedIndex {
+        case 0:
+            return .none
+        case 1:
+            let primaryActionCompletion: FeedbackCompletion = { [weak self] in
+                self?.showAlert(withTitle: "Primary Action", message: nil, cancelActionTitle: "OK")
+            }
+            return .button(title: title, completion: primaryActionCompletion)
+        case 2:
+            let retryablePrimaryActionCompletion: FeedbackRetryCompletion = { [weak self] completionRetryHanlder in
+                DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+                    DispatchQueue.main.async {
+                        completionRetryHanlder()
+                        self?.showAlert(withTitle: "Primary Action", message: nil, cancelActionTitle: "OK")
+                    }
+                }
+            }
+            return .retryButton(title: title, loadingTitle: loadingTitle, retryCompletion: retryablePrimaryActionCompletion)
+        default:
+            fatalError("Unknown secondary action selected for index: \(selectedIndex)")
         }
-        return .button(title: title, completion: primaryActionCompletion)
     }
 
     func buildSecondaryAction(for selectedIndex: Int, title: String) -> FeedbackSecondaryAction {

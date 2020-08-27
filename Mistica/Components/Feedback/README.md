@@ -23,10 +23,24 @@ All styles, if presented modally, will show a 'close' button. If they are presen
 
 ### Primary Action
 
-The primary action button is optional. The title and action can be configured when creating the `FeedbackConfiguration`:
+For the primary action, there are three different options: 
 
+- **Button:** `FeedbackPrimaryAction.button(title: "Primary button", completion: { ... })`
+- **Retry Button:** `FeedbackPrimaryAction.retryButton(title: "Primary button", loadingTitle: nil, retryCompletion: { completionHanlder in ... })`
+- **No button:** `FeedbackPrimaryAction.none`
+
+| Button    | Retry Button     |
+|-------------|-----------------|
+| ![custom](./docs/images/primary-button.jpg) | ![custom](./docs/images/primary-retry.gif)  |
+
+⚠️ For the **Retry Button** is important execute the `completionHanlder` closure when the async retry task is finished.
 ```swift
-FeedbackPrimaryAction.button(title: "Primary button", completion: { ... })
+retryCompletion: { completionHandler in
+    // Do async retry task
+    DispatchQueue.main.async {
+        completionHandler()
+    }
+}
 ```
 
 ### Secondary Action

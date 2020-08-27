@@ -1,3 +1,7 @@
+# v.1.3.0 - 2020-08-27
+
+- Add new `retryButton` for `FeedbackView`
+
 # v.1.2.0 - 2020-08-26
 
 - Add `HighlightedCard` component.

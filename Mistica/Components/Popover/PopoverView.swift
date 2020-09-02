@@ -248,7 +248,7 @@ private extension PopoverView {
 
             // Keep the popover respecting the margin with containerView
             leadingAnchor.constraint(greaterThanOrEqualTo: containerView.leadingAnchor, constant: ViewStyles.leadingMarginToContainerView),
-            containerView.trailingAnchor.constraint(greaterThanOrEqualTo: trailingAnchor, constant: ViewStyles.trailingMarginToContainerView)
+            trailingAnchor.constraint(lessThanOrEqualTo: containerView.trailingAnchor, constant: -ViewStyles.trailingMarginToContainerView)
         ])
 
         switch tipDirection {

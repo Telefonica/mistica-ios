@@ -1,3 +1,7 @@
+# v.1.3.1 - 2020-09-01
+
+- Fix popover misalignment when the target view is next to the side and support adding the popover to scrollviews.
+
 # v.1.3.0 - 2020-08-27
 
 - Add new `retryButton` for `FeedbackView`

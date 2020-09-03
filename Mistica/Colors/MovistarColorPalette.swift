@@ -344,6 +344,6 @@ private enum Colors {
 
     // Prominent
     static let movistarProminentBlue = UIColor(r: 11, g: 39, b: 57)
-    static let movistarProminentBlueDark = UIColor(r: 0, g: 30, b:41)
+    static let movistarProminentBlueDark = UIColor(r: 0, g: 30, b: 41)
     static let movistarProminentBlueLight30 = UIColor(r: 182, g: 190, b: 195, a: 64)
 }

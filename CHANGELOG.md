@@ -1,3 +1,7 @@
+# v.1.3.2 - 2020-09-03
+
+- Merge v1.1.2 branch
+
 # v.1.3.1 - 2020-09-01
 
 - Fix popover misalignment when the target view is next to the side and support adding the popover to scrollviews.

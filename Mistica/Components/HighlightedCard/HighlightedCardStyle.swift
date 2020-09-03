@@ -32,7 +32,7 @@ extension HighlightedCardStyle {
             return .primaryInverse
         }
     }
-    
+
     var secondaryButtonStyle: Button.Style {
         switch self {
         case .normal:
@@ -41,7 +41,7 @@ extension HighlightedCardStyle {
             return .secondaryInverse
         }
     }
-    
+
     var linkButtonStyle: Button.Style {
         switch self {
         case .normal:

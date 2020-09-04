@@ -28,7 +28,7 @@ final class SeparatorView: UIView {
             return CGSize(width: UIView.noIntrinsicMetric, height: height)
         case .vertical:
             return CGSize(width: height, height: UIView.noIntrinsicMetric)
-		@unknown default:
+        @unknown default:
             fatalError()
         }
     }

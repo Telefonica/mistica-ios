@@ -56,7 +56,8 @@ class UICatalogCroutonViewController: UITableViewController {
         }
     }
 
-    required init?(coder _: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -117,7 +118,7 @@ private extension CroutonStyle {
             return "Critical"
         case .info:
             return "Default"
-		@unknown default:
+        @unknown default:
             return "Default"
         }
     }

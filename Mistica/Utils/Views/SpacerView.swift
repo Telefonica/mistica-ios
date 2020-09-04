@@ -22,7 +22,8 @@ final class SpacerView: UIView {
         setContentCompressionResistancePriority(.required, for: axis)
     }
 
-    required init?(coder _: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -32,7 +33,7 @@ final class SpacerView: UIView {
             return CGSize(width: amount, height: UIView.noIntrinsicMetric)
         case .vertical:
             return CGSize(width: UIView.noIntrinsicMetric, height: amount)
-		@unknown default:
+        @unknown default:
             fatalError()
         }
     }

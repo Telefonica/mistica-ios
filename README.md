@@ -112,36 +112,4 @@ And for showing the catalog you only need to show **UICatalogViewController**.
 
 ## Contributing
 
-To create or modify components from the Mistica library follow the next steps:
-
-1. Clone this repo
-
-2. Install SwiftFormat, if you already have installed Homebrew:
-```
-brew install swiftformat
-```
-
-or read the [documentation](https://github.com/nicklockwood/SwiftFormat#command-line-tool).
-
-3. Use carthage to update Mistica's dependencies (Lottie) and be able to build locally:
-
-```swift
-carthage update --platform iOS
-```
-
-> Once Lottie provides support to SPM with dynamic dependencies, carthage won't be needed to build Mistica locally. The Cartfile will still be available to add Mistica to an existing project using Carthage.
-
-3. Open `Mistica.xcodeproj`
-
-4. Place the new component under the `Components` folder. The component should have a proper definition by the design team.
-
-When implementing the component, try to have in mind the following guidelines:
-
-* The component should be implemented to be reusable. Make it generic enough so that other teams can also use it.
-* Make sure the component reiszes correctly (we support iPad multitasking, so any screen can resize at any given time).
-* Don't forget accessibility (VoiceOver, Dynamic Type...).
-* Pay attention to user interaction (Gestures, Haptics, 3D Touch...)
-* Although this should be transparent to you, take into account themes and multiple brands.
-* To help other developers, add documentation about the new component.
-
-> Future versions will include a sample app or catalog to test those components. Once the catalog is available, don't forget to include new components on it.
+See [CONTRIBUTING.md](./CONTRIBUTING.md)

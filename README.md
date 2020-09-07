@@ -125,11 +125,17 @@ or read the [documentation](https://github.com/nicklockwood/SwiftFormat#command-
 
 3. Use carthage to update Mistica's dependencies (Lottie) and be able to build locally:
 
+> The current version of Carthage `0.35.0` does not work properly on Xcode 12 without a workaroud. Use the script `carthage-build.sh` to update and build dependencies. The dependencies and Carthage are not using 'Module stability' so they have to be built again for different versions of Swift. 
+
+```
+./carthage-build.sh
+```
+
+For previous versions of Xcode you can still use:
+
 ```swift
 carthage update --platform iOS
 ```
-
-> Once Lottie provides support to SPM with dynamic dependencies, carthage won't be needed to build Mistica locally. The Cartfile will still be available to add Mistica to an existing project using Carthage.
 
 3. Open `Mistica.xcodeproj`
 

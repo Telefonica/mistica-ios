@@ -1,3 +1,7 @@
+# v.1.3.3 - 2020-09-08
+
+- Play animation after finish retry async task.
+- 
 # v.1.3.2 - 2020-09-03
 
 - Merge v1.1.2 branch

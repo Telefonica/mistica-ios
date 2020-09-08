@@ -263,6 +263,7 @@ private extension FeedbackView {
 
     func prepareAnimation() {
         guard style.shouldAnimate else { return }
+        animationFired = false
         contentContainerStackView.alpha = 0
         contentContainerStackView.transform = CGAffineTransform(translationX: 0, y: 20)
         animator.addAnimations {
@@ -292,11 +293,11 @@ private extension FeedbackView {
             primaryButton?.state = .loading
             prepareHapticFeedback()
             completion { [weak self] in
+                self?.prepareAnimation()
+                self?.startAnimation()
+
                 self?.primaryButton?.title = title
                 self?.primaryButton?.state = .normal
-                DispatchQueue.main.async {
-                    self?.triggerHapticFeedback()
-                }
             }
         case .none:
             break

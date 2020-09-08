@@ -42,7 +42,7 @@ extension UIColor {
     ///   - defaultColor: color used when the color for the current variant has not been provided
     ///   - variants: colors for different theme variants
     convenience init(_ defaultColor: UIColor, variants: [ThemeVariant: UIColor]) {
-        if let current = variants[Mistica.themeVariant] {
+        if let current = variants[MisticaConfig.themeVariant] {
             self.init(cgColor: current.cgColor)
         } else {
             self.init(cgColor: defaultColor.cgColor)
@@ -79,9 +79,9 @@ private extension AssetType {
         case .common:
             return name
         case .branded:
-            return Mistica.brandStyle.assetPath(name, variant: .standard)
+            return MisticaConfig.brandStyle.assetPath(name, variant: .standard)
         case .brandedAndThemed:
-            return Mistica.brandStyle.assetPath(name, variant: Mistica.themeVariant)
+            return MisticaConfig.brandStyle.assetPath(name, variant: MisticaConfig.themeVariant)
         }
     }
 }

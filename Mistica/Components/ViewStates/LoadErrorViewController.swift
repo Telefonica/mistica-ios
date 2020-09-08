@@ -53,7 +53,7 @@ public class LoadErrorViewController: UIViewController {
     }
 
     override public var preferredStatusBarStyle: UIStatusBarStyle {
-        Mistica.brandStyle.preferredStatusBarStyle
+        MisticaConfig.brandStyle.preferredStatusBarStyle
     }
 }
 

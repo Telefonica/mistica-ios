@@ -44,7 +44,7 @@ private extension BrandStyleSelectorView {
         BrandStyle.allCases.enumerated().forEach { pair in
             segment.insertSegment(withTitle: pair.element.rawValue, at: pair.offset, animated: false)
 
-            if pair.element == Mistica.brandStyle {
+            if pair.element == MisticaConfig.brandStyle {
                 segment.selectedSegmentIndex = pair.offset
             }
         }

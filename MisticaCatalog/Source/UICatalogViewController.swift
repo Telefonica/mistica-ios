@@ -161,8 +161,8 @@ private extension UICatalogViewController {
         styleViews()
 
         headerView.didSelectBrandStyle = { [weak self] newValue in
-            Mistica.brandStyle = newValue
-            Mistica.styleControls(MisticaControlStyle.allCases)
+            MisticaConfig.brandStyle = newValue
+            MisticaConfig.styleControls(MisticaControlStyle.allCases)
             self?.tableView.reloadData()
 
             // Force update `UIAppearance` changes

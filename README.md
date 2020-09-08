@@ -54,8 +54,8 @@ Support for SPM will be considered after the release of Xcode 12 and the new sup
 By default the framework components are created with the Movistar's brand style and the `standard` theme variant, to select a different one, configure the brand style and/or variant:
 
 ```swift
-Mistica.brandStyle = .o2
-Mistica.themeVariant = .prominent
+MisticaConfig.brandStyle = .o2
+MisticaConfig.themeVariant = .prominent
 ```
 
 Remember to initialize Mistica with you desired brand style before the initialize the UI of your app.
@@ -65,7 +65,7 @@ In applications before iOS 13, the initialziation should be done in **UIApplicat
 ```swift
 func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Set up Mistica
-    Mistica.brandStyle = .vivo
+    MisticaConfig.brandStyle = .vivo
     
     return true
 }
@@ -78,7 +78,7 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
     guard let windowScene = (scene as? UIWindowScene) else { return }
 
     // Configure brand style before initializing the UI
-    Mistica.brandStyle = .movistar
+    MisticaConfig.brandStyle = .movistar
 }
 ```
 

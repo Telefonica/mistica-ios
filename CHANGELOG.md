@@ -1,3 +1,7 @@
+# v.1.3.4 - 2020-09-08
+
+- Add module stability and compatibility with Xcode 12.
+
 # v.1.3.3 - 2020-09-08
 
 - Play animation after finish retry async task.

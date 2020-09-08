@@ -35,7 +35,8 @@ public class LoadErrorViewController: UIViewController {
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
 
-    required init?(coder _: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -52,7 +53,7 @@ public class LoadErrorViewController: UIViewController {
     }
 
     override public var preferredStatusBarStyle: UIStatusBarStyle {
-        Mistica.brandStyle.preferredStatusBarStyle
+        MisticaConfig.brandStyle.preferredStatusBarStyle
     }
 }
 

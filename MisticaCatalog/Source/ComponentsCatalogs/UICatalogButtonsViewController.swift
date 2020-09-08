@@ -56,7 +56,8 @@ class UICatalogButtonsViewController: UITableViewController {
         }
     }
 
-    required init?(coder _: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -158,7 +159,7 @@ private extension Button.State {
             button = Button(style: style, title: "Loading", loadingTitle: "Loading Title", isSmall: isSmall)
         case .normal:
             fallthrough
-		@unknown default:
+        @unknown default:
             button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Normal"
             button.state = self

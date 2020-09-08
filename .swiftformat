@@ -10,7 +10,6 @@
 --decimalgrouping 3,4
 --commas inline
 --maxwidth none
---stripunusedargs always
 --wrapcollections before-first
 
 # rules

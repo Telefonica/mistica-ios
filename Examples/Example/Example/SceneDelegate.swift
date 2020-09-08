@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         // Configure brand style before initializing the UI
-        Mistica.brandStyle = .movistar
-        Mistica.styleControls(MisticaControlStyle.allCases)
+        MisticaConfig.brandStyle = .movistar
+        MisticaConfig.styleControls(MisticaControlStyle.allCases)
 
         // Setup the UI
         window = UIWindow(windowScene: windowScene)

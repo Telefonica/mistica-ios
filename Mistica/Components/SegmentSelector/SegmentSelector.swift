@@ -198,7 +198,7 @@ private extension SegmentSelector {
         case .compact,
              .unspecified:
             segmentsContentMode = .leading
-		@unknown default:
+        @unknown default:
             segmentsContentMode = .leading
         }
     }

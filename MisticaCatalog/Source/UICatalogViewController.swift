@@ -48,7 +48,8 @@ public class UICatalogViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder _: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -160,8 +161,8 @@ private extension UICatalogViewController {
         styleViews()
 
         headerView.didSelectBrandStyle = { [weak self] newValue in
-            Mistica.brandStyle = newValue
-            Mistica.styleControls(MisticaControlStyle.allCases)
+            MisticaConfig.brandStyle = newValue
+            MisticaConfig.styleControls(MisticaControlStyle.allCases)
             self?.tableView.reloadData()
 
             // Force update `UIAppearance` changes

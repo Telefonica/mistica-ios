@@ -31,7 +31,8 @@ public class FeedbackViewController: UIViewController {
         }
     }
 
-    required init?(coder _: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
@@ -61,7 +62,7 @@ public extension FeedbackViewController {
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        Mistica.brandStyle.preferredStatusBarStyle
+        MisticaConfig.brandStyle.preferredStatusBarStyle
     }
 }
 

@@ -15,14 +15,14 @@ After the `brandStyle` is configured and before you instanteate you UI, you can 
 
 ```swift
 // Configure brand style before initializing the UI
-Mistica.brandStyle = .movistar
-Mistica.styleControls(MisticaControlStyle.allCases)
+MisticaConfig.brandStyle = .movistar
+MisticaConfig.styleControls(MisticaControlStyle.allCases)
 ```
 
 Or you can select which `UIControl`s are styled
 
 ```swift
 // Configure brand style before initializing the UI
-Mistica.brandStyle = .movistar
-Mistica.styleControls([.pageControl, .switch])
+MisticaConfig.brandStyle = .movistar
+MisticaConfig.styleControls([.pageControl, .switch])
 ```

@@ -44,6 +44,12 @@ public class UICatalogViewController: UIViewController {
         }
     }
 
+    public var shouldShowNavigationBar = false {
+        didSet {
+            navigationController?.setNavigationBarHidden(shouldShowNavigationBar, animated: true)
+        }
+    }
+
     public init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -62,7 +68,7 @@ public class UICatalogViewController: UIViewController {
     }
 
     override public func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(!shouldShowNavigationBar, animated: animated)
         super.viewWillAppear(animated)
     }
 

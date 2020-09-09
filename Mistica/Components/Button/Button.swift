@@ -17,6 +17,7 @@ open class Button: UIView {
         static let borderWidth: CGFloat = 1.5
     }
 
+    @frozen
     public enum State {
         case normal
         case selected

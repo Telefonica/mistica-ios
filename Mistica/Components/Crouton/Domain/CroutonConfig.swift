@@ -8,6 +8,7 @@
 
 import UIKit
 
+@frozen
 @objc public enum CroutonStyle: Int, CaseIterable {
     case info
     case critical

@@ -171,8 +171,6 @@ extension UICatalogPopoverViewController: UITableViewDataSource, UITableViewDele
         case .up:
             targetView = titleCell
         case .down:
-            fallthrough
-        @unknown default:
             targetView = showTooltipCell
         }
 

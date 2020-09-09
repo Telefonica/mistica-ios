@@ -118,8 +118,6 @@ private extension CroutonStyle {
             return "Critical"
         case .info:
             return "Default"
-        @unknown default:
-            return "Default"
         }
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@frozen
 public enum MisticaControlStyle: CaseIterable {
     case `switch`
     case segmentedControl

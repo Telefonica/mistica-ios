@@ -27,6 +27,7 @@ private enum ViewStyles {
 // MARK: PopoverView
 
 public class PopoverView: UIView {
+    @frozen
     public enum TipDirection {
         case up
         case down

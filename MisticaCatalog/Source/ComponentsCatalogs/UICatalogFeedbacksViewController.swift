@@ -296,8 +296,6 @@ private extension FeedbackStyle {
         case .error:
             return "Error"
         case .informative:
-            fallthrough
-        @unknown default:
             return "Informative"
         }
     }

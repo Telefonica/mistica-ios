@@ -129,8 +129,14 @@ private extension UITableViewCell {
 }
 
 private class LoadSimulationButton: Button {
-    func configureForLoadSimulation() {
+    override init(style: Button.Style = .primary, title: String, loadingTitle: String? = nil, isSmall: Bool = false) {
+        super.init(style: style, title: title, loadingTitle: loadingTitle, isSmall: isSmall)
         addTarget(self, action: #selector(simulateLoad), for: .touchUpInside)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     @objc func simulateLoad() {
@@ -152,14 +158,12 @@ private extension Button.State {
             button.state = self
             button.isUserInteractionEnabled = false
         case .disabled:
-            button = LoadSimulationButton(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
+            button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Disabled"
             button.state = self
         case .loading:
-            button = Button(style: style, title: "Loading", loadingTitle: "Loading Title", isSmall: isSmall)
+            button = LoadSimulationButton(style: style, title: "Loading", loadingTitle: "Loading Title", isSmall: isSmall)
         case .normal:
-            fallthrough
-        @unknown default:
             button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Normal"
             button.state = self

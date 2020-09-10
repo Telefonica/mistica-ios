@@ -1,3 +1,9 @@
+# v.1.3.5 - 2020-09-10
+
+- Freeze enums in Mistica
+- Fix loading button in MisitcaCatalog
+- Allow showing a navigation bar in the MisticaCatalog landing view
+
 # v.1.3.4 - 2020-09-08
 
 - Add module stability and compatibility with Xcode 12.

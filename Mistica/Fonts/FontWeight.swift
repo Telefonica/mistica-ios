@@ -49,10 +49,11 @@ extension FontStyle {
     }
 
     @objc public enum TextPreset6Weight: Int, FontWeightConvertible {
-        case regular, medium
+        case light, regular, medium
         
         var weight: UIFont.Weight {
             switch self {
+            case .light: return .light
             case .regular: return .regular
             case .medium: return .medium
             }

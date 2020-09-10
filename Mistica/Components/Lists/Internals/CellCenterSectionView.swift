@@ -88,7 +88,7 @@ private extension CellCenterSectionView {
 
     func styleViews() {
         titleLabel.numberOfLines = 0
-        titleLabel.font = .textPreset5(.light)
+        titleLabel.font = .textPreset6(.light)
         titleLabel.textColor = .textPrimary
         titleLabel.minHeight = 24
         titleLabel.lineBreakMode = .byWordWrapping

@@ -9,30 +9,17 @@
 import UIKit
 
 @objc public enum FontStyle: Int, CaseIterable, CustomStringConvertible {
-    case display1
-    case display2
-    case display3
-    case display4
-    case display5
-    case display6
-    case headline1
-    case headline2
-    case headline3
-    case title
-    case title1
-    case title2
-    case title3
-    case body1
-    case body2
-    case body3
-    case sub1
-    case sub2
-    case caption1
-    case caption2
-    case caption3
-    case caption4
+    case textPreset1
+    case textPreset2
+    case textPreset3
+    case textPreset4
+    case textPreset5
+    case textPreset6
+    case textPreset7
+    case textPreset8
+    case textSystem
 
-    func preferredFont(constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    func preferredFont(weight: UIFont.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         let horizontalSizeClass = UIScreen.main.traitCollection.horizontalSizeClass
         var preferredSize = self.preferredSize
 
@@ -47,50 +34,24 @@ import UIKit
 
     public var description: String {
         switch self {
-        case .display1:
-            return "display1"
-        case .display2:
-            return "display2"
-        case .display3:
-            return "display3"
-        case .display4:
-            return "display4"
-        case .display5:
-            return "display5"
-        case .display6:
-            return "display6"
-        case .headline1:
-            return "headline1"
-        case .headline2:
-            return "headline2"
-        case .headline3:
-            return "headline3"
-        case .title:
-            return "title"
-        case .title1:
-            return "title1"
-        case .title2:
-            return "title2"
-        case .title3:
-            return "title3"
-        case .body1:
-            return "body1"
-        case .body2:
-            return "body2"
-        case .body3:
-            return "body3"
-        case .sub1:
-            return "sub1"
-        case .sub2:
-            return "sub2"
-        case .caption1:
-            return "caption1"
-        case .caption2:
-            return "caption2"
-        case .caption3:
-            return "caption3"
-        case .caption4:
-            return "caption4"
+        case .textPreset1:
+            return "TextPreset1"
+        case .textPreset2:
+            return "TextPreset2"
+        case .textPreset3:
+            return "TextPreset3"
+        case .textPreset4:
+            return "TextPreset4"
+        case .textPreset5:
+            return "TextPreset5"
+        case .textPreset6:
+            return "TextPreset6"
+        case .textPreset7:
+            return "TextPreset7"
+        case .textPreset8:
+            return "TextPreset8"
+        case .textSystem:
+            return "TextSystem"
         }
     }
 }
@@ -102,88 +63,24 @@ private extension FontStyle {
 
     var fontSize: FontSize {
         switch self {
-        case .display1,
-             .display2,
-             .display3:
-            return .huge
-        case .display4:
-            return .veryVeryHuge
-        case .display5:
-            return .extraHuge
-        case .display6:
+        case .textPreset1:
             return .veryHuge
-        case .headline1,
-             .headline2,
-             .headline3:
+        case .textPreset2:
+            return .huge
+        case .textPreset3:
             return .large
-        case .title,
-             .title1:
-            return .big
-        case .title2,
-             .title3:
+        case .textPreset4:
             return .veryBig
-        case .body1,
-             .body2,
-             .body3:
+        case .textPreset5:
+            return .big
+        case .textPreset6:
             return .medium
-        case .sub1,
-             .sub2:
+        case .textPreset7:
             return .small
-        case .caption1,
-             .caption2,
-             .caption3:
+        case .textPreset8:
             return .verySmall
-        case .caption4:
+        case .textSystem:
             return .extraSmall
-        }
-    }
-
-    var weight: UIFont.Weight {
-        switch self {
-        case .display1:
-            return .regular
-        case .display2:
-            return .medium
-        case .display3:
-            return .light
-        case .display4:
-            return .regular
-        case .display5:
-            return .light
-        case .display6:
-            return .light
-        case .headline1:
-            return .regular
-        case .headline2:
-            return .medium
-        case .headline3:
-            return .light
-        case .title:
-            return .medium
-        case .title1:
-            return .light
-        case .title2:
-            return .medium
-        case .title3:
-            return .light
-        case .body1:
-            return .regular
-        case .body2:
-            return .medium
-        case .body3:
-            return .bold
-        case .sub1:
-            return .regular
-        case .sub2:
-            return .medium
-        case .caption1:
-            return .regular
-        case .caption2:
-            return .medium
-        case .caption3:
-            return .bold
-        case .caption4:
-            return .regular
         }
     }
 }

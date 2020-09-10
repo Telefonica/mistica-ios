@@ -22,7 +22,7 @@ public func createNovumTabBarItem(badgeValue: UInt = 0) -> UITabBarItem {
     }
 
     let badgeTextAttributes = [
-        NSAttributedString.Key.font: UIFont.caption2,
+        NSAttributedString.Key.font: UIFont.textPreset8(.medium),
         NSAttributedString.Key.foregroundColor: UIColor.textPrimaryInverse
     ]
 

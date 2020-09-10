@@ -35,14 +35,14 @@ extension UINavigationBar {
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.shadowColor = .clear
             navBarAppearance.backgroundColor = .navigationBarBackground
-            navBarAppearance.largeTitleTextAttributes = UINavigationBar.textAttributes(for: .display3, color: UIColor.navigationBarPrimary)
-            navBarAppearance.titleTextAttributes = UINavigationBar.textAttributes(for: .title, color: UIColor.navigationBarPrimary)
+            navBarAppearance.largeTitleTextAttributes = UINavigationBar.textAttributes(for: .textPreset2, color: UIColor.navigationBarPrimary)
+            navBarAppearance.titleTextAttributes = UINavigationBar.textAttributes(for: .textPreset5, color: UIColor.navigationBarPrimary)
             standardAppearance = navBarAppearance
             compactAppearance = navBarAppearance
             scrollEdgeAppearance = navBarAppearance
         } else {
-            largeTitleTextAttributes = UINavigationBar.textAttributes(for: .display3, color: UIColor.navigationBarPrimary)
-            titleTextAttributes = UINavigationBar.textAttributes(for: .title, color: UIColor.navigationBarPrimary)
+            largeTitleTextAttributes = UINavigationBar.textAttributes(for: .textPreset2, color: UIColor.navigationBarPrimary)
+            titleTextAttributes = UINavigationBar.textAttributes(for: .textPreset5, color: UIColor.navigationBarPrimary)
         }
     }
 }

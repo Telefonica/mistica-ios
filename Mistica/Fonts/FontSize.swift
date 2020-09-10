@@ -48,7 +48,7 @@ private extension FontSize {
         case .large:
             return 24
         case .veryBig:
-            return 20
+            return 22
         case .big:
             return 18
         case .medium:

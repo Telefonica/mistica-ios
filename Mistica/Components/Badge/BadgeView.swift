@@ -48,7 +48,7 @@ public class BadgeView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .textPrimaryInverse
-        label.font = .caption2
+        label.font = .textPreset8(.medium)
         return label
     }()
 
@@ -140,7 +140,7 @@ private extension BadgeView {
     func setUpLabelStyle() {
         label.textAlignment = .center
         label.textColor = .textPrimaryInverse
-        label.font = .caption2
+        label.font = .textPreset8(.medium)
     }
 
     func updateStyle() {

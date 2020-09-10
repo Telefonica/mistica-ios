@@ -1,5 +1,5 @@
 //
-//  Mistica.swift
+//  MisticaConfig.swift
 //  Mistica
 //
 //  Created by Pablo Bartolome on 08/07/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Mistica {
+public struct MisticaConfig {
     static var currentColorPalette: ColorPalette = MovistarColorPalette()
     static var currentStyledControls = [MisticaControlStyle]()
 
@@ -33,7 +33,7 @@ public struct Mistica {
     }
 }
 
-private extension Mistica {
+private extension MisticaConfig {
     static func configureColorPalette(for _: BrandStyle) {
         switch brandStyle {
         case .movistar:

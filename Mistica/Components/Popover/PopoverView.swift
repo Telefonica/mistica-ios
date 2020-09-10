@@ -27,6 +27,7 @@ private enum ViewStyles {
 // MARK: PopoverView
 
 public class PopoverView: UIView {
+    @frozen
     public enum TipDirection {
         case up
         case down
@@ -53,7 +54,8 @@ public class PopoverView: UIView {
         commonInit()
     }
 
-    required init?(coder _: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 

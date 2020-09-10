@@ -56,17 +56,23 @@ brew install swiftformat
 
 or read the [documentation](https://github.com/nicklockwood/SwiftFormat#command-line-tool).
 
-3. Use `carthage` to update Mistica's dependencies (Lottie) and be able to build locally:
+3. Use carthage to update Mistica's dependencies (Lottie) and be able to build locally:
 
-```sh
+> The Carthage version `0.35.0` does not work properly on Xcode 12 without a workaroud. Use the script `carthage-build.sh` to update and build dependencies.
+
+```
+./carthage-build.sh
+```
+
+For previous versions of Xcode you can still use:
+
+```swift
 carthage update --platform iOS
 ```
 
-> Once Lottie provides support to SPM with dynamic dependencies, carthage won't be needed to build Mistica locally. The Cartfile will still be available to add Mistica to an existing project using Carthage.
+4. Open `Mistica.xcodeproj`
 
-3. Open `Mistica.xcodeproj`
-
-4. Place the new component under the `Components` folder. The component should have a proper definition by the design team.
+5. Place the new component under the `Components` folder. The component should have a proper definition by the design team.
 
 When implementing the component, try to have in mind the following guidelines:
 

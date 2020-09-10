@@ -8,6 +8,7 @@
 
 import UIKit
 
+@frozen
 public enum MisticaControlStyle: CaseIterable {
     case `switch`
     case segmentedControl
@@ -68,7 +69,7 @@ private extension MisticaAppearance {
     }
 
     static func setUpAppearanceOfSwitch() {
-        guard !Mistica.brandStyle.shouldUseLegacyTintForControls else { return }
+        guard !MisticaConfig.brandStyle.shouldUseLegacyTintForControls else { return }
 
         let appearance = UISwitch.appearance()
         appearance.onTintColor = .controlActivated

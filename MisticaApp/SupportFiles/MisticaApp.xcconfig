@@ -1,14 +1,10 @@
 //
-//  Config.xcconfig
+//  MisticaApp.xcconfig
 //  Mistica
 //
 //  Created by Pablo Bartolome on 07/07/2020.
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
-
-// Versioning
-VERSION_NUMBER = 1.0.0
-CURRENT_PROJECT_VERSION = 1 //Build
 
 // Build options
 
@@ -20,8 +16,8 @@ INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks
 IPHONEOS_DEPLOYMENT_TARGET = 13.0
 SKIP_INSTALL = YES
 TARGETED_DEVICE_FAMILY = 1,2
-PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica
-PRODUCT_NAME = $(TARGET_NAME:c99extidentifier)
+PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise
+PRODUCT_NAME = $(TARGET_NAME)
 
 // Search Paths
 
@@ -40,11 +36,6 @@ LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/
 
 DEFINES_MODULE = YES
 INFOPLIST_FILE = $(TARGET_NAME)/SupportFiles/Info.plist
-PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.$(TARGET_NAME)
-
-// Signing
-
-CODE_SIGN_IDENTITY =
 
 // Swift
 

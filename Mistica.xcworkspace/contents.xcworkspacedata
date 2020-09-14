@@ -4,7 +4,4 @@
    <FileRef
       location = "group:Mistica.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Examples/Example/Example.xcodeproj">
-   </FileRef>
 </Workspace>

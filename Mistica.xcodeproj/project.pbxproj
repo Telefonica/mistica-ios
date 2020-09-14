@@ -101,6 +101,17 @@
 		B83050BA24D8719200C7EAA2 /* MisticaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83050B924D8719200C7EAA2 /* MisticaAppearance.swift */; };
 		B83050BE24D8763100C7EAA2 /* AssetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83050BD24D8763100C7EAA2 /* AssetType.swift */; };
 		B83050C324DBFDDE00C7EAA2 /* UICatalogControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83050C224DBFDDE00C7EAA2 /* UICatalogControlsViewController.swift */; };
+		B831A5BC250FC65A00B0976A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B831A5BB250FC65A00B0976A /* AppDelegate.swift */; };
+		B831A5BE250FC65A00B0976A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B831A5BD250FC65A00B0976A /* SceneDelegate.swift */; };
+		B831A5C0250FC65A00B0976A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B831A5BF250FC65A00B0976A /* ViewController.swift */; };
+		B831A5C5250FC65A00B0976A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B831A5C4250FC65A00B0976A /* Assets.xcassets */; };
+		B831A5C8250FC65A00B0976A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B831A5C6250FC65A00B0976A /* LaunchScreen.storyboard */; };
+		B831A5CE250FC66400B0976A /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */; };
+		B831A5CF250FC66400B0976A /* Mistica.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B831A5D2250FC66400B0976A /* MisticaCatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89E6CB524D80F260029D8EE /* MisticaCatalog.framework */; };
+		B831A5D3250FC66400B0976A /* MisticaCatalog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B89E6CB524D80F260029D8EE /* MisticaCatalog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B831A5D7250FC67000B0976A /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DFA1D124B723C1004C908E /* Lottie.framework */; };
+		B831A5D8250FC67000B0976A /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4DFA1D124B723C1004C908E /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B89E6CD924D811CE0029D8EE /* UICatalogScrollContentIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CC924D811CD0029D8EE /* UICatalogScrollContentIndicatorViewController.swift */; };
 		B89E6CDA24D811CE0029D8EE /* UICatalogTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCA24D811CD0029D8EE /* UICatalogTagsViewController.swift */; };
 		B89E6CDB24D811CE0029D8EE /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E6CCB24D811CD0029D8EE /* UICatalogBadgeViewController.swift */; };
@@ -142,6 +153,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B831A5D0250FC66400B0976A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4D8EB7624B46B91002F3AD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4D8EB7E24B46B91002F3AD5;
+			remoteInfo = Mistica;
+		};
+		B831A5D4250FC66400B0976A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4D8EB7624B46B91002F3AD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B89E6CB424D80F260029D8EE;
+			remoteInfo = MisticaCatalog;
+		};
 		B89E6D0924D8223D0029D8EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B4D8EB7624B46B91002F3AD5 /* Project object */;
@@ -150,6 +175,22 @@
 			remoteInfo = Mistica;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B831A5D6250FC66400B0976A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B831A5CF250FC66400B0976A /* Mistica.framework in Embed Frameworks */,
+				B831A5D3250FC66400B0976A /* MisticaCatalog.framework in Embed Frameworks */,
+				B831A5D8250FC67000B0976A /* Lottie.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6C36487324EC187C008F67A0 /* HighlightedCardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardStyle.swift; sourceTree = "<group>"; };
@@ -268,6 +309,14 @@
 		B83050BD24D8763100C7EAA2 /* AssetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetType.swift; sourceTree = "<group>"; };
 		B83050C224DBFDDE00C7EAA2 /* UICatalogControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogControlsViewController.swift; sourceTree = "<group>"; };
 		B83050C424DC5E7700C7EAA2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B831A5B9250FC65A00B0976A /* MisticaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B831A5BB250FC65A00B0976A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B831A5BD250FC65A00B0976A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B831A5BF250FC65A00B0976A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B831A5C4250FC65A00B0976A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B831A5C7250FC65A00B0976A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B831A5C9250FC65A00B0976A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B831A5DC250FC72C00B0976A /* MisticaApp.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MisticaApp.xcconfig; sourceTree = "<group>"; };
 		B89E6CB524D80F260029D8EE /* MisticaCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MisticaCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MisticaCatalog.xcconfig; sourceTree = "<group>"; };
 		B89E6CC524D8113E0029D8EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -319,6 +368,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B831A5B6250FC65A00B0976A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B831A5CE250FC66400B0976A /* Mistica.framework in Frameworks */,
+				B831A5D2250FC66400B0976A /* MisticaCatalog.framework in Frameworks */,
+				B831A5D7250FC67000B0976A /* Lottie.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B89E6CB224D80F260029D8EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,7 +407,9 @@
 				B4DFA20324B74F11004C908E /* Cartfile */,
 				B4D8EB8124B46B91002F3AD5 /* Mistica */,
 				B89E6CB624D80F260029D8EE /* MisticaCatalog */,
+				B831A5BA250FC65A00B0976A /* MisticaApp */,
 				B4D8EB8024B46B91002F3AD5 /* Products */,
+				B831A5CD250FC66400B0976A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,6 +418,7 @@
 			children = (
 				B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */,
 				B89E6CB524D80F260029D8EE /* MisticaCatalog.framework */,
+				B831A5B9250FC65A00B0976A /* MisticaApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -714,6 +776,51 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
+		B831A5BA250FC65A00B0976A /* MisticaApp */ = {
+			isa = PBXGroup;
+			children = (
+				B831A5D9250FC6D700B0976A /* Source */,
+				B831A5DA250FC6E300B0976A /* Resources */,
+				B831A5DB250FC70800B0976A /* SupportFiles */,
+			);
+			path = MisticaApp;
+			sourceTree = "<group>";
+		};
+		B831A5CD250FC66400B0976A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B831A5D9250FC6D700B0976A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B831A5BB250FC65A00B0976A /* AppDelegate.swift */,
+				B831A5BD250FC65A00B0976A /* SceneDelegate.swift */,
+				B831A5BF250FC65A00B0976A /* ViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		B831A5DA250FC6E300B0976A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B831A5C4250FC65A00B0976A /* Assets.xcassets */,
+				B831A5C6250FC65A00B0976A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B831A5DB250FC70800B0976A /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B831A5DC250FC72C00B0976A /* MisticaApp.xcconfig */,
+				B831A5C9250FC65A00B0976A /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
 		B89E6CB624D80F260029D8EE /* MisticaCatalog */ = {
 			isa = PBXGroup;
 			children = (
@@ -899,6 +1006,26 @@
 			productReference = B4D8EB7F24B46B91002F3AD5 /* Mistica.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B831A5B8250FC65A00B0976A /* MisticaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B831A5CC250FC65A00B0976A /* Build configuration list for PBXNativeTarget "MisticaApp" */;
+			buildPhases = (
+				B831A5B5250FC65A00B0976A /* Sources */,
+				B831A5B6250FC65A00B0976A /* Frameworks */,
+				B831A5B7250FC65A00B0976A /* Resources */,
+				B831A5D6250FC66400B0976A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B831A5D1250FC66400B0976A /* PBXTargetDependency */,
+				B831A5D5250FC66400B0976A /* PBXTargetDependency */,
+			);
+			name = MisticaApp;
+			productName = MisticaApp;
+			productReference = B831A5B9250FC65A00B0976A /* MisticaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		B89E6CB424D80F260029D8EE /* MisticaCatalog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B89E6CBC24D80F260029D8EE /* Build configuration list for PBXNativeTarget "MisticaCatalog" */;
@@ -924,11 +1051,15 @@
 		B4D8EB7624B46B91002F3AD5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1170;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = Telefonica;
 				TargetAttributes = {
 					B4D8EB7E24B46B91002F3AD5 = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					B831A5B8250FC65A00B0976A = {
+						CreatedOnToolsVersion = 11.7;
 					};
 					B89E6CB424D80F260029D8EE = {
 						CreatedOnToolsVersion = 11.6;
@@ -951,6 +1082,7 @@
 			targets = (
 				B4D8EB7E24B46B91002F3AD5 /* Mistica */,
 				B89E6CB424D80F260029D8EE /* MisticaCatalog */,
+				B831A5B8250FC65A00B0976A /* MisticaApp */,
 			);
 		};
 /* End PBXProject section */
@@ -962,6 +1094,15 @@
 			files = (
 				B8DD218224D17BBD0096D68C /* README.md in Resources */,
 				B413033724B75D6700212D16 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B831A5B7250FC65A00B0976A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B831A5C8250FC65A00B0976A /* LaunchScreen.storyboard in Resources */,
+				B831A5C5250FC65A00B0976A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1102,6 +1243,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B831A5B5250FC65A00B0976A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B831A5C0250FC65A00B0976A /* ViewController.swift in Sources */,
+				B831A5BC250FC65A00B0976A /* AppDelegate.swift in Sources */,
+				B831A5BE250FC65A00B0976A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B89E6CB124D80F260029D8EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1143,12 +1294,33 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B831A5D1250FC66400B0976A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4D8EB7E24B46B91002F3AD5 /* Mistica */;
+			targetProxy = B831A5D0250FC66400B0976A /* PBXContainerItemProxy */;
+		};
+		B831A5D5250FC66400B0976A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B89E6CB424D80F260029D8EE /* MisticaCatalog */;
+			targetProxy = B831A5D4250FC66400B0976A /* PBXContainerItemProxy */;
+		};
 		B89E6D0A24D8223D0029D8EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B4D8EB7E24B46B91002F3AD5 /* Mistica */;
 			targetProxy = B89E6D0924D8223D0029D8EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B831A5C6250FC65A00B0976A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B831A5C7250FC65A00B0976A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B4D8EB8524B46B91002F3AD5 /* Debug */ = {
@@ -1295,6 +1467,40 @@
 			};
 			name = Release;
 		};
+		B831A5CA250FC65A00B0976A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B831A5DC250FC72C00B0976A /* MisticaApp.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_NAME = MisticaApp;
+			};
+			name = Debug;
+		};
+		B831A5CB250FC65A00B0976A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B831A5DC250FC72C00B0976A /* MisticaApp.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_NAME = MisticaApp;
+			};
+			name = Release;
+		};
 		B89E6CBA24D80F260029D8EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */;
@@ -1326,6 +1532,15 @@
 			buildConfigurations = (
 				B4D8EB8824B46B91002F3AD5 /* Debug */,
 				B4D8EB8924B46B91002F3AD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B831A5CC250FC65A00B0976A /* Build configuration list for PBXNativeTarget "MisticaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B831A5CA250FC65A00B0976A /* Debug */,
+				B831A5CB250FC65A00B0976A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

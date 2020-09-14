@@ -12,52 +12,42 @@ private var _isDynamicTypeEnabled = true
 
 public extension UIFont {
     
-    @objc(textPreset1)
     static var textPreset1: (FontStyle.TextPreset1Weight) -> UIFont {
         { FontStyle.textPreset1.preferredFont(weight: $0.weight) }
     }
     
-    @objc(textPreset2)
     static var textPreset2: (FontStyle.TextPreset2Weight) -> UIFont {
         { FontStyle.textPreset2.preferredFont(weight: $0.weight) }
     }
     
-    @objc(textPreset3)
     static var textPreset3: (FontStyle.TextPreset3Weight) -> UIFont {
         { FontStyle.textPreset3.preferredFont(weight: $0.weight) }
     }
     
-    @objc(textPreset4)
     static var textPreset4: (FontStyle.TextPreset4Weight) -> UIFont {
         { FontStyle.textPreset4.preferredFont(weight: $0.weight) }
     }
     
-    @objc(textPreset5)
     static var textPreset5: (FontStyle.TextPreset5Weight) -> UIFont {
         { FontStyle.textPreset5.preferredFont(weight: $0.weight) }
     }
-    
-    @objc(textPreset6)
+
     static var textPreset6: (FontStyle.TextPreset6Weight) -> UIFont {
         { FontStyle.textPreset6.preferredFont(weight: $0.weight) }
     }
     
-    @objc(textPreset7)
     static var textPreset7: (FontStyle.TextPreset7Weight) -> UIFont {
         { FontStyle.textPreset7.preferredFont(weight: $0.weight) }
     }
-    
-    @objc(textPreset8)
+
     static var textPreset8: (FontStyle.TextPreset8Weight) -> UIFont {
         { FontStyle.textPreset8.preferredFont(weight: $0.weight) }
     }
     
-    @objc(textPreset9)
     static var textSystem: (FontStyle.TextSystemWeight) -> UIFont {
         { FontStyle.textSystem.preferredFont(weight: $0.weight) }
     }
     
-    @objc(fixedFontForFontStyle:)
     static func fixedFont(for fontStyle: FontStyle) -> UIFont {
         switch fontStyle {
         case .textPreset1,
@@ -74,7 +64,6 @@ public extension UIFont {
         }
     }
 
-    @objc(preferredFontForFontStyle:constrainedToSize:)
     static func preferredFont(for fontStyle: FontStyle, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory) -> UIFont {
         switch fontStyle {
         case .textPreset1,
@@ -91,7 +80,7 @@ public extension UIFont {
         }
     }
 
-    @objc static var isDynamicTypeEnabled: Bool {
+    static var isDynamicTypeEnabled: Bool {
         get {
             _isDynamicTypeEnabled
         }

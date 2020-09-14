@@ -13,78 +13,55 @@ protocol FontWeightConvertible {
 }
 
 extension FontStyle {
-    @objc public enum TextPreset1Weight: Int, FontWeightConvertible {
+    public enum TextPreset1Weight: String, FontWeightConvertible {
         case light
-        
-        var weight: UIFont.Weight { .light }
     }
 
-    @objc public enum TextPreset2Weight: Int, FontWeightConvertible {
+    public enum TextPreset2Weight: String, FontWeightConvertible {
         case light
-        
-        var weight: UIFont.Weight { .light }
     }
 
-    @objc public enum TextPreset3Weight: Int, FontWeightConvertible {
+    public enum TextPreset3Weight: String, FontWeightConvertible {
         case light
-        
-        var weight: UIFont.Weight { .light }
     }
 
-    @objc public enum TextPreset4Weight: Int, FontWeightConvertible {
+    public enum TextPreset4Weight: String, FontWeightConvertible {
         case light
-        
-        var weight: UIFont.Weight { .light }
     }
 
-    @objc public enum TextPreset5Weight: Int, FontWeightConvertible {
+    public enum TextPreset5Weight: String, FontWeightConvertible {
         case light, medium
-        
-        var weight: UIFont.Weight {
-            switch self {
-            case .light: return .light
-            case .medium: return .medium
-            }
-        }
     }
 
-    @objc public enum TextPreset6Weight: Int, FontWeightConvertible {
+    public enum TextPreset6Weight: String, FontWeightConvertible {
         case light, regular, medium
-        
-        var weight: UIFont.Weight {
-            switch self {
-            case .light: return .light
-            case .regular: return .regular
-            case .medium: return .medium
-            }
-        }
     }
 
-    @objc public enum TextPreset7Weight: Int, FontWeightConvertible {
+    public enum TextPreset7Weight: String, FontWeightConvertible {
         case regular, medium
-        
-        var weight: UIFont.Weight {
-            switch self {
-            case .regular: return .regular
-            case .medium: return .medium
-            }
-        }
     }
 
-    @objc public enum TextPreset8Weight: Int, FontWeightConvertible {
+    public enum TextPreset8Weight: String, FontWeightConvertible {
         case regular, medium
-        
-        var weight: UIFont.Weight {
-            switch self {
-            case .regular: return .regular
-            case .medium: return .medium
-            }
-        }
     }
 
-    @objc public enum TextSystemWeight: Int, FontWeightConvertible {
+    public enum TextSystemWeight: String, FontWeightConvertible {
         case regular
-        
-        var weight: UIFont.Weight { .regular }
+    }
+}
+
+extension RawRepresentable where RawValue == String {
+    var weight: UIFont.Weight {
+        switch self.rawValue {
+        case "light":
+            return .light
+        case "regular":
+            return .regular
+        case "medium":
+            return .medium
+        default:
+            assertionFailure("TextPreset should be an instance of light, regular or medium")
+            return .light
+        }
     }
 }

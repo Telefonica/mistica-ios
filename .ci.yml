@@ -1,0 +1,57 @@
+version: 2
+
+timeout: 90
+
+parameters:
+  RBENV_PATHS: "/Users/tools/.rbenv/bin:/Users/tools/.rbenv/shims"
+  LANGUAGE: en_US.UTF-8
+  LANG: en_US.UTF-8
+  LC_ALL: en_US.UTF-8
+
+defaults:
+  platform: "ios-client"
+  plugins:
+    mail: {}
+    logparser:
+      rules: minimal
+    artifacts:
+      include:
+        - "${source}/pkg/dist/*.zip"
+        - "${source}/pkg/dist/*.ipa"
+
+workflows:
+  deploy_mistica_app_to_appcenter:
+    platform: iOS-preproduction-builder
+    stages: ["unistall_prov_profiles_and_cert", "install_prov_profiles_and_cert", "setup", "bundle_install", "build_hotapps", "unistall_prov_profiles_and_cert"]
+    parameters:
+      # parameters sent by flow
+      INSTALL_PROV_PROFILES: '-i'
+      UNINSTALL_PROV_PROFILES: '-u'
+      # static varibles
+      IGNORE_DIRTY: 'yes'
+      BRAND_VARIANT: 'MisticaApp'
+    plugins:
+      artifacts:
+        enabled: true
+      mail:
+        enabled: True
+        recipients:
+          - "appscore@tuenti.com"
+
+stages:
+  setup:
+    - "rm -rf logs/*"
+    - "rm -rf tmp/*"
+    - "export PATH=${RBENV_PATHS}:${PATH}; rbenv which ruby; which ruby; ruby --version"
+  bundle_install:
+    - "pwd"
+    - "export PATH=${RBENV_PATHS}:${PATH}; bundle config --delete without"
+    - "export PATH=${RBENV_PATHS}:${PATH}; bundle install"
+  build_hotapps:
+    - "export PATH=${RBENV_PATHS}:${PATH}; bundle exec fastlane build_mistica_app_for_hotapps"
+  install_prov_profiles_and_cert:
+    - "./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh ${INSTALL_PROV_PROFILES}"
+  unistall_prov_profiles_and_cert:
+    - "./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh ${UNINSTALL_PROV_PROFILES}"
+  check_prov_profiles_and_cert_expiry_day:
+    - "./scripts/osx_prov_profiles_and_certs_mgmt/check_cert_and_prov_profiles_expiration_date.sh ${CHECK_PROV_PROFILES_DATE}"

@@ -20,7 +20,7 @@ defaults:
         - "${source}/pkg/dist/*.ipa"
 
 workflows:
-  deploy_mistica_app_to_appcenter:
+  build_mistica_app_for_enterprise:
     platform: iOS-preproduction-builder
     stages: ["unistall_prov_profiles_and_cert", "install_prov_profiles_and_cert", "setup", "bundle_install", "build_hotapps", "unistall_prov_profiles_and_cert"]
     parameters:

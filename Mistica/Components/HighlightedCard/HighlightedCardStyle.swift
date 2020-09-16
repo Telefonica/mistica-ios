@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@frozen
 public enum HighlightedCardStyle {
     case normal
     case inverse

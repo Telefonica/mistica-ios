@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@frozen
 public enum HeaderViewStyle {
     case normal
     case inverse

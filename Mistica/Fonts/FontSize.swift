@@ -8,6 +8,7 @@
 
 import UIKit
 
+@frozen
 public enum FontSize {
     case extraHuge
     case veryVeryHuge

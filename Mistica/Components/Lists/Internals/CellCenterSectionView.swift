@@ -88,7 +88,7 @@ private extension CellCenterSectionView {
 
     func styleViews() {
         titleLabel.numberOfLines = 0
-        titleLabel.font = .textPreset6(.light)
+        titleLabel.font = .textPreset6(weight: .light)
         titleLabel.textColor = .textPrimary
         titleLabel.minHeight = 24
         titleLabel.lineBreakMode = .byWordWrapping
@@ -97,7 +97,7 @@ private extension CellCenterSectionView {
         titleLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
 
         detailLabel.numberOfLines = 0
-        detailLabel.font = .textPreset7(.regular)
+        detailLabel.font = .textPreset7(weight: .regular)
         detailLabel.textColor = .textSecondary
         detailLabel.minHeight = 20
         detailLabel.lineBreakMode = .byWordWrapping
@@ -106,7 +106,7 @@ private extension CellCenterSectionView {
         detailLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
 
         subtitleLabel.numberOfLines = 0
-        subtitleLabel.font = .textPreset7(.regular)
+        subtitleLabel.font = .textPreset7(weight: .regular)
         subtitleLabel.textColor = .textSecondary
         subtitleLabel.minHeight = 20
         subtitleLabel.lineBreakMode = .byWordWrapping

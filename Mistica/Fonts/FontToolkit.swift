@@ -12,40 +12,40 @@ private var _isDynamicTypeEnabled = true
 
 public extension UIFont {
     
-    static var textPreset1: (FontStyle.TextPreset1Weight) -> UIFont {
-        { FontStyle.textPreset1.preferredFont(weight: $0.weight) }
+    static func textPreset1(weight: FontStyle.TextPreset1Weight = .light) -> UIFont {
+        FontStyle.textPreset1.preferredFont(weight: weight.systemWeight)
     }
     
-    static var textPreset2: (FontStyle.TextPreset2Weight) -> UIFont {
-        { FontStyle.textPreset2.preferredFont(weight: $0.weight) }
+    static func extPreset2(weight: FontStyle.TextPreset2Weight) -> UIFont {
+        FontStyle.textPreset2.preferredFont(weight: weight.systemWeight)
     }
     
-    static var textPreset3: (FontStyle.TextPreset3Weight) -> UIFont {
-        { FontStyle.textPreset3.preferredFont(weight: $0.weight) }
+    static func textPreset3(weight: FontStyle.TextPreset3Weight) -> UIFont {
+        FontStyle.textPreset3.preferredFont(weight: weight.systemWeight)
     }
     
-    static var textPreset4: (FontStyle.TextPreset4Weight) -> UIFont {
-        { FontStyle.textPreset4.preferredFont(weight: $0.weight) }
+    static func textPreset4(weight: FontStyle.TextPreset4Weight) -> UIFont {
+        FontStyle.textPreset4.preferredFont(weight: weight.systemWeight)
     }
     
-    static var textPreset5: (FontStyle.TextPreset5Weight) -> UIFont {
-        { FontStyle.textPreset5.preferredFont(weight: $0.weight) }
+    static func textPreset5(weight: FontStyle.TextPreset5Weight) -> UIFont {
+        FontStyle.textPreset5.preferredFont(weight: weight.systemWeight)
     }
 
-    static var textPreset6: (FontStyle.TextPreset6Weight) -> UIFont {
-        { FontStyle.textPreset6.preferredFont(weight: $0.weight) }
+    static func textPreset6(weight: FontStyle.TextPreset6Weight) -> UIFont {
+        FontStyle.textPreset6.preferredFont(weight: weight.systemWeight)
     }
     
-    static var textPreset7: (FontStyle.TextPreset7Weight) -> UIFont {
-        { FontStyle.textPreset7.preferredFont(weight: $0.weight) }
+    static func textPreset7(weight: FontStyle.TextPreset7Weight) -> UIFont {
+        FontStyle.textPreset7.preferredFont(weight: weight.systemWeight)
     }
 
-    static var textPreset8: (FontStyle.TextPreset8Weight) -> UIFont {
-        { FontStyle.textPreset8.preferredFont(weight: $0.weight) }
+    static func textPreset8(weight: FontStyle.TextPreset8Weight) -> UIFont {
+        FontStyle.textPreset8.preferredFont(weight: weight.systemWeight)
     }
     
-    static var textSystem: (FontStyle.TextSystemWeight) -> UIFont {
-        { FontStyle.textSystem.preferredFont(weight: $0.weight) }
+    static func textSystem(weight: FontStyle.TextSystemWeight) -> UIFont {
+        FontStyle.textSystem.preferredFont(weight: weight.systemWeight)
     }
     
     static func fixedFont(for fontStyle: FontStyle) -> UIFont {

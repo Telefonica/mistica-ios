@@ -211,7 +211,7 @@ private extension UICatalogFeedbacksViewController {
         texts.forEach { string in
             let label = UILabel()
             label.text = string
-            label.font = .textPreset6(.regular)
+            label.font = .textPreset6(weight: .regular)
             label.numberOfLines = 0
             label.textColor = .lightGray
             stackView.addArrangedSubview(label)

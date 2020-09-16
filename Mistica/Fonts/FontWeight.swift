@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FontWeightConvertible {
-    var weight: UIFont.Weight { get }
+    var systemWeight: UIFont.Weight { get }
 }
 
 extension FontStyle {
@@ -51,7 +51,7 @@ extension FontStyle {
 }
 
 extension RawRepresentable where RawValue == String {
-    var weight: UIFont.Weight {
+    var systemWeight: UIFont.Weight {
         switch self.rawValue {
         case "light":
             return .light

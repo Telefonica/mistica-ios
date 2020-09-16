@@ -59,7 +59,7 @@ private extension SectionTitleHeaderView {
 
         contentView.backgroundColor = .background
 
-        titleLabel.font = .textPreset8(.medium)
+        titleLabel.font = .textPreset8(weight: .medium)
         titleLabel.textColor = .textSecondary
         titleLabel.numberOfLines = 0
     }

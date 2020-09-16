@@ -426,8 +426,8 @@ private extension HighlightedCard {
     }
 
     func updateFonts() {
-        titleLabel.font = .textPreset5(.light)
-        subtitleLabel.font = .textPreset7(.regular)
+        titleLabel.font = .textPreset5(weight: .light)
+        subtitleLabel.font = .textPreset7(weight: .regular)
         updateActionButtonStyle()
     }
 

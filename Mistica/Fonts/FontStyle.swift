@@ -27,9 +27,9 @@ import UIKit
             preferredSize = constrainedSize
         }
 
-        let points = fontSize.points(prerredContentSize: preferredSize, horizontalSizeClass: horizontalSizeClass)
+        let sizePoints = points(prerredContentSize: preferredSize, horizontalSizeClass: horizontalSizeClass)
 
-        return UIFont.systemFont(ofSize: points, weight: weight)
+        return UIFont.systemFont(ofSize: sizePoints, weight: weight)
     }
 
     public var description: String {
@@ -61,28 +61,100 @@ private extension FontStyle {
         UIScreen.main.traitCollection.preferredContentSizeCategory
     }
 
-    var fontSize: FontSize {
+    var baseSize: CGFloat {
         switch self {
         case .textPreset1:
-            return .veryHuge
+            return 32
         case .textPreset2:
-            return .huge
+            return 28
         case .textPreset3:
-            return .large
+            return 24
         case .textPreset4:
-            return .veryBig
+            return 22
         case .textPreset5:
-            return .big
+            return 18
         case .textPreset6:
-            return .medium
+            return 16
         case .textPreset7:
-            return .small
+            return 14
         case .textPreset8:
-            return .verySmall
+            return 12
         case .textSystem:
-            return .extraSmall
+            return 10
         }
     }
+    
+    func points(prerredContentSize: UIContentSizeCategory, horizontalSizeClass: UIUserInterfaceSizeClass?) -> CGFloat {
+        var size = baseSize
+
+        let preferredContentSizeDelta = deltaPoints(preferredSize: prerredContentSize)
+        let sizeClassDelta = deltaPoints(horizontalSizeClass: horizontalSizeClass)
+
+        size += preferredContentSizeDelta
+        size += sizeClassDelta
+
+        return size
+    }
+    
+    /// Returns the additional points to adjust a FontSize taking into account the `preferredContentSize`
+    /// The result can be negative as the default preferred content size is .large and there are smaller sizes
+    func deltaPoints(preferredSize: UIContentSizeCategory) -> CGFloat {
+        if !UIFont.isDynamicTypeEnabled {
+            return 0
+        }
+
+        switch preferredSize {
+        case .extraSmall:
+            return -3
+        case .small:
+            return -2
+        case .medium:
+            return -1
+        case .large: // Default
+            return 0
+        case .extraLarge:
+            return 2
+        case .extraExtraLarge:
+            return 4
+        case .extraExtraExtraLarge:
+            return 6
+        case .accessibilityMedium:
+            return 10
+        case .accessibilityLarge:
+            return 14
+        case .accessibilityExtraLarge:
+            return 18
+        case .accessibilityExtraExtraLarge:
+            return 22
+        case .accessibilityExtraExtraExtraLarge:
+            return 26
+        default:
+            assertionFailure("Unhandled UIContentSizeCategory: \(preferredSize.rawValue)")
+            return 0
+        }
+    }
+
+    /// Returns the additional points taking into account the `horizontalSizeClass`
+    /// This currently makes the font size a bit larger for some sizes on regular horizontal size classes
+    func deltaPoints(horizontalSizeClass: UIUserInterfaceSizeClass?) -> CGFloat {
+        let horizontalSizeClass = horizontalSizeClass ?? .compact
+        guard horizontalSizeClass == .regular else { return 0 }
+
+        switch self {
+        case .textPreset1,
+             .textPreset2,
+             .textPreset3,
+             .textPreset4:
+            return 0
+        case .textPreset5,
+             .textPreset6,
+             .textPreset7,
+             .textPreset8,
+             .textSystem:
+            return 2
+        }
+    }
+    
 }
 
 // This extension can go away when we drop support for iOS versions lower than 11

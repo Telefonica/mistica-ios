@@ -132,7 +132,7 @@ public class InputField: UIView {
     private lazy var backingPlaceholderLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = .textPreset8(.regular)
+        label.font = .textPreset8(weight: .regular)
         label.numberOfLines = 1
         label.alpha = 0
         label.setContentCompressionResistancePriority(.required, for: .vertical)
@@ -143,8 +143,8 @@ public class InputField: UIView {
 
     private lazy var placeholderLayer: CATextLayer = {
         let textLayer = CATextLayer()
-        textLayer.font = UIFont.textPreset6(.regular)
-        textLayer.fontSize = UIFont.textPreset6(.regular).pointSize
+        textLayer.font = UIFont.textPreset6(weight: .regular)
+        textLayer.fontSize = UIFont.textPreset6(weight: .regular).pointSize
         textLayer.contentsScale = UIScreen.main.scale
         return textLayer
     }()
@@ -161,7 +161,7 @@ public class InputField: UIView {
         }
 
         textInputView.textAlignment = .left
-        textInputView.font = .textPreset6(.regular)
+        textInputView.font = .textPreset6(weight: .regular)
         textInputView.translatesAutoresizingMaskIntoConstraints = false
         textInputView.setContentCompressionResistancePriority(.required, for: .vertical)
         textInputView.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
@@ -188,7 +188,7 @@ public class InputField: UIView {
 
     private lazy var prefixLabel: UILabel = {
         let label = UILabel()
-        label.font = .textPreset6(.regular)
+        label.font = .textPreset6(weight: .regular)
         label.numberOfLines = 1
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         label.setContentHuggingPriority(.defaultLow, for: .horizontal)
@@ -200,7 +200,7 @@ public class InputField: UIView {
         let label = PaddingLabel()
         label.topInset = 4
         label.textAlignment = .right
-        label.font = .textPreset8(.regular)
+        label.font = .textPreset8(weight: .regular)
         label.numberOfLines = 2
         label.setContentHuggingPriority(.required, for: .horizontal)
         return label
@@ -210,7 +210,7 @@ public class InputField: UIView {
         let label = PaddingLabel()
         label.topInset = 4
         label.textAlignment = .left
-        label.font = .textPreset8(.regular)
+        label.font = .textPreset8(weight: .regular)
         label.numberOfLines = 0
         return label
     }()
@@ -717,11 +717,11 @@ private extension InputField {
     func updatePlaceholderLayerPosition() {
         if isPlaceholderFloating {
             placeholderLayer.frame.origin = .zero
-            placeholderLayer.fontSize = UIFont.textPreset8(.regular).pointSize
+            placeholderLayer.fontSize = UIFont.textPreset8(weight: .regular).pointSize
         } else {
             let y = (backingPlaceholderLabel.bounds.height + Constants.horizontalPlaceholderSpacing) / 2
             placeholderLayer.frame.origin = CGPoint(x: 0, y: y)
-            placeholderLayer.fontSize = UIFont.textPreset6(.regular).pointSize
+            placeholderLayer.fontSize = UIFont.textPreset6(weight: .regular).pointSize
         }
     }
 

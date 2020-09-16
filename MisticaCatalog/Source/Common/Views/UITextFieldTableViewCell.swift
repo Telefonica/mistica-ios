@@ -25,7 +25,7 @@ public class UITextFieldTableViewCell: UITableViewCell {
     func setUp() {
         selectionStyle = .none
         textField.clearButtonMode = .whileEditing
-        textField.font = .textPreset6(.regular)
+        textField.font = .textPreset6(weight: .regular)
 
         addSubview(constrainedToLayoutMarginsGuideOf: textField)
     }

@@ -27,6 +27,6 @@ public class UITextFieldTableViewCell: UITableViewCell {
         textField.clearButtonMode = .whileEditing
         textField.font = .body1
 
-        addSubview(constrainedToLayoutMarginsGuideOf: textField)
+        contentView.addSubview(constrainedToLayoutMarginsGuideOf: textField)
     }
 }

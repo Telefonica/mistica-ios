@@ -23,13 +23,7 @@ public class UISegmentedControlTableViewCell: UITableViewCell {
 
     func setUp() {
         selectionStyle = .none
-        addSubview(segmentedControl)
+        contentView.addSubview(constrainedToLayoutMarginsGuideOf: segmentedControl)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            layoutMarginsGuide.leadingAnchor.constraint(equalTo: segmentedControl.leadingAnchor),
-            layoutMarginsGuide.trailingAnchor.constraint(equalTo: segmentedControl.trailingAnchor),
-            layoutMarginsGuide.topAnchor.constraint(equalTo: segmentedControl.topAnchor),
-            layoutMarginsGuide.bottomAnchor.constraint(equalTo: segmentedControl.bottomAnchor)
-        ])
     }
 }

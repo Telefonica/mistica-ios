@@ -11,127 +11,76 @@ import UIKit
 private var _isDynamicTypeEnabled = true
 
 public extension UIFont {
-    @objc(display1Font)
-    static var display1: UIFont {
-        FontStyle.display1.preferredFont()
+    
+    static func textPreset1(weight: FontStyle.TextPreset1Weight = .light) -> UIFont {
+        FontStyle.textPreset1.preferredFont(weight: weight.systemWeight)
+    }
+    
+    static func textPreset2(weight: FontStyle.TextPreset2Weight) -> UIFont {
+        FontStyle.textPreset2.preferredFont(weight: weight.systemWeight)
+    }
+    
+    static func textPreset3(weight: FontStyle.TextPreset3Weight) -> UIFont {
+        FontStyle.textPreset3.preferredFont(weight: weight.systemWeight)
+    }
+    
+    static func textPreset4(weight: FontStyle.TextPreset4Weight) -> UIFont {
+        FontStyle.textPreset4.preferredFont(weight: weight.systemWeight)
+    }
+    
+    static func textPreset5(weight: FontStyle.TextPreset5Weight) -> UIFont {
+        FontStyle.textPreset5.preferredFont(weight: weight.systemWeight)
     }
 
-    @objc(display2Font)
-    static var display2: UIFont {
-        FontStyle.display2.preferredFont()
+    static func textPreset6(weight: FontStyle.TextPreset6Weight) -> UIFont {
+        FontStyle.textPreset6.preferredFont(weight: weight.systemWeight)
+    }
+    
+    static func textPreset7(weight: FontStyle.TextPreset7Weight) -> UIFont {
+        FontStyle.textPreset7.preferredFont(weight: weight.systemWeight)
     }
 
-    @objc(display3Font)
-    static var display3: UIFont {
-        FontStyle.display3.preferredFont()
+    static func textPreset8(weight: FontStyle.TextPreset8Weight) -> UIFont {
+        FontStyle.textPreset8.preferredFont(weight: weight.systemWeight)
     }
-
-    @objc(display4Font)
-    static var display4: UIFont {
-        FontStyle.display4.preferredFont()
+    
+    static func textSystem(weight: FontStyle.TextSystemWeight) -> UIFont {
+        FontStyle.textSystem.preferredFont(weight: weight.systemWeight)
     }
-
-    @objc(display5Font)
-    static var display5: UIFont {
-        FontStyle.display5.preferredFont()
-    }
-
-    @objc(display6Font)
-    static var display6: UIFont {
-        FontStyle.display6.preferredFont()
-    }
-
-    @objc(headline1Font)
-    static var headline1: UIFont {
-        FontStyle.headline1.preferredFont()
-    }
-
-    @objc(headline2Font)
-    static var headline2: UIFont {
-        FontStyle.headline2.preferredFont()
-    }
-
-    @objc(headline3Font)
-    static var headline3: UIFont {
-        FontStyle.headline3.preferredFont()
-    }
-
-    @objc(titleFont)
-    static var title: UIFont {
-        FontStyle.title.preferredFont()
-    }
-
-    @objc(title1Font)
-    static var title1: UIFont {
-        FontStyle.title1.preferredFont()
-    }
-
-    @objc(title2Font)
-    static var title2: UIFont {
-        FontStyle.title2.preferredFont()
-    }
-
-    @objc(title3Font)
-    static var title3: UIFont {
-        FontStyle.title3.preferredFont()
-    }
-
-    @objc(body1Font)
-    static var body1: UIFont {
-        FontStyle.body1.preferredFont()
-    }
-
-    @objc(body2Font)
-    static var body2: UIFont {
-        FontStyle.body2.preferredFont()
-    }
-
-    @objc(body3Font)
-    static var body3: UIFont {
-        FontStyle.body3.preferredFont()
-    }
-
-    @objc(sub1Font)
-    static var sub1: UIFont {
-        FontStyle.sub1.preferredFont()
-    }
-
-    @objc(sub2Font)
-    static var sub2: UIFont {
-        FontStyle.sub2.preferredFont()
-    }
-
-    @objc(caption1Font)
-    static var caption1: UIFont {
-        FontStyle.caption1.preferredFont()
-    }
-
-    @objc(caption2Font)
-    static var caption2: UIFont {
-        FontStyle.caption2.preferredFont()
-    }
-
-    @objc(caption3Font)
-    static var caption3: UIFont {
-        FontStyle.caption3.preferredFont()
-    }
-
-    @objc(caption4Font)
-    static var caption4: UIFont {
-        FontStyle.caption4.preferredFont()
-    }
-
-    @objc(fixedFontForFontStyle:)
+    
     static func fixedFont(for fontStyle: FontStyle) -> UIFont {
-        fontStyle.preferredFont(constrainedToPreferredSize: .large)
+        switch fontStyle {
+        case .textPreset1,
+             .textPreset2,
+             .textPreset3,
+             .textPreset4,
+             .textPreset5,
+             .textPreset6:
+            return fontStyle.preferredFont(weight: .light, constrainedToPreferredSize: .large)
+        case .textPreset7,
+             .textPreset8,
+             .textSystem:
+            return fontStyle.preferredFont(weight: .regular, constrainedToPreferredSize: .large)
+        }
     }
 
-    @objc(preferredFontForFontStyle:constrainedToSize:)
     static func preferredFont(for fontStyle: FontStyle, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory) -> UIFont {
-        fontStyle.preferredFont(constrainedToPreferredSize: constrainedPreferredSize)
+        switch fontStyle {
+        case .textPreset1,
+             .textPreset2,
+             .textPreset3,
+             .textPreset4,
+             .textPreset5,
+             .textPreset6:
+            return fontStyle.preferredFont(weight: .light, constrainedToPreferredSize: constrainedPreferredSize)
+        case .textPreset7,
+             .textPreset8,
+             .textSystem:
+            return fontStyle.preferredFont(weight: .regular, constrainedToPreferredSize: constrainedPreferredSize)
+        }
     }
 
-    @objc static var isDynamicTypeEnabled: Bool {
+    static var isDynamicTypeEnabled: Bool {
         get {
             _isDynamicTypeEnabled
         }

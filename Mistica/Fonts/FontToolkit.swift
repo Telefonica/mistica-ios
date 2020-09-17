@@ -16,7 +16,7 @@ public extension UIFont {
         FontStyle.textPreset1.preferredFont(weight: weight.systemWeight)
     }
     
-    static func extPreset2(weight: FontStyle.TextPreset2Weight) -> UIFont {
+    static func textPreset2(weight: FontStyle.TextPreset2Weight) -> UIFont {
         FontStyle.textPreset2.preferredFont(weight: weight.systemWeight)
     }
     

@@ -32,6 +32,10 @@ workflows:
           - "appscore@tuenti.com"
       vault:
         secrets:
+          - path: secret/services/jenkins/iOS_prov_profiles_and_certs/MisticaApp
+            keys:
+              Enterprise_prov_profiles: IOS_ENTERPRISE_PROV_PROFILES
+              Enterprise_p12_pwd: ENTERPRISE_CERT_PWD
           - path: secret/services/jenkins/appcenter
             keys:
               appcenter_project_key: APPCENTER_PROJECT_NAME

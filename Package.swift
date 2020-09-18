@@ -5,17 +5,18 @@ import PackageDescription
 let package = Package(
     name: "Mistica",
     platforms: [
-      .iOS(.v11),
+        .iOS(.v11)
     ],
     products: [
         .library(
             name: "Mistica",
             targets: ["Mistica"]),
-        .library(name: "MisticaCatalog",
-                 targets: ["MisticaCatalog"])
+        .library(
+            name: "MisticaCatalog",
+            targets: ["MisticaCatalog"])
     ],
     dependencies: [
-        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", from: "3.1.2")
+        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", from: "3.1.8")
     ],
     targets: [
         .target(
@@ -61,20 +62,24 @@ let package = Package(
             ],
             resources: [
                 .process("Resources")
+            ],
+            swiftSettings: [
+                .define("SWIFT_PACKAGE")
             ]
         ),
-        .target(name: "MisticaCatalog",
-                dependencies: [
-                    "Mistica"
-                ],
-                path: "MisticaCatalog",
-                exclude: [
-                    "Resources",
-                    "SupportFiles",
-                ],
-                resources: [
-                    .process("Resources")
-                ]
+        .target(
+            name: "MisticaCatalog",
+            dependencies: [
+                "Mistica"
+            ],
+            path: "MisticaCatalog",
+            exclude: [
+                "Resources",
+                "SupportFiles"
+            ],
+            swiftSettings: [
+                .define("SWIFT_PACKAGE")
+            ]
         )
     ]
 )

@@ -14,29 +14,28 @@ defaults:
     mail: {}
     logparser:
       rules: minimal
-    artifacts:
-      include:
-        - "${source}/pkg/dist/*.zip"
-        - "${source}/pkg/dist/*.ipa"
 
 workflows:
   build_mistica_app_for_enterprise:
     platform: iOS-preproduction-builder
-    stages: ["unistall_prov_profiles_and_cert", "install_prov_profiles_and_cert", "setup", "bundle_install", "build_hotapps", "unistall_prov_profiles_and_cert"]
+    stages: ["unistall_prov_profiles_and_cert", "install_prov_profiles_and_cert", "setup", "bundle_install", "build_hotapps", "check_prov_profiles_and_cert_expiry_day", "unistall_prov_profiles_and_cert"]
     parameters:
       # parameters sent by flow
       INSTALL_PROV_PROFILES: '-i'
       UNINSTALL_PROV_PROFILES: '-u'
       # static varibles
-      IGNORE_DIRTY: 'yes'
       BRAND_VARIANT: 'MisticaApp'
     plugins:
-      artifacts:
-        enabled: true
       mail:
         enabled: True
         recipients:
           - "appscore@tuenti.com"
+      vault:
+        secrets:
+          - path: secret/services/jenkins/appcenter
+            keys:
+              appcenter_project_key: APPCENTER_PROJECT_NAME
+              appcenter_api_token: APPCENTER_API_TOKEN
 
 stages:
   setup:

@@ -25,17 +25,20 @@ public class InputField: UIView {
         static let verticalPlaceholderHeightThreshold: CGFloat = 4
     }
 
+    @frozen
     public enum State {
         case normal
         case invalid
         case disabled
     }
 
+    @frozen
     public enum SecureTextEntry {
         case disabled
         case enabled
     }
 
+    @frozen
     public struct StateStyle {
         let placeholderTextColor: UIColor
         let assistiveTextColor: UIColor
@@ -43,21 +46,25 @@ public class InputField: UIView {
         let editingPlaceholderTextColor: UIColor
     }
 
+    @frozen
     public enum TextInputStyle {
         case textField
         case textView
     }
 
+    @frozen
     public enum TextInputLimit: Equatable {
         case infinite
         case finite(characterCount: Int)
     }
 
+    @frozen
     public enum TextInputKeyboardStyle {
         case keyboard(type: UIKeyboardType, textAutocorrectionType: UITextAutocorrectionType, textAutocapitalizationType: UITextAutocapitalizationType)
         case picker
     }
 
+    @frozen
     public enum SideItem {
         case image(UIImage)
         case secureEntry

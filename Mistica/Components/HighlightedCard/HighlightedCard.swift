@@ -18,11 +18,13 @@ public class HighlightedCard: UIView {
         static let defaultTextEdgeInsets = NSDirectionalEdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 56)
     }
 
+    @frozen
     public enum RightImageStyle {
         case fit
         case fill
     }
 
+    @frozen
     public enum ButtonStyle {
         case link
         case primary

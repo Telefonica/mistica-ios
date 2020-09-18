@@ -62,9 +62,8 @@ public class UICatalogViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.applyOpaqueStyleWithoutShadow()
-
         setUp()
+        styleViews()
     }
 
     override public func viewWillAppear(_ animated: Bool) {
@@ -164,8 +163,6 @@ private extension UICatalogViewController {
         tableView.delegate = self
         tableView.register(ListCellView.self, forCellReuseIdentifier: Constants.cellReusableIdentifier)
 
-        styleViews()
-
         headerView.didSelectBrandStyle = { [weak self] newValue in
             MisticaConfig.brandStyle = newValue
             MisticaConfig.styleControls(MisticaControlStyle.allCases)
@@ -173,11 +170,13 @@ private extension UICatalogViewController {
 
             // Force update `UIAppearance` changes
             UIApplication.shared.windows.forEach { $0.reload() }
+            self?.styleViews()
         }
     }
 
     func styleViews() {
         view.backgroundColor = .background
+        navigationController?.navigationBar.applyOpaqueStyleWithoutShadow()
     }
 }
 

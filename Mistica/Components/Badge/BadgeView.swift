@@ -14,6 +14,7 @@ private enum Constants {
 
 public class BadgeView: UIView {
     /// Specifies the style of a badge
+    @frozen
     public enum Style {
         /// A red oval with a white number
         case numeric

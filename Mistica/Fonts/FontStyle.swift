@@ -8,6 +8,7 @@
 
 import UIKit
 
+@frozen
 @objc public enum FontStyle: Int, CaseIterable, CustomStringConvertible {
     case textPreset1
     case textPreset2

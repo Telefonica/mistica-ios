@@ -1,3 +1,6 @@
+# v.2.0.0 - 2020-09-17
+- Update FontStyle with new text-presets
+
 # v.1.3.5 - 2020-09-10
 
 - Freeze enums in Mistica

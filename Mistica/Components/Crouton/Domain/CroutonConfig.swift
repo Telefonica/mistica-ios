@@ -66,6 +66,6 @@ private extension Button.Style {
     static var croutonOverriddenSizes: OverriddenSizes {
         OverriddenSizes(insets: Constants.insets,
                         minimumWidth: Constants.minimumWidth,
-                        font: .body2)
+                        font: .textPreset6(weight: .medium))
     }
 }

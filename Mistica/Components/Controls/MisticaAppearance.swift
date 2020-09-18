@@ -88,11 +88,11 @@ private extension MisticaAppearance {
 
         let normalTextAttributes = [
             NSAttributedString.Key.foregroundColor: textColor,
-            NSAttributedString.Key.font: UIFont.sub2
+            NSAttributedString.Key.font: UIFont.textPreset7(weight: .medium)
         ]
         let selectedTextAttributes = [
             NSAttributedString.Key.foregroundColor: selectedTextColor,
-            NSAttributedString.Key.font: UIFont.sub2
+            NSAttributedString.Key.font: UIFont.textPreset7(weight: .medium)
         ]
 
         segmentedControlAppearance.setTitleTextAttributes(normalTextAttributes, for: .normal)

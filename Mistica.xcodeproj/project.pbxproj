@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55E6709D250A43A2003BE565 /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E6709C250A43A2003BE565 /* FontWeight.swift */; };
 		6C36487424EC187C008F67A0 /* HighlightedCardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C36487324EC187C008F67A0 /* HighlightedCardStyle.swift */; };
 		6CEAB67124EFD40E004283BE /* AlignmentImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEAB67024EFD40E004283BE /* AlignmentImageView.swift */; };
 		6CFFC24424EBCCF40036DB34 /* HighlightedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFFC24324EBCCF40036DB34 /* HighlightedCard.swift */; };
@@ -72,7 +73,6 @@
 		B4D8ECC624B4D0DC002F3AD5 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */; };
 		B4D8ECCB24B4D26B002F3AD5 /* ThemeVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC824B4D26B002F3AD5 /* ThemeVariant.swift */; };
 		B4D8ECCC24B4D26B002F3AD5 /* AssetCatalog+Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECC924B4D26B002F3AD5 /* AssetCatalog+Themed.swift */; };
-		B4D8ECD224B4D721002F3AD5 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECCF24B4D721002F3AD5 /* FontSize.swift */; };
 		B4D8ECD324B4D721002F3AD5 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECD024B4D721002F3AD5 /* FontStyle.swift */; };
 		B4D8ECD424B4D721002F3AD5 /* FontToolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECD124B4D721002F3AD5 /* FontToolkit.swift */; };
 		B4D8ECD624B4D9B1002F3AD5 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D8ECD524B4D9B1002F3AD5 /* UIView+Utils.swift */; };
@@ -152,6 +152,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55E6709C250A43A2003BE565 /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
 		6C36487324EC187C008F67A0 /* HighlightedCardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardStyle.swift; sourceTree = "<group>"; };
 		6C5AF19624F3CB290017145D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		6CEAB67024EFD40E004283BE /* AlignmentImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentImageView.swift; sourceTree = "<group>"; };
@@ -235,7 +236,6 @@
 		B4D8ECC524B4D0DC002F3AD5 /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		B4D8ECC824B4D26B002F3AD5 /* ThemeVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeVariant.swift; sourceTree = "<group>"; };
 		B4D8ECC924B4D26B002F3AD5 /* AssetCatalog+Themed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AssetCatalog+Themed.swift"; sourceTree = "<group>"; };
-		B4D8ECCF24B4D721002F3AD5 /* FontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 		B4D8ECD024B4D721002F3AD5 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		B4D8ECD124B4D721002F3AD5 /* FontToolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontToolkit.swift; sourceTree = "<group>"; };
 		B4D8ECD524B4D9B1002F3AD5 /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
@@ -669,8 +669,8 @@
 		B4D8ECCE24B4D721002F3AD5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				B4D8ECCF24B4D721002F3AD5 /* FontSize.swift */,
 				B4D8ECD024B4D721002F3AD5 /* FontStyle.swift */,
+				55E6709C250A43A2003BE565 /* FontWeight.swift */,
 				B4D8ECD124B4D721002F3AD5 /* FontToolkit.swift */,
 			);
 			path = Fonts;
@@ -1032,6 +1032,7 @@
 				B4D8ED2A24B5C6C2002F3AD5 /* UIImage+Utils.swift in Sources */,
 				B4D8ECD324B4D721002F3AD5 /* FontStyle.swift in Sources */,
 				B8DD218724D17BFE0096D68C /* SpacerView.swift in Sources */,
+				55E6709D250A43A2003BE565 /* FontWeight.swift in Sources */,
 				B4D8EC9524B4CB33002F3AD5 /* SegmentSelectorCenteredContentLayout.swift in Sources */,
 				B4D8ED1B24B5B8C0002F3AD5 /* UIStackView+Utils.swift in Sources */,
 				B4D8ECB224B4CB33002F3AD5 /* ValidatableView.swift in Sources */,
@@ -1083,7 +1084,6 @@
 				B4D8ECE324B4DD60002F3AD5 /* SeparatorView.swift in Sources */,
 				B4D8EC7B24B4CB33002F3AD5 /* BadgeView.swift in Sources */,
 				B4D8EC8D24B4CB33002F3AD5 /* SegmentSelector.swift in Sources */,
-				B4D8ECD224B4D721002F3AD5 /* FontSize.swift in Sources */,
 				B4D8EC6424B4CB33002F3AD5 /* UIViewPropertyAnimator+InputField.swift in Sources */,
 				B8DD218124D17BBD0096D68C /* PopoverView.swift in Sources */,
 				B4D8ED0024B5B513002F3AD5 /* PaddingLabel.swift in Sources */,

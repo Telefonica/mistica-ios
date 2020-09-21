@@ -26,7 +26,6 @@ let package = Package(
             ],
             path: "Mistica",
             exclude: [
-                "Resources",
                 "SupportFiles",
                 "Source/Components/Badge/docs",
                 "Source/Components/Badge/README.md",

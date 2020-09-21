@@ -1,0 +1,103 @@
+#!/bin/bash
+
+check_requirements() {
+	local prov_profiles_cert_scenario=$1
+	local error_message_no_env_var="This job is no using Vault or no values in secret/services/jenkins/iOS_prov_profiles_and_certs/$BRAND_VARIANT path in Vault"
+	if [[ -z "$IOS_PROD_PROV_PROFILES" ]]; then
+		echo "IOS_PROD_PROV_PROFILES env var has no value for the current job or no value in Vault Key name"
+	else
+		echo "adding IOS_PROD_PROV_PROFILES base64 zip"
+		echo "adding PRODUCTION_CERT_PWD for p12 certs"
+		prov_profiles_cert_list_in_base64+=($IOS_PROD_PROV_PROFILES)
+		prov_profiles_cert_pwd_list+=($PRODUCTION_CERT_PWD)
+	fi
+	if [[ -z "$IOS_ENTERPRISE_PROV_PROFILES" ]]; then
+		echo "IOS_ENTERPRISE_PROV_PROFILES env var has no value for the current job or no value in Vault Key name"
+	else
+		echo "adding IOS_ENTERPRISE_PROV_PROFILES base64 zip"
+		echo "adding ENTERPRISE_CERT_PWD for p12 certs"
+		prov_profiles_cert_list_in_base64+=($IOS_ENTERPRISE_PROV_PROFILES)
+		prov_profiles_cert_pwd_list+=($ENTERPRISE_CERT_PWD)
+	fi
+	if [[ -z "$IOS_PROD_PROV_PROFILES" ]] && [[ -z "$IOS_ENTERPRISE_PROV_PROFILES" ]] ; then
+		if [ $dry_run -ne 0 ]; then
+			echo $error_message_no_env_var
+			return 1
+		else
+			echo "This job is not using Vault or no values in secret/services/jenkins/iOS_prov_profiles_and_certs/$BRAND_VARIANT path in Vault"
+			exit 1
+		fi
+	fi
+	if [[ -z "$CHECK_DAYS_TO_EXPIRE" ]] && [[ ${prov_profiles_cert_scenario} == *expiration_date* ]] ;then
+		export CHECK_DAYS_TO_EXPIRE=15
+		echo "There is no CHECK_DAYS_TO_EXPIRE env var in jenkins job so setting CHECK_DAYS_TO_EXPIRE to: $CHECK_DAYS_TO_EXPIRE"
+	fi
+	exists_command base64
+	exists_command unzip
+	exists_command openssl
+	return 0
+}
+
+unzip_files () {
+	local prov_profiles_cert_base64=$1
+	local ios_prov_files_folder=$2
+	local error_message="ERROR: Not valid zip format ${ios_prov_files_folder}.zip for brand: $BRAND_VARIANT"
+	echo "$prov_profiles_cert_base64" | base64 --decode > ${ios_prov_files_folder}".zip"
+	unzip -t ${ios_prov_files_folder}".zip" 1> /dev/null 2>&1
+	status=$?
+	if [ $status -eq 0 ]; then
+		unzip ${ios_prov_files_folder}".zip" -d $ios_prov_files_folder
+		return 0
+	else
+		return 1
+	fi
+}
+
+set_cert_password() {
+	local cert_pwd=$1
+	[[ -n "$cert_pwd" ]] && set_password="-P ${cert_pwd}" || set_password=""
+	echo "$set_password"
+}
+
+is_cert_file() {
+	local file=$1
+	if [[ ${file} == *.p12 ]]; then
+		return 0
+	elif [[ ${file} == *.cer* ]]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+exists_command() {
+	command -v "$1" >/dev/null 2>&1
+	[ $? -ne 0 ] && echo "$1 not installed" && exit 1
+}
+
+remove_prov_files() {
+	local ios_prov_files_folder=$1
+	local ios_prov_files_zip="${ios_prov_files_folder}.zip"
+	echo "Removing $ios_prov_files_folder folder and $ios_prov_files_zip zip ..."
+	[[ -d $ios_prov_files_folder ]] && rm -rf $ios_prov_files_folder || echo "$ios_prov_files_folder folder not found"
+	[[ -f $ios_prov_files_zip ]] && rm -rf $ios_prov_files_zip || echo "$ios_prov_files_zip zip not found"
+}
+
+get_prov_profiles_version() {
+	local brand=$1
+	local version="1"
+	# To-Do invoking ios script with brand as a param
+	echo "$version"
+}
+
+get_final_prov_profiles_folder() {
+	local prov_profiles_folder=$1
+	local brand=$2
+	local version=$3
+	local final_prov_profiles_folder="$prov_profiles_folder/${brand}_$version"
+	if [[ -d $final_prov_profiles_folder ]]; then
+		echo "$final_prov_profiles_folder"
+	else
+		echo "path $final_prov_profiles_folder does not exist into the zip"
+	fi
+}

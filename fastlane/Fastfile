@@ -1,0 +1,81 @@
+# Requires
+fastlane_version '2.159.0'
+
+skip_docs
+default_platform(:ios)
+
+# Constants
+
+WORKSPACE_NAME = "Mistica.xcworkspace"
+TMP_BUILDS_PATH = "pkg/dist"
+TEAM_ID = "JA666WMX28"
+MISTICA_APP_INFO_PLIST_PATH = "./MisticaApp/SupportFiles/Info.plist"
+MISTICA_APP_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaApp.ipa" 
+
+platform :ios do
+  
+  desc "Build MisticaApp and deploy to AppCenter"
+  lane :build_mistica_app_and_deploy_to_appcenter do
+  	ensure_git_status_clean
+
+  	increment_build_number_in_info_plist(
+      path: MISTICA_APP_INFO_PLIST_PATH
+    )
+
+  	gym(
+        workspace: WORKSPACE_NAME,
+        scheme: "MisticaApp",
+        configuration: "Release",
+        codesigning_identity: "iPhone Distribution: Tuenti Technologies SL",
+        export_team_id: TEAM_ID,
+        output_directory: TMP_BUILDS_PATH,
+        export_method: 'enterprise',
+        clean: true
+    )
+
+    appcenter_upload(
+  	  api_token: get_appcenter_api_token,
+  	  owner_name: "Tuenti-Organization",
+  	  app_name: "Mistica-iOS",
+  	  destinations: "Public",
+  	  file: MISTICA_APP_IPA_PATH,
+  	  release_notes: "https://github.com/Telefonica/mistica-ios/blob/master/CHANGELOG.md"
+  	)
+
+    reset_git_repo
+  end
+
+end
+
+##############################################################
+# Helper Functions
+##############################################################
+
+def increment_build_number_in_info_plist(params)
+	buildNumber = get_info_plist_value(
+  		path: params[:path], 
+  		key: "CFBundleVersion"
+  	).to_i
+
+  	set_info_plist_value(
+  		path: params[:path],
+  		key: "CFBundleVersion",
+  		value: (buildNumber + 1).to_s
+  	)	
+end
+
+def get_appcenter_api_token
+	UI.header "AppCenter API Token"
+
+	appcenter_api_token = ENV['APPCENTER_API_TOKEN'] ||`git config --local --get appcenter.apitoken`.strip
+
+	if appcenter_api_token.empty?
+		appcenter_api_token = UI.input("No AppCenter user API token found., Which is your AppCenter user API token? ")
+
+		`git config --local appcenter.apitoken #{appcenter_api_token}`
+	else
+		UI.success "AppCenter API token configured :)"
+    end
+
+    appcenter_api_token
+end

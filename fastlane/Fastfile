@@ -8,8 +8,7 @@ default_platform(:ios)
 
 WORKSPACE_NAME = "Mistica.xcworkspace"
 TMP_BUILDS_PATH = "pkg/dist"
-TEAM_ID = "JA666WMX28"
-MISTICA_APP_INFO_PLIST_PATH = "./MisticaApp/SupportFiles/Info.plist"
+MISTICA_APP_INFO_PLIST_PATH = "./Examples/MisticaApp/MisticaApp/SupportFiles/Info.plist"
 MISTICA_APP_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaApp.ipa" 
 
 platform :ios do
@@ -27,7 +26,7 @@ platform :ios do
         scheme: "MisticaApp",
         configuration: "Release",
         codesigning_identity: "iPhone Distribution: Tuenti Technologies SL",
-        export_team_id: TEAM_ID,
+        export_team_id: "JA666WMX28",
         output_directory: TMP_BUILDS_PATH,
         export_method: 'enterprise',
         clean: true

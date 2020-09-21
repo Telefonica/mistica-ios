@@ -16,7 +16,7 @@ let package = Package(
             targets: ["MisticaCatalog"])
     ],
     dependencies: [
-        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", from: "3.1.8")
+        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8"))
     ],
     targets: [
         .target(

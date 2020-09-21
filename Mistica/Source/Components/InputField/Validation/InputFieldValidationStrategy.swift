@@ -8,6 +8,7 @@
 
 import Foundation
 
+@frozen
 public enum InputFieldValidationResult: Equatable {
     case success
     case failure(message: String)

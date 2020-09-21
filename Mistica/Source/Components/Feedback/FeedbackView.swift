@@ -12,6 +12,7 @@ import UIKit
 public typealias FeedbackCompletion = () -> Void
 public typealias FeedbackRetryCompletion = (@escaping () -> Void) -> Void
 
+@frozen
 public enum FeedbackPrimaryAction {
     case none
     case button(title: String, completion: FeedbackCompletion)
@@ -33,6 +34,7 @@ extension FeedbackPrimaryAction: Equatable {
     }
 }
 
+@frozen
 public enum FeedbackSecondaryAction {
     case none
     case button(title: String, completion: FeedbackCompletion)

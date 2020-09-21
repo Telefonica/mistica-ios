@@ -16,6 +16,7 @@ private enum ViewStyles {
 // MARK: ListCellView
 
 open class ListCellView: UITableViewCell {
+    @frozen
     public enum AssetSize {
         case none
         case large

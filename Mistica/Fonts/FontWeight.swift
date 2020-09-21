@@ -52,7 +52,7 @@ extension FontStyle {
 
 extension RawRepresentable where RawValue == String {
     var systemWeight: UIFont.Weight {
-        switch self.rawValue {
+        switch rawValue {
         case "light":
             return .light
         case "regular":

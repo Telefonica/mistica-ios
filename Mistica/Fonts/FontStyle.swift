@@ -84,7 +84,7 @@ private extension FontStyle {
             return 10
         }
     }
-    
+
     func points(prerredContentSize: UIContentSizeCategory, horizontalSizeClass: UIUserInterfaceSizeClass?) -> CGFloat {
         var size = baseSize
 
@@ -96,7 +96,7 @@ private extension FontStyle {
 
         return size
     }
-    
+
     /// Returns the additional points to adjust a FontSize taking into account the `preferredContentSize`
     /// The result can be negative as the default preferred content size is .large and there are smaller sizes
     func deltaPoints(preferredSize: UIContentSizeCategory) -> CGFloat {
@@ -155,7 +155,6 @@ private extension FontStyle {
             return 2
         }
     }
-    
 }
 
 // This extension can go away when we drop support for iOS versions lower than 11

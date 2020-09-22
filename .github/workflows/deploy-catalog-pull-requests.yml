@@ -2,11 +2,7 @@ name: Deploy catalog pull requests
 
 on:
   push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
   deploy-catalog-pull-requests:

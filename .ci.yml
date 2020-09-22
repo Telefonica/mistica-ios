@@ -38,7 +38,6 @@ workflows:
               Enterprise_p12_pwd: ENTERPRISE_CERT_PWD
           - path: secret/services/jenkins/appcenter
             keys:
-              mistica_ios_project_key: APPCENTER_PROJECT_NAME
               appcenter_api_token: APPCENTER_API_TOKEN
 
 stages:

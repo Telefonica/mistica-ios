@@ -72,7 +72,7 @@ platform :ios do
     appcenter_upload(
   	  api_token: get_appcenter_api_token,
   	  owner_name: "Tuenti-Organization",
-  	  app_name: ENV['APPCENTER_PROJECT_NAME'],
+  	  app_name: "Mistica-iOS",
   	  destinations: "Public",
   	  file: MISTICA_APP_IPA_PATH,
   	  release_notes: "https://github.com/Telefonica/mistica-ios/blob/master/CHANGELOG.md"

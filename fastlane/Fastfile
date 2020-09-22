@@ -11,8 +11,6 @@ TMP_BUILDS_PATH = "pkg/dist"
 MISTICA_APP_INFO_PLIST_PATH = "./Examples/MisticaApp/MisticaApp/SupportFiles/Info.plist"
 MISTICA_APP_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaApp.ipa" 
 
-ENV["DEVELOPER_DIR"] = "/Applications/Xcode-12.app/Contents/Developer" if is_ci()
-
 platform :ios do
 
   before_all do
@@ -24,30 +22,25 @@ platform :ios do
     UI.message "Installing homebrew"
     
     if system("which -s brew;")
-      UI.success "Homebrew already installed"      
+      UI.success "Homebrew already installed"   
     else
       system('CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"')
-      UI.success "Done ✅"
     end
 
     UI.message "Installing carthage"
     brew_install_or_update(
       formula: "carthage"
     )
-    UI.success "Done ✅"
 
     UI.message "Installing swiftformat"
     brew_install_or_update(
       formula: "swiftformat"
     )
-    UI.success "Done ✅"
 
     UI.message "Installing swiftformat"
     Dir.chdir("..") do
       sh("./carthage-build.sh")
     end
-    UI.success "Done ✅"
-
   end
 
   desc "Build Mistica catalog and upload to AppCenter"

@@ -32,7 +32,7 @@ platform :ios do
 
     UI.message "Installing swiftformat"
     brew_install_or_update(
-      formula: "carthage"
+      formula: "swiftformat"
     )
     UI.success "Done ✅"
 

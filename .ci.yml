@@ -16,9 +16,9 @@ defaults:
       rules: minimal
 
 workflows:
-  build_mistica_app_for_enterprise:
+  build_and_deploy_mistica_catalog:
     platform: iOS-preproduction-builder
-    stages: ["unistall_prov_profiles_and_cert", "install_prov_profiles_and_cert", "setup", "bundle_install", "build_mistica_app_and_deploy_to_appcenter", "check_prov_profiles_and_cert_expiry_day", "unistall_prov_profiles_and_cert"]
+    stages: ["unistall_prov_profiles_and_cert", "install_prov_profiles_and_cert", "setup", "bundle_install", "build_and_deploy_mistica_catalog", "check_prov_profiles_and_cert_expiry_day", "unistall_prov_profiles_and_cert"]
     parameters:
       # Parameters for cert & profiles management scripts
       INSTALL_PROV_PROFILES: '-i'
@@ -49,8 +49,8 @@ stages:
     - "pwd"
     - "export PATH=${RBENV_PATHS}:${PATH}; bundle config --delete without"
     - "export PATH=${RBENV_PATHS}:${PATH}; bundle install"
-  build_mistica_app_and_deploy_to_appcenter:
-    - "export PATH=${RBENV_PATHS}:${PATH}; bundle exec fastlane build_mistica_app_and_deploy_to_appcenter"
+  build_and_deploy_mistica_catalog:
+    - "export PATH=${RBENV_PATHS}:${PATH}; bundle exec fastlane build_and_deploy_mistica_catalog"
   install_prov_profiles_and_cert:
     - "./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh ${INSTALL_PROV_PROFILES}"
   unistall_prov_profiles_and_cert:

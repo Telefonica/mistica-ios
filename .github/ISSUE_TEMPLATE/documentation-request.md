@@ -9,4 +9,4 @@ assignees: ''
 
 **Is something in our documentation missing or not well explained? Do you need help with a component? Should we create a new Mistica Catalog entry as example?**
 
-Please describe how can we improve our documentation
+<!-- Please describe how can we improve our documentation -->

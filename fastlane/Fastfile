@@ -11,7 +11,13 @@ TMP_BUILDS_PATH = "pkg/dist"
 MISTICA_APP_INFO_PLIST_PATH = "./Examples/MisticaApp/MisticaApp/SupportFiles/Info.plist"
 MISTICA_APP_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaApp.ipa" 
 
+ENV["DEVELOPER_DIR"] = "/Applications/Xcode-12.app/Contents/Developer" if is_ci()
+
 platform :ios do
+
+  before_all do
+    xcversion(version: "12")
+  end
 
   desc "Setup the external dependencies and stuff needed to have a full working environment experience"  
   lane :setup do
@@ -107,7 +113,7 @@ def get_appcenter_api_token
 		UI.success "AppCenter API token configured :)"
    end
 
-   appcenter_api_token
+   return appcenter_api_token
 end
 
 def brew_install_or_update(params)
@@ -118,4 +124,12 @@ def brew_install_or_update(params)
     UI.message "Installing brew formula #{params[:formula]}"
     system("brew install #{params[:formula]}")
   end
+end
+
+def is_ci
+  # Check for Jenkins environment variables
+  ['JENKINS_HOME', 'JENKINS_URL'].each do |current|
+    return true if ENV.key?(current)
+  end
+  return false
 end

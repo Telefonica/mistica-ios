@@ -44,6 +44,8 @@ stages:
   setup:
     - "rm -rf logs/*"
     - "rm -rf tmp/*"
+    - "export PATH=${RBENV_PATHS}:${PATH}; rbenv install 2.6.0"
+    - "export PATH=${RBENV_PATHS}:${PATH}; rbenv local 2.6.0"
     - "export PATH=${RBENV_PATHS}:${PATH}; rbenv which ruby; which ruby; ruby --version"
   bundle_install:
     - "pwd"

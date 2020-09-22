@@ -12,7 +12,38 @@ MISTICA_APP_INFO_PLIST_PATH = "./Examples/MisticaApp/MisticaApp/SupportFiles/Inf
 MISTICA_APP_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaApp.ipa" 
 
 platform :ios do
-  
+
+  desc "Setup the external dependencies and stuff needed to have a full working environment experience"  
+  lane :setup do
+    UI.message "Installing homebrew"
+    
+    if system("which -s brew;")
+      UI.success "Homebrew already installed"      
+    else
+      system('CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"')
+      UI.success "Done ✅"
+    end
+
+    UI.message "Installing carthage"
+    brew_install_or_update(
+      formula: "carthage"
+    )
+    UI.success "Done ✅"
+
+    UI.message "Installing swiftformat"
+    brew_install_or_update(
+      formula: "carthage"
+    )
+    UI.success "Done ✅"
+
+    UI.message "Installing swiftformat"
+    Dir.chdir("..") do
+      sh("./carthage-build.sh")
+    end
+    UI.success "Done ✅"
+
+  end
+
   desc "Build Mistica catalog and upload to AppCenter"
   lane :build_and_deploy_mistica_catalog do
   	ensure_git_status_clean
@@ -74,7 +105,17 @@ def get_appcenter_api_token
 		`git config --local appcenter.apitoken #{appcenter_api_token}`
 	else
 		UI.success "AppCenter API token configured :)"
-    end
+   end
 
-    appcenter_api_token
+   appcenter_api_token
+end
+
+def brew_install_or_update(params)
+  if system("brew ls --versions #{params[:formula]} >/dev/null;")
+    UI.message "Updating brew formula #{params[:formula]}"
+    system("brew upgrade #{params[:formula]}")
+  else
+    UI.message "Installing brew formula #{params[:formula]}"
+    system("brew install #{params[:formula]}")
+  end
 end

@@ -19,7 +19,7 @@ defaults:
 workflows:
   build_and_deploy_mistica_catalog:
     platform: iOS-preproduction-builder
-    stages: ["unistall_prov_profiles_and_cert", "install_prov_profiles_and_cert", "setup", "bundle_install", "build_and_deploy_mistica_catalog", "check_prov_profiles_and_cert_expiry_day", "unistall_prov_profiles_and_cert"]
+    stages: ["unistall_prov_profiles_and_cert", "install_prov_profiles_and_cert", "setup_ruby", "setup_project_dependencies", "build_and_deploy_mistica_catalog", "check_prov_profiles_and_cert_expiry_day", "unistall_prov_profiles_and_cert"]
     parameters:
       # Parameters for cert & profiles management scripts
       INSTALL_PROV_PROFILES: '-i'
@@ -42,16 +42,17 @@ workflows:
               appcenter_api_token: APPCENTER_API_TOKEN
 
 stages:
-  setup:
+  setup_ruby:
     - "rm -rf logs/*"
     - "rm -rf tmp/*"
     - "export PATH=${RBENV_PATHS}:${PATH}; rbenv install 2.6.0 || true"
     - "export PATH=${RBENV_PATHS}:${PATH}; rbenv local 2.6.0"
     - "export PATH=${RBENV_PATHS}:${PATH}; rbenv which ruby; which ruby; ruby --version"
-  bundle_install:
+  setup_project_dependencies:
     - "pwd"
     - "export PATH=${RBENV_PATHS}:${PATH}; bundle config --delete without"
     - "export PATH=${RBENV_PATHS}:${PATH}; bundle install"
+    - "export PATH=${RBENV_PATHS}:${PATH}; bundle exec fastlane setup"
   build_and_deploy_mistica_catalog:
     - "export PATH=${RBENV_PATHS}:${PATH}; bundle exec fastlane build_and_deploy_mistica_catalog"
   install_prov_profiles_and_cert:

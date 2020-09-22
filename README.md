@@ -11,7 +11,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-59C939.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Cocoapods compatible](https://img.shields.io/badge/CocoaPods-compatible-59C939.svg?style=flat)](https://cocoapods.org/)
 
-Mistica is a framework that contains reusable UI components and utilities.
+Mistica is a framework that contains reusable UI components and utilities for Telefonica Design System ([Mistica](https://github.com/Telefonica/mistica))
 
 ## Instalation
 
@@ -20,7 +20,7 @@ Mistica is a framework that contains reusable UI components and utilities.
 Add Mistica to your `Cartfile`:
 
 ```
-github "Telefonica/mistica-ios" "master"
+github "Telefonica/mistica-ios"
 ```
 
 And then run:
@@ -48,6 +48,14 @@ pod install
 ### Swift Package Manager
 
 Support for SPM will be considered after the release of Xcode 12 and the new support of swift packages with resources.
+
+## Components
+
+Explore the components downloading the Mistica Catalog app
+
+<p align="center">
+<img height="200" align="center" alt="Mística Catalog for iOS" src="./doc/images/mistica-catalog-download-qr.png">
+</p>
 
 ## Configuration
 

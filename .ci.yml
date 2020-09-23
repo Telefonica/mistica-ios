@@ -28,7 +28,7 @@ workflows:
       mail:
         enabled: True
         recipients:
-          - "appscore@tuenti.com"
+          - "ios@tuenti.com"
       vault:
         secrets:
           - path: secret/services/jenkins/iOS_prov_profiles_and_certs/MisticaApp

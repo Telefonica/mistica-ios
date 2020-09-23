@@ -24,6 +24,12 @@ logs/
 pkg/
 local/
 
+### SwiftPM ###
+Packages
+.build/
+*.xcodeproj
+Package.resolved
+
 # AppCode
 *.iml
 .idea/

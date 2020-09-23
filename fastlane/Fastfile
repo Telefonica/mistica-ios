@@ -22,7 +22,7 @@ platform :ios do
     UI.message "Installing homebrew"
     
     if system("which -s brew;")
-      UI.success "Homebrew already installed"   
+      UI.success "Homebrew already installed"
     else
       system('CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"')
     end
@@ -37,7 +37,7 @@ platform :ios do
       formula: "swiftformat"
     )
 
-    UI.message "Installing swiftformat"
+    UI.message "Carthage update and build"
     Dir.chdir("..") do
       sh("./carthage-build.sh")
     end

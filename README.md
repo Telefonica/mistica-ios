@@ -27,7 +27,7 @@ Mistica is a framework that contains reusable UI components and utilities.
 You can add Mistica to an Xcode project by adding it as a package dependency.
 
 1. From the **File** menu, select **Swift Package** > **Add Package Dependency**.
-2. Enter "[https://github.com/Telefonica/mistica-ios](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fpointfreeco%2Fswift-composable-architecture%2Fbadge%3Ftype%3Dswift-versions)" into the package repository URL text field.
+2. Enter "[https://github.com/Telefonica/mistica-ios](https://github.com/Telefonica/mistica-ios)" into the package repository URL text field.
 3. From the **Add Package to App** window, select **Mistica** library. Add only **MisticaCatalog** if you want to see the Component Catalog inside your app.
 
 You also can integrate Mitica to Swift Package, add the following as a dependency to your `Package.swift`:

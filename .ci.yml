@@ -48,6 +48,7 @@ stages:
     - "export PATH=${RBENV_PATHS}:${PATH}; rbenv which ruby; which ruby; ruby --version"
   setup_project_dependencies:
     - "pwd"
+    - "export PATH=${RBENV_PATHS}:${PATH}; gem install bundle"
     - "export PATH=${RBENV_PATHS}:${PATH}; bundle config --delete without"
     - "export PATH=${RBENV_PATHS}:${PATH}; bundle install"
     - "export PATH=${RBENV_PATHS}:${PATH}; bundle exec fastlane setup"

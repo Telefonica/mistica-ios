@@ -10,6 +10,11 @@ import Foundation
 
 // A helper to access the framework bundle
 extension Bundle {
-    private final class Internal {}
-    static let misticaCatalog = Bundle(for: Internal.self)
+    #if SWIFT_PACKAGE
+        static let misticaCatalog = Bundle.module
+    #else
+        private final class Internal {}
+
+        static let misticaCatalog = Bundle(for: Internal.self)
+    #endif
 }

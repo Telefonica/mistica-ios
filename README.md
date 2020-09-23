@@ -110,6 +110,11 @@ The instalation process is the same than for `Mistica.framework`.
 
 And for showing the catalog you only need to show **UICatalogViewController**.
 
+## Demo app
+Included in this repository is a demo app with all implemented components. We have also created a demo app with is being update constantly where we show all the componennts from the library
+
+The app can be downloaded [here](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-ios/distribution_groups/public)
+
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md)

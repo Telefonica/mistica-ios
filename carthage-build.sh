@@ -17,7 +17,7 @@ build()
 }
 
 # Update dependency without building
-carthage update --no-build --use-ssh
+carthage update --no-build
 
 # Build dependency with extra flags to prevent issues in Xcode 12
 build

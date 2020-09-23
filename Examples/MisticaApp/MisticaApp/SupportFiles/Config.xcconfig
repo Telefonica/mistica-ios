@@ -18,10 +18,9 @@ ENABLE_BITCODE = NO
 
 INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks
 IPHONEOS_DEPLOYMENT_TARGET = 13.0
-SKIP_INSTALL = YES
+SKIP_INSTALL = NO
 TARGETED_DEVICE_FAMILY = 1,2
-PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica
-PRODUCT_NAME = $(TARGET_NAME:c99extidentifier)
+PRODUCT_NAME = $(TARGET_NAME)
 
 // Search Paths
 
@@ -40,11 +39,7 @@ LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/
 
 DEFINES_MODULE = YES
 INFOPLIST_FILE = $(TARGET_NAME)/SupportFiles/Info.plist
-PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.$(TARGET_NAME)
-
-// Signing
-
-CODE_SIGN_IDENTITY =
+PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise
 
 // Swift
 

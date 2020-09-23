@@ -12,7 +12,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-59C939.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Cocoapods compatible](https://img.shields.io/badge/CocoaPods-compatible-59C939.svg?style=flat)](https://cocoapods.org/)
 
-Mistica is a framework that contains reusable UI components and utilities.
+Mistica is a framework that contains reusable UI components and utilities for Telefonica Design System ([Mistica](https://github.com/Telefonica/mistica))
 
 * [Instalation](#instalation)
 * [Configuration](#configuration)
@@ -151,7 +151,11 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 ## Demo app
 Included in this repository is a demo app with all implemented components. We have also created a demo app with is being update constantly where we show all the componennts from the library
 
-The app can be downloaded [here](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-ios/distribution_groups/public)
+The app can be downloaded [here](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-ios/distribution_groups/public) or use the following QR
+
+<p align="center">
+<img height="175" align="center" alt="Mística Catalog for iOS" src="./doc/images/mistica-catalog-download-qr.png">
+</p>
 
 ## Contributing
 

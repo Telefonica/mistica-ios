@@ -1299,6 +1299,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */;
 			buildSettings = {
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1306,6 +1308,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */;
 			buildSettings = {
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

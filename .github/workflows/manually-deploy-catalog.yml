@@ -1,0 +1,32 @@
+name: Manually deploy catalog
+
+on:
+  workflow_dispatch:
+        inputs:
+            commit_to_deploy:
+                description: 'Changeset'
+                required: false
+                default: ''
+
+jobs:
+  manually-deploy-catalog:
+    name: Manually deploy catalog
+    runs-on: self-hosted
+    
+    steps:
+      
+      - name: Deploy master
+        if: ${{ github.event.inputs.commit_to_deploy == '' }}
+        uses: satak/webrequest-action@master
+        with:
+          url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
+          method: POST
+          payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-ios",  "branch": "master",  "workflow": "build_and_deploy_mistica_catalog",  "ticket": "APPS-7169", "username": "flow"}'
+
+      - name: Deploy commit
+        if: ${{ github.event.inputs.commit_to_deploy != '' }}
+        uses: satak/webrequest-action@master
+        with:
+          url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
+          method: POST
+          payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-ios",  "branch": "master",  "changeset": ${{ github.event.inputs.commit_to_deploy }},  "workflow": "build_and_deploy_mistica_catalog",  "ticket": "APPS-7169", "username": "flow"}'

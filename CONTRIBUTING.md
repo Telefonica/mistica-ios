@@ -48,26 +48,12 @@ To create or modify components from the Mistica library follow the next steps:
 
 1. Clone this repo
 
-2. Install SwiftFormat, if you already have installed Homebrew:
+2. Run the following commands
 
 ```sh
-brew install swiftformat
-```
-
-or read the [documentation](https://github.com/nicklockwood/SwiftFormat#command-line-tool).
-
-3. Use carthage to update Mistica's dependencies (Lottie) and be able to build locally:
-
-> The Carthage version `0.35.0` does not work properly on Xcode 12 without a workaroud. Use the script `carthage-build.sh` to update and build dependencies.
-
-```
-./carthage-build.sh
-```
-
-For previous versions of Xcode you can still use:
-
-```swift
-carthage update --platform iOS
+sudo gem install bundler
+bundle install
+bundle exec fastlane setup
 ```
 
 4. Open `Mistica.xcodeproj`

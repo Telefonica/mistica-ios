@@ -5,6 +5,6 @@
       location = "group:Mistica.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Examples/Example/Example.xcodeproj">
+      location = "group:Examples/MisticaApp/MisticaApp.xcodeproj">
    </FileRef>
 </Workspace>

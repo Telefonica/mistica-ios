@@ -34,11 +34,13 @@ public extension CroutonController {
     ///   - text: The text to display in the crouton
     ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
     ///   - style: The style of the crouton, `.info` by default
+    ///   - useSafeAreaLayoutGuides: True if the Crouton must take the safeAreaLayoutGuides as reference,  otherwhise false.
     ///   - dismissHandler: A handler which is called when the handler is removed from the screen
     @discardableResult
     func showCrouton(withText text: String,
                      action: ActionConfig? = nil,
                      style: CroutonStyle = .info,
+                     useSafeAreaLayoutGuides: Bool = false,
                      dismissHandler: DismissHandlerBlock? = nil) -> Token {
         assertMainThread()
 
@@ -61,6 +63,7 @@ public extension CroutonController {
         let crouton = CroutonView(text: text,
                                   action: overwrittenAction,
                                   config: config,
+                                  useSafeAreaLayoutGuides: useSafeAreaLayoutGuides,
                                   dismissHandler: dismissHandler)
 
         show(crouton, token: token)
@@ -159,14 +162,20 @@ private extension CroutonController {
             assertionFailure("Could not find the app's key window.")
             return nil
         }
+        guard let rootViewController = window.rootViewController else {
+            assertionFailure("Has the window a rootViewController?")
+            return nil
+        }
 
-        if let rootVC = window.rootViewController as? UINavigationController {
+        let vcVisible = visibleViewController(from: rootViewController)
+
+        if let rootVC = vcVisible as? UINavigationController {
             return visibleViewController(from: rootVC.topViewController!)
-        } else if let homeVC = window.rootViewController?.tabBarController,
+        } else if let homeVC = vcVisible.parent?.tabBarController,
             let selectedNavigationController = homeVC.selectedViewController as? UINavigationController {
             return visibleViewController(from: selectedNavigationController.topViewController!)
         } else {
-            return window.rootViewController
+            return vcVisible
         }
     }
 
@@ -180,6 +189,12 @@ private extension CroutonController {
         } else if let viewController = viewController as? UINavigationController {
             if let topViewController = viewController.topViewController {
                 return visibleViewController(from: topViewController)
+            } else {
+                return viewController
+            }
+        } else if let tabViewController = viewController as? UITabBarController {
+            if let selectedTab = tabViewController.selectedViewController {
+                return selectedTab
             } else {
                 return viewController
             }

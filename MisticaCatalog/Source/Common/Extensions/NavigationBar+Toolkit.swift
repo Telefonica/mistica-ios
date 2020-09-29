@@ -15,9 +15,9 @@ extension UINavigationBar {
         shadowImage = UIImage()
     }
 
-    static func textAttributes(for fontStyle: FontStyle, color: UIColor) -> [NSAttributedString.Key: Any] {
+    static func textAttributes(for font: UIFont, color: UIColor) -> [NSAttributedString.Key: Any] {
         [
-            .font: UIFont.fixedFont(for: fontStyle),
+            .font: font,
             .foregroundColor: color,
             .shadow: NSShadow.clear()
         ]
@@ -35,14 +35,14 @@ extension UINavigationBar {
             navBarAppearance.configureWithOpaqueBackground()
             navBarAppearance.shadowColor = .clear
             navBarAppearance.backgroundColor = .navigationBarBackground
-            navBarAppearance.largeTitleTextAttributes = UINavigationBar.textAttributes(for: .textPreset2, color: UIColor.navigationBarPrimary)
-            navBarAppearance.titleTextAttributes = UINavigationBar.textAttributes(for: .textPreset5, color: UIColor.navigationBarPrimary)
+            navBarAppearance.largeTitleTextAttributes = UINavigationBar.textAttributes(for: .textPreset2(weight: .light), color: UIColor.navigationBarPrimary)
+            navBarAppearance.titleTextAttributes = UINavigationBar.textAttributes(for: .textPreset5(weight: .medium), color: UIColor.navigationBarPrimary)
             standardAppearance = navBarAppearance
             compactAppearance = navBarAppearance
             scrollEdgeAppearance = navBarAppearance
         } else {
-            largeTitleTextAttributes = UINavigationBar.textAttributes(for: .textPreset2, color: UIColor.navigationBarPrimary)
-            titleTextAttributes = UINavigationBar.textAttributes(for: .textPreset5, color: UIColor.navigationBarPrimary)
+            largeTitleTextAttributes = UINavigationBar.textAttributes(for: .textPreset2(weight: .light), color: UIColor.navigationBarPrimary)
+            titleTextAttributes = UINavigationBar.textAttributes(for: .textPreset5(weight: .medium), color: UIColor.navigationBarPrimary)
         }
     }
 }

@@ -1,3 +1,6 @@
+# v.2.1.0 - 2020-09-29
+- Update FontToolkit adding a parameter for constraining the preferred size of each text preset
+
 # v.2.0.0 - 2020-09-17
 - Update FontStyle with new text-presets
 

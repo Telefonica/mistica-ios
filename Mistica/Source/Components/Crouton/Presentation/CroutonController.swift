@@ -34,13 +34,11 @@ public extension CroutonController {
     ///   - text: The text to display in the crouton
     ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
     ///   - style: The style of the crouton, `.info` by default
-    ///   - useSafeAreaLayoutGuides: True if the Crouton must take the safeAreaLayoutGuides as reference,  otherwhise false.
     ///   - dismissHandler: A handler which is called when the handler is removed from the screen
     @discardableResult
     func showCrouton(withText text: String,
                      action: ActionConfig? = nil,
                      style: CroutonStyle = .info,
-                     useSafeAreaLayoutGuides: Bool = false,
                      dismissHandler: DismissHandlerBlock? = nil) -> Token {
         assertMainThread()
 
@@ -63,7 +61,6 @@ public extension CroutonController {
         let crouton = CroutonView(text: text,
                                   action: overwrittenAction,
                                   config: config,
-                                  useSafeAreaLayoutGuides: useSafeAreaLayoutGuides,
                                   dismissHandler: dismissHandler)
 
         show(crouton, token: token)

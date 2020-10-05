@@ -76,17 +76,14 @@ class CroutonView: UIView {
     private let config: CroutonConfig
     private let dismissHandler: DismissHandlerBlock?
     private let action: (text: String, handler: DidTapActionBlock)?
-    private let useSafeAreaLayoutGuides: Bool
 
     init(text: String,
          action: (text: String, handler: DidTapActionBlock)? = nil,
          config: CroutonConfig,
-         useSafeAreaLayoutGuides: Bool,
          dismissHandler: DismissHandlerBlock? = nil) {
         self.text = text
         self.action = action
         self.config = config
-        self.useSafeAreaLayoutGuides = useSafeAreaLayoutGuides
         self.dismissHandler = dismissHandler
 
         super.init(frame: .zero)
@@ -95,7 +92,7 @@ class CroutonView: UIView {
         backgroundColor = config.backgroundColor
         accessibilityLabel = text
 
-        layoutViews(useSafeAreaLayoutGuides: useSafeAreaLayoutGuides)
+        layoutViews()
     }
 
     @available(*, unavailable)
@@ -199,13 +196,7 @@ extension CroutonView {
 // MARK: Private methods
 
 private extension CroutonView {
-    func layoutViews(useSafeAreaLayoutGuides: Bool) {
-        if useSafeAreaLayoutGuides {
-            directionalLayoutMargins = Constants.marginsWhenUsingSafeArea
-        } else {
-            directionalLayoutMargins = Constants.margins
-        }
-
+    func layoutViews() {
         addSubview(stackView)
         addSubview(dummyView)
 
@@ -223,17 +214,19 @@ private extension CroutonView {
             dummyView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor)
         ])
     }
-    
+
     func addContainerConstraints(to container: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
 
-        if useSafeAreaLayoutGuides {
+        if container.safeAreaInsets.bottom > 0 {
             NSLayoutConstraint.activate([
                 trailingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.trailingAnchor),
                 leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor),
                 bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: container.safeAreaInsets.bottom),
                 dummyView.heightAnchor.constraint(equalToConstant: container.safeAreaInsets.bottom)
             ])
+
+            directionalLayoutMargins = Constants.marginsWhenUsingSafeArea
         } else {
             let bottomConstraint: NSLayoutConstraint
 
@@ -249,6 +242,8 @@ private extension CroutonView {
                 leadingAnchor.constraint(equalTo: container.leadingAnchor),
                 bottomConstraint
             ])
+
+            directionalLayoutMargins = Constants.margins
         }
     }
 

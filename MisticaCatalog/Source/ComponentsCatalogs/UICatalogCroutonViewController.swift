@@ -45,17 +45,10 @@ class UICatalogCroutonViewController: UITableViewController {
         return cell
     }()
 
-    private lazy var showCroutonInTabCell: UITableViewCell = {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "showCroutonInTab")
-        cell.textLabel?.textColor = .textLink
-        cell.textLabel?.text = "Show Crouton in Tab"
-        return cell
-    }()
-
     private lazy var cells = [
         [titleCell],
         [actionTitleCell],
-        [croutonStyleCell, showCroutonCell, showCroutonInTabCell]
+        [croutonStyleCell, showCroutonCell]
     ]
 
     init() {
@@ -106,8 +99,7 @@ extension UICatalogCroutonViewController {
         if indexPath.row == 1 {
             CroutonController.shared.showCrouton(withText: titleCell.textField.text ?? "",
                                                  action: croutonAction,
-                                                 style: selectedCroutonStyle,
-                                                 useSafeAreaLayoutGuides: true)
+                                                 style: selectedCroutonStyle)
         } else {
             let sampleTabBarViewController = SampleTabBarViewController()
             sampleTabBarViewController.text = titleCell.textField.text ?? ""

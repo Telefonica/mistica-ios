@@ -135,18 +135,18 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 
 ## Components
 
-* [Button](./Mistica/Components/Button/)
-* [Crouton](./Mistica/Components/Crouton/)
-* [SegmentSelector](./Mistica/Components/SegmentSelector/)
-* [Feedbacks](./Mistica/Components/Feedback/)
-* [Popover](./Mistica/Components/Popover/)
-* [ViewStates](./Mistica/Components/ViewStates/)
-* [Badge](./Mistica/Components/Badge/)
-* [InputFields](./Mistica/Components/InputField/)
-* [ScrollContentIndicator](./Mistica/Components/ScrollContentIndicator/)
-* [Lists](./Mistica/Components/Lists/)
-* [SectionTitle](./Mistica/Components/SectionTitle/)
-* [Header](./Mistica/Components/Header/)
+* [Button](./Mistica/Source/Components/Button/)
+* [Crouton](./Mistica/Source/Components/Crouton/)
+* [SegmentSelector](./Mistica/Source/Components/SegmentSelector/)
+* [Feedbacks](./Mistica/Source/Components/Feedback/)
+* [Popover](./Mistica/Source/Components/Popover/)
+* [ViewStates](./Mistica/Source/Components/ViewStates/)
+* [Badge](./Mistica/Source/Components/Badge/)
+* [InputFields](./Mistica/Source/Components/InputField/)
+* [ScrollContentIndicator](./Mistica/Source/Components/ScrollContentIndicator/)
+* [Lists](./Mistica/Source/Components/Lists/)
+* [SectionTitle](./Mistica/Source/Components/SectionTitle/)
+* [Header](./Mistica/Source/Components/Header/)
 
 ## Demo app
 Included in this repository is a demo app with all implemented components. We have also created a demo app with is being update constantly where we show all the componennts from the library

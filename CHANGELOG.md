@@ -1,3 +1,10 @@
+# [v2.2.0](https://github.com/Telefonica/mistica-ios/compare/v2.1.0...v2.2.0) (2020-10-07)
+
+### Bug Fixes
+
+* **Feedbacks:** show icons correctly in o2Classic brand ([5ba329b](https://github.com/Telefonica/mistica-web/commit/5ba329bb423a9e63285c03e2650bc0066d1e476f))
+* **Croutons:** make the component can skip the safe area automatically. ([5ba329b](https://github.com/Telefonica/mistica-web/commit/5ba329bb423a9e63285c03e2650bc0066d1e476f)) 
+
 # v.2.1.0 - 2020-09-29
 - Update FontToolkit adding a parameter for constraining the preferred size of each text preset
 

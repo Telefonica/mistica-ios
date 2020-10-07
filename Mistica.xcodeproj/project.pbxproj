@@ -162,6 +162,7 @@
 		B89E6CB524D80F260029D8EE /* MisticaCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MisticaCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89E6CC424D8113E0029D8EE /* MisticaCatalog.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MisticaCatalog.xcconfig; sourceTree = "<group>"; };
 		B89E6CC524D8113E0029D8EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8AA79F5252DC5120056A2C7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		B8B116E2251B993F00672874 /* CatalogAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogAssets.swift; sourceTree = "<group>"; };
 		B8B116E3251B993F00672874 /* UICatalogHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHeaderView.swift; sourceTree = "<group>"; };
 		B8B116E5251B993F00672874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -378,6 +379,7 @@
 		B4D8EB7524B46B91002F3AD5 = {
 			isa = PBXGroup;
 			children = (
+				B8AA79F5252DC5120056A2C7 /* Package.swift */,
 				B4DFA20524B74F11004C908E /* Mistica.podspec */,
 				6C5AF19624F3CB290017145D /* CHANGELOG.md */,
 				B4D8EB8A24B47869002F3AD5 /* README.md */,

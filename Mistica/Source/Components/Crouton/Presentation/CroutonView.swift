@@ -21,10 +21,12 @@ class CroutonView: UIView {
         static let contentAnimationDelay: TimeInterval = 0.07
         static let contentAnimationDuration = presentationAnimationDuration - contentAnimationDelay
 
-        static let margins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        static let buttonWidthThresholdForVerticalLayout: CGFloat = 128
-        static let horizontalSpacing: CGFloat = 24
-        static let verticalSpacing: CGFloat = 40
+        static let margins = NSDirectionalEdgeInsets(top: 14, leading: 16, bottom: 14, trailing: 16)
+        static let marginsWhenUsingSafeArea = NSDirectionalEdgeInsets(top: 14, leading: 16, bottom: 0, trailing: 16)
+
+        static let buttonWidthThresholdForVerticalLayout: CGFloat = 104
+        static let horizontalSpacing: CGFloat = 16
+        static let verticalSpacing: CGFloat = 18
     }
 
     public typealias DismissHandlerBlock = () -> Void
@@ -44,8 +46,10 @@ class CroutonView: UIView {
     private lazy var actionButton: Button? = {
         guard let action = action else { return nil }
         let button = Button(style: config.actionStyle, title: action.text)
+        button.isSmall = true
         button.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
-        button.setContentCompressionResistancePriority(.required, for: .horizontal)
+        button.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        button.setContentHuggingPriority(.required, for: .horizontal)
         return button
     }()
 
@@ -63,8 +67,10 @@ class CroutonView: UIView {
         return stackView
     }()
 
+    // A dummy view used for skipping the bottom safe area inset
+    private lazy var dummyView = UIView()
+
     private var timer: Timer?
-    private var showCroutonConstraint: NSLayoutConstraint?
 
     private let text: String
     private let config: CroutonConfig
@@ -85,9 +91,8 @@ class CroutonView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = config.backgroundColor
         accessibilityLabel = text
-        layoutMargins = Constants.margins
 
-        addSubview(constrainedToLayoutMarginsGuideOf: stackView)
+        layoutViews()
     }
 
     @available(*, unavailable)
@@ -132,10 +137,10 @@ extension CroutonView {
 
         container.addSubview(self)
 
-        addContainerConstraints(to: container)
-
         container.layoutIfNeeded()
         layoutIfNeeded()
+
+        addContainerConstraints(to: container)
 
         transform = CGAffineTransform(translationX: 0, y: frameHeight)
 
@@ -191,16 +196,55 @@ extension CroutonView {
 // MARK: Private methods
 
 private extension CroutonView {
+    func layoutViews() {
+        addSubview(stackView)
+        addSubview(dummyView)
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        dummyView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: dummyView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+
+            dummyView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            dummyView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
+            dummyView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor)
+        ])
+    }
+
     func addContainerConstraints(to container: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([
-            container.leadingAnchor.constraint(equalTo: leadingAnchor),
-            container.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
+        if container.safeAreaInsets.bottom > 0 {
+            NSLayoutConstraint.activate([
+                trailingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.trailingAnchor),
+                leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor),
+                bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: container.safeAreaInsets.bottom),
+                dummyView.heightAnchor.constraint(equalToConstant: container.safeAreaInsets.bottom)
+            ])
 
-        showCroutonConstraint = container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
-        showCroutonConstraint?.isActive = true
+            directionalLayoutMargins = Constants.marginsWhenUsingSafeArea
+        } else {
+            let bottomConstraint: NSLayoutConstraint
+
+            if let scrollViewContainer = container as? UIScrollView {
+                // The bottomAnchor does not work in scrollViews, as workarround we take the topAnchor as reference
+                bottomConstraint = bottomAnchor.constraint(equalTo: container.topAnchor, constant: scrollViewContainer.frameHeight)
+            } else {
+                bottomConstraint = bottomAnchor.constraint(equalTo: container.bottomAnchor)
+            }
+
+            NSLayoutConstraint.activate([
+                trailingAnchor.constraint(equalTo: container.trailingAnchor),
+                leadingAnchor.constraint(equalTo: container.leadingAnchor),
+                bottomConstraint
+            ])
+
+            directionalLayoutMargins = Constants.margins
+        }
     }
 
     func addCountdownToDismiss() {
@@ -241,7 +285,7 @@ private extension CroutonView {
         stackView.axis = .horizontal
         stackView.spacing = Constants.horizontalSpacing
         stackView.alignment = .center
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
 
         stackView.removeArrangedSubview(actionButtonStackView)
         actionButton.removeFromSuperview()

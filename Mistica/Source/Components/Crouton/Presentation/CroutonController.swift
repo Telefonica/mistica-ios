@@ -159,14 +159,20 @@ private extension CroutonController {
             assertionFailure("Could not find the app's key window.")
             return nil
         }
+        guard let rootViewController = window.rootViewController else {
+            assertionFailure("Has the window a rootViewController?")
+            return nil
+        }
 
-        if let rootVC = window.rootViewController as? UINavigationController {
+        let visibleVC = visibleViewController(from: rootViewController)
+
+        if let rootVC = visibleVC as? UINavigationController {
             return visibleViewController(from: rootVC.topViewController!)
-        } else if let homeVC = window.rootViewController?.tabBarController,
+        } else if let homeVC = visibleVC.parent?.tabBarController,
             let selectedNavigationController = homeVC.selectedViewController as? UINavigationController {
             return visibleViewController(from: selectedNavigationController.topViewController!)
         } else {
-            return window.rootViewController
+            return visibleVC
         }
     }
 
@@ -180,6 +186,12 @@ private extension CroutonController {
         } else if let viewController = viewController as? UINavigationController {
             if let topViewController = viewController.topViewController {
                 return visibleViewController(from: topViewController)
+            } else {
+                return viewController
+            }
+        } else if let tabViewController = viewController as? UITabBarController {
+            if let selectedTab = tabViewController.selectedViewController {
+                return selectedTab
             } else {
                 return viewController
             }

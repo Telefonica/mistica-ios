@@ -13,11 +13,10 @@ private enum Section: Int, CaseIterable {
     case title
     case action
     case show
+    case showInTab
 }
 
 class UICatalogCroutonViewController: UITableViewController {
-    lazy var croutonController = CroutonController.shared
-
     private lazy var titleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "title")
         cell.textField.text = "You have no Internet connection. Please insert your SIM card to fix it."
@@ -46,7 +45,11 @@ class UICatalogCroutonViewController: UITableViewController {
         return cell
     }()
 
-    private lazy var cells = [[titleCell], [actionTitleCell], [croutonStyleCell, showCroutonCell]]
+    private lazy var cells = [
+        [titleCell],
+        [actionTitleCell],
+        [croutonStyleCell, showCroutonCell]
+    ]
 
     init() {
         if #available(iOS 13.0, *) {
@@ -73,7 +76,7 @@ class UICatalogCroutonViewController: UITableViewController {
 
 extension UICatalogCroutonViewController {
     override func numberOfSections(in _: UITableView) -> Int {
-        Section.allCases.count
+        cells.count
     }
 
     override func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -89,18 +92,27 @@ extension UICatalogCroutonViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section == cells.indices.last!, indexPath.row == cells[indexPath.section].indices.last! else { return }
+        guard indexPath.section == cells.indices.last!, indexPath.row != 0 else { return }
         tableView.deselectRow(animated: true)
         view.endEditing(true)
 
-        croutonController.showCrouton(withText: titleCell.textField.text ?? "",
-                                      action: croutonAction,
-                                      style: selectedCroutonStyle)
+        if indexPath.row == 1 {
+            CroutonController.shared.showCrouton(withText: titleCell.textField.text ?? "",
+                                                 action: croutonAction,
+                                                 style: selectedCroutonStyle)
+        } else {
+            let sampleTabBarViewController = SampleTabBarViewController()
+            sampleTabBarViewController.text = titleCell.textField.text ?? ""
+            sampleTabBarViewController.action = croutonAction
+            sampleTabBarViewController.style = selectedCroutonStyle
+
+            show(sampleTabBarViewController, sender: self)
+        }
     }
 }
 
 private extension UICatalogCroutonViewController {
-    private var selectedCroutonStyle: CroutonStyle {
+    var selectedCroutonStyle: CroutonStyle {
         let selectedStyleIndex = croutonStyleCell.segmentedControl.selectedSegmentIndex
         return CroutonStyle(rawValue: selectedStyleIndex)!
     }
@@ -127,7 +139,41 @@ private extension Section {
         switch self {
         case .title: return "Title"
         case .action: return "Action Title"
-        case .show: return nil
+        case .show, .showInTab: return nil
         }
+    }
+}
+
+private class SampleTabViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.backgroundColor = .background
+    }
+}
+
+private class SampleTabBarViewController: UITabBarController {
+    var text: String!
+    var action: CroutonController.ActionConfig?
+    var style: CroutonStyle!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let tabOne = SampleTabViewController()
+        tabOne.title = "Tab 1"
+
+        let tabTwo = SampleTabViewController()
+        tabTwo.title = "Tab 2"
+
+        viewControllers = [tabOne, tabTwo]
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        CroutonController.shared.showCrouton(withText: text,
+                                             action: action,
+                                             style: style)
     }
 }

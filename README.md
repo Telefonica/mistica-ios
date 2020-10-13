@@ -147,6 +147,7 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 * [Lists](./Mistica/Source/Components/Lists/)
 * [SectionTitle](./Mistica/Source/Components/SectionTitle/)
 * [Header](./Mistica/Source/Components/Header/)
+* [RadioButton](./Mistica/Source/Components/RadioButton/)
 
 ## Demo app
 Included in this repository is a demo app with all implemented components. We have also created a demo app with is being update constantly where we show all the componennts from the library

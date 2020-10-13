@@ -138,6 +138,8 @@
 		B8B118AC251B995500672874 /* PopoverAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B1180B251B995500672874 /* PopoverAssets.swift */; };
 		B8B118AD251B995500672874 /* ListsAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B1180C251B995500672874 /* ListsAssets.swift */; };
 		B8B118AE251B995500672874 /* CheckBoxAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B1180D251B995500672874 /* CheckBoxAssets.swift */; };
+		B8BB4D03252CABC8006BEFA0 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BB4D02252CABC8006BEFA0 /* RadioButton.swift */; };
+		B8BB4D07252CAF71006BEFA0 /* UICatalogRadioButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BB4D06252CAF71006BEFA0 /* UICatalogRadioButtonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -355,6 +357,9 @@
 		B8B1180B251B995500672874 /* PopoverAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAssets.swift; sourceTree = "<group>"; };
 		B8B1180C251B995500672874 /* ListsAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsAssets.swift; sourceTree = "<group>"; };
 		B8B1180D251B995500672874 /* CheckBoxAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxAssets.swift; sourceTree = "<group>"; };
+		B8BB4D02252CABC8006BEFA0 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		B8BB4D06252CAF71006BEFA0 /* UICatalogRadioButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogRadioButtonViewController.swift; sourceTree = "<group>"; };
+		B8C9F0332535FAD800CFE145 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,10 +444,10 @@
 			children = (
 				B8B116E2251B993F00672874 /* CatalogAssets.swift */,
 				B8B116E3251B993F00672874 /* UICatalogHeaderView.swift */,
+				B8B11706251B994000672874 /* UICatalogViewController.swift */,
 				B8B116E4251B993F00672874 /* Resources */,
 				B8B116E6251B993F00672874 /* Common */,
 				B8B116F4251B993F00672874 /* ComponentsCatalogs */,
-				B8B11706251B994000672874 /* UICatalogViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -509,6 +514,7 @@
 				B8B11703251B994000672874 /* UICatalogCroutonViewController.swift */,
 				B8B11704251B994000672874 /* UICatalogBadgeViewController.swift */,
 				B8B11705251B994000672874 /* UICatalogHeaderViewController.swift */,
+				B8BB4D06252CAF71006BEFA0 /* UICatalogRadioButtonViewController.swift */,
 			);
 			path = ComponentsCatalogs;
 			sourceTree = "<group>";
@@ -608,6 +614,7 @@
 		B8B11753251B995400672874 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B8BB4D01252CABBB006BEFA0 /* RadioButton */,
 				B8B11754251B995400672874 /* ScrollContentIndicator */,
 				B8B1175C251B995400672874 /* Form */,
 				B8B11763251B995400672874 /* Lists */,
@@ -1201,6 +1208,15 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		B8BB4D01252CABBB006BEFA0 /* RadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				B8BB4D02252CABC8006BEFA0 /* RadioButton.swift */,
+				B8C9F0332535FAD800CFE145 /* README.md */,
+			);
+			path = RadioButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1341,6 +1357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BB4D03252CABC8006BEFA0 /* RadioButton.swift in Sources */,
 				B8B11820251B995500672874 /* SeparatorView.swift in Sources */,
 				B8B11822251B995500672874 /* IntrinsictImageView.swift in Sources */,
 				B8B11836251B995500672874 /* FormView.swift in Sources */,
@@ -1471,6 +1488,7 @@
 				B8B1170C251B994000672874 /* UITableView+Utils.swift in Sources */,
 				B8B1170D251B994000672874 /* UITableViewCell+Utils.swift in Sources */,
 				B8B11726251B994000672874 /* UICatalogViewController.swift in Sources */,
+				B8BB4D07252CAF71006BEFA0 /* UICatalogRadioButtonViewController.swift in Sources */,
 				B8B1171B251B994000672874 /* UICatalogInputFieldsViewController.swift in Sources */,
 				B8B11714251B994000672874 /* UITextFieldTableViewCell.swift in Sources */,
 				B8B11724251B994000672874 /* UICatalogBadgeViewController.swift in Sources */,

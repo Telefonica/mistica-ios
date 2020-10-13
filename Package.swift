@@ -48,6 +48,7 @@ let package = Package(
                 "Source/Components/Lists/README.md",
                 "Source/Components/Popover/docs",
                 "Source/Components/Popover/README.md",
+                "Source/Components/RadioButton/README.md",
                 "Source/Components/ScrollContentIndicator/docs",
                 "Source/Components/ScrollContentIndicator/README.md",
                 "Source/Components/SectionTitle/docs",

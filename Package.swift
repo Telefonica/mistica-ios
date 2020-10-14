@@ -56,6 +56,7 @@ let package = Package(
                 "Source/Components/SectionTitle/README.md",
                 "Source/Components/SegmentSelector/docs",
                 "Source/Components/SegmentSelector/README.md",
+                "Source/Components/Switch/README.md",
                 "Source/Components/Tag/docs",
                 "Source/Components/Tag/README.md",
                 "Source/Components/ViewStates/docs",

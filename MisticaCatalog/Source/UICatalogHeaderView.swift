@@ -14,6 +14,7 @@ class BrandStyleSelectorView: UIView {
 
     private let misticaLogoImageView = UIImageView(image: .misticaLogo)
     private let segment = UISegmentedControl()
+    private let libraryVersionLabel = UILabel()
 
     var didSelectBrandStyle: ((BrandStyle) -> Void)?
     var showBrandSelector = true {
@@ -34,6 +35,14 @@ class BrandStyleSelectorView: UIView {
 }
 
 private extension BrandStyleSelectorView {
+    var misticaVersion: String? {
+        let misticaBundle = Bundle(for: Button.self)
+
+        guard let bundleDictionary = misticaBundle.infoDictionary else { return nil }
+
+        return bundleDictionary["CFBundleShortVersionString"] as? String
+    }
+
     func setUp() {
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -55,6 +64,18 @@ private extension BrandStyleSelectorView {
 
         stackView.addArrangedSubview(misticaLogoImageView)
         stackView.addArrangedSubview(segment)
+
+        addSubview(libraryVersionLabel, constraints: [
+            libraryVersionLabel.bottomAnchor.constraint(equalTo: misticaLogoImageView.bottomAnchor),
+            libraryVersionLabel.trailingAnchor.constraint(equalTo: misticaLogoImageView.trailingAnchor)
+        ])
+
+        if let misticaVersion = misticaVersion {
+            libraryVersionLabel.text = "v\(misticaVersion)"
+        }
+
+        libraryVersionLabel.font = .textPreset6(weight: .medium)
+        libraryVersionLabel.textColor = UIColor(red: 0, green: 50 / 255, blue: 69 / 255, alpha: 1)
     }
 
     @objc func didValueChange() {

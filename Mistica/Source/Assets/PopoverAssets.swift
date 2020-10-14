@@ -1,8 +1,8 @@
 //
 //  PopoverAssets.swift
-//  Mistica
 //
-//  Created by Jose Miguel Brocal on 29/07/2020.
+//  Made with ❤️ by Novum
+//
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 

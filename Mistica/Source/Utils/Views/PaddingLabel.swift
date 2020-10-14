@@ -1,9 +1,9 @@
 //
 //  PaddingLabel.swift
-//  Mistica
 //
-//  Created by jmpuerta on 29/4/18.
-//  Copyright © 2018 Tuenti. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

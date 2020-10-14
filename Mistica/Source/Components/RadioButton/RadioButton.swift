@@ -1,8 +1,8 @@
 //
 //  RadioButton.swift
-//  Mistica
 //
-//  Created by Jose Miguel Brocal on 06/10/2020.
+//  Made with ❤️ by Novum
+//
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 

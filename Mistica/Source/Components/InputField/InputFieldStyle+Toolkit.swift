@@ -1,9 +1,9 @@
 //
 //  InputFieldStyle+Toolkit.swift
-//  Mistica
 //
-//  Created by jmpuerta on 06/11/2019.
-//  Copyright © 2019 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

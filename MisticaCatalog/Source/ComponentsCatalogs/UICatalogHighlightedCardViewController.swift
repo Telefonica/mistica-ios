@@ -1,8 +1,8 @@
 //
 //  UICatalogHighlightedCardViewController.swift
-//  MisticaCatalog
 //
-//  Created by Jose Maria Puerta on 18/08/2020.
+//  Made with ❤️ by Novum
+//
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 

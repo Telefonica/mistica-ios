@@ -1,8 +1,9 @@
 //
 //  ListCellView.swift
 //
-//  Created by Jose Miguel Brocal on 19/05/2020.
-//  Copyright © 2020 Jose Miguel Brocal. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import UIKit

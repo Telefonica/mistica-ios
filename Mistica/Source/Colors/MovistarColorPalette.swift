@@ -1,9 +1,9 @@
 //
 //  MovistarColorPalette.swift
-//  Mistica
 //
-//  Created by Víctor Pimentel on 14/12/2016.
-//  Copyright © 2016 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import UIKit

@@ -1,9 +1,9 @@
 //
 //  SegmentSelector.swift
-//  Mistica
 //
-//  Created by cestebanez on 28/10/2019.
-//  Copyright © 2019 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

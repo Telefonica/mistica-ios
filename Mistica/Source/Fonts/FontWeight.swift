@@ -1,8 +1,8 @@
 //
 //  FontWeight.swift
-//  Mistica
 //
-//  Created by jalonso on 10/09/2020.
+//  Made with ❤️ by Novum
+//
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 

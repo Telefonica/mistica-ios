@@ -1,9 +1,9 @@
 //
 //  AssetCatalog+Themed.swift
-//  Mistica
 //
-//  Created by pbartolome on 22/07/2019.
-//  Copyright © 2019 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

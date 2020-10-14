@@ -1,9 +1,9 @@
 //
 //  PreprocessorChecks.swift
-//  Mistica
 //
-//  Created by asantos on 23/09/15.
-//  Copyright © 2015 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

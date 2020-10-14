@@ -1,9 +1,9 @@
 //
 //  UITableViewHeaderFooterView+Utils.swift
-//  Mistica
 //
-//  Created by dmarin on 07/09/2018.
-//  Copyright © 2018 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import UIKit

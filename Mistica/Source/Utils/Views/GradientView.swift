@@ -1,9 +1,9 @@
 //
 //  GradientView.swift
-//  Mistica
 //
-//  Created by Guille Gonzalez on 25/08/2017.
-//  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import UIKit

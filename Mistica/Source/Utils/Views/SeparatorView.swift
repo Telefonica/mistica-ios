@@ -1,9 +1,9 @@
 //
 //  SeparatorView.swift
-//  Mistica
 //
-//  Created by Guille Gonzalez on 22/11/2017.
-//  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import UIKit

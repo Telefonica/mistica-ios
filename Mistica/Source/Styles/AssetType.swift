@@ -1,8 +1,8 @@
 //
 //  AssetType.swift
-//  Mistica
 //
-//  Created by Pablo Bartolome on 10/07/2020.
+//  Made with ❤️ by Novum
+//
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 

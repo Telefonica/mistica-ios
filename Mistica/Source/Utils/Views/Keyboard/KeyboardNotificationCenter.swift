@@ -1,9 +1,9 @@
 //
 //  KeyboardNotificationCenter.swift
-//  Mistica
 //
-//  Created by Enrique de la Torre Fernandez on 5/25/16.
-//  Copyright © 2016 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

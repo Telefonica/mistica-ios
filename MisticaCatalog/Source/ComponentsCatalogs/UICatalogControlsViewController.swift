@@ -1,8 +1,8 @@
 //
 //  UICatalogControlsViewController.swift
-//  MisticaCatalog
 //
-//  Created by Jose Miguel Brocal on 06/08/2020.
+//  Made with ❤️ by Novum
+//
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 

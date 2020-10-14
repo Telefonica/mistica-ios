@@ -1,9 +1,9 @@
 //
 //  UICatalogFormViewController.swift
-//  AppCoreKit
 //
-//  Created by jmpuerta on 25/02/2020.
-//  Copyright © 2020 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

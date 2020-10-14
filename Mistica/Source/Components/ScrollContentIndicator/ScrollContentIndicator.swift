@@ -1,9 +1,9 @@
 //
 //  ScrollContentIndicator.swift
-//  Mistica
 //
-//  Created by Jose Salavert on 24/03/2020.
-//  Copyright © 2020 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import UIKit

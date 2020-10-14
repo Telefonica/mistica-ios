@@ -1,9 +1,9 @@
 //
 //  VivoColorPalette.swift
-//  Mistica
 //
-//  Created by psanchez on 14/7/17.
-//  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import UIKit

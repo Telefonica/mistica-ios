@@ -1,8 +1,8 @@
 //
-//  Bundle+Mistica.swift
-//  MisticaCatalog
+//  Bundle+MisticaCatalog.swift
 //
-//  Created by Pablo Bartolome on 08/07/2020.
+//  Made with ❤️ by Novum
+//
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 

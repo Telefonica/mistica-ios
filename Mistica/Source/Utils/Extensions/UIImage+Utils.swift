@@ -1,9 +1,9 @@
 //
 //  UIImage+Utils.swift
-//  Mistica
 //
-//  Created by Víctor Pimentel on 03/01/2017.
-//  Copyright © 2017 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import UIKit

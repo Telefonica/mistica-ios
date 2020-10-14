@@ -1,9 +1,9 @@
 //
 //  ThemeVariant.swift
-//  Mistica
 //
-//  Created by Pablo Bartolome on 7/19/19.
-//  Copyright © 2019 Tuenti Technologies S.L. All rights reserved.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

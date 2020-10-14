@@ -1,4 +1,12 @@
 //
+//  O2ClassicColorPalette.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
+//
+
+//
 //  O2ColorPalette.swift
 //  Mistica
 //

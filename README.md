@@ -135,19 +135,21 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 
 ## Components
 
-* [Button](./Mistica/Source/Components/Button/)
-* [Crouton](./Mistica/Source/Components/Crouton/)
-* [SegmentSelector](./Mistica/Source/Components/SegmentSelector/)
-* [Feedbacks](./Mistica/Source/Components/Feedback/)
-* [Popover](./Mistica/Source/Components/Popover/)
-* [ViewStates](./Mistica/Source/Components/ViewStates/)
 * [Badge](./Mistica/Source/Components/Badge/)
-* [InputFields](./Mistica/Source/Components/InputField/)
-* [ScrollContentIndicator](./Mistica/Source/Components/ScrollContentIndicator/)
-* [Lists](./Mistica/Source/Components/Lists/)
-* [SectionTitle](./Mistica/Source/Components/SectionTitle/)
+* [Button](./Mistica/Source/Components/Button/)
+* [CheckBox](./Mistica/Source/Components/CheckBox/)
+* [Controls](./Mistica/Source/Components/Controls/)
+* [Crouton](./Mistica/Source/Components/Crouton/)
+* [Feedbacks](./Mistica/Source/Components/Feedback/)
 * [Header](./Mistica/Source/Components/Header/)
+* [InputFields](./Mistica/Source/Components/InputField/)
+* [Lists](./Mistica/Source/Components/Lists/)
+* [Popover](./Mistica/Source/Components/Popover/)
 * [RadioButton](./Mistica/Source/Components/RadioButton/)
+* [ScrollContentIndicator](./Mistica/Source/Components/ScrollContentIndicator/)
+* [SectionTitle](./Mistica/Source/Components/SectionTitle/)
+* [SegmentSelector](./Mistica/Source/Components/SegmentSelector/)
+* [ViewStates](./Mistica/Source/Components/ViewStates/)
 
 ## Demo app
 Included in this repository is a demo app with all implemented components. We have also created a demo app with is being update constantly where we show all the componennts from the library

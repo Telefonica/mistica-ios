@@ -31,6 +31,7 @@ let package = Package(
                 "Source/Components/Badge/README.md",
                 "Source/Components/Button/docs",
                 "Source/Components/Button/README.md",
+                "Source/Components/CheckBox/README.md",
                 "Source/Components/Controls/README.md",
                 "Source/Components/Crouton/docs",
                 "Source/Components/Crouton/README.md",

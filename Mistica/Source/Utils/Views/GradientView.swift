@@ -60,7 +60,7 @@ struct GradientStyle {
 final class GradientView: UIView {
     var colors: [UIColor] = [] {
         didSet {
-            gradientLayer.colors = colors.map { $0.cgColor }
+            gradientLayer.colors = colors.map(\.cgColor)
         }
     }
 

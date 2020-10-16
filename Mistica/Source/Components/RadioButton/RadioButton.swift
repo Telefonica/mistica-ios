@@ -41,7 +41,7 @@ public class RadioButton: UIView {
     }
 
     override public var intrinsicContentSize: CGSize {
-        let diameter: CGFloat = UIFontMetrics.default.scaledValue(for: Constants.viewWidth)
+        let diameter = UIFontMetrics.default.scaledValue(for: Constants.viewWidth)
 
         return CGSize(width: diameter, height: diameter)
     }
@@ -92,7 +92,5 @@ private extension RadioButton {
         isActivated.toggle()
 
         onValueChanged?(isActivated)
-
-        setNeedsDisplay()
     }
 }

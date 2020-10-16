@@ -11,6 +11,7 @@
 --commas inline
 --maxwidth none
 --wrapcollections before-first
+--header "\n {file}\n\n Made with ❤️ by Novum\n\n Copyright © 2020 Telefonica. All rights reserved.\n "
 
 # rules
 

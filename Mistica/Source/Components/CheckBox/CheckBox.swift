@@ -51,6 +51,19 @@ public class CheckBox: UIControl {
     override public var allControlEvents: UIControl.Event {
         [.valueChanged]
     }
+
+    override public var accessibilityValue: String? {
+        get {
+            guard super.accessibilityValue == nil else { return super.accessibilityLabel }
+
+            // To replicate UISwitch voiceover behaviour, we are using a undocumented accessibility trait used by UISwitch.
+            // This undocumented accessibilty trait uses 1 or 0 to read "activated" or "deactivated"
+            return isChecked ? "1" : "0"
+        }
+        set {
+            super.accessibilityValue = newValue
+        }
+    }
 }
 
 private extension CheckBox {
@@ -68,6 +81,9 @@ private extension CheckBox {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
         addGestureRecognizer(tapGesture)
+
+        isAccessibilityElement = true
+        setupAccessibilityTraits()
     }
 
     func layoutView() {
@@ -89,5 +105,11 @@ private extension CheckBox {
         onValueChanged?(isChecked)
 
         setNeedsDisplay()
+    }
+
+    @available(iOS, introduced: 11.0, deprecated: 13.0, message: "We're using an undocumented traits. Please verify that this works before increment the deprecated version number")
+    func setupAccessibilityTraits() {
+        let switchButtonAccessibilityTrait = UIAccessibilityTraits(rawValue: 1 << 53)
+        accessibilityTraits = [.button, switchButtonAccessibilityTrait]
     }
 }

@@ -18,6 +18,7 @@ public class RadioButton: UIControl {
     public var isActivated = false {
         didSet {
             setNeedsDisplay()
+            setUpAccessiblityTraits()
         }
     }
 
@@ -90,6 +91,8 @@ private extension RadioButton {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
         addGestureRecognizer(tapGesture)
+
+        isAccessibilityElement = true
     }
 
     @objc func didTap() {
@@ -97,5 +100,13 @@ private extension RadioButton {
 
         sendActions(for: .valueChanged)
         onValueChanged?(isActivated)
+    }
+
+    private func setUpAccessiblityTraits() {
+        if isActivated {
+            accessibilityTraits = [.button, .selected]
+        } else {
+            accessibilityTraits = [.button]
+        }
     }
 }

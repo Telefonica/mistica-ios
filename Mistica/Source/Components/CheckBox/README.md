@@ -14,7 +14,7 @@ checkBox.onValueChanged = { checked in
 }
 ```
 
-or using the target-action pattern of UIControl. RadioButton only send actions for `UIControl.Event.valueChanged`,
+or using the target-action pattern of UIControl. CheckBox only send actions for `UIControl.Event.valueChanged`,
 
 ```swift
 checkBox.addTarget(self, action: #selector(checkBoxTapped), for: .valueChanged)

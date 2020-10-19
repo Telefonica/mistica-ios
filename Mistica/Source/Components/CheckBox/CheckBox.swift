@@ -9,7 +9,7 @@
 import CoreGraphics
 import UIKit
 
-public class CheckBox: UIView {
+public class CheckBox: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(24)
     }
@@ -47,6 +47,10 @@ public class CheckBox: UIView {
 
         return CGSize(width: diameter, height: diameter)
     }
+
+    override public var allControlEvents: UIControl.Event {
+        [.valueChanged]
+    }
 }
 
 private extension CheckBox {
@@ -81,6 +85,7 @@ private extension CheckBox {
     @objc func didTap() {
         isChecked.toggle()
 
+        sendActions(for: .valueChanged)
         onValueChanged?(isChecked)
 
         setNeedsDisplay()

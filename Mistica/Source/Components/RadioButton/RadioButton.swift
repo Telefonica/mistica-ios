@@ -9,7 +9,7 @@
 import CoreGraphics
 import UIKit
 
-public class RadioButton: UIView {
+public class RadioButton: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(24)
     }
@@ -38,6 +38,10 @@ public class RadioButton: UIView {
         super.init(coder: coder)
 
         commonInit()
+    }
+
+    override public var allControlEvents: UIControl.Event {
+        [.valueChanged]
     }
 
     override public var intrinsicContentSize: CGSize {
@@ -91,6 +95,7 @@ private extension RadioButton {
     @objc func didTap() {
         isActivated.toggle()
 
+        sendActions(for: .valueChanged)
         onValueChanged?(isActivated)
     }
 }

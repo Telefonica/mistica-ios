@@ -79,6 +79,8 @@ struct VivoColorPalette: ColorPalette {
     let iconSecondary = Colors.grey2
     let iconTertiary = Colors.vivoBlue
     let iconInverse = Colors.white
+    let iconWarning = Colors.vivoOrange
+    let iconError = Colors.pepper
 
     // MARK: Search bar
 

@@ -80,6 +80,8 @@ protocol ColorPalette {
     var iconSecondary: UIColor { get }
     var iconTertiary: UIColor { get }
     var iconInverse: UIColor { get }
+    var iconWarning: UIColor { get }
+    var iconError: UIColor { get }
 
     // MARK: Search bar
 

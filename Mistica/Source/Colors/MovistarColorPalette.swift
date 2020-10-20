@@ -91,6 +91,8 @@ struct MovistarColorPalette: ColorPalette {
     let iconSecondary = Colors.grey2
     let iconTertiary = Colors.movistarBlue
     let iconInverse = Colors.white
+    let iconWarning = Colors.egg
+    let iconError = Colors.pepper
 
     // MARK: Search bar
 

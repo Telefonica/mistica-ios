@@ -79,6 +79,8 @@ struct O2ColorPalette: ColorPalette {
     let iconSecondary = Colors.grey2
     let iconTertiary = Colors.o2BluePrimary
     let iconInverse = Colors.white
+    let iconWarning = Colors.o2Orange
+    let iconError = Colors.pepper
 
     // MARK: Search bar
 

@@ -11,7 +11,7 @@ on:
 jobs:
   manually-deploy-catalog:
     name: Manually deploy catalog
-    runs-on: self-hosted
+    runs-on: self-hosted-novum
     
     steps:
       

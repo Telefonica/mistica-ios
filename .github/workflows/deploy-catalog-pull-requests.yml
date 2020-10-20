@@ -7,7 +7,7 @@ on:
 jobs:
   deploy-catalog-pull-requests:
     name: Deploy catalog pull requests
-    runs-on: self-hosted
+    runs-on: self-hosted-novum
     
     steps:
       - uses: satak/webrequest-action@master

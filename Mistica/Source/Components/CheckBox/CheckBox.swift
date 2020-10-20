@@ -107,9 +107,8 @@ private extension CheckBox {
         setNeedsDisplay()
     }
 
-    @available(iOS, introduced: 11.0, deprecated: 13.0, message: "We're using an undocumented traits. Please verify that this works before increment the deprecated version number")
+    @available(iOS, introduced: 11.0, deprecated: 13.0, message: "We're using an undocumented traits of UISwitch. Please verify that this works before increment the deprecated version number")
     func setupAccessibilityTraits() {
-        let switchButtonAccessibilityTrait = UIAccessibilityTraits(rawValue: 1 << 53)
-        accessibilityTraits = [.button, switchButtonAccessibilityTrait]
+        accessibilityTraits = UISwitch().accessibilityTraits
     }
 }

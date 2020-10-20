@@ -18,7 +18,6 @@ public class RadioButton: UIControl {
     public var isActivated = false {
         didSet {
             setNeedsDisplay()
-            setUpAccessiblityTraits()
         }
     }
 
@@ -39,6 +38,19 @@ public class RadioButton: UIControl {
         super.init(coder: coder)
 
         commonInit()
+    }
+
+    override public var accessibilityTraits: UIAccessibilityTraits {
+        get {
+            if super.accessibilityTraits != customAccessiblityTraits {
+                return super.accessibilityTraits
+            } else {
+                return customAccessiblityTraits
+            }
+        }
+        set {
+            super.accessibilityTraits = newValue
+        }
     }
 
     override public var allControlEvents: UIControl.Event {
@@ -81,6 +93,14 @@ public class RadioButton: UIControl {
 }
 
 private extension RadioButton {
+    var customAccessiblityTraits: UIAccessibilityTraits {
+        if isActivated {
+            return [.button, .selected]
+        } else {
+            return [.button]
+        }
+    }
+
     func commonInit() {
         backgroundColor = .clear
 
@@ -100,13 +120,5 @@ private extension RadioButton {
 
         sendActions(for: .valueChanged)
         onValueChanged?(isActivated)
-    }
-
-    private func setUpAccessiblityTraits() {
-        if isActivated {
-            accessibilityTraits = [.button, .selected]
-        } else {
-            accessibilityTraits = [.button]
-        }
     }
 }

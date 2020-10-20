@@ -28,7 +28,7 @@ You can add Mistica to an Xcode project by adding it as a package dependency.
 
 1. From the **File** menu, select **Swift Package** > **Add Package Dependency**.
 2. Enter "[https://github.com/Telefonica/mistica-ios](https://github.com/Telefonica/mistica-ios)" into the package repository URL text field.
-3. From the **Add Package to App** window, select **Mistica** library. Add only **MisticaCatalog** if you want to see the Component Catalog inside your app.
+3. From the **Add Package to App** window, select **Mistica** library.
 
 You also can integrate Mitica to Swift Package, add the following as a dependency to your `Package.swift`:
 
@@ -37,38 +37,6 @@ You also can integrate Mitica to Swift Package, add the following as a dependenc
 ```
 
 and then specify `"Mistica"` as a dependency of the Target in which you wish to use Mistica.
-
-If you want to use the Catalog Component inside your app, add also `"MisticaCatalog"` as your Target dependency respectively.
-
-Here's an example `PackageDescription`:
-
-```swift
-// swift-tools-version:5.3
-import PackageDescription
-
-let package = Package(
-    name: "MyPackage",
-    platforms: [.iOS(.v11)],
-    products: [
-        .library(
-            name: "MyPackage",
-            targets: ["MyPackage"]),
-    ],
-    dependencies: [
-        .package(name: "Mistica", url: "https://github.com/Telefonica/mistica-ios.git", from: "2.0.0")
-    ],
-    targets: [
-        .target(
-            name: "MyPackage",
-            dependencies: [
-                "Mistica"
-            ]),
-        .testTarget(
-            name: "MyPackageTests",
-            dependencies: ["MyPackage"]),
-    ]
-)
-```
 
 ### Carthage
 

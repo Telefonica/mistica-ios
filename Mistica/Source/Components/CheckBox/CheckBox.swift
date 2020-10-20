@@ -9,7 +9,7 @@
 import CoreGraphics
 import UIKit
 
-public class CheckBox: UIView {
+public class CheckBox: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(24)
     }
@@ -47,6 +47,23 @@ public class CheckBox: UIView {
 
         return CGSize(width: diameter, height: diameter)
     }
+
+    override public var allControlEvents: UIControl.Event {
+        [.valueChanged]
+    }
+
+    override public var accessibilityValue: String? {
+        get {
+            guard super.accessibilityValue == nil else { return super.accessibilityLabel }
+
+            // To replicate UISwitch voiceover behaviour, we are using a undocumented accessibility trait used by UISwitch.
+            // This undocumented accessibilty trait uses 1 or 0 to read "activated" or "deactivated"
+            return isChecked ? "1" : "0"
+        }
+        set {
+            super.accessibilityValue = newValue
+        }
+    }
 }
 
 private extension CheckBox {
@@ -64,6 +81,9 @@ private extension CheckBox {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
         addGestureRecognizer(tapGesture)
+
+        isAccessibilityElement = true
+        setupAccessibilityTraits()
     }
 
     func layoutView() {
@@ -81,8 +101,14 @@ private extension CheckBox {
     @objc func didTap() {
         isChecked.toggle()
 
+        sendActions(for: .valueChanged)
         onValueChanged?(isChecked)
 
         setNeedsDisplay()
+    }
+
+    @available(iOS, introduced: 11.0, deprecated: 13.0, message: "We're using an undocumented traits of UISwitch. Please verify that this works before increment the deprecated version number")
+    func setupAccessibilityTraits() {
+        accessibilityTraits = UISwitch().accessibilityTraits
     }
 }

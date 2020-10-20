@@ -9,7 +9,7 @@
 import CoreGraphics
 import UIKit
 
-public class RadioButton: UIView {
+public class RadioButton: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(24)
     }
@@ -38,6 +38,23 @@ public class RadioButton: UIView {
         super.init(coder: coder)
 
         commonInit()
+    }
+
+    override public var accessibilityTraits: UIAccessibilityTraits {
+        get {
+            if super.accessibilityTraits != customAccessiblityTraits {
+                return super.accessibilityTraits
+            } else {
+                return customAccessiblityTraits
+            }
+        }
+        set {
+            super.accessibilityTraits = newValue
+        }
+    }
+
+    override public var allControlEvents: UIControl.Event {
+        [.valueChanged]
     }
 
     override public var intrinsicContentSize: CGSize {
@@ -76,6 +93,14 @@ public class RadioButton: UIView {
 }
 
 private extension RadioButton {
+    var customAccessiblityTraits: UIAccessibilityTraits {
+        if isActivated {
+            return [.button, .selected]
+        } else {
+            return [.button]
+        }
+    }
+
     func commonInit() {
         backgroundColor = .clear
 
@@ -86,11 +111,14 @@ private extension RadioButton {
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap))
         addGestureRecognizer(tapGesture)
+
+        isAccessibilityElement = true
     }
 
     @objc func didTap() {
         isActivated.toggle()
 
+        sendActions(for: .valueChanged)
         onValueChanged?(isActivated)
     }
 }

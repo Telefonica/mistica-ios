@@ -1,0 +1,46 @@
+//
+//  AppDelegate.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
+//
+
+// Versioning
+VERSION_NUMBER = 1.0.0
+CURRENT_PROJECT_VERSION = 1 //Build
+
+// Build options
+
+ENABLE_BITCODE = NO
+
+// Deployment
+
+INSTALL_PATH = $(LOCAL_LIBRARY_DIR)/Frameworks
+IPHONEOS_DEPLOYMENT_TARGET = 14.0
+SKIP_INSTALL = NO
+TARGETED_DEVICE_FAMILY = 1,2
+PRODUCT_NAME = $(TARGET_NAME)
+
+// Search Paths
+
+CARTHAGE_SEARCH_PATH = $(PROJECT_DIR)/../../Carthage/Build/iOS
+
+FRAMEWORK_SEARCH_PATHS = $(CARTHAGE_SEARCH_PATH) $(PLATFORM_DIR)/Developer/Library/Frameworks
+
+// Linking
+
+DYLIB_COMPATIBILITY_VERSION = 1
+DYLIB_CURRENT_VERSION = 1
+DYLIB_INSTALL_NAME_BASE = @rpath
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+
+// Packaging
+
+DEFINES_MODULE = YES
+INFOPLIST_FILE = SupportFiles/Info.plist
+PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise
+
+// Swift
+
+SWIFT_VERSION = 5.3

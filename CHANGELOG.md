@@ -1,3 +1,14 @@
+# [v2.4.0](https://github.com/Telefonica/mistica-ios/compare/v2.3.0...v2.4.0) (2020-10-20)
+
+### Features
+
+* **ColorPalette:** add new colors iconWarning and iconError. ([bfcd748](https://github.com/Telefonica/mistica-web/commit/bfcd748f04ad13ccfcf21fef815922be3b09d590))
+
+
+### Bug Fixes
+
+* **GithubActions:** use self-hosted-novum tag for running actions in Novum CI infrastructure. ([2f12030](https://github.com/Telefonica/mistica-web/commit/2f12030f924e73afe8a3dbb21d6cfe0d56199c5c))
+
 # [v2.3.0](https://github.com/Telefonica/mistica-ios/compare/v2.2.0...v2.3.0) (2020-10-20)
 
 ### Features

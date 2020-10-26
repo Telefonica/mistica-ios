@@ -51,7 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B8C57BBA2546D3A600ACC2BC /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ../..; sourceTree = "<group>"; };
+		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8F990002546C98600DFBFE9 /* CatalogList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogList.swift; sourceTree = "<group>"; };
@@ -109,12 +109,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B8C57BBB2546D3C300ACC2BC /* Packages */ = {
+		B8E161F82546EF8300DA3743 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				B8C57BBA2546D3A600ACC2BC /* mistica-ios */,
+				B8E161F92546EF9500DA3743 /* mistica-ios */,
 			);
-			path = Packages;
+			name = Packages;
 			sourceTree = "<group>";
 		};
 		B8F98FE12546C95600DFBFE9 = {
@@ -122,7 +122,7 @@
 			children = (
 				B8F98FFD2546C98600DFBFE9 /* Source */,
 				B8F990552546C99300DFBFE9 /* SupportFiles */,
-				B8C57BBB2546D3C300ACC2BC /* Packages */,
+				B8E161F82546EF8300DA3743 /* Packages */,
 				B8F98FEB2546C95600DFBFE9 /* Products */,
 				B8F990612546CAA500DFBFE9 /* Frameworks */,
 			);

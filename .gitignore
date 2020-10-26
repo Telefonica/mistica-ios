@@ -28,7 +28,6 @@ local/
 Packages
 .build/
 .swiftpm
-*.xcodeproj
 Package.resolved
 
 # AppCode

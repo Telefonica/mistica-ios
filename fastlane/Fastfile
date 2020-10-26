@@ -36,11 +36,6 @@ platform :ios do
     brew_install_or_update(
       formula: "swiftformat"
     )
-
-    UI.message "Carthage update and build"
-    Dir.chdir("..") do
-      sh("./carthage-build.sh")
-    end
   end
 
   desc "Build Mistica catalog and upload to AppCenter"

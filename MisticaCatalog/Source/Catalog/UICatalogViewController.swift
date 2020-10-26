@@ -36,21 +36,8 @@ private enum Constants {
 }
 
 public class UICatalogViewController: UIViewController {
-    private let headerView = BrandStyleSelectorView()
+    private let brandsSegmentedControl = UISegmentedControl()
     private let tableView = ListView()
-
-    public var showBrandSelector = true {
-        didSet {
-            headerView.showBrandSelector = showBrandSelector
-            view.setNeedsLayout()
-        }
-    }
-
-    public var shouldShowNavigationBar = false {
-        didSet {
-            navigationController?.setNavigationBarHidden(shouldShowNavigationBar, animated: true)
-        }
-    }
 
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -63,19 +50,20 @@ public class UICatalogViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-
         setUp()
         styleViews()
     }
 
     override public func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(!shouldShowNavigationBar, animated: animated)
         super.viewWillAppear(animated)
+
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override public func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
+
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 
@@ -83,11 +71,45 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - Table view data source
 
     public func numberOfSections(in _: UITableView) -> Int {
-        1
+        2
     }
 
-    public func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        UICatalogRow.allCases.count
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 0
+        } else {
+            return UICatalogRow.allCases.count
+        }
+    }
+
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let v = UIView()
+        v.backgroundColor = .background
+
+        if section == 0 {
+            let label = UILabel()
+            label.text = "Touch and play with\nMística iOS components"
+            label.font = .textPreset2(weight: .light)
+            label.textColor = UIColor(red: 0, green: 50 / 255, blue: 69 / 255, alpha: 1)
+            label.numberOfLines = 0
+
+            v.addSubview(label, constraints: [
+                label.leadingAnchor.constraint(equalTo: v.leadingAnchor, constant: 16),
+                label.topAnchor.constraint(equalTo: v.topAnchor, constant: 32),
+                label.trailingAnchor.constraint(equalTo: v.trailingAnchor, constant: 16),
+                label.bottomAnchor.constraint(equalTo: v.bottomAnchor, constant: 32),
+                v.heightAnchor.constraint(equalTo: label.heightAnchor, constant: 64) // label height plus top and bottom margins
+            ])
+        } else {
+            v.addSubview(brandsSegmentedControl, constraints: [
+                brandsSegmentedControl.centerYAnchor.constraint(equalTo: v.centerYAnchor),
+                brandsSegmentedControl.centerXAnchor.constraint(equalTo: v.centerXAnchor)
+            ])
+
+            v.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        }
+
+        return v
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -151,15 +173,14 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 private extension UICatalogViewController {
+    func styleViews() {
+        view.backgroundColor = .background
+        navigationController?.navigationBar.applyOpaqueStyleWithoutShadow()
+    }
+
     func setUp() {
-        view.addSubview(headerView, constraints: [
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            headerView.heightAnchor.constraint(equalToConstant: 200)
-        ])
         view.addSubview(tableView, constraints: [
-            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 5),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -169,20 +190,31 @@ private extension UICatalogViewController {
         tableView.delegate = self
         tableView.register(ListCellView.self, forCellReuseIdentifier: Constants.cellReusableIdentifier)
 
-        headerView.didSelectBrandStyle = { [weak self] newValue in
-            MisticaConfig.brandStyle = newValue
-            MisticaConfig.styleControls(MisticaControlStyle.allCases)
-            self?.tableView.reloadData()
-
-            // Force update `UIAppearance` changes
-            UIApplication.shared.windows.forEach { $0.reload() }
-            self?.styleViews()
-        }
+        setUpBrandsSegmentedControl()
     }
 
-    func styleViews() {
-        view.backgroundColor = .background
-        navigationController?.navigationBar.applyOpaqueStyleWithoutShadow()
+    func setUpBrandsSegmentedControl() {
+        BrandStyle.allCases.enumerated().forEach { pair in
+            brandsSegmentedControl.insertSegment(withTitle: pair.element.rawValue, at: pair.offset, animated: false)
+
+            if pair.element == MisticaConfig.brandStyle {
+                brandsSegmentedControl.selectedSegmentIndex = pair.offset
+            }
+        }
+
+        brandsSegmentedControl.addTarget(self, action: #selector(didValueChange(_:)), for: .valueChanged)
+    }
+
+    @objc func didValueChange(_ segment: UISegmentedControl) {
+        let newBrandStyle = BrandStyle.allCases[segment.selectedSegmentIndex]
+
+        MisticaConfig.brandStyle = newBrandStyle
+        MisticaConfig.styleControls(MisticaControlStyle.allCases)
+        tableView.reloadData()
+
+        // Force update `UIAppearance` changes
+        UIApplication.shared.windows.forEach { $0.reload() }
+        styleViews()
     }
 }
 

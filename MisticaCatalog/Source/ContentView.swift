@@ -6,11 +6,19 @@
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 
+import Mistica
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        CatalogList()
+        NavigationView {
+            VStack(alignment: .leading) {
+                CatalogHeader()
+                CatalogList()
+            }
+            .navigationBarHidden(true)
+            .misticaNavigationBarStyle()
+        }
     }
 }
 

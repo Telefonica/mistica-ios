@@ -6,9 +6,9 @@ default_platform(:ios)
 
 # Constants
 
-WORKSPACE_NAME = "Mistica.xcworkspace"
+MISTICA_CATALOG_PROJECT_PATH = "MisticaCatalog/MisticaCatalog.xcodeproj"
 TMP_BUILDS_PATH = "pkg/dist"
-MISTICA_APP_INFO_PLIST_PATH = "./Examples/MisticaApp/MisticaApp/SupportFiles/Info.plist"
+MISTICA_APP_INFO_PLIST_PATH = "./MisticaCatalog/SupportFiles/Info.plist"
 MISTICA_APP_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaApp.ipa" 
 
 platform :ios do
@@ -47,13 +47,16 @@ platform :ios do
   lane :build_and_deploy_mistica_catalog do
   	ensure_git_status_clean
 
+    today = Time.now.strftime('%Y%m%d%H%M')
+
   	increment_build_number_in_info_plist(
+      build_number: today,
       path: MISTICA_APP_INFO_PLIST_PATH
     )
 
   	gym(
-        workspace: WORKSPACE_NAME,
-        scheme: "MisticaApp",
+        project: MISTICA_CATALOG_PROJECT_PATH,
+        scheme: "MisticaCatalog",
         configuration: "Release",
         codesigning_identity: "iPhone Distribution: Tuenti Technologies SL",
         export_team_id: "JA666WMX28",
@@ -117,12 +120,4 @@ def brew_install_or_update(params)
     UI.message "Installing brew formula #{params[:formula]}"
     system("brew install #{params[:formula]}")
   end
-end
-
-def is_ci
-  # Check for Jenkins environment variables
-  ['JENKINS_HOME', 'JENKINS_URL'].each do |current|
-    return true if ENV.key?(current)
-  end
-  return false
 end

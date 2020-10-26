@@ -63,5 +63,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>MisticaVersion</key>
+	<string>v2.3.0</string>
 </dict>
 </plist>

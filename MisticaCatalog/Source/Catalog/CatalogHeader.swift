@@ -18,12 +18,22 @@ struct CatalogHeader: View {
 
             Spacer()
 
-            Text("v2.2.0")
-                .foregroundColor(Color(UIColor.textPrimary))
+            if let misticaVersion = misticaVersion {
+                Text(misticaVersion)
+                    .foregroundColor(Color(UIColor.textPrimary))
+            }
         }
         .padding(.top, 8)
         .padding(.leading, 16)
         .padding(.trailing, 16)
+    }
+}
+
+private extension CatalogHeader {
+    var misticaVersion: String? {
+        guard let infoPlist = Bundle.main.infoDictionary else { return nil }
+        
+        return infoPlist["MisticaVersion"] as? String
     }
 }
 

@@ -27,6 +27,7 @@ local/
 ### SwiftPM ###
 Packages
 .build/
+.swiftpm
 *.xcodeproj
 Package.resolved
 
@@ -50,3 +51,6 @@ fastlane/test_output
 
 # ci
 .ruby-version
+
+# Do not ignore xcodeproj of MisticaCatalog app
+!MisticaCatalog/MisticaCatalog.xcodeproj 

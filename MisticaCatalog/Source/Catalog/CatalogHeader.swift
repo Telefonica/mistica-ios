@@ -32,7 +32,7 @@ struct CatalogHeader: View {
 private extension CatalogHeader {
     var misticaVersion: String? {
         guard let infoPlist = Bundle.main.infoDictionary else { return nil }
-        
+
         return infoPlist["MisticaVersion"] as? String
     }
 }

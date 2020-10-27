@@ -120,7 +120,6 @@
 		B4DFA1D124B723C1004C908E /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = SOURCE_ROOT; };
 		B4DFA20324B74F11004C908E /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		B4DFA20524B74F11004C908E /* Mistica.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Mistica.podspec; sourceTree = SOURCE_ROOT; };
-		B866728B2535FF4500AE35FE /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		B86672A22536F33200AE35FE /* ButtonContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonContentView.swift; sourceTree = "<group>"; };
 		B86672A82536F33200AE35FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B86672A92536F33200AE35FE /* ButtonStyle+Toolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+Toolkit.swift"; sourceTree = "<group>"; };
@@ -225,56 +224,6 @@
 		B8B11750251B995400672874 /* BrandStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandStyle.swift; sourceTree = "<group>"; };
 		B8B11751251B995400672874 /* AssetCatalog+Themed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AssetCatalog+Themed.swift"; sourceTree = "<group>"; };
 		B8B11752251B995400672874 /* ThemeVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeVariant.swift; sourceTree = "<group>"; };
-		B8B11755251B995400672874 /* ScrollContentIndicatorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollContentIndicatorStyle.swift; sourceTree = "<group>"; };
-		B8B1175B251B995400672874 /* ScrollContentIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollContentIndicator.swift; sourceTree = "<group>"; };
-		B8B11761251B995400672874 /* FormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
-		B8B11762251B995400672874 /* ValidatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatableView.swift; sourceTree = "<group>"; };
-		B8B11764251B995400672874 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		B8B11766251B995400672874 /* NavigationPresetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPresetView.swift; sourceTree = "<group>"; };
-		B8B11767251B995400672874 /* VerticallyCenteredPresetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredPresetView.swift; sourceTree = "<group>"; };
-		B8B1176F251B995400672874 /* CellCenterSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCenterSectionView.swift; sourceTree = "<group>"; };
-		B8B11770251B995400672874 /* CellLeftSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellLeftSectionView.swift; sourceTree = "<group>"; };
-		B8B11771251B995400672874 /* ListCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
-		B8B11772251B995400672874 /* ListCellStyle+Toolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListCellStyle+Toolkit.swift"; sourceTree = "<group>"; };
-		B8B11774251B995400672874 /* SegmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentCell.swift; sourceTree = "<group>"; };
-		B8B11775251B995400672874 /* SegmentSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentSelector.swift; sourceTree = "<group>"; };
-		B8B1177D251B995400672874 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
-		B8B11780251B995400672874 /* SegmentSelectorCenteredContentLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentSelectorCenteredContentLayout.swift; sourceTree = "<group>"; };
-		B8B1178A251B995400672874 /* CroutonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CroutonConfig.swift; sourceTree = "<group>"; };
-		B8B1178C251B995500672874 /* CroutonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CroutonView.swift; sourceTree = "<group>"; };
-		B8B1178D251B995500672874 /* CroutonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CroutonController.swift; sourceTree = "<group>"; };
-		B8B1178E251B995500672874 /* CustomCroutonContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCroutonContainer.swift; sourceTree = "<group>"; };
-		B8B11790251B995500672874 /* FeedbackStyle+Toolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedbackStyle+Toolkit.swift"; sourceTree = "<group>"; };
-		B8B11791251B995500672874 /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
-		B8B1179F251B995500672874 /* FeedbackConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackConfiguration.swift; sourceTree = "<group>"; };
-		B8B117A0251B995500672874 /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
-		B8B117A2251B995500672874 /* PopoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
-		B8B117A8251B995500672874 /* PopoverMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverMessageView.swift; sourceTree = "<group>"; };
-		B8B117A9251B995500672874 /* PopoverContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverContentView.swift; sourceTree = "<group>"; };
-		B8B117AA251B995500672874 /* PopoverConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverConfiguration.swift; sourceTree = "<group>"; };
-		B8B117AD251B995500672874 /* MisticaAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MisticaAppearance.swift; sourceTree = "<group>"; };
-		B8B117AF251B995500672874 /* SectionTitleHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitleHeaderView.swift; sourceTree = "<group>"; };
-		B8B117B5251B995500672874 /* ButtonContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonContentView.swift; sourceTree = "<group>"; };
-		B8B117BC251B995500672874 /* ButtonStyle+Toolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+Toolkit.swift"; sourceTree = "<group>"; };
-		B8B117BD251B995500672874 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		B8B117C7251B995500672874 /* HighlightedCardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightedCardStyle.swift; sourceTree = "<group>"; };
-		B8B117C8251B995500672874 /* HighlightedCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightedCard.swift; sourceTree = "<group>"; };
-		B8B117CA251B995500672874 /* UIViewPropertyAnimator+InputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewPropertyAnimator+InputField.swift"; sourceTree = "<group>"; };
-		B8B117CB251B995500672874 /* InputFieldStyle+Toolkit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InputFieldStyle+Toolkit.swift"; sourceTree = "<group>"; };
-		B8B117CC251B995500672874 /* InputFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldDelegate.swift; sourceTree = "<group>"; };
-		B8B117D2251B995500672874 /* TextInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
-		B8B117D3251B995500672874 /* InputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
-		B8B117D6251B995500672874 /* EmailInputFieldValidationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailInputFieldValidationStrategy.swift; sourceTree = "<group>"; };
-		B8B117D7251B995500672874 /* PhoneNumberInputFieldValidationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberInputFieldValidationStrategy.swift; sourceTree = "<group>"; };
-		B8B117D8251B995500672874 /* PasswordInputFieldValidationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordInputFieldValidationStrategy.swift; sourceTree = "<group>"; };
-		B8B117D9251B995500672874 /* InputFieldValidationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldValidationStrategy.swift; sourceTree = "<group>"; };
-		B8B117DB251B995500672874 /* LoadErrorViewControllerLifecycleDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadErrorViewControllerLifecycleDelegate.swift; sourceTree = "<group>"; };
-		B8B117DF251B995500672874 /* LoadErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadErrorViewController.swift; sourceTree = "<group>"; };
-		B8B117E1251B995500672874 /* LoadErrorViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadErrorViewControllerDelegate.swift; sourceTree = "<group>"; };
-		B8B117E9251B995500672874 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
-		B8B117F1251B995500672874 /* IntrinsicMaxButtonWidthContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntrinsicMaxButtonWidthContainerView.swift; sourceTree = "<group>"; };
-		B8B117F2251B995500672874 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		B8B117F3251B995500672874 /* HeaderViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewStyle.swift; sourceTree = "<group>"; };
 		B8B117F5251B995500672874 /* BadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		B8B117F6251B995500672874 /* NovumBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NovumBarButtonItem.swift; sourceTree = "<group>"; };
 		B8B117FC251B995500672874 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -292,7 +241,6 @@
 		B8B1180B251B995500672874 /* PopoverAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAssets.swift; sourceTree = "<group>"; };
 		B8B1180C251B995500672874 /* ListsAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsAssets.swift; sourceTree = "<group>"; };
 		B8B1180D251B995500672874 /* CheckBoxAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxAssets.swift; sourceTree = "<group>"; };
-		B8BB4D02252CABC8006BEFA0 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,7 +264,6 @@
 				B4DFA20324B74F11004C908E /* Cartfile */,
 				B4D8EB8124B46B91002F3AD5 /* Mistica */,
 				B4D8EB8024B46B91002F3AD5 /* Products */,
-				B866729E2536F31E00AE35FE /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -345,65 +292,6 @@
 				B4DFA1D124B723C1004C908E /* Lottie.framework */,
 			);
 			path = SupportFiles;
-			sourceTree = "<group>";
-		};
-		B866729E2536F31E00AE35FE /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				B8BB4D02252CABC8006BEFA0 /* RadioButton.swift */,
-				B8B11761251B995400672874 /* FormView.swift */,
-				B866728B2535FF4500AE35FE /* CheckBox.swift */,
-				B8B1178C251B995500672874 /* CroutonView.swift */,
-				B8B117D6251B995500672874 /* EmailInputFieldValidationStrategy.swift */,
-				B8B1176F251B995400672874 /* CellCenterSectionView.swift */,
-				B8B117D3251B995500672874 /* InputField.swift */,
-				B8B11771251B995400672874 /* ListCellView.swift */,
-				B8B11775251B995400672874 /* SegmentSelector.swift */,
-				B8B117D2251B995500672874 /* TextInput.swift */,
-				B8B117E1251B995500672874 /* LoadErrorViewControllerDelegate.swift */,
-				B8B117F3251B995500672874 /* HeaderViewStyle.swift */,
-				B8B11770251B995400672874 /* CellLeftSectionView.swift */,
-				B8B11766251B995400672874 /* NavigationPresetView.swift */,
-				B8B117A8251B995500672874 /* PopoverMessageView.swift */,
-				B8B11764251B995400672874 /* ListView.swift */,
-				B8B1179F251B995500672874 /* FeedbackConfiguration.swift */,
-				B8B117E9251B995500672874 /* TagView.swift */,
-				B8B11774251B995400672874 /* SegmentCell.swift */,
-				B8B117AD251B995500672874 /* MisticaAppearance.swift */,
-				B8B117D7251B995500672874 /* PhoneNumberInputFieldValidationStrategy.swift */,
-				B8B117AF251B995500672874 /* SectionTitleHeaderView.swift */,
-				B8B11767251B995400672874 /* VerticallyCenteredPresetView.swift */,
-				B8B11762251B995400672874 /* ValidatableView.swift */,
-				B8B117D8251B995500672874 /* PasswordInputFieldValidationStrategy.swift */,
-				B8B117CA251B995500672874 /* UIViewPropertyAnimator+InputField.swift */,
-				B8B1175B251B995400672874 /* ScrollContentIndicator.swift */,
-				B8B117F1251B995500672874 /* IntrinsicMaxButtonWidthContainerView.swift */,
-				B8B1177D251B995400672874 /* Segment.swift */,
-				B8B117C7251B995500672874 /* HighlightedCardStyle.swift */,
-				B8B117A0251B995500672874 /* FeedbackView.swift */,
-				B8B117D9251B995500672874 /* InputFieldValidationStrategy.swift */,
-				B8B117F2251B995500672874 /* HeaderView.swift */,
-				B8B117BD251B995500672874 /* Button.swift */,
-				B8B11780251B995400672874 /* SegmentSelectorCenteredContentLayout.swift */,
-				B8B11790251B995500672874 /* FeedbackStyle+Toolkit.swift */,
-				B8B11772251B995400672874 /* ListCellStyle+Toolkit.swift */,
-				B8B117B5251B995500672874 /* ButtonContentView.swift */,
-				B8B117A9251B995500672874 /* PopoverContentView.swift */,
-				B8B117BC251B995500672874 /* ButtonStyle+Toolkit.swift */,
-				B8B117A2251B995500672874 /* PopoverView.swift */,
-				B8B117C8251B995500672874 /* HighlightedCard.swift */,
-				B8B1178D251B995500672874 /* CroutonController.swift */,
-				B8B1178E251B995500672874 /* CustomCroutonContainer.swift */,
-				B8B11755251B995400672874 /* ScrollContentIndicatorStyle.swift */,
-				B8B117CB251B995500672874 /* InputFieldStyle+Toolkit.swift */,
-				B8B117AA251B995500672874 /* PopoverConfiguration.swift */,
-				B8B117DF251B995500672874 /* LoadErrorViewController.swift */,
-				B8B117DB251B995500672874 /* LoadErrorViewControllerLifecycleDelegate.swift */,
-				B8B11791251B995500672874 /* FeedbackViewController.swift */,
-				B8B117CC251B995500672874 /* InputFieldDelegate.swift */,
-				B8B1178A251B995400672874 /* CroutonConfig.swift */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		B86672A12536F33200AE35FE /* Button */ = {

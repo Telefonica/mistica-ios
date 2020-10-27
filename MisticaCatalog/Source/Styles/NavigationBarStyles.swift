@@ -9,11 +9,11 @@
 import SwiftUI
 
 private struct MisticaNavigationBarStyle: ViewModifier {
-    init(backgroundColor: UIColor) {
+    init() {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.shadowColor = .clear
-        navBarAppearance.backgroundColor = backgroundColor
+        navBarAppearance.backgroundColor = .navigationBarBackground
         navBarAppearance.largeTitleTextAttributes = UINavigationBar.textAttributes(for: .textPreset2(weight: .light), color: UIColor.navigationBarPrimary)
         navBarAppearance.titleTextAttributes = UINavigationBar.textAttributes(for: .textPreset5(weight: .medium), color: UIColor.navigationBarPrimary)
 
@@ -31,7 +31,7 @@ private struct MisticaNavigationBarStyle: ViewModifier {
 }
 
 extension View {
-    func misticaNavigationBarStyle(backgroundColor: UIColor = .navigationBarBackground) -> some View {
-        modifier(MisticaNavigationBarStyle(backgroundColor: backgroundColor))
+    func misticaNavigationBarStyle() -> some View {
+        modifier(MisticaNavigationBarStyle())
     }
 }

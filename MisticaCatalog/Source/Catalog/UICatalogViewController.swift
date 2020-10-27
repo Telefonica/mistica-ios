@@ -31,6 +31,11 @@ private enum UICatalogRow: Int, CaseIterable {
     case viewStates
 }
 
+private enum UICatalogSection: Int, CaseIterable {
+    case playAndTouchTitle
+    case componentsList
+}
+
 private enum Constants {
     static let cellReusableIdentifier = "catalog-cell"
 }
@@ -70,46 +75,48 @@ public class UICatalogViewController: UIViewController {
 extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - Table view data source
 
-    public func numberOfSections(in _: UITableView) -> Int {
-        2
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        UICatalogSection.allCases.count
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        switch UICatalogSection(rawValue: section)! {
+        case .playAndTouchTitle:
             return 0
-        } else {
+        case .componentsList:
             return UICatalogRow.allCases.count
         }
     }
 
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let v = UIView()
-        v.backgroundColor = .background
+        let headerView = UIView()
+        headerView.backgroundColor = .background
 
-        if section == 0 {
+        switch UICatalogSection(rawValue: section)! {
+        case .playAndTouchTitle:
             let label = UILabel()
             label.text = "Touch and play with\nMística iOS components"
             label.font = .textPreset2(weight: .light)
             label.textColor = UIColor(red: 0, green: 50 / 255, blue: 69 / 255, alpha: 1)
             label.numberOfLines = 0
 
-            v.addSubview(label, constraints: [
-                label.leadingAnchor.constraint(equalTo: v.leadingAnchor, constant: 16),
-                label.topAnchor.constraint(equalTo: v.topAnchor, constant: 32),
-                label.trailingAnchor.constraint(equalTo: v.trailingAnchor, constant: 16),
-                label.bottomAnchor.constraint(equalTo: v.bottomAnchor, constant: 32),
-                v.heightAnchor.constraint(equalTo: label.heightAnchor, constant: 64) // label height plus top and bottom margins
-            ])
-        } else {
-            v.addSubview(brandsSegmentedControl, constraints: [
-                brandsSegmentedControl.centerYAnchor.constraint(equalTo: v.centerYAnchor),
-                brandsSegmentedControl.centerXAnchor.constraint(equalTo: v.centerXAnchor)
+            headerView.addSubview(label, constraints: [
+                label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+                label.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 32),
+                label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: 16),
+                label.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -32)
             ])
 
-            v.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        case .componentsList:
+            headerView.addSubview(brandsSegmentedControl, constraints: [
+                brandsSegmentedControl.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+                brandsSegmentedControl.centerXAnchor.constraint(equalTo: headerView.centerXAnchor)
+            ])
+
+            headerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         }
 
-        return v
+        return headerView
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,7 +134,7 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Table view delegate
 
-    public func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = UICatalogRow(rawValue: indexPath.row)!
         switch row {
         case .buttons:
@@ -189,16 +196,18 @@ private extension UICatalogViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(ListCellView.self, forCellReuseIdentifier: Constants.cellReusableIdentifier)
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 80
 
         setUpBrandsSegmentedControl()
     }
 
     func setUpBrandsSegmentedControl() {
-        BrandStyle.allCases.enumerated().forEach { pair in
-            brandsSegmentedControl.insertSegment(withTitle: pair.element.rawValue, at: pair.offset, animated: false)
+        BrandStyle.allCases.enumerated().forEach { offset, brand in
+            brandsSegmentedControl.insertSegment(withTitle: brand.rawValue, at: offset, animated: false)
 
-            if pair.element == MisticaConfig.brandStyle {
-                brandsSegmentedControl.selectedSegmentIndex = pair.offset
+            if brand == MisticaConfig.brandStyle {
+                brandsSegmentedControl.selectedSegmentIndex = offset
             }
         }
 

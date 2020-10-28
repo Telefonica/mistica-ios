@@ -6,10 +6,10 @@ default_platform(:ios)
 
 # Constants
 
-WORKSPACE_NAME = "Mistica.xcworkspace"
+MISTICA_CATALOG_PROJECT_PATH = "MisticaCatalog/MisticaCatalog.xcodeproj"
 TMP_BUILDS_PATH = "pkg/dist"
-MISTICA_APP_INFO_PLIST_PATH = "./Examples/MisticaApp/MisticaApp/SupportFiles/Info.plist"
-MISTICA_APP_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaApp.ipa" 
+MISTICA_CATALOG_INFO_PLIST_PATH = "./MisticaCatalog/SupportFiles/Info.plist"
+MISTICA_CATALOG_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaCatalog.ipa" 
 
 platform :ios do
 
@@ -48,12 +48,12 @@ platform :ios do
   	ensure_git_status_clean
 
   	increment_build_number_in_info_plist(
-      path: MISTICA_APP_INFO_PLIST_PATH
+      path: MISTICA_CATALOG_INFO_PLIST_PATH
     )
 
   	gym(
-        workspace: WORKSPACE_NAME,
-        scheme: "MisticaApp",
+        project: MISTICA_CATALOG_PROJECT_PATH,
+        scheme: "MisticaCatalog",
         configuration: "Release",
         codesigning_identity: "iPhone Distribution: Tuenti Technologies SL",
         export_team_id: "JA666WMX28",
@@ -67,7 +67,7 @@ platform :ios do
   	  owner_name: "Tuenti-Organization",
   	  app_name: "Mistica-iOS",
   	  destinations: "Public",
-  	  file: MISTICA_APP_IPA_PATH,
+  	  file: MISTICA_CATALOG_IPA_PATH,
   	  release_notes: "https://github.com/Telefonica/mistica-ios/blob/master/CHANGELOG.md"
   	)
 
@@ -81,16 +81,13 @@ end
 ##############################################################
 
 def increment_build_number_in_info_plist(params)
-	buildNumber = get_info_plist_value(
-  		path: params[:path], 
-  		key: "CFBundleVersion"
-  	).to_i
+  today = Time.now.strftime('%Y%m%d%H%M')
 
-  	set_info_plist_value(
-  		path: params[:path],
-  		key: "CFBundleVersion",
-  		value: (buildNumber + 1).to_s
-  	)	
+	set_info_plist_value(
+		path: params[:path],
+		key: "CFBundleVersion",
+		value: today
+	)
 end
 
 def get_appcenter_api_token
@@ -117,12 +114,4 @@ def brew_install_or_update(params)
     UI.message "Installing brew formula #{params[:formula]}"
     system("brew install #{params[:formula]}")
   end
-end
-
-def is_ci
-  # Check for Jenkins environment variables
-  ['JENKINS_HOME', 'JENKINS_URL'].each do |current|
-    return true if ENV.key?(current)
-  end
-  return false
 end

@@ -10,10 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "Mistica",
-            targets: ["Mistica"]),
-        .library(
-            name: "MisticaCatalog",
-            targets: ["MisticaCatalog"])
+            targets: ["Mistica"])
     ],
     dependencies: [
         .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8"))
@@ -61,20 +58,6 @@ let package = Package(
                 "Source/Components/Tag/README.md",
                 "Source/Components/ViewStates/docs",
                 "Source/Components/ViewStates/README.md"
-            ],
-            swiftSettings: [
-                .define("SWIFT_PACKAGE")
-            ]
-        ),
-        .target(
-            name: "MisticaCatalog",
-            dependencies: [
-                "Mistica"
-            ],
-            path: "MisticaCatalog",
-            exclude: [
-                "Resources",
-                "SupportFiles"
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")

@@ -1,29 +1,24 @@
-# [v2.4.0](https://github.com/Telefonica/mistica-ios/compare/v2.3.0...v2.4.0) (2020-10-20)
+# [v3.0.0](https://github.com/Telefonica/mistica-ios/compare/v2.3.0...v3.0.0) (2020-10-28)
 
-### Features
+### Breaking Changes
 
-* **ColorPalette:** add new colors iconWarning and iconError. ([bfcd748](https://github.com/Telefonica/mistica-ios/commit/bfcd748f04ad13ccfcf21fef815922be3b09d590))
-
-
-### Bug Fixes
-
-* **GithubActions:** use self-hosted-novum tag for running actions in Novum CI infrastructure. ([2f12030](https://github.com/Telefonica/mistica-ios/commit/2f12030f924e73afe8a3dbb21d6cfe0d56199c5c))
+* Delete MisticaCatalog library, migrate Mistica app to SwiftUI and apply new design for components list screen  ([c204a17](https://github.com/Telefonica/mistica-web/commit/c204a17ff21b5dd964566544a6d31ebe796280b4))
 
 # [v2.3.0](https://github.com/Telefonica/mistica-ios/compare/v2.2.0...v2.3.0) (2020-10-20)
 
 ### Features
 
-* **RadioButton:** new RadioButton component ([07cdcdf](https://github.com/Telefonica/mistica-ios/commit/07cdcdf378fdc576e8fe08b15f9b5d135d182176))
-* **CheckBox:** new CheckBox component. ([f8ac04d](https://github.com/Telefonica/mistica-ios/commit/f8ac04de2545bae7d1dcdb5f7b1eb14fc9ca4721))
-* **Switch:** new Switch component. ([d8e1e2f](https://github.com/Telefonica/mistica-ios/commit/d8e1e2f55199bedae03fbb05399bd0e530d15379))
-* **Development:** added header rule to SwiftFormat. ([58bac11](https://github.com/Telefonica/mistica-ios/commit/58bac11ff6d4ae9c82c04940c0d7820b28e1fbef))
+* **RadioButton:** new RadioButton component ([07cdcdf](https://github.com/Telefonica/mistica-web/commit/07cdcdf378fdc576e8fe08b15f9b5d135d182176))
+* **CheckBox:** new CheckBox component. ([f8ac04d](https://github.com/Telefonica/mistica-web/commit/f8ac04de2545bae7d1dcdb5f7b1eb14fc9ca4721))
+* **Switch:** new Switch component. ([d8e1e2f](https://github.com/Telefonica/mistica-web/commit/d8e1e2f55199bedae03fbb05399bd0e530d15379))
+* **Development:** added header rule to SwiftFormat. ([58bac11](https://github.com/Telefonica/mistica-web/commit/58bac11ff6d4ae9c82c04940c0d7820b28e1fbef))
 
 # [v2.2.0](https://github.com/Telefonica/mistica-ios/compare/v2.1.0...v2.2.0) (2020-10-07)
 
 ### Bug Fixes
 
-* **Feedbacks:** show icons correctly in o2Classic brand ([5ba329b](https://github.com/Telefonica/mistica-ios/commit/5ba329bb423a9e63285c03e2650bc0066d1e476f))
-* **Croutons:** make the component can skip the safe area automatically. ([5ba329b](https://github.com/Telefonica/mistica-ios/commit/5ba329bb423a9e63285c03e2650bc0066d1e476f))
+* **Feedbacks:** show icons correctly in o2Classic brand ([5ba329b](https://github.com/Telefonica/mistica-web/commit/5ba329bb423a9e63285c03e2650bc0066d1e476f))
+* **Croutons:** make the component can skip the safe area automatically. ([5ba329b](https://github.com/Telefonica/mistica-web/commit/5ba329bb423a9e63285c03e2650bc0066d1e476f))
 
 # v.2.1.0 - 2020-09-29
 - Update FontToolkit adding a parameter for constraining the preferred size of each text preset

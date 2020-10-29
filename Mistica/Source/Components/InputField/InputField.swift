@@ -945,28 +945,28 @@ private extension InputField {
 
 // MARK: Accessibility
 
-extension InputField {
-    override public var accessibilityLabel: String? {
+public extension InputField {
+    override var accessibilityLabel: String? {
         get { overridenAccessibilityLabel ?? placeholderText }
         set { overridenAccessibilityLabel = newValue }
     }
 
-    override public var accessibilityValue: String? {
+    override var accessibilityValue: String? {
         get { overridenAccessibilityValue ?? text }
         set { overridenAccessibilityLabel = newValue }
     }
 
-    override public var accessibilityTraits: UIAccessibilityTraits {
+    override var accessibilityTraits: UIAccessibilityTraits {
         get { overridenAccessibilityTraits ?? (state == .disabled ? .notEnabled : .none) }
         set { overridenAccessibilityTraits = newValue }
     }
 
-    override public var accessibilityHint: String? {
+    override var accessibilityHint: String? {
         get { overridenAccessibilityHint ?? assistiveText }
         set { overridenAccessibilityHint = newValue }
     }
 
-    public var assistiveAccessibilityIdentifier: String? {
+    var assistiveAccessibilityIdentifier: String? {
         get { assistiveLabel.accessibilityIdentifier }
         set { assistiveLabel.accessibilityIdentifier = newValue }
     }

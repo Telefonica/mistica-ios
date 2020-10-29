@@ -1,7 +1,4 @@
-# Run SwiftFormant
+# Run SwiftFormat
 
-if which swiftformat >/dev/null; then
-	swiftformat --swiftversion 5.2 $1
-else
-	echo "warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat or run brew install swiftformat"
-fi
+SDKROOT=macosx
+swift run -c release --package-path buildTools swiftformat $1

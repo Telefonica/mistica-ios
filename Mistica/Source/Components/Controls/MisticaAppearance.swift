@@ -16,7 +16,7 @@ public enum MisticaControlStyle: CaseIterable {
     case pageControl
 }
 
-class MisticaAppearance {
+enum MisticaAppearance {
     static func setUp(controls: [MisticaControlStyle]) {
         for control in controls {
             switch control {

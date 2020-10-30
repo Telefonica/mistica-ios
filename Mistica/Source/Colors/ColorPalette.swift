@@ -15,7 +15,7 @@ protocol ColorPalette {
     var textDisabled: UIColor { get }
     var textPrimaryInverse: UIColor { get }
     var textSecondary: UIColor { get }
-            var textSecondaryAlternative: UIColor { get }
+    var textSecondaryAlternative: UIColor { get }
     var textSecondaryInverse: UIColor { get }
     var textHint: UIColor { get }
     var textDanger: UIColor { get }

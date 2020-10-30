@@ -13,4 +13,4 @@ cd .. &>/dev/null
 
 sed -i '' -E "s/(s.version[[:space:]]+=[[:space:]]+').*(')/\1$VERSION_NUMBER\2/" Mistica.podspec
 sed -i '' -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" Mistica/SupportFiles/Mistica.xcconfig
-sed -i '' -e '/<key>MisticaVersion<\/key>/ {' -e "n; s/<string>.*<\/string>/<string>$VERSION_NUMBER<\/string>/" -e '}' MisticaCatalog/SupportFiles/Info.plist
+sed -i '' -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" MisticaCatalog/SupportFiles/Config.xcconfig

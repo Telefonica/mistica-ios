@@ -32,11 +32,6 @@ platform :ios do
       formula: "carthage"
     )
 
-    UI.message "Installing swiftformat"
-    brew_install_or_update(
-      formula: "swiftformat"
-    )
-
     UI.message "Carthage update and build"
     Dir.chdir("..") do
       sh("./carthage-build.sh")

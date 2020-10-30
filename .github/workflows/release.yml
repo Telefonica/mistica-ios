@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  workflow_dispatch:
+        inputs:
+            cliArgs:
+                description: 'CLI args'
+                required: false
+                default: ''
+
+jobs:
+  release:
+    name: Release
+    runs-on: self-hosted-novum
+    
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+            node-version: 12
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.FLOW_GITHUB_TOKEN }}
+        run: npx -p @semantic-release/changelog -p @semantic-release/git -p @semantic-release/exec -p semantic-release semantic-release ${{ github.event.inputs.cliArgs }}

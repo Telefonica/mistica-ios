@@ -31,9 +31,9 @@ struct CatalogHeader: View {
 
 private extension CatalogHeader {
     var misticaVersion: String? {
-        guard let infoPlist = Bundle.main.infoDictionary else { return nil }
-
-        return infoPlist["MisticaVersion"] as? String
+        guard let infoPlist = Bundle.main.infoDictionary,
+              let version = infoPlist["CFBundleShortVersionString"] as? String else { return nil }
+        return "v\(version)"
     }
 }
 

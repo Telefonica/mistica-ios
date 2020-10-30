@@ -9,6 +9,8 @@ jobs:
     runs-on: self-hosted-novum-mac
     steps:
       - uses: actions/checkout@v2
+      - name: Select Xcode 12
+        run: sudo xcode-select -s /Applications/Xcode-12.app
       - name: Format
         run: scripts/run_swiftformat.sh .
       - uses: stefanzweifel/git-auto-commit-action@v4

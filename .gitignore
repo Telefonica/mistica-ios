@@ -28,7 +28,6 @@ local/
 Packages
 .build/
 .swiftpm
-Package.resolved
 
 # AppCode
 *.iml

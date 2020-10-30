@@ -332,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../scripts/run_swiftformat.sh\" \"${SRCROOT}/\"\n";
+			shellScript = "\"${SRCROOT}/../scripts/run_swiftformat.sh\" \"${SRCROOT}/\" \"${SRCROOT}/../buildTools\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

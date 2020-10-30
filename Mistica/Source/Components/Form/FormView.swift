@@ -254,7 +254,7 @@ extension FormView: InputFieldDelegate {
 
     public func inputFieldDidBeginEditing(_ field: InputField) {
         if let lastField = validatableViews.last as? InputField,
-            field == lastField {
+           field == lastField {
             field.returnKeyType = .go
         } else {
             field.returnKeyType = .next

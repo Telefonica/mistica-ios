@@ -169,7 +169,7 @@ private extension CroutonController {
         if let rootVC = visibleVC as? UINavigationController {
             return visibleViewController(from: rootVC.topViewController!)
         } else if let homeVC = visibleVC.parent?.tabBarController,
-            let selectedNavigationController = homeVC.selectedViewController as? UINavigationController {
+                  let selectedNavigationController = homeVC.selectedViewController as? UINavigationController {
             return visibleViewController(from: selectedNavigationController.topViewController!)
         } else {
             return visibleVC

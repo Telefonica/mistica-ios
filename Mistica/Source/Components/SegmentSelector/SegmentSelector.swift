@@ -181,8 +181,8 @@ extension SegmentSelector: UICollectionViewDelegate {
 extension SegmentSelector: UILargeContentViewerInteractionDelegate {
     public func largeContentViewerInteraction(_: UILargeContentViewerInteraction, didEndOn item: UILargeContentViewerItem?, at _: CGPoint) {
         guard let cell = item as? SegmentCell,
-            let indexPath = collectionView.indexPath(for: cell),
-            let segment = segment(atIndex: indexPath.item) else { return }
+              let indexPath = collectionView.indexPath(for: cell),
+              let segment = segment(atIndex: indexPath.item) else { return }
 
         select(segment)
     }

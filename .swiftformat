@@ -1,6 +1,6 @@
 # file options
 
---exclude Carthage,**/Resources,scripts
+--exclude Carthage,**/Resources,scripts,buildTools
 
 # format options
 

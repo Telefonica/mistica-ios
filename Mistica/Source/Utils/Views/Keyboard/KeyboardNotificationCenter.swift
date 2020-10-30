@@ -87,7 +87,7 @@ private extension KeyboardNotificationCenter {
 
     func executeHandler(for event: KeyboardEvent, userInfo: [AnyHashable: Any]?) {
         guard let userInfo = userInfo,
-            let handler = handlers[event] else {
+              let handler = handlers[event] else {
             return
         }
         handler(KeyboardInfo(userInfo: userInfo))

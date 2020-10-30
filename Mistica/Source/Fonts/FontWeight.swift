@@ -12,40 +12,40 @@ protocol FontWeightConvertible {
     var systemWeight: UIFont.Weight { get }
 }
 
-extension FontStyle {
-    public enum TextPreset1Weight: String, FontWeightConvertible {
+public extension FontStyle {
+    enum TextPreset1Weight: String, FontWeightConvertible {
         case light
     }
 
-    public enum TextPreset2Weight: String, FontWeightConvertible {
+    enum TextPreset2Weight: String, FontWeightConvertible {
         case light
     }
 
-    public enum TextPreset3Weight: String, FontWeightConvertible {
+    enum TextPreset3Weight: String, FontWeightConvertible {
         case light
     }
 
-    public enum TextPreset4Weight: String, FontWeightConvertible {
+    enum TextPreset4Weight: String, FontWeightConvertible {
         case light
     }
 
-    public enum TextPreset5Weight: String, FontWeightConvertible {
+    enum TextPreset5Weight: String, FontWeightConvertible {
         case light, medium
     }
 
-    public enum TextPreset6Weight: String, FontWeightConvertible {
+    enum TextPreset6Weight: String, FontWeightConvertible {
         case light, regular, medium
     }
 
-    public enum TextPreset7Weight: String, FontWeightConvertible {
+    enum TextPreset7Weight: String, FontWeightConvertible {
         case regular, medium
     }
 
-    public enum TextPreset8Weight: String, FontWeightConvertible {
+    enum TextPreset8Weight: String, FontWeightConvertible {
         case regular, medium
     }
 
-    public enum TextSystemWeight: String, FontWeightConvertible {
+    enum TextSystemWeight: String, FontWeightConvertible {
         case regular
     }
 }

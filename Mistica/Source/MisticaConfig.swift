@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MisticaConfig {
+public enum MisticaConfig {
     static var currentColorPalette: ColorPalette = MovistarColorPalette()
     static var currentStyledControls = [MisticaControlStyle]()
 

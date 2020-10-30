@@ -11,7 +11,7 @@ import UIKit
 protocol ColorPalette {
     // MARK: Text
 
-                                var textPrimary: UIColor { get }
+    var textPrimary: UIColor { get }
     var textDisabled: UIColor { get }
     var textPrimaryInverse: UIColor { get }
     var textSecondary: UIColor { get }
@@ -30,7 +30,7 @@ protocol ColorPalette {
     var textButtonPrimary: UIColor { get }
     var textButtonPrimaryInverse: UIColor { get }
     var textButtonPrimaryInverseSelected: UIColor { get }
-                                var textButtonPrimaryInverseDisabled: UIColor { get }
+    var textButtonPrimaryInverseDisabled: UIColor { get }
 
     var textButtonSecondary: UIColor { get }
     var textButtonSecondarySelected: UIColor { get }

@@ -11,12 +11,10 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: self-hosted-novum
+    runs-on: self-hosted-novum-mac
     
     steps:
       - uses: actions/checkout@v2
-        with:
-            token: ${{ secrets.FLOW_GITHUB_TOKEN }}
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:

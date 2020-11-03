@@ -1,0 +1,20 @@
+name: SwiftFormat
+on:
+  pull_request:
+    branches:
+      - '*'
+jobs:
+  format:
+    name: SwiftFormat
+    runs-on: self-hosted-novum-mac
+    steps:
+      - uses: actions/checkout@v2
+      - name: Format
+        run: scripts/run_swiftformat.sh .
+        env:
+          DEVELOPER_DIR: /Applications/Xcode-12.app/Contents/Developer
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Run swiftformat
+        env:
+          GITHUB_TOKEN: ${{ secrets.FLOW_GITHUB_TOKEN }}

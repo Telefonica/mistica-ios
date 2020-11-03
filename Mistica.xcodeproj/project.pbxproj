@@ -742,7 +742,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4D8EB8724B46B91002F3AD5 /* Build configuration list for PBXNativeTarget "Mistica" */;
 			buildPhases = (
-				B8DD217824D081010096D68C /* Run SwiftFormat */,
 				B4D8EB7A24B46B91002F3AD5 /* Headers */,
 				B4D8EB7B24B46B91002F3AD5 /* Sources */,
 				B4D8EB7C24B46B91002F3AD5 /* Frameworks */,
@@ -800,27 +799,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B8DD217824D081010096D68C /* Run SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftFormat";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/scripts/run_swiftformat.sh\" \"${SRCROOT}/\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B4D8EB7B24B46B91002F3AD5 /* Sources */ = {

@@ -254,7 +254,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8F98FF92546C95800DFBFE9 /* Build configuration list for PBXNativeTarget "MisticaCatalog" */;
 			buildPhases = (
-				B89CF6A625482844000F07CA /* Run SwiftFormat */,
 				B8F98FE62546C95600DFBFE9 /* Sources */,
 				B8F98FE72546C95600DFBFE9 /* Frameworks */,
 				B8F98FE82546C95600DFBFE9 /* Resources */,
@@ -314,27 +313,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B89CF6A625482844000F07CA /* Run SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run SwiftFormat";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../scripts/run_swiftformat.sh\" \"${SRCROOT}/\" \"${SRCROOT}/../buildTools\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B8F98FE62546C95600DFBFE9 /* Sources */ = {

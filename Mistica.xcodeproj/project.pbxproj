@@ -60,6 +60,7 @@
 		B86673BF2536F33300AE35FE /* ScrollContentIndicatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86673482536F33300AE35FE /* ScrollContentIndicatorStyle.swift */; };
 		B86673C32536F33300AE35FE /* ScrollContentIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866734E2536F33300AE35FE /* ScrollContentIndicator.swift */; };
 		B86674152536F66600AE35FE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B86674142536F66600AE35FE /* README.md */; };
+		B877E0ED25516FDB00D5D054 /* UINavigationBar+Mistica.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877E0EC25516FDB00D5D054 /* UINavigationBar+Mistica.swift */; };
 		B8B1180E251B995500672874 /* MisticaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B1172C251B995400672874 /* MisticaConfig.swift */; };
 		B8B1180F251B995500672874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8B1172E251B995400672874 /* Assets.xcassets */; };
 		B8B11810251B995500672874 /* UIBarButtonItem+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B11731251B995400672874 /* UIBarButtonItem+Utils.swift */; };
@@ -190,6 +191,7 @@
 		B866734E2536F33300AE35FE /* ScrollContentIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollContentIndicator.swift; sourceTree = "<group>"; };
 		B86674102536F4D000AE35FE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B86674142536F66600AE35FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B877E0EC25516FDB00D5D054 /* UINavigationBar+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Mistica.swift"; sourceTree = "<group>"; };
 		B8AA79F5252DC5120056A2C7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		B8B1172C251B995400672874 /* MisticaConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MisticaConfig.swift; sourceTree = "<group>"; };
 		B8B1172E251B995400672874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -562,6 +564,14 @@
 			path = Switch;
 			sourceTree = "<group>";
 		};
+		B877E0EB25516FC800D5D054 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				B877E0EC25516FDB00D5D054 /* UINavigationBar+Mistica.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		B8B1172B251B995400672874 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +667,7 @@
 		B8B11753251B995400672874 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B877E0EB25516FC800D5D054 /* NavigationBar */,
 				B8B117F4251B995500672874 /* Badge */,
 				B86672A12536F33200AE35FE /* Button */,
 				B86673352536F33300AE35FE /* CheckBox */,
@@ -859,6 +870,7 @@
 				B866736E2536F33300AE35FE /* TagView.swift in Sources */,
 				B86673C32536F33300AE35FE /* ScrollContentIndicator.swift in Sources */,
 				B8B1182B251B995500672874 /* AssetType.swift in Sources */,
+				B877E0ED25516FDB00D5D054 /* UINavigationBar+Mistica.swift in Sources */,
 				B86673632536F33300AE35FE /* FeedbackView.swift in Sources */,
 				B86673AB2536F33300AE35FE /* SegmentSelector.swift in Sources */,
 				B86673792536F33300AE35FE /* PhoneNumberInputFieldValidationStrategy.swift in Sources */,

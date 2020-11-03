@@ -12,11 +12,11 @@ public extension UINavigationBar {
     class var misticaLargeTitleTextAttributes: [NSAttributedString.Key: Any] {
         textAttributes(for: .textPreset2(weight: .light, constrainedToPreferredSize: .large), color: UIColor.navigationBarPrimary)
     }
-    
+
     class var misticaTitleTextAttributes: [NSAttributedString.Key: Any] {
         textAttributes(for: .textPreset5(weight: .medium, constrainedToPreferredSize: .large), color: UIColor.navigationBarPrimary)
     }
-    
+
     func applyMisticaStyle() {
         applyCommonOpaqueStyle()
         shadowImage = UIImage()
@@ -42,8 +42,8 @@ private extension UINavigationBar {
             compactAppearance = navBarAppearance
             scrollEdgeAppearance = navBarAppearance
         } else {
-            self.largeTitleTextAttributes = UINavigationBar.misticaLargeTitleTextAttributes
-            self.titleTextAttributes = UINavigationBar.misticaTitleTextAttributes
+            largeTitleTextAttributes = UINavigationBar.misticaLargeTitleTextAttributes
+            titleTextAttributes = UINavigationBar.misticaTitleTextAttributes
         }
     }
 

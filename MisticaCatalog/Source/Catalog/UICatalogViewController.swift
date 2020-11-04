@@ -182,7 +182,7 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
 private extension UICatalogViewController {
     func styleViews() {
         view.backgroundColor = .background
-        navigationController?.navigationBar.applyOpaqueStyleWithoutShadow()
+        navigationController?.navigationBar.applyMisticaStyle()
     }
 
     func setUp() {

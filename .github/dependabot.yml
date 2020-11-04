@@ -6,7 +6,15 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    reviewers:
+      - "Telefonica/ios"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+    reviewers:
+      - "Telefonica/ios"
+    ignore:
+      - dependency-name: "actions/setup-node"
+        # Ignore beta version
+        versions: ["2.x"]

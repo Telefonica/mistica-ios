@@ -6,7 +6,9 @@
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 
+import Mistica
 import SwiftUI
+import UIKit
 
 private struct MisticaNavigationBarStyle: ViewModifier {
     init() {
@@ -14,8 +16,8 @@ private struct MisticaNavigationBarStyle: ViewModifier {
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.shadowColor = .clear
         navBarAppearance.backgroundColor = .navigationBarBackground
-        navBarAppearance.largeTitleTextAttributes = UINavigationBar.textAttributes(for: .textPreset2(weight: .light), color: UIColor.navigationBarPrimary)
-        navBarAppearance.titleTextAttributes = UINavigationBar.textAttributes(for: .textPreset5(weight: .medium), color: UIColor.navigationBarPrimary)
+        navBarAppearance.largeTitleTextAttributes = UINavigationBar.misticaLargeTitleTextAttributes
+        navBarAppearance.titleTextAttributes = UINavigationBar.misticaTitleTextAttributes
 
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().compactAppearance = navBarAppearance

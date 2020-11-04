@@ -1,12 +1,10 @@
 #  UINavigationBar
 
-The UINavigationBar component will not be implmented because we promote the native UINavigationBar.
-
-But Mistica provides styles for UINavigationBar based on the brand used. 
+Mística doesn't provide a custom navigation bar component. Instead, it recommends the usage of the native `UINavigationBar` and provides styles based on the brand used.
 
 ## Usage
 
-Mistica provides an extension to `UINavigationBar` named `applyMisticaStyle`.
+Mística provides an extension to `UINavigationBar` named `applyMisticaStyle`.
 
 ```swift
 override func viewDidLoad() {

@@ -6,7 +6,9 @@
         ["@semantic-release/exec", {
             "prepareCmd": "./scripts/update-version.sh ${nextRelease.version}"
         }],
-        "@semantic-release/git",
+        ["@semantic-release/git", {
+            "assets": ["CHANGELOG.md", "Mistica.podspec", "Mistica/SupportFiles/Mistica.xcconfig", "MisticaCatalog/SupportFiles/Config.xcconfig"]
+        }],
         "@semantic-release/github"
     ]
 }

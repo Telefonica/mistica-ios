@@ -11,6 +11,35 @@ Don't hesitate to ask any questions and share your ideas
 We would love to accept your Pull Requests but please, before starting your development,
 [create an issue](https://github.com/Telefonica/mistica-ios/issues/new/choose).
 
+When selecting the reviewers for you pull request, we encourage to use the `Telefonica/iOS` team as it will automatically select two reviewers from the team.
+
+The prefered way to merge a pull request is by squashing all commits and combine them into one that will have a meaningful message following the ["Commit messages"](#commit-messages) guidelines.
+
+### Release workflow
+
+To create a new release, use the GitHub action `Relese`. The process is automated using [semantic-release](https://github.com/semantic-release/semantic-release), which will increase version numbers, update the CHANGELOG.md and create a new GitHub release. 
+
+### Commit messages
+
+**semantic-release** uses the uses [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines) to determine the type release to generate. The following list includes some examples of commit messages and the type of release that will be created:
+
+| Commit message                                                                                        | Release type               |
+|-------------------------------------------------------------------------------------------------------|----------------------------|
+| `fix(Button): make it green again in MovistarES`                                                      | Patch Release              |
+| `feat(Button): added a new fancy animation`                                                           | Minor Release              |
+| `feat(FontStyle): update font styles`<br><br>`BREAKING CHANGE: The existing font style has changed.`  | Major Release              |
+
+> In order for a feature/fix to be considered a major release, it needs to include the `BREAKING CHANGE:` body in the commit message. Refer the the full list of commit message types [here](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
+
+
+To revert a commit, the commit message should begin with `revert:`, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>`, where the hash is the SHA of the commit being reverted. **semantic-release** will automatically skip the original and the revert commit from the `CHANGELOG.md` if the release has not been yet created, if not, it will create a new one.
+
+```
+revert: fix(Button): make it green again in MovistarES
+
+This reverts commit c3cdc70e88dc0bf9de849fb21c6b4ddf22b27470
+```
+
 ## Bug reports
 
 If something is broken or not working as expected, let us know!
@@ -47,7 +76,6 @@ or [open an issue](https://github.com/Telefonica/mistica/issues) in the main Mis
 To create or modify components from the Mistica library follow the next steps:
 
 1. Clone this repo
-
 2. Run the following commands
 
 ```sh
@@ -56,9 +84,9 @@ bundle install
 bundle exec fastlane setup
 ```
 
-4. Open `Mistica.xcodeproj`
-
-5. Place the new component under the `Components` folder. The component should have a proper definition by the design team.
+3. Open `Mistica.xcodeproj`
+4. Place the new component under the `Components` folder. The component should have a proper definition by the design team.
+5. Add a new entry to MisticaCatalog showing how the new component works and documentation with component details and usage.
 
 When implementing the component, try to have in mind the following guidelines:
 
@@ -68,5 +96,3 @@ When implementing the component, try to have in mind the following guidelines:
 * Pay attention to user interaction (Gestures, Haptics, 3D Touch...)
 * Although this should be transparent to you, take into account themes and multiple brands.
 * To help other developers, add documentation about the new component.
-
-> Future versions will include a sample app or catalog to test those components. Once the catalog is available, don't forget to include new components on it.

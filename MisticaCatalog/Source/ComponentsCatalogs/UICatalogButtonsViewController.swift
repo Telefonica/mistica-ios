@@ -32,12 +32,22 @@ class UICatalogButtonsViewController: UITableViewController {
             ]
         }
 
-        static var additionalButtonSections: [(name: String, buttons: [Button])] = [
+        static var additionalButtonSections: [(name: String, buttons: [Button], contentMode: UIView.ContentMode)] = [
             ("Min width", [
                 Button(style: .primary, title: "OK"),
                 Button(style: .primary, title: "OK", isSmall: true),
                 Button(style: .link, title: "OK")
-            ])
+            ], .center),
+            ("Left Bleeding Alignment", [
+                Button(style: .primary, title: "OK"),
+                Button(style: .primary, title: "OK", isSmall: true),
+                Button(style: .link, title: "OK")
+            ], .left),
+            ("Right Bleeding Alignment", [
+                Button(style: .primary, title: "OK"),
+                Button(style: .primary, title: "OK", isSmall: true),
+                Button(style: .link, title: "OK")
+            ], .right)
         ]
     }
 
@@ -78,7 +88,7 @@ class UICatalogButtonsViewController: UITableViewController {
         Constants.styles.indices.contains(section)
     }
 
-    func additionalButtonSection(at section: Int) -> (name: String, buttons: [Button]) {
+    func additionalButtonSection(at section: Int) -> (name: String, buttons: [Button], contentMode: UIView.ContentMode) {
         return Constants.additionalButtonSections[section - Constants.styles.count]
     }
 
@@ -106,9 +116,10 @@ class UICatalogButtonsViewController: UITableViewController {
     func additionalCell(at indexPath: IndexPath) -> UITableViewCell {
         let buttonCategory = additionalButtonSection(at: indexPath.section)
         let button = buttonCategory.buttons[indexPath.row]
-
+        button.contentMode = buttonCategory.contentMode
+        
         let cell = UITableViewCell()
-        cell.configure(with: button)
+        cell.configure(with: button, contentMode: buttonCategory.contentMode)
 
         return cell
     }
@@ -119,11 +130,21 @@ class UICatalogButtonsViewController: UITableViewController {
 }
 
 private extension UITableViewCell {
-    func configure(with button: Button) {
+    func configure(with button: Button, contentMode: UIView.ContentMode = .center) {
+        let alignmentConstraint: NSLayoutConstraint
+        switch contentMode {
+        case .left:
+            alignmentConstraint = contentView.leftAnchor.constraint(equalTo: button.leftAnchor)
+        case .right:
+            alignmentConstraint = contentView.rightAnchor.constraint(equalTo: button.rightAnchor)
+        default:
+            alignmentConstraint = contentView.centerXAnchor.constraint(equalTo: button.centerXAnchor)
+        }
+        
         contentView.addSubview(button, constraints: [
             contentView.layoutMarginsGuide.topAnchor.constraint(equalTo: button.topAnchor),
             contentView.layoutMarginsGuide.bottomAnchor.constraint(equalTo: button.bottomAnchor),
-            contentView.centerXAnchor.constraint(equalTo: button.centerXAnchor)
+            alignmentConstraint
         ])
     }
 }

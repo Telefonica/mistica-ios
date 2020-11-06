@@ -117,7 +117,7 @@ class UICatalogButtonsViewController: UITableViewController {
         let buttonCategory = additionalButtonSection(at: indexPath.section)
         let button = buttonCategory.buttons[indexPath.row]
         button.contentMode = buttonCategory.contentMode
-        
+
         let cell = UITableViewCell()
         cell.configure(with: button, contentMode: buttonCategory.contentMode)
 
@@ -140,7 +140,7 @@ private extension UITableViewCell {
         default:
             alignmentConstraint = contentView.centerXAnchor.constraint(equalTo: button.centerXAnchor)
         }
-        
+
         contentView.addSubview(button, constraints: [
             contentView.layoutMarginsGuide.topAnchor.constraint(equalTo: button.topAnchor),
             contentView.layoutMarginsGuide.bottomAnchor.constraint(equalTo: button.bottomAnchor),

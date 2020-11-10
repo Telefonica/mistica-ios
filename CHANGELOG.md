@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/Telefonica/mistica-ios/compare/v3.0.0...v3.1.0) (2020-11-04)
+
+
+### Features
+
+* **UINavigationBar:** Add UINavigationBar extension for provides styles based on the brand used. ([fe448ff](https://github.com/Telefonica/mistica-ios/commit/fe448ff89109216b136e24f298236cd103ce219b))
+
 # [v3.0.0](https://github.com/Telefonica/mistica-ios/compare/v2.3.0...v3.0.0) (2020-10-28)
 
 ### Breaking Changes

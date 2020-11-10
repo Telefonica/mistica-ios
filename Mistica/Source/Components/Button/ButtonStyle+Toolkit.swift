@@ -19,7 +19,7 @@ public extension Button.Style {
 
     private static var regularMinimumWidth: CGFloat = 156
     private static var smallMinimumWidth: CGFloat = 104
-    private static var linkMinimumWidth: CGFloat = 96
+    private static var linkMinimumWidth: CGFloat = 0
 
     static var primary: Button.Style {
         let textColor: UIColor = .textButtonPrimary

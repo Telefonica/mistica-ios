@@ -12,21 +12,30 @@ jobs:
   manually-deploy-catalog:
     name: Manually deploy catalog
     runs-on: self-hosted-novum
-    
-    steps:
-      
-      - name: Deploy master
-        if: ${{ github.event.inputs.commit_to_deploy == '' }}
-        uses: satak/webrequest-action@master
-        with:
-          url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
-          method: POST
-          payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-ios",  "branch": "master",  "workflow": "build_and_deploy_mistica_catalog",  "ticket": "APPS-7169", "username": "flow"}'
 
-      - name: Deploy commit
-        if: ${{ github.event.inputs.commit_to_deploy != '' }}
-        uses: satak/webrequest-action@master
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v2
+
+      - name: Checkout Telefonica/github-actions repo
+        uses: actions/checkout@v2
         with:
-          url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
-          method: POST
-          payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-ios",  "branch": "master",  "changeset": ${{ github.event.inputs.commit_to_deploy }},  "workflow": "build_and_deploy_mistica_catalog",  "ticket": "APPS-7169", "username": "flow"}'
+          repository: Telefonica/github-actions
+          token: "${{ secrets.READ_PRIVATE_REPOS }}"
+          path: .github/actions
+
+      - name: Deploy master (cigen workflow)
+        if: ${{ github.event.inputs.commit_to_deploy == '' }}
+        uses: ./.github/actions/novum/trigger-cigen-workflow
+        with:
+          workflow: build_and_deploy_mistica_catalog
+          payload: "repository: mistica-ios, branch: master, ticket: APPS-7169"
+          token: "${{ secrets.FLOW_BEARER_TOKEN }}"
+
+      - name: Deploy commit (cigen workflow)
+        if: ${{ github.event.inputs.commit_to_deploy != '' }}
+        uses: ./.github/actions/novum/trigger-cigen-workflow
+        with:
+          workflow: build_and_deploy_mistica_catalog
+          payload: "repository: mistica-ios, branch: master, changeset: ${{ github.event.inputs.commit_to_deploy }}, ticket: APPS-7169"
+          token: "${{ secrets.FLOW_BEARER_TOKEN }}"

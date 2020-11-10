@@ -11,13 +11,13 @@ Don't hesitate to ask any questions and share your ideas
 We would love to accept your Pull Requests but please, before starting your development,
 [create an issue](https://github.com/Telefonica/mistica-ios/issues/new/choose).
 
-When selecting the reviewers for you pull request, we encourage to use the `Telefonica/iOS` team as it will automatically select two reviewers from the team.
+When selecting the reviewers for your pull request, use the `Telefonica/iOS` team as it will automatically select two reviewers from the team.
 
-The prefered way to merge a pull request is by squashing all commits and combine them into one that will have a meaningful message following the ["Commit messages"](#commit-messages) guidelines.
+Pull request will be merged by the repo owners by squashing all commits and combining them into one that will have a meaningful message following the ["Commit messages"](#commit-messages) guidelines.
 
 ### Release workflow
 
-To create a new release, use the GitHub action `Relese`. The process is automated using [semantic-release](https://github.com/semantic-release/semantic-release), which will increase version numbers, update the CHANGELOG.md and create a new GitHub release. 
+To create a new release, use the GitHub action `Release`. The process is automated using [semantic-release](https://github.com/semantic-release/semantic-release), which will increase version numbers, update the CHANGELOG.md and create a new GitHub release. 
 
 ### Commit messages
 

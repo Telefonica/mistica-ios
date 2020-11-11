@@ -24,5 +24,4 @@ jobs:
         uses: ./.github/actions/novum/trigger-cigen-workflow
         with:
           workflow: build_and_deploy_mistica_catalog
-          flow-token: "${{ secrets.FLOW_BEARER_TOKEN }}"
           payload:  "ticket: APPS-7169"

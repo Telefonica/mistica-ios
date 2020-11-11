@@ -91,7 +91,7 @@ private extension CellCenterSectionView {
         titleLabel.font = .textPreset6(weight: .light)
         titleLabel.textColor = .textPrimary
         titleLabel.minHeight = 24
-        titleLabel.lineBreakMode = .byWordWrapping
+        titleLabel.lineBreakMode = .byTruncatingTail
         titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         titleLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
@@ -100,7 +100,7 @@ private extension CellCenterSectionView {
         detailLabel.font = .textPreset7(weight: .regular)
         detailLabel.textColor = .textSecondary
         detailLabel.minHeight = 20
-        detailLabel.lineBreakMode = .byWordWrapping
+        detailLabel.lineBreakMode = .byTruncatingTail
         detailLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         detailLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         detailLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
@@ -109,7 +109,7 @@ private extension CellCenterSectionView {
         subtitleLabel.font = .textPreset7(weight: .regular)
         subtitleLabel.textColor = .textSecondary
         subtitleLabel.minHeight = 20
-        subtitleLabel.lineBreakMode = .byWordWrapping
+        subtitleLabel.lineBreakMode = .byTruncatingTail
         subtitleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         subtitleLabel.setContentHuggingPriority(.defaultLow, for: .vertical)

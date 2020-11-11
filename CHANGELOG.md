@@ -1,3 +1,17 @@
+# [4.0.0](https://github.com/Telefonica/mistica-ios/compare/v3.1.0...v4.0.0) (2020-11-11)
+
+
+### Features
+
+* **Button:** Remove min width in Button link ([9b711dd](https://github.com/Telefonica/mistica-ios/commit/9b711dd9eae6f5f8d76273ccb8646063933de30d))
+* **Feedbacks:** Update MovistarES error feedback animation ([#27](https://github.com/Telefonica/mistica-ios/issues/27)) ([aab0d49](https://github.com/Telefonica/mistica-ios/commit/aab0d495ce99ee7ef887a1ff80ea3774f646d33a))
+
+
+### BREAKING CHANGES
+
+* **Button:** Button link won't have a min width anymore
+* **Feedbacks:** The existing feedback animation will be replaced with this new version
+
 # [3.1.0](https://github.com/Telefonica/mistica-ios/compare/v3.0.0...v3.1.0) (2020-11-04)
 
 

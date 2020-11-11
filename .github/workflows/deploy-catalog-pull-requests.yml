@@ -8,10 +8,21 @@ jobs:
   deploy-catalog-pull-requests:
     name: Deploy catalog pull requests
     runs-on: self-hosted-novum
-    
+
     steps:
-      - uses: satak/webrequest-action@master
+      - name: Checkout this repo
+        uses: actions/checkout@v2
+
+      - name: Checkout Telefonica/github-actions repo
+        uses: actions/checkout@v2
         with:
-          url: https://flow.tuenti.io/events/FLOW/SCRIPT_EVENT
-          method: POST
-          payload: '{"script": "tu-ci", "operation": "create_or_update_job",  "repository": "mistica-ios",  "branch": "master",  "changeset": "${{ github.sha }}",  "workflow": "build_and_deploy_mistica_catalog",  "ticket": "APPS-7169", "username": "flow"}'
+          repository: Telefonica/github-actions
+          token: "${{ secrets.READ_PRIVATE_REPOS }}"
+          path: .github/actions
+
+      - name: Deploy mistica catalog (cigen workflow)
+        uses: ./.github/actions/novum/trigger-cigen-workflow
+        with:
+          workflow: build_and_deploy_mistica_catalog
+          flow-token: "${{ secrets.FLOW_BEARER_TOKEN }}"
+          payload:  "ticket: APPS-7169"

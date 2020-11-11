@@ -29,13 +29,16 @@ jobs:
         uses: ./.github/actions/novum/trigger-cigen-workflow
         with:
           workflow: build_and_deploy_mistica_catalog
-          payload: "repository: mistica-ios, branch: master, ticket: APPS-7169"
-          token: "${{ secrets.FLOW_BEARER_TOKEN }}"
+          branch: master
+          payload: "ticket: APPS-7169"
+          flow-token: "${{ secrets.FLOW_BEARER_TOKEN }}"
 
       - name: Deploy commit (cigen workflow)
         if: ${{ github.event.inputs.commit_to_deploy != '' }}
         uses: ./.github/actions/novum/trigger-cigen-workflow
         with:
           workflow: build_and_deploy_mistica_catalog
-          payload: "repository: mistica-ios, branch: master, changeset: ${{ github.event.inputs.commit_to_deploy }}, ticket: APPS-7169"
-          token: "${{ secrets.FLOW_BEARER_TOKEN }}"
+          branch: master
+          changeset: "${{ github.event.inputs.commit_to_deploy }}"
+          payload: "ticket: APPS-7169"
+          flow-token: "${{ secrets.FLOW_BEARER_TOKEN }}"

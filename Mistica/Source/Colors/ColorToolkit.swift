@@ -5,9 +5,7 @@
 //
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
-
 import UIKit
-
 public extension UIColor {
     // MARK: Text
 

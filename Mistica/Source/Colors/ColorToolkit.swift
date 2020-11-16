@@ -8,12 +8,10 @@
 import UIKit
 public extension UIColor {
     // MARK: Text
-
     @objc(textPrimaryColor)
     static var textPrimary: UIColor {
         MisticaConfig.currentColorPalette.textPrimary
     }
-
     @objc(textDisabledColor)
     static var textDisabled: UIColor {
         MisticaConfig.currentColorPalette.textDisabled

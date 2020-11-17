@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Novum' => 'appscore@tuenti.com' }
   s.source           = { :git => 'https://github.com/Telefonica/mistica-ios/mistica-ios.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'Mistica/**/*.swift'
 

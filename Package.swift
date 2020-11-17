@@ -13,7 +13,8 @@ let package = Package(
             targets: ["Mistica"])
     ],
     dependencies: [
-        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8"))
+        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8")),
+        .package(name: "SnapshotTesting", url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .exact("1.8.2"))
     ],
     targets: [
         .target(
@@ -21,47 +22,58 @@ let package = Package(
             dependencies: [
                 "Lottie"
             ],
-            path: "Mistica",
+            path: "Mistica/Source",
             exclude: [
                 "SupportFiles",
-                "Source/Components/Badge/docs",
-                "Source/Components/Badge/README.md",
-                "Source/Components/Button/docs",
-                "Source/Components/Button/README.md",
-                "Source/Components/CheckBox/README.md",
-                "Source/Components/Controls/README.md",
-                "Source/Components/Crouton/docs",
-                "Source/Components/Crouton/README.md",
-                "Source/Components/Feedback/docs",
-                "Source/Components/Feedback/README.md",
-                "Source/Components/Form/docs",
-                "Source/Components/Form/README.md",
-                "Source/Components/Header/docs",
-                "Source/Components/Header/README.md",
-                "Source/Components/HighlightedCard/docs",
-                "Source/Components/HighlightedCard/README.md",
-                "Source/Components/InputField/docs",
-                "Source/Components/InputField/README.md",
-                "Source/Components/Lists/docs",
-                "Source/Components/Lists/README.md",
-                "Source/Components/NavigationBar/README.md",
-                "Source/Components/Popover/docs",
-                "Source/Components/Popover/README.md",
-                "Source/Components/RadioButton/README.md",
-                "Source/Components/ScrollContentIndicator/docs",
-                "Source/Components/ScrollContentIndicator/README.md",
-                "Source/Components/SectionTitle/docs",
-                "Source/Components/SectionTitle/README.md",
-                "Source/Components/SegmentSelector/docs",
-                "Source/Components/SegmentSelector/README.md",
-                "Source/Components/Switch/README.md",
-                "Source/Components/Tag/docs",
-                "Source/Components/Tag/README.md",
-                "Source/Components/ViewStates/docs",
-                "Source/Components/ViewStates/README.md"
+                "Components/Badge/docs",
+                "Components/Badge/README.md",
+                "Components/Button/docs",
+                "Components/Button/README.md",
+                "Components/CheckBox/README.md",
+                "Components/Controls/README.md",
+                "Components/Crouton/docs",
+                "Components/Crouton/README.md",
+                "Components/Feedback/docs",
+                "Components/Feedback/README.md",
+                "Components/Form/docs",
+                "Components/Form/README.md",
+                "Components/Header/docs",
+                "Components/Header/README.md",
+                "Components/HighlightedCard/docs",
+                "Components/HighlightedCard/README.md",
+                "Components/InputField/docs",
+                "Components/InputField/README.md",
+                "Components/Lists/docs",
+                "Components/Lists/README.md",
+                "Components/NavigationBar/README.md",
+                "Components/Popover/docs",
+                "Components/Popover/README.md",
+                "Components/RadioButton/README.md",
+                "Components/ScrollContentIndicator/docs",
+                "Components/ScrollContentIndicator/README.md",
+                "Components/SectionTitle/docs",
+                "Components/SectionTitle/README.md",
+                "Components/SegmentSelector/docs",
+                "Components/SegmentSelector/README.md",
+                "Components/Switch/README.md",
+                "Components/Tag/docs",
+                "Components/Tag/README.md",
+                "Components/ViewStates/docs",
+                "Components/ViewStates/README.md"
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
+            ]
+        ),
+        .testTarget(
+            name: "MisticaTests",
+            dependencies: [
+                "Mistica",
+                "SnapshotTesting"
+            ],
+            path: "Mistica/Tests",
+            exclude: [
+                "UI/__Snapshots__"
             ]
         )
     ]

@@ -103,7 +103,7 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             headerView.addSubview(label, constraints: [
                 label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
                 label.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 32),
-                label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: 16),
+                label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
                 label.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -32)
             ])
 
@@ -222,7 +222,8 @@ private extension UICatalogViewController {
         tableView.reloadData()
 
         // Force update `UIAppearance` changes
-        UIApplication.shared.windows.forEach { $0.reload() }
+        let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
+        keyWindow?.reload()
         styleViews()
     }
 }

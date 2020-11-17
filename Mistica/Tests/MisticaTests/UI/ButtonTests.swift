@@ -1,3 +1,11 @@
+//
+//  ButtonTests.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
+//
+
 import Mistica
 import SnapshotTesting
 import XCTest

@@ -311,7 +311,7 @@ private extension ListCellView {
             leftSection.removeFromSuperview()
             return
         }
-        
+
         updateAssetAligment()
 
         leftSection.assetType = assetType

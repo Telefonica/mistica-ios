@@ -16,7 +16,7 @@ private enum ImageSize {
 class CellLeftSectionView: UIStackView {
     private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize)
     private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize)
-    
+
     private lazy var containerView: UIView = {
         let view = UIView()
         view.addSubview(withCenterConstraints: imageView)

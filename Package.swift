@@ -71,7 +71,7 @@ let package = Package(
                 "Mistica",
                 "SnapshotTesting"
             ],
-            path: "Mistica/Tests",
+            path: "Mistica/Tests/MisticaTests",
             exclude: [
                 "UI/__Snapshots__"
             ]

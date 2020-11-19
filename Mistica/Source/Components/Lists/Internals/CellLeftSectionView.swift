@@ -43,10 +43,12 @@ class CellLeftSectionView: UIStackView {
     func topAlignment() {
         alignment = .top
         isLayoutMarginsRelativeArrangement = true
-        directionalLayoutMargins = NSDirectionalEdgeInsets(top: 4,
-                                                           leading: 0,
-                                                           bottom: 0,
-                                                           trailing: 0)
+        directionalLayoutMargins = NSDirectionalEdgeInsets(
+            top: 4,
+            leading: 0,
+            bottom: 0,
+            trailing: 0
+        )
     }
 }
 

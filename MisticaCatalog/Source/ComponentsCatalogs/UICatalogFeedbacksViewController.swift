@@ -176,18 +176,24 @@ extension UICatalogFeedbacksViewController {
 
 private extension UICatalogFeedbacksViewController {
     func buildConfiguration() -> FeedbackConfiguration {
-        let primaryAction = buildPrimaryAction(for: primaryActionStyleCell.segmentedControl.selectedSegmentIndex,
-                                               title: primaryActionTitleCell.textField.text ?? "",
-                                               loadingTitle: primaryActionLoadingTitleVisibleCell.isOn ? primaryActionLoadingTitleCell.textField.text : nil)
-        let secondaryAction = buildSecondaryAction(for: secondaryActionStyleCell.segmentedControl.selectedSegmentIndex,
-                                                   title: secondaryActionTitleCell.textField.text ?? "")
+        let primaryAction = buildPrimaryAction(
+            for: primaryActionStyleCell.segmentedControl.selectedSegmentIndex,
+            title: primaryActionTitleCell.textField.text ?? "",
+            loadingTitle: primaryActionLoadingTitleVisibleCell.isOn ? primaryActionLoadingTitleCell.textField.text : nil
+        )
+        let secondaryAction = buildSecondaryAction(
+            for: secondaryActionStyleCell.segmentedControl.selectedSegmentIndex,
+            title: secondaryActionTitleCell.textField.text ?? ""
+        )
         let shouldUseExtraContent = extraContentCell.segmentedControl.selectedSegmentIndex == 1
-        return FeedbackConfiguration(style: selectedStyle,
-                                     title: titleCell.textField.text ?? "",
-                                     subtitle: subtitleCell.textField.text ?? "",
-                                     primaryAction: primaryAction,
-                                     secondaryAction: secondaryAction,
-                                     extraContent: shouldUseExtraContent ? buildExtraView() : nil)
+        return FeedbackConfiguration(
+            style: selectedStyle,
+            title: titleCell.textField.text ?? "",
+            subtitle: subtitleCell.textField.text ?? "",
+            primaryAction: primaryAction,
+            secondaryAction: secondaryAction,
+            extraContent: shouldUseExtraContent ? buildExtraView() : nil
+        )
     }
 
     var selectedStyle: FeedbackStyle {

@@ -8,12 +8,18 @@
 
 import Foundation
 
-private let localPartEmailRegex = (try? NSRegularExpression(pattern: "^[A-Z0-9a-z_%+-]+(\\.[A-Z0-9a-z_%+-]+)*$",
-                                                            options: .caseInsensitive))!
-private let domainEmailRegex = (try? NSRegularExpression(pattern: "^([-A-Za-z0-9]{1,63}\\.)+[A-Za-z]{2,63}$",
-                                                         options: .caseInsensitive))!
-private let weirdCharactersForPhoneRegex = (try? NSRegularExpression(pattern: "[a-z:]+",
-                                                                     options: .caseInsensitive))!
+private let localPartEmailRegex = (try? NSRegularExpression(
+    pattern: "^[A-Z0-9a-z_%+-]+(\\.[A-Z0-9a-z_%+-]+)*$",
+    options: .caseInsensitive
+))!
+private let domainEmailRegex = (try? NSRegularExpression(
+    pattern: "^([-A-Za-z0-9]{1,63}\\.)+[A-Za-z]{2,63}$",
+    options: .caseInsensitive
+))!
+private let weirdCharactersForPhoneRegex = (try? NSRegularExpression(
+    pattern: "[a-z:]+",
+    options: .caseInsensitive
+))!
 
 extension String {
     var trimmingWhiteSpace: String {

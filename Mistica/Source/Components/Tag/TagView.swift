@@ -80,8 +80,10 @@ public class TagView: UIView {
             + label.intrinsicContentSize.height
             + Style.verticalMargin
 
-        return CGSize(width: max(Style.minWidth, intrinsicWidth),
-                      height: max(Style.minHeight, intrinsicHeight))
+        return CGSize(
+            width: max(Style.minWidth, intrinsicWidth),
+            height: max(Style.minHeight, intrinsicHeight)
+        )
     }
 
     // MARK: Accessibility
@@ -110,14 +112,22 @@ public class TagView: UIView {
 private extension TagView {
     func commonInit() {
         addSubview(label, constraints: [
-            topAnchor.constraint(equalTo: label.topAnchor,
-                                 constant: -Style.verticalMargin),
-            bottomAnchor.constraint(equalTo: label.bottomAnchor,
-                                    constant: Style.verticalMargin),
-            leadingAnchor.constraint(equalTo: label.leadingAnchor,
-                                     constant: -Style.horizontalMargin),
-            trailingAnchor.constraint(equalTo: label.trailingAnchor,
-                                      constant: Style.horizontalMargin)
+            topAnchor.constraint(
+                equalTo: label.topAnchor,
+                constant: -Style.verticalMargin
+            ),
+            bottomAnchor.constraint(
+                equalTo: label.bottomAnchor,
+                constant: Style.verticalMargin
+            ),
+            leadingAnchor.constraint(
+                equalTo: label.leadingAnchor,
+                constant: -Style.horizontalMargin
+            ),
+            trailingAnchor.constraint(
+                equalTo: label.trailingAnchor,
+                constant: Style.horizontalMargin
+            )
         ])
 
         makeRounded(cornerRadius: Style.cornerRadius)

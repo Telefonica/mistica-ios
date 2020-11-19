@@ -14,11 +14,13 @@ extension UIViewPropertyAnimator {
         guard label.textColor != textColor else { return }
 
         addAnimations {
-            UIView.transition(with: label,
-                              duration: self.duration,
-                              options: [.transitionCrossDissolve],
-                              animations: { label.textColor = textColor },
-                              completion: nil)
+            UIView.transition(
+                with: label,
+                duration: self.duration,
+                options: [.transitionCrossDissolve],
+                animations: { label.textColor = textColor },
+                completion: nil
+            )
         }
     }
 }

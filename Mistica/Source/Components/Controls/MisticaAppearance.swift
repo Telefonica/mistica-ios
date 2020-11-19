@@ -48,18 +48,22 @@ private extension MisticaAppearance {
 
     static func setUpAppearanceOfSegmentedControl() {
         let segmentedControlAppearance = UISegmentedControl.appearance()
-        setUpAppearanceOfSegmentedControl(withAppearance: segmentedControlAppearance,
-                                          tintColor: .segmentedControlBackgroundSelected,
-                                          textColor: .textSegmentedControl,
-                                          selectedTextColor: .textSegmentedControlSelected)
+        setUpAppearanceOfSegmentedControl(
+            withAppearance: segmentedControlAppearance,
+            tintColor: .segmentedControlBackgroundSelected,
+            textColor: .textSegmentedControl,
+            selectedTextColor: .textSegmentedControlSelected
+        )
     }
 
     static func setUpAppearanceOfSegmentedControlInSearchBar() {
         let scopeButtonsAppearance = UISegmentedControl.appearance(whenContainedInInstancesOf: [UISearchBar.self])
-        setUpAppearanceOfSegmentedControl(withAppearance: scopeButtonsAppearance,
-                                          tintColor: .segmentedControlBackgroundInverseSelected,
-                                          textColor: .textSegmentedControlInverse,
-                                          selectedTextColor: .textSegmentedControlInverseSelected)
+        setUpAppearanceOfSegmentedControl(
+            withAppearance: scopeButtonsAppearance,
+            tintColor: .segmentedControlBackgroundInverseSelected,
+            textColor: .textSegmentedControlInverse,
+            selectedTextColor: .textSegmentedControlInverseSelected
+        )
     }
 
     static func setUpAppearanceOfPageControl() {

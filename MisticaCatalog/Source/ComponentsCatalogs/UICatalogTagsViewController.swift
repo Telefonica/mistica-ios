@@ -60,26 +60,42 @@ class UICatalogTagsViewController: UIViewController {
 
         container.backgroundColor = .skeletonBackground
         cell.contentView.addSubview(container, constraints: [
-            cell.contentView.topAnchor.constraint(equalTo: container.topAnchor,
-                                                  constant: -Constants.Container.margin),
-            cell.contentView.bottomAnchor.constraint(equalTo: container.bottomAnchor,
-                                                     constant: Constants.Container.margin),
-            cell.contentView.leadingAnchor.constraint(equalTo: container.leadingAnchor,
-                                                      constant: -Constants.Container.margin),
-            cell.contentView.trailingAnchor.constraint(equalTo: container.trailingAnchor,
-                                                       constant: Constants.Container.margin)
+            cell.contentView.topAnchor.constraint(
+                equalTo: container.topAnchor,
+                constant: -Constants.Container.margin
+            ),
+            cell.contentView.bottomAnchor.constraint(
+                equalTo: container.bottomAnchor,
+                constant: Constants.Container.margin
+            ),
+            cell.contentView.leadingAnchor.constraint(
+                equalTo: container.leadingAnchor,
+                constant: -Constants.Container.margin
+            ),
+            cell.contentView.trailingAnchor.constraint(
+                equalTo: container.trailingAnchor,
+                constant: Constants.Container.margin
+            )
         ])
 
         // Tag in this container
         container.addSubview(tag, constraints: [
-            container.topAnchor.constraint(equalTo: tag.topAnchor,
-                                           constant: -Constants.Tag.topMargin),
-            container.bottomAnchor.constraint(greaterThanOrEqualTo: tag.bottomAnchor,
-                                              constant: Constants.Tag.minBottomMargin),
-            container.leadingAnchor.constraint(equalTo: tag.leadingAnchor,
-                                               constant: -Constants.Tag.leadingMargin),
-            container.trailingAnchor.constraint(greaterThanOrEqualTo: tag.trailingAnchor,
-                                                constant: Constants.Tag.minTrailingMargin)
+            container.topAnchor.constraint(
+                equalTo: tag.topAnchor,
+                constant: -Constants.Tag.topMargin
+            ),
+            container.bottomAnchor.constraint(
+                greaterThanOrEqualTo: tag.bottomAnchor,
+                constant: Constants.Tag.minBottomMargin
+            ),
+            container.leadingAnchor.constraint(
+                equalTo: tag.leadingAnchor,
+                constant: -Constants.Tag.leadingMargin
+            ),
+            container.trailingAnchor.constraint(
+                greaterThanOrEqualTo: tag.trailingAnchor,
+                constant: Constants.Tag.minTrailingMargin
+            )
         ])
 
         return cell

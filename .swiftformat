@@ -10,9 +10,10 @@
 --decimalgrouping 3,4
 --commas inline
 --maxwidth none
+--wraparguments before-first
 --wrapcollections before-first
 --header "\n {file}\n\n Made with ❤️ by Novum\n\n Copyright © 2020 Telefonica. All rights reserved.\n "
 
 # rules
 
---disable hoistPatternLet,redundantRawValues,andOperator,redundantNilInit,wrapArguments,wrapMultilineStatementBraces
+--disable hoistPatternLet,redundantRawValues,andOperator,redundantNilInit,wrapMultilineStatementBraces

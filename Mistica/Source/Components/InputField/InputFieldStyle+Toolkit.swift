@@ -26,65 +26,79 @@ public extension InputField.Style {
     }
 
     static var `default`: InputField.Style {
-        InputField.Style(stateStyleByState: primaryStateStyleByState,
-                         secureTextEntry: .disabled,
-                         textInputStyle: .textField,
-                         textInputKeyboardStyle: .keyboard(type: .default, textAutocorrectionType: .yes, textAutocapitalizationType: .none),
-                         leadingSideItem: .none,
-                         traillingSideItem: .none)
+        InputField.Style(
+            stateStyleByState: primaryStateStyleByState,
+            secureTextEntry: .disabled,
+            textInputStyle: .textField,
+            textInputKeyboardStyle: .keyboard(type: .default, textAutocorrectionType: .yes, textAutocapitalizationType: .none),
+            leadingSideItem: .none,
+            traillingSideItem: .none
+        )
     }
 
     static var inverse: InputField.Style {
-        InputField.Style(stateStyleByState: inverseStateStyleByState,
-                         secureTextEntry: .disabled,
-                         textInputStyle: .textField,
-                         textInputKeyboardStyle: .keyboard(type: .default, textAutocorrectionType: .yes, textAutocapitalizationType: .none),
-                         leadingSideItem: .none,
-                         traillingSideItem: .none)
+        InputField.Style(
+            stateStyleByState: inverseStateStyleByState,
+            secureTextEntry: .disabled,
+            textInputStyle: .textField,
+            textInputKeyboardStyle: .keyboard(type: .default, textAutocorrectionType: .yes, textAutocapitalizationType: .none),
+            leadingSideItem: .none,
+            traillingSideItem: .none
+        )
     }
 
     static var multiline: InputField.Style {
-        InputField.Style(stateStyleByState: primaryStateStyleByState,
-                         secureTextEntry: .disabled,
-                         textInputStyle: .textView,
-                         textInputKeyboardStyle: .keyboard(type: .default, textAutocorrectionType: .yes, textAutocapitalizationType: .none),
-                         leadingSideItem: .none,
-                         traillingSideItem: .none)
+        InputField.Style(
+            stateStyleByState: primaryStateStyleByState,
+            secureTextEntry: .disabled,
+            textInputStyle: .textView,
+            textInputKeyboardStyle: .keyboard(type: .default, textAutocorrectionType: .yes, textAutocapitalizationType: .none),
+            leadingSideItem: .none,
+            traillingSideItem: .none
+        )
     }
 
     static var email: InputField.Style {
-        InputField.Style(stateStyleByState: primaryStateStyleByState,
-                         secureTextEntry: .disabled,
-                         textInputStyle: .textField,
-                         textInputKeyboardStyle: .keyboard(type: .emailAddress, textAutocorrectionType: .yes, textAutocapitalizationType: .none),
-                         leadingSideItem: .none,
-                         traillingSideItem: .none)
+        InputField.Style(
+            stateStyleByState: primaryStateStyleByState,
+            secureTextEntry: .disabled,
+            textInputStyle: .textField,
+            textInputKeyboardStyle: .keyboard(type: .emailAddress, textAutocorrectionType: .yes, textAutocapitalizationType: .none),
+            leadingSideItem: .none,
+            traillingSideItem: .none
+        )
     }
 
     static var password: InputField.Style {
-        InputField.Style(stateStyleByState: primaryStateStyleByState,
-                         secureTextEntry: .enabled,
-                         textInputStyle: .textField,
-                         textInputKeyboardStyle: .keyboard(type: .default, textAutocorrectionType: .no, textAutocapitalizationType: .none),
-                         leadingSideItem: .none,
-                         traillingSideItem: .secureEntry)
+        InputField.Style(
+            stateStyleByState: primaryStateStyleByState,
+            secureTextEntry: .enabled,
+            textInputStyle: .textField,
+            textInputKeyboardStyle: .keyboard(type: .default, textAutocorrectionType: .no, textAutocapitalizationType: .none),
+            leadingSideItem: .none,
+            traillingSideItem: .secureEntry
+        )
     }
 
     static var phoneNumber: InputField.Style {
-        InputField.Style(stateStyleByState: primaryStateStyleByState,
-                         secureTextEntry: .disabled,
-                         textInputStyle: .textField,
-                         textInputKeyboardStyle: .keyboard(type: .phonePad, textAutocorrectionType: .no, textAutocapitalizationType: .none),
-                         leadingSideItem: .none,
-                         traillingSideItem: .none)
+        InputField.Style(
+            stateStyleByState: primaryStateStyleByState,
+            secureTextEntry: .disabled,
+            textInputStyle: .textField,
+            textInputKeyboardStyle: .keyboard(type: .phonePad, textAutocorrectionType: .no, textAutocapitalizationType: .none),
+            leadingSideItem: .none,
+            traillingSideItem: .none
+        )
     }
 
     static var dropdown: InputField.Style {
-        InputField.Style(stateStyleByState: primaryStateStyleByState,
-                         secureTextEntry: .disabled,
-                         textInputStyle: .textField,
-                         textInputKeyboardStyle: .picker,
-                         leadingSideItem: .none,
-                         traillingSideItem: .picker)
+        InputField.Style(
+            stateStyleByState: primaryStateStyleByState,
+            secureTextEntry: .disabled,
+            textInputStyle: .textField,
+            textInputKeyboardStyle: .picker,
+            leadingSideItem: .none,
+            traillingSideItem: .picker
+        )
     }
 }

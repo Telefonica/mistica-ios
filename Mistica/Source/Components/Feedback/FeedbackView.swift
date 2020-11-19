@@ -64,9 +64,11 @@ public class FeedbackView: UIView {
         static let animationCurveControlPoint2 = CGPoint(x: 0.355, y: 1)
     }
 
-    private lazy var animator = UIViewPropertyAnimator(duration: Constants.animationDuration,
-                                                       controlPoint1: Constants.animationCurveControlPoint1,
-                                                       controlPoint2: Constants.animationCurveControlPoint2)
+    private lazy var animator = UIViewPropertyAnimator(
+        duration: Constants.animationDuration,
+        controlPoint1: Constants.animationCurveControlPoint1,
+        controlPoint2: Constants.animationCurveControlPoint2
+    )
 
     // Setup properties
     private let style: FeedbackStyle

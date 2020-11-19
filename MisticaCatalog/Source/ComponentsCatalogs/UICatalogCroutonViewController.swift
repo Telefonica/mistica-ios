@@ -97,9 +97,11 @@ extension UICatalogCroutonViewController {
         view.endEditing(true)
 
         if indexPath.row == 1 {
-            CroutonController.shared.showCrouton(withText: titleCell.textField.text ?? "",
-                                                 action: croutonAction,
-                                                 style: selectedCroutonStyle)
+            CroutonController.shared.showCrouton(
+                withText: titleCell.textField.text ?? "",
+                action: croutonAction,
+                style: selectedCroutonStyle
+            )
         } else {
             let sampleTabBarViewController = SampleTabBarViewController()
             sampleTabBarViewController.text = titleCell.textField.text ?? ""
@@ -172,8 +174,10 @@ private class SampleTabBarViewController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        CroutonController.shared.showCrouton(withText: text,
-                                             action: action,
-                                             style: style)
+        CroutonController.shared.showCrouton(
+            withText: text,
+            action: action,
+            style: style
+        )
     }
 }

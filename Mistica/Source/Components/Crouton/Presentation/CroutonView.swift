@@ -144,17 +144,19 @@ extension CroutonView {
 
         transform = CGAffineTransform(translationX: 0, y: frameHeight)
 
-        UIView.animate(withDuration: Constants.presentationAnimationDuration,
-                       delay: 0,
-                       options: .curveEaseOut,
-                       animations: {
-                           self.transform = .identity
-                       },
-                       completion: { _ in
-                           container.clipsToBounds = previousClipsToBounds
+        UIView.animate(
+            withDuration: Constants.presentationAnimationDuration,
+            delay: 0,
+            options: .curveEaseOut,
+            animations: {
+                self.transform = .identity
+            },
+            completion: { _ in
+                container.clipsToBounds = previousClipsToBounds
 
-                           self.addCountdownToDismiss()
-                       })
+                self.addCountdownToDismiss()
+            }
+        )
 
         fadeStackViewIn()
     }
@@ -175,19 +177,21 @@ extension CroutonView {
 
         transform = .identity
 
-        UIView.animate(withDuration: Constants.presentationAnimationDuration,
-                       delay: 0,
-                       options: .curveEaseIn,
-                       animations: {
-                           self.transform = CGAffineTransform(translationX: 0, y: self.frameHeight)
-                       },
-                       completion: { _ in
-                           superview.clipsToBounds = previousClipsToBounds
+        UIView.animate(
+            withDuration: Constants.presentationAnimationDuration,
+            delay: 0,
+            options: .curveEaseIn,
+            animations: {
+                self.transform = CGAffineTransform(translationX: 0, y: self.frameHeight)
+            },
+            completion: { _ in
+                superview.clipsToBounds = previousClipsToBounds
 
-                           self.removeFromSuperview()
+                self.removeFromSuperview()
 
-                           completion?()
-                       })
+                completion?()
+            }
+        )
 
         fadeStackViewOut()
     }
@@ -251,11 +255,13 @@ private extension CroutonView {
         let dismissInterval = (action == nil) ? Constants.actionlessDismissInterval
             : Constants.withActionDismissInterval
 
-        timer = Timer.scheduledTimer(timeInterval: dismissInterval,
-                                     target: self,
-                                     selector: #selector(invokeDismissHandler),
-                                     userInfo: nil,
-                                     repeats: false)
+        timer = Timer.scheduledTimer(
+            timeInterval: dismissInterval,
+            target: self,
+            selector: #selector(invokeDismissHandler),
+            userInfo: nil,
+            repeats: false
+        )
     }
 
     func adjustStackViewLayout(traitCollection: UITraitCollection) {
@@ -309,24 +315,28 @@ private extension CroutonView {
 
     func fadeStackViewIn() {
         stackView.alpha = 0
-        UIView.animate(withDuration: Constants.contentAnimationDuration,
-                       delay: Constants.contentAnimationDelay,
-                       options: .curveEaseOut,
-                       animations: {
-                           self.stackView.alpha = 1
-                       },
-                       completion: nil)
+        UIView.animate(
+            withDuration: Constants.contentAnimationDuration,
+            delay: Constants.contentAnimationDelay,
+            options: .curveEaseOut,
+            animations: {
+                self.stackView.alpha = 1
+            },
+            completion: nil
+        )
     }
 
     func fadeStackViewOut() {
         stackView.alpha = 1
-        UIView.animate(withDuration: Constants.contentAnimationDuration,
-                       delay: 0,
-                       options: .curveEaseIn,
-                       animations: {
-                           self.stackView.alpha = 0
-                       },
-                       completion: nil)
+        UIView.animate(
+            withDuration: Constants.contentAnimationDuration,
+            delay: 0,
+            options: .curveEaseIn,
+            animations: {
+                self.stackView.alpha = 0
+            },
+            completion: nil
+        )
     }
 
     @objc func didTapActionButton() {

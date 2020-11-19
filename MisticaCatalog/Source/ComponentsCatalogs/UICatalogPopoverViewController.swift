@@ -160,11 +160,13 @@ extension UICatalogPopoverViewController: UITableViewDataSource, UITableViewDele
         let image: UIImage? = assetCell.segmentedControl.selectedSegmentIndex == 0 ? nil : UIImage(color: .accentBackground)
         let canClosePopover = canCloseCell.segmentedControl.selectedSegmentIndex == 0 ? true : false
 
-        let configuration = PopoverConfiguration(tipDirection: tipDirection,
-                                                 image: image,
-                                                 title: tooltipTile,
-                                                 subtitle: tooltipMessage,
-                                                 canClose: canClosePopover)
+        let configuration = PopoverConfiguration(
+            tipDirection: tipDirection,
+            image: image,
+            title: tooltipTile,
+            subtitle: tooltipMessage,
+            canClose: canClosePopover
+        )
         let targetView: UIView
 
         switch tipDirection {

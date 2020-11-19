@@ -245,9 +245,11 @@ public class InputField: UIView {
     private var overridenAccessibilityHint: String?
     private var overridenAccessibilityTraits: UIAccessibilityTraits?
 
-    private lazy var animator = UIViewPropertyAnimator(duration: Constants.animationDuration,
-                                                       controlPoint1: Constants.animationCurveControlPoint1,
-                                                       controlPoint2: Constants.animationCurveControlPoint2)
+    private lazy var animator = UIViewPropertyAnimator(
+        duration: Constants.animationDuration,
+        controlPoint1: Constants.animationCurveControlPoint1,
+        controlPoint2: Constants.animationCurveControlPoint2
+    )
 
     @objc public var placeholderText: String? {
         didSet {

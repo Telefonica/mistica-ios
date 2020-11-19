@@ -10,7 +10,8 @@ let package = Package(
     products: [
         .library(
             name: "Mistica",
-            targets: ["Mistica"])
+            targets: ["Mistica"]
+        )
     ],
     dependencies: [
         .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8")),

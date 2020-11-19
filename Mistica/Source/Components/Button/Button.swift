@@ -93,9 +93,11 @@ open class Button: UIView {
 
     private var overridenAccessibilityLabel: String?
 
-    private lazy var animator = UIViewPropertyAnimator(duration: Constants.animationDuration,
-                                                       controlPoint1: Constants.animationCurveControlPoint1,
-                                                       controlPoint2: Constants.animationCurveControlPoint2)
+    private lazy var animator = UIViewPropertyAnimator(
+        duration: Constants.animationDuration,
+        controlPoint1: Constants.animationCurveControlPoint1,
+        controlPoint2: Constants.animationCurveControlPoint2
+    )
 
     private lazy var backingButton = BackingButton()
     private lazy var container = ButtonContentView()

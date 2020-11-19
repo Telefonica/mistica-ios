@@ -161,10 +161,12 @@ private extension UICatalogViewStatesViewController {
     func showLoadErrorState() {
         let showsActionButton = actionButtonEnabledCell.isOn
 
-        let viewController = LoadErrorViewController(title: titleText,
-                                                     descriptionText: descriptionText,
-                                                     actionButtonTitle: actionButtonTitle,
-                                                     showActionButton: showsActionButton)
+        let viewController = LoadErrorViewController(
+            title: titleText,
+            descriptionText: descriptionText,
+            actionButtonTitle: actionButtonTitle,
+            showActionButton: showsActionButton
+        )
 
         viewController.delegate = self
 

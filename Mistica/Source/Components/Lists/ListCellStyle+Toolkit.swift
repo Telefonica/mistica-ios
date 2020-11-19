@@ -66,17 +66,21 @@ extension ListCellStyle {
         case .fullWidth:
             return .zero
         case .boxed:
-            return NSDirectionalEdgeInsets(top: 8,
-                                           leading: 16,
-                                           bottom: 8,
-                                           trailing: 16)
+            return NSDirectionalEdgeInsets(
+                top: 8,
+                leading: 16,
+                bottom: 8,
+                trailing: 16
+            )
         }
     }
 
     var mainStackViewLayoutMargins: NSDirectionalEdgeInsets {
-        NSDirectionalEdgeInsets(top: 16,
-                                leading: 16,
-                                bottom: 16,
-                                trailing: 16)
+        NSDirectionalEdgeInsets(
+            top: 16,
+            leading: 16,
+            bottom: 16,
+            trailing: 16
+        )
     }
 }

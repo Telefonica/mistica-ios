@@ -11,11 +11,13 @@ import UIKit
 
 extension KeyboardInfo {
     func animateAlongsideKeyboard(animations: @escaping () -> Void) {
-        UIView.animate(withDuration: duration,
-                       delay: 0,
-                       options: animationOptions,
-                       animations: animations,
-                       completion: nil)
+        UIView.animate(
+            withDuration: duration,
+            delay: 0,
+            options: animationOptions,
+            animations: animations,
+            completion: nil
+        )
     }
 }
 
@@ -69,10 +71,12 @@ private extension KeyboardNotificationCenter {
 
     func addObserverIfNeeded(for event: KeyboardEvent) {
         guard !handlers.keys.contains(event) else { return }
-        notificationCenter.addObserver(self,
-                                       selector: #selector(didReceiveKeyboardEvent),
-                                       name: event.notificationName,
-                                       object: nil)
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(didReceiveKeyboardEvent),
+            name: event.notificationName,
+            object: nil
+        )
     }
 
     func removeObserver(for event: KeyboardEvent) {

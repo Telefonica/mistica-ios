@@ -14,6 +14,9 @@ private enum ImageSize {
 }
 
 class CellLeftSectionView: UIStackView {
+    private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize)
+    private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize)
+    
     private lazy var containerView: UIView = {
         let view = UIView()
         view.addSubview(withCenterConstraints: imageView)
@@ -24,8 +27,8 @@ class CellLeftSectionView: UIStackView {
 
     var assetType: ListCellView.CellAssetType = .none {
         didSet {
-            containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize).isActive = true
-            containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize).isActive = true
+            heightConstraint.constant = assetType.viewSize
+            widthConstraint.constant = assetType.viewSize
             imageView.intrinsicWidth = assetType.assetSize
             imageView.intrinsicHeight = assetType.assetSize
             imageView.image = assetType.image
@@ -74,6 +77,7 @@ class CellLeftSectionView: UIStackView {
 private extension CellLeftSectionView {
     func commonInit() {
         addArrangedSubview(containerView)
+        NSLayoutConstraint.activate([heightConstraint, widthConstraint])
     }
 }
 

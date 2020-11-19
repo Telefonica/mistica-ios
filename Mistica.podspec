@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Mistica/**/*.swift'
 
-  s.resources = ['Mistica/Resources/*']
+  s.resources = ['Mistica/Source/Resources/*']
 
   s.frameworks = 'UIKit'
   s.dependency 'lottie-ios', '3.1.8'

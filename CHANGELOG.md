@@ -1,3 +1,20 @@
+# [5.0.0](https://github.com/Telefonica/mistica-ios/compare/v4.0.0...v5.0.0) (2020-11-19)
+
+
+### Bug Fixes
+
+* **Cocoapods:** Fix paths of source_files and resources ([85c3da1](https://github.com/Telefonica/mistica-ios/commit/85c3da17cb7becc7d342d31a4de47c608b9363e1))
+
+
+### Features
+
+* **Mistica:** Rise deployment target to iOS 12 ([#32](https://github.com/Telefonica/mistica-ios/issues/32)) ([703e21f](https://github.com/Telefonica/mistica-ios/commit/703e21f6654c0069a59d911190f0dd525e627eee))
+
+
+### BREAKING CHANGES
+
+* **Mistica:** iOS 11 has been deprecated.
+
 # [4.0.0](https://github.com/Telefonica/mistica-ios/compare/v3.1.0...v4.0.0) (2020-11-11)
 
 

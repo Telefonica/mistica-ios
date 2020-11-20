@@ -6,13 +6,13 @@
 #  Mistica for iOS
 
 [![Platform](https://img.shields.io/badge/platform-iOS-%23989898.svg)](https://github.com/Telefonica/mistica-ios)
-[![iOS Version](https://img.shields.io/badge/Support-%3E%3D%20iOS%2011.0-brightgreen.svg)](https://github.com/Telefonica/mistica-ios)
+[![iOS Version](https://img.shields.io/badge/Support-%3E%3D%20iOS%2012.0-brightgreen.svg)](https://github.com/Telefonica/mistica-ios)
 [![Languages](https://img.shields.io/badge/languages-Swift-orange.svg)](https://github.com/Telefonica/mistica-ios)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-59C939.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Cocoapods compatible](https://img.shields.io/badge/CocoaPods-compatible-59C939.svg?style=flat)](https://cocoapods.org/)
 
-Mistica is a framework that contains reusable UI components and utilities for Telefonica Design System ([Mistica](https://github.com/Telefonica/mistica))
+Mistica is a framework that contains reusable UI components and utilities for the Telefonica Design System ([Mistica](https://github.com/Telefonica/mistica))
 
 * [Instalation](#instalation)
 * [Configuration](#configuration)
@@ -79,7 +79,7 @@ MisticaConfig.themeVariant = .prominent
 
 Remember to initialize Mistica with you desired brand style before the initialize the UI of your app.
 
-In applications before iOS 13, the initialziation should be done in **UIApplicationDelegate**,
+In applications before iOS 13, the initialziation should be done in the **UIApplicationDelegate**,
 
 ```swift
 func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -90,7 +90,7 @@ func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicati
 }
 ```
 
-For applications in iOS 13 and above, the initialization should be done in **SceneDelegate**
+For applications in iOS 13 and above, the initialization should be done in the **SceneDelegate**
 
 ```swift
 func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
@@ -120,9 +120,7 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 * [ViewStates](./Mistica/Source/Components/ViewStates/)
 
 ## Demo app
-Included in this repository is a demo app with all implemented components. We have also created a demo app with is being update constantly where we show all the componennts from the library
-
-The app can be downloaded [here](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-ios/distribution_groups/public) or use the following QR
+Included in this repository there's a demo app showcasing all implemented components. With each new release, a new version of the mistica catalog app is created. It can be installed with this [link](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-ios/distribution_groups/public) or by using the following QR:
 
 <p align="center">
 <img height="175" align="center" alt="Mística Catalog for iOS" src="./doc/images/mistica-catalog-download-qr.png">

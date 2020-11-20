@@ -34,7 +34,7 @@ platform :ios do
 
     UI.message "Carthage update and build"
     Dir.chdir("..") do
-      sh("./carthage-build.sh")
+      sh("./scripts/carthage-build.sh")
     end
   end
 

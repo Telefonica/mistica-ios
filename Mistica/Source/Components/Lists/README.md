@@ -17,7 +17,10 @@ Lists has two styles of cells `FullWidth` and `Boxed`
   <img width="300" src="./docs/images/row-anatomy.png"/>
 </p>
 
-* **Section A** contains an asset, which can be configured in two sized
+* **Section A** contains an asset, which can be configured with one of the following three styles:
+	- **Small icon**: 24x24 icon.
+	- **Large icon**: 24x24 icon centered on a circle with 40px diameter and a provided background color.
+	- **Image**: an image cliped to a circle with 40px diameter.
 * **Section B** contains the following elements (described form top to down)
 	* A headline section which can be customized with any kind of `UIView`
 	* Title: non optional
@@ -51,8 +54,7 @@ public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
 
 	cell.title = "My title"
 	cell.detailText = "My detail text"
-	cell.assetSize = .large
-	cell.assetImage = UIImage(named: "myAsset")
+	cell.assetType = .largeIcon(UIImage(named: "myAsset"), backgroundColor: .iconDisabled)
 	cell.isCellSeparatorHidden = isLastCell(indexPath)
 	
 	return cell

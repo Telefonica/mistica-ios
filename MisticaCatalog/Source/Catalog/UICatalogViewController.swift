@@ -125,8 +125,7 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
         let catalogRow = UICatalogRow(rawValue: indexPath.row)!
 
         cell.title = catalogRow.title
-        cell.assetImage = catalogRow.icon
-        cell.assetSize = .small
+        cell.assetType = .smallIcon(catalogRow.icon)
         cell.controlView = NavigationPresetView()
 
         return cell

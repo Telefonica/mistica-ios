@@ -58,10 +58,12 @@ public extension CroutonController {
         }
 
         let token = Token()
-        let crouton = CroutonView(text: text,
-                                  action: overwrittenAction,
-                                  config: config,
-                                  dismissHandler: dismissHandler)
+        let crouton = CroutonView(
+            text: text,
+            action: overwrittenAction,
+            config: config,
+            dismissHandler: dismissHandler
+        )
 
         show(crouton, token: token)
 

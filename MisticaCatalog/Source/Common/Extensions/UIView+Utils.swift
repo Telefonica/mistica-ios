@@ -57,8 +57,10 @@ extension UIView {
             frame.origin.x
         }
         set {
-            frame = CGRect(origin: CGPoint(x: newValue, y: frame.origin.y),
-                           size: frame.size).integral
+            frame = CGRect(
+                origin: CGPoint(x: newValue, y: frame.origin.y),
+                size: frame.size
+            ).integral
         }
     }
 
@@ -67,8 +69,10 @@ extension UIView {
             frame.origin.y
         }
         set {
-            frame = CGRect(origin: CGPoint(x: frame.origin.x, y: newValue),
-                           size: frame.size).integral
+            frame = CGRect(
+                origin: CGPoint(x: frame.origin.x, y: newValue),
+                size: frame.size
+            ).integral
         }
     }
 
@@ -77,8 +81,10 @@ extension UIView {
             frame.width
         }
         set {
-            frame = CGRect(origin: frame.origin,
-                           size: CGSize(width: newValue, height: frame.height)).integral
+            frame = CGRect(
+                origin: frame.origin,
+                size: CGSize(width: newValue, height: frame.height)
+            ).integral
         }
     }
 
@@ -87,8 +93,10 @@ extension UIView {
             frame.height
         }
         set {
-            frame = CGRect(origin: frame.origin,
-                           size: CGSize(width: frame.width, height: newValue)).integral
+            frame = CGRect(
+                origin: frame.origin,
+                size: CGSize(width: frame.width, height: newValue)
+            ).integral
         }
     }
 
@@ -97,9 +105,13 @@ extension UIView {
             center
         }
         set {
-            frame = CGRect(origin: CGPoint(x: newValue.x - bounds.size.width / 2,
-                                           y: newValue.y - bounds.size.height / 2),
-                           size: frame.size).integral
+            frame = CGRect(
+                origin: CGPoint(
+                    x: newValue.x - bounds.size.width / 2,
+                    y: newValue.y - bounds.size.height / 2
+                ),
+                size: frame.size
+            ).integral
         }
     }
 
@@ -126,8 +138,10 @@ extension UIView {
             bounds.origin.x
         }
         set {
-            bounds = CGRect(origin: CGPoint(x: newValue, y: bounds.origin.y),
-                            size: bounds.size).integral
+            bounds = CGRect(
+                origin: CGPoint(x: newValue, y: bounds.origin.y),
+                size: bounds.size
+            ).integral
         }
     }
 
@@ -136,8 +150,10 @@ extension UIView {
             bounds.origin.y
         }
         set {
-            bounds = CGRect(origin: CGPoint(x: bounds.origin.x, y: newValue),
-                            size: bounds.size).integral
+            bounds = CGRect(
+                origin: CGPoint(x: bounds.origin.x, y: newValue),
+                size: bounds.size
+            ).integral
         }
     }
 
@@ -146,8 +162,10 @@ extension UIView {
             bounds.size.width
         }
         set {
-            bounds = CGRect(origin: bounds.origin,
-                            size: CGSize(width: newValue, height: bounds.size.height)).integral
+            bounds = CGRect(
+                origin: bounds.origin,
+                size: CGSize(width: newValue, height: bounds.size.height)
+            ).integral
         }
     }
 
@@ -156,8 +174,10 @@ extension UIView {
             bounds.size.height
         }
         set {
-            bounds = CGRect(origin: bounds.origin,
-                            size: CGSize(width: bounds.size.width, height: newValue)).integral
+            bounds = CGRect(
+                origin: bounds.origin,
+                size: CGSize(width: bounds.size.width, height: newValue)
+            ).integral
         }
     }
 
@@ -180,11 +200,13 @@ extension UIView {
     // MARK: Animations
 
     func fade(toAlpha alpha: CGFloat, duration: TimeInterval, options: UIView.AnimationOptions = []) {
-        UIView.animate(withDuration: duration,
-                       delay: 0,
-                       options: options,
-                       animations: { self.alpha = alpha },
-                       completion: nil)
+        UIView.animate(
+            withDuration: duration,
+            delay: 0,
+            options: options,
+            animations: { self.alpha = alpha },
+            completion: nil
+        )
     }
 
     func lightShake() {
@@ -318,11 +340,13 @@ extension UIView {
     }
 
     func layoutIfNeededAnimated(withDuration duration: TimeInterval, delay: TimeInterval = 0, options: UIView.AnimationOptions, completion: ((Bool) -> Void)? = nil) {
-        UIView.animate(withDuration: duration,
-                       delay: delay,
-                       options: options,
-                       animations: { [self] in self.layoutIfNeeded() },
-                       completion: completion)
+        UIView.animate(
+            withDuration: duration,
+            delay: delay,
+            options: options,
+            animations: { [self] in self.layoutIfNeeded() },
+            completion: completion
+        )
     }
 
     func hasSuperview(_ superview: UIView) -> Bool {

@@ -38,27 +38,32 @@ public class ScrollContentIndicator: Button {
 
     public func show() {
         isHidden = false
-        UIView.animate(withDuration: Constants.animationDuration,
-                       delay: 0.0,
-                       options: .curveEaseOut,
-                       animations: {
-                           self.transform = .identity
-                           self.alpha = 1
-                       })
+        UIView.animate(
+            withDuration: Constants.animationDuration,
+            delay: 0.0,
+            options: .curveEaseOut,
+            animations: {
+                self.transform = .identity
+                self.alpha = 1
+            }
+        )
     }
 
     public func hide() {
-        UIView.animate(withDuration: Constants.animationDuration,
-                       delay: 0.0,
-                       options: .curveEaseIn,
-                       animations: {
-                           // Due to the maths behind Affine Transformation matrix we have to use 0.001 instead 0.0 for the down scale to work properly.
-                           // More info: https://medium.com/@sarthak.tayade/problem-when-animating-a-uiview-to-scale-to-zero-using-cgaffinetransform-on-ios-2f50717add18
-                           self.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-                           self.alpha = 0
-                       }, completion: { _ in
-                           self.isHidden = true
-                       })
+        UIView.animate(
+            withDuration: Constants.animationDuration,
+            delay: 0.0,
+            options: .curveEaseIn,
+            animations: {
+                // Due to the maths behind Affine Transformation matrix we have to use 0.001 instead 0.0 for the down scale to work properly.
+                // More info: https://medium.com/@sarthak.tayade/problem-when-animating-a-uiview-to-scale-to-zero-using-cgaffinetransform-on-ios-2f50717add18
+                self.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                self.alpha = 0
+            },
+            completion: { _ in
+                self.isHidden = true
+            }
+        )
     }
 }
 

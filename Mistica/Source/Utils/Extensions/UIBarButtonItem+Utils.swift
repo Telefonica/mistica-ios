@@ -24,9 +24,11 @@ extension UIBarButtonItem {
     convenience init(title: String,
                      target: AnyObject,
                      action: Selector) {
-        let button = UIButton(title: title,
-                              target: target,
-                              action: action)
+        let button = UIButton(
+            title: title,
+            target: target,
+            action: action
+        )
         self.init(customView: button)
     }
 }

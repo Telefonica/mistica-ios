@@ -44,13 +44,15 @@ private extension Button.Style {
     static var croutonInfoLink: Button.Style {
         let backgroundColor: UIColor = .clear
 
-        var style = Button.Style(allowsBleedingAlignment: true,
-                                 stateStyleByState: [
-                                     .normal: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                                     .selected: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: .buttonLinkBackgroundSelectedInverse, borderColor: backgroundColor),
-                                     .disabled: Button.StateStyle(textColor: .textLinkInverseDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                                     .loading: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor)
-                                 ])
+        var style = Button.Style(
+            allowsBleedingAlignment: true,
+            stateStyleByState: [
+                .normal: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: .buttonLinkBackgroundSelectedInverse, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textLinkInverseDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .loading: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor)
+            ]
+        )
 
         style.overriddenSizes = croutonOverriddenSizes
 
@@ -64,8 +66,10 @@ private extension Button.Style {
     }
 
     static var croutonOverriddenSizes: OverriddenSizes {
-        OverriddenSizes(insets: Constants.insets,
-                        minimumWidth: Constants.minimumWidth,
-                        font: .textPreset6(weight: .medium))
+        OverriddenSizes(
+            insets: Constants.insets,
+            minimumWidth: Constants.minimumWidth,
+            font: .textPreset6(weight: .medium)
+        )
     }
 }

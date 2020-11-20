@@ -201,9 +201,11 @@ open class ListCellView: UITableViewCell {
     override public func systemLayoutSizeFitting(_ targetSize: CGSize,
                                                  withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                                  verticalFittingPriority: UILayoutPriority) -> CGSize {
-        let size = super.systemLayoutSizeFitting(targetSize,
-                                                 withHorizontalFittingPriority: horizontalFittingPriority,
-                                                 verticalFittingPriority: verticalFittingPriority)
+        let size = super.systemLayoutSizeFitting(
+            targetSize,
+            withHorizontalFittingPriority: horizontalFittingPriority,
+            verticalFittingPriority: verticalFittingPriority
+        )
 
         return CGSize(width: size.width, height: max(size.height, listCellStyle.minHeight))
     }

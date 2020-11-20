@@ -5,12 +5,13 @@ import PackageDescription
 let package = Package(
     name: "Mistica",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12)
     ],
     products: [
         .library(
             name: "Mistica",
-            targets: ["Mistica"])
+            targets: ["Mistica"]
+        )
     ],
     dependencies: [
         .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8")),

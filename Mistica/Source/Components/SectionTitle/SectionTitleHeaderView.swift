@@ -42,12 +42,16 @@ public class SectionTitleHeaderView: UITableViewHeaderFooterView {
     override public func systemLayoutSizeFitting(_ targetSize: CGSize,
                                                  withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                                  verticalFittingPriority: UILayoutPriority) -> CGSize {
-        let size = super.systemLayoutSizeFitting(targetSize,
-                                                 withHorizontalFittingPriority: horizontalFittingPriority,
-                                                 verticalFittingPriority: verticalFittingPriority)
-        let sectionTitleViewSize = titleLabel.systemLayoutSizeFitting(targetSize,
-                                                                      withHorizontalFittingPriority: horizontalFittingPriority,
-                                                                      verticalFittingPriority: verticalFittingPriority)
+        let size = super.systemLayoutSizeFitting(
+            targetSize,
+            withHorizontalFittingPriority: horizontalFittingPriority,
+            verticalFittingPriority: verticalFittingPriority
+        )
+        let sectionTitleViewSize = titleLabel.systemLayoutSizeFitting(
+            targetSize,
+            withHorizontalFittingPriority: horizontalFittingPriority,
+            verticalFittingPriority: verticalFittingPriority
+        )
 
         return CGSize(width: size.width, height: max(sectionTitleViewSize.height, ViewStyles.minimumHeight))
     }
@@ -68,10 +72,12 @@ private extension SectionTitleHeaderView {
         preservesSuperviewLayoutMargins = false
         contentView.preservesSuperviewLayoutMargins = false
 
-        contentView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: ViewStyles.topMarging,
-                                                                       leading: ViewStyles.horizontalMarging,
-                                                                       bottom: ViewStyles.bottomMarging,
-                                                                       trailing: ViewStyles.horizontalMarging)
+        contentView.directionalLayoutMargins = NSDirectionalEdgeInsets(
+            top: ViewStyles.topMarging,
+            leading: ViewStyles.horizontalMarging,
+            bottom: ViewStyles.bottomMarging,
+            trailing: ViewStyles.horizontalMarging
+        )
 
         contentView.addSubview(constrainedToLayoutMarginsGuideOf: titleLabel)
     }

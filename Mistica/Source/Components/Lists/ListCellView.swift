@@ -18,10 +18,11 @@ private enum ViewStyles {
 
 open class ListCellView: UITableViewCell {
     @frozen
-    public enum AssetSize {
+    public enum CellAssetType: Equatable {
         case none
-        case large
-        case small
+        case image(UIImage)
+        case smallIcon(UIImage)
+        case largeIcon(UIImage, backgroundColor: UIColor)
     }
 
     // MARK: Initializers
@@ -148,22 +149,13 @@ open class ListCellView: UITableViewCell {
         }
     }
 
-    public var assetImage: UIImage? {
-        get {
-            leftSection.imageView.image
-        }
-        set {
-            leftSection.imageView.image = newValue
-        }
-    }
-
     public var listCellStyle = ListCellStyle.fullWidth {
         didSet {
             updateCellStyle()
         }
     }
 
-    public var assetSize: AssetSize = .none {
+    public var assetType: CellAssetType = .none {
         didSet {
             updateAssetView()
         }
@@ -171,10 +163,10 @@ open class ListCellView: UITableViewCell {
 
     public var assetTintColor: UIColor? {
         get {
-            leftSection.imageView.tintColor
+            leftSection.assetTintColor
         }
         set {
-            leftSection.imageView.tintColor = newValue
+            leftSection.assetTintColor = newValue
         }
     }
 
@@ -252,19 +244,19 @@ public extension ListCellView {
 
     var assetAccessibilityLabel: String? {
         get {
-            leftSection.imageView.accessibilityLabel
+            leftSection.accessibilityLabel
         }
         set {
-            leftSection.imageView.accessibilityLabel = newValue
+            leftSection.accessibilityLabel = newValue
         }
     }
 
     var assetAccessibilityIdentifier: String? {
         get {
-            leftSection.imageView.accessibilityIdentifier
+            leftSection.accessibilityIdentifier
         }
         set {
-            leftSection.imageView.accessibilityIdentifier = newValue
+            leftSection.accessibilityIdentifier = newValue
         }
     }
 }
@@ -317,14 +309,14 @@ private extension ListCellView {
     }
 
     func updateAssetView() {
-        guard assetSize != .none else {
+        guard assetType != .none else {
             leftSection.removeFromSuperview()
             return
         }
 
         updateAssetAligment()
 
-        leftSection.assetIsSmall = assetSize == .small
+        leftSection.assetType = assetType
 
         if leftSection.superview == nil {
             cellContentView.insertArrangedSubview(leftSection, at: 0)

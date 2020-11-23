@@ -68,6 +68,8 @@ public extension FeedbackViewController {
 
 private extension FeedbackViewController {
     private func setupNavigationBar() {
+        navigationItem.largeTitleDisplayMode = .never
+
         if shouldShowCloseButton {
             navigationItem.rightBarButtonItem = closeButton
         }

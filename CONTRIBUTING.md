@@ -40,6 +40,12 @@ revert: fix(Button): make it green again in MovistarES
 This reverts commit c3cdc70e88dc0bf9de849fb21c6b4ddf22b27470
 ```
 
+### SwiftFormat
+
+When a pull request is created, swiftformat runs [automatically](.github/workflows/swiftformat.yml) over the commits in that branch and formats the code according to the rules defined in the `.swiftformat` file. The formated changes will be commited and added to the pull request automatically.
+
+SwiftFormat is located as a precompiled binary in `scripts/swiftformat`. In order to update the library, follow the instructions to check out and build SwiftFormat manually on macOS from `https://github.com/nicklockwood/SwiftFormat#command-line-tool`. The binary resulting after building the tool for release, by default located under the `.build/release` folder, can directly replace the binary in `Mistica` in the `scripts` folder.
+
 ## Bug reports
 
 If something is broken or not working as expected, let us know!

@@ -59,8 +59,9 @@ class UICatalogListsViewController: UITableViewController {
     private lazy var assetStyleCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "assetStyleCell")
         cell.segmentedControl.insertSegment(withTitle: "None", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Large", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Small", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Large Icon", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Small Icon", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Image", at: 3, animated: false)
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
@@ -154,11 +155,13 @@ extension UICatalogListsViewController {
 
         switch assetStyleCell.segmentedControl.selectedSegmentIndex {
         case 0:
-            sampleVC.assetSize = ListCellView.AssetSize.none
+            sampleVC.assetType = ListCellView.CellAssetType.none
         case 1:
-            sampleVC.assetSize = .large
+            sampleVC.assetType = .largeIcon(.imageIcon, backgroundColor: .iconDisabled)
         case 2:
-            sampleVC.assetSize = .small
+            sampleVC.assetType = .smallIcon(.imageIcon)
+        case 3:
+            sampleVC.assetType = .image(.netflixLogo)
         default:
             break
         }
@@ -220,7 +223,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
     var detailText: String?
     var subtitle: String?
     var showHeadline: Bool = false
-    var assetSize: ListCellView.AssetSize!
+    var assetType: ListCellView.CellAssetType!
     var customControl = CustomControl.none
     var cellLayoutStyle: ListCellStyle!
 
@@ -238,6 +241,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.largeTitleDisplayMode = .never
         listView.dataSource = self
         ListCellView.register(on: listView)
     }
@@ -252,7 +256,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
         cell.title = text
         cell.subtitle = subtitle
         cell.detailText = detailText
-        cell.assetSize = assetSize
+        cell.assetType = assetType
         cell.subtitle = subtitle
         cell.listCellStyle = cellLayoutStyle
 
@@ -270,10 +274,6 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
             cell.controlView = navigationPreset
         case .custom:
             cell.controlView = CustomPresetView()
-        }
-
-        if assetSize != ListCellView.AssetSize.none {
-            cell.assetImage = UIImage(color: .accentBackground)
         }
 
         cell.isCellSeparatorHidden = indexPath.row == (numberOfRows - 1)

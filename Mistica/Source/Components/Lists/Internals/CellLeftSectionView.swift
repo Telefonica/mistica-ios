@@ -8,18 +8,33 @@
 
 import UIKit
 
-private enum ViewStyles {
-    static let imageLargeSize: CGFloat = 40
-    static let imageSmallSize: CGFloat = 24
+private enum ImageSize {
+    static let large: CGFloat = 40
+    static let small: CGFloat = 24
 }
 
 class CellLeftSectionView: UIStackView {
-    var imageView = IntrinsictImageView()
+    private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize)
+    private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize)
 
-    var assetIsSmall: Bool = false {
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.addSubview(withCenterConstraints: imageView)
+        return view
+    }()
+
+    private let imageView = IntrinsictImageView()
+
+    var assetType: ListCellView.CellAssetType = .none {
         didSet {
-            imageView.intrinsicWidth = assetIsSmall ? ViewStyles.imageSmallSize : ViewStyles.imageLargeSize
-            imageView.intrinsicHeight = assetIsSmall ? ViewStyles.imageSmallSize : ViewStyles.imageLargeSize
+            heightConstraint.constant = assetType.viewSize
+            widthConstraint.constant = assetType.viewSize
+            imageView.intrinsicWidth = assetType.assetSize
+            imageView.intrinsicHeight = assetType.assetSize
+            imageView.image = assetType.image
+            imageView.contentMode = assetType.contentMode
+            containerView.makeRounded(cornerRadius: assetType.cornerRadius)
+            containerView.backgroundColor = assetType.backgroundColor
         }
     }
 
@@ -27,6 +42,15 @@ class CellLeftSectionView: UIStackView {
         super.init(frame: .zero)
 
         commonInit()
+    }
+
+    var assetTintColor: UIColor? {
+        get {
+            imageView.tintColor
+        }
+        set {
+            imageView.tintColor = newValue
+        }
     }
 
     @available(*, unavailable)
@@ -54,8 +78,67 @@ class CellLeftSectionView: UIStackView {
 
 private extension CellLeftSectionView {
     func commonInit() {
-        addArrangedSubview(imageView)
+        addArrangedSubview(containerView)
+        NSLayoutConstraint.activate([heightConstraint, widthConstraint])
+    }
+}
 
-        imageView.contentMode = .scaleAspectFit
+private extension ListCellView.CellAssetType {
+    var assetSize: CGFloat {
+        switch self {
+        case .none:
+            return 0
+        case .image:
+            return ImageSize.large
+        case .smallIcon, .largeIcon:
+            return ImageSize.small
+        }
+    }
+
+    var viewSize: CGFloat {
+        switch self {
+        case .none:
+            return 0
+        case .image, .largeIcon:
+            return ImageSize.large
+        case .smallIcon:
+            return ImageSize.small
+        }
+    }
+
+    var cornerRadius: CGFloat {
+        switch self {
+        case .none, .smallIcon:
+            return 0
+        case .largeIcon, .image:
+            return viewSize / 2
+        }
+    }
+
+    var image: UIImage? {
+        switch self {
+        case .smallIcon(let image), .largeIcon(let image, _), .image(let image):
+            return image
+        case .none:
+            return nil
+        }
+    }
+
+    var contentMode: UIView.ContentMode {
+        switch self {
+        case .image:
+            return .scaleAspectFill
+        case .none, .smallIcon, .largeIcon:
+            return .scaleAspectFit
+        }
+    }
+
+    var backgroundColor: UIColor {
+        switch self {
+        case .largeIcon(_, let backgroundColor):
+            return backgroundColor
+        case .none, .smallIcon, .image:
+            return .clear
+        }
     }
 }

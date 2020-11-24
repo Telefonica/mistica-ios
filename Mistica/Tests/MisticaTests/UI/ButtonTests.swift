@@ -13,21 +13,21 @@ import XCTest
 final class ButtonTests: XCTestCase {
     override class func setUp() {
         super.setUp()
-        
+
         isRecording = false
     }
-    
+
     // MARK: - Styles
-    
+
     // MARK: Regular Buttons
-    
+
     func testRegularSizeWithPrimaryStyle() {
         assertSnapshotForAllBrands(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: false)
         )
     }
-    
+
     func testRegularSizeWithPrimaryClearStyle() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -76,7 +76,7 @@ final class ButtonTests: XCTestCase {
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: false)
         )
     }
-    
+
     // MARK: Small Buttons
 
     func testSmallSizeWithPrimaryStyle() {
@@ -85,7 +85,7 @@ final class ButtonTests: XCTestCase {
             viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: true)
         )
     }
-    
+
     func testSmallSizeWithPrimaryClearStyle() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -134,61 +134,61 @@ final class ButtonTests: XCTestCase {
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: true)
         )
     }
-    
+
     // MARK: - Layout
-    
+
     func testTextIsAlwaysSingleLine() {
         MisticaConfig.brandStyle = .movistar
-        
+
         let buttonNormalState = Button()
         buttonNormalState.title = "A very very very long long long long teeeext"
         buttonNormalState.state = .normal
-        
+
         assertSnapshot(
             matching: buttonNormalState,
             as: .image(size: CGSize(width: 156, height: 48))
         )
     }
-    
+
     func testLoadingTextIsAlwaysSingleLine() {
         MisticaConfig.brandStyle = .movistar
-        
+
         let buttonNormalState = Button()
         buttonNormalState.loadingTitle = "A very very very long long long long teeeext"
         buttonNormalState.state = .normal
-        
+
         assertSnapshot(
             matching: buttonNormalState,
             as: .image(size: buttonNormalState.intrinsicContentSize)
         )
     }
-    
+
     func testMinimumWidth() {
         MisticaConfig.brandStyle = .vivo
-        
+
         assertSnapshot(
             matching: makeTemplateWithRegularAndSmallButtons(),
             as: .image
         )
     }
-    
+
     // MARK: Behaviour
-    
+
     func testShowLoadingLabel() {
         MisticaConfig.brandStyle = .o2
-        
+
         let buttonNormalState = Button()
         buttonNormalState.title = "Regular"
         buttonNormalState.loadingTitle = "Loading"
-        
+
         assertSnapshot(
             matching: buttonNormalState,
             as: .image(size: buttonNormalState.intrinsicContentSize),
             named: "assertInitialState"
         )
-        
+
         buttonNormalState.state = .loading
-        
+
         assertSnapshot(
             matching: buttonNormalState,
             as: .image(size: buttonNormalState.intrinsicContentSize),
@@ -205,32 +205,32 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool)
     buttonNormalState.style = style
     buttonNormalState.state = .normal
     buttonNormalState.isSmall = isSmall
-    
+
     let buttonDisabledState = Button()
     buttonDisabledState.title = "Disabled"
     buttonDisabledState.style = style
     buttonDisabledState.state = .disabled
     buttonDisabledState.isSmall = isSmall
-    
+
     let buttonSelectedState = Button()
     buttonSelectedState.title = "Selected"
     buttonSelectedState.style = style
     buttonSelectedState.state = .selected
     buttonSelectedState.isSmall = isSmall
-    
+
     let buttonLoadingState = Button()
     buttonLoadingState.loadingTitle = "Loading"
     buttonLoadingState.style = style
     buttonLoadingState.state = .loading
     buttonLoadingState.isSmall = isSmall
-    
+
     let vStack = UIStackView(arrangedSubviews: [
         buttonNormalState,
         buttonSelectedState,
         buttonDisabledState,
         buttonLoadingState
     ])
-    
+
     vStack.axis = .vertical
     vStack.alignment = .center
     vStack.spacing = 0
@@ -240,7 +240,7 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool)
         width: buttonLoadingState.intrinsicContentSize.width,
         height: buttonLoadingState.intrinsicContentSize.height * 4
     )
-    
+
     return vStack
 }
 
@@ -249,16 +249,16 @@ func makeTemplateWithRegularAndSmallButtons() -> UIStackView {
     smallButton.title = "Small"
     smallButton.state = .normal
     smallButton.isSmall = true
-    
+
     let regularButton = Button()
     regularButton.title = "Normal"
     regularButton.state = .normal
-    
+
     let vStack = UIStackView(arrangedSubviews: [
         smallButton,
-        regularButton,
+        regularButton
     ])
-    
+
     vStack.axis = .vertical
     vStack.alignment = .center
     vStack.spacing = 0
@@ -268,6 +268,6 @@ func makeTemplateWithRegularAndSmallButtons() -> UIStackView {
         width: regularButton.intrinsicContentSize.width,
         height: regularButton.intrinsicContentSize.height + regularButton.intrinsicContentSize.height
     )
-    
+
     return vStack
 }

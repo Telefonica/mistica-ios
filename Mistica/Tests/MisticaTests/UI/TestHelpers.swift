@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  TestHelpers.swift
 //
-//  Created by Jose Miguel Brocal on 20/11/20.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Mistica
@@ -17,8 +18,7 @@ func assertSnapshotForAllBrands<Format>(
     testName: String = #function,
     line: UInt = #line,
     viewBuilder: @autoclosure () -> UIView
-    ) {
-
+) {
     _assertSnapshotForAllBrands(
         as: snapshotting,
         file: file,
@@ -34,8 +34,7 @@ func assertSnapshotForAllBrands<Format>(
     testName: String = #function,
     line: UInt = #line,
     viewBuilder: @autoclosure () -> UIViewController
-    ) {
-    
+) {
     _assertSnapshotForAllBrands(
         as: snapshotting,
         file: file,
@@ -53,11 +52,10 @@ private func _assertSnapshotForAllBrands<View, Format>(
     testName: String = #function,
     line: UInt = #line,
     viewBuilder: @autoclosure () -> View
-    ) {
-    
+) {
     for brand in BrandStyle.allCases {
         MisticaConfig.brandStyle = brand
-        
+
         assertSnapshot(
             matching: viewBuilder(),
             as: snapshotting,

@@ -2,26 +2,40 @@ name: Release
 
 on:
   workflow_dispatch:
-        inputs:
-            cliArgs:
-                description: 'CLI args'
-                required: false
-                default: ''
+    inputs:
+      cliArgs:
+        description: "CLI args"
+        required: false
+        default: ""
 
 jobs:
   release:
     name: Release
     runs-on: self-hosted-novum-mac
-    
+
     steps:
       - uses: actions/checkout@v2
         with:
-            token: ${{ secrets.FLOW_GITHUB_TOKEN }}
+          token: ${{ secrets.FLOW_GITHUB_TOKEN }}
+
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-            node-version: 12
+          node-version: 12
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.FLOW_GITHUB_TOKEN }}
         run: npx -p @semantic-release/changelog -p @semantic-release/git -p @semantic-release/exec -p semantic-release semantic-release --debug ${{ github.event.inputs.cliArgs }}
+
+      - name: Checkout Telefonica/github-actions repo
+        uses: actions/checkout@v2
+        with:
+          repository: Telefonica/github-actions
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+          path: .github/actions
+
+      - name: Send Notification to Teams
+        uses: ./.github/actions/microsoft-teams/notify
+        with:
+          channel: ios_releases

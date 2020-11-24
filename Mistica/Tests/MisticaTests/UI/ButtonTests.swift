@@ -244,7 +244,7 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool)
     return vStack
 }
 
-func makeTemplateWithRegularAndSmallButtons() -> UIStackView {
+private func makeTemplateWithRegularAndSmallButtons() -> UIStackView {
     let smallButton = Button()
     smallButton.title = "Small"
     smallButton.state = .normal

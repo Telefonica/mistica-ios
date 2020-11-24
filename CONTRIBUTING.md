@@ -6,6 +6,16 @@ Feel free to contact maintainers at the
 [Mística Teams Channel](https://teams.microsoft.com/l/channel/19%3ad2e3607a32ec411b8bf492f43cd0fe0c%40thread.tacv2/General?groupId=e265fe99-929f-45d1-8154-699649674a40&tenantId=9744600e-3e04-492e-baa1-25ec245c6f10).
 Don't hesitate to ask any questions and share your ideas
 
+* [Pull Requests](#pull-requests)
+  * [Release workflow](#release-workflow)
+  * [Commit messages](#commit-messages)
+* [Bug reports](#bug-reports)
+* [Feature requests (no UI/UX changes)](#feature-requests--no-ui-ux-changes-)
+* [Documentation and help requests](#documentation-and-help-requests)
+* [New component proposals or UI/UX changes](#new-component-proposals-or-ui-ux-changes)
+* [How to work with mistica-ios](#how-to-work-with-mistica-ios)
+* [Testing](#testing)
+
 ## Pull Requests
 
 We would love to accept your Pull Requests but please, before starting your development,
@@ -102,3 +112,18 @@ When implementing the component, try to have in mind the following guidelines:
 * Pay attention to user interaction (Gestures, Haptics, 3D Touch...)
 * Although this should be transparent to you, take into account themes and multiple brands.
 * To help other developers, add documentation about the new component.
+
+## Testing
+
+### Running Tests
+
+Open `Mistica.xcodeproj` after following the [How to work with mistica-ios](#how-to-work-with-mistica-ios) guide and click any Test button.
+
+### Creating a Test
+
+* Open `Mistica.xcodeproj` and create a new file in `MisticaTest` folder.
+* Select the generic template Unit Test Case Class.
+* Name the class, keep the XCTestCase as super class and select Swift if needed.
+* Select the appropriate test target
+
+We use Screenshot or Snapshot type tests using a library named [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing), so please go the library repository and read the documentation.

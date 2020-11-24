@@ -155,19 +155,37 @@ final class ButtonTests: XCTestCase {
 
         let buttonNormalState = Button()
         buttonNormalState.loadingTitle = "A very very very long long long long teeeext"
-        buttonNormalState.state = .normal
-
+        buttonNormalState.state = .loading
+        
         assertSnapshot(
             matching: buttonNormalState,
-            as: .image(size: buttonNormalState.intrinsicContentSize)
+            as: .image(size: CGSize(width: 156, height: 48))
         )
     }
 
     func testMinimumWidth() {
         MisticaConfig.brandStyle = .vivo
-
+       
         assertSnapshot(
-            matching: makeTemplateWithRegularAndSmallButtons(),
+            matching: makeTemplateWithRegularAndSmallButtonsAndLinkButton(),
+            as: .image
+        )
+    }
+    
+    func testLinkStyleAndContentModeLeft() {
+        MisticaConfig.brandStyle = .movistar
+        
+        assertSnapshot(
+            matching: makeTemplateAlignment(contentMode: .left),
+            as: .image
+        )
+    }
+    
+    func testLinkStyleAndContentModeRight() {
+        MisticaConfig.brandStyle = .movistar
+        
+        assertSnapshot(
+            matching: makeTemplateAlignment(contentMode: .right),
             as: .image
         )
     }
@@ -244,30 +262,93 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool)
     return vStack
 }
 
-private func makeTemplateWithRegularAndSmallButtons() -> UIStackView {
+private func makeTemplateWithRegularAndSmallButtonsAndLinkButton() -> UIStackView {
     let smallButton = Button()
-    smallButton.title = "Small"
+    smallButton.title = "O"
     smallButton.state = .normal
     smallButton.isSmall = true
 
     let regularButton = Button()
-    regularButton.title = "Normal"
+    regularButton.title = "O"
     regularButton.state = .normal
+    
+    let linkButton = Button()
+    linkButton.title = "O"
+    linkButton.state = .selected
+    linkButton.style = .link
 
     let vStack = UIStackView(arrangedSubviews: [
         smallButton,
-        regularButton
+        regularButton,
+        linkButton
     ])
 
+    let expectedWidth = vStack.arrangedSubviews
+        .map(\.intrinsicContentSize)
+        .map(\.width)
+        .reduce(CGFloat(0), CGFloat.maximum)
+    let expectedHeight = vStack.arrangedSubviews
+        .map(\.intrinsicContentSize)
+        .map(\.height)
+        .reduce(CGFloat(0), +)
+    
     vStack.axis = .vertical
     vStack.alignment = .center
     vStack.spacing = 0
     vStack.frame = CGRect(
         x: 0,
         y: 0,
-        width: regularButton.intrinsicContentSize.width,
-        height: regularButton.intrinsicContentSize.height + regularButton.intrinsicContentSize.height
+        width: expectedWidth,
+        height: expectedHeight
     )
 
     return vStack
+}
+
+private func makeTemplateAlignment(contentMode: UIView.ContentMode) -> UIView {
+    let containerView = UIView()
+    containerView.backgroundColor = .white
+    
+    let title = UILabel()
+    title.text = "Lorem ipsum dolor sit amet"
+    title.translatesAutoresizingMaskIntoConstraints = false
+    
+    let linkButton = Button()
+    linkButton.title = "Link"
+    linkButton.style = .link
+    linkButton.contentMode = contentMode
+    linkButton.translatesAutoresizingMaskIntoConstraints = false
+    
+    containerView.addSubview(title)
+    containerView.addSubview(linkButton)
+    
+    NSLayoutConstraint.activate([
+        title.topAnchor.constraint(equalTo: containerView.topAnchor),
+        title.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5),
+        title.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 5),
+        linkButton.topAnchor.constraint(equalTo: title.bottomAnchor)
+    ])
+    
+    switch contentMode {
+    case .left:
+        linkButton.leadingAnchor.constraint(equalTo: title.leadingAnchor).isActive = true
+    case .right:
+        linkButton.trailingAnchor.constraint(equalTo: title.trailingAnchor).isActive = true
+    default:
+        fatalError("Sorry but at the moment of implementing this, I only took into account left and right contentMode")
+    }
+    
+    let expectedHeight = containerView.subviews
+        .map(\.intrinsicContentSize)
+        .map(\.height)
+        .reduce(CGFloat(0), +)
+    
+    containerView.frame = CGRect(
+        x: 0,
+        y: 0,
+        width: title.intrinsicContentSize.width + 10, // title width plus some margin
+        height: expectedHeight
+    )
+    
+    return containerView
 }

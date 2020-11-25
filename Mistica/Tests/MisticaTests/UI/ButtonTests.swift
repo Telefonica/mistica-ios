@@ -223,11 +223,11 @@ final class ButtonTests: XCTestCase {
         view.buttonPinnedToSides.title = "Button pinned to sides"
         view.buttonPinnedToLeading.title = "Button pinned to leading"
         view.buttonPinnedToTrailing.title = "Button pinned to trailing"
-        
+
         view.buttonCentered.title = "Button centered"
         view.buttonCentered.loadingTitle = "Button centered"
         view.buttonCentered.state = .loading
-        
+
         assertSnapshot(
             matching: view,
             as: .image

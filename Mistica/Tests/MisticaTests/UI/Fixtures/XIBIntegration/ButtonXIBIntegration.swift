@@ -10,8 +10,8 @@ import Mistica
 import UIKit
 
 class ButtonXIBIntegration: UIView {
-    @IBOutlet weak var buttonPinnedToSides: Button!
-    @IBOutlet weak var buttonPinnedToLeading: Button!
-    @IBOutlet weak var buttonPinnedToTrailing: Button!
-    @IBOutlet weak var buttonCentered: Button!
+    @IBOutlet var buttonPinnedToSides: Button!
+    @IBOutlet var buttonPinnedToLeading: Button!
+    @IBOutlet var buttonPinnedToTrailing: Button!
+    @IBOutlet var buttonCentered: Button!
 }

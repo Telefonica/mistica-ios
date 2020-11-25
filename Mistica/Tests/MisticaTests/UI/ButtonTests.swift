@@ -213,15 +213,15 @@ final class ButtonTests: XCTestCase {
             named: "finalState"
         )
     }
-    
+
     // MARK: XIB integration
-    
+
     func testXIBIntegration() {
         MisticaConfig.brandStyle = .o2
-        
+
         let view = ButtonXIBIntegration.viewFromNib()
         view.button.title = "Tap me!"
-        
+
         assertSnapshot(
             matching: view,
             as: .image

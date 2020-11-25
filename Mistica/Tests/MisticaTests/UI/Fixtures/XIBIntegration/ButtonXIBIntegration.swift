@@ -1,13 +1,14 @@
 //
-//  Button.swift
-//  MisticaTests
+//  ButtonXIBIntegration.swift
 //
-//  Created by Jose Miguel Brocal on 25/11/20.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Mistica
 import UIKit
 
 class ButtonXIBIntegration: UIView {
-    @IBOutlet weak var button: Button!
+    @IBOutlet var button: Button!
 }

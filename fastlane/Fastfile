@@ -6,6 +6,7 @@ default_platform(:ios)
 
 # Constants
 
+MISTICA_LIB_PROJECT_PATH = "Mistica.xcodeproj"
 MISTICA_CATALOG_PROJECT_PATH = "MisticaCatalog/MisticaCatalog.xcodeproj"
 TMP_BUILDS_PATH = "pkg/dist"
 MISTICA_CATALOG_INFO_PLIST_PATH = "./MisticaCatalog/SupportFiles/Info.plist"
@@ -14,7 +15,7 @@ MISTICA_CATALOG_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaCatalog.ipa"
 platform :ios do
 
   before_all do
-    xcversion(version: "12")
+    xcversion(version: "12.2")
   end
 
   desc "Setup the external dependencies and stuff needed to have a full working environment experience"  
@@ -69,6 +70,14 @@ platform :ios do
     reset_git_repo
   end
 
+  desc "Run Tests"
+  lane :test do
+    scan(
+      project: MISTICA_LIB_PROJECT_PATH,
+      devices: ["iPhone 11"],
+      derived_data_path: "tmp/test_output"
+    )
+  end
 end
 
 ##############################################################

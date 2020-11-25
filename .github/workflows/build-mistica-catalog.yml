@@ -1,6 +1,8 @@
-name: Manually deploy catalog
+name: Deploy Mistica Catalog
 
 on:
+  release:
+    types: [published]
   workflow_dispatch:
         inputs:
             commit_to_deploy:
@@ -9,8 +11,8 @@ on:
                 default: ''
 
 jobs:
-  manually-deploy-catalog:
-    name: Manually deploy catalog
+  deploy-mistica-catalog:
+    name: Deploy Mistica Catalog
     runs-on: self-hosted-novum
 
     steps:

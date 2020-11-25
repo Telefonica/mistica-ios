@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,20 +16,40 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgs-mz-Txi" customClass="Button" customModule="Mistica">
-                    <rect key="frame" x="20" y="159" width="374" height="30"/>
-                    <state key="normal" title="Button"/>
+                    <rect key="frame" x="20" y="74" width="374" height="30"/>
+                    <state key="normal" title="Button pinned to sides"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciH-MA-3hd" customClass="Button" customModule="Mistica">
+                    <rect key="frame" x="62" y="438" width="290" height="30"/>
+                    <state key="normal" title="Button centered vertically and horizontally"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQI-Vw-2VZ" customClass="Button" customModule="Mistica">
+                    <rect key="frame" x="20" y="154" width="168" height="30"/>
+                    <state key="normal" title="Button pinned to leading"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TL-nf-2fv" customClass="Button" customModule="Mistica">
+                    <rect key="frame" x="229" y="234" width="165" height="30"/>
+                    <state key="normal" title="Button pinned to trailing"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="jgs-mz-Txi" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="7gS-XY-zhW"/>
+                <constraint firstItem="ciH-MA-3hd" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="486-N2-faF"/>
+                <constraint firstItem="OQI-Vw-2VZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Bnd-b7-nDB"/>
+                <constraint firstItem="7TL-nf-2fv" firstAttribute="top" secondItem="OQI-Vw-2VZ" secondAttribute="bottom" constant="50" id="Fti-dt-Ygi"/>
+                <constraint firstItem="ciH-MA-3hd" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="TvA-B1-0ke"/>
                 <constraint firstItem="jgs-mz-Txi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="aFu-ea-qUB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jgs-mz-Txi" secondAttribute="trailing" constant="20" id="di6-JU-pjE"/>
-                <constraint firstItem="jgs-mz-Txi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="115" id="ft2-o2-yt1"/>
+                <constraint firstItem="jgs-mz-Txi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="ft2-o2-yt1"/>
+                <constraint firstItem="OQI-Vw-2VZ" firstAttribute="top" secondItem="jgs-mz-Txi" secondAttribute="bottom" constant="50" id="tTf-bz-ZRo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7TL-nf-2fv" secondAttribute="trailing" constant="20" id="wi1-3b-sQt"/>
             </constraints>
             <connections>
-                <outlet property="button" destination="jgs-mz-Txi" id="sgX-AI-gzs"/>
+                <outlet property="buttonCentered" destination="ciH-MA-3hd" id="fJt-vO-JGX"/>
+                <outlet property="buttonPinnedToLeading" destination="OQI-Vw-2VZ" id="GlV-Df-Nz4"/>
+                <outlet property="buttonPinnedToSides" destination="jgs-mz-Txi" id="McO-fI-SDx"/>
+                <outlet property="buttonPinnedToTrailing" destination="7TL-nf-2fv" id="4j6-wr-ds1"/>
             </connections>
             <point key="canvasLocation" x="-20.289855072463769" y="153.34821428571428"/>
         </view>

@@ -76,6 +76,7 @@ public class FeedbackView: UIView {
     private let secondaryAction: FeedbackSecondaryAction
     private let title: String
     private let subtitle: String?
+    private let shouldDisableAnimations: Bool
 
     // Private views
     private lazy var gradientView: GradientView = {
@@ -191,6 +192,7 @@ public class FeedbackView: UIView {
         extraContent = configuration.extraContent
         title = configuration.title
         subtitle = configuration.subtitle
+        shouldDisableAnimations = configuration.shouldDisableAnimations
 
         super.init(frame: .zero)
         setupView()
@@ -205,6 +207,11 @@ public class FeedbackView: UIView {
 public extension FeedbackView {
     func startAnimation() {
         guard style.shouldAnimate, !animationFired else { return }
+        guard !shouldDisableAnimations else {
+            animatedIcon.stop()
+            animatedIcon.currentProgress = 1
+            return
+        }
         DispatchQueue.main.async {
             self.animationFired = true
             self.animator.startAnimation(afterDelay: Constants.animationDelay)
@@ -267,7 +274,7 @@ private extension FeedbackView {
     }
 
     func prepareAnimation() {
-        guard style.shouldAnimate else { return }
+        guard style.shouldAnimate, !shouldDisableAnimations else { return }
         animationFired = false
         contentContainerStackView.alpha = 0
         contentContainerStackView.transform = CGAffineTransform(translationX: 0, y: 20)

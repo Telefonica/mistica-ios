@@ -92,6 +92,7 @@
 		AE568ECA9A69A30366BD05ED /* PopoverConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9393F68AA721A8925A439504 /* PopoverConfiguration.swift */; };
 		AF443028E947CEFC57C78C6D /* IntrinsictImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8614CC19ABBC171200631823 /* IntrinsictImageView.swift */; };
 		B347848A473FEE0AB4E04D27 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5F4F9885708D1D3909E98 /* UIColor+Utils.swift */; };
+		B4C66DD7256EB8A50087E4B5 /* FeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */; };
 		B4C99EA94307852447D672A1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE9079D1C9C80AD4FB45F3 /* ListView.swift */; };
 		B805C38E65D802F520DB0931 /* LoadErrorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CAF7C86C74F12CE2700B8 /* LoadErrorViewControllerDelegate.swift */; };
 		B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40616E1B8E8E2F0E7D3AAA /* Mistica.framework */; };
@@ -270,6 +271,7 @@
 		B15709C90D275DCFABDE247B /* VivoColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VivoColorPalette.swift; sourceTree = "<group>"; };
 		B201DBB50BD4162E5B0F5A84 /* SectionTitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleHeaderView.swift; sourceTree = "<group>"; };
 		B44BB86FA0A8DAFEFB59BF31 /* KeyboardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
+		B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTests.swift; sourceTree = "<group>"; };
 		B4CDCA7FBA5511616538F84A /* FeedbackConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackConfiguration.swift; sourceTree = "<group>"; };
 		B5F3A3A2B59695E7D19E2CE2 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		B88DE71DF455B000DEED6A29 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
@@ -928,6 +930,7 @@
 				B8FFFA8B256E602100472C23 /* Fixtures */,
 				B8BCF901256D113B00D2BCCC /* TestHelpers.swift */,
 				CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */,
+				B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 			);
 			path = UI;
@@ -1462,6 +1465,7 @@
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
 				B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */,
+				B4C66DD7256EB8A50087E4B5 /* FeedbackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

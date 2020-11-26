@@ -73,8 +73,6 @@ private extension MisticaAppearance {
     }
 
     static func setUpAppearanceOfSwitch() {
-        guard !MisticaConfig.brandStyle.shouldUseLegacyTintForControls else { return }
-
         let appearance = UISwitch.appearance()
         appearance.onTintColor = .controlActivated
         appearance.tintColor = .control

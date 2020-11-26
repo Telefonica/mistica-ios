@@ -1,0 +1,17 @@
+//
+//  ButtonXIBIntegration.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
+//
+
+import Mistica
+import UIKit
+
+class ButtonXIBIntegration: UIView {
+    @IBOutlet var buttonPinnedToSides: Button!
+    @IBOutlet var buttonPinnedToLeading: Button!
+    @IBOutlet var buttonPinnedToTrailing: Button!
+    @IBOutlet var buttonCentered: Button!
+}

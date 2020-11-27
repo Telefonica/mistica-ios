@@ -8,9 +8,11 @@ default_platform(:ios)
 
 MISTICA_LIB_PROJECT_PATH = "Mistica.xcodeproj"
 MISTICA_CATALOG_PROJECT_PATH = "MisticaCatalog/MisticaCatalog.xcodeproj"
-TMP_BUILDS_PATH = "pkg/dist"
+TMP_BUILDS_PATH = "tmp"
 MISTICA_CATALOG_INFO_PLIST_PATH = "./MisticaCatalog/SupportFiles/Info.plist"
-MISTICA_CATALOG_IPA_PATH = "#{TMP_BUILDS_PATH}/MisticaCatalog.ipa" 
+MISTICA_CATALOG_IPA_PATH = "#{TMP_BUILDS_PATH}/dist/MisticaCatalog.ipa"
+XCRESULT_FILE_PATH = "test_output/Mistica.xcresult"
+SCREENSHOT_DIFFS_OUTPUT_PATH = "test_output/diff_output"
 
 platform :ios do
 
@@ -75,9 +77,20 @@ platform :ios do
     scan(
       project: MISTICA_LIB_PROJECT_PATH,
       devices: ["iPhone 11"],
-      derived_data_path: "tmp/test_output"
+      result_bundle: true,
     )
   end
+
+  desc "Extract tests attachments"
+  lane :extract_tests_attachments do
+    UI.message "Installing xcparse"
+    brew_install_or_update(
+      formula: "chargepoint/xcparse/xcparse"
+    )
+
+    UI.message `xcparse attachments #{XCRESULT_FILE_PATH} #{SCREENSHOT_DIFFS_OUTPUT_PATH} --uti public.plain-text public.image --test`
+  end
+
 end
 
 ##############################################################
@@ -119,3 +132,8 @@ def brew_install_or_update(params)
     system("brew install #{params[:formula]}")
   end
 end
+
+def is_ci
+  ENV["IS_CI"]
+end
+

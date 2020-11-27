@@ -20,8 +20,7 @@ final class FeedbackTests: XCTestCase {
         static let secondaryActionTitle = "Secondary Action"
         static let retryLoadingTitle = "Loading Title"
     }
-    
-    
+
     override class func setUp() {
         super.setUp()
 
@@ -145,9 +144,11 @@ final class FeedbackTests: XCTestCase {
                 style: .error,
                 title: Constants.multiLineTitle,
                 subtitle: Constants.multiLineSubtitle,
-                primaryAction: .retryButton(title: Constants.primartyActionTitle,
-                                            loadingTitle: Constants.retryLoadingTitle,
-                                            retryCompletion: { _ in }),
+                primaryAction: .retryButton(
+                    title: Constants.primartyActionTitle,
+                    loadingTitle: Constants.retryLoadingTitle,
+                    retryCompletion: { _ in }
+                ),
                 secondaryAction: .none
             )
         )
@@ -229,9 +230,11 @@ final class FeedbackTests: XCTestCase {
                 style: .error,
                 title: Constants.multiLineTitle,
                 subtitle: Constants.multiLineSubtitle,
-                primaryAction: .retryButton(title: Constants.primartyActionTitle,
-                                            loadingTitle: Constants.retryLoadingTitle,
-                                            retryCompletion: { _ in }),
+                primaryAction: .retryButton(
+                    title: Constants.primartyActionTitle,
+                    loadingTitle: Constants.retryLoadingTitle,
+                    retryCompletion: { _ in }
+                ),
                 secondaryAction: .link(title: Constants.secondaryActionTitle, completion: {})
             )
         )
@@ -311,7 +314,7 @@ private extension FeedbackTests {
             closeButton: nil
         )
     }
-    
+
     func buildExtraView() -> UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical

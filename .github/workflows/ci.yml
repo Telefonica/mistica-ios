@@ -52,15 +52,13 @@ jobs:
         run: bundle exec fastlane extract_tests_attachments
 
       - name: Checkout Telefonica/github-actions repo
-        if: failure()
         uses: actions/checkout@v2
         with:
           repository: Telefonica/github-actions
           token: "${{ secrets.READ_PRIVATE_REPOS }}"
           path: .github/actions
 
-      - name: Deploy mistica catalog (cigen workflow)
-        if: failure()
+      - name: Check Tests result
         uses: ./.github/actions/mistica/upload-failed-screenshots
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

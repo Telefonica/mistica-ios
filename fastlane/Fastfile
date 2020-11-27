@@ -133,7 +133,3 @@ def brew_install_or_update(params)
   end
 end
 
-def is_ci
-  ENV["IS_CI"]
-end
-

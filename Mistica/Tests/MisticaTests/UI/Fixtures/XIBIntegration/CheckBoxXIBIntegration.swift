@@ -1,5 +1,5 @@
 //
-//  CheckBoxXIBIntegration.swift
+//  CheckboxXIBIntegration.swift
 //
 //  Made with ❤️ by Novum
 //

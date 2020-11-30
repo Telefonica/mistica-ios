@@ -18,7 +18,6 @@ public struct FeedbackConfiguration: Equatable {
     public let extraContent: UIView?
     public let shouldHideCloseButton: Bool
     public let modalPresentationStyle: UIModalPresentationStyle?
-    public let shouldDisableAnimations: Bool
 
     public init(style: FeedbackStyle,
                 title: String,
@@ -27,8 +26,7 @@ public struct FeedbackConfiguration: Equatable {
                 secondaryAction: FeedbackSecondaryAction = .none,
                 extraContent: UIView? = nil,
                 shouldHideCloseButton: Bool = false,
-                modalPresentationStyle: UIModalPresentationStyle? = nil,
-                shouldDisableAnimations: Bool = false) {
+                modalPresentationStyle: UIModalPresentationStyle? = nil) {
         self.style = style
         self.title = title
         self.subtitle = subtitle
@@ -37,6 +35,5 @@ public struct FeedbackConfiguration: Equatable {
         self.extraContent = extraContent
         self.shouldHideCloseButton = shouldHideCloseButton
         self.modalPresentationStyle = modalPresentationStyle
-        self.shouldDisableAnimations = shouldDisableAnimations
     }
 }

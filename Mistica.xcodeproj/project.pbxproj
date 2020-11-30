@@ -64,6 +64,7 @@
 		7C08A5B312CD6C093A0777AB /* InputFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A0C023382C7D869CDF717 /* InputFieldDelegate.swift */; };
 		7C5C4FA51C8DD0174E91ACA0 /* FeedbackUIAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBB044C1F47FE38007C053 /* FeedbackUIAssets.swift */; };
 		7FD4C59EF8B83AE5EC1CBDF1 /* EmailInputFieldValidationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E757D07E48CDC3FEAF75340 /* EmailInputFieldValidationStrategy.swift */; };
+		82CF1540257567C700867797 /* BadgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF153C257567A000867797 /* BadgeTests.swift */; };
 		83C49A0982B41B48B95AF7C8 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083767C39CB9F8DB5699928 /* RadioButton.swift */; };
 		86E4D10F795ADC42295ADD69 /* UIViewPropertyAnimator+InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E761686C428884CF07312D /* UIViewPropertyAnimator+InputField.swift */; };
 		88882FCE598E7589DBB0E8D8 /* VerticallyCenteredPresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */; };
@@ -228,6 +229,7 @@
 		824D08C7E0400E39D73D1BE2 /* informative.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = informative.png; sourceTree = "<group>"; };
 		825172D74B7F0CC9F9FB5440 /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center.png; sourceTree = "<group>"; };
 		828462A2F693C09FE52A3958 /* header-inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header-inverse.png"; sourceTree = "<group>"; };
+		82CF153C257567A000867797 /* BadgeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeTests.swift; sourceTree = "<group>"; };
 		84F200F256C58D12B09938F4 /* crouton-style-critical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crouton-style-critical.png"; sourceTree = "<group>"; };
 		855DAA88944E0E8383B91ACB /* ScrollStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollStackView.swift; sourceTree = "<group>"; };
 		8592A5DE5FCD5C50B861789C /* CroutonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonConfig.swift; sourceTree = "<group>"; };
@@ -917,6 +919,7 @@
 				B8FFFA8B256E602100472C23 /* Fixtures */,
 				B8BCF901256D113B00D2BCCC /* TestHelpers.swift */,
 				CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */,
+				82CF153C257567A000867797 /* BadgeTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 			);
 			path = UI;
@@ -1439,6 +1442,7 @@
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
+				82CF1540257567C700867797 /* BadgeTests.swift in Sources */,
 				B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

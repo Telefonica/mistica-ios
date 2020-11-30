@@ -205,16 +205,15 @@ public class FeedbackView: UIView {
 public extension FeedbackView {
     func startAnimation() {
         guard style.shouldAnimate, !animationFired else { return }
-        guard UIView.areAnimationsEnabled else {
+        animationFired = true
+        animator.startAnimation(afterDelay: Constants.animationDelay)
+        triggerHapticFeedback()
+        
+        if UIView.areAnimationsEnabled {
+            animatedIcon.play()
+        } else {
             animatedIcon.stop()
             animatedIcon.currentProgress = 1
-            return
-        }
-        DispatchQueue.main.async {
-            self.animationFired = true
-            self.animator.startAnimation(afterDelay: Constants.animationDelay)
-            self.animatedIcon.play()
-            self.triggerHapticFeedback()
         }
     }
 }
@@ -272,7 +271,7 @@ private extension FeedbackView {
     }
 
     func prepareAnimation() {
-        guard style.shouldAnimate, UIView.areAnimationsEnabled else { return }
+        guard style.shouldAnimate else { return }
         animationFired = false
         contentContainerStackView.alpha = 0
         contentContainerStackView.transform = CGAffineTransform(translationX: 0, y: 20)

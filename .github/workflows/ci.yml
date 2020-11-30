@@ -65,7 +65,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           azure-account-name: ${{ secrets.AZURE_ACCOUNT_NAME }}
           azure-account-key: ${{ secrets.AZURE_ACCOUNT_KEY }}
-          glob: 'fastlane/test_output/diff_output/**/difference*.png'
+          glob: 'tmp/test_output/diff_output/**/difference*.png'
           testSuiteAndTestNameRegex: '(?<=diff_output\/)(.*)(?=\/difference)'
           testSuiteAndTestNameSeparator: '/'
           ci-container-name: 'mistica-ios-ci-container'

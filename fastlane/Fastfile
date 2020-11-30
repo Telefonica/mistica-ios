@@ -22,7 +22,7 @@ SCREENSHOT_DIFFS_OUTPUT_PATH = File.join(TEST_OUTPUT_PATH, "diff_output")
 platform :ios do
 
   before_all do
-    xcversion(version: "12.2")
+    xcversion(version: "12")
   end
 
   desc "Setup the external dependencies and stuff needed to have a full working environment experience"  

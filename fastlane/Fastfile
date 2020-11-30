@@ -6,13 +6,18 @@ default_platform(:ios)
 
 # Constants
 
-MISTICA_LIB_PROJECT_PATH = "Mistica.xcodeproj"
-MISTICA_CATALOG_PROJECT_PATH = "MisticaCatalog/MisticaCatalog.xcodeproj"
-TMP_BUILDS_PATH = "tmp"
-MISTICA_CATALOG_INFO_PLIST_PATH = "./MisticaCatalog/SupportFiles/Info.plist"
-MISTICA_CATALOG_IPA_PATH = "#{TMP_BUILDS_PATH}/dist/MisticaCatalog.ipa"
-XCRESULT_FILE_PATH = "test_output/Mistica.xcresult"
-SCREENSHOT_DIFFS_OUTPUT_PATH = "test_output/diff_output"
+ROOT_PROJECT_PATH = File.expand_path("../", Dir.pwd)
+TMP_ROOT_PATH = File.join(ROOT_PROJECT_PATH, "tmp")
+BUILD_OUTPUT_PATH = File.join(TMP_ROOT_PATH, "build")
+TEST_OUTPUT_PATH = File.join(TMP_ROOT_PATH, "test_output")
+
+MISTICA_LIB_PROJECT_PATH = File.join(ROOT_PROJECT_PATH, "Mistica.xcodeproj")
+MISTICA_CATALOG_PROJECT_PATH = File.join(ROOT_PROJECT_PATH, "MisticaCatalog", "MisticaCatalog.xcodeproj")
+MISTICA_CATALOG_INFO_PLIST_PATH = File.join(ROOT_PROJECT_PATH, "MisticaCatalog", "SupportFiles", "Info.plist")
+MISTICA_CATALOG_IPA_PATH = File.join(BUILD_OUTPUT_PATH, "MisticaCatalog.ipa")
+
+XCRESULT_FILE_PATH = File.join(TEST_OUTPUT_PATH, "Mistica.xcresult")
+SCREENSHOT_DIFFS_OUTPUT_PATH = File.join(TEST_OUTPUT_PATH, "diff_output")
 
 platform :ios do
 
@@ -55,7 +60,7 @@ platform :ios do
         configuration: "Release",
         codesigning_identity: "iPhone Distribution: Tuenti Technologies SL",
         export_team_id: "JA666WMX28",
-        output_directory: TMP_BUILDS_PATH,
+        output_directory: BUILD_OUTPUT_PATH,
         export_method: 'enterprise',
         clean: true
     )
@@ -77,6 +82,7 @@ platform :ios do
     scan(
       project: MISTICA_LIB_PROJECT_PATH,
       devices: ["iPhone 11"],
+      output_directory: TEST_OUTPUT_PATH,
       result_bundle: true,
     )
   end

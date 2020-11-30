@@ -1,3 +1,20 @@
+# [6.0.0](https://github.com/Telefonica/mistica-ios/compare/v5.0.0...v6.0.0) (2020-11-30)
+
+
+### Bug Fixes
+
+* **Mistica:** Remove unnecessary bundle resources ([#48](https://github.com/Telefonica/mistica-ios/issues/48)) ([97e7540](https://github.com/Telefonica/mistica-ios/commit/97e7540a28329b53d5e6df57bc7a19197d6e8872))
+
+
+### Features
+
+* **Lists:** APPS-6771 Icon changes on lists ([#31](https://github.com/Telefonica/mistica-ios/issues/31)) ([70c6d96](https://github.com/Telefonica/mistica-ios/commit/70c6d96012ed3e56b095d92f9bcaca48a64742a5))
+
+
+### BREAKING CHANGES
+
+* **Lists:** Lists assets API changed
+
 # [5.0.0](https://github.com/Telefonica/mistica-ios/compare/v4.0.0...v5.0.0) (2020-11-19)
 
 

@@ -1,8 +1,9 @@
 //
 //  CheckBoxTests.swift
-//  Mistica
 //
-//  Created by cbarrera on 30/11/20.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Mistica
@@ -24,19 +25,19 @@ final class CheckBoxTests: XCTestCase {
             viewBuilder: makeTemplateWithCheckBoxState(isChecked: false)
         )
     }
-    
+
     func testCheckboxActiveCheckedState() {
         assertSnapshotForAllBrands(
             as: .image,
             viewBuilder: makeTemplateWithCheckBoxState(isChecked: true)
         )
     }
-    
+
     // MARK: Behaviour
-    
+
     func testCheckboxIsChecked() {
         MisticaConfig.brandStyle = .o2
-        
+
         let checkBox = CheckBox()
         checkBox.isChecked = false
 
@@ -74,11 +75,10 @@ final class CheckBoxTests: XCTestCase {
 private func makeTemplateWithCheckBoxState(isChecked: Bool) -> UIView {
     let checkBox = CheckBox(frame: CGRect(origin: .zero, size: CGSize(width: 24, height: 24)))
     checkBox.isChecked = isChecked
-    
-    
+
     let containerView = UIView(frame: CGRect(origin: .zero, size: checkBox.intrinsicContentSize))
     containerView.backgroundColor = .white
     containerView.addSubview(checkBox)
-    
+
     return containerView
 }

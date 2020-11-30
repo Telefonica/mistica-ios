@@ -122,6 +122,20 @@
 		F05AC8F3C238A4D6BB7638C1 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66920067223E2F56C791267 /* Segment.swift */; };
 		F2BFC9F715E3810F002FCDBF /* InputFieldStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFF454CCE139BDE71EC071 /* InputFieldStyle+Toolkit.swift */; };
 		F343B351B4E71C9AD816E7AA /* Optional+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF673AB137A97C45F6148D /* Optional+Utils.swift */; };
+		F73BFB7D25751EBD000E3C1E /* CheckBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFB7A25751E8A000E3C1E /* CheckBoxTests.swift */; };
+		F73D6C6225750D340012A2C4 /* CheckboxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */; };
+		F73D6C6825750DB30012A2C4 /* CheckBoxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckBoxXIBIntegration.xib */; };
+		F74CB4DA2575448100260675 /* testCheckboxActiveCheckedState.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4CF2575448000260675 /* testCheckboxActiveCheckedState.with-movistar-style.png */; };
+		F74CB4DB2575448100260675 /* testCheckboxDefaultState.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D02575448000260675 /* testCheckboxDefaultState.with-o2Classic-style.png */; };
+		F74CB4DC2575448100260675 /* testCheckboxIsChecked.finalState.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D12575448000260675 /* testCheckboxIsChecked.finalState.png */; };
+		F74CB4DD2575448100260675 /* testCheckboxActiveCheckedState.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D22575448000260675 /* testCheckboxActiveCheckedState.with-o2Classic-style.png */; };
+		F74CB4DE2575448100260675 /* testCheckboxActiveCheckedState.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D32575448000260675 /* testCheckboxActiveCheckedState.with-vivo-style.png */; };
+		F74CB4DF2575448100260675 /* testXIBIntegration.1.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D42575448000260675 /* testXIBIntegration.1.png */; };
+		F74CB4E02575448100260675 /* testCheckboxDefaultState.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D52575448000260675 /* testCheckboxDefaultState.with-o2-style.png */; };
+		F74CB4E12575448100260675 /* testCheckboxIsChecked.assertInitialState.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D62575448000260675 /* testCheckboxIsChecked.assertInitialState.png */; };
+		F74CB4E22575448100260675 /* testCheckboxDefaultState.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D72575448000260675 /* testCheckboxDefaultState.with-vivo-style.png */; };
+		F74CB4E32575448100260675 /* testCheckboxDefaultState.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D82575448000260675 /* testCheckboxDefaultState.with-movistar-style.png */; };
+		F74CB4E42575448100260675 /* testCheckboxActiveCheckedState.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D92575448000260675 /* testCheckboxActiveCheckedState.with-o2-style.png */; };
 		F948E84103076A2F9DB64915 /* BrandStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2171DEE8E3CD47EE049D0 /* BrandStyle.swift */; };
 		FB5A638A94B3B96ECAA3AC4A /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1E862C434A3F09F5E2251 /* SpacerView.swift */; };
 		FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2FF52F0B92407878CA43 /* IntrinsicMaxButtonWidthContainerView.swift */; };
@@ -401,6 +415,20 @@
 		F374FFFEA862CA17EDA3D4F3 /* IntrinsicHeightTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicHeightTextView.swift; sourceTree = "<group>"; };
 		F3C4B777E490D209B868734E /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		F4879FB92B4EAB99BE49D827 /* CroutonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonController.swift; sourceTree = "<group>"; };
+		F73BFB7A25751E8A000E3C1E /* CheckBoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxTests.swift; sourceTree = "<group>"; };
+		F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxXIBIntegration.swift; sourceTree = "<group>"; };
+		F73D6C6525750D600012A2C4 /* CheckBoxXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxXIBIntegration.xib; sourceTree = "<group>"; };
+		F74CB4CF2575448000260675 /* testCheckboxActiveCheckedState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-movistar-style.png"; sourceTree = "<group>"; };
+		F74CB4D02575448000260675 /* testCheckboxDefaultState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F74CB4D12575448000260675 /* testCheckboxIsChecked.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testCheckboxIsChecked.finalState.png; sourceTree = "<group>"; };
+		F74CB4D22575448000260675 /* testCheckboxActiveCheckedState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F74CB4D32575448000260675 /* testCheckboxActiveCheckedState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-vivo-style.png"; sourceTree = "<group>"; };
+		F74CB4D42575448000260675 /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
+		F74CB4D52575448000260675 /* testCheckboxDefaultState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-o2-style.png"; sourceTree = "<group>"; };
+		F74CB4D62575448000260675 /* testCheckboxIsChecked.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testCheckboxIsChecked.assertInitialState.png; sourceTree = "<group>"; };
+		F74CB4D72575448000260675 /* testCheckboxDefaultState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-vivo-style.png"; sourceTree = "<group>"; };
+		F74CB4D82575448000260675 /* testCheckboxDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
+		F74CB4D92575448000260675 /* testCheckboxActiveCheckedState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-o2-style.png"; sourceTree = "<group>"; };
 		F9982D822AACCA74B34989A6 /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
 		FC4EF4BBC11420C556337C0E /* Bundle+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Mistica.swift"; sourceTree = "<group>"; };
 		FDC1885EBE249BAA8A791EA0 /* scroll-content-indicator-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll-content-indicator-info.png"; sourceTree = "<group>"; };
@@ -463,6 +491,7 @@
 		0B3C024EEA152B58A19951D6 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
+				F74CB4CE2575448000260675 /* CheckBoxTests */,
 				244B1E13DB639AE1DC1620F0 /* ButtonTests */,
 			);
 			path = __Snapshots__;
@@ -928,6 +957,7 @@
 				B8FFFA8B256E602100472C23 /* Fixtures */,
 				B8BCF901256D113B00D2BCCC /* TestHelpers.swift */,
 				CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */,
+				F73BFB7A25751E8A000E3C1E /* CheckBoxTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 			);
 			path = UI;
@@ -1178,6 +1208,8 @@
 			children = (
 				B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */,
 				B8FFFA96256E6CB300472C23 /* ButtonXIBIntegration.swift */,
+				F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */,
+				F73D6C6525750D600012A2C4 /* CheckBoxXIBIntegration.xib */,
 			);
 			path = XIBIntegration;
 			sourceTree = "<group>";
@@ -1328,6 +1360,24 @@
 			path = ScrollContentIndicator;
 			sourceTree = "<group>";
 		};
+		F74CB4CE2575448000260675 /* CheckBoxTests */ = {
+			isa = PBXGroup;
+			children = (
+				F74CB4CF2575448000260675 /* testCheckboxActiveCheckedState.with-movistar-style.png */,
+				F74CB4D02575448000260675 /* testCheckboxDefaultState.with-o2Classic-style.png */,
+				F74CB4D12575448000260675 /* testCheckboxIsChecked.finalState.png */,
+				F74CB4D22575448000260675 /* testCheckboxActiveCheckedState.with-o2Classic-style.png */,
+				F74CB4D32575448000260675 /* testCheckboxActiveCheckedState.with-vivo-style.png */,
+				F74CB4D42575448000260675 /* testXIBIntegration.1.png */,
+				F74CB4D52575448000260675 /* testCheckboxDefaultState.with-o2-style.png */,
+				F74CB4D62575448000260675 /* testCheckboxIsChecked.assertInitialState.png */,
+				F74CB4D72575448000260675 /* testCheckboxDefaultState.with-vivo-style.png */,
+				F74CB4D82575448000260675 /* testCheckboxDefaultState.with-movistar-style.png */,
+				F74CB4D92575448000260675 /* testCheckboxActiveCheckedState.with-o2-style.png */,
+			);
+			path = CheckBoxTests;
+			sourceTree = "<group>";
+		};
 		FA5DB9DC31767152F4B12355 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1428,7 +1478,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74CB4DA2575448100260675 /* testCheckboxActiveCheckedState.with-movistar-style.png in Resources */,
+				F74CB4DF2575448100260675 /* testXIBIntegration.1.png in Resources */,
+				F74CB4E32575448100260675 /* testCheckboxDefaultState.with-movistar-style.png in Resources */,
+				F74CB4DD2575448100260675 /* testCheckboxActiveCheckedState.with-o2Classic-style.png in Resources */,
+				F74CB4E02575448100260675 /* testCheckboxDefaultState.with-o2-style.png in Resources */,
+				F74CB4E42575448100260675 /* testCheckboxActiveCheckedState.with-o2-style.png in Resources */,
+				F74CB4DB2575448100260675 /* testCheckboxDefaultState.with-o2Classic-style.png in Resources */,
+				F74CB4DE2575448100260675 /* testCheckboxActiveCheckedState.with-vivo-style.png in Resources */,
+				F74CB4DC2575448100260675 /* testCheckboxIsChecked.finalState.png in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
+				F74CB4E12575448100260675 /* testCheckboxIsChecked.assertInitialState.png in Resources */,
+				F73D6C6825750DB30012A2C4 /* CheckBoxXIBIntegration.xib in Resources */,
+				F74CB4E22575448100260675 /* testCheckboxDefaultState.with-vivo-style.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1459,6 +1521,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
+				F73BFB7D25751EBD000E3C1E /* CheckBoxTests.swift in Sources */,
+				F73D6C6225750D340012A2C4 /* CheckboxXIBIntegration.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
 				B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */,

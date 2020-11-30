@@ -208,7 +208,7 @@ public extension FeedbackView {
         animationFired = true
         animator.startAnimation(afterDelay: Constants.animationDelay)
         triggerHapticFeedback()
-        
+
         if UIView.areAnimationsEnabled {
             animatedIcon.play()
         } else {

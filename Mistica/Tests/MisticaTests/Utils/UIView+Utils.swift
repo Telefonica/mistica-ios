@@ -17,9 +17,9 @@ extension UIView {
         let fullName = NSStringFromClass(self)
         let className = fullName.components(separatedBy: ".").last!
         #if SWIFT_PACKAGE
-        let bundle = Bundle.module
+            let bundle = Bundle.module
         #else
-        let bundle = Bundle(for: self)
+            let bundle = Bundle(for: self)
         #endif
         return UINib(nibName: className, bundle: bundle)
     }

@@ -24,7 +24,7 @@ final class FeedbackTests: XCTestCase {
     override class func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
-        
+
         isRecording = false
     }
 
@@ -307,7 +307,7 @@ private extension FeedbackTests {
             shouldHideCloseButton: shouldHideCloseButton,
             modalPresentationStyle: modalPresentationStyle
         )
-        
+
         return FeedbackViewController(
             configuration: configuration,
             backButton: nil,

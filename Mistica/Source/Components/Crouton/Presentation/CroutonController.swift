@@ -8,11 +8,10 @@
 
 import UIKit
 
-@available(iOSApplicationExtension, unavailable)
 public class CroutonController: NSObject {
     public typealias Token = UUID
     public typealias ActionConfig = (text: String, handler: DidTapActionBlock)
-    fileprivate typealias OngoingCrouton = (token: Token, croutonView: CroutonView)
+    fileprivate typealias OngoingCrouton = (token: Token, croutonView: CroutonView, rootViewController: () -> UIViewController?)
 
     public typealias DismissHandlerBlock = () -> Void
     public typealias DidTapActionBlock = () -> Void
@@ -27,7 +26,6 @@ public class CroutonController: NSObject {
 
 // MARK: Public functions
 
-@available(iOSApplicationExtension, unavailable)
 public extension CroutonController {
     /// Show a crouton (or enqueue one if there is already a crouton shown)
     /// - Parameters:
@@ -35,11 +33,38 @@ public extension CroutonController {
     ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
     ///   - style: The style of the crouton, `.info` by default
     ///   - dismissHandler: A handler which is called when the handler is removed from the screen
+    @available(iOSApplicationExtension, unavailable)
     @discardableResult
-    func showCrouton(withText text: String,
-                     action: ActionConfig? = nil,
-                     style: CroutonStyle = .info,
-                     dismissHandler: DismissHandlerBlock? = nil) -> Token {
+    func showCrouton(
+        withText text: String,
+        action: ActionConfig? = nil,
+        style: CroutonStyle = .info,
+        dismissHandler: DismissHandlerBlock? = nil
+    ) -> Token {
+        return showCrouton(
+            withText: text,
+            action: action,
+            style: style,
+            dismissHandler: dismissHandler,
+            rootViewController: UIApplication.shared.keyWindow?.rootViewController
+        )
+    }
+    
+    /// Show a crouton (or enqueue one if there is already a crouton shown)
+    /// - Parameters:
+    ///   - text: The text to display in the crouton
+    ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
+    ///   - style: The style of the crouton, `.info` by default
+    ///   - dismissHandler: A handler which is called when the handler is removed from the screen
+    ///   - rootViewController: The root view controller that will show the crouton.
+    @discardableResult
+    func showCrouton(
+        withText text: String,
+        action: ActionConfig? = nil,
+        style: CroutonStyle = .info,
+        dismissHandler: DismissHandlerBlock? = nil,
+        rootViewController: @escaping @autoclosure () -> UIViewController?
+    ) -> Token {
         assertMainThread()
 
         let config = CroutonConfig(style: style)
@@ -65,7 +90,7 @@ public extension CroutonController {
             dismissHandler: dismissHandler
         )
 
-        show(crouton, token: token)
+        show(crouton, token: token, rootViewController: rootViewController)
 
         return token
     }
@@ -97,10 +122,9 @@ public extension CroutonController {
 
 // MARK: Private methods
 
-@available(iOSApplicationExtension, unavailable)
 private extension CroutonController {
-    func show(_ crouton: CroutonView, token: Token) {
-        enqueue(OngoingCrouton(token: token, croutonView: crouton))
+    func show(_ crouton: CroutonView, token: Token, rootViewController: @escaping () -> UIViewController?) {
+        enqueue(OngoingCrouton(token: token, croutonView: crouton, rootViewController: rootViewController))
 
         showEnqueuedCrouton()
     }
@@ -139,15 +163,15 @@ private extension CroutonController {
     func showEnqueuedCrouton() {
         guard showingToken == nil else { return }
         guard let ongoingCrouton = croutonViewList.first else { return }
-        guard let containerView = visibleContainerView() else { return }
+        guard let containerView = visibleContainerView(ongoingCrouton.rootViewController) else { return }
 
         showingToken = ongoingCrouton.token
 
         ongoingCrouton.croutonView.show(in: containerView)
     }
 
-    func visibleContainerView() -> UIView? {
-        guard let viewController = visibleViewController() else { return nil }
+    func visibleContainerView(_ rootViewController: () -> UIViewController?) -> UIView? {
+        guard let viewController = visibleViewController(rootViewController) else { return nil }
 
         if let viewController = viewController as? CustomCroutonContainer {
             return viewController.customCroutonContainerView
@@ -156,13 +180,9 @@ private extension CroutonController {
         }
     }
 
-    func visibleViewController() -> UIViewController? {
-        guard let window = UIApplication.shared.keyWindow else {
-            assertionFailure("Could not find the app's key window.")
-            return nil
-        }
-        guard let rootViewController = window.rootViewController else {
-            assertionFailure("Has the window a rootViewController?")
+    func visibleViewController(_ rootViewController: () -> UIViewController?) -> UIViewController? {
+        guard let rootViewController = rootViewController() else {
+            assertionFailure("Root view controller not found!")
             return nil
         }
 

@@ -64,6 +64,7 @@
 		7C08A5B312CD6C093A0777AB /* InputFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A0C023382C7D869CDF717 /* InputFieldDelegate.swift */; };
 		7C5C4FA51C8DD0174E91ACA0 /* FeedbackUIAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBB044C1F47FE38007C053 /* FeedbackUIAssets.swift */; };
 		7FD4C59EF8B83AE5EC1CBDF1 /* EmailInputFieldValidationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E757D07E48CDC3FEAF75340 /* EmailInputFieldValidationStrategy.swift */; };
+		8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209DDFD25764401006D91F2 /* CroutonTests.swift */; };
 		83C49A0982B41B48B95AF7C8 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083767C39CB9F8DB5699928 /* RadioButton.swift */; };
 		86E4D10F795ADC42295ADD69 /* UIViewPropertyAnimator+InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E761686C428884CF07312D /* UIViewPropertyAnimator+InputField.swift */; };
 		88882FCE598E7589DBB0E8D8 /* VerticallyCenteredPresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */; };
@@ -226,6 +227,7 @@
 		7D6F1F0A0754AC1E365886A3 /* IntrinsictHeightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsictHeightLabel.swift; sourceTree = "<group>"; };
 		7EEAFF2DEE9339EF597FB6E5 /* crouton-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crouton-info.png"; sourceTree = "<group>"; };
 		7F66B7EF8740501FBBE563A4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8209DDFD25764401006D91F2 /* CroutonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonTests.swift; sourceTree = "<group>"; };
 		824D08C7E0400E39D73D1BE2 /* informative.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = informative.png; sourceTree = "<group>"; };
 		825172D74B7F0CC9F9FB5440 /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center.png; sourceTree = "<group>"; };
 		828462A2F693C09FE52A3958 /* header-inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header-inverse.png"; sourceTree = "<group>"; };
@@ -920,6 +922,7 @@
 				B8BCF901256D113B00D2BCCC /* TestHelpers.swift */,
 				CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */,
 				B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */,
+				8209DDFD25764401006D91F2 /* CroutonTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 			);
 			path = UI;
@@ -1441,6 +1444,7 @@
 			files = (
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
+				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
 				B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */,
 				B4C66DD7256EB8A50087E4B5 /* FeedbackTests.swift in Sources */,

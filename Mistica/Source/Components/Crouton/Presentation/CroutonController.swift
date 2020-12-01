@@ -41,7 +41,7 @@ public extension CroutonController {
         style: CroutonStyle = .info,
         dismissHandler: DismissHandlerBlock? = nil
     ) -> Token {
-        return showCrouton(
+        showCrouton(
             withText: text,
             action: action,
             style: style,
@@ -49,7 +49,7 @@ public extension CroutonController {
             rootViewController: UIApplication.shared.keyWindow?.rootViewController
         )
     }
-    
+
     /// Show a crouton (or enqueue one if there is already a crouton shown)
     /// - Parameters:
     ///   - text: The text to display in the crouton

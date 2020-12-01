@@ -24,6 +24,19 @@ final class BadgeTests: XCTestCase {
     func testNumericBadge() {
         assertSnapshotForAllBrands(as: .image, viewBuilder: makeNumericBadge())
     }
+    
+    func testXIBIntegration() {
+        MisticaConfig.brandStyle = .o2
+
+        let view = BadgeXIBIntegration.viewFromNib()
+        view.flagBadge.style = .flag
+        view.firstNumericBadge.style = .numeric
+        view.firstNumericBadge.value = 7
+        view.secondNumericBadge.style = .numeric
+        view.secondNumericBadge.value = 1000
+
+        assertSnapshot(matching: view, as: .image)
+    }
 }
 
 private extension BadgeTests {

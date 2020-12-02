@@ -16,7 +16,11 @@ extension UIView {
     private class func nib() -> UINib {
         let fullName = NSStringFromClass(self)
         let className = fullName.components(separatedBy: ".").last!
-        let bundle = Bundle(for: self)
+        #if SWIFT_PACKAGE
+            let bundle = Bundle.module
+        #else
+            let bundle = Bundle(for: self)
+        #endif
         return UINib(nibName: className, bundle: bundle)
     }
 

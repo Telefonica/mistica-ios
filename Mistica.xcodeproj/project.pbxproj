@@ -64,10 +64,10 @@
 		7C08A5B312CD6C093A0777AB /* InputFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A0C023382C7D869CDF717 /* InputFieldDelegate.swift */; };
 		7C5C4FA51C8DD0174E91ACA0 /* FeedbackUIAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FBB044C1F47FE38007C053 /* FeedbackUIAssets.swift */; };
 		7FD4C59EF8B83AE5EC1CBDF1 /* EmailInputFieldValidationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E757D07E48CDC3FEAF75340 /* EmailInputFieldValidationStrategy.swift */; };
+		8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209DDFD25764401006D91F2 /* CroutonTests.swift */; };
 		8209DE0325769688006D91F2 /* BadgeXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8209DE0225769688006D91F2 /* BadgeXIBIntegration.xib */; };
 		8209DE0925769860006D91F2 /* BadgeXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209DE052576983F006D91F2 /* BadgeXIBIntegration.swift */; };
 		82CF1540257567C700867797 /* BadgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF153C257567A000867797 /* BadgeTests.swift */; };
-		8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209DDFD25764401006D91F2 /* CroutonTests.swift */; };
 		83C49A0982B41B48B95AF7C8 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083767C39CB9F8DB5699928 /* RadioButton.swift */; };
 		86E4D10F795ADC42295ADD69 /* UIViewPropertyAnimator+InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E761686C428884CF07312D /* UIViewPropertyAnimator+InputField.swift */; };
 		88882FCE598E7589DBB0E8D8 /* VerticallyCenteredPresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */; };
@@ -119,17 +119,113 @@
 		F73BFB7D25751EBD000E3C1E /* CheckBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFB7A25751E8A000E3C1E /* CheckBoxTests.swift */; };
 		F73D6C6225750D340012A2C4 /* CheckBoxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckBoxXIBIntegration.swift */; };
 		F73D6C6825750DB30012A2C4 /* CheckBoxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckBoxXIBIntegration.xib */; };
-		F74CB4DA2575448100260675 /* testCheckboxActiveCheckedState.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4CF2575448000260675 /* testCheckboxActiveCheckedState.with-movistar-style.png */; };
-		F74CB4DB2575448100260675 /* testCheckboxDefaultState.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D02575448000260675 /* testCheckboxDefaultState.with-o2Classic-style.png */; };
-		F74CB4DC2575448100260675 /* testCheckboxIsChecked.finalState.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D12575448000260675 /* testCheckboxIsChecked.finalState.png */; };
-		F74CB4DD2575448100260675 /* testCheckboxActiveCheckedState.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D22575448000260675 /* testCheckboxActiveCheckedState.with-o2Classic-style.png */; };
-		F74CB4DE2575448100260675 /* testCheckboxActiveCheckedState.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D32575448000260675 /* testCheckboxActiveCheckedState.with-vivo-style.png */; };
-		F74CB4DF2575448100260675 /* testXIBIntegration.1.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D42575448000260675 /* testXIBIntegration.1.png */; };
-		F74CB4E02575448100260675 /* testCheckboxDefaultState.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D52575448000260675 /* testCheckboxDefaultState.with-o2-style.png */; };
 		F74CB4E12575448100260675 /* testCheckboxIsChecked.assertInitialState.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D62575448000260675 /* testCheckboxIsChecked.assertInitialState.png */; };
 		F74CB4E22575448100260675 /* testCheckboxDefaultState.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D72575448000260675 /* testCheckboxDefaultState.with-vivo-style.png */; };
-		F74CB4E32575448100260675 /* testCheckboxDefaultState.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D82575448000260675 /* testCheckboxDefaultState.with-movistar-style.png */; };
-		F74CB4E42575448100260675 /* testCheckboxActiveCheckedState.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F74CB4D92575448000260675 /* testCheckboxActiveCheckedState.with-o2-style.png */; };
+		F7A78F3A2577F7F80013B78E /* testNumericBadge.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ECF2577F7F80013B78E /* testNumericBadge.with-movistar-style.png */; };
+		F7A78F3B2577F7F80013B78E /* testFlagBadge.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED02577F7F80013B78E /* testFlagBadge.with-o2Classic-style.png */; };
+		F7A78F3C2577F7F80013B78E /* testNumericBadge.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED12577F7F80013B78E /* testNumericBadge.with-vivo-style.png */; };
+		F7A78F3D2577F7F80013B78E /* testFlagBadge.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED22577F7F80013B78E /* testFlagBadge.with-o2-style.png */; };
+		F7A78F3E2577F7F80013B78E /* testNumericBadge.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED32577F7F80013B78E /* testNumericBadge.with-o2-style.png */; };
+		F7A78F3F2577F7F80013B78E /* testXIBIntegration.1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED42577F7F80013B78E /* testXIBIntegration.1.png */; };
+		F7A78F402577F7F80013B78E /* testFlagBadge.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED52577F7F80013B78E /* testFlagBadge.with-vivo-style.png */; };
+		F7A78F412577F7F80013B78E /* testNumericBadge.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED62577F7F80013B78E /* testNumericBadge.with-o2Classic-style.png */; };
+		F7A78F422577F7F80013B78E /* testFlagBadge.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED72577F7F80013B78E /* testFlagBadge.with-movistar-style.png */; };
+		F7A78F432577F7F80013B78E /* testCriticalCrouton.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED92577F7F80013B78E /* testCriticalCrouton.with-o2-style.png */; };
+		F7A78F442577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDA2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png */; };
+		F7A78F452577F7F80013B78E /* testInfoCrouton.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDB2577F7F80013B78E /* testInfoCrouton.with-movistar-style.png */; };
+		F7A78F462577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDC2577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2-style.png */; };
+		F7A78F472577F7F80013B78E /* testCriticalCrouton.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDD2577F7F80013B78E /* testCriticalCrouton.with-movistar-style.png */; };
+		F7A78F482577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDE2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2-style.png */; };
+		F7A78F492577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDF2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-vivo-style.png */; };
+		F7A78F4A2577F7F80013B78E /* testInfoCrouton.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE02577F7F80013B78E /* testInfoCrouton.with-vivo-style.png */; };
+		F7A78F4B2577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE12577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-movistar-style.png */; };
+		F7A78F4C2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE22577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-vivo-style.png */; };
+		F7A78F4D2577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE32577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-movistar-style.png */; };
+		F7A78F4E2577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE42577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-vivo-style.png */; };
+		F7A78F4F2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE52577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-movistar-style.png */; };
+		F7A78F502577F7F80013B78E /* testInfoCrouton.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE62577F7F80013B78E /* testInfoCrouton.with-o2Classic-style.png */; };
+		F7A78F512577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE72577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-vivo-style.png */; };
+		F7A78F522577F7F80013B78E /* testCriticalCrouton.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE82577F7F80013B78E /* testCriticalCrouton.with-vivo-style.png */; };
+		F7A78F532577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EE92577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2-style.png */; };
+		F7A78F542577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EEA2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2Classic-style.png */; };
+		F7A78F552577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EEB2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2Classic-style.png */; };
+		F7A78F562577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EEC2577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2Classic-style.png */; };
+		F7A78F572577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EED2577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2Classic-style.png */; };
+		F7A78F582577F7F80013B78E /* testInfoCrouton.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EEE2577F7F80013B78E /* testInfoCrouton.with-o2-style.png */; };
+		F7A78F592577F7F80013B78E /* testCriticalCrouton.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EEF2577F7F80013B78E /* testCriticalCrouton.with-o2Classic-style.png */; };
+		F7A78F5A2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EF02577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-movistar-style.png */; };
+		F7A78F5B2577F7F80013B78E /* testInformativeMultilineScroll.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EF22577F7F80013B78E /* testInformativeMultilineScroll.with-vivo-style.png */; };
+		F7A78F5C2577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EF32577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-vivo-style.png */; };
+		F7A78F5D2577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EF42577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2-style.png */; };
+		F7A78F5E2577F7F80013B78E /* testInformativePrimaryButton.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EF52577F7F80013B78E /* testInformativePrimaryButton.with-vivo-style.png */; };
+		F7A78F5F2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EF62577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2-style.png */; };
+		F7A78F602577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EF72577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-o2-style.png */; };
+		F7A78F612577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EF82577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-movistar-style.png */; };
+		F7A78F622577F7F80013B78E /* testSuccessMultiline.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EF92577F7F80013B78E /* testSuccessMultiline.with-vivo-style.png */; };
+		F7A78F632577F7F80013B78E /* testErrorPrimaryRetryButton.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EFA2577F7F80013B78E /* testErrorPrimaryRetryButton.with-o2Classic-style.png */; };
+		F7A78F642577F7F80013B78E /* testSuccessTitle.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EFB2577F7F80013B78E /* testSuccessTitle.with-vivo-style.png */; };
+		F7A78F652577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EFC2577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2-style.png */; };
+		F7A78F662577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EFD2577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2Classic-style.png */; };
+		F7A78F672577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EFE2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-movistar-style.png */; };
+		F7A78F682577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EFF2577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-movistar-style.png */; };
+		F7A78F692577F7F80013B78E /* testSuccessSecondaryButton.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F002577F7F80013B78E /* testSuccessSecondaryButton.with-o2Classic-style.png */; };
+		F7A78F6A2577F7F80013B78E /* testSuccessPrimaryButton.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F012577F7F80013B78E /* testSuccessPrimaryButton.with-movistar-style.png */; };
+		F7A78F6B2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F022577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2-style.png */; };
+		F7A78F6C2577F7F80013B78E /* testInformativeMultilineScroll.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F032577F7F80013B78E /* testInformativeMultilineScroll.with-movistar-style.png */; };
+		F7A78F6D2577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F042577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-vivo-style.png */; };
+		F7A78F6E2577F7F80013B78E /* testInformativeTitleAndSubtitle.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F052577F7F80013B78E /* testInformativeTitleAndSubtitle.with-movistar-style.png */; };
+		F7A78F6F2577F7F80013B78E /* testInformativePrimaryButton.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F062577F7F80013B78E /* testInformativePrimaryButton.with-o2Classic-style.png */; };
+		F7A78F702577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F072577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-vivo-style.png */; };
+		F7A78F712577F7F80013B78E /* testErrorTitleAndSubtitle.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F082577F7F80013B78E /* testErrorTitleAndSubtitle.with-o2Classic-style.png */; };
+		F7A78F722577F7F80013B78E /* testSuccessSecondaryButton.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F092577F7F80013B78E /* testSuccessSecondaryButton.with-vivo-style.png */; };
+		F7A78F732577F7F80013B78E /* testErrorSecondaryButtonLink.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F0A2577F7F80013B78E /* testErrorSecondaryButtonLink.with-movistar-style.png */; };
+		F7A78F742577F7F80013B78E /* testSuccessMultiline.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F0B2577F7F80013B78E /* testSuccessMultiline.with-o2-style.png */; };
+		F7A78F752577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F0C2577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2Classic-style.png */; };
+		F7A78F762577F7F80013B78E /* testInformativePrimaryButton.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F0D2577F7F80013B78E /* testInformativePrimaryButton.with-movistar-style.png */; };
+		F7A78F772577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F0E2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2Classic-style.png */; };
+		F7A78F782577F7F90013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F0F2577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2Classic-style.png */; };
+		F7A78F792577F7F90013B78E /* testSuccessMultiline.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F102577F7F80013B78E /* testSuccessMultiline.with-o2Classic-style.png */; };
+		F7A78F7A2577F7F90013B78E /* testSuccessTitle.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F112577F7F80013B78E /* testSuccessTitle.with-o2-style.png */; };
+		F7A78F7B2577F7F90013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F122577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-vivo-style.png */; };
+		F7A78F7C2577F7F90013B78E /* testInformativeMultilineScroll.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F132577F7F80013B78E /* testInformativeMultilineScroll.with-o2-style.png */; };
+		F7A78F7D2577F7F90013B78E /* testSuccessSecondaryButton.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F142577F7F80013B78E /* testSuccessSecondaryButton.with-movistar-style.png */; };
+		F7A78F7E2577F7F90013B78E /* testErrorPrimaryRetryButton.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F152577F7F80013B78E /* testErrorPrimaryRetryButton.with-movistar-style.png */; };
+		F7A78F7F2577F7F90013B78E /* testSuccessTitle.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F162577F7F80013B78E /* testSuccessTitle.with-movistar-style.png */; };
+		F7A78F802577F7F90013B78E /* testInformativeSecondaryButtonLink.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F172577F7F80013B78E /* testInformativeSecondaryButtonLink.with-movistar-style.png */; };
+		F7A78F812577F7F90013B78E /* testInformativeMultilineScroll.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F182577F7F80013B78E /* testInformativeMultilineScroll.with-o2Classic-style.png */; };
+		F7A78F822577F7F90013B78E /* testSuccessPrimaryAndSecondaryButton.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F192577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-movistar-style.png */; };
+		F7A78F832577F7F90013B78E /* testSuccessMultiline.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F1A2577F7F80013B78E /* testSuccessMultiline.with-movistar-style.png */; };
+		F7A78F842577F7F90013B78E /* testErrorTitleAndSubtitle.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F1B2577F7F80013B78E /* testErrorTitleAndSubtitle.with-vivo-style.png */; };
+		F7A78F852577F7F90013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F1C2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2Classic-style.png */; };
+		F7A78F862577F7F90013B78E /* testErrorTitleAndSubtitle.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F1D2577F7F80013B78E /* testErrorTitleAndSubtitle.with-movistar-style.png */; };
+		F7A78F872577F7F90013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F1E2577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2Classic-style.png */; };
+		F7A78F882577F7F90013B78E /* testErrorTitleAndSubtitle.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F1F2577F7F80013B78E /* testErrorTitleAndSubtitle.with-o2-style.png */; };
+		F7A78F892577F7F90013B78E /* testErrorPrimaryRetryButton.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F202577F7F80013B78E /* testErrorPrimaryRetryButton.with-vivo-style.png */; };
+		F7A78F8A2577F7F90013B78E /* testErrorMultilineScrollWithButtons.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F212577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-o2Classic-style.png */; };
+		F7A78F8B2577F7F90013B78E /* testErrorSecondaryButtonLink.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F222577F7F80013B78E /* testErrorSecondaryButtonLink.with-o2Classic-style.png */; };
+		F7A78F8C2577F7F90013B78E /* testSuccessSecondaryButton.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F232577F7F80013B78E /* testSuccessSecondaryButton.with-o2-style.png */; };
+		F7A78F8D2577F7F90013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F242577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2-style.png */; };
+		F7A78F8E2577F7F90013B78E /* testSuccessPrimaryButton.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F252577F7F80013B78E /* testSuccessPrimaryButton.with-vivo-style.png */; };
+		F7A78F8F2577F7F90013B78E /* testInformativeSecondaryButtonLink.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F262577F7F80013B78E /* testInformativeSecondaryButtonLink.with-vivo-style.png */; };
+		F7A78F902577F7F90013B78E /* testInformativeSecondaryButtonLinkCustomView.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F272577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-movistar-style.png */; };
+		F7A78F912577F7F90013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F282577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2Classic-style.png */; };
+		F7A78F922577F7F90013B78E /* testSuccessPrimaryAndSecondaryButton.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F292577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-vivo-style.png */; };
+		F7A78F932577F7F90013B78E /* testInformativeSecondaryButtonLinkCustomView.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F2A2577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-vivo-style.png */; };
+		F7A78F942577F7F90013B78E /* testInformativeTitleAndSubtitle.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F2B2577F7F80013B78E /* testInformativeTitleAndSubtitle.with-vivo-style.png */; };
+		F7A78F952577F7F90013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F2C2577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2-style.png */; };
+		F7A78F962577F7F90013B78E /* testInformativeTitleAndSubtitle.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F2D2577F7F80013B78E /* testInformativeTitleAndSubtitle.with-o2-style.png */; };
+		F7A78F972577F7F90013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F2E2577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-vivo-style.png */; };
+		F7A78F982577F7F90013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F2F2577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2-style.png */; };
+		F7A78F992577F7F90013B78E /* testSuccessPrimaryButton.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F302577F7F80013B78E /* testSuccessPrimaryButton.with-o2-style.png */; };
+		F7A78F9A2577F7F90013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F312577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-movistar-style.png */; };
+		F7A78F9B2577F7F90013B78E /* testErrorSecondaryButtonLink.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F322577F7F80013B78E /* testErrorSecondaryButtonLink.with-o2-style.png */; };
+		F7A78F9C2577F7F90013B78E /* testInformativePrimaryButton.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F332577F7F80013B78E /* testInformativePrimaryButton.with-o2-style.png */; };
+		F7A78F9D2577F7F90013B78E /* testSuccessTitle.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F342577F7F80013B78E /* testSuccessTitle.with-o2Classic-style.png */; };
+		F7A78F9E2577F7F90013B78E /* testSuccessPrimaryButton.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F352577F7F80013B78E /* testSuccessPrimaryButton.with-o2Classic-style.png */; };
+		F7A78F9F2577F7F90013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F362577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-movistar-style.png */; };
+		F7A78FA02577F7F90013B78E /* testInformativeTitleAndSubtitle.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F372577F7F80013B78E /* testInformativeTitleAndSubtitle.with-o2Classic-style.png */; };
+		F7A78FA12577F7F90013B78E /* testErrorSecondaryButtonLink.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F382577F7F80013B78E /* testErrorSecondaryButtonLink.with-vivo-style.png */; };
+		F7A78FA22577F7F90013B78E /* testErrorPrimaryRetryButton.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78F392577F7F80013B78E /* testErrorPrimaryRetryButton.with-o2-style.png */; };
 		F948E84103076A2F9DB64915 /* BrandStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2171DEE8E3CD47EE049D0 /* BrandStyle.swift */; };
 		FB5A638A94B3B96ECAA3AC4A /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1E862C434A3F09F5E2251 /* SpacerView.swift */; };
 		FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2FF52F0B92407878CA43 /* IntrinsicMaxButtonWidthContainerView.swift */; };
@@ -244,9 +340,9 @@
 		7D6F1F0A0754AC1E365886A3 /* IntrinsictHeightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsictHeightLabel.swift; sourceTree = "<group>"; };
 		7EEAFF2DEE9339EF597FB6E5 /* crouton-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "crouton-info.png"; sourceTree = "<group>"; };
 		7F66B7EF8740501FBBE563A4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8209DDFD25764401006D91F2 /* CroutonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonTests.swift; sourceTree = "<group>"; };
 		8209DE0225769688006D91F2 /* BadgeXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeXIBIntegration.xib; sourceTree = "<group>"; };
 		8209DE052576983F006D91F2 /* BadgeXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeXIBIntegration.swift; sourceTree = "<group>"; };
-		8209DDFD25764401006D91F2 /* CroutonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonTests.swift; sourceTree = "<group>"; };
 		824D08C7E0400E39D73D1BE2 /* informative.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = informative.png; sourceTree = "<group>"; };
 		825172D74B7F0CC9F9FB5440 /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center.png; sourceTree = "<group>"; };
 		828462A2F693C09FE52A3958 /* header-inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header-inverse.png"; sourceTree = "<group>"; };
@@ -428,6 +524,111 @@
 		F74CB4D72575448000260675 /* testCheckboxDefaultState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-vivo-style.png"; sourceTree = "<group>"; };
 		F74CB4D82575448000260675 /* testCheckboxDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
 		F74CB4D92575448000260675 /* testCheckboxActiveCheckedState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78ECF2577F7F80013B78E /* testNumericBadge.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNumericBadge.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78ED02577F7F80013B78E /* testFlagBadge.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78ED12577F7F80013B78E /* testNumericBadge.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNumericBadge.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78ED22577F7F80013B78E /* testFlagBadge.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78ED32577F7F80013B78E /* testNumericBadge.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNumericBadge.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78ED42577F7F80013B78E /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
+		F7A78ED52577F7F80013B78E /* testFlagBadge.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78ED62577F7F80013B78E /* testNumericBadge.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNumericBadge.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78ED72577F7F80013B78E /* testFlagBadge.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78ED92577F7F80013B78E /* testCriticalCrouton.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCrouton.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EDA2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithLongActionTitle.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EDB2577F7F80013B78E /* testInfoCrouton.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCrouton.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78EDC2577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCroutonWithShortActionTitle.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EDD2577F7F80013B78E /* testCriticalCrouton.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCrouton.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78EDE2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCroutonWithLongActionTitle.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EDF2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCroutonWithLongActionTitle.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EE02577F7F80013B78E /* testInfoCrouton.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCrouton.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EE12577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCroutonWithShortActionTitle.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78EE22577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithLongActionTitle.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EE32577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithShortActionTitle.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78EE42577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithShortActionTitle.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EE52577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCroutonWithLongActionTitle.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78EE62577F7F80013B78E /* testInfoCrouton.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCrouton.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78EE72577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCroutonWithShortActionTitle.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EE82577F7F80013B78E /* testCriticalCrouton.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCrouton.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EE92577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithShortActionTitle.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EEA2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCroutonWithLongActionTitle.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78EEB2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithLongActionTitle.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78EEC2577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithShortActionTitle.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78EED2577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCroutonWithShortActionTitle.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78EEE2577F7F80013B78E /* testInfoCrouton.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCrouton.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EEF2577F7F80013B78E /* testCriticalCrouton.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCrouton.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78EF02577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithLongActionTitle.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78EF22577F7F80013B78E /* testInformativeMultilineScroll.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeMultilineScroll.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EF32577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorMultilineScrollWithButtons.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EF42577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorPrimaryRetryAndSecondaryButtonLink.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EF52577F7F80013B78E /* testInformativePrimaryButton.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativePrimaryButton.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EF62577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryAndSecondaryButton.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EF72577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorMultilineScrollWithButtons.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EF82577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorSecondaryPrimaryButtonCustomView.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78EF92577F7F80013B78E /* testSuccessMultiline.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessMultiline.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EFA2577F7F80013B78E /* testErrorPrimaryRetryButton.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorPrimaryRetryButton.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78EFB2577F7F80013B78E /* testSuccessTitle.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessTitle.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78EFC2577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeSecondaryButtonLink.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78EFD2577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativePrimaryAndSecondaryButtonLink.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78EFE2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78EFF2577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorMultilineScrollWithButtons.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F002577F7F80013B78E /* testSuccessSecondaryButton.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessSecondaryButton.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F012577F7F80013B78E /* testSuccessPrimaryButton.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryButton.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F022577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F032577F7F80013B78E /* testInformativeMultilineScroll.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeMultilineScroll.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F042577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativePrimaryAndSecondaryButtonLink.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F052577F7F80013B78E /* testInformativeTitleAndSubtitle.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeTitleAndSubtitle.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F062577F7F80013B78E /* testInformativePrimaryButton.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativePrimaryButton.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F072577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorPrimaryRetryAndSecondaryButtonLink.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F082577F7F80013B78E /* testErrorTitleAndSubtitle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorTitleAndSubtitle.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F092577F7F80013B78E /* testSuccessSecondaryButton.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessSecondaryButton.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F0A2577F7F80013B78E /* testErrorSecondaryButtonLink.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorSecondaryButtonLink.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F0B2577F7F80013B78E /* testSuccessMultiline.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessMultiline.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F0C2577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeSecondaryButtonLink.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F0D2577F7F80013B78E /* testInformativePrimaryButton.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativePrimaryButton.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F0E2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryAndSecondaryButton.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F0F2577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorPrimaryRetryAndSecondaryButtonLink.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F102577F7F80013B78E /* testSuccessMultiline.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessMultiline.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F112577F7F80013B78E /* testSuccessTitle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessTitle.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F122577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F132577F7F80013B78E /* testInformativeMultilineScroll.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeMultilineScroll.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F142577F7F80013B78E /* testSuccessSecondaryButton.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessSecondaryButton.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F152577F7F80013B78E /* testErrorPrimaryRetryButton.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorPrimaryRetryButton.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F162577F7F80013B78E /* testSuccessTitle.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessTitle.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F172577F7F80013B78E /* testInformativeSecondaryButtonLink.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeSecondaryButtonLink.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F182577F7F80013B78E /* testInformativeMultilineScroll.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeMultilineScroll.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F192577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryAndSecondaryButton.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F1A2577F7F80013B78E /* testSuccessMultiline.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessMultiline.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F1B2577F7F80013B78E /* testErrorTitleAndSubtitle.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorTitleAndSubtitle.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F1C2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F1D2577F7F80013B78E /* testErrorTitleAndSubtitle.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorTitleAndSubtitle.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F1E2577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorSecondaryPrimaryButtonCustomView.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F1F2577F7F80013B78E /* testErrorTitleAndSubtitle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorTitleAndSubtitle.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F202577F7F80013B78E /* testErrorPrimaryRetryButton.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorPrimaryRetryButton.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F212577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorMultilineScrollWithButtons.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F222577F7F80013B78E /* testErrorSecondaryButtonLink.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorSecondaryButtonLink.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F232577F7F80013B78E /* testSuccessSecondaryButton.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessSecondaryButton.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F242577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorSecondaryPrimaryButtonCustomView.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F252577F7F80013B78E /* testSuccessPrimaryButton.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryButton.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F262577F7F80013B78E /* testInformativeSecondaryButtonLink.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeSecondaryButtonLink.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F272577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeSecondaryButtonLinkCustomView.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F282577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeSecondaryButtonLinkCustomView.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F292577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryAndSecondaryButton.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F2A2577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeSecondaryButtonLinkCustomView.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F2B2577F7F80013B78E /* testInformativeTitleAndSubtitle.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeTitleAndSubtitle.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F2C2577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativePrimaryAndSecondaryButtonLink.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F2D2577F7F80013B78E /* testInformativeTitleAndSubtitle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeTitleAndSubtitle.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F2E2577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorSecondaryPrimaryButtonCustomView.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F2F2577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeSecondaryButtonLinkCustomView.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F302577F7F80013B78E /* testSuccessPrimaryButton.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryButton.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F312577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativePrimaryAndSecondaryButtonLink.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F322577F7F80013B78E /* testErrorSecondaryButtonLink.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorSecondaryButtonLink.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F332577F7F80013B78E /* testInformativePrimaryButton.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativePrimaryButton.with-o2-style.png"; sourceTree = "<group>"; };
+		F7A78F342577F7F80013B78E /* testSuccessTitle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessTitle.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F352577F7F80013B78E /* testSuccessPrimaryButton.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSuccessPrimaryButton.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F362577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorPrimaryRetryAndSecondaryButtonLink.with-movistar-style.png"; sourceTree = "<group>"; };
+		F7A78F372577F7F80013B78E /* testInformativeTitleAndSubtitle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInformativeTitleAndSubtitle.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		F7A78F382577F7F80013B78E /* testErrorSecondaryButtonLink.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorSecondaryButtonLink.with-vivo-style.png"; sourceTree = "<group>"; };
+		F7A78F392577F7F80013B78E /* testErrorPrimaryRetryButton.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testErrorPrimaryRetryButton.with-o2-style.png"; sourceTree = "<group>"; };
 		F9982D822AACCA74B34989A6 /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
 		FC4EF4BBC11420C556337C0E /* Bundle+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Mistica.swift"; sourceTree = "<group>"; };
 		FDC1885EBE249BAA8A791EA0 /* scroll-content-indicator-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll-content-indicator-info.png"; sourceTree = "<group>"; };
@@ -490,6 +691,9 @@
 		0B3C024EEA152B58A19951D6 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
+				F7A78ECE2577F7F80013B78E /* BadgeTests */,
+				F7A78ED82577F7F80013B78E /* CroutonTests */,
+				F7A78EF12577F7F80013B78E /* FeedbackTests */,
 				F74CB4CE2575448000260675 /* CheckBoxTests */,
 				244B1E13DB639AE1DC1620F0 /* ButtonTests */,
 			);
@@ -1382,6 +1586,132 @@
 			path = CheckBoxTests;
 			sourceTree = "<group>";
 		};
+		F7A78ECE2577F7F80013B78E /* BadgeTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7A78ECF2577F7F80013B78E /* testNumericBadge.with-movistar-style.png */,
+				F7A78ED02577F7F80013B78E /* testFlagBadge.with-o2Classic-style.png */,
+				F7A78ED12577F7F80013B78E /* testNumericBadge.with-vivo-style.png */,
+				F7A78ED22577F7F80013B78E /* testFlagBadge.with-o2-style.png */,
+				F7A78ED32577F7F80013B78E /* testNumericBadge.with-o2-style.png */,
+				F7A78ED42577F7F80013B78E /* testXIBIntegration.1.png */,
+				F7A78ED52577F7F80013B78E /* testFlagBadge.with-vivo-style.png */,
+				F7A78ED62577F7F80013B78E /* testNumericBadge.with-o2Classic-style.png */,
+				F7A78ED72577F7F80013B78E /* testFlagBadge.with-movistar-style.png */,
+			);
+			path = BadgeTests;
+			sourceTree = "<group>";
+		};
+		F7A78ED82577F7F80013B78E /* CroutonTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7A78ED92577F7F80013B78E /* testCriticalCrouton.with-o2-style.png */,
+				F7A78EDA2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png */,
+				F7A78EDB2577F7F80013B78E /* testInfoCrouton.with-movistar-style.png */,
+				F7A78EDC2577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2-style.png */,
+				F7A78EDD2577F7F80013B78E /* testCriticalCrouton.with-movistar-style.png */,
+				F7A78EDE2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2-style.png */,
+				F7A78EDF2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-vivo-style.png */,
+				F7A78EE02577F7F80013B78E /* testInfoCrouton.with-vivo-style.png */,
+				F7A78EE12577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-movistar-style.png */,
+				F7A78EE22577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-vivo-style.png */,
+				F7A78EE32577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-movistar-style.png */,
+				F7A78EE42577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-vivo-style.png */,
+				F7A78EE52577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-movistar-style.png */,
+				F7A78EE62577F7F80013B78E /* testInfoCrouton.with-o2Classic-style.png */,
+				F7A78EE72577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-vivo-style.png */,
+				F7A78EE82577F7F80013B78E /* testCriticalCrouton.with-vivo-style.png */,
+				F7A78EE92577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2-style.png */,
+				F7A78EEA2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2Classic-style.png */,
+				F7A78EEB2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2Classic-style.png */,
+				F7A78EEC2577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2Classic-style.png */,
+				F7A78EED2577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2Classic-style.png */,
+				F7A78EEE2577F7F80013B78E /* testInfoCrouton.with-o2-style.png */,
+				F7A78EEF2577F7F80013B78E /* testCriticalCrouton.with-o2Classic-style.png */,
+				F7A78EF02577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-movistar-style.png */,
+			);
+			path = CroutonTests;
+			sourceTree = "<group>";
+		};
+		F7A78EF12577F7F80013B78E /* FeedbackTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7A78EF22577F7F80013B78E /* testInformativeMultilineScroll.with-vivo-style.png */,
+				F7A78EF32577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-vivo-style.png */,
+				F7A78EF42577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2-style.png */,
+				F7A78EF52577F7F80013B78E /* testInformativePrimaryButton.with-vivo-style.png */,
+				F7A78EF62577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2-style.png */,
+				F7A78EF72577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-o2-style.png */,
+				F7A78EF82577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-movistar-style.png */,
+				F7A78EF92577F7F80013B78E /* testSuccessMultiline.with-vivo-style.png */,
+				F7A78EFA2577F7F80013B78E /* testErrorPrimaryRetryButton.with-o2Classic-style.png */,
+				F7A78EFB2577F7F80013B78E /* testSuccessTitle.with-vivo-style.png */,
+				F7A78EFC2577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2-style.png */,
+				F7A78EFD2577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2Classic-style.png */,
+				F7A78EFE2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-movistar-style.png */,
+				F7A78EFF2577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-movistar-style.png */,
+				F7A78F002577F7F80013B78E /* testSuccessSecondaryButton.with-o2Classic-style.png */,
+				F7A78F012577F7F80013B78E /* testSuccessPrimaryButton.with-movistar-style.png */,
+				F7A78F022577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2-style.png */,
+				F7A78F032577F7F80013B78E /* testInformativeMultilineScroll.with-movistar-style.png */,
+				F7A78F042577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-vivo-style.png */,
+				F7A78F052577F7F80013B78E /* testInformativeTitleAndSubtitle.with-movistar-style.png */,
+				F7A78F062577F7F80013B78E /* testInformativePrimaryButton.with-o2Classic-style.png */,
+				F7A78F072577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-vivo-style.png */,
+				F7A78F082577F7F80013B78E /* testErrorTitleAndSubtitle.with-o2Classic-style.png */,
+				F7A78F092577F7F80013B78E /* testSuccessSecondaryButton.with-vivo-style.png */,
+				F7A78F0A2577F7F80013B78E /* testErrorSecondaryButtonLink.with-movistar-style.png */,
+				F7A78F0B2577F7F80013B78E /* testSuccessMultiline.with-o2-style.png */,
+				F7A78F0C2577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2Classic-style.png */,
+				F7A78F0D2577F7F80013B78E /* testInformativePrimaryButton.with-movistar-style.png */,
+				F7A78F0E2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2Classic-style.png */,
+				F7A78F0F2577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2Classic-style.png */,
+				F7A78F102577F7F80013B78E /* testSuccessMultiline.with-o2Classic-style.png */,
+				F7A78F112577F7F80013B78E /* testSuccessTitle.with-o2-style.png */,
+				F7A78F122577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-vivo-style.png */,
+				F7A78F132577F7F80013B78E /* testInformativeMultilineScroll.with-o2-style.png */,
+				F7A78F142577F7F80013B78E /* testSuccessSecondaryButton.with-movistar-style.png */,
+				F7A78F152577F7F80013B78E /* testErrorPrimaryRetryButton.with-movistar-style.png */,
+				F7A78F162577F7F80013B78E /* testSuccessTitle.with-movistar-style.png */,
+				F7A78F172577F7F80013B78E /* testInformativeSecondaryButtonLink.with-movistar-style.png */,
+				F7A78F182577F7F80013B78E /* testInformativeMultilineScroll.with-o2Classic-style.png */,
+				F7A78F192577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-movistar-style.png */,
+				F7A78F1A2577F7F80013B78E /* testSuccessMultiline.with-movistar-style.png */,
+				F7A78F1B2577F7F80013B78E /* testErrorTitleAndSubtitle.with-vivo-style.png */,
+				F7A78F1C2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2Classic-style.png */,
+				F7A78F1D2577F7F80013B78E /* testErrorTitleAndSubtitle.with-movistar-style.png */,
+				F7A78F1E2577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2Classic-style.png */,
+				F7A78F1F2577F7F80013B78E /* testErrorTitleAndSubtitle.with-o2-style.png */,
+				F7A78F202577F7F80013B78E /* testErrorPrimaryRetryButton.with-vivo-style.png */,
+				F7A78F212577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-o2Classic-style.png */,
+				F7A78F222577F7F80013B78E /* testErrorSecondaryButtonLink.with-o2Classic-style.png */,
+				F7A78F232577F7F80013B78E /* testSuccessSecondaryButton.with-o2-style.png */,
+				F7A78F242577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2-style.png */,
+				F7A78F252577F7F80013B78E /* testSuccessPrimaryButton.with-vivo-style.png */,
+				F7A78F262577F7F80013B78E /* testInformativeSecondaryButtonLink.with-vivo-style.png */,
+				F7A78F272577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-movistar-style.png */,
+				F7A78F282577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2Classic-style.png */,
+				F7A78F292577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-vivo-style.png */,
+				F7A78F2A2577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-vivo-style.png */,
+				F7A78F2B2577F7F80013B78E /* testInformativeTitleAndSubtitle.with-vivo-style.png */,
+				F7A78F2C2577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2-style.png */,
+				F7A78F2D2577F7F80013B78E /* testInformativeTitleAndSubtitle.with-o2-style.png */,
+				F7A78F2E2577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-vivo-style.png */,
+				F7A78F2F2577F7F80013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2-style.png */,
+				F7A78F302577F7F80013B78E /* testSuccessPrimaryButton.with-o2-style.png */,
+				F7A78F312577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-movistar-style.png */,
+				F7A78F322577F7F80013B78E /* testErrorSecondaryButtonLink.with-o2-style.png */,
+				F7A78F332577F7F80013B78E /* testInformativePrimaryButton.with-o2-style.png */,
+				F7A78F342577F7F80013B78E /* testSuccessTitle.with-o2Classic-style.png */,
+				F7A78F352577F7F80013B78E /* testSuccessPrimaryButton.with-o2Classic-style.png */,
+				F7A78F362577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-movistar-style.png */,
+				F7A78F372577F7F80013B78E /* testInformativeTitleAndSubtitle.with-o2Classic-style.png */,
+				F7A78F382577F7F80013B78E /* testErrorSecondaryButtonLink.with-vivo-style.png */,
+				F7A78F392577F7F80013B78E /* testErrorPrimaryRetryButton.with-o2-style.png */,
+			);
+			path = FeedbackTests;
+			sourceTree = "<group>";
+		};
 		FA5DB9DC31767152F4B12355 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1494,7 +1824,112 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A78F582577F7F80013B78E /* testInfoCrouton.with-o2-style.png in Resources */,
+				F7A78F9D2577F7F90013B78E /* testSuccessTitle.with-o2Classic-style.png in Resources */,
+				F7A78F772577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2Classic-style.png in Resources */,
+				F7A78F5B2577F7F80013B78E /* testInformativeMultilineScroll.with-vivo-style.png in Resources */,
+				F7A78F472577F7F80013B78E /* testCriticalCrouton.with-movistar-style.png in Resources */,
+				F7A78F642577F7F80013B78E /* testSuccessTitle.with-vivo-style.png in Resources */,
+				F7A78F4E2577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-vivo-style.png in Resources */,
+				F7A78F892577F7F90013B78E /* testErrorPrimaryRetryButton.with-vivo-style.png in Resources */,
+				F7A78FA02577F7F90013B78E /* testInformativeTitleAndSubtitle.with-o2Classic-style.png in Resources */,
+				F7A78F5E2577F7F80013B78E /* testInformativePrimaryButton.with-vivo-style.png in Resources */,
+				F7A78F4A2577F7F80013B78E /* testInfoCrouton.with-vivo-style.png in Resources */,
+				F7A78F742577F7F80013B78E /* testSuccessMultiline.with-o2-style.png in Resources */,
+				F7A78FA22577F7F90013B78E /* testErrorPrimaryRetryButton.with-o2-style.png in Resources */,
+				F7A78F862577F7F90013B78E /* testErrorTitleAndSubtitle.with-movistar-style.png in Resources */,
+				F7A78F792577F7F90013B78E /* testSuccessMultiline.with-o2Classic-style.png in Resources */,
+				F7A78F542577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2Classic-style.png in Resources */,
+				F7A78F6F2577F7F80013B78E /* testInformativePrimaryButton.with-o2Classic-style.png in Resources */,
+				F7A78F8C2577F7F90013B78E /* testSuccessSecondaryButton.with-o2-style.png in Resources */,
+				F7A78F432577F7F80013B78E /* testCriticalCrouton.with-o2-style.png in Resources */,
+				F7A78FA12577F7F90013B78E /* testErrorSecondaryButtonLink.with-vivo-style.png in Resources */,
+				F7A78F8D2577F7F90013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2-style.png in Resources */,
+				F7A78F6D2577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-vivo-style.png in Resources */,
+				F7A78F882577F7F90013B78E /* testErrorTitleAndSubtitle.with-o2-style.png in Resources */,
+				F7A78F4D2577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-movistar-style.png in Resources */,
+				F7A78F922577F7F90013B78E /* testSuccessPrimaryAndSecondaryButton.with-vivo-style.png in Resources */,
+				F7A78F812577F7F90013B78E /* testInformativeMultilineScroll.with-o2Classic-style.png in Resources */,
+				F7A78F6B2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2-style.png in Resources */,
+				F7A78F482577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-o2-style.png in Resources */,
+				F7A78F952577F7F90013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2-style.png in Resources */,
+				F7A78F3F2577F7F80013B78E /* testXIBIntegration.1.png in Resources */,
+				F7A78F422577F7F80013B78E /* testFlagBadge.with-movistar-style.png in Resources */,
+				F7A78F592577F7F80013B78E /* testCriticalCrouton.with-o2Classic-style.png in Resources */,
+				F7A78F602577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-o2-style.png in Resources */,
+				F7A78F8E2577F7F90013B78E /* testSuccessPrimaryButton.with-vivo-style.png in Resources */,
+				F7A78F9A2577F7F90013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-movistar-style.png in Resources */,
+				F7A78F8F2577F7F90013B78E /* testInformativeSecondaryButtonLink.with-vivo-style.png in Resources */,
+				F7A78F622577F7F80013B78E /* testSuccessMultiline.with-vivo-style.png in Resources */,
+				F7A78F8A2577F7F90013B78E /* testErrorMultilineScrollWithButtons.with-o2Classic-style.png in Resources */,
+				F7A78F852577F7F90013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-o2Classic-style.png in Resources */,
+				F7A78F4B2577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-movistar-style.png in Resources */,
+				F7A78F5D2577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2-style.png in Resources */,
+				F7A78F502577F7F80013B78E /* testInfoCrouton.with-o2Classic-style.png in Resources */,
+				F7A78F782577F7F90013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-o2Classic-style.png in Resources */,
+				F7A78F972577F7F90013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-vivo-style.png in Resources */,
+				F7A78F562577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2Classic-style.png in Resources */,
+				F7A78F492577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-vivo-style.png in Resources */,
+				F7A78F692577F7F80013B78E /* testSuccessSecondaryButton.with-o2Classic-style.png in Resources */,
+				F7A78F4C2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-vivo-style.png in Resources */,
+				F7A78F7B2577F7F90013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-vivo-style.png in Resources */,
+				F7A78F842577F7F90013B78E /* testErrorTitleAndSubtitle.with-vivo-style.png in Resources */,
+				F7A78F442577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png in Resources */,
+				F7A78F962577F7F90013B78E /* testInformativeTitleAndSubtitle.with-o2-style.png in Resources */,
+				F7A78F5A2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-movistar-style.png in Resources */,
+				F7A78F702577F7F80013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-vivo-style.png in Resources */,
+				F7A78F822577F7F90013B78E /* testSuccessPrimaryAndSecondaryButton.with-movistar-style.png in Resources */,
+				F7A78F9B2577F7F90013B78E /* testErrorSecondaryButtonLink.with-o2-style.png in Resources */,
+				F7A78F8B2577F7F90013B78E /* testErrorSecondaryButtonLink.with-o2Classic-style.png in Resources */,
+				F7A78F412577F7F80013B78E /* testNumericBadge.with-o2Classic-style.png in Resources */,
+				F7A78F7C2577F7F90013B78E /* testInformativeMultilineScroll.with-o2-style.png in Resources */,
 				21E9E8E6F439B119869C6B65 /* Assets.xcassets in Resources */,
+				F7A78F802577F7F90013B78E /* testInformativeSecondaryButtonLink.with-movistar-style.png in Resources */,
+				F7A78F5F2577F7F80013B78E /* testSuccessPrimaryAndSecondaryButton.with-o2-style.png in Resources */,
+				F7A78F452577F7F80013B78E /* testInfoCrouton.with-movistar-style.png in Resources */,
+				F7A78F752577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2Classic-style.png in Resources */,
+				F7A78F732577F7F80013B78E /* testErrorSecondaryButtonLink.with-movistar-style.png in Resources */,
+				F7A78F652577F7F80013B78E /* testInformativeSecondaryButtonLink.with-o2-style.png in Resources */,
+				F7A78F9E2577F7F90013B78E /* testSuccessPrimaryButton.with-o2Classic-style.png in Resources */,
+				F7A78F462577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2-style.png in Resources */,
+				F7A78F9F2577F7F90013B78E /* testErrorPrimaryRetryAndSecondaryButtonLink.with-movistar-style.png in Resources */,
+				F7A78F912577F7F90013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2Classic-style.png in Resources */,
+				F7A78F3A2577F7F80013B78E /* testNumericBadge.with-movistar-style.png in Resources */,
+				F7A78F6C2577F7F80013B78E /* testInformativeMultilineScroll.with-movistar-style.png in Resources */,
+				F7A78F682577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-movistar-style.png in Resources */,
+				F7A78F7A2577F7F90013B78E /* testSuccessTitle.with-o2-style.png in Resources */,
+				F7A78F762577F7F80013B78E /* testInformativePrimaryButton.with-movistar-style.png in Resources */,
+				F7A78F612577F7F80013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-movistar-style.png in Resources */,
+				F7A78F572577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-o2Classic-style.png in Resources */,
+				F7A78F522577F7F80013B78E /* testCriticalCrouton.with-vivo-style.png in Resources */,
+				F7A78F992577F7F90013B78E /* testSuccessPrimaryButton.with-o2-style.png in Resources */,
+				F7A78F712577F7F80013B78E /* testErrorTitleAndSubtitle.with-o2Classic-style.png in Resources */,
+				F7A78F832577F7F90013B78E /* testSuccessMultiline.with-movistar-style.png in Resources */,
+				F7A78F932577F7F90013B78E /* testInformativeSecondaryButtonLinkCustomView.with-vivo-style.png in Resources */,
+				F7A78F632577F7F80013B78E /* testErrorPrimaryRetryButton.with-o2Classic-style.png in Resources */,
+				F7A78F7D2577F7F90013B78E /* testSuccessSecondaryButton.with-movistar-style.png in Resources */,
+				F7A78F902577F7F90013B78E /* testInformativeSecondaryButtonLinkCustomView.with-movistar-style.png in Resources */,
+				F7A78F552577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2Classic-style.png in Resources */,
+				F7A78F3D2577F7F80013B78E /* testFlagBadge.with-o2-style.png in Resources */,
+				F7A78F722577F7F80013B78E /* testSuccessSecondaryButton.with-vivo-style.png in Resources */,
+				F7A78F3E2577F7F80013B78E /* testNumericBadge.with-o2-style.png in Resources */,
+				F7A78F3C2577F7F80013B78E /* testNumericBadge.with-vivo-style.png in Resources */,
+				F7A78F5C2577F7F80013B78E /* testErrorMultilineScrollWithButtons.with-vivo-style.png in Resources */,
+				F7A78F532577F7F80013B78E /* testInfoCroutonWithShortActionTitle.with-o2-style.png in Resources */,
+				F7A78F982577F7F90013B78E /* testInformativeSecondaryButtonLinkCustomView.with-o2-style.png in Resources */,
+				F7A78F942577F7F90013B78E /* testInformativeTitleAndSubtitle.with-vivo-style.png in Resources */,
+				F7A78F662577F7F80013B78E /* testInformativePrimaryAndSecondaryButtonLink.with-o2Classic-style.png in Resources */,
+				F7A78F872577F7F90013B78E /* testErrorSecondaryPrimaryButtonCustomView.with-o2Classic-style.png in Resources */,
+				F7A78F6E2577F7F80013B78E /* testInformativeTitleAndSubtitle.with-movistar-style.png in Resources */,
+				F7A78F402577F7F80013B78E /* testFlagBadge.with-vivo-style.png in Resources */,
+				F7A78F7E2577F7F90013B78E /* testErrorPrimaryRetryButton.with-movistar-style.png in Resources */,
+				F7A78F7F2577F7F90013B78E /* testSuccessTitle.with-movistar-style.png in Resources */,
+				F7A78F672577F7F80013B78E /* testSuccessPrimaryAndSecondaryButtonLinkCustomView.with-movistar-style.png in Resources */,
+				F7A78F512577F7F80013B78E /* testCriticalCroutonWithShortActionTitle.with-vivo-style.png in Resources */,
+				F7A78F4F2577F7F80013B78E /* testCriticalCroutonWithLongActionTitle.with-movistar-style.png in Resources */,
+				F7A78F6A2577F7F80013B78E /* testSuccessPrimaryButton.with-movistar-style.png in Resources */,
+				F7A78F3B2577F7F80013B78E /* testFlagBadge.with-o2Classic-style.png in Resources */,
+				F7A78F9C2577F7F90013B78E /* testInformativePrimaryButton.with-o2-style.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

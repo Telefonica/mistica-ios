@@ -75,6 +75,9 @@ let package = Package(
             path: "Mistica/Tests/MisticaTests",
             exclude: [
                 "UI/__Snapshots__"
+            ],
+            swiftSettings: [
+                .define("SWIFT_PACKAGE")
             ]
         )
     ]

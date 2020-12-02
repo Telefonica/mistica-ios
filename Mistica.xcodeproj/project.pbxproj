@@ -67,6 +67,7 @@
 		8209DE0325769688006D91F2 /* BadgeXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8209DE0225769688006D91F2 /* BadgeXIBIntegration.xib */; };
 		8209DE0925769860006D91F2 /* BadgeXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209DE052576983F006D91F2 /* BadgeXIBIntegration.swift */; };
 		82CF1540257567C700867797 /* BadgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF153C257567A000867797 /* BadgeTests.swift */; };
+		8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209DDFD25764401006D91F2 /* CroutonTests.swift */; };
 		83C49A0982B41B48B95AF7C8 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6083767C39CB9F8DB5699928 /* RadioButton.swift */; };
 		86E4D10F795ADC42295ADD69 /* UIViewPropertyAnimator+InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E761686C428884CF07312D /* UIViewPropertyAnimator+InputField.swift */; };
 		88882FCE598E7589DBB0E8D8 /* VerticallyCenteredPresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */; };
@@ -231,6 +232,7 @@
 		7F66B7EF8740501FBBE563A4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8209DE0225769688006D91F2 /* BadgeXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeXIBIntegration.xib; sourceTree = "<group>"; };
 		8209DE052576983F006D91F2 /* BadgeXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeXIBIntegration.swift; sourceTree = "<group>"; };
+		8209DDFD25764401006D91F2 /* CroutonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonTests.swift; sourceTree = "<group>"; };
 		824D08C7E0400E39D73D1BE2 /* informative.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = informative.png; sourceTree = "<group>"; };
 		825172D74B7F0CC9F9FB5440 /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = center.png; sourceTree = "<group>"; };
 		828462A2F693C09FE52A3958 /* header-inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header-inverse.png"; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 				CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */,
 				82CF153C257567A000867797 /* BadgeTests.swift */,
 				B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */,
+				8209DDFD25764401006D91F2 /* CroutonTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 			);
 			path = UI;
@@ -1451,6 +1454,7 @@
 			files = (
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
+				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
 				82CF1540257567C700867797 /* BadgeTests.swift in Sources */,
 				8209DE0925769860006D91F2 /* BadgeXIBIntegration.swift in Sources */,

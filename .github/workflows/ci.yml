@@ -67,5 +67,5 @@ jobs:
           azure-account-key: ${{ secrets.AZURE_ACCOUNT_KEY }}
           glob: 'tmp/test_output/diff_output/**/difference*.png'
           test-suite-and-test-name-regex: '(?<=diff_output\/)(.*)(?=\/difference)'
-          test-suite-and-test-aame-separator: '/'
+          test-suite-and-test-name-separator: '/'
           ci-container-name: 'mistica-ios-ci-container'

@@ -112,6 +112,7 @@
 		F05AC8F3C238A4D6BB7638C1 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66920067223E2F56C791267 /* Segment.swift */; };
 		F2BFC9F715E3810F002FCDBF /* InputFieldStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFFF454CCE139BDE71EC071 /* InputFieldStyle+Toolkit.swift */; };
 		F343B351B4E71C9AD816E7AA /* Optional+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BF673AB137A97C45F6148D /* Optional+Utils.swift */; };
+		F74CB4F42576606100260675 /* ControlsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74CB4F025765A4A00260675 /* ControlsTests.swift */; };
 		F948E84103076A2F9DB64915 /* BrandStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D2171DEE8E3CD47EE049D0 /* BrandStyle.swift */; };
 		FB5A638A94B3B96ECAA3AC4A /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1E862C434A3F09F5E2251 /* SpacerView.swift */; };
 		FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EB2FF52F0B92407878CA43 /* IntrinsicMaxButtonWidthContainerView.swift */; };
@@ -392,6 +393,7 @@
 		F374FFFEA862CA17EDA3D4F3 /* IntrinsicHeightTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicHeightTextView.swift; sourceTree = "<group>"; };
 		F3C4B777E490D209B868734E /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		F4879FB92B4EAB99BE49D827 /* CroutonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonController.swift; sourceTree = "<group>"; };
+		F74CB4F025765A4A00260675 /* ControlsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsTests.swift; sourceTree = "<group>"; };
 		F9982D822AACCA74B34989A6 /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
 		FC4EF4BBC11420C556337C0E /* Bundle+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Mistica.swift"; sourceTree = "<group>"; };
 		FDC1885EBE249BAA8A791EA0 /* scroll-content-indicator-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll-content-indicator-info.png"; sourceTree = "<group>"; };
@@ -920,6 +922,7 @@
 				B8BCF901256D113B00D2BCCC /* TestHelpers.swift */,
 				CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */,
 				B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */,
+				F74CB4F025765A4A00260675 /* ControlsTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 			);
 			path = UI;
@@ -1440,6 +1443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
+				F74CB4F42576606100260675 /* ControlsTests.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
 				B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */,

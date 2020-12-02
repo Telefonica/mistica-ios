@@ -205,11 +205,15 @@ public class FeedbackView: UIView {
 public extension FeedbackView {
     func startAnimation() {
         guard style.shouldAnimate, !animationFired else { return }
-        DispatchQueue.main.async {
-            self.animationFired = true
-            self.animator.startAnimation(afterDelay: Constants.animationDelay)
-            self.animatedIcon.play()
-            self.triggerHapticFeedback()
+        animationFired = true
+        animator.startAnimation(afterDelay: Constants.animationDelay)
+        triggerHapticFeedback()
+
+        if UIView.areAnimationsEnabled {
+            animatedIcon.play()
+        } else {
+            animatedIcon.stop()
+            animatedIcon.currentProgress = 1
         }
     }
 }

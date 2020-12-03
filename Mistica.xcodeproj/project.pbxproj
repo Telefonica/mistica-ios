@@ -1416,8 +1416,8 @@
 				B8FFFA96256E6CB300472C23 /* ButtonXIBIntegration.swift */,
 				8209DE0225769688006D91F2 /* BadgeXIBIntegration.xib */,
 				8209DE052576983F006D91F2 /* BadgeXIBIntegration.swift */,
-				F73D6C5F25750D210012A2C4 /* CheckBoxXIBIntegration.swift */,
 				F73D6C6525750D600012A2C4 /* CheckBoxXIBIntegration.xib */,
+				F73D6C5F25750D210012A2C4 /* CheckBoxXIBIntegration.swift */,
 			);
 			path = XIBIntegration;
 			sourceTree = "<group>";

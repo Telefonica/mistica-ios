@@ -49,3 +49,4 @@ fastlane/test_output
 
 # ci
 .ruby-version
+vendor/

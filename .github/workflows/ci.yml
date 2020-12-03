@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches: [apps/ci-workflow-fixes]
+
+jobs:
+  test:
+    runs-on: self-hosted-novum-mac
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Clean tmp directory
+        run: rm -rf tmp/*
+      
+      - name: RubyGems Cache
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: mistica-ios-gems-${{ hashFiles('Gemfile.lock') }}
+          restore-keys: |
+            mistica-ios-gems-
+      
+      - name: Carthage Cache
+        uses: actions/cache@v1
+        id: carthage-cache
+        with:
+          path: Carthage
+          key: mistica-ios-carthage-${{ hashFiles('Cartfile.resolved') }}
+          restore-keys: |
+            mistica-ios-carthage-
+      
+      - name: Setup Ruby
+        run: |
+          rbenv install 2.6.0 || true
+          rbenv local 2.6.0
+      
+      - name: Bundle Install
+        run: |
+          gem install bundle
+          bundle config path vendor/bundle
+          bundle install
+      
+      - name: Setup Project Dependencies
+        run: bundle exec fastlane setup
+      
+      - name: Build and Test
+        run: bundle exec fastlane test
+
+      - name: Extract Sceenshot diff from failed Tests
+        if: failure()
+        run: bundle exec fastlane extract_tests_attachments
+
+      - name: Checkout Telefonica/github-actions repo
+        uses: actions/checkout@v2
+        with:
+          repository: Telefonica/github-actions
+          ref: 'apps/mistica-upload-failed-screenshots'
+          token: "${{ secrets.READ_PRIVATE_REPOS }}"
+          path: .github/actions
+
+      - name: Check Tests result
+        uses: ./.github/actions/mistica/upload-failed-screenshots
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          azure-account-name: ${{ secrets.AZURE_ACCOUNT_NAME }}
+          azure-account-key: ${{ secrets.AZURE_ACCOUNT_KEY }}
+          glob: 'tmp/test_output/diff_output/**/difference*.png'
+          test-suite-and-test-name-regex: '(?<=diff_output\/)(.*)(?=\/difference)'
+          test-suite-and-test-name-separator: '/'
+          ci-container-name: 'mistica-ios-ci-container'

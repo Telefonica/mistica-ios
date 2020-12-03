@@ -16,7 +16,7 @@ build()
 
 	export XCODE_XCCONFIG_FILE="$xcconfig"
 
-	carthage build --platform iOS --no-use-binaries
+	carthage build --platform iOS --no-use-binaries --cache-builds
 }
 
 # Update dependency without building

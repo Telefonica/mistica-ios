@@ -34,9 +34,11 @@ jobs:
             mistica-ios-carthage-
 
       - name: Setup Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
+          bundler-cache: false
+          bundler: 'none'
       
       - name: Bundle Install
         run: |

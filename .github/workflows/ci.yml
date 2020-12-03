@@ -33,14 +33,9 @@ jobs:
           restore-keys: |
             mistica-ios-carthage-
 
-      - name: Install ruby 2.6
-        run: rbenv install 2.6.0 -s
-      
-      - name: Cwd
-        run: pwd
-
-      - name: Setup 2.6.0 locally
-        run: rbenv local 2.6.0
+      - name: Setup Ruby
+        run: |
+          rbenv local 2.6.0
       
       - name: Bundle Install
         run: |

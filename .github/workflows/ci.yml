@@ -33,6 +33,7 @@ jobs:
           restore-keys: |
             mistica-ios-carthage-
 
+      - name: Setup Ruby
         run: |
           cd /var/root/.rbenv/versions
           ls

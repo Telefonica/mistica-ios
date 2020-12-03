@@ -35,6 +35,7 @@ jobs:
 
       - name: Setup Ruby
         run: |
+          which ruby; ruby --version
           rbenv install 2.6.0 -s
           rbenv local 2.6.0
       

@@ -35,6 +35,8 @@ jobs:
 
       - name: Setup Ruby
         run: |
+          export RBENV_ROOT=/usr/local/rbenv
+          export PATH="${RBENV_ROOT}/bin:$PATH"
           rbenv install 2.6.0 -s -v
           rbenv local 2.6.0
       

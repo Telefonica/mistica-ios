@@ -32,11 +32,11 @@ jobs:
           key: mistica-ios-carthage-${{ hashFiles('Cartfile.resolved') }}
           restore-keys: |
             mistica-ios-carthage-
-      
+
       - name: Setup Ruby
-        uses: actions/setup-ruby
+        uses: actions/setup-ruby@v1
         with:
-          ruby-version: '2.6'
+          ruby-version: 2.6
       
       - name: Bundle Install
         run: |

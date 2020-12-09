@@ -157,7 +157,7 @@ private extension ControlsTests {
         _switch.isOn = isOn
         return _switch
     }
-    
+
     func makeSegmentedControlTemplate() -> UIView {
         MisticaConfig.styleControls([.segmentedControl])
         let segmentedControl = UISegmentedControl()
@@ -188,16 +188,16 @@ private extension ControlsTests {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = tabs
         tabBarController.selectedIndex = 1
-        
+
         return tabBarController.view
     }
-    
+
     func makePageControlTemplate() -> UIView {
         MisticaConfig.styleControls([.pageControl])
         let pageControl = UIPageControl()
         pageControl.numberOfPages = 5
         pageControl.currentPage = 3
-        
+
         return pageControl
     }
 }

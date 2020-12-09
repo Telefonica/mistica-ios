@@ -68,7 +68,7 @@ final class ControlsTests: XCTestCase {
 
         let segmentedControl = createSegmentControl()
         segmentedControl.selectedSegmentIndex = 1
-        
+
         assertSnapshot(
             matching: segmentedControl,
             as: .image(size: segmentedControl.intrinsicContentSize),
@@ -156,30 +156,30 @@ private extension ControlsTests {
 
         let tabBarController = createTabBarController()
         tabBarController.selectedIndex = 1
-        
+
         return tabBarController.view
     }
 
     func makePageControlTemplate() -> UIView {
         MisticaConfig.styleControls([.pageControl])
-        
+
         let pageControl = UIPageControl()
         pageControl.numberOfPages = 5
         pageControl.currentPage = 3
 
         return pageControl
     }
-    
+
     func createSegmentControl() -> UISegmentedControl {
         let segmentedControl = UISegmentedControl()
         segmentedControl.insertSegment(withTitle: "Segment 1", at: 0, animated: true)
         segmentedControl.insertSegment(withTitle: "Segment 2", at: 1, animated: true)
         segmentedControl.insertSegment(withTitle: "Segment 3", at: 2, animated: true)
         segmentedControl.insertSegment(withTitle: "Segment 4", at: 3, animated: true)
-        
+
         return segmentedControl
     }
-    
+
     func createTabBarController() -> UITabBarController {
         var tabs = [UIViewController]()
         for i in 0 ..< 3 {

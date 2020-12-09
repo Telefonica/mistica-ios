@@ -38,7 +38,7 @@ final class ControlsTests: XCTestCase {
     func testSegmentedControl() {
         assertSnapshotForAllBrands(
             as: .image,
-            viewBuilder: makeSegmentedControlTemplate(selectedSegmentIndex: 1)
+            viewBuilder: makeSegmentedControlTemplate()
         )
     }
     
@@ -47,7 +47,7 @@ final class ControlsTests: XCTestCase {
     func testTabBarControl() {
         assertSnapshotForAllBrands(
             as: .image,
-            viewBuilder: makeTabBarTemplate(selectedIndex: 1)
+            viewBuilder: makeTabBarTemplate()
         )
     }
     
@@ -56,7 +56,7 @@ final class ControlsTests: XCTestCase {
     func testPageControl() {
         assertSnapshotForAllBrands(
             as: .image,
-            viewBuilder: makePageControlTemplate(currentPage: 3)
+            viewBuilder: makePageControlTemplate()
         )
     }
     
@@ -159,7 +159,7 @@ private extension ControlsTests {
         return _switch
     }
     
-    func makeSegmentedControlTemplate(selectedSegmentIndex: Int) -> UIView {
+    func makeSegmentedControlTemplate() -> UIView {
         MisticaConfig.styleControls([.segmentedControl])
         let segmentedControl = UISegmentedControl()
         segmentedControl.insertSegment(withTitle: "Segment 1", at: 0, animated: true)
@@ -167,7 +167,7 @@ private extension ControlsTests {
         segmentedControl.insertSegment(withTitle: "Segment 3", at: 2, animated: true)
         segmentedControl.insertSegment(withTitle: "Segment 4", at: 3, animated: true)
 
-        segmentedControl.selectedSegmentIndex = selectedSegmentIndex
+        segmentedControl.selectedSegmentIndex = 1
 
         return segmentedControl
     }
@@ -188,16 +188,16 @@ private extension ControlsTests {
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = tabs
-        tabBarController.selectedIndex = selectedIndex
+        tabBarController.selectedIndex = 1
         
         return tabBarController.view
     }
     
-    func makePageControlTemplate(currentPage: Int) -> UIView {
+    func makePageControlTemplate() -> UIView {
         MisticaConfig.styleControls([.pageControl])
         let pageControl = UIPageControl()
         pageControl.numberOfPages = 5
-        pageControl.currentPage = currentPage
+        pageControl.currentPage = 3
         
         return pageControl
     }

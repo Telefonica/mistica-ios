@@ -66,13 +66,9 @@ final class ControlsTests: XCTestCase {
         MisticaConfig.brandStyle = .o2
         MisticaConfig.styleControls([.segmentedControl])
 
-        let segmentedControl = UISegmentedControl()
-        segmentedControl.insertSegment(withTitle: "Segment 1", at: 0, animated: true)
-        segmentedControl.insertSegment(withTitle: "Segment 2", at: 1, animated: true)
-        segmentedControl.insertSegment(withTitle: "Segment 3", at: 2, animated: true)
-        segmentedControl.insertSegment(withTitle: "Segment 4", at: 3, animated: true)
-
+        let segmentedControl = createSegmentControl()
         segmentedControl.selectedSegmentIndex = 1
+        
         assertSnapshot(
             matching: segmentedControl,
             as: .image(size: segmentedControl.intrinsicContentSize),
@@ -94,19 +90,7 @@ final class ControlsTests: XCTestCase {
         MisticaConfig.brandStyle = .vivo
         MisticaConfig.styleControls([.tabBar])
 
-        var tabs = [UIViewController]()
-        for i in 0 ..< 3 {
-            let tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: i)
-            tabBarItem.title = "Tab \(i)"
-
-            let viewController = UIViewController()
-            viewController.tabBarItem = tabBarItem
-
-            tabs.append(viewController)
-        }
-
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = tabs
+        let tabBarController = createTabBarController()
         tabBarController.selectedIndex = 1
 
         assertSnapshot(
@@ -160,12 +144,8 @@ private extension ControlsTests {
 
     func makeSegmentedControlTemplate() -> UIView {
         MisticaConfig.styleControls([.segmentedControl])
-        let segmentedControl = UISegmentedControl()
-        segmentedControl.insertSegment(withTitle: "Segment 1", at: 0, animated: true)
-        segmentedControl.insertSegment(withTitle: "Segment 2", at: 1, animated: true)
-        segmentedControl.insertSegment(withTitle: "Segment 3", at: 2, animated: true)
-        segmentedControl.insertSegment(withTitle: "Segment 4", at: 3, animated: true)
 
+        let segmentedControl = createSegmentControl()
         segmentedControl.selectedSegmentIndex = 1
 
         return segmentedControl
@@ -174,6 +154,33 @@ private extension ControlsTests {
     func makeTabBarTemplate() -> UIView {
         MisticaConfig.styleControls([.tabBar])
 
+        let tabBarController = createTabBarController()
+        tabBarController.selectedIndex = 1
+        
+        return tabBarController.view
+    }
+
+    func makePageControlTemplate() -> UIView {
+        MisticaConfig.styleControls([.pageControl])
+        
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = 5
+        pageControl.currentPage = 3
+
+        return pageControl
+    }
+    
+    func createSegmentControl() -> UISegmentedControl {
+        let segmentedControl = UISegmentedControl()
+        segmentedControl.insertSegment(withTitle: "Segment 1", at: 0, animated: true)
+        segmentedControl.insertSegment(withTitle: "Segment 2", at: 1, animated: true)
+        segmentedControl.insertSegment(withTitle: "Segment 3", at: 2, animated: true)
+        segmentedControl.insertSegment(withTitle: "Segment 4", at: 3, animated: true)
+        
+        return segmentedControl
+    }
+    
+    func createTabBarController() -> UITabBarController {
         var tabs = [UIViewController]()
         for i in 0 ..< 3 {
             let tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: i)
@@ -187,17 +194,7 @@ private extension ControlsTests {
 
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = tabs
-        tabBarController.selectedIndex = 1
 
-        return tabBarController.view
-    }
-
-    func makePageControlTemplate() -> UIView {
-        MisticaConfig.styleControls([.pageControl])
-        let pageControl = UIPageControl()
-        pageControl.numberOfPages = 5
-        pageControl.currentPage = 3
-
-        return pageControl
+        return tabBarController
     }
 }

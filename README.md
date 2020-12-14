@@ -105,7 +105,7 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 
 * [Badge](./Mistica/Source/Components/Badge/)
 * [Button](./Mistica/Source/Components/Button/)
-* [CheckBox](./Mistica/Source/Components/CheckBox/)
+* [Checkbox](./Mistica/Source/Components/Checkbox/)
 * [Controls](./Mistica/Source/Components/Controls/)
 * [Crouton](./Mistica/Source/Components/Crouton/)
 * [Feedbacks](./Mistica/Source/Components/Feedback/)

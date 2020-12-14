@@ -28,7 +28,7 @@
 		B8F9903F2546C98700DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990172546C98600DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift */; };
 		B8F990402546C98700DFBFE9 /* UICatalogFeedbacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990182546C98600DFBFE9 /* UICatalogFeedbacksViewController.swift */; };
 		B8F990412546C98700DFBFE9 /* UICatalogHighlightedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990192546C98600DFBFE9 /* UICatalogHighlightedCardViewController.swift */; };
-		B8F990422546C98700DFBFE9 /* UICatalogCheckBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901A2546C98600DFBFE9 /* UICatalogCheckBoxViewController.swift */; };
+		B8F990422546C98700DFBFE9 /* UICatalogCheckboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901A2546C98600DFBFE9 /* UICatalogCheckboxViewController.swift */; };
 		B8F990432546C98700DFBFE9 /* UICatalogButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901B2546C98600DFBFE9 /* UICatalogButtonsViewController.swift */; };
 		B8F990442546C98700DFBFE9 /* UICatalogFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901C2546C98600DFBFE9 /* UICatalogFormViewController.swift */; };
 		B8F990452546C98700DFBFE9 /* UICatalogFontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901D2546C98600DFBFE9 /* UICatalogFontsViewController.swift */; };
@@ -73,7 +73,7 @@
 		B8F990172546C98600DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogScrollContentIndicatorViewController.swift; sourceTree = "<group>"; };
 		B8F990182546C98600DFBFE9 /* UICatalogFeedbacksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFeedbacksViewController.swift; sourceTree = "<group>"; };
 		B8F990192546C98600DFBFE9 /* UICatalogHighlightedCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHighlightedCardViewController.swift; sourceTree = "<group>"; };
-		B8F9901A2546C98600DFBFE9 /* UICatalogCheckBoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCheckBoxViewController.swift; sourceTree = "<group>"; };
+		B8F9901A2546C98600DFBFE9 /* UICatalogCheckboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCheckboxViewController.swift; sourceTree = "<group>"; };
 		B8F9901B2546C98600DFBFE9 /* UICatalogButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogButtonsViewController.swift; sourceTree = "<group>"; };
 		B8F9901C2546C98600DFBFE9 /* UICatalogFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFormViewController.swift; sourceTree = "<group>"; };
 		B8F9901D2546C98600DFBFE9 /* UICatalogFontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFontsViewController.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 				B8F990172546C98600DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift */,
 				B8F990182546C98600DFBFE9 /* UICatalogFeedbacksViewController.swift */,
 				B8F990192546C98600DFBFE9 /* UICatalogHighlightedCardViewController.swift */,
-				B8F9901A2546C98600DFBFE9 /* UICatalogCheckBoxViewController.swift */,
+				B8F9901A2546C98600DFBFE9 /* UICatalogCheckboxViewController.swift */,
 				B8F9901B2546C98600DFBFE9 /* UICatalogButtonsViewController.swift */,
 				B8F9901C2546C98600DFBFE9 /* UICatalogFormViewController.swift */,
 				B8F9901D2546C98600DFBFE9 /* UICatalogFontsViewController.swift */,
@@ -339,7 +339,7 @@
 				B8F990512546C98700DFBFE9 /* UICatalogHeaderViewController.swift in Sources */,
 				B8F990492546C98700DFBFE9 /* UICatalogSegmentSelectorViewController.swift in Sources */,
 				B8F990312546C98700DFBFE9 /* NavigationBarStyles.swift in Sources */,
-				B8F990422546C98700DFBFE9 /* UICatalogCheckBoxViewController.swift in Sources */,
+				B8F990422546C98700DFBFE9 /* UICatalogCheckboxViewController.swift in Sources */,
 				B8F9904D2546C98700DFBFE9 /* UICatalogListsViewController.swift in Sources */,
 				B8F9902D2546C98700DFBFE9 /* CatalogList.swift in Sources */,
 				B8F9904F2546C98700DFBFE9 /* UICatalogCroutonViewController.swift in Sources */,

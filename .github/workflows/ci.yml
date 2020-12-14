@@ -53,7 +53,6 @@ jobs:
         run: bundle exec fastlane test
 
       - name: Extract Sceenshot diff from failed Tests
-        if: failure()
         run: bundle exec fastlane extract_tests_attachments
 
       - name: Checkout Telefonica/github-actions repo

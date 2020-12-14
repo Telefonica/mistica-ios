@@ -1,5 +1,5 @@
 //
-//  CheckBox.swift
+//  Checkbox.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -9,21 +9,21 @@
 import CoreGraphics
 import UIKit
 
-public class CheckBox: UIControl {
+public class Checkbox: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(24)
     }
 
     private let imageView = UIImageView()
 
-    // A Boolean value that determines the off/on state of the CheckBox
+    // A Boolean value that determines the off/on state of the Checkbox
     public var isChecked = false {
         didSet {
             changeIcon(checked: isChecked)
         }
     }
 
-    // Called when the CheckBox changes its value.
+    // Called when the Checkbox changes its value.
     public var onValueChanged: ((Bool) -> Void)?
 
     public convenience init() {
@@ -66,7 +66,7 @@ public class CheckBox: UIControl {
     }
 }
 
-private extension CheckBox {
+private extension Checkbox {
     func commonInit() {
         layoutView()
 

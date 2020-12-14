@@ -1,5 +1,5 @@
 //
-//  CheckBoxAssets.swift
+//  CheckboxAssets.swift
 //
 //  Made with ❤️ by Novum
 //

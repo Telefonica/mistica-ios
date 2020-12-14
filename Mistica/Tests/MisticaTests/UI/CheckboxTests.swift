@@ -1,5 +1,5 @@
 //
-//  CheckBoxTests.swift
+//  CheckboxTests.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -10,7 +10,7 @@ import Mistica
 import SnapshotTesting
 import XCTest
 
-final class CheckBoxTests: XCTestCase {
+final class CheckboxTests: XCTestCase {
     override class func setUp() {
         super.setUp()
 
@@ -22,14 +22,14 @@ final class CheckBoxTests: XCTestCase {
     func testCheckboxDefaultState() {
         assertSnapshotForAllBrands(
             as: .image,
-            viewBuilder: makeTemplateWithCheckBoxState(isChecked: false)
+            viewBuilder: makeTemplateWithCheckboxState(isChecked: false)
         )
     }
 
     func testCheckboxActiveCheckedState() {
         assertSnapshotForAllBrands(
             as: .image,
-            viewBuilder: makeTemplateWithCheckBoxState(isChecked: true)
+            viewBuilder: makeTemplateWithCheckboxState(isChecked: true)
         )
     }
 
@@ -38,20 +38,20 @@ final class CheckBoxTests: XCTestCase {
     func testCheckboxIsChecked() {
         MisticaConfig.brandStyle = .o2
 
-        let checkBox = CheckBox()
-        checkBox.isChecked = false
+        let checkbox = Checkbox()
+        checkbox.isChecked = false
 
         assertSnapshot(
-            matching: checkBox,
-            as: .image(size: checkBox.intrinsicContentSize),
+            matching: checkbox,
+            as: .image(size: checkbox.intrinsicContentSize),
             named: "assertInitialState"
         )
 
-        checkBox.isChecked = true
+        checkbox.isChecked = true
 
         assertSnapshot(
-            matching: checkBox,
-            as: .image(size: checkBox.intrinsicContentSize),
+            matching: checkbox,
+            as: .image(size: checkbox.intrinsicContentSize),
             named: "finalState"
         )
     }
@@ -61,7 +61,7 @@ final class CheckBoxTests: XCTestCase {
     func testXIBIntegration() {
         MisticaConfig.brandStyle = .vivo
 
-        let view = CheckBoxXIBIntegration.viewFromNib()
+        let view = CheckboxXIBIntegration.viewFromNib()
 
         assertSnapshot(
             matching: view,
@@ -72,13 +72,13 @@ final class CheckBoxTests: XCTestCase {
 
 // MARK: - Helpers
 
-private func makeTemplateWithCheckBoxState(isChecked: Bool) -> UIView {
-    let checkBox = CheckBox(frame: CGRect(origin: .zero, size: CGSize(width: 24, height: 24)))
-    checkBox.isChecked = isChecked
+private func makeTemplateWithCheckboxState(isChecked: Bool) -> UIView {
+    let checkbox = Checkbox(frame: CGRect(origin: .zero, size: CGSize(width: 24, height: 24)))
+    checkbox.isChecked = isChecked
 
-    let containerView = UIView(frame: CGRect(origin: .zero, size: checkBox.intrinsicContentSize))
+    let containerView = UIView(frame: CGRect(origin: .zero, size: checkbox.intrinsicContentSize))
     containerView.backgroundColor = .white
-    containerView.addSubview(checkBox)
+    containerView.addSubview(checkbox)
 
     return containerView
 }

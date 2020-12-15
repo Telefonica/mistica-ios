@@ -12,7 +12,7 @@ import UIKit
 private enum UICatalogRow: Int, CaseIterable {
     case badge
     case buttons
-    case checkBox
+    case checkbox
     case controls
     case crouton
     case feedbacks
@@ -172,8 +172,8 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogControlsViewController(), sender: self)
         case .highlightedCard:
             show(UICatalogHighlightedCardViewController(), sender: self)
-        case .checkBox:
-            show(UICatalogCheckBoxViewController(), sender: self)
+        case .checkbox:
+            show(UICatalogCheckboxViewController(), sender: self)
         }
     }
 }
@@ -234,8 +234,8 @@ private extension UICatalogRow {
             return "Buttons"
         case .feedbacks:
             return "Feedbacks"
-        case .checkBox:
-            return "CheckBox"
+        case .checkbox:
+            return "Checkbox"
         case .crouton:
             return "Crouton"
         case .segmentSelector:
@@ -279,7 +279,7 @@ private extension UICatalogRow {
             return .feedbacksIcon
         case .crouton:
             return .croutonIcon
-        case .checkBox:
+        case .checkbox:
             return .controlsIcon
         case .segmentSelector:
             return .segmentSelectorIcon

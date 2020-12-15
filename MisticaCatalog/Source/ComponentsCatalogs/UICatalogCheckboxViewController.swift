@@ -1,5 +1,5 @@
 //
-//  UICatalogCheckBoxViewController.swift
+//  UICatalogCheckboxViewController.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -11,10 +11,10 @@ import UIKit
 
 private enum Section: Int, CaseIterable {
     case activated
-    case disabld
+    case disabled
 }
 
-class UICatalogCheckBoxViewController: UITableViewController {
+class UICatalogCheckboxViewController: UITableViewController {
     init() {
         if #available(iOS 13.0, *) {
             super.init(style: .insetGrouped)
@@ -30,7 +30,7 @@ class UICatalogCheckBoxViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "CheckBox"
+        title = "Checkbox"
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -38,7 +38,7 @@ class UICatalogCheckBoxViewController: UITableViewController {
     }
 }
 
-extension UICatalogCheckBoxViewController {
+extension UICatalogCheckboxViewController {
     override func numberOfSections(in _: UITableView) -> Int {
         Section.allCases.count
     }
@@ -52,7 +52,7 @@ extension UICatalogCheckBoxViewController {
     }
 
     override func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let checkBox = CheckBox()
+        let checkBox = Checkbox()
         checkBox.isUserInteractionEnabled = false
 
         if indexPath.section == 0 {
@@ -66,7 +66,7 @@ extension UICatalogCheckBoxViewController {
 }
 
 private class CellView: UITableViewCell {
-    public init(checkBox: CheckBox, reuseIdentifier: String?) {
+    public init(checkBox: Checkbox, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
 
         selectionStyle = .none
@@ -91,7 +91,7 @@ private extension Section {
         switch self {
         case .activated:
             return "Activated"
-        case .disabld:
+        case .disabled:
             return "Disabled"
         }
     }

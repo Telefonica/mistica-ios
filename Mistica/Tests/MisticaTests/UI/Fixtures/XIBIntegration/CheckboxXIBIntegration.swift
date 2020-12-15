@@ -1,5 +1,5 @@
 //
-//  CheckBoxXIBIntegration.swift
+//  CheckboxXIBIntegration.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -9,6 +9,6 @@
 import Mistica
 import UIKit
 
-class CheckBoxXIBIntegration: UIView {
-    @IBOutlet var checkBox: CheckBox!
+class CheckboxXIBIntegration: UIView {
+    @IBOutlet var checkbox: Checkbox!
 }

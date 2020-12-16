@@ -239,7 +239,7 @@ final class ButtonTests: XCTestCase {
 
 private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool) -> UIView {
     let buttonNormalState = Button()
-    buttonNormalState.title = "Normal"
+    buttonNormalState.title = "Norl"
     buttonNormalState.style = style
     buttonNormalState.state = .normal
     buttonNormalState.isSmall = isSmall

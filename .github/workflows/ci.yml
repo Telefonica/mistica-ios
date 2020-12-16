@@ -53,10 +53,12 @@ jobs:
         run: bundle exec fastlane test
 
       - name: Extract Sceenshot diff from failed Tests
+        if: always()
         run: bundle exec fastlane extract_tests_attachments
 
       - name: Checkout Telefonica/github-actions repo
         uses: actions/checkout@v2
+        if: always()
         with:
           repository: Telefonica/github-actions
           ref: 'v1.1.0'
@@ -65,6 +67,7 @@ jobs:
 
       - name: Check Tests result
         uses: ./.github/actions/mistica/upload-failed-screenshots
+        if: always()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           azure-account-name: ${{ secrets.AZURE_ACCOUNT_NAME }}

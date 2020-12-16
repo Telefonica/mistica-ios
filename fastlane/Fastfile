@@ -86,17 +86,22 @@ platform :ios do
       devices: DEVICES_USED_FOR_TESTING,
       output_directory: TEST_OUTPUT_PATH,
       result_bundle: true,
+      concurrent_workers: 2
     )
   end
 
   desc "Extract tests attachments"
   lane :extract_tests_attachments do
-    UI.message "Installing xcparse"
-    brew_install_or_update(
-      formula: "chargepoint/xcparse/xcparse"
-    )
+    if File.exist?(XCRESULT_FILE_PATH)
+      UI.message "Installing xcparse"
+      brew_install_or_update(
+        formula: "chargepoint/xcparse/xcparse"
+      )
 
-    UI.message `xcparse attachments #{XCRESULT_FILE_PATH} #{SCREENSHOT_DIFFS_OUTPUT_PATH} --uti public.plain-text public.image --test`
+      UI.message `xcparse attachments #{XCRESULT_FILE_PATH} #{SCREENSHOT_DIFFS_OUTPUT_PATH} --uti public.plain-text public.image --test`
+    else 
+      UI.message "Could not find #{XCRESULT_FILE_PATH}"
+    end
   end
 
 end

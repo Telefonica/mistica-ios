@@ -12,7 +12,7 @@ import XCTest
 
 final class FeedbackTests: XCTestCase {
     private enum Constants {
-        static let singleLineTitle = "Titl"
+        static let singleLineTitle = "Title"
         static let singleLineSubtitle = "Subtitle"
         static let multiLineTitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         static let multiLineSubtitle = "Nam non ipsum id metus cursus dictum. Praesent efficitur erat libero, vitae tempus orci iaculis id. Proin ipsum ante, auctor mattis rutrum sit amet, elementum vitae quam. Praesent velit lectus, lacinia ut accumsan sit amet, convallis non leo. Ut quis facilisis sapien. "

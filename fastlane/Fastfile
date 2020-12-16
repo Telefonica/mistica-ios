@@ -86,6 +86,7 @@ platform :ios do
       devices: DEVICES_USED_FOR_TESTING,
       output_directory: TEST_OUTPUT_PATH,
       result_bundle: true,
+      concurrent_workers: 2
     )
   end
 

@@ -1,11 +1,8 @@
 name: CI
 
 on:
-  workflow_dispatch:
-
   pull_request:
-    branches:
-      - apps/ci-workflow-fixes
+        branches: [master]
 
 jobs:
   test:

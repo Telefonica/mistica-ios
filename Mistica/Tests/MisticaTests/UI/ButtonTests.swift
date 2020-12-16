@@ -251,7 +251,7 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool)
     buttonDisabledState.isSmall = isSmall
 
     let buttonSelectedState = Button()
-    buttonSelectedState.title = "Selecd"
+    buttonSelectedState.title = "Selected"
     buttonSelectedState.style = style
     buttonSelectedState.state = .selected
     buttonSelectedState.isSmall = isSmall
@@ -284,7 +284,7 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool)
 
 private func makeTemplateWithRegularAndSmallButtonsAndLinkButton() -> UIStackView {
     let smallButton = Button()
-    smallButton.title = "Okkkkk"
+    smallButton.title = "O"
     smallButton.state = .normal
     smallButton.isSmall = true
 

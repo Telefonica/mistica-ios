@@ -59,7 +59,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: Telefonica/github-actions
-          ref: 'apps/mistica-upload-failed-screenshots'
+          ref: 'v1.1.0'
           token: "${{ secrets.READ_PRIVATE_REPOS }}"
           path: .github/actions
 

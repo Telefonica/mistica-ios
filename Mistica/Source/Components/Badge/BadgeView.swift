@@ -33,7 +33,7 @@ public class BadgeView: UIView {
     public var value: Int = 0 {
         didSet {
             guard style == .numeric else { return }
-            
+
             isHidden = value == 0
 
             if value > Constants.maximumValue {

@@ -3,8 +3,9 @@ name: CI
 on:
   workflow_dispatch:
 
-  push:
-    branches: [apps/ci-workflow-fixes]
+  pull_request:
+    branches:
+      - apps/ci-workflow-fixes
 
 jobs:
   test:

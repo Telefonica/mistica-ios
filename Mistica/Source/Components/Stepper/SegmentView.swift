@@ -15,10 +15,10 @@ class SegmentView: UIView {
     
     private lazy var slider = UISlider(frame: bounds)
     
-    var value: Int = 0 {
-        didSet {
-            slider.value = Float(value)
-        }
+    private var _value: Int = 0
+    var value: Int {
+        set { setValue(newValue, animated: false) }
+        get { Int(slider.value) }
     }
     
     var minimumValue: Int = 0 {
@@ -54,6 +54,16 @@ class SegmentView: UIView {
         layer.masksToBounds = true
     }
 }
+
+// MARK: Public
+
+extension SegmentView {
+    func setValue(_ value: Int, animated: Bool) {
+        slider.setValue(Float(value), animated: animated)
+    }
+}
+
+// MARK: Private
 
 private extension SegmentView {
     func commonInit() {

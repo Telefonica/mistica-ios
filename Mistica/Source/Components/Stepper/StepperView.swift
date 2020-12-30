@@ -13,15 +13,20 @@ public class StepperView: UIControl {
         static let spacing: CGFloat = 8
     }
     
-    public var currentStep = 0 {
-        didSet {
-            layoutView()
-            onValueChanged?(currentStep)
+    private var _currentStep = 0
+    public var currentStep: Int {
+        set {
+            setCurrentStep(newValue, animated: false)
+            updateAccesibilityValues()
+        }
+        get {
+            _currentStep
         }
     }
     
     public var numberOfSteps = 3 {
         didSet {
+            updateAccesibilityValues()
             layoutView()
         }
     }
@@ -68,11 +73,32 @@ public class StepperView: UIControl {
     }
 }
 
+// MARK: Public
+
+public extension StepperView {
+    func setCurrentStep(_ currentStep: Int, animated: Bool) {
+        _currentStep = currentStep
+        
+        for (step, segmentView) in segmentViews.enumerated() {
+            // Segments are in even indices. The correct step
+            update(segmentView: segmentView, at: step+1, animated: animated)
+        }
+        
+        for (step, stepView) in stepViews.enumerated() {
+            update(stepView: stepView, at: step, animated: animated)
+        }
+        
+        onValueChanged?(currentStep)
+    }
+}
+
 // MARK: Common
 
 private extension StepperView {
     func commonInit() {
         addSubview(withDefaultConstraints: stackView)
+        isAccessibilityElement = true
+        updateAccesibilityValues()
         backgroundColor = .clear
         layoutView()
     }
@@ -84,6 +110,12 @@ private extension StepperView {
     var stepViews: [StepView] {
         stackView.arrangedSubviews.compactMap { $0 as? StepView }
     }
+    
+    func updateAccesibilityValues() {
+        let formatter = NumberFormatter()
+        accessibilityLabel = formatter.string(from: NSNumber(integerLiteral: currentStep+1))
+        accessibilityTraits = [.adjustable]
+    }
 }
 
 // MARK: Updates
@@ -91,7 +123,7 @@ private extension StepperView {
 private extension StepperView {
     func createSegment(step: Int) -> SegmentView {
         let segmentView = SegmentView()
-        update(segmentView: segmentView, at: step)
+        update(segmentView: segmentView, at: step, animated: false)
         return segmentView
     }
     
@@ -99,30 +131,29 @@ private extension StepperView {
         let stepView = StepView()
         // Aspect ratio 1 constraint, it keeps squared even if the text grows.
         stepView.widthAnchor.constraint(equalTo: stepView.heightAnchor).isActive.toggle()
-        update(stepView: stepView, at: step)
+        update(stepView: stepView, at: step, animated: false)
         return stepView
     }
     
-    func update(segmentView: SegmentView, at step: Int) {
+    func update(segmentView: SegmentView, at step: Int, animated: Bool) {
         segmentView.minimumValue = 0
         segmentView.maximumValue = numberOfSteps
         if !isNumbered {
-            segmentView.value = currentStep
+            segmentView.setValue(currentStep, animated: animated)
         } else if step <= currentStep {
-            segmentView.value = segmentView.maximumValue
+            segmentView.setValue(segmentView.maximumValue, animated: animated)
         } else {
-            segmentView.value = segmentView.minimumValue
+            segmentView.setValue(segmentView.minimumValue, animated: animated)
         }
     }
     
-    func update(stepView: StepView, at step: Int) {
-        stepView.step = step
+    func update(stepView: StepView, at step: Int, animated: Bool) {
         if step == currentStep {
-            stepView.status = .activated
+            stepView.setStatus(.activated(step: step), animated: animated)
         } else if step < currentStep {
-            stepView.status = .completed
+            stepView.setStatus(.completed, animated: animated)
         } else {
-            stepView.status = .waiting
+            stepView.setStatus(.waiting(step: step), animated: animated)
         }
     }
 }

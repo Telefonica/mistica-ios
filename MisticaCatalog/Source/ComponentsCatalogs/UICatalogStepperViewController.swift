@@ -127,7 +127,7 @@ extension UICatalogStepperViewController {
             
             if sender == currentStepStepper {
                 currentStep = Int(sender.value)
-                stepperView.currentStep = currentStep
+                stepperView.setCurrentStep(currentStep, animated: true)
                 updateCurrentStepLabel()
             }
         }

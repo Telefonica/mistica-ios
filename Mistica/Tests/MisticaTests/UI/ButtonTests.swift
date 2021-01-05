@@ -228,7 +228,7 @@ final class ButtonTests: XCTestCase {
         view.buttonCentered.title = "Button centered"
         view.buttonCentered.loadingTitle = "Button centered"
         view.buttonCentered.state = .loading
-       
+
         assertSnapshot(
             matching: view.asRootOfViewController(),
             as: .image(on: .iPhoneX) // We need a device with Safe Area

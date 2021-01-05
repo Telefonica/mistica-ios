@@ -223,14 +223,15 @@ final class ButtonTests: XCTestCase {
         view.buttonPinnedToSides.title = "Button pinned to sides"
         view.buttonPinnedToLeading.title = "Button pinned to leading"
         view.buttonPinnedToTrailing.title = "Button pinned to trailing"
+        view.buttonPinnedToBottomIgnoringSafeArea.title = "Button pinned to bottom ignoring safe area"
 
         view.buttonCentered.title = "Button centered"
         view.buttonCentered.loadingTitle = "Button centered"
         view.buttonCentered.state = .loading
-
+       
         assertSnapshot(
-            matching: view,
-            as: .image
+            matching: view.asRootOfViewController(),
+            as: .image(on: .iPhoneX) // We need a device with Safe Area
         )
     }
 }

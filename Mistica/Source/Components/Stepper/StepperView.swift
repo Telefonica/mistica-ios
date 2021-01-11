@@ -1,8 +1,9 @@
 //
-//  Stepper.swift
-//  Mistica
+//  StepperView.swift
 //
-//  Created by jmpuerta on 28/12/2020.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

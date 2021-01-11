@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  SegmentView.swift
 //
-//  Created by jmpuerta on 30/12/2020.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

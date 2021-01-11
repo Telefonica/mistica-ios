@@ -31,7 +31,7 @@ public class StepperView: UIControl {
         }
     }
     
-    public var isNumbered = false {
+    public var isDetermined = false {
         didSet {
             layoutView()
         }
@@ -138,7 +138,7 @@ private extension StepperView {
     func update(segmentView: SegmentView, at step: Int, animated: Bool) {
         segmentView.minimumValue = 0
         segmentView.maximumValue = numberOfSteps
-        if !isNumbered {
+        if !isDetermined {
             segmentView.setValue(currentStep, animated: animated)
         } else if step <= currentStep {
             segmentView.setValue(segmentView.maximumValue, animated: animated)
@@ -162,14 +162,14 @@ private extension StepperView {
 
 private extension StepperView {
     func layoutView() {
-        if isNumbered {
-            layoutNumberedView()
+        if isDetermined {
+            layoutDeterminedView()
         } else {
-            layoutNonNumberedView()
+            layoutIndeterminateView()
         }
     }
     
-    func layoutNumberedView() {
+    func layoutDeterminedView() {
         stackView.removeArrangedSubviews()
         
         var arrangedSubviews: [UIView] = [createStep(step: 0)]
@@ -191,7 +191,7 @@ private extension StepperView {
         }
     }
     
-    func layoutNonNumberedView() {
+    func layoutIndeterminateView() {
         stackView.removeArrangedSubviews()
         stackView.addArrangedSubview(createSegment(step: currentStep))
     }

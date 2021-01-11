@@ -10,7 +10,7 @@ import Mistica
 import UIKit
 
 private enum UICatalogRow: Int, CaseIterable {
-    case steepper // Move to the bottom
+    case stepper // Move to the bottom
     case badge
     case buttons
     case checkbox
@@ -175,7 +175,7 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogHighlightedCardViewController(), sender: self)
         case .checkbox:
             show(UICatalogCheckboxViewController(), sender: self)
-        case .steepper:
+        case .stepper:
             show(UICatalogStepperViewController(), sender: self)
         }
     }
@@ -271,7 +271,7 @@ private extension UICatalogRow {
             return "Controls"
         case .highlightedCard:
             return "HighlightedCard"
-        case .steepper:
+        case .stepper:
             return "Stepper"
         }
     }
@@ -316,8 +316,8 @@ private extension UICatalogRow {
             return .controlsIcon
         case .highlightedCard:
             return .highlightedCardIcon
-        case .steepper:
-            return .highlightedCardIcon
+        case .stepper:
+            return .stepperIcon
         }
     }
 }

@@ -10,8 +10,8 @@ import UIKit
 import Mistica
 
 private enum Section: Int, CaseIterable {
-    case linear
-    case numbered
+    case indeterminate
+    case determined
     case configuration
 }
 
@@ -71,9 +71,9 @@ extension UICatalogStepperViewController {
         let section = Section(rawValue: indexPath.section)!
         
         switch section {
-        case .linear, .numbered:
+        case .indeterminate, .determined:
             let stepper = StepperView()
-            stepper.isNumbered = section == .numbered
+            stepper.isDetermined = section == .determined
             stepper.numberOfSteps = numberOfSteps
             stepperViews.append(stepper)
             containerView = stepper
@@ -153,10 +153,10 @@ private class CellView: UITableViewCell {
 private extension Section {
     var headerTitle: String {
         switch self {
-        case .numbered:
-            return "Numbered"
-        case .linear:
-            return "Linear"
+        case .determined:
+            return "Determined"
+        case .indeterminate:
+            return "Indeterminate"
         case .configuration:
             return "Configuration"
         }

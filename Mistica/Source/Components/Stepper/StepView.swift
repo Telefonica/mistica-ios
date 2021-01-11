@@ -47,8 +47,7 @@ class StepView: UIView {
         label.textAlignment = .center
         addSubview(withDefaultConstraints: label)
         
-        #warning("Get correct image")
-        imageView.image = UIImage(named: "icn_checkbox_on", type: .brandedAndThemed)
+        imageView.image = UIImage(named: "icn_check_stepper", type: .brandedAndThemed)
         addSubview(withDefaultConstraints: imageView)
     }
     
@@ -75,7 +74,7 @@ extension StepView {
                 self.imageView.isHidden = false
                 self.label.isHidden = true
                 self.removeBorder()
-                self.backgroundColor = .controlActivated
+                self.backgroundColor = .clear
                 self.accessibilityTraits = []
             case .activated(let step):
                 self.label.text = "\(step + 1)"

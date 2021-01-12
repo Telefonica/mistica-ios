@@ -10,7 +10,6 @@ import Mistica
 import UIKit
 
 private enum UICatalogRow: Int, CaseIterable {
-    case stepper // Move to the bottom
     case badge
     case buttons
     case checkbox
@@ -27,6 +26,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case scrollContentIndicator
     case sectionTitle
     case segmentSelector
+    case stepper
     case tag
     case tooltip
     case viewStates

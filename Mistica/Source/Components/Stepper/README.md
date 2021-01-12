@@ -10,9 +10,9 @@ stepper.numberOfSteps = 3
 stepper.currentStep = 0
 ```
 
-`StepperView.swift` can be configured as determined of intederminated. 
-Determinated steppers show the current step number. 
-Interminated steppers just show a non numbered progress bar.
+`StepperView.swift` can be configured as determined or indeterminate.
+Determined steppers show the current step number. 
+Indeterminate steppers just show a non numbered progress bar.
 
 ```swift
 stepper.isDetermined = true

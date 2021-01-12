@@ -68,9 +68,9 @@ extension SegmentView {
 
 private extension SegmentView {
     func commonInit() {
-        slider.backgroundColor = .control
-        slider.tintColor = .controlActivated
         slider.backgroundColor = .clear
+        slider.minimumTrackTintColor = .controlActivated
+        slider.maximumTrackTintColor = .control
         slider.setThumbImage(UIImage(), for: .normal)
         
         addSubview(withDefaultConstraints: slider)

@@ -115,7 +115,6 @@ private extension StepperView {
     func updateAccesibilityValues() {
         let formatter = NumberFormatter()
         accessibilityLabel = formatter.string(from: NSNumber(integerLiteral: currentStep+1))
-        accessibilityTraits = [.adjustable]
     }
 }
 

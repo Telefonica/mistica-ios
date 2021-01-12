@@ -1,3 +1,16 @@
+# [7.0.0](https://github.com/Telefonica/mistica-ios/compare/v6.0.0...v7.0.0) (2021-01-12)
+
+
+### Bug Fixes
+
+* **Button:** Does not update automatically the view's layout margins to reflect the safe area. ([#58](https://github.com/Telefonica/mistica-ios/issues/58)) ([e408f07](https://github.com/Telefonica/mistica-ios/commit/e408f07f2212918196c298df9b331cdbef8cef7e))
+* **Checkbox:** Rename CheckBox to Checkbox ([#53](https://github.com/Telefonica/mistica-ios/issues/53)) ([f66721f](https://github.com/Telefonica/mistica-ios/commit/f66721f85c138ea694e36f96a7c3f24f0b4f6fdb))
+
+
+### BREAKING CHANGES
+
+* **Checkbox:** Rename CheckBox to Checkbox
+
 # [6.0.0](https://github.com/Telefonica/mistica-ios/compare/v5.0.0...v6.0.0) (2020-11-30)
 
 

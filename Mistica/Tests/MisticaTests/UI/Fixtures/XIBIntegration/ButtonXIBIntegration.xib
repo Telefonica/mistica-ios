@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,6 +27,10 @@
                     <rect key="frame" x="20" y="154" width="168" height="30"/>
                     <state key="normal" title="Button pinned to leading"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWO-Nj-Wtv" userLabel="Button Pinned To Bottom ignoring safe area" customClass="Button" customModule="Mistica">
+                    <rect key="frame" x="124.5" y="866" width="165" height="30"/>
+                    <state key="normal" title="Button pinned to trailing"/>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TL-nf-2fv" customClass="Button" customModule="Mistica">
                     <rect key="frame" x="229" y="234" width="165" height="30"/>
                     <state key="normal" title="Button pinned to trailing"/>
@@ -38,14 +43,17 @@
                 <constraint firstItem="OQI-Vw-2VZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Bnd-b7-nDB"/>
                 <constraint firstItem="7TL-nf-2fv" firstAttribute="top" secondItem="OQI-Vw-2VZ" secondAttribute="bottom" constant="50" id="Fti-dt-Ygi"/>
                 <constraint firstItem="ciH-MA-3hd" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="TvA-B1-0ke"/>
+                <constraint firstItem="uWO-Nj-Wtv" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Xin-kp-fxp"/>
                 <constraint firstItem="jgs-mz-Txi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="aFu-ea-qUB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jgs-mz-Txi" secondAttribute="trailing" constant="20" id="di6-JU-pjE"/>
                 <constraint firstItem="jgs-mz-Txi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="ft2-o2-yt1"/>
                 <constraint firstItem="OQI-Vw-2VZ" firstAttribute="top" secondItem="jgs-mz-Txi" secondAttribute="bottom" constant="50" id="tTf-bz-ZRo"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7TL-nf-2fv" secondAttribute="trailing" constant="20" id="wi1-3b-sQt"/>
+                <constraint firstAttribute="bottom" secondItem="uWO-Nj-Wtv" secondAttribute="bottom" id="zbi-ce-7x9"/>
             </constraints>
             <connections>
                 <outlet property="buttonCentered" destination="ciH-MA-3hd" id="fJt-vO-JGX"/>
+                <outlet property="buttonPinnedToBottomIgnoringSafeArea" destination="uWO-Nj-Wtv" id="59g-0I-kcx"/>
                 <outlet property="buttonPinnedToLeading" destination="OQI-Vw-2VZ" id="GlV-Df-Nz4"/>
                 <outlet property="buttonPinnedToSides" destination="jgs-mz-Txi" id="McO-fI-SDx"/>
                 <outlet property="buttonPinnedToTrailing" destination="7TL-nf-2fv" id="4j6-wr-ds1"/>

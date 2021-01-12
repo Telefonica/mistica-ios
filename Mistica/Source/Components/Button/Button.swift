@@ -203,6 +203,7 @@ private extension Button {
         insets.left -= leftBleedingInsets
         insets.right -= rightBleedingInsets
         container.layoutMargins = insets
+        container.insetsLayoutMarginsFromSafeArea = false
         invalidateIntrinsicContentSize()
     }
 

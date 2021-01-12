@@ -13,7 +13,7 @@ public class StepperView: UIControl {
     enum Constants {
         static let spacing: CGFloat = 8
     }
-    
+
     private var _currentStep = 0
     public var currentStep: Int {
         set {
@@ -24,20 +24,20 @@ public class StepperView: UIControl {
             _currentStep
         }
     }
-    
+
     public var numberOfSteps = 3 {
         didSet {
             updateAccesibilityValues()
             layoutView()
         }
     }
-    
+
     public var isDetermined = false {
         didSet {
             layoutView()
         }
     }
-    
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -68,8 +68,8 @@ public class StepperView: UIControl {
     override public var allControlEvents: UIControl.Event {
         [.valueChanged]
     }
-    
-    public override var intrinsicContentSize: CGSize {
+
+    override public var intrinsicContentSize: CGSize {
         stackView.intrinsicContentSize
     }
 }
@@ -79,15 +79,16 @@ public class StepperView: UIControl {
 public extension StepperView {
     func setCurrentStep(_ currentStep: Int, animated: Bool) {
         _currentStep = currentStep
-        
+
         for (step, segmentView) in segmentViews.enumerated() {
-            update(segmentView: segmentView, at: step+1, animated: animated)
+            // Segments are in even indices. The correct step
+            update(segmentView: segmentView, at: step + 1, animated: animated)
         }
-        
+
         for (step, stepView) in stepViews.enumerated() {
             update(stepView: stepView, at: step, animated: animated)
         }
-        
+
         onValueChanged?(currentStep)
         sendActions(for: .valueChanged)
     }
@@ -107,14 +108,14 @@ private extension StepperView {
     var segmentViews: [SegmentView] {
         stackView.arrangedSubviews.compactMap { $0 as? SegmentView }
     }
-    
+
     var stepViews: [StepView] {
         stackView.arrangedSubviews.compactMap { $0 as? StepView }
     }
-    
+
     func updateAccesibilityValues() {
         let formatter = NumberFormatter()
-        accessibilityLabel = formatter.string(from: NSNumber(integerLiteral: currentStep+1))
+        accessibilityLabel = formatter.string(from: NSNumber(integerLiteral: currentStep + 1))
     }
 }
 
@@ -126,7 +127,7 @@ private extension StepperView {
         update(segmentView: segmentView, at: step, animated: false)
         return segmentView
     }
-    
+
     func createStep(step: Int) -> StepView {
         let stepView = StepView()
         // Aspect ratio 1 constraint, it keeps squared even if the text grows.
@@ -134,7 +135,7 @@ private extension StepperView {
         update(stepView: stepView, at: step, animated: false)
         return stepView
     }
-    
+
     func update(segmentView: SegmentView, at step: Int, animated: Bool) {
         segmentView.minimumValue = 0
         segmentView.maximumValue = numberOfSteps
@@ -146,7 +147,7 @@ private extension StepperView {
             segmentView.setValue(segmentView.minimumValue, animated: animated)
         }
     }
-    
+
     func update(stepView: StepView, at step: Int, animated: Bool) {
         if step == currentStep {
             stepView.setStatus(.activated(step: step), animated: animated)
@@ -168,29 +169,29 @@ private extension StepperView {
             layoutIndeterminateView()
         }
     }
-    
+
     func layoutDeterminedView() {
         stackView.removeArrangedSubviews()
-        
+
         var arrangedSubviews: [UIView] = [createStep(step: 0)]
-        for step in 1..<numberOfSteps {
+        for step in 1 ..< numberOfSteps {
             arrangedSubviews.append(createSegment(step: step))
             arrangedSubviews.append(createStep(step: step))
         }
 
         arrangedSubviews.forEach(stackView.addArrangedSubview)
-        
+
         activateSegmentsWidthConstraints()
     }
-    
+
     func activateSegmentsWidthConstraints() {
         guard let firstSegment = segmentViews.first else { return }
-        
+
         for segment in segmentViews where firstSegment != segment {
             segment.widthAnchor.constraint(equalTo: firstSegment.widthAnchor).isActive.toggle()
         }
     }
-    
+
     func layoutIndeterminateView() {
         stackView.removeArrangedSubviews()
         stackView.addArrangedSubview(createSegment(step: currentStep))

@@ -1,13 +1,14 @@
 //
 //  UICatalogStepperViewController.swift
-//  MisticaCatalog
 //
-//  Created by jmpuerta on 28/12/2020.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation
-import UIKit
 import Mistica
+import UIKit
 
 private enum Section: Int, CaseIterable {
     case indeterminate
@@ -21,11 +22,11 @@ class UICatalogStepperViewController: UITableViewController {
     private var maximumNumberOfSteps = 6
     private var currentStep = 0
     private var stepperViews: [StepperView] = []
-    
+
     private let currentStepStepper = UIStepper()
     private let currentStepLabel = UILabel()
     private lazy var currentStepStackView = UIStackView(arrangedSubviews: [currentStepLabel, currentStepStepper])
-    
+
     private let numberOfStepsStepper = UIStepper()
     private let numberOfStepsLabel = UILabel()
     private lazy var numberOfStepsStackView = UIStackView(arrangedSubviews: [numberOfStepsLabel, numberOfStepsStepper])
@@ -69,7 +70,7 @@ extension UICatalogStepperViewController {
     override func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let containerView: UIView
         let section = Section(rawValue: indexPath.section)!
-        
+
         switch section {
         case .indeterminate, .determined:
             let stepper = StepperView()
@@ -83,39 +84,39 @@ extension UICatalogStepperViewController {
             currentStepStepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
             currentStepLabel.text = "Current step: \(currentStep + 1)"
             updateCurrentStepLabel()
-            
+
             currentStepStackView.distribution = .equalSpacing
             currentStepStackView.alignment = .center
-            
+
             // Number Of Steps
             numberOfStepsStepper.minimumValue = Double(minimumNumberOfSteps)
             numberOfStepsStepper.maximumValue = Double(maximumNumberOfSteps)
             numberOfStepsStepper.value = Double(numberOfSteps)
             numberOfStepsStepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
             updateNumberOfStepsLabel()
-            
+
             numberOfStepsStackView.distribution = .equalSpacing
             numberOfStepsStackView.alignment = .center
-            
+
             // Vertical stack view
             let stackView = UIStackView(arrangedSubviews: [numberOfStepsStackView, currentStepStackView])
             stackView.axis = .vertical
             stackView.spacing = 8
-            
+
             containerView = stackView
         }
-        
+
         return CellView(view: containerView, reuseIdentifier: "Cell")
     }
-    
+
     func updateNumberOfStepsLabel() {
         numberOfStepsLabel.text = "Number of steps: \(numberOfSteps)"
     }
-    
+
     func updateCurrentStepLabel() {
         currentStepLabel.text = "Current step: \(currentStep + 1)"
     }
-    
+
     @objc func stepperValueChanged(sender: UIStepper) {
         stepperViews.forEach { stepperView in
             if sender == numberOfStepsStepper {
@@ -124,7 +125,7 @@ extension UICatalogStepperViewController {
                 currentStepStepper.maximumValue = sender.value
                 updateNumberOfStepsLabel()
             }
-            
+
             if sender == currentStepStepper {
                 currentStep = Int(sender.value)
                 stepperView.setCurrentStep(currentStep, animated: true)

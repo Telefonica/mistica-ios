@@ -25,7 +25,7 @@ final class StepperTests: XCTestCase {
             viewBuilder: makeTemplateWithStepperState(isDetermined: true)
         )
     }
-    
+
     func testIndeterminedStepperDefaultState() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -54,7 +54,7 @@ final class StepperTests: XCTestCase {
             named: "finalState"
         )
     }
-    
+
     func testDeterminedStepperNumberOfStepsChanges() {
         MisticaConfig.brandStyle = .movistar
 
@@ -74,7 +74,7 @@ final class StepperTests: XCTestCase {
             named: "finalState"
         )
     }
-    
+
     func testIndeterminedStepperCurrentStepChanges() {
         MisticaConfig.brandStyle = .movistar
 
@@ -94,7 +94,7 @@ final class StepperTests: XCTestCase {
             named: "finalState"
         )
     }
-    
+
     func testIndeterminedStepperNumberOfStepsChanges() {
         MisticaConfig.brandStyle = .movistar
 
@@ -114,7 +114,6 @@ final class StepperTests: XCTestCase {
             named: "finalState"
         )
     }
-    
 
     // MARK: XIB integration
 
@@ -123,19 +122,19 @@ final class StepperTests: XCTestCase {
 
         let view = StepperXIBIntegration.viewFromNib()
         view.stepper.isDetermined = true
-        
+
         assertSnapshot(
             matching: view,
             as: .image
         )
     }
-    
+
     func testIndeterminedStepperXIBIntegration() {
         MisticaConfig.brandStyle = .vivo
 
         let view = StepperXIBIntegration.viewFromNib()
         view.stepper.isDetermined = false
-        
+
         assertSnapshot(
             matching: view,
             as: .image

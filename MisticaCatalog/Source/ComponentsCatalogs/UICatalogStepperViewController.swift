@@ -82,7 +82,7 @@ extension UICatalogStepperViewController {
             // Current Step
             currentStepStepper.maximumValue = Double(numberOfSteps)
             currentStepStepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
-            currentStepLabel.text = "Current step: \(currentStep + 1)"
+            currentStepLabel.text = "Current step: \(currentStep)"
             updateCurrentStepLabel()
 
             currentStepStackView.distribution = .equalSpacing
@@ -114,7 +114,7 @@ extension UICatalogStepperViewController {
     }
 
     func updateCurrentStepLabel() {
-        currentStepLabel.text = "Current step: \(currentStep + 1)"
+        currentStepLabel.text = "Current step: \(currentStep)"
     }
 
     @objc func stepperValueChanged(sender: UIStepper) {

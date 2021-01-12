@@ -44,6 +44,14 @@ func assertSnapshotForAllBrands<Format>(
     )
 }
 
+extension UIView {
+    func asRootOfViewController() -> UIViewController {
+        let vc = UIViewController()
+        vc.view = self
+        return vc
+    }
+}
+
 // MARK: - Private Helpers
 
 private func _assertSnapshotForAllBrands<View, Format>(

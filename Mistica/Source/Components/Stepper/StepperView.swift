@@ -81,7 +81,6 @@ public extension StepperView {
         _currentStep = currentStep
         
         for (step, segmentView) in segmentViews.enumerated() {
-            // Segments are in even indices. The correct step
             update(segmentView: segmentView, at: step+1, animated: animated)
         }
         
@@ -90,6 +89,7 @@ public extension StepperView {
         }
         
         onValueChanged?(currentStep)
+        sendActions(for: .valueChanged)
     }
 }
 

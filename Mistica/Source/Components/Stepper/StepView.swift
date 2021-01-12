@@ -13,15 +13,15 @@ class StepView: UIView {
     private enum Constants {
         static let height: CGFloat = 24
     }
-    
+
     enum Status {
         case completed
         case activated(step: Int)
         case waiting(step: Int)
     }
-        
+
     private var _status: Status = .completed
-    var status: Status  {
+    var status: Status {
         get {
             _status
         }
@@ -29,33 +29,33 @@ class StepView: UIView {
             setStatus(newValue, animated: false)
         }
     }
-    
+
     private lazy var label = UILabel(frame: bounds)
     private lazy var imageView = UIImageView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }
-    
+
     func commonInit() {
         label.font = .textPreset8(weight: .medium)
         label.textAlignment = .center
         addSubview(withDefaultConstraints: label)
-        
+
         imageView.image = UIImage(named: "icn_check_stepper", type: .brandedAndThemed)
         addSubview(withDefaultConstraints: imageView)
     }
-    
+
     override var intrinsicContentSize: CGSize {
         CGSize(width: Constants.height, height: Constants.height)
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.size.height / 2
@@ -95,7 +95,7 @@ extension StepView {
                 self.accessibilityTraits = []
             }
         }
-        
+
         if animated {
             UIView.transition(with: self, duration: UIView.defaultAnimationDuration, options: .transitionCrossDissolve, animations: animations, completion: nil)
         } else {

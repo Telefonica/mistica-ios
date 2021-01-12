@@ -1,10 +1,8 @@
 name: CI
 
 on:
-  workflow_dispatch:
-
-  push:
-    branches: [apps/ci-workflow-fixes]
+  pull_request:
+        branches: [master]
 
 jobs:
   test:
@@ -25,17 +23,19 @@ jobs:
             mistica-ios-gems-
       
       - name: Carthage Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         id: carthage-cache
         with:
           path: Carthage
           key: mistica-ios-carthage-${{ hashFiles('Cartfile.resolved') }}
           restore-keys: |
             mistica-ios-carthage-
-      
+
       - name: Setup Ruby
         run: |
-          rbenv install 2.6.0 || true
+          export RBENV_ROOT=/usr/local/rbenv
+          export PATH="${RBENV_ROOT}/bin:$PATH"
+          rbenv install 2.6.0 -s
           rbenv local 2.6.0
       
       - name: Bundle Install
@@ -51,19 +51,21 @@ jobs:
         run: bundle exec fastlane test
 
       - name: Extract Sceenshot diff from failed Tests
-        if: failure()
+        if: always()
         run: bundle exec fastlane extract_tests_attachments
 
       - name: Checkout Telefonica/github-actions repo
         uses: actions/checkout@v2
+        if: always()
         with:
           repository: Telefonica/github-actions
-          ref: 'apps/mistica-upload-failed-screenshots'
+          ref: 'v1.1.0'
           token: "${{ secrets.READ_PRIVATE_REPOS }}"
           path: .github/actions
 
       - name: Check Tests result
         uses: ./.github/actions/mistica/upload-failed-screenshots
+        if: always()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           azure-account-name: ${{ secrets.AZURE_ACCOUNT_NAME }}

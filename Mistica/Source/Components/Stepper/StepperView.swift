@@ -15,9 +15,12 @@ open class StepperView: UIControl {
     }
 
     private var _currentStep = 0
+    /// Use this property to get and set the stepper's current step. To render an animated transition from the current value to the new value, use the setCurrentStep(_:animated:) method instead.
+    /// If you try to set a value that is below 0 or the number of steps, a sanitized value is set. The default value of this property is 0.
     public var currentStep: Int {
         set {
-            setCurrentStep(newValue, animated: false)
+            let sanitizedStep = min(max(newValue, 0), numberOfSteps)
+            setCurrentStep(sanitizedStep, animated: false)
             updateAccesibilityValues()
         }
         get {
@@ -25,6 +28,7 @@ open class StepperView: UIControl {
         }
     }
 
+    /// Use this property to get and set the stepper's number of steps. The default value of this property is 3.
     public var numberOfSteps = 3 {
         didSet {
             updateAccesibilityValues()

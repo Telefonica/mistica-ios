@@ -14,19 +14,27 @@ class StepView: UIView {
         static let height: CGFloat = 24
     }
 
-    enum Status {
-        case completed
-        case activated(step: Int)
-        case waiting(step: Int)
+    enum State {
+        case done
+        case active(step: Int)
+        case pending(step: Int)
     }
 
-    private var _status: Status = .completed
-    var status: Status {
-        get {
-            _status
-        }
-        set {
-            setStatus(newValue, animated: false)
+    var state: State = .done {
+        didSet { didSetState() }
+    }
+
+    func setState(_ state: State, animated: Bool) {
+        if animated {
+            UIView.transition(
+                with: self,
+                duration: UIView.defaultAnimationDuration,
+                options: .transitionCrossDissolve,
+                animations: { self.state = state },
+                completion: nil
+            )
+        } else {
+            self.state = state
         }
     }
 
@@ -64,42 +72,31 @@ class StepView: UIView {
     }
 }
 
-// MARK: Public
-
 extension StepView {
-    func setStatus(_ status: Status, animated: Bool) {
-        _status = status
-        let animations = {
-            switch status {
-            case .completed:
-                self.imageView.isHidden = false
-                self.label.isHidden = true
-                self.removeBorder()
-                self.backgroundColor = .clear
-                self.accessibilityTraits = []
-            case .activated(let step):
-                self.label.text = "\(step + 1)"
-                self.label.textColor = .textPrimaryInverse
-                self.label.isHidden = false
-                self.imageView.isHidden = true
-                self.removeBorder()
-                self.backgroundColor = .controlActivated
-                self.accessibilityTraits = [.selected]
-            case .waiting(let step):
-                self.label.text = "\(step + 1)"
-                self.label.textColor = .borderDark
-                self.label.isHidden = false
-                self.imageView.isHidden = true
-                self.addBorder(borderColor: .borderDark)
-                self.backgroundColor = .clear
-                self.accessibilityTraits = []
-            }
-        }
-
-        if animated {
-            UIView.transition(with: self, duration: UIView.defaultAnimationDuration, options: .transitionCrossDissolve, animations: animations, completion: nil)
-        } else {
-            animations()
+    func didSetState() {
+        switch state {
+        case .done:
+            imageView.isHidden = false
+            label.isHidden = true
+            removeBorder()
+            backgroundColor = .clear
+            accessibilityTraits = []
+        case .active(let step):
+            label.text = "\(step + 1)"
+            label.textColor = .textPrimaryInverse
+            label.isHidden = false
+            imageView.isHidden = true
+            removeBorder()
+            backgroundColor = .controlActivated
+            accessibilityTraits = [.selected]
+        case .pending(let step):
+            label.text = "\(step + 1)"
+            label.textColor = .borderDark
+            label.isHidden = false
+            imageView.isHidden = true
+            addBorder(borderColor: .borderDark)
+            backgroundColor = .clear
+            accessibilityTraits = []
         }
     }
 }

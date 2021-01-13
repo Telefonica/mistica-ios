@@ -19,26 +19,26 @@ final class StepperTests: XCTestCase {
 
     // MARK: - Styles
 
-    func testDeterminedStepperDefaultState() {
+    func testDeterminateStepperDefaultState() {
         assertSnapshotForAllBrands(
             as: .image,
-            viewBuilder: makeTemplateWithStepperState(isDetermined: true)
+            viewBuilder: makeTemplateWithStepperState(isDeterminate: true)
         )
     }
 
-    func testIndeterminedStepperDefaultState() {
+    func testIndeterminateStepperDefaultState() {
         assertSnapshotForAllBrands(
             as: .image,
-            viewBuilder: makeTemplateWithStepperState(isDetermined: false)
+            viewBuilder: makeTemplateWithStepperState(isDeterminate: false)
         )
     }
 
     // MARK: Behaviour
 
-    func testDeterminedStepperCurrentStepChanges() {
+    func testDeterminateStepperCurrentStepChanges() {
         MisticaConfig.brandStyle = .movistar
 
-        let stepper = makeTemplateWithStepperState(isDetermined: true, currentStep: 0)
+        let stepper = makeTemplateWithStepperState(isDeterminate: true, currentStep: 0)
 
         assertSnapshot(
             matching: stepper,
@@ -55,10 +55,10 @@ final class StepperTests: XCTestCase {
         )
     }
 
-    func testDeterminedStepperNumberOfStepsChanges() {
+    func testDeterminateStepperNumberOfStepsChanges() {
         MisticaConfig.brandStyle = .movistar
 
-        let stepper = makeTemplateWithStepperState(isDetermined: true, numberOfSteps: 3)
+        let stepper = makeTemplateWithStepperState(isDeterminate: true, numberOfSteps: 3)
 
         assertSnapshot(
             matching: stepper,
@@ -75,10 +75,10 @@ final class StepperTests: XCTestCase {
         )
     }
 
-    func testIndeterminedStepperCurrentStepChanges() {
+    func testIndeterminateStepperCurrentStepChanges() {
         MisticaConfig.brandStyle = .movistar
 
-        let stepper = makeTemplateWithStepperState(isDetermined: false, currentStep: 0)
+        let stepper = makeTemplateWithStepperState(isDeterminate: false, currentStep: 0)
 
         assertSnapshot(
             matching: stepper,
@@ -95,10 +95,10 @@ final class StepperTests: XCTestCase {
         )
     }
 
-    func testIndeterminedStepperNumberOfStepsChanges() {
+    func testIndeterminateStepperNumberOfStepsChanges() {
         MisticaConfig.brandStyle = .movistar
 
-        let stepper = makeTemplateWithStepperState(isDetermined: false, numberOfSteps: 3)
+        let stepper = makeTemplateWithStepperState(isDeterminate: false, numberOfSteps: 3)
 
         assertSnapshot(
             matching: stepper,
@@ -117,11 +117,11 @@ final class StepperTests: XCTestCase {
 
     // MARK: XIB integration
 
-    func testDeterminedStepperXIBIntegration() {
+    func testDeterminateStepperXIBIntegration() {
         MisticaConfig.brandStyle = .vivo
 
         let view = StepperXIBIntegration.viewFromNib()
-        view.stepper.isDetermined = true
+        view.stepper.isDeterminate = true
 
         assertSnapshot(
             matching: view,
@@ -129,11 +129,11 @@ final class StepperTests: XCTestCase {
         )
     }
 
-    func testIndeterminedStepperXIBIntegration() {
+    func testIndeterminateStepperXIBIntegration() {
         MisticaConfig.brandStyle = .vivo
 
         let view = StepperXIBIntegration.viewFromNib()
-        view.stepper.isDetermined = false
+        view.stepper.isDeterminate = false
 
         assertSnapshot(
             matching: view,
@@ -144,9 +144,9 @@ final class StepperTests: XCTestCase {
 
 // MARK: - Helpers
 
-private func makeTemplateWithStepperState(isDetermined: Bool, currentStep: Int = 0, numberOfSteps: Int = 3) -> StepperView {
+private func makeTemplateWithStepperState(isDeterminate: Bool, currentStep: Int = 0, numberOfSteps: Int = 3) -> StepperView {
     let stepperView = StepperView(frame: CGRect(origin: .zero, size: CGSize(width: 600, height: 24)))
-    stepperView.isDetermined = isDetermined
+    stepperView.isDeterminate = isDeterminate
     stepperView.numberOfSteps = numberOfSteps
     stepperView.currentStep = currentStep
     return stepperView

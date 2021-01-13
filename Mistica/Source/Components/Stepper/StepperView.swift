@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class StepperView: UIControl {
+open class StepperView: UIControl {
     enum Constants {
         static let spacing: CGFloat = 8
     }
@@ -32,7 +32,7 @@ public class StepperView: UIControl {
         }
     }
 
-    public var isDetermined = false {
+    public var isDeterminate = false {
         didSet {
             layoutView()
         }
@@ -60,7 +60,7 @@ public class StepperView: UIControl {
         commonInit()
     }
 
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }
@@ -139,7 +139,7 @@ private extension StepperView {
     func update(segmentView: SegmentView, at step: Int, animated: Bool) {
         segmentView.minimumValue = 0
         segmentView.maximumValue = numberOfSteps
-        if !isDetermined {
+        if !isDeterminate {
             segmentView.setValue(currentStep, animated: animated)
         } else if step <= currentStep {
             segmentView.setValue(segmentView.maximumValue, animated: animated)
@@ -150,11 +150,11 @@ private extension StepperView {
 
     func update(stepView: StepView, at step: Int, animated: Bool) {
         if step == currentStep {
-            stepView.setStatus(.activated(step: step), animated: animated)
+            stepView.setState(.active(step: step), animated: animated)
         } else if step < currentStep {
-            stepView.setStatus(.completed, animated: animated)
+            stepView.setState(.done, animated: animated)
         } else {
-            stepView.setStatus(.waiting(step: step), animated: animated)
+            stepView.setState(.pending(step: step), animated: animated)
         }
     }
 }
@@ -163,14 +163,14 @@ private extension StepperView {
 
 private extension StepperView {
     func layoutView() {
-        if isDetermined {
-            layoutDeterminedView()
+        if isDeterminate {
+            layoutDeterminateView()
         } else {
             layoutIndeterminateView()
         }
     }
 
-    func layoutDeterminedView() {
+    func layoutDeterminateView() {
         stackView.removeArrangedSubviews()
 
         var arrangedSubviews: [UIView] = [createStep(step: 0)]

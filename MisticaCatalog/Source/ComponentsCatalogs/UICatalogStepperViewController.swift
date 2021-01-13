@@ -12,7 +12,7 @@ import UIKit
 
 private enum Section: Int, CaseIterable {
     case indeterminate
-    case determined
+    case determinate
     case configuration
 }
 
@@ -72,9 +72,9 @@ extension UICatalogStepperViewController {
         let section = Section(rawValue: indexPath.section)!
 
         switch section {
-        case .indeterminate, .determined:
+        case .indeterminate, .determinate:
             let stepper = StepperView()
-            stepper.isDetermined = section == .determined
+            stepper.isDeterminate = section == .determinate
             stepper.numberOfSteps = numberOfSteps
             stepperViews.append(stepper)
             containerView = stepper
@@ -154,8 +154,8 @@ private class CellView: UITableViewCell {
 private extension Section {
     var headerTitle: String {
         switch self {
-        case .determined:
-            return "Determined"
+        case .determinate:
+            return "Determinate"
         case .indeterminate:
             return "Indeterminate"
         case .configuration:

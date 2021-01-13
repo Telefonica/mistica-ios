@@ -16,7 +16,6 @@ class SegmentView: UIView {
 
     private lazy var slider = UISlider(frame: bounds)
 
-    private var _value: Int = 0
     var value: Int {
         set { setValue(newValue, animated: false) }
         get { Int(slider.value) }
@@ -50,9 +49,7 @@ class SegmentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = bounds.size.height / 2
-        layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner]
-        layer.masksToBounds = true
+        makeRounded()
     }
 }
 

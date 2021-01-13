@@ -124,6 +124,8 @@ private extension StepperView {
 private extension StepperView {
     func createSegment(step: Int) -> SegmentView {
         let segmentView = SegmentView()
+        segmentView.minimumValue = 0
+        segmentView.maximumValue = numberOfSteps
         update(segmentView: segmentView, at: step, animated: false)
         return segmentView
     }
@@ -137,8 +139,6 @@ private extension StepperView {
     }
 
     func update(segmentView: SegmentView, at step: Int, animated: Bool) {
-        segmentView.minimumValue = 0
-        segmentView.maximumValue = numberOfSteps
         if !isDeterminate {
             segmentView.setValue(currentStep, animated: animated)
         } else if step <= currentStep {

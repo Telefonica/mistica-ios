@@ -19,7 +19,6 @@ open class StepperView: UIControl {
     /// If you try to set a value that is below 0 or the number of steps, a sanitized value is set. The default value of this property is 0.
     public var currentStep: Int {
         set {
-            let sanitizedStep = min(max(newValue, 0), numberOfSteps)
             setCurrentStep(sanitizedStep, animated: false)
             updateAccesibilityValues()
         }
@@ -82,7 +81,8 @@ open class StepperView: UIControl {
 
 public extension StepperView {
     func setCurrentStep(_ currentStep: Int, animated: Bool) {
-        _currentStep = currentStep
+        let sanitizedStep = min(max(currentStep, 0), numberOfSteps)
+        _currentStep = sanitizedStep
 
         for (step, segmentView) in segmentViews.enumerated() {
             // Segments are in even indices. The correct step
@@ -93,7 +93,7 @@ public extension StepperView {
             update(stepView: stepView, at: step, animated: animated)
         }
 
-        onValueChanged?(currentStep)
+        onValueChanged?(sanitizedStep)
         sendActions(for: .valueChanged)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  StepperView.swift
+//  DeterminateDeterminateStepperView.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class StepperView: UIControl {
+open class DeterminateStepperView: UIControl {
     enum Constants {
         static let spacing: CGFloat = 8
     }
@@ -19,8 +19,7 @@ open class StepperView: UIControl {
     /// If you try to set a value that is below 0 or the number of steps, a sanitized value is set. The default value of this property is 0.
     public var currentStep: Int {
         set {
-            setCurrentStep(sanitizedStep, animated: false)
-            updateAccesibilityValues()
+            setCurrentStep(newValue, animated: false)
         }
         get {
             _currentStep
@@ -29,13 +28,6 @@ open class StepperView: UIControl {
 
     /// Use this property to get and set the stepper's number of steps. The default value of this property is 3.
     public var numberOfSteps = 3 {
-        didSet {
-            updateAccesibilityValues()
-            layoutView()
-        }
-    }
-
-    public var isDeterminate = false {
         didSet {
             layoutView()
         }
@@ -50,8 +42,8 @@ open class StepperView: UIControl {
         return stackView
     }()
 
-    // Called when the Checkbox changes its value.
-    public var onValueChanged: ((Int) -> Void)?
+    // Called when the Stepper changes its value.
+    public var onStepChanged: ((Int) -> Void)?
 
     public convenience init() {
         self.init(frame: .zero)
@@ -79,13 +71,12 @@ open class StepperView: UIControl {
 
 // MARK: Public
 
-public extension StepperView {
+public extension DeterminateStepperView {
     func setCurrentStep(_ currentStep: Int, animated: Bool) {
         let sanitizedStep = min(max(currentStep, 0), numberOfSteps)
         _currentStep = sanitizedStep
 
         for (step, segmentView) in segmentViews.enumerated() {
-            // Segments are in even indices. The correct step
             update(segmentView: segmentView, at: step + 1, animated: animated)
         }
 
@@ -93,14 +84,14 @@ public extension StepperView {
             update(stepView: stepView, at: step, animated: animated)
         }
 
-        onValueChanged?(sanitizedStep)
+        onStepChanged?(sanitizedStep)
         sendActions(for: .valueChanged)
     }
 }
 
 // MARK: Common
 
-private extension StepperView {
+private extension DeterminateStepperView {
     func commonInit() {
         addSubview(withDefaultConstraints: stackView)
         isAccessibilityElement = true
@@ -125,7 +116,7 @@ private extension StepperView {
 
 // MARK: Updates
 
-private extension StepperView {
+private extension DeterminateStepperView {
     func createSegment(step: Int) -> SegmentView {
         let segmentView = SegmentView()
         segmentView.minimumValue = 0
@@ -143,9 +134,7 @@ private extension StepperView {
     }
 
     func update(segmentView: SegmentView, at step: Int, animated: Bool) {
-        if !isDeterminate {
-            segmentView.setValue(currentStep, animated: animated)
-        } else if step <= currentStep {
+        if step <= currentStep {
             segmentView.setValue(segmentView.maximumValue, animated: animated)
         } else {
             segmentView.setValue(segmentView.minimumValue, animated: animated)
@@ -165,16 +154,8 @@ private extension StepperView {
 
 // MARK: Layout
 
-private extension StepperView {
+private extension DeterminateStepperView {
     func layoutView() {
-        if isDeterminate {
-            layoutDeterminateView()
-        } else {
-            layoutIndeterminateView()
-        }
-    }
-
-    func layoutDeterminateView() {
         stackView.removeArrangedSubviews()
 
         var arrangedSubviews: [UIView] = [createStep(step: 0)]
@@ -194,10 +175,5 @@ private extension StepperView {
         for segment in segmentViews where firstSegment != segment {
             segment.widthAnchor.constraint(equalTo: firstSegment.widthAnchor).isActive.toggle()
         }
-    }
-
-    func layoutIndeterminateView() {
-        stackView.removeArrangedSubviews()
-        stackView.addArrangedSubview(createSegment(step: currentStep))
     }
 }

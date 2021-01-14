@@ -21,8 +21,10 @@ class UICatalogStepperViewController: UITableViewController {
     private var minimumNumberOfSteps = 2
     private var maximumNumberOfSteps = 6
     private var currentStep = 0
-    private var stepperViews: [StepperView] = []
 
+    private var indeterminateStepperView: IndeterminateStepperView!
+    private var determinateStepperView: DeterminateStepperView!
+    
     private let currentStepStepper = UIStepper()
     private let currentStepLabel = UILabel()
     private lazy var currentStepStackView = UIStackView(arrangedSubviews: [currentStepLabel, currentStepStepper])
@@ -72,12 +74,13 @@ extension UICatalogStepperViewController {
         let section = Section(rawValue: indexPath.section)!
 
         switch section {
-        case .indeterminate, .determinate:
-            let stepper = StepperView()
-            stepper.isDeterminate = section == .determinate
-            stepper.numberOfSteps = numberOfSteps
-            stepperViews.append(stepper)
-            containerView = stepper
+        case .indeterminate:
+            indeterminateStepperView = IndeterminateStepperView()
+            containerView = indeterminateStepperView
+        case .determinate:
+            determinateStepperView = DeterminateStepperView()
+            determinateStepperView.numberOfSteps = numberOfSteps
+            containerView = determinateStepperView
         case .configuration:
             // Current Step
             currentStepStepper.maximumValue = Double(numberOfSteps)
@@ -116,22 +119,26 @@ extension UICatalogStepperViewController {
     func updateCurrentStepLabel() {
         currentStepLabel.text = "Current step: \(currentStep)"
     }
-
+    
     @objc func stepperValueChanged(sender: UIStepper) {
-        stepperViews.forEach { stepperView in
-            if sender == numberOfStepsStepper {
-                numberOfSteps = Int(sender.value)
-                stepperView.numberOfSteps = numberOfSteps
-                currentStepStepper.maximumValue = sender.value
-                updateNumberOfStepsLabel()
-            }
-
-            if sender == currentStepStepper {
-                currentStep = Int(sender.value)
-                stepperView.setCurrentStep(currentStep, animated: true)
-                updateCurrentStepLabel()
-            }
+        if sender == numberOfStepsStepper {
+            numberOfSteps = Int(sender.value)
+            determinateStepperView.numberOfSteps = numberOfSteps
+            currentStepStepper.maximumValue = sender.value
+            updateNumberOfStepsLabel()
         }
+        
+        if sender == currentStepStepper {
+            currentStep = Int(sender.value)
+            updateCurrentStepLabel()
+        }
+        
+        updateStepperValues()
+    }
+    
+    func updateStepperValues() {
+        indeterminateStepperView.setValue(Int(Float(currentStep) / Float(numberOfSteps) * 100), animated: true)
+        determinateStepperView.setCurrentStep(currentStep, animated: true)
     }
 }
 

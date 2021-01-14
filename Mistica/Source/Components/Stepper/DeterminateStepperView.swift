@@ -1,5 +1,5 @@
 //
-//  DeterminateDeterminateStepperView.swift
+//  DeterminateStepperView.swift
 //
 //  Made with ❤️ by Novum
 //

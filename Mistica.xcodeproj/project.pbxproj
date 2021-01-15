@@ -93,6 +93,13 @@
 		B805C38E65D802F520DB0931 /* LoadErrorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CAF7C86C74F12CE2700B8 /* LoadErrorViewControllerDelegate.swift */; };
 		B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40616E1B8E8E2F0E7D3AAA /* Mistica.framework */; };
 		B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BCF901256D113B00D2BCCC /* TestHelpers.swift */; };
+		B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193A25B20FF0006510CC /* MediaCard.swift */; };
+		B8D7194425B20FF0006510CC /* DataCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193B25B20FF0006510CC /* DataCard.swift */; };
+		B8D7194525B20FF0006510CC /* CardCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193D25B20FF0006510CC /* CardCommonContent.swift */; };
+		B8D7194625B20FF0006510CC /* CardActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193E25B20FF0006510CC /* CardActionsView.swift */; };
+		B8D7194725B20FF0006510CC /* CardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193F25B20FF0006510CC /* CardBase.swift */; };
+		B8D7194825B20FF0006510CC /* CardContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7194025B20FF0006510CC /* CardContentItem.swift */; };
+		B8D7194925B20FF0006510CC /* CardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7194225B20FF0006510CC /* CardAction.swift */; };
 		B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */; };
 		B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA9B256E6DCA00472C23 /* UIView+Utils.swift */; };
 		B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA96256E6CB300472C23 /* ButtonXIBIntegration.swift */; };
@@ -143,9 +150,6 @@
 		F7A78EC82577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.assertInitialState.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EAE2577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.assertInitialState.png */; };
 		F7A78EC92577DF9A0013B78E /* testSwitchDefaultState.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EAF2577DF9A0013B78E /* testSwitchDefaultState.with-movistar-style.png */; };
 		F7A78ECA2577DF9A0013B78E /* testTabBarControl.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EB02577DF9A0013B78E /* testTabBarControl.with-movistar-style.png */; };
-		F73BFB7D25751EBD000E3C1E /* CheckboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFB7A25751E8A000E3C1E /* CheckboxTests.swift */; };
-		F73D6C6225750D340012A2C4 /* CheckboxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */; };
-		F73D6C6825750DB30012A2C4 /* CheckboxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */; };
 		F7A78F432577F7F80013B78E /* testCriticalCrouton.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED92577F7F80013B78E /* testCriticalCrouton.with-o2-style.png */; };
 		F7A78F442577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDA2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png */; };
 		F7A78F452577F7F80013B78E /* testInfoCrouton.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDB2577F7F80013B78E /* testInfoCrouton.with-movistar-style.png */; };
@@ -488,6 +492,17 @@
 		B8BCF9B5256D1AB700D2BCCC /* testRegularSizeWithSecondaryStyle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testRegularSizeWithSecondaryStyle.with-o2Classic-style.png"; sourceTree = "<group>"; };
 		B8BCF9B6256D1AB700D2BCCC /* testSmallSizeWithPrimaryStyle.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSmallSizeWithPrimaryStyle.with-movistar-style.png"; sourceTree = "<group>"; };
 		B8BCF9B7256D1AB700D2BCCC /* testSmallSizeWithPrimaryStyle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSmallSizeWithPrimaryStyle.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		B8D7193A25B20FF0006510CC /* MediaCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCard.swift; sourceTree = "<group>"; };
+		B8D7193B25B20FF0006510CC /* DataCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCard.swift; sourceTree = "<group>"; };
+		B8D7193D25B20FF0006510CC /* CardCommonContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCommonContent.swift; sourceTree = "<group>"; };
+		B8D7193E25B20FF0006510CC /* CardActionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardActionsView.swift; sourceTree = "<group>"; };
+		B8D7193F25B20FF0006510CC /* CardBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBase.swift; sourceTree = "<group>"; };
+		B8D7194025B20FF0006510CC /* CardContentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentItem.swift; sourceTree = "<group>"; };
+		B8D7194225B20FF0006510CC /* CardAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAction.swift; sourceTree = "<group>"; };
+		B8D7194B25B21065006510CC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B8D7195425B21589006510CC /* card-extra-content.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "card-extra-content.jpg"; sourceTree = "<group>"; };
+		B8D7195725B21594006510CC /* media-card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "media-card.jpg"; sourceTree = "<group>"; };
+		B8D7195825B21594006510CC /* data-card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "data-card.jpg"; sourceTree = "<group>"; };
 		B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredPresetView.swift; sourceTree = "<group>"; };
 		B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonXIBIntegration.xib; sourceTree = "<group>"; };
 		B8FFFA92256E6C9800472C23 /* testLinkStyleAndContentModeLeft.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testLinkStyleAndContentModeLeft.1.png; sourceTree = "<group>"; };
@@ -546,17 +561,8 @@
 		F374FFFEA862CA17EDA3D4F3 /* IntrinsicHeightTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicHeightTextView.swift; sourceTree = "<group>"; };
 		F3C4B777E490D209B868734E /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		F4879FB92B4EAB99BE49D827 /* CroutonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonController.swift; sourceTree = "<group>"; };
-		F74CB4CF2575448000260675 /* testCheckboxActiveCheckedState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-movistar-style.png"; sourceTree = "<group>"; };
-		F74CB4D02575448000260675 /* testCheckboxDefaultState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F74CB4D12575448000260675 /* testCheckboxIsChecked.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testCheckboxIsChecked.finalState.png; sourceTree = "<group>"; };
-		F74CB4D22575448000260675 /* testCheckboxActiveCheckedState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F74CB4D32575448000260675 /* testCheckboxActiveCheckedState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-vivo-style.png"; sourceTree = "<group>"; };
-		F74CB4D42575448000260675 /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
-		F74CB4D52575448000260675 /* testCheckboxDefaultState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-o2-style.png"; sourceTree = "<group>"; };
-		F74CB4D62575448000260675 /* testCheckboxIsChecked.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testCheckboxIsChecked.assertInitialState.png; sourceTree = "<group>"; };
-		F74CB4D72575448000260675 /* testCheckboxDefaultState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-vivo-style.png"; sourceTree = "<group>"; };
-		F74CB4D82575448000260675 /* testCheckboxDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
-		F74CB4D92575448000260675 /* testCheckboxActiveCheckedState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-o2-style.png"; sourceTree = "<group>"; };
+		F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxXIBIntegration.swift; sourceTree = "<group>"; };
+		F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxXIBIntegration.xib; sourceTree = "<group>"; };
 		F74CB4F025765A4A00260675 /* ControlsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsTests.swift; sourceTree = "<group>"; };
 		F7A78E972577DF9A0013B78E /* testPageControl.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testPageControl.with-o2-style.png"; sourceTree = "<group>"; };
 		F7A78E982577DF9A0013B78E /* testTabBarControl.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testTabBarControl.with-o2Classic-style.png"; sourceTree = "<group>"; };
@@ -584,9 +590,6 @@
 		F7A78EAE2577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSegmentedControlChangeSelectedSegment.assertInitialState.png; sourceTree = "<group>"; };
 		F7A78EAF2577DF9A0013B78E /* testSwitchDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
 		F7A78EB02577DF9A0013B78E /* testTabBarControl.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testTabBarControl.with-movistar-style.png"; sourceTree = "<group>"; };
-		F73BFB7A25751E8A000E3C1E /* CheckboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTests.swift; sourceTree = "<group>"; };
-		F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxXIBIntegration.swift; sourceTree = "<group>"; };
-		F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxXIBIntegration.xib; sourceTree = "<group>"; };
 		F7A78ED92577F7F80013B78E /* testCriticalCrouton.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCrouton.with-o2-style.png"; sourceTree = "<group>"; };
 		F7A78EDA2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithLongActionTitle.with-o2-style.png"; sourceTree = "<group>"; };
 		F7A78EDB2577F7F80013B78E /* testInfoCrouton.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCrouton.with-movistar-style.png"; sourceTree = "<group>"; };
@@ -1244,6 +1247,7 @@
 		7EC27C08C547CB235571FBA5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B8D7193925B20FF0006510CC /* Cards */,
 				8EFBC877A9A7C576B013980D /* Badge */,
 				6029222399A3A1EDFFD001E6 /* Button */,
 				FEE485632D40E24FB0311B4C /* Checkbox */,
@@ -1481,6 +1485,56 @@
 				B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */,
 			);
 			path = ControlPresets;
+			sourceTree = "<group>";
+		};
+		B8D7193925B20FF0006510CC /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				B8D7194F25B21206006510CC /* docs */,
+				B8D7194B25B21065006510CC /* README.md */,
+				B8D7193A25B20FF0006510CC /* MediaCard.swift */,
+				B8D7193B25B20FF0006510CC /* DataCard.swift */,
+				B8D7193C25B20FF0006510CC /* Internals */,
+				B8D7194125B20FF0006510CC /* Model */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		B8D7193C25B20FF0006510CC /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				B8D7193D25B20FF0006510CC /* CardCommonContent.swift */,
+				B8D7193E25B20FF0006510CC /* CardActionsView.swift */,
+				B8D7193F25B20FF0006510CC /* CardBase.swift */,
+				B8D7194025B20FF0006510CC /* CardContentItem.swift */,
+			);
+			path = Internals;
+			sourceTree = "<group>";
+		};
+		B8D7194125B20FF0006510CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8D7194225B20FF0006510CC /* CardAction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8D7194F25B21206006510CC /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				B8D7195025B2120E006510CC /* images */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		B8D7195025B2120E006510CC /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B8D7195825B21594006510CC /* data-card.jpg */,
+				B8D7195725B21594006510CC /* media-card.jpg */,
+				B8D7195425B21589006510CC /* card-extra-content.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		B8FFFA8B256E602100472C23 /* Fixtures */ = {
@@ -2079,6 +2133,7 @@
 				D80B7145DD7C350BC8E8CCBF /* AlignmentImageView.swift in Sources */,
 				27321C77876795284B43C40E /* Array+NSAttributedString.swift in Sources */,
 				CAF27E0ABEBFB611FC0EE3BF /* AssetCatalog+Themed.swift in Sources */,
+				B8D7194625B20FF0006510CC /* CardActionsView.swift in Sources */,
 				0585D331C6B995C80E5867E7 /* AssetType.swift in Sources */,
 				205E03827FDA8AA677CC107E /* BadgeView.swift in Sources */,
 				74E247BBC5916AABD37FC76F /* BoundsChangeInvalidatingFlowLayout.swift in Sources */,
@@ -2116,8 +2171,10 @@
 				6F2DC585A16D86F7FFFD778D /* InputField.swift in Sources */,
 				BFB222960EE616A5A31A2131 /* InputFieldAssets.swift in Sources */,
 				7C08A5B312CD6C093A0777AB /* InputFieldDelegate.swift in Sources */,
+				B8D7194525B20FF0006510CC /* CardCommonContent.swift in Sources */,
 				F2BFC9F715E3810F002FCDBF /* InputFieldStyle+Toolkit.swift in Sources */,
 				FD91D9B40E070D425FA48CDC /* InputFieldValidationStrategy.swift in Sources */,
+				B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */,
 				FF695537B060674584B2F14D /* IntrinsicHeightTextView.swift in Sources */,
 				FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
 				43B97750F1AABDAC15224AC8 /* IntrinsictHeightLabel.swift in Sources */,
@@ -2125,6 +2182,7 @@
 				69B7063AEE070561B5D83375 /* KeyboardInfo.swift in Sources */,
 				A05C5AFAFC51AC86C9FEAD58 /* KeyboardNotificationCenter.swift in Sources */,
 				5E9996DC83EFB50DB7E2B9B6 /* ListCellStyle+Toolkit.swift in Sources */,
+				B8D7194725B20FF0006510CC /* CardBase.swift in Sources */,
 				45165BE25062A3F6F3258CF2 /* ListCellView.swift in Sources */,
 				B4C99EA94307852447D672A1 /* ListView.swift in Sources */,
 				ABCDBD7FEBCC5710EAB9AD55 /* ListsAssets.swift in Sources */,
@@ -2143,12 +2201,15 @@
 				D3DC00209006534C72A7B2F2 /* PasswordInputFieldValidationStrategy.swift in Sources */,
 				5236C2BE900CA9A69C0B58B6 /* PhoneNumberInputFieldValidationStrategy.swift in Sources */,
 				2413001847ED6200A13CC1D6 /* PopoverAssets.swift in Sources */,
+				B8D7194925B20FF0006510CC /* CardAction.swift in Sources */,
+				B8D7194825B20FF0006510CC /* CardContentItem.swift in Sources */,
 				AE568ECA9A69A30366BD05ED /* PopoverConfiguration.swift in Sources */,
 				2E2AF2C793F73E8F9765065A /* PopoverContentView.swift in Sources */,
 				0E981C32BBB09DF7A1A9D7F9 /* PopoverMessageView.swift in Sources */,
 				2AC87076A6AC9FB3B66D64A3 /* PopoverView.swift in Sources */,
 				730E74166CA8DF6FE7233484 /* PreprocessorChecks.swift in Sources */,
 				83C49A0982B41B48B95AF7C8 /* RadioButton.swift in Sources */,
+				B8D7194425B20FF0006510CC /* DataCard.swift in Sources */,
 				244AF2F1FA472CECF71F4212 /* ScrollContentIndicator.swift in Sources */,
 				C8652B0AFC082F85242A7D32 /* ScrollContentIndicatorStyle.swift in Sources */,
 				340E022D5FE30D155E4BEC1B /* ScrollStackView.swift in Sources */,

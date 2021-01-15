@@ -1,5 +1,5 @@
 //
-//  CommonCardContent.swift
+//  CardCommonContent.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CommonCardContent: UIStackView {
+class CardCommonContent: UIStackView {
     let headlineTagView = CardContentItem<TagView>(topSpacing: 8)
     let titleLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 4)
     let subtitleLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 4)
-    let detailLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 8)
+    let descriptionLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 8)
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +25,9 @@ class CommonCardContent: UIStackView {
     }
 }
 
-extension CommonCardContent {
+// MARK: Internal
+
+extension CardCommonContent {
     var headline: String? {
         get {
             headlineTagView.text
@@ -47,12 +49,12 @@ extension CommonCardContent {
         }
         set {
             titleLabel.text = newValue
-            
+
             if titleLabel.text == nil {
                 titleLabel.removeFromSuperview()
             } else if titleLabel.superview == nil {
-                let subtitlePosition = titleLabel.superview == nil ? 1 : 0
-                insertArrangedSubview(titleLabel, at: subtitlePosition)
+                let titlePosition = headlineTagView.superview == nil ? 1 : 0
+                insertArrangedSubview(titleLabel, at: titlePosition)
             }
         }
     }
@@ -67,24 +69,26 @@ extension CommonCardContent {
             if subtitleLabel.text == nil {
                 subtitleLabel.removeFromSuperview()
             } else if subtitleLabel.superview == nil {
-                let subtitlePosition = headlineTagView.superview == nil ? 1 : 2
-                insertArrangedSubview(subtitleLabel, at: subtitlePosition)
+                if let descriptionTitlePosition = arrangedSubviews.firstIndex(of: descriptionLabel) {
+                    insertArrangedSubview(subtitleLabel, at: descriptionTitlePosition)
+                } else {
+                    addArrangedSubview(subtitleLabel)
+                }
             }
         }
     }
 
     var descriptionTitle: String? {
         get {
-            detailLabel.text
+            descriptionLabel.text
         }
         set {
-            detailLabel.text = newValue
+            descriptionLabel.text = newValue
 
-            if detailLabel.text == nil {
-                detailLabel.removeFromSuperview()
-            } else if detailLabel.superview == nil {
-                let detailPosition = subtitleLabel.superview == nil ? 3 : 2
-                insertArrangedSubview(detailLabel, at: detailPosition)
+            if descriptionLabel.text == nil {
+                descriptionLabel.removeFromSuperview()
+            } else if descriptionLabel.superview == nil {
+                addArrangedSubview(descriptionLabel)
             }
         }
     }
@@ -92,7 +96,7 @@ extension CommonCardContent {
 
 // MARK: Private
 
-private extension CommonCardContent {
+private extension CardCommonContent {
     func commomInit() {
         layoutViews()
         styleViews()
@@ -103,25 +107,10 @@ private extension CommonCardContent {
         alignment = .leading
 
         addArrangedSubview(titleLabel)
-        addArrangedSubview(detailLabel)
+        addArrangedSubview(descriptionLabel)
     }
 
     func styleViews() {
         backgroundColor = .background
-
-        titleLabel.font = .textPreset5(weight: .light)
-        titleLabel.textColor = .textPrimary
-        titleLabel.minHeight = 24
-        titleLabel.numberOfLines = 0
-
-        subtitleLabel.font = .textPreset7(weight: .regular)
-        subtitleLabel.textColor = .textPrimary
-        subtitleLabel.minHeight = 20
-        subtitleLabel.numberOfLines = 0
-
-        detailLabel.font = .textPreset7(weight: .regular)
-        detailLabel.textColor = .textSecondary
-        detailLabel.minHeight = 20
-        detailLabel.numberOfLines = 0
     }
 }

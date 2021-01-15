@@ -1,5 +1,5 @@
 //
-//  BaseCard.swift
+//  CardBase.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class BaseCard: UIStackView {
-    let contentView = CommonCardContent(frame: .zero)
+class CardBase: UIStackView {
+    let contentView = CardCommonContent(frame: .zero)
     let actionsView = CardActionsView()
 
     public var fragmentView: UIView? {
@@ -18,8 +18,6 @@ class BaseCard: UIStackView {
             oldValue?.removeFromSuperview()
 
             if let view = fragmentView {
-                
-                
                 if let actionsPosition = arrangedSubviews.firstIndex(of: actionsView) {
                     insertArrangedSubview(view, at: actionsPosition)
                 } else {
@@ -40,7 +38,9 @@ class BaseCard: UIStackView {
     }
 }
 
-extension BaseCard {
+// MARK: Internal
+
+extension CardBase {
     var title: String? {
         get {
             contentView.title
@@ -90,7 +90,7 @@ extension BaseCard {
 
 // MARK: Private
 
-private extension BaseCard {
+private extension CardBase {
     func commomInit() {
         layoutViews()
     }

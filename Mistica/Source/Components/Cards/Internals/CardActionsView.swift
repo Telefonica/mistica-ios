@@ -45,6 +45,8 @@ class CardActionsView: UIStackView {
     }
 }
 
+// MARK: Internal
+
 extension CardActionsView {
     func configureActions(primaryAction: CardAction?, linkAction: CardAction?) {
         if let primaryAction = primaryAction {

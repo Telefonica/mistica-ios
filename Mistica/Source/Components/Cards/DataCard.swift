@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// MARK: DataCardConfiguration
+
 public struct DataCardConfiguration {
     let icon: UIImage?
     let headline: String?
@@ -37,15 +39,30 @@ public struct DataCardConfiguration {
     }
 }
 
+// MARK: DataCard
+
 public class DataCard: UIView {
-    var iconImageView = IntrinsictImageView()
-    let iconContainerView = UIView()
-    let baseCardView = BaseCard()
+    private enum Constants {
+        static let spacingAfterIconView = CGFloat(0)
+        static let cornerRadius = CGFloat(4)
+        static let cardLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 24, trailing: 16)
+        static let iconLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
+        static let iconHeight = CGFloat(40)
+        static let iconWidth = CGFloat(40)
+    }
+
+    private let iconContainerView = UIView()
+    private var iconImageView = IntrinsictImageView()
+    private let cardBaseView = CardBase()
 
     public var fragmentView: UIView? {
         didSet {
-            baseCardView.fragmentView = fragmentView
+            cardBaseView.fragmentView = fragmentView
         }
+    }
+
+    public var contentConfiguration: DataCardConfiguration? {
+        didSet {}
     }
 
     override public init(frame: CGRect) {
@@ -60,7 +77,7 @@ public class DataCard: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        makeRounded(cornerRadius: 4)
+        makeRounded(cornerRadius: Constants.cornerRadius)
     }
 }
 
@@ -70,8 +87,8 @@ public extension DataCard {
     func configure(with configuration: DataCardConfiguration) {
         if let icon = configuration.icon {
             if iconContainerView.superview == nil {
-                baseCardView.insertArrangedSubview(iconContainerView, at: 0)
-                baseCardView.setCustomSpacing(0, after: iconContainerView)
+                cardBaseView.insertArrangedSubview(iconContainerView, at: 0)
+                cardBaseView.setCustomSpacing(Constants.spacingAfterIconView, after: iconContainerView)
             }
             iconImageView.image = icon
         } else {
@@ -79,12 +96,12 @@ public extension DataCard {
             iconImageView.image = nil
         }
 
-        baseCardView.headline = configuration.headline
-        baseCardView.title = configuration.title
-        baseCardView.subtitle = configuration.subtitle
-        baseCardView.descriptionTitle = configuration.descriptionTitle
+        cardBaseView.headline = configuration.headline
+        cardBaseView.title = configuration.title
+        cardBaseView.subtitle = configuration.subtitle
+        cardBaseView.descriptionTitle = configuration.descriptionTitle
 
-        baseCardView.configureActions(primaryAction: configuration.button, linkAction: configuration.link)
+        cardBaseView.configureActions(primaryAction: configuration.button, linkAction: configuration.link)
     }
 
     var iconContentMode: UIView.ContentMode {
@@ -96,21 +113,21 @@ public extension DataCard {
         }
     }
 
-    var primaryActionState: Button.State {
+    var primaryButtonState: Button.State {
         get {
-            baseCardView.actionsView.buttonState
+            cardBaseView.actionsView.buttonState
         }
         set {
-            baseCardView.actionsView.buttonState = newValue
+            cardBaseView.actionsView.buttonState = newValue
         }
     }
 
-    var linkActionState: Button.State {
+    var linkButtonState: Button.State {
         get {
-            baseCardView.actionsView.linkState
+            cardBaseView.actionsView.linkState
         }
         set {
-            baseCardView.actionsView.linkState = newValue
+            cardBaseView.actionsView.linkState = newValue
         }
     }
 }
@@ -124,12 +141,12 @@ private extension DataCard {
     }
 
     func layoutViews() {
-        directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 24, trailing: 16)
+        directionalLayoutMargins = Constants.cardLayoutMargins
         insetsLayoutMarginsFromSafeArea = false
 
-        addSubview(constrainedToLayoutMarginsGuideOf: baseCardView)
+        addSubview(constrainedToLayoutMarginsGuideOf: cardBaseView)
 
-        iconContainerView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
+        iconContainerView.directionalLayoutMargins = Constants.iconLayoutMargins
         iconContainerView.insetsLayoutMarginsFromSafeArea = false
 
         iconContainerView.addSubview(iconImageView, constraints: [
@@ -138,11 +155,26 @@ private extension DataCard {
             iconImageView.bottomAnchor.constraint(equalTo: iconContainerView.layoutMarginsGuide.bottomAnchor)
         ])
 
-        iconImageView.intrinsicWidth = 40
-        iconImageView.intrinsicHeight = 40
+        iconImageView.intrinsicWidth = Constants.iconWidth
+        iconImageView.intrinsicHeight = Constants.iconHeight
     }
 
     func styleViews() {
         backgroundColor = .background
+
+        cardBaseView.contentView.titleLabel.font = .textPreset5(weight: .light)
+        cardBaseView.contentView.titleLabel.textColor = .textPrimary
+        cardBaseView.contentView.titleLabel.minHeight = 24
+        cardBaseView.contentView.titleLabel.numberOfLines = 0
+
+        cardBaseView.contentView.subtitleLabel.font = .textPreset7(weight: .regular)
+        cardBaseView.contentView.subtitleLabel.textColor = .textPrimary
+        cardBaseView.contentView.subtitleLabel.minHeight = 20
+        cardBaseView.contentView.subtitleLabel.numberOfLines = 0
+
+        cardBaseView.contentView.descriptionLabel.font = .textPreset7(weight: .regular)
+        cardBaseView.contentView.descriptionLabel.textColor = .textSecondary
+        cardBaseView.contentView.descriptionLabel.minHeight = 20
+        cardBaseView.contentView.descriptionLabel.numberOfLines = 0
     }
 }

@@ -10,17 +10,10 @@ import UIKit
 
 @dynamicMemberLookup
 class CardContentItem<Element: UIView>: UIStackView {
-    var item: Element
-
-    var topSpacing: CGFloat {
-        didSet {
-            directionalLayoutMargins = NSDirectionalEdgeInsets(top: topSpacing, leading: 0, bottom: 0, trailing: 0)
-        }
-    }
+    private var item: Element
 
     init(topSpacing: CGFloat) {
         item = Element(frame: .zero)
-        self.topSpacing = topSpacing
 
         super.init(frame: .zero)
 

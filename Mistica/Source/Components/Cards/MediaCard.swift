@@ -1,15 +1,18 @@
 //
-//  File.swift
-//  
+//  MediaCard.swift
 //
-//  Created by Jose Miguel Brocal on 14/1/21.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
+// MARK: MediaCardConfiguration
+
 public struct MediaCardConfiguration {
-    let icon: UIImage
+    let richMedia: UIView
     let headline: String?
     let title: String?
     let pretitle: String?
@@ -18,7 +21,7 @@ public struct MediaCardConfiguration {
     let link: CardAction?
 
     public init(
-        icon: UIImage,
+        richMedia: UIView,
         headline: String? = nil,
         title: String? = nil,
         pretitle: String? = nil,
@@ -26,7 +29,7 @@ public struct MediaCardConfiguration {
         button: CardAction? = nil,
         link: CardAction? = nil
     ) {
-        self.icon = icon
+        self.richMedia = richMedia
         self.headline = headline
         self.title = title
         self.pretitle = pretitle
@@ -36,23 +39,17 @@ public struct MediaCardConfiguration {
     }
 }
 
-public struct MediaCardAction {
-    public let title: String
-    public let loadingTitle: String?
-    public let tapHandler: (() -> Void)?
-
-    public init(title: String,
-                loadingTitle: String?,
-                tapHandler: (() -> Void)?) {
-        self.title = title
-        self.loadingTitle = loadingTitle
-        self.tapHandler = tapHandler
-    }
-}
+// MARK: MediaCard
 
 public class MediaCard: UIView {
-    var iconImageView = IntrinsictImageView()
-    let baseCardView = BaseCard()
+    private enum Constants {
+        static let cornerRadius = CGFloat(4)
+        static let cardLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 24, trailing: 16)
+        static let spacingAfterRichMediaView = CGFloat(8)
+    }
+
+    private var richMediaContainerView = UIView()
+    private let baseCardView = CardBase()
 
     public var fragmentView: UIView? {
         didSet {
@@ -72,7 +69,7 @@ public class MediaCard: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        makeRounded(cornerRadius: 4)
+        makeRounded(cornerRadius: Constants.cornerRadius)
     }
 }
 
@@ -80,7 +77,9 @@ public class MediaCard: UIView {
 
 public extension MediaCard {
     func configure(with configuration: MediaCardConfiguration) {
-        iconImageView.image = configuration.icon
+        richMediaContainerView.subviews.first?.removeFromSuperview()
+
+        richMediaContainerView.addSubview(withDefaultConstraints: configuration.richMedia)
 
         baseCardView.headline = configuration.headline
         baseCardView.title = configuration.pretitle?.uppercased()
@@ -88,15 +87,6 @@ public extension MediaCard {
         baseCardView.descriptionTitle = configuration.descriptionTitle
 
         baseCardView.configureActions(primaryAction: configuration.button, linkAction: configuration.link)
-    }
-
-    var iconContentMode: UIView.ContentMode {
-        get {
-            iconImageView.contentMode
-        }
-        set {
-            iconImageView.contentMode = newValue
-        }
     }
 
     var primaryActionState: Button.State {
@@ -127,28 +117,26 @@ private extension MediaCard {
     }
 
     func layoutViews() {
-        directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 24, trailing: 16)
+        directionalLayoutMargins = Constants.cardLayoutMargins
         insetsLayoutMarginsFromSafeArea = false
-        
-        addSubview(iconImageView, constraints: [
-            iconImageView.topAnchor.constraint(equalTo: topAnchor),
-            iconImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor)
+
+        addSubview(richMediaContainerView, constraints: [
+            richMediaContainerView.topAnchor.constraint(equalTo: topAnchor),
+            richMediaContainerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            richMediaContainerView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
-        
+
         addSubview(baseCardView, constraints: [
-            baseCardView.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 8),
+            baseCardView.topAnchor.constraint(equalTo: richMediaContainerView.bottomAnchor, constant: Constants.spacingAfterRichMediaView),
             baseCardView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             baseCardView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-            baseCardView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            baseCardView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor)
         ])
     }
 
     func styleViews() {
         backgroundColor = .background
-        
-        iconImageView.intrinsicHeight = 200
-        
+
         baseCardView.contentView.titleLabel.font = .textPreset8(weight: .regular)
         baseCardView.contentView.titleLabel.textColor = .textPrimary
         baseCardView.contentView.titleLabel.minHeight = 16
@@ -159,9 +147,9 @@ private extension MediaCard {
         baseCardView.contentView.subtitleLabel.minHeight = 24
         baseCardView.contentView.subtitleLabel.numberOfLines = 0
 
-        baseCardView.contentView.detailLabel.font = .textPreset7(weight: .regular)
-        baseCardView.contentView.detailLabel.textColor = .textSecondary
-        baseCardView.contentView.detailLabel.minHeight = 20
-        baseCardView.contentView.detailLabel.numberOfLines = 0
+        baseCardView.contentView.descriptionLabel.font = .textPreset7(weight: .regular)
+        baseCardView.contentView.descriptionLabel.textColor = .textSecondary
+        baseCardView.contentView.descriptionLabel.minHeight = 20
+        baseCardView.contentView.descriptionLabel.numberOfLines = 0
     }
 }

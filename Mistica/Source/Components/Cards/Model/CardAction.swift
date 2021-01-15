@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  CardAction.swift
 //
-//  Created by Jose Miguel Brocal on 15/1/21.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Foundation

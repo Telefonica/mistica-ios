@@ -10,7 +10,12 @@ import UIKit
 
 final class SpacerView: UIView {
     private let axis: NSLayoutConstraint.Axis
-    private let amount: CGFloat
+
+    var amount: CGFloat {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
 
     init(axis: NSLayoutConstraint.Axis, amount: CGFloat) {
         self.axis = axis

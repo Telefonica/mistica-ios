@@ -9,10 +9,10 @@
 import UIKit
 
 class CommonCardContent: UIStackView {
-    private let headlineTagView = CardContentItem<TagView>(topSpacing: 8)
-    private let titleLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 4)
-    private let subtitleLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 4)
-    private let detailLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 8)
+    let headlineTagView = CardContentItem<TagView>(topSpacing: 8)
+    let titleLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 4)
+    let subtitleLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 4)
+    let detailLabel = CardContentItem<IntrinsictHeightLabel>(topSpacing: 8)
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,6 +47,13 @@ extension CommonCardContent {
         }
         set {
             titleLabel.text = newValue
+            
+            if titleLabel.text == nil {
+                titleLabel.removeFromSuperview()
+            } else if titleLabel.superview == nil {
+                let subtitlePosition = titleLabel.superview == nil ? 1 : 0
+                insertArrangedSubview(titleLabel, at: subtitlePosition)
+            }
         }
     }
 
@@ -66,7 +73,7 @@ extension CommonCardContent {
         }
     }
 
-    var detailText: String? {
+    var descriptionTitle: String? {
         get {
             detailLabel.text
         }

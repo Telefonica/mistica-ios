@@ -46,7 +46,7 @@ class CardActionsView: UIStackView {
 }
 
 extension CardActionsView {
-    func configureActions(primaryAction: DataCardAction?, linkAction: DataCardAction?) {
+    func configureActions(primaryAction: CardAction?, linkAction: CardAction?) {
         if let primaryAction = primaryAction {
             primaryButton.title = primaryAction.title
             primaryButton.loadingTitle = primaryAction.loadingTitle
@@ -62,6 +62,7 @@ extension CardActionsView {
         if let linkAction = linkAction {
             linkButton.title = linkAction.title
             linkButton.loadingTitle = linkAction.loadingTitle
+            linkButton.contentMode = .left
             linkActionHandler = linkAction.tapHandler
 
             if linkButton.superview == nil {

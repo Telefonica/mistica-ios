@@ -14,66 +14,37 @@ public struct DataCardConfiguration {
     let headline: String?
     let title: String
     let subtitle: String?
-    let detailTitle: String
-    let button: DataCardAction?
-    let link: DataCardAction?
+    let descriptionTitle: String
+    let button: CardAction?
+    let link: CardAction?
 
     public init(
         icon: UIImage? = nil,
         headline: String? = nil,
         title: String,
         subtitle: String? = nil,
-        detailTitle: String,
-        button: DataCardAction? = nil,
-        link: DataCardAction? = nil
+        descriptionTitle: String,
+        button: CardAction? = nil,
+        link: CardAction? = nil
     ) {
         self.icon = icon
         self.headline = headline
         self.title = title
         self.subtitle = subtitle
-        self.detailTitle = detailTitle
+        self.descriptionTitle = descriptionTitle
         self.button = button
         self.link = link
     }
 }
 
-public struct DataCardAction {
-    public let title: String
-    public let loadingTitle: String?
-    public let tapHandler: (() -> Void)?
-
-    public init(title: String,
-                loadingTitle: String?,
-                tapHandler: (() -> Void)?) {
-        self.title = title
-        self.loadingTitle = loadingTitle
-        self.tapHandler = tapHandler
-    }
-}
-
 public class DataCard: UIView {
-    private let stackView = UIStackView()
-
-    let iconImageView = IntrinsictImageView()
-    lazy var mediaView = CardRichMedia(itemView: iconImageView, topSpacing: 8, bottomSpacing: 8)
-    let contentView = CommonCardContent(frame: .zero)
-    let actionsView = CardActionsView()
+    var iconImageView = IntrinsictImageView()
+    let iconContainerView = UIView()
+    let baseCardView = BaseCard()
 
     public var fragmentView: UIView? {
         didSet {
-            oldValue?.removeFromSuperview()
-
-            if let view = fragmentView {
-                if iconImageView.superview != nil {
-                    stackView.insertArrangedSubview(view, at: 2)
-                } else if actionsView.superview != nil {
-                    stackView.insertArrangedSubview(view, at: 1)
-                } else {
-                    stackView.addArrangedSubview(view)
-                }
-
-                updateSpacingBeforeActions()
-            }
+            baseCardView.fragmentView = fragmentView
         }
     }
 
@@ -97,28 +68,23 @@ public class DataCard: UIView {
 
 public extension DataCard {
     func configure(with configuration: DataCardConfiguration) {
-        iconImageView.image = configuration.icon
-
-        if configuration.icon == nil {
-            mediaView.removeFromSuperview()
-        } else if mediaView.superview == nil {
-            stackView.insertArrangedSubview(mediaView, at: 0)
+        if let icon = configuration.icon {
+            if iconContainerView.superview == nil {
+                baseCardView.insertArrangedSubview(iconContainerView, at: 0)
+                baseCardView.setCustomSpacing(0, after: iconContainerView)
+            }
+            iconImageView.image = icon
+        } else {
+            iconContainerView.removeFromSuperview()
+            iconImageView.image = nil
         }
 
-        contentView.headline = configuration.headline
-        contentView.title = configuration.title
-        contentView.subtitle = configuration.subtitle
-        contentView.detailText = configuration.detailTitle
+        baseCardView.headline = configuration.headline
+        baseCardView.title = configuration.title
+        baseCardView.subtitle = configuration.subtitle
+        baseCardView.descriptionTitle = configuration.descriptionTitle
 
-        actionsView.configureActions(primaryAction: configuration.button, linkAction: configuration.link)
-
-        if actionsView.arrangedSubviews.isEmpty {
-            actionsView.removeFromSuperview()
-        } else if actionsView.superview == nil {
-            stackView.addArrangedSubview(actionsView)
-
-            updateSpacingBeforeActions()
-        }
+        baseCardView.configureActions(primaryAction: configuration.button, linkAction: configuration.link)
     }
 
     var iconContentMode: UIView.ContentMode {
@@ -132,19 +98,19 @@ public extension DataCard {
 
     var primaryActionState: Button.State {
         get {
-            actionsView.buttonState
+            baseCardView.actionsView.buttonState
         }
         set {
-            actionsView.buttonState = newValue
+            baseCardView.actionsView.buttonState = newValue
         }
     }
 
     var linkActionState: Button.State {
         get {
-            actionsView.linkState
+            baseCardView.actionsView.linkState
         }
         set {
-            actionsView.linkState = newValue
+            baseCardView.actionsView.linkState = newValue
         }
     }
 }
@@ -161,10 +127,16 @@ private extension DataCard {
         directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 24, trailing: 16)
         insetsLayoutMarginsFromSafeArea = false
 
-        addSubview(constrainedToLayoutMarginsGuideOf: stackView)
+        addSubview(constrainedToLayoutMarginsGuideOf: baseCardView)
 
-        stackView.addArrangedSubview(contentView)
-        stackView.axis = .vertical
+        iconContainerView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
+        iconContainerView.insetsLayoutMarginsFromSafeArea = false
+
+        iconContainerView.addSubview(iconImageView, constraints: [
+            iconImageView.topAnchor.constraint(equalTo: iconContainerView.layoutMarginsGuide.topAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: iconContainerView.layoutMarginsGuide.leadingAnchor),
+            iconImageView.bottomAnchor.constraint(equalTo: iconContainerView.layoutMarginsGuide.bottomAnchor)
+        ])
 
         iconImageView.intrinsicWidth = 40
         iconImageView.intrinsicHeight = 40
@@ -172,13 +144,5 @@ private extension DataCard {
 
     func styleViews() {
         backgroundColor = .background
-    }
-
-    func updateSpacingBeforeActions() {
-        if let fragmentView = fragmentView {
-            stackView.setCustomSpacing(16, after: fragmentView)
-        } else {
-            stackView.setCustomSpacing(16, after: contentView)
-        }
     }
 }

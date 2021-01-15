@@ -12,13 +12,19 @@ import UIKit
 // MARK: DataCardConfiguration
 
 public struct DataCardConfiguration {
+    
+    public enum Buttons {
+        case link(config: CardAction)
+        case primary(config: CardAction)
+        case primaryAndLink(primary: CardAction, link: CardAction)
+    }
+    
     let icon: UIImage?
     let headline: String?
     let title: String
     let subtitle: String?
     let descriptionTitle: String
-    let button: CardAction?
-    let link: CardAction?
+    let buttons: Buttons
 
     public init(
         icon: UIImage? = nil,
@@ -26,16 +32,14 @@ public struct DataCardConfiguration {
         title: String,
         subtitle: String? = nil,
         descriptionTitle: String,
-        button: CardAction? = nil,
-        link: CardAction? = nil
+        buttons: Buttons
     ) {
         self.icon = icon
         self.headline = headline
         self.title = title
         self.subtitle = subtitle
         self.descriptionTitle = descriptionTitle
-        self.button = button
-        self.link = link
+        self.buttons = buttons
     }
 }
 
@@ -101,7 +105,14 @@ public extension DataCard {
         cardBaseView.subtitle = configuration.subtitle
         cardBaseView.descriptionTitle = configuration.descriptionTitle
 
-        cardBaseView.configureActions(primaryAction: configuration.button, linkAction: configuration.link)
+        switch configuration.buttons {
+        case .link(let linkButton):
+            cardBaseView.configureButtons(primaryButton: nil, linkButton: linkButton)
+        case .primary(let primaryButton):
+            cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: nil)
+        case .primaryAndLink(let primaryButton, let linkButton):
+            cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
+        }
     }
 
     var iconContentMode: UIView.ContentMode {
@@ -115,19 +126,19 @@ public extension DataCard {
 
     var primaryButtonState: Button.State {
         get {
-            cardBaseView.actionsView.buttonState
+            cardBaseView.buttonsView.buttonState
         }
         set {
-            cardBaseView.actionsView.buttonState = newValue
+            cardBaseView.buttonsView.buttonState = newValue
         }
     }
 
     var linkButtonState: Button.State {
         get {
-            cardBaseView.actionsView.linkState
+            cardBaseView.buttonsView.linkState
         }
         set {
-            cardBaseView.actionsView.linkState = newValue
+            cardBaseView.buttonsView.linkState = newValue
         }
     }
 }

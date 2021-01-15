@@ -11,14 +11,14 @@ import UIKit
 
 class CardBase: UIStackView {
     let contentView = CardCommonContent(frame: .zero)
-    let actionsView = CardActionsView()
+    let buttonsView = CardButtonsView()
 
     public var fragmentView: UIView? {
         didSet {
             oldValue?.removeFromSuperview()
 
             if let view = fragmentView {
-                if let actionsPosition = arrangedSubviews.firstIndex(of: actionsView) {
+                if let actionsPosition = arrangedSubviews.firstIndex(of: buttonsView) {
                     insertArrangedSubview(view, at: actionsPosition)
                 } else {
                     addArrangedSubview(view)
@@ -77,13 +77,13 @@ extension CardBase {
         }
     }
 
-    func configureActions(primaryAction: CardAction?, linkAction: CardAction?) {
-        actionsView.configureActions(primaryAction: primaryAction, linkAction: linkAction)
+    func configureButtons(primaryButton: CardAction?, linkButton: CardAction?) {
+        buttonsView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
 
-        if actionsView.arrangedSubviews.isEmpty {
-            actionsView.removeFromSuperview()
-        } else if actionsView.superview == nil {
-            addArrangedSubview(actionsView)
+        if buttonsView.arrangedSubviews.isEmpty {
+            buttonsView.removeFromSuperview()
+        } else if buttonsView.superview == nil {
+            addArrangedSubview(buttonsView)
         }
     }
 }

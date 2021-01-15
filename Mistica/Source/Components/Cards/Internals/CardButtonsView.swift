@@ -1,5 +1,5 @@
 //
-//  CardActionsView.swift
+//  CardButtonsView.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardActionsView: UIStackView {
+class CardButtonsView: UIStackView {
     private let primaryButton = Button()
     private let linkButton = Button()
     private let dummyView = SpacerView(axis: .vertical, amount: 1)
@@ -47,8 +47,8 @@ class CardActionsView: UIStackView {
 
 // MARK: Internal
 
-extension CardActionsView {
-    func configureActions(primaryAction: CardAction?, linkAction: CardAction?) {
+extension CardButtonsView {
+    func configureButtons(primaryButton primaryAction: CardAction?, linkButton linkAction: CardAction?) {
         if let primaryAction = primaryAction {
             primaryButton.title = primaryAction.title
             primaryButton.loadingTitle = primaryAction.loadingTitle
@@ -82,7 +82,7 @@ extension CardActionsView {
 
 // MARK: Private
 
-private extension CardActionsView {
+private extension CardButtonsView {
     func commomInit() {
         axis = .horizontal
         alignment = .top
@@ -99,6 +99,7 @@ private extension CardActionsView {
         primaryButton.isSmall = true
 
         linkButton.style = .link
+        linkButton.contentMode = .left
     }
 
     @objc func primaryActionTapped(_ sender: Button) {

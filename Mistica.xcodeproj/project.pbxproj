@@ -96,7 +96,7 @@
 		B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193A25B20FF0006510CC /* MediaCard.swift */; };
 		B8D7194425B20FF0006510CC /* DataCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193B25B20FF0006510CC /* DataCard.swift */; };
 		B8D7194525B20FF0006510CC /* CardCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193D25B20FF0006510CC /* CardCommonContent.swift */; };
-		B8D7194625B20FF0006510CC /* CardActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193E25B20FF0006510CC /* CardActionsView.swift */; };
+		B8D7194625B20FF0006510CC /* CardButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193E25B20FF0006510CC /* CardButtonsView.swift */; };
 		B8D7194725B20FF0006510CC /* CardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193F25B20FF0006510CC /* CardBase.swift */; };
 		B8D7194825B20FF0006510CC /* CardContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7194025B20FF0006510CC /* CardContentItem.swift */; };
 		B8D7194925B20FF0006510CC /* CardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7194225B20FF0006510CC /* CardAction.swift */; };
@@ -495,7 +495,7 @@
 		B8D7193A25B20FF0006510CC /* MediaCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCard.swift; sourceTree = "<group>"; };
 		B8D7193B25B20FF0006510CC /* DataCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCard.swift; sourceTree = "<group>"; };
 		B8D7193D25B20FF0006510CC /* CardCommonContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCommonContent.swift; sourceTree = "<group>"; };
-		B8D7193E25B20FF0006510CC /* CardActionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardActionsView.swift; sourceTree = "<group>"; };
+		B8D7193E25B20FF0006510CC /* CardButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardButtonsView.swift; sourceTree = "<group>"; };
 		B8D7193F25B20FF0006510CC /* CardBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBase.swift; sourceTree = "<group>"; };
 		B8D7194025B20FF0006510CC /* CardContentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentItem.swift; sourceTree = "<group>"; };
 		B8D7194225B20FF0006510CC /* CardAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardAction.swift; sourceTree = "<group>"; };
@@ -1504,7 +1504,7 @@
 			isa = PBXGroup;
 			children = (
 				B8D7193D25B20FF0006510CC /* CardCommonContent.swift */,
-				B8D7193E25B20FF0006510CC /* CardActionsView.swift */,
+				B8D7193E25B20FF0006510CC /* CardButtonsView.swift */,
 				B8D7193F25B20FF0006510CC /* CardBase.swift */,
 				B8D7194025B20FF0006510CC /* CardContentItem.swift */,
 			);
@@ -2133,7 +2133,7 @@
 				D80B7145DD7C350BC8E8CCBF /* AlignmentImageView.swift in Sources */,
 				27321C77876795284B43C40E /* Array+NSAttributedString.swift in Sources */,
 				CAF27E0ABEBFB611FC0EE3BF /* AssetCatalog+Themed.swift in Sources */,
-				B8D7194625B20FF0006510CC /* CardActionsView.swift in Sources */,
+				B8D7194625B20FF0006510CC /* CardButtonsView.swift in Sources */,
 				0585D331C6B995C80E5867E7 /* AssetType.swift in Sources */,
 				205E03827FDA8AA677CC107E /* BadgeView.swift in Sources */,
 				74E247BBC5916AABD37FC76F /* BoundsChangeInvalidatingFlowLayout.swift in Sources */,

@@ -86,24 +86,24 @@ public extension MediaCard {
         baseCardView.subtitle = configuration.title
         baseCardView.descriptionTitle = configuration.descriptionTitle
 
-        baseCardView.configureActions(primaryAction: configuration.button, linkAction: configuration.link)
+        baseCardView.configureButtons(primaryButton: configuration.button, linkButton: configuration.link)
     }
 
     var primaryActionState: Button.State {
         get {
-            baseCardView.actionsView.buttonState
+            baseCardView.buttonsView.buttonState
         }
         set {
-            baseCardView.actionsView.buttonState = newValue
+            baseCardView.buttonsView.buttonState = newValue
         }
     }
 
     var linkActionState: Button.State {
         get {
-            baseCardView.actionsView.linkState
+            baseCardView.buttonsView.linkState
         }
         set {
-            baseCardView.actionsView.linkState = newValue
+            baseCardView.buttonsView.linkState = newValue
         }
     }
 }

@@ -17,8 +17,8 @@ public struct MediaCardConfiguration {
     let title: String?
     let pretitle: String?
     let descriptionTitle: String
-    let button: CardAction?
-    let link: CardAction?
+    let button: CardButton?
+    let link: CardLinkButton?
 
     public init(
         richMedia: UIView,
@@ -26,8 +26,8 @@ public struct MediaCardConfiguration {
         title: String? = nil,
         pretitle: String? = nil,
         descriptionTitle: String,
-        button: CardAction? = nil,
-        link: CardAction? = nil
+        button: CardButton? = nil,
+        link: CardLinkButton? = nil
     ) {
         self.richMedia = richMedia
         self.headline = headline
@@ -89,21 +89,21 @@ public extension MediaCard {
         baseCardView.configureButtons(primaryButton: configuration.button, linkButton: configuration.link)
     }
 
-    var primaryActionState: Button.State {
+    var primaryButtonState: Button.State {
         get {
-            baseCardView.buttonsView.buttonState
+            baseCardView.buttonsView.primaryButtonState
         }
         set {
-            baseCardView.buttonsView.buttonState = newValue
+            baseCardView.buttonsView.primaryButtonState = newValue
         }
     }
 
-    var linkActionState: Button.State {
+    var linkButtonState: Button.State {
         get {
-            baseCardView.buttonsView.linkState
+            baseCardView.buttonsView.linkButtonState
         }
         set {
-            baseCardView.buttonsView.linkState = newValue
+            baseCardView.buttonsView.linkButtonState = newValue
         }
     }
 }

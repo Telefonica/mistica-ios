@@ -13,24 +13,6 @@ class CardButtonsView: UIStackView {
     private let linkButton = Button()
     private let dummyView = SpacerView(axis: .vertical, amount: 1)
 
-    var buttonState: Button.State {
-        get {
-            primaryButton.state
-        }
-        set {
-            primaryButton.state = newValue
-        }
-    }
-
-    var linkState: Button.State {
-        get {
-            linkButton.state
-        }
-        set {
-            linkButton.state = newValue
-        }
-    }
-
     private var primaryActionHandler: (() -> Void)?
     private var linkActionHandler: (() -> Void)?
 
@@ -48,30 +30,47 @@ class CardButtonsView: UIStackView {
 // MARK: Internal
 
 extension CardButtonsView {
-    func configureButtons(primaryButton primaryAction: CardAction?, linkButton linkAction: CardAction?) {
-        if let primaryAction = primaryAction {
-            primaryButton.title = primaryAction.title
-            primaryButton.loadingTitle = primaryAction.loadingTitle
+    var primaryButtonState: Button.State {
+        get {
+            primaryButton.state
+        }
+        set {
+            primaryButton.state = newValue
+        }
+    }
+
+    var linkButtonState: Button.State {
+        get {
+            linkButton.state
+        }
+        set {
+            linkButton.state = newValue
+        }
+    }
+    
+    func configureButtons(primaryButton: CardButton?, linkButton: CardLinkButton?) {
+        if let primaryAction = primaryButton {
+            self.primaryButton.title = primaryAction.title
+            self.primaryButton.loadingTitle = primaryAction.loadingTitle
             primaryActionHandler = primaryAction.tapHandler
 
-            if primaryButton.superview == nil {
-                addArrangedSubview(primaryButton)
+            if self.primaryButton.superview == nil {
+                addArrangedSubview(self.primaryButton)
             }
         } else {
-            primaryButton.removeFromSuperview()
+            self.primaryButton.removeFromSuperview()
         }
 
-        if let linkAction = linkAction {
-            linkButton.title = linkAction.title
-            linkButton.loadingTitle = linkAction.loadingTitle
-            linkButton.contentMode = .left
-            linkActionHandler = linkAction.tapHandler
+        if let linkButton = linkButton {
+            self.linkButton.title = linkButton.title
+            self.linkButton.contentMode = .left
+            linkActionHandler = linkButton.tapHandler
 
-            if linkButton.superview == nil {
-                addArrangedSubview(linkButton)
+            if self.linkButton.superview == nil {
+                addArrangedSubview(self.linkButton)
             }
         } else {
-            linkButton.removeFromSuperview()
+            self.linkButton.removeFromSuperview()
         }
 
         if !arrangedSubviews.isEmpty {

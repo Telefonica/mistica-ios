@@ -77,7 +77,7 @@ extension CardBase {
         }
     }
 
-    func configureButtons(primaryButton: CardAction?, linkButton: CardAction?) {
+    func configureButtons(primaryButton: CardButton?, linkButton: CardLinkButton?) {
         buttonsView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
 
         if buttonsView.arrangedSubviews.isEmpty {
@@ -98,6 +98,6 @@ private extension CardBase {
     func layoutViews() {
         addArrangedSubview(contentView)
         axis = .vertical
-        spacing = 20
+        spacing = 16
     }
 }

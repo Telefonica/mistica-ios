@@ -14,9 +14,9 @@ import UIKit
 public struct DataCardConfiguration {
     
     public enum Buttons {
-        case link(config: CardAction)
-        case primary(config: CardAction)
-        case primaryAndLink(primary: CardAction, link: CardAction)
+        case link(CardLinkButton)
+        case primary(CardButton)
+        case primaryAndLink(primary: CardButton, link: CardLinkButton)
     }
     
     let icon: UIImage?
@@ -83,6 +83,10 @@ public class DataCard: UIView {
         super.layoutSubviews()
         makeRounded(cornerRadius: Constants.cornerRadius)
     }
+    
+    override public var intrinsicContentSize: CGSize {
+        cardBaseView.intrinsicContentSize
+    }
 }
 
 // MARK: Public
@@ -126,19 +130,19 @@ public extension DataCard {
 
     var primaryButtonState: Button.State {
         get {
-            cardBaseView.buttonsView.buttonState
+            cardBaseView.buttonsView.primaryButtonState
         }
         set {
-            cardBaseView.buttonsView.buttonState = newValue
+            cardBaseView.buttonsView.primaryButtonState = newValue
         }
     }
 
     var linkButtonState: Button.State {
         get {
-            cardBaseView.buttonsView.linkState
+            cardBaseView.buttonsView.linkButtonState
         }
         set {
-            cardBaseView.buttonsView.linkState = newValue
+            cardBaseView.buttonsView.linkButtonState = newValue
         }
     }
 }

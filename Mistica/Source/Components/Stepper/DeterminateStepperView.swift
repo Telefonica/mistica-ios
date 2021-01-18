@@ -54,7 +54,7 @@ open class DeterminateStepperView: UIControl {
         commonInit()
     }
 
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }

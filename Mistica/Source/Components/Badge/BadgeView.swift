@@ -34,6 +34,8 @@ public class BadgeView: UIView {
         didSet {
             guard style == .numeric else { return }
 
+            isHidden = value == 0
+
             if value > Constants.maximumValue {
                 label.text = "+9"
             } else {

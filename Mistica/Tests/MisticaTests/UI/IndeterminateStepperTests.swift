@@ -74,7 +74,7 @@ final class IndeterminateStepperTests: XCTestCase {
         MisticaConfig.brandStyle = .vivo
 
         let view = IndeterminateStepperXIBIntegration.viewFromNib()
-        
+
         assertSnapshot(
             matching: view,
             as: .image

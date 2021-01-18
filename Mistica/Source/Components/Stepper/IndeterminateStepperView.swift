@@ -11,7 +11,7 @@ import UIKit
 
 open class IndeterminateStepperView: UIControl {
     private lazy var segmentView = SegmentView()
-    
+
     private var _value = 0
     /// Use this property to get and set the stepper's current value. To render an animated transition from the current value to the new value, use the setValue(_:animated:) method instead.
     /// If you try to set a value that is below 0  or 100, a sanitized value is set. The default value of this property is 0.
@@ -23,10 +23,10 @@ open class IndeterminateStepperView: UIControl {
             _value
         }
     }
-    
+
     // Called when the Stepper changes its value.
     public var onValueChanged: ((Int) -> Void)?
-    
+
     public convenience init() {
         self.init(frame: .zero)
         commonInit()
@@ -37,11 +37,11 @@ open class IndeterminateStepperView: UIControl {
         commonInit()
     }
 
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }
-    
+
     func commonInit() {
         addSubview(withDefaultConstraintsIfNeeded: segmentView)
         isAccessibilityElement = true
@@ -50,7 +50,7 @@ open class IndeterminateStepperView: UIControl {
         segmentView.minimumValue = 0
         segmentView.maximumValue = 100
     }
-    
+
     override public var allControlEvents: UIControl.Event {
         [.valueChanged]
     }

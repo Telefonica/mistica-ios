@@ -24,7 +24,7 @@ class UICatalogStepperViewController: UITableViewController {
 
     private var indeterminateStepperView: IndeterminateStepperView!
     private var determinateStepperView: DeterminateStepperView!
-    
+
     private let currentStepStepper = UIStepper()
     private let currentStepLabel = UILabel()
     private lazy var currentStepStackView = UIStackView(arrangedSubviews: [currentStepLabel, currentStepStepper])
@@ -119,7 +119,7 @@ extension UICatalogStepperViewController {
     func updateCurrentStepLabel() {
         currentStepLabel.text = "Current step: \(currentStep)"
     }
-    
+
     @objc func stepperValueChanged(sender: UIStepper) {
         if sender == numberOfStepsStepper {
             numberOfSteps = Int(sender.value)
@@ -127,15 +127,15 @@ extension UICatalogStepperViewController {
             currentStepStepper.maximumValue = sender.value
             updateNumberOfStepsLabel()
         }
-        
+
         if sender == currentStepStepper {
             currentStep = Int(sender.value)
             updateCurrentStepLabel()
         }
-        
+
         updateStepperValues()
     }
-    
+
     func updateStepperValues() {
         indeterminateStepperView.setValue(Int(Float(currentStep) / Float(numberOfSteps) * 100), animated: true)
         determinateStepperView.setCurrentStep(currentStep, animated: true)

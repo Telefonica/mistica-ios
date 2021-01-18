@@ -38,7 +38,6 @@ open class DeterminateStepperView: UIControl {
         stackView.axis = .horizontal
         stackView.spacing = Constants.spacing
         stackView.alignment = .center
-        stackView.distribution = .fill
         return stackView
     }()
 
@@ -128,7 +127,7 @@ private extension DeterminateStepperView {
     func createStep(step: Int) -> StepView {
         let stepView = StepView()
         // Aspect ratio 1 constraint, it keeps squared even if the text grows.
-        stepView.widthAnchor.constraint(equalTo: stepView.heightAnchor).isActive.toggle()
+        stepView.widthAnchor.constraint(equalTo: stepView.heightAnchor).isActive = true
         update(stepView: stepView, at: step, animated: false)
         return stepView
     }

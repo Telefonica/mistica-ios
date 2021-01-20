@@ -1,9 +1,9 @@
 //
-//  UICatalogHighlightedCardViewController.swift
+//  UICatalogMediaCardViewController.swift
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation
@@ -28,59 +28,59 @@ class UICatalogMediaCardViewController: UIViewController {
             return UITableView(frame: .zero, style: .grouped)
         }
     }()
-    
+
     private lazy var richMediaCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "RichMediaCell")
-        
+
         cell.segmentedControl.insertSegment(withTitle: "Image", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Custom View", at: 1, animated: false)
         cell.segmentedControl.selectedSegmentIndex = 0
-        
+
         return cell
     }()
-    
+
     private lazy var headlineCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Headline")
         cell.textField.text = "headline"
         return cell
     }()
-    
+
     private lazy var pretitleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Pretitle")
         cell.textField.text = "movistar likes"
         return cell
     }()
-    
+
     private lazy var titleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Title")
         cell.textField.text = "Item title"
         return cell
     }()
-    
+
     private lazy var descriptionCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Description")
         cell.textField.text = "This is a description"
         return cell
     }()
-    
+
     private lazy var buttonsCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "ActionButtonStyleCell")
-        
+
         cell.segmentedControl.insertSegment(withTitle: "Link", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Primary", at: 1, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Primary & Link", at: 2, animated: false)
         cell.segmentedControl.selectedSegmentIndex = 0
-        
+
         return cell
     }()
-    
+
     private lazy var showCardCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "ShowCardCell")
         cell.textLabel?.textColor = .textLink
         cell.textLabel?.text = "Show Card"
         return cell
     }()
-    
+
     private lazy var cells = [
         [richMediaCell],
         [headlineCell],
@@ -90,30 +90,30 @@ class UICatalogMediaCardViewController: UIViewController {
         [buttonsCell],
         [showCardCell]
     ]
-    
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "MediaCard"
-        
+
         view.addSubview(withDefaultConstraints: tableView)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.keyboardDismissMode = .interactive
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
     }
-    
+
     @objc func dismissKeyboard(_: UITapGestureRecognizer) {
         cells.flatMap { $0 }.forEach { cell in
             guard let textFieldCell = cell as? UITextFieldTableViewCell else { return }
@@ -126,27 +126,27 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
     func numberOfSections(in _: UITableView) -> Int {
         Section.allCases.count
     }
-    
+
     func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
         Section(rawValue: section)!.headerTitle
     }
-    
+
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         cells[section].count
     }
-    
+
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         cells[indexPath.section][indexPath.row]
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard indexPath.section == cells.indices.last! else { return }
         tableView.deselectRow(animated: true)
-        
+
         let vc = MediaCardViewSampleViewController()
-        
+
         let richMedia: UIView
-        
+
         if richMediaCell.segmentedControl.selectedSegmentIndex == 0 {
             richMedia = UIImageView(image: .misticaLogo)
             richMedia.heightAnchor.constraint(equalToConstant: 120).isActive = true
@@ -155,18 +155,18 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
             let containerView = UIView()
             containerView.heightAnchor.constraint(equalToConstant: 120).isActive = true
             containerView.backgroundColor = .gray
-            
+
             let label = UILabel()
             label.text = "Custom Media Item"
-            
+
             containerView.addSubview(withCenterConstraints: label)
-            
+
             richMedia = containerView
         }
-        
+
         let button: CardButton?
         let linkButton: CardLinkButton?
-        
+
         switch buttonsCell.segmentedControl.selectedSegmentIndex {
         case 0:
             button = nil
@@ -177,10 +177,10 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
         case 2:
             button = CardButton(title: "Button", loadingTitle: "Loading", tapHandler: nil)
             linkButton = CardLinkButton(title: "Link", tapHandler: nil)
-            default:
+        default:
             fatalError("Case not implemented")
         }
-        
+
         let configuration = MediaCardConfiguration(
             richMedia: richMedia,
             headline: headlineCell.textField.text.valueOrNil,
@@ -188,31 +188,32 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
             pretitle: pretitleCell.textField.text.valueOrNil,
             descriptionTitle: descriptionCell.textField.text.valueOrNil ?? "Mandatory field",
             button: button,
-            link: linkButton)
-        
+            link: linkButton
+        )
+
         vc.card.contentConfiguration = configuration
-        
+
         show(vc, sender: self)
     }
 }
 
 private class MediaCardViewSampleViewController: UIViewController {
     var card = MediaCard()
-    
+
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .background
-        
+
         view.addSubview(card, constraints: [
             card.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             card.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
             card.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24)
         ])
-        
+
         self.view = view
         self.view.backgroundColor = .darkGray
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "MediaCard"
@@ -241,7 +242,7 @@ private extension Section {
 }
 
 private extension Optional where Wrapped == String {
-  var valueOrNil: String? {
-    return isEmpty ? nil : self
-  }
+    var valueOrNil: String? {
+        isEmpty ? nil : self
+    }
 }

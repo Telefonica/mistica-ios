@@ -1,9 +1,9 @@
 //
-//  DataCardXIBIntegration.swift
+//  MediaCardXIBIntegration.swift
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Mistica

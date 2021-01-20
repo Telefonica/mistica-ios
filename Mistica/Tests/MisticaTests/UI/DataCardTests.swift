@@ -3,7 +3,7 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Mistica
@@ -21,7 +21,7 @@ final class DataCardTests: XCTestCase {
 
     func testBrandStyles() {
         MisticaConfig.brandStyle = .movistar
-        
+
         let view = makeBasicCard()
 
         assertSnapshotForAllBrands(as: .image, viewBuilder: view)
@@ -36,7 +36,7 @@ final class DataCardTests: XCTestCase {
 
         assertSnapshot(matching: view, as: .image)
     }
-    
+
     func testShowAssetOfTypeIcon() {
         MisticaConfig.brandStyle = .movistar
 
@@ -44,7 +44,7 @@ final class DataCardTests: XCTestCase {
 
         assertSnapshot(matching: view, as: .image)
     }
-    
+
     func testMinimumContent() {
         MisticaConfig.brandStyle = .movistar
 
@@ -160,7 +160,7 @@ extension DataCardTests {
         static let button = CardButton(title: "Button", loadingTitle: "Loading", tapHandler: nil)
         static let link = CardLinkButton(title: "Button Link", tapHandler: nil)
     }
-    
+
     func makeBasicCard(buttons: DataCardConfiguration.Buttons = .link(AnyValues.link)) -> DataCard {
         let configuration = DataCardConfiguration(
             title: "Item title",

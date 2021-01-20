@@ -3,7 +3,7 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Mistica
@@ -21,7 +21,7 @@ final class MediaCardTests: XCTestCase {
 
     func testBrandStyles() {
         MisticaConfig.brandStyle = .movistar
-        
+
         let view = makeBasicCard()
 
         assertSnapshotForAllBrands(as: .image, viewBuilder: view)
@@ -44,7 +44,7 @@ final class MediaCardTests: XCTestCase {
 
         assertSnapshot(matching: view, as: .image)
     }
-    
+
     func testFullContentWithoutFragment() {
         MisticaConfig.brandStyle = .movistar
 
@@ -52,7 +52,7 @@ final class MediaCardTests: XCTestCase {
 
         assertSnapshot(matching: view, as: .image)
     }
-    
+
     func testFullContentWithoutHeadline() {
         MisticaConfig.brandStyle = .movistar
 
@@ -60,7 +60,7 @@ final class MediaCardTests: XCTestCase {
 
         assertSnapshot(matching: view, as: .image)
     }
-    
+
     func testFullContentWithoutTitle() {
         MisticaConfig.brandStyle = .movistar
 
@@ -68,7 +68,7 @@ final class MediaCardTests: XCTestCase {
 
         assertSnapshot(matching: view, as: .image)
     }
-    
+
     func testFullContentWithoutPretitle() {
         MisticaConfig.brandStyle = .movistar
 
@@ -153,13 +153,13 @@ extension MediaCardTests {
         static let link = CardLinkButton(title: "Button Link", tapHandler: nil)
         static var richMedia: UIImageView {
             let image = UIImageView(image: UIImage(color: .green))
-            
+
             image.heightAnchor.constraint(equalToConstant: 120).isActive = true
-            
+
             return image
         }
     }
-    
+
     func makeBasicCard(primaryButton: CardButton? = nil,
                        linkButton: CardLinkButton? = nil) -> MediaCard {
         let configuration = MediaCardConfiguration(

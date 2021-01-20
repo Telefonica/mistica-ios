@@ -3,7 +3,7 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation
@@ -18,7 +18,7 @@ public struct DataCardConfiguration {
         case primary(CardButton)
         case primaryAndLink(primary: CardButton, link: CardLinkButton)
     }
-    
+
     @frozen
     public enum AssetType: Equatable {
         case none
@@ -176,6 +176,7 @@ private extension DataCard {
         cardBaseView.contentView.descriptionLabel.minHeight = 20
         cardBaseView.contentView.descriptionLabel.numberOfLines = 0
     }
+
     func configure(with configuration: DataCardConfiguration) {
         if configuration.asset != .none {
             if iconContainerView.superview == nil {

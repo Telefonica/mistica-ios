@@ -3,7 +3,7 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation
@@ -56,7 +56,7 @@ public class MediaCard: UIView {
             baseCardView.fragmentView = fragmentView
         }
     }
-    
+
     public var contentConfiguration: MediaCardConfiguration? {
         didSet {
             if let contentConfiguration = contentConfiguration {

@@ -99,6 +99,9 @@
 		B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B857855A25B8292E00E76B4C /* MediaCardXIBIntegration.xib */; };
 		B85CCA5925B82EFA00B76426 /* CheckboxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */; };
 		B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */; };
+		B85CCA5E25B848C300B76426 /* DataCardAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA5D25B848C300B76426 /* DataCardAsset.swift */; };
+		B85CCA6225B8522000B76426 /* testShowAssetOfTypeImage.1.png in Resources */ = {isa = PBXBuildFile; fileRef = B85CCA6025B8522000B76426 /* testShowAssetOfTypeImage.1.png */; };
+		B85CCA6325B8522000B76426 /* testShowAssetOfTypeIcon.1.png in Resources */ = {isa = PBXBuildFile; fileRef = B85CCA6125B8522000B76426 /* testShowAssetOfTypeIcon.1.png */; };
 		B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40616E1B8E8E2F0E7D3AAA /* Mistica.framework */; };
 		B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BCF901256D113B00D2BCCC /* TestHelpers.swift */; };
 		B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193A25B20FF0006510CC /* MediaCard.swift */; };
@@ -466,6 +469,9 @@
 		B85CCA5525B82CCD00B76426 /* testFullContentWithoutHeadline.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutHeadline.1.png; sourceTree = "<group>"; };
 		B85CCA5625B82CCD00B76426 /* testFullContentWithoutPretitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutPretitle.1.png; sourceTree = "<group>"; };
 		B85CCA5725B82CCD00B76426 /* testFullContentWithoutTitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutTitle.1.png; sourceTree = "<group>"; };
+		B85CCA5D25B848C300B76426 /* DataCardAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCardAsset.swift; sourceTree = "<group>"; };
+		B85CCA6025B8522000B76426 /* testShowAssetOfTypeImage.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowAssetOfTypeImage.1.png; sourceTree = "<group>"; };
+		B85CCA6125B8522000B76426 /* testShowAssetOfTypeIcon.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowAssetOfTypeIcon.1.png; sourceTree = "<group>"; };
 		B88DE71DF455B000DEED6A29 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		B8BCF901256D113B00D2BCCC /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		B8BCF973256D1AB500D2BCCC /* testRegularSizeWithPrimaryClearStyle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testRegularSizeWithPrimaryClearStyle.with-o2-style.png"; sourceTree = "<group>"; };
@@ -1562,6 +1568,8 @@
 		B87360B525B21D880070C418 /* DataCardTests */ = {
 			isa = PBXGroup;
 			children = (
+				B85CCA6125B8522000B76426 /* testShowAssetOfTypeIcon.1.png */,
+				B85CCA6025B8522000B76426 /* testShowAssetOfTypeImage.1.png */,
 				B857854B25B35ED600E76B4C /* testBrandStyles.with-movistar-style.png */,
 				B857854E25B35ED600E76B4C /* testBrandStyles.with-o2-style.png */,
 				B857854725B35ED500E76B4C /* testBrandStyles.with-o2Classic-style.png */,
@@ -1597,6 +1605,7 @@
 		B8D7193C25B20FF0006510CC /* Internals */ = {
 			isa = PBXGroup;
 			children = (
+				B85CCA5D25B848C300B76426 /* DataCardAsset.swift */,
 				B8D7193D25B20FF0006510CC /* CardCommonContent.swift */,
 				B8D7193E25B20FF0006510CC /* CardButtonsView.swift */,
 				B8D7193F25B20FF0006510CC /* CardBase.swift */,
@@ -2073,6 +2082,7 @@
 				B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */,
 				F7A78EC32577DF9A0013B78E /* testTabBarControlChangeSelectedItem.finalState.png in Resources */,
 				F7A78EB62577DF9A0013B78E /* testSwitchDefaultState.with-o2-style.png in Resources */,
+				B85CCA6225B8522000B76426 /* testShowAssetOfTypeImage.1.png in Resources */,
 				F7A78EC12577DF9A0013B78E /* testPageControl.with-movistar-style.png in Resources */,
 				F7A78EB22577DF9A0013B78E /* testTabBarControl.with-o2Classic-style.png in Resources */,
 				F7A78EB12577DF9A0013B78E /* testPageControl.with-o2-style.png in Resources */,
@@ -2088,6 +2098,7 @@
 				F7A78EBE2577DF9A0013B78E /* testPageControl.with-o2Classic-style.png in Resources */,
 				B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */,
 				F7A78EB72577DF9A0013B78E /* testSwitchOnState.with-o2Classic-style.png in Resources */,
+				B85CCA6325B8522000B76426 /* testShowAssetOfTypeIcon.1.png in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
 				F7A78EC52577DF9A0013B78E /* testPageControl.with-vivo-style.png in Resources */,
 				F7A78EBC2577DF9A0013B78E /* testPageControlChangeCurrentPage.assertInitialState.png in Resources */,
@@ -2335,6 +2346,7 @@
 				E67C11529DD9E1699278458A /* UIBarButtonItem+Utils.swift in Sources */,
 				9069ACD1BD3E576D4291C424 /* UIButton+Utils.swift in Sources */,
 				759D8FD6321204FA71C221E8 /* UICollectionViewCell+Utils.swift in Sources */,
+				B85CCA5E25B848C300B76426 /* DataCardAsset.swift in Sources */,
 				B347848A473FEE0AB4E04D27 /* UIColor+Utils.swift in Sources */,
 				1F552724291C5BF268DA82B3 /* UIImage+Utils.swift in Sources */,
 				34567C60C964C6D4997CEC4C /* UINavigationBar+Mistica.swift in Sources */,

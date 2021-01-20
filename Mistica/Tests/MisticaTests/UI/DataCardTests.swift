@@ -29,6 +29,22 @@ final class DataCardTests: XCTestCase {
 
     // MARK: - Layout
 
+    func testShowAssetOfTypeImage() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeCardWithFullContentAndButtons(asset: .image(.init(color: .cyan)))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+    
+    func testShowAssetOfTypeIcon() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeCardWithFullContentAndButtons(asset: .icon(.init(color: .cyan), backgroundColor: .black))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+    
     func testMinimumContent() {
         MisticaConfig.brandStyle = .movistar
 
@@ -48,7 +64,7 @@ final class DataCardTests: XCTestCase {
     func testFullContentWithoutIcon() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeCardWithFullContentAndButtons(icon: nil)
+        let view = makeCardWithFullContentAndButtons(asset: nil)
 
         assertSnapshot(matching: view, as: .image)
     }
@@ -162,7 +178,7 @@ extension DataCardTests {
     }
 
     func makeCardWithFullContentAndButtons(
-        icon: UIImage? = .init(color: .green),
+        asset: DataCardConfiguration.AssetType? = .image(.init(color: .green)),
         headline: String? = "headline",
         title: String = "Item title",
         subtitle: String? = "Subtitle",
@@ -171,7 +187,7 @@ extension DataCardTests {
         hasFragment: Bool = true
     ) -> DataCard {
         let configuration = DataCardConfiguration(
-            icon: icon,
+            asset: asset,
             headline: headline,
             title: title,
             subtitle: subtitle,

@@ -12,13 +12,20 @@ import UIKit
 // MARK: DataCardConfiguration
 
 public struct DataCardConfiguration {
+    @frozen
     public enum Buttons {
         case link(CardLinkButton)
         case primary(CardButton)
         case primaryAndLink(primary: CardButton, link: CardLinkButton)
     }
+    
+    @frozen
+    public enum AssetType: Equatable {
+        case image(UIImage)
+        case icon(UIImage, backgroundColor: UIColor)
+    }
 
-    let icon: UIImage?
+    let asset: AssetType?
     let headline: String?
     let title: String
     let subtitle: String?
@@ -26,14 +33,15 @@ public struct DataCardConfiguration {
     let buttons: Buttons
 
     public init(
-        icon: UIImage? = nil,
+        asset: AssetType? = nil,
+        backgroundIcon: UIImage? = nil,
         headline: String? = nil,
         title: String,
         subtitle: String? = nil,
         descriptionTitle: String,
         buttons: Buttons
     ) {
-        self.icon = icon
+        self.asset = asset
         self.headline = headline
         self.title = title
         self.subtitle = subtitle
@@ -50,12 +58,12 @@ public class DataCard: UIView {
         static let cornerRadius = CGFloat(4)
         static let cardLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 24, trailing: 16)
         static let iconLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
-        static let iconHeight = CGFloat(40)
-        static let iconWidth = CGFloat(40)
+        static let imageSize = CGFloat(40)
+        static let largeIconSize = CGFloat(24)
     }
 
     private let iconContainerView = UIView()
-    private var iconImageView = IntrinsictImageView()
+    private var iconImageView = DataCardAsset()
     private let cardBaseView = CardBase()
 
     public var fragmentView: UIView? {
@@ -92,15 +100,15 @@ public class DataCard: UIView {
 
 public extension DataCard {
     func configure(with configuration: DataCardConfiguration) {
-        if let icon = configuration.icon {
+        if let icon = configuration.asset {
             if iconContainerView.superview == nil {
                 cardBaseView.insertArrangedSubview(iconContainerView, at: 0)
                 cardBaseView.setCustomSpacing(Constants.spacingAfterIconView, after: iconContainerView)
             }
-            iconImageView.image = icon
+            iconImageView.assetType = icon
         } else {
             iconContainerView.removeFromSuperview()
-            iconImageView.image = nil
+            iconImageView.assetType = nil
         }
 
         cardBaseView.headline = configuration.headline
@@ -168,9 +176,6 @@ private extension DataCard {
             iconImageView.leadingAnchor.constraint(equalTo: iconContainerView.layoutMarginsGuide.leadingAnchor),
             iconImageView.bottomAnchor.constraint(equalTo: iconContainerView.layoutMarginsGuide.bottomAnchor)
         ])
-
-        iconImageView.intrinsicWidth = Constants.iconWidth
-        iconImageView.intrinsicHeight = Constants.iconHeight
     }
 
     func styleViews() {

@@ -12,7 +12,7 @@ import UIKit
 /// CardBase is a custom view which contain the sahred views between DataCard and MediaCard
 class CardBase: UIStackView {
     let contentView = CardCommonContent(frame: .zero)
-    let buttonsView = CardButtonsView()
+    let buttonsView = CardButtons()
 
     public var fragmentView: UIView? {
         didSet {

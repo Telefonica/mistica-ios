@@ -1,5 +1,5 @@
 //
-//  CardButtonsView.swift
+//  CardButtons.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,8 +8,8 @@
 
 import UIKit
 
-/// CardCommonContent is a custom view which contains the buttons shared between DataCard and MediaCard
-class CardButtonsView: UIStackView {
+/// CardButtons is a custom view which contains the buttons shared between DataCard and MediaCard
+class CardButtons: UIStackView {
     private let primaryButton = Button()
     private let linkButton = Button()
     private let dummyView = SpacerView(axis: .vertical, amount: 1)
@@ -30,7 +30,7 @@ class CardButtonsView: UIStackView {
 
 // MARK: Internal
 
-extension CardButtonsView {
+extension CardButtons {
     var primaryButtonState: Button.State {
         get {
             primaryButton.state
@@ -82,7 +82,7 @@ extension CardButtonsView {
 
 // MARK: Private
 
-private extension CardButtonsView {
+private extension CardButtons {
     func commomInit() {
         axis = .horizontal
         alignment = .top

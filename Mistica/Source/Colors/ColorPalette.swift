@@ -70,6 +70,7 @@ protocol ColorPalette {
     var placeholderBackground: UIColor { get }
 
     var border: UIColor { get }
+    var borderDark: UIColor { get }
     var borderSelected: UIColor { get }
 
     // MARK: Icons

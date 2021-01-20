@@ -76,6 +76,7 @@ struct O2ClassicColorPalette: ColorPalette {
     let placeholderBackground = Colors.o2Gem
 
     let border = Colors.grey3
+    let borderDark = Colors.grey1
     let borderSelected = Colors.o2Gem
 
     // MARK: Icons

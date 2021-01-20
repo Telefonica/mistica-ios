@@ -26,6 +26,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case scrollContentIndicator
     case sectionTitle
     case segmentSelector
+    case stepper
     case tag
     case tooltip
     case viewStates
@@ -174,6 +175,8 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogHighlightedCardViewController(), sender: self)
         case .checkbox:
             show(UICatalogCheckboxViewController(), sender: self)
+        case .stepper:
+            show(UICatalogStepperViewController(), sender: self)
         }
     }
 }
@@ -268,6 +271,8 @@ private extension UICatalogRow {
             return "Controls"
         case .highlightedCard:
             return "HighlightedCard"
+        case .stepper:
+            return "Stepper"
         }
     }
 
@@ -311,6 +316,8 @@ private extension UICatalogRow {
             return .controlsIcon
         case .highlightedCard:
             return .highlightedCardIcon
+        case .stepper:
+            return .stepperIcon
         }
     }
 }

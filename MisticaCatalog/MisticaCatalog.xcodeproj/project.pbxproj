@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B85CCA6725B861BC00B76426 /* UICatalogMediaCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */; };
+		B85CCA6A25B868D900B76426 /* UICatalogDataCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F9902D2546C98700DFBFE9 /* CatalogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990002546C98600DFBFE9 /* CatalogList.swift */; };
 		B8F9902E2546C98700DFBFE9 /* CatalogHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990012546C98600DFBFE9 /* CatalogHeader.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogMediaCardViewController.swift; sourceTree = "<group>"; };
+		B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogDataCardViewController.swift; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -206,8 +210,10 @@
 			isa = PBXGroup;
 			children = (
 				B8F990172546C98600DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift */,
+				B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */,
 				B8F990182546C98600DFBFE9 /* UICatalogFeedbacksViewController.swift */,
 				B8F990192546C98600DFBFE9 /* UICatalogHighlightedCardViewController.swift */,
+				B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */,
 				B8F9901A2546C98600DFBFE9 /* UICatalogCheckboxViewController.swift */,
 				B8F9901B2546C98600DFBFE9 /* UICatalogButtonsViewController.swift */,
 				B8F9901C2546C98600DFBFE9 /* UICatalogFormViewController.swift */,
@@ -320,6 +326,7 @@
 				B8F990482546C98700DFBFE9 /* UICatalogControlsViewController.swift in Sources */,
 				B8F990472546C98700DFBFE9 /* UICatalogViewStatesViewController.swift in Sources */,
 				B8F990382546C98700DFBFE9 /* UIImage+Utils.swift in Sources */,
+				B85CCA6A25B868D900B76426 /* UICatalogDataCardViewController.swift in Sources */,
 				B8F9904C2546C98700DFBFE9 /* UICatalogPopoverViewController.swift in Sources */,
 				B8F9903D2546C98700DFBFE9 /* UITextFieldTableViewCell.swift in Sources */,
 				B8F9903E2546C98700DFBFE9 /* MisticaCatalogApp.swift in Sources */,
@@ -331,6 +338,7 @@
 				B8F9902E2546C98700DFBFE9 /* CatalogHeader.swift in Sources */,
 				B8F990522546C98700DFBFE9 /* AppDelegate.swift in Sources */,
 				B8F9903F2546C98700DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift in Sources */,
+				B85CCA6725B861BC00B76426 /* UICatalogMediaCardViewController.swift in Sources */,
 				B8F990322546C98700DFBFE9 /* CatalogAssets.swift in Sources */,
 				B8F9904E2546C98700DFBFE9 /* UICatalogSectionTitleViewController.swift in Sources */,
 				B8F990452546C98700DFBFE9 /* UICatalogFontsViewController.swift in Sources */,

@@ -16,14 +16,8 @@ private enum Constants {
 class DataCardAsset: UIView {
     private var imageView = UIImageView()
     
-    var assetType: DataCardConfiguration.AssetType? {
+    var assetType: DataCardConfiguration.AssetType = .none {
         didSet {
-            guard let assetType = assetType else {
-                imageView.image = nil
-                backgroundColor = .clear
-                return
-            }
-
             imageView.image = assetType.image
             imageView.contentMode = assetType.contentMode
             backgroundColor = assetType.backgroundColor
@@ -54,22 +48,12 @@ class DataCardAsset: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        guard assetType != nil else {
-            return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
-        }
-
         return CGSize(width: Constants.viewSize, height: Constants.viewSize)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        guard let assetType = assetType else {
-            frame = CGRect(x: 0, y: layoutMargins.top, width: Constants.imageSize, height: Constants.imageSize)
-            imageView.frame = CGRect(x: 0, y: 0, width: Constants.imageSize, height: Constants.imageSize)
-            return
-        }
-        
+
         frame = CGRect(x: 0, y: layoutMargins.top, width: Constants.viewSize, height: Constants.viewSize)
         
         // ImageView centered at X and Y
@@ -95,6 +79,8 @@ private extension DataCardConfiguration.AssetType {
             return Constants.imageSize
         case .icon:
             return Constants.iconSize
+        case .none:
+            return 0
         }
     }
 
@@ -104,6 +90,8 @@ private extension DataCardConfiguration.AssetType {
             return 0
         case .icon:
             return Constants.viewSize / 2
+        case .none:
+            return 0
         }
     }
 
@@ -111,6 +99,8 @@ private extension DataCardConfiguration.AssetType {
         switch self {
         case .image(let image), .icon(let image, backgroundColor: _):
             return image
+        case .none:
+            return nil
         }
     }
 
@@ -120,12 +110,14 @@ private extension DataCardConfiguration.AssetType {
             return .scaleAspectFill
         case .icon:
             return .scaleAspectFit
+        case .none:
+            return .scaleAspectFill
         }
     }
 
     var backgroundColor: UIColor {
         switch self {
-        case .image:
+        case .image, .none:
             return .clear
         case .icon(_, let backgroundColor):
             return backgroundColor

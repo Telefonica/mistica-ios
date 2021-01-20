@@ -177,15 +177,15 @@ private extension DataCard {
         cardBaseView.contentView.descriptionLabel.numberOfLines = 0
     }
     func configure(with configuration: DataCardConfiguration) {
-        if configuration.asset != .none {
+        if let icon = configuration.asset {
             if iconContainerView.superview == nil {
                 cardBaseView.insertArrangedSubview(iconContainerView, at: 0)
                 cardBaseView.setCustomSpacing(Constants.spacingAfterIconView, after: iconContainerView)
             }
-            iconImageView.assetType = configuration.asset
+            iconImageView.assetType = icon
         } else {
             iconContainerView.removeFromSuperview()
-            iconImageView.assetType = .none
+            iconImageView.assetType = nil
         }
 
         cardBaseView.headline = configuration.headline

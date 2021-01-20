@@ -15,6 +15,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case checkbox
     case controls
     case crouton
+    case dataCard
     case feedbacks
     case fonts
     case forms
@@ -22,6 +23,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case highlightedCard
     case inputFields
     case lists
+    case mediaCard
     case radioButton
     case scrollContentIndicator
     case sectionTitle
@@ -174,6 +176,10 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogHighlightedCardViewController(), sender: self)
         case .checkbox:
             show(UICatalogCheckboxViewController(), sender: self)
+        case .mediaCard:
+            show(UICatalogMediaCardViewController(), sender: self)
+        case .dataCard:
+            show(UICatalogDataCardViewController(), sender: self)
         }
     }
 }
@@ -268,6 +274,10 @@ private extension UICatalogRow {
             return "Controls"
         case .highlightedCard:
             return "HighlightedCard"
+        case .mediaCard:
+            return "MediaCard"
+        case .dataCard:
+            return "DataCard"
         }
     }
 
@@ -309,8 +319,8 @@ private extension UICatalogRow {
             return .headerIcon
         case .controls:
             return .controlsIcon
-        case .highlightedCard:
-            return .highlightedCardIcon
+        case .highlightedCard, .mediaCard, .dataCard:
+            return .cardIcon
         }
     }
 }

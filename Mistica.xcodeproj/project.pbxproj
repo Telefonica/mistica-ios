@@ -94,6 +94,9 @@
 		B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B857851D25B2228700E76B4C /* DataCardXIBIntegration.xib */; };
 		B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857852025B2229000E76B4C /* DataCardXIBIntegration.swift */; };
 		B857852925B223DF00E76B4C /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857852525B223DC00E76B4C /* UIImage+Utils.swift */; };
+		B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857855525B823B400E76B4C /* MediaCardTests.swift */; };
+		B857855B25B8292E00E76B4C /* MediaCardXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857855925B8292E00E76B4C /* MediaCardXIBIntegration.swift */; };
+		B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B857855A25B8292E00E76B4C /* MediaCardXIBIntegration.xib */; };
 		B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40616E1B8E8E2F0E7D3AAA /* Mistica.framework */; };
 		B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BCF901256D113B00D2BCCC /* TestHelpers.swift */; };
 		B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193A25B20FF0006510CC /* MediaCard.swift */; };
@@ -443,6 +446,24 @@
 		B857855025B35ED600E76B4C /* testFullContentWithoutHeadline.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutHeadline.1.png; sourceTree = "<group>"; };
 		B857855125B35ED600E76B4C /* testFullContentWithoutIcon.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutIcon.1.png; sourceTree = "<group>"; };
 		B857855225B35ED600E76B4C /* testFullContentWithoutSubtitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutSubtitle.1.png; sourceTree = "<group>"; };
+		B857855525B823B400E76B4C /* MediaCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCardTests.swift; sourceTree = "<group>"; };
+		B857855925B8292E00E76B4C /* MediaCardXIBIntegration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCardXIBIntegration.swift; sourceTree = "<group>"; };
+		B857855A25B8292E00E76B4C /* MediaCardXIBIntegration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaCardXIBIntegration.xib; sourceTree = "<group>"; };
+		B85CCA4825B82A0B00B76426 /* testFullContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContent.1.png; sourceTree = "<group>"; };
+		B85CCA4925B82A0B00B76426 /* testPrimaryAndLinkButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryAndLinkButtons.1.png; sourceTree = "<group>"; };
+		B85CCA4A25B82A0B00B76426 /* testBrandStyles.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-vivo-style.png"; sourceTree = "<group>"; };
+		B85CCA4B25B82A0B00B76426 /* testBrandStyles.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-movistar-style.png"; sourceTree = "<group>"; };
+		B85CCA4C25B82A0B00B76426 /* testBrandStyles.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		B85CCA4D25B82A0B00B76426 /* testMinimumContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testMinimumContent.1.png; sourceTree = "<group>"; };
+		B85CCA4E25B82A0B00B76426 /* testFullContentWithoutFragment.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutFragment.1.png; sourceTree = "<group>"; };
+		B85CCA4F25B82A0B00B76426 /* testPrimaryButtonsOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryButtonsOnly.1.png; sourceTree = "<group>"; };
+		B85CCA5025B82A0B00B76426 /* testBrandStyles.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2-style.png"; sourceTree = "<group>"; };
+		B85CCA5125B82A0B00B76426 /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
+		B85CCA5225B82A0B00B76426 /* testTextsWithMultiLine.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testTextsWithMultiLine.1.png; sourceTree = "<group>"; };
+		B85CCA5325B82A0B00B76426 /* testShowLoadingStateForButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowLoadingStateForButtons.1.png; sourceTree = "<group>"; };
+		B85CCA5525B82CCD00B76426 /* testFullContentWithoutHeadline.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutHeadline.1.png; sourceTree = "<group>"; };
+		B85CCA5625B82CCD00B76426 /* testFullContentWithoutPretitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutPretitle.1.png; sourceTree = "<group>"; };
+		B85CCA5725B82CCD00B76426 /* testFullContentWithoutTitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutTitle.1.png; sourceTree = "<group>"; };
 		B88DE71DF455B000DEED6A29 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		B8BCF901256D113B00D2BCCC /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		B8BCF973256D1AB500D2BCCC /* testRegularSizeWithPrimaryClearStyle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testRegularSizeWithPrimaryClearStyle.with-o2-style.png"; sourceTree = "<group>"; };
@@ -780,6 +801,7 @@
 		0B3C024EEA152B58A19951D6 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
+				B85CCA4725B82A0B00B76426 /* MediaCardTests */,
 				B87360B525B21D880070C418 /* DataCardTests */,
 				F7C50F1E258A0C5100B8D465 /* BadgeTests */,
 				8208CF0B2587AF57006D63F0 /* CheckboxTests */,
@@ -1256,6 +1278,7 @@
 				8209DDFD25764401006D91F2 /* CroutonTests.swift */,
 				F74CB4F025765A4A00260675 /* ControlsTests.swift */,
 				B8D7195C25B21ADB006510CC /* DataCardTests.swift */,
+				B857855525B823B400E76B4C /* MediaCardTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 			);
 			path = UI;
@@ -1512,6 +1535,28 @@
 			path = ControlPresets;
 			sourceTree = "<group>";
 		};
+		B85CCA4725B82A0B00B76426 /* MediaCardTests */ = {
+			isa = PBXGroup;
+			children = (
+				B85CCA5525B82CCD00B76426 /* testFullContentWithoutHeadline.1.png */,
+				B85CCA5625B82CCD00B76426 /* testFullContentWithoutPretitle.1.png */,
+				B85CCA5725B82CCD00B76426 /* testFullContentWithoutTitle.1.png */,
+				B85CCA4825B82A0B00B76426 /* testFullContent.1.png */,
+				B85CCA4925B82A0B00B76426 /* testPrimaryAndLinkButtons.1.png */,
+				B85CCA4A25B82A0B00B76426 /* testBrandStyles.with-vivo-style.png */,
+				B85CCA4B25B82A0B00B76426 /* testBrandStyles.with-movistar-style.png */,
+				B85CCA4C25B82A0B00B76426 /* testBrandStyles.with-o2Classic-style.png */,
+				B85CCA4D25B82A0B00B76426 /* testMinimumContent.1.png */,
+				B85CCA4E25B82A0B00B76426 /* testFullContentWithoutFragment.1.png */,
+				B85CCA4F25B82A0B00B76426 /* testPrimaryButtonsOnly.1.png */,
+				B85CCA5025B82A0B00B76426 /* testBrandStyles.with-o2-style.png */,
+				B85CCA5125B82A0B00B76426 /* testXIBIntegration.1.png */,
+				B85CCA5225B82A0B00B76426 /* testTextsWithMultiLine.1.png */,
+				B85CCA5325B82A0B00B76426 /* testShowLoadingStateForButtons.1.png */,
+			);
+			path = MediaCardTests;
+			sourceTree = "<group>";
+		};
 		B87360B525B21D880070C418 /* DataCardTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1603,6 +1648,8 @@
 				F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */,
 				B857851D25B2228700E76B4C /* DataCardXIBIntegration.xib */,
 				B857852025B2229000E76B4C /* DataCardXIBIntegration.swift */,
+				B857855925B8292E00E76B4C /* MediaCardXIBIntegration.swift */,
+				B857855A25B8292E00E76B4C /* MediaCardXIBIntegration.xib */,
 			);
 			path = XIBIntegration;
 			sourceTree = "<group>";
@@ -2032,6 +2079,7 @@
 				F7A78EBD2577DF9A0013B78E /* testSwitchOnState.with-movistar-style.png in Resources */,
 				F7A78EB52577DF9A0013B78E /* testSegmentedControl.with-vivo-style.png in Resources */,
 				F7A78EB82577DF9A0013B78E /* testSwitchOnState.with-o2-style.png in Resources */,
+				B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */,
 				F7A78EBA2577DF9A0013B78E /* testSegmentedControl.with-movistar-style.png in Resources */,
 				F7A78ECA2577DF9A0013B78E /* testTabBarControl.with-movistar-style.png in Resources */,
 				F7A78EBE2577DF9A0013B78E /* testPageControl.with-o2Classic-style.png in Resources */,
@@ -2166,10 +2214,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
+				B857855B25B8292E00E76B4C /* MediaCardXIBIntegration.swift in Sources */,
 				F74CB4F42576606100260675 /* ControlsTests.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
 				B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */,
 				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
+				B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
 				B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */,
 				82CF1540257567C700867797 /* BadgeTests.swift in Sources */,

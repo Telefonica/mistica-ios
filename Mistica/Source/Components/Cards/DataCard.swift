@@ -12,13 +12,12 @@ import UIKit
 // MARK: DataCardConfiguration
 
 public struct DataCardConfiguration {
-    
     public enum Buttons {
         case link(CardLinkButton)
         case primary(CardButton)
         case primaryAndLink(primary: CardButton, link: CardLinkButton)
     }
-    
+
     let icon: UIImage?
     let headline: String?
     let title: String
@@ -83,7 +82,7 @@ public class DataCard: UIView {
         super.layoutSubviews()
         makeRounded(cornerRadius: Constants.cornerRadius)
     }
-    
+
     override public var intrinsicContentSize: CGSize {
         cardBaseView.intrinsicContentSize
     }

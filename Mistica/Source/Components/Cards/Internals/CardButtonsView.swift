@@ -47,7 +47,7 @@ extension CardButtonsView {
             linkButton.state = newValue
         }
     }
-    
+
     func configureButtons(primaryButton: CardButton?, linkButton: CardLinkButton?) {
         if let primaryAction = primaryButton {
             self.primaryButton.title = primaryAction.title

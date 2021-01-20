@@ -9,6 +9,6 @@
 import Mistica
 import UIKit
 
-class DataCardXIBIntegration: UIView {
-    @IBOutlet var card: DataCard!
+class MediaCardXIBIntegration: UIView {
+    @IBOutlet var card: MediaCard!
 }

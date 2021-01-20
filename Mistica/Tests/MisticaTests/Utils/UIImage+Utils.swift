@@ -1,8 +1,9 @@
 //
 //  UIImage+Utils.swift
-//  Mistica
 //
-//  Created by Jose Miguel Brocal on 15/1/21.
+//  Made with ❤️ by Novum
+//
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import UIKit
@@ -23,7 +24,7 @@ extension UIImage {
         UIGraphicsEndImageContext()
 
         if let image = image,
-            let cgImage = image.cgImage {
+           let cgImage = image.cgImage {
             self.init(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
         } else {
             self.init()

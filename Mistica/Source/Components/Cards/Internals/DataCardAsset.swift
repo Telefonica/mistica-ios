@@ -13,8 +13,6 @@ private enum Constants {
     static let viewSize = CGFloat(40)
 }
 
-// MARK: Internal
-
 class DataCardAsset: UIView {
     private var imageView = UIImageView()
     

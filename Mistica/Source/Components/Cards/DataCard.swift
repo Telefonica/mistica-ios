@@ -73,7 +73,13 @@ public class DataCard: UIView {
     }
 
     public var contentConfiguration: DataCardConfiguration? {
-        didSet {}
+        didSet {
+            if let contentConfiguration = contentConfiguration {
+                configure(with: contentConfiguration)
+            } else {
+                configure(with: .emptyConfiguration)
+            }
+        }
     }
 
     override public init(frame: CGRect) {
@@ -99,33 +105,6 @@ public class DataCard: UIView {
 // MARK: Public
 
 public extension DataCard {
-    func configure(with configuration: DataCardConfiguration) {
-        if let icon = configuration.asset {
-            if iconContainerView.superview == nil {
-                cardBaseView.insertArrangedSubview(iconContainerView, at: 0)
-                cardBaseView.setCustomSpacing(Constants.spacingAfterIconView, after: iconContainerView)
-            }
-            iconImageView.assetType = icon
-        } else {
-            iconContainerView.removeFromSuperview()
-            iconImageView.assetType = nil
-        }
-
-        cardBaseView.headline = configuration.headline
-        cardBaseView.title = configuration.title
-        cardBaseView.subtitle = configuration.subtitle
-        cardBaseView.descriptionTitle = configuration.descriptionTitle
-
-        switch configuration.buttons {
-        case .link(let linkButton):
-            cardBaseView.configureButtons(primaryButton: nil, linkButton: linkButton)
-        case .primary(let primaryButton):
-            cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: nil)
-        case .primaryAndLink(let primaryButton, let linkButton):
-            cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
-        }
-    }
-
     var iconContentMode: UIView.ContentMode {
         get {
             iconImageView.contentMode
@@ -196,4 +175,40 @@ private extension DataCard {
         cardBaseView.contentView.descriptionLabel.minHeight = 20
         cardBaseView.contentView.descriptionLabel.numberOfLines = 0
     }
+    func configure(with configuration: DataCardConfiguration) {
+        if let icon = configuration.asset {
+            if iconContainerView.superview == nil {
+                cardBaseView.insertArrangedSubview(iconContainerView, at: 0)
+                cardBaseView.setCustomSpacing(Constants.spacingAfterIconView, after: iconContainerView)
+            }
+            iconImageView.assetType = icon
+        } else {
+            iconContainerView.removeFromSuperview()
+            iconImageView.assetType = nil
+        }
+
+        cardBaseView.headline = configuration.headline
+        cardBaseView.title = configuration.title
+        cardBaseView.subtitle = configuration.subtitle
+        cardBaseView.descriptionTitle = configuration.descriptionTitle
+
+        switch configuration.buttons {
+        case .link(let linkButton):
+            cardBaseView.configureButtons(primaryButton: nil, linkButton: linkButton)
+        case .primary(let primaryButton):
+            cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: nil)
+        case .primaryAndLink(let primaryButton, let linkButton):
+            cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
+        }
+    }
+}
+
+private extension DataCardConfiguration {
+    static let emptyConfiguration = DataCardConfiguration(
+        title: "",
+        descriptionTitle: "",
+        buttons: .link(
+            CardLinkButton(title: "", tapHandler: nil)
+        )
+    )
 }

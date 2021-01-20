@@ -56,6 +56,16 @@ public class MediaCard: UIView {
             baseCardView.fragmentView = fragmentView
         }
     }
+    
+    public var contentConfiguration: MediaCardConfiguration? {
+        didSet {
+            if let contentConfiguration = contentConfiguration {
+                configure(with: contentConfiguration)
+            } else {
+                configure(with: .emptyConfiguration)
+            }
+        }
+    }
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,19 +86,6 @@ public class MediaCard: UIView {
 // MARK: Public
 
 public extension MediaCard {
-    func configure(with configuration: MediaCardConfiguration) {
-        richMediaContainerView.subviews.first?.removeFromSuperview()
-
-        richMediaContainerView.addSubview(withDefaultConstraints: configuration.richMedia)
-
-        baseCardView.headline = configuration.headline
-        baseCardView.title = configuration.pretitle?.uppercased()
-        baseCardView.subtitle = configuration.title
-        baseCardView.descriptionTitle = configuration.descriptionTitle
-
-        baseCardView.configureButtons(primaryButton: configuration.button, linkButton: configuration.link)
-    }
-
     var primaryButtonState: Button.State {
         get {
             baseCardView.buttonsView.primaryButtonState
@@ -152,4 +149,21 @@ private extension MediaCard {
         baseCardView.contentView.descriptionLabel.minHeight = 20
         baseCardView.contentView.descriptionLabel.numberOfLines = 0
     }
+
+    func configure(with configuration: MediaCardConfiguration) {
+        richMediaContainerView.subviews.first?.removeFromSuperview()
+
+        richMediaContainerView.addSubview(withDefaultConstraints: configuration.richMedia)
+
+        baseCardView.headline = configuration.headline
+        baseCardView.title = configuration.pretitle?.uppercased()
+        baseCardView.subtitle = configuration.title
+        baseCardView.descriptionTitle = configuration.descriptionTitle
+
+        baseCardView.configureButtons(primaryButton: configuration.button, linkButton: configuration.link)
+    }
+}
+
+private extension MediaCardConfiguration {
+    static let emptyConfiguration = MediaCardConfiguration(richMedia: UIView(), descriptionTitle: "")
 }

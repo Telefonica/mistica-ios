@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// CardCommonContent is a custom view which contains the buttons shared between DataCard and MediaCard
 class CardButtonsView: UIStackView {
     private let primaryButton = Button()
     private let linkButton = Button()

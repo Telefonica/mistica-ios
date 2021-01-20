@@ -144,7 +144,7 @@ final class DataCardTests: XCTestCase {
         )
 
         let view = DataCardXIBIntegration.viewFromNib()
-        view.card.configure(with: configurationWithActions)
+        view.card.contentConfiguration = configurationWithActions
 
         assertSnapshot(
             matching: view.asRootOfViewController(),
@@ -169,7 +169,7 @@ extension DataCardTests {
         )
 
         let view = DataCard()
-        view.configure(with: configuration)
+        view.contentConfiguration = configuration
 
         let cardSize = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         view.frame = CGRect(x: 0, y: 0, width: cardSize.width, height: cardSize.height)
@@ -196,7 +196,7 @@ extension DataCardTests {
         )
 
         let view = DataCard()
-        view.configure(with: configuration)
+        view.contentConfiguration = configuration
 
         if hasFragment {
             view.fragmentView = makeAFragmentView()

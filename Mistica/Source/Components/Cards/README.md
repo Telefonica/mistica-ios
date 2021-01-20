@@ -12,11 +12,11 @@ Create a `DataCardConfiguration` with the required parameters. For example, a ba
 DataCardConfiguration(title: "title", descriptionTitle: "a detail text")
 ```
 
-Once the configuration is created, use the `configure(with:)` function:
+Once the configuration is created, set the configuration to `dataConfiguration` property.
 
 ```swift
 let myDataCard = DataCard()
-myDataCard.configure(with: myConfiguration)
+myDataCard.dataConfiguration = myConfiguration
 ```
 
 # MediaCard
@@ -33,11 +33,11 @@ Create a `MediaCardConfiguration` with the required parameters. For example, a b
 MediaCardConfiguration(richMedia: myRichMediaView, descriptionTitle: "a detail text")
 ```
 
-Once the configuration is created, use the `configure(with:)` function:
+Once the configuration is created, set the configuration to `dataConfiguration` property.
 
 ```swift
 let myDataCard = MediaCard()
-myDataCard.configure(with: myConfiguration)
+myDataCard.dataConfiguration = myConfiguration
 ```
 
 ## Rich Media

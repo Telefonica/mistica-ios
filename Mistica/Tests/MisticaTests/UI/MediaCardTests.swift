@@ -136,7 +136,7 @@ final class MediaCardTests: XCTestCase {
         )
 
         let view = MediaCardXIBIntegration.viewFromNib()
-        view.card.configure(with: configurationWithActions)
+        view.card.contentConfiguration = configurationWithActions
 
         assertSnapshot(
             matching: view.asRootOfViewController(),
@@ -170,7 +170,7 @@ extension MediaCardTests {
         )
 
         let view = MediaCard()
-        view.configure(with: configuration)
+        view.contentConfiguration = configuration
 
         let cardSize = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         view.frame = CGRect(x: 0, y: 0, width: cardSize.width, height: cardSize.height)
@@ -199,7 +199,7 @@ extension MediaCardTests {
         )
 
         let view = MediaCard()
-        view.configure(with: configuration)
+        view.contentConfiguration = configuration
 
         if hasFragment {
             view.fragmentView = makeAFragmentView()

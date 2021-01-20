@@ -97,6 +97,8 @@
 		B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857855525B823B400E76B4C /* MediaCardTests.swift */; };
 		B857855B25B8292E00E76B4C /* MediaCardXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857855925B8292E00E76B4C /* MediaCardXIBIntegration.swift */; };
 		B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B857855A25B8292E00E76B4C /* MediaCardXIBIntegration.xib */; };
+		B85CCA5925B82EFA00B76426 /* CheckboxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */; };
+		B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */; };
 		B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40616E1B8E8E2F0E7D3AAA /* Mistica.framework */; };
 		B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BCF901256D113B00D2BCCC /* TestHelpers.swift */; };
 		B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193A25B20FF0006510CC /* MediaCard.swift */; };
@@ -2068,6 +2070,7 @@
 				F7A78EBB2577DF9A0013B78E /* testTabBarControl.with-vivo-style.png in Resources */,
 				F7A78EC92577DF9A0013B78E /* testSwitchDefaultState.with-movistar-style.png in Resources */,
 				F7A78EBF2577DF9A0013B78E /* testTabBarControlChangeSelectedItem.assertInitialState.png in Resources */,
+				B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */,
 				F7A78EC32577DF9A0013B78E /* testTabBarControlChangeSelectedItem.finalState.png in Resources */,
 				F7A78EB62577DF9A0013B78E /* testSwitchDefaultState.with-o2-style.png in Resources */,
 				F7A78EC12577DF9A0013B78E /* testPageControl.with-movistar-style.png in Resources */,
@@ -2218,6 +2221,7 @@
 				F74CB4F42576606100260675 /* ControlsTests.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
 				B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */,
+				B85CCA5925B82EFA00B76426 /* CheckboxXIBIntegration.swift in Sources */,
 				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
 				B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,

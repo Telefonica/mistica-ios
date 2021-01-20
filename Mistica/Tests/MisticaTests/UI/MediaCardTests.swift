@@ -14,12 +14,14 @@ final class MediaCardTests: XCTestCase {
     override class func setUp() {
         super.setUp()
 
-        isRecording = true
+        isRecording = false
     }
 
     // MARK: - Styles
 
     func testBrandStyles() {
+        MisticaConfig.brandStyle = .movistar
+        
         let view = makeBasicCard()
 
         assertSnapshotForAllBrands(as: .image, viewBuilder: view)
@@ -182,8 +184,8 @@ extension MediaCardTests {
         title: String? = "Item title",
         pretitle: String? = "Movistar Likes",
         descriptionTitle: String = "This is a description",
-        primaryButton: CardButton? = .any,
-        linkButton: CardLinkButton? = .any,
+        primaryButton: CardButton? = AnyValues.button,
+        linkButton: CardLinkButton? = AnyValues.link,
         hasFragment: Bool = true
     ) -> MediaCard {
         let configuration = MediaCardConfiguration(

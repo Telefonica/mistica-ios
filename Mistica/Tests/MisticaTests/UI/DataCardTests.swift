@@ -20,6 +20,8 @@ final class DataCardTests: XCTestCase {
     // MARK: - Styles
 
     func testBrandStyles() {
+        MisticaConfig.brandStyle = .movistar
+        
         let view = makeBasicCard()
 
         assertSnapshotForAllBrands(as: .image, viewBuilder: view)
@@ -90,7 +92,7 @@ final class DataCardTests: XCTestCase {
     func testPrimaryButtonsOnly() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeBasicCard(buttons: .primary(.any))
+        let view = makeBasicCard(buttons: .primary(AnyValues.button))
 
         assertSnapshot(matching: view, as: .image)
     }
@@ -98,7 +100,7 @@ final class DataCardTests: XCTestCase {
     func testPrimaryAndLinkButtons() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeBasicCard(buttons: .primaryAndLink(primary: .any, link: .any))
+        let view = makeBasicCard(buttons: .primaryAndLink(primary: AnyValues.button, link: AnyValues.link))
 
         assertSnapshot(matching: view, as: .image)
     }
@@ -108,7 +110,7 @@ final class DataCardTests: XCTestCase {
     func testShowLoadingStateForButtons() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeCardWithFullContentAndButtons(buttons: .primaryAndLink(primary: .any, link: .any))
+        let view = makeCardWithFullContentAndButtons(buttons: .primaryAndLink(primary: AnyValues.button, link: AnyValues.link))
         view.primaryButtonState = .loading
 
         assertSnapshot(matching: view, as: .image)
@@ -122,7 +124,7 @@ final class DataCardTests: XCTestCase {
         let configurationWithActions = DataCardConfiguration(
             title: "Title",
             descriptionTitle: "Description",
-            buttons: .primaryAndLink(primary: .any, link: .any)
+            buttons: .primaryAndLink(primary: AnyValues.button, link: AnyValues.link)
         )
 
         let view = DataCardXIBIntegration.viewFromNib()
@@ -137,81 +139,80 @@ final class DataCardTests: XCTestCase {
 
 // MARK: - Helpers
 
-extension CardButton {
-    static let any = CardButton(title: "Button", loadingTitle: "Loading", tapHandler: nil)
-}
+extension DataCardTests {
+    enum AnyValues {
+        static let button = CardButton(title: "Button", loadingTitle: "Loading", tapHandler: nil)
+        static let link = CardLinkButton(title: "Button Link", tapHandler: nil)
+    }
+    
+    func makeBasicCard(buttons: DataCardConfiguration.Buttons = .link(AnyValues.link)) -> DataCard {
+        let configuration = DataCardConfiguration(
+            title: "Item title",
+            descriptionTitle: "This is a description",
+            buttons: buttons
+        )
 
-extension CardLinkButton {
-    static let any = CardLinkButton(title: "Button Link", tapHandler: nil)
-}
+        let view = DataCard()
+        view.configure(with: configuration)
 
-func makeBasicCard(buttons: DataCardConfiguration.Buttons = .link(.any)) -> DataCard {
-    let configuration = DataCardConfiguration(
-        title: "Item title",
-        descriptionTitle: "This is a description",
-        buttons: buttons
-    )
+        let cardSize = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        view.frame = CGRect(x: 0, y: 0, width: cardSize.width, height: cardSize.height)
 
-    let view = DataCard()
-    view.configure(with: configuration)
-
-    let cardSize = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-    view.frame = CGRect(x: 0, y: 0, width: cardSize.width, height: cardSize.height)
-
-    return view
-}
-
-func makeCardWithFullContentAndButtons(
-    icon: UIImage? = .init(color: .green),
-    headline: String? = "headline",
-    title: String = "Item title",
-    subtitle: String? = "Subtitle",
-    descriptionTitle: String = "This is a description",
-    buttons: DataCardConfiguration.Buttons = .primaryAndLink(primary: .any, link: .any),
-    hasFragment: Bool = true
-) -> DataCard {
-    let configuration = DataCardConfiguration(
-        icon: icon,
-        headline: headline,
-        title: title,
-        subtitle: subtitle,
-        descriptionTitle: descriptionTitle,
-        buttons: buttons
-    )
-
-    let view = DataCard()
-    view.configure(with: configuration)
-
-    if hasFragment {
-        view.fragmentView = makeAFragmentView()
+        return view
     }
 
-    let cardSize = view.systemLayoutSizeFitting(
-        CGSize(width: 300, height: 0),
-        withHorizontalFittingPriority: .required,
-        verticalFittingPriority: .defaultLow
-    )
-    view.frame = CGRect(x: 0, y: 0, width: cardSize.width, height: cardSize.height)
+    func makeCardWithFullContentAndButtons(
+        icon: UIImage? = .init(color: .green),
+        headline: String? = "headline",
+        title: String = "Item title",
+        subtitle: String? = "Subtitle",
+        descriptionTitle: String = "This is a description",
+        buttons: DataCardConfiguration.Buttons = .primaryAndLink(primary: AnyValues.button, link: AnyValues.link),
+        hasFragment: Bool = true
+    ) -> DataCard {
+        let configuration = DataCardConfiguration(
+            icon: icon,
+            headline: headline,
+            title: title,
+            subtitle: subtitle,
+            descriptionTitle: descriptionTitle,
+            buttons: buttons
+        )
 
-    return view
-}
+        let view = DataCard()
+        view.configure(with: configuration)
 
-func makeAFragmentView() -> UIView {
-    let parentView = UIView()
-    parentView.backgroundColor = .gray
+        if hasFragment {
+            view.fragmentView = makeAFragmentView()
+        }
 
-    let label = UILabel()
-    label.text = "Hi, I am a text inside a fragment"
-    label.numberOfLines = 0
+        let cardSize = view.systemLayoutSizeFitting(
+            CGSize(width: 300, height: 0),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .defaultLow
+        )
+        view.frame = CGRect(x: 0, y: 0, width: cardSize.width, height: cardSize.height)
 
-    parentView.addSubview(label)
+        return view
+    }
 
-    label.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-        label.centerXAnchor.constraint(equalTo: parentView.centerXAnchor),
-        label.centerYAnchor.constraint(equalTo: parentView.centerYAnchor),
-        parentView.heightAnchor.constraint(equalTo: label.heightAnchor, constant: 40)
-    ])
+    func makeAFragmentView() -> UIView {
+        let parentView = UIView()
+        parentView.backgroundColor = .gray
 
-    return parentView
+        let label = UILabel()
+        label.text = "Hi, I am a text inside a fragment"
+        label.numberOfLines = 0
+
+        parentView.addSubview(label)
+
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: parentView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: parentView.centerYAnchor),
+            parentView.heightAnchor.constraint(equalTo: label.heightAnchor, constant: 40)
+        ])
+
+        return parentView
+    }
 }

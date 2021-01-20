@@ -1,3 +1,10 @@
+# [7.1.0](https://github.com/Telefonica/mistica-ios/compare/v7.0.0...v7.1.0) (2021-01-20)
+
+
+### Features
+
+* **Stepper:** Add StepperView ([#59](https://github.com/Telefonica/mistica-ios/issues/59)) ([6174987](https://github.com/Telefonica/mistica-ios/commit/61749872d68833df6c624ea9fe234ba8270d6187))
+
 # [7.0.0](https://github.com/Telefonica/mistica-ios/compare/v6.0.0...v7.0.0) (2021-01-12)
 
 

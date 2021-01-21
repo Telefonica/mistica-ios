@@ -343,6 +343,5 @@ private extension ListViewCell {
 @available(*, deprecated, renamed: "ListViewCell")
 open class ListCellView: UITableViewCell { }
 
-@frozen
 @available(*, deprecated, renamed: "ListViewCell.CellStyle")
 public enum ListCellStyle { }

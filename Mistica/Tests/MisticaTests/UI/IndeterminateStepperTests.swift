@@ -39,7 +39,7 @@ final class IndeterminateStepperTests: XCTestCase {
             named: "assertInitialState"
         )
 
-        stepper.currentStep = 1
+        stepper.value = 1
 
         assertSnapshot(
             matching: stepper,
@@ -86,6 +86,6 @@ final class IndeterminateStepperTests: XCTestCase {
 
 private func makeTemplateWithStepperState(value: Int = 0) -> IndeterminateStepperView {
     let stepperView = IndeterminateStepperView(frame: CGRect(origin: .zero, size: CGSize(width: 600, height: 24)))
-    stepperView.value = currentStep
+    stepperView.value = value
     return stepperView
 }

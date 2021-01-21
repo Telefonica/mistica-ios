@@ -225,7 +225,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
     var showHeadline: Bool = false
     var assetType: ListViewCell.CellAssetType!
     var customControl = CustomControl.none
-    var cellLayoutStyle: ListCellStyle!
+    var cellLayoutStyle: ListViewCell.CellStyle!
 
     let numberOfRows = 30
 

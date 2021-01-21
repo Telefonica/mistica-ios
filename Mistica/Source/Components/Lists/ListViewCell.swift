@@ -18,6 +18,12 @@ private enum ViewStyles {
 
 open class ListViewCell: UITableViewCell {
     @frozen
+    public enum CellStyle {
+        case fullWidth
+        case boxed
+    }
+    
+    @frozen
     public enum CellAssetType: Equatable {
         case none
         case image(UIImage)
@@ -149,7 +155,7 @@ open class ListViewCell: UITableViewCell {
         }
     }
 
-    public var listCellStyle = ListCellStyle.fullWidth {
+    public var listCellStyle = CellStyle.fullWidth {
         didSet {
             updateCellStyle()
         }
@@ -336,3 +342,7 @@ private extension ListViewCell {
 // NARK: - Deprecated
 @available(*, deprecated, renamed: "ListViewCell")
 open class ListCellView: UITableViewCell { }
+
+@frozen
+@available(*, deprecated, renamed: "ListViewCell.CellStyle")
+public enum ListCellStyle { }

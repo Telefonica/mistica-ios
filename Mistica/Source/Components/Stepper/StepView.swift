@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import Lottie
+import UIKit
 
 class StepView: UIView {
     private enum Constants {
@@ -32,7 +32,7 @@ class StepView: UIView {
         if state == .done && state != self.state {
             animatedView.play()
         }
-        
+
         if animated {
             UIView.transition(
                 with: self,
@@ -61,7 +61,7 @@ class StepView: UIView {
         animation.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         return animation
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -76,11 +76,11 @@ class StepView: UIView {
         label.font = .textPreset8(weight: .medium)
         label.textAlignment = .center
         circularView.addSubview(withDefaultConstraints: label)
-        
+
         let colorKeypath = AnimationKeypath(keypath: "**.Color")
         let colorProvider = ColorValueProvider(UIColor.controlActivated.lottieColorValue)
         animatedView.setValueProvider(colorProvider, keypath: colorKeypath)
-        
+
         addSubview(withDefaultConstraints: animatedView)
         addSubview(withDefaultConstraints: circularView)
     }

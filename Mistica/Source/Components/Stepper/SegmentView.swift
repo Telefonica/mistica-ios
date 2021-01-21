@@ -18,7 +18,7 @@ class SegmentView: UIView {
     private lazy var trackView = UIView()
 
     private lazy var widthConstraint = trackView.widthAnchor.constraint(equalToConstant: 0)
-    
+
     var value = 0 {
         didSet {
             updateValueConstraint()
@@ -78,7 +78,7 @@ private extension SegmentView {
             backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             backgroundView.heightAnchor.constraint(equalToConstant: Constants.height)
         ])
-        
+
         backgroundView.addSubview(trackView, constraints: [
             trackView.topAnchor.constraint(equalTo: backgroundView.topAnchor),
             trackView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor),
@@ -86,7 +86,7 @@ private extension SegmentView {
             widthConstraint
         ])
     }
-    
+
     func updateValueConstraint() {
         let factor = CGFloat(value) / CGFloat(maximumValue)
         let width = backgroundView.bounds.width * factor

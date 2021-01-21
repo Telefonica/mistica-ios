@@ -1,5 +1,5 @@
 //
-//  PopoverAssets.swift
+//  StepperUIAssets.swift
 //
 //  Made with ❤️ by Novum
 //

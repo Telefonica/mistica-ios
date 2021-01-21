@@ -166,7 +166,7 @@ private extension DeterminateStepperView {
         arrangedSubviews.forEach(stackView.addArrangedSubview)
 
         activateSegmentsWidthConstraints()
-        
+
         // Make the update on the stackview non animated.
         // It will avoid weird animations (only) while adding or removing steps.
         UIView.performWithoutAnimation {

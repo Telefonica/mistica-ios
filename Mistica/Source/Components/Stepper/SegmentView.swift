@@ -45,6 +45,7 @@ class SegmentView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundView.makeRounded(cornerRadius: Constants.height / 2)
+        trackView.makeRounded(cornerRadius: Constants.height / 2)
         updateValueConstraint()
     }
 }

@@ -103,8 +103,9 @@
 		B4C66DD7256EB8A50087E4B5 /* FeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */; };
 		B4C99EA94307852447D672A1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE9079D1C9C80AD4FB45F3 /* ListView.swift */; };
 		B805C38E65D802F520DB0931 /* LoadErrorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CAF7C86C74F12CE2700B8 /* LoadErrorViewControllerDelegate.swift */; };
-		B833F67225B98FAE0013FD92 /* DeteminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeteminateStepperXIBIntegration.xib */; };
+		B833F67225B98FAE0013FD92 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
 		B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40616E1B8E8E2F0E7D3AAA /* Mistica.framework */; };
+		B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
 		B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BCF901256D113B00D2BCCC /* TestHelpers.swift */; };
 		B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */; };
 		B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA9B256E6DCA00472C23 /* UIView+Utils.swift */; };
@@ -188,7 +189,7 @@
 		1860BBBD25B03AD900319CFC /* IndeterminateStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndeterminateStepperView.swift; sourceTree = "<group>"; };
 		1860BBC025B03AF200319CFC /* DeterminateStepperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeterminateStepperTests.swift; sourceTree = "<group>"; };
 		1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterminateStepperXIBIntegration.swift; sourceTree = "<group>"; };
-		1860BBC625B03B7100319CFC /* DeteminateStepperXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeteminateStepperXIBIntegration.xib; sourceTree = "<group>"; };
+		1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeterminateStepperXIBIntegration.xib; sourceTree = "<group>"; };
 		1860BBE425B03C9400319CFC /* testIndeterminateStepperCurrentStepChanges.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperCurrentStepChanges.finalState.png; sourceTree = "<group>"; };
 		1860BBE525B03C9400319CFC /* testIndeterminateStepperCurrentStepChanges.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperCurrentStepChanges.assertInitialState.png; sourceTree = "<group>"; };
 		1860BBE625B03C9400319CFC /* testIndeterminateStepperDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIndeterminateStepperDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
@@ -1462,7 +1463,7 @@
 				F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */,
 				F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */,
 				1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */,
-				1860BBC625B03B7100319CFC /* DeteminateStepperXIBIntegration.xib */,
+				1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */,
 				18CDBD7725ACB1AC00928474 /* IndeterminateStepperXIBIntegration.swift */,
 				18CDBD7625ACB1AC00928474 /* IndeterminateStepperXIBIntegration.xib */,
 			);
@@ -1875,8 +1876,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8209DE0325769688006D91F2 /* BadgeXIBIntegration.xib in Resources */,
-				B833F67225B98FAE0013FD92 /* DeteminateStepperXIBIntegration.xib in Resources */,
+				B833F67225B98FAE0013FD92 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
+				B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
 				18D8894525ADA1000098EED3 /* CheckboxXIBIntegration.xib in Resources */,
 			);

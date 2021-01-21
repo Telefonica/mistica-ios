@@ -81,6 +81,7 @@ struct MovistarColorPalette: ColorPalette {
     let placeholderBackground = Colors.movistarBlue
 
     let border = Colors.grey3
+    let borderDark = Colors.grey1
     let borderSelected = Colors.movistarGreen
 
     // MARK: Icons

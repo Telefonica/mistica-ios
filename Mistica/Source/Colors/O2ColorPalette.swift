@@ -69,6 +69,7 @@ struct O2ColorPalette: ColorPalette {
     let placeholderBackground = Colors.o2Teal
 
     let border = Colors.grey3
+    let borderDark = Colors.grey1
     let borderSelected = Colors.o2BluePrimary
 
     // MARK: Icons

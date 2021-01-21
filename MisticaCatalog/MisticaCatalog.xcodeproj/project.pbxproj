@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B85CCA6725B861BC00B76426 /* UICatalogMediaCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */; };
 		B85CCA6A25B868D900B76426 /* UICatalogDataCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */; };
+		18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F9902D2546C98700DFBFE9 /* CatalogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990002546C98600DFBFE9 /* CatalogList.swift */; };
 		B8F9902E2546C98700DFBFE9 /* CatalogHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990012546C98600DFBFE9 /* CatalogHeader.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogMediaCardViewController.swift; sourceTree = "<group>"; };
 		B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogDataCardViewController.swift; sourceTree = "<group>"; };
+		18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogStepperViewController.swift; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				B8F990272546C98600DFBFE9 /* UICatalogCroutonViewController.swift */,
 				B8F990282546C98600DFBFE9 /* UICatalogBadgeViewController.swift */,
 				B8F990292546C98600DFBFE9 /* UICatalogHeaderViewController.swift */,
+				18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */,
 			);
 			path = ComponentsCatalogs;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				B8F990492546C98700DFBFE9 /* UICatalogSegmentSelectorViewController.swift in Sources */,
 				B8F990312546C98700DFBFE9 /* NavigationBarStyles.swift in Sources */,
 				B8F990422546C98700DFBFE9 /* UICatalogCheckboxViewController.swift in Sources */,
+				18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */,
 				B8F9904D2546C98700DFBFE9 /* UICatalogListsViewController.swift in Sources */,
 				B8F9902D2546C98700DFBFE9 /* CatalogList.swift in Sources */,
 				B8F9904F2546C98700DFBFE9 /* UICatalogCroutonViewController.swift in Sources */,

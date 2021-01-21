@@ -28,6 +28,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case scrollContentIndicator
     case sectionTitle
     case segmentSelector
+    case stepper
     case tag
     case tooltip
     case viewStates
@@ -180,6 +181,8 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogMediaCardViewController(), sender: self)
         case .dataCard:
             show(UICatalogDataCardViewController(), sender: self)
+        case .stepper:
+            show(UICatalogStepperViewController(), sender: self)
         }
     }
 }
@@ -278,6 +281,8 @@ private extension UICatalogRow {
             return "MediaCard"
         case .dataCard:
             return "DataCard"
+        case .stepper:
+            return "Stepper"
         }
     }
 
@@ -321,6 +326,8 @@ private extension UICatalogRow {
             return .controlsIcon
         case .highlightedCard, .mediaCard, .dataCard:
             return .cardIcon
+case .stepper:
+return .stepperIcon
         }
     }
 }

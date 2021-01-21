@@ -69,6 +69,7 @@ struct VivoColorPalette: ColorPalette {
     let placeholderBackground = Colors.vivoBlue
 
     let border = Colors.grey3
+    let borderDark = Colors.grey1
     let borderSelected = Colors.vivoPurple
 
     // MARK: Icons

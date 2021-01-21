@@ -117,6 +117,7 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 * [ScrollContentIndicator](./Mistica/Source/Components/ScrollContentIndicator/)
 * [SectionTitle](./Mistica/Source/Components/SectionTitle/)
 * [SegmentSelector](./Mistica/Source/Components/SegmentSelector/)
+* [Stepper](./Mistica/Source/Components/Stepper/)
 * [ViewStates](./Mistica/Source/Components/ViewStates/)
 
 ## Demo app

@@ -234,6 +234,11 @@ public extension UIColor {
         MisticaConfig.currentColorPalette.border
     }
 
+    @objc(borderDark)
+    static var borderDark: UIColor {
+        MisticaConfig.currentColorPalette.borderDark
+    }
+
     @objc(borderSelectedColor)
     static var borderSelected: UIColor {
         MisticaConfig.currentColorPalette.borderSelected

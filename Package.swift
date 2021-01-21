@@ -61,8 +61,10 @@ let package = Package(
                 "Components/Tag/README.md",
                 "Components/ViewStates/docs",
                 "Components/ViewStates/README.md",
+                "Components/Stepper/README.md",
+                "Components/Stepper/docs",
                 "Components/Cards/README.md",
-                "Components/Cards/docs",
+                "Components/Cards/docs"
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")

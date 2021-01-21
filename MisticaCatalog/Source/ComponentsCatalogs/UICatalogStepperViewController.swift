@@ -19,7 +19,7 @@ private enum Section: Int, CaseIterable {
 class UICatalogStepperViewController: UITableViewController {
     private var numberOfSteps = 3
     private var minimumNumberOfSteps = 2
-    private var maximumNumberOfSteps = 6
+    private var maximumNumberOfSteps = 5
     private var currentStep = 0
 
     private var indeterminateStepperView: IndeterminateStepperView!
@@ -48,7 +48,7 @@ class UICatalogStepperViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Checkbox"
+        title = "Stepper"
 
         tableView.dataSource = self
         tableView.delegate = self

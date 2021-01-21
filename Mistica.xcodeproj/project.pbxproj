@@ -22,10 +22,7 @@
 		1860BBEE25B03C9400319CFC /* testIndeterminateStepperCurrentStepChanges.assertInitialState.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBE525B03C9400319CFC /* testIndeterminateStepperCurrentStepChanges.assertInitialState.png */; };
 		1860BBEF25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBE625B03C9400319CFC /* testIndeterminateStepperDefaultState.with-movistar-style.png */; };
 		1860BBF025B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBE725B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2Classic-style.png */; };
-		1860BBF125B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.finalState.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBE825B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.finalState.png */; };
-		1860BBF225B03C9400319CFC /* testIndeterminateStepperXIBIntegration.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBE925B03C9400319CFC /* testIndeterminateStepperXIBIntegration.1.png */; };
 		1860BBF325B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBEA25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2-style.png */; };
-		1860BBF425B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.assertInitialState.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBEB25B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.assertInitialState.png */; };
 		1860BBF525B03C9400319CFC /* testIndeterminateStepperDefaultState.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBEC25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-vivo-style.png */; };
 		1860BC0125B03D0C00319CFC /* testDeterminateStepperDefaultState.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBF925B03D0C00319CFC /* testDeterminateStepperDefaultState.with-movistar-style.png */; };
 		1860BC0225B03D0C00319CFC /* testDeterminateStepperDefaultState.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBFA25B03D0C00319CFC /* testDeterminateStepperDefaultState.with-o2Classic-style.png */; };
@@ -37,6 +34,11 @@
 		1860BC0825B03D0C00319CFC /* testDeterminateStepperDefaultState.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = 1860BC0025B03D0C00319CFC /* testDeterminateStepperDefaultState.with-o2-style.png */; };
 		18CDBD4D25ACA17600928474 /* IndeterminateStepperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDBD4C25ACA17600928474 /* IndeterminateStepperTests.swift */; };
 		18CDBD7825ACB1AD00928474 /* IndeterminateStepperXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDBD7725ACB1AC00928474 /* IndeterminateStepperXIBIntegration.swift */; };
+		18D4BA9B25B976F2002D2BC8 /* StepperUIAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4BA9A25B976F2002D2BC8 /* StepperUIAssets.swift */; };
+		18D4BA9E25B97725002D2BC8 /* NSDataAsset+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4BA9D25B97725002D2BC8 /* NSDataAsset+Utils.swift */; };
+		18D4BAA325B979BD002D2BC8 /* testIndeterminateStepperXIBIntegration.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D4BAA225B979BD002D2BC8 /* testIndeterminateStepperXIBIntegration.1.png */; };
+		18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
+		18D4BAA825B97A96002D2BC8 /* testDeterminateStepperXIBIntegration.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D4BAA725B97A96002D2BC8 /* testDeterminateStepperXIBIntegration.1.png */; };
 		18D8894025ADA08A0098EED3 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D8893E25ADA08A0098EED3 /* demo.png */; };
 		18D8894425ADA1000098EED3 /* CheckboxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */; };
 		18D8894525ADA1000098EED3 /* CheckboxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */; };
@@ -172,18 +174,6 @@
 		F7A78EC82577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.assertInitialState.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EAE2577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.assertInitialState.png */; };
 		F7A78EC92577DF9A0013B78E /* testSwitchDefaultState.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EAF2577DF9A0013B78E /* testSwitchDefaultState.with-movistar-style.png */; };
 		F7A78ECA2577DF9A0013B78E /* testTabBarControl.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EB02577DF9A0013B78E /* testTabBarControl.with-movistar-style.png */; };
-		F7A78F3A2577F7F80013B78E /* testNumericBadge.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ECF2577F7F80013B78E /* testNumericBadge.with-movistar-style.png */; };
-		F7A78F3B2577F7F80013B78E /* testFlagBadge.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED02577F7F80013B78E /* testFlagBadge.with-o2Classic-style.png */; };
-		F7A78F3C2577F7F80013B78E /* testNumericBadge.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED12577F7F80013B78E /* testNumericBadge.with-vivo-style.png */; };
-		F7A78F3D2577F7F80013B78E /* testFlagBadge.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED22577F7F80013B78E /* testFlagBadge.with-o2-style.png */; };
-		F7A78F3E2577F7F80013B78E /* testNumericBadge.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED32577F7F80013B78E /* testNumericBadge.with-o2-style.png */; };
-		F7A78F3F2577F7F80013B78E /* testXIBIntegration.1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED42577F7F80013B78E /* testXIBIntegration.1.png */; };
-		F7A78F402577F7F80013B78E /* testFlagBadge.with-vivo-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED52577F7F80013B78E /* testFlagBadge.with-vivo-style.png */; };
-		F7A78F412577F7F80013B78E /* testNumericBadge.with-o2Classic-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED62577F7F80013B78E /* testNumericBadge.with-o2Classic-style.png */; };
-		F7A78F422577F7F80013B78E /* testFlagBadge.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED72577F7F80013B78E /* testFlagBadge.with-movistar-style.png */; };
-		F73BFB7D25751EBD000E3C1E /* CheckboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73BFB7A25751E8A000E3C1E /* CheckboxTests.swift */; };
-		F73D6C6225750D340012A2C4 /* CheckboxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */; };
-		F73D6C6825750DB30012A2C4 /* CheckboxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */; };
 		F7A78F432577F7F80013B78E /* testCriticalCrouton.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78ED92577F7F80013B78E /* testCriticalCrouton.with-o2-style.png */; };
 		F7A78F442577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDA2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png */; };
 		F7A78F452577F7F80013B78E /* testInfoCrouton.with-movistar-style.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A78EDB2577F7F80013B78E /* testInfoCrouton.with-movistar-style.png */; };
@@ -347,15 +337,12 @@
 		1860BBBD25B03AD900319CFC /* IndeterminateStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndeterminateStepperView.swift; sourceTree = "<group>"; };
 		1860BBC025B03AF200319CFC /* DeterminateStepperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeterminateStepperTests.swift; sourceTree = "<group>"; };
 		1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterminateStepperXIBIntegration.swift; sourceTree = "<group>"; };
-		1860BBC625B03B7100319CFC /* DeteminateStepperXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeteminateStepperXIBIntegration.xib; sourceTree = "<group>"; };
+		1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeterminateStepperXIBIntegration.xib; sourceTree = "<group>"; };
 		1860BBE425B03C9400319CFC /* testIndeterminateStepperCurrentStepChanges.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperCurrentStepChanges.finalState.png; sourceTree = "<group>"; };
 		1860BBE525B03C9400319CFC /* testIndeterminateStepperCurrentStepChanges.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperCurrentStepChanges.assertInitialState.png; sourceTree = "<group>"; };
 		1860BBE625B03C9400319CFC /* testIndeterminateStepperDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIndeterminateStepperDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
 		1860BBE725B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIndeterminateStepperDefaultState.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		1860BBE825B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperNumberOfStepsChanges.finalState.png; sourceTree = "<group>"; };
-		1860BBE925B03C9400319CFC /* testIndeterminateStepperXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperXIBIntegration.1.png; sourceTree = "<group>"; };
 		1860BBEA25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIndeterminateStepperDefaultState.with-o2-style.png"; sourceTree = "<group>"; };
-		1860BBEB25B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperNumberOfStepsChanges.assertInitialState.png; sourceTree = "<group>"; };
 		1860BBEC25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIndeterminateStepperDefaultState.with-vivo-style.png"; sourceTree = "<group>"; };
 		1860BBF925B03D0C00319CFC /* testDeterminateStepperDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDeterminateStepperDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
 		1860BBFA25B03D0C00319CFC /* testDeterminateStepperDefaultState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDeterminateStepperDefaultState.with-o2Classic-style.png"; sourceTree = "<group>"; };
@@ -368,6 +355,10 @@
 		18CDBD4C25ACA17600928474 /* IndeterminateStepperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndeterminateStepperTests.swift; sourceTree = "<group>"; };
 		18CDBD7625ACB1AC00928474 /* IndeterminateStepperXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndeterminateStepperXIBIntegration.xib; sourceTree = "<group>"; };
 		18CDBD7725ACB1AC00928474 /* IndeterminateStepperXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateStepperXIBIntegration.swift; sourceTree = "<group>"; };
+		18D4BA9A25B976F2002D2BC8 /* StepperUIAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperUIAssets.swift; sourceTree = "<group>"; };
+		18D4BA9D25B97725002D2BC8 /* NSDataAsset+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDataAsset+Utils.swift"; sourceTree = "<group>"; };
+		18D4BAA225B979BD002D2BC8 /* testIndeterminateStepperXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperXIBIntegration.1.png; sourceTree = "<group>"; };
+		18D4BAA725B97A96002D2BC8 /* testDeterminateStepperXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testDeterminateStepperXIBIntegration.1.png; sourceTree = "<group>"; };
 		18D8893E25ADA08A0098EED3 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 		18D8893F25ADA08A0098EED3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		18F193E3259C8E9A00A09E20 /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
@@ -642,56 +633,6 @@
 		F7A78EAE2577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSegmentedControlChangeSelectedSegment.assertInitialState.png; sourceTree = "<group>"; };
 		F7A78EAF2577DF9A0013B78E /* testSwitchDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
 		F7A78EB02577DF9A0013B78E /* testTabBarControl.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testTabBarControl.with-movistar-style.png"; sourceTree = "<group>"; };
-		F7A78ECF2577F7F80013B78E /* testNumericBadge.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNumericBadge.with-movistar-style.png"; sourceTree = "<group>"; };
-		F7A78ED02577F7F80013B78E /* testFlagBadge.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F7A78ED12577F7F80013B78E /* testNumericBadge.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNumericBadge.with-vivo-style.png"; sourceTree = "<group>"; };
-		F7A78ED22577F7F80013B78E /* testFlagBadge.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-o2-style.png"; sourceTree = "<group>"; };
-		F7A78ED32577F7F80013B78E /* testNumericBadge.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNumericBadge.with-o2-style.png"; sourceTree = "<group>"; };
-		F7A78ED42577F7F80013B78E /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
-		F7A78ED52577F7F80013B78E /* testFlagBadge.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-vivo-style.png"; sourceTree = "<group>"; };
-		F7A78ED62577F7F80013B78E /* testNumericBadge.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNumericBadge.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F7A78ED72577F7F80013B78E /* testFlagBadge.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-movistar-style.png"; sourceTree = "<group>"; };
-		F74CB4CF2575448000260675 /* testCheckboxActiveCheckedState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-movistar-style.png"; sourceTree = "<group>"; };
-		F74CB4D02575448000260675 /* testCheckboxDefaultState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F74CB4D12575448000260675 /* testCheckboxIsChecked.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testCheckboxIsChecked.finalState.png; sourceTree = "<group>"; };
-		F74CB4D22575448000260675 /* testCheckboxActiveCheckedState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F74CB4D32575448000260675 /* testCheckboxActiveCheckedState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-vivo-style.png"; sourceTree = "<group>"; };
-		F74CB4D42575448000260675 /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
-		F74CB4D52575448000260675 /* testCheckboxDefaultState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-o2-style.png"; sourceTree = "<group>"; };
-		F74CB4D62575448000260675 /* testCheckboxIsChecked.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testCheckboxIsChecked.assertInitialState.png; sourceTree = "<group>"; };
-		F74CB4D72575448000260675 /* testCheckboxDefaultState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-vivo-style.png"; sourceTree = "<group>"; };
-		F74CB4D82575448000260675 /* testCheckboxDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
-		F74CB4D92575448000260675 /* testCheckboxActiveCheckedState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCheckboxActiveCheckedState.with-o2-style.png"; sourceTree = "<group>"; };
-		F74CB4F025765A4A00260675 /* ControlsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsTests.swift; sourceTree = "<group>"; };
-		F7A78E972577DF9A0013B78E /* testPageControl.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testPageControl.with-o2-style.png"; sourceTree = "<group>"; };
-		F7A78E982577DF9A0013B78E /* testTabBarControl.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testTabBarControl.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F7A78E992577DF9A0013B78E /* testSegmentedControl.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSegmentedControl.with-o2-style.png"; sourceTree = "<group>"; };
-		F7A78E9A2577DF9A0013B78E /* testTabBarControl.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testTabBarControl.with-o2-style.png"; sourceTree = "<group>"; };
-		F7A78E9B2577DF9A0013B78E /* testSegmentedControl.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSegmentedControl.with-vivo-style.png"; sourceTree = "<group>"; };
-		F7A78E9C2577DF9A0013B78E /* testSwitchDefaultState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchDefaultState.with-o2-style.png"; sourceTree = "<group>"; };
-		F7A78E9D2577DF9A0013B78E /* testSwitchOnState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchOnState.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F7A78E9E2577DF9A0013B78E /* testSwitchOnState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchOnState.with-o2-style.png"; sourceTree = "<group>"; };
-		F7A78E9F2577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSegmentedControlChangeSelectedSegment.finalState.png; sourceTree = "<group>"; };
-		F7A78EA02577DF9A0013B78E /* testSegmentedControl.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSegmentedControl.with-movistar-style.png"; sourceTree = "<group>"; };
-		F7A78EA12577DF9A0013B78E /* testTabBarControl.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testTabBarControl.with-vivo-style.png"; sourceTree = "<group>"; };
-		F7A78EA22577DF9A0013B78E /* testPageControlChangeCurrentPage.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPageControlChangeCurrentPage.assertInitialState.png; sourceTree = "<group>"; };
-		F7A78EA32577DF9A0013B78E /* testSwitchOnState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchOnState.with-movistar-style.png"; sourceTree = "<group>"; };
-		F7A78EA42577DF9A0013B78E /* testPageControl.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testPageControl.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F7A78EA52577DF9A0013B78E /* testTabBarControlChangeSelectedItem.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testTabBarControlChangeSelectedItem.assertInitialState.png; sourceTree = "<group>"; };
-		F7A78EA62577DF9A0013B78E /* testPageControlChangeCurrentPage.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPageControlChangeCurrentPage.finalState.png; sourceTree = "<group>"; };
-		F7A78EA72577DF9A0013B78E /* testPageControl.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testPageControl.with-movistar-style.png"; sourceTree = "<group>"; };
-		F7A78EA82577DF9A0013B78E /* testSwitchOnState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchOnState.with-vivo-style.png"; sourceTree = "<group>"; };
-		F7A78EA92577DF9A0013B78E /* testTabBarControlChangeSelectedItem.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testTabBarControlChangeSelectedItem.finalState.png; sourceTree = "<group>"; };
-		F7A78EAA2577DF9A0013B78E /* testSegmentedControl.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSegmentedControl.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F7A78EAB2577DF9A0013B78E /* testPageControl.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testPageControl.with-vivo-style.png"; sourceTree = "<group>"; };
-		F7A78EAC2577DF9A0013B78E /* testSwitchDefaultState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchDefaultState.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		F7A78EAD2577DF9A0013B78E /* testSwitchDefaultState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchDefaultState.with-vivo-style.png"; sourceTree = "<group>"; };
-		F7A78EAE2577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSegmentedControlChangeSelectedSegment.assertInitialState.png; sourceTree = "<group>"; };
-		F7A78EAF2577DF9A0013B78E /* testSwitchDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSwitchDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
-		F7A78EB02577DF9A0013B78E /* testTabBarControl.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testTabBarControl.with-movistar-style.png"; sourceTree = "<group>"; };
-		F73BFB7A25751E8A000E3C1E /* CheckboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTests.swift; sourceTree = "<group>"; };
-		F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxXIBIntegration.swift; sourceTree = "<group>"; };
-		F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxXIBIntegration.xib; sourceTree = "<group>"; };
 		F7A78ED92577F7F80013B78E /* testCriticalCrouton.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testCriticalCrouton.with-o2-style.png"; sourceTree = "<group>"; };
 		F7A78EDA2577F7F80013B78E /* testInfoCroutonWithLongActionTitle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCroutonWithLongActionTitle.with-o2-style.png"; sourceTree = "<group>"; };
 		F7A78EDB2577F7F80013B78E /* testInfoCrouton.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testInfoCrouton.with-movistar-style.png"; sourceTree = "<group>"; };
@@ -910,6 +851,7 @@
 				1860BBFC25B03D0C00319CFC /* testDeterminateStepperDefaultState.with-vivo-style.png */,
 				1860BBFF25B03D0C00319CFC /* testDeterminateStepperNumberOfStepsChanges.assertInitialState.png */,
 				1860BBFD25B03D0C00319CFC /* testDeterminateStepperNumberOfStepsChanges.finalState.png */,
+				18D4BAA725B97A96002D2BC8 /* testDeterminateStepperXIBIntegration.1.png */,
 			);
 			path = DeterminateStepperTests;
 			sourceTree = "<group>";
@@ -921,11 +863,9 @@
 				1860BBE525B03C9400319CFC /* testIndeterminateStepperCurrentStepChanges.assertInitialState.png */,
 				1860BBE625B03C9400319CFC /* testIndeterminateStepperDefaultState.with-movistar-style.png */,
 				1860BBE725B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2Classic-style.png */,
-				1860BBE825B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.finalState.png */,
-				1860BBE925B03C9400319CFC /* testIndeterminateStepperXIBIntegration.1.png */,
 				1860BBEA25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2-style.png */,
-				1860BBEB25B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.assertInitialState.png */,
 				1860BBEC25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-vivo-style.png */,
+				18D4BAA225B979BD002D2BC8 /* testIndeterminateStepperXIBIntegration.1.png */,
 			);
 			path = IndeterminateStepperTests;
 			sourceTree = "<group>";
@@ -1471,6 +1411,7 @@
 				56FBB044C1F47FE38007C053 /* FeedbackUIAssets.swift */,
 				2F7535DFA147C89CCF74339E /* InputFieldAssets.swift */,
 				11FB31360201868F6EC67F32 /* ListsAssets.swift */,
+				18D4BA9A25B976F2002D2BC8 /* StepperUIAssets.swift */,
 				2771E355D52B9143E83F277C /* PopoverAssets.swift */,
 			);
 			path = Assets;
@@ -1569,6 +1510,7 @@
 				37BF673AB137A97C45F6148D /* Optional+Utils.swift */,
 				AE25989DB7260E24A92CCEAF /* PreprocessorChecks.swift */,
 				16BD1D5B42512D701A4A0490 /* String+Utils.swift */,
+				18D4BA9D25B97725002D2BC8 /* NSDataAsset+Utils.swift */,
 				E5D7FFA8DEE633E8DD586363 /* UIBarButtonItem+Utils.swift */,
 				4F0CAB80603A17B9E35DE3E8 /* UIButton+Utils.swift */,
 				2395E3391D3DEA5F341B6941 /* UICollectionViewCell+Utils.swift */,
@@ -1671,7 +1613,7 @@
 				F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */,
 				F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */,
 				1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */,
-				1860BBC625B03B7100319CFC /* DeteminateStepperXIBIntegration.xib */,
+				1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */,
 				18CDBD7725ACB1AC00928474 /* IndeterminateStepperXIBIntegration.swift */,
 				18CDBD7625ACB1AC00928474 /* IndeterminateStepperXIBIntegration.xib */,
 			);
@@ -1825,39 +1767,6 @@
 			sourceTree = "<group>";
 		};
 		F7A78E962577DF9A0013B78E /* ControlsTests */ = {
-			isa = PBXGroup;
-			children = (
-				F7A78E972577DF9A0013B78E /* testPageControl.with-o2-style.png */,
-				F7A78E982577DF9A0013B78E /* testTabBarControl.with-o2Classic-style.png */,
-				F7A78E992577DF9A0013B78E /* testSegmentedControl.with-o2-style.png */,
-				F7A78E9A2577DF9A0013B78E /* testTabBarControl.with-o2-style.png */,
-				F7A78E9B2577DF9A0013B78E /* testSegmentedControl.with-vivo-style.png */,
-				F7A78E9C2577DF9A0013B78E /* testSwitchDefaultState.with-o2-style.png */,
-				F7A78E9D2577DF9A0013B78E /* testSwitchOnState.with-o2Classic-style.png */,
-				F7A78E9E2577DF9A0013B78E /* testSwitchOnState.with-o2-style.png */,
-				F7A78E9F2577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.finalState.png */,
-				F7A78EA02577DF9A0013B78E /* testSegmentedControl.with-movistar-style.png */,
-				F7A78EA12577DF9A0013B78E /* testTabBarControl.with-vivo-style.png */,
-				F7A78EA22577DF9A0013B78E /* testPageControlChangeCurrentPage.assertInitialState.png */,
-				F7A78EA32577DF9A0013B78E /* testSwitchOnState.with-movistar-style.png */,
-				F7A78EA42577DF9A0013B78E /* testPageControl.with-o2Classic-style.png */,
-				F7A78EA52577DF9A0013B78E /* testTabBarControlChangeSelectedItem.assertInitialState.png */,
-				F7A78EA62577DF9A0013B78E /* testPageControlChangeCurrentPage.finalState.png */,
-				F7A78EA72577DF9A0013B78E /* testPageControl.with-movistar-style.png */,
-				F7A78EA82577DF9A0013B78E /* testSwitchOnState.with-vivo-style.png */,
-				F7A78EA92577DF9A0013B78E /* testTabBarControlChangeSelectedItem.finalState.png */,
-				F7A78EAA2577DF9A0013B78E /* testSegmentedControl.with-o2Classic-style.png */,
-				F7A78EAB2577DF9A0013B78E /* testPageControl.with-vivo-style.png */,
-				F7A78EAC2577DF9A0013B78E /* testSwitchDefaultState.with-o2Classic-style.png */,
-				F7A78EAD2577DF9A0013B78E /* testSwitchDefaultState.with-vivo-style.png */,
-				F7A78EAE2577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.assertInitialState.png */,
-				F7A78EAF2577DF9A0013B78E /* testSwitchDefaultState.with-movistar-style.png */,
-				F7A78EB02577DF9A0013B78E /* testTabBarControl.with-movistar-style.png */,
-			);
-			path = ControlsTests;
-			sourceTree = "<group>";
-		};
-		F7A78ECE2577F7F80013B78E /* BadgeTests */ = {
 			isa = PBXGroup;
 			children = (
 				F7A78E972577DF9A0013B78E /* testPageControl.with-o2-style.png */,
@@ -2131,28 +2040,28 @@
 				F7A78EB62577DF9A0013B78E /* testSwitchDefaultState.with-o2-style.png in Resources */,
 				F7A78EC12577DF9A0013B78E /* testPageControl.with-movistar-style.png in Resources */,
 				1860BC0825B03D0C00319CFC /* testDeterminateStepperDefaultState.with-o2-style.png in Resources */,
+				18D4BAA825B97A96002D2BC8 /* testDeterminateStepperXIBIntegration.1.png in Resources */,
 				1860BC0325B03D0C00319CFC /* testDeterminateStepperCurrentStepChanges.assertInitialState.png in Resources */,
 				1860BBF525B03C9400319CFC /* testIndeterminateStepperDefaultState.with-vivo-style.png in Resources */,
 				F7A78EB22577DF9A0013B78E /* testTabBarControl.with-o2Classic-style.png in Resources */,
 				F7A78EB12577DF9A0013B78E /* testPageControl.with-o2-style.png in Resources */,
 				1860BC0725B03D0C00319CFC /* testDeterminateStepperNumberOfStepsChanges.assertInitialState.png in Resources */,
 				F7A78EC22577DF9A0013B78E /* testSwitchOnState.with-vivo-style.png in Resources */,
-				1860BBF225B03C9400319CFC /* testIndeterminateStepperXIBIntegration.1.png in Resources */,
 				F7A78EC82577DF9A0013B78E /* testSegmentedControlChangeSelectedSegment.assertInitialState.png in Resources */,
 				F7A78EC42577DF9A0013B78E /* testSegmentedControl.with-o2Classic-style.png in Resources */,
 				F7A78EBD2577DF9A0013B78E /* testSwitchOnState.with-movistar-style.png in Resources */,
-				1860BBF425B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.assertInitialState.png in Resources */,
 				F7A78EB52577DF9A0013B78E /* testSegmentedControl.with-vivo-style.png in Resources */,
 				F7A78EB82577DF9A0013B78E /* testSwitchOnState.with-o2-style.png in Resources */,
 				F7A78EBA2577DF9A0013B78E /* testSegmentedControl.with-movistar-style.png in Resources */,
-				1860BBF125B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.finalState.png in Resources */,
 				1860BBF325B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2-style.png in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
 				F7A78ECA2577DF9A0013B78E /* testTabBarControl.with-movistar-style.png in Resources */,
+				18D4BAA325B979BD002D2BC8 /* testIndeterminateStepperXIBIntegration.1.png in Resources */,
 				F7A78EBE2577DF9A0013B78E /* testPageControl.with-o2Classic-style.png in Resources */,
 				1860BC0525B03D0C00319CFC /* testDeterminateStepperNumberOfStepsChanges.finalState.png in Resources */,
 				1860BBEF25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-movistar-style.png in Resources */,
 				F7A78EB72577DF9A0013B78E /* testSwitchOnState.with-o2Classic-style.png in Resources */,
+				18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
 				18D8894525ADA1000098EED3 /* CheckboxXIBIntegration.xib in Resources */,
 				F7A78EC52577DF9A0013B78E /* testPageControl.with-vivo-style.png in Resources */,
@@ -2342,6 +2251,7 @@
 				C9FA3DB7E94E95A9DA5F707F /* FormView.swift in Sources */,
 				2E78A0C4CA752000D3329BC4 /* GradientView.swift in Sources */,
 				5336A071B18BBC9ABCE45530 /* HeaderView.swift in Sources */,
+				18D4BA9B25B976F2002D2BC8 /* StepperUIAssets.swift in Sources */,
 				D32EAC728C217E538048802C /* HeaderViewStyle.swift in Sources */,
 				120C102BBB0AEA7505A51F60 /* HighlightedCard.swift in Sources */,
 				1860BBBE25B03AD900319CFC /* IndeterminateStepperView.swift in Sources */,
@@ -2355,6 +2265,7 @@
 				FD91D9B40E070D425FA48CDC /* InputFieldValidationStrategy.swift in Sources */,
 				FF695537B060674584B2F14D /* IntrinsicHeightTextView.swift in Sources */,
 				FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
+				18D4BA9E25B97725002D2BC8 /* NSDataAsset+Utils.swift in Sources */,
 				43B97750F1AABDAC15224AC8 /* IntrinsictHeightLabel.swift in Sources */,
 				AF443028E947CEFC57C78C6D /* IntrinsictImageView.swift in Sources */,
 				69B7063AEE070561B5D83375 /* KeyboardInfo.swift in Sources */,

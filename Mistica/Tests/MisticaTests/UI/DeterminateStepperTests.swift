@@ -39,7 +39,7 @@ final class DeterminateStepperTests: XCTestCase {
             named: "assertInitialState"
         )
 
-        stepper.currentStep = 1
+        stepper.currentStep = 50
 
         assertSnapshot(
             matching: stepper,

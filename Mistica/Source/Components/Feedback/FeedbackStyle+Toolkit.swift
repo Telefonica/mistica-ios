@@ -101,14 +101,3 @@ extension FeedbackStyle {
         }
     }
 }
-
-private extension Optional where Wrapped == NSDataAsset {
-    var lottieAnimation: Lottie.Animation? {
-        switch self {
-        case .none:
-            return nil
-        case .some(let dataAsset):
-            return try? JSONDecoder().decode(Lottie.Animation.self, from: dataAsset.data)
-        }
-    }
-}

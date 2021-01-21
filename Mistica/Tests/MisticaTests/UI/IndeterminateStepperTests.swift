@@ -39,26 +39,6 @@ final class IndeterminateStepperTests: XCTestCase {
             named: "assertInitialState"
         )
 
-        stepper.currentStep = 1
-
-        assertSnapshot(
-            matching: stepper,
-            as: .image,
-            named: "finalState"
-        )
-    }
-
-    func testIndeterminateStepperNumberOfStepsChanges() {
-        MisticaConfig.brandStyle = .movistar
-
-        let stepper = makeTemplateWithStepperState()
-
-        assertSnapshot(
-            matching: stepper,
-            as: .image,
-            named: "assertInitialState"
-        )
-
         stepper.value = 50
 
         assertSnapshot(
@@ -86,6 +66,6 @@ final class IndeterminateStepperTests: XCTestCase {
 
 private func makeTemplateWithStepperState(value: Int = 0) -> IndeterminateStepperView {
     let stepperView = IndeterminateStepperView(frame: CGRect(origin: .zero, size: CGSize(width: 600, height: 24)))
-    stepperView.value = currentStep
+    stepperView.value = value
     return stepperView
 }

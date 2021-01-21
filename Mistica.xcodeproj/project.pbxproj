@@ -123,6 +123,7 @@
 		B4C99EA94307852447D672A1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE9079D1C9C80AD4FB45F3 /* ListView.swift */; };
 		B805C38E65D802F520DB0931 /* LoadErrorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CAF7C86C74F12CE2700B8 /* LoadErrorViewControllerDelegate.swift */; };
 		B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40616E1B8E8E2F0E7D3AAA /* Mistica.framework */; };
+		B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
 		B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BCF901256D113B00D2BCCC /* TestHelpers.swift */; };
 		B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */; };
 		B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA9B256E6DCA00472C23 /* UIView+Utils.swift */; };
@@ -2057,6 +2058,7 @@
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
 				F7A78ECA2577DF9A0013B78E /* testTabBarControl.with-movistar-style.png in Resources */,
 				18D4BAA325B979BD002D2BC8 /* testIndeterminateStepperXIBIntegration.1.png in Resources */,
+				B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				F7A78EBE2577DF9A0013B78E /* testPageControl.with-o2Classic-style.png in Resources */,
 				1860BC0525B03D0C00319CFC /* testDeterminateStepperNumberOfStepsChanges.finalState.png in Resources */,
 				1860BBEF25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-movistar-style.png in Resources */,

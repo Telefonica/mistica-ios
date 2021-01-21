@@ -326,8 +326,8 @@ private extension UICatalogRow {
             return .controlsIcon
         case .highlightedCard, .mediaCard, .dataCard:
             return .cardIcon
-case .stepper:
-return .stepperIcon
+        case .stepper:
+            return .stepperIcon
         }
     }
 }

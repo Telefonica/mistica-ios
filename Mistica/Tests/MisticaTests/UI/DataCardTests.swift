@@ -64,7 +64,7 @@ final class DataCardTests: XCTestCase {
     func testFullContentWithoutIcon() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeCardWithFullContentAndButtons(asset: nil)
+        let view = makeCardWithFullContentAndButtons(asset: .none)
 
         assertSnapshot(matching: view, as: .image)
     }
@@ -178,7 +178,7 @@ extension DataCardTests {
     }
 
     func makeCardWithFullContentAndButtons(
-        asset: DataCardConfiguration.AssetType? = .image(.init(color: .green)),
+        asset: DataCardConfiguration.AssetType = .image(.init(color: .green)),
         headline: String? = "headline",
         title: String = "Item title",
         subtitle: String? = "Subtitle",

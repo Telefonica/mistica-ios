@@ -22,7 +22,7 @@ open class ListViewCell: UITableViewCell {
         case fullWidth
         case boxed
     }
-    
+
     @frozen
     public enum CellAssetType: Equatable {
         case none
@@ -338,10 +338,9 @@ private extension ListViewCell {
     }
 }
 
-
 // NARK: - Deprecated
 @available(*, deprecated, renamed: "ListViewCell")
-open class ListCellView: UITableViewCell { }
+open class ListCellView: UITableViewCell {}
 
 @available(*, deprecated, renamed: "ListViewCell.CellStyle")
-public enum ListCellStyle { }
+public enum ListCellStyle {}

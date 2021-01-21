@@ -1,5 +1,5 @@
 //
-//  ListCellView.swift
+//  ListViewCell.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -14,9 +14,9 @@ private enum ViewStyles {
     static let horizontalPadding: CGFloat = 16
 }
 
-// MARK: ListCellView
+// MARK: ListViewCell
 
-open class ListCellView: UITableViewCell {
+open class ListViewCell: UITableViewCell {
     @frozen
     public enum CellAssetType: Equatable {
         case none
@@ -223,7 +223,7 @@ open class ListCellView: UITableViewCell {
 
 // MARK: Custom Accessibilities
 
-public extension ListCellView {
+public extension ListViewCell {
     var titleAccessibilityLabel: String? {
         get {
             centerSection.titleLabel.accessibilityLabel
@@ -263,7 +263,7 @@ public extension ListCellView {
 
 // MARK: Private
 
-private extension ListCellView {
+private extension ListViewCell {
     var highlightedView: UIView {
         switch listCellStyle {
         case .fullWidth:
@@ -331,3 +331,8 @@ private extension ListCellView {
         }
     }
 }
+
+
+// NARK: - Deprecated
+@available(*, deprecated, renamed: "ListViewCell")
+open class ListCellView: UITableViewCell { }

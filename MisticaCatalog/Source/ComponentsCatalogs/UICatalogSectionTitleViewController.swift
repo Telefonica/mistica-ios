@@ -33,7 +33,7 @@ class UICatalogSectionTitleViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.sectionFooterHeight = 0.0
 
-        tableView.register(ListCellView.self, forCellReuseIdentifier: Constants.listCellReusableIdentifier)
+        tableView.register(ListViewCell.self, forCellReuseIdentifier: Constants.listCellReusableIdentifier)
         tableView.register(SectionTitleHeaderView.self, forHeaderFooterViewReuseIdentifier: Constants.sectionTitleReusableIdentifier)
     }
 
@@ -46,7 +46,7 @@ class UICatalogSectionTitleViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.listCellReusableIdentifier, for: indexPath) as! ListCellView
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.listCellReusableIdentifier, for: indexPath) as! ListViewCell
 
         cell.title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         cell.detailText = "Pellentesque mattis risus arcu, porttitor convallis lacus volutpat quis."

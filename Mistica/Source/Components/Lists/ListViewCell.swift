@@ -339,7 +339,7 @@ private extension ListViewCell {
 }
 
 
-// NARK: - Deprecated
+// MARK: - Deprecated
 @available(*, deprecated, renamed: "ListViewCell")
 open class ListCellView: UITableViewCell { }
 

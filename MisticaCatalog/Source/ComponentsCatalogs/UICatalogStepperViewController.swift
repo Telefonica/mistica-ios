@@ -33,6 +33,10 @@ class UICatalogStepperViewController: UITableViewController {
     private let numberOfStepsLabel = UILabel()
     private lazy var numberOfStepsStackView = UIStackView(arrangedSubviews: [numberOfStepsLabel, numberOfStepsStepper])
 
+    private let animatedSwitch = UISwitch()
+    private let animatedLabel = UILabel()
+    private lazy var animatedStackView = UIStackView(arrangedSubviews: [animatedLabel, animatedSwitch])
+    
     init() {
         if #available(iOS 13.0, *) {
             super.init(style: .insetGrouped)
@@ -100,9 +104,16 @@ extension UICatalogStepperViewController {
 
             numberOfStepsStackView.distribution = .equalSpacing
             numberOfStepsStackView.alignment = .center
+            
+            // Animated
+            animatedLabel.text = "Animated"
+            animatedSwitch.isOn = true
+            
+            animatedStackView.distribution = .equalSpacing
+            animatedStackView.alignment = .center
 
             // Vertical stack view
-            let stackView = UIStackView(arrangedSubviews: [numberOfStepsStackView, currentStepStackView])
+            let stackView = UIStackView(arrangedSubviews: [numberOfStepsStackView, currentStepStackView, animatedStackView])
             stackView.axis = .vertical
             stackView.spacing = 8
 
@@ -137,8 +148,8 @@ extension UICatalogStepperViewController {
     }
 
     func updateStepperValues() {
-        indeterminateStepperView.setValue(Int(Float(currentStep) / Float(numberOfSteps) * 100), animated: true)
-        determinateStepperView.setCurrentStep(currentStep, animated: true)
+        indeterminateStepperView.setValue(Int(Float(currentStep) / Float(numberOfSteps) * 100), animated: animatedSwitch.isOn)
+        determinateStepperView.setCurrentStep(currentStep, animated: animatedSwitch.isOn)
     }
 }
 

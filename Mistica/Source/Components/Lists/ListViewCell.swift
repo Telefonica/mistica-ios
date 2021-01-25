@@ -155,7 +155,7 @@ open class ListViewCell: UITableViewCell {
         }
     }
 
-    public var listCellStyle = CellStyle.fullWidth {
+    public var cellStyle = CellStyle.fullWidth {
         didSet {
             updateCellStyle()
         }
@@ -188,7 +188,7 @@ open class ListViewCell: UITableViewCell {
 
     public var isCellSeparatorHidden: Bool = true {
         didSet {
-            guard listCellStyle != .boxed else { return }
+            guard cellStyle != .boxed else { return }
 
             cellSeparatorView.isHidden = isCellSeparatorHidden
         }
@@ -205,7 +205,7 @@ open class ListViewCell: UITableViewCell {
             verticalFittingPriority: verticalFittingPriority
         )
 
-        return CGSize(width: size.width, height: max(size.height, listCellStyle.minHeight))
+        return CGSize(width: size.width, height: max(size.height, cellStyle.minHeight))
     }
 
     override public func setHighlighted(_ highlighted: Bool, animated _: Bool) {
@@ -271,7 +271,7 @@ public extension ListViewCell {
 
 private extension ListViewCell {
     var highlightedView: UIView {
-        switch listCellStyle {
+        switch cellStyle {
         case .fullWidth:
             return contentView
         case .boxed:
@@ -300,18 +300,18 @@ private extension ListViewCell {
     }
 
     func updateCellStyle() {
-        contentView.directionalLayoutMargins = listCellStyle.contentViewLayoutMargins
+        contentView.directionalLayoutMargins = cellStyle.contentViewLayoutMargins
         contentView.preservesSuperviewLayoutMargins = false
 
         cellContentView.isLayoutMarginsRelativeArrangement = true
-        cellContentView.directionalLayoutMargins = listCellStyle.mainStackViewLayoutMargins
+        cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins
 
         cellBorderView.backgroundColor = .background
-        cellBorderView.layer.cornerRadius = listCellStyle.cornerRadius
-        cellBorderView.layer.borderColor = listCellStyle.borderColor
-        cellBorderView.layer.borderWidth = listCellStyle.borderWidth
+        cellBorderView.layer.cornerRadius = cellStyle.cornerRadius
+        cellBorderView.layer.borderColor = cellStyle.borderColor
+        cellBorderView.layer.borderWidth = cellStyle.borderWidth
 
-        cellSeparatorView.isHidden = listCellStyle.cellSeparatorIsHidden
+        cellSeparatorView.isHidden = cellStyle.cellSeparatorIsHidden
     }
 
     func updateAssetView() {

@@ -337,11 +337,3 @@ private extension ListViewCell {
         }
     }
 }
-
-// MARK: - Deprecated
-
-@available(*, deprecated, renamed: "ListViewCell")
-open class ListCellView: UITableViewCell {}
-
-@available(*, deprecated, renamed: "ListViewCell.CellStyle")
-public enum ListCellStyle {}

@@ -1,3 +1,16 @@
+# [7.2.0](https://github.com/Telefonica/mistica-ios/compare/v7.1.0...v7.2.0) (2021-01-26)
+
+
+### Bug Fixes
+
+* **ListViewCell:** Rename ListCellView to ListViewCell ([#65](https://github.com/Telefonica/mistica-ios/issues/65)) ([ffba956](https://github.com/Telefonica/mistica-ios/commit/ffba9567437e31471fa2035393212b46a4143680))
+* **Mistica:** Remove screenshots images from Mistica bundle ([f81c331](https://github.com/Telefonica/mistica-ios/commit/f81c3317502bc36e9bb1711e49c564e4b8920f7c))
+
+
+### Features
+
+* **Cards:** new DatCard and MediaCard components ([163f388](https://github.com/Telefonica/mistica-ios/commit/163f388ce399a944e3b28ae67759ba02182c5f40))
+
 # [7.1.0](https://github.com/Telefonica/mistica-ios/compare/v7.0.0...v7.1.0) (2021-01-20)
 
 

@@ -36,7 +36,7 @@ class UICatalogStepperViewController: UITableViewController {
     private let animatedSwitch = UISwitch()
     private let animatedLabel = UILabel()
     private lazy var animatedStackView = UIStackView(arrangedSubviews: [animatedLabel, animatedSwitch])
-    
+
     init() {
         if #available(iOS 13.0, *) {
             super.init(style: .insetGrouped)
@@ -104,11 +104,11 @@ extension UICatalogStepperViewController {
 
             numberOfStepsStackView.distribution = .equalSpacing
             numberOfStepsStackView.alignment = .center
-            
+
             // Animated
             animatedLabel.text = "Animated"
             animatedSwitch.isOn = true
-            
+
             animatedStackView.distribution = .equalSpacing
             animatedStackView.alignment = .center
 

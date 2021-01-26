@@ -24,8 +24,6 @@
 		18D4BA9E25B97725002D2BC8 /* NSDataAsset+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4BA9D25B97725002D2BC8 /* NSDataAsset+Utils.swift */; };
 		18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
 		18D8894025ADA08A0098EED3 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D8893E25ADA08A0098EED3 /* demo.png */; };
-		18D8894425ADA1000098EED3 /* CheckboxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */; };
-		18D8894525ADA1000098EED3 /* CheckboxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */; };
 		18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CDBD7625ACB1AC00928474 /* IndeterminateStepperXIBIntegration.xib */; };
 		18F193E5259C8E9A00A09E20 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F193E3259C8E9A00A09E20 /* SegmentView.swift */; };
 		18F193E6259C8E9A00A09E20 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F193E4259C8E9A00A09E20 /* StepView.swift */; };
@@ -107,9 +105,25 @@
 		B4C99EA94307852447D672A1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE9079D1C9C80AD4FB45F3 /* ListView.swift */; };
 		B805C38E65D802F520DB0931 /* LoadErrorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CAF7C86C74F12CE2700B8 /* LoadErrorViewControllerDelegate.swift */; };
 		B833F67225B98FAE0013FD92 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
+		B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B857851D25B2228700E76B4C /* DataCardXIBIntegration.xib */; };
+		B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857852025B2229000E76B4C /* DataCardXIBIntegration.swift */; };
+		B857852925B223DF00E76B4C /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857852525B223DC00E76B4C /* UIImage+Utils.swift */; };
+		B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857855525B823B400E76B4C /* MediaCardTests.swift */; };
+		B857855B25B8292E00E76B4C /* MediaCardXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857855925B8292E00E76B4C /* MediaCardXIBIntegration.swift */; };
+		B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B857855A25B8292E00E76B4C /* MediaCardXIBIntegration.xib */; };
+		B85CCA5925B82EFA00B76426 /* CheckboxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */; };
+		B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */; };
+		B85CCA5E25B848C300B76426 /* DataCardAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA5D25B848C300B76426 /* DataCardAsset.swift */; };
 		B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40616E1B8E8E2F0E7D3AAA /* Mistica.framework */; };
-		B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
 		B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BCF901256D113B00D2BCCC /* TestHelpers.swift */; };
+		B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193A25B20FF0006510CC /* MediaCard.swift */; };
+		B8D7194425B20FF0006510CC /* DataCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193B25B20FF0006510CC /* DataCard.swift */; };
+		B8D7194525B20FF0006510CC /* CardCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193D25B20FF0006510CC /* CardCommonContent.swift */; };
+		B8D7194625B20FF0006510CC /* CardButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193E25B20FF0006510CC /* CardButtonsView.swift */; };
+		B8D7194725B20FF0006510CC /* CardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193F25B20FF0006510CC /* CardBase.swift */; };
+		B8D7194825B20FF0006510CC /* CardContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7194025B20FF0006510CC /* CardContentItem.swift */; };
+		B8D7194925B20FF0006510CC /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7194225B20FF0006510CC /* CardButton.swift */; };
+		B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7195C25B21ADB006510CC /* DataCardTests.swift */; };
 		B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */; };
 		B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA9B256E6DCA00472C23 /* UIView+Utils.swift */; };
 		B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA96256E6CB300472C23 /* ButtonXIBIntegration.swift */; };
@@ -330,6 +344,45 @@
 		B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTests.swift; sourceTree = "<group>"; };
 		B4CDCA7FBA5511616538F84A /* FeedbackConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackConfiguration.swift; sourceTree = "<group>"; };
 		B5F3A3A2B59695E7D19E2CE2 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		B857851D25B2228700E76B4C /* DataCardXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataCardXIBIntegration.xib; sourceTree = "<group>"; };
+		B857852025B2229000E76B4C /* DataCardXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardXIBIntegration.swift; sourceTree = "<group>"; };
+		B857852525B223DC00E76B4C /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
+		B857854425B35ED500E76B4C /* testBrandStyles.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-vivo-style.png"; sourceTree = "<group>"; };
+		B857854525B35ED500E76B4C /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
+		B857854625B35ED500E76B4C /* testPrimaryAndLinkButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryAndLinkButtons.1.png; sourceTree = "<group>"; };
+		B857854725B35ED500E76B4C /* testBrandStyles.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		B857854825B35ED500E76B4C /* testShowLoadingStateForButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowLoadingStateForButtons.1.png; sourceTree = "<group>"; };
+		B857854925B35ED600E76B4C /* testMinimumContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testMinimumContent.1.png; sourceTree = "<group>"; };
+		B857854A25B35ED600E76B4C /* testTextsWithMultiLine.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testTextsWithMultiLine.1.png; sourceTree = "<group>"; };
+		B857854B25B35ED600E76B4C /* testBrandStyles.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-movistar-style.png"; sourceTree = "<group>"; };
+		B857854C25B35ED600E76B4C /* testFullContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContent.1.png; sourceTree = "<group>"; };
+		B857854D25B35ED600E76B4C /* testFullContentWithoutFragment.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutFragment.1.png; sourceTree = "<group>"; };
+		B857854E25B35ED600E76B4C /* testBrandStyles.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2-style.png"; sourceTree = "<group>"; };
+		B857854F25B35ED600E76B4C /* testPrimaryButtonsOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryButtonsOnly.1.png; sourceTree = "<group>"; };
+		B857855025B35ED600E76B4C /* testFullContentWithoutHeadline.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutHeadline.1.png; sourceTree = "<group>"; };
+		B857855125B35ED600E76B4C /* testFullContentWithoutIcon.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutIcon.1.png; sourceTree = "<group>"; };
+		B857855225B35ED600E76B4C /* testFullContentWithoutSubtitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutSubtitle.1.png; sourceTree = "<group>"; };
+		B857855525B823B400E76B4C /* MediaCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCardTests.swift; sourceTree = "<group>"; };
+		B857855925B8292E00E76B4C /* MediaCardXIBIntegration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCardXIBIntegration.swift; sourceTree = "<group>"; };
+		B857855A25B8292E00E76B4C /* MediaCardXIBIntegration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaCardXIBIntegration.xib; sourceTree = "<group>"; };
+		B85CCA4825B82A0B00B76426 /* testFullContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContent.1.png; sourceTree = "<group>"; };
+		B85CCA4925B82A0B00B76426 /* testPrimaryAndLinkButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryAndLinkButtons.1.png; sourceTree = "<group>"; };
+		B85CCA4A25B82A0B00B76426 /* testBrandStyles.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-vivo-style.png"; sourceTree = "<group>"; };
+		B85CCA4B25B82A0B00B76426 /* testBrandStyles.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-movistar-style.png"; sourceTree = "<group>"; };
+		B85CCA4C25B82A0B00B76426 /* testBrandStyles.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		B85CCA4D25B82A0B00B76426 /* testMinimumContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testMinimumContent.1.png; sourceTree = "<group>"; };
+		B85CCA4E25B82A0B00B76426 /* testFullContentWithoutFragment.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutFragment.1.png; sourceTree = "<group>"; };
+		B85CCA4F25B82A0B00B76426 /* testPrimaryButtonsOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryButtonsOnly.1.png; sourceTree = "<group>"; };
+		B85CCA5025B82A0B00B76426 /* testBrandStyles.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2-style.png"; sourceTree = "<group>"; };
+		B85CCA5125B82A0B00B76426 /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
+		B85CCA5225B82A0B00B76426 /* testTextsWithMultiLine.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testTextsWithMultiLine.1.png; sourceTree = "<group>"; };
+		B85CCA5325B82A0B00B76426 /* testShowLoadingStateForButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowLoadingStateForButtons.1.png; sourceTree = "<group>"; };
+		B85CCA5525B82CCD00B76426 /* testFullContentWithoutHeadline.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutHeadline.1.png; sourceTree = "<group>"; };
+		B85CCA5625B82CCD00B76426 /* testFullContentWithoutPretitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutPretitle.1.png; sourceTree = "<group>"; };
+		B85CCA5725B82CCD00B76426 /* testFullContentWithoutTitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutTitle.1.png; sourceTree = "<group>"; };
+		B85CCA5D25B848C300B76426 /* DataCardAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCardAsset.swift; sourceTree = "<group>"; };
+		B85CCA6025B8522000B76426 /* testShowAssetOfTypeImage.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowAssetOfTypeImage.1.png; sourceTree = "<group>"; };
+		B85CCA6125B8522000B76426 /* testShowAssetOfTypeIcon.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowAssetOfTypeIcon.1.png; sourceTree = "<group>"; };
 		B88DE71DF455B000DEED6A29 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		B8BCF901256D113B00D2BCCC /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		B8BCF973256D1AB500D2BCCC /* testRegularSizeWithPrimaryClearStyle.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testRegularSizeWithPrimaryClearStyle.with-o2-style.png"; sourceTree = "<group>"; };
@@ -401,6 +454,18 @@
 		B8BCF9B5256D1AB700D2BCCC /* testRegularSizeWithSecondaryStyle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testRegularSizeWithSecondaryStyle.with-o2Classic-style.png"; sourceTree = "<group>"; };
 		B8BCF9B6256D1AB700D2BCCC /* testSmallSizeWithPrimaryStyle.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSmallSizeWithPrimaryStyle.with-movistar-style.png"; sourceTree = "<group>"; };
 		B8BCF9B7256D1AB700D2BCCC /* testSmallSizeWithPrimaryStyle.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testSmallSizeWithPrimaryStyle.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		B8D7193A25B20FF0006510CC /* MediaCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaCard.swift; sourceTree = "<group>"; };
+		B8D7193B25B20FF0006510CC /* DataCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCard.swift; sourceTree = "<group>"; };
+		B8D7193D25B20FF0006510CC /* CardCommonContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCommonContent.swift; sourceTree = "<group>"; };
+		B8D7193E25B20FF0006510CC /* CardButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardButtonsView.swift; sourceTree = "<group>"; };
+		B8D7193F25B20FF0006510CC /* CardBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBase.swift; sourceTree = "<group>"; };
+		B8D7194025B20FF0006510CC /* CardContentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentItem.swift; sourceTree = "<group>"; };
+		B8D7194225B20FF0006510CC /* CardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
+		B8D7194B25B21065006510CC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B8D7195425B21589006510CC /* card-extra-content.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "card-extra-content.jpg"; sourceTree = "<group>"; };
+		B8D7195725B21594006510CC /* media-card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "media-card.jpg"; sourceTree = "<group>"; };
+		B8D7195825B21594006510CC /* data-card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "data-card.jpg"; sourceTree = "<group>"; };
+		B8D7195C25B21ADB006510CC /* DataCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardTests.swift; sourceTree = "<group>"; };
 		B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredPresetView.swift; sourceTree = "<group>"; };
 		B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonXIBIntegration.xib; sourceTree = "<group>"; };
 		B8FFFA92256E6C9800472C23 /* testLinkStyleAndContentModeLeft.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testLinkStyleAndContentModeLeft.1.png; sourceTree = "<group>"; };
@@ -655,6 +720,8 @@
 		0B3C024EEA152B58A19951D6 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
+				B85CCA4725B82A0B00B76426 /* MediaCardTests */,
+				B87360B525B21D880070C418 /* DataCardTests */,
 				F7C50F1E258A0C5100B8D465 /* BadgeTests */,
 				8208CF0B2587AF57006D63F0 /* CheckboxTests */,
 				F7A78ED82577F7F80013B78E /* CroutonTests */,
@@ -1190,6 +1257,8 @@
 				B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */,
 				8209DDFD25764401006D91F2 /* CroutonTests.swift */,
 				F74CB4F025765A4A00260675 /* ControlsTests.swift */,
+				B8D7195C25B21ADB006510CC /* DataCardTests.swift */,
+				B857855525B823B400E76B4C /* MediaCardTests.swift */,
 				1860BBC025B03AF200319CFC /* DeterminateStepperTests.swift */,
 				18CDBD4C25ACA17600928474 /* IndeterminateStepperTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
@@ -1208,6 +1277,7 @@
 		7EC27C08C547CB235571FBA5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B8D7193925B20FF0006510CC /* Cards */,
 				8EFBC877A9A7C576B013980D /* Badge */,
 				6029222399A3A1EDFFD001E6 /* Button */,
 				FEE485632D40E24FB0311B4C /* Checkbox */,
@@ -1450,6 +1520,103 @@
 			path = ControlPresets;
 			sourceTree = "<group>";
 		};
+		B85CCA4725B82A0B00B76426 /* MediaCardTests */ = {
+			isa = PBXGroup;
+			children = (
+				B85CCA5525B82CCD00B76426 /* testFullContentWithoutHeadline.1.png */,
+				B85CCA5625B82CCD00B76426 /* testFullContentWithoutPretitle.1.png */,
+				B85CCA5725B82CCD00B76426 /* testFullContentWithoutTitle.1.png */,
+				B85CCA4825B82A0B00B76426 /* testFullContent.1.png */,
+				B85CCA4925B82A0B00B76426 /* testPrimaryAndLinkButtons.1.png */,
+				B85CCA4A25B82A0B00B76426 /* testBrandStyles.with-vivo-style.png */,
+				B85CCA4B25B82A0B00B76426 /* testBrandStyles.with-movistar-style.png */,
+				B85CCA4C25B82A0B00B76426 /* testBrandStyles.with-o2Classic-style.png */,
+				B85CCA4D25B82A0B00B76426 /* testMinimumContent.1.png */,
+				B85CCA4E25B82A0B00B76426 /* testFullContentWithoutFragment.1.png */,
+				B85CCA4F25B82A0B00B76426 /* testPrimaryButtonsOnly.1.png */,
+				B85CCA5025B82A0B00B76426 /* testBrandStyles.with-o2-style.png */,
+				B85CCA5125B82A0B00B76426 /* testXIBIntegration.1.png */,
+				B85CCA5225B82A0B00B76426 /* testTextsWithMultiLine.1.png */,
+				B85CCA5325B82A0B00B76426 /* testShowLoadingStateForButtons.1.png */,
+			);
+			path = MediaCardTests;
+			sourceTree = "<group>";
+		};
+		B87360B525B21D880070C418 /* DataCardTests */ = {
+			isa = PBXGroup;
+			children = (
+				B85CCA6125B8522000B76426 /* testShowAssetOfTypeIcon.1.png */,
+				B85CCA6025B8522000B76426 /* testShowAssetOfTypeImage.1.png */,
+				B857854B25B35ED600E76B4C /* testBrandStyles.with-movistar-style.png */,
+				B857854E25B35ED600E76B4C /* testBrandStyles.with-o2-style.png */,
+				B857854725B35ED500E76B4C /* testBrandStyles.with-o2Classic-style.png */,
+				B857854425B35ED500E76B4C /* testBrandStyles.with-vivo-style.png */,
+				B857854C25B35ED600E76B4C /* testFullContent.1.png */,
+				B857854D25B35ED600E76B4C /* testFullContentWithoutFragment.1.png */,
+				B857855025B35ED600E76B4C /* testFullContentWithoutHeadline.1.png */,
+				B857855125B35ED600E76B4C /* testFullContentWithoutIcon.1.png */,
+				B857855225B35ED600E76B4C /* testFullContentWithoutSubtitle.1.png */,
+				B857854925B35ED600E76B4C /* testMinimumContent.1.png */,
+				B857854625B35ED500E76B4C /* testPrimaryAndLinkButtons.1.png */,
+				B857854F25B35ED600E76B4C /* testPrimaryButtonsOnly.1.png */,
+				B857854825B35ED500E76B4C /* testShowLoadingStateForButtons.1.png */,
+				B857854A25B35ED600E76B4C /* testTextsWithMultiLine.1.png */,
+				B857854525B35ED500E76B4C /* testXIBIntegration.1.png */,
+			);
+			path = DataCardTests;
+			sourceTree = "<group>";
+		};
+		B8D7193925B20FF0006510CC /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				B8D7194F25B21206006510CC /* docs */,
+				B8D7194B25B21065006510CC /* README.md */,
+				B8D7193A25B20FF0006510CC /* MediaCard.swift */,
+				B8D7193B25B20FF0006510CC /* DataCard.swift */,
+				B8D7193C25B20FF0006510CC /* Internals */,
+				B8D7194125B20FF0006510CC /* Model */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		B8D7193C25B20FF0006510CC /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				B85CCA5D25B848C300B76426 /* DataCardAsset.swift */,
+				B8D7193D25B20FF0006510CC /* CardCommonContent.swift */,
+				B8D7193E25B20FF0006510CC /* CardButtonsView.swift */,
+				B8D7193F25B20FF0006510CC /* CardBase.swift */,
+				B8D7194025B20FF0006510CC /* CardContentItem.swift */,
+			);
+			path = Internals;
+			sourceTree = "<group>";
+		};
+		B8D7194125B20FF0006510CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8D7194225B20FF0006510CC /* CardButton.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8D7194F25B21206006510CC /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				B8D7195025B2120E006510CC /* images */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		B8D7195025B2120E006510CC /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B8D7195825B21594006510CC /* data-card.jpg */,
+				B8D7195725B21594006510CC /* media-card.jpg */,
+				B8D7195425B21589006510CC /* card-extra-content.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		B8FFFA8B256E602100472C23 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
@@ -1467,6 +1634,10 @@
 				8209DE052576983F006D91F2 /* BadgeXIBIntegration.swift */,
 				F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */,
 				F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */,
+				B857851D25B2228700E76B4C /* DataCardXIBIntegration.xib */,
+				B857852025B2229000E76B4C /* DataCardXIBIntegration.swift */,
+				B857855925B8292E00E76B4C /* MediaCardXIBIntegration.swift */,
+				B857855A25B8292E00E76B4C /* MediaCardXIBIntegration.xib */,
 				1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */,
 				1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */,
 				18CDBD7725ACB1AC00928474 /* IndeterminateStepperXIBIntegration.swift */,
@@ -1479,6 +1650,7 @@
 			isa = PBXGroup;
 			children = (
 				B8FFFA9B256E6DCA00472C23 /* UIView+Utils.swift */,
+				B857852525B223DC00E76B4C /* UIImage+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1855,7 +2027,7 @@
 		2044F3198C1F7582917A829F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1230;
 			};
 			buildConfigurationList = C95182709122347D34E97F2F /* Build configuration list for PBXProject "Mistica" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -1881,11 +2053,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8209DE0325769688006D91F2 /* BadgeXIBIntegration.xib in Resources */,
+				B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */,
+				B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
+				B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */,
 				B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
-				18D8894525ADA1000098EED3 /* CheckboxXIBIntegration.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1906,12 +2080,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
+				B857855B25B8292E00E76B4C /* MediaCardXIBIntegration.swift in Sources */,
 				F74CB4F42576606100260675 /* ControlsTests.swift in Sources */,
 				1860BBC725B03B7100319CFC /* DeterminateStepperXIBIntegration.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
+				B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */,
+				B85CCA5925B82EFA00B76426 /* CheckboxXIBIntegration.swift in Sources */,
 				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
+				B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
-				18D8894425ADA1000098EED3 /* CheckboxXIBIntegration.swift in Sources */,
+				B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */,
 				18CDBD7825ACB1AD00928474 /* IndeterminateStepperXIBIntegration.swift in Sources */,
 				82CF1540257567C700867797 /* BadgeTests.swift in Sources */,
 				8209DE0925769860006D91F2 /* BadgeXIBIntegration.swift in Sources */,
@@ -1919,6 +2097,7 @@
 				B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */,
 				1860BBC125B03AF200319CFC /* DeterminateStepperTests.swift in Sources */,
 				B4C66DD7256EB8A50087E4B5 /* FeedbackTests.swift in Sources */,
+				B857852925B223DF00E76B4C /* UIImage+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1929,6 +2108,7 @@
 				D80B7145DD7C350BC8E8CCBF /* AlignmentImageView.swift in Sources */,
 				27321C77876795284B43C40E /* Array+NSAttributedString.swift in Sources */,
 				CAF27E0ABEBFB611FC0EE3BF /* AssetCatalog+Themed.swift in Sources */,
+				B8D7194625B20FF0006510CC /* CardButtonsView.swift in Sources */,
 				0585D331C6B995C80E5867E7 /* AssetType.swift in Sources */,
 				205E03827FDA8AA677CC107E /* BadgeView.swift in Sources */,
 				74E247BBC5916AABD37FC76F /* BoundsChangeInvalidatingFlowLayout.swift in Sources */,
@@ -1969,9 +2149,11 @@
 				6F2DC585A16D86F7FFFD778D /* InputField.swift in Sources */,
 				BFB222960EE616A5A31A2131 /* InputFieldAssets.swift in Sources */,
 				7C08A5B312CD6C093A0777AB /* InputFieldDelegate.swift in Sources */,
+				B8D7194525B20FF0006510CC /* CardCommonContent.swift in Sources */,
 				1800DE3F25AF575700D5E5DA /* DeterminateStepperView.swift in Sources */,
 				F2BFC9F715E3810F002FCDBF /* InputFieldStyle+Toolkit.swift in Sources */,
 				FD91D9B40E070D425FA48CDC /* InputFieldValidationStrategy.swift in Sources */,
+				B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */,
 				FF695537B060674584B2F14D /* IntrinsicHeightTextView.swift in Sources */,
 				FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
 				18D4BA9E25B97725002D2BC8 /* NSDataAsset+Utils.swift in Sources */,
@@ -1981,6 +2163,7 @@
 				A05C5AFAFC51AC86C9FEAD58 /* KeyboardNotificationCenter.swift in Sources */,
 				5E9996DC83EFB50DB7E2B9B6 /* CellStyle+Toolkit.swift in Sources */,
 				45165BE25062A3F6F3258CF2 /* ListViewCell.swift in Sources */,
+				B8D7194725B20FF0006510CC /* CardBase.swift in Sources */,
 				B4C99EA94307852447D672A1 /* ListView.swift in Sources */,
 				ABCDBD7FEBCC5710EAB9AD55 /* ListsAssets.swift in Sources */,
 				A8EA4F98CE276934610F9C3E /* LoadErrorViewController.swift in Sources */,
@@ -1998,6 +2181,8 @@
 				D3DC00209006534C72A7B2F2 /* PasswordInputFieldValidationStrategy.swift in Sources */,
 				5236C2BE900CA9A69C0B58B6 /* PhoneNumberInputFieldValidationStrategy.swift in Sources */,
 				2413001847ED6200A13CC1D6 /* PopoverAssets.swift in Sources */,
+				B8D7194925B20FF0006510CC /* CardButton.swift in Sources */,
+				B8D7194825B20FF0006510CC /* CardContentItem.swift in Sources */,
 				AE568ECA9A69A30366BD05ED /* PopoverConfiguration.swift in Sources */,
 				2E2AF2C793F73E8F9765065A /* PopoverContentView.swift in Sources */,
 				0E981C32BBB09DF7A1A9D7F9 /* PopoverMessageView.swift in Sources */,
@@ -2005,6 +2190,7 @@
 				2AC87076A6AC9FB3B66D64A3 /* PopoverView.swift in Sources */,
 				730E74166CA8DF6FE7233484 /* PreprocessorChecks.swift in Sources */,
 				83C49A0982B41B48B95AF7C8 /* RadioButton.swift in Sources */,
+				B8D7194425B20FF0006510CC /* DataCard.swift in Sources */,
 				244AF2F1FA472CECF71F4212 /* ScrollContentIndicator.swift in Sources */,
 				C8652B0AFC082F85242A7D32 /* ScrollContentIndicatorStyle.swift in Sources */,
 				340E022D5FE30D155E4BEC1B /* ScrollStackView.swift in Sources */,
@@ -2022,6 +2208,7 @@
 				E67C11529DD9E1699278458A /* UIBarButtonItem+Utils.swift in Sources */,
 				9069ACD1BD3E576D4291C424 /* UIButton+Utils.swift in Sources */,
 				759D8FD6321204FA71C221E8 /* UICollectionViewCell+Utils.swift in Sources */,
+				B85CCA5E25B848C300B76426 /* DataCardAsset.swift in Sources */,
 				B347848A473FEE0AB4E04D27 /* UIColor+Utils.swift in Sources */,
 				1F552724291C5BF268DA82B3 /* UIImage+Utils.swift in Sources */,
 				34567C60C964C6D4997CEC4C /* UINavigationBar+Mistica.swift in Sources */,

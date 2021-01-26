@@ -85,6 +85,9 @@
 		88882FCE598E7589DBB0E8D8 /* VerticallyCenteredPresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */; };
 		8F2A23EC9EAF5C65182B2DB3 /* UITableViewHeaderFooterView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9F8965B378478A270E995 /* UITableViewHeaderFooterView+Utils.swift */; };
 		9069ACD1BD3E576D4291C424 /* UIButton+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CAB80603A17B9E35DE3E8 /* UIButton+Utils.swift */; };
+		90E9623625BEBE54006E6170 /* FormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9ADCD25BB004800EB911D /* FormTests.swift */; };
+		90E9624025BF1B8C006E6170 /* FormXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9623C25BF19E7006E6170 /* FormXIBIntegration.swift */; };
+		90E9624225BF1B94006E6170 /* FormXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */; };
 		91D9EEEA06D35D3B7254A7F5 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF28FC67BA35FC48AE91FC2 /* FeedbackView.swift */; };
 		930BDEF8014BD8B8104C4F8B /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCAE1716D720F3C189901F5 /* TextInput.swift */; };
 		94E1463C1F9E3507C48E7C27 /* FeedbackConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CDCA7FBA5511616538F84A /* FeedbackConfiguration.swift */; };
@@ -301,6 +304,9 @@
 		9058FF7F30809B474D27B6CE /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		90B0FC7CFADA89D838495A21 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = "<group>"; };
 		90C0D32D83E30260E11717BF /* CustomCroutonContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCroutonContainer.swift; sourceTree = "<group>"; };
+		90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXIBIntegration.xib; sourceTree = "<group>"; };
+		90E9623C25BF19E7006E6170 /* FormXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormXIBIntegration.swift; sourceTree = "<group>"; };
+		90E9ADCD25BB004800EB911D /* FormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTests.swift; sourceTree = "<group>"; };
 		92D995F6C6453B81FE9D4F54 /* default-content-mode-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-content-mode-selected.png"; sourceTree = "<group>"; };
 		9393F68AA721A8925A439504 /* PopoverConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverConfiguration.swift; sourceTree = "<group>"; };
 		94E6D7D1BBC41C376703E098 /* demo-accessibility.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "demo-accessibility.gif"; sourceTree = "<group>"; };
@@ -1185,6 +1191,7 @@
 				CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */,
 				82CF153C257567A000867797 /* BadgeTests.swift */,
 				B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */,
+				90E9ADCD25BB004800EB911D /* FormTests.swift */,
 				8209DDFD25764401006D91F2 /* CroutonTests.swift */,
 				F74CB4F025765A4A00260675 /* ControlsTests.swift */,
 				1860BBC025B03AF200319CFC /* DeterminateStepperTests.swift */,
@@ -1466,6 +1473,8 @@
 				1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */,
 				18CDBD7725ACB1AC00928474 /* IndeterminateStepperXIBIntegration.swift */,
 				18CDBD7625ACB1AC00928474 /* IndeterminateStepperXIBIntegration.xib */,
+				90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */,
+				90E9623C25BF19E7006E6170 /* FormXIBIntegration.swift */,
 			);
 			path = XIBIntegration;
 			sourceTree = "<group>";
@@ -1878,6 +1887,7 @@
 				8209DE0325769688006D91F2 /* BadgeXIBIntegration.xib in Resources */,
 				B833F67225B98FAE0013FD92 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
+				90E9624225BF1B94006E6170 /* FormXIBIntegration.xib in Resources */,
 				B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
 				18D8894525ADA1000098EED3 /* CheckboxXIBIntegration.xib in Resources */,
@@ -1902,6 +1912,7 @@
 			files = (
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
 				F74CB4F42576606100260675 /* ControlsTests.swift in Sources */,
+				90E9623625BEBE54006E6170 /* FormTests.swift in Sources */,
 				1860BBC725B03B7100319CFC /* DeterminateStepperXIBIntegration.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
 				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
@@ -1913,6 +1924,7 @@
 				18CDBD4D25ACA17600928474 /* IndeterminateStepperTests.swift in Sources */,
 				B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */,
 				1860BBC125B03AF200319CFC /* DeterminateStepperTests.swift in Sources */,
+				90E9624025BF1B8C006E6170 /* FormXIBIntegration.swift in Sources */,
 				B4C66DD7256EB8A50087E4B5 /* FeedbackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

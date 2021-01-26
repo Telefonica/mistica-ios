@@ -1,5 +1,5 @@
 //
-//  ListCellView.swift
+//  ListViewCell.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -14,9 +14,15 @@ private enum ViewStyles {
     static let horizontalPadding: CGFloat = 16
 }
 
-// MARK: ListCellView
+// MARK: ListViewCell
 
-open class ListCellView: UITableViewCell {
+open class ListViewCell: UITableViewCell {
+    @frozen
+    public enum CellStyle {
+        case fullWidth
+        case boxed
+    }
+
     @frozen
     public enum CellAssetType: Equatable {
         case none
@@ -149,7 +155,7 @@ open class ListCellView: UITableViewCell {
         }
     }
 
-    public var listCellStyle = ListCellStyle.fullWidth {
+    public var cellStyle = CellStyle.fullWidth {
         didSet {
             updateCellStyle()
         }
@@ -182,7 +188,7 @@ open class ListCellView: UITableViewCell {
 
     public var isCellSeparatorHidden: Bool = true {
         didSet {
-            guard listCellStyle != .boxed else { return }
+            guard cellStyle != .boxed else { return }
 
             cellSeparatorView.isHidden = isCellSeparatorHidden
         }
@@ -199,7 +205,7 @@ open class ListCellView: UITableViewCell {
             verticalFittingPriority: verticalFittingPriority
         )
 
-        return CGSize(width: size.width, height: max(size.height, listCellStyle.minHeight))
+        return CGSize(width: size.width, height: max(size.height, cellStyle.minHeight))
     }
 
     override public func setHighlighted(_ highlighted: Bool, animated _: Bool) {
@@ -223,7 +229,7 @@ open class ListCellView: UITableViewCell {
 
 // MARK: Custom Accessibilities
 
-public extension ListCellView {
+public extension ListViewCell {
     var titleAccessibilityLabel: String? {
         get {
             centerSection.titleLabel.accessibilityLabel
@@ -263,9 +269,9 @@ public extension ListCellView {
 
 // MARK: Private
 
-private extension ListCellView {
+private extension ListViewCell {
     var highlightedView: UIView {
-        switch listCellStyle {
+        switch cellStyle {
         case .fullWidth:
             return contentView
         case .boxed:
@@ -294,18 +300,18 @@ private extension ListCellView {
     }
 
     func updateCellStyle() {
-        contentView.directionalLayoutMargins = listCellStyle.contentViewLayoutMargins
+        contentView.directionalLayoutMargins = cellStyle.contentViewLayoutMargins
         contentView.preservesSuperviewLayoutMargins = false
 
         cellContentView.isLayoutMarginsRelativeArrangement = true
-        cellContentView.directionalLayoutMargins = listCellStyle.mainStackViewLayoutMargins
+        cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins
 
         cellBorderView.backgroundColor = .background
-        cellBorderView.layer.cornerRadius = listCellStyle.cornerRadius
-        cellBorderView.layer.borderColor = listCellStyle.borderColor
-        cellBorderView.layer.borderWidth = listCellStyle.borderWidth
+        cellBorderView.layer.cornerRadius = cellStyle.cornerRadius
+        cellBorderView.layer.borderColor = cellStyle.borderColor
+        cellBorderView.layer.borderWidth = cellStyle.borderWidth
 
-        cellSeparatorView.isHidden = listCellStyle.cellSeparatorIsHidden
+        cellSeparatorView.isHidden = cellStyle.cellSeparatorIsHidden
     }
 
     func updateAssetView() {

@@ -123,7 +123,7 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReusableIdentifier, for: indexPath) as! ListCellView
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReusableIdentifier, for: indexPath) as! ListViewCell
 
         let catalogRow = UICatalogRow(rawValue: indexPath.row)!
 
@@ -203,7 +203,7 @@ private extension UICatalogViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(ListCellView.self, forCellReuseIdentifier: Constants.cellReusableIdentifier)
+        tableView.register(ListViewCell.self, forCellReuseIdentifier: Constants.cellReusableIdentifier)
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 80
 

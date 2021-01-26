@@ -25,7 +25,7 @@ class CellLeftSectionView: UIStackView {
 
     private let imageView = IntrinsictImageView()
 
-    var assetType: ListCellView.CellAssetType = .none {
+    var assetType: ListViewCell.CellAssetType = .none {
         didSet {
             heightConstraint.constant = assetType.viewSize
             widthConstraint.constant = assetType.viewSize
@@ -83,7 +83,7 @@ private extension CellLeftSectionView {
     }
 }
 
-private extension ListCellView.CellAssetType {
+private extension ListViewCell.CellAssetType {
     var assetSize: CGFloat {
         switch self {
         case .none:

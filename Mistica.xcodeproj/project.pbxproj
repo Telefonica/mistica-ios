@@ -21,8 +21,6 @@
 		18CDBD4D25ACA17600928474 /* IndeterminateStepperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDBD4C25ACA17600928474 /* IndeterminateStepperTests.swift */; };
 		18CDBD7825ACB1AD00928474 /* IndeterminateStepperXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDBD7725ACB1AC00928474 /* IndeterminateStepperXIBIntegration.swift */; };
 		18D8894025ADA08A0098EED3 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D8893E25ADA08A0098EED3 /* demo.png */; };
-		18D8894425ADA1000098EED3 /* CheckboxXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */; };
-		18D8894525ADA1000098EED3 /* CheckboxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */; };
 		18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CDBD7625ACB1AC00928474 /* IndeterminateStepperXIBIntegration.xib */; };
 		18F193E5259C8E9A00A09E20 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F193E3259C8E9A00A09E20 /* SegmentView.swift */; };
 		18F193E6259C8E9A00A09E20 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F193E4259C8E9A00A09E20 /* StepView.swift */; };
@@ -54,11 +52,11 @@
 		3F006F4799D9309B0DD2564E /* MovistarColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6C443D987AD4CDAFD35525 /* MovistarColorPalette.swift */; };
 		412183A67D2A3B6A43410022 /* ButtonContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1774D247674DF30E3E112C /* ButtonContentView.swift */; };
 		43B97750F1AABDAC15224AC8 /* IntrinsictHeightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6F1F0A0754AC1E365886A3 /* IntrinsictHeightLabel.swift */; };
-		45165BE25062A3F6F3258CF2 /* ListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9982D822AACCA74B34989A6 /* ListCellView.swift */; };
+		45165BE25062A3F6F3258CF2 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9982D822AACCA74B34989A6 /* ListViewCell.swift */; };
 		5236C2BE900CA9A69C0B58B6 /* PhoneNumberInputFieldValidationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A67DB1DF67BD581B687361 /* PhoneNumberInputFieldValidationStrategy.swift */; };
 		5336A071B18BBC9ABCE45530 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2D0EBC9A630B3017747EF /* HeaderView.swift */; };
 		5C50E1F5A7510E7807736AF2 /* MisticaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F2FC75B7ADFCAE01D5BBD0 /* MisticaConfig.swift */; };
-		5E9996DC83EFB50DB7E2B9B6 /* ListCellStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABF99EE0334AA102A64EA9 /* ListCellStyle+Toolkit.swift */; };
+		5E9996DC83EFB50DB7E2B9B6 /* CellStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABF99EE0334AA102A64EA9 /* CellStyle+Toolkit.swift */; };
 		631476E90140ED8EC617FE48 /* CustomCroutonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0D32D83E30260E11717BF /* CustomCroutonContainer.swift */; };
 		6402705AE1EA5AA50384018E /* SegmentSelectorCenteredContentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224711C2166F020E0B2326C /* SegmentSelectorCenteredContentLayout.swift */; };
 		64DDAA4BF38945645F39B702 /* CroutonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4879FB92B4EAB99BE49D827 /* CroutonController.swift */; };
@@ -114,7 +112,6 @@
 		B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */; };
 		B85CCA5E25B848C300B76426 /* DataCardAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA5D25B848C300B76426 /* DataCardAsset.swift */; };
 		B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D40616E1B8E8E2F0E7D3AAA /* Mistica.framework */; };
-		B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
 		B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BCF901256D113B00D2BCCC /* TestHelpers.swift */; };
 		B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193A25B20FF0006510CC /* MediaCard.swift */; };
 		B8D7194425B20FF0006510CC /* DataCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193B25B20FF0006510CC /* DataCard.swift */; };
@@ -498,7 +495,7 @@
 		D4304806B5F71DB7F4AB828E /* lists-boxed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lists-boxed.png"; sourceTree = "<group>"; };
 		D54C5FAA8E3E3279A07E845F /* KeyboardNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationCenter.swift; sourceTree = "<group>"; };
 		D5D1E862C434A3F09F5E2251 /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
-		D7ABF99EE0334AA102A64EA9 /* ListCellStyle+Toolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListCellStyle+Toolkit.swift"; sourceTree = "<group>"; };
+		D7ABF99EE0334AA102A64EA9 /* CellStyle+Toolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellStyle+Toolkit.swift"; sourceTree = "<group>"; };
 		D7D66B01696D1A031C3EA365 /* validation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = validation.gif; sourceTree = "<group>"; };
 		D7FD6B74CCA2B6A0267A0FAB /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		D9A67DB1DF67BD581B687361 /* PhoneNumberInputFieldValidationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberInputFieldValidationStrategy.swift; sourceTree = "<group>"; };
@@ -657,7 +654,7 @@
 		F7C50F25258A0C5100B8D465 /* testFlagBadge.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-vivo-style.png"; sourceTree = "<group>"; };
 		F7C50F26258A0C5100B8D465 /* testNumericBadge.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testNumericBadge.with-o2Classic-style.png"; sourceTree = "<group>"; };
 		F7C50F27258A0C5100B8D465 /* testFlagBadge.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testFlagBadge.with-movistar-style.png"; sourceTree = "<group>"; };
-		F9982D822AACCA74B34989A6 /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
+		F9982D822AACCA74B34989A6 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 		FC4EF4BBC11420C556337C0E /* Bundle+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Mistica.swift"; sourceTree = "<group>"; };
 		FDC1885EBE249BAA8A791EA0 /* scroll-content-indicator-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scroll-content-indicator-info.png"; sourceTree = "<group>"; };
 		FDF5F4F9885708D1D3909E98 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
@@ -1041,8 +1038,8 @@
 		53C40E8A99E12FBBCBFB5349 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
-				D7ABF99EE0334AA102A64EA9 /* ListCellStyle+Toolkit.swift */,
-				F9982D822AACCA74B34989A6 /* ListCellView.swift */,
+				D7ABF99EE0334AA102A64EA9 /* CellStyle+Toolkit.swift */,
+				F9982D822AACCA74B34989A6 /* ListViewCell.swift */,
 				85FE9079D1C9C80AD4FB45F3 /* ListView.swift */,
 				38199C0732F9B42AA1A50F47 /* README.md */,
 				B6FADA5E51E20A69DB2111D2 /* ControlPresets */,
@@ -2025,7 +2022,7 @@
 		2044F3198C1F7582917A829F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1230;
 			};
 			buildConfigurationList = C95182709122347D34E97F2F /* Build configuration list for PBXProject "Mistica" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -2056,9 +2053,7 @@
 				B833F67225B98FAE0013FD92 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
 				B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */,
-				B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
-				18D8894525ADA1000098EED3 /* CheckboxXIBIntegration.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2089,7 +2084,6 @@
 				B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
 				B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */,
-				18D8894425ADA1000098EED3 /* CheckboxXIBIntegration.swift in Sources */,
 				18CDBD7825ACB1AD00928474 /* IndeterminateStepperXIBIntegration.swift in Sources */,
 				82CF1540257567C700867797 /* BadgeTests.swift in Sources */,
 				8209DE0925769860006D91F2 /* BadgeXIBIntegration.swift in Sources */,
@@ -2159,9 +2153,9 @@
 				AF443028E947CEFC57C78C6D /* IntrinsictImageView.swift in Sources */,
 				69B7063AEE070561B5D83375 /* KeyboardInfo.swift in Sources */,
 				A05C5AFAFC51AC86C9FEAD58 /* KeyboardNotificationCenter.swift in Sources */,
-				5E9996DC83EFB50DB7E2B9B6 /* ListCellStyle+Toolkit.swift in Sources */,
+				5E9996DC83EFB50DB7E2B9B6 /* CellStyle+Toolkit.swift in Sources */,
+				45165BE25062A3F6F3258CF2 /* ListViewCell.swift in Sources */,
 				B8D7194725B20FF0006510CC /* CardBase.swift in Sources */,
-				45165BE25062A3F6F3258CF2 /* ListCellView.swift in Sources */,
 				B4C99EA94307852447D672A1 /* ListView.swift in Sources */,
 				ABCDBD7FEBCC5710EAB9AD55 /* ListsAssets.swift in Sources */,
 				A8EA4F98CE276934610F9C3E /* LoadErrorViewController.swift in Sources */,

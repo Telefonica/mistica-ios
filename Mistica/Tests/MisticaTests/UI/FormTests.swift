@@ -1,9 +1,9 @@
 //
-//  FormsTests.swift
+//  FormTests.swift
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © Telefonica. All rights reserved.
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Mistica
@@ -16,23 +16,23 @@ final class FormsTests: XCTestCase {
         static let buttonTitle = "Save"
         static let footerTitle = "Footer view"
     }
-    
+
     override func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
 
         isRecording = false
     }
-    
+
     // MARK: - Simple view
-    
+
     func testHeaderAndButtonEnabledAndFooter() {
         let formViewDelegate = FormViewDelegateMock { _ in
-            return true
+            true
         } formViewDidTapButtonMock: { _, _ in
             // to do nothing
         }
-        
+
         assertSnapshotForAllBrands(
             as: .image,
             viewBuilder: formView(
@@ -43,25 +43,26 @@ final class FormsTests: XCTestCase {
             )
         )
     }
-    
+
     func testFormViewWithButtonDisabled() {
         let formViewDelegate = FormViewDelegateMock { _ in
-            return false
+            false
         } formViewDidTapButtonMock: { _, _ in
             // to do nothing
         }
 
-        assertSnapshotForAllBrands(as: .image,
-                                   viewBuilder: formView(
-                                    inputFields: [],
-                                    buttonTitle: Constants.buttonTitle,
-                                    delegate: formViewDelegate
-                                )
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: formView(
+                inputFields: [],
+                buttonTitle: Constants.buttonTitle,
+                delegate: formViewDelegate
+            )
         )
     }
-    
+
     // MARK: - InputField Styles
-    
+
     func testInputFieldWithStyleForDefault() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -73,7 +74,7 @@ final class FormsTests: XCTestCase {
             )
         )
     }
-    
+
     func testFieldWithEmailStyle() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -147,10 +148,10 @@ final class FormsTests: XCTestCase {
     }
 
     // MARK: Behaviour
-    
+
     func testSetValueToPasswordInputField() {
         MisticaConfig.brandStyle = .o2
-        
+
         let passwordInputField = makeInputFieldWithPasswordStyle()
         let formViewWithPassword = formView(
             inputFields: [
@@ -158,27 +159,29 @@ final class FormsTests: XCTestCase {
             ],
             buttonTitle: Constants.buttonTitle
         )
-        assertSnapshot(matching: formViewWithPassword,
-                       as: .image,
-                       named: "assertInitialState"
+        assertSnapshot(
+            matching: formViewWithPassword,
+            as: .image,
+            named: "assertInitialState"
         )
-        
+
         passwordInputField.text = "password"
-        
-        assertSnapshot(matching: formViewWithPassword,
-                       as: .image,
-                       named: "finalState"
+
+        assertSnapshot(
+            matching: formViewWithPassword,
+            as: .image,
+            named: "finalState"
         )
     }
-        
+
     // MARK: XIB integration
-    
+
     func testXIBIntegration() {
         MisticaConfig.brandStyle = .o2
-        
+
         let view = FormXIBIntegration.viewFromNib()
-        guard let formView = view.formView else { fatalError("The view IBOutlet was not setup")}
-        
+        guard let formView = view.formView else { fatalError("The view IBOutlet was not setup") }
+
         formView.addHeaderView(makeLabel(withText: Constants.headerTitle))
         formView.addInputFields([
             makeInputField(),
@@ -191,7 +194,7 @@ final class FormsTests: XCTestCase {
         ])
         formView.button.title = Constants.buttonTitle
         formView.addFooterView(makeLabel(withText: Constants.footerTitle))
-        
+
         assertSnapshot(matching: view, as: .image)
     }
 }
@@ -201,16 +204,16 @@ final class FormsTests: XCTestCase {
 class FormViewDelegateMock: FormViewDelegate {
     var formViewButtonShouldBeEnabledMock: (FormView) -> Bool
     var formViewDidTapButtonMock: (FormView, Bool) -> Void
-    
-    init(formViewButtonShouldBeEnabledMock: @escaping(FormView) -> Bool, formViewDidTapButtonMock: @escaping (FormView, Bool) -> Void) {
+
+    init(formViewButtonShouldBeEnabledMock: @escaping (FormView) -> Bool, formViewDidTapButtonMock: @escaping (FormView, Bool) -> Void) {
         self.formViewButtonShouldBeEnabledMock = formViewButtonShouldBeEnabledMock
         self.formViewDidTapButtonMock = formViewDidTapButtonMock
     }
-    
+
     func formViewButtonShouldBeEnabled(_ formView: FormView) -> Bool {
         formViewButtonShouldBeEnabledMock(formView)
     }
-    
+
     func formViewDidTapButton(_ formView: FormView, isValid: Bool) {
         formViewDidTapButtonMock(formView, isValid)
     }
@@ -231,62 +234,74 @@ private extension FormsTests {
         let viewController = FormTestsViewController(formView: formView)
         return viewController
     }
-    
+
     func makeLabel(withText text: String) -> UIView {
         let label = UILabel()
         label.text = text
         return label
     }
-        
+
     func makeInputField(withStyle style: InputField.Style = .default, placeholderText: String? = "Text", validationStrategy: InputFieldValidationStrategy? = nil) -> InputField {
         let inputField = InputField(style: style, nonOptionalFieldFailureMessage: "This field is required")
         inputField.placeholderText = placeholderText
         inputField.validationStrategy = validationStrategy
         return inputField
     }
-    
+
     func makeInputFieldWithEmailStyle() -> InputField {
-        makeInputField(withStyle: .email,
-                       placeholderText: "Email",
-                       validationStrategy: EmailInputFieldValidationStrategy(failureMessage: "Hmm, looks like the email is written incorrectly"))
+        makeInputField(
+            withStyle: .email,
+            placeholderText: "Email",
+            validationStrategy: EmailInputFieldValidationStrategy(failureMessage: "Hmm, looks like the email is written incorrectly")
+        )
     }
 
     func makeInputFieldWithPasswordStyle() -> InputField {
-        makeInputField(withStyle: .password,
-                       placeholderText: "Password",
-                       validationStrategy: PasswordInputFieldValidationStrategy(failureMessage: "Oops! That's too short. It has to have at lest 8 characters"))
+        makeInputField(
+            withStyle: .password,
+            placeholderText: "Password",
+            validationStrategy: PasswordInputFieldValidationStrategy(failureMessage: "Oops! That's too short. It has to have at lest 8 characters")
+        )
     }
 
     func makeInputFieldWithPhoneNumberStyle() -> InputField {
-        makeInputField(withStyle: .phoneNumber,
-                       placeholderText: "Phone",
-                       validationStrategy: PhoneNumberInputFieldValidationStrategy(failureMessage: "Hmm, looks like the phone is written incorrectly."))
+        makeInputField(
+            withStyle: .phoneNumber,
+            placeholderText: "Phone",
+            validationStrategy: PhoneNumberInputFieldValidationStrategy(failureMessage: "Hmm, looks like the phone is written incorrectly.")
+        )
     }
-    
+
     func makeInputFieldWithDropdownStyle() -> InputField {
-        makeInputField(withStyle: .dropdown,
-                       placeholderText: "dropdown")
+        makeInputField(
+            withStyle: .dropdown,
+            placeholderText: "dropdown"
+        )
     }
 
     func makeInputFieldWithMultilineStyle() -> InputField {
-        makeInputField(withStyle: .multiline,
-                       placeholderText: "multiline\nmultiline\nmultiline\nmultiline")
+        makeInputField(
+            withStyle: .multiline,
+            placeholderText: "multiline\nmultiline\nmultiline\nmultiline"
+        )
     }
-    
+
     func makeInputFieldWithInverseStyle() -> InputField {
-        makeInputField(withStyle: .inverse,
-                       placeholderText: "inverse")
+        makeInputField(
+            withStyle: .inverse,
+            placeholderText: "inverse"
+        )
     }
 }
 
 private class FormTestsViewController: UIViewController {
     private let formView: FormView
-    
+
     init(formView: FormView) {
         self.formView = formView
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

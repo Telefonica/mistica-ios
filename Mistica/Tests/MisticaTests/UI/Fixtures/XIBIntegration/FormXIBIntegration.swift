@@ -3,12 +3,12 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © Telefonica. All rights reserved.
+//  Copyright © 2020 Telefonica. All rights reserved.
 //
 
 import Mistica
 import UIKit
 
 class FormXIBIntegration: UIView {
-    @IBOutlet weak var formView: FormView!
+    @IBOutlet var formView: FormView!
 }

@@ -20,6 +20,9 @@
 		1860BBC725B03B7100319CFC /* DeterminateStepperXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */; };
 		18CDBD4D25ACA17600928474 /* IndeterminateStepperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDBD4C25ACA17600928474 /* IndeterminateStepperTests.swift */; };
 		18CDBD7825ACB1AD00928474 /* IndeterminateStepperXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CDBD7725ACB1AC00928474 /* IndeterminateStepperXIBIntegration.swift */; };
+		18D4BA9B25B976F2002D2BC8 /* StepperUIAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4BA9A25B976F2002D2BC8 /* StepperUIAssets.swift */; };
+		18D4BA9E25B97725002D2BC8 /* NSDataAsset+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4BA9D25B97725002D2BC8 /* NSDataAsset+Utils.swift */; };
+		18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
 		18D8894025ADA08A0098EED3 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D8893E25ADA08A0098EED3 /* demo.png */; };
 		18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CDBD7625ACB1AC00928474 /* IndeterminateStepperXIBIntegration.xib */; };
 		18F193E5259C8E9A00A09E20 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F193E3259C8E9A00A09E20 /* SegmentView.swift */; };
@@ -208,10 +211,7 @@
 		1860BBE525B03C9400319CFC /* testIndeterminateStepperCurrentStepChanges.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperCurrentStepChanges.assertInitialState.png; sourceTree = "<group>"; };
 		1860BBE625B03C9400319CFC /* testIndeterminateStepperDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIndeterminateStepperDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
 		1860BBE725B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIndeterminateStepperDefaultState.with-o2Classic-style.png"; sourceTree = "<group>"; };
-		1860BBE825B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperNumberOfStepsChanges.finalState.png; sourceTree = "<group>"; };
-		1860BBE925B03C9400319CFC /* testIndeterminateStepperXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperXIBIntegration.1.png; sourceTree = "<group>"; };
 		1860BBEA25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIndeterminateStepperDefaultState.with-o2-style.png"; sourceTree = "<group>"; };
-		1860BBEB25B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperNumberOfStepsChanges.assertInitialState.png; sourceTree = "<group>"; };
 		1860BBEC25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testIndeterminateStepperDefaultState.with-vivo-style.png"; sourceTree = "<group>"; };
 		1860BBF925B03D0C00319CFC /* testDeterminateStepperDefaultState.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDeterminateStepperDefaultState.with-movistar-style.png"; sourceTree = "<group>"; };
 		1860BBFA25B03D0C00319CFC /* testDeterminateStepperDefaultState.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testDeterminateStepperDefaultState.with-o2Classic-style.png"; sourceTree = "<group>"; };
@@ -224,6 +224,10 @@
 		18CDBD4C25ACA17600928474 /* IndeterminateStepperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndeterminateStepperTests.swift; sourceTree = "<group>"; };
 		18CDBD7625ACB1AC00928474 /* IndeterminateStepperXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndeterminateStepperXIBIntegration.xib; sourceTree = "<group>"; };
 		18CDBD7725ACB1AC00928474 /* IndeterminateStepperXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateStepperXIBIntegration.swift; sourceTree = "<group>"; };
+		18D4BA9A25B976F2002D2BC8 /* StepperUIAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperUIAssets.swift; sourceTree = "<group>"; };
+		18D4BA9D25B97725002D2BC8 /* NSDataAsset+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDataAsset+Utils.swift"; sourceTree = "<group>"; };
+		18D4BAA225B979BD002D2BC8 /* testIndeterminateStepperXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIndeterminateStepperXIBIntegration.1.png; sourceTree = "<group>"; };
+		18D4BAA725B97A96002D2BC8 /* testDeterminateStepperXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testDeterminateStepperXIBIntegration.1.png; sourceTree = "<group>"; };
 		18D8893E25ADA08A0098EED3 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 		18D8893F25ADA08A0098EED3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		18F193E3259C8E9A00A09E20 /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
@@ -769,6 +773,7 @@
 				1860BBFC25B03D0C00319CFC /* testDeterminateStepperDefaultState.with-vivo-style.png */,
 				1860BBFF25B03D0C00319CFC /* testDeterminateStepperNumberOfStepsChanges.assertInitialState.png */,
 				1860BBFD25B03D0C00319CFC /* testDeterminateStepperNumberOfStepsChanges.finalState.png */,
+				18D4BAA725B97A96002D2BC8 /* testDeterminateStepperXIBIntegration.1.png */,
 			);
 			path = DeterminateStepperTests;
 			sourceTree = "<group>";
@@ -780,11 +785,9 @@
 				1860BBE525B03C9400319CFC /* testIndeterminateStepperCurrentStepChanges.assertInitialState.png */,
 				1860BBE625B03C9400319CFC /* testIndeterminateStepperDefaultState.with-movistar-style.png */,
 				1860BBE725B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2Classic-style.png */,
-				1860BBE825B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.finalState.png */,
-				1860BBE925B03C9400319CFC /* testIndeterminateStepperXIBIntegration.1.png */,
 				1860BBEA25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-o2-style.png */,
-				1860BBEB25B03C9400319CFC /* testIndeterminateStepperNumberOfStepsChanges.assertInitialState.png */,
 				1860BBEC25B03C9400319CFC /* testIndeterminateStepperDefaultState.with-vivo-style.png */,
+				18D4BAA225B979BD002D2BC8 /* testIndeterminateStepperXIBIntegration.1.png */,
 			);
 			path = IndeterminateStepperTests;
 			sourceTree = "<group>";
@@ -1333,6 +1336,7 @@
 				56FBB044C1F47FE38007C053 /* FeedbackUIAssets.swift */,
 				2F7535DFA147C89CCF74339E /* InputFieldAssets.swift */,
 				11FB31360201868F6EC67F32 /* ListsAssets.swift */,
+				18D4BA9A25B976F2002D2BC8 /* StepperUIAssets.swift */,
 				2771E355D52B9143E83F277C /* PopoverAssets.swift */,
 			);
 			path = Assets;
@@ -1431,6 +1435,7 @@
 				37BF673AB137A97C45F6148D /* Optional+Utils.swift */,
 				AE25989DB7260E24A92CCEAF /* PreprocessorChecks.swift */,
 				16BD1D5B42512D701A4A0490 /* String+Utils.swift */,
+				18D4BA9D25B97725002D2BC8 /* NSDataAsset+Utils.swift */,
 				E5D7FFA8DEE633E8DD586363 /* UIBarButtonItem+Utils.swift */,
 				4F0CAB80603A17B9E35DE3E8 /* UIButton+Utils.swift */,
 				2395E3391D3DEA5F341B6941 /* UICollectionViewCell+Utils.swift */,
@@ -2050,9 +2055,10 @@
 				8209DE0325769688006D91F2 /* BadgeXIBIntegration.xib in Resources */,
 				B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */,
 				B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */,
-				B833F67225B98FAE0013FD92 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
 				B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */,
+				B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */,
+				18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2134,6 +2140,7 @@
 				C9FA3DB7E94E95A9DA5F707F /* FormView.swift in Sources */,
 				2E78A0C4CA752000D3329BC4 /* GradientView.swift in Sources */,
 				5336A071B18BBC9ABCE45530 /* HeaderView.swift in Sources */,
+				18D4BA9B25B976F2002D2BC8 /* StepperUIAssets.swift in Sources */,
 				D32EAC728C217E538048802C /* HeaderViewStyle.swift in Sources */,
 				120C102BBB0AEA7505A51F60 /* HighlightedCard.swift in Sources */,
 				1860BBBE25B03AD900319CFC /* IndeterminateStepperView.swift in Sources */,
@@ -2149,6 +2156,7 @@
 				B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */,
 				FF695537B060674584B2F14D /* IntrinsicHeightTextView.swift in Sources */,
 				FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
+				18D4BA9E25B97725002D2BC8 /* NSDataAsset+Utils.swift in Sources */,
 				43B97750F1AABDAC15224AC8 /* IntrinsictHeightLabel.swift in Sources */,
 				AF443028E947CEFC57C78C6D /* IntrinsictImageView.swift in Sources */,
 				69B7063AEE070561B5D83375 /* KeyboardInfo.swift in Sources */,

@@ -1,6 +1,6 @@
 #  Lists
 
-Lists are continous group of text whit images and/or controls. We currently provide two classes `ListView.swift` and `ListCellView.swift`. 
+Lists are continous group of text whit images and/or controls. We currently provide two classes `ListView.swift` and `ListViewCell.swift`. 
 
 Lists has two styles of cells `FullWidth` and `Boxed`
 
@@ -9,7 +9,7 @@ Lists has two styles of cells `FullWidth` and `Boxed`
 | <img src="./docs/images/lists-fullwidth.png" alt="drawing" width="300"/> |  <img src="./docs/images/lists-boxed.png" alt="drawing" width="300"/> |
 
 
-#  ListCellView
+#  ListViewCell
 
 `ListViewCell` has the following anatomy
 
@@ -38,19 +38,19 @@ listView.delegate = // set you delegate
 listView.dataSource = // set you datasource
 ```
 
-Then register the `ListCellView.swift` on you recently created `ListView`
+Then register the `ListViewCell.swift` on you recently created `ListView`
 
 ```swift
-listView.register(ListCellView.self, forCellReuseIdentifier: "ListCellView")
+listView.register(ListViewCell.self, forCellReuseIdentifier: "ListViewCell")
 ```
 
-### Configuring ListCellView
+### Configuring ListViewCell
 
-You can use `ListCellView.swift` component directly or inherit from him, a full configuration looks like
+You can use `ListViewCell.swift` component directly or inherit from him, a full configuration looks like
 
 ```swift
 public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-	let cell = listView.dequeueReusableCell(withIdentifier: "ListCellView", for: indexPath) as! ListCellView
+	let cell = listView.dequeueReusableCell(withIdentifier: "ListViewCell", for: indexPath) as! ListViewCell
 
 	cell.title = "My title"
 	cell.detailText = "My detail text"
@@ -63,11 +63,11 @@ public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
 
 #### Control Customization
 
-`ListCellView.swift` can be configured with a custom control like 
+`ListViewCell.swift` can be configured with a custom control like 
 
 ```swift
 public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-	let cell = listView.dequeueReusableCell(withIdentifier: "ListCellView", for: indexPath) as! ListCellView
+	let cell = listView.dequeueReusableCell(withIdentifier: "ListViewCell", for: indexPath) as! ListViewCell
 
 	...
 	

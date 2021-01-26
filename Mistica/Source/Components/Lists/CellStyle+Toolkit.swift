@@ -1,5 +1,5 @@
 //
-//  ListCellStyle+Toolkit.swift
+//  CellStyle+Toolkit.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -9,13 +9,7 @@
 import Foundation
 import UIKit
 
-@frozen
-public enum ListCellStyle {
-    case fullWidth
-    case boxed
-}
-
-extension ListCellStyle {
+extension ListViewCell.CellStyle {
     var cornerRadius: CGFloat {
         switch self {
         case .fullWidth:

@@ -42,7 +42,7 @@ myDataCard.dataConfiguration = myConfiguration
 
 ## Rich Media
 
-TODO
+MediaCard is used to show relevant information of sales, products, services and rich media.
 
 # Extra Content
 

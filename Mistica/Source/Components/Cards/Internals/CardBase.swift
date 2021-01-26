@@ -19,8 +19,8 @@ class CardBase: UIStackView {
             oldValue?.removeFromSuperview()
 
             if let view = fragmentView {
-                if let actionsPosition = arrangedSubviews.firstIndex(of: buttonsView) {
-                    insertArrangedSubview(view, at: actionsPosition)
+                if let buttonsViewIndex = arrangedSubviews.firstIndex(of: buttonsView) {
+                    insertArrangedSubview(view, at: buttonsViewIndex)
                 } else {
                     addArrangedSubview(view)
                 }

@@ -14,24 +14,19 @@ class SegmentView: UIView {
         static let height: CGFloat = 4
     }
 
-    private lazy var slider = UISlider(frame: bounds)
+    private lazy var backgroundView = UIView()
+    private lazy var trackView = UIView()
 
-    var value: Int {
-        set { setValue(newValue, animated: false) }
-        get { Int(slider.value) }
-    }
+    private lazy var widthConstraint = trackView.widthAnchor.constraint(equalToConstant: 0)
 
-    var minimumValue: Int = 0 {
+    var value = 0 {
         didSet {
-            slider.minimumValue = Float(minimumValue)
+            updateValueConstraint()
         }
     }
 
-    var maximumValue: Int = 1 {
-        didSet {
-            slider.maximumValue = Float(maximumValue)
-        }
-    }
+    var minimumValue = 0
+    var maximumValue = 100
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,15 +44,24 @@ class SegmentView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        makeRounded()
+        backgroundView.makeRounded(cornerRadius: Constants.height / 2)
+        trackView.makeRounded(cornerRadius: Constants.height / 2)
+        updateValueConstraint()
     }
 }
 
-// MARK: Public
+// MARK: Internal
 
 extension SegmentView {
     func setValue(_ value: Int, animated: Bool) {
-        slider.setValue(Float(value), animated: animated)
+        if animated {
+            UIView.animate(withDuration: UIView.defaultAnimationDuration) {
+                self.value = value
+                self.layoutIfNeeded()
+            }
+        } else {
+            self.value = value
+        }
     }
 }
 
@@ -65,11 +69,28 @@ extension SegmentView {
 
 private extension SegmentView {
     func commonInit() {
-        slider.backgroundColor = .clear
-        slider.minimumTrackTintColor = .controlActivated
-        slider.maximumTrackTintColor = .control
-        slider.setThumbImage(UIImage(), for: .normal)
+        backgroundColor = .clear
+        backgroundView.backgroundColor = .control
+        trackView.backgroundColor = .controlActivated
 
-        addSubview(withDefaultConstraints: slider)
+        addSubview(backgroundView, constraints: [
+            backgroundView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundView.heightAnchor.constraint(equalToConstant: Constants.height)
+        ])
+
+        backgroundView.addSubview(trackView, constraints: [
+            trackView.topAnchor.constraint(equalTo: backgroundView.topAnchor),
+            trackView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor),
+            trackView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor),
+            widthConstraint
+        ])
+    }
+
+    func updateValueConstraint() {
+        let factor = CGFloat(value) / CGFloat(maximumValue)
+        let width = backgroundView.bounds.width * factor
+        widthConstraint.constant = width
     }
 }

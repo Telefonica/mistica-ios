@@ -87,12 +87,10 @@ private extension DataCardConfiguration.AssetType {
 
     var cornerRadius: CGFloat {
         switch self {
-        case .image:
+        case .image, .none:
             return 0
         case .icon:
             return Constants.viewSize / 2
-        case .none:
-            return 0
         }
     }
 
@@ -107,12 +105,10 @@ private extension DataCardConfiguration.AssetType {
 
     var contentMode: UIView.ContentMode {
         switch self {
-        case .image:
+        case .image, .none:
             return .scaleAspectFill
         case .icon:
             return .scaleAspectFit
-        case .none:
-            return .scaleAspectFill
         }
     }
 

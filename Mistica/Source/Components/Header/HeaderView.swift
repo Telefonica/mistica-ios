@@ -213,7 +213,7 @@ public class HeaderView: UIView {
             subtitleLabel.textColor = subtitleHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
         }
     }
-
+    
     // MARK: - Inits
 
     public convenience init() {
@@ -232,6 +232,137 @@ public class HeaderView: UIView {
         setUpView()
     }
 }
+
+// MARK: - Accessibility
+
+public extension HeaderView {
+    var pretitleAccessibilityLabel: String? {
+        get {
+            pretitleLabel.accessibilityLabel
+        }
+        set {
+            pretitleLabel.accessibilityLabel = newValue
+        }
+    }
+
+    var pretitleAccessibilityIdentifier: String? {
+        get {
+            pretitleLabel.accessibilityIdentifier
+        }
+        set {
+            pretitleLabel.accessibilityIdentifier = newValue
+        }
+    }
+    
+    var titleAccessibilityLabel: String? {
+        get {
+            titleLabel.accessibilityLabel
+        }
+        set {
+            titleLabel.accessibilityLabel = newValue
+        }
+    }
+
+    var titleAccessibilityIdentifier: String? {
+        get {
+            titleLabel.accessibilityIdentifier
+        }
+        set {
+            titleLabel.accessibilityIdentifier = newValue
+        }
+    }
+    
+    var preAmountAccessibilityLabel: String? {
+        get {
+            preAmountLabel.accessibilityLabel
+        }
+        set {
+            preAmountLabel.accessibilityLabel = newValue
+        }
+    }
+
+    var preAmountAccessibilityIdentifier: String? {
+        get {
+            preAmountLabel.accessibilityIdentifier
+        }
+        set {
+            preAmountLabel.accessibilityIdentifier = newValue
+        }
+    }
+    
+    var amountAccessibilityLabel: String? {
+        get {
+            amountLabel.accessibilityLabel
+        }
+        set {
+            amountLabel.accessibilityLabel = newValue
+        }
+    }
+
+    var amountAccessibilityIdentifier: String? {
+        get {
+            amountLabel.accessibilityIdentifier
+        }
+        set {
+            amountLabel.accessibilityIdentifier = newValue
+        }
+    }
+    
+    var primaryActionAccessibilityLabel: String? {
+        get {
+            buttonsContainerView.primaryButton.accessibilityLabel
+        }
+        set {
+            buttonsContainerView.primaryButton.accessibilityLabel = newValue
+        }
+    }
+
+    var primaryActionAccessibilityIdentifier: String? {
+        get {
+            buttonsContainerView.primaryButton.accessibilityIdentifier
+        }
+        set {
+            buttonsContainerView.primaryButton.accessibilityIdentifier = newValue
+        }
+    }
+    
+    var secondaryActionAccessibilityLabel: String? {
+        get {
+            buttonsContainerView.secondaryButton.accessibilityLabel
+        }
+        set {
+            buttonsContainerView.secondaryButton.accessibilityLabel = newValue
+        }
+    }
+
+    var secondaryActionAccessibilityIdentifier: String? {
+        get {
+            buttonsContainerView.secondaryButton.accessibilityIdentifier
+        }
+        set {
+            buttonsContainerView.secondaryButton.accessibilityIdentifier = newValue
+        }
+    }
+    
+    var subtitleAccessibilityLabel: String? {
+        get {
+            subtitleLabel.accessibilityLabel
+        }
+        set {
+            subtitleLabel.accessibilityLabel = newValue
+        }
+    }
+
+    var subtitleAccessibilityIdentifier: String? {
+        get {
+            subtitleLabel.accessibilityIdentifier
+        }
+        set {
+            subtitleLabel.accessibilityIdentifier = newValue
+        }
+    }
+}
+
 
 // MARK: - Private
 

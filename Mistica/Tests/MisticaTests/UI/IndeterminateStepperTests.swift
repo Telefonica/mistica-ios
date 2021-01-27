@@ -3,7 +3,7 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Mistica
@@ -32,26 +32,6 @@ final class IndeterminateStepperTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         let stepper = makeTemplateWithStepperState(value: 0)
-
-        assertSnapshot(
-            matching: stepper,
-            as: .image,
-            named: "assertInitialState"
-        )
-
-        stepper.value = 1
-
-        assertSnapshot(
-            matching: stepper,
-            as: .image,
-            named: "finalState"
-        )
-    }
-
-    func testIndeterminateStepperNumberOfStepsChanges() {
-        MisticaConfig.brandStyle = .movistar
-
-        let stepper = makeTemplateWithStepperState()
 
         assertSnapshot(
             matching: stepper,

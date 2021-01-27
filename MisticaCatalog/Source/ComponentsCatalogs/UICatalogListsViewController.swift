@@ -3,7 +3,7 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation
@@ -258,7 +258,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
         cell.detailText = detailText
         cell.assetType = assetType
         cell.subtitle = subtitle
-        cell.listCellStyle = cellLayoutStyle
+        cell.cellStyle = cellLayoutStyle
 
         if showHeadline {
             cell.headlineView = TagView(text: "HEADLINE")

@@ -12,7 +12,7 @@
 --maxwidth none
 --wraparguments before-first
 --wrapcollections before-first
---header "\n {file}\n\n Made with ❤️ by Novum\n\n Copyright © 2020 Telefonica. All rights reserved.\n "
+--header "\n {file}\n\n Made with ❤️ by Novum\n\n Copyright © Telefonica. All rights reserved.\n "
 
 # rules
 

@@ -213,7 +213,7 @@ public class HeaderView: UIView {
             subtitleLabel.textColor = subtitleHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
         }
     }
-    
+
     // MARK: - Inits
 
     public convenience init() {
@@ -253,7 +253,7 @@ public extension HeaderView {
             pretitleLabel.accessibilityIdentifier = newValue
         }
     }
-    
+
     var titleAccessibilityLabel: String? {
         get {
             titleLabel.accessibilityLabel
@@ -271,7 +271,7 @@ public extension HeaderView {
             titleLabel.accessibilityIdentifier = newValue
         }
     }
-    
+
     var preAmountAccessibilityLabel: String? {
         get {
             preAmountLabel.accessibilityLabel
@@ -289,7 +289,7 @@ public extension HeaderView {
             preAmountLabel.accessibilityIdentifier = newValue
         }
     }
-    
+
     var amountAccessibilityLabel: String? {
         get {
             amountLabel.accessibilityLabel
@@ -307,7 +307,7 @@ public extension HeaderView {
             amountLabel.accessibilityIdentifier = newValue
         }
     }
-    
+
     var primaryActionAccessibilityLabel: String? {
         get {
             buttonsContainerView.primaryButton.accessibilityLabel
@@ -325,7 +325,7 @@ public extension HeaderView {
             buttonsContainerView.primaryButton.accessibilityIdentifier = newValue
         }
     }
-    
+
     var secondaryActionAccessibilityLabel: String? {
         get {
             buttonsContainerView.secondaryButton.accessibilityLabel
@@ -343,7 +343,7 @@ public extension HeaderView {
             buttonsContainerView.secondaryButton.accessibilityIdentifier = newValue
         }
     }
-    
+
     var subtitleAccessibilityLabel: String? {
         get {
             subtitleLabel.accessibilityLabel
@@ -362,7 +362,6 @@ public extension HeaderView {
         }
     }
 }
-
 
 // MARK: - Private
 

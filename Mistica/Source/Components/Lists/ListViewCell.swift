@@ -256,7 +256,7 @@ public extension ListViewCell {
             centerSection.subtitleLabel.accessibilityLabel = newValue
         }
     }
-    
+
     var subtitleAccessibilityIdentifier: String? {
         get {
             centerSection.subtitleLabel.accessibilityIdentifier
@@ -265,7 +265,7 @@ public extension ListViewCell {
             centerSection.subtitleLabel.accessibilityIdentifier = newValue
         }
     }
-    
+
     var detailAccessibilityLabel: String? {
         get {
             centerSection.detailLabel.accessibilityLabel
@@ -274,7 +274,7 @@ public extension ListViewCell {
             centerSection.detailLabel.accessibilityLabel = newValue
         }
     }
-    
+
     var detailAccessibilityIdentifier: String? {
         get {
             centerSection.detailLabel.accessibilityIdentifier

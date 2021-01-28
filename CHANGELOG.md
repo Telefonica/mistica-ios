@@ -1,3 +1,11 @@
+## [8.0.1](https://github.com/Telefonica/mistica-ios/compare/v8.0.0...v8.0.1) (2021-01-28)
+
+
+### Bug Fixes
+
+* **HeaderView:** add support for setting custom accessibility IDs and labels ([#71](https://github.com/Telefonica/mistica-ios/issues/71)) ([97a98cd](https://github.com/Telefonica/mistica-ios/commit/97a98cd342e2a19069ca6afbe6ed07358f68ec22))
+* **ListViewCell:** Add missing accessibility identifiers in ListViewCell ([#70](https://github.com/Telefonica/mistica-ios/issues/70)) ([33e1c8c](https://github.com/Telefonica/mistica-ios/commit/33e1c8cf66b5107eff24507d5a86aaf10cf16f27))
+
 # [8.0.0](https://github.com/Telefonica/mistica-ios/compare/v7.1.0...v8.0.0) (2021-01-26)
 
 

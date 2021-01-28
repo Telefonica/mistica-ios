@@ -1,5 +1,5 @@
 //
-//  FormsTests.swift
+//  FormTests.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -16,22 +16,22 @@ final class FormsTests: XCTestCase {
         static let buttonTitle = "Save"
         static let footerTitle = "Footer view"
     }
-    
+
     override func setUp() {
         super.setUp()
 
         isRecording = false
     }
-    
+
     // MARK: - Simple view
-    
+
     func testHeaderAndButtonEnabledAndFooter() {
         let formViewDelegate = FormViewDelegateMock { _ in
-            return true
+            true
         } formViewDidTapButtonMock: { _, _ in
             // to do nothing
         }
-                
+
         assertSnapshotForAllBrands(
             as: .image(on: .iPhoneSe),
             viewBuilder: FormTestsViewController(
@@ -46,7 +46,7 @@ final class FormsTests: XCTestCase {
     
     func testHeaderAndButtonDisabledAndFooter() {
         let formViewDelegate = FormViewDelegateMock { _ in
-            return false
+            false
         } formViewDidTapButtonMock: { _, _ in
             // to do nothing
         }
@@ -237,13 +237,13 @@ final class FormsTests: XCTestCase {
     }
 
     // MARK: XIB integration
-    
+
     func testXIBIntegration() {
         MisticaConfig.brandStyle = .o2
-        
+
         let view = FormXIBIntegration.viewFromNib()
-        guard let formView = view.formView else { fatalError("The view IBOutlet was not setup")}
-        
+        guard let formView = view.formView else { fatalError("The view IBOutlet was not setup") }
+
         formView.addHeaderView(makeLabel(withText: Constants.headerTitle))
         formView.addInputFields([
             makeInputField(),
@@ -265,16 +265,16 @@ final class FormsTests: XCTestCase {
 class FormViewDelegateMock: FormViewDelegate {
     var formViewButtonShouldBeEnabledMock: (FormView) -> Bool
     var formViewDidTapButtonMock: (FormView, Bool) -> Void
-    
-    init(formViewButtonShouldBeEnabledMock: @escaping(FormView) -> Bool, formViewDidTapButtonMock: @escaping (FormView, Bool) -> Void) {
+
+    init(formViewButtonShouldBeEnabledMock: @escaping (FormView) -> Bool, formViewDidTapButtonMock: @escaping (FormView, Bool) -> Void) {
         self.formViewButtonShouldBeEnabledMock = formViewButtonShouldBeEnabledMock
         self.formViewDidTapButtonMock = formViewDidTapButtonMock
     }
-    
+
     func formViewButtonShouldBeEnabled(_ formView: FormView) -> Bool {
         formViewButtonShouldBeEnabledMock(formView)
     }
-    
+
     func formViewDidTapButton(_ formView: FormView, isValid: Bool) {
         formViewDidTapButtonMock(formView, isValid)
     }
@@ -295,7 +295,7 @@ private extension FormsTests {
         
         return formView
     }
-    
+
     func makeLabel(withText text: String) -> UIView {
         let label = UILabel()
         label.text = text
@@ -368,12 +368,12 @@ private extension FormsTests {
 
 private class FormTestsViewController: UIViewController {
     private let formView: FormView
-    
+
     init(formView: FormView) {
         self.formView = formView
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

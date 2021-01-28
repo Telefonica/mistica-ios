@@ -248,6 +248,42 @@ public extension ListViewCell {
         }
     }
 
+    var subtitleAccessibilityLabel: String? {
+        get {
+            centerSection.subtitleLabel.accessibilityLabel
+        }
+        set {
+            centerSection.subtitleLabel.accessibilityLabel = newValue
+        }
+    }
+
+    var subtitleAccessibilityIdentifier: String? {
+        get {
+            centerSection.subtitleLabel.accessibilityIdentifier
+        }
+        set {
+            centerSection.subtitleLabel.accessibilityIdentifier = newValue
+        }
+    }
+
+    var detailAccessibilityLabel: String? {
+        get {
+            centerSection.detailLabel.accessibilityLabel
+        }
+        set {
+            centerSection.detailLabel.accessibilityLabel = newValue
+        }
+    }
+
+    var detailAccessibilityIdentifier: String? {
+        get {
+            centerSection.detailLabel.accessibilityIdentifier
+        }
+        set {
+            centerSection.detailLabel.accessibilityIdentifier = newValue
+        }
+    }
+
     var assetAccessibilityLabel: String? {
         get {
             leftSection.accessibilityLabel

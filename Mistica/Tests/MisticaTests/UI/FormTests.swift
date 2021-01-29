@@ -43,7 +43,7 @@ final class FormsTests: XCTestCase {
                 ))
         )
     }
-    
+
     func testHeaderAndButtonDisabledAndFooter() {
         let formViewDelegate = FormViewDelegateMock { _ in
             false
@@ -63,9 +63,9 @@ final class FormsTests: XCTestCase {
             )
         )
     }
-    
+
     // MARK: - Layout
-    
+
     func testOnlyOneInputField() {
         MisticaConfig.brandStyle = .movistar
 
@@ -82,12 +82,12 @@ final class FormsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     // MARK: - Behaviour
-    
+
     func testAddInputField() {
         MisticaConfig.brandStyle = .o2
-        
+
         let formView = makeFormView(
             inputFields: [
                 makeInputField()
@@ -95,7 +95,7 @@ final class FormsTests: XCTestCase {
             buttonTitle: Constants.buttonTitle
         )
         let formTestsViewController = FormTestsViewController(formView: formView)
-        
+
         assertSnapshot(
             matching: formTestsViewController,
             as: .image(on: .iPhoneSe),
@@ -110,7 +110,7 @@ final class FormsTests: XCTestCase {
             named: "finalState"
         )
     }
-    
+
     func testRemoveInputField() {
         MisticaConfig.brandStyle = .o2
 
@@ -124,7 +124,7 @@ final class FormsTests: XCTestCase {
             buttonTitle: Constants.buttonTitle
         )
         let formTestsViewController = FormTestsViewController(formView: formView)
-        
+
         assertSnapshot(
             matching: formTestsViewController,
             as: .image(on: .iPhoneSe),
@@ -139,12 +139,12 @@ final class FormsTests: XCTestCase {
             named: "finalState"
         )
     }
-    
+
     // MARK: - Validation
-    
+
     func testInputFieldMandatoryValidationShowWarning() {
         MisticaConfig.brandStyle = .o2
-        
+
         let formView = makeFormView(
             inputFields: [
                 makeInputField(),
@@ -157,7 +157,7 @@ final class FormsTests: XCTestCase {
             buttonTitle: Constants.buttonTitle
         )
         let formTestsViewController = FormTestsViewController(formView: formView)
-        
+
         assertSnapshot(
             matching: formTestsViewController,
             as: .image(on: .iPhoneSe),
@@ -175,7 +175,7 @@ final class FormsTests: XCTestCase {
 
     func testInputFieldIsOptionalValidationDoesNotShowWarning() {
         MisticaConfig.brandStyle = .o2
-        
+
         let formView = makeFormView(
             inputFields: [
                 makeInputField(isOptional: true),
@@ -189,7 +189,7 @@ final class FormsTests: XCTestCase {
             buttonTitle: Constants.buttonTitle
         )
         let formTestsViewController = FormTestsViewController(formView: formView)
-        
+
         assertSnapshot(
             matching: formTestsViewController,
             as: .image(on: .iPhoneSe),
@@ -204,10 +204,10 @@ final class FormsTests: XCTestCase {
             named: "finalState"
         )
     }
-    
+
     func testInputFieldMandatoryAndFillInValidationDoesNotShowWarning() {
         MisticaConfig.brandStyle = .o2
-        
+
         let formView = makeFormView(
             inputFields: [
                 makeInputField(text: "user name"),
@@ -220,7 +220,7 @@ final class FormsTests: XCTestCase {
             buttonTitle: Constants.buttonTitle
         )
         let formTestsViewController = FormTestsViewController(formView: formView)
-        
+
         assertSnapshot(
             matching: formTestsViewController,
             as: .image(on: .iPhoneSe),
@@ -255,7 +255,7 @@ final class FormsTests: XCTestCase {
         ])
         formView.button.title = Constants.buttonTitle
         formView.addFooterView(makeLabel(withText: Constants.footerTitle))
-        
+
         assertSnapshot(matching: view.asRootOfViewController(), as: .image(on: .iPhoneSe))
     }
 }
@@ -292,7 +292,7 @@ private extension FormsTests {
         if let footer = footer {
             formView.addFooterView(footer)
         }
-        
+
         return formView
     }
 
@@ -301,7 +301,7 @@ private extension FormsTests {
         label.text = text
         return label
     }
-        
+
     func makeInputField(withStyle style: InputField.Style = .default,
                         placeholderText: String? = "Text",
                         text: String = "",
@@ -314,54 +314,64 @@ private extension FormsTests {
         inputField.validationStrategy = validationStrategy
         return inputField
     }
-    
+
     func makeInputFieldWithEmailStyle(text: String = "", isOptional: Bool = false) -> InputField {
-        makeInputField(withStyle: .email,
-                       placeholderText: "Email",
-                       text: text,
-                       isOptional: true,
-                       validationStrategy: isOptional ? nil : EmailInputFieldValidationStrategy(failureMessage: "Hmm, looks like the email is written incorrectly"))
+        makeInputField(
+            withStyle: .email,
+            placeholderText: "Email",
+            text: text,
+            isOptional: true,
+            validationStrategy: isOptional ? nil : EmailInputFieldValidationStrategy(failureMessage: "Hmm, looks like the email is written incorrectly")
+        )
     }
 
     func makeInputFieldWithPasswordStyle(text: String = "", isOptional: Bool = false) -> InputField {
-        makeInputField(withStyle: .password,
-                       placeholderText: "Password",
-                       text: text,
-                       isOptional: isOptional,
-                       validationStrategy: isOptional ? nil : PasswordInputFieldValidationStrategy(failureMessage: "Oops! That's too short. It has to have at lest 8 characters"))
+        makeInputField(
+            withStyle: .password,
+            placeholderText: "Password",
+            text: text,
+            isOptional: isOptional,
+            validationStrategy: isOptional ? nil : PasswordInputFieldValidationStrategy(failureMessage: "Oops! That's too short. It has to have at lest 8 characters")
+        )
     }
 
     func makeInputFieldWithPhoneNumberStyle(text: String = "", isOptional: Bool = false) -> InputField {
-        makeInputField(withStyle: .phoneNumber,
-                       placeholderText: "Phone",
-                       text: text,
-                       isOptional: isOptional,
-                       validationStrategy: isOptional ? nil : PhoneNumberInputFieldValidationStrategy(failureMessage: "Hmm, looks like the phone is written incorrectly."))
+        makeInputField(
+            withStyle: .phoneNumber,
+            placeholderText: "Phone",
+            text: text,
+            isOptional: isOptional,
+            validationStrategy: isOptional ? nil : PhoneNumberInputFieldValidationStrategy(failureMessage: "Hmm, looks like the phone is written incorrectly.")
+        )
     }
-    
+
     func makeInputFieldWithDropdownStyle(text: String = "", isOptional: Bool = false) -> InputField {
-        makeInputField(withStyle: .dropdown,
-                       placeholderText: "dropdown",
-                       text: text,
-                       isOptional: isOptional)
+        makeInputField(
+            withStyle: .dropdown,
+            placeholderText: "dropdown",
+            text: text,
+            isOptional: isOptional
+        )
     }
 
     func makeInputFieldWithMultilineStyle(text: String = "", isOptional: Bool = false) -> InputField {
-        makeInputField(withStyle: .multiline,
-                       placeholderText: "multiline",
-                       text: text,
-                       isOptional: isOptional)
+        makeInputField(
+            withStyle: .multiline,
+            placeholderText: "multiline",
+            text: text,
+            isOptional: isOptional
+        )
     }
-    
+
     func makeStackView(arrangedSubviews views: [UIView]) -> UIStackView {
         let vStack = UIStackView(arrangedSubviews: views)
-        
+
         vStack.axis = .vertical
         vStack.alignment = .center
         vStack.spacing = 0
         let size = vStack.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         vStack.frame = CGRect(origin: .zero, size: size)
-        
+
         return vStack
     }
 }

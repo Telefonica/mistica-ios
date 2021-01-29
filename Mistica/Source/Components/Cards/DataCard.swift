@@ -181,7 +181,7 @@ private extension DataCard {
         cardBaseView.contentView.descriptionLabel.numberOfLines = 0
         cardBaseView.contentView.descriptionLabel.topSpacing = 8
 
-        addBorder()
+        addBorder(borderColor: .border)
     }
 
     func configure(with configuration: DataCardConfiguration) {

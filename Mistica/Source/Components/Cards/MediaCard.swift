@@ -134,20 +134,29 @@ private extension MediaCard {
     func styleViews() {
         backgroundColor = .background
 
+        baseCardView.contentView.headlineTopSpacing = 8
+
         baseCardView.contentView.titleLabel.font = .textPreset8(weight: .regular)
         baseCardView.contentView.titleLabel.textColor = .textPrimary
         baseCardView.contentView.titleLabel.minHeight = 16
         baseCardView.contentView.titleLabel.numberOfLines = 0
+        baseCardView.contentView.titleTopSpacing = 8
 
         baseCardView.contentView.subtitleLabel.font = .textPreset5(weight: .light)
         baseCardView.contentView.subtitleLabel.textColor = .textPrimary
         baseCardView.contentView.subtitleLabel.minHeight = 24
         baseCardView.contentView.subtitleLabel.numberOfLines = 0
+        baseCardView.contentView.subtitleTopSpacing = 4
 
         baseCardView.contentView.descriptionLabel.font = .textPreset7(weight: .regular)
         baseCardView.contentView.descriptionLabel.textColor = .textSecondary
         baseCardView.contentView.descriptionLabel.minHeight = 20
         baseCardView.contentView.descriptionLabel.numberOfLines = 0
+        baseCardView.contentView.descriptionTitleTopSpacing = 8
+
+        richMediaContainerView.clipsToBounds = true
+
+        addBorder()
     }
 
     func configure(with configuration: MediaCardConfiguration) {

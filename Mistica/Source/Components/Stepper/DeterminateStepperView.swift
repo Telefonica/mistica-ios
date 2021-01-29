@@ -3,7 +3,7 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation
@@ -166,13 +166,20 @@ private extension DeterminateStepperView {
         arrangedSubviews.forEach(stackView.addArrangedSubview)
 
         activateSegmentsWidthConstraints()
+
+        // Make the update on the stackview non animated.
+        // It will avoid weird animations (only) while adding or removing steps.
+        UIView.performWithoutAnimation {
+            stackView.setNeedsLayout()
+            stackView.layoutIfNeeded()
+        }
     }
 
     func activateSegmentsWidthConstraints() {
         guard let firstSegment = segmentViews.first else { return }
 
         for segment in segmentViews where firstSegment != segment {
-            segment.widthAnchor.constraint(equalTo: firstSegment.widthAnchor).isActive.toggle()
+            segment.widthAnchor.constraint(equalTo: firstSegment.widthAnchor).isActive = true
         }
     }
 }

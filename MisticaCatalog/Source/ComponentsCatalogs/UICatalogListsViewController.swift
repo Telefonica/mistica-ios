@@ -3,7 +3,7 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation
@@ -155,7 +155,7 @@ extension UICatalogListsViewController {
 
         switch assetStyleCell.segmentedControl.selectedSegmentIndex {
         case 0:
-            sampleVC.assetType = ListCellView.CellAssetType.none
+            sampleVC.assetType = ListViewCell.CellAssetType.none
         case 1:
             sampleVC.assetType = .largeIcon(.imageIcon, backgroundColor: .iconDisabled)
         case 2:
@@ -223,9 +223,9 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
     var detailText: String?
     var subtitle: String?
     var showHeadline: Bool = false
-    var assetType: ListCellView.CellAssetType!
+    var assetType: ListViewCell.CellAssetType!
     var customControl = CustomControl.none
-    var cellLayoutStyle: ListCellStyle!
+    var cellLayoutStyle: ListViewCell.CellStyle!
 
     let numberOfRows = 30
 
@@ -243,7 +243,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
 
         navigationItem.largeTitleDisplayMode = .never
         listView.dataSource = self
-        ListCellView.register(on: listView)
+        ListViewCell.register(on: listView)
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
@@ -251,14 +251,14 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ListCellView.dequeueReusableCell(for: indexPath, from: tableView)
+        let cell = ListViewCell.dequeueReusableCell(for: indexPath, from: tableView)
 
         cell.title = text
         cell.subtitle = subtitle
         cell.detailText = detailText
         cell.assetType = assetType
         cell.subtitle = subtitle
-        cell.listCellStyle = cellLayoutStyle
+        cell.cellStyle = cellLayoutStyle
 
         if showHeadline {
             cell.headlineView = TagView(text: "HEADLINE")

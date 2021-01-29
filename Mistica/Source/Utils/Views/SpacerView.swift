@@ -3,14 +3,19 @@
 //
 //  Made with ❤️ by Novum
 //
-//  Copyright © 2020 Telefonica. All rights reserved.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import UIKit
 
 final class SpacerView: UIView {
     private let axis: NSLayoutConstraint.Axis
-    private let amount: CGFloat
+
+    var amount: CGFloat {
+        didSet {
+            invalidateIntrinsicContentSize()
+        }
+    }
 
     init(axis: NSLayoutConstraint.Axis, amount: CGFloat) {
         self.axis = axis

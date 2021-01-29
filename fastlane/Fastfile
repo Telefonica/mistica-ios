@@ -104,6 +104,11 @@ platform :ios do
     end
   end
 
+  desc "Run SwiftFormat"
+  lane :run_swiftformat do
+    sh("#{ROOT_PROJECT_PATH}/scripts/swiftFormat #{ROOT_PROJECT_PATH}")
+  end
+
 end
 
 ##############################################################

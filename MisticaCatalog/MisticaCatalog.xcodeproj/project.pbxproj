@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */; };
 		B85CCA6725B861BC00B76426 /* UICatalogMediaCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */; };
 		B85CCA6A25B868D900B76426 /* UICatalogDataCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */; };
-		18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */; };
+		B8D04F6625C4237A00C55FA1 /* UICatalogCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D04F6525C4237A00C55FA1 /* UICatalogCardsViewController.swift */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F9902D2546C98700DFBFE9 /* CatalogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990002546C98600DFBFE9 /* CatalogList.swift */; };
 		B8F9902E2546C98700DFBFE9 /* CatalogHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990012546C98600DFBFE9 /* CatalogHeader.swift */; };
@@ -53,9 +54,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogStepperViewController.swift; sourceTree = "<group>"; };
 		B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogMediaCardViewController.swift; sourceTree = "<group>"; };
 		B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogDataCardViewController.swift; sourceTree = "<group>"; };
-		18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogStepperViewController.swift; sourceTree = "<group>"; };
+		B8D04F6525C4237A00C55FA1 /* UICatalogCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogCardsViewController.swift; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				B8F990282546C98600DFBFE9 /* UICatalogBadgeViewController.swift */,
 				B8F990292546C98600DFBFE9 /* UICatalogHeaderViewController.swift */,
 				18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */,
+				B8D04F6525C4237A00C55FA1 /* UICatalogCardsViewController.swift */,
 			);
 			path = ComponentsCatalogs;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				B8F9903E2546C98700DFBFE9 /* MisticaCatalogApp.swift in Sources */,
 				B8F990532546C98700DFBFE9 /* ContentView.swift in Sources */,
 				B8F990442546C98700DFBFE9 /* UICatalogFormViewController.swift in Sources */,
+				B8D04F6625C4237A00C55FA1 /* UICatalogCardsViewController.swift in Sources */,
 				B8F9903C2546C98700DFBFE9 /* UISegmentedControlTableViewCell.swift in Sources */,
 				B8F990402546C98700DFBFE9 /* UICatalogFeedbacksViewController.swift in Sources */,
 				B8F9904A2546C98700DFBFE9 /* UICatalogRadioButtonViewController.swift in Sources */,

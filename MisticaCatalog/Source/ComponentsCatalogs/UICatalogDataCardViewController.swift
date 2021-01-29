@@ -69,7 +69,7 @@ class UICatalogDataCardViewController: UIViewController {
 
         cell.segmentedControl.insertSegment(withTitle: "Link", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Primary", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Primary & Link", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Both", at: 2, animated: false)
         cell.segmentedControl.selectedSegmentIndex = 0
 
         return cell
@@ -196,15 +196,15 @@ private class DataCardViewSampleViewController: UIViewController {
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .background
+        view.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
 
         view.addSubview(card, constraints: [
             card.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
-            card.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            card.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24)
+            card.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            card.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
         ])
 
         self.view = view
-        self.view.backgroundColor = .darkGray
     }
 
     override func viewDidLoad() {

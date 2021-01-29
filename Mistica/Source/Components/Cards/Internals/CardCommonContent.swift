@@ -93,7 +93,7 @@ extension CardCommonContent {
             }
         }
     }
-    
+
     var headlineTopSpacing: CGFloat {
         get {
             headlineTagView.topSpacing
@@ -102,7 +102,7 @@ extension CardCommonContent {
             headlineTagView.topSpacing = newValue
         }
     }
-    
+
     var titleTopSpacing: CGFloat {
         get {
             titleLabel.topSpacing
@@ -111,7 +111,7 @@ extension CardCommonContent {
             titleLabel.topSpacing = newValue
         }
     }
-    
+
     var subtitleTopSpacing: CGFloat {
         get {
             subtitleLabel.topSpacing
@@ -120,7 +120,7 @@ extension CardCommonContent {
             subtitleLabel.topSpacing = newValue
         }
     }
-    
+
     var descriptionTitleTopSpacing: CGFloat {
         get {
             descriptionLabel.topSpacing

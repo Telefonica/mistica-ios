@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  MisticaCatalog
+//  UICatalogCardsViewController.swift
 //
-//  Created by Jose Miguel Brocal on 29/1/21.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Mistica
@@ -33,7 +34,7 @@ public class UICatalogCardsViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         title = "Cards"
-        
+
         setUp()
         styleViews()
     }

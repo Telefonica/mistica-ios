@@ -135,7 +135,7 @@ private extension MediaCard {
         backgroundColor = .background
 
         baseCardView.contentView.headlineTopSpacing = 8
-        
+
         baseCardView.contentView.titleLabel.font = .textPreset8(weight: .regular)
         baseCardView.contentView.titleLabel.textColor = .textPrimary
         baseCardView.contentView.titleLabel.minHeight = 16
@@ -153,9 +153,9 @@ private extension MediaCard {
         baseCardView.contentView.descriptionLabel.minHeight = 20
         baseCardView.contentView.descriptionLabel.numberOfLines = 0
         baseCardView.contentView.descriptionTitleTopSpacing = 8
-        
+
         richMediaContainerView.clipsToBounds = true
-        
+
         addBorder(borderColor: .border)
     }
 

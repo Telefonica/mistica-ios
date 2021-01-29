@@ -175,6 +175,8 @@ private extension DataCard {
         cardBaseView.contentView.descriptionLabel.textColor = .textSecondary
         cardBaseView.contentView.descriptionLabel.minHeight = 20
         cardBaseView.contentView.descriptionLabel.numberOfLines = 0
+
+        addBorder()
     }
 
     func configure(with configuration: DataCardConfiguration) {

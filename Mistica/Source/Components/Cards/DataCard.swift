@@ -161,20 +161,25 @@ private extension DataCard {
     func styleViews() {
         backgroundColor = .background
 
+        cardBaseView.contentView.headlineTopSpacing = 8
+
         cardBaseView.contentView.titleLabel.font = .textPreset5(weight: .light)
         cardBaseView.contentView.titleLabel.textColor = .textPrimary
         cardBaseView.contentView.titleLabel.minHeight = 24
         cardBaseView.contentView.titleLabel.numberOfLines = 0
+        cardBaseView.contentView.titleLabel.topSpacing = 4
 
         cardBaseView.contentView.subtitleLabel.font = .textPreset7(weight: .regular)
         cardBaseView.contentView.subtitleLabel.textColor = .textPrimary
         cardBaseView.contentView.subtitleLabel.minHeight = 20
         cardBaseView.contentView.subtitleLabel.numberOfLines = 0
+        cardBaseView.contentView.subtitleLabel.topSpacing = 4
 
         cardBaseView.contentView.descriptionLabel.font = .textPreset7(weight: .regular)
         cardBaseView.contentView.descriptionLabel.textColor = .textSecondary
         cardBaseView.contentView.descriptionLabel.minHeight = 20
         cardBaseView.contentView.descriptionLabel.numberOfLines = 0
+        cardBaseView.contentView.descriptionLabel.topSpacing = 8
 
         addBorder()
     }

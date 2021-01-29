@@ -93,6 +93,42 @@ extension CardCommonContent {
             }
         }
     }
+    
+    var headlineTopSpacing: CGFloat {
+        get {
+            headlineTagView.topSpacing
+        }
+        set {
+            headlineTagView.topSpacing = newValue
+        }
+    }
+    
+    var titleTopSpacing: CGFloat {
+        get {
+            titleLabel.topSpacing
+        }
+        set {
+            titleLabel.topSpacing = newValue
+        }
+    }
+    
+    var subtitleTopSpacing: CGFloat {
+        get {
+            subtitleLabel.topSpacing
+        }
+        set {
+            subtitleLabel.topSpacing = newValue
+        }
+    }
+    
+    var descriptionTitleTopSpacing: CGFloat {
+        get {
+            descriptionLabel.topSpacing
+        }
+        set {
+            descriptionLabel.topSpacing = newValue
+        }
+    }
 }
 
 // MARK: Private

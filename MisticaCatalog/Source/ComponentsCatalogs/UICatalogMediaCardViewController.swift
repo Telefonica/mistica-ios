@@ -66,9 +66,10 @@ class UICatalogMediaCardViewController: UIViewController {
     private lazy var buttonsCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "ActionButtonStyleCell")
 
-        cell.segmentedControl.insertSegment(withTitle: "Link", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Primary", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Primary & Link", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "None", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Link", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Primary", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Both", at: 3, animated: false)
         cell.segmentedControl.selectedSegmentIndex = 0
 
         return cell
@@ -148,12 +149,12 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
         let richMedia: UIView
 
         if richMediaCell.segmentedControl.selectedSegmentIndex == 0 {
-            richMedia = UIImageView(image: .misticaLogo)
-            richMedia.heightAnchor.constraint(equalToConstant: 120).isActive = true
-            richMedia.contentMode = .scaleAspectFit
+            richMedia = UIImageView(image: .avengersMovieLogo)
+            richMedia.heightAnchor.constraint(equalToConstant: 150).isActive = true
+            richMedia.contentMode = .scaleAspectFill
         } else {
             let containerView = UIView()
-            containerView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            containerView.heightAnchor.constraint(equalToConstant: 150).isActive = true
             containerView.backgroundColor = .gray
 
             let label = UILabel()
@@ -170,11 +171,14 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
         switch buttonsCell.segmentedControl.selectedSegmentIndex {
         case 0:
             button = nil
-            linkButton = CardLinkButton(title: "Link", tapHandler: nil)
+            linkButton = nil
         case 1:
+            button = nil
+            linkButton = CardLinkButton(title: "Link", tapHandler: nil)
+        case 2:
             button = CardButton(title: "Button", loadingTitle: "Loading", tapHandler: nil)
             linkButton = nil
-        case 2:
+        case 3:
             button = CardButton(title: "Button", loadingTitle: "Loading", tapHandler: nil)
             linkButton = CardLinkButton(title: "Link", tapHandler: nil)
         default:
@@ -203,15 +207,15 @@ private class MediaCardViewSampleViewController: UIViewController {
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .background
+        view.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
 
         view.addSubview(card, constraints: [
             card.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
-            card.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            card.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24)
+            card.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            card.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
         ])
 
         self.view = view
-        self.view.backgroundColor = .darkGray
     }
 
     override func viewDidLoad() {

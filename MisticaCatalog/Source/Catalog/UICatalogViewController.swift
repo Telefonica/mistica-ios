@@ -12,18 +12,16 @@ import UIKit
 private enum UICatalogRow: Int, CaseIterable {
     case badge
     case buttons
+    case cards
     case checkbox
     case controls
     case crouton
-    case dataCard
     case feedbacks
     case fonts
     case forms
     case header
-    case highlightedCard
     case inputFields
     case lists
-    case mediaCard
     case radioButton
     case scrollContentIndicator
     case sectionTitle
@@ -173,14 +171,10 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogHeaderViewController(), sender: self)
         case .controls:
             show(UICatalogControlsViewController(), sender: self)
-        case .highlightedCard:
-            show(UICatalogHighlightedCardViewController(), sender: self)
+        case .cards:
+            show(UICatalogCardsViewController(), sender: self)
         case .checkbox:
             show(UICatalogCheckboxViewController(), sender: self)
-        case .mediaCard:
-            show(UICatalogMediaCardViewController(), sender: self)
-        case .dataCard:
-            show(UICatalogDataCardViewController(), sender: self)
         case .stepper:
             show(UICatalogStepperViewController(), sender: self)
         }
@@ -275,12 +269,8 @@ private extension UICatalogRow {
             return "Headers"
         case .controls:
             return "Controls"
-        case .highlightedCard:
-            return "HighlightedCard"
-        case .mediaCard:
-            return "MediaCard"
-        case .dataCard:
-            return "DataCard"
+        case .cards:
+            return "Cards"
         case .stepper:
             return "Stepper"
         }
@@ -324,7 +314,7 @@ private extension UICatalogRow {
             return .headerIcon
         case .controls:
             return .controlsIcon
-        case .highlightedCard, .mediaCard, .dataCard:
+        case .cards:
             return .cardIcon
         case .stepper:
             return .stepperIcon

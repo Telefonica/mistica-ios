@@ -156,7 +156,7 @@ private extension MediaCard {
 
         richMediaContainerView.clipsToBounds = true
 
-        addBorder()
+        addBorder(borderColor: .border)
     }
 
     func configure(with configuration: MediaCardConfiguration) {

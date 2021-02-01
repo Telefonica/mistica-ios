@@ -374,7 +374,7 @@ private extension HighlightedCard {
         closeButton.clipsToBounds = true
         closeButton.isHidden = true
 
-        addBorder(borderColor: .border)
+        addBorder(color: .border)
         makeRounded(cornerRadius: Constants.cornerRadius)
     }
 

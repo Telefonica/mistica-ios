@@ -117,7 +117,7 @@ extension StepView {
             label.textColor = .borderDark
             animatedView.alpha = 0
             circularView.alpha = 1
-            circularView.addBorder(borderColor: .borderDark)
+            circularView.addBorder(color: .borderDark)
             circularView.backgroundColor = .clear
             accessibilityTraits = []
         }

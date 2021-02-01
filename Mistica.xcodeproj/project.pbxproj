@@ -108,7 +108,6 @@
 		B4C66DD7256EB8A50087E4B5 /* FeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */; };
 		B4C99EA94307852447D672A1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE9079D1C9C80AD4FB45F3 /* ListView.swift */; };
 		B805C38E65D802F520DB0931 /* LoadErrorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CAF7C86C74F12CE2700B8 /* LoadErrorViewControllerDelegate.swift */; };
-		B833F67225B98FAE0013FD92 /* DeterminateStepperXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1860BBC625B03B7100319CFC /* DeterminateStepperXIBIntegration.xib */; };
 		B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B857851D25B2228700E76B4C /* DataCardXIBIntegration.xib */; };
 		B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857852025B2229000E76B4C /* DataCardXIBIntegration.swift */; };
 		B857852925B223DF00E76B4C /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857852525B223DC00E76B4C /* UIImage+Utils.swift */; };
@@ -322,6 +321,7 @@
 		899E67590D803757F4002E1F /* min-max-size.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "min-max-size.gif"; sourceTree = "<group>"; };
 		9058FF7F30809B474D27B6CE /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		90594A7825C15B980021142B /* InputFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldTests.swift; sourceTree = "<group>"; };
+		908C0EB625C8301400D1687A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90B0FC7CFADA89D838495A21 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = "<group>"; };
 		90C0D32D83E30260E11717BF /* CustomCroutonContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCroutonContainer.swift; sourceTree = "<group>"; };
 		90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXIBIntegration.xib; sourceTree = "<group>"; };
@@ -1307,6 +1307,7 @@
 				3B0D0BA976A82CFB6036BD8A /* SegmentSelector */,
 				18726449259A242300B9CD0D /* Stepper */,
 				43BB6276F1C3E9AF175B9E38 /* Switch */,
+				908C0EB525C82FCC00D1687A /* Tabs */,
 				259C74E42CE5B71F29FF51D1 /* Tag */,
 				57CA13571D72A84014EE76AD /* ViewStates */,
 			);
@@ -1379,6 +1380,14 @@
 				7C2AED6530F1CF8E9E78EA7B /* UI */,
 			);
 			path = MisticaTests;
+			sourceTree = "<group>";
+		};
+		908C0EB525C82FCC00D1687A /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				908C0EB625C8301400D1687A /* README.md */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		93302F4B8C783EB7188C93C1 /* Layouts */ = {
@@ -2070,7 +2079,6 @@
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
 				B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */,
 				90E9624225BF1B94006E6170 /* FormXIBIntegration.xib in Resources */,
-				B895D9F925B9A7A500ADD972 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
 			);

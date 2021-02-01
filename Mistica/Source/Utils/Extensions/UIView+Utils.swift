@@ -233,8 +233,8 @@ extension UIView {
         clipsToBounds = true
     }
 
-    func addBorder(borderColor: UIColor) {
-        layer.borderColor = borderColor.cgColor
+    func addBorder(color: UIColor) {
+        layer.borderColor = color.cgColor
         layer.borderWidth = 1
     }
 

@@ -88,7 +88,7 @@ class UICatalogFormViewController: UIViewController {
         super.viewDidLoad()
         title = "Form"
         view.backgroundColor = .background
-        view.addSubview(withDefaultConstraints: formView)
+        view.addSubview(constrainedToLayoutMarginsGuideOf: formView)
     }
 }
 

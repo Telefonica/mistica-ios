@@ -13,6 +13,10 @@ import UIKit
 class StepView: UIView {
     private enum Constants {
         static let height: CGFloat = 24
+        static let originalHeight: CGFloat = 64
+        // The border width should be 1.5, however as we are scaling down the animation,
+        // we need to adjust the border width. Otherwise, sizes do not match.
+        static let borderWidth: CGFloat = 1.5 * (Constants.originalHeight / Constants.height)
     }
 
     enum State: Equatable {
@@ -56,6 +60,7 @@ class StepView: UIView {
         animation.isUserInteractionEnabled = false
         animation.animation = NSDataAsset.checkAnimation.lottieAnimation
         animation.contentMode = .scaleAspectFit
+        animation.clipsToBounds = false
         animation.heightAnchor.constraint(equalTo: animation.widthAnchor).isActive = true
         animation.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         animation.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
@@ -81,6 +86,10 @@ class StepView: UIView {
         let colorProvider = ColorValueProvider(UIColor.controlActivated.lottieColorValue)
         animatedView.setValueProvider(colorProvider, keypath: colorKeypath)
 
+        let widthKeypath = AnimationKeypath(keypath: "**.Stroke Width")
+        let widthProvider = FloatValueProvider(Constants.borderWidth)
+        animatedView.setValueProvider(widthProvider, keypath: widthKeypath)
+        
         addSubview(withDefaultConstraints: animatedView)
         addSubview(withDefaultConstraints: circularView)
     }

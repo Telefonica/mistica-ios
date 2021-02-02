@@ -89,7 +89,7 @@ class StepView: UIView {
         let widthKeypath = AnimationKeypath(keypath: "**.Stroke Width")
         let widthProvider = FloatValueProvider(Constants.borderWidth)
         animatedView.setValueProvider(widthProvider, keypath: widthKeypath)
-        
+
         addSubview(withDefaultConstraints: animatedView)
         addSubview(withDefaultConstraints: circularView)
     }

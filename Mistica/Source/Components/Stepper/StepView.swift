@@ -16,7 +16,8 @@ class StepView: UIView {
         static let originalHeight: CGFloat = 64
         // The border width should be 1.5, however as we are scaling down the animation,
         // we need to adjust the border width. Otherwise, sizes do not match.
-        static let borderWidth: CGFloat = 1.5 * (Constants.originalHeight / Constants.height)
+        static let scaleFactor: CGFloat = Constants.originalHeight / Constants.height
+        static let borderWidth: CGFloat = 1.5 * Constants.scaleFactor
     }
 
     enum State: Equatable {

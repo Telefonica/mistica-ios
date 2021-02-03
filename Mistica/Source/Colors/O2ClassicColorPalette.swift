@@ -69,7 +69,7 @@ struct O2ClassicColorPalette: ColorPalette {
     let divider = Colors.grey4
     let backgroundAlternative = Colors.grey5
 
-    let backgroundPromo = Colors.o2Purple
+    let backgroundPromo = Colors.pink
 
     let rowBackground = Colors.white
     let rowBackgroundHighlighted = Colors.grey5

@@ -35,8 +35,8 @@ public class TabsView: UIView {
     
     public weak var delegate: TabsViewDelegate?
 
-    public init(tabsItems: [TabItem]) {
-        self.tabsItems = tabsItems
+    public init(tabItems: [TabItem]) {
+        self.tabsItems = tabItems
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
         super.init(frame: .zero)
@@ -50,6 +50,18 @@ public class TabsView: UIView {
         super.init(coder: coder)
         
         commomInit()
+    }
+}
+
+// MARK: - Public
+
+extension TabsView {
+    public func update(_ tabItem: TabItem, newTabItem: TabItem) {
+            
+    }
+        
+    public func remove(_ tabItem: TabItem) {
+            
     }
 }
 

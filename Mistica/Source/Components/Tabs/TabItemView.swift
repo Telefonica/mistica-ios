@@ -48,7 +48,6 @@ public class TabItemView: UICollectionViewCell {
     
     private lazy var icon: UIImageView = {
         let icon = UIImageView()
-        icon.backgroundColor = .clear
         icon.image = .checkmarkIconSmall
         return icon
     }()
@@ -110,19 +109,24 @@ extension TabItemView {
 private extension TabItemView {
     func commomInit() {
         contentView.backgroundColor = .clear
-        contentView.addSubview(verticalStack, constraints: [
-            verticalStack.topAnchor.constraint(equalTo: contentView.topAnchor),
-            verticalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            verticalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            verticalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+        
+        contentView.addSubview(horizontalStack, constraints: [
+            horizontalStack.topAnchor.constraint(equalTo: contentView.topAnchor),
+            horizontalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            horizontalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            horizontalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
                         
             icon.widthAnchor.constraint(equalToConstant: Constants.iconSize),
             icon.heightAnchor.constraint(equalToConstant: Constants.iconSize),
             
             title.widthAnchor.constraint(lessThanOrEqualToConstant: Constants.maximumWidthLabel),
-            
+        ])
+        
+        contentView.addSubview(selectedLine, constraints: [
             selectedLine.heightAnchor.constraint(equalToConstant: Constants.selectedLineHeight),
-            selectedLine.widthAnchor.constraint(equalTo: verticalStack.widthAnchor)
+            selectedLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            selectedLine.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            selectedLine.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
 }

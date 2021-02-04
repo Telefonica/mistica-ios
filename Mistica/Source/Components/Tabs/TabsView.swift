@@ -77,9 +77,9 @@ private extension TabsView {
     
     func setUpDivider() {
         addSubview(divider, constraints: [
-            bottomAnchor.constraint(equalTo: divider.bottomAnchor),
+            divider.bottomAnchor.constraint(equalTo: bottomAnchor),
             divider.leadingAnchor.constraint(equalTo: leadingAnchor),
-            trailingAnchor.constraint(equalTo: divider.trailingAnchor),
+            divider.trailingAnchor.constraint(equalTo: trailingAnchor),
             divider.heightAnchor.constraint(equalToConstant: Constants.dividerHeight)
         ])
     }
@@ -101,9 +101,9 @@ private extension TabsView {
         addSubview(collectionView, constraints: [
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: divider.topAnchor),
             
             collectionView.heightAnchor.constraint(equalToConstant: Constants.componentHeight)
         ])
@@ -130,7 +130,6 @@ extension TabsView: UICollectionViewDataSource {
         let tabItemView = TabItemView.dequeueReusableCell(for: indexPath, from: collectionView)
         tabItemView.text = tabItem.title
         tabItemView.isSelected ? tabItemView.showSelected() : tabItemView.showDeselected()
-        tabItemView.accessibilityIdentifier = tabItemView.accessibilityIdentifier
         return tabItemView
     }
 }
@@ -143,5 +142,10 @@ extension TabsView: UICollectionViewDelegate {
     public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemView else { return }
         tabItemView.showSelected()
+    }
+    
+    public func collectionView(_: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemView else { return }
+        tabItemView.showDeselected()
     }
 }

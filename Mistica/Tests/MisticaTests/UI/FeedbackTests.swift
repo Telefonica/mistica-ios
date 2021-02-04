@@ -32,7 +32,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessTitle() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.singleLineTitle,
@@ -45,7 +45,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativeTitleAndSubtitle() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.singleLineTitle,
@@ -58,7 +58,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorTitleAndSubtitle() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.singleLineTitle,
@@ -73,7 +73,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessMultiline() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -86,7 +86,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativeMultilineScroll() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -99,7 +99,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorMultilineScrollWithButtons() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,
@@ -114,7 +114,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessPrimaryButton() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -127,7 +127,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativePrimaryButton() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -140,7 +140,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorPrimaryRetryButton() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,
@@ -159,7 +159,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessSecondaryButton() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -172,7 +172,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativeSecondaryButtonLink() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -185,7 +185,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorSecondaryButtonLink() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,
@@ -200,7 +200,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessPrimaryAndSecondaryButton() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -213,7 +213,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativePrimaryAndSecondaryButtonLink() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -226,7 +226,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorPrimaryRetryAndSecondaryButtonLink() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,
@@ -245,7 +245,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessPrimaryAndSecondaryButtonLinkCustomView() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -259,7 +259,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativeSecondaryButtonLinkCustomView() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -273,7 +273,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorSecondaryPrimaryButtonCustomView() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(on: .iPhoneX),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,

@@ -346,11 +346,11 @@ private extension HighlightedCard {
     }
 
     func styleViews() {
-        titleLabel.numberOfLines = 2
+        titleLabel.numberOfLines = 0
         titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
 
-        subtitleLabel.numberOfLines = 3
+        subtitleLabel.numberOfLines = 0
         subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         subtitleLabel.setContentHuggingPriority(.required, for: .vertical)
 

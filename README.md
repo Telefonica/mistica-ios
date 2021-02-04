@@ -1,4 +1,4 @@
-<img height="90" alt="Mística for iOS" src="./misticaIos.svg">
+<img alt="Mística for iOS" src="./misticaIos.svg">
 <br>
 
 [![Platform](https://img.shields.io/badge/platform-iOS-%23989898.svg)](https://github.com/Telefonica/mistica-ios)

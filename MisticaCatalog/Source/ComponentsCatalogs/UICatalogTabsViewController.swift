@@ -24,16 +24,23 @@ public class UICatalogTabsViewController: UIViewController {
         title = "Tabs"
 
         setUp()
-        styleViews()
     }
 }
 
 private extension UICatalogTabsViewController {
     func setUp() {
-        
-    }
-    
-    func styleViews() {
-        
+        let tabsView = TabsView(tabsItems: [
+            TabItem(title: "Item", icon: "🎲")
+            ,TabItem(title: "Item long text", icon: "🎲")
+            ,TabItem(title: "Item long text Item long text", icon: "🎲")
+        ])
+
+        view.backgroundColor = .white
+
+        view.addSubview(tabsView, constraints: [
+            tabsView.topAnchor.constraint(equalTo: view.topAnchor, constant: 140),
+            tabsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tabsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0)
+        ])
     }
 }

@@ -10,6 +10,7 @@ import Mistica
 import UIKit
 
 private enum UICatalogRow: Int, CaseIterable {
+    case tabs
     case badge
     case buttons
     case cards
@@ -30,7 +31,6 @@ private enum UICatalogRow: Int, CaseIterable {
     case tag
     case tooltip
     case viewStates
-    case tabs
 }
 
 private enum UICatalogSection: Int, CaseIterable {

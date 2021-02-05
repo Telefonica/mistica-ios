@@ -400,6 +400,20 @@ final class ListsTests: XCTestCase {
         )
     }
     
+    func testCellWithAllLabelsAndNavigationPresetWithoutNavigationIcon() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitle,
+            detailText: AnyValues.detailText,
+            customControl: .navigation(makeNavigationPresetViewWithoutNavigationIcon())
+        )
+        
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image
+        )
+    }
+    
     func testCellWithAllLabelsAndNavigationPresetWithFlagBadge() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -428,12 +442,12 @@ final class ListsTests: XCTestCase {
         )
     }
     
-    func testCellWithAllLabelsAndNavigationPresetWithNumericBadgeWithLongValue() {
+    func testCellWithAllLabelsAndNavigationPresetWithNumericBadgeWithValueMajorThanTen() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithNumericBagde(withValue: AnyValues.longIntValue))
+            customControl: .navigation(makeNavigationPresetViewWithNumericBagde(withValue: AnyValues.majorThanTenIntValue))
         )
         
         assertSnapshot(
@@ -532,7 +546,7 @@ extension ListsTests {
         static let subtitle = "Any subtitle"
         static let detailText = "Any detail text"
         static let intValue = 2
-        static let longIntValue = 1000
+        static let majorThanTenIntValue = 11
         static let titleMultiline = """
         Title line 1
         Title line 2
@@ -589,6 +603,13 @@ extension ListsTests {
         return customView
     }
     
+    func makeNavigationPresetViewWithoutNavigationIcon() -> NavigationPresetView {
+        let navigationPreset = NavigationPresetView()
+        navigationPreset.isBadgeHidden = true
+        navigationPreset.isNavigationIconHidden = true
+        return navigationPreset
+    }
+    
     func makeNavigationPresetViewWithoutBagde() -> NavigationPresetView {
         let navigationPreset = NavigationPresetView()
         navigationPreset.isBadgeHidden = true
@@ -598,6 +619,7 @@ extension ListsTests {
     func makeNavigationPresetViewWithFlagBagde() -> NavigationPresetView {
         let navigationPreset = NavigationPresetView()
         navigationPreset.badgeView.style = .flag
+        navigationPreset.isBadgeHidden = false
         return navigationPreset
     }
     
@@ -605,6 +627,7 @@ extension ListsTests {
         let navigationPreset = NavigationPresetView()
         navigationPreset.badgeView.style = .numeric
         navigationPreset.badgeView.value = value
+        navigationPreset.isBadgeHidden = false
         return navigationPreset
     }
 }

@@ -269,6 +269,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
             cell.controlView = nil
         case .navigation:
             let navigationPreset = NavigationPresetView()
+            navigationPreset.isBadgeHidden = false
             navigationPreset.badgeView.style = .numeric
             navigationPreset.badgeView.value = Int.random(in: 1 ... 10)
             cell.controlView = navigationPreset

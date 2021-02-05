@@ -66,14 +66,14 @@ open class Button: UIControl {
             updateStyle()
         }
     }
-    
+
     public var isLoading = false {
         didSet {
             guard oldValue != isLoading else { return }
             updateState()
         }
     }
-    
+
     @objc public var title: String? {
         get { container.title }
         set { container.title = newValue }
@@ -83,7 +83,7 @@ open class Button: UIControl {
         get { container.loadingTitle }
         set { container.loadingTitle = newValue }
     }
-    
+
     private var overridenAccessibilityLabel: String?
 
     private lazy var animator = UIViewPropertyAnimator(
@@ -133,14 +133,14 @@ open class Button: UIControl {
     override public var intrinsicContentSize: CGSize {
         container.intrinsicContentSize
     }
-    
-    open override var isHighlighted: Bool {
+
+    override open var isHighlighted: Bool {
         didSet {
             updateState()
         }
     }
 
-    open override var state: UIControl.State {
+    override open var state: UIControl.State {
         get {
             if isLoading {
                 return super.state.union(.loading)
@@ -233,7 +233,7 @@ private extension Button {
 
     func applyStyleColors() {
         let stateStyle: StateStyle
-        
+
         if isLoading {
             stateStyle = style.stateStyleByState[.loading]!
         } else if !isEnabled {
@@ -243,7 +243,7 @@ private extension Button {
         } else {
             stateStyle = style.stateStyleByState[.normal]!
         }
-        
+
         container.textColor = stateStyle.textColor
         backgroundColor = stateStyle.backgroundColor
         layer.borderColor = stateStyle.borderColor.cgColor
@@ -342,4 +342,4 @@ public extension Button.State {
     static let loading = UIControl.State(rawValue: 1 << 50) // Arbitrary value
 }
 
-extension Button.State: Hashable { }
+extension Button.State: Hashable {}

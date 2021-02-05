@@ -500,6 +500,28 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
+    
+    // MARK: XIB integration
+
+    func testXIBIntegration() {
+        let view = ListsXIBIntegration.viewFromNib()
+        
+        let listTestsViewController = makeListTestsViewController(
+            listView: view.listView,
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitle,
+            detailText: AnyValues.detailText,
+            assetType: .image(AnyValues.image),
+            customControl: .custom(makeCustomControlView()),
+            showHeadline: true,
+            cellLayoutStyle: .fullWidth
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneX)
+        )
+    }
 }
 
 // MARK: - Helpers
@@ -529,6 +551,7 @@ extension ListsTests {
     }
     
     fileprivate func makeListTestsViewController(
+        listView: ListView = ListView(),
         title: String? = nil,
         subtitle: String? = nil,
         detailText: String? = nil,
@@ -538,7 +561,7 @@ extension ListsTests {
         cellLayoutStyle: ListViewCell.CellStyle = .fullWidth,
         numberOfRows: Int = 1
     ) -> ListsTestsViewController {
-        let listTestsViewController = ListsTestsViewController()
+        let listTestsViewController = ListsTestsViewController(listView: listView)
         
         listTestsViewController.text = title
         listTestsViewController.subtitle = subtitle
@@ -602,10 +625,11 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
     var customControl = CustomControl.none
     var cellLayoutStyle = ListViewCell.CellStyle.fullWidth
     
-    private let listView = ListView()
+    private let listView: ListView
     var numberOfRows = 1
     
-    init() {
+    init(listView: ListView) {
+        self.listView = listView
         super.init(nibName: nil, bundle: nil)
     }
 

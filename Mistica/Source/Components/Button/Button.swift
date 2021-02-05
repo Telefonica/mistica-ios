@@ -339,7 +339,7 @@ private extension Button.State {
 // MARK: Useful extensions
 
 public extension Button.State {
-    static let loading = UIControl.State(rawValue: 1 << 42)
+    static let loading = UIControl.State(rawValue: 1 << 50) // Arbitrary value
 }
 
 extension Button.State: Hashable { }

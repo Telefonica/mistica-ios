@@ -8,12 +8,6 @@
 
 import UIKit
 
-public extension Button.State {
-    static let loading = UIControl.State(rawValue: 1 << 42)
-}
-
-extension Button.State: Hashable { }
-
 open class Button: UIControl {
     private enum Constants {
         static let animationDuration: TimeInterval = 0.3
@@ -89,15 +83,7 @@ open class Button: UIControl {
         get { container.loadingTitle }
         set { container.loadingTitle = newValue }
     }
-
-    public func set(state: UIControl.State) {
-        let oldState = self.state
-        isSelected = state.contains(.selected)
-        isEnabled = !state.contains(.disabled)
-        isLoading = state.contains(.loading)
-        didUpdateState(previousState: oldState)
-    }
-
+    
     private var overridenAccessibilityLabel: String?
 
     private lazy var animator = UIViewPropertyAnimator(
@@ -120,7 +106,6 @@ open class Button: UIControl {
 
         self.title = title
         self.loadingTitle = loadingTitle
-        container.isUserInteractionEnabled = false
         commonInit()
     }
 
@@ -164,7 +149,11 @@ open class Button: UIControl {
             }
         }
         set {
-            set(state: newValue)
+            let oldValue = self.state
+            isSelected = newValue.contains(.selected)
+            isEnabled = !newValue.contains(.disabled)
+            isLoading = newValue.contains(.loading)
+            didUpdateState(previousState: oldValue)
         }
     }
 }
@@ -238,6 +227,7 @@ private extension Button {
     }
 
     func setUpContainer() {
+        container.isUserInteractionEnabled = false
         addSubview(withDefaultConstraints: container)
     }
 
@@ -330,18 +320,26 @@ private extension Button.State {
 
 @objc public extension Button {
     func objc_setNormalState() {
-        set(state: .normal)
+        state = .normal
     }
 
     func objc_setLoadingState() {
-        set(state: .loading)
+        state = .loading
     }
 
     func objc_setDisabledState() {
-        set(state: .disabled)
+        state = .disabled
     }
 
     func objc_setLinkStyle() {
         style = .link
     }
 }
+
+// MARK: Useful extensions
+
+public extension Button.State {
+    static let loading = UIControl.State(rawValue: 1 << 42)
+}
+
+extension Button.State: Hashable { }

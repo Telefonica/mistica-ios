@@ -111,12 +111,12 @@ private extension UICatalogFormViewController {
 
     func disableInputs() {
         inputFields.forEach { $0.set(state: .disabled, animated: true) }
-        formView.button.set(state: .disabled)
+        formView.button.state = .disabled
     }
 
     func enableInputs() {
         inputFields.forEach { $0.set(state: .normal, animated: true) }
-        formView.button.set(state: .normal)
+        formView.button.state = .normal
     }
 }
 

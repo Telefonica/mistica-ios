@@ -161,7 +161,7 @@ open class Button: UIControl {
 @objc public extension Button {
     override var accessibilityLabel: String? {
         get {
-            if state == .loading {
+            if state.contains(.loading) {
                 return loadingTitle
             } else if overridenAccessibilityLabel != nil {
                 return overridenAccessibilityLabel
@@ -224,6 +224,7 @@ private extension Button {
         layer.borderWidth = Constants.borderWidth
         isAccessibilityElement = true
         isUserInteractionEnabled = true
+        updateEnabled()
     }
 
     func setUpContainer() {

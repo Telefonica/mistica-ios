@@ -13,7 +13,7 @@ public class NavigationPresetView: UIStackView {
 
     public let badgeView = BadgeView()
 
-    public var isBadgeHidden = false {
+    public var isBadgeHidden = true {
         didSet {
             if isBadgeHidden {
                 badgeView.removeFromSuperview()
@@ -23,7 +23,7 @@ public class NavigationPresetView: UIStackView {
         }
     }
 
-    public var isNavigationIconHidden = false {
+    public var isNavigationIconHidden = true {
         didSet {
             if isNavigationIconHidden {
                 imageView.removeFromSuperview()

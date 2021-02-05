@@ -8,21 +8,19 @@
 
 import UIKit
 
-open class Button: UIView {
+public extension Button.State {
+    static let loading = UIControl.State(rawValue: 1 << 42)
+}
+
+extension Button.State: Hashable { }
+
+open class Button: UIControl {
     private enum Constants {
         static let animationDuration: TimeInterval = 0.3
         static let animationCurveControlPoint1 = CGPoint(x: 0.77, y: 0)
         static let animationCurveControlPoint2 = CGPoint(x: 0.175, y: 1)
         static let cornerRadius: CGFloat = 4
         static let borderWidth: CGFloat = 1.5
-    }
-
-    @frozen
-    public enum State {
-        case normal
-        case selected
-        case disabled
-        case loading
     }
 
     public struct Style {
@@ -43,7 +41,7 @@ open class Button: UIView {
         }
 
         public init(allowsBleedingAlignment: Bool,
-                    stateStyleByState: [Button.State: Button.StateStyle],
+                    stateStyleByState: [State: Button.StateStyle],
                     overriddenSizes: Button.Style.OverriddenSizes? = nil) {
             self.allowsBleedingAlignment = allowsBleedingAlignment
             self.stateStyleByState = stateStyleByState
@@ -74,7 +72,14 @@ open class Button: UIView {
             updateStyle()
         }
     }
-
+    
+    public var isLoading = false {
+        didSet {
+            guard oldValue != isLoading else { return }
+            updateState()
+        }
+    }
+    
     @objc public var title: String? {
         get { container.title }
         set { container.title = newValue }
@@ -85,10 +90,12 @@ open class Button: UIView {
         set { container.loadingTitle = newValue }
     }
 
-    public var state: State = .normal {
-        didSet {
-            didUpdateState(previousState: oldValue)
-        }
+    public func set(state: UIControl.State) {
+        let oldState = self.state
+        isSelected = state.contains(.selected)
+        isEnabled = !state.contains(.disabled)
+        isLoading = state.contains(.loading)
+        didUpdateState(previousState: oldState)
     }
 
     private var overridenAccessibilityLabel: String?
@@ -99,7 +106,6 @@ open class Button: UIView {
         controlPoint2: Constants.animationCurveControlPoint2
     )
 
-    private lazy var backingButton = BackingButton()
     private lazy var container = ButtonContentView()
 
     public convenience init() {
@@ -114,7 +120,7 @@ open class Button: UIView {
 
         self.title = title
         self.loadingTitle = loadingTitle
-
+        container.isUserInteractionEnabled = false
         commonInit()
     }
 
@@ -139,21 +145,31 @@ open class Button: UIView {
         UIEdgeInsets(top: 0, left: leftBleedingInsets, bottom: 0, right: rightBleedingInsets)
     }
 
-    override public var tag: Int {
-        get { backingButton.tag }
-        set { backingButton.tag = newValue }
-    }
-
     override public var intrinsicContentSize: CGSize {
         container.intrinsicContentSize
+    }
+    
+    open override var isHighlighted: Bool {
+        didSet {
+            updateState()
+        }
+    }
+
+    open override var state: UIControl.State {
+        get {
+            if isLoading {
+                return super.state.union(.loading)
+            } else {
+                return super.state
+            }
+        }
+        set {
+            set(state: newValue)
+        }
     }
 }
 
 @objc public extension Button {
-    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
-        backingButton.addTarget(target, action: action, for: controlEvents)
-    }
-
     override var accessibilityLabel: String? {
         get {
             if state == .loading {
@@ -166,15 +182,6 @@ open class Button: UIView {
         }
         set {
             overridenAccessibilityLabel = newValue
-        }
-    }
-
-    override func accessibilityActivate() -> Bool {
-        if state.shouldBackingButtonBeEnabled {
-            backingButton.sendActions(for: .touchUpInside)
-            return true
-        } else {
-            return false
         }
     }
 }
@@ -217,7 +224,6 @@ private extension Button {
     func commonInit() {
         setUpView()
         setUpContainer()
-        setUpBackingButton()
         updateStyle()
     }
 
@@ -228,33 +234,33 @@ private extension Button {
         }
         layer.borderWidth = Constants.borderWidth
         isAccessibilityElement = true
+        isUserInteractionEnabled = true
     }
 
     func setUpContainer() {
         addSubview(withDefaultConstraints: container)
     }
 
-    func setUpBackingButton() {
-        updateBackingButtonEnabled()
-        backingButton.setContentHuggingPriority(UILayoutPriority(rawValue: 1), for: .horizontal)
-        backingButton.setContentHuggingPriority(UILayoutPriority(rawValue: 1), for: .vertical)
-        addSubview(withDefaultConstraints: backingButton)
-        backingButton.isHighlightedDidChangeHandler = { [weak self] in
-            self?.updateStateBasedOnBackingButton()
-        }
-    }
-
     func applyStyleColors() {
-        guard let stateStyle = style.stateStyleByState[state] else {
-            preconditionFailure("Style \(style) does not have stateStyle for state \(state). Check that the current style is defined properly.")
+        let stateStyle: StateStyle
+        
+        if isLoading {
+            stateStyle = style.stateStyleByState[.loading]!
+        } else if !isEnabled {
+            stateStyle = style.stateStyleByState[.disabled]!
+        } else if isSelected {
+            stateStyle = style.stateStyleByState[.selected]!
+        } else {
+            stateStyle = style.stateStyleByState[.normal]!
         }
+        
         container.textColor = stateStyle.textColor
         backgroundColor = stateStyle.backgroundColor
         layer.borderColor = stateStyle.borderColor.cgColor
     }
 
     func didUpdateState(previousState: State) {
-        if state == .loading {
+        if state.contains(.loading) {
             animator.stopAnimation(true)
 
             // transition to loading
@@ -265,9 +271,9 @@ private extension Button {
                 self?.container.transitionToLoading()
                 self?.applyStyleColors()
             }
-            updateBackingButtonEnabled()
+            updateEnabled()
             animator.startAnimation()
-        } else if previousState == .loading {
+        } else if previousState.contains(.loading) {
             animator.stopAnimation(true)
 
             // transition to normal
@@ -278,65 +284,45 @@ private extension Button {
             animator.addCompletion { [weak self] _ in
                 guard let s = self else { return }
                 UIAccessibility.post(notification: .layoutChanged, argument: s.accessibilityLabel)
-                s.updateBackingButtonEnabled()
+                s.updateEnabled()
             }
             animator.startAnimation()
         } else {
             applyStyleColors()
-            updateBackingButtonEnabled()
+            updateEnabled()
         }
     }
 
-    func updateBackingButtonEnabled() {
+    func updateEnabled() {
         accessibilityTraits = state.accesibilityTraits
-        backingButton.isEnabled = state.shouldBackingButtonBeEnabled
+        isEnabled = state.shouldBeEnabled
     }
 
-    func updateStateBasedOnBackingButton() {
-        if backingButton.isHighlighted && state == .normal {
-            state = .selected
-        } else if !backingButton.isHighlighted && state == .selected {
-            state = .normal
+    func updateState() {
+        let baseState = isLoading ? UIControl.State.loading : UIControl.State.normal
+        if isHighlighted && state.contains(.normal) {
+            state = baseState.union(.selected)
+        } else if !isHighlighted && state.contains(.selected) {
+            state = baseState
         }
     }
 }
 
 private extension Button.State {
-    var shouldBackingButtonBeEnabled: Bool {
-        switch self {
-        case .disabled, .loading: return false
-        case .normal, .selected: return true
+    var shouldBeEnabled: Bool {
+        if contains(.disabled) || contains(.loading) {
+            return false
+        } else {
+            return true
         }
     }
 
     var accesibilityTraits: UIAccessibilityTraits {
-        if shouldBackingButtonBeEnabled {
-            return .button
-        } else {
+        if contains(.disabled) || contains(.loading) {
             return [.button, .notEnabled]
+        } else {
+            return .button
         }
-    }
-}
-
-// MARK: Dummy button
-
-private class BackingButton: UIButton {
-    var isHighlightedDidChangeHandler: (() -> Void)?
-
-    override var isHighlighted: Bool {
-        didSet {
-            isHighlightedDidChangeHandler?()
-        }
-    }
-
-    init() {
-        super.init(frame: .zero)
-        accessibilityElementsHidden = true
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -344,15 +330,15 @@ private class BackingButton: UIButton {
 
 @objc public extension Button {
     func objc_setNormalState() {
-        state = .normal
+        set(state: .normal)
     }
 
     func objc_setLoadingState() {
-        state = .loading
+        set(state: .loading)
     }
 
     func objc_setDisabledState() {
-        state = .disabled
+        set(state: .disabled)
     }
 
     func objc_setLinkStyle() {

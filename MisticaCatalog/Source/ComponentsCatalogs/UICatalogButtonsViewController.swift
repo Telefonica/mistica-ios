@@ -160,7 +160,7 @@ private class LoadSimulationButton: Button {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc func simulateLoad() {
+    @objc func simulateLoad(_ sender: Any) {
         state = .loading
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.state = .normal
@@ -188,6 +188,8 @@ private extension Button.State {
             button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Normal"
             button.state = self
+        default:
+            fatalError("Unknown")
         }
 
         return button

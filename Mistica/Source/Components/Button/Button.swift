@@ -133,25 +133,25 @@ open class Button: UIControl {
             didUpdateState()
         }
     }
-    
+
     override open var isHighlighted: Bool {
         didSet {
-           didUpdateState()
+            didUpdateState()
         }
     }
-    
-    open override var isSelected: Bool {
+
+    override open var isSelected: Bool {
         didSet {
             didUpdateState()
         }
     }
-    
-    open override var isEnabled: Bool {
+
+    override open var isEnabled: Bool {
         didSet {
             didUpdateState()
         }
     }
-    
+
     override open var state: UIControl.State {
         if isLoading {
             return .loading
@@ -164,7 +164,7 @@ open class Button: UIControl {
         }
     }
 
-    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         guard !isLoading else { return nil }
         return super.hitTest(point, with: event)
     }

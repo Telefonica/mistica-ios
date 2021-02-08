@@ -244,21 +244,25 @@ private extension Button {
     }
 
     func applyStyleColors() {
-        let stateStyle: StateStyle
+        let stateStyle: StateStyle?
 
         if isLoading {
-            stateStyle = style.stateStyleByState[.loading]!
+            stateStyle = style.stateStyleByState[.loading]
         } else if !isEnabled {
-            stateStyle = style.stateStyleByState[.disabled]!
+            stateStyle = style.stateStyleByState[.disabled]
         } else if isSelected {
-            stateStyle = style.stateStyleByState[.selected]!
+            stateStyle = style.stateStyleByState[.selected]
         } else {
-            stateStyle = style.stateStyleByState[.normal]!
+            stateStyle = style.stateStyleByState[.normal]
         }
-
-        container.textColor = stateStyle.textColor
-        backgroundColor = stateStyle.backgroundColor
-        layer.borderColor = stateStyle.borderColor.cgColor
+        
+        guard stateStyle != nil else {
+             preconditionFailure("Style \(style) does not have stateStyle for state \(state). Check that the current style is defined properly.")
+        }
+        
+        container.textColor = stateStyle!.textColor
+        backgroundColor = stateStyle!.backgroundColor
+        layer.borderColor = stateStyle!.borderColor.cgColor
     }
 
     func didUpdateState() {

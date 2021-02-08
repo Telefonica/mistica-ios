@@ -255,11 +255,11 @@ private extension Button {
         } else {
             stateStyle = style.stateStyleByState[.normal]
         }
-        
+
         guard stateStyle != nil else {
-             preconditionFailure("Style \(style) does not have stateStyle for state \(state). Check that the current style is defined properly.")
+            preconditionFailure("Style \(style) does not have stateStyle for state \(state). Check that the current style is defined properly.")
         }
-        
+
         container.textColor = stateStyle!.textColor
         backgroundColor = stateStyle!.backgroundColor
         layer.borderColor = stateStyle!.borderColor.cgColor

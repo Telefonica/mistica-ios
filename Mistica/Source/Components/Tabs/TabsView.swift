@@ -17,8 +17,8 @@ public protocol TabsViewDelegate: AnyObject {
 public class TabsView: UIView {
     private enum Constants {
         static let dividerHeight: CGFloat = 1
-        static let componentHeight: CGFloat = 56
-        static let estimatedItemSize = CGSize(width: 100, height: 24)
+        static let componentHeight: CGFloat = 55
+        static let estimatedItemSize = CGSize(width: 100, height: 55)
     }
     
     // Layout is initialized to a default UICollectionViewFlowLayout. It will be overriden during set up phase.
@@ -27,7 +27,7 @@ public class TabsView: UIView {
     
     private lazy var divider: UIView = {
         let divider = UIView()
-        divider.backgroundColor = .orange //.divider
+        divider.backgroundColor = .divider
         return divider
     }()
     
@@ -69,21 +69,11 @@ extension TabsView {
 
 private extension TabsView {
     func commomInit() {
-        setUpDivider()
-
         setUpLayout()
+        setUpDivider()
         setUpCollectionView()
     }
-    
-    func setUpDivider() {
-        addSubview(divider, constraints: [
-            divider.bottomAnchor.constraint(equalTo: bottomAnchor),
-            divider.leadingAnchor.constraint(equalTo: leadingAnchor),
-            divider.trailingAnchor.constraint(equalTo: trailingAnchor),
-            divider.heightAnchor.constraint(equalToConstant: Constants.dividerHeight)
-        ])
-    }
-    
+        
     func setUpLayout() {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
@@ -97,14 +87,13 @@ private extension TabsView {
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.alwaysBounceHorizontal = true
+        collectionView.clipsToBounds = false
 
         addSubview(collectionView, constraints: [
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
             collectionView.bottomAnchor.constraint(equalTo: divider.topAnchor),
-            
             collectionView.heightAnchor.constraint(equalToConstant: Constants.componentHeight)
         ])
 
@@ -112,6 +101,15 @@ private extension TabsView {
         collectionView.delegate = self
 
         TabItemView.registerClassForCell(to: collectionView)
+    }
+
+    func setUpDivider() {
+        addSubview(divider, constraints: [
+            divider.bottomAnchor.constraint(equalTo: bottomAnchor),
+            divider.leadingAnchor.constraint(equalTo: leadingAnchor),
+            divider.trailingAnchor.constraint(equalTo: trailingAnchor),
+            divider.heightAnchor.constraint(equalToConstant: Constants.dividerHeight)
+        ])
     }
 }
 

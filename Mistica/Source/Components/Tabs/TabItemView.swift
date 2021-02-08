@@ -16,9 +16,11 @@ public class TabItemView: UICollectionViewCell {
         static let iconAndTextSpace: CGFloat = 8
         static let selectedLineHeight: CGFloat = 5
         static let heightLabel: CGFloat = 24
+        static let heightDivider: CGFloat = 2
         static let minimumWidthLabel: CGFloat = 45
         static let minimumWidthIPadLabel: CGFloat = 208
         static let maximumWidthLabel: CGFloat = 284
+        static let horizontalHeight: CGFloat = 54
     }
         
     private lazy var verticalStack: UIStackView = {
@@ -38,7 +40,6 @@ public class TabItemView: UICollectionViewCell {
                                                      bottom: Constants.innerPadding,
                                                      right: Constants.innerLateralPadding)
         horizontalStack.backgroundColor = .clear
-        horizontalStack.isLayoutMarginsRelativeArrangement = true
         horizontalStack.axis = .horizontal
         horizontalStack.distribution = .fill
         horizontalStack.alignment = .center
@@ -110,23 +111,20 @@ private extension TabItemView {
     func commomInit() {
         contentView.backgroundColor = .clear
         
-        contentView.addSubview(horizontalStack, constraints: [
-            horizontalStack.topAnchor.constraint(equalTo: contentView.topAnchor),
-            horizontalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            horizontalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            horizontalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-                        
+        addSubview(verticalStack, constraints: [
+            verticalStack.topAnchor.constraint(equalTo: topAnchor),
+            verticalStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+            verticalStack.leadingAnchor.constraint(equalTo: leadingAnchor),
+            
+            horizontalStack.heightAnchor.constraint(equalToConstant: Constants.horizontalHeight),
+            
             icon.widthAnchor.constraint(equalToConstant: Constants.iconSize),
             icon.heightAnchor.constraint(equalToConstant: Constants.iconSize),
             
-            title.widthAnchor.constraint(lessThanOrEqualToConstant: Constants.maximumWidthLabel),
-        ])
-        
-        contentView.addSubview(selectedLine, constraints: [
-            selectedLine.heightAnchor.constraint(equalToConstant: Constants.selectedLineHeight),
-            selectedLine.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            selectedLine.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            selectedLine.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            title.widthAnchor.constraint(greaterThanOrEqualToConstant: 100),
+            
+            selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
+            selectedLine.widthAnchor.constraint(equalTo: horizontalStack.widthAnchor)
         ])
     }
 }

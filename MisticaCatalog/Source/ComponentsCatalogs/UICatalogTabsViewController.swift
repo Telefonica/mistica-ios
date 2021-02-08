@@ -157,6 +157,7 @@ private struct TabsDataset {
     let title: String
     let tabItems: [TabItem]
     
+    static let oneItems = TabsDataset(title: "Two items", tabItems: [.eSports])
     static let twoItems = TabsDataset(title: "Two items", tabItems: [.eSports, .movies])
     static let threeItems = TabsDataset(title: "Three items", tabItems: [.eSports, .movies, .offers])
     static let fourItems = TabsDataset(title: "Four items", tabItems: [.eSports, .movies, .offers, .television])
@@ -176,8 +177,7 @@ private extension UICatalogTabsViewController {
         view.addSubview(tabs, constraints: [
             tabs.topAnchor.constraint(equalTo: view.topAnchor),
             tabs.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tabs.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tabs.heightAnchor.constraint(equalToConstant: 61)
+            tabs.leadingAnchor.constraint(equalTo: view.leadingAnchor)
         ])
     }
     

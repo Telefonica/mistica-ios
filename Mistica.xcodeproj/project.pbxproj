@@ -236,6 +236,12 @@
 		18D8893F25ADA08A0098EED3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		18F193E3259C8E9A00A09E20 /* SegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		18F193E4259C8E9A00A09E20 /* StepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
+		18F342CC25D1A67700B09500 /* testStartAndStopLoadingBacksToNormal.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testStartAndStopLoadingBacksToNormal.finalState.png; sourceTree = "<group>"; };
+		18F342CD25D1A67700B09500 /* testSelectAndDeselectBacksToNormal.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSelectAndDeselectBacksToNormal.finalState.png; sourceTree = "<group>"; };
+		18F342CE25D1A67700B09500 /* testDisableAndEnableBacksToNormal.finalState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testDisableAndEnableBacksToNormal.finalState.png; sourceTree = "<group>"; };
+		18F342CF25D1A67700B09500 /* testDisableAndEnableBacksToNormal.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testDisableAndEnableBacksToNormal.assertInitialState.png; sourceTree = "<group>"; };
+		18F342D025D1A67700B09500 /* testSelectAndDeselectBacksToNormal.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSelectAndDeselectBacksToNormal.assertInitialState.png; sourceTree = "<group>"; };
+		18F342D125D1A67700B09500 /* testStartAndStopLoadingBacksToNormal.assertInitialState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testStartAndStopLoadingBacksToNormal.assertInitialState.png; sourceTree = "<group>"; };
 		18F65F48542EBF9B8472E8C1 /* PopoverContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverContentView.swift; sourceTree = "<group>"; };
 		1929FD98AEC3F04A744E1458 /* BoundsChangeInvalidatingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundsChangeInvalidatingFlowLayout.swift; sourceTree = "<group>"; };
 		1A6C443D987AD4CDAFD35525 /* MovistarColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovistarColorPalette.swift; sourceTree = "<group>"; };
@@ -940,6 +946,12 @@
 				B8BCF995256D1AB600D2BCCC /* testSmallSizeWithSecondaryStyle.with-o2-style.png */,
 				B8BCF992256D1AB600D2BCCC /* testSmallSizeWithSecondaryStyle.with-o2Classic-style.png */,
 				B8BCF979256D1AB500D2BCCC /* testSmallSizeWithSecondaryStyle.with-vivo-style.png */,
+				18F342CF25D1A67700B09500 /* testDisableAndEnableBacksToNormal.assertInitialState.png */,
+				18F342CE25D1A67700B09500 /* testDisableAndEnableBacksToNormal.finalState.png */,
+				18F342D025D1A67700B09500 /* testSelectAndDeselectBacksToNormal.assertInitialState.png */,
+				18F342CD25D1A67700B09500 /* testSelectAndDeselectBacksToNormal.finalState.png */,
+				18F342D125D1A67700B09500 /* testStartAndStopLoadingBacksToNormal.assertInitialState.png */,
+				18F342CC25D1A67700B09500 /* testStartAndStopLoadingBacksToNormal.finalState.png */,
 				B8BCF9AC256D1AB700D2BCCC /* testTextIsAlwaysSingleLine.1.png */,
 			);
 			path = ButtonTests;

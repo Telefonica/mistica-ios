@@ -13,7 +13,8 @@ import XCTest
 final class ButtonTests: XCTestCase {
     override class func setUp() {
         super.setUp()
-
+        UIView.setAnimationsEnabled(false)
+        
         isRecording = false
     }
 
@@ -213,6 +214,73 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testStartAndStopLoadingBacksToNormal() {
+        MisticaConfig.brandStyle = .movistar
+
+        let button = Button()
+        button.title = "Regular"
+        button.loadingTitle = "Loading"
+        
+        assertSnapshot(
+            matching: button,
+            as: .image(size: button.intrinsicContentSize),
+            named: "assertInitialState"
+        )
+        
+        button.isLoading = true
+        button.isLoading = false
+
+        assertSnapshot(
+            matching: button,
+            as: .image(size: button.intrinsicContentSize),
+            named: "finalState"
+        )
+    }
+    
+    func testDisableAndEnableBacksToNormal() {
+        MisticaConfig.brandStyle = .movistar
+
+        let button = Button()
+        button.title = "Regular"
+        
+        assertSnapshot(
+            matching: button,
+            as: .image(size: button.intrinsicContentSize),
+            named: "assertInitialState"
+        )
+        
+        button.isEnabled = false
+        button.isEnabled = true
+
+        assertSnapshot(
+            matching: button,
+            as: .image(size: button.intrinsicContentSize),
+            named: "finalState"
+        )
+    }
+    
+    func testSelectAndDeselectBacksToNormal() {
+        MisticaConfig.brandStyle = .movistar
+
+        let button = Button()
+        button.title = "Regular"
+        
+        assertSnapshot(
+            matching: button,
+            as: .image(size: button.intrinsicContentSize),
+            named: "assertInitialState"
+        )
+        
+        button.isSelected = true
+        button.isSelected = false
+
+        assertSnapshot(
+            matching: button,
+            as: .image(size: button.intrinsicContentSize),
+            named: "finalState"
+        )
+    }
+    
     // MARK: XIB integration
 
     func testXIBIntegration() {

@@ -115,22 +115,12 @@ public extension DataCard {
         }
     }
 
-    var primaryButtonState: Button.State {
-        get {
-            cardBaseView.buttonsView.primaryButtonState
-        }
-        set {
-            cardBaseView.buttonsView.primaryButtonState = newValue
-        }
+    var primaryButton: Button {
+        cardBaseView.buttonsView.primaryButton
     }
 
-    var linkButtonState: Button.State {
-        get {
-            cardBaseView.buttonsView.linkButtonState
-        }
-        set {
-            cardBaseView.buttonsView.linkButtonState = newValue
-        }
+    var linkButton: Button {
+        cardBaseView.buttonsView.linkButton
     }
 }
 

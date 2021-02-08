@@ -67,13 +67,6 @@ open class Button: UIControl {
         }
     }
 
-    public var isLoading = false {
-        didSet {
-            guard oldValue != isLoading else { return }
-            updateState()
-        }
-    }
-
     @objc public var title: String? {
         get { container.title }
         set { container.title = newValue }
@@ -85,6 +78,7 @@ open class Button: UIControl {
     }
 
     private var overridenAccessibilityLabel: String?
+    private var isShowingLoadingAnimation = false
 
     private lazy var animator = UIViewPropertyAnimator(
         duration: Constants.animationDuration,
@@ -134,27 +128,45 @@ open class Button: UIControl {
         container.intrinsicContentSize
     }
 
+    public var isLoading = false {
+        didSet {
+            didUpdateState()
+        }
+    }
+    
     override open var isHighlighted: Bool {
         didSet {
-            updateState()
+           didUpdateState()
+        }
+    }
+    
+    open override var isSelected: Bool {
+        didSet {
+            didUpdateState()
+        }
+    }
+    
+    open override var isEnabled: Bool {
+        didSet {
+            didUpdateState()
+        }
+    }
+    
+    override open var state: UIControl.State {
+        if isLoading {
+            return .loading
+        } else if !isEnabled {
+            return .disabled
+        } else if isSelected || isHighlighted {
+            return .selected
+        } else {
+            return .normal
         }
     }
 
-    override open var state: UIControl.State {
-        get {
-            if isLoading {
-                return super.state.union(.loading)
-            } else {
-                return super.state
-            }
-        }
-        set {
-            let oldValue = self.state
-            isSelected = newValue.contains(.selected)
-            isEnabled = !newValue.contains(.disabled)
-            isLoading = newValue.contains(.loading)
-            didUpdateState(previousState: oldValue)
-        }
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        guard !isLoading else { return nil }
+        return super.hitTest(point, with: event)
     }
 }
 
@@ -223,8 +235,7 @@ private extension Button {
         }
         layer.borderWidth = Constants.borderWidth
         isAccessibilityElement = true
-        isUserInteractionEnabled = true
-        updateEnabled()
+        updateTraits()
     }
 
     func setUpContainer() {
@@ -235,11 +246,11 @@ private extension Button {
     func applyStyleColors() {
         let stateStyle: StateStyle
 
-        if isLoading {
+        if state.contains(.loading) {
             stateStyle = style.stateStyleByState[.loading]!
-        } else if !isEnabled {
+        } else if state.contains(.disabled) {
             stateStyle = style.stateStyleByState[.disabled]!
-        } else if isSelected {
+        } else if state.contains(.selected) {
             stateStyle = style.stateStyleByState[.selected]!
         } else {
             stateStyle = style.stateStyleByState[.normal]!
@@ -250,7 +261,7 @@ private extension Button {
         layer.borderColor = stateStyle.borderColor.cgColor
     }
 
-    func didUpdateState(previousState: State) {
+    func didUpdateState() {
         if state.contains(.loading) {
             animator.stopAnimation(true)
 
@@ -262,9 +273,10 @@ private extension Button {
                 self?.container.transitionToLoading()
                 self?.applyStyleColors()
             }
-            updateEnabled()
+            updateTraits()
+            isShowingLoadingAnimation = true
             animator.startAnimation()
-        } else if previousState.contains(.loading) {
+        } else if isShowingLoadingAnimation {
             animator.stopAnimation(true)
 
             // transition to normal
@@ -275,39 +287,22 @@ private extension Button {
             animator.addCompletion { [weak self] _ in
                 guard let s = self else { return }
                 UIAccessibility.post(notification: .layoutChanged, argument: s.accessibilityLabel)
-                s.updateEnabled()
+                s.updateTraits()
             }
+            isShowingLoadingAnimation = false
             animator.startAnimation()
         } else {
             applyStyleColors()
-            updateEnabled()
+            updateTraits()
         }
     }
 
-    func updateEnabled() {
+    func updateTraits() {
         accessibilityTraits = state.accesibilityTraits
-        isEnabled = state.shouldBeEnabled
-    }
-
-    func updateState() {
-        let baseState = isLoading ? UIControl.State.loading : UIControl.State.normal
-        if isHighlighted && state.contains(.normal) {
-            state = baseState.union(.selected)
-        } else if !isHighlighted && state.contains(.selected) {
-            state = baseState
-        }
     }
 }
 
 private extension Button.State {
-    var shouldBeEnabled: Bool {
-        if contains(.disabled) || contains(.loading) {
-            return false
-        } else {
-            return true
-        }
-    }
-
     var accesibilityTraits: UIAccessibilityTraits {
         if contains(.disabled) || contains(.loading) {
             return [.button, .notEnabled]
@@ -321,15 +316,17 @@ private extension Button.State {
 
 @objc public extension Button {
     func objc_setNormalState() {
-        state = .normal
+        isLoading = false
+        isSelected = false
+        isEnabled = true
     }
 
     func objc_setLoadingState() {
-        state = .loading
+        isLoading = true
     }
 
     func objc_setDisabledState() {
-        state = .disabled
+        isEnabled = false
     }
 
     func objc_setLinkStyle() {

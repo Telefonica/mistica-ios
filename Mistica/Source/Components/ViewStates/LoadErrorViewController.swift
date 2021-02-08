@@ -59,11 +59,11 @@ public class LoadErrorViewController: UIViewController {
 
 public extension LoadErrorViewController {
     func addActivityIndicatorToRetryButton() {
-        actionButton.state = .loading
+        actionButton.isLoading = true
     }
 
     func removeActivityIndicatorFromRetryButton() {
-        actionButton.state = .normal
+        actionButton.isLoading = false
     }
 }
 

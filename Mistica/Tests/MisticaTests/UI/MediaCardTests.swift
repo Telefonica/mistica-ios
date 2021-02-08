@@ -115,7 +115,7 @@ final class MediaCardTests: XCTestCase {
         let view = makeCardWithFullContentAndButtons(
             primaryButton: AnyValues.button, linkButton: AnyValues.link
         )
-        view.primaryButtonState = .loading
+        view.primaryButton.isLoading = true
 
         assertSnapshot(matching: view, as: .image)
     }

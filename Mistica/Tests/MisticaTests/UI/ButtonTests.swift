@@ -142,7 +142,6 @@ final class ButtonTests: XCTestCase {
 
         let buttonNormalState = Button()
         buttonNormalState.title = "A very very very long long long long teeeext"
-        buttonNormalState.state = .normal
 
         assertSnapshot(
             matching: buttonNormalState,
@@ -155,7 +154,7 @@ final class ButtonTests: XCTestCase {
 
         let buttonNormalState = Button()
         buttonNormalState.loadingTitle = "A very very very long long long long teeeext"
-        buttonNormalState.state = .loading
+        buttonNormalState.isLoading = true
 
         assertSnapshot(
             matching: buttonNormalState,
@@ -205,7 +204,7 @@ final class ButtonTests: XCTestCase {
             named: "assertInitialState"
         )
 
-        buttonNormalState.state = .loading
+        buttonNormalState.isLoading = true
 
         assertSnapshot(
             matching: buttonNormalState,
@@ -227,7 +226,7 @@ final class ButtonTests: XCTestCase {
 
         view.buttonCentered.title = "Button centered"
         view.buttonCentered.loadingTitle = "Button centered"
-        view.buttonCentered.state = .loading
+        view.buttonCentered.isLoading = true
 
         assertSnapshot(
             matching: view.asRootOfViewController(),
@@ -242,25 +241,24 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool)
     let buttonNormalState = Button()
     buttonNormalState.title = "Normal"
     buttonNormalState.style = style
-    buttonNormalState.state = .normal
     buttonNormalState.isSmall = isSmall
 
     let buttonDisabledState = Button()
     buttonDisabledState.title = "Disabled"
     buttonDisabledState.style = style
-    buttonDisabledState.state = .disabled
+    buttonDisabledState.isEnabled = false
     buttonDisabledState.isSmall = isSmall
 
     let buttonSelectedState = Button()
     buttonSelectedState.title = "Selected"
     buttonSelectedState.style = style
-    buttonSelectedState.state = .selected
+    buttonSelectedState.isSelected = true
     buttonSelectedState.isSmall = isSmall
 
     let buttonLoadingState = Button()
     buttonLoadingState.loadingTitle = "Loading"
     buttonLoadingState.style = style
-    buttonLoadingState.state = .loading
+    buttonLoadingState.isLoading = true
     buttonLoadingState.isSmall = isSmall
 
     let vStack = UIStackView(arrangedSubviews: [
@@ -286,16 +284,14 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool)
 private func makeTemplateWithRegularAndSmallButtonsAndLinkButton() -> UIStackView {
     let smallButton = Button()
     smallButton.title = "O"
-    smallButton.state = .normal
     smallButton.isSmall = true
 
     let regularButton = Button()
     regularButton.title = "O"
-    regularButton.state = .normal
 
     let linkButton = Button()
     linkButton.title = "O"
-    linkButton.state = .selected
+    linkButton.isSelected = true
     linkButton.style = .link
 
     let vStack = UIStackView(arrangedSubviews: [

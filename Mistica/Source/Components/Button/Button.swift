@@ -173,7 +173,7 @@ open class Button: UIControl {
 @objc public extension Button {
     override var accessibilityLabel: String? {
         get {
-            if state.contains(.loading) {
+            if isLoading {
                 return loadingTitle
             } else if overridenAccessibilityLabel != nil {
                 return overridenAccessibilityLabel
@@ -246,11 +246,11 @@ private extension Button {
     func applyStyleColors() {
         let stateStyle: StateStyle
 
-        if state.contains(.loading) {
+        if isLoading {
             stateStyle = style.stateStyleByState[.loading]!
-        } else if state.contains(.disabled) {
+        } else if !isEnabled {
             stateStyle = style.stateStyleByState[.disabled]!
-        } else if state.contains(.selected) {
+        } else if isSelected {
             stateStyle = style.stateStyleByState[.selected]!
         } else {
             stateStyle = style.stateStyleByState[.normal]!
@@ -262,7 +262,7 @@ private extension Button {
     }
 
     func didUpdateState() {
-        if state.contains(.loading) {
+        if isLoading {
             animator.stopAnimation(true)
 
             // transition to loading

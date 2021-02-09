@@ -19,6 +19,7 @@ public class TabsView: UIView {
         static let dividerHeight: CGFloat = 1
         static let componentHeight: CGFloat = 55
         static let estimatedItemSize = CGSize(width: 100, height: 55)
+        static let firstIndexPath = IndexPath(row: 0, section: 0)
     }
     
     // Layout is initialized to a default UICollectionViewFlowLayout. It will be overriden during set up phase.
@@ -29,6 +30,11 @@ public class TabsView: UIView {
         let divider = UIView()
         divider.backgroundColor = .divider
         return divider
+    }()
+    
+    private lazy var selectedItem: IndexPath = {
+        let firstSelectedItem = collectionView.indexPathsForSelectedItems?.first
+        return firstSelectedItem ?? IndexPath(item: 0, section: 0)
     }()
     
     private var tabsItems: [TabItem] = []
@@ -57,7 +63,9 @@ public class TabsView: UIView {
 
 extension TabsView {
     public func update(_ tabItem: TabItem, newTabItem: TabItem) {
-            
+        guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
+        tabsItems[index] = newTabItem
+        collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
     }
         
     public func remove(_ tabItem: TabItem) {
@@ -88,6 +96,7 @@ private extension TabsView {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.alwaysBounceHorizontal = true
         collectionView.clipsToBounds = false
+        collectionView.selectItem(at: Constants.firstIndexPath, animated: false, scrollPosition: [])
 
         addSubview(collectionView, constraints: [
             collectionView.topAnchor.constraint(equalTo: topAnchor),
@@ -128,10 +137,18 @@ extension TabsView: UICollectionViewDataSource {
         let tabItemView = TabItemView.dequeueReusableCell(for: indexPath, from: collectionView)
         tabItemView.text = tabItem.title
         tabItemView.icon = tabItem.icon
-        tabItemView.isSelected ? tabItemView.showSelected() : tabItemView.showDeselected()
+        
+        if selectedItem == indexPath {
+            tabItemView.showSelected()
+        } else {
+            tabItemView.showDeselected()
+        }
+        
         return tabItemView
     }
 }
+
+// MARK: UICollectionViewDelegate
 
 extension TabsView: UICollectionViewDelegate {
     public func collectionView(_: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
@@ -140,7 +157,9 @@ extension TabsView: UICollectionViewDelegate {
 
     public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemView else { return }
+        let tabItem = tabsItems[indexPath.item]
         tabItemView.showSelected()
+        delegate?.tabsView(self, didSelectTab: tabItem)
     }
     
     public func collectionView(_: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

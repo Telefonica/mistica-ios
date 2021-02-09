@@ -127,7 +127,6 @@ private extension TabItemView {
             horizontalStack.heightAnchor.constraint(equalToConstant: Constants.horizontalHeight),
             imageView.widthAnchor.constraint(equalToConstant: Constants.iconSize),
             imageView.heightAnchor.constraint(equalToConstant: Constants.iconSize),
-            title.widthAnchor.constraint(greaterThanOrEqualToConstant: 100),
             selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
             selectedLine.widthAnchor.constraint(equalTo: horizontalStack.widthAnchor)
         ])

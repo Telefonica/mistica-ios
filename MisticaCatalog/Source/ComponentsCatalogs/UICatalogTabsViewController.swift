@@ -15,6 +15,8 @@ class UICatalogTabsViewController: UIViewController {
     private lazy var tabItemSelectedTitleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "tabItemSelectedTitleCell")
         cell.textField.text = currentSelectedTabItems?.title
+        cell.textField.addTarget(self, action: #selector(textFieldDidChange(_:)),
+                                 for: .editingChanged)
         return cell
     }()
     
@@ -80,6 +82,14 @@ class UICatalogTabsViewController: UIViewController {
         title = "Tabs"
 
         setUp()
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let currentSelectedTabItems = self.currentSelectedTabItems else { return }
+        let newSelectedTabItem = TabItem(title: textField.text ?? "",
+                                         icon: currentSelectedTabItems.icon)
+        tabs.update(currentSelectedTabItems, newTabItem: newSelectedTabItem)
+        self.currentSelectedTabItems = newSelectedTabItem
     }
 }
 

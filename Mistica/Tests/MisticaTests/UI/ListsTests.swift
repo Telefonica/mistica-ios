@@ -546,7 +546,7 @@ final class ListsTests: XCTestCase {
 
     func testXIBIntegration() {
         let view = ListsXIBIntegration.viewFromNib()
-        
+
         assertSnapshotForAllBrands(
             as: .image,
             viewBuilder: makeListTestsViewController(

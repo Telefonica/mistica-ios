@@ -296,7 +296,7 @@ final class ListsTests: XCTestCase {
             )
         )
     }
-    
+
     func testCellWithAllLabelsAndHeadline() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -337,7 +337,7 @@ final class ListsTests: XCTestCase {
     }
 
     // MARK: - Navigation preset
-    
+
     func testCellWithTitleAndNavigationPresetWithoutBadge() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -347,7 +347,7 @@ final class ListsTests: XCTestCase {
             )
         )
     }
-    
+
     func testCellWithAllLabelsAndNavigationPresetWithoutBadge() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -407,9 +407,9 @@ final class ListsTests: XCTestCase {
             )
         )
     }
-    
+
     // MARK: - Vertically centered preset
-    
+
     func testCellWithTitleAndVerticallyCenteredPreset() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -419,7 +419,7 @@ final class ListsTests: XCTestCase {
             )
         )
     }
-    
+
     func testCellWithAllLabelsAndVerticallyCenteredPreset() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -431,7 +431,7 @@ final class ListsTests: XCTestCase {
             )
         )
     }
-    
+
     func testCellWithAllLabelsAndVerticallyCenteredPresetMoreThanOne() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -498,7 +498,7 @@ final class ListsTests: XCTestCase {
             )
         )
     }
-    
+
     func testAllLabelsAndBoxedStyleMoreThanOneRow() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -511,7 +511,7 @@ final class ListsTests: XCTestCase {
             )
         )
     }
-    
+
     func testAllLabelsAndVerticallyPresetAndBoxedStyleMoreThanOneRow() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -525,7 +525,7 @@ final class ListsTests: XCTestCase {
             )
         )
     }
-    
+
     func testAllLabelsWithMultilinesAndHeadlineAndImageAndNavigationPresetAndBoxedStyleMoreThanOneRow() {
         assertSnapshotForAllBrands(
             as: .image,
@@ -648,7 +648,7 @@ extension ListsTests {
         navigationPreset.isBadgeHidden = false
         return navigationPreset
     }
-    
+
     func makeNavigationPresetViewWithNumericBagdeValueMajorThanTen() -> NavigationPresetView {
         let navigationPreset = NavigationPresetView()
         navigationPreset.badgeView.style = .numeric
@@ -656,7 +656,7 @@ extension ListsTests {
         navigationPreset.isBadgeHidden = false
         return navigationPreset
     }
-    
+
     func makeVerticallyCenteredPreset() -> VerticallyCenteredPresetView {
         let button = Button(title: "test")
         button.isSmall = true

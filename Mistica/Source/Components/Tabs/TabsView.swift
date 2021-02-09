@@ -127,6 +127,7 @@ extension TabsView: UICollectionViewDataSource {
         let tabItem = tabsItems[indexPath.item]
         let tabItemView = TabItemView.dequeueReusableCell(for: indexPath, from: collectionView)
         tabItemView.text = tabItem.title
+        tabItemView.icon = tabItem.icon
         tabItemView.isSelected ? tabItemView.showSelected() : tabItemView.showDeselected()
         return tabItemView
     }

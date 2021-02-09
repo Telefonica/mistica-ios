@@ -65,6 +65,8 @@ class UICatalogTabsViewController: UIViewController {
         currentSelectedTabItems = currentTabItems.first
 
         super.init(nibName: nil, bundle: nil)
+
+        tabs.delegate = self
     }
 
     @available(*, unavailable)
@@ -142,10 +144,10 @@ extension UICatalogTabsViewController: TabsViewDelegate {
 // MARK: - Helper
 
 private extension TabItem {
-    static let eSports = TabItem(title: "eSports", icon: nil)
-    static let movies = TabItem(title: "Movies", icon: "🎲")
-    static let offers = TabItem(title: "Offers", icon: "🎲")
-    static let television = TabItem(title: "Television", icon: "🎲")
+    static let eSports = TabItem(title: "eSports muy largo y mas", icon: .tagsIcon)
+    static let movies = TabItem(title: "Movies", icon: .buttonsIcon)
+    static let offers = TabItem(title: "Offers", icon: .tabsIcon)
+    static let television = TabItem(title: "Television", icon: .cardIcon)
 }
 
 private enum Section: Int, CaseIterable {
@@ -220,7 +222,7 @@ private extension UICatalogTabsViewController {
     func updateTabItem() {
         guard let currentSelectedTabItems = currentSelectedTabItems else { return }
         let newTabItem = TabItem(title: tabItemSelectedTitleCell.textLabel?.text ?? "",
-                                 icon: tabItemSelectedIconCell.isOn ? "🎲": nil)
+                                 icon: tabItemSelectedIconCell.isOn ? .buttonsIcon : nil)
         tabs.update(currentSelectedTabItems, newTabItem: newTabItem)
     }
     

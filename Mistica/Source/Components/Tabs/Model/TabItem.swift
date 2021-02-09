@@ -6,13 +6,13 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public struct TabItem {
     public let title: String
-    public let icon: String?
+    public let icon: UIImage?
     
-    public init(title: String, icon: String?) {
+    public init(title: String, icon: UIImage?) {
         self.title = title
         self.icon = icon
     }

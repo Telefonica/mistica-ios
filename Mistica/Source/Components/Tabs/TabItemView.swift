@@ -11,7 +11,7 @@ import UIKit
 public class TabItemView: UICollectionViewCell {
     private enum Constants {
         static let innerPadding: CGFloat = 16
-        static let innerLateralPadding: CGFloat = 16
+        static let bottomPadding: CGFloat = innerPadding - heightDivider
         static let iconSize: CGFloat = 24
         static let iconAndTextSpace: CGFloat = 8
         static let selectedLineHeight: CGFloat = 5
@@ -28,29 +28,29 @@ public class TabItemView: UICollectionViewCell {
         verticalStack.backgroundColor = .clear
         verticalStack.axis = .vertical
         verticalStack.distribution = .fill
-        verticalStack.alignment = .leading
-        verticalStack.spacing = 0
+        verticalStack.alignment = .center
         return verticalStack
     }()
     
     private lazy var horizontalStack: UIStackView = {
-        let horizontalStack = UIStackView(arrangedSubviews: [icon, title])
-        horizontalStack.layoutMargins = UIEdgeInsets(top: Constants.innerPadding,
-                                                     left: Constants.innerLateralPadding,
-                                                     bottom: Constants.innerPadding,
-                                                     right: Constants.innerLateralPadding)
+        let horizontalStack = UIStackView(arrangedSubviews: [imageView, title])
+        horizontalStack.translatesAutoresizingMaskIntoConstraints = false
+        horizontalStack.isLayoutMarginsRelativeArrangement = true
+        horizontalStack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: Constants.innerPadding,
+                                                                           leading: Constants.innerPadding,
+                                                                           bottom: Constants.bottomPadding,
+                                                                           trailing: Constants.innerPadding)
         horizontalStack.backgroundColor = .clear
         horizontalStack.axis = .horizontal
-        horizontalStack.distribution = .fill
+        horizontalStack.distribution = .fillProportionally
         horizontalStack.alignment = .center
         horizontalStack.spacing = Constants.iconAndTextSpace
         return horizontalStack
     }()
     
-    private lazy var icon: UIImageView = {
-        let icon = UIImageView()
-        icon.image = .checkmarkIconSmall
-        return icon
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
     }()
 
     private lazy var title: UILabel = {
@@ -91,17 +91,26 @@ extension TabItemView {
         }
     }
     
+    var icon: UIImage? {
+        get {
+            imageView.image
+        }
+        set {
+            imageView.image = newValue
+        }
+    }
+        
     func showSelected() {
         selectedLine.isHidden = false
         title.textColor = .textPrimary
-        icon.tintColor = .iconPrimary
+        imageView.tintColor = .iconPrimary
         
     }
 
     func showDeselected() {
         selectedLine.isHidden = true
         title.textColor = .textDisabled
-        icon.tintColor = .iconDisabled
+        imageView.tintColor = .iconDisabled
     }
 }
 
@@ -115,14 +124,10 @@ private extension TabItemView {
             verticalStack.topAnchor.constraint(equalTo: topAnchor),
             verticalStack.trailingAnchor.constraint(equalTo: trailingAnchor),
             verticalStack.leadingAnchor.constraint(equalTo: leadingAnchor),
-            
             horizontalStack.heightAnchor.constraint(equalToConstant: Constants.horizontalHeight),
-            
-            icon.widthAnchor.constraint(equalToConstant: Constants.iconSize),
-            icon.heightAnchor.constraint(equalToConstant: Constants.iconSize),
-            
+            imageView.widthAnchor.constraint(equalToConstant: Constants.iconSize),
+            imageView.heightAnchor.constraint(equalToConstant: Constants.iconSize),
             title.widthAnchor.constraint(greaterThanOrEqualToConstant: 100),
-            
             selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
             selectedLine.widthAnchor.constraint(equalTo: horizontalStack.widthAnchor)
         ])

@@ -25,7 +25,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController()
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -36,7 +36,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(assetType: .image(AnyValues.image))
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -47,7 +47,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(assetType: .smallIcon(AnyValues.image))
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -58,7 +58,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(assetType: .largeIcon(AnyValues.image, backgroundColor: .blue))
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -72,7 +72,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -85,7 +85,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(title: AnyValues.title)
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -99,7 +99,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -113,7 +113,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -127,7 +127,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -142,7 +142,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -158,7 +158,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -173,7 +173,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -188,7 +188,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -203,7 +203,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -219,7 +219,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -235,7 +235,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -250,7 +250,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -265,7 +265,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -280,7 +280,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -296,7 +296,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -313,7 +313,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -329,7 +329,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -345,7 +345,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -361,7 +361,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -378,7 +378,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -394,13 +394,13 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithAllLabelsAndHeadline() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -410,7 +410,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -427,7 +427,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -445,7 +445,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -453,7 +453,7 @@ final class ListsTests: XCTestCase {
     }
 
     // MARK: - Navigation preset
-    
+
     func testCellWithTitleAndNavigationPresetWithoutBadge() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -461,13 +461,13 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithAllLabelsAndNavigationPresetWithoutBadge() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -477,7 +477,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -493,7 +493,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -509,7 +509,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -525,7 +525,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -541,15 +541,15 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     // MARK: - Vertically centered preset
-    
+
     func testCellWithTitleAndVerticallyCenteredPreset() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -557,13 +557,13 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithAllLabelsAndVerticallyCenteredPreset() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -573,13 +573,13 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithAllLabelsAndVerticallyCenteredPresetMoreThanOne() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -590,7 +590,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -607,7 +607,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -625,7 +625,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -644,7 +644,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -660,13 +660,13 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testAllLabelsAndBoxedStyleMoreThanOneRow() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.titleMultiline,
@@ -677,13 +677,13 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testAllLabelsAndVerticallyPresetAndBoxedStyleMoreThanOneRow() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.titleMultiline,
@@ -695,13 +695,13 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testAllLabelsWithMultilinesAndHeadlineAndImageAndNavigationPresetAndBoxedStyleMoreThanOneRow() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -715,7 +715,7 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
@@ -726,7 +726,7 @@ final class ListsTests: XCTestCase {
 
     func testXIBIntegration() {
         MisticaConfig.brandStyle = .movistar
-        
+
         let view = ListsXIBIntegration.viewFromNib()
 
         let listTestsViewController = makeListTestsViewController(
@@ -741,15 +741,15 @@ final class ListsTests: XCTestCase {
         )
 
         MisticaConfig.brandStyle = .movistar
-        
+
         assertSnapshot(
             matching: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     // MARK: - Font colors based on brands
-    
+
     func testAllLabelsFontColors() {
         assertSnapshotForAllBrands(
             as: .image(on: .iPhoneSe),
@@ -847,7 +847,7 @@ extension ListsTests {
         navigationPreset.isBadgeHidden = false
         return navigationPreset
     }
-    
+
     func makeNavigationPresetViewWithNumericBagdeValueMajorThanTen() -> NavigationPresetView {
         let navigationPreset = NavigationPresetView()
         navigationPreset.badgeView.style = .numeric
@@ -855,7 +855,7 @@ extension ListsTests {
         navigationPreset.isBadgeHidden = false
         return navigationPreset
     }
-    
+
     func makeVerticallyCenteredPreset() -> VerticallyCenteredPresetView {
         let button = Button(title: "test")
         button.isSmall = true
@@ -935,7 +935,6 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
     }
 }
 
-
 ////
 ////  ListsTests.swift
 ////
@@ -944,11 +943,11 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
 ////  Copyright © Telefonica. All rights reserved.
 ////
 //
-//@testable import Mistica
-//import SnapshotTesting
-//import XCTest
+// @testable import Mistica
+// import SnapshotTesting
+// import XCTest
 //
-//final class ListsTests: XCTestCase {
+// final class ListsTests: XCTestCase {
 //    override func setUp() {
 //        super.setUp()
 //
@@ -1499,11 +1498,11 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
 //            )
 //        )
 //    }
-//}
+// }
 //
 //// MARK: - Helpers
 //
-//extension ListsTests {
+// extension ListsTests {
 //    enum AnyValues {
 //        static let title = "Any title"
 //        static let subtitle = "Any subtitle"
@@ -1602,9 +1601,9 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
 //        verticallyCenteredPreset.backgroundColor = .yellow
 //        return verticallyCenteredPreset
 //    }
-//}
+// }
 //
-//private class ListsTestsViewController: UIViewController, UITableViewDataSource {
+// private class ListsTestsViewController: UIViewController, UITableViewDataSource {
 //    enum CustomControl {
 //        case none
 //        case navigation(() -> NavigationPresetView)
@@ -1672,4 +1671,4 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
 //
 //        return cell
 //    }
-//}
+// }

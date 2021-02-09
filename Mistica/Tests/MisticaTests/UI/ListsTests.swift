@@ -19,7 +19,7 @@ final class ListsTests: XCTestCase {
 
     // MARK: - Layout
 
-    // Default config
+    // MARK: - Default config
 
     func testCellDefaultConfig() {
         let listTestsViewController = makeListTestsViewController()
@@ -60,7 +60,7 @@ final class ListsTests: XCTestCase {
     func testCellDefaultConfigAndLargeIconAndControlView() {
         let listTestsViewController = makeListTestsViewController(
             assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView())
+            customControl: .custom(makeCustomControlView)
         )
 
         assertSnapshot(
@@ -69,7 +69,7 @@ final class ListsTests: XCTestCase {
         )
     }
 
-    // Only Title
+    // MARK: - Only Title
 
     func testCellWithTitle() {
         let listTestsViewController = makeListTestsViewController(title: AnyValues.title)
@@ -120,7 +120,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView())
+            customControl: .custom(makeCustomControlView)
         )
 
         assertSnapshot(
@@ -129,7 +129,7 @@ final class ListsTests: XCTestCase {
         )
     }
 
-    // Title and Subtitle
+    // MARK: - Title and Subtitle
 
     func testCellWithTitleAndSubtitle() {
         let listTestsViewController = makeListTestsViewController(
@@ -187,7 +187,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView())
+            customControl: .custom(makeCustomControlView)
         )
 
         assertSnapshot(
@@ -196,7 +196,7 @@ final class ListsTests: XCTestCase {
         )
     }
 
-    // Title and Detail text
+    // MARK: - Title and Detail text
 
     func testCellWithTitleAndDetailText() {
         let listTestsViewController = makeListTestsViewController(
@@ -254,7 +254,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             detailText: AnyValues.detailText,
             assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView())
+            customControl: .custom(makeCustomControlView)
         )
 
         assertSnapshot(
@@ -263,7 +263,7 @@ final class ListsTests: XCTestCase {
         )
     }
 
-    // All labels
+    // MARK: - All labels
 
     func testCellWithAllLabels() {
         let listTestsViewController = makeListTestsViewController(
@@ -326,7 +326,7 @@ final class ListsTests: XCTestCase {
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
             assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView())
+            customControl: .custom(makeCustomControlView)
         )
 
         assertSnapshot(
@@ -335,8 +335,20 @@ final class ListsTests: XCTestCase {
         )
     }
 
-    // All labels and headline
+    // MARK: - Headline
 
+    func testCellWithTitleAndHeadline() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            showHeadline: true
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image
+        )
+    }
+    
     func testCellWithAllLabelsAndHeadline() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -372,7 +384,7 @@ final class ListsTests: XCTestCase {
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
             assetType: .image(AnyValues.image),
-            customControl: .custom(makeCustomControlView()),
+            customControl: .custom(makeCustomControlView),
             showHeadline: true
         )
 
@@ -382,14 +394,26 @@ final class ListsTests: XCTestCase {
         )
     }
 
-    // All labels and navigation preset
+    // MARK: - Navigation preset
+    
+    func testCellWithTitleAndNavigationPresetWithoutBadge() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            customControl: .navigation(makeNavigationPresetViewWithoutBagde)
+        )
 
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image
+        )
+    }
+    
     func testCellWithAllLabelsAndNavigationPresetWithoutBadge() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithoutBagde())
+            customControl: .navigation(makeNavigationPresetViewWithoutBagde)
         )
 
         assertSnapshot(
@@ -403,7 +427,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithoutNavigationIcon())
+            customControl: .navigation(makeNavigationPresetViewWithoutNavigationIcon)
         )
 
         assertSnapshot(
@@ -417,7 +441,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithFlagBagde())
+            customControl: .navigation(makeNavigationPresetViewWithFlagBagde)
         )
 
         assertSnapshot(
@@ -431,7 +455,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithNumericBagde(withValue: AnyValues.intValue))
+            customControl: .navigation(makeNavigationPresetViewWithNumericBagde)
         )
 
         assertSnapshot(
@@ -445,7 +469,50 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithNumericBagde(withValue: AnyValues.majorThanTenIntValue))
+            customControl: .navigation(makeNavigationPresetViewWithNumericBagdeValueMajorThanTen)
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image
+        )
+    }
+    
+    // MARK: - Vertically centered preset
+    
+    func testCellWithTitleAndVerticallyCenteredPreset() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            customControl: .custom(makeVerticallyCenteredPreset)
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image
+        )
+    }
+    
+    func testCellWithAllLabelsAndVerticallyCenteredPreset() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitle,
+            detailText: AnyValues.detailText,
+            customControl: .custom(makeVerticallyCenteredPreset)
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image
+        )
+    }
+    
+    func testCellWithAllLabelsAndVerticallyCenteredPresetMoreThanOne() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitle,
+            detailText: AnyValues.detailText,
+            customControl: .custom(makeVerticallyCenteredPreset),
+            numberOfRows: 3
         )
 
         assertSnapshot(
@@ -454,7 +521,7 @@ final class ListsTests: XCTestCase {
         )
     }
 
-    // Multilines test
+    // MARK: - Multilines test
 
     func testAllLabelsWithMultilines() {
         let listTestsViewController = makeListTestsViewController(
@@ -475,7 +542,7 @@ final class ListsTests: XCTestCase {
             subtitle: AnyValues.subtitleMultiline,
             detailText: AnyValues.detailTextMultiline,
             assetType: .image(AnyValues.image),
-            customControl: .navigation(makeNavigationPresetViewWithoutBagde()),
+            customControl: .navigation(makeNavigationPresetViewWithoutBagde),
             showHeadline: true
         )
 
@@ -485,11 +552,14 @@ final class ListsTests: XCTestCase {
         )
     }
 
-    // Three rows
-
-    func testThreeRows() {
+    func testAllLabelsWithMultilinesAndHeadlineAndImageAndNavigationPresetMoreThanOneRow() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
+            subtitle: AnyValues.subtitleMultiline,
+            detailText: AnyValues.detailTextMultiline,
+            assetType: .image(AnyValues.image),
+            customControl: .navigation(makeNavigationPresetViewWithoutBagde),
+            showHeadline: true,
             numberOfRows: 3
         )
 
@@ -499,9 +569,9 @@ final class ListsTests: XCTestCase {
         )
     }
 
-    // Boxed style
+    // MARK: - Boxed style
 
-    func testBoxedStyle() {
+    func testCellWithTitleAndBoxedStyle() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             cellLayoutStyle: .boxed
@@ -512,8 +582,57 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
+    
+    func testAllLabelsAndBoxedStyleMoreThanOneRow() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.titleMultiline,
+            subtitle: AnyValues.subtitleMultiline,
+            detailText: AnyValues.detailTextMultiline,
+            cellLayoutStyle: .boxed,
+            numberOfRows: 3
+        )
 
-    // MARK: XIB integration
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image
+        )
+    }
+    
+    func testAllLabelsAndVerticallyPresetAndBoxedStyleMoreThanOneRow() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.titleMultiline,
+            subtitle: AnyValues.subtitleMultiline,
+            detailText: AnyValues.detailTextMultiline,
+            customControl: .custom(makeVerticallyCenteredPreset),
+            cellLayoutStyle: .boxed,
+            numberOfRows: 3
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image
+        )
+    }
+    
+    func testAllLabelsWithMultilinesAndHeadlineAndImageAndNavigationPresetAndBoxedStyleMoreThanOneRow() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitleMultiline,
+            detailText: AnyValues.detailTextMultiline,
+            assetType: .image(AnyValues.image),
+            customControl: .navigation(makeNavigationPresetViewWithoutBagde),
+            showHeadline: true,
+            cellLayoutStyle: .boxed,
+            numberOfRows: 3
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image
+        )
+    }
+
+    // MARK: - XIB integration
 
     func testXIBIntegration() {
         let view = ListsXIBIntegration.viewFromNib()
@@ -524,7 +643,7 @@ final class ListsTests: XCTestCase {
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
             assetType: .image(AnyValues.image),
-            customControl: .custom(makeCustomControlView()),
+            customControl: .custom(makeCustomControlView),
             showHeadline: true,
             cellLayoutStyle: .fullWidth
         )
@@ -588,16 +707,9 @@ extension ListsTests {
     }
 
     func makeCustomControlView() -> UIView {
-        let customView = UIStackView(frame: .zero)
-        customView.alignment = .bottom
-        let button = Button(title: "test")
-        button.isSmall = true
-
-        customView.addArrangedSubview(button)
-
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalToConstant: 115).isActive = true
-
+        let customView = UIView()
+        customView.backgroundColor = .yellow
+        customView.widthAnchor.constraint(equalToConstant: 115).isActive = true
         return customView
     }
 
@@ -621,20 +733,36 @@ extension ListsTests {
         return navigationPreset
     }
 
-    func makeNavigationPresetViewWithNumericBagde(withValue value: Int) -> NavigationPresetView {
+    func makeNavigationPresetViewWithNumericBagde() -> NavigationPresetView {
         let navigationPreset = NavigationPresetView()
         navigationPreset.badgeView.style = .numeric
-        navigationPreset.badgeView.value = value
+        navigationPreset.badgeView.value = AnyValues.intValue
         navigationPreset.isBadgeHidden = false
         return navigationPreset
+    }
+    
+    func makeNavigationPresetViewWithNumericBagdeValueMajorThanTen() -> NavigationPresetView {
+        let navigationPreset = NavigationPresetView()
+        navigationPreset.badgeView.style = .numeric
+        navigationPreset.badgeView.value = AnyValues.majorThanTenIntValue
+        navigationPreset.isBadgeHidden = false
+        return navigationPreset
+    }
+    
+    func makeVerticallyCenteredPreset() -> VerticallyCenteredPresetView {
+        let button = Button(title: "test")
+        button.isSmall = true
+        let verticallyCenteredPreset = VerticallyCenteredPresetView(arrangedSubview: button)
+        verticallyCenteredPreset.backgroundColor = .yellow
+        return verticallyCenteredPreset
     }
 }
 
 private class ListsTestsViewController: UIViewController, UITableViewDataSource {
     enum CustomControl {
         case none
-        case navigation(NavigationPresetView)
-        case custom(UIView)
+        case navigation(() -> NavigationPresetView)
+        case custom(() -> UIView)
     }
 
     // Cell config
@@ -690,10 +818,10 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
         switch customControl {
         case .none:
             cell.controlView = nil
-        case .navigation(let navigationPreset):
-            cell.controlView = navigationPreset
-        case .custom(let customView):
-            cell.controlView = customView
+        case .navigation(let makeNavigationPreset):
+            cell.controlView = makeNavigationPreset()
+        case .custom(let makeCustomControl):
+            cell.controlView = makeCustomControl()
         }
 
         return cell

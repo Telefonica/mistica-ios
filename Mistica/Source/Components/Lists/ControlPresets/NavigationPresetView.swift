@@ -23,7 +23,7 @@ public class NavigationPresetView: UIStackView {
         }
     }
 
-    public var isNavigationIconHidden = true {
+    public var isNavigationIconHidden = false {
         didSet {
             if isNavigationIconHidden {
                 imageView.removeFromSuperview()

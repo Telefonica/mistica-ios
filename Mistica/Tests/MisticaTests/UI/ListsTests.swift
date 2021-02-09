@@ -348,7 +348,7 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
-    
+
     func testCellWithAllLabelsAndHeadline() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -395,7 +395,7 @@ final class ListsTests: XCTestCase {
     }
 
     // MARK: - Navigation preset
-    
+
     func testCellWithTitleAndNavigationPresetWithoutBadge() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -407,7 +407,7 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
-    
+
     func testCellWithAllLabelsAndNavigationPresetWithoutBadge() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -477,9 +477,9 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
-    
+
     // MARK: - Vertically centered preset
-    
+
     func testCellWithTitleAndVerticallyCenteredPreset() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -491,7 +491,7 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
-    
+
     func testCellWithAllLabelsAndVerticallyCenteredPreset() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -505,7 +505,7 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
-    
+
     func testCellWithAllLabelsAndVerticallyCenteredPresetMoreThanOne() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -582,7 +582,7 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
-    
+
     func testAllLabelsAndBoxedStyleMoreThanOneRow() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.titleMultiline,
@@ -597,7 +597,7 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
-    
+
     func testAllLabelsAndVerticallyPresetAndBoxedStyleMoreThanOneRow() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.titleMultiline,
@@ -613,7 +613,7 @@ final class ListsTests: XCTestCase {
             as: .image
         )
     }
-    
+
     func testAllLabelsWithMultilinesAndHeadlineAndImageAndNavigationPresetAndBoxedStyleMoreThanOneRow() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -740,7 +740,7 @@ extension ListsTests {
         navigationPreset.isBadgeHidden = false
         return navigationPreset
     }
-    
+
     func makeNavigationPresetViewWithNumericBagdeValueMajorThanTen() -> NavigationPresetView {
         let navigationPreset = NavigationPresetView()
         navigationPreset.badgeView.style = .numeric
@@ -748,7 +748,7 @@ extension ListsTests {
         navigationPreset.isBadgeHidden = false
         return navigationPreset
     }
-    
+
     func makeVerticallyCenteredPreset() -> VerticallyCenteredPresetView {
         let button = Button(title: "test")
         button.isSmall = true

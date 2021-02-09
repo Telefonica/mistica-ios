@@ -22,613 +22,523 @@ final class ListsTests: XCTestCase {
     // MARK: - Default config
 
     func testCellDefaultConfig() {
-        let listTestsViewController = makeListTestsViewController()
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController()
         )
     }
 
     func testCellDefaultConfigAndImage() {
-        let listTestsViewController = makeListTestsViewController(assetType: .image(AnyValues.image))
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(assetType: .image(AnyValues.image))
         )
     }
 
     func testCellDefaultConfigAndSmallIcon() {
-        let listTestsViewController = makeListTestsViewController(assetType: .smallIcon(AnyValues.image))
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(assetType: .smallIcon(AnyValues.image))
         )
     }
 
     func testCellDefaultConfigAndLargeIcon() {
-        let listTestsViewController = makeListTestsViewController(assetType: .largeIcon(AnyValues.image, backgroundColor: .blue))
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(assetType: .largeIcon(AnyValues.image, backgroundColor: .blue))
         )
     }
 
     func testCellDefaultConfigAndLargeIconAndControlView() {
-        let listTestsViewController = makeListTestsViewController(
-            assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
+                customControl: .custom(makeCustomControlView)
+            )
         )
     }
 
     // MARK: - Only Title
 
     func testCellWithTitle() {
-        let listTestsViewController = makeListTestsViewController(title: AnyValues.title)
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(title: AnyValues.title)
         )
     }
 
     func testCellWithTitleAndImage() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            assetType: .image(AnyValues.image)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                assetType: .image(AnyValues.image)
+            )
         )
     }
 
     func testCellWithTitleAndSmallIcon() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            assetType: .smallIcon(AnyValues.image)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                assetType: .smallIcon(AnyValues.image)
+            )
         )
     }
 
     func testCellWithTitleAndLargeIcon() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            assetType: .largeIcon(AnyValues.image, backgroundColor: .blue)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                assetType: .largeIcon(AnyValues.image, backgroundColor: .blue)
+            )
         )
     }
 
     func testCellWithTitleAndLargeIconAndControlView() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
+                customControl: .custom(makeCustomControlView)
+            )
         )
     }
 
     // MARK: - Title and Subtitle
 
     func testCellWithTitleAndSubtitle() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle
+            )
         )
     }
 
     func testCellWithTitleAndSubtitleAndImage() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            assetType: .image(AnyValues.image)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                assetType: .image(AnyValues.image)
+            )
         )
     }
 
     func testCellWithTitleAndSubtitleAndSmallIcon() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            assetType: .smallIcon(AnyValues.image)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                assetType: .smallIcon(AnyValues.image)
+            )
         )
     }
 
     func testCellWithTitleAndSubtitleAndLargeIcon() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            assetType: .largeIcon(AnyValues.image, backgroundColor: .blue)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                assetType: .largeIcon(AnyValues.image, backgroundColor: .blue)
+            )
         )
     }
 
     func testCellWithTitleAndSubtitleAndLargeIconAndControlView() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
+                customControl: .custom(makeCustomControlView)
+            )
         )
     }
 
     // MARK: - Title and Detail text
 
     func testCellWithTitleAndDetailText() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            detailText: AnyValues.detailText
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                detailText: AnyValues.detailText
+            )
         )
     }
 
     func testCellWithTitleAndDetailTextAndImage() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                detailText: AnyValues.detailText,
+                assetType: .image(AnyValues.image)
+            )
         )
     }
 
     func testCellWithTitleAndDetailTextAndSmallIcon() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            detailText: AnyValues.detailText,
-            assetType: .smallIcon(AnyValues.image)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                detailText: AnyValues.detailText,
+                assetType: .smallIcon(AnyValues.image)
+            )
         )
     }
 
     func testCellWithTitleAndDetailTextAndLargeIcon() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            detailText: AnyValues.detailText,
-            assetType: .largeIcon(AnyValues.image, backgroundColor: .blue)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                detailText: AnyValues.detailText,
+                assetType: .largeIcon(AnyValues.image, backgroundColor: .blue)
+            )
         )
     }
 
     func testCellWithTitleAndDetailTextAndLargeIconAndControlView() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            detailText: AnyValues.detailText,
-            assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                detailText: AnyValues.detailText,
+                assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
+                customControl: .custom(makeCustomControlView)
+            )
         )
     }
 
     // MARK: - All labels
 
     func testCellWithAllLabels() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText
+            )
         )
     }
 
     func testCellWithAllLabelsAndImage() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                assetType: .image(AnyValues.image)
+            )
         )
     }
 
     func testCellWithAllLabelsAndSmallIcon() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            assetType: .smallIcon(AnyValues.image)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                assetType: .smallIcon(AnyValues.image)
+            )
         )
     }
 
     func testCellWithAllLabelsAndLargeIcon() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            assetType: .largeIcon(AnyValues.image, backgroundColor: .blue)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                assetType: .largeIcon(AnyValues.image, backgroundColor: .blue)
+            )
         )
     }
 
     func testCellWithAllLabelsAndLargeIconAndControlView() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
-            customControl: .custom(makeCustomControlView)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                assetType: .largeIcon(AnyValues.image, backgroundColor: .blue),
+                customControl: .custom(makeCustomControlView)
+            )
         )
     }
 
     // MARK: - Headline
 
     func testCellWithTitleAndHeadline() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            showHeadline: true
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                showHeadline: true
+            )
         )
     }
     
     func testCellWithAllLabelsAndHeadline() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            showHeadline: true
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                showHeadline: true
+            )
         )
     }
 
     func testCellWithAllLabelsAndHeadlineAndImage() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image),
-            showHeadline: true
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                assetType: .image(AnyValues.image),
+                showHeadline: true
+            )
         )
     }
 
     func testCellWithAllLabelsAndHeadlineAndImageAndControlView() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image),
-            customControl: .custom(makeCustomControlView),
-            showHeadline: true
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                assetType: .image(AnyValues.image),
+                customControl: .custom(makeCustomControlView),
+                showHeadline: true
+            )
         )
     }
 
     // MARK: - Navigation preset
     
     func testCellWithTitleAndNavigationPresetWithoutBadge() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            customControl: .navigation(makeNavigationPresetViewWithoutBagde)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                customControl: .navigation(makeNavigationPresetViewWithoutBagde)
+            )
         )
     }
     
     func testCellWithAllLabelsAndNavigationPresetWithoutBadge() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithoutBagde)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                customControl: .navigation(makeNavigationPresetViewWithoutBagde)
+            )
         )
     }
 
     func testCellWithAllLabelsAndNavigationPresetWithoutNavigationIcon() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithoutNavigationIcon)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                customControl: .navigation(makeNavigationPresetViewWithoutNavigationIcon)
+            )
         )
     }
 
     func testCellWithAllLabelsAndNavigationPresetWithFlagBadge() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithFlagBagde)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                customControl: .navigation(makeNavigationPresetViewWithFlagBagde)
+            )
         )
     }
 
     func testCellWithAllLabelsAndNavigationPresetWithNumericBadge() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithNumericBagde)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                customControl: .navigation(makeNavigationPresetViewWithNumericBagde)
+            )
         )
     }
 
     func testCellWithAllLabelsAndNavigationPresetWithNumericBadgeWithValueMajorThanTen() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            customControl: .navigation(makeNavigationPresetViewWithNumericBagdeValueMajorThanTen)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                customControl: .navigation(makeNavigationPresetViewWithNumericBagdeValueMajorThanTen)
+            )
         )
     }
     
     // MARK: - Vertically centered preset
     
     func testCellWithTitleAndVerticallyCenteredPreset() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            customControl: .custom(makeVerticallyCenteredPreset)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                customControl: .custom(makeVerticallyCenteredPreset)
+            )
         )
     }
     
     func testCellWithAllLabelsAndVerticallyCenteredPreset() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            customControl: .custom(makeVerticallyCenteredPreset)
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                customControl: .custom(makeVerticallyCenteredPreset)
+            )
         )
     }
     
     func testCellWithAllLabelsAndVerticallyCenteredPresetMoreThanOne() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            customControl: .custom(makeVerticallyCenteredPreset),
-            numberOfRows: 3
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                customControl: .custom(makeVerticallyCenteredPreset),
+                numberOfRows: 3
+            )
         )
     }
 
     // MARK: - Multilines test
 
     func testAllLabelsWithMultilines() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.titleMultiline,
-            subtitle: AnyValues.subtitleMultiline,
-            detailText: AnyValues.detailTextMultiline
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.titleMultiline,
+                subtitle: AnyValues.subtitleMultiline,
+                detailText: AnyValues.detailTextMultiline
+            )
         )
     }
 
     func testAllLabelsWithMultilinesAndHeadlineAndImageAndNavigationPreset() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.titleMultiline,
-            subtitle: AnyValues.subtitleMultiline,
-            detailText: AnyValues.detailTextMultiline,
-            assetType: .image(AnyValues.image),
-            customControl: .navigation(makeNavigationPresetViewWithoutBagde),
-            showHeadline: true
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.titleMultiline,
+                subtitle: AnyValues.subtitleMultiline,
+                detailText: AnyValues.detailTextMultiline,
+                assetType: .image(AnyValues.image),
+                customControl: .navigation(makeNavigationPresetViewWithoutBagde),
+                showHeadline: true
+            )
         )
     }
 
     func testAllLabelsWithMultilinesAndHeadlineAndImageAndNavigationPresetMoreThanOneRow() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitleMultiline,
-            detailText: AnyValues.detailTextMultiline,
-            assetType: .image(AnyValues.image),
-            customControl: .navigation(makeNavigationPresetViewWithoutBagde),
-            showHeadline: true,
-            numberOfRows: 3
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitleMultiline,
+                detailText: AnyValues.detailTextMultiline,
+                assetType: .image(AnyValues.image),
+                customControl: .navigation(makeNavigationPresetViewWithoutBagde),
+                showHeadline: true,
+                numberOfRows: 3
+            )
         )
     }
 
     // MARK: - Boxed style
 
     func testCellWithTitleAndBoxedStyle() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            cellLayoutStyle: .boxed
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                cellLayoutStyle: .boxed
+            )
         )
     }
     
     func testAllLabelsAndBoxedStyleMoreThanOneRow() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.titleMultiline,
-            subtitle: AnyValues.subtitleMultiline,
-            detailText: AnyValues.detailTextMultiline,
-            cellLayoutStyle: .boxed,
-            numberOfRows: 3
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.titleMultiline,
+                subtitle: AnyValues.subtitleMultiline,
+                detailText: AnyValues.detailTextMultiline,
+                cellLayoutStyle: .boxed,
+                numberOfRows: 3
+            )
         )
     }
     
     func testAllLabelsAndVerticallyPresetAndBoxedStyleMoreThanOneRow() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.titleMultiline,
-            subtitle: AnyValues.subtitleMultiline,
-            detailText: AnyValues.detailTextMultiline,
-            customControl: .custom(makeVerticallyCenteredPreset),
-            cellLayoutStyle: .boxed,
-            numberOfRows: 3
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.titleMultiline,
+                subtitle: AnyValues.subtitleMultiline,
+                detailText: AnyValues.detailTextMultiline,
+                customControl: .custom(makeVerticallyCenteredPreset),
+                cellLayoutStyle: .boxed,
+                numberOfRows: 3
+            )
         )
     }
     
     func testAllLabelsWithMultilinesAndHeadlineAndImageAndNavigationPresetAndBoxedStyleMoreThanOneRow() {
-        let listTestsViewController = makeListTestsViewController(
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitleMultiline,
-            detailText: AnyValues.detailTextMultiline,
-            assetType: .image(AnyValues.image),
-            customControl: .navigation(makeNavigationPresetViewWithoutBagde),
-            showHeadline: true,
-            cellLayoutStyle: .boxed,
-            numberOfRows: 3
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitleMultiline,
+                detailText: AnyValues.detailTextMultiline,
+                assetType: .image(AnyValues.image),
+                customControl: .navigation(makeNavigationPresetViewWithoutBagde),
+                showHeadline: true,
+                cellLayoutStyle: .boxed,
+                numberOfRows: 3
+            )
         )
     }
 
@@ -636,21 +546,19 @@ final class ListsTests: XCTestCase {
 
     func testXIBIntegration() {
         let view = ListsXIBIntegration.viewFromNib()
-
-        let listTestsViewController = makeListTestsViewController(
-            listView: view.listView,
-            title: AnyValues.title,
-            subtitle: AnyValues.subtitle,
-            detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image),
-            customControl: .custom(makeCustomControlView),
-            showHeadline: true,
-            cellLayoutStyle: .fullWidth
-        )
-
-        assertSnapshot(
-            matching: listTestsViewController,
-            as: .image(on: .iPhoneX)
+        
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeListTestsViewController(
+                listView: view.listView,
+                title: AnyValues.title,
+                subtitle: AnyValues.subtitle,
+                detailText: AnyValues.detailText,
+                assetType: .image(AnyValues.image),
+                customControl: .custom(makeCustomControlView),
+                showHeadline: true,
+                cellLayoutStyle: .fullWidth
+            )
         )
     }
 }

@@ -22,6 +22,7 @@ class SegmentCell: UICollectionViewCell {
         super.init(frame: frame)
         setUpTitle()
         setUpAccessibility()
+        accessibilityTraits = [.button]
     }
 
     @available(*, unavailable)

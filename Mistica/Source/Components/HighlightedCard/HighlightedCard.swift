@@ -140,15 +140,18 @@ public class HighlightedCard: UIView {
         }
     }
 
-    public convenience init(title: String? = nil,
-                            subtitle: String? = nil,
-                            rightImage: UIImage? = nil,
-                            actionButtonStyle: ButtonStyle = .primary) {
-        self.init(frame: .zero)
+    public init(title: String? = nil,
+                subtitle: String? = nil,
+                rightImage: UIImage? = nil,
+                actionButtonStyle: ButtonStyle = .primary) {
+        super.init(frame: .zero)
+        
         self.title = title
         self.subtitle = subtitle
         self.rightImage = rightImage
         self.actionButtonStyle = actionButtonStyle
+        
+        commonInit()
     }
 
     override public init(frame: CGRect) {

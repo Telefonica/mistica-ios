@@ -21,10 +21,11 @@ jobs:
         
       - name: Setup Ruby and bundle install
         uses: ruby/setup-ruby@v1
+        env:
+          ImageOS: macos-latest
         with:
           ruby-version: 2.6
           bundler-cache: true 
-          ImageOS: macos-latest
           
       - name: Carthage Cache
         uses: actions/cache@v2.1.4

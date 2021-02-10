@@ -138,7 +138,7 @@ private extension CardCommonContent {
         layoutViews()
         styleViews()
     }
-    
+
     func layoutViews() {
         axis = .vertical
         alignment = .leading

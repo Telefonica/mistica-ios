@@ -80,10 +80,10 @@ extension CardBase {
 
     func configureButtons(primaryButton: CardButton?, linkButton: CardLinkButton?) {
         buttonsView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
-        
+
         let shouldBeAccesibleAsUniqueElement = primaryButton == nil && linkButton == nil
         setAccessibilityAsUniqueElement(shouldBeAccesibleAsUniqueElement)
-        
+
         if buttonsView.arrangedSubviews.isEmpty {
             buttonsView.removeFromSuperview()
         } else if buttonsView.superview == nil {
@@ -104,7 +104,7 @@ private extension CardBase {
         axis = .vertical
         spacing = 16
     }
-    
+
     func setAccessibilityAsUniqueElement(_ enabled: Bool) {
         if enabled {
             isAccessibilityElement = true

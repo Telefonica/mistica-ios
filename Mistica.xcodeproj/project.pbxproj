@@ -1395,6 +1395,7 @@
 				90594A7825C15B980021142B /* InputFieldTests.swift */,
 				B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */,
 				1E6AAD2925CC7AF300FB6D3C /* ListsTests.swift */,
+				B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 			);
 			path = UI;
@@ -1796,6 +1797,8 @@
 				B835993525D4227F00246981 /* HighlightedCardXIBIntegration.xib */,
 				1EB4FB6825CD59DC004537CC /* ListsXIBIntegration.swift */,
 				1EB4FB6B25CD5AE8004537CC /* ListsXIBIntegration.xib */,
+				B835993625D4227F00246981 /* HighlightedCardXIBIntegration.swift */,
+				B835993525D4227F00246981 /* HighlightedCardXIBIntegration.xib */,
 			);
 			path = XIBIntegration;
 			sourceTree = "<group>";

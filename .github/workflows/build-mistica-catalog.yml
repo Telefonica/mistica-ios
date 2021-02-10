@@ -24,6 +24,7 @@ jobs:
         with:
           ruby-version: 2.6
           bundler-cache: true 
+          ImageOS: macos-latest
           
       - name: Carthage Cache
         uses: actions/cache@v2.1.4
@@ -34,10 +35,13 @@ jobs:
           restore-keys: |
             mistica-ios-carthage-
                 
-      - name: fastlane
+      - name: Setup the needed external dependencies 
         run:  bundle exec fastlane setup
-      
 
+      # Missing step: Install profiles
+
+      - name: Build Mistica catalog and upload to AppCenter 
+        run:  bundle exec fastlane build_and_deploy_mistica_catalog
 
 
       # - name: Checkout this repo

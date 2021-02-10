@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3Qw-OW-dIU" customClass="ListsXIBIntegration" customModule="MisticaTests">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7mu-rz-1oD" customClass="ListView" customModule="Mistica">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="hdV-N4-Qhf"/>
+            <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+            <constraints>
+                <constraint firstItem="7mu-rz-1oD" firstAttribute="top" secondItem="hdV-N4-Qhf" secondAttribute="top" id="HQF-ee-Epq"/>
+                <constraint firstItem="hdV-N4-Qhf" firstAttribute="bottom" secondItem="7mu-rz-1oD" secondAttribute="bottom" id="Jz1-jS-cP4"/>
+                <constraint firstItem="hdV-N4-Qhf" firstAttribute="trailing" secondItem="7mu-rz-1oD" secondAttribute="trailing" id="f3U-lR-czM"/>
+                <constraint firstItem="7mu-rz-1oD" firstAttribute="leading" secondItem="hdV-N4-Qhf" secondAttribute="leading" id="i8i-5n-iRG"/>
+            </constraints>
+            <connections>
+                <outlet property="listView" destination="7mu-rz-1oD" id="no8-ga-K1I"/>
+            </connections>
+            <point key="canvasLocation" x="-1101" y="146"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

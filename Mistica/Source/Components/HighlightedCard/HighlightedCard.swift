@@ -145,12 +145,12 @@ public class HighlightedCard: UIView {
                 rightImage: UIImage? = nil,
                 actionButtonStyle: ButtonStyle = .primary) {
         super.init(frame: .zero)
-        
+
         self.title = title
         self.subtitle = subtitle
         self.rightImage = rightImage
         self.actionButtonStyle = actionButtonStyle
-        
+
         commonInit()
     }
 
@@ -159,9 +159,9 @@ public class HighlightedCard: UIView {
         commonInit()
     }
 
-    @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        commonInit()
     }
 
     override public var intrinsicContentSize: CGSize {

@@ -80,7 +80,10 @@ extension CardBase {
 
     func configureButtons(primaryButton: CardButton?, linkButton: CardLinkButton?) {
         buttonsView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
-
+        
+        let shouldBeAccesibleAsUniqueElement = primaryButton == nil && linkButton == nil
+        setAccessibilityAsUniqueElement(shouldBeAccesibleAsUniqueElement)
+        
         if buttonsView.arrangedSubviews.isEmpty {
             buttonsView.removeFromSuperview()
         } else if buttonsView.superview == nil {
@@ -94,11 +97,27 @@ extension CardBase {
 private extension CardBase {
     func commomInit() {
         layoutViews()
+
     }
 
     func layoutViews() {
         addArrangedSubview(contentView)
         axis = .vertical
         spacing = 16
+    }
+    
+    func setAccessibilityAsUniqueElement(_ enabled: Bool) {
+        if enabled {
+            isAccessibilityElement = true
+            accessibilityLabel = [
+                title,
+                headline,
+                subtitle,
+                descriptionTitle
+            ].compactMap { $0 }.joined(separator: " ")
+        } else {
+            isAccessibilityElement = false
+            accessibilityLabel = nil
+        }
     }
 }

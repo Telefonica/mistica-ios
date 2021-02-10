@@ -229,11 +229,11 @@ extension UICatalogHighlightedCardViewController: UITableViewDataSource, UITable
         }
 
         if showActionButtonCell.segmentedControl.selectedSegmentIndex > 0 {
-            vc.highlightedCard.showActionButton = true
+            vc.highlightedCard.showActionButton = false
         }
 
         if showCloseButtonCell.segmentedControl.selectedSegmentIndex > 0 {
-            vc.highlightedCard.showCloseButton = false
+            vc.highlightedCard.showCloseButton = true
         }
 
         if showRightImageCell.segmentedControl.selectedSegmentIndex > 0 {

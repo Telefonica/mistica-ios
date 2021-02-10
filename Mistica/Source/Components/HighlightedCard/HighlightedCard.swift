@@ -118,7 +118,7 @@ public class HighlightedCard: UIView {
             actionButton.isHidden
         }
         set {
-            actionButton.isHidden = newValue
+            actionButton.isHidden = !newValue
             updateTapGesture()
         }
     }
@@ -130,7 +130,7 @@ public class HighlightedCard: UIView {
             closeButton.isHidden
         }
         set {
-            closeButton.isHidden = newValue
+            closeButton.isHidden = !newValue
         }
     }
 

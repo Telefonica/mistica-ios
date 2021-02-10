@@ -97,7 +97,6 @@ extension CardBase {
 private extension CardBase {
     func commomInit() {
         layoutViews()
-
     }
 
     func layoutViews() {

@@ -12,10 +12,14 @@ import UIKit
 // MARK: - UICatalogTabsViewController
 
 class UICatalogTabsViewController: UIViewController {
+    enum Constants {
+        static let defaultIcon = UIImage.tabsIcon
+    }
+    
     private lazy var tabItemSelectedTitleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "tabItemSelectedTitleCell")
         cell.textField.text = currentSelectedTabItems?.title
-        cell.textField.addTarget(self, action: #selector(textFieldDidChange(_:)),
+        cell.textField.addTarget(self, action: #selector(tabItemSelectedTitleDidChange(_:)),
                                  for: .editingChanged)
         return cell
     }()
@@ -24,6 +28,7 @@ class UICatalogTabsViewController: UIViewController {
         let cell = UISwitchTableViewCell(reuseIdentifier: "tabItemSelectedIconCell")
         cell.isOn = currentSelectedTabItems?.icon != nil ? true : false
         cell.textLabel?.text = "Show icon"
+        cell.didValueChange = tabItemSelectedIconDidChange
         return cell
     }()
     
@@ -84,12 +89,17 @@ class UICatalogTabsViewController: UIViewController {
         setUp()
     }
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
+    @objc func tabItemSelectedTitleDidChange(_ textField: UITextField) {
         guard let currentSelectedTabItems = self.currentSelectedTabItems else { return }
-        let newSelectedTabItem = TabItem(title: textField.text ?? "",
-                                         icon: currentSelectedTabItems.icon)
-        tabs.update(currentSelectedTabItems, newTabItem: newSelectedTabItem)
-        self.currentSelectedTabItems = newSelectedTabItem
+        updateCurrentSelectedTabItem(withTitle: textField.text ?? "",
+                                     icon: currentSelectedTabItems.icon)
+    }
+    
+    func tabItemSelectedIconDidChange(_ `switch`: UISwitch) {
+        guard let currentSelectedTabItems = self.currentSelectedTabItems else { return }
+        let icon = `switch`.isOn ? Constants.defaultIcon : nil
+        updateCurrentSelectedTabItem(withTitle: currentSelectedTabItems.title,
+                                     icon: icon)
     }
 }
 
@@ -239,6 +249,14 @@ private extension UICatalogTabsViewController {
     func removeTabItem() {
         guard let currentSelectedTabItems = currentSelectedTabItems else { return }
         tabs.remove(currentSelectedTabItems)
+    }
+    
+    func updateCurrentSelectedTabItem(withTitle title: String, icon: UIImage?) {
+        guard let currentSelectedTabItems = self.currentSelectedTabItems else { return }
+        let newSelectedTabItem = TabItem(title: title,
+                                         icon: icon)
+        tabs.update(currentSelectedTabItems, newTabItem: newSelectedTabItem)
+        self.currentSelectedTabItems = newSelectedTabItem
     }
 }
 

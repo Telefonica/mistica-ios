@@ -250,7 +250,7 @@ private extension Button {
             stateStyle = style.stateStyleByState[.loading]
         } else if !isEnabled {
             stateStyle = style.stateStyleByState[.disabled]
-        } else if isSelected {
+        } else if isSelected || isHighlighted {
             stateStyle = style.stateStyleByState[.selected]
         } else {
             stateStyle = style.stateStyleByState[.normal]

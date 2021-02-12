@@ -62,6 +62,11 @@ public class TabsView: UIView {
 // MARK: - Public
 
 extension TabsView {
+    public func reload(with tabItems: [TabItem]) {
+        self.tabsItems = tabItems
+        collectionView.reloadData()
+    }
+    
     public func update(_ tabItem: TabItem, newTabItem: TabItem) {
         guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
         tabsItems[index] = newTabItem
@@ -69,7 +74,9 @@ extension TabsView {
     }
         
     public func remove(_ tabItem: TabItem) {
-            
+        guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
+        tabsItems.remove(at: index)
+        collectionView.reloadData()
     }
 }
 

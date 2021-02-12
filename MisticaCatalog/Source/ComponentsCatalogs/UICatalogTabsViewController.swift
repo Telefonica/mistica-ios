@@ -32,13 +32,6 @@ class UICatalogTabsViewController: UIViewController {
         return cell
     }()
     
-    private lazy var updateTabItemSelectedCell: UITableViewCell = {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "updateTabItemSelectedCell")
-        cell.textLabel?.textColor = .link
-        cell.textLabel?.text = "Update Item"
-        return cell
-    }()
-    
     private lazy var removeTabItemSelectedCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "removeTabsItemSelectedCell")
         cell.textLabel?.textColor = .textDanger
@@ -58,7 +51,6 @@ class UICatalogTabsViewController: UIViewController {
     private lazy var tabItemSelectedCells = [
         tabItemSelectedTitleCell,
         tabItemSelectedIconCell,
-        updateTabItemSelectedCell,
         removeTabItemSelectedCell
     ]
     
@@ -135,12 +127,14 @@ extension UICatalogTabsViewController: UITableViewDataSource {
 
 extension UICatalogTabsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section + 1 == Section.allCases.count else { return }
-        
-        switch indexPath.row {
-        case 2:
-            updateTabItem()
-        case 3:
+        switch (indexPath.section, indexPath.row) {
+        case (Section.dataSet.rawValue, 0):
+            tabs.reload(with: TabsDataset.twoItems.tabItems)
+        case (Section.dataSet.rawValue, 1):
+            tabs.reload(with: TabsDataset.threeItems.tabItems)
+        case (Section.dataSet.rawValue, 2):
+            tabs.reload(with: TabsDataset.fourItems.tabItems)
+        case (Section.tabItemSelected.rawValue, 2):
             removeTabItem()
         default:
             return
@@ -239,13 +233,6 @@ private extension UICatalogTabsViewController {
         }
     }
 
-    func updateTabItem() {
-        guard let currentSelectedTabItems = currentSelectedTabItems else { return }
-        let newTabItem = TabItem(title: tabItemSelectedTitleCell.textLabel?.text ?? "",
-                                 icon: tabItemSelectedIconCell.isOn ? .buttonsIcon : nil)
-        tabs.update(currentSelectedTabItems, newTabItem: newTabItem)
-    }
-    
     func removeTabItem() {
         guard let currentSelectedTabItems = currentSelectedTabItems else { return }
         tabs.remove(currentSelectedTabItems)

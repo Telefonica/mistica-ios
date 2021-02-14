@@ -12,6 +12,7 @@ import UIKit
 class SegmentView: UIView {
     private enum Constants {
         static let height: CGFloat = 4
+        static let animationDuration: TimeInterval = 0.5
     }
 
     private lazy var backgroundView = UIView()
@@ -55,7 +56,7 @@ class SegmentView: UIView {
 extension SegmentView {
     func setValue(_ value: Int, animated: Bool) {
         if animated {
-            UIView.animate(withDuration: UIView.defaultAnimationDuration) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.value = value
                 self.layoutIfNeeded()
             }

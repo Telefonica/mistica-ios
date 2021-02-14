@@ -13,7 +13,7 @@ public class NavigationPresetView: UIStackView {
 
     public let badgeView = BadgeView()
 
-    public var isBadgeHidden = false {
+    public var isBadgeHidden = true {
         didSet {
             if isBadgeHidden {
                 badgeView.removeFromSuperview()

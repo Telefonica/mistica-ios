@@ -46,7 +46,7 @@ final class ControlsTests: XCTestCase {
 
     func testTabBarControl() {
         assertSnapshotForAllBrands(
-            as: .image,
+            as: .image(size: CGSize(width: 420, height: 60)),
             viewBuilder: makeTabBarTemplate()
         )
     }

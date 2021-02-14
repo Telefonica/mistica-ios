@@ -33,7 +33,7 @@
             <connections>
                 <outlet property="card" destination="NTR-g8-owd" id="Vak-Dj-E29"/>
             </connections>
-            <point key="canvasLocation" x="-603" y="147"/>
+            <point key="canvasLocation" x="-1101" y="146"/>
         </view>
     </objects>
     <resources>

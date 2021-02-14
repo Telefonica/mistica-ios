@@ -185,6 +185,7 @@ private extension UICatalogTabsViewController {
     func setUp() {
         setUpTabs()
         setUpOptionsTable()
+        setUpInitialState()
     }
     
     func setUpTabs() {
@@ -209,6 +210,11 @@ private extension UICatalogTabsViewController {
         optionsTable.rowHeight = UITableView.automaticDimension
         optionsTable.estimatedRowHeight = 50
         optionsTable.register(UITableViewCell.self, forCellReuseIdentifier: "dequeueReusableCell")
+    }
+    
+    func setUpInitialState() {
+        optionsTable.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
+        tabs.selectTabItem(at: 0)
     }
     
     func numberOfRows(In section: Section) -> Int {

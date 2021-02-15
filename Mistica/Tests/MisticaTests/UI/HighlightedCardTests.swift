@@ -219,7 +219,7 @@ final class HighlightedCardTests: XCTestCase {
         view.card.title = "Resolver problema técnico"
         view.card.subtitle = "Usa nuestra herramienta para resolver tus problemas técnicos"
         view.card.actionButtonTitle = "Empezar pruebas"
-        
+
         assertSnapshot(
             matching: view.asRootOfViewController(),
             as: .image(on: .iPhoneSe)

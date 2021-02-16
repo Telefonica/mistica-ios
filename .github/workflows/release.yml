@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.FLOW_GITHUB_TOKEN }}
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v2.1.4
@@ -25,7 +25,7 @@ jobs:
 
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.FLOW_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}
         run: npx -p @semantic-release/changelog -p @semantic-release/git -p @semantic-release/exec -p semantic-release semantic-release ${{ github.event.inputs.cliArgs }}
 
       - name: Checkout Telefonica/github-actions repo

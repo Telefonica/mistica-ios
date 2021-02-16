@@ -17,4 +17,4 @@ jobs:
         with:
           commit_message: Run swiftformat
         env:
-          GITHUB_TOKEN: ${{ secrets.FLOW_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}

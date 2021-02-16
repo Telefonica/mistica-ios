@@ -6,6 +6,10 @@
 //  Copyright © 2020 Telefonica. All rights reserved.
 //
 
+// Apple Clang - Language - Preprocessing
+
+GCC_PREPROCESSOR_DEFINITIONS = "APPCENTER_APP_SECRET=${APPCENTER_APP_SECRET}"
+
 // Versioning
 VERSION_NUMBER = 8.0.1
 CURRENT_PROJECT_VERSION = 1 //Build

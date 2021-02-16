@@ -56,10 +56,13 @@ platform :ios do
       path: MISTICA_CATALOG_INFO_PLIST_PATH
     )
 
+    appcenter_app_secret = ENV["APPCENTER_APP_SECRET"]
+
   	gym(
         project: MISTICA_CATALOG_PROJECT_PATH,
         scheme: "MisticaCatalog",
         configuration: "Release",
+        xcargs: "APPCENTER_APP_SECRET=#{appcenter_app_secret}",
         codesigning_identity: "iPhone Distribution: Tuenti Technologies SL",
         export_team_id: "JA666WMX28",
         output_directory: BUILD_OUTPUT_PATH,

@@ -135,6 +135,15 @@ public extension DataCard {
     var linkButton: Button {
         cardBaseView.buttonsView.linkButton
     }
+    
+    override var accessibilityTraits: UIAccessibilityTraits {
+        get {
+            accessibilityElement.accessibilityTraits
+        }
+        set {
+            accessibilityElement.accessibilityTraits = newValue
+        }
+    }
 }
 
 // MARK: Private

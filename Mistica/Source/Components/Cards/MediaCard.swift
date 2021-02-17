@@ -48,6 +48,7 @@ public class MediaCard: UIView {
         static let spacingAfterRichMediaView = CGFloat(8)
     }
 
+    private lazy var accessibilityElement = UIAccessibilityElement(accessibilityContainer: self)
     private var richMediaContainerView = UIView()
     private let baseCardView = CardBase()
 
@@ -56,7 +57,19 @@ public class MediaCard: UIView {
             baseCardView.fragmentView = fragmentView
         }
     }
-
+    
+    public override var accessibilityElements: [Any]? {
+        get {
+            accessibilityElement.accessibilityFrameInContainerSpace = bounds
+            return [
+                accessibilityElement,
+                fragmentView as Any,
+                baseCardView.buttonsView
+            ].compactMap { $0 }
+        }
+        set { }
+    }
+    
     public var contentConfiguration: MediaCardConfiguration? {
         didSet {
             if let contentConfiguration = contentConfiguration {
@@ -170,6 +183,13 @@ private extension MediaCard {
         baseCardView.descriptionTitle = configuration.descriptionTitle
 
         baseCardView.configureButtons(primaryButton: configuration.button, linkButton: configuration.link)
+        
+        accessibilityElement.accessibilityLabel = [
+            baseCardView.headline,
+            baseCardView.title,
+            baseCardView.subtitle,
+            baseCardView.descriptionTitle
+        ].compactMap { $0 }.joined(separator: " ")
     }
 }
 

@@ -24,9 +24,9 @@ class CardButtons: UIStackView {
                 linkButton.superview == nil ? nil : linkButton
             ].compactMap { $0 }
         }
-        set { }
+        set {}
     }
-    
+
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commomInit()

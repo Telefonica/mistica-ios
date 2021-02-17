@@ -57,8 +57,8 @@ public class MediaCard: UIView {
             baseCardView.fragmentView = fragmentView
         }
     }
-    
-    public override var accessibilityElements: [Any]? {
+
+    override public var accessibilityElements: [Any]? {
         get {
             accessibilityElement.accessibilityFrameInContainerSpace = bounds
             return [
@@ -67,9 +67,9 @@ public class MediaCard: UIView {
                 baseCardView.buttonsView
             ].compactMap { $0 }
         }
-        set { }
+        set {}
     }
-    
+
     public var contentConfiguration: MediaCardConfiguration? {
         didSet {
             if let contentConfiguration = contentConfiguration {
@@ -116,7 +116,7 @@ public extension MediaCard {
             baseCardView.buttonsView.linkButtonState = newValue
         }
     }
-    
+
     override var accessibilityTraits: UIAccessibilityTraits {
         get {
             accessibilityElement.accessibilityTraits
@@ -192,7 +192,7 @@ private extension MediaCard {
         baseCardView.descriptionTitle = configuration.descriptionTitle
 
         baseCardView.configureButtons(primaryButton: configuration.button, linkButton: configuration.link)
-        
+
         accessibilityElement.accessibilityLabel = [
             baseCardView.headline,
             baseCardView.title,

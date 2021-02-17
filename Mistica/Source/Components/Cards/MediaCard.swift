@@ -116,6 +116,15 @@ public extension MediaCard {
             baseCardView.buttonsView.linkButtonState = newValue
         }
     }
+    
+    override var accessibilityTraits: UIAccessibilityTraits {
+        get {
+            accessibilityElement.accessibilityTraits
+        }
+        set {
+            accessibilityElement.accessibilityTraits = newValue
+        }
+    }
 }
 
 // MARK: Private

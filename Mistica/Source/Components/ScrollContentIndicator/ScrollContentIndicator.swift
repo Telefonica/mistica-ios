@@ -87,6 +87,7 @@ private extension ScrollContentIndicator {
         let gradientView = GradientView()
         gradientView.applyStyle(.scrollContentIndicator)
         gradientView.makeRounded(cornerRadius: cornerRadius)
+        gradientView.isUserInteractionEnabled = false
         insertSubview(gradientView, at: 0, constraints: gradientView.constraintsForEdges(to: self))
     }
 

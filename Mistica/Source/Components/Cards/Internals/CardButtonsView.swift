@@ -10,8 +10,8 @@ import UIKit
 
 /// CardButtons is a custom view which contains the buttons shared between DataCard and MediaCard
 class CardButtons: UIStackView {
-    private let primaryButton = Button()
-    private let linkButton = Button()
+    let primaryButton = Button()
+    let linkButton = Button()
     private let dummyView = SpacerView(axis: .vertical, amount: 1)
 
     private var primaryActionHandler: (() -> Void)?
@@ -41,24 +41,6 @@ class CardButtons: UIStackView {
 // MARK: Internal
 
 extension CardButtons {
-    var primaryButtonState: Button.State {
-        get {
-            primaryButton.state
-        }
-        set {
-            primaryButton.state = newValue
-        }
-    }
-
-    var linkButtonState: Button.State {
-        get {
-            linkButton.state
-        }
-        set {
-            linkButton.state = newValue
-        }
-    }
-
     func configureButtons(primaryButton: CardButton?, linkButton: CardLinkButton?) {
         if let primaryAction = primaryButton {
             self.primaryButton.title = primaryAction.title

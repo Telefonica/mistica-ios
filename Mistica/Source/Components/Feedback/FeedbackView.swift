@@ -299,14 +299,14 @@ private extension FeedbackView {
         case .button(_, let completion):
             completion()
         case .retryButton(let title, _, let completion):
-            primaryButton?.state = .loading
+            primaryButton?.isLoading = true
             prepareHapticFeedback()
             completion { [weak self] in
                 self?.prepareAnimation()
                 self?.startAnimation()
 
                 self?.primaryButton?.title = title
-                self?.primaryButton?.state = .normal
+                self?.primaryButton?.isLoading = false
             }
         case .none:
             break

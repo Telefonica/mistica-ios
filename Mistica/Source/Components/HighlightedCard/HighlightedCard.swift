@@ -119,7 +119,7 @@ public class HighlightedCard: UIView {
             actionButton.isHidden
         }
         set {
-            actionButton.isHidden = newValue
+            actionButton.isHidden = !newValue
             updateTapGesture()
         }
     }
@@ -131,7 +131,7 @@ public class HighlightedCard: UIView {
             closeButton.isHidden
         }
         set {
-            closeButton.isHidden = newValue
+            closeButton.isHidden = !newValue
         }
     }
 
@@ -154,15 +154,19 @@ public class HighlightedCard: UIView {
         set {}
     }
 
-    public convenience init(title: String? = nil,
-                            subtitle: String? = nil,
-                            rightImage: UIImage? = nil,
-                            actionButtonStyle: ButtonStyle = .primary) {
-        self.init(frame: .zero)
+    public init(title: String? = nil,
+                subtitle: String? = nil,
+                rightImage: UIImage? = nil,
+                actionButtonStyle: ButtonStyle = .primary) {
+        super.init(frame: .zero)
+
+
         self.title = title
         self.subtitle = subtitle
         self.rightImage = rightImage
         self.actionButtonStyle = actionButtonStyle
+
+        commonInit()
     }
 
     override public init(frame: CGRect) {
@@ -170,9 +174,9 @@ public class HighlightedCard: UIView {
         commonInit()
     }
 
-    @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        commonInit()
     }
 
     override public var intrinsicContentSize: CGSize {

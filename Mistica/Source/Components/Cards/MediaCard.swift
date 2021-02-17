@@ -99,22 +99,12 @@ public class MediaCard: UIView {
 // MARK: Public
 
 public extension MediaCard {
-    var primaryButtonState: Button.State {
-        get {
-            baseCardView.buttonsView.primaryButtonState
-        }
-        set {
-            baseCardView.buttonsView.primaryButtonState = newValue
-        }
+    var primaryButton: Button {
+        baseCardView.buttonsView.primaryButton
     }
 
-    var linkButtonState: Button.State {
-        get {
-            baseCardView.buttonsView.linkButtonState
-        }
-        set {
-            baseCardView.buttonsView.linkButtonState = newValue
-        }
+    var linkButton: Button {
+        baseCardView.buttonsView.linkButton
     }
 
     override var accessibilityTraits: UIAccessibilityTraits {

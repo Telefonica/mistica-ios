@@ -160,7 +160,6 @@ public class HighlightedCard: UIView {
                 actionButtonStyle: ButtonStyle = .primary) {
         super.init(frame: .zero)
 
-
         self.title = title
         self.subtitle = subtitle
         self.rightImage = rightImage

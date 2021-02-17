@@ -83,8 +83,8 @@ public class DataCard: UIView {
             }
         }
     }
-    
-    public override var accessibilityElements: [Any]? {
+
+    override public var accessibilityElements: [Any]? {
         get {
             accessibilityElement.accessibilityFrameInContainerSpace = bounds
             return [
@@ -93,7 +93,7 @@ public class DataCard: UIView {
                 cardBaseView.buttonsView
             ].compactMap { $0 }
         }
-        set { }
+        set {}
     }
 
     override public init(frame: CGRect) {
@@ -135,7 +135,7 @@ public extension DataCard {
     var linkButton: Button {
         cardBaseView.buttonsView.linkButton
     }
-    
+
     override var accessibilityTraits: UIAccessibilityTraits {
         get {
             accessibilityElement.accessibilityTraits
@@ -221,7 +221,7 @@ private extension DataCard {
         case .primaryAndLink(let primaryButton, let linkButton):
             cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
         }
-        
+
         accessibilityElement.accessibilityLabel = [
             configuration.headline,
             configuration.title,

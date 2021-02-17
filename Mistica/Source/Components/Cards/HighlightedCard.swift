@@ -34,7 +34,7 @@ public class HighlightedCard: UIView {
     private lazy var accessibilityElement = UIAccessibilityElement(accessibilityContainer: self)
     private lazy var verticalStackView = UIStackView()
     private lazy var horizontalStackView = UIStackView()
-    
+
     private lazy var titleLabel = UILabel()
     private lazy var subtitleLabel = UILabel()
     private lazy var actionButton = Button()
@@ -140,8 +140,8 @@ public class HighlightedCard: UIView {
             updateColors()
         }
     }
-    
-    public override var accessibilityElements: [Any]? {
+
+    override public var accessibilityElements: [Any]? {
         get {
             updateAccessibilityLabel()
             accessibilityElement.accessibilityFrameInContainerSpace = bounds
@@ -151,7 +151,7 @@ public class HighlightedCard: UIView {
                 closeButton.isHidden ? nil : closeButton
             ].compactMap { $0 }
         }
-        set { }
+        set {}
     }
 
     public init(title: String? = nil,
@@ -306,7 +306,7 @@ public extension HighlightedCard {
             backgroundImageView.accessibilityIdentifier = newValue
         }
     }
-    
+
     override var accessibilityTraits: UIAccessibilityTraits {
         get {
             accessibilityElement.accessibilityTraits
@@ -466,7 +466,7 @@ private extension HighlightedCard {
     @objc func actionButtonTapped() {
         actionButtonCallback?()
     }
-    
+
     func updateAccessibilityLabel() {
         accessibilityElement.accessibilityLabel = [
             titleAccessibilityLabel,

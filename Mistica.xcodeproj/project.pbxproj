@@ -1405,7 +1405,6 @@
 				1860BBC025B03AF200319CFC /* DeterminateStepperTests.swift */,
 				18CDBD4C25ACA17600928474 /* IndeterminateStepperTests.swift */,
 				90594A7825C15B980021142B /* InputFieldTests.swift */,
-				B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */,
 				1E6AAD2925CC7AF300FB6D3C /* ListsTests.swift */,
 				B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
@@ -1632,8 +1631,6 @@
 		AFD4A16598BBDC97C2CB7272 /* HighlightedCard */ = {
 			isa = PBXGroup;
 			children = (
-				60B05E30B585FA553637073B /* HighlightedCard.swift */,
-				ECD56BBE30569BDAA6E657B2 /* HighlightedCardStyle.swift */,
 				CE4639C14EB70095D7C8A82E /* README.md */,
 				DE0B4BE6FB3D802AE83DFB1F /* docs */,
 			);
@@ -1734,6 +1731,8 @@
 				B8D7194B25B21065006510CC /* README.md */,
 				B8D7193A25B20FF0006510CC /* MediaCard.swift */,
 				B8D7193B25B20FF0006510CC /* DataCard.swift */,
+				60B05E30B585FA553637073B /* HighlightedCard.swift */,
+				ECD56BBE30569BDAA6E657B2 /* HighlightedCardStyle.swift */,
 				B8D7193C25B20FF0006510CC /* Internals */,
 				B8D7194125B20FF0006510CC /* Model */,
 			);
@@ -1771,6 +1770,11 @@
 		B8D7195025B2120E006510CC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6C6AE81BF2E75A483E4EAA1E /* highlighted-card-background.png */,
+				68F3F224D83384B81453E522 /* highlighted-card-image-fill.png */,
+				CCD4DACB4633200AF01D04A2 /* highlighted-card-image-fit.png */,
+				67CCE0C19AECBF4FAC221920 /* highlighted-card-inverse.png */,
+				4CBD28E592422A7765C8D6A3 /* highlighted-card-normal.png */,
 				B8D7195825B21594006510CC /* data-card.jpg */,
 				B8D7195725B21594006510CC /* media-card.jpg */,
 				B8D7195425B21589006510CC /* card-extra-content.jpg */,
@@ -1805,8 +1809,6 @@
 				18CDBD7625ACB1AC00928474 /* IndeterminateStepperXIBIntegration.xib */,
 				90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */,
 				90E9623C25BF19E7006E6170 /* FormXIBIntegration.swift */,
-				B835993625D4227F00246981 /* HighlightedCardXIBIntegration.swift */,
-				B835993525D4227F00246981 /* HighlightedCardXIBIntegration.xib */,
 				1EB4FB6825CD59DC004537CC /* ListsXIBIntegration.swift */,
 				1EB4FB6B25CD5AE8004537CC /* ListsXIBIntegration.xib */,
 				B835993625D4227F00246981 /* HighlightedCardXIBIntegration.swift */,
@@ -1942,11 +1944,6 @@
 		F1C6E69D5581830410FBCDDC /* images */ = {
 			isa = PBXGroup;
 			children = (
-				6C6AE81BF2E75A483E4EAA1E /* highlighted-card-background.png */,
-				68F3F224D83384B81453E522 /* highlighted-card-image-fill.png */,
-				CCD4DACB4633200AF01D04A2 /* highlighted-card-image-fit.png */,
-				67CCE0C19AECBF4FAC221920 /* highlighted-card-inverse.png */,
-				4CBD28E592422A7765C8D6A3 /* highlighted-card-normal.png */,
 			);
 			path = images;
 			sourceTree = "<group>";

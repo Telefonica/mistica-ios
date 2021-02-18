@@ -3,7 +3,6 @@
 
 ### Bug Fixes
 
-* **Button:** Make Button a UIControl  BREAKING CHANGE: Button.State enum has changed to UIControl.State. ([#79](https://github.com/Telefonica/mistica-ios/issues/79)) ([4b57222](https://github.com/Telefonica/mistica-ios/commit/4b5722211510b4bbed28f1b15a4596a28187972c))
 * **ColorPalette:** fix backgroundPromo color of O2ClassicColorPalette ([#75](https://github.com/Telefonica/mistica-ios/issues/75)) ([fd87da0](https://github.com/Telefonica/mistica-ios/commit/fd87da01c6e28677d85bdbc6bb46630d8788afc0))
 * **DataCard:** fix border color of card ([cb4c3b0](https://github.com/Telefonica/mistica-ios/commit/cb4c3b01e9c4a5c23f7cdf19745caaa02764fdc1))
 * **HighlightedCard:** add support for xib and storyboard ([5e3afa7](https://github.com/Telefonica/mistica-ios/commit/5e3afa73f9a2694422273359bfc58e35a83ebba2))
@@ -18,6 +17,7 @@
 ### BREAKING CHANGES
 
 * **HighlightedCard:** texts (title and subtitle) of HighlightedCard have no restrictions of number of lines and both add support multi lines.
+* **Button:** Make Button a UIControl ([#79](https://github.com/Telefonica/mistica-ios/issues/79)) ([4b57222](https://github.com/Telefonica/mistica-ios/commit/4b5722211510b4bbed28f1b15a4596a28187972c))
 
 ## [8.0.1](https://github.com/Telefonica/mistica-ios/compare/v8.0.0...v8.0.1) (2021-01-28)
 

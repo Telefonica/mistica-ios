@@ -144,6 +144,7 @@ public class HighlightedCard: UIView {
     override public var accessibilityElements: [Any]? {
         get {
             updateAccessibilityLabel()
+            // We must set the frame and be sure it is already calculated.
             accessibilityElement.accessibilityFrameInContainerSpace = bounds
             return [
                 accessibilityElement,

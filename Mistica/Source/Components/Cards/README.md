@@ -31,7 +31,7 @@ myDataCard.dataConfiguration = myConfiguration
 
 ### Adding extra content to a DataCard
 
-A DataCard can be customize adding an extra view like
+A DataCard can be customized adding an extra view like
 
 ![DataCard](./docs/images/card-extra-content.jpg)
 
@@ -64,7 +64,7 @@ myDataCard.dataConfiguration = myConfiguration
 
 ### Adding extra content to a MediaCard
 
-A MediaCard can be customize adding an extra view like
+A MediaCard can be customized adding an extra view like
 
 ![MediaCard](./docs/images/card-extra-content.jpg)
 

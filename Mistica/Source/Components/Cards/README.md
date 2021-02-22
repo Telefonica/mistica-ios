@@ -7,6 +7,7 @@
 * [HighlightedCard](#highlightedcard)
    * [Right Image](#right-image)
    * [How to use a HighlightedCard](#how-to-use-a-highlightedcard)
+* [Accessibility](#accessibility)
 
 ## DataCard
 
@@ -116,7 +117,7 @@ When using with autolayout, **HighlightedCard** has no intrinsic size for the wi
 # Accessibility
 
 Cards are ready for VoiceOver. 
-They will be as a unique element and if has buttons, them will be also focusable with VoiceOver.
+They will be an unique element and if has buttons, them will be also focusable with VoiceOver.
 
 VoiceOver will read the following components (in this particular order):
 - headline

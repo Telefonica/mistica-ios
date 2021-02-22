@@ -31,7 +31,7 @@ public class HighlightedCard: UIView {
         case secondary
     }
 
-    private lazy var accessibilityElement = UIAccessibilityElement(accessibilityContainer: self)
+    private lazy var cardAccessibilityElement = UIAccessibilityElement(accessibilityContainer: self)
     private lazy var verticalStackView = UIStackView()
     private lazy var horizontalStackView = UIStackView()
 
@@ -145,9 +145,9 @@ public class HighlightedCard: UIView {
         get {
             updateAccessibilityLabel()
             // We must set the frame and be sure it is already calculated.
-            accessibilityElement.accessibilityFrameInContainerSpace = bounds
+            cardAccessibilityElement.accessibilityFrameInContainerSpace = bounds
             return [
-                accessibilityElement,
+                cardAccessibilityElement,
                 actionButton.isHidden ? nil : actionButton,
                 closeButton.isHidden ? nil : closeButton
             ].compactMap { $0 }
@@ -310,10 +310,10 @@ public extension HighlightedCard {
 
     override var accessibilityTraits: UIAccessibilityTraits {
         get {
-            accessibilityElement.accessibilityTraits
+            cardAccessibilityElement.accessibilityTraits
         }
         set {
-            accessibilityElement.accessibilityTraits = newValue
+            cardAccessibilityElement.accessibilityTraits = newValue
         }
     }
 }
@@ -469,7 +469,7 @@ private extension HighlightedCard {
     }
 
     func updateAccessibilityLabel() {
-        accessibilityElement.accessibilityLabel = [
+        cardAccessibilityElement.accessibilityLabel = [
             titleAccessibilityLabel,
             subtitleAccessibilityLabel
         ].compactMap { $0 }.joined(separator: " ")

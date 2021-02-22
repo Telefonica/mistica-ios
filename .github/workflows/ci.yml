@@ -60,7 +60,7 @@ jobs:
         with:
           repository: Telefonica/github-actions
           ref: 'v1.1.0'
-          token: "${{ secrets.READ_PRIVATE_REPOS }}"
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
           path: .github/actions
 
       - name: Check Tests result

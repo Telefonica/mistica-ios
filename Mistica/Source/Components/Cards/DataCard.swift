@@ -63,6 +63,7 @@ public class DataCard: UIView {
         static let largeIconSize = CGFloat(24)
     }
 
+    private lazy var cardAccessibilityElement = UIAccessibilityElement(accessibilityContainer: self)
     private let iconContainerView = UIView()
     private var iconImageView = DataCardAsset()
     private let cardBaseView = CardBase()
@@ -81,6 +82,18 @@ public class DataCard: UIView {
                 configure(with: .emptyConfiguration)
             }
         }
+    }
+
+    override public var accessibilityElements: [Any]? {
+        get {
+            // We must set the frame and be sure it is already calculated.
+            cardAccessibilityElement.accessibilityFrameInContainerSpace = bounds
+            return [
+                cardAccessibilityElement,
+                cardBaseView
+            ].compactMap { $0 }
+        }
+        set {}
     }
 
     override public init(frame: CGRect) {
@@ -121,6 +134,15 @@ public extension DataCard {
 
     var linkButton: Button {
         cardBaseView.buttonsView.linkButton
+    }
+
+    override var accessibilityTraits: UIAccessibilityTraits {
+        get {
+            cardAccessibilityElement.accessibilityTraits
+        }
+        set {
+            cardAccessibilityElement.accessibilityTraits = newValue
+        }
     }
 }
 
@@ -199,6 +221,13 @@ private extension DataCard {
         case .primaryAndLink(let primaryButton, let linkButton):
             cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
         }
+
+        cardAccessibilityElement.accessibilityLabel = [
+            configuration.headline,
+            configuration.title,
+            configuration.subtitle,
+            configuration.descriptionTitle
+        ].compactMap { $0 }.joined(separator: " ")
     }
 }
 

@@ -17,6 +17,16 @@ class CardButtons: UIStackView {
     private var primaryActionHandler: (() -> Void)?
     private var linkActionHandler: (() -> Void)?
 
+    override var accessibilityElements: [Any]? {
+        get {
+            [
+                primaryButton.superview == nil ? nil : primaryButton,
+                linkButton.superview == nil ? nil : linkButton
+            ].compactMap { $0 }
+        }
+        set {}
+    }
+
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commomInit()

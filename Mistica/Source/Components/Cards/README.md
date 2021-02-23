@@ -7,6 +7,7 @@
 * [HighlightedCard](#highlightedcard)
    * [Right Image](#right-image)
    * [How to use a HighlightedCard](#how-to-use-a-highlightedcard)
+* [Accessibility](#accessibility)
 
 ## DataCard
 
@@ -112,3 +113,59 @@ highlightedCard.showCloseButton = true
 ```
 
 When using with autolayout, **HighlightedCard** has no intrinsic size for the width but it has an specific intrinsic size for the height.
+
+# Accessibility
+
+Cards are ready for VoiceOver. 
+They will be an unique element and if has buttons, them will be also focusable with VoiceOver.
+
+VoiceOver will read the following components (in this particular order):
+- headline
+- title
+- subtitle
+- description
+
+## Extra content Accessibility
+
+If extra view is provided to the cell, extra view is reponsible about his accessibility and will be a focusable element for voice over inside the card like the buttons.
+To provide a good Accessibility Experience watch [this video](https://developer.apple.com/videos/play/wwdc2018/230/) is highly recommended. 
+
+This is an example extra view class that wil be an unique element for VoiceOver and will read Title and Text.
+
+```swift
+class ExtraView: UIView {
+    private let titleLabel = UILabel()
+    private let textLabel = UILabel()
+    
+    // Initializers...
+    
+    func configure(title: String, text: String) {
+        titleLabel.text = title
+        textLabel.text = text
+        
+        // Update the accessibility label with the
+        // content to be readed by VoiceOver
+        accessibilityLabel = "\(title) \(text)"
+    }
+    
+    private func commonInit() {
+        // Setup code...
+        
+        // Make this view as an accesible element to 
+        // be focusable by VoiceOver.
+        isAccessibleElement = true
+    }
+}
+
+card.fragmentView = extraView
+```
+
+
+## Cards as Cells (UITableViewCell/UICollectionViewCell)
+
+To use the cards as cells, as selectable items, set the `accessibilityTraits` of the Card to `[.button]` is recommended.
+And double tap with the focused card will launch `didSelect` on table/collection delegate.
+
+## UITapGesture
+
+Same as working with cells, Cards can be tappables with `UITapGestureRecognizer`, setting the `accessibilityTrait` to `[.button]` is also recommended.

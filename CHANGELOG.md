@@ -1,3 +1,10 @@
+## [9.0.1](https://github.com/Telefonica/mistica-ios/compare/v9.0.0...v9.0.1) (2021-02-24)
+
+
+### Bug Fixes
+
+* **Accessibility:** improve Accessibility on Cards. Update Cards docs ([#86](https://github.com/Telefonica/mistica-ios/issues/86)) ([3bbe36b](https://github.com/Telefonica/mistica-ios/commit/3bbe36b64b8eb106a5d1ee868ed447eba6d15d21))
+
 # [9.0.0](https://github.com/Telefonica/mistica-ios/compare/v8.0.1...v9.0.0) (2021-02-17)
 
 

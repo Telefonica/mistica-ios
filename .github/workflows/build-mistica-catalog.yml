@@ -18,49 +18,46 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Echo
-        run:  echo ${{ secrets.APPCENTER_API_TOKEN }}
         
-      # - name: RubyGems Cache
-      #   uses: actions/cache@v2.1.4
-      #   with:
-      #     path: vendor/bundle
-      #     key: mistica-ios-gems-${{ hashFiles('Gemfile.lock') }}
-      #     restore-keys: |
-      #       mistica-ios-gems-
+      - name: RubyGems Cache
+        uses: actions/cache@v2.1.4
+        with:
+          path: vendor/bundle
+          key: mistica-ios-gems-${{ hashFiles('Gemfile.lock') }}
+          restore-keys: |
+            mistica-ios-gems-
           
-      # - name: Carthage Cache
-      #   uses: actions/cache@v2.1.4
-      #   id: carthage-cache
-      #   with:
-      #     path: Carthage
-      #     key: mistica-ios-carthage-${{ hashFiles('Cartfile.resolved') }}
-      #     restore-keys: |
-      #       mistica-ios-carthage-
+      - name: Carthage Cache
+        uses: actions/cache@v2.1.4
+        id: carthage-cache
+        with:
+          path: Carthage
+          key: mistica-ios-carthage-${{ hashFiles('Cartfile.resolved') }}
+          restore-keys: |
+            mistica-ios-carthage-
       
-      # - name: Setup Ruby
-      #   run: |
-      #     export RBENV_ROOT=/usr/local/rbenv
-      #     export PATH="${RBENV_ROOT}/bin:$PATH"
-      #     rbenv install 2.6.0 -s
-      #     rbenv local 2.6.0
+      - name: Setup Ruby
+        run: |
+          export RBENV_ROOT=/usr/local/rbenv
+          export PATH="${RBENV_ROOT}/bin:$PATH"
+          rbenv install 2.6.0 -s
+          rbenv local 2.6.0
       
-      # - name: Bundle Install
-      #   run: |
-      #     gem install bundle
-      #     bundle config path vendor/bundle
-      #     bundle install
+      - name: Bundle Install
+        run: |
+          gem install bundle
+          bundle config path vendor/bundle
+          bundle install
                 
-      # - name: Setup needed external dependencies 
-      #   run:  bundle exec fastlane setup
+      - name: Setup needed external dependencies 
+        run:  bundle exec fastlane setup
 
-      # # Missing step: Install profiles
+      # Missing step: Install profiles
 
-      # - name: Build Mistica catalog and upload to AppCenter 
-      #   run:  bundle exec fastlane build_and_deploy_mistica_catalog
-      #   env:
-      #     APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
+      - name: Build Mistica catalog and upload to AppCenter 
+        run:  bundle exec fastlane build_and_deploy_mistica_catalog
+        env:
+          APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
 
 
       # - name: Checkout this repo

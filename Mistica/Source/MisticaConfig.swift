@@ -10,6 +10,7 @@ import Foundation
 
 public enum MisticaConfig {
     static var currentColorPalette: ColorPalette = MovistarColorPalette()
+    static var currentAppColorPalette: AppColorPalette = MovistarAppColorPalette()
     static var currentStyledControls = [MisticaControlStyle]()
 
     // MARK: Public Setup
@@ -38,12 +39,13 @@ private extension MisticaConfig {
         switch brandStyle {
         case .movistar:
             currentColorPalette = MovistarColorPalette()
+            currentAppColorPalette = MovistarAppColorPalette()
         case .vivo:
-            currentColorPalette = VivoColorPalette()
+            fatalError("Not yet")
         case .o2:
-            currentColorPalette = O2ColorPalette()
+            fatalError("Not yet")
         case .o2Classic:
-            currentColorPalette = O2ClassicColorPalette()
+            fatalError("Not yet")
         }
     }
 }

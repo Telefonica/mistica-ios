@@ -8,6 +8,7 @@
 
 import UIKit
 
+/*
 struct VivoColorPalette: ColorPalette {
     // MARK: Text
 
@@ -310,3 +311,4 @@ private enum Colors {
 
     static let sageLight = UIColor(r: 197, g: 227, b: 177)
 }
+*/

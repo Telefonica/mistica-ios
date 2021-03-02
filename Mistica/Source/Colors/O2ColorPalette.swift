@@ -8,6 +8,7 @@
 
 import UIKit
 
+/*
 struct O2ColorPalette: ColorPalette {
     // MARK: Text
 
@@ -307,3 +308,4 @@ private enum Colors {
     static let o2GradientThird = UIColor(r: 13, g: 113, b: 173)
     static let o2GradientFourth = UIColor(r: 68, g: 158, b: 208)
 }
+*/

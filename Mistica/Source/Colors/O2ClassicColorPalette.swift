@@ -15,7 +15,11 @@
 //
 import UIKit
 
+/*
 struct O2ClassicColorPalette: ColorPalette {
+}
+
+struct O2ClassicAppColorPalette: AppColorPalette {
     // MARK: Text
 
     let textPrimary = Colors.grey0
@@ -322,3 +326,4 @@ private enum Colors {
 
     static let o2Purple = UIColor(r: 149, g: 54, b: 152)
 }
+*/

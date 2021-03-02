@@ -92,7 +92,7 @@ private extension ScrollContentIndicator {
     }
 
     func addShadow() {
-        layer.shadowColor = UIColor.backgroundOpacity.cgColor
+        layer.shadowColor = UIColor.backgroundOverlay.cgColor
         layer.shadowOpacity = Constants.shadowOpacity
         layer.shadowOffset = .zero
         layer.shadowRadius = Constants.shadowRadius

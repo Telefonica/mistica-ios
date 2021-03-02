@@ -48,8 +48,8 @@ private extension Button.Style {
             allowsBleedingAlignment: true,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: .buttonLinkBackgroundSelectedInverse, borderColor: backgroundColor),
-                .disabled: Button.StateStyle(textColor: .textLinkInverseDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: .buttonLinkBackgroundSelected, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textLinkDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .loading: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]
         )

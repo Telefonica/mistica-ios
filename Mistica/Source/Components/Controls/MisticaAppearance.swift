@@ -38,31 +38,33 @@ private extension MisticaAppearance {
     static func setUpAppearanceOfTabBar() {
         let tabBarAppearance = UITabBar.appearance()
 
-        tabBarAppearance.tintColor = .appBarTextSelected
+        tabBarAppearance.tintColor = .textAppBarSelected
         tabBarAppearance.barTintColor = .appBarBackground
-        tabBarAppearance.unselectedItemTintColor = .appBarText
+        tabBarAppearance.unselectedItemTintColor = .textAppBar
         tabBarAppearance.isTranslucent = false
         tabBarAppearance.backgroundImage = UIImage()
         tabBarAppearance.shadowImage = UIImage(color: .divider)
     }
 
     static func setUpAppearanceOfSegmentedControl() {
+        #warning("Check")
         let segmentedControlAppearance = UISegmentedControl.appearance()
         setUpAppearanceOfSegmentedControl(
             withAppearance: segmentedControlAppearance,
-            tintColor: .segmentedControlBackgroundSelected,
-            textColor: .textSegmentedControl,
-            selectedTextColor: .textSegmentedControlSelected
+            tintColor: .controlActivated,
+            textColor: .textButtonPrimaryInverse,
+            selectedTextColor: .textNavigationBarPrimary
         )
     }
 
     static func setUpAppearanceOfSegmentedControlInSearchBar() {
+        #warning("Check")
         let scopeButtonsAppearance = UISegmentedControl.appearance(whenContainedInInstancesOf: [UISearchBar.self])
         setUpAppearanceOfSegmentedControl(
             withAppearance: scopeButtonsAppearance,
-            tintColor: .segmentedControlBackgroundInverseSelected,
-            textColor: .textSegmentedControlInverse,
-            selectedTextColor: .textSegmentedControlInverseSelected
+            tintColor: .controlActivated,
+            textColor: .textButtonPrimary,
+            selectedTextColor: .textNavigationBarPrimary
         )
     }
 

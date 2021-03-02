@@ -195,7 +195,7 @@ class UICatalogInputFieldsViewController: UITableViewController {
         cell.addSubview(constrainedToLayoutMarginsGuideOf: inputField)
 
         if style.isInverse {
-            cell.backgroundColor = .backgroundBrandFirst
+            cell.backgroundColor = .brand
         }
 
         return cell

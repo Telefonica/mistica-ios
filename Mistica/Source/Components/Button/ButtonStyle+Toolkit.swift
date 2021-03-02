@@ -55,10 +55,10 @@ public extension Button.Style {
         return Button.Style(
             allowsBleedingAlignment: false,
             stateStyleByState: [
-                .normal: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDanger, borderColor: .buttonDanger),
-                .selected: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerSelected, borderColor: .buttonDangerSelected),
-                .disabled: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerDisabled, borderColor: .buttonDangerDisabled),
-                .loading: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDanger, borderColor: .buttonDanger)
+                .normal: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackground, borderColor: .buttonDangerBackground),
+                .selected: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackgroundSelected, borderColor: .buttonDangerBackgroundSelected),
+                .disabled: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackgroundDisabled, borderColor: .buttonDangerBackgroundDisabled),
+                .loading: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackground, borderColor: .buttonDangerBackground)
             ]
         )
     }
@@ -70,7 +70,7 @@ public extension Button.Style {
             allowsBleedingAlignment: true,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLink, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textLinkSelected, backgroundColor: .buttonLinkBackgroundSelected, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLink, backgroundColor: .buttonLinkBackgroundSelected, borderColor: backgroundColor),
                 .disabled: Button.StateStyle(textColor: .textLinkDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .loading: Button.StateStyle(textColor: .textLink, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]
@@ -107,14 +107,14 @@ public extension Button.Style {
 
     static var linkInverse: Button.Style {
         let backgroundColor: UIColor = .clear
-
+        #warning("Check")
         var style = Button.Style(
             allowsBleedingAlignment: true,
             stateStyleByState: [
-                .normal: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textLinkInverseSelected, backgroundColor: .buttonLinkBackgroundSelectedInverse, borderColor: backgroundColor),
-                .disabled: Button.StateStyle(textColor: .textLinkInverseDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .loading: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
+                .normal: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textButtonSecondaryInverseSelected, backgroundColor: .buttonLinkBackgroundSelected, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textButtonSecondaryInverseDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .loading: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]
         )
 

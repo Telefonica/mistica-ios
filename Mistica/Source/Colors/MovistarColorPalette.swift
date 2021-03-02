@@ -159,6 +159,7 @@ struct MovistarAppColorPalette: AppColorPalette  {
     let bubbleOtherBackground = Colors.movistarGreenLight30
     let bubbleOtherBackgroundSelected = Colors.movistarGreenLight50
     let buttonBot = Colors.white
+    let buttonBotSelected = Colors.movistarGreen
     let buttonBotBorder = Colors.movistarGreenLight30
 
     // MARK: Assistant

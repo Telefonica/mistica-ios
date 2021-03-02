@@ -150,6 +150,7 @@ protocol AppColorPalette {
     var bubbleOtherBackground: UIColor { get }
     var bubbleOtherBackgroundSelected: UIColor { get }
     var buttonBot: UIColor { get }
+    var buttonBotSelected: UIColor { get }
     var buttonBotBorder: UIColor { get }
     
     // MARK: Assistant

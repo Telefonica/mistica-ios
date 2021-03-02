@@ -529,6 +529,11 @@ public extension UIColor {
         MisticaConfig.currentAppColorPalette.buttonBot
     }
     
+    @objc(buttonBotSelectedColor)
+    static var buttonBotSelected: UIColor {
+        MisticaConfig.currentAppColorPalette.buttonBotSelected
+    }
+    
     @objc(buttonBotBorderColor)
     static var buttonBotBorder: UIColor {
         MisticaConfig.currentAppColorPalette.buttonBotBorder

@@ -465,16 +465,6 @@ public extension UIColor {
         MisticaConfig.currentAppColorPalette.navigationsSearchBarBackground
     }
     
-    @objc(navigationSearchBarHintTextColor)
-    static var navigationSearchBarHintText: UIColor {
-        MisticaConfig.currentAppColorPalette.navigationSearchBarHintText
-    }
-    
-    @objc(iconNavigationBarColor)
-    static var iconNavigationBar: UIColor {
-        MisticaConfig.currentAppColorPalette.iconNavigationBar
-    }
-    
     // MARK: Navigation bar
     
     @objc(buttonTertiaryBackgroundColor)
@@ -534,9 +524,14 @@ public extension UIColor {
         MisticaConfig.currentAppColorPalette.bubbleOtherBackgroundSelected
     }
     
-    @objc(accentBackgroundColor)
-    static var accentBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.accentBackground
+    @objc(buttonBotColor)
+    static var buttonBot: UIColor {
+        MisticaConfig.currentAppColorPalette.buttonBot
+    }
+    
+    @objc(buttonBotBorderColor)
+    static var buttonBotBorder: UIColor {
+        MisticaConfig.currentAppColorPalette.buttonBotBorder
     }
     
     // MARK: Assistant

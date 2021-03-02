@@ -129,8 +129,6 @@ protocol AppColorPalette {
     // MARK: Search bar
 
     var navigationsSearchBarBackground: UIColor { get }
-    var navigationSearchBarHintText: UIColor { get }
-    var iconNavigationBar: UIColor { get }
 
     // MARK: Buttons
 
@@ -151,8 +149,9 @@ protocol AppColorPalette {
     var bubbleMeBackgroundSelected: UIColor { get }
     var bubbleOtherBackground: UIColor { get }
     var bubbleOtherBackgroundSelected: UIColor { get }
-    var accentBackground: UIColor { get }
-
+    var buttonBot: UIColor { get }
+    var buttonBotBorder: UIColor { get }
+    
     // MARK: Assistant
 
     var assistantButtonBackground: UIColor { get }

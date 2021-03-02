@@ -119,9 +119,10 @@ struct MovistarColorPalette: ColorPalette {
     ]
 }
 
-struct MovistarAppColorPalette: AppColorPalette  {
+struct MovistarAppColorPalette: AppColorPalette  {   
     
     // MARK: Text
+    
     let textSecondaryAlternative = Colors.white
     let textHint = Colors.grey2
     let textAccent = Colors.movistarGreen
@@ -137,12 +138,6 @@ struct MovistarAppColorPalette: AppColorPalette  {
     var navigationsSearchBarBackground: UIColor {
         UIColor(Colors.movistarBlueDark, variants: [.prominent: Colors.movistarProminentBlueDark])
     }
-    
-    var navigationSearchBarHintText: UIColor {
-        UIColor(Colors.movistarBlueLight30, variants: [.prominent: Colors.movistarProminentBlueLight30])
-    }
-    
-    let iconNavigationBar = Colors.white
 
     // MARK: Buttons
     
@@ -164,9 +159,7 @@ struct MovistarAppColorPalette: AppColorPalette  {
     let bubbleOtherBackground = Colors.movistarGreenLight30
     let bubbleOtherBackgroundSelected = Colors.movistarGreenLight50
     let buttonBot = Colors.white
-    let buttonBotSelected = Colors.movistarGreen
     let buttonBotBorder = Colors.movistarGreenLight30
-    let accentBackground = Colors.movistarGreen
 
     // MARK: Assistant
 

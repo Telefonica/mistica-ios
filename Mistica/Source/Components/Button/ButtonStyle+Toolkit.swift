@@ -107,7 +107,6 @@ public extension Button.Style {
 
     static var linkInverse: Button.Style {
         let backgroundColor: UIColor = .clear
-        #warning("Check")
         var style = Button.Style(
             allowsBleedingAlignment: true,
             stateStyleByState: [

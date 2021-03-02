@@ -60,46 +60,57 @@ public extension UIColor {
     static var buttonPrimaryBackgroundSelectedInverse: UIColor {
         MisticaConfig.currentColorPalette.buttonPrimaryBackgroundSelectedInverse
     }
+    
     @objc(buttonSecondaryBackgroundColor)
     static var buttonSecondaryBackground: UIColor {
         MisticaConfig.currentColorPalette.buttonSecondaryBackground
     }
+    
     @objc(buttonSecondaryBackgroundDisabledColor)
     static var buttonSecondaryBackgroundDisabled: UIColor {
         MisticaConfig.currentColorPalette.buttonSecondaryBackgroundDisabled
     }
+    
     @objc(buttonSecondaryBackgroundSelectedColor)
     static var buttonSecondaryBackgroundSelected: UIColor {
         MisticaConfig.currentColorPalette.buttonSecondaryBackgroundSelected
     }
+    
     @objc(buttonSecondaryBorderDisabledInverseColor)
     static var buttonSecondaryBorderDisabledInverse: UIColor {
         MisticaConfig.currentColorPalette.buttonSecondaryBorderDisabledInverse
     }
+    
     @objc(buttonSecondaryBorderInverseColor)
     static var buttonSecondaryBorderInverse: UIColor {
         MisticaConfig.currentColorPalette.buttonSecondaryBorderInverse
     }
+    
     @objc(buttonSecondaryBorderSelectedInverseColor)
     static var buttonSecondaryBorderSelectedInverse: UIColor {
         MisticaConfig.currentColorPalette.buttonSecondaryBorderSelectedInverse
     }
+    
     @objc(textButtonPrimaryColor)
     static var textButtonPrimary: UIColor {
         MisticaConfig.currentColorPalette.textButtonPrimary
     }
+    
     @objc(textButtonPrimaryInverseColor)
     static var textButtonPrimaryInverse: UIColor {
         MisticaConfig.currentColorPalette.textButtonPrimaryInverse
     }
+    
     @objc(textButtonPrimaryInverseDisabledColor)
     static var textButtonPrimaryInverseDisabled: UIColor {
         MisticaConfig.currentColorPalette.textButtonPrimaryInverseDisabled
     }
+    
     @objc(textButtonPrimaryInverseSelectedColor)
     static var textButtonPrimaryInverseSelected: UIColor {
         MisticaConfig.currentColorPalette.textButtonPrimaryInverseSelected
     }
+    
     @objc(textButtonSecondaryColor)
     static var textButtonSecondary: UIColor {
         MisticaConfig.currentColorPalette.textButtonSecondary
@@ -112,34 +123,42 @@ public extension UIColor {
     static var textButtonSecondarySelected: UIColor {
         MisticaConfig.currentColorPalette.textButtonSecondarySelected
     }
+    
     @objc(textButtonSecondaryInverseColor)
     static var textButtonSecondaryInverse: UIColor {
         MisticaConfig.currentColorPalette.textButtonSecondaryInverse
     }
+    
     @objc(textButtonSecondaryInverseDisabledColor)
     static var textButtonSecondaryInverseDisabled: UIColor {
         MisticaConfig.currentColorPalette.textButtonSecondaryInverseDisabled
     }
+    
     @objc(textButtonSecondaryInverseSelectedColor)
     static var textButtonSecondaryInverseSelected: UIColor {
         MisticaConfig.currentColorPalette.textButtonSecondaryInverseSelected
     }
+    
     @objc(textLinkColor)
     static var textLink: UIColor {
         MisticaConfig.currentColorPalette.textLink
     }
+    
     @objc(textLinkDangerColor)
     static var textLinkDanger: UIColor {
         MisticaConfig.currentColorPalette.textLinkDanger
     }
+    
     @objc(textLinkDangerDisabledColor)
     static var textLinkDangerDisabled: UIColor {
         MisticaConfig.currentColorPalette.textLinkDangerDisabled
     }
+    
     @objc(textLinkDisabledColor)
     static var textLinkDisabled: UIColor {
         MisticaConfig.currentColorPalette.textLinkDisabled
     }
+    
     @objc(textLinkSnackbarColor)
     static var textLinkSnackbar: UIColor {
         MisticaConfig.currentColorPalette.textLinkSnackbar
@@ -205,12 +224,12 @@ public extension UIColor {
     
     // MARK: Tab bar
     
-    @objc(textAppBarSelected)
+    @objc(textAppBarSelectedColor)
     static var textAppBarSelected: UIColor {
         MisticaConfig.currentColorPalette.textAppBarSelected
     }
     
-    @objc(textAppBar)
+    @objc(textAppBarColor)
     static var textAppBar: UIColor {
         MisticaConfig.currentColorPalette.textAppBar
     }
@@ -251,56 +270,56 @@ public extension UIColor {
     
     // MARK: Controls
     
-    @objc(control)
+    @objc(controlColor)
     static var control: UIColor {
         MisticaConfig.currentColorPalette.control
     }
     
-    @objc(controlActivated)
+    @objc(controlActivatedColor)
     static var controlActivated: UIColor {
         MisticaConfig.currentColorPalette.controlActivated
     }
     
-    @objc(controlError)
+    @objc(controlErrorColor)
     static var controlError: UIColor {
         MisticaConfig.currentColorPalette.controlError
     }
     
-    @objc(loadingBar)
+    @objc(loadingBarColor)
     static var loadingBar: UIColor {
         MisticaConfig.currentColorPalette.loadingBar
     }
     
-    @objc(loadingBarBackground)
+    @objc(loadingBarBackgroundColor)
     static var loadingBarBackground: UIColor {
         MisticaConfig.currentColorPalette.loadingBarBackground
     }
     
-    @objc(loadingBarBackgroundInverse)
+    @objc(loadingBarBackgroundInverseColor)
     static var loadingBarBackgroundInverse: UIColor {
         MisticaConfig.currentColorPalette.loadingBarBackgroundInverse
     }
     
-    @objc(loadingBarInverse)
+    @objc(loadingBarInverseColor)
     static var loadingBarInverse: UIColor {
         MisticaConfig.currentColorPalette.loadingBarInverse
     }
     
     // MARK:  Dividers
     
-    @objc(dividerColor)
+    @objc(dividerColorColor)
     static var divider: UIColor {
         MisticaConfig.currentColorPalette.divider
     }
     
-    @objc(navigationBarDivider)
+    @objc(navigationBarDividerColor)
     static var navigationBarDivider: UIColor {
         MisticaConfig.currentColorPalette.navigationBarDivider
     }
     
     // MARK: Global
     
-    @objc(brandColor)
+    @objc(brandColorColor)
     static var brand: UIColor {
         MisticaConfig.currentColorPalette.brand
     }
@@ -406,7 +425,7 @@ public extension UIColor {
     
     // MARK: Gradient
     
-    @objc(backgroundBrandGradient)
+    @objc(backgroundBrandGradientColors)
     static var backgroundBrandGradient: [UIColor] {
         MisticaConfig.currentColorPalette.backgroundBrandGradient
     }
@@ -433,7 +452,7 @@ public extension UIColor {
         MisticaConfig.currentAppColorPalette.textInputLabel
     }
     
-    @objc(textInputLabelError)
+    @objc(textInputLabelErrorColor)
     static var textInputLabelError: UIColor {
         MisticaConfig.currentAppColorPalette.textInputLabelError
     }

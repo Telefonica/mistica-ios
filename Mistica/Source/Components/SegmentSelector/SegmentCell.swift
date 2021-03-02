@@ -55,13 +55,13 @@ extension SegmentCell {
     }
 
     func showSelected() {
-        backgroundColor = .navigationBarBackground
-        title.textColor = .textNavigationBarPrimary
+        backgroundColor = .textNavigationBarPrimary
+        title.textColor = .navigationBarBackground
     }
 
     func showDeselected() {
-        backgroundColor = .navigationSearchBarBackground
-        title.textColor = .textNavigationSearchBarText
+        backgroundColor = .navigationsSearchBarBackground
+        title.textColor = .textNavigationBarPrimary
     }
 }
 

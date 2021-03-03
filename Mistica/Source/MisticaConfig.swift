@@ -41,12 +41,14 @@ private extension MisticaConfig {
             currentColorPalette = MovistarColorPalette()
             currentAppColorPalette = MovistarAppColorPalette()
         case .vivo:
-            fatalError("Not yet")
+            currentColorPalette = VivoColorPalette()
+            currentAppColorPalette = VivoAppColorPalette()
         case .o2:
             currentColorPalette = O2ColorPalette()
             currentAppColorPalette = O2AppColorPalette()
         case .o2Classic:
-            fatalError("Not yet")
+            currentColorPalette = O2ClassicColorPalette()
+            currentAppColorPalette = O2ClassicAppColorPalette()
         }
     }
 }

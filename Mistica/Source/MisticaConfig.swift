@@ -43,7 +43,8 @@ private extension MisticaConfig {
         case .vivo:
             fatalError("Not yet")
         case .o2:
-            fatalError("Not yet")
+            currentColorPalette = O2ColorPalette()
+            currentAppColorPalette = O2AppColorPalette()
         case .o2Classic:
             fatalError("Not yet")
         }

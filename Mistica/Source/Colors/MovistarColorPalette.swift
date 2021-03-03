@@ -200,13 +200,6 @@ struct MovistarAppColorPalette: AppColorPalette  {
 
     let progressBar = Colors.movistarGreen
 
-    // MARK: Status
-
-    let tagBackgroundFirst = Colors.movistarGreen
-    let tagBackgroundSecond = Colors.grey3
-    let tagBackgroundThird = Colors.movistarBlue
-    let tagBackgroundFourth = Colors.egg
-
     // MARK: Account Widget
 
     let amountBillingInfoWarning = Colors.pink

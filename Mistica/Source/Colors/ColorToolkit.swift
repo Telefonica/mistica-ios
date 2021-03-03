@@ -676,28 +676,6 @@ public extension UIColor {
         MisticaConfig.currentAppColorPalette.progressBar
     }
     
-    // MARK: Status
-    
-    @objc(tagBackgroundFirstColor)
-    static var tagBackgroundFirst: UIColor {
-        MisticaConfig.currentAppColorPalette.tagBackgroundFirst
-    }
-    
-    @objc(tagBackgroundSecondColor)
-    static var tagBackgroundSecond: UIColor {
-        MisticaConfig.currentAppColorPalette.tagBackgroundSecond
-    }
-    
-    @objc(tagBackgroundThirdColor)
-    static var tagBackgroundThird: UIColor {
-        MisticaConfig.currentAppColorPalette.tagBackgroundThird
-    }
-    
-    @objc(tagBackgroundFourthColor)
-    static var tagBackgroundFourth: UIColor {
-        MisticaConfig.currentAppColorPalette.tagBackgroundFourth
-    }
-    
     // MARK: Account Widget
     
     @objc(amountBillingInfoWarningColor)

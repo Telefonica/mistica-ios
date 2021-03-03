@@ -191,13 +191,6 @@ protocol AppColorPalette {
 
     var progressBar: UIColor { get }
 
-    // MARK: Status
-
-    var tagBackgroundFirst: UIColor { get }
-    var tagBackgroundSecond: UIColor { get }
-    var tagBackgroundThird: UIColor { get }
-    var tagBackgroundFourth: UIColor { get }
-
     // MARK: Account Widget
 
     var amountBillingInfoWarning: UIColor { get }

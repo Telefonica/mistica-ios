@@ -31,6 +31,11 @@ public extension UIColor {
         MisticaConfig.currentColorPalette.buttonLinkBackgroundSelected
     }
     
+    @objc(buttonLinkBackgroundSelectedInverseColor)
+    static var buttonLinkBackgroundSelectedInverse: UIColor {
+        MisticaConfig.currentColorPalette.buttonLinkBackgroundSelectedInverse
+    }
+    
     @objc(buttonPrimaryBackgroundColor)
     static var buttonPrimaryBackground: UIColor {
         MisticaConfig.currentColorPalette.buttonPrimaryBackground
@@ -115,10 +120,12 @@ public extension UIColor {
     static var textButtonSecondary: UIColor {
         MisticaConfig.currentColorPalette.textButtonSecondary
     }
+    
     @objc(textButtonSecondaryDisabledColor)
     static var textButtonSecondaryDisabled: UIColor {
         MisticaConfig.currentColorPalette.textButtonSecondaryDisabled
     }
+    
     @objc(textButtonSecondarySelectedColor)
     static var textButtonSecondarySelected: UIColor {
         MisticaConfig.currentColorPalette.textButtonSecondarySelected

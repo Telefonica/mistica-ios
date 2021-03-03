@@ -32,6 +32,7 @@ protocol ColorPalette {
     var buttonDangerBackgroundDisabled: UIColor { get }
     var buttonDangerBackgroundSelected: UIColor { get }
     var buttonLinkBackgroundSelected: UIColor { get }
+    var buttonLinkBackgroundSelectedInverse: UIColor { get }
     var buttonPrimaryBackground: UIColor { get }
     var buttonPrimaryBackgroundDisabled: UIColor { get }
     var buttonPrimaryBackgroundDisabledInverse: UIColor { get }

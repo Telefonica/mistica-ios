@@ -21,9 +21,9 @@ struct O2ClassicColorPalette: ColorPalette {
     let appBarBackground = Colors.white
     let background = Colors.white
     let backgroundBrand = Colors.o2GradientFirst
-    let backgroundOverlay = Colors.grey6.withAlphaComponent(60)
+    let backgroundOverlay = Colors.grey6.withAlphaComponent(0.6)
     let backgroundSkeleton = Colors.grey1
-    let backgroundSkeletonInverse = Colors.white.withAlphaComponent(20)
+    let backgroundSkeletonInverse = Colors.white.withAlphaComponent(0.2)
     let navigationBarBackground = Colors.o2Blue
     let navigationSearchBarBackground = Colors.o2BlueDark
     let backgroundAlternative = Colors.grey1
@@ -40,9 +40,10 @@ struct O2ClassicColorPalette: ColorPalette {
     let buttonDangerBackgroundDisabled = Colors.pepperLight30
     let buttonDangerBackgroundSelected = Colors.pepperDark
     let buttonLinkBackgroundSelected = Colors.o2SkyBlueLight10
+    let buttonLinkBackgroundSelectedInverse = Colors.white.withAlphaComponent(0.2)
     let buttonPrimaryBackground = Colors.o2SkyBlue
-    let buttonPrimaryBackgroundDisabled = Colors.o2SkyBlueLight50
-    let buttonPrimaryBackgroundDisabledInverse = Colors.o2SkyBlueLight50
+    let buttonPrimaryBackgroundDisabled = Colors.o2SkyBlueLight60
+    let buttonPrimaryBackgroundDisabledInverse = Colors.o2SkyBlueLight60
     let buttonPrimaryBackgroundInverse = Colors.white
     let buttonPrimaryBackgroundSelected = Colors.o2SkyBlueDark
     let buttonPrimaryBackgroundSelectedInverse = Colors.o2SkyBlueLight50
@@ -58,7 +59,7 @@ struct O2ClassicColorPalette: ColorPalette {
     let textButtonPrimaryInverseDisabled = Colors.o2SkyBlueLight30
     let textButtonPrimaryInverseSelected = Colors.o2SkyBlue
     let textButtonSecondary = Colors.o2SkyBlue
-    let textButtonSecondaryDisabled = Colors.o2SkyBlueLight50
+    let textButtonSecondaryDisabled = Colors.o2SkyBlueLight60
     let textButtonSecondarySelected = Colors.o2SkyBlueDark
     let textButtonSecondaryInverse = Colors.white
     let textButtonSecondaryInverseDisabled = Colors.o2SkyBlueLight50
@@ -80,7 +81,7 @@ struct O2ClassicColorPalette: ColorPalette {
     
     // DIVIDERS
     let divider = Colors.grey2
-    let dividerInverse = Colors.white.withAlphaComponent(20)
+    let dividerInverse = Colors.white.withAlphaComponent(0.2)
     let navigationBarDivider = Colors.o2Blue
     
     // FEEDBACKS
@@ -169,10 +170,10 @@ struct O2ClassicAppColorPalette: AppColorPalette  {
     
     // MARK: Assistant
     
-    let assistantButtonBackground = Colors.o2SkyBlueLight30.withAlphaComponent(25)
-    let assistantButtonBackgroundHighlighted = Colors.o2SkyBlueLight60.withAlphaComponent(25)
-    let assistantButtonBackgroundSelected = Colors.o2SkyBlueLight60.withAlphaComponent(25)
-    let assistantButtonBackgroundDisabled = Colors.o2SkyBlueLight60.withAlphaComponent(25)
+    let assistantButtonBackground = Colors.o2SkyBlueLight30.withAlphaComponent(0.25)
+    let assistantButtonBackgroundHighlighted = Colors.o2SkyBlueLight60.withAlphaComponent(0.25)
+    let assistantButtonBackgroundSelected = Colors.o2SkyBlueLight60.withAlphaComponent(0.25)
+    let assistantButtonBackgroundDisabled = Colors.o2SkyBlueLight60.withAlphaComponent(0.25)
     
     let assistantButtonBorderBackground = Colors.white
     let assistantButtonBorderBackgroundSelected = Colors.o2SkyBlueLight60
@@ -183,7 +184,7 @@ struct O2ClassicAppColorPalette: AppColorPalette  {
     let assistantDivider = Colors.o2SkyBlueLight60
     let assistantArrow = Colors.o2SkyBlueLight60
     let assistantPlaceholderText = Colors.o2SkyBlueLight30
-    let assistantCardShadow = Colors.o2BlueDark.withAlphaComponent(40)
+    let assistantCardShadow = Colors.o2BlueDark.withAlphaComponent(0.40)
     
     let assistantBadge = Colors.grey6
     
@@ -210,7 +211,7 @@ struct O2ClassicAppColorPalette: AppColorPalette  {
     let amountBillingInfoWarning = Colors.pepperDark
     let chartWarning = Colors.o2Yellow
     let chartWarningLight = Colors.o2Yellow
-    let chartBackground = Colors.white.withAlphaComponent(40)
+    let chartBackground = Colors.white.withAlphaComponent(0.40)
     let chartUnlimited = Colors.o2DeepSkyBlue
     let chartDanger = Colors.coral
     let chartPrimary = Colors.o2Green

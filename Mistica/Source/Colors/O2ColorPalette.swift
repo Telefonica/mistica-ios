@@ -14,9 +14,9 @@ struct O2ColorPalette: ColorPalette {
     let appBarBackground = Colors.white
     let background = Colors.white
     let backgroundBrand = Colors.o2BluePrimary
-    let backgroundOverlay = Colors.grey6.withAlphaComponent(60)
+    let backgroundOverlay = Colors.grey6.withAlphaComponent(0.6)
     let backgroundSkeleton = Colors.grey1
-    let backgroundSkeletonInverse = Colors.white.withAlphaComponent(20)
+    let backgroundSkeletonInverse = Colors.white.withAlphaComponent(0.2)
     let navigationBarBackground = Colors.o2BluePrimary
     let navigationSearchBarBackground = Colors.o2BluePrimary
     let backgroundAlternative = Colors.grey1
@@ -33,6 +33,7 @@ struct O2ColorPalette: ColorPalette {
     let buttonDangerBackgroundDisabled = Colors.pepperLight30
     let buttonDangerBackgroundSelected = Colors.pepperDark
     let buttonLinkBackgroundSelected = Colors.o2BluePrimaryLight10
+    let buttonLinkBackgroundSelectedInverse = Colors.white.withAlphaComponent(0.2)
     let buttonPrimaryBackground = Colors.o2BluePrimary
     let buttonPrimaryBackgroundDisabled = Colors.o2BluePrimaryLight10
     let buttonPrimaryBackgroundDisabledInverse = Colors.o2BluePrimaryLight50
@@ -162,10 +163,10 @@ struct O2AppColorPalette: AppColorPalette  {
 
     // MARK: Assistant
     
-    let assistantButtonBackground = Colors.o2BlueLight30.withAlphaComponent(25)
-    let assistantButtonBackgroundHighlighted = Colors.o2BlueLight60.withAlphaComponent(25)
-    let assistantButtonBackgroundSelected = Colors.o2BlueLight60.withAlphaComponent(25)
-    let assistantButtonBackgroundDisabled = Colors.o2BlueLight60.withAlphaComponent(25)
+    let assistantButtonBackground = Colors.o2BlueLight30.withAlphaComponent(0.25)
+    let assistantButtonBackgroundHighlighted = Colors.o2BlueLight60.withAlphaComponent(0.25)
+    let assistantButtonBackgroundSelected = Colors.o2BlueLight60.withAlphaComponent(0.25)
+    let assistantButtonBackgroundDisabled = Colors.o2BlueLight60.withAlphaComponent(0.25)
 
     let assistantButtonBorderBackground = Colors.white
     let assistantButtonBorderBackgroundSelected = Colors.o2BlueLight60
@@ -176,7 +177,7 @@ struct O2AppColorPalette: AppColorPalette  {
     let assistantDivider = Colors.o2BlueLight60
     let assistantArrow = Colors.o2BlueLight60
     let assistantPlaceholderText = Colors.o2BlueLight30
-    let assistantCardShadow = Colors.o2BluePrimaryDark.withAlphaComponent(40)
+    let assistantCardShadow = Colors.o2BluePrimaryDark.withAlphaComponent(0.40)
 
     let assistantBadge = Colors.grey6
 
@@ -203,7 +204,7 @@ struct O2AppColorPalette: AppColorPalette  {
     let amountBillingInfoWarning = Colors.pepperDark
     let chartWarning = Colors.o2Yellow
     let chartWarningLight = Colors.o2Yellow
-    let chartBackground = Colors.white.withAlphaComponent(40)
+    let chartBackground = Colors.white.withAlphaComponent(0.40)
     let chartUnlimited = Colors.o2BlueLight
     let chartDanger = Colors.o2Coral
     let chartPrimary = Colors.o2Green

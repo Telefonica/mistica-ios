@@ -13,9 +13,9 @@ struct VivoColorPalette: ColorPalette {
     let appBarBackground = Colors.white
     let background = Colors.white
     let backgroundBrand = Colors.vivoPurple
-    let backgroundOverlay = Colors.grey6 // al 60% de opacidad
+    let backgroundOverlay = Colors.grey6.withAlphaComponent(0.6)
     let backgroundSkeleton = Colors.grey1
-    let backgroundSkeletonInverse = Colors.white // al 20% de opacidad
+    let backgroundSkeletonInverse = Colors.white.withAlphaComponent(0.2)
     let navigationBarBackground = Colors.vivoPurple
     let navigationSearchBarBackground = Colors.vivoPurpleDark
     let backgroundAlternative = Colors.grey1
@@ -33,6 +33,7 @@ struct VivoColorPalette: ColorPalette {
     let buttonDangerBackgroundSelected = Colors.pepperDark
     let buttonDangerBackgroundHover = Colors.pepperDark
     let buttonLinkBackgroundSelected = Colors.vivoPurpleLight10
+    let buttonLinkBackgroundSelectedInverse = Colors.white.withAlphaComponent(0.2)
     let buttonPrimaryBackground = Colors.vivoPurple
     let buttonPrimaryBackgroundDisabled = Colors.vivoPurpleLight20
     let buttonPrimaryBackgroundDisabledInverse = Colors.vivoPurpleLight50
@@ -72,13 +73,9 @@ struct VivoColorPalette: ColorPalette {
     let loadingBarBackgroundInverse = Colors.vivoPurpleLight50
     let loadingBarInverse = Colors.vivoPurple
 
-    let toggleAndroidInactive = Colors.grey2 // solo web
-    let toggleAndroidBackgroundActive = Colors.vivoPurpleLight20 // solo web
-    let toggleIosInactive = Colors.white // solo web
-
     // DIVIDERS
     let divider = Colors.grey2
-    let dividerInverse = Colors.white // al 20% de opacidad
+    let dividerInverse = Colors.white.withAlphaComponent(0.2)
     let navigationBarDivider = Colors.vivoPurple
 
     // FEEDBACKS
@@ -169,10 +166,10 @@ struct VivoAppColorPalette: AppColorPalette  {
 
     // MARK: Assistant
     
-    let assistantButtonBackground = Colors.vivoPurpleLight30.withAlphaComponent(25)
-    let assistantButtonBackgroundHighlighted = Colors.vivoPurpleLight50.withAlphaComponent(25)
-    let assistantButtonBackgroundSelected = Colors.vivoPurpleLight50.withAlphaComponent(25)
-    let assistantButtonBackgroundDisabled = Colors.vivoPurpleLight50.withAlphaComponent(25)
+    let assistantButtonBackground = Colors.vivoPurpleLight30.withAlphaComponent(0.25)
+    let assistantButtonBackgroundHighlighted = Colors.vivoPurpleLight50.withAlphaComponent(0.25)
+    let assistantButtonBackgroundSelected = Colors.vivoPurpleLight50.withAlphaComponent(0.25)
+    let assistantButtonBackgroundDisabled = Colors.vivoPurpleLight50.withAlphaComponent(0.25)
 
     let assistantButtonBorderBackground = Colors.white
     let assistantButtonBorderBackgroundSelected = Colors.vivoPurpleLight50
@@ -210,13 +207,13 @@ struct VivoAppColorPalette: AppColorPalette  {
     let amountBillingInfoWarning = Colors.pink
     let chartWarning = Colors.orange
     let chartWarningLight = Colors.orangeLight
-    let chartBackground = Colors.white.withAlphaComponent(40)
+    let chartBackground = Colors.white.withAlphaComponent(0.40)
     let chartUnlimited = Colors.sageLight // #c5e3b1
     let chartDanger = Colors.pink
     let chartPrimary = Colors.vivoGreen
     let chartPrimaryDark = Colors.vivoGreenDark
     let chartPrimaryLight = Colors.sageLight
-    let chartCritical = Colors.white.withAlphaComponent(40)
+    let chartCritical = Colors.white.withAlphaComponent(0.40)
 
     // MARK: Explore
 

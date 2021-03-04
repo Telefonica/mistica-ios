@@ -209,11 +209,6 @@ struct MovistarAppColorPalette: AppColorPalette  {
     var tableBackground: UIColor {
         UIColor(UIColor.white, variants: [.prominent: Colors.grey1])
     }
-
-    // MARK: Notification Inbox
-
-    let scrollContentIndicatorBackgroundFirst = Colors.movistarBlue
-    let scrollContentIndicatorBackgroundSecond = Colors.movistarBlueDark
 }
 
 private enum Colors {

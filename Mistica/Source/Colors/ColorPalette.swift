@@ -166,7 +166,6 @@ protocol AppColorPalette {
     var ratingInactive: UIColor { get }
     var ratingActive: UIColor { get }
 
-
     // MARK: Account Widget
 
     var amountBillingInfoWarning: UIColor { get }
@@ -189,9 +188,4 @@ protocol AppColorPalette {
     var textPrimaryOverImage: UIColor { get }
     var textSecondaryOverImage: UIColor { get }
     var tableBackground: UIColor { get }
-
-    // MARK: Scroll Content Indicator
-
-    var scrollContentIndicatorBackgroundFirst: UIColor { get }
-    var scrollContentIndicatorBackgroundSecond: UIColor { get }
 }

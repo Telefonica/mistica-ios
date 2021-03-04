@@ -691,16 +691,6 @@ public extension UIColor {
     static var tableBackground: UIColor {
         MisticaConfig.currentAppColorPalette.tableBackground
     }
-    
-    // MARK: Notification Inbox
-    
-    static var scrollContentIndicatorBackgroundFirst: UIColor {
-        MisticaConfig.currentAppColorPalette.scrollContentIndicatorBackgroundFirst
-    }
-    
-    static var scrollContentIndicatorBackgroundSecond: UIColor {
-        MisticaConfig.currentAppColorPalette.scrollContentIndicatorBackgroundSecond
-    }
 }
  
 

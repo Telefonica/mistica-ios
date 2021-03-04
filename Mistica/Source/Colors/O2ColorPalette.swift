@@ -199,11 +199,6 @@ struct O2AppColorPalette: AppColorPalette  {
     let textPrimaryOverImage = Colors.grey6
     let textSecondaryOverImage = Colors.grey1
     let tableBackground = Colors.grey1
-
-    // MARK: Notification Inbox
-
-    let scrollContentIndicatorBackgroundFirst = Colors.o2BluePrimary
-    let scrollContentIndicatorBackgroundSecond = Colors.o2BluePrimaryDark
 }
 
 private enum Colors {

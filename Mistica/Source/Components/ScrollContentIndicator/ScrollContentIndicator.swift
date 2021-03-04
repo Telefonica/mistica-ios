@@ -74,7 +74,7 @@ private extension ScrollContentIndicator {
 
     func setUp() {
         removeBorder()
-        addGradient()
+        addBackgroundView()
         makeRounded(cornerRadius: cornerRadius)
         addShadow()
         transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
@@ -83,12 +83,12 @@ private extension ScrollContentIndicator {
         setContentCompressionResistancePriority(.required, for: .horizontal)
     }
 
-    func addGradient() {
-        let gradientView = GradientView()
-        gradientView.applyStyle(.scrollContentIndicator)
-        gradientView.makeRounded(cornerRadius: cornerRadius)
-        gradientView.isUserInteractionEnabled = false
-        insertSubview(gradientView, at: 0, constraints: gradientView.constraintsForEdges(to: self))
+    func addBackgroundView() {
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .brand
+        backgroundView.makeRounded(cornerRadius: cornerRadius)
+        backgroundView.isUserInteractionEnabled = false
+        insertSubview(backgroundView, at: 0, constraints: backgroundView.constraintsForEdges(to: self))
     }
 
     func addShadow() {

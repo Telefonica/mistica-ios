@@ -147,7 +147,7 @@ struct MovistarAppColorPalette: AppColorPalette  {
 
     // MARK: Assistant
 
-    let assistantButtonBackground = Colors.movistarBlueLight30Percent25
+    let assistantButtonBackground = Colors.movistarBlueLight30.withAlphaComponent(0.25)
     let assistantButtonBackgroundHighlighted = Colors.movistarBlueLight50.withAlphaComponent(0.25)
     let assistantButtonBackgroundSelected = Colors.movistarBlueLight50.withAlphaComponent(0.25)
     let assistantButtonBackgroundDisabled = Colors.movistarBlueLight50.withAlphaComponent(0.25)

@@ -26,20 +26,6 @@ struct GradientStyle {
             isOpaque: false
         )
     }
-
-    static var scrollContentIndicator: GradientStyle {
-        GradientStyle(
-            alpha: 1,
-            colors: [
-                UIColor.brand,
-                UIColor.brand,
-            ],
-            locations: [0, 1],
-            start: CGPoint(x: 0, y: 0.5),
-            end: CGPoint(x: 1.0, y: 0.5),
-            isOpaque: false
-        )
-    }
 }
 
 final class GradientView: UIView {

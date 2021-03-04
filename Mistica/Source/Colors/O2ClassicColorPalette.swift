@@ -20,7 +20,7 @@ struct O2ClassicColorPalette: ColorPalette {
     // BACKGROUNDS
     let appBarBackground = Colors.white
     let background = Colors.white
-    let backgroundBrand = Colors.o2GradientFirst
+    let backgroundBrand = Colors.o2Blue
     let backgroundOverlay = Colors.grey6.withAlphaComponent(0.6)
     let backgroundSkeleton = Colors.grey1
     let backgroundSkeletonInverse = Colors.white.withAlphaComponent(0.2)
@@ -120,7 +120,7 @@ struct O2ClassicColorPalette: ColorPalette {
     
     // GRADIENTS
     let backgroundBrandGradient = [
-        Colors.o2GradientFirst,
+        Colors.o2Blue,
         Colors.o2GradientSecond,
         Colors.o2GradientThird,
         Colors.o2GradientFourth
@@ -136,7 +136,7 @@ struct O2ClassicAppColorPalette: AppColorPalette  {
     let textAccent = Colors.o2Gem
     let textInputLabel = Colors.o2Gem
     let textInputLabelError = Colors.pepper
-    let gradientBackgroundFirst = Colors.o2GradientFirst
+    let gradientBackgroundFirst = Colors.o2Blue
     let gradientBackgroundSecond = Colors.o2GradientSecond
     let gradientBackgroundThird = Colors.o2GradientThird
     let gradientBackgroundFourth = Colors.o2GradientFourth
@@ -264,7 +264,6 @@ private enum Colors {
     static let orangeLight = UIColor(hex: "#FFD6C2")!
     static let coral = UIColor(hex: "#FF706E")!
     static let pink = UIColor(hex: "#EB3C7D")!
-    static let o2GradientFirst = UIColor(hex: "#102550")!
     static let o2GradientSecond = UIColor(hex: "#0B4680")!
     static let o2GradientThird = UIColor(hex: "#0D71AD")!
     static let o2GradientFourth = UIColor(hex: "#449ED0")!

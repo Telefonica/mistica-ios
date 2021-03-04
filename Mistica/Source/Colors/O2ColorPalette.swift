@@ -73,8 +73,8 @@ struct O2ColorPalette: ColorPalette {
     let loadingBarInverse = Colors.o2BluePrimary
 
     // DIVIDERS
-    let divider = Colors.pepperDark
-    let dividerInverse = Colors.white // al 20% de opacidad
+    let divider = Colors.grey2
+    let dividerInverse = Colors.white.withAlphaComponent(0.2)
     let navigationBarDivider = Colors.o2BluePrimary
 
     // FEEDBACKS
@@ -233,7 +233,6 @@ struct O2AppColorPalette: AppColorPalette  {
 }
 
 private enum Colors {
-    // Mistica
     static let o2BluePrimary = UIColor(hex: "#0019A5")!
     static let o2BluePrimaryDark = UIColor(hex: "#000066")!
     static let o2BluePrimaryLight50 = UIColor(hex: "#808CD2")!

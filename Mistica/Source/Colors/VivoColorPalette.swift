@@ -128,7 +128,7 @@ struct VivoAppColorPalette: AppColorPalette  {
     let textSecondaryAlternative = Colors.grey4
     let textHint = Colors.grey4
     let textAccent = Colors.vivoGreen
-    let textInputLabel = Colors.vivoGreen
+    let textInputLabel = Colors.vivoPurple
     let textInputLabelError = Colors.pepper
     
     #warning("Check")

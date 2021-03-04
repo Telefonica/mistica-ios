@@ -223,6 +223,11 @@ public extension UIColor {
         MisticaConfig.currentColorPalette.backgroundFeedbackBottom
     }
     
+    @objc(skeletonWaveColor)
+    static var skeletonWave: UIColor {
+        MisticaConfig.currentColorPalette.skeletonWave
+    }
+    
     // MARK: BadgeView
     
     static var badge: UIColor {
@@ -473,13 +478,6 @@ public extension UIColor {
     static var gradientBackgroundFourth: UIColor {
         MisticaConfig.currentAppColorPalette.gradientBackgroundFourth
     }
-
-    // MARK: Search bar
-    
-    @objc(navigationsSearchBarBackgroundColor)
-    static var navigationsSearchBarBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.navigationsSearchBarBackground
-    }
     
     // MARK: Bubbles
     
@@ -620,25 +618,6 @@ public extension UIColor {
     @objc(ratingActiveColor)
     static var ratingActive: UIColor {
         MisticaConfig.currentAppColorPalette.ratingActive
-    }
-    
-    // MARK: Skeletons
-    
-    @objc(skeletonBackgroundColor)
-    static var skeletonBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.skeletonBackground
-    }
-    
-    @objc(skeletonWaveColor)
-    static var skeletonWave: UIColor {
-        MisticaConfig.currentAppColorPalette.skeletonWave
-    }
-    
-    // MARK: Progress bars
-    
-    @objc(progressBarColor)
-    static var progressBar: UIColor {
-        MisticaConfig.currentAppColorPalette.progressBar
     }
     
     // MARK: Account Widget

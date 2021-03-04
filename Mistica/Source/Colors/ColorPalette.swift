@@ -20,6 +20,7 @@ protocol ColorPalette {
     var backgroundSkeletonInverse: UIColor { get }
     var navigationBarBackground: UIColor { get }
     var navigationSearchBarBackground: UIColor { get }
+    var skeletonWave: UIColor { get }
     
     // BORDERS
     var border: UIColor { get }
@@ -125,10 +126,6 @@ protocol AppColorPalette {
     var gradientBackgroundThird: UIColor { get }
     var gradientBackgroundFourth: UIColor { get }
 
-    // MARK: Search bar
-
-    var navigationsSearchBarBackground: UIColor { get }
-
     // MARK: Bubbles
 
     var bubbleTimeBackground: UIColor { get }
@@ -169,14 +166,6 @@ protocol AppColorPalette {
     var ratingInactive: UIColor { get }
     var ratingActive: UIColor { get }
 
-    // MARK: Skeletons
-
-    var skeletonBackground: UIColor { get }
-    var skeletonWave: UIColor { get }
-
-    // MARK: Progress bars
-
-    var progressBar: UIColor { get }
 
     // MARK: Account Widget
 

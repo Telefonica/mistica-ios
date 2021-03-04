@@ -28,7 +28,8 @@ struct O2ClassicColorPalette: ColorPalette {
     let navigationSearchBarBackground = Colors.o2BlueDark
     let backgroundAlternative = Colors.grey1
     let backgroundFeedbackBottom = Colors.o2GradientFourth
-    
+    let skeletonWave = Colors.grey2
+
     // BORDERS
     let borderLight = Colors.grey1
     let border = Colors.grey3
@@ -139,10 +140,6 @@ struct O2ClassicAppColorPalette: AppColorPalette  {
     let gradientBackgroundThird = Colors.o2GradientThird
     let gradientBackgroundFourth = Colors.o2GradientFourth
     
-    // MARK: Search bar
-    
-    let navigationsSearchBarBackground = Colors.o2BlueDark
-    
     // MARK: Bubbles
     
     let bubbleTimeBackground = Colors.grey6
@@ -182,15 +179,6 @@ struct O2ClassicAppColorPalette: AppColorPalette  {
     let chartSecondaryActive = Colors.orange
     let ratingInactive = Colors.grey2
     let ratingActive = Colors.orange
-    
-    // MARK: Skeletons
-    
-    let skeletonBackground = Colors.grey2
-    let skeletonWave = Colors.grey1
-    
-    // MARK: Progress bars
-    
-    let progressBar = Colors.o2SkyBlue
     
     // MARK: Account Widget
     

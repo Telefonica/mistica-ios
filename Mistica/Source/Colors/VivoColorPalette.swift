@@ -20,7 +20,8 @@ struct VivoColorPalette: ColorPalette {
     let navigationSearchBarBackground = Colors.vivoPurpleDark
     let backgroundAlternative = Colors.grey1
     let backgroundFeedbackBottom = Colors.vivoPurple
-
+    let skeletonWave = Colors.grey2
+    
     // BORDERS
     let borderLight = Colors.grey1
     let border = Colors.grey3
@@ -176,15 +177,6 @@ struct VivoAppColorPalette: AppColorPalette  {
     let chartSecondaryActive = Colors.vivoPurple
     let ratingInactive = Colors.grey2
     let ratingActive = Colors.pepperLight30
-
-    // MARK: Skeletons
-
-    let skeletonBackground = Colors.grey2
-    let skeletonWave = Colors.grey1
-
-    // MARK: Progress bars
-
-    let progressBar = Colors.vivoPurple
 
     // MARK: Account Widget
 

@@ -17,10 +17,11 @@ struct MovistarColorPalette: ColorPalette {
     let backgroundSkeleton = Colors.grey1
     let backgroundSkeletonInverse = Colors.movistarBlueDark
     var navigationBarBackground: UIColor  { UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue]) }
-    let navigationSearchBarBackground = Colors.movistarBlueDark
+    var navigationSearchBarBackground: UIColor { UIColor(Colors.movistarBlueDark, variants: [.prominent: Colors.movistarProminentBlueDark]) }
     let backgroundAlternative = Colors.grey1
     let backgroundFeedbackBottom = Colors.movistarBlue
-
+    let skeletonWave = Colors.grey2
+    
     // BORDERS
     let borderLight = Colors.grey1
     let border = Colors.grey3
@@ -133,12 +134,6 @@ struct MovistarAppColorPalette: AppColorPalette  {
     let gradientBackgroundThird = Colors.movistarBlue
     let gradientBackgroundFourth = Colors.movistarBlue
     
-    // MARK: Search bar
-
-    var navigationsSearchBarBackground: UIColor {
-        UIColor(Colors.movistarBlueDark, variants: [.prominent: Colors.movistarProminentBlueDark])
-    }
-    
     // MARK: Bubbles
 
     let bubbleTimeBackground = Colors.corporate
@@ -183,10 +178,6 @@ struct MovistarAppColorPalette: AppColorPalette  {
 
     let skeletonBackground = Colors.grey2
     let skeletonWave = Colors.grey1
-
-    // MARK: Progress bars
-
-    let progressBar = Colors.movistarGreen
 
     // MARK: Account Widget
 
@@ -254,6 +245,9 @@ private enum Colors {
     static let white = UIColor(hex: "#FFFFFF")!
     static let movistarProminentBlue = UIColor(hex: "#0B2739")!
     static let movistarProminentBlueDark = UIColor(hex: "#081F2D")!
+    static let movistarProminentBlueLight20 = UIColor(hex :"#CED3D7")
+    static let movistarProminentBlueLight50 = UIColor(hex :"#85939C")
+    static let movistarProminentBlueLight70 = UIColor(hex :"#546874")
     
     #warning("Remove")
     static let corporate = UIColor(r: 25, g: 25, b: 25)

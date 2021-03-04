@@ -21,6 +21,7 @@ struct O2ColorPalette: ColorPalette {
     let navigationSearchBarBackground = Colors.o2BluePrimary
     let backgroundAlternative = Colors.grey1
     let backgroundFeedbackBottom = Colors.o2BluePrimary
+    let skeletonWave = Colors.grey2
 
     // BORDERS
     let borderLight = Colors.grey1
@@ -175,15 +176,6 @@ struct O2AppColorPalette: AppColorPalette  {
     let chartSecondaryActive = Colors.o2Orange
     let ratingInactive = Colors.grey2
     let ratingActive = Colors.o2Orange
-
-    // MARK: Skeletons
-
-    let skeletonBackground = Colors.grey2
-    let skeletonWave = Colors.grey1
-
-    // MARK: Progress bars
-
-    let progressBar = Colors.o2BluePrimary
 
     // MARK: Account Widget
 

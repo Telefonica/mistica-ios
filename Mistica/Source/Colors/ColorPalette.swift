@@ -120,8 +120,6 @@ protocol AppColorPalette {
     var textSecondaryAlternative: UIColor { get }
     var textHint: UIColor { get }
     var textAccent: UIColor { get }
-    var textInputLabel: UIColor { get }
-    var textInputLabelError: UIColor { get }
     var gradientBackgroundFirst: UIColor { get }
     var gradientBackgroundSecond: UIColor { get }
     var gradientBackgroundThird: UIColor { get }
@@ -130,18 +128,6 @@ protocol AppColorPalette {
     // MARK: Search bar
 
     var navigationsSearchBarBackground: UIColor { get }
-
-    // MARK: Buttons
-
-    var buttonTertiaryBackground: UIColor { get }
-    var buttonTertiaryBackgroundSelected: UIColor { get }
-    var buttonTertiaryBackgroundDisabled: UIColor { get }
-    var quickActionPrimaryBackground: UIColor { get }
-    var quickActionBackgroundDestructive: UIColor { get }
-
-    // MARK: Controls
-
-    var controlHighlighted: UIColor { get }
 
     // MARK: Bubbles
 
@@ -219,8 +205,4 @@ protocol AppColorPalette {
 
     var scrollContentIndicatorBackgroundFirst: UIColor { get }
     var scrollContentIndicatorBackgroundSecond: UIColor { get }
-
-    // MARK: Cells
-
-    var cellBackgroundHighlighted: UIColor { get }
 }

@@ -454,16 +454,6 @@ public extension UIColor {
         MisticaConfig.currentAppColorPalette.textAccent
     }
     
-    @objc(textInputLabelColor)
-    static var textInputLabel: UIColor {
-        MisticaConfig.currentAppColorPalette.textInputLabel
-    }
-    
-    @objc(textInputLabelErrorColor)
-    static var textInputLabelError: UIColor {
-        MisticaConfig.currentAppColorPalette.textInputLabelError
-    }
-    
     @objc(gradientBackgroundFirstColor)
     static var gradientBackgroundFirst: UIColor {
         MisticaConfig.currentAppColorPalette.gradientBackgroundFirst
@@ -489,38 +479,6 @@ public extension UIColor {
     @objc(navigationsSearchBarBackgroundColor)
     static var navigationsSearchBarBackground: UIColor {
         MisticaConfig.currentAppColorPalette.navigationsSearchBarBackground
-    }
-    
-    // MARK: Navigation bar
-    
-    @objc(buttonTertiaryBackgroundColor)
-    static var buttonTertiaryBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.buttonTertiaryBackground
-    }
-    
-    @objc(buttonTertiaryBackgroundSelectedColor)
-    static var buttonTertiaryBackgroundSelected: UIColor {
-        MisticaConfig.currentAppColorPalette.buttonTertiaryBackgroundSelected
-    }
-    
-    @objc(buttonTertiaryBackgroundDisabledColor)
-    static var buttonTertiaryBackgroundDisabled: UIColor {
-        MisticaConfig.currentAppColorPalette.buttonTertiaryBackgroundDisabled
-    }
-    
-    @objc(quickActionPrimaryBackgroundColor)
-    static var quickActionPrimaryBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.quickActionPrimaryBackground
-    }
-    
-    @objc(quickActionBackgroundDestructiveColor)
-    static var quickActionBackgroundDestructive: UIColor {
-        MisticaConfig.currentAppColorPalette.quickActionBackgroundDestructive
-    }
-    
-    @objc(controlHighlightedColor)
-    static var controlHighlighted: UIColor {
-        MisticaConfig.currentAppColorPalette.controlHighlighted
     }
     
     // MARK: Bubbles

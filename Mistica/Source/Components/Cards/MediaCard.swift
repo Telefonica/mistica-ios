@@ -57,7 +57,7 @@ public class MediaCard: UIView {
             baseCardView.fragmentView = fragmentView
         }
     }
-    
+
     override public var accessibilityElements: [Any]? {
         get {
             cardAccessibilityElement.accessibilityFrameInContainerSpace = bounds

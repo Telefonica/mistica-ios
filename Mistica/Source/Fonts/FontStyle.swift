@@ -198,12 +198,10 @@ public extension UIContentSizeCategory {
 }
 
 extension UIFont {
-    static let fontBundle = Bundle.module
-}
-
-extension UIFont {
     
     private static var loaded = false
+    
+    private static var fontBundle: Bundle { Bundle(for: Reference.self) }
     
     public static func loadFonts() {
         guard !loaded else { return }
@@ -215,7 +213,7 @@ extension UIFont {
     
     @discardableResult
     static func registerFont(bundle: Bundle, fontName: String, fontExtension: String) -> Bool {
-
+        
         guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension) else {
             fatalError("Couldn't find font \(fontName)")
         }
@@ -237,4 +235,6 @@ extension UIFont {
 
         return true
     }
+    
+    private class Reference {}
 }

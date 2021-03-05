@@ -167,7 +167,7 @@ struct O2ClassicAppColorPalette: AppColorPalette  {
     let assistantDivider = Colors.o2SkyBlueLight60
     let assistantArrow = Colors.o2SkyBlueLight60
     let assistantPlaceholderText = Colors.o2SkyBlueLight30
-    let assistantCardShadow = Colors.o2BlueDark.withAlphaComponent(0.40)
+    let assistantCardShadow = Colors.o2BlueDark.withAlphaComponent(0.4)
     
     let assistantBadge = Colors.grey6
     
@@ -185,7 +185,7 @@ struct O2ClassicAppColorPalette: AppColorPalette  {
     let amountBillingInfoWarning = Colors.pepperDark
     let chartWarning = Colors.o2Yellow
     let chartWarningLight = Colors.o2Yellow
-    let chartBackground = Colors.white.withAlphaComponent(0.40)
+    let chartBackground = Colors.white.withAlphaComponent(0.4)
     let chartUnlimited = Colors.o2DeepSkyBlue
     let chartDanger = Colors.coral
     let chartPrimary = Colors.o2Green

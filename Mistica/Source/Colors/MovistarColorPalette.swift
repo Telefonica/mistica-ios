@@ -113,12 +113,14 @@ struct MovistarColorPalette: ColorPalette {
     var textAppBarSelected: UIColor { UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue]) }
     
     // GRADIENTS
-    let backgroundBrandGradient = [
-        UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue]),
-        UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue]),
-        UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue]),
-        UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue])
-    ]
+    var backgroundBrandGradient: [UIColor] {
+        [
+            UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue]),
+            UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue]),
+            UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue]),
+            UIColor(Colors.movistarBlue, variants: [.prominent: Colors.movistarProminentBlue])
+        ]
+    }
 }
 
 struct MovistarAppColorPalette: AppColorPalette  {   

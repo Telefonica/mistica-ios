@@ -20,17 +20,19 @@ import UIKit
     case textPreset8
     case textSystem
 
-    func preferredFont(weight: UIFont.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    func preferredFont(weight: CustomFontWeight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         let horizontalSizeClass = UIScreen.main.traitCollection.horizontalSizeClass
         var preferredSize = self.preferredSize
 
         if let constrainedSize = constrainedPreferredSize, preferredSize.isGreaterThan(constrainedSize) {
             preferredSize = constrainedSize
         }
-
+        
+        UIFont.loadFonts()
+        
         let sizePoints = points(prerredContentSize: preferredSize, horizontalSizeClass: horizontalSizeClass)
-
-        return UIFont.systemFont(ofSize: sizePoints, weight: weight)
+        
+        return UIFont(name: "OnAir-\(weight.rawValue.capitalized)", size: sizePoints)!
     }
 
     public var description: String {
@@ -192,5 +194,47 @@ public extension UIContentSizeCategory {
         default:
             return 0
         }
+    }
+}
+
+extension UIFont {
+    static let fontBundle = Bundle.module
+}
+
+extension UIFont {
+    
+    private static var loaded = false
+    
+    public static func loadFonts() {
+        guard !loaded else { return }
+        loaded = true
+        registerFont(bundle: fontBundle, fontName: "OnAir-Light", fontExtension: "ttf")
+        registerFont(bundle: fontBundle, fontName: "OnAir-Regular", fontExtension: "ttf")
+        registerFont(bundle: fontBundle, fontName: "OnAir-Bold", fontExtension: "ttf")
+    }
+    
+    @discardableResult
+    static func registerFont(bundle: Bundle, fontName: String, fontExtension: String) -> Bool {
+
+        guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension) else {
+            fatalError("Couldn't find font \(fontName)")
+        }
+
+        guard let fontDataProvider = CGDataProvider(url: fontURL as CFURL) else {
+            fatalError("Couldn't load data from the font \(fontName)")
+        }
+
+        guard let font = CGFont(fontDataProvider) else {
+            fatalError("Couldn't create font from data")
+        }
+
+        var error: Unmanaged<CFError>?
+        let success = CTFontManagerRegisterGraphicsFont(font, &error)
+        guard success else {
+            print("Error registering font: maybe it was already registered.")
+            return false
+        }
+
+        return true
     }
 }

@@ -50,6 +50,28 @@ public extension FontStyle {
     }
 }
 
+enum CustomFontWeight: String {
+    case light
+    case regular
+    case bold
+}
+
+extension RawRepresentable where RawValue == String {
+    var customFontWeight: CustomFontWeight {
+        switch rawValue {
+        case "light":
+            return .light
+        case "regular":
+            return .regular
+        case "medium":
+            return .bold
+        default:
+            assertionFailure("TextPreset should be an instance of light, regular or medium")
+            return .light
+        }
+    }
+}
+
 extension RawRepresentable where RawValue == String {
     var systemWeight: UIFont.Weight {
         switch rawValue {

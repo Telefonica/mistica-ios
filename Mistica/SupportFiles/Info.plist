@@ -18,5 +18,11 @@
 	<string>$(VERSION_NUMBER)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OnAir-Bold.ttf</string>
+		<string>OnAir-Regular.ttf</string>
+		<string>OnAir-Light.ttf</string>
+	</array>
 </dict>
 </plist>

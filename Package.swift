@@ -66,6 +66,9 @@ let package = Package(
                 "Components/Cards/README.md",
                 "Components/Cards/docs"
             ],
+            resources: [
+                .process("Fonts/CustomFonts")
+            ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
             ]

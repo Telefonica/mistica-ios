@@ -133,10 +133,6 @@ struct VivoAppColorPalette: AppColorPalette  {
     let gradientBackgroundSecond = Colors.vivoPurple
     let gradientBackgroundThird = Colors.vivoPurple
     let gradientBackgroundFourth = Colors.vivoPurple
-    
-    // MARK: Search bar
-
-    let navigationsSearchBarBackground = Colors.vivoPurpleDark
 
     // MARK: Bubbles
 
@@ -184,11 +180,11 @@ struct VivoAppColorPalette: AppColorPalette  {
     let chartWarning = Colors.orange
     let chartWarningLight = Colors.orangeLight
     let chartBackground = Colors.white.withAlphaComponent(0.40)
-    let chartUnlimited = Colors.sageLight // #c5e3b1
+    let chartUnlimited = Colors.vivoGreenLight40
     let chartDanger = Colors.pink
     let chartPrimary = Colors.vivoGreen
     let chartPrimaryDark = Colors.vivoGreenDark
-    let chartPrimaryLight = Colors.sageLight
+    let chartPrimaryLight = Colors.vivoGreenLight40
     let chartCritical = Colors.white.withAlphaComponent(0.40)
 
     // MARK: Explore
@@ -235,7 +231,6 @@ private enum Colors {
     static let white = UIColor(hex: "#FFFFFF")!
     
     #warning("Check")
-    static let sageLight = UIColor(hex: "#c5e3b1")!
     static let vivoPurpleLight30 = UIColor(hex: "#d1b2e0")!
     static let vivoPurpleLight40 = UIColor(hex: "#c199d6")!
 }

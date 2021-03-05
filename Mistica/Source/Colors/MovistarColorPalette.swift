@@ -128,7 +128,6 @@ struct MovistarAppColorPalette: AppColorPalette  {
     let textSecondaryAlternative = Colors.white
     let textHint = Colors.grey2
     let textAccent = Colors.movistarGreen
-    
     let gradientBackgroundFirst = Colors.movistarBlue
     let gradientBackgroundSecond = Colors.movistarBlue
     let gradientBackgroundThird = Colors.movistarBlue
@@ -173,12 +172,7 @@ struct MovistarAppColorPalette: AppColorPalette  {
     let chartSecondaryActive = Colors.movistarBlue
     let ratingInactive = Colors.grey2
     let ratingActive = Colors.egg
-
-    // MARK: Skeletons
-
-    let skeletonBackground = Colors.grey2
-    let skeletonWave = Colors.grey1
-
+    
     // MARK: Account Widget
 
     let amountBillingInfoWarning = Colors.pink
@@ -207,7 +201,7 @@ struct MovistarAppColorPalette: AppColorPalette  {
     }
 
     var tableBackground: UIColor {
-        UIColor(UIColor.white, variants: [.prominent: Colors.grey1])
+        UIColor(Colors.white, variants: [.prominent: Colors.grey1])
     }
 }
 

@@ -45,7 +45,7 @@
 		2AC87076A6AC9FB3B66D64A3 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723D7D9C5D506C5C673AD316 /* PopoverView.swift */; };
 		2BB32F038D7B02EC315B23C6 /* LoadErrorViewControllerLifecycleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FCFA88E2AAFEDD751BF41 /* LoadErrorViewControllerLifecycleDelegate.swift */; };
 		2DA33370AE8CA80CBAC89747 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FD6B74CCA2B6A0267A0FAB /* Checkbox.swift */; };
-		2E0C605AFDBC5ACC8CCC9C79 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4B777E490D209B868734E /* ColorPalette.swift */; };
+		2E0C605AFDBC5ACC8CCC9C79 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4B777E490D209B868734E /* Colors.swift */; };
 		2E2AF2C793F73E8F9765065A /* PopoverContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F65F48542EBF9B8472E8C1 /* PopoverContentView.swift */; };
 		2E78A0C4CA752000D3329BC4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4241C32C50597407B5BCA00 /* GradientView.swift */; };
 		31B305376D92ACC7D4B2B1DE /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26961EA1A6073AD6568231C6 /* FontWeight.swift */; };
@@ -602,7 +602,7 @@
 		ECD56BBE30569BDAA6E657B2 /* HighlightedCardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardStyle.swift; sourceTree = "<group>"; };
 		F2099839700895B3419EF3BC /* CellCenterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCenterSectionView.swift; sourceTree = "<group>"; };
 		F374FFFEA862CA17EDA3D4F3 /* IntrinsicHeightTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicHeightTextView.swift; sourceTree = "<group>"; };
-		F3C4B777E490D209B868734E /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		F3C4B777E490D209B868734E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F4879FB92B4EAB99BE49D827 /* CroutonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonController.swift; sourceTree = "<group>"; };
 		F73D6C5F25750D210012A2C4 /* CheckboxXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxXIBIntegration.swift; sourceTree = "<group>"; };
 		F73D6C6525750D600012A2C4 /* CheckboxXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckboxXIBIntegration.xib; sourceTree = "<group>"; };
@@ -1319,7 +1319,7 @@
 		623B51DD61BF9F51D0C78989 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
-				F3C4B777E490D209B868734E /* ColorPalette.swift */,
+				F3C4B777E490D209B868734E /* Colors.swift */,
 				9599F7A2556D8108E656F8C1 /* ColorToolkit.swift */,
 				1A6C443D987AD4CDAFD35525 /* MovistarColorPalette.swift */,
 				2EDD39A8DF179A5F9023F6CD /* O2ClassicColorPalette.swift */,
@@ -2298,7 +2298,7 @@
 				6E8008A4ABEF555F16D885DA /* CellLeftSectionView.swift in Sources */,
 				2DA33370AE8CA80CBAC89747 /* Checkbox.swift in Sources */,
 				E1E628216A0ADAACB444973E /* CheckboxAssets.swift in Sources */,
-				2E0C605AFDBC5ACC8CCC9C79 /* ColorPalette.swift in Sources */,
+				2E0C605AFDBC5ACC8CCC9C79 /* Colors.swift in Sources */,
 				C5E9FAF7E42216E75566AF37 /* ColorToolkit.swift in Sources */,
 				35E207B7BF639E6988044D81 /* CroutonConfig.swift in Sources */,
 				64DDAA4BF38945645F39B702 /* CroutonController.swift in Sources */,

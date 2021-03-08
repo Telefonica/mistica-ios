@@ -13,668 +13,435 @@ public extension UIColor {
     
     @objc(buttonDangerBackgroundColor)
     static var buttonDangerBackground: UIColor {
-        MisticaConfig.currentColorPalette.buttonDangerBackground
+        MisticaConfig.currentColors.buttonDangerBackground
     }
     
     @objc(buttonDangerBackgroundDisabledColor)
     static var buttonDangerBackgroundDisabled: UIColor {
-        MisticaConfig.currentColorPalette.buttonDangerBackgroundDisabled
+        MisticaConfig.currentColors.buttonDangerBackgroundDisabled
     }
     
     @objc(buttonDangerBackgroundSelectedColor)
     static var buttonDangerBackgroundSelected: UIColor {
-        MisticaConfig.currentColorPalette.buttonDangerBackgroundSelected
+        MisticaConfig.currentColors.buttonDangerBackgroundSelected
     }
     
     @objc(buttonLinkBackgroundSelectedColor)
     static var buttonLinkBackgroundSelected: UIColor {
-        MisticaConfig.currentColorPalette.buttonLinkBackgroundSelected
+        MisticaConfig.currentColors.buttonLinkBackgroundSelected
     }
     
     @objc(buttonLinkBackgroundSelectedInverseColor)
     static var buttonLinkBackgroundSelectedInverse: UIColor {
-        MisticaConfig.currentColorPalette.buttonLinkBackgroundSelectedInverse
+        MisticaConfig.currentColors.buttonLinkBackgroundSelectedInverse
     }
     
     @objc(buttonPrimaryBackgroundColor)
     static var buttonPrimaryBackground: UIColor {
-        MisticaConfig.currentColorPalette.buttonPrimaryBackground
+        MisticaConfig.currentColors.buttonPrimaryBackground
     }
     
     @objc(buttonPrimaryBackgroundDisabledColor)
     static var buttonPrimaryBackgroundDisabled: UIColor {
-        MisticaConfig.currentColorPalette.buttonPrimaryBackgroundDisabled
+        MisticaConfig.currentColors.buttonPrimaryBackgroundDisabled
     }
     
     @objc(buttonPrimaryBackgroundDisabledInverseColor)
     static var buttonPrimaryBackgroundDisabledInverse: UIColor {
-        MisticaConfig.currentColorPalette.buttonPrimaryBackgroundDisabledInverse
+        MisticaConfig.currentColors.buttonPrimaryBackgroundDisabledInverse
     }
     
     @objc(buttonPrimaryBackgroundInverseColor)
     static var buttonPrimaryBackgroundInverse: UIColor {
-        MisticaConfig.currentColorPalette.buttonPrimaryBackgroundInverse
+        MisticaConfig.currentColors.buttonPrimaryBackgroundInverse
     }
     
     @objc(buttonPrimaryBackgroundSelectedColor)
     static var buttonPrimaryBackgroundSelected: UIColor {
-        MisticaConfig.currentColorPalette.buttonPrimaryBackgroundSelected
+        MisticaConfig.currentColors.buttonPrimaryBackgroundSelected
     }
 
     @objc(buttonPrimaryBackgroundSelectedInverseColor)
     static var buttonPrimaryBackgroundSelectedInverse: UIColor {
-        MisticaConfig.currentColorPalette.buttonPrimaryBackgroundSelectedInverse
+        MisticaConfig.currentColors.buttonPrimaryBackgroundSelectedInverse
     }
     
     @objc(buttonSecondaryBackgroundColor)
     static var buttonSecondaryBackground: UIColor {
-        MisticaConfig.currentColorPalette.buttonSecondaryBackground
+        MisticaConfig.currentColors.buttonSecondaryBackground
     }
     
     @objc(buttonSecondaryBackgroundDisabledColor)
     static var buttonSecondaryBackgroundDisabled: UIColor {
-        MisticaConfig.currentColorPalette.buttonSecondaryBackgroundDisabled
+        MisticaConfig.currentColors.buttonSecondaryBackgroundDisabled
     }
     
     @objc(buttonSecondaryBackgroundSelectedColor)
     static var buttonSecondaryBackgroundSelected: UIColor {
-        MisticaConfig.currentColorPalette.buttonSecondaryBackgroundSelected
+        MisticaConfig.currentColors.buttonSecondaryBackgroundSelected
     }
     
     @objc(buttonSecondaryBorderDisabledInverseColor)
     static var buttonSecondaryBorderDisabledInverse: UIColor {
-        MisticaConfig.currentColorPalette.buttonSecondaryBorderDisabledInverse
+        MisticaConfig.currentColors.buttonSecondaryBorderDisabledInverse
     }
     
     @objc(buttonSecondaryBorderInverseColor)
     static var buttonSecondaryBorderInverse: UIColor {
-        MisticaConfig.currentColorPalette.buttonSecondaryBorderInverse
+        MisticaConfig.currentColors.buttonSecondaryBorderInverse
     }
     
     @objc(buttonSecondaryBorderSelectedInverseColor)
     static var buttonSecondaryBorderSelectedInverse: UIColor {
-        MisticaConfig.currentColorPalette.buttonSecondaryBorderSelectedInverse
+        MisticaConfig.currentColors.buttonSecondaryBorderSelectedInverse
     }
     
     @objc(textButtonPrimaryColor)
     static var textButtonPrimary: UIColor {
-        MisticaConfig.currentColorPalette.textButtonPrimary
+        MisticaConfig.currentColors.textButtonPrimary
     }
     
     @objc(textButtonPrimaryInverseColor)
     static var textButtonPrimaryInverse: UIColor {
-        MisticaConfig.currentColorPalette.textButtonPrimaryInverse
+        MisticaConfig.currentColors.textButtonPrimaryInverse
     }
     
     @objc(textButtonPrimaryInverseDisabledColor)
     static var textButtonPrimaryInverseDisabled: UIColor {
-        MisticaConfig.currentColorPalette.textButtonPrimaryInverseDisabled
+        MisticaConfig.currentColors.textButtonPrimaryInverseDisabled
     }
     
     @objc(textButtonPrimaryInverseSelectedColor)
     static var textButtonPrimaryInverseSelected: UIColor {
-        MisticaConfig.currentColorPalette.textButtonPrimaryInverseSelected
+        MisticaConfig.currentColors.textButtonPrimaryInverseSelected
     }
     
     @objc(textButtonSecondaryColor)
     static var textButtonSecondary: UIColor {
-        MisticaConfig.currentColorPalette.textButtonSecondary
+        MisticaConfig.currentColors.textButtonSecondary
     }
     
     @objc(textButtonSecondaryDisabledColor)
     static var textButtonSecondaryDisabled: UIColor {
-        MisticaConfig.currentColorPalette.textButtonSecondaryDisabled
+        MisticaConfig.currentColors.textButtonSecondaryDisabled
     }
     
     @objc(textButtonSecondarySelectedColor)
     static var textButtonSecondarySelected: UIColor {
-        MisticaConfig.currentColorPalette.textButtonSecondarySelected
+        MisticaConfig.currentColors.textButtonSecondarySelected
     }
     
     @objc(textButtonSecondaryInverseColor)
     static var textButtonSecondaryInverse: UIColor {
-        MisticaConfig.currentColorPalette.textButtonSecondaryInverse
+        MisticaConfig.currentColors.textButtonSecondaryInverse
     }
     
     @objc(textButtonSecondaryInverseDisabledColor)
     static var textButtonSecondaryInverseDisabled: UIColor {
-        MisticaConfig.currentColorPalette.textButtonSecondaryInverseDisabled
+        MisticaConfig.currentColors.textButtonSecondaryInverseDisabled
     }
     
     @objc(textButtonSecondaryInverseSelectedColor)
     static var textButtonSecondaryInverseSelected: UIColor {
-        MisticaConfig.currentColorPalette.textButtonSecondaryInverseSelected
+        MisticaConfig.currentColors.textButtonSecondaryInverseSelected
     }
     
     @objc(textLinkColor)
     static var textLink: UIColor {
-        MisticaConfig.currentColorPalette.textLink
+        MisticaConfig.currentColors.textLink
     }
     
     @objc(textLinkDangerColor)
     static var textLinkDanger: UIColor {
-        MisticaConfig.currentColorPalette.textLinkDanger
+        MisticaConfig.currentColors.textLinkDanger
     }
     
     @objc(textLinkDangerDisabledColor)
     static var textLinkDangerDisabled: UIColor {
-        MisticaConfig.currentColorPalette.textLinkDangerDisabled
+        MisticaConfig.currentColors.textLinkDangerDisabled
     }
     
     @objc(textLinkDisabledColor)
     static var textLinkDisabled: UIColor {
-        MisticaConfig.currentColorPalette.textLinkDisabled
+        MisticaConfig.currentColors.textLinkDisabled
     }
     
     @objc(textLinkSnackbarColor)
     static var textLinkSnackbar: UIColor {
-        MisticaConfig.currentColorPalette.textLinkSnackbar
+        MisticaConfig.currentColors.textLinkSnackbar
     }
     
     // MARK: Backgrounds
     
     @objc(appBarBackgroundColor)
     static var appBarBackground: UIColor {
-        MisticaConfig.currentColorPalette.appBarBackground
+        MisticaConfig.currentColors.appBarBackground
     }
     
     @objc(backgroundColor)
     static var background: UIColor {
-        MisticaConfig.currentColorPalette.background
+        MisticaConfig.currentColors.background
     }
     
     @objc(backgroundBrandColor)
     static var backgroundBrand: UIColor {
-        MisticaConfig.currentColorPalette.backgroundBrand
+        MisticaConfig.currentColors.backgroundBrand
     }
     
     @objc(backgroundOverlayColor)
     static var backgroundOverlay: UIColor {
-        MisticaConfig.currentColorPalette.backgroundOverlay
+        MisticaConfig.currentColors.backgroundOverlay
     }
     
     @objc(backgroundSkeletonColor)
     static var backgroundSkeleton: UIColor {
-        MisticaConfig.currentColorPalette.backgroundSkeleton
+        MisticaConfig.currentColors.backgroundSkeleton
     }
     
     @objc(backgroundSkeletonInverseColor)
     static var backgroundSkeletonInverse: UIColor {
-        MisticaConfig.currentColorPalette.backgroundSkeletonInverse
+        MisticaConfig.currentColors.backgroundSkeletonInverse
     }
     
     @objc(navigationBarBackgroundColor)
     static var navigationBarBackground: UIColor {
-        MisticaConfig.currentColorPalette.navigationBarBackground
+        MisticaConfig.currentColors.navigationBarBackground
     }
     
     @objc(navigationSearchBarBackgroundColor)
     static var navigationSearchBarBackground: UIColor {
-        MisticaConfig.currentColorPalette.navigationSearchBarBackground
+        MisticaConfig.currentColors.navigationSearchBarBackground
     }
     
     @objc(backgroundAlternativeColor)
     static var backgroundAlternative: UIColor {
-        MisticaConfig.currentColorPalette.backgroundAlternative
+        MisticaConfig.currentColors.backgroundAlternative
     }
     
     @objc(backgroundFeedbackBottomColor)
     static var backgroundFeedbackBottom: UIColor {
-        MisticaConfig.currentColorPalette.backgroundFeedbackBottom
+        MisticaConfig.currentColors.backgroundFeedbackBottom
     }
     
     @objc(skeletonWaveColor)
     static var skeletonWave: UIColor {
-        MisticaConfig.currentColorPalette.skeletonWave
+        MisticaConfig.currentColors.skeletonWave
     }
     
     // MARK: BadgeView
     
     static var badge: UIColor {
-        MisticaConfig.currentColorPalette.badge
+        MisticaConfig.currentColors.badge
     }
     
     // MARK: Tab bar
     
     @objc(textAppBarSelectedColor)
     static var textAppBarSelected: UIColor {
-        MisticaConfig.currentColorPalette.textAppBarSelected
+        MisticaConfig.currentColors.textAppBarSelected
     }
     
     @objc(textAppBarColor)
     static var textAppBar: UIColor {
-        MisticaConfig.currentColorPalette.textAppBar
+        MisticaConfig.currentColors.textAppBar
     }
     
     // MARK: Borders
     
     @objc(borderLightColor)
     static var borderLight: UIColor {
-        MisticaConfig.currentColorPalette.borderLight
+        MisticaConfig.currentColors.borderLight
     }
     
     @objc(borderColor)
     static var border: UIColor {
-        MisticaConfig.currentColorPalette.border
+        MisticaConfig.currentColors.border
     }
     
     @objc(borderDarkColor)
     static var borderDark: UIColor {
-        MisticaConfig.currentColorPalette.borderDark
+        MisticaConfig.currentColors.borderDark
     }
     
     @objc(borderSelectedColor)
     static var borderSelected: UIColor {
-        MisticaConfig.currentColorPalette.borderSelected
+        MisticaConfig.currentColors.borderSelected
     }
     
     // MARK: Feedback
     
     @objc(feedbackInfoBackgroundColor)
     static var feedbackInfoBackground: UIColor {
-        MisticaConfig.currentColorPalette.feedbackInfoBackground
+        MisticaConfig.currentColors.feedbackInfoBackground
     }
     
     @objc(feedbackErrorBackgroundColor)
     static var feedbackErrorBackground: UIColor {
-        MisticaConfig.currentColorPalette.feedbackErrorBackground
+        MisticaConfig.currentColors.feedbackErrorBackground
     }
     
     // MARK: Controls
     
     @objc(controlColor)
     static var control: UIColor {
-        MisticaConfig.currentColorPalette.control
+        MisticaConfig.currentColors.control
     }
     
     @objc(controlActivatedColor)
     static var controlActivated: UIColor {
-        MisticaConfig.currentColorPalette.controlActivated
+        MisticaConfig.currentColors.controlActivated
     }
     
     @objc(controlErrorColor)
     static var controlError: UIColor {
-        MisticaConfig.currentColorPalette.controlError
+        MisticaConfig.currentColors.controlError
     }
     
     @objc(loadingBarColor)
     static var loadingBar: UIColor {
-        MisticaConfig.currentColorPalette.loadingBar
+        MisticaConfig.currentColors.loadingBar
     }
     
     @objc(loadingBarBackgroundColor)
     static var loadingBarBackground: UIColor {
-        MisticaConfig.currentColorPalette.loadingBarBackground
+        MisticaConfig.currentColors.loadingBarBackground
     }
     
     @objc(loadingBarBackgroundInverseColor)
     static var loadingBarBackgroundInverse: UIColor {
-        MisticaConfig.currentColorPalette.loadingBarBackgroundInverse
+        MisticaConfig.currentColors.loadingBarBackgroundInverse
     }
     
     @objc(loadingBarInverseColor)
     static var loadingBarInverse: UIColor {
-        MisticaConfig.currentColorPalette.loadingBarInverse
+        MisticaConfig.currentColors.loadingBarInverse
     }
     
     // MARK:  Dividers
     
     @objc(dividerColorColor)
     static var divider: UIColor {
-        MisticaConfig.currentColorPalette.divider
+        MisticaConfig.currentColors.divider
     }
     
     @objc(navigationBarDividerColor)
     static var navigationBarDivider: UIColor {
-        MisticaConfig.currentColorPalette.navigationBarDivider
+        MisticaConfig.currentColors.navigationBarDivider
     }
     
     // MARK: Global
     
     @objc(brandColorColor)
     static var brand: UIColor {
-        MisticaConfig.currentColorPalette.brand
+        MisticaConfig.currentColors.brand
     }
     
     @objc(inverseColor)
     static var inverse: UIColor {
-        MisticaConfig.currentColorPalette.inverse
+        MisticaConfig.currentColors.inverse
     }
     
     @objc(neutralHighColor)
     static var neutralHigh: UIColor {
-        MisticaConfig.currentColorPalette.neutralHigh
+        MisticaConfig.currentColors.neutralHigh
     }
     
     @objc(neutralLowColor)
     static var neutralLow: UIColor {
-        MisticaConfig.currentColorPalette.neutralLow
+        MisticaConfig.currentColors.neutralLow
     }
     
     @objc(neutralMediumColor)
     static var neutralMedium: UIColor {
-        MisticaConfig.currentColorPalette.neutralMedium
+        MisticaConfig.currentColors.neutralMedium
     }
     
     @objc(promoColor)
     static var promo: UIColor {
-        MisticaConfig.currentColorPalette.promo
+        MisticaConfig.currentColors.promo
     }
     
     @objc(highlightColor)
     static var highlight: UIColor {
-        MisticaConfig.currentColorPalette.highlight
+        MisticaConfig.currentColors.highlight
     }
     
     @objc(textPrimaryColor)
     static var textPrimary: UIColor {
-        MisticaConfig.currentColorPalette.textPrimary
+        MisticaConfig.currentColors.textPrimary
     }
     
     @objc(textPrimaryInverseColor)
     static var textPrimaryInverse: UIColor {
-        MisticaConfig.currentColorPalette.textPrimaryInverse
+        MisticaConfig.currentColors.textPrimaryInverse
     }
     
     @objc(textSecondaryColor)
     static var textSecondary: UIColor {
-        MisticaConfig.currentColorPalette.textSecondary
+        MisticaConfig.currentColors.textSecondary
     }
     
     @objc(textSecondaryInverseColor)
     static var textSecondaryInverse: UIColor {
-        MisticaConfig.currentColorPalette.textSecondaryInverse
+        MisticaConfig.currentColors.textSecondaryInverse
     }
     
     @objc(textDisabledColor)
     static var textDisabled: UIColor {
-        MisticaConfig.currentColorPalette.textDisabled
+        MisticaConfig.currentColors.textDisabled
     }
     
     @objc(textAmountColor)
     static var textAmount: UIColor {
-        MisticaConfig.currentColorPalette.textAmount
+        MisticaConfig.currentColors.textAmount
     }
     
     // MARK: States
     
     @objc(errorColor)
     static var error: UIColor {
-        MisticaConfig.currentColorPalette.error
+        MisticaConfig.currentColors.error
     }
     
     @objc(successColor)
     static var success: UIColor {
-        MisticaConfig.currentColorPalette.success
+        MisticaConfig.currentColors.success
     }
     
     @objc(warningColor)
     static var warning: UIColor {
-        MisticaConfig.currentColorPalette.warning
+        MisticaConfig.currentColors.warning
     }
     
     // MARK:  Bars Texts
     
     @objc(textNavigationBarPrimaryColor)
     static var textNavigationBarPrimary: UIColor {
-        MisticaConfig.currentColorPalette.textNavigationBarPrimary
+        MisticaConfig.currentColors.textNavigationBarPrimary
     }
     
     @objc(textNavigationBarSecondaryColor)
     static var textNavigationBarSecondary: UIColor {
-        MisticaConfig.currentColorPalette.textNavigationBarSecondary
+        MisticaConfig.currentColors.textNavigationBarSecondary
     }
     
     @objc(textNavigationSearchBarHintColor)
     static var textNavigationSearchBarHint: UIColor {
-        MisticaConfig.currentColorPalette.textNavigationSearchBarHint
+        MisticaConfig.currentColors.textNavigationSearchBarHint
     }
     
     @objc(textNavigationSearchBarTextColor)
     static var textNavigationSearchBarText: UIColor {
-        MisticaConfig.currentColorPalette.textNavigationSearchBarText
+        MisticaConfig.currentColors.textNavigationSearchBarText
     }
     
     // MARK: Gradient
     
     @objc(backgroundBrandGradientColors)
     static var backgroundBrandGradient: [UIColor] {
-        MisticaConfig.currentColorPalette.backgroundBrandGradient
+        MisticaConfig.currentColors.backgroundBrandGradient
     }
-}
-
-public extension UIColor {
-    @objc(textSecondaryAlternativeColor)
-    static var textSecondaryAlternative: UIColor {
-        MisticaConfig.currentAppColorPalette.textSecondaryAlternative
-    }
-    
-    @objc(textHintColor)
-    static var textHint: UIColor {
-        MisticaConfig.currentAppColorPalette.textHint
-    }
-    
-    @objc(textAccentColor)
-    static var textAccent: UIColor {
-        MisticaConfig.currentAppColorPalette.textAccent
-    }
-    
-    // MARK: Bubbles
-    
-    @objc(bubbleTimeBackgroundColor)
-    static var bubbleTimeBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.bubbleTimeBackground
-    }
-    
-    @objc(bubbleMeBackgroundColor)
-    static var bubbleMeBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.bubbleMeBackground
-    }
-    
-    @objc(bubbleMeBackgroundSelectedColor)
-    static var bubbleMeBackgroundSelected: UIColor {
-        MisticaConfig.currentAppColorPalette.bubbleMeBackgroundSelected
-    }
-    
-    @objc(bubbleOtherBackgroundColor)
-    static var bubbleOtherBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.bubbleOtherBackground
-    }
-    
-    @objc(bubbleOtherBackgroundSelectedColor)
-    static var bubbleOtherBackgroundSelected: UIColor {
-        MisticaConfig.currentAppColorPalette.bubbleOtherBackgroundSelected
-    }
-    
-    @objc(buttonBotColor)
-    static var buttonBot: UIColor {
-        MisticaConfig.currentAppColorPalette.buttonBot
-    }
-    
-    @objc(buttonBotSelectedColor)
-    static var buttonBotSelected: UIColor {
-        MisticaConfig.currentAppColorPalette.buttonBotSelected
-    }
-    
-    @objc(buttonBotBorderColor)
-    static var buttonBotBorder: UIColor {
-        MisticaConfig.currentAppColorPalette.buttonBotBorder
-    }
-    
-    // MARK: Assistant
-    
-    @objc(assistantButtonBackgroundColor)
-    static var assistantButtonBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantButtonBackground
-    }
-    
-    @objc(assistantButtonBackgroundHighlightedColor)
-    static var assistantButtonBackgroundHighlighted: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantButtonBackgroundHighlighted
-    }
-    
-    @objc(assistantButtonBackgroundSelectedColor)
-    static var assistantButtonBackgroundSelected: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantButtonBackgroundSelected
-    }
-    
-    @objc(assistantButtonBackgroundDisabledColor)
-    static var assistantButtonBackgroundDisabled: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantButtonBackgroundDisabled
-    }
-    
-    @objc(assistantButtonBorderBackgroundColor)
-    static var assistantButtonBorderBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantButtonBorderBackground
-    }
-    
-    @objc(assistantButtonBorderBackgroundSelectedColor)
-    static var assistantButtonBorderBackgroundSelected: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantButtonBorderBackgroundSelected
-    }
-    
-    @objc(assistantButtonBorderBackgroundDisabledColor)
-    static var assistantButtonBorderBackgroundDisabled: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantButtonBorderBackgroundDisabled
-    }
-    
-    @objc(assistantButtonNotificationsBackgroundColor)
-    static var assistantButtonNotificationsBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantButtonNotificationsBackground
-    }
-    
-    @objc(assistantDividerColor)
-    static var assistantDivider: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantDivider
-    }
-    
-    @objc(assistantArrowColor)
-    static var assistantArrow: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantArrow
-    }
-    
-    @objc(assistantPlaceholderTextColor)
-    static var assistantPlaceholderText: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantPlaceholderText
-    }
-    
-    @objc(assistantCardShadowColor)
-    static var assistantCardShadow: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantCardShadow
-    }
-    
-    @objc(assistantBadgeColor)
-    static var assistantBadge: UIColor {
-        MisticaConfig.currentAppColorPalette.assistantBadge
-    }
-    
-    // MARK: Charts
-    
-    @objc(chartPrimaryInactiveColor)
-    static var chartPrimaryInactive: UIColor {
-        MisticaConfig.currentAppColorPalette.chartPrimaryInactive
-    }
-    
-    @objc(chartPrimaryActiveColor)
-    static var chartPrimaryActive: UIColor {
-        MisticaConfig.currentAppColorPalette.chartPrimaryActive
-    }
-    
-    @objc(chartSecondaryInactiveColor)
-    static var chartSecondaryInactive: UIColor {
-        MisticaConfig.currentAppColorPalette.chartSecondaryInactive
-    }
-    
-    @objc(chartSecondaryActiveColor)
-    static var chartSecondaryActive: UIColor {
-        MisticaConfig.currentAppColorPalette.chartSecondaryActive
-    }
-    
-    @objc(ratingInactiveColor)
-    static var ratingInactive: UIColor {
-        MisticaConfig.currentAppColorPalette.ratingInactive
-    }
-    
-    @objc(ratingActiveColor)
-    static var ratingActive: UIColor {
-        MisticaConfig.currentAppColorPalette.ratingActive
-    }
-    
-    // MARK: Account Widget
-    
-    @objc(amountBillingInfoWarningColor)
-    static var amountBillingInfoWarning: UIColor {
-        MisticaConfig.currentAppColorPalette.amountBillingInfoWarning
-    }
-    
-    @objc(chartWarningColor)
-    static var chartWarning: UIColor {
-        MisticaConfig.currentAppColorPalette.chartWarning
-    }
-    
-    @objc(chartWarningLightColor)
-    static var chartWarningLight: UIColor {
-        MisticaConfig.currentAppColorPalette.chartWarningLight
-    }
-    
-    @objc(chartBackgroundColor)
-    static var chartBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.chartBackground
-    }
-    
-    @objc(chartUnlimitedColor)
-    static var chartUnlimited: UIColor {
-        MisticaConfig.currentAppColorPalette.chartUnlimited
-    }
-    
-    @objc(chartDangerColor)
-    static var chartDanger: UIColor {
-        MisticaConfig.currentAppColorPalette.chartDanger
-    }
-    
-    @objc(chartPrimaryColor)
-    static var chartPrimary: UIColor {
-        MisticaConfig.currentAppColorPalette.chartPrimary
-    }
-    
-    @objc(chartPrimaryDarkColor)
-    static var chartPrimaryDark: UIColor {
-        MisticaConfig.currentAppColorPalette.chartPrimaryDark
-    }
-    
-    @objc(chartPrimaryLightColor)
-    static var chartPrimaryLight: UIColor {
-        MisticaConfig.currentAppColorPalette.chartPrimaryLight
-    }
-    
-    @objc(chartCriticalColor)
-    static var chartCritical: UIColor {
-        MisticaConfig.currentAppColorPalette.chartCritical
-    }
-    
-    // MARK: Explore
-    
-    static var timeIndicatorWarning: UIColor {
-        MisticaConfig.currentAppColorPalette.timeIndicatorWarning
-    }
-    
-    // MARK: Support
-    
-    static var textPrimaryOverImage: UIColor {
-        MisticaConfig.currentAppColorPalette.textPrimaryOverImage
-    }
-    
-    static var textSecondaryOverImage: UIColor {
-        MisticaConfig.currentAppColorPalette.textSecondaryOverImage
-    }
-    
-    // MARK: Background
-    
-    static var assistantBackgroundGradient: [UIColor] {
-        MisticaConfig.currentAppColorPalette.assistantBackgroundGradient
-    }
-}
- 
+} 
 
 public extension BrandStyle {
     var preferredStatusBarStyle: UIStatusBarStyle {

@@ -1,5 +1,5 @@
 //
-//  ColorPalette.swift
+//  Colors.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ColorPalette {
+protocol Colors {
     // BACKGROUNDS
     var appBarBackground: UIColor { get }
     var background: UIColor { get }
@@ -112,79 +112,4 @@ protocol ColorPalette {
     
     // GRADIENTS
     var backgroundBrandGradient: [UIColor] { get }
-}
-    
-protocol AppColorPalette {
-        
-    // MARK: Text
-
-    var textSecondaryAlternative: UIColor { get }
-    var textHint: UIColor { get }
-    var textAccent: UIColor { get }
-
-    // MARK: Bubbles
-
-    var bubbleTimeBackground: UIColor { get }
-    var bubbleMeBackground: UIColor { get }
-    var bubbleMeBackgroundSelected: UIColor { get }
-    var bubbleOtherBackground: UIColor { get }
-    var bubbleOtherBackgroundSelected: UIColor { get }
-    var buttonBot: UIColor { get }
-    var buttonBotSelected: UIColor { get }
-    var buttonBotBorder: UIColor { get }
-    
-    // MARK: Assistant
-
-    var assistantButtonBackground: UIColor { get }
-    var assistantButtonBackgroundHighlighted: UIColor { get }
-    var assistantButtonBackgroundSelected: UIColor { get }
-    var assistantButtonBackgroundDisabled: UIColor { get }
-
-    var assistantButtonBorderBackground: UIColor { get }
-    var assistantButtonBorderBackgroundSelected: UIColor { get }
-    var assistantButtonBorderBackgroundDisabled: UIColor { get }
-
-    var assistantButtonNotificationsBackground: UIColor { get }
-
-    var assistantDivider: UIColor { get }
-    var assistantArrow: UIColor { get }
-    var assistantPlaceholderText: UIColor { get }
-    var assistantCardShadow: UIColor { get }
-
-    var assistantBadge: UIColor { get }
-
-    // MARK: Charts
-
-    var chartPrimaryInactive: UIColor { get }
-    var chartPrimaryActive: UIColor { get }
-    var chartSecondaryInactive: UIColor { get }
-    var chartSecondaryActive: UIColor { get }
-    var ratingInactive: UIColor { get }
-    var ratingActive: UIColor { get }
-
-    // MARK: Account Widget
-
-    var amountBillingInfoWarning: UIColor { get }
-    var chartWarning: UIColor { get }
-    var chartWarningLight: UIColor { get }
-    var chartBackground: UIColor { get }
-    var chartUnlimited: UIColor { get }
-    var chartDanger: UIColor { get }
-    var chartPrimary: UIColor { get }
-    var chartPrimaryDark: UIColor { get }
-    var chartPrimaryLight: UIColor { get }
-    var chartCritical: UIColor { get }
-
-    // MARK: Explore
-
-    var timeIndicatorWarning: UIColor { get }
-
-    // MARK: Support
-
-    var textPrimaryOverImage: UIColor { get }
-    var textSecondaryOverImage: UIColor { get }
-    
-    // MARK: Background
-    
-    var assistantBackgroundGradient: [UIColor] { get }
 }

@@ -95,7 +95,7 @@ class UICatalogFeedbacksViewController: UITableViewController {
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
-    
+
     private lazy var closeButtonCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "closeButtonCell")
         cell.segmentedControl.insertSegment(withTitle: "None", at: 0, animated: false)
@@ -103,7 +103,7 @@ class UICatalogFeedbacksViewController: UITableViewController {
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
-    
+
     private lazy var backButtonCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "backButtonCell")
         cell.segmentedControl.insertSegment(withTitle: "None", at: 0, animated: false)
@@ -112,7 +112,7 @@ class UICatalogFeedbacksViewController: UITableViewController {
         cell.segmentedControl.selectedSegmentIndex = 2
         return cell
     }()
-    
+
     private lazy var pushFeedbackCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "showCrouton")
         cell.textLabel?.textColor = .textLink
@@ -289,7 +289,7 @@ private extension UICatalogFeedbacksViewController {
             fatalError("Unknown secondary action selected for index: \(selectedIndex)")
         }
     }
-    
+
     func buildBackButton(for selectedIndex: Int) -> FeedbackNavigationButton {
         switch selectedIndex {
         case 0:
@@ -303,7 +303,7 @@ private extension UICatalogFeedbacksViewController {
             fatalError("Unknown option selected for index: \(selectedIndex)")
         }
     }
-    
+
     func buildCloseButton(for selectedIndex: Int) -> FeedbackNavigationButton {
         switch selectedIndex {
         case 0:

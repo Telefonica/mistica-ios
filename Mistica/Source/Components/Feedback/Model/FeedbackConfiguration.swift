@@ -12,7 +12,6 @@ import UIKit
 public typealias FeedbackCompletion = () -> Void
 public typealias FeedbackRetryCompletion = (@escaping () -> Void) -> Void
 
-
 @frozen
 public enum FeedbackPrimaryAction {
     case none
@@ -31,10 +30,10 @@ public enum FeedbackSecondaryAction {
 public enum FeedbackNavigationButton: Equatable {
     // Remove the button from the navigation bar
     case none
-    
+
     // Keep the existing navigation bar button
     case keep
-    
+
     // Use a custom UIBarButtonItem
     case custom(button: UIBarButtonItem)
 }

@@ -20,7 +20,7 @@ public class FeedbackViewController: UIViewController {
         if let modalPresentationStyle = configuration.modalPresentationStyle {
             self.modalPresentationStyle = modalPresentationStyle
         }
-        
+
         if #available(iOS 13.0, *), configuration.shouldDisableSwipeToDismiss {
             isModalInPresentation = true
         }
@@ -73,7 +73,7 @@ private extension FeedbackViewController {
         case .custom(let button):
             navigationItem.rightBarButtonItem = button
         }
-        
+
         switch configuration.backButton {
         case .none:
             navigationItem.hidesBackButton = true

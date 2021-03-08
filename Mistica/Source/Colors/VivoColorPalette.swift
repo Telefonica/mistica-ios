@@ -86,12 +86,12 @@ struct VivoColors: Colors {
     let feedbackInfoBackground = VivoColorPalette.grey6
 
     // GLOBAL
-    let brand = VivoColorPalette.vivoPurple // antes iconBrand
-    let inverse = VivoColorPalette.white // antes iconInverse
-    let neutralHigh = VivoColorPalette.grey6 // antes iconPrimary
-    let neutralLow = VivoColorPalette.grey3 // antes iconDisabled
-    let neutralMedium = VivoColorPalette.grey5 // antes iconSecondary
-    let promo = VivoColorPalette.vivoPurple // antes backgroundPromo
+    let brand = VivoColorPalette.vivoPurple
+    let inverse = VivoColorPalette.white
+    let neutralHigh = VivoColorPalette.grey6
+    let neutralLow = VivoColorPalette.grey3
+    let neutralMedium = VivoColorPalette.grey5
+    let promo = VivoColorPalette.vivoPurple
     let highlight = VivoColorPalette.pink
 
     let textPrimary = VivoColorPalette.grey6
@@ -102,15 +102,15 @@ struct VivoColors: Colors {
     let textAmount = VivoColorPalette.vivoPurple
 
     // STATES
-    let error = VivoColorPalette.pepper // antes iconError
-    let success = VivoColorPalette.vivoGreen // antes iconSuccess
-    let warning = VivoColorPalette.orange // antes iconWarning
+    let error = VivoColorPalette.pepper
+    let success = VivoColorPalette.vivoGreen
+    let warning = VivoColorPalette.orange
 
     // BARS TEXTS
     let textNavigationBarPrimary = VivoColorPalette.white
     let textNavigationBarSecondary = VivoColorPalette.vivoPurpleLight50
-    let textNavigationSearchBarHint = VivoColorPalette.vivoPurpleLight50 // solo en iOS
-    let textNavigationSearchBarText = VivoColorPalette.white // solo en iOS
+    let textNavigationSearchBarHint = VivoColorPalette.vivoPurpleLight50
+    let textNavigationSearchBarText = VivoColorPalette.white
     let textAppBar = VivoColorPalette.grey4
     let textAppBarSelected = VivoColorPalette.vivoPurple
     

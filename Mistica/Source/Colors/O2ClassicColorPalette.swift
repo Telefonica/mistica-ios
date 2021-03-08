@@ -84,12 +84,12 @@ struct O2ClassicColors: Colors {
     let feedbackInfoBackground = O2ClassicColorPalette.grey6
     
     // GLOBAL
-    let brand = O2ClassicColorPalette.o2Blue // antes iconBrand
-    let inverse = O2ClassicColorPalette.white // antes iconInverse
-    let neutralHigh = O2ClassicColorPalette.grey6 // antes iconPrimary
-    let neutralLow = O2ClassicColorPalette.grey3 // antes iconDisabled
-    let neutralMedium = O2ClassicColorPalette.grey5 // antes iconSecondary
-    let promo = O2ClassicColorPalette.pink // antes backgroundPromo
+    let brand = O2ClassicColorPalette.o2Blue
+    let inverse = O2ClassicColorPalette.white
+    let neutralHigh = O2ClassicColorPalette.grey6
+    let neutralLow = O2ClassicColorPalette.grey3
+    let neutralMedium = O2ClassicColorPalette.grey5
+    let promo = O2ClassicColorPalette.pink
     let highlight = O2ClassicColorPalette.pink
     
     let textPrimary = O2ClassicColorPalette.grey6
@@ -100,15 +100,15 @@ struct O2ClassicColors: Colors {
     let textAmount = O2ClassicColorPalette.o2SkyBlue
 
     // STATES
-    let error = O2ClassicColorPalette.pepper // antes iconError
-    let success = O2ClassicColorPalette.o2Green // antes iconSuccess
-    let warning = O2ClassicColorPalette.orange // antes iconWarning
+    let error = O2ClassicColorPalette.pepper
+    let success = O2ClassicColorPalette.o2Green
+    let warning = O2ClassicColorPalette.orange
 
     // BARS TEXTS
     let textNavigationBarPrimary = O2ClassicColorPalette.white
     let textNavigationBarSecondary = O2ClassicColorPalette.o2BlueLight60
-    let textNavigationSearchBarHint = O2ClassicColorPalette.o2BlueLight60 // solo en iOS
-    let textNavigationSearchBarText = O2ClassicColorPalette.white // solo en iOS
+    let textNavigationSearchBarHint = O2ClassicColorPalette.o2BlueLight60
+    let textNavigationSearchBarText = O2ClassicColorPalette.white
     let textAppBar = O2ClassicColorPalette.grey4
     let textAppBarSelected = O2ClassicColorPalette.o2Blue
     

@@ -84,12 +84,12 @@ struct O2Colors: Colors {
     let feedbackInfoBackground = O2ColorPalette.grey6
 
     // GLOBAL
-    let brand = O2ColorPalette.o2BluePrimary // antes iconBrand
-    let inverse = O2ColorPalette.white // antes iconInverse
-    let neutralHigh = O2ColorPalette.grey6 // antes iconPrimary
-    let neutralLow = O2ColorPalette.grey3 // antes iconDisabled
-    let neutralMedium = O2ColorPalette.grey5 // antes iconSecondary
-    let promo = O2ColorPalette.o2Purple // antes backgroundPromo
+    let brand = O2ColorPalette.o2BluePrimary
+    let inverse = O2ColorPalette.white
+    let neutralHigh = O2ColorPalette.grey6
+    let neutralLow = O2ColorPalette.grey3
+    let neutralMedium = O2ColorPalette.grey5
+    let promo = O2ColorPalette.o2Purple
     let highlight = O2ColorPalette.o2Pink
 
     let textPrimary = O2ColorPalette.grey6
@@ -100,9 +100,9 @@ struct O2Colors: Colors {
     let textAmount = O2ColorPalette.o2BluePrimary
 
     // STATES
-    let error = O2ColorPalette.pepper // antes iconError
-    let success = O2ColorPalette.o2Green // antes iconSuccess
-    let warning = O2ColorPalette.o2Orange // antes iconWarning
+    let error = O2ColorPalette.pepper
+    let success = O2ColorPalette.o2Green
+    let warning = O2ColorPalette.o2Orange
 
     // BARS TEXTS
     let textNavigationBarPrimary = O2ColorPalette.white

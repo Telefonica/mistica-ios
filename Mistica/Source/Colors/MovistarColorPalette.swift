@@ -85,12 +85,12 @@ struct MovistarColors: Colors {
     let feedbackInfoBackground = MovistarColorPalette.grey6
 
     // GLOBAL
-    let brand = MovistarColorPalette.movistarBlue // antes iconBrand
-    let inverse = MovistarColorPalette.white // antes iconInverse
-    let neutralHigh = MovistarColorPalette.grey6 // antes iconPrimary
-    let neutralLow = MovistarColorPalette.grey3 // antes iconDisabled
-    let neutralMedium = MovistarColorPalette.grey5 // antes iconSecondary
-    let promo = MovistarColorPalette.purple // antes backgroundPromo
+    let brand = MovistarColorPalette.movistarBlue
+    let inverse = MovistarColorPalette.white
+    let neutralHigh = MovistarColorPalette.grey6
+    let neutralLow = MovistarColorPalette.grey3
+    let neutralMedium = MovistarColorPalette.grey5
+    let promo = MovistarColorPalette.purple
     let highlight = MovistarColorPalette.pink
 
     let textPrimary = MovistarColorPalette.grey6
@@ -101,9 +101,9 @@ struct MovistarColors: Colors {
     let textAmount = MovistarColorPalette.movistarBlue
 
     // STATES
-    let error = MovistarColorPalette.pepper // antes iconError
-    let success = MovistarColorPalette.movistarGreen // antes iconSuccess
-    let warning = MovistarColorPalette.egg // antes iconWarning
+    let error = MovistarColorPalette.pepper
+    let success = MovistarColorPalette.movistarGreen
+    let warning = MovistarColorPalette.egg
 
     // BARS TEXTS
     let textNavigationBarPrimary = MovistarColorPalette.white

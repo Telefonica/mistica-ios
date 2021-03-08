@@ -107,7 +107,6 @@ struct MovistarColors: Colors {
 
     // BARS TEXTS
     let textNavigationBarPrimary = MovistarColorPalette.white
-    #warning("Check prominent variant. It was 30%")
     var textNavigationBarSecondary: UIColor { UIColor(MovistarColorPalette.movistarBlueLight30, variants: [.prominent: MovistarColorPalette.movistarProminentBlueLight20]) }
     let textNavigationSearchBarHint = MovistarColorPalette.movistarBlueLight30
     let textNavigationSearchBarText = MovistarColorPalette.white

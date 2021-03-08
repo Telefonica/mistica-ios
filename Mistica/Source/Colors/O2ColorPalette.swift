@@ -9,6 +9,7 @@
 import UIKit
 
 struct O2Colors: Colors {
+    
     // BACKGROUNDS
     let appBarBackground = O2ColorPalette.white
     let background = O2ColorPalette.white

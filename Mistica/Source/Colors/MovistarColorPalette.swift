@@ -9,6 +9,7 @@
 import UIKit
 
 struct MovistarColors: Colors {
+    
     // BACKGROUNDS
     let appBarBackground = MovistarColorPalette.white
     let background = MovistarColorPalette.white

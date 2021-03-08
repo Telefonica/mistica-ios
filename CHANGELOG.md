@@ -1,3 +1,31 @@
+## [9.0.1](https://github.com/Telefonica/mistica-ios/compare/v9.0.0...v9.0.1) (2021-02-24)
+
+
+### Bug Fixes
+
+* **Accessibility:** improve Accessibility on Cards. Update Cards docs ([#86](https://github.com/Telefonica/mistica-ios/issues/86)) ([3bbe36b](https://github.com/Telefonica/mistica-ios/commit/3bbe36b64b8eb106a5d1ee868ed447eba6d15d21))
+
+# [9.0.0](https://github.com/Telefonica/mistica-ios/compare/v8.0.1...v9.0.0) (2021-02-17)
+
+
+### Bug Fixes
+
+* **ColorPalette:** fix backgroundPromo color of O2ClassicColorPalette ([#75](https://github.com/Telefonica/mistica-ios/issues/75)) ([fd87da0](https://github.com/Telefonica/mistica-ios/commit/fd87da01c6e28677d85bdbc6bb46630d8788afc0))
+* **DataCard:** fix border color of card ([cb4c3b0](https://github.com/Telefonica/mistica-ios/commit/cb4c3b01e9c4a5c23f7cdf19745caaa02764fdc1))
+* **HighlightedCard:** add support for xib and storyboard ([5e3afa7](https://github.com/Telefonica/mistica-ios/commit/5e3afa73f9a2694422273359bfc58e35a83ebba2))
+* **HighlightedCard:** fix showActionButton and showCloseButton so that the value of the variables makes sense in English ([b6a2921](https://github.com/Telefonica/mistica-ios/commit/b6a29216cd21a97adfbbf1de07a9dc41e68438b2))
+* **HighlightedCard:** nake init with parameters: `(title:subtitle:rightImage:actionButtonStyle:)` configures the correct styles. ([31f2bf6](https://github.com/Telefonica/mistica-ios/commit/31f2bf63d205ef06253fede38138dc39850c19e8))
+* **HighlightedCard:** set multi lines support for both texts (title and subtitle) ([#77](https://github.com/Telefonica/mistica-ios/issues/77)) ([657a3bc](https://github.com/Telefonica/mistica-ios/commit/657a3bc6343d2d40f87bde01404d2c97808b411f))
+* **HighlightedCard,MediaCard,MediaCard,Stepper:** fix border color by replacing "divider" by "border" of the color palette and set the border size to 1 px ([66e4aae](https://github.com/Telefonica/mistica-ios/commit/66e4aae166f4efa17ab10651134a8e7465ad75d4))
+* **MediaCard:** fix border color of card and vertical spacing after headline ([f62b6f2](https://github.com/Telefonica/mistica-ios/commit/f62b6f2afc01ac9b29e793de55b233c0abaf515a))
+* **Stepper:**  Update Lottie stroke width ([#76](https://github.com/Telefonica/mistica-ios/issues/76)) ([0c9a35f](https://github.com/Telefonica/mistica-ios/commit/0c9a35f49806cf87c9a7ae1b487b106b61d96cb1))
+
+
+### BREAKING CHANGES
+
+* **HighlightedCard:** texts (title and subtitle) of HighlightedCard have no restrictions of number of lines and both add support multi lines.
+* **Button:** Make Button a UIControl ([#79](https://github.com/Telefonica/mistica-ios/issues/79)) ([4b57222](https://github.com/Telefonica/mistica-ios/commit/4b5722211510b4bbed28f1b15a4596a28187972c))
+
 ## [8.0.1](https://github.com/Telefonica/mistica-ios/compare/v8.0.0...v8.0.1) (2021-01-28)
 
 

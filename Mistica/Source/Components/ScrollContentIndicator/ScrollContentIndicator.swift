@@ -32,7 +32,7 @@ public class ScrollContentIndicator: Button {
         view.addSubview(self, constraints: [
             centerXAnchor.constraint(equalTo: view.centerXAnchor),
             heightAnchor.constraint(equalToConstant: Constants.defaultHeight),
-            topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.defaultMargin)
+            topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.defaultMargin)
         ])
     }
 
@@ -87,6 +87,7 @@ private extension ScrollContentIndicator {
         let gradientView = GradientView()
         gradientView.applyStyle(.scrollContentIndicator)
         gradientView.makeRounded(cornerRadius: cornerRadius)
+        gradientView.isUserInteractionEnabled = false
         insertSubview(gradientView, at: 0, constraints: gradientView.constraintsForEdges(to: self))
     }
 

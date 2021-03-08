@@ -10,7 +10,7 @@ You can check out the `ButtonStyle+Toolkit.swift` file to check out the availabl
 
 ## State
 
-Set a new value to the property `state` in order to change the button's state.
+Set a new value to the properties `isLoading`, `isSelected` or `isEnabled` in order to change the button's state.
 
 * **Normal:** Initial button state, enabled and accepting touches.
 * **Selected:** It automatically changes to this state when the button is tapped and will remain like that until the tapped event stops.

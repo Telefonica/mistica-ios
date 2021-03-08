@@ -48,6 +48,7 @@ public class MediaCard: UIView {
         static let spacingAfterRichMediaView = CGFloat(8)
     }
 
+    private lazy var cardAccessibilityElement = UIAccessibilityElement(accessibilityContainer: self)
     private var richMediaContainerView = UIView()
     private let baseCardView = CardBase()
 
@@ -55,6 +56,18 @@ public class MediaCard: UIView {
         didSet {
             baseCardView.fragmentView = fragmentView
         }
+    }
+
+    override public var accessibilityElements: [Any]? {
+        get {
+            cardAccessibilityElement.accessibilityFrameInContainerSpace = bounds
+            return [
+                cardAccessibilityElement,
+                fragmentView as Any,
+                baseCardView.buttonsView
+            ].compactMap { $0 }
+        }
+        set {}
     }
 
     public var contentConfiguration: MediaCardConfiguration? {
@@ -86,21 +99,20 @@ public class MediaCard: UIView {
 // MARK: Public
 
 public extension MediaCard {
-    var primaryButtonState: Button.State {
-        get {
-            baseCardView.buttonsView.primaryButtonState
-        }
-        set {
-            baseCardView.buttonsView.primaryButtonState = newValue
-        }
+    var primaryButton: Button {
+        baseCardView.buttonsView.primaryButton
     }
 
-    var linkButtonState: Button.State {
+    var linkButton: Button {
+        baseCardView.buttonsView.linkButton
+    }
+
+    override var accessibilityTraits: UIAccessibilityTraits {
         get {
-            baseCardView.buttonsView.linkButtonState
+            cardAccessibilityElement.accessibilityTraits
         }
         set {
-            baseCardView.buttonsView.linkButtonState = newValue
+            cardAccessibilityElement.accessibilityTraits = newValue
         }
     }
 }
@@ -170,6 +182,13 @@ private extension MediaCard {
         baseCardView.descriptionTitle = configuration.descriptionTitle
 
         baseCardView.configureButtons(primaryButton: configuration.button, linkButton: configuration.link)
+
+        cardAccessibilityElement.accessibilityLabel = [
+            baseCardView.headline,
+            baseCardView.title,
+            baseCardView.subtitle,
+            baseCardView.descriptionTitle
+        ].compactMap { $0 }.joined(separator: " ")
     }
 }
 

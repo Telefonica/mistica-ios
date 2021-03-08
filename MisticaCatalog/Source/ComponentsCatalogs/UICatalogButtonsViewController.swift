@@ -161,9 +161,9 @@ private class LoadSimulationButton: Button {
     }
 
     @objc func simulateLoad() {
-        state = .loading
+        isLoading = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.state = .normal
+            self.isLoading = false
         }
     }
 }
@@ -176,18 +176,19 @@ private extension Button.State {
         case .selected:
             button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Selected"
-            button.state = self
+            button.isSelected = true
             button.isUserInteractionEnabled = false
         case .disabled:
             button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Disabled"
-            button.state = self
+            button.isEnabled = false
         case .loading:
             button = LoadSimulationButton(style: style, title: "Loading", loadingTitle: "Loading Title", isSmall: isSmall)
         case .normal:
             button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Normal"
-            button.state = self
+        default:
+            fatalError("Unknown state")
         }
 
         return button

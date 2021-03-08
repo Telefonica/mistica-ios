@@ -61,6 +61,9 @@
 		45165BE25062A3F6F3258CF2 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9982D822AACCA74B34989A6 /* ListViewCell.swift */; };
 		5236C2BE900CA9A69C0B58B6 /* PhoneNumberInputFieldValidationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A67DB1DF67BD581B687361 /* PhoneNumberInputFieldValidationStrategy.swift */; };
 		5336A071B18BBC9ABCE45530 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2D0EBC9A630B3017747EF /* HeaderView.swift */; };
+		5594007325F24DB400AA066D /* OnAir-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5594006D25F24ABC00AA066D /* OnAir-Bold.ttf */; };
+		5594007425F24DB400AA066D /* OnAir-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5594006C25F24ABC00AA066D /* OnAir-Regular.ttf */; };
+		5594007525F24DB400AA066D /* OnAir-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5594006B25F24ABC00AA066D /* OnAir-Light.ttf */; };
 		5C50E1F5A7510E7807736AF2 /* MisticaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F2FC75B7ADFCAE01D5BBD0 /* MisticaConfig.swift */; };
 		5E9996DC83EFB50DB7E2B9B6 /* CellStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABF99EE0334AA102A64EA9 /* CellStyle+Toolkit.swift */; };
 		631476E90140ED8EC617FE48 /* CustomCroutonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0D32D83E30260E11717BF /* CustomCroutonContainer.swift */; };
@@ -2249,7 +2252,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5594007525F24DB400AA066D /* OnAir-Light.ttf in Resources */,
 				18D8894025ADA08A0098EED3 /* demo.png in Resources */,
+				5594007425F24DB400AA066D /* OnAir-Regular.ttf in Resources */,
+				5594007325F24DB400AA066D /* OnAir-Bold.ttf in Resources */,
 				21E9E8E6F439B119869C6B65 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

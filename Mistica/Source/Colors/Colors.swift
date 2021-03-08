@@ -9,7 +9,6 @@
 import UIKit
 
 protocol Colors {
-    
     // BACKGROUNDS
     var appBarBackground: UIColor { get }
     var background: UIColor { get }
@@ -22,13 +21,13 @@ protocol Colors {
     var navigationBarBackground: UIColor { get }
     var navigationSearchBarBackground: UIColor { get }
     var skeletonWave: UIColor { get }
-    
+
     // BORDERS
     var border: UIColor { get }
     var borderDark: UIColor { get }
     var borderLight: UIColor { get }
     var borderSelected: UIColor { get }
-    
+
     // BORDERS
     var buttonDangerBackground: UIColor { get }
     var buttonDangerBackgroundDisabled: UIColor { get }
@@ -47,7 +46,7 @@ protocol Colors {
     var buttonSecondaryBorderDisabledInverse: UIColor { get }
     var buttonSecondaryBorderInverse: UIColor { get }
     var buttonSecondaryBorderSelectedInverse: UIColor { get }
-    
+
     var textButtonPrimary: UIColor { get }
     var textButtonPrimaryInverse: UIColor { get }
     var textButtonPrimaryInverseDisabled: UIColor { get }
@@ -63,7 +62,7 @@ protocol Colors {
     var textLinkDangerDisabled: UIColor { get }
     var textLinkDisabled: UIColor { get }
     var textLinkSnackbar: UIColor { get }
-    
+
     // CONTROLS
     var control: UIColor { get }
     var controlActivated: UIColor { get }
@@ -72,7 +71,7 @@ protocol Colors {
     var loadingBarBackground: UIColor { get }
     var loadingBarBackgroundInverse: UIColor { get }
     var loadingBarInverse: UIColor { get }
-        
+
     // DIVIDERS
     var divider: UIColor { get }
     var navigationBarDivider: UIColor { get }
@@ -81,7 +80,7 @@ protocol Colors {
     var badge: UIColor { get }
     var feedbackErrorBackground: UIColor { get }
     var feedbackInfoBackground: UIColor { get }
-    
+
     // GLOBAL
     var brand: UIColor { get }
     var inverse: UIColor { get }
@@ -90,14 +89,14 @@ protocol Colors {
     var neutralMedium: UIColor { get }
     var promo: UIColor { get }
     var highlight: UIColor { get }
-    
+
     var textPrimary: UIColor { get }
     var textPrimaryInverse: UIColor { get }
     var textSecondary: UIColor { get }
     var textSecondaryInverse: UIColor { get }
     var textDisabled: UIColor { get }
     var textAmount: UIColor { get }
-    
+
     // STATES
     var error: UIColor { get }
     var success: UIColor { get }
@@ -110,7 +109,7 @@ protocol Colors {
     var textNavigationSearchBarText: UIColor { get }
     var textAppBar: UIColor { get }
     var textAppBarSelected: UIColor { get }
-    
+
     // GRADIENTS
     var backgroundBrandGradient: [UIColor] { get }
 }

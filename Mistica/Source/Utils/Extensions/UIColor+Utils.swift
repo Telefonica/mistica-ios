@@ -17,7 +17,7 @@ extension UIColor {
             alpha: a / 255
         )
     }
-    
+
     public convenience init?(hex: String) {
         var hexColor = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 

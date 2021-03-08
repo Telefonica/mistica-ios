@@ -9,7 +9,6 @@
 import UIKit
 
 struct MovistarColors: Colors {
-    
     // BACKGROUNDS
     let appBarBackground = MovistarColorPalette.white
     let background = MovistarColorPalette.white
@@ -17,12 +16,12 @@ struct MovistarColors: Colors {
     let backgroundOverlay = MovistarColorPalette.grey6.withAlphaComponent(0.6)
     let backgroundSkeleton = MovistarColorPalette.grey1
     let backgroundSkeletonInverse = MovistarColorPalette.movistarBlueDark
-    var navigationBarBackground: UIColor  { UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) }
+    var navigationBarBackground: UIColor { UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) }
     var navigationSearchBarBackground: UIColor { UIColor(MovistarColorPalette.movistarBlueDark, variants: [.prominent: MovistarColorPalette.movistarProminentBlueDark]) }
     let backgroundAlternative = MovistarColorPalette.grey1
     let backgroundFeedbackBottom = MovistarColorPalette.movistarBlue
     let skeletonWave = MovistarColorPalette.grey2
-    
+
     // BORDERS
     let borderLight = MovistarColorPalette.grey1
     let border = MovistarColorPalette.grey3
@@ -112,7 +111,7 @@ struct MovistarColors: Colors {
     let textNavigationSearchBarText = MovistarColorPalette.white
     let textAppBar = MovistarColorPalette.grey4
     var textAppBarSelected: UIColor { UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) }
-    
+
     // GRADIENTS
     var backgroundBrandGradient: [UIColor] {
         [
@@ -152,7 +151,7 @@ public enum MovistarColorPalette {
     public static let white = UIColor(hex: "#FFFFFF")!
     public static let movistarProminentBlue = UIColor(hex: "#0B2739")!
     public static let movistarProminentBlueDark = UIColor(hex: "#081F2D")!
-    public static let movistarProminentBlueLight20 = UIColor(hex :"#CED3D7")!
-    public static let movistarProminentBlueLight50 = UIColor(hex :"#85939C")!
-    public static let movistarProminentBlueLight70 = UIColor(hex :"#546874")!
+    public static let movistarProminentBlueLight20 = UIColor(hex: "#CED3D7")!
+    public static let movistarProminentBlueLight50 = UIColor(hex: "#85939C")!
+    public static let movistarProminentBlueLight70 = UIColor(hex: "#546874")!
 }

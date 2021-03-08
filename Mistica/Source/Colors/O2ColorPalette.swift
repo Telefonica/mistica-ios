@@ -9,7 +9,6 @@
 import UIKit
 
 struct O2Colors: Colors {
-    
     // BACKGROUNDS
     let appBarBackground = O2ColorPalette.white
     let background = O2ColorPalette.white
@@ -111,7 +110,7 @@ struct O2Colors: Colors {
     let textNavigationSearchBarText = O2ColorPalette.white
     let textAppBar = O2ColorPalette.grey4
     let textAppBarSelected = O2ColorPalette.o2BluePrimary
-    
+
     // GRADIENTS
     let backgroundBrandGradient = [
         O2ColorPalette.o2BluePrimary,

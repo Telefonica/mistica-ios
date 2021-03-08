@@ -1,5 +1,5 @@
 //
-//  O2ClassicColorsColorPalette.swift
+//  O2ClassicColorPalette.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -9,7 +9,6 @@
 import UIKit
 
 struct O2ClassicColors: Colors {
-    
     // BACKGROUNDS
     let appBarBackground = O2ClassicColorPalette.white
     let background = O2ClassicColorPalette.white
@@ -28,7 +27,7 @@ struct O2ClassicColors: Colors {
     let border = O2ClassicColorPalette.grey3
     let borderDark = O2ClassicColorPalette.grey5
     let borderSelected = O2ClassicColorPalette.o2Gem
-    
+
     // BUTTONS
     let buttonDangerBackground = O2ClassicColorPalette.pepper
     let buttonDangerBackgroundDisabled = O2ClassicColorPalette.pepperLight30
@@ -47,7 +46,7 @@ struct O2ClassicColors: Colors {
     let buttonSecondaryBorderDisabledInverse = O2ClassicColorPalette.o2SkyBlueLight50
     let buttonSecondaryBorderInverse = O2ClassicColorPalette.white
     let buttonSecondaryBorderSelectedInverse = O2ClassicColorPalette.o2SkyBlueLight50
-    
+
     let textButtonPrimary = O2ClassicColorPalette.white
     let textButtonPrimaryInverse = O2ClassicColorPalette.o2SkyBlue
     let textButtonPrimaryInverseDisabled = O2ClassicColorPalette.o2SkyBlueLight30
@@ -63,7 +62,7 @@ struct O2ClassicColors: Colors {
     let textLinkDangerDisabled = O2ClassicColorPalette.pepperLight30
     let textLinkDisabled = O2ClassicColorPalette.o2SkyBlueLight
     let textLinkSnackbar = O2ClassicColorPalette.o2SkyBlueLight
-    
+
     // CONTROLS
     let control = O2ClassicColorPalette.grey3
     let controlActivated = O2ClassicColorPalette.o2Gem
@@ -72,17 +71,17 @@ struct O2ClassicColors: Colors {
     let loadingBarBackground = O2ClassicColorPalette.o2GemLight30
     let loadingBarBackgroundInverse = O2ClassicColorPalette.o2GemLight30
     let loadingBarInverse = O2ClassicColorPalette.o2Gem
-    
+
     // DIVIDERS
     let divider = O2ClassicColorPalette.grey2
     let dividerInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2)
     let navigationBarDivider = O2ClassicColorPalette.o2Blue
-    
+
     // FEEDBACKS
     let badge = O2ClassicColorPalette.pepperDark
     let feedbackErrorBackground = O2ClassicColorPalette.pepper
     let feedbackInfoBackground = O2ClassicColorPalette.grey6
-    
+
     // GLOBAL
     let brand = O2ClassicColorPalette.o2Blue
     let inverse = O2ClassicColorPalette.white
@@ -91,7 +90,7 @@ struct O2ClassicColors: Colors {
     let neutralMedium = O2ClassicColorPalette.grey5
     let promo = O2ClassicColorPalette.pink
     let highlight = O2ClassicColorPalette.pink
-    
+
     let textPrimary = O2ClassicColorPalette.grey6
     let textPrimaryInverse = O2ClassicColorPalette.white
     let textSecondary = O2ClassicColorPalette.grey5
@@ -111,7 +110,7 @@ struct O2ClassicColors: Colors {
     let textNavigationSearchBarText = O2ClassicColorPalette.white
     let textAppBar = O2ClassicColorPalette.grey4
     let textAppBarSelected = O2ClassicColorPalette.o2Blue
-    
+
     // GRADIENTS
     let backgroundBrandGradient = [
         O2ClassicColorPalette.o2Blue,

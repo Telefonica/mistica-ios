@@ -9,7 +9,6 @@
 import UIKit
 
 struct VivoColors: Colors {
-    
     // BACKGROUNDS
     let appBarBackground = VivoColorPalette.white
     let background = VivoColorPalette.white
@@ -22,7 +21,7 @@ struct VivoColors: Colors {
     let backgroundAlternative = VivoColorPalette.grey1
     let backgroundFeedbackBottom = VivoColorPalette.vivoPurple
     let skeletonWave = VivoColorPalette.grey2
-    
+
     // BORDERS
     let borderLight = VivoColorPalette.grey1
     let border = VivoColorPalette.grey3
@@ -113,7 +112,7 @@ struct VivoColors: Colors {
     let textNavigationSearchBarText = VivoColorPalette.white
     let textAppBar = VivoColorPalette.grey4
     let textAppBarSelected = VivoColorPalette.vivoPurple
-    
+
     // GRADIENTS
     let backgroundBrandGradient = [
         VivoColorPalette.vivoPurple,

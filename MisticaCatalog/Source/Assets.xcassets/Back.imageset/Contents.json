@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icnBack.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

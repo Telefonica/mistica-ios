@@ -10,24 +10,19 @@ import UIKit
 
 public class FeedbackViewController: UIViewController {
     private let feedbackView: FeedbackView
-    private let style: FeedbackStyle
-    private let shouldHideCloseButton: Bool
+    private let configuration: FeedbackConfiguration
 
-    private let backButton: UIBarButtonItem?
-    private let closeButton: UIBarButtonItem?
-
-    public init(configuration: FeedbackConfiguration,
-                backButton: UIBarButtonItem? = nil,
-                closeButton: UIBarButtonItem? = nil) {
-        style = configuration.style
-        shouldHideCloseButton = configuration.shouldHideCloseButton
+    public init(configuration: FeedbackConfiguration) {
+        self.configuration = configuration
         feedbackView = FeedbackView(configuration: configuration)
-        self.backButton = backButton
-        self.closeButton = closeButton
         super.init(nibName: nil, bundle: nil)
 
         if let modalPresentationStyle = configuration.modalPresentationStyle {
             self.modalPresentationStyle = modalPresentationStyle
+        }
+        
+        if #available(iOS 13.0, *), configuration.shouldDisableSwipeToDismiss {
+            isModalInPresentation = true
         }
     }
 
@@ -51,7 +46,7 @@ public extension FeedbackViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if !shouldShowBackButton {
+        if configuration.backButton == .none {
             navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         }
     }
@@ -70,25 +65,23 @@ private extension FeedbackViewController {
     private func setupNavigationBar() {
         navigationItem.largeTitleDisplayMode = .never
 
-        if shouldShowCloseButton {
-            navigationItem.rightBarButtonItem = closeButton
+        switch configuration.closeButton {
+        case .none:
+            navigationItem.rightBarButtonItem = nil
+        case .keep:
+            break
+        case .custom(let button):
+            navigationItem.rightBarButtonItem = button
         }
-
-        if shouldShowBackButton {
-            navigationItem.leftBarButtonItem = backButton
-        } else {
+        
+        switch configuration.backButton {
+        case .none:
             navigationItem.hidesBackButton = true
+            navigationItem.leftBarButtonItem = nil
+        case .keep:
+            break
+        case .custom(let button):
+            navigationItem.leftBarButtonItem = button
         }
-    }
-
-    var shouldShowCloseButton: Bool {
-        guard let navigationController = navigationController else { return false }
-        return navigationController.presentingViewController?.presentedViewController == navigationController && !shouldHideCloseButton
-    }
-
-    var shouldShowBackButton: Bool {
-        guard style != .success else { return false }
-        guard let navigationController = navigationController else { return false }
-        return navigationController.viewControllers.count > 1
     }
 }

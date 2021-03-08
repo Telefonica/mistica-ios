@@ -201,7 +201,15 @@ struct O2ClassicAppColorPalette: AppColorPalette  {
     
     let textPrimaryOverImage = Colors.grey6
     let textSecondaryOverImage = Colors.grey1
-    let tableBackground = Colors.grey1
+    
+    // MARK: Background
+    
+    let assistantBackgroundGradient = [
+        Colors.o2Blue,
+        Colors.o2GradientSecond,
+        Colors.o2GradientThird,
+        Colors.o2GradientFourth
+    ]
 }
 
 private enum Colors {

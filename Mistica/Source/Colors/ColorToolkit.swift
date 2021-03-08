@@ -459,26 +459,6 @@ public extension UIColor {
         MisticaConfig.currentAppColorPalette.textAccent
     }
     
-    @objc(gradientBackgroundFirstColor)
-    static var gradientBackgroundFirst: UIColor {
-        MisticaConfig.currentAppColorPalette.gradientBackgroundFirst
-    }
-    
-    @objc(gradientBackgroundSecondColor)
-    static var gradientBackgroundSecond: UIColor {
-        MisticaConfig.currentAppColorPalette.gradientBackgroundSecond
-    }
-    
-    @objc(gradientBackgroundThirdColor)
-    static var gradientBackgroundThird: UIColor {
-        MisticaConfig.currentAppColorPalette.gradientBackgroundThird
-    }
-    
-    @objc(gradientBackgroundFourthColor)
-    static var gradientBackgroundFourth: UIColor {
-        MisticaConfig.currentAppColorPalette.gradientBackgroundFourth
-    }
-    
     // MARK: Bubbles
     
     @objc(bubbleTimeBackgroundColor)
@@ -688,8 +668,10 @@ public extension UIColor {
         MisticaConfig.currentAppColorPalette.textSecondaryOverImage
     }
     
-    static var tableBackground: UIColor {
-        MisticaConfig.currentAppColorPalette.tableBackground
+    // MARK: Background
+    
+    static var assistantBackgroundGradient: [UIColor] {
+        MisticaConfig.currentAppColorPalette.assistantBackgroundGradient
     }
 }
  

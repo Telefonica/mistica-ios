@@ -128,14 +128,6 @@ struct O2AppColorPalette: AppColorPalette  {
     let textSecondaryAlternative = Colors.grey4
     let textHint = Colors.grey4
     let textAccent = Colors.o2Teal
-    let gradientBackgroundFirst = Colors.o2BluePrimary
-    let gradientBackgroundSecond = Colors.o2BluePrimary
-    let gradientBackgroundThird = Colors.o2BluePrimary
-    let gradientBackgroundFourth = Colors.o2BluePrimary
-    
-    // MARK: Search bar
-
-    let navigationsSearchBarBackground = Colors.o2BluePrimaryDark
 
     // MARK: Bubbles
 
@@ -198,7 +190,15 @@ struct O2AppColorPalette: AppColorPalette  {
 
     let textPrimaryOverImage = Colors.grey6
     let textSecondaryOverImage = Colors.grey1
-    let tableBackground = Colors.grey1
+    
+    // MARK: Background
+    
+    let assistantBackgroundGradient = [
+        Colors.o2BluePrimary,
+        Colors.o2BluePrimary,
+        Colors.o2BluePrimary,
+        Colors.o2BluePrimary
+    ]
 }
 
 private enum Colors {

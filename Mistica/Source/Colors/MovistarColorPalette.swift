@@ -201,10 +201,15 @@ struct MovistarAppColorPalette: AppColorPalette  {
     var textSecondaryOverImage: UIColor {
         UIColor(Colors.grey4, variants: [.prominent: Colors.white])
     }
-
-    var tableBackground: UIColor {
-        UIColor(Colors.white, variants: [.prominent: Colors.grey1])
-    }
+    
+    // MARK: Background
+    
+    let assistantBackgroundGradient = [
+        Colors.movistarBlue,
+        Colors.movistarBlue,
+        Colors.movistarBlue,
+        Colors.movistarBlue
+    ]
 }
 
 private enum Colors {

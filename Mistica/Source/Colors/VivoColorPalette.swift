@@ -129,10 +129,6 @@ struct VivoAppColorPalette: AppColorPalette  {
     let textSecondaryAlternative = Colors.grey4
     let textHint = Colors.grey4
     let textAccent = Colors.vivoGreen
-    let gradientBackgroundFirst = Colors.vivoPurple
-    let gradientBackgroundSecond = Colors.vivoPurple
-    let gradientBackgroundThird = Colors.vivoPurple
-    let gradientBackgroundFourth = Colors.vivoPurple
 
     // MARK: Bubbles
 
@@ -195,12 +191,15 @@ struct VivoAppColorPalette: AppColorPalette  {
 
     let textPrimaryOverImage = Colors.grey6
     let textSecondaryOverImage = Colors.grey1
-    let tableBackground = Colors.grey1
 
-    // MARK: Notification Inbox
-
-    let scrollContentIndicatorBackgroundFirst = Colors.vivoPurple
-    let scrollContentIndicatorBackgroundSecond = Colors.vivoPurpleDark
+    // MARK: Background
+    
+    let assistantBackgroundGradient = [
+        Colors.vivoPurple,
+        Colors.vivoPurple,
+        Colors.vivoPurple,
+        Colors.vivoPurple
+    ]
 }
 
 private enum Colors {

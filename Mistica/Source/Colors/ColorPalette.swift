@@ -121,10 +121,6 @@ protocol AppColorPalette {
     var textSecondaryAlternative: UIColor { get }
     var textHint: UIColor { get }
     var textAccent: UIColor { get }
-    var gradientBackgroundFirst: UIColor { get }
-    var gradientBackgroundSecond: UIColor { get }
-    var gradientBackgroundThird: UIColor { get }
-    var gradientBackgroundFourth: UIColor { get }
 
     // MARK: Bubbles
 
@@ -187,5 +183,8 @@ protocol AppColorPalette {
 
     var textPrimaryOverImage: UIColor { get }
     var textSecondaryOverImage: UIColor { get }
-    var tableBackground: UIColor { get }
+    
+    // MARK: Background
+    
+    var assistantBackgroundGradient: [UIColor] { get }
 }

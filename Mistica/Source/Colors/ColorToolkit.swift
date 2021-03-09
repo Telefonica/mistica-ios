@@ -318,7 +318,7 @@ public extension UIColor {
     static var divider: UIColor {
         MisticaConfig.currentColors.divider
     }
-    
+
     @objc(dividerInverseColor)
     static var dividerInverse: UIColor {
         MisticaConfig.currentColors.dividerInverse
@@ -340,7 +340,7 @@ public extension UIColor {
     static var brandDark: UIColor {
         MisticaConfig.currentColors.brandDark
     }
-    
+
     @objc(inverseColor)
     static var inverse: UIColor {
         MisticaConfig.currentColors.inverse

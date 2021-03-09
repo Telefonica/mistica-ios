@@ -294,7 +294,6 @@ private extension FeedbackTests {
         primaryAction: FeedbackPrimaryAction,
         secondaryAction: FeedbackSecondaryAction,
         extraContent: UIView? = nil,
-        shouldHideCloseButton: Bool = false,
         modalPresentationStyle: UIModalPresentationStyle? = nil
     ) -> FeedbackViewController {
         let configuration = FeedbackConfiguration(
@@ -304,15 +303,9 @@ private extension FeedbackTests {
             primaryAction: primaryAction,
             secondaryAction: secondaryAction,
             extraContent: extraContent,
-            shouldHideCloseButton: shouldHideCloseButton,
             modalPresentationStyle: modalPresentationStyle
         )
-
-        return FeedbackViewController(
-            configuration: configuration,
-            backButton: nil,
-            closeButton: nil
-        )
+        return FeedbackViewController(configuration: configuration)
     }
 
     func buildExtraView() -> UIView {

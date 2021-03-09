@@ -17,7 +17,6 @@ struct O2ClassicColors: Colors {
     let backgroundSkeleton = O2ClassicColorPalette.grey1
     let backgroundSkeletonInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2)
     let navigationBarBackground = O2ClassicColorPalette.o2Blue
-    let navigationSearchBarBackground = O2ClassicColorPalette.o2BlueDark
     let backgroundAlternative = O2ClassicColorPalette.grey1
     let backgroundFeedbackBottom = O2ClassicColorPalette.o2GradientFourth
     let skeletonWave = O2ClassicColorPalette.grey2
@@ -84,6 +83,7 @@ struct O2ClassicColors: Colors {
 
     // GLOBAL
     let brand = O2ClassicColorPalette.o2Blue
+    let brandDark = O2ClassicColorPalette.o2BlueDark
     let inverse = O2ClassicColorPalette.white
     let neutralHigh = O2ClassicColorPalette.grey6
     let neutralLow = O2ClassicColorPalette.grey3
@@ -144,6 +144,7 @@ public enum O2ClassicColorPalette {
     public static let orangeLight = UIColor(hex: "#FFD6C2")!
     public static let coral = UIColor(hex: "#FF706E")!
     public static let pink = UIColor(hex: "#EB3C7D")!
+    public static let o2GradientFirst = UIColor(hex: "#102550")!
     public static let o2GradientSecond = UIColor(hex: "#0B4680")!
     public static let o2GradientThird = UIColor(hex: "#0D71AD")!
     public static let o2GradientFourth = UIColor(hex: "#449ED0")!

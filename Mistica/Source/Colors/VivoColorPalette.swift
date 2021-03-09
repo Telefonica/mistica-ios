@@ -17,7 +17,6 @@ struct VivoColors: Colors {
     let backgroundSkeleton = VivoColorPalette.grey1
     let backgroundSkeletonInverse = VivoColorPalette.white.withAlphaComponent(0.2)
     let navigationBarBackground = VivoColorPalette.vivoPurple
-    let navigationSearchBarBackground = VivoColorPalette.vivoPurpleDark
     let backgroundAlternative = VivoColorPalette.grey1
     let backgroundFeedbackBottom = VivoColorPalette.vivoPurple
     let skeletonWave = VivoColorPalette.grey2
@@ -32,7 +31,6 @@ struct VivoColors: Colors {
     let buttonDangerBackground = VivoColorPalette.pepper
     let buttonDangerBackgroundDisabled = VivoColorPalette.pepperLight30
     let buttonDangerBackgroundSelected = VivoColorPalette.pepperDark
-    let buttonDangerBackgroundHover = VivoColorPalette.pepperDark
     let buttonLinkBackgroundSelected = VivoColorPalette.vivoPurpleLight10
     let buttonLinkBackgroundSelectedInverse = VivoColorPalette.white.withAlphaComponent(0.2)
     let buttonPrimaryBackground = VivoColorPalette.vivoPurple
@@ -40,7 +38,6 @@ struct VivoColors: Colors {
     let buttonPrimaryBackgroundDisabledInverse = VivoColorPalette.vivoPurpleLight50
     let buttonPrimaryBackgroundInverse = VivoColorPalette.white
     let buttonPrimaryBackgroundSelected = VivoColorPalette.vivoPurpleDark
-    let buttonPrimaryBackgroundHover = VivoColorPalette.vivoPurpleDark
     let buttonPrimaryBackgroundSelectedInverse = VivoColorPalette.vivoPurpleLight50
     let buttonSecondaryBackground = VivoColorPalette.vivoPurple
     let buttonSecondaryBackgroundDisabled = VivoColorPalette.vivoPurpleLight20
@@ -86,6 +83,7 @@ struct VivoColors: Colors {
 
     // GLOBAL
     let brand = VivoColorPalette.vivoPurple
+    let brandDark = VivoColorPalette.vivoPurpleDark
     let inverse = VivoColorPalette.white
     let neutralHigh = VivoColorPalette.grey6
     let neutralLow = VivoColorPalette.grey3

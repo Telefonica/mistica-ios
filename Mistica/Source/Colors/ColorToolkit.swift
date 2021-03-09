@@ -208,11 +208,6 @@ public extension UIColor {
         MisticaConfig.currentColors.navigationBarBackground
     }
 
-    @objc(navigationSearchBarBackgroundColor)
-    static var navigationSearchBarBackground: UIColor {
-        MisticaConfig.currentColors.navigationSearchBarBackground
-    }
-
     @objc(backgroundAlternativeColor)
     static var backgroundAlternative: UIColor {
         MisticaConfig.currentColors.backgroundAlternative
@@ -319,9 +314,14 @@ public extension UIColor {
 
     // MARK: Dividers
 
-    @objc(dividerColorColor)
+    @objc(dividerColor)
     static var divider: UIColor {
         MisticaConfig.currentColors.divider
+    }
+    
+    @objc(dividerInverseColor)
+    static var dividerInverse: UIColor {
+        MisticaConfig.currentColors.dividerInverse
     }
 
     @objc(navigationBarDividerColor)
@@ -331,11 +331,16 @@ public extension UIColor {
 
     // MARK: Global
 
-    @objc(brandColorColor)
+    @objc(brandColor)
     static var brand: UIColor {
         MisticaConfig.currentColors.brand
     }
 
+    @objc(brandDarkColor)
+    static var brandDark: UIColor {
+        MisticaConfig.currentColors.brandDark
+    }
+    
     @objc(inverseColor)
     static var inverse: UIColor {
         MisticaConfig.currentColors.inverse

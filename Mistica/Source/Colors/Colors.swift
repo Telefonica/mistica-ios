@@ -19,7 +19,6 @@ protocol Colors {
     var backgroundSkeleton: UIColor { get }
     var backgroundSkeletonInverse: UIColor { get }
     var navigationBarBackground: UIColor { get }
-    var navigationSearchBarBackground: UIColor { get }
     var skeletonWave: UIColor { get }
 
     // BORDERS
@@ -74,6 +73,7 @@ protocol Colors {
 
     // DIVIDERS
     var divider: UIColor { get }
+    var dividerInverse: UIColor { get }
     var navigationBarDivider: UIColor { get }
 
     // FEEDBACKS
@@ -83,6 +83,7 @@ protocol Colors {
 
     // GLOBAL
     var brand: UIColor { get }
+    var brandDark: UIColor { get }
     var inverse: UIColor { get }
     var neutralHigh: UIColor { get }
     var neutralLow: UIColor { get }

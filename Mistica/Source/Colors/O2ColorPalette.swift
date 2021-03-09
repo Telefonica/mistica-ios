@@ -17,7 +17,6 @@ struct O2Colors: Colors {
     let backgroundSkeleton = O2ColorPalette.grey1
     let backgroundSkeletonInverse = O2ColorPalette.white.withAlphaComponent(0.2)
     let navigationBarBackground = O2ColorPalette.o2BluePrimary
-    let navigationSearchBarBackground = O2ColorPalette.o2BluePrimary
     let backgroundAlternative = O2ColorPalette.grey1
     let backgroundFeedbackBottom = O2ColorPalette.o2BluePrimary
     let skeletonWave = O2ColorPalette.grey2
@@ -84,6 +83,7 @@ struct O2Colors: Colors {
 
     // GLOBAL
     let brand = O2ColorPalette.o2BluePrimary
+    let brandDark = O2ColorPalette.o2BluePrimaryDark
     let inverse = O2ColorPalette.white
     let neutralHigh = O2ColorPalette.grey6
     let neutralLow = O2ColorPalette.grey3

@@ -17,7 +17,6 @@ struct MovistarColors: Colors {
     let backgroundSkeleton = MovistarColorPalette.grey1
     let backgroundSkeletonInverse = MovistarColorPalette.movistarBlueDark
     var navigationBarBackground: UIColor { UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) }
-    var navigationSearchBarBackground: UIColor { UIColor(MovistarColorPalette.movistarBlueDark, variants: [.prominent: MovistarColorPalette.movistarProminentBlueDark]) }
     let backgroundAlternative = MovistarColorPalette.grey1
     let backgroundFeedbackBottom = MovistarColorPalette.movistarBlue
     let skeletonWave = MovistarColorPalette.grey2
@@ -32,7 +31,6 @@ struct MovistarColors: Colors {
     let buttonDangerBackground = MovistarColorPalette.pepper
     let buttonDangerBackgroundDisabled = MovistarColorPalette.pepperLight30
     let buttonDangerBackgroundSelected = MovistarColorPalette.pepperDark
-    let buttonDangerBackgroundHover = MovistarColorPalette.pepperDark
     let buttonLinkBackgroundSelected = MovistarColorPalette.movistarBlueLight10
     let buttonLinkBackgroundSelectedInverse = MovistarColorPalette.white.withAlphaComponent(0.2)
     let buttonPrimaryBackground = MovistarColorPalette.movistarGreen
@@ -40,7 +38,6 @@ struct MovistarColors: Colors {
     let buttonPrimaryBackgroundDisabledInverse = MovistarColorPalette.movistarBlueLight50
     let buttonPrimaryBackgroundInverse = MovistarColorPalette.white
     let buttonPrimaryBackgroundSelected = MovistarColorPalette.movistarGreenDark
-    let buttonPrimaryBackgroundHover = MovistarColorPalette.movistarGreenDark
     let buttonPrimaryBackgroundSelectedInverse = MovistarColorPalette.movistarBlueLight50
     let buttonSecondaryBackground = MovistarColorPalette.movistarGreen
     let buttonSecondaryBackgroundDisabled = MovistarColorPalette.movistarGreenLight50
@@ -76,6 +73,7 @@ struct MovistarColors: Colors {
 
     // DIVIDERS
     let divider = MovistarColorPalette.grey2
+    let dividerInverse = MovistarColorPalette.movistarBlueDark
     var navigationBarDivider: UIColor { UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) }
 
     // FEEDBACKS
@@ -85,6 +83,7 @@ struct MovistarColors: Colors {
 
     // GLOBAL
     let brand = MovistarColorPalette.movistarBlue
+    let brandDark = MovistarColorPalette.movistarBlueDark
     let inverse = MovistarColorPalette.white
     let neutralHigh = MovistarColorPalette.grey6
     let neutralLow = MovistarColorPalette.grey3
@@ -129,8 +128,6 @@ public enum MovistarColorPalette {
     public static let movistarBlueLight50 = UIColor(hex: "#80CEF9")!
     public static let movistarBlueLight30 = UIColor(hex: "#B3E1FB")!
     public static let movistarBlueLight10 = UIColor(hex: "#E6F5FD")!
-    public static let movistarBlueLight50Percent25 = UIColor(hex: "#E3F4FD")!
-    public static let movistarBlueLight30Percent25 = UIColor(hex: "#ECF7FE")!
     public static let movistarGreen = UIColor(hex: "#5CB615")!
     public static let movistarGreenDark = UIColor(hex: "#499110")!
     public static let movistarGreenLight50 = UIColor(hex: "#ADDA8A")!

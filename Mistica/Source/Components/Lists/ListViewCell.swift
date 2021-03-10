@@ -210,7 +210,7 @@ open class ListViewCell: UITableViewCell {
 
     override public func setHighlighted(_ highlighted: Bool, animated _: Bool) {
         if highlighted {
-            highlightedView.backgroundColor = .rowBackgroundHighlighted
+            highlightedView.backgroundColor = .backgroundAlternative
         } else {
             highlightedView.backgroundColor = .background
         }

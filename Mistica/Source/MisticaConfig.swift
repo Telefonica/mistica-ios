@@ -9,7 +9,7 @@
 import Foundation
 
 public enum MisticaConfig {
-    static var currentColorPalette: ColorPalette = MovistarColorPalette()
+    static var currentColors: Colors = MovistarColors()
     static var currentStyledControls = [MisticaControlStyle]()
 
     // MARK: Public Setup
@@ -37,13 +37,13 @@ private extension MisticaConfig {
     static func configureColorPalette(for _: BrandStyle) {
         switch brandStyle {
         case .movistar:
-            currentColorPalette = MovistarColorPalette()
+            currentColors = MovistarColors()
         case .vivo:
-            currentColorPalette = VivoColorPalette()
+            currentColors = VivoColors()
         case .o2:
-            currentColorPalette = O2ColorPalette()
+            currentColors = O2Colors()
         case .o2Classic:
-            currentColorPalette = O2ClassicColorPalette()
+            currentColors = O2ClassicColors()
         }
     }
 }

@@ -58,7 +58,7 @@ class UICatalogTagsViewController: UIViewController {
         let container = UIView()
         container.makeRounded(cornerRadius: Constants.Container.cornerRadius)
 
-        container.backgroundColor = .skeletonBackground
+        container.backgroundColor = .backgroundSkeleton
         cell.contentView.addSubview(container, constraints: [
             cell.contentView.topAnchor.constraint(
                 equalTo: container.topAnchor,

@@ -131,7 +131,7 @@ private extension TagView {
         ])
 
         makeRounded(cornerRadius: Style.cornerRadius)
-        backgroundColor = .backgroundPromo
+        backgroundColor = .promo
     }
 
     func textDidSet() {

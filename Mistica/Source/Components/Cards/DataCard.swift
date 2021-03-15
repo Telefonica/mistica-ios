@@ -114,6 +114,12 @@ public class DataCard: UIView {
     override public var intrinsicContentSize: CGSize {
         cardBaseView.intrinsicContentSize
     }
+    
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        addBorder(color: .border)
+    }
 }
 
 // MARK: Public

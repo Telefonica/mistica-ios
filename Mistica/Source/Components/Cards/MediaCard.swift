@@ -115,6 +115,12 @@ public extension MediaCard {
             cardAccessibilityElement.accessibilityTraits = newValue
         }
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        addBorder(color: .border)
+    }
 }
 
 // MARK: Private

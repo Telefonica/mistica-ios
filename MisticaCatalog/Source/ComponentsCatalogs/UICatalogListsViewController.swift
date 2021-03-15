@@ -157,7 +157,7 @@ extension UICatalogListsViewController {
         case 0:
             sampleVC.assetType = ListViewCell.CellAssetType.none
         case 1:
-            sampleVC.assetType = .largeIcon(.imageIcon, backgroundColor: .iconDisabled)
+            sampleVC.assetType = .largeIcon(.imageIcon, backgroundColor: .neutralLow)
         case 2:
             sampleVC.assetType = .smallIcon(.imageIcon)
         case 3:

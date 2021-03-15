@@ -1,3 +1,22 @@
+# [10.0.0](https://github.com/Telefonica/mistica-ios/compare/v9.0.1...v10.0.0) (2021-03-10)
+
+
+### Bug Fixes
+
+* **Feedbacks:** Update Feedbacks handling of close and back buttons ([201d9b7](https://github.com/Telefonica/mistica-ios/commit/201d9b730e9611d013c20d9eb2cd34bfa8e89917))
+* **SnapshotTests:** Update to iOS 14.4 / Xcode 12.4 ([d8d3af3](https://github.com/Telefonica/mistica-ios/commit/d8d3af3dfa13a9f44bfdba982b666ad463ccc001))
+
+
+### Features
+
+* **ColorPalette:** Update color palette ([0b79886](https://github.com/Telefonica/mistica-ios/commit/0b7988638615eb59a3c04493b594529a0dd8e2f3))
+
+
+### BREAKING CHANGES
+
+* **ColorPalette:** Some colors haven been renamed or removed
+* **Feedbacks:** Feedback configuration API related to back/close button has changed
+
 ## [9.0.1](https://github.com/Telefonica/mistica-ios/compare/v9.0.0...v9.0.1) (2021-02-24)
 
 

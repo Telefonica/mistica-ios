@@ -529,7 +529,7 @@ private extension HeaderView {
 
     func updateAmountLabelTextColor() {
         guard !amountHasDangerColor else {
-            amountLabel.textColor = .textDanger
+            amountLabel.textColor = .highlight
             return
         }
 

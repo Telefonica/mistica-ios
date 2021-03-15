@@ -1,5 +1,5 @@
 //
-//  TabItemView.swift
+//  TabItemViewCell.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TabItemView: UICollectionViewCell {
+public class TabItemViewCell: UICollectionViewCell {
     private enum Constants {
         static let innerPadding: CGFloat = 16
         static let bottomPadding: CGFloat = innerPadding - heightDivider
@@ -74,14 +74,13 @@ public class TabItemView: UICollectionViewCell {
 
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
         commomInit()
     }
 }
 
 // MARK: Public API
 
-extension TabItemView {
+extension TabItemViewCell {
     var text: String? {
         get {
             title.text
@@ -116,7 +115,7 @@ extension TabItemView {
 
 // MARK: - Private
 
-private extension TabItemView {
+private extension TabItemViewCell {
     func commomInit() {
         contentView.backgroundColor = .clear
         
@@ -130,5 +129,35 @@ private extension TabItemView {
             selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
             selectedLine.widthAnchor.constraint(equalTo: horizontalStack.widthAnchor)
         ])
+        setUpAccessibility()
+    }
+    
+    func setUpAccessibility() {
+        // This component don't grow with Dynamic Type, but presents a HUD instead, since it is intended to be always
+        // presented below the navigation bar.
+        if #available(iOS 13, *) {
+            showsLargeContentViewer = true
+        }
+
+        // For Voice Over, consider the whole cell as the accessibility element, since the cell is much bigger then the
+        // title label, and it is more difficult to find it. The accesibility label is overridden to just dynamically
+        // delegate on the title label
+        isAccessibilityElement = true
+        title.isAccessibilityElement = false
+    }
+}
+
+// MARK: Accessibility
+
+public extension TabItemViewCell {
+    @available(iOS 13, *)
+    override var largeContentTitle: String? {
+        get { title.largeContentTitle }
+        set {}
+    }
+    
+    override var accessibilityLabel: String? {
+        get { title.text }
+        set {}
     }
 }

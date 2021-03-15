@@ -64,7 +64,7 @@ public class TabsView: UIView {
 extension TabsView {
     public func reload(with tabItems: [TabItem]) {
         self.tabsItems = tabItems
-        collectionView.reloadData()
+        reloadContent()
     }
     
     public func update(_ tabItem: TabItem, newTabItem: TabItem) {
@@ -84,13 +84,13 @@ extension TabsView {
 
         // Deselection
         if let selectedItemIndexPath = selectedItemIndexPath {
-            deselectTabView(at: selectedItemIndexPath)
+            deselectTabItem(at: selectedItemIndexPath)
         }
 
         // Selection
         let indexPath = IndexPath(item: index, section: 0)
         collectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
-        selectTabView(at: indexPath)
+        selectTabItem(at: indexPath)
     }
 }
 
@@ -101,6 +101,9 @@ private extension TabsView {
         setUpDivider()
         setUpLayout()
         setUpCollectionView()
+        
+        // Listen to theme variant changes
+        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChange, object: nil)
     }
         
     func setUpLayout() {
@@ -130,7 +133,7 @@ private extension TabsView {
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        TabItemView.registerClassForCell(to: collectionView)
+        TabItemViewCell.registerClassForCell(to: collectionView)
     }
 
     func setUpDivider() {
@@ -142,18 +145,25 @@ private extension TabsView {
         ])
     }
     
-    func selectTabView(at indexPath: IndexPath) {
-        guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemView else { return }
+    func selectTabItem(at indexPath: IndexPath) {
+        guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell else { return }
         let tabItem = tabsItems[indexPath.item]
         tabItemView.showSelected()
         delegate?.tabsView(self, didSelectTab: tabItem)
     }
     
-    func deselectTabView(at indexPath: IndexPath) {
-        guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemView else {
+    func deselectTabItem(at indexPath: IndexPath) {
+        guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell else {
             return
         }
         tabItemView.showDeselected()
+    }
+    
+    func reloadContent() {
+        collectionView.reloadData()
+        guard tabsItems.count > 0 else { return }
+        let firstItem = IndexPath(item: 0, section: 0)
+        collectionView.scrollToItem(at: firstItem, at: .left, animated: false)
     }
 }
 
@@ -169,9 +179,10 @@ extension TabsView: UICollectionViewDataSource {
             fatalError("Inconsistency between the collectionView and it's dataSource: Trying to fetch cell for item at indexPath \(indexPath), but the index was not valid. Current tabs list: \(tabsItems)")
         }
         let tabItem = tabsItems[indexPath.item]
-        let tabItemView = TabItemView.dequeueReusableCell(for: indexPath, from: collectionView)
+        let tabItemView = TabItemViewCell.dequeueReusableCell(for: indexPath, from: collectionView)
         tabItemView.text = tabItem.title
         tabItemView.icon = tabItem.icon
+        tabItemView.accessibilityIdentifier = tabItem.accessibilityIdentifier
         
         if tabItemView.isSelected {
             tabItemView.showSelected()
@@ -191,10 +202,30 @@ extension TabsView: UICollectionViewDelegate {
     }
 
     public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       selectTabView(at: indexPath)
+       selectTabItem(at: indexPath)
     }
     
     public func collectionView(_: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        deselectTabView(at: indexPath)
+        deselectTabItem(at: indexPath)
+    }
+}
+
+// MARK: Theme Variant did change notification
+
+@objc extension TabsView {
+    func themeDidChange() {
+        reloadContent()
+    }
+}
+
+// MARK: UILargeContentViewerInteractionDelegate
+
+@available(iOS 13, *)
+extension TabsView: UILargeContentViewerInteractionDelegate {
+    public func largeContentViewerInteraction(_: UILargeContentViewerInteraction, didEndOn item: UILargeContentViewerItem?, at _: CGPoint) {
+        guard let cell = item as? TabItemViewCell,
+              let indexPath = collectionView.indexPath(for: cell) else { return }
+
+        selectTabItem(at: indexPath)
     }
 }

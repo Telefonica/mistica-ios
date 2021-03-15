@@ -96,8 +96,8 @@ extension UICatalogScrollContentIndicatorViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.dequeueReusableCell(for: indexPath, from: tableView)
         cell.textLabel?.text = datasets[indexPath.row]
-        cell.backgroundColor = .white
-        cell.textLabel?.textColor = .black
+        cell.backgroundColor = .background
+        cell.textLabel?.textColor = .textPrimary
         return cell
     }
 }

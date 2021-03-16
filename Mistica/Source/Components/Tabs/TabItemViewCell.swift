@@ -137,6 +137,7 @@ private extension TabItemViewCell {
         // presented below the navigation bar.
         if #available(iOS 13, *) {
             showsLargeContentViewer = true
+            addInteraction(UILargeContentViewerInteraction())
         }
 
         // For Voice Over, consider the whole cell as the accessibility element, since the cell is much bigger then the
@@ -156,8 +157,13 @@ public extension TabItemViewCell {
         set {}
     }
     
-    override var accessibilityLabel: String? {
-        get { title.text }
+    override var largeContentImage: UIImage? {
+        get { imageView.image }
         set {}
     }
+    
+//    override var accessibilityLabel: String? {
+//        get { title.text }
+//        set {}
+//    }
 }

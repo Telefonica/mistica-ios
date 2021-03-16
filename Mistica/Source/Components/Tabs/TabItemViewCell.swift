@@ -102,14 +102,14 @@ extension TabItemViewCell {
     func showSelected() {
         selectedLine.isHidden = false
         title.textColor = .textPrimary
-        imageView.tintColor = .iconPrimary
+        imageView.tintColor = .neutralHigh
         
     }
 
     func showDeselected() {
         selectedLine.isHidden = true
         title.textColor = .textDisabled
-        imageView.tintColor = .iconDisabled
+        imageView.tintColor = .neutralLow
     }
 }
 

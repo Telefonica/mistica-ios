@@ -34,7 +34,7 @@ class UICatalogTabsViewController: UIViewController {
     
     private lazy var removeTabItemSelectedCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "removeTabsItemSelectedCell")
-        cell.textLabel?.textColor = .textDanger
+        cell.textLabel?.textColor = .buttonDangerBackground
         cell.textLabel?.text = "Remove Item"
         return cell
     }()

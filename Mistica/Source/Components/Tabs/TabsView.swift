@@ -17,33 +17,59 @@ public protocol TabsViewDelegate: AnyObject {
 public class TabsView: UIView {
     private enum Constants {
         static let dividerHeight: CGFloat = 1
-        static let componentHeight: CGFloat = 55
-        static let estimatedItemSize = CGSize(width: 100, height: 55)
+        static let componentHeight: CGFloat = 56
+        static let estimatedItemSize = CGSize(width: 100, height: Constants.componentHeight)
         static let firstIndexPath = IndexPath(row: 0, section: 0)
     }
     
+    private lazy var collectionView: UICollectionView = {
+        var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout);
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.alwaysBounceHorizontal = false
+        collectionView.alwaysBounceVertical = false
+        collectionView.bounces = false
+        collectionView.clipsToBounds = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        TabItemViewCell.registerClassForCell(to: collectionView)
+        return collectionView
+    }()
+
     // Layout is initialized to a default UICollectionViewFlowLayout. It will be overriden during set up phase.
-    private var layout = UICollectionViewFlowLayout()
-    private let collectionView: UICollectionView
-    
+    private lazy var layout: UICollectionViewFlowLayout = {
+        var layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        if tabsItems.count > 2 {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+        return layout
+    }()
+
     private lazy var divider: UIView = {
         let divider = UIView()
         divider.backgroundColor = .divider
         return divider
     }()
     
-    private lazy var selectedItemIndexPath: IndexPath? = {
+    private var firstIndexPathForSelectedItem: IndexPath? {
         let firstSelectedItem = collectionView.indexPathsForSelectedItems?.first
         return firstSelectedItem
-    }()
+    }
     
+    var widthOfScreen: CGFloat {
+        self.frame.width
+    }
+
     private var tabsItems: [TabItem] = []
     
     public weak var delegate: TabsViewDelegate?
 
     public init(tabItems: [TabItem]) {
         self.tabsItems = tabItems
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
         super.init(frame: .zero)
         
@@ -51,8 +77,6 @@ public class TabsView: UIView {
     }
 
     public required init?(coder: NSCoder) {
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-
         super.init(coder: coder)
         
         commomInit()
@@ -83,14 +107,14 @@ extension TabsView {
         guard index < tabsItems.count else { return }
 
         // Deselection
-        if let selectedItemIndexPath = selectedItemIndexPath {
-            deselectTabItem(at: selectedItemIndexPath)
+        if let selectedItem = firstIndexPathForSelectedItem {
+            deselectTabItem(at: selectedItem)
         }
 
         // Selection
-        let indexPath = IndexPath(item: index, section: 0)
-        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
-        selectTabItem(at: indexPath)
+        let nextSelectedItem = IndexPath(item: index, section: 0)
+        collectionView.selectItem(at: nextSelectedItem, animated: false, scrollPosition: [])
+        selectTabItem(at: nextSelectedItem)
     }
 }
 
@@ -99,49 +123,29 @@ extension TabsView {
 private extension TabsView {
     func commomInit() {
         setUpDivider()
-        setUpLayout()
         setUpCollectionView()
         
         // Listen to theme variant changes
         NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChange, object: nil)
     }
         
-    func setUpLayout() {
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        layout.itemSize = UICollectionViewFlowLayout.automaticSize
-        layout.estimatedItemSize = Constants.estimatedItemSize
-        collectionView.collectionViewLayout = layout
-    }
-    
-    func setUpCollectionView() {
-        collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.alwaysBounceHorizontal = true
-        collectionView.clipsToBounds = false
-        collectionView.selectItem(at: Constants.firstIndexPath, animated: false, scrollPosition: [])
-
-        addSubview(collectionView, constraints: [
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: divider.topAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: Constants.componentHeight)
-        ])
-
-        collectionView.dataSource = self
-        collectionView.delegate = self
-
-        TabItemViewCell.registerClassForCell(to: collectionView)
-    }
-
     func setUpDivider() {
         addSubview(divider, constraints: [
             divider.bottomAnchor.constraint(equalTo: bottomAnchor),
             divider.leadingAnchor.constraint(equalTo: leadingAnchor),
             divider.trailingAnchor.constraint(equalTo: trailingAnchor),
             divider.heightAnchor.constraint(equalToConstant: Constants.dividerHeight)
+        ])
+    }
+    
+    func setUpCollectionView() {
+        addSubview(collectionView, constraints: [
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: divider.topAnchor, constant: Constants.dividerHeight),
+            collectionView.heightAnchor.constraint(equalToConstant: Constants.componentHeight),
+            self.heightAnchor.constraint(equalToConstant: Constants.componentHeight)
         ])
     }
     
@@ -161,9 +165,6 @@ private extension TabsView {
     
     func reloadContent() {
         collectionView.reloadData()
-        guard tabsItems.count > 0 else { return }
-        let firstItem = IndexPath(item: 0, section: 0)
-        collectionView.scrollToItem(at: firstItem, at: .left, animated: false)
     }
 }
 
@@ -184,7 +185,8 @@ extension TabsView: UICollectionViewDataSource {
         tabItemView.icon = tabItem.icon
         tabItemView.accessibilityIdentifier = tabItem.accessibilityIdentifier
         
-        if tabItemView.isSelected {
+        if tabItemView.isSelected || firstIndexPathForSelectedItem == nil {
+            collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
             tabItemView.showSelected()
         } else {
             tabItemView.showDeselected()
@@ -202,7 +204,8 @@ extension TabsView: UICollectionViewDelegate {
     }
 
     public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       selectTabItem(at: indexPath)
+        selectTabItem(at: indexPath.row)
+        selectTabItem(at: indexPath)
     }
     
     public func collectionView(_: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -227,5 +230,19 @@ extension TabsView: UILargeContentViewerInteractionDelegate {
               let indexPath = collectionView.indexPath(for: cell) else { return }
 
         selectTabItem(at: indexPath)
+    }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+
+extension TabsView: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if tabsItems.count <= 3 {
+            layout.estimatedItemSize = CGSize.zero
+            return CGSize(width: (1.0 * widthOfScreen) / CGFloat(tabsItems.count), height: Constants.componentHeight)
+        } else {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            return layout.itemSize
+        }
     }
 }

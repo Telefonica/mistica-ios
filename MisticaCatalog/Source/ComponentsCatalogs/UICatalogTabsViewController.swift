@@ -39,14 +39,17 @@ class UICatalogTabsViewController: UIViewController {
         return cell
     }()
     
-    private var currentTabItems = TabsDataset.twoItems.tabItems
+    private var currentTabItems = TabsDataset.oneItems.tabItems
     private var currentSelectedTabItems: TabItem?
     private let tabs: TabsView
     private let optionsTable: UITableView
     private let datasetsCells: [TabsDataset] = [
+        .oneItems,
         .twoItems,
+        .twoItemsWithLargeText,
+        .twoItemsWithSmallText,
         .threeItems,
-        .fourItems
+        .sixItems
     ]
     private lazy var tabItemSelectedCells = [
         tabItemSelectedTitleCell,
@@ -128,12 +131,8 @@ extension UICatalogTabsViewController: UITableViewDataSource {
 extension UICatalogTabsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
-        case (Section.dataSet.rawValue, 0):
-            tabs.reload(with: TabsDataset.twoItems.tabItems)
-        case (Section.dataSet.rawValue, 1):
-            tabs.reload(with: TabsDataset.threeItems.tabItems)
-        case (Section.dataSet.rawValue, 2):
-            tabs.reload(with: TabsDataset.fourItems.tabItems)
+        case(Section.dataSet.rawValue, let index):
+            tabs.reload(with: datasetsCells[index].tabItems)
         case (Section.tabItemSelected.rawValue, 2):
             removeTabItem()
         default:
@@ -158,10 +157,12 @@ extension UICatalogTabsViewController: TabsViewDelegate {
 // MARK: - Helper
 
 private extension TabItem {
-    static let eSports = TabItem(title: "eSports muy largo y mas", icon: .tagsIcon)
+    static let eSports = TabItem(title: "Movistar Spain eSports 2021", icon: .tagsIcon)
     static let movies = TabItem(title: "Movies", icon: .buttonsIcon)
-    static let offers = TabItem(title: "Offers", icon: .tabsIcon)
+    static let offers = TabItem(title: "Super Summer Offers 2021", icon: .tabsIcon)
     static let television = TabItem(title: "Television", icon: .cardIcon)
+    static let phone = TabItem(title: "Phone", icon: .imageIcon)
+    static let shop = TabItem(title: "Shop", icon: .fontsIcon)
 }
 
 private enum Section: Int, CaseIterable {
@@ -173,10 +174,12 @@ private struct TabsDataset {
     let title: String
     let tabItems: [TabItem]
     
-    static let oneItems = TabsDataset(title: "Two items", tabItems: [.eSports])
+    static let oneItems = TabsDataset(title: "One item", tabItems: [.eSports])
     static let twoItems = TabsDataset(title: "Two items", tabItems: [.eSports, .movies])
-    static let threeItems = TabsDataset(title: "Three items", tabItems: [.eSports, .movies, .offers])
-    static let fourItems = TabsDataset(title: "Four items", tabItems: [.eSports, .movies, .offers, .television])
+    static let twoItemsWithLargeText = TabsDataset(title: "Two items with large text", tabItems: [.eSports, .offers])
+    static let twoItemsWithSmallText = TabsDataset(title: "Two items with large text", tabItems: [.movies, .television])
+    static let threeItems = TabsDataset(title: "Three items", tabItems: [.phone, .movies, .television])
+    static let sixItems = TabsDataset(title: "Six items", tabItems: [.phone, .eSports, .movies, .offers, .television, .shop])
 }
 
 // MARK: - Private methods
@@ -214,7 +217,6 @@ private extension UICatalogTabsViewController {
     
     func setUpInitialState() {
         optionsTable.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
-        tabs.selectTabItem(at: 0)
     }
     
     func numberOfRows(In section: Section) -> Int {

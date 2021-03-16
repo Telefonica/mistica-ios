@@ -12,20 +12,17 @@ public class TabItemViewCell: UICollectionViewCell {
     private enum Constants {
         static let innerPadding: CGFloat = 16
         static let bottomPadding: CGFloat = innerPadding - heightDivider
-        static let iconSize: CGFloat = 24
         static let iconAndTextSpace: CGFloat = 8
-        static let selectedLineHeight: CGFloat = 5
-        static let heightLabel: CGFloat = 24
-        static let heightDivider: CGFloat = 2
+        static let heightDivider: CGFloat = 1
         static let minimumWidthLabel: CGFloat = 45
         static let minimumWidthIPadLabel: CGFloat = 208
         static let maximumWidthLabel: CGFloat = 284
-        static let horizontalHeight: CGFloat = 54
     }
         
     private lazy var verticalStack: UIStackView = {
         let verticalStack = UIStackView(arrangedSubviews: [horizontalStack, selectedLine])
         verticalStack.backgroundColor = .clear
+        verticalStack.translatesAutoresizingMaskIntoConstraints = false
         verticalStack.axis = .vertical
         verticalStack.distribution = .fill
         verticalStack.alignment = .center
@@ -35,6 +32,7 @@ public class TabItemViewCell: UICollectionViewCell {
     private lazy var horizontalStack: UIStackView = {
         let horizontalStack = UIStackView(arrangedSubviews: [imageView, title])
         horizontalStack.translatesAutoresizingMaskIntoConstraints = false
+        horizontalStack.backgroundColor = .clear
         horizontalStack.isLayoutMarginsRelativeArrangement = true
         horizontalStack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: Constants.innerPadding,
                                                                            leading: Constants.innerPadding,
@@ -42,8 +40,8 @@ public class TabItemViewCell: UICollectionViewCell {
                                                                            trailing: Constants.innerPadding)
         horizontalStack.backgroundColor = .clear
         horizontalStack.axis = .horizontal
-        horizontalStack.distribution = .fillProportionally
-        horizontalStack.alignment = .center
+        horizontalStack.distribution = .fill
+        horizontalStack.alignment = .fill
         horizontalStack.spacing = Constants.iconAndTextSpace
         return horizontalStack
     }()
@@ -100,14 +98,13 @@ extension TabItemViewCell {
     }
         
     func showSelected() {
-        selectedLine.isHidden = false
+        selectedLine.backgroundColor = .controlActivated
         title.textColor = .textPrimary
         imageView.tintColor = .neutralHigh
-        
     }
 
     func showDeselected() {
-        selectedLine.isHidden = true
+        selectedLine.backgroundColor = .clear
         title.textColor = .textDisabled
         imageView.tintColor = .neutralLow
     }
@@ -119,15 +116,13 @@ private extension TabItemViewCell {
     func commomInit() {
         contentView.backgroundColor = .clear
         
-        addSubview(verticalStack, constraints: [
-            verticalStack.topAnchor.constraint(equalTo: topAnchor),
-            verticalStack.trailingAnchor.constraint(equalTo: trailingAnchor),
-            verticalStack.leadingAnchor.constraint(equalTo: leadingAnchor),
-            horizontalStack.heightAnchor.constraint(equalToConstant: Constants.horizontalHeight),
-            imageView.widthAnchor.constraint(equalToConstant: Constants.iconSize),
-            imageView.heightAnchor.constraint(equalToConstant: Constants.iconSize),
-            selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
-            selectedLine.widthAnchor.constraint(equalTo: horizontalStack.widthAnchor)
+        contentView.addSubview(verticalStack, constraints: [
+                                verticalStack.topAnchor.constraint(equalTo: contentView.topAnchor),
+                                verticalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                                verticalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+                                verticalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+                                selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
+                                selectedLine.widthAnchor.constraint(equalTo: verticalStack.widthAnchor)
         ])
         setUpAccessibility()
     }
@@ -162,8 +157,8 @@ public extension TabItemViewCell {
         set {}
     }
     
-//    override var accessibilityLabel: String? {
-//        get { title.text }
-//        set {}
-//    }
+    override var accessibilityLabel: String? {
+        get { title.text }
+        set {}
+    }
 }

@@ -95,6 +95,7 @@
 		9069ACD1BD3E576D4291C424 /* UIButton+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CAB80603A17B9E35DE3E8 /* UIButton+Utils.swift */; };
 		9071229225C84EC1009E3727 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9071229125C84EC1009E3727 /* TabsView.swift */; };
 		9071229625C85AE2009E3727 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9071229525C85AE2009E3727 /* TabItem.swift */; };
+		90D602AC2602289600DC2375 /* TabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D602A92602288300DC2375 /* TabsTests.swift */; };
 		90E9623625BEBE54006E6170 /* FormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9ADCD25BB004800EB911D /* FormTests.swift */; };
 		90E9624025BF1B8C006E6170 /* FormXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9623C25BF19E7006E6170 /* FormXIBIntegration.swift */; };
 		90E9624225BF1B94006E6170 /* FormXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */; };
@@ -402,6 +403,7 @@
 		908C0EB625C8301400D1687A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90B0FC7CFADA89D838495A21 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = "<group>"; };
 		90C0D32D83E30260E11717BF /* CustomCroutonContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCroutonContainer.swift; sourceTree = "<group>"; };
+		90D602A92602288300DC2375 /* TabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTests.swift; sourceTree = "<group>"; };
 		90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXIBIntegration.xib; sourceTree = "<group>"; };
 		90E9623C25BF19E7006E6170 /* FormXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormXIBIntegration.swift; sourceTree = "<group>"; };
 		90E9ADCD25BB004800EB911D /* FormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTests.swift; sourceTree = "<group>"; };
@@ -1416,6 +1418,7 @@
 				18CDBD4C25ACA17600928474 /* IndeterminateStepperTests.swift */,
 				90594A7825C15B980021142B /* InputFieldTests.swift */,
 				1E6AAD2925CC7AF300FB6D3C /* ListsTests.swift */,
+				90D602A92602288300DC2375 /* TabsTests.swift */,
 				B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 			);
@@ -2281,6 +2284,7 @@
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
 				B857855B25B8292E00E76B4C /* MediaCardXIBIntegration.swift in Sources */,
 				F74CB4F42576606100260675 /* ControlsTests.swift in Sources */,
+				90D602AC2602289600DC2375 /* TabsTests.swift in Sources */,
 				90E9623625BEBE54006E6170 /* FormTests.swift in Sources */,
 				1860BBC725B03B7100319CFC /* DeterminateStepperXIBIntegration.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,

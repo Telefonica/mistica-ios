@@ -19,6 +19,7 @@ struct ContentView: View {
             .navigationBarHidden(true)
             .misticaNavigationBarStyle()
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

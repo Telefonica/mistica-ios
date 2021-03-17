@@ -21,13 +21,15 @@ public class TabsView: UIView {
         static let estimatedItemSize = CGSize(width: 100, height: Constants.componentHeight)
         static let firstIndexPath = IndexPath(row: 0, section: 0)
         static let maximuItemWithFixSize = 3
+        static let minimumWidthForIpad: CGFloat = 768
+        static let maximumWidthItem: CGFloat = 280
     }
     
     private lazy var collectionView: UICollectionView = {
         var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout);
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .background
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.alwaysBounceHorizontal = false
         collectionView.alwaysBounceVertical = false
@@ -118,6 +120,7 @@ private extension TabsView {
     func commomInit() {
         setUpDivider()
         setUpCollectionView()
+        updateEstimatedItemSize()
         
         // Listen to theme variant changes
         NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChange, object: nil)
@@ -191,6 +194,9 @@ extension TabsView: UICollectionViewDataSource {
         tabItemView.icon = tabItem.icon
         tabItemView.accessibilityIdentifier = tabItem.accessibilityIdentifier
         
+        let isIpad = widthOfScreen >= Constants.minimumWidthForIpad
+        tabItemView.isActiveMinimumWidthConstraintForIpad(isIpad)
+        
         if indexPath == firstIndexPathForSelectedItem || firstIndexPathForSelectedItem == nil {
             collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
             firstIndexPathForSelectedItem = indexPath
@@ -246,7 +252,8 @@ extension TabsView: UILargeContentViewerInteractionDelegate {
 extension TabsView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if tabsItems.count <= Constants.maximuItemWithFixSize {
-            return CGSize(width: (1.0 * widthOfScreen) / CGFloat(tabsItems.count), height: Constants.componentHeight)
+            let width: CGFloat = min(Constants.maximumWidthItem, widthOfScreen / CGFloat(tabsItems.count))
+            return CGSize(width: width, height: Constants.componentHeight)
         } else {
             return layout.itemSize
         }

@@ -14,9 +14,7 @@ public class TabItemViewCell: UICollectionViewCell {
         static let bottomPadding: CGFloat = innerPadding - heightDivider
         static let iconAndTextSpace: CGFloat = 8
         static let heightDivider: CGFloat = 1
-        static let minimumWidthLabel: CGFloat = 45
-        static let minimumWidthIPadLabel: CGFloat = 208
-        static let maximumWidthLabel: CGFloat = 284
+        static let minimumItemWidthForIpad: CGFloat = 208.0
     }
         
     private lazy var verticalStack: UIStackView = {
@@ -64,6 +62,10 @@ public class TabItemViewCell: UICollectionViewCell {
         selectedLine.backgroundColor = .controlActivated
         return selectedLine
     }()
+    
+    public lazy var minimumWidthConstraintForIpad = {
+        contentView.widthAnchor.constraint(greaterThanOrEqualToConstant: Constants.minimumItemWidthForIpad)
+    }()
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -96,6 +98,10 @@ extension TabItemViewCell {
             imageView.image = newValue
         }
     }
+    
+    func isActiveMinimumWidthConstraintForIpad(_ active: Bool) {
+        minimumWidthConstraintForIpad.isActive = active
+    }
         
     func showSelected() {
         selectedLine.backgroundColor = .controlActivated
@@ -122,7 +128,8 @@ private extension TabItemViewCell {
             verticalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             verticalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
-            selectedLine.widthAnchor.constraint(equalTo: verticalStack.widthAnchor)
+            selectedLine.widthAnchor.constraint(equalTo: verticalStack.widthAnchor),
+            minimumWidthConstraintForIpad
         ])
         setUpAccessibility()
     }

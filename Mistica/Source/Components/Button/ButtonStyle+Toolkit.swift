@@ -22,15 +22,13 @@ public extension Button.Style {
     private static var linkMinimumWidth: CGFloat = 0
 
     static var primary: Button.Style {
-        let textColor: UIColor = .textButtonPrimary
-
         return Button.Style(
             allowsBleedingAlignment: false,
             stateStyleByState: [
-                .normal: Button.StateStyle(textColor: textColor, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground),
-                .selected: Button.StateStyle(textColor: textColor, backgroundColor: .buttonPrimaryBackgroundSelected, borderColor: .buttonPrimaryBackgroundSelected),
-                .disabled: Button.StateStyle(textColor: textColor, backgroundColor: .buttonPrimaryBackgroundDisabled, borderColor: .buttonPrimaryBackgroundDisabled),
-                .loading: Button.StateStyle(textColor: textColor, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground)
+                .normal: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground),
+                .selected: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackgroundSelected, borderColor: .buttonPrimaryBackgroundSelected),
+                .disabled: Button.StateStyle(textColor: .textButtonPrimaryDisabled, backgroundColor: .buttonPrimaryBackgroundDisabled, borderColor: .buttonPrimaryBackgroundDisabled),
+                .loading: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground)
             ]
         )
     }

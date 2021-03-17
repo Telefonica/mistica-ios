@@ -48,6 +48,7 @@ struct O2ClassicColors: Colors {
     let buttonSecondaryBorderSelectedInverse = O2ClassicColorPalette.o2SkyBlueLight50
 
     let textButtonPrimary = O2ClassicColorPalette.white
+    let textButtonPrimaryDisabled = O2ClassicColorPalette.white
     let textButtonPrimaryInverse = O2ClassicColorPalette.o2SkyBlue
     let textButtonPrimaryInverseDisabled = O2ClassicColorPalette.o2SkyBlueLight30
     let textButtonPrimaryInverseSelected = O2ClassicColorPalette.o2SkyBlue

@@ -196,6 +196,8 @@ class UICatalogInputFieldsViewController: UITableViewController {
 
         if style.isInverse {
             cell.backgroundColor = .brand
+        } else {
+            cell.backgroundColor = .backgroundContainer
         }
 
         return cell

@@ -174,6 +174,7 @@ public class InputField: UIView {
         textInputView.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
         textInputView.setContentCompressionResistancePriority(.init(rawValue: 1), for: .horizontal)
         textInputView.setContentHuggingPriority(.init(rawValue: 1), for: .horizontal)
+        textInputView.backgroundColor = .background
 
         return textInputView
     }

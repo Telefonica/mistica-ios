@@ -101,6 +101,11 @@ public extension UIColor {
         MisticaConfig.currentColors.textButtonPrimary
     }
 
+    @objc(textButtonPrimaryDisabledColor)
+    static var textButtonPrimaryDisabled: UIColor {
+        MisticaConfig.currentColors.textButtonPrimaryDisabled
+    }
+
     @objc(textButtonPrimaryInverseColor)
     static var textButtonPrimaryInverse: UIColor {
         MisticaConfig.currentColors.textButtonPrimaryInverse

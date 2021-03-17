@@ -12,6 +12,7 @@ protocol Colors {
     // BACKGROUNDS
     var appBarBackground: UIColor { get }
     var background: UIColor { get }
+    var backgroundContainer: UIColor { get }
     var backgroundAlternative: UIColor { get }
     var backgroundBrand: UIColor { get }
     var backgroundFeedbackBottom: UIColor { get }

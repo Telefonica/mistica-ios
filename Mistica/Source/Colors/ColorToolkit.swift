@@ -183,6 +183,11 @@ public extension UIColor {
         MisticaConfig.currentColors.background
     }
 
+    @objc(backgroundContainerColor)
+    static var backgroundContainer: UIColor {
+        MisticaConfig.currentColors.backgroundContainer
+    }
+    
     @objc(backgroundBrandColor)
     static var backgroundBrand: UIColor {
         MisticaConfig.currentColors.backgroundBrand

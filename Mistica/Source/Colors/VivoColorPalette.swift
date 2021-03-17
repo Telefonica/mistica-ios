@@ -12,6 +12,7 @@ struct VivoColors: Colors {
     // BACKGROUNDS
     let appBarBackground = VivoColorPalette.white
     let background = VivoColorPalette.white
+    let backgroundContainer = VivoColorPalette.white
     let backgroundBrand = VivoColorPalette.vivoPurple
     let backgroundOverlay = VivoColorPalette.grey6.withAlphaComponent(0.6)
     let backgroundSkeleton = VivoColorPalette.grey1
@@ -94,7 +95,7 @@ struct VivoColors: Colors {
     let textPrimary = VivoColorPalette.grey6
     let textPrimaryInverse = VivoColorPalette.white
     let textSecondary = VivoColorPalette.grey5
-    let textSecondaryInverse = VivoColorPalette.vivoPurpleLight50
+    let textSecondaryInverse = VivoColorPalette.white
     let textDisabled = VivoColorPalette.grey3
     let textAmount = VivoColorPalette.vivoPurple
 

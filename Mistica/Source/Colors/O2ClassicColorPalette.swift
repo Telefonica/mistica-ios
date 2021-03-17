@@ -12,6 +12,7 @@ struct O2ClassicColors: Colors {
     // BACKGROUNDS
     let appBarBackground = O2ClassicColorPalette.white
     let background = O2ClassicColorPalette.white
+    let backgroundContainer = O2ClassicColorPalette.white
     let backgroundBrand = O2ClassicColorPalette.o2Blue
     let backgroundOverlay = O2ClassicColorPalette.grey6.withAlphaComponent(0.6)
     let backgroundSkeleton = O2ClassicColorPalette.grey1
@@ -94,7 +95,7 @@ struct O2ClassicColors: Colors {
     let textPrimary = O2ClassicColorPalette.grey6
     let textPrimaryInverse = O2ClassicColorPalette.white
     let textSecondary = O2ClassicColorPalette.grey5
-    let textSecondaryInverse = O2ClassicColorPalette.o2SkyBlueLight
+    let textSecondaryInverse = O2ClassicColorPalette.white
     let textDisabled = O2ClassicColorPalette.grey3
     let textAmount = O2ClassicColorPalette.o2SkyBlue
 

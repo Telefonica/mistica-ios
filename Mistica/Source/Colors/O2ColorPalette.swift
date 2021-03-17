@@ -12,6 +12,7 @@ struct O2Colors: Colors {
     // BACKGROUNDS
     let appBarBackground = O2ColorPalette.white
     let background = O2ColorPalette.white
+    let backgroundContainer = O2ColorPalette.white
     let backgroundBrand = O2ColorPalette.o2BluePrimary
     let backgroundOverlay = O2ColorPalette.grey6.withAlphaComponent(0.6)
     let backgroundSkeleton = O2ColorPalette.grey1
@@ -94,7 +95,7 @@ struct O2Colors: Colors {
     let textPrimary = O2ColorPalette.grey6
     let textPrimaryInverse = O2ColorPalette.white
     let textSecondary = O2ColorPalette.grey5
-    let textSecondaryInverse = O2ColorPalette.o2BlueLight60
+    let textSecondaryInverse = O2ColorPalette.white
     let textDisabled = O2ColorPalette.grey3
     let textAmount = O2ColorPalette.o2BluePrimary
 

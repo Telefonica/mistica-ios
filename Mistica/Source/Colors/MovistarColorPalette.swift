@@ -107,7 +107,7 @@ struct MovistarColors: Colors {
     let textPrimary = MovistarColorPalette.grey6 | MovistarColorPalette.white
     let textPrimaryInverse = MovistarColorPalette.white
     let textSecondary = MovistarColorPalette.grey5 | MovistarColorPalette.grey4
-    let textSecondaryInverse = MovistarColorPalette.movistarBlueLight30 | MovistarColorPalette.grey4
+    let textSecondaryInverse = MovistarColorPalette.white | MovistarColorPalette.grey4
     let textDisabled = MovistarColorPalette.grey3 | MovistarColorPalette.grey5 // veis necesario un textDisabledInverse para textos deshabilitados sobre masa de color?
     let textAmount = MovistarColorPalette.movistarBlue
 

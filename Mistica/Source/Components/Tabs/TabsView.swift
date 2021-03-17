@@ -20,10 +20,12 @@ public class TabsView: UIView {
         static let componentHeight: CGFloat = 56
         static let estimatedItemSize = CGSize(width: 100, height: Constants.componentHeight)
         static let firstIndexPath = IndexPath(row: 0, section: 0)
+        static let maximuItemWithFixSize = 3
     }
     
     private lazy var collectionView: UICollectionView = {
         var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout);
+
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
@@ -34,6 +36,7 @@ public class TabsView: UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
         TabItemViewCell.registerClassForCell(to: collectionView)
+
         return collectionView
     }()
 
@@ -43,9 +46,6 @@ public class TabsView: UIView {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        if tabsItems.count > 2 {
-            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
         return layout
     }()
 
@@ -55,10 +55,7 @@ public class TabsView: UIView {
         return divider
     }()
     
-    private var firstIndexPathForSelectedItem: IndexPath? {
-        let firstSelectedItem = collectionView.indexPathsForSelectedItems?.first
-        return firstSelectedItem
-    }
+    private var firstIndexPathForSelectedItem: IndexPath?
     
     var widthOfScreen: CGFloat {
         self.frame.width
@@ -89,32 +86,29 @@ extension TabsView {
     public func reload(with tabItems: [TabItem]) {
         self.tabsItems = tabItems
         reloadContent()
+        collectionView.performBatchUpdates(nil) { _ in
+            guard let firstTabItem = tabItems.first else { return }
+            self.delegate?.tabsView(self, didSelectTab: firstTabItem)
+        }
     }
     
     public func update(_ tabItem: TabItem, newTabItem: TabItem) {
         guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
         tabsItems[index] = newTabItem
-        collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+        let indexPath = IndexPath(item: index, section: 0)
+        collectionView.reloadItems(at: [indexPath])
+        collectionView.performBatchUpdates(nil) { _ in
+            self.selectTabItem(at: indexPath)
+        }
     }
         
     public func remove(_ tabItem: TabItem) {
         guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
         tabsItems.remove(at: index)
         collectionView.reloadData()
-    }
-    
-    public func selectTabItem(at index: Int) {
-        guard index < tabsItems.count else { return }
-
-        // Deselection
-        if let selectedItem = firstIndexPathForSelectedItem {
-            deselectTabItem(at: selectedItem)
+        collectionView.performBatchUpdates(nil) { _ in
+            self.selectTabItem(at: IndexPath(item: 0, section: 0))
         }
-
-        // Selection
-        let nextSelectedItem = IndexPath(item: index, section: 0)
-        collectionView.selectItem(at: nextSelectedItem, animated: false, scrollPosition: [])
-        selectTabItem(at: nextSelectedItem)
     }
 }
 
@@ -153,6 +147,8 @@ private extension TabsView {
         guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell else { return }
         let tabItem = tabsItems[indexPath.item]
         tabItemView.showSelected()
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        tabItemView.isSelected = true
         delegate?.tabsView(self, didSelectTab: tabItem)
     }
     
@@ -164,7 +160,16 @@ private extension TabsView {
     }
     
     func reloadContent() {
+        updateEstimatedItemSize()
         collectionView.reloadData()
+    }
+    
+    func updateEstimatedItemSize() {
+        if tabsItems.count <= Constants.maximuItemWithFixSize {
+            layout.estimatedItemSize = CGSize.zero
+        } else {
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
     }
 }
 
@@ -179,17 +184,21 @@ extension TabsView: UICollectionViewDataSource {
         guard tabsItems.indices.contains(indexPath.item) else {
             fatalError("Inconsistency between the collectionView and it's dataSource: Trying to fetch cell for item at indexPath \(indexPath), but the index was not valid. Current tabs list: \(tabsItems)")
         }
+        
         let tabItem = tabsItems[indexPath.item]
         let tabItemView = TabItemViewCell.dequeueReusableCell(for: indexPath, from: collectionView)
         tabItemView.text = tabItem.title
         tabItemView.icon = tabItem.icon
         tabItemView.accessibilityIdentifier = tabItem.accessibilityIdentifier
         
-        if tabItemView.isSelected || firstIndexPathForSelectedItem == nil {
+        if indexPath == firstIndexPathForSelectedItem || firstIndexPathForSelectedItem == nil {
             collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
+            firstIndexPathForSelectedItem = indexPath
             tabItemView.showSelected()
+            tabItemView.isSelected = true
         } else {
             tabItemView.showDeselected()
+            tabItemView.isSelected = false
         }
         
         return tabItemView
@@ -204,7 +213,6 @@ extension TabsView: UICollectionViewDelegate {
     }
 
     public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectTabItem(at: indexPath.row)
         selectTabItem(at: indexPath)
     }
     
@@ -237,11 +245,9 @@ extension TabsView: UILargeContentViewerInteractionDelegate {
 
 extension TabsView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if tabsItems.count <= 3 {
-            layout.estimatedItemSize = CGSize.zero
+        if tabsItems.count <= Constants.maximuItemWithFixSize {
             return CGSize(width: (1.0 * widthOfScreen) / CGFloat(tabsItems.count), height: Constants.componentHeight)
         } else {
-            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
             return layout.itemSize
         }
     }

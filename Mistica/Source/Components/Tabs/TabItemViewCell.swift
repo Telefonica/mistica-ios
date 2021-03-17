@@ -117,12 +117,12 @@ private extension TabItemViewCell {
         contentView.backgroundColor = .clear
         
         contentView.addSubview(verticalStack, constraints: [
-                                verticalStack.topAnchor.constraint(equalTo: contentView.topAnchor),
-                                verticalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-                                verticalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-                                verticalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-                                selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
-                                selectedLine.widthAnchor.constraint(equalTo: verticalStack.widthAnchor)
+            verticalStack.topAnchor.constraint(equalTo: contentView.topAnchor),
+            verticalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            verticalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            verticalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
+            selectedLine.widthAnchor.constraint(equalTo: verticalStack.widthAnchor)
         ])
         setUpAccessibility()
     }

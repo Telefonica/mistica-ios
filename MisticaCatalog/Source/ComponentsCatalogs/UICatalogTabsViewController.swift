@@ -175,7 +175,7 @@ private struct TabsDataset {
     let tabItems: [TabItem]
     
     static let oneItems = TabsDataset(title: "One item", tabItems: [.eSports])
-    static let twoItems = TabsDataset(title: "Two items", tabItems: [.eSports, .movies])
+    static let twoItems = TabsDataset(title: "Two items", tabItems: [.movies, .eSports])
     static let twoItemsWithLargeText = TabsDataset(title: "Two items with large text", tabItems: [.eSports, .offers])
     static let twoItemsWithSmallText = TabsDataset(title: "Two items with large text", tabItems: [.movies, .television])
     static let threeItems = TabsDataset(title: "Three items", tabItems: [.phone, .movies, .television])

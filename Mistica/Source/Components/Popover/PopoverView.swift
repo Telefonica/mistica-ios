@@ -356,7 +356,7 @@ private extension PopoverView {
     }
 
     func paintBubble(_ context: CGContext) {
-        context.setFillColor(UIColor.backgroundContainer.cgColor)
+        context.setFillColor(UIColor.background.cgColor)
         context.fill(bounds)
     }
 }

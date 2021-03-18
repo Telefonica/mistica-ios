@@ -163,6 +163,7 @@ private extension TabItem {
     static let television = TabItem(title: "Television", icon: .cardIcon)
     static let phone = TabItem(title: "Phone", icon: .imageIcon)
     static let shop = TabItem(title: "Shop", icon: .fontsIcon)
+    static let longText = TabItem(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", icon: .fontsIcon)
 }
 
 private enum Section: Int, CaseIterable {
@@ -176,8 +177,8 @@ private struct TabsDataset {
     
     static let oneItems = TabsDataset(title: "One item", tabItems: [.eSports])
     static let twoItems = TabsDataset(title: "Two items", tabItems: [.movies, .eSports])
-    static let twoItemsWithLargeText = TabsDataset(title: "Two items with large text", tabItems: [.eSports, .offers])
-    static let twoItemsWithSmallText = TabsDataset(title: "Two items with large text", tabItems: [.movies, .television])
+    static let twoItemsWithLargeText = TabsDataset(title: "Two items with large text", tabItems: [.longText, .longText])
+    static let twoItemsWithSmallText = TabsDataset(title: "Two items with small text", tabItems: [.movies, .television])
     static let threeItems = TabsDataset(title: "Three items", tabItems: [.phone, .movies, .television])
     static let sixItems = TabsDataset(title: "Six items", tabItems: [.phone, .eSports, .movies, .offers, .television, .shop])
 }

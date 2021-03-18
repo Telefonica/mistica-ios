@@ -10,6 +10,7 @@ import UIKit
 
 public class TabItemViewCell: UICollectionViewCell {
     private enum Constants {
+        static let cellHeight: CGFloat = 56
         static let innerPadding: CGFloat = 16
         static let bottomPadding: CGFloat = innerPadding - heightDivider
         static let iconAndTextSpace: CGFloat = 8
@@ -129,6 +130,7 @@ private extension TabItemViewCell {
             verticalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
             selectedLine.widthAnchor.constraint(equalTo: verticalStack.widthAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: Constants.cellHeight),
             minimumWidthConstraintForIpad
         ])
         setUpAccessibility()

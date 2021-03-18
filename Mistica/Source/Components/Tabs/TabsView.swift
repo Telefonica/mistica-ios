@@ -47,6 +47,7 @@ public class TabsView: UIView {
         var layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
+        layout.itemSize = CGSize(width: Constants.maximumWidthItem, height: Constants.componentHeight)
         layout.minimumInteritemSpacing = 0
         return layout
     }()
@@ -152,6 +153,7 @@ private extension TabsView {
         tabItemView.showSelected()
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
         tabItemView.isSelected = true
+        firstIndexPathForSelectedItem = indexPath
         delegate?.tabsView(self, didSelectTab: tabItem)
     }
     

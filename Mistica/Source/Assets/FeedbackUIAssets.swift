@@ -11,7 +11,7 @@ import UIKit
 
 extension UIImage {
     static var iconNotificationInfo: UIImage? {
-        UIImage(named: "icnNotificationInfo", type: .brandedAndThemed)
+        UIImage(named: "icnNotificationInfo", type: .brandedAndThemed)?.withRenderingMode(.alwaysTemplate)
     }
 }
 

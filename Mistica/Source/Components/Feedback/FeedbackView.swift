@@ -40,6 +40,7 @@ public class FeedbackView: UIView {
     private lazy var icon: UIImageView = {
         let icon = UIImageView()
         icon.contentMode = .scaleAspectFit
+        icon.tintColor = .brand
         return icon
     }()
 

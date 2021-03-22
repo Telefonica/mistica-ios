@@ -123,10 +123,10 @@ struct VivoColors: Colors {
 
     // GRADIENTS
     let backgroundBrandGradient = [
-        VivoColorPalette.vivoPurple,
-        VivoColorPalette.vivoPurple,
-        VivoColorPalette.vivoPurple,
-        VivoColorPalette.vivoPurple
+        VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack,
+        VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack,
+        VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack,
+        VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
     ]
 }
 

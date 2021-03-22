@@ -122,10 +122,10 @@ struct O2Colors: Colors {
 
     // GRADIENTS
     let backgroundBrandGradient = [
-        O2ColorPalette.o2BluePrimary,
-        O2ColorPalette.o2BluePrimary,
-        O2ColorPalette.o2BluePrimary,
-        O2ColorPalette.o2BluePrimary
+        O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack,
+        O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack,
+        O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack,
+        O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
     ]
 }
 

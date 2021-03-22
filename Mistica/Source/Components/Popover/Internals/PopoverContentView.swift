@@ -211,8 +211,9 @@ private extension PopoverContentView {
     func configureCloseImageView() {
         closeImageView.intrinsicHeight = ViewStyles.closeImageHeight
         closeImageView.intrinsicWidth = ViewStyles.closeImageWidth
-        closeImageView.image = .closeButtonBlackSmallIcon
-
+        closeImageView.image = UIImage.closeButtonBlackSmallIcon.withRenderingMode(.alwaysTemplate)
+        closeImageView.tintColor = .neutralHigh
+        
         let tapGesture = UITapGestureRecognizer()
         tapGesture.addTarget(self, action: #selector(closeButtonTapped))
 

@@ -139,6 +139,20 @@ final class TabsTests: XCTestCase {
             matching: makeTemplate(width: Constants.tabletWidth, tabItems: Constants.eightItem),
             as: .image)
     }
+    
+    // MARK: XIB integration
+
+    func testXIBIntegration() {
+        MisticaConfig.brandStyle = .movistar
+        
+        let view = TabsXIBIntegration.viewFromNib()
+        view.tabs.reload(with: Constants.twoItem)
+        
+        assertSnapshot(
+            matching: view.asRootOfViewController(),
+            as: .image(on: .iPhoneSe)
+        )
+    }
 }
 
 // MARK: - Helpers

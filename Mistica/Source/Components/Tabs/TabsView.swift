@@ -29,12 +29,11 @@ public class TabsView: UIView {
         var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout);
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .background
+        collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.alwaysBounceHorizontal = false
         collectionView.alwaysBounceVertical = false
         collectionView.bounces = false
-        collectionView.clipsToBounds = false
         collectionView.dataSource = self
         collectionView.delegate = self
         TabItemViewCell.registerClassForCell(to: collectionView)
@@ -119,12 +118,17 @@ extension TabsView {
 
 private extension TabsView {
     func commomInit() {
+        setUpView()
         setUpDivider()
         setUpCollectionView()
         updateEstimatedItemSize()
         
         // Listen to theme variant changes
         NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChange, object: nil)
+    }
+    
+    func setUpView() {
+        backgroundColor = .background
     }
         
     func setUpDivider() {
@@ -165,6 +169,7 @@ private extension TabsView {
     }
     
     func reloadContent() {
+        firstIndexPathForSelectedItem = nil
         updateEstimatedItemSize()
         collectionView.reloadData()
     }

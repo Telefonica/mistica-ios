@@ -90,6 +90,8 @@
 		86E4D10F795ADC42295ADD69 /* UIViewPropertyAnimator+InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E761686C428884CF07312D /* UIViewPropertyAnimator+InputField.swift */; };
 		88882FCE598E7589DBB0E8D8 /* VerticallyCenteredPresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */; };
 		8F2A23EC9EAF5C65182B2DB3 /* UITableViewHeaderFooterView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9F8965B378478A270E995 /* UITableViewHeaderFooterView+Utils.swift */; };
+		9022A95E2608BF69007C8A82 /* TabsXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022A95B2608BF5E007C8A82 /* TabsXIBIntegration.swift */; };
+		9022A9622608BFA0007C8A82 /* TabsXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9022A9612608BFA0007C8A82 /* TabsXIBIntegration.xib */; };
 		9055F91225C9519700ED3507 /* TabItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9055F91125C9519700ED3507 /* TabItemViewCell.swift */; };
 		90594A7B25C15BE50021142B /* InputFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90594A7825C15B980021142B /* InputFieldTests.swift */; };
 		9069ACD1BD3E576D4291C424 /* UIButton+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CAB80603A17B9E35DE3E8 /* UIButton+Utils.swift */; };
@@ -395,6 +397,8 @@
 		85FE9079D1C9C80AD4FB45F3 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		8614CC19ABBC171200631823 /* IntrinsictImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsictImageView.swift; sourceTree = "<group>"; };
 		899E67590D803757F4002E1F /* min-max-size.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "min-max-size.gif"; sourceTree = "<group>"; };
+		9022A95B2608BF5E007C8A82 /* TabsXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsXIBIntegration.swift; sourceTree = "<group>"; };
+		9022A9612608BFA0007C8A82 /* TabsXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabsXIBIntegration.xib; sourceTree = "<group>"; };
 		9055F91125C9519700ED3507 /* TabItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemViewCell.swift; sourceTree = "<group>"; };
 		9058FF7F30809B474D27B6CE /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		90594A7825C15B980021142B /* InputFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldTests.swift; sourceTree = "<group>"; };
@@ -1846,6 +1850,8 @@
 				1EB4FB6B25CD5AE8004537CC /* ListsXIBIntegration.xib */,
 				B835993625D4227F00246981 /* HighlightedCardXIBIntegration.swift */,
 				B835993525D4227F00246981 /* HighlightedCardXIBIntegration.xib */,
+				9022A95B2608BF5E007C8A82 /* TabsXIBIntegration.swift */,
+				9022A9612608BFA0007C8A82 /* TabsXIBIntegration.xib */,
 			);
 			path = XIBIntegration;
 			sourceTree = "<group>";
@@ -2257,6 +2263,7 @@
 				1EB4FB6C25CD5AE8004537CC /* ListsXIBIntegration.xib in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
 				B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */,
+				9022A9622608BFA0007C8A82 /* TabsXIBIntegration.xib in Resources */,
 				B835993925D4230D00246981 /* HighlightedCardXIBIntegration.xib in Resources */,
 				90E9624225BF1B94006E6170 /* FormXIBIntegration.xib in Resources */,
 				18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */,
@@ -2292,6 +2299,7 @@
 				B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */,
 				B81D7D4A25CD64F600930392 /* HighlightedCardTests.swift in Sources */,
 				B85CCA5925B82EFA00B76426 /* CheckboxXIBIntegration.swift in Sources */,
+				9022A95E2608BF69007C8A82 /* TabsXIBIntegration.swift in Sources */,
 				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
 				B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */,
 				827157F525D2D14D00CD0A8E /* HeaderTests.swift in Sources */,

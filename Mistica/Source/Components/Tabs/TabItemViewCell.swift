@@ -14,7 +14,7 @@ public class TabItemViewCell: UICollectionViewCell {
         static let innerPadding: CGFloat = 16
         static let bottomPadding: CGFloat = innerPadding - heightDivider
         static let iconAndTextSpace: CGFloat = 8
-        static let heightDivider: CGFloat = 1
+        static let heightDivider: CGFloat = 2
         static let minimumItemWidthForIpad: CGFloat = 208.0
     }
         
@@ -122,6 +122,7 @@ extension TabItemViewCell {
 private extension TabItemViewCell {
     func commomInit() {
         contentView.backgroundColor = .clear
+        backgroundColor = .clear
         
         contentView.addSubview(verticalStack, constraints: [
             verticalStack.topAnchor.constraint(equalTo: contentView.topAnchor),

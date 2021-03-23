@@ -69,7 +69,7 @@ private extension Button.Style {
         OverriddenSizes(
             insets: Constants.insets,
             minimumWidth: Constants.minimumWidth,
-            font: .textPreset6(weight: .medium)
+            font: .preset3(weight: .medium)
         )
     }
 }

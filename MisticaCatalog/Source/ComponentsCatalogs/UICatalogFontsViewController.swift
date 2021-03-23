@@ -13,20 +13,23 @@ class UICatalogFontsViewController: UITableViewController {
     typealias FontType = (fontStyle: FontStyle, weight: String)
 
     private let fonts: [FontType] = [
-        (FontStyle.textPreset1, FontStyle.TextPreset1Weight.light.rawValue),
-        (FontStyle.textPreset2, FontStyle.TextPreset2Weight.light.rawValue),
-        (FontStyle.textPreset3, FontStyle.TextPreset3Weight.light.rawValue),
-        (FontStyle.textPreset4, FontStyle.TextPreset4Weight.light.rawValue),
-        (FontStyle.textPreset5, FontStyle.TextPreset5Weight.light.rawValue),
-        (FontStyle.textPreset5, FontStyle.TextPreset5Weight.medium.rawValue),
-        (FontStyle.textPreset6, FontStyle.TextPreset6Weight.light.rawValue),
-        (FontStyle.textPreset6, FontStyle.TextPreset6Weight.regular.rawValue),
-        (FontStyle.textPreset6, FontStyle.TextPreset6Weight.medium.rawValue),
-        (FontStyle.textPreset7, FontStyle.TextPreset7Weight.regular.rawValue),
-        (FontStyle.textPreset7, FontStyle.TextPreset7Weight.medium.rawValue),
-        (FontStyle.textPreset8, FontStyle.TextPreset8Weight.regular.rawValue),
-        (FontStyle.textPreset8, FontStyle.TextPreset8Weight.medium.rawValue),
-        (FontStyle.textSystem, FontStyle.TextSystemWeight.regular.rawValue)
+        (fontStyle: FontStyle.textPreset1, weight: FontStyle.TextPreset1Weight.regular.rawValue),
+        (fontStyle: FontStyle.textPreset1, weight: FontStyle.TextPreset1Weight.medium.rawValue),
+        (fontStyle: FontStyle.textPreset2, weight: FontStyle.TextPreset2Weight.regular.rawValue),
+        (fontStyle: FontStyle.textPreset2, weight: FontStyle.TextPreset2Weight.medium.rawValue),
+        (fontStyle: FontStyle.textPreset3, weight: FontStyle.TextPreset3Weight.light.rawValue),
+        (fontStyle: FontStyle.textPreset3, weight: FontStyle.TextPreset3Weight.regular.rawValue),
+        (fontStyle: FontStyle.textPreset3, weight: FontStyle.TextPreset3Weight.medium.rawValue),
+        (fontStyle: FontStyle.textPreset4, weight: FontStyle.TextPreset4Weight.light.rawValue),
+        (fontStyle: FontStyle.textPreset4, weight: FontStyle.TextPreset4Weight.regular.rawValue),
+        (fontStyle: FontStyle.textPreset4, weight: FontStyle.TextPreset4Weight.medium.rawValue),
+        (fontStyle: FontStyle.textPreset5, weight: FontStyle.TextPreset5Weight.light.rawValue),
+        (fontStyle: FontStyle.textPreset6, weight: FontStyle.TextPreset6Weight.light.rawValue),
+        (fontStyle: FontStyle.textPreset7, weight: FontStyle.TextPreset7Weight.light.rawValue),
+        (fontStyle: FontStyle.textPreset8, weight: FontStyle.TextPreset8Weight.light.rawValue),
+        (fontStyle: FontStyle.textPreset9, weight: FontStyle.TextPreset9Weight.light.rawValue),
+        (fontStyle: FontStyle.textPreset10, weight: FontStyle.TextPreset10Weight.light.rawValue),
+        (fontStyle: FontStyle.textSystem, weight: FontStyle.TextSystemWeight.regular.rawValue)
     ]
 
     init() {

@@ -10,11 +10,11 @@ import UIKit
 
 public extension UINavigationBar {
     class var misticaLargeTitleTextAttributes: [NSAttributedString.Key: Any] {
-        textAttributes(for: .textPreset2(weight: .light, constrainedToPreferredSize: .large), color: UIColor.textNavigationBarPrimary)
+        textAttributes(for: .preset7(weight: .light, constrainedToPreferredSize: .large), color: UIColor.textNavigationBarPrimary)
     }
 
     class var misticaTitleTextAttributes: [NSAttributedString.Key: Any] {
-        textAttributes(for: .textPreset5(weight: .medium, constrainedToPreferredSize: .large), color: UIColor.textNavigationBarPrimary)
+        textAttributes(for: .preset4(weight: .medium, constrainedToPreferredSize: .large), color: UIColor.textNavigationBarPrimary)
     }
 
     func applyMisticaStyle() {

@@ -11,35 +11,43 @@ import UIKit
 private var _isDynamicTypeEnabled = true
 
 public extension UIFont {
-    static func textPreset1(weight: FontStyle.TextPreset1Weight = .light, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    static func preset1(weight: FontStyle.TextPreset1Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset1.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
-    static func textPreset2(weight: FontStyle.TextPreset2Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    static func preset2(weight: FontStyle.TextPreset2Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset2.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
-    static func textPreset3(weight: FontStyle.TextPreset3Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    static func preset3(weight: FontStyle.TextPreset3Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset3.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
-    static func textPreset4(weight: FontStyle.TextPreset4Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    static func preset4(weight: FontStyle.TextPreset4Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset4.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
-    static func textPreset5(weight: FontStyle.TextPreset5Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    static func preset5(weight: FontStyle.TextPreset5Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset5.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
-    static func textPreset6(weight: FontStyle.TextPreset6Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    static func preset6(weight: FontStyle.TextPreset6Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset6.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
-    static func textPreset7(weight: FontStyle.TextPreset7Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    static func preset7(weight: FontStyle.TextPreset7Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset7.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
-    static func textPreset8(weight: FontStyle.TextPreset8Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    static func preset8(weight: FontStyle.TextPreset8Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+        FontStyle.textPreset8.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+    }
+    
+    static func preset9(weight: FontStyle.TextPreset9Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+        FontStyle.textPreset8.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+    }
+    
+    static func preset10(weight: FontStyle.TextPreset9Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset8.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 

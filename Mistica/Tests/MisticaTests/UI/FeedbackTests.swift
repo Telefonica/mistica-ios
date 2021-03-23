@@ -325,7 +325,7 @@ private extension FeedbackTests {
         texts.forEach { string in
             let label = UILabel()
             label.text = string
-            label.font = .textPreset6(weight: .regular)
+            label.font = .preset3(weight: .regular)
             label.numberOfLines = 0
             label.textColor = .lightGray
             stackView.addArrangedSubview(label)

@@ -411,31 +411,31 @@ private extension HeaderView {
 
     func stylePretitleLabel() {
         pretitleLabel.isHidden = true
-        pretitleLabel.font = .textPreset6(weight: .regular)
+        pretitleLabel.font = .preset3(weight: .regular)
         pretitleLabel.textColor = _style.textPrimaryColor
     }
 
     func styleTitleLabel() {
-        titleLabel.font = .textPreset3(weight: .light)
+        titleLabel.font = .preset6(weight: .light)
         titleLabel.textColor = _style.textPrimaryColor
         titleLabel.numberOfLines = 0
     }
 
     func stylePreamountLabel() {
         preAmountLabel.isHidden = true
-        preAmountLabel.font = .textPreset6(weight: .regular)
+        preAmountLabel.font = .preset3(weight: .regular)
         preAmountLabel.textColor = _style.textPrimaryColor
     }
 
     func styleAmountLabel() {
         amountLabel.isHidden = true
-        amountLabel.font = .textPreset1(weight: .light)
+        amountLabel.font = .preset8(weight: .light)
         amountLabel.textColor = _style.textPrimaryColor
     }
 
     func styleSubtitleLabel() {
         subtitleLabel.isHidden = true
-        subtitleLabel.font = .textPreset6(weight: .regular)
+        subtitleLabel.font = .preset3(weight: .regular)
         subtitleLabel.textColor = _style.textPrimaryColor
     }
 

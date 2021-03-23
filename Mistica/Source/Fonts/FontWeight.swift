@@ -8,41 +8,49 @@
 
 import UIKit
 
-protocol FontWeightConvertible {
+protocol FontWeightConvertible: CaseIterable {
     var systemWeight: UIFont.Weight { get }
 }
 
 public extension FontStyle {
     enum TextPreset1Weight: String, FontWeightConvertible {
-        case light
+        case regular, medium
     }
 
     enum TextPreset2Weight: String, FontWeightConvertible {
-        case light
+        case regular, medium
     }
 
     enum TextPreset3Weight: String, FontWeightConvertible {
-        case light
-    }
-
-    enum TextPreset4Weight: String, FontWeightConvertible {
-        case light
-    }
-
-    enum TextPreset5Weight: String, FontWeightConvertible {
-        case light, medium
-    }
-
-    enum TextPreset6Weight: String, FontWeightConvertible {
         case light, regular, medium
     }
 
+    enum TextPreset4Weight: String, FontWeightConvertible {
+        case light, regular, medium
+    }
+
+    enum TextPreset5Weight: String, FontWeightConvertible {
+        case light
+    }
+
+    enum TextPreset6Weight: String, FontWeightConvertible {
+        case light
+    }
+
     enum TextPreset7Weight: String, FontWeightConvertible {
-        case regular, medium
+        case light
     }
 
     enum TextPreset8Weight: String, FontWeightConvertible {
-        case regular, medium
+        case light
+    }
+    
+    enum TextPreset9Weight: String, FontWeightConvertible {
+        case light
+    }
+    
+    enum TextPreset10Weight: String, FontWeightConvertible {
+        case light
     }
 
     enum TextSystemWeight: String, FontWeightConvertible {

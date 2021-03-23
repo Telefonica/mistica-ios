@@ -97,7 +97,7 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
         case .playAndTouchTitle:
             let label = UILabel()
             label.text = "Touch and play with\nMística iOS components"
-            label.font = .textPreset2(weight: .light)
+            label.font = .preset7(weight: .light)
             label.textColor = UIColor(red: 0, green: 50 / 255, blue: 69 / 255, alpha: 1)
             label.numberOfLines = 0
 

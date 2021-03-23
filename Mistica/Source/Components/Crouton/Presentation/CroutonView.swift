@@ -39,7 +39,7 @@ class CroutonView: UIView {
         label.text = text
         label.numberOfLines = 0
         label.textColor = config.textColor
-        label.font = .textPreset7(weight: .regular)
+        label.font = .preset2(weight: .regular)
         return label
     }()
 

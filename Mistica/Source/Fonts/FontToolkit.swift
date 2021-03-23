@@ -11,10 +11,6 @@ import UIKit
 private var _isDynamicTypeEnabled = true
 
 public extension UIFont {
-    static func textSystem(weight: FontStyle.TextSystemWeight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
-        FontStyle.textSystem.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
-    }
-    
     static func textPreset1(weight: FontStyle.TextPreset1Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset1.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }

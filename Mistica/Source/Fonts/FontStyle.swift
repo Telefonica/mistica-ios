@@ -10,7 +10,6 @@ import UIKit
 
 @frozen
 @objc public enum FontStyle: Int, CaseIterable, CustomStringConvertible {
-    case textSystem
     case textPreset1
     case textPreset2
     case textPreset3
@@ -37,8 +36,6 @@ import UIKit
 
     public var description: String {
         switch self {
-        case .textSystem:
-            return "TextSystem"
         case .textPreset1:
             return "TextPreset1"
         case .textPreset2:
@@ -70,8 +67,6 @@ private extension FontStyle {
 
     var baseSize: CGFloat {
         switch self {
-        case .textSystem:
-            return 10
         case .textPreset1:
             return 12
         case .textPreset2:
@@ -155,8 +150,7 @@ private extension FontStyle {
         case .textPreset1,
              .textPreset2,
              .textPreset3,
-             .textPreset4,
-             .textSystem:
+             .textPreset4:
             return 2
         case .textPreset5,
              .textPreset6,

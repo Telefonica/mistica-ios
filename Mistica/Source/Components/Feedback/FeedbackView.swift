@@ -55,7 +55,7 @@ public class FeedbackView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = title
-        label.font = .preset6(weight: .light)
+        label.font = .textPreset6(weight: .light)
         label.textColor = style.feedbackTextPrimary
         label.numberOfLines = 0
         return label
@@ -64,7 +64,7 @@ public class FeedbackView: UIView {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.text = subtitle
-        label.font = .preset4(weight: .light)
+        label.font = .textPreset4(weight: .light)
         label.textColor = style.feedbackTextSecondary
         label.numberOfLines = 0
         return label

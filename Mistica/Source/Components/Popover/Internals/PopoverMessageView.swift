@@ -112,7 +112,7 @@ private extension PopoverMessageView {
     func styleViews() {
         titleLabel.numberOfLines = 0
         titleLabel.minHeight = 25
-        titleLabel.font = .preset3(weight: .regular)
+        titleLabel.font = .textPreset3(weight: .regular)
         titleLabel.textColor = .textPrimary
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
@@ -120,7 +120,7 @@ private extension PopoverMessageView {
 
         subtitleLabel.numberOfLines = 0
         subtitleLabel.minHeight = 20
-        subtitleLabel.font = .preset2(weight: .regular)
+        subtitleLabel.font = .textPreset2(weight: .regular)
         subtitleLabel.textColor = .textSecondary
         subtitleLabel.lineBreakMode = .byWordWrapping
         subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)

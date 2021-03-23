@@ -81,7 +81,7 @@ private extension SegmentCell {
         layer.masksToBounds = true
 
         // Opt out of Dynamic Type, we will use LargerContentViewer API instead.
-        title.font = .preset2(weight: .regular)
+        title.font = .textPreset2(weight: .regular)
         title.textAlignment = .center
     }
 

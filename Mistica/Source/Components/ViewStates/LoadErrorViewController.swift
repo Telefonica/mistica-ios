@@ -82,7 +82,7 @@ private extension LoadErrorViewController {
     }
 
     func setUpTitleText() {
-        titleTextLabel.font = .preset4(weight: .medium)
+        titleTextLabel.font = .textPreset4(weight: .medium)
         titleTextLabel.textColor = .textPrimary
         titleTextLabel.textAlignment = .center
         titleTextLabel.numberOfLines = 0
@@ -90,7 +90,7 @@ private extension LoadErrorViewController {
     }
 
     func setUpDescriptionText() {
-        descriptionLabel.font = .preset3(weight: .medium)
+        descriptionLabel.font = .textPreset3(weight: .medium)
         descriptionLabel.textColor = .textSecondary
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 0

@@ -176,7 +176,7 @@ private class TabViewController: UIViewController {
         view.backgroundColor = .background
 
         let label = UILabel()
-        label.font = .preset4(weight: .medium)
+        label.font = .textPreset4(weight: .medium)
         label.textColor = .textPrimary
         label.text = text
 

@@ -42,7 +42,7 @@ extension UIButton {
         setTitleColor(.textNavigationBarSecondary, for: .highlighted)
         setTitleColor(.textNavigationBarSecondary, for: .selected)
         setTitleColor(.textNavigationBarSecondary, for: .disabled)
-        titleLabel?.font = .preset3(weight: .regular)
+        titleLabel?.font = .textPreset3(weight: .regular)
         sizeToFit()
         frameHeight = 36.0
     }

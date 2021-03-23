@@ -45,7 +45,7 @@ private extension DefaultTableHeaderView {
             bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
 
-        label.font = .preset2(weight: .regular)
+        label.font = .textPreset2(weight: .regular)
         label.textColor = .textSecondary
         label.backgroundColor = .clear
     }

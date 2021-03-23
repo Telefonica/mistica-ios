@@ -39,6 +39,7 @@ class UICatalogTabsViewController: UIViewController {
         return cell
     }()
     
+    private let keyboardNotificationCenter = KeyboardNotificationCenter()
     private var currentTabItems = TabsDataset.oneItems.tabItems
     private var currentSelectedTabItems: TabItem?
     private let tabs: TabsView
@@ -180,13 +181,14 @@ private struct TabsDataset {
     static let twoItemsWithLargeText = TabsDataset(title: "Two items with large text", tabItems: [.longText, .longText])
     static let twoItemsWithSmallText = TabsDataset(title: "Two items with small text", tabItems: [.movies, .television])
     static let threeItems = TabsDataset(title: "Three items", tabItems: [.phone, .movies, .television])
-    static let sixItems = TabsDataset(title: "Six items", tabItems: [.phone, .eSports, .movies, .offers, .television, .shop])
+    static let sixItems = TabsDataset(title: "Six items", tabItems: [.phone, .shop, .television, .offers, .movies, .eSports])
 }
 
 // MARK: - Private methods
 
 private extension UICatalogTabsViewController {
     func setUp() {
+        startListeningKeyboardNotifications()
         setUpTabs()
         setUpOptionsTable()
         setUpInitialState()
@@ -253,6 +255,24 @@ private extension UICatalogTabsViewController {
                                          icon: icon)
         tabs.update(currentSelectedTabItems, newTabItem: newSelectedTabItem)
         self.currentSelectedTabItems = newSelectedTabItem
+    }
+    
+    func startListeningKeyboardNotifications() {
+        keyboardNotificationCenter.subscribe(.willShow) { [weak self] keyboardInfo in
+            self?.handleWillShowKeyboardNotification(keyboardInfo: keyboardInfo)
+        }
+
+        keyboardNotificationCenter.subscribe(.willHide) { [weak self] keyboardInfo in
+            self?.handleWillHideKeyboardNotification(keyboardInfo: keyboardInfo)
+        }
+    }
+
+    func handleWillShowKeyboardNotification(keyboardInfo: KeyboardInfo) {
+        optionsTable.contentInset.bottom = keyboardInfo.frameEnd.height
+    }
+
+    func handleWillHideKeyboardNotification(keyboardInfo _: KeyboardInfo) {
+       optionsTable.contentInset.bottom = 0
     }
 }
 

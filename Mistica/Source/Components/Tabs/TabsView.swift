@@ -155,7 +155,7 @@ private extension TabsView {
         guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell else { return }
         let tabItem = tabsItems[indexPath.item]
         tabItemView.showSelected()
-        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         tabItemView.isSelected = true
         firstIndexPathForSelectedItem = indexPath
         delegate?.tabsView(self, didSelectTab: tabItem)

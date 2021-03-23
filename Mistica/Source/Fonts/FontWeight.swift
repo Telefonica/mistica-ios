@@ -44,11 +44,11 @@ public extension FontStyle {
     enum TextPreset8Weight: String, FontWeightConvertible {
         case light
     }
-    
+
     enum TextPreset9Weight: String, FontWeightConvertible {
         case light
     }
-    
+
     enum TextPreset10Weight: String, FontWeightConvertible {
         case light
     }

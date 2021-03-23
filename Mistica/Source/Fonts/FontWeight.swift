@@ -13,6 +13,10 @@ protocol FontWeightConvertible: CaseIterable {
 }
 
 public extension FontStyle {
+    enum TextSystemWeight: String, FontWeightConvertible {
+        case regular
+    }
+    
     enum TextPreset1Weight: String, FontWeightConvertible {
         case regular, medium
     }
@@ -51,10 +55,6 @@ public extension FontStyle {
     
     enum TextPreset10Weight: String, FontWeightConvertible {
         case light
-    }
-
-    enum TextSystemWeight: String, FontWeightConvertible {
-        case regular
     }
 }
 

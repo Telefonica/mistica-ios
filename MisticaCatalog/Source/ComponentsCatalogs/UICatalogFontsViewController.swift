@@ -13,6 +13,7 @@ class UICatalogFontsViewController: UITableViewController {
     typealias FontType = (fontStyle: FontStyle, weight: String)
 
     private let fonts: [FontType] = [
+        (fontStyle: FontStyle.textSystem, weight: FontStyle.TextSystemWeight.regular.rawValue),
         (fontStyle: FontStyle.textPreset1, weight: FontStyle.TextPreset1Weight.regular.rawValue),
         (fontStyle: FontStyle.textPreset1, weight: FontStyle.TextPreset1Weight.medium.rawValue),
         (fontStyle: FontStyle.textPreset2, weight: FontStyle.TextPreset2Weight.regular.rawValue),
@@ -28,8 +29,7 @@ class UICatalogFontsViewController: UITableViewController {
         (fontStyle: FontStyle.textPreset7, weight: FontStyle.TextPreset7Weight.light.rawValue),
         (fontStyle: FontStyle.textPreset8, weight: FontStyle.TextPreset8Weight.light.rawValue),
         (fontStyle: FontStyle.textPreset9, weight: FontStyle.TextPreset9Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset10, weight: FontStyle.TextPreset10Weight.light.rawValue),
-        (fontStyle: FontStyle.textSystem, weight: FontStyle.TextSystemWeight.regular.rawValue)
+        (fontStyle: FontStyle.textPreset10, weight: FontStyle.TextPreset10Weight.light.rawValue)
     ]
 
     init() {

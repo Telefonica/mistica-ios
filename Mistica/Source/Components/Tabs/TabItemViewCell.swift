@@ -17,7 +17,7 @@ public class TabItemViewCell: UICollectionViewCell {
         static let heightDivider: CGFloat = 2
         static let minimumItemWidthForIpad: CGFloat = 208.0
     }
-        
+
     private lazy var verticalStack: UIStackView = {
         let verticalStack = UIStackView(arrangedSubviews: [horizontalStack, selectedLine])
         verticalStack.backgroundColor = .clear
@@ -27,16 +27,18 @@ public class TabItemViewCell: UICollectionViewCell {
         verticalStack.alignment = .center
         return verticalStack
     }()
-    
+
     private lazy var horizontalStack: UIStackView = {
         let horizontalStack = UIStackView(arrangedSubviews: [imageView, title])
         horizontalStack.translatesAutoresizingMaskIntoConstraints = false
         horizontalStack.backgroundColor = .clear
         horizontalStack.isLayoutMarginsRelativeArrangement = true
-        horizontalStack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: Constants.innerPadding,
-                                                                           leading: Constants.innerPadding,
-                                                                           bottom: Constants.bottomPadding,
-                                                                           trailing: Constants.innerPadding)
+        horizontalStack.directionalLayoutMargins = NSDirectionalEdgeInsets(
+            top: Constants.innerPadding,
+            leading: Constants.innerPadding,
+            bottom: Constants.bottomPadding,
+            trailing: Constants.innerPadding
+        )
         horizontalStack.backgroundColor = .clear
         horizontalStack.axis = .horizontal
         horizontalStack.distribution = .fill
@@ -44,7 +46,7 @@ public class TabItemViewCell: UICollectionViewCell {
         horizontalStack.spacing = Constants.iconAndTextSpace
         return horizontalStack
     }()
-    
+
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
@@ -57,17 +59,17 @@ public class TabItemViewCell: UICollectionViewCell {
         label.lineBreakMode = .byTruncatingTail
         return label
     }()
-    
+
     private lazy var selectedLine: UIView = {
         let selectedLine = UIView()
         selectedLine.backgroundColor = .controlActivated
         return selectedLine
     }()
-    
+
     public lazy var minimumWidthConstraintForIpad = {
         contentView.widthAnchor.constraint(greaterThanOrEqualToConstant: Constants.minimumItemWidthForIpad)
     }()
-        
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commomInit()
@@ -90,7 +92,7 @@ extension TabItemViewCell {
             title.text = newValue
         }
     }
-    
+
     var icon: UIImage? {
         get {
             imageView.image
@@ -99,11 +101,11 @@ extension TabItemViewCell {
             imageView.image = newValue
         }
     }
-    
+
     func isActiveMinimumWidthConstraintForIpad(_ active: Bool) {
         minimumWidthConstraintForIpad.isActive = active
     }
-        
+
     func showSelected() {
         selectedLine.backgroundColor = .controlActivated
         title.textColor = .textPrimary
@@ -123,7 +125,7 @@ private extension TabItemViewCell {
     func commomInit() {
         contentView.backgroundColor = .clear
         backgroundColor = .clear
-        
+
         contentView.addSubview(verticalStack, constraints: [
             verticalStack.topAnchor.constraint(equalTo: contentView.topAnchor),
             verticalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -136,7 +138,7 @@ private extension TabItemViewCell {
         ])
         setUpAccessibility()
     }
-    
+
     func setUpAccessibility() {
         // This component don't grow with Dynamic Type, but presents a HUD instead, since it is intended to be always
         // presented below the navigation bar.
@@ -161,12 +163,12 @@ public extension TabItemViewCell {
         get { title.largeContentTitle }
         set {}
     }
-    
+
     override var largeContentImage: UIImage? {
         get { imageView.image }
         set {}
     }
-    
+
     override var accessibilityLabel: String? {
         get { title.text }
         set {}

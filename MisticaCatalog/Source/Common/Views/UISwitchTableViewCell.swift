@@ -15,7 +15,7 @@ public class UISwitchTableViewCell: UITableViewCell {
         get { `switch`.isOn }
         set { `switch`.isOn = newValue }
     }
-    
+
     public var didValueChange: ((UISwitch) -> Void)?
 
     public init(reuseIdentifier: String?) {

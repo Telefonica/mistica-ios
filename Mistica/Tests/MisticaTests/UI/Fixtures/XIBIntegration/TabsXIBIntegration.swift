@@ -1,8 +1,9 @@
 //
 //  TabsXIBIntegration.swift
-//  Mistica
 //
-//  Created by dmarin on 22/3/21.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Mistica

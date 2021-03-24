@@ -24,9 +24,9 @@ public class TabsView: UIView {
         static let minimumWidthForIpad: CGFloat = 768
         static let maximumWidthItem: CGFloat = 280
     }
-    
+
     private lazy var collectionView: UICollectionView = {
-        var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout);
+        var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
@@ -56,45 +56,45 @@ public class TabsView: UIView {
         divider.backgroundColor = .divider
         return divider
     }()
-    
+
     private var firstIndexPathForSelectedItem: IndexPath?
-    
+
     var widthOfScreen: CGFloat {
-        self.frame.width
+        frame.width
     }
 
     private var tabsItems: [TabItem] = []
-    
+
     public weak var delegate: TabsViewDelegate?
 
     public init(tabItems: [TabItem]) {
-        self.tabsItems = tabItems
+        tabsItems = tabItems
 
         super.init(frame: .zero)
-        
+
         commomInit()
     }
 
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         commomInit()
     }
 }
 
 // MARK: - Public
 
-extension TabsView {
-    public func reload(with tabItems: [TabItem]) {
-        self.tabsItems = tabItems
+public extension TabsView {
+    func reload(with tabItems: [TabItem]) {
+        tabsItems = tabItems
         reloadContent()
         collectionView.performBatchUpdates(nil) { _ in
             guard let firstTabItem = tabItems.first else { return }
             self.delegate?.tabsView(self, didSelectTab: firstTabItem)
         }
     }
-    
-    public func update(_ tabItem: TabItem, newTabItem: TabItem) {
+
+    func update(_ tabItem: TabItem, newTabItem: TabItem) {
         guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
         tabsItems[index] = newTabItem
         let indexPath = IndexPath(item: index, section: 0)
@@ -103,8 +103,8 @@ extension TabsView {
             self.selectTabItem(at: indexPath)
         }
     }
-        
-    public func remove(_ tabItem: TabItem) {
+
+    func remove(_ tabItem: TabItem) {
         guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
         tabsItems.remove(at: index)
         collectionView.reloadData()
@@ -122,15 +122,15 @@ private extension TabsView {
         setUpDivider()
         setUpCollectionView()
         updateEstimatedItemSize()
-        
+
         // Listen to theme variant changes
         NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChange, object: nil)
     }
-    
+
     func setUpView() {
         backgroundColor = .background
     }
-        
+
     func setUpDivider() {
         addSubview(divider, constraints: [
             divider.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -139,7 +139,7 @@ private extension TabsView {
             divider.heightAnchor.constraint(equalToConstant: Constants.dividerHeight)
         ])
     }
-    
+
     func setUpCollectionView() {
         addSubview(collectionView, constraints: [
             collectionView.topAnchor.constraint(equalTo: topAnchor),
@@ -147,10 +147,10 @@ private extension TabsView {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: divider.topAnchor, constant: Constants.dividerHeight),
             collectionView.heightAnchor.constraint(equalToConstant: Constants.componentHeight),
-            self.heightAnchor.constraint(equalToConstant: Constants.componentHeight)
+            heightAnchor.constraint(equalToConstant: Constants.componentHeight)
         ])
     }
-    
+
     func selectTabItem(at indexPath: IndexPath) {
         guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell else { return }
         let tabItem = tabsItems[indexPath.item]
@@ -160,20 +160,20 @@ private extension TabsView {
         firstIndexPathForSelectedItem = indexPath
         delegate?.tabsView(self, didSelectTab: tabItem)
     }
-    
+
     func deselectTabItem(at indexPath: IndexPath) {
         guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell else {
             return
         }
         tabItemView.showDeselected()
     }
-    
+
     func reloadContent() {
         firstIndexPathForSelectedItem = nil
         updateEstimatedItemSize()
         collectionView.reloadData()
     }
-    
+
     func updateEstimatedItemSize() {
         if tabsItems.count <= Constants.maximuItemWithFixSize {
             layout.estimatedItemSize = CGSize.zero
@@ -189,21 +189,21 @@ extension TabsView: UICollectionViewDataSource {
     public func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         tabsItems.count
     }
-    
+
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard tabsItems.indices.contains(indexPath.item) else {
             fatalError("Inconsistency between the collectionView and it's dataSource: Trying to fetch cell for item at indexPath \(indexPath), but the index was not valid. Current tabs list: \(tabsItems)")
         }
-        
+
         let tabItem = tabsItems[indexPath.item]
         let tabItemView = TabItemViewCell.dequeueReusableCell(for: indexPath, from: collectionView)
         tabItemView.text = tabItem.title
         tabItemView.icon = tabItem.icon
         tabItemView.accessibilityIdentifier = tabItem.accessibilityIdentifier
-        
+
         let isIpad = widthOfScreen >= Constants.minimumWidthForIpad
         tabItemView.isActiveMinimumWidthConstraintForIpad(isIpad)
-        
+
         if indexPath == firstIndexPathForSelectedItem || firstIndexPathForSelectedItem == nil {
             collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
             firstIndexPathForSelectedItem = indexPath
@@ -213,7 +213,7 @@ extension TabsView: UICollectionViewDataSource {
             tabItemView.showDeselected()
             tabItemView.isSelected = false
         }
-        
+
         return tabItemView
     }
 }
@@ -228,7 +228,7 @@ extension TabsView: UICollectionViewDelegate {
     public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectTabItem(at: indexPath)
     }
-    
+
     public func collectionView(_: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         deselectTabItem(at: indexPath)
     }

@@ -40,16 +40,16 @@ class UICatalogTabsViewController: UIViewController {
     }()
     
     private let keyboardNotificationCenter = KeyboardNotificationCenter()
-    private var currentTabItems = TabsDataset.oneItems.tabItems
+    private var currentTabItems = TabsDataset.twoItems.tabItems
     private var currentSelectedTabItems: TabItem?
     private let tabs: TabsView
     private let optionsTable: UITableView
     private let datasetsCells: [TabsDataset] = [
-        .oneItems,
         .twoItems,
         .twoItemsWithLargeText,
         .twoItemsWithSmallText,
         .threeItems,
+        .threeItemsWithLargeText,
         .sixItems
     ]
     private lazy var tabItemSelectedCells = [
@@ -176,11 +176,11 @@ private struct TabsDataset {
     let title: String
     let tabItems: [TabItem]
     
-    static let oneItems = TabsDataset(title: "One item", tabItems: [.eSports])
     static let twoItems = TabsDataset(title: "Two items", tabItems: [.movies, .eSports])
     static let twoItemsWithLargeText = TabsDataset(title: "Two items with large text", tabItems: [.longText, .longText])
     static let twoItemsWithSmallText = TabsDataset(title: "Two items with small text", tabItems: [.movies, .television])
     static let threeItems = TabsDataset(title: "Three items", tabItems: [.phone, .movies, .television])
+    static let threeItemsWithLargeText = TabsDataset(title: "Three items with large text", tabItems: [.longText, .longText, .longText])
     static let sixItems = TabsDataset(title: "Six items", tabItems: [.phone, .shop, .television, .offers, .movies, .eSports])
 }
 

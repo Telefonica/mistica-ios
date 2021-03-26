@@ -49,8 +49,10 @@ platform :ios do
   end
 
   desc "Build Mistica catalog and upload to AppCenter"
-  lane :build_and_deploy_mistica_catalog do
-  	ensure_git_status_clean
+  lane :build_and_deploy_mistica_catalog do |options|
+    if options[:CI]
+      ensure_git_status_clean
+    end
 
   	increment_build_number_in_info_plist(
       path: MISTICA_CATALOG_INFO_PLIST_PATH
@@ -76,7 +78,9 @@ platform :ios do
   	  release_notes: "https://github.com/Telefonica/mistica-ios/blob/master/CHANGELOG.md"
   	)
 
-    # reset_git_repo
+    if options[:CI]
+      reset_git_repo
+    end
   end
 
   desc "Run Tests"

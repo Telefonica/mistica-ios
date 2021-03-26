@@ -79,31 +79,3 @@ jobs:
           BRAND_VARIANT: MisticaApp
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
-
-
-      # - name: Checkout this repo
-      #   uses: actions/checkout@v2
-
-      # - name: Checkout Telefonica/github-actions repo
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: Telefonica/github-actions
-      #     token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
-      #     path: .github/actions
-
-      # - name: Deploy main (cigen workflow)
-      #   if: ${{ github.event.inputs.commit_to_deploy == '' }}
-      #   uses: ./.github/actions/novum/trigger-cigen-workflow
-      #   with:
-      #     workflow: build_and_deploy_mistica_catalog
-      #     branch: main
-      #     payload: "ticket: APPS-7169"
-
-      # - name: Deploy commit (cigen workflow)
-      #   if: ${{ github.event.inputs.commit_to_deploy != '' }}
-      #   uses: ./.github/actions/novum/trigger-cigen-workflow
-      #   with:
-      #     workflow: build_and_deploy_mistica_catalog
-      #     branch: main
-      #     changeset: "${{ github.event.inputs.commit_to_deploy }}"
-      #     payload: "ticket: APPS-7169"

@@ -76,7 +76,7 @@ platform :ios do
   	  release_notes: "https://github.com/Telefonica/mistica-ios/blob/master/CHANGELOG.md"
   	)
 
-    reset_git_repo
+    # reset_git_repo
   end
 
   desc "Run Tests"

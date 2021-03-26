@@ -167,7 +167,6 @@ if check_requirements; then
 		prov_profiles_version=$(get_prov_profiles_version $BRAND_VARIANT)
 		if unzip_files ${prov_profiles_cert_list_in_base64[i]} $IOS_PROV_FILES_FOLDER; then
 			final_prov_profiles_folder=$(get_final_prov_profiles_folder $IOS_PROV_FILES_FOLDER $BRAND_VARIANT $prov_profiles_version)
-			echo "WTF ${final_prov_profiles_folder}"
 			ios_prov_files_and_cert=$(ls ${final_prov_profiles_folder})
 			pushd ${final_prov_profiles_folder}  1>/dev/null
 			for file in ${ios_prov_files_and_cert}; do

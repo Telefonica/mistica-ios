@@ -54,12 +54,14 @@ jobs:
 
       - name: Uninstall provisioning profiles and certificate
         run: sh ./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh -u
+        shell: bash
         env:
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
 
       - name: Install provisioning profiles and certificate
         run: sh ./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh -i   
+        shell: bash
         env:
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}

@@ -53,14 +53,14 @@ jobs:
         run:  bundle exec fastlane setup
 
       - name: Uninstall provisioning profiles and certificate
-        run: sh ./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh -u
+        run: bash ./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh -u
         shell: bash
         env:
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
 
       - name: Install provisioning profiles and certificate
-        run: sh ./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh -i   
+        run: bash ./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh -i   
         shell: bash
         env:
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
@@ -72,7 +72,7 @@ jobs:
           APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
 
       - name: Check provisioning profiles and certificate expiry day
-        run: sh ./scripts/osx_prov_profiles_and_certs_mgmt/check_cert_and_prov_profiles_expiration_date.sh -p -c
+        run: bash ./scripts/osx_prov_profiles_and_certs_mgmt/check_cert_and_prov_profiles_expiration_date.sh -p -c
         env:
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}

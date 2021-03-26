@@ -56,6 +56,7 @@ jobs:
         run: bash ./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh -u
         shell: bash
         env:
+          BRAND_VARIANT: MisticaApp
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
 
@@ -63,6 +64,7 @@ jobs:
         run: bash ./scripts/osx_prov_profiles_and_certs_mgmt/install_prov_profiles_and_cert_in_osx.sh -i   
         shell: bash
         env:
+          BRAND_VARIANT: MisticaApp
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
 
@@ -74,6 +76,7 @@ jobs:
       - name: Check provisioning profiles and certificate expiry day
         run: bash ./scripts/osx_prov_profiles_and_certs_mgmt/check_cert_and_prov_profiles_expiration_date.sh -p -c
         env:
+          BRAND_VARIANT: MisticaApp
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
 

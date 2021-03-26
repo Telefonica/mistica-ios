@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 source ./scripts/osx_prov_profiles_and_certs_mgmt/common-functions
 
 show_help () {

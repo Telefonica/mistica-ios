@@ -102,7 +102,7 @@ public class BadgeView: UIView {
             bezierPath = UIBezierPath(ovalIn: rect)
         }
 
-        UIColor.badgeColor.setFill()
+        UIColor.badge.setFill()
         bezierPath.fill()
 
         super.draw(rect)

@@ -157,7 +157,7 @@ extension UICatalogPopoverViewController: UITableViewDataSource, UITableViewDele
             fatalError("Selected segment index unknown")
         }
 
-        let image: UIImage? = assetCell.segmentedControl.selectedSegmentIndex == 0 ? nil : UIImage(color: .accentBackground)
+        let image: UIImage? = assetCell.segmentedControl.selectedSegmentIndex == 0 ? nil : UIImage(color: .success)
         let canClosePopover = canCloseCell.segmentedControl.selectedSegmentIndex == 0 ? true : false
 
         let configuration = PopoverConfiguration(

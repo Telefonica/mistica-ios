@@ -78,6 +78,16 @@ extension CardBase {
         }
     }
 
+    override var accessibilityElements: [Any]? {
+        get {
+            [
+                buttonsView,
+                fragmentView as Any
+            ].compactMap { $0 }
+        }
+        set {}
+    }
+
     func configureButtons(primaryButton: CardButton?, linkButton: CardLinkButton?) {
         buttonsView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
 

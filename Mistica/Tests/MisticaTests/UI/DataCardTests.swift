@@ -127,7 +127,7 @@ final class DataCardTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         let view = makeCardWithFullContentAndButtons(buttons: .primaryAndLink(primary: AnyValues.button, link: AnyValues.link))
-        view.primaryButtonState = .loading
+        view.primaryButton.isLoading = true
 
         assertSnapshot(matching: view, as: .image)
     }

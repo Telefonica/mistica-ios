@@ -32,7 +32,7 @@ public class ScrollContentIndicator: Button {
         view.addSubview(self, constraints: [
             centerXAnchor.constraint(equalTo: view.centerXAnchor),
             heightAnchor.constraint(equalToConstant: Constants.defaultHeight),
-            topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.defaultMargin)
+            topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.defaultMargin)
         ])
     }
 
@@ -74,7 +74,7 @@ private extension ScrollContentIndicator {
 
     func setUp() {
         removeBorder()
-        addGradient()
+        addBackgroundView()
         makeRounded(cornerRadius: cornerRadius)
         addShadow()
         transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
@@ -83,15 +83,16 @@ private extension ScrollContentIndicator {
         setContentCompressionResistancePriority(.required, for: .horizontal)
     }
 
-    func addGradient() {
-        let gradientView = GradientView()
-        gradientView.applyStyle(.scrollContentIndicator)
-        gradientView.makeRounded(cornerRadius: cornerRadius)
-        insertSubview(gradientView, at: 0, constraints: gradientView.constraintsForEdges(to: self))
+    func addBackgroundView() {
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .brand
+        backgroundView.makeRounded(cornerRadius: cornerRadius)
+        backgroundView.isUserInteractionEnabled = false
+        insertSubview(backgroundView, at: 0, constraints: backgroundView.constraintsForEdges(to: self))
     }
 
     func addShadow() {
-        layer.shadowColor = UIColor.backgroundOpacity.cgColor
+        layer.shadowColor = UIColor.backgroundOverlay.cgColor
         layer.shadowOpacity = Constants.shadowOpacity
         layer.shadowOffset = .zero
         layer.shadowRadius = Constants.shadowRadius

@@ -167,9 +167,9 @@ public extension FormView {
 
     func updateButtonState() {
         if delegate?.formViewButtonShouldBeEnabled(self) ?? true {
-            button.state = .normal
+            button.isEnabled = true
         } else {
-            button.state = .disabled
+            button.isEnabled = false
         }
     }
 }

@@ -31,6 +31,7 @@ public class HighlightedCard: UIView {
         case secondary
     }
 
+    private lazy var cardAccessibilityElement = UIAccessibilityElement(accessibilityContainer: self)
     private lazy var verticalStackView = UIStackView()
     private lazy var horizontalStackView = UIStackView()
 
@@ -118,7 +119,7 @@ public class HighlightedCard: UIView {
             actionButton.isHidden
         }
         set {
-            actionButton.isHidden = newValue
+            actionButton.isHidden = !newValue
             updateTapGesture()
         }
     }
@@ -130,7 +131,7 @@ public class HighlightedCard: UIView {
             closeButton.isHidden
         }
         set {
-            closeButton.isHidden = newValue
+            closeButton.isHidden = !newValue
         }
     }
 
@@ -140,15 +141,32 @@ public class HighlightedCard: UIView {
         }
     }
 
-    public convenience init(title: String? = nil,
-                            subtitle: String? = nil,
-                            rightImage: UIImage? = nil,
-                            actionButtonStyle: ButtonStyle = .primary) {
-        self.init(frame: .zero)
+    override public var accessibilityElements: [Any]? {
+        get {
+            updateAccessibilityLabel()
+            // We must set the frame and be sure it is already calculated.
+            cardAccessibilityElement.accessibilityFrameInContainerSpace = bounds
+            return [
+                cardAccessibilityElement,
+                actionButton.isHidden ? nil : actionButton,
+                closeButton.isHidden ? nil : closeButton
+            ].compactMap { $0 }
+        }
+        set {}
+    }
+
+    public init(title: String? = nil,
+                subtitle: String? = nil,
+                rightImage: UIImage? = nil,
+                actionButtonStyle: ButtonStyle = .primary) {
+        super.init(frame: .zero)
+
         self.title = title
         self.subtitle = subtitle
         self.rightImage = rightImage
         self.actionButtonStyle = actionButtonStyle
+
+        commonInit()
     }
 
     override public init(frame: CGRect) {
@@ -156,9 +174,9 @@ public class HighlightedCard: UIView {
         commonInit()
     }
 
-    @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        commonInit()
     }
 
     override public var intrinsicContentSize: CGSize {
@@ -287,6 +305,15 @@ public extension HighlightedCard {
         }
         set {
             backgroundImageView.accessibilityIdentifier = newValue
+        }
+    }
+
+    override var accessibilityTraits: UIAccessibilityTraits {
+        get {
+            cardAccessibilityElement.accessibilityTraits
+        }
+        set {
+            cardAccessibilityElement.accessibilityTraits = newValue
         }
     }
 }
@@ -439,5 +466,12 @@ private extension HighlightedCard {
 
     @objc func actionButtonTapped() {
         actionButtonCallback?()
+    }
+
+    func updateAccessibilityLabel() {
+        cardAccessibilityElement.accessibilityLabel = [
+            titleAccessibilityLabel,
+            subtitleAccessibilityLabel
+        ].compactMap { $0 }.joined(separator: " ")
     }
 }

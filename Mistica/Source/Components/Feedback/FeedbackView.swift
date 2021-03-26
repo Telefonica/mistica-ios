@@ -9,53 +9,6 @@
 import Lottie
 import UIKit
 
-public typealias FeedbackCompletion = () -> Void
-public typealias FeedbackRetryCompletion = (@escaping () -> Void) -> Void
-
-@frozen
-public enum FeedbackPrimaryAction {
-    case none
-    case button(title: String, completion: FeedbackCompletion)
-    case retryButton(title: String, loadingTitle: String?, retryCompletion: FeedbackRetryCompletion)
-}
-
-extension FeedbackPrimaryAction: Equatable {
-    public static func == (lhs: FeedbackPrimaryAction, rhs: FeedbackPrimaryAction) -> Bool {
-        switch (lhs, rhs) {
-        case (.none, .none):
-            return true
-        case (.button(let lhsTitle, _), .button(let rhsTitle, _)):
-            return lhsTitle == rhsTitle
-        case (.retryButton(let lhsTitle, let lhsLoadingTitle, _), .retryButton(let rhsTitle, let rhsLoadingTitle, _)):
-            return lhsTitle == rhsTitle && lhsLoadingTitle == rhsLoadingTitle
-        default:
-            return false
-        }
-    }
-}
-
-@frozen
-public enum FeedbackSecondaryAction {
-    case none
-    case button(title: String, completion: FeedbackCompletion)
-    case link(title: String, completion: FeedbackCompletion)
-}
-
-extension FeedbackSecondaryAction: Equatable {
-    public static func == (lhs: FeedbackSecondaryAction, rhs: FeedbackSecondaryAction) -> Bool {
-        switch (lhs, rhs) {
-        case (.none, .none):
-            return true
-        case (.button(let lhsTitle, _), .button(let rhsTitle, _)):
-            return lhsTitle == rhsTitle
-        case (.link(let lhsTitle, _), .link(let rhsTitle, _)):
-            return lhsTitle == rhsTitle
-        default:
-            return false
-        }
-    }
-}
-
 public class FeedbackView: UIView {
     private enum Constants {
         static let animationDelay: TimeInterval = 0.2
@@ -299,14 +252,14 @@ private extension FeedbackView {
         case .button(_, let completion):
             completion()
         case .retryButton(let title, _, let completion):
-            primaryButton?.state = .loading
+            primaryButton?.isLoading = true
             prepareHapticFeedback()
             completion { [weak self] in
                 self?.prepareAnimation()
                 self?.startAnimation()
 
                 self?.primaryButton?.title = title
-                self?.primaryButton?.state = .normal
+                self?.primaryButton?.isLoading = false
             }
         case .none:
             break

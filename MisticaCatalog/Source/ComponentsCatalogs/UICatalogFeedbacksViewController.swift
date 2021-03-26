@@ -17,6 +17,8 @@ private enum Section: Int, CaseIterable {
     case secondaryButton
     case extraContent
     case style
+    case closeButton
+    case backButton
     case show
 }
 
@@ -94,6 +96,23 @@ class UICatalogFeedbacksViewController: UITableViewController {
         return cell
     }()
 
+    private lazy var closeButtonCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "closeButtonCell")
+        cell.segmentedControl.insertSegment(withTitle: "None", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Custom Close", at: 1, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = 0
+        return cell
+    }()
+
+    private lazy var backButtonCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "backButtonCell")
+        cell.segmentedControl.insertSegment(withTitle: "None", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Custom Back", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Keep Default", at: 2, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = 2
+        return cell
+    }()
+
     private lazy var pushFeedbackCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "showCrouton")
         cell.textLabel?.textColor = .textLink
@@ -115,6 +134,8 @@ class UICatalogFeedbacksViewController: UITableViewController {
         [secondaryActionStyleCell, secondaryActionTitleCell],
         [extraContentCell],
         [feedbackStyleCell],
+        [closeButtonCell],
+        [backButtonCell],
         [presentFeedbackCell, pushFeedbackCell]
     ]
 
@@ -162,7 +183,8 @@ extension UICatalogFeedbacksViewController {
 
         switch indexPath.row {
         case 0:
-            present(feedbackViewController, animated: true, completion: nil)
+            let navigationController = UINavigationController(rootViewController: feedbackViewController)
+            present(navigationController, animated: true, completion: nil)
         case 1:
             navigationController?.pushViewController(feedbackViewController, animated: true)
         default:
@@ -192,7 +214,9 @@ private extension UICatalogFeedbacksViewController {
             subtitle: subtitleCell.textField.text ?? "",
             primaryAction: primaryAction,
             secondaryAction: secondaryAction,
-            extraContent: shouldUseExtraContent ? buildExtraView() : nil
+            extraContent: shouldUseExtraContent ? buildExtraView() : nil,
+            closeButton: buildCloseButton(for: closeButtonCell.segmentedControl.selectedSegmentIndex),
+            backButton: buildBackButton(for: backButtonCell.segmentedControl.selectedSegmentIndex)
         )
     }
 
@@ -266,15 +290,36 @@ private extension UICatalogFeedbacksViewController {
         }
     }
 
+    func buildBackButton(for selectedIndex: Int) -> FeedbackNavigationButton {
+        switch selectedIndex {
+        case 0:
+            return .none
+        case 1:
+            let button = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(dismissFeedback))
+            return .custom(button: button)
+        case 2:
+            return .keep
+        default:
+            fatalError("Unknown option selected for index: \(selectedIndex)")
+        }
+    }
+
+    func buildCloseButton(for selectedIndex: Int) -> FeedbackNavigationButton {
+        switch selectedIndex {
+        case 0:
+            return .none
+        case 1:
+            let button = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(dismissFeedback))
+            return .custom(button: button)
+        default:
+            fatalError("Unknown option selected for index: \(selectedIndex)")
+        }
+    }
+
     func showAlert(withTitle title: String, message: String?, cancelActionTitle: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: cancelActionTitle, style: .cancel) { [weak self] _ in
-
-            if let presentedVC = self?.presentedViewController {
-                presentedVC.dismiss(animated: true, completion: nil)
-            } else {
-                self?.navigationController?.popViewController(animated: true)
-            }
+            self?.dismissFeedback()
         }
         alertController.addAction(alertAction)
 
@@ -282,6 +327,16 @@ private extension UICatalogFeedbacksViewController {
             presentedVC.present(alertController, animated: true)
         } else {
             present(alertController, animated: true)
+        }
+    }
+}
+
+private extension UICatalogFeedbacksViewController {
+    @objc func dismissFeedback() {
+        if let presentedVC = presentedViewController {
+            presentedVC.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
         }
     }
 }
@@ -322,6 +377,10 @@ private extension Section {
             return "Extra Content"
         case .style:
             return "Feedback style"
+        case .closeButton:
+            return "Close button"
+        case .backButton:
+            return "Back button"
         case .show:
             return nil
         }

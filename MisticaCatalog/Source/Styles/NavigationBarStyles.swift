@@ -23,7 +23,7 @@ private struct MisticaNavigationBarStyle: ViewModifier {
         UINavigationBar.appearance().compactAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         UINavigationBar.appearance().isTranslucent = true
-        UINavigationBar.appearance().tintColor = .navigationBarPrimary
+        UINavigationBar.appearance().tintColor = .textNavigationBarPrimary
         UINavigationBar.appearance().barTintColor = .navigationBarBackground
     }
 

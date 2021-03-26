@@ -11,16 +11,16 @@ import Foundation
 public extension InputField.Style {
     private static var primaryStateStyleByState: [InputField.State: InputField.StateStyle] {
         [
-            .normal: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textSecondary, textColor: .textPrimary, editingPlaceholderTextColor: .textInputLabel),
-            .invalid: InputField.StateStyle(placeholderTextColor: .textInputLabelError, assistiveTextColor: .textInputLabelError, textColor: .textPrimary, editingPlaceholderTextColor: .textInputLabelError),
+            .normal: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textSecondary, textColor: .textPrimary, editingPlaceholderTextColor: .controlActivated),
+            .invalid: InputField.StateStyle(placeholderTextColor: .error, assistiveTextColor: .error, textColor: .textPrimary, editingPlaceholderTextColor: .error),
             .disabled: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textSecondary, textColor: .textDisabled, editingPlaceholderTextColor: .textSecondary)
         ]
     }
 
     private static var inverseStateStyleByState: [InputField.State: InputField.StateStyle] {
         [
-            .normal: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textPrimaryInverse, textColor: .textPrimary, editingPlaceholderTextColor: .textInputLabel),
-            .invalid: InputField.StateStyle(placeholderTextColor: .textInputLabelError, assistiveTextColor: .textPrimaryInverse, textColor: .textPrimary, editingPlaceholderTextColor: .textInputLabelError),
+            .normal: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textPrimaryInverse, textColor: .textPrimary, editingPlaceholderTextColor: .controlActivated),
+            .invalid: InputField.StateStyle(placeholderTextColor: .error, assistiveTextColor: .textPrimaryInverse, textColor: .textPrimary, editingPlaceholderTextColor: .error),
             .disabled: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textPrimaryInverse, textColor: .textDisabled, editingPlaceholderTextColor: .textSecondary)
         ]
     }

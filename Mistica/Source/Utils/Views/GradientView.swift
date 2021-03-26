@@ -16,48 +16,13 @@ struct GradientStyle {
     let end: CGPoint
     let isOpaque: Bool
 
-    static var assistant: GradientStyle {
-        GradientStyle(
-            alpha: 0.92,
-            colors: [
-                UIColor.gradientBackgroundFirst,
-                UIColor.gradientBackgroundSecond,
-                UIColor.gradientBackgroundThird,
-                UIColor.gradientBackgroundFourth
-            ],
-            locations: [0, 0.51, 0.71, 1],
-            start: CGPoint(x: 0.5, y: 0),
-            end: CGPoint(x: 0.5, y: 1.0),
-            isOpaque: false
-        )
-    }
-
     static var backgroundBrand: GradientStyle {
         GradientStyle(
             alpha: 1,
-            colors: [
-                UIColor.backgroundBrandFirst,
-                UIColor.backgroundBrandSecond,
-                UIColor.backgroundBrandThird,
-                UIColor.backgroundBrandFourth
-            ],
+            colors: UIColor.backgroundBrandGradient,
             locations: [0, 0.51, 0.71, 1],
             start: CGPoint(x: 0.5, y: 0),
             end: CGPoint(x: 0.5, y: 1.0),
-            isOpaque: false
-        )
-    }
-
-    static var scrollContentIndicator: GradientStyle {
-        GradientStyle(
-            alpha: 1,
-            colors: [
-                UIColor.scrollContentIndicatorBackgroundFirst,
-                UIColor.scrollContentIndicatorBackgroundSecond
-            ],
-            locations: [0, 1],
-            start: CGPoint(x: 0, y: 0.5),
-            end: CGPoint(x: 1.0, y: 0.5),
             isOpaque: false
         )
     }

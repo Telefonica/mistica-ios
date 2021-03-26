@@ -13,7 +13,7 @@ import UIKit
 ///   - badgeValue: The number to show in the badge or 0 for do not display it.
 public func createNovumTabBarItem(badgeValue: UInt = 0) -> UITabBarItem {
     let item = UITabBarItem()
-    item.badgeColor = .badgeColor
+    item.badgeColor = .badge
 
     if badgeValue > 0 && badgeValue < 10 {
         item.badgeValue = String(badgeValue)

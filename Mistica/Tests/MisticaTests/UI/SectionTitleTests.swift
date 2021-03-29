@@ -1,8 +1,9 @@
 //
 //  SectionTitleTests.swift
-//  Mistica
 //
-//  Created by jalonso on 29/3/21.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 @testable import Mistica
@@ -13,11 +14,11 @@ final class SectionTitleTests: XCTestCase {
     override func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
-        
+
         isRecording = false
         MisticaConfig.brandStyle = .movistar
     }
-    
+
     func testSectionTitle() {
         assertSnapshot(
             matching: makeSectionTitle(title: "Section title test"),
@@ -33,9 +34,8 @@ private extension SectionTitleTests {
 }
 
 private class SectionTitleViewControler: UITableViewController {
-    
     private var sectionTitle: String!
-    
+
     init(sectionTitle: String) {
         self.sectionTitle = sectionTitle
         super.init(style: .grouped)
@@ -66,7 +66,7 @@ private class SectionTitleViewControler: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        UITableViewCell()
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -75,5 +75,4 @@ private class SectionTitleViewControler: UITableViewController {
 
         return headerView
     }
-
 }

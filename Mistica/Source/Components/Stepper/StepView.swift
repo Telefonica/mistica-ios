@@ -131,7 +131,7 @@ extension StepView {
             accessibilityTraits = []
         }
     }
-    
+
     func updateAnimationKeypaths() {
         let colorKeypath = AnimationKeypath(keypath: "**.Color")
         let colorProvider = ColorValueProvider(UIColor.controlActivated.lottieColorValue)

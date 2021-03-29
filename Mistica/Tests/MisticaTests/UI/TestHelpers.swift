@@ -63,7 +63,7 @@ private func _assertSnapshotForAllBrands<View: UserInterfaceStyling, Format>(
 ) {
     for brand in BrandStyle.allCases {
         MisticaConfig.brandStyle = brand
-                
+
         assertSnapshot(
             matching: viewBuilder(),
             as: snapshotting,
@@ -72,7 +72,7 @@ private func _assertSnapshotForAllBrands<View: UserInterfaceStyling, Format>(
             testName: testName,
             line: line
         )
-        
+
         guard #available(iOSApplicationExtension 13.0, *) else { return }
 
         var darkView = viewBuilder()

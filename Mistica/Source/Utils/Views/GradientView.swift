@@ -62,7 +62,7 @@ final class GradientView: UIView {
         isOpaque = style.isOpaque
         alpha = style.alpha
     }
-    
+
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }

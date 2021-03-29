@@ -22,12 +22,46 @@ let items = [
     TabItem(title: "tab 3", icon: UIImage(named: "icon 3")!)
 ]
 let tabs = TabsView(tabItems: items)
-tabs.selectTabItem(at: 0)
 ```
 
 You can reset the `items`  at your discretion. Every time you set this property, the tab items will automatically reload.
 
-Set a delegate for the component if you want to be notified when a item is selected. Also, you can call `selectTabItem(at: NSIndexPath)` to programmatically select a particular item.
+Set a delegate for the component if you want to be notified when a item is selected. 
+
+```swift
+func tabsView(_ tabsView: TabsView, didSelectTab tab: TabItem)
+```
+### Reload items
+
+A new list of Items can be displayed, replacing the previous list of components. 
+
+```swift
+let dataset: [TabItem] = [
+    TabItem(title: "Movistar Spain eSports 2021", icon: .tagsIcon),
+    TabItem(title: "Movies", icon: .buttonsIcon)
+] 
+tabs.reload(with: dataset)
+```
+
+### Update item
+
+From the current list, any item can be updated by changing the name or icon. It is only necessary to indicate the `TabItem` to change and indicate the new one. 
+
+```swift
+let newSelectedTabItem = TabItem(
+    title: title,
+    icon: icon
+)
+tabs.update(currentSelectedTabItems, newTabItem: newSelectedTabItem)
+```
+
+### Remove item
+
+To delete an item, it is only necessary to indicate the corresponding `TabItem`. 
+
+```swift
+tabs.remove(currentSelectedTabItems)
+```
 
 ### Interface Builder
 

@@ -174,4 +174,3 @@ public enum MovistarColorPalette {
     public static let darkModeMovistarBlueDark = UIColor(hex: "#4C7389")!
     public static let darkModeMovistarGreenDark = UIColor(hex: "#637951")!
     public static let darkModePepperDark = UIColor(hex: "#8C5A5E")!
-    public static let movistarGreenLight10 = UIColor(hex: "#F1F8EB")!}

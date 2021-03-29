@@ -54,7 +54,7 @@ public class TabItemViewCell: UICollectionViewCell {
 
     private lazy var title: UILabel = {
         let label = UILabel()
-        label.font = .textPreset8(weight: .medium)
+        label.font = .textPreset3(weight: .regular)
         label.backgroundColor = .clear
         label.lineBreakMode = .byTruncatingTail
         return label

@@ -391,7 +391,7 @@ public class InputField: UIView {
         let height = container.intrinsicContentSize.height
         return CGSize(width: width, height: height)
     }
-    
+
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }

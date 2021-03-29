@@ -16,7 +16,7 @@ struct O2Colors: Colors {
     let backgroundBrand = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
     let backgroundOverlay = O2ColorPalette.grey6 /* alpha 60% */ | O2ColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = O2ColorPalette.grey1 | O2ColorPalette.darkModeGrey6
-    let backgroundSkeletonInverse = O2ColorPalette.white.withAlphaComponent(0.2)  | O2ColorPalette.darkModeGrey6
+    let backgroundSkeletonInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.darkModeGrey6
     let navigationBarBackground = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
     let backgroundAlternative = O2ColorPalette.grey1 | O2ColorPalette.darkModeGrey
     let backgroundFeedbackBottom = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
@@ -28,7 +28,7 @@ struct O2Colors: Colors {
     let borderDark = O2ColorPalette.grey5 | O2ColorPalette.grey5
     let borderSelected = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
 
-    //BUTTONS
+    // BUTTONS
     let buttonDangerBackground = O2ColorPalette.pepper
     let buttonDangerBackgroundDisabled = O2ColorPalette.pepperLight30 | O2ColorPalette.darkModeGrey
     let buttonDangerBackgroundSelected = O2ColorPalette.pepperDark
@@ -71,7 +71,7 @@ struct O2Colors: Colors {
     let textLinkDisabled = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.grey5
     let textLinkSnackbar = O2ColorPalette.o2BluePrimaryLight50
 
-    //CONTROLS
+    // CONTROLS
     let control = O2ColorPalette.grey3 | O2ColorPalette.darkModeGrey6
     let controlActivated = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimaryLight50
     let controlError = O2ColorPalette.pepper
@@ -80,17 +80,17 @@ struct O2Colors: Colors {
     let loadingBarBackgroundInverse = O2ColorPalette.grey1 | O2ColorPalette.grey1
     let loadingBarInverse = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
 
-    //DIVIDERS
+    // DIVIDERS
     let divider = O2ColorPalette.grey2 | O2ColorPalette.darkModeGrey
-    let dividerInverse = O2ColorPalette.white.withAlphaComponent(0.2) |  O2ColorPalette.darkModeGrey
+    let dividerInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.darkModeGrey
     let navigationBarDivider = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
 
-    //FEEDBACKS
+    // FEEDBACKS
     let badge = O2ColorPalette.pepperDark
     let feedbackErrorBackground = O2ColorPalette.pepper
     let feedbackInfoBackground = O2ColorPalette.grey6 | O2ColorPalette.darkModeGrey6
 
-    //GLOBAL
+    // GLOBAL
     let brand = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimaryLight50
     let brandDark = O2ColorPalette.o2BluePrimaryDark | O2ColorPalette.darkModeGrey6
     let inverse = O2ColorPalette.white | O2ColorPalette.grey2
@@ -107,12 +107,12 @@ struct O2Colors: Colors {
     let textDisabled = O2ColorPalette.grey3 | O2ColorPalette.grey5
     let textAmount = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimaryLight10
 
-    //STATES
+    // STATES
     let error = O2ColorPalette.pepper
     let success = O2ColorPalette.o2Green
     let warning = O2ColorPalette.o2Orange
 
-    //BARS TEXTS
+    // BARS TEXTS
     let textNavigationBarPrimary = O2ColorPalette.white | O2ColorPalette.grey2
     let textNavigationBarSecondary = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.grey4
     let textNavigationSearchBarHint = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.grey4
@@ -162,7 +162,7 @@ public enum O2ColorPalette {
     public static let grey5 = UIColor(hex: "#707070")!
     public static let grey6 = UIColor(hex: "#000033")!
     public static let white = UIColor(hex: "#FFFFFF")!
-    
+
     public static let darkModeBlack = UIColor(hex: "#191919")!
     public static let darkModeGrey = UIColor(hex: "#242424")!
     public static let darkModeGrey6 = UIColor(hex: "#313235")!

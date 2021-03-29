@@ -225,7 +225,7 @@ open class ListViewCell: UITableViewCell {
             centerSection.isUserInteractionEnabled = isUserInteractionEnabled
         }
     }
-    
+
     override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }

@@ -168,7 +168,7 @@ open class Button: UIControl {
         guard !isLoading else { return nil }
         return super.hitTest(point, with: event)
     }
-    
+
     override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }

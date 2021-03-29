@@ -191,7 +191,7 @@ public class HighlightedCard: UIView {
 
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        
+
         if traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory {
             updateFonts()
             updateRightImageViewVisibility()

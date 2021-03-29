@@ -18,7 +18,8 @@ import UIKit
     case textPreset6
     case textPreset7
     case textPreset8
-    case textSystem
+    case textPreset9
+    case textPreset10
 
     func preferredFont(weight: UIFont.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         let horizontalSizeClass = UIScreen.main.traitCollection.horizontalSizeClass
@@ -51,8 +52,10 @@ import UIKit
             return "TextPreset7"
         case .textPreset8:
             return "TextPreset8"
-        case .textSystem:
-            return "TextSystem"
+        case .textPreset9:
+            return "TextPreset9"
+        case .textPreset10:
+            return "TextPreset10"
         }
     }
 }
@@ -65,23 +68,25 @@ private extension FontStyle {
     var baseSize: CGFloat {
         switch self {
         case .textPreset1:
-            return 32
-        case .textPreset2:
-            return 28
-        case .textPreset3:
-            return 24
-        case .textPreset4:
-            return 22
-        case .textPreset5:
-            return 18
-        case .textPreset6:
-            return 16
-        case .textPreset7:
-            return 14
-        case .textPreset8:
             return 12
-        case .textSystem:
-            return 10
+        case .textPreset2:
+            return 14
+        case .textPreset3:
+            return 16
+        case .textPreset4:
+            return 18
+        case .textPreset5:
+            return 22
+        case .textPreset6:
+            return 24
+        case .textPreset7:
+            return 28
+        case .textPreset8:
+            return 32
+        case .textPreset9:
+            return 32
+        case .textPreset10:
+            return 32
         }
     }
 
@@ -146,13 +151,14 @@ private extension FontStyle {
              .textPreset2,
              .textPreset3,
              .textPreset4:
-            return 0
+            return 2
         case .textPreset5,
              .textPreset6,
              .textPreset7,
              .textPreset8,
-             .textSystem:
-            return 2
+             .textPreset9,
+             .textPreset10:
+            return 0
         }
     }
 }

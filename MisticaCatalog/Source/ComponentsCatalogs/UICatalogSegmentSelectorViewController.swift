@@ -55,7 +55,7 @@ private class DatasetCell: UITableViewCell {
             title.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
         title.numberOfLines = 0
-        title.font = .textPreset6(weight: .regular)
+        title.font = .textPreset3(weight: .regular)
     }
 
     @available(*, unavailable)

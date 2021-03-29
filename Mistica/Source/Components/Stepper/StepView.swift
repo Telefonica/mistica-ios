@@ -103,7 +103,7 @@ class StepView: UIView {
         super.layoutSubviews()
         circularView.makeRounded()
     }
-    
+
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }

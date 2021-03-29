@@ -20,6 +20,7 @@ struct MovistarColors: Colors {
     var navigationBarBackground: UIColor {
         UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) | MovistarColorPalette.darkModeBlack
     }
+
     let backgroundAlternative = MovistarColorPalette.grey1 | MovistarColorPalette.darkModeGrey // (seguramente mejor darkModeBlack)
     let backgroundFeedbackBottom = MovistarColorPalette.movistarBlue | MovistarColorPalette.darkModeBlack
     let skeletonWave = MovistarColorPalette.grey2 | MovistarColorPalette.grey5
@@ -121,6 +122,7 @@ struct MovistarColors: Colors {
     var textNavigationBarSecondary: UIColor {
         UIColor(MovistarColorPalette.movistarBlueLight30, variants: [.prominent: MovistarColorPalette.movistarProminentBlueLight20]) | MovistarColorPalette.grey4
     }
+
     let textNavigationSearchBarHint = MovistarColorPalette.movistarBlueLight30 | MovistarColorPalette.grey4 // iOS only
     let textNavigationSearchBarText = MovistarColorPalette.white // iOS only
     let textAppBar = MovistarColorPalette.grey4 | MovistarColorPalette.grey5
@@ -168,9 +170,11 @@ public enum MovistarColorPalette {
     public static let movistarProminentBlueLight20 = UIColor(hex: "#CED3D7")!
     public static let movistarProminentBlueLight50 = UIColor(hex: "#85939C")!
     public static let movistarProminentBlueLight70 = UIColor(hex: "#546874")!
-    
+
     public static let darkModeBlack = UIColor(hex: "#191919")!
     public static let darkModeGrey = UIColor(hex: "#242424")!
     public static let darkModeMovistarBlueDark = UIColor(hex: "#4C7389")!
     public static let darkModeMovistarGreenDark = UIColor(hex: "#637951")!
     public static let darkModePepperDark = UIColor(hex: "#8C5A5E")!
+    public static let movistarGreenLight10 = UIColor(hex: "#F1F8EB")!
+}

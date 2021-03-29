@@ -112,7 +112,7 @@ public class SegmentSelector: UIView {
             setUpSegmentsContentMode(for: traitCollection)
             setUpLayout(for: segmentsContentMode)
         }
-        
+
         if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
             themeDidChange()
         }

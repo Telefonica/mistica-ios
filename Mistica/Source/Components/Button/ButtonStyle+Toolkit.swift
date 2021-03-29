@@ -22,7 +22,7 @@ public extension Button.Style {
     private static var linkMinimumWidth: CGFloat = 0
 
     static var primary: Button.Style {
-        return Button.Style(
+        Button.Style(
             allowsBleedingAlignment: false,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground),

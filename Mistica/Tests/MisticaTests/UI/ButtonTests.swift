@@ -23,56 +23,56 @@ final class ButtonTests: XCTestCase {
     // MARK: Regular Buttons
 
     func testRegularSizeWithPrimaryStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: false)
         )
     }
 
     func testRegularSizeWithPrimaryClearStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .primaryClear, isSmall: false)
         )
     }
 
     func testRegularSizeWithPrimaryInverseStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .primaryInverse, isSmall: false)
         )
     }
 
     func testRegularSizeWithSecondaryStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .secondary, isSmall: false)
         )
     }
 
     func testRegularSizeWithSecondaryInverseStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .secondaryInverse, isSmall: false)
         )
     }
 
     func testRegularSizeWithDangerStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .danger, isSmall: false)
         )
     }
 
     func testRegularSizeWithLinkStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: false)
         )
     }
 
     func testRegularSizeWithLinkInverseStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: false)
         )
@@ -81,56 +81,56 @@ final class ButtonTests: XCTestCase {
     // MARK: Small Buttons
 
     func testSmallSizeWithPrimaryStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: true)
         )
     }
 
     func testSmallSizeWithPrimaryClearStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .primaryClear, isSmall: true)
         )
     }
 
     func testSmallSizeWithPrimaryInverseStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .primaryInverse, isSmall: true)
         )
     }
 
     func testSmallSizeWithSecondaryStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .secondary, isSmall: true)
         )
     }
 
     func testSmallSizeWithSecondaryInverseStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .secondaryInverse, isSmall: true)
         )
     }
 
     func testSmallSizeWithDangerStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .danger, isSmall: true)
         )
     }
 
     func testSmallSizeWithLinkStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: true)
         )
     }
 
     func testSmallSizeWithLinkInverseStyle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: true)
         )

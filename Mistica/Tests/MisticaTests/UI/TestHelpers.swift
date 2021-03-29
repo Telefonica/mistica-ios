@@ -12,7 +12,7 @@ import UIKit
 
 // MARK: - Public Helpers
 
-func assertSnapshotForAllBrands<Format>(
+func assertSnapshotForAllBrandsAndStyles<Format>(
     as snapshotting: Snapshotting<UIView, Format>,
     file: StaticString = #file,
     testName: String = #function,
@@ -54,7 +54,7 @@ extension UIView {
 
 // MARK: - Private Helpers
 
-private func _assertSnapshotForAllBrands<View, Format>(
+private func _assertSnapshotForAllBrands<View: UserInterfaceStyling, Format>(
     as snapshotting: Snapshotting<View, Format>,
     file: StaticString = #file,
     testName: String = #function,
@@ -63,7 +63,7 @@ private func _assertSnapshotForAllBrands<View, Format>(
 ) {
     for brand in BrandStyle.allCases {
         MisticaConfig.brandStyle = brand
-
+                
         assertSnapshot(
             matching: viewBuilder(),
             as: snapshotting,
@@ -72,5 +72,27 @@ private func _assertSnapshotForAllBrands<View, Format>(
             testName: testName,
             line: line
         )
+        
+        guard #available(iOSApplicationExtension 13.0, *) else { return }
+
+        var darkView = viewBuilder()
+        darkView.overrideUserInterfaceStyle = .dark
+
+        assertSnapshot(
+            matching: darkView,
+            as: snapshotting,
+            named: "with-\(brand)-dark-style",
+            file: file,
+            testName: testName,
+            line: line
+        )
     }
 }
+
+private protocol UserInterfaceStyling {
+    @available(iOS 13.0, *)
+    var overrideUserInterfaceStyle: UIUserInterfaceStyle { get set }
+}
+
+extension UIView: UserInterfaceStyling {}
+extension UIViewController: UserInterfaceStyling {}

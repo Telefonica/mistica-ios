@@ -69,7 +69,7 @@ jobs:
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
 
       - name: Build Mistica catalog and upload to AppCenter 
-        run:  bundle exec fastlane build_and_deploy_mistica_catalog CI:true
+        run:  bundle exec fastlane build_and_deploy_mistica_catalog
         env:
           APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
 

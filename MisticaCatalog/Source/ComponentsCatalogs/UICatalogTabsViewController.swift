@@ -172,7 +172,7 @@ extension UICatalogTabsViewController: TabsViewDelegate {
     public func tabsView(_ tabsView: TabsView, didSelectTab tabItem: TabItem) {
         currentSelectedRow = currentTabItems.firstIndex(where: { $0 == tabItem }) ?? 0
         tabItemSelectedTitleCell.textField.text = tabItem.title
-        tabItemSelectedIconCell.isOn = tabItem.icon == nil ? false : true
+        tabItemSelectedIconCell.isOn = tabItem.icon != nil
     }
 }
 

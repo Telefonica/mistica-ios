@@ -48,10 +48,7 @@ public class TabItemViewCell: UICollectionViewCell {
         return horizontalStack
     }()
 
-    private lazy var imageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
+    private lazy var imageView = UIImageView()
 
     private lazy var title: UILabel = {
         let label = UILabel()

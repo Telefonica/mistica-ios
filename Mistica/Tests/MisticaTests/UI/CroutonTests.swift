@@ -19,7 +19,7 @@ final class CroutonTests: XCTestCase {
     }
 
     func testInfoCrouton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeCrouton(
                 withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -29,7 +29,7 @@ final class CroutonTests: XCTestCase {
     }
 
     func testInfoCroutonWithShortActionTitle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeCrouton(
                 withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -40,7 +40,7 @@ final class CroutonTests: XCTestCase {
     }
 
     func testInfoCroutonWithLongActionTitle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeCrouton(
                 withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -51,7 +51,7 @@ final class CroutonTests: XCTestCase {
     }
 
     func testCriticalCrouton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeCrouton(
                 withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -61,7 +61,7 @@ final class CroutonTests: XCTestCase {
     }
 
     func testCriticalCroutonWithShortActionTitle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeCrouton(
                 withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -72,7 +72,7 @@ final class CroutonTests: XCTestCase {
     }
 
     func testCriticalCroutonWithLongActionTitle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeCrouton(
                 withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

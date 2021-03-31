@@ -12,38 +12,6 @@ import UIKit
 
 // MARK: - Public Helpers
 
-func assertSnapshotForAllBrandsAndStyles<Format>(
-    as snapshotting: Snapshotting<UIView, Format>,
-    file: StaticString = #file,
-    testName: String = #function,
-    line: UInt = #line,
-    viewBuilder: @autoclosure () -> UIView
-) {
-    _assertSnapshotForAllBrands(
-        as: snapshotting,
-        file: file,
-        testName: testName,
-        line: line,
-        viewBuilder: viewBuilder()
-    )
-}
-
-func assertSnapshotForAllBrands<Format>(
-    as snapshotting: Snapshotting<UIViewController, Format>,
-    file: StaticString = #file,
-    testName: String = #function,
-    line: UInt = #line,
-    viewBuilder: @autoclosure () -> UIViewController
-) {
-    _assertSnapshotForAllBrands(
-        as: snapshotting,
-        file: file,
-        testName: testName,
-        line: line,
-        viewBuilder: viewBuilder()
-    )
-}
-
 extension UIView {
     func asRootOfViewController() -> UIViewController {
         let vc = UIViewController()
@@ -52,9 +20,9 @@ extension UIView {
     }
 }
 
-// MARK: - Private Helpers
+// MARK: - Helpers
 
-private func _assertSnapshotForAllBrands<View: UserInterfaceStyling, Format>(
+func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     as snapshotting: Snapshotting<View, Format>,
     file: StaticString = #file,
     testName: String = #function,
@@ -89,7 +57,7 @@ private func _assertSnapshotForAllBrands<View: UserInterfaceStyling, Format>(
     }
 }
 
-private protocol UserInterfaceStyling {
+protocol UserInterfaceStyling {
     @available(iOS 13.0, *)
     var overrideUserInterfaceStyle: UIUserInterfaceStyle { get set }
 }

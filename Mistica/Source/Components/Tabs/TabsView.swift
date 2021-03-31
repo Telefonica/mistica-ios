@@ -94,8 +94,8 @@ public extension TabsView {
         guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
         tabsItems[index] = newTabItem
         let indexPath = IndexPath(item: index, section: 0)
-        
-        collectionView.performBatchUpdates{
+
+        collectionView.performBatchUpdates {
             collectionView.reloadItems(at: [indexPath])
         }
     }
@@ -154,12 +154,12 @@ private extension TabsView {
         guard row < tabsItems.count else { return }
         let indexPath = IndexPath(item: row, section: 0)
         firstIndexPathForSelectedItem = indexPath
-        
+
         if let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell {
             tabItemView.showSelected()
             tabItemView.isSelected = true
         }
-        
+
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
         collectionView.setNeedsLayout()
 

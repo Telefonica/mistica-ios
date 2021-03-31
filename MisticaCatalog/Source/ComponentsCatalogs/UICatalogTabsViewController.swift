@@ -30,7 +30,8 @@ class UICatalogTabsViewController: UIViewController {
         cell.textField.addTarget(
             self,
             action: #selector(tabItemSelectedTitleEditingDidEndOnExit(_:)),
-            for: .editingDidEndOnExit)
+            for: .editingDidEndOnExit
+        )
         return cell
     }()
 
@@ -53,6 +54,7 @@ class UICatalogTabsViewController: UIViewController {
     private var currentSelectedTabItems: TabItem {
         currentTabItems[currentSelectedRow]
     }
+
     private var currentTabItems = TabsDataset.twoItems.tabItems
     private var currentSelectedRow: Int = 0
     private let tabs: TabsView
@@ -103,7 +105,7 @@ class UICatalogTabsViewController: UIViewController {
             icon: currentSelectedTabItems.icon
         )
     }
-    
+
     @objc func tabItemSelectedTitleEditingDidEndOnExit(_ textField: UITextField) {
         textField.resignFirstResponder()
     }

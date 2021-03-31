@@ -18,7 +18,7 @@ public class TabItemViewCell: UICollectionViewCell {
         static let heightDivider: CGFloat = 2
         static let minimumItemWidthForLargeScreen: CGFloat = 208.0
     }
-    
+
     private lazy var verticalStack: UIStackView = {
         let verticalStack = UIStackView(arrangedSubviews: [horizontalStack, selectedLine])
         verticalStack.backgroundColor = .clear
@@ -132,7 +132,7 @@ private extension TabItemViewCell {
     func commomInit() {
         contentView.backgroundColor = .clear
         backgroundColor = .clear
-        
+
         contentView.addSubview(verticalStack, constraints: [
             verticalStack.topAnchor.constraint(equalTo: contentView.topAnchor),
             verticalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),

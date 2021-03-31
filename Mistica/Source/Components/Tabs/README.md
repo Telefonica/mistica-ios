@@ -26,7 +26,7 @@ let tabs = TabsView(tabItems: items)
 
 You can reset the `items`  at your discretion. Every time you set this property, the tab items will automatically reload.
 
-Set a delegate for the component if you want to be notified when a item is selected. 
+Set a delegate for the component if you want to be notified when an item is selected. 
 
 ```swift
 func tabsView(_ tabsView: TabsView, didSelectTab tab: TabItem)
@@ -60,7 +60,8 @@ tabs.update(currentSelectedTabItems, newTabItem: newSelectedTabItem)
 To delete an item, it is only necessary to indicate the corresponding `TabItem`. 
 
 ```swift
-tabs.remove(currentSelectedTabItems)
+let itemIndexToRemove = 3
+tabs.remove(itemIndexToRemove)
 ```
 
 ### Interface Builder
@@ -76,7 +77,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tabsView.reload(with: [
             TabItem(title: "tab 1", icon: UIImage(named: "icon 1")!),
-            TabItem(title: "tab 2", icon: UIImage(named: "icon 2")!)
+            TabItem(title: "tab 2", icon: UIImage(named: "icon 2")!),
+            TabItem(title: "tab without icon")
         ])
     }
 }
@@ -91,6 +93,6 @@ Width is also fixed to the width of the screen. TabItemViewCell's width will cha
 
 Cases:
     - 2 items: Tab width will be 50% of `TabsView` width. No matter long or short texts.
-    - 3 items: Tabs
+    - 3 items: The width of each Tabs will be distributed proportionally between each Tab, in this case 33%.
     - More items: `TabsView` will enable horizontal scroll. TabItemViewCell will have a maximum width constraint of 280 points.
 

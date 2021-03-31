@@ -14,10 +14,11 @@ public class TabItemViewCell: UICollectionViewCell {
         static let innerPadding: CGFloat = 16
         static let bottomPadding: CGFloat = innerPadding - heightDivider
         static let iconAndTextSpace: CGFloat = 8
+        static let iconSize: CGFloat = 24
         static let heightDivider: CGFloat = 2
-        static let minimumItemWidthForIpad: CGFloat = 208.0
+        static let minimumItemWidthForLargeScreen: CGFloat = 208.0
     }
-
+    
     private lazy var verticalStack: UIStackView = {
         let verticalStack = UIStackView(arrangedSubviews: [horizontalStack, selectedLine])
         verticalStack.backgroundColor = .clear
@@ -66,8 +67,12 @@ public class TabItemViewCell: UICollectionViewCell {
         return selectedLine
     }()
 
-    public lazy var minimumWidthConstraintForIpad = {
-        contentView.widthAnchor.constraint(greaterThanOrEqualToConstant: Constants.minimumItemWidthForIpad)
+    private lazy var minimumWidthConstraintForLargeScreen = {
+        contentView.widthAnchor.constraint(greaterThanOrEqualToConstant: Constants.minimumItemWidthForLargeScreen)
+    }()
+
+    private lazy var imageViewWidthConstraint = {
+        imageView.widthAnchor.constraint(equalToConstant: Constants.iconSize)
     }()
 
     override init(frame: CGRect) {
@@ -99,11 +104,16 @@ extension TabItemViewCell {
         }
         set {
             imageView.image = newValue
+            if newValue == nil {
+                imageViewWidthConstraint.constant = 0
+            } else {
+                imageViewWidthConstraint.constant = Constants.iconSize
+            }
         }
     }
 
-    func isActiveMinimumWidthConstraintForIpad(_ active: Bool) {
-        minimumWidthConstraintForIpad.isActive = active
+    func activeMinimumWidthConstraint(_ isActive: Bool) {
+        minimumWidthConstraintForLargeScreen.isActive = isActive
     }
 
     func showSelected() {
@@ -125,7 +135,7 @@ private extension TabItemViewCell {
     func commomInit() {
         contentView.backgroundColor = .clear
         backgroundColor = .clear
-
+        
         contentView.addSubview(verticalStack, constraints: [
             verticalStack.topAnchor.constraint(equalTo: contentView.topAnchor),
             verticalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -134,7 +144,9 @@ private extension TabItemViewCell {
             selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
             selectedLine.widthAnchor.constraint(equalTo: verticalStack.widthAnchor),
             contentView.heightAnchor.constraint(equalToConstant: Constants.cellHeight),
-            minimumWidthConstraintForIpad
+            imageViewWidthConstraint,
+            imageView.heightAnchor.constraint(equalToConstant: Constants.iconSize),
+            minimumWidthConstraintForLargeScreen
         ])
         setUpAccessibility()
     }

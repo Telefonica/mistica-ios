@@ -25,9 +25,9 @@ final class TabsTests: XCTestCase {
         ]
 
         static let threeItemWithoutIcon = [
-            TabItem(title: "Movies", icon: nil, accessibilityIdentifier: nil),
-            TabItem(title: "Phone", icon: nil, accessibilityIdentifier: nil),
-            TabItem(title: "Offers", icon: nil, accessibilityIdentifier: nil)
+            TabItem(title: "Movies", accessibilityIdentifier: nil),
+            TabItem(title: "Phone", accessibilityIdentifier: nil),
+            TabItem(title: "Offers", accessibilityIdentifier: nil)
         ]
 
         static let threeItem = [
@@ -37,9 +37,9 @@ final class TabsTests: XCTestCase {
         ]
 
         static let threeItemWithLongTextAndNoIcon = [
-            TabItem(title: Constants.longText, icon: nil, accessibilityIdentifier: nil),
-            TabItem(title: Constants.longText, icon: nil, accessibilityIdentifier: nil),
-            TabItem(title: Constants.longText, icon: nil, accessibilityIdentifier: nil)
+            TabItem(title: Constants.longText, accessibilityIdentifier: nil),
+            TabItem(title: Constants.longText, accessibilityIdentifier: nil),
+            TabItem(title: Constants.longText, accessibilityIdentifier: nil)
         ]
 
         static let threeItemWithLongText = [

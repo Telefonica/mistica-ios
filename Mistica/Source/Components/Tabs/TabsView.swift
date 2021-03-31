@@ -59,10 +59,6 @@ public class TabsView: UIView {
 
     private var firstIndexPathForSelectedItem: IndexPath?
 
-    var widthOfScreen: CGFloat {
-        frame.width
-    }
-
     private var tabsItems: [TabItem] = []
 
     public weak var delegate: TabsViewDelegate?
@@ -98,18 +94,21 @@ public extension TabsView {
         guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
         tabsItems[index] = newTabItem
         let indexPath = IndexPath(item: index, section: 0)
-        collectionView.reloadItems(at: [indexPath])
-        collectionView.performBatchUpdates(nil) { _ in
-            self.selectTabItem(at: indexPath)
+        
+        collectionView.performBatchUpdates{
+            collectionView.reloadItems(at: [indexPath])
         }
     }
 
-    func remove(_ tabItem: TabItem) {
-        guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
+    func remove(_ index: Int) {
+        guard index < tabsItems.count else { return }
         tabsItems.remove(at: index)
-        collectionView.reloadData()
-        collectionView.performBatchUpdates(nil) { _ in
-            self.selectTabItem(at: IndexPath(item: 0, section: 0))
+        collectionView.performBatchUpdates {
+            let indexPath = IndexPath(item: index, section: 0)
+            collectionView.deleteItems(at: [indexPath])
+        } completion: { _ in
+            self.deselectTabItem(at: index)
+            self.selectTabItem(at: max(0, index - 1))
         }
     }
 }
@@ -151,21 +150,29 @@ private extension TabsView {
         ])
     }
 
-    func selectTabItem(at indexPath: IndexPath) {
-        guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell else { return }
-        let tabItem = tabsItems[indexPath.item]
-        tabItemView.showSelected()
-        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        tabItemView.isSelected = true
+    func selectTabItem(at row: Int) {
+        guard row < tabsItems.count else { return }
+        let indexPath = IndexPath(item: row, section: 0)
         firstIndexPathForSelectedItem = indexPath
+        
+        if let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell {
+            tabItemView.showSelected()
+            tabItemView.isSelected = true
+        }
+        
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        collectionView.setNeedsLayout()
+
+        let tabItem = tabsItems[row]
         delegate?.tabsView(self, didSelectTab: tabItem)
     }
 
-    func deselectTabItem(at indexPath: IndexPath) {
-        guard let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell else {
-            return
+    func deselectTabItem(at row: Int) {
+        let indexPath = IndexPath(item: row, section: 0)
+        if let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell {
+            tabItemView.showDeselected()
+            tabItemView.isSelected = false
         }
-        tabItemView.showDeselected()
     }
 
     func reloadContent() {
@@ -201,11 +208,11 @@ extension TabsView: UICollectionViewDataSource {
         tabItemView.icon = tabItem.icon
         tabItemView.accessibilityIdentifier = tabItem.accessibilityIdentifier
 
-        let isIpad = widthOfScreen >= Constants.minimumWidthForIpad
-        tabItemView.isActiveMinimumWidthConstraintForIpad(isIpad)
+        let hasLargeScreen = frame.width >= Constants.minimumWidthForIpad
+        tabItemView.activeMinimumWidthConstraint(hasLargeScreen)
 
         if indexPath == firstIndexPathForSelectedItem || firstIndexPathForSelectedItem == nil {
-            collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
+            collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
             firstIndexPathForSelectedItem = indexPath
             tabItemView.showSelected()
             tabItemView.isSelected = true
@@ -226,11 +233,11 @@ extension TabsView: UICollectionViewDelegate {
     }
 
     public func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectTabItem(at: indexPath)
+        selectTabItem(at: indexPath.row)
     }
 
     public func collectionView(_: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        deselectTabItem(at: indexPath)
+        deselectTabItem(at: indexPath.row)
     }
 }
 
@@ -250,7 +257,7 @@ extension TabsView: UILargeContentViewerInteractionDelegate {
         guard let cell = item as? TabItemViewCell,
               let indexPath = collectionView.indexPath(for: cell) else { return }
 
-        selectTabItem(at: indexPath)
+        selectTabItem(at: indexPath.row)
     }
 }
 
@@ -259,7 +266,7 @@ extension TabsView: UILargeContentViewerInteractionDelegate {
 extension TabsView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if tabsItems.count <= Constants.maximuItemWithFixSize {
-            let width: CGFloat = min(Constants.maximumWidthItem, widthOfScreen / CGFloat(tabsItems.count))
+            let width: CGFloat = min(Constants.maximumWidthItem, frame.width / CGFloat(tabsItems.count))
             return CGSize(width: width, height: Constants.componentHeight)
         } else {
             return layout.itemSize

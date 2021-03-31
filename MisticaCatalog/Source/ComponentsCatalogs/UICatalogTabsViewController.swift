@@ -13,24 +13,31 @@ import UIKit
 
 class UICatalogTabsViewController: UIViewController {
     enum Constants {
+        static let headerTitle = "Tabs"
         static let defaultIcon = UIImage.tabsIcon
+        static let iconTitle = "Show icon"
+        static let removeItemButtonTitle = "Remove Item"
     }
 
     private lazy var tabItemSelectedTitleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "tabItemSelectedTitleCell")
-        cell.textField.text = currentSelectedTabItems?.title
+        cell.textField.text = currentSelectedTabItems.title
         cell.textField.addTarget(
             self,
             action: #selector(tabItemSelectedTitleDidChange(_:)),
             for: .editingChanged
         )
+        cell.textField.addTarget(
+            self,
+            action: #selector(tabItemSelectedTitleEditingDidEndOnExit(_:)),
+            for: .editingDidEndOnExit)
         return cell
     }()
 
     private lazy var tabItemSelectedIconCell: UISwitchTableViewCell = {
         let cell = UISwitchTableViewCell(reuseIdentifier: "tabItemSelectedIconCell")
-        cell.isOn = currentSelectedTabItems?.icon != nil ? true : false
-        cell.textLabel?.text = "Show icon"
+        cell.isOn = currentSelectedTabItems.icon != nil ? true : false
+        cell.textLabel?.text = Constants.iconTitle
         cell.didValueChange = tabItemSelectedIconDidChange
         return cell
     }()
@@ -38,13 +45,16 @@ class UICatalogTabsViewController: UIViewController {
     private lazy var removeTabItemSelectedCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "removeTabsItemSelectedCell")
         cell.textLabel?.textColor = .buttonDangerBackground
-        cell.textLabel?.text = "Remove Item"
+        cell.textLabel?.text = Constants.removeItemButtonTitle
         return cell
     }()
 
     private let keyboardNotificationCenter = KeyboardNotificationCenter()
+    private var currentSelectedTabItems: TabItem {
+        currentTabItems[currentSelectedRow]
+    }
     private var currentTabItems = TabsDataset.twoItems.tabItems
-    private var currentSelectedTabItems: TabItem?
+    private var currentSelectedRow: Int = 0
     private let tabs: TabsView
     private let optionsTable: UITableView
     private let datasetsCells: [TabsDataset] = [
@@ -68,7 +78,6 @@ class UICatalogTabsViewController: UIViewController {
             optionsTable = UITableView(frame: .zero, style: .grouped)
         }
         tabs = TabsView(tabItems: currentTabItems)
-        currentSelectedTabItems = currentTabItems.first
 
         super.init(nibName: nil, bundle: nil)
 
@@ -83,21 +92,23 @@ class UICatalogTabsViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = []
-        title = "Tabs"
+        title = Constants.headerTitle
 
         setUp()
     }
 
     @objc func tabItemSelectedTitleDidChange(_ textField: UITextField) {
-        guard let currentSelectedTabItems = self.currentSelectedTabItems else { return }
         updateCurrentSelectedTabItem(
             withTitle: textField.text ?? "",
             icon: currentSelectedTabItems.icon
         )
     }
+    
+    @objc func tabItemSelectedTitleEditingDidEndOnExit(_ textField: UITextField) {
+        textField.resignFirstResponder()
+    }
 
     func tabItemSelectedIconDidChange(_ switch: UISwitch) {
-        guard let currentSelectedTabItems = self.currentSelectedTabItems else { return }
         let icon = `switch`.isOn ? Constants.defaultIcon : nil
         updateCurrentSelectedTabItem(
             withTitle: currentSelectedTabItems.title,
@@ -140,7 +151,8 @@ extension UICatalogTabsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case(Section.dataSet.rawValue, let index):
-            tabs.reload(with: datasetsCells[index].tabItems)
+            currentTabItems = datasetsCells[index].tabItems
+            tabs.reload(with: currentTabItems)
         case (Section.tabItemSelected.rawValue, 2):
             removeTabItem()
         default:
@@ -156,7 +168,7 @@ extension UICatalogTabsViewController: UITableViewDelegate {
 
 extension UICatalogTabsViewController: TabsViewDelegate {
     public func tabsView(_ tabsView: TabsView, didSelectTab tabItem: TabItem) {
-        currentSelectedTabItems = tabItem
+        currentSelectedRow = currentTabItems.firstIndex(where: { $0 == tabItem }) ?? 0
         tabItemSelectedTitleCell.textField.text = tabItem.title
         tabItemSelectedIconCell.isOn = tabItem.icon == nil ? false : true
     }
@@ -252,18 +264,18 @@ private extension UICatalogTabsViewController {
     }
 
     func removeTabItem() {
-        guard let currentSelectedTabItems = currentSelectedTabItems else { return }
-        tabs.remove(currentSelectedTabItems)
+        guard currentTabItems.count > 1 else { return }
+        currentTabItems.remove(at: currentSelectedRow)
+        tabs.remove(currentSelectedRow)
     }
 
     func updateCurrentSelectedTabItem(withTitle title: String, icon: UIImage?) {
-        guard let currentSelectedTabItems = self.currentSelectedTabItems else { return }
         let newSelectedTabItem = TabItem(
             title: title,
             icon: icon
         )
         tabs.update(currentSelectedTabItems, newTabItem: newSelectedTabItem)
-        self.currentSelectedTabItems = newSelectedTabItem
+        currentTabItems[currentSelectedRow] = newSelectedTabItem
     }
 
     func startListeningKeyboardNotifications() {

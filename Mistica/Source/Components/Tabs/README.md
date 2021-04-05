@@ -45,14 +45,14 @@ tabs.reload(with: dataset)
 
 ### Update item
 
-From the current list, any item can be updated by changing the name or icon. It is only necessary to indicate the `TabItem` to change and indicate the new one. 
+From the current list, any item can be updated by changing the name or icon. It is only necessary to indicate the `index` to change and indicate the new `Tabitem`. 
 
 ```swift
 let newSelectedTabItem = TabItem(
     title: title,
     icon: icon
 )
-tabs.update(currentSelectedTabItems, newTabItem: newSelectedTabItem)
+tabs.update(newSelectedTabItem, at: 3)
 ```
 
 ### Remove item

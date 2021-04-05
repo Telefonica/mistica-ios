@@ -28,7 +28,6 @@ public class TabsView: UIView {
     private lazy var collectionView: UICollectionView = {
         var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.alwaysBounceHorizontal = false
@@ -88,18 +87,19 @@ public extension TabsView {
         delegate?.tabsView(self, didSelectTab: firstTabItem)
     }
 
-    func update(_ tabItem: TabItem, newTabItem: TabItem) {
-        guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
-        tabsItems[index] = newTabItem
+    func update(_ tabItem: TabItem, at index: Int) {
+        tabsItems[index] = tabItem
         let indexPath = IndexPath(item: index, section: 0)
 
         collectionView.performBatchUpdates {
             collectionView.reloadItems(at: [indexPath])
         }
     }
-
+    
     func remove(_ index: Int) {
-        guard index < tabsItems.count else { return }
+        guard index < tabsItems.count else {
+            fatalError("The index (\(index) and number of elements (\(tabsItems.count) don't match. ")
+        }
         tabsItems.remove(at: index)
         collectionView.performBatchUpdates {
             let indexPath = IndexPath(item: index, section: 0)
@@ -149,17 +149,14 @@ private extension TabsView {
     }
 
     func selectTabItem(at row: Int) {
-        guard row < tabsItems.count else { return }
         let indexPath = IndexPath(item: row, section: 0)
         firstIndexPathForSelectedItem = indexPath
 
         if let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell {
             tabItemView.showSelected()
-            tabItemView.isSelected = true
         }
 
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-        collectionView.setNeedsLayout()
 
         let tabItem = tabsItems[row]
         delegate?.tabsView(self, didSelectTab: tabItem)
@@ -169,7 +166,6 @@ private extension TabsView {
         let indexPath = IndexPath(item: row, section: 0)
         if let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell {
             tabItemView.showDeselected()
-            tabItemView.isSelected = false
         }
     }
 
@@ -213,10 +209,8 @@ extension TabsView: UICollectionViewDataSource {
             collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
             firstIndexPathForSelectedItem = indexPath
             tabItemView.showSelected()
-            tabItemView.isSelected = true
         } else {
             tabItemView.showDeselected()
-            tabItemView.isSelected = false
         }
 
         return tabItemView

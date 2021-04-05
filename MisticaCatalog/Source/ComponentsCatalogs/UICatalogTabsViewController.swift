@@ -277,7 +277,7 @@ private extension UICatalogTabsViewController {
             title: title,
             icon: icon
         )
-        tabs.update(currentSelectedTabItems, newTabItem: newSelectedTabItem)
+        tabs.update(newSelectedTabItem, at: currentSelectedRow)
         currentTabItems[currentSelectedRow] = newSelectedTabItem
     }
 

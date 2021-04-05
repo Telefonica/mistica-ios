@@ -27,10 +27,10 @@ private enum UICatalogRow: Int, CaseIterable {
     case sectionTitle
     case segmentSelector
     case stepper
+    case tabs
     case tag
     case tooltip
     case viewStates
-    case tabs
 }
 
 private enum UICatalogSection: Int, CaseIterable {

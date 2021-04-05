@@ -21,8 +21,6 @@ public class TabItemViewCell: UICollectionViewCell {
 
     private lazy var verticalStack: UIStackView = {
         let verticalStack = UIStackView(arrangedSubviews: [horizontalStack, selectedLine])
-        verticalStack.backgroundColor = .clear
-        verticalStack.translatesAutoresizingMaskIntoConstraints = false
         verticalStack.axis = .vertical
         verticalStack.distribution = .fill
         verticalStack.alignment = .center
@@ -31,8 +29,6 @@ public class TabItemViewCell: UICollectionViewCell {
 
     private lazy var horizontalStack: UIStackView = {
         let horizontalStack = UIStackView(arrangedSubviews: [imageView, title])
-        horizontalStack.translatesAutoresizingMaskIntoConstraints = false
-        horizontalStack.backgroundColor = .clear
         horizontalStack.isLayoutMarginsRelativeArrangement = true
         horizontalStack.directionalLayoutMargins = NSDirectionalEdgeInsets(
             top: Constants.innerPadding,
@@ -40,7 +36,6 @@ public class TabItemViewCell: UICollectionViewCell {
             bottom: Constants.bottomPadding,
             trailing: Constants.innerPadding
         )
-        horizontalStack.backgroundColor = .clear
         horizontalStack.axis = .horizontal
         horizontalStack.distribution = .fill
         horizontalStack.alignment = .fill
@@ -48,7 +43,7 @@ public class TabItemViewCell: UICollectionViewCell {
         return horizontalStack
     }()
 
-    private lazy var imageView = UIImageView()
+    private lazy var imageView = IntrinsictImageView()
 
     private lazy var title: UILabel = {
         let label = UILabel()

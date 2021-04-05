@@ -121,6 +121,7 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 * [SegmentSelector](./Mistica/Source/Components/SegmentSelector/)
 * [Stepper](./Mistica/Source/Components/Stepper/)
 * [Switch](./Mistica/Source/Components/Switch/)
+* [Tabs](./Mistica/Source/Components/Tabs)
 * [Tag](./Mistica/Source/Components/Tag/)
 * [ViewStates](./Mistica/Source/Components/ViewStates/)
 

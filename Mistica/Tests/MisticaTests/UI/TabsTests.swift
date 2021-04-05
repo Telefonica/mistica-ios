@@ -197,7 +197,7 @@ extension UIImage {
     static let antenna = generateImage("antenna.radiowaves.left.and.right")
 
     static func generateImage(_ name: String) -> UIImage? {
-        if #available(iOSApplicationExtension 13.0, *) {
+        if #available(iOS 13.0, *) {
             return UIImage(systemName: name)
         } else {
             return nil

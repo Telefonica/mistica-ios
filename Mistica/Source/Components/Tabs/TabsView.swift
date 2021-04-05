@@ -81,15 +81,13 @@ public class TabsView: UIView {
 // MARK: - Public
 
 public extension TabsView {
-    func reload(with tabItems: [TabItem]) {
-        tabsItems = tabItems
+    func reload(with tabsItems: [TabItem]) {
+        self.tabsItems = tabsItems
         reloadContent()
-        collectionView.performBatchUpdates(nil) { _ in
-            guard let firstTabItem = tabItems.first else { return }
-            self.delegate?.tabsView(self, didSelectTab: firstTabItem)
-        }
+        guard let firstTabItem = tabsItems.first else { return }
+        delegate?.tabsView(self, didSelectTab: firstTabItem)
     }
-
+    
     func update(_ tabItem: TabItem, newTabItem: TabItem) {
         guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
         tabsItems[index] = newTabItem

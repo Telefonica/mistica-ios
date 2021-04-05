@@ -17,6 +17,7 @@ class UICatalogTabsViewController: UIViewController {
         static let defaultIcon = UIImage.tabsIcon
         static let iconTitle = "Show icon"
         static let removeItemButtonTitle = "Remove Item"
+        static let minimumNumberOfTabs = 2
     }
 
     private lazy var tabItemSelectedTitleCell: UITextFieldTableViewCell = {
@@ -266,7 +267,7 @@ private extension UICatalogTabsViewController {
     }
 
     func removeTabItem() {
-        guard currentTabItems.count > 1 else { return }
+        guard currentTabItems.count > Constants.minimumNumberOfTabs else { return }
         currentTabItems.remove(at: currentSelectedRow)
         tabs.remove(currentSelectedRow)
     }

@@ -87,7 +87,7 @@ public extension TabsView {
         guard let firstTabItem = tabsItems.first else { return }
         delegate?.tabsView(self, didSelectTab: firstTabItem)
     }
-    
+
     func update(_ tabItem: TabItem, newTabItem: TabItem) {
         guard let index = tabsItems.firstIndex(where: { $0 == tabItem }) else { return }
         tabsItems[index] = newTabItem

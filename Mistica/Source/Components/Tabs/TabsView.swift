@@ -95,7 +95,7 @@ public extension TabsView {
             collectionView.reloadItems(at: [indexPath])
         }
     }
-    
+
     func remove(_ index: Int) {
         guard index < tabsItems.count else {
             fatalError("The index (\(index) and number of elements (\(tabsItems.count) don't match. ")

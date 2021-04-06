@@ -15,13 +15,19 @@ final class SectionTitleTests: XCTestCase {
         UIView.setAnimationsEnabled(false)
         
         isRecording = false
-        MisticaConfig.brandStyle = .movistar
     }
     
     func testSectionTitle() {
-        assertSnapshot(
-            matching: makeSectionTitle(title: "Section title test"),
-            as: .image(on: .iPhoneSe)
+        assertSnapshotForAllBrands(
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "Section title test")
+        )
+    }
+    
+    func testSectionTitleMultiline() {
+        assertSnapshotForAllBrands(
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline text work fine")
         )
     }
 }
@@ -72,8 +78,11 @@ private class SectionTitleViewControler: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as! SectionTitleHeaderView
         headerView.title = sectionTitle
-
+        
         return headerView
     }
-
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        UITableView.automaticDimension
+    }
 }

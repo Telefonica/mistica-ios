@@ -43,7 +43,12 @@ public class TabItemViewCell: UICollectionViewCell {
         return horizontalStack
     }()
 
-    private lazy var imageView = IntrinsictImageView()
+    private lazy var imageView: IntrinsictImageView = {
+        let imageView = IntrinsictImageView()
+        imageView.intrinsicWidth = Constants.iconSize
+        imageView.intrinsicHeight = Constants.iconSize
+        return imageView
+    }()
 
     private lazy var title: UILabel = {
         let label = UILabel()
@@ -61,10 +66,6 @@ public class TabItemViewCell: UICollectionViewCell {
 
     private lazy var minimumWidthConstraintForLargeScreen = {
         contentView.widthAnchor.constraint(greaterThanOrEqualToConstant: Constants.minimumItemWidthForLargeScreen)
-    }()
-
-    private lazy var imageViewWidthConstraint = {
-        imageView.widthAnchor.constraint(equalToConstant: Constants.iconSize)
     }()
 
     override init(frame: CGRect) {
@@ -97,9 +98,9 @@ extension TabItemViewCell {
         set {
             imageView.image = newValue
             if newValue == nil {
-                imageViewWidthConstraint.constant = 0
+                imageView.removeFromSuperview()
             } else {
-                imageViewWidthConstraint.constant = Constants.iconSize
+                horizontalStack.insertArrangedSubview(imageView, at: 0)
             }
         }
     }
@@ -136,7 +137,6 @@ private extension TabItemViewCell {
             selectedLine.heightAnchor.constraint(equalToConstant: Constants.heightDivider),
             selectedLine.widthAnchor.constraint(equalTo: verticalStack.widthAnchor),
             contentView.heightAnchor.constraint(equalToConstant: Constants.cellHeight),
-            imageViewWidthConstraint,
             imageView.heightAnchor.constraint(equalToConstant: Constants.iconSize),
             minimumWidthConstraintForLargeScreen
         ])

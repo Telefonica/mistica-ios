@@ -14,7 +14,7 @@ struct O2Colors: Colors {
     let background = O2ColorPalette.white | O2ColorPalette.darkModeBlack
     let backgroundContainer = O2ColorPalette.white | O2ColorPalette.darkModeGrey
     let backgroundBrand = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
-    let backgroundOverlay = O2ColorPalette.grey6 /* alpha 60% */ | O2ColorPalette.darkModeGrey.withAlphaComponent(0.8)
+    let backgroundOverlay = O2ColorPalette.grey6.withAlphaComponent(0.6) | O2ColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = O2ColorPalette.grey1 | O2ColorPalette.darkModeGrey6
     let backgroundSkeletonInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.darkModeGrey6
     let navigationBarBackground = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
@@ -32,7 +32,6 @@ struct O2Colors: Colors {
     let buttonDangerBackground = O2ColorPalette.pepper
     let buttonDangerBackgroundDisabled = O2ColorPalette.pepperLight30 | O2ColorPalette.darkModeGrey
     let buttonDangerBackgroundSelected = O2ColorPalette.pepperDark
-    let buttonDangerBackgroundHover = O2ColorPalette.pepperDark // web only
 
     let buttonLinkBackgroundSelected = O2ColorPalette.o2BluePrimaryLight10 | O2ColorPalette.darkModeGrey
     let buttonLinkBackgroundSelectedInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.darkModeGrey

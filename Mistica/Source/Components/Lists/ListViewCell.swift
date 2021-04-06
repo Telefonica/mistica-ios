@@ -348,7 +348,7 @@ private extension ListViewCell {
         cellContentView.isLayoutMarginsRelativeArrangement = true
         cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins
 
-        cellBorderView.backgroundColor = .background
+        cellBorderView.backgroundColor = cellStyle.backgroundColor
         cellBorderView.layer.cornerRadius = cellStyle.cornerRadius
         cellBorderView.layer.borderColor = cellStyle.borderColor
         cellBorderView.layer.borderWidth = cellStyle.borderWidth

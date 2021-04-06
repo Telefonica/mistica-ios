@@ -97,7 +97,7 @@ public class InputField: UIView {
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.border.cgColor
         view.layer.cornerRadius = 4
-        view.backgroundColor = .background
+        view.backgroundColor = .backgroundContainer
 
         horizontalTextInputStackView.alignment = .fill
         horizontalTextInputStackView.distribution = .fill
@@ -174,7 +174,7 @@ public class InputField: UIView {
         textInputView.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
         textInputView.setContentCompressionResistancePriority(.init(rawValue: 1), for: .horizontal)
         textInputView.setContentHuggingPriority(.init(rawValue: 1), for: .horizontal)
-        textInputView.backgroundColor = .background
+        textInputView.backgroundColor = .backgroundContainer
 
         return textInputView
     }

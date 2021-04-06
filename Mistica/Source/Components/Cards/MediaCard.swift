@@ -150,7 +150,8 @@ private extension MediaCard {
     }
 
     func styleViews() {
-        backgroundColor = .background
+        backgroundColor = .backgroundContainer
+        baseCardView.contentView.backgroundColor = .backgroundContainer
 
         baseCardView.contentView.headlineTopSpacing = 8
 

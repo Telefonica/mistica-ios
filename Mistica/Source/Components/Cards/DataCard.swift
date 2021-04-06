@@ -177,7 +177,8 @@ private extension DataCard {
     }
 
     func styleViews() {
-        backgroundColor = .background
+        backgroundColor = .backgroundContainer
+        cardBaseView.contentView.backgroundColor = .backgroundContainer
 
         cardBaseView.contentView.headlineTopSpacing = 8
 

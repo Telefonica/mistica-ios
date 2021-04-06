@@ -77,4 +77,13 @@ extension ListViewCell.CellStyle {
             trailing: 16
         )
     }
+    
+    var backgroundColor: UIColor {
+        switch self {
+        case .fullWidth:
+            return .background
+        case .boxed:
+             return .backgroundContainer
+        }
+    }
 }

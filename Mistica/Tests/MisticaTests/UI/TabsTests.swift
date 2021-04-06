@@ -12,8 +12,7 @@ import XCTest
 
 final class TabsTests: XCTestCase {
     enum Constants {
-        static let mobileWidth: CGFloat = 390
-        static let tabletWidth: CGFloat = 768
+        static let defaultWidth: CGFloat = 390
         static let heightComponent: CGFloat = 56
         static let padding: CGFloat = 20
 
@@ -66,13 +65,20 @@ final class TabsTests: XCTestCase {
     }
 
     // MARK: - Mobile Width Styles
+    
+    func testTabsDefaultState() {
+        assertSnapshotForAllBrands(as: .image,
+                                   viewBuilder: makeTemplateView(tabItems: Constants.threeItem))
+    }
 
     func testWithMobileWidth() {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: makeTemplate(width: Constants.mobileWidth, tabItems: Constants.threeItem),
-            as: .image
+            matching: TabsTestsViewController(
+                tabsView: makeTemplateTabsView(tabItems: Constants.threeItem)
+            ),
+            as: .image(on: .iPhoneSe)
         )
     }
 
@@ -80,8 +86,10 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: makeTemplate(width: Constants.mobileWidth, tabItems: Constants.threeItemWithoutIcon),
-            as: .image
+            matching: TabsTestsViewController(
+                tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithoutIcon)
+            ),
+            as: .image(on: .iPhoneSe)
         )
     }
 
@@ -89,8 +97,10 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: makeTemplate(width: Constants.mobileWidth, tabItems: Constants.threeItemWithLongText),
-            as: .image
+            matching: TabsTestsViewController(
+                tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongText)
+            ),
+            as: .image(on: .iPhoneSe)
         )
     }
 
@@ -98,8 +108,10 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: makeTemplate(width: Constants.mobileWidth, tabItems: Constants.threeItemWithLongTextAndNoIcon),
-            as: .image
+            matching: TabsTestsViewController(
+            tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongTextAndNoIcon)
+        ),
+            as: .image(on: .iPhoneSe)
         )
     }
 
@@ -107,8 +119,10 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: makeTemplate(width: Constants.mobileWidth, tabItems: Constants.eightItem),
-            as: .image
+            matching: TabsTestsViewController(
+                tabsView: makeTemplateTabsView(tabItems: Constants.eightItem)
+            ),
+            as: .image(on: .iPhoneSe)
         )
     }
 
@@ -118,8 +132,10 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: makeTemplate(width: Constants.tabletWidth, tabItems: Constants.threeItem),
-            as: .image
+            matching: TabsTestsViewController(
+                tabsView: makeTemplateTabsView(tabItems: Constants.threeItem)
+            ),
+            as: .image(on: .iPadMini)
         )
     }
 
@@ -127,8 +143,10 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: makeTemplate(width: Constants.tabletWidth, tabItems: Constants.twoItem),
-            as: .image
+            matching: TabsTestsViewController(
+                tabsView: makeTemplateTabsView(tabItems: Constants.twoItem)
+            ),
+            as: .image(on: .iPadMini)
         )
     }
 
@@ -136,8 +154,10 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: makeTemplate(width: Constants.tabletWidth, tabItems: Constants.threeItemWithLongText),
-            as: .image
+            matching: TabsTestsViewController(
+            tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongText)
+        ),
+            as: .image(on: .iPadMini)
         )
     }
 
@@ -145,8 +165,10 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: makeTemplate(width: Constants.tabletWidth, tabItems: Constants.eightItem),
-            as: .image
+            matching: TabsTestsViewController(
+                tabsView: makeTemplateTabsView(tabItems: Constants.eightItem)
+            ),
+            as: .image(on: .iPadMini)
         )
     }
 
@@ -168,23 +190,64 @@ final class TabsTests: XCTestCase {
 // MARK: - Helpers
 
 private extension TabsTests {
-    private func makeTemplate(width: CGFloat, tabItems: [TabItem]) -> UIView {
+    private func makeTemplateView(tabItems: [TabItem]) -> UIView {
         let contentView = UIView(frame: CGRect(
             origin: .zero,
             size: CGSize(
-                width: width,
+                width: Constants.defaultWidth,
                 height: Constants.heightComponent + Constants.padding
             )
         ))
         contentView.backgroundColor = .black
 
-        let tabView = TabsView(tabItems: tabItems)
-        let size = CGSize(width: width, height: Constants.heightComponent)
-        tabView.frame = CGRect(origin: CGPoint(x: 0, y: 10), size: size)
+        let tabsView = TabsView(tabItems: tabItems)
+        tabsView.translatesAutoresizingMaskIntoConstraints = false
 
-        contentView.addSubview(tabView)
+        contentView.addSubview(tabsView)
+        NSLayoutConstraint.activate([
+            tabsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            tabsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            tabsView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.padding / 2)
+        ])
 
         return contentView
+    }
+    
+    private func makeTemplateTabsView(tabItems: [TabItem]) -> TabsView {
+        let tabsView = TabsView(tabItems: tabItems)
+        tabsView.translatesAutoresizingMaskIntoConstraints = false
+        return tabsView
+    }
+}
+
+private class TabsTestsViewController: UIViewController {
+    enum Constants {
+        static let padding: CGFloat = 20
+    }
+    
+    private let tabsView: TabsView
+    
+    init(tabsView: TabsView) {
+        self.tabsView = tabsView
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .background
+        tabsView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tabsView)
+
+        NSLayoutConstraint.activate([
+            tabsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tabsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tabsView.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.padding)
+        ])
     }
 }
 

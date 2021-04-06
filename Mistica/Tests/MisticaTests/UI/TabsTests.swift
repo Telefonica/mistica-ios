@@ -65,10 +65,12 @@ final class TabsTests: XCTestCase {
     }
 
     // MARK: - Mobile Width Styles
-    
+
     func testTabsDefaultState() {
-        assertSnapshotForAllBrands(as: .image,
-                                   viewBuilder: makeTemplateView(tabItems: Constants.threeItem))
+        assertSnapshotForAllBrands(
+            as: .image,
+            viewBuilder: makeTemplateView(tabItems: Constants.threeItem)
+        )
     }
 
     func testWithMobileWidth() {
@@ -109,8 +111,8 @@ final class TabsTests: XCTestCase {
 
         assertSnapshot(
             matching: TabsTestsViewController(
-            tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongTextAndNoIcon)
-        ),
+                tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongTextAndNoIcon)
+            ),
             as: .image(on: .iPhoneSe)
         )
     }
@@ -155,8 +157,8 @@ final class TabsTests: XCTestCase {
 
         assertSnapshot(
             matching: TabsTestsViewController(
-            tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongText)
-        ),
+                tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongText)
+            ),
             as: .image(on: .iPadMini)
         )
     }
@@ -212,7 +214,7 @@ private extension TabsTests {
 
         return contentView
     }
-    
+
     private func makeTemplateTabsView(tabItems: [TabItem]) -> TabsView {
         let tabsView = TabsView(tabItems: tabItems)
         tabsView.translatesAutoresizingMaskIntoConstraints = false
@@ -224,14 +226,14 @@ private class TabsTestsViewController: UIViewController {
     enum Constants {
         static let padding: CGFloat = 20
     }
-    
+
     private let tabsView: TabsView
-    
+
     init(tabsView: TabsView) {
         self.tabsView = tabsView
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

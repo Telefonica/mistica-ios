@@ -118,7 +118,7 @@ extension TabItemViewCell {
     func showDeselected() {
         selectedLine.backgroundColor = .clear
         title.textColor = .textSecondary
-        imageView.tintColor = .neutralLow
+        imageView.tintColor = .neutralMedium
     }
 }
 

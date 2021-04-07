@@ -212,7 +212,7 @@ open class ListViewCell: UITableViewCell {
         if highlighted {
             highlightedView.backgroundColor = .backgroundAlternative
         } else {
-            highlightedView.backgroundColor = .background
+            highlightedView.backgroundColor = .backgroundContainer
         }
     }
 

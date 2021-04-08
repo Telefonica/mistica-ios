@@ -17,14 +17,14 @@ final class TagTests: XCTestCase {
 
         isRecording = false
     }
-    
+
     func testTagView() {
         assertSnapshotForAllBrands(
             as: .image(size: CGSize(width: 100.0, height: 33.0)),
             viewBuilder: makeTag(text: "Tag")
         )
     }
-    
+
     func testTagXibIntegration() {
         MisticaConfig.brandStyle = .movistar
 

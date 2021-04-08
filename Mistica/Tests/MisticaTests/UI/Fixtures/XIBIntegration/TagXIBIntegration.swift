@@ -1,8 +1,9 @@
 //
 //  TagXIBIntegration.swift
-//  MisticaTests
 //
-//  Created by jalonso on 6/4/21.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Mistica

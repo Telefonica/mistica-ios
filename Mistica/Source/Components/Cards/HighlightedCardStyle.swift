@@ -19,7 +19,7 @@ extension HighlightedCardStyle {
     var backgroundColor: UIColor {
         switch self {
         case .normal:
-            return .background
+            return .backgroundContainer
         case .inverse:
             return .navigationBarBackground
         }

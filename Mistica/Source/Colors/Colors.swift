@@ -12,6 +12,7 @@ protocol Colors {
     // BACKGROUNDS
     var appBarBackground: UIColor { get }
     var background: UIColor { get }
+    var backgroundContainer: UIColor { get }
     var backgroundAlternative: UIColor { get }
     var backgroundBrand: UIColor { get }
     var backgroundFeedbackBottom: UIColor { get }
@@ -47,6 +48,7 @@ protocol Colors {
     var buttonSecondaryBorderSelectedInverse: UIColor { get }
 
     var textButtonPrimary: UIColor { get }
+    var textButtonPrimaryDisabled: UIColor { get }
     var textButtonPrimaryInverse: UIColor { get }
     var textButtonPrimaryInverseDisabled: UIColor { get }
     var textButtonPrimaryInverseSelected: UIColor { get }

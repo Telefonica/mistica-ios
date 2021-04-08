@@ -18,6 +18,7 @@ struct ContentView: View {
             }
             .navigationBarHidden(true)
             .misticaNavigationBarStyle()
+            .background(Color(.background).ignoresSafeArea())
         }
     }
 }

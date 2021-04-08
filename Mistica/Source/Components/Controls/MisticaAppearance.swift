@@ -50,8 +50,8 @@ private extension MisticaAppearance {
         let segmentedControlAppearance = UISegmentedControl.appearance()
         setUpAppearanceOfSegmentedControl(
             withAppearance: segmentedControlAppearance,
-            tintColor: .navigationBarBackground,
-            textColor: .navigationBarBackground,
+            tintColor: .controlActivated,
+            textColor: .controlActivated,
             selectedTextColor: .textPrimaryInverse
         )
     }

@@ -97,7 +97,7 @@ public class InputField: UIView {
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.border.cgColor
         view.layer.cornerRadius = 4
-        view.backgroundColor = .background
+        view.backgroundColor = .backgroundContainer
 
         horizontalTextInputStackView.alignment = .fill
         horizontalTextInputStackView.distribution = .fill
@@ -174,6 +174,7 @@ public class InputField: UIView {
         textInputView.setContentHuggingPriority(.fittingSizeLevel, for: .vertical)
         textInputView.setContentCompressionResistancePriority(.init(rawValue: 1), for: .horizontal)
         textInputView.setContentHuggingPriority(.init(rawValue: 1), for: .horizontal)
+        textInputView.backgroundColor = .backgroundContainer
 
         return textInputView
     }
@@ -389,6 +390,12 @@ public class InputField: UIView {
         let width = max(Constants.intrinsicContentWidth, container.intrinsicContentSize.width)
         let height = container.intrinsicContentSize.height
         return CGSize(width: width, height: height)
+    }
+
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        borderColor = UIColor.divider.cgColor
     }
 }
 

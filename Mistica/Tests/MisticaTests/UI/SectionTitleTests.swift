@@ -24,7 +24,7 @@ final class SectionTitleTests: XCTestCase {
             viewBuilder: makeSectionTitle(title: "Section title test")
         )
     }
-    
+
     func testSectionTitleMultiline() {
         assertSnapshotForAllBrands(
             as: .image(on: .iPhoneSe),
@@ -78,7 +78,7 @@ private class SectionTitleViewControler: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as! SectionTitleHeaderView
         headerView.title = sectionTitle
-        
+
         return headerView
     }
 }

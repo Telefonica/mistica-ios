@@ -20,14 +20,14 @@ final class ControlsTests: XCTestCase {
     // MARK: - Switch Style
 
     func testSwitchDefaultState() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeSwitchTemplate(isOn: false)
         )
     }
 
     func testSwitchOnState() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeSwitchTemplate(isOn: true)
         )
@@ -36,7 +36,7 @@ final class ControlsTests: XCTestCase {
     // MARK: - UISegmentedControl Style
 
     func testSegmentedControl() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeSegmentedControlTemplate()
         )
@@ -45,7 +45,7 @@ final class ControlsTests: XCTestCase {
     // MARK: - UITabBar Style
 
     func testTabBarControl() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 420, height: 60)),
             viewBuilder: makeTabBarTemplate()
         )
@@ -54,7 +54,7 @@ final class ControlsTests: XCTestCase {
     // MARK: - UIPageControl Style
 
     func testPageControl() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makePageControlTemplate()
         )

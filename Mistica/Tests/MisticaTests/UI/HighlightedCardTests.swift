@@ -20,28 +20,28 @@ final class HighlightedCardTests: XCTestCase {
     // MARK: - Styles
 
     func testNormalStyleAndLinkButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeCard(actionButtonStyle: .link)
         )
     }
 
     func testNormalStyleAndPrimaryButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeCard(actionButtonStyle: .primary)
         )
     }
 
     func testNormalStyleAndSecondaryButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeCard(actionButtonStyle: .secondary)
         )
     }
 
     func testInverseStyleAndLinkButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeCard(
                 style: .inverse,
@@ -51,7 +51,7 @@ final class HighlightedCardTests: XCTestCase {
     }
 
     func testInverseStyleAndPrimaryButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeCard(
                 style: .inverse,
@@ -61,7 +61,7 @@ final class HighlightedCardTests: XCTestCase {
     }
 
     func testInverseStyleAndSecondaryButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeCard(
                 style: .inverse,

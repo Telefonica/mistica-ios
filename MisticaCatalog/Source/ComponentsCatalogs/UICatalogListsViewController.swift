@@ -231,7 +231,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
 
     override func loadView() {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .background
 
         view.addSubview(withDefaultConstraints: listView)
 

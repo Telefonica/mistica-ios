@@ -212,7 +212,7 @@ open class ListViewCell: UITableViewCell {
         if highlighted {
             highlightedView.backgroundColor = .backgroundAlternative
         } else {
-            highlightedView.backgroundColor = .background
+            highlightedView.backgroundColor = .backgroundContainer
         }
     }
 
@@ -224,6 +224,12 @@ open class ListViewCell: UITableViewCell {
         didSet {
             centerSection.isUserInteractionEnabled = isUserInteractionEnabled
         }
+    }
+
+    override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        cellBorderView.layer.borderColor = cellStyle.borderColor
     }
 }
 
@@ -342,7 +348,7 @@ private extension ListViewCell {
         cellContentView.isLayoutMarginsRelativeArrangement = true
         cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins
 
-        cellBorderView.backgroundColor = .background
+        cellBorderView.backgroundColor = cellStyle.backgroundColor
         cellBorderView.layer.cornerRadius = cellStyle.cornerRadius
         cellBorderView.layer.borderColor = cellStyle.borderColor
         cellBorderView.layer.borderWidth = cellStyle.borderWidth

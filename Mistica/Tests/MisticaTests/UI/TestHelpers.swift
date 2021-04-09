@@ -12,38 +12,6 @@ import UIKit
 
 // MARK: - Public Helpers
 
-func assertSnapshotForAllBrands<Format>(
-    as snapshotting: Snapshotting<UIView, Format>,
-    file: StaticString = #file,
-    testName: String = #function,
-    line: UInt = #line,
-    viewBuilder: @autoclosure () -> UIView
-) {
-    _assertSnapshotForAllBrands(
-        as: snapshotting,
-        file: file,
-        testName: testName,
-        line: line,
-        viewBuilder: viewBuilder()
-    )
-}
-
-func assertSnapshotForAllBrands<Format>(
-    as snapshotting: Snapshotting<UIViewController, Format>,
-    file: StaticString = #file,
-    testName: String = #function,
-    line: UInt = #line,
-    viewBuilder: @autoclosure () -> UIViewController
-) {
-    _assertSnapshotForAllBrands(
-        as: snapshotting,
-        file: file,
-        testName: testName,
-        line: line,
-        viewBuilder: viewBuilder()
-    )
-}
-
 extension UIView {
     func asRootOfViewController() -> UIViewController {
         let vc = UIViewController()
@@ -52,9 +20,9 @@ extension UIView {
     }
 }
 
-// MARK: - Private Helpers
+// MARK: - Helpers
 
-private func _assertSnapshotForAllBrands<View, Format>(
+func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     as snapshotting: Snapshotting<View, Format>,
     file: StaticString = #file,
     testName: String = #function,
@@ -72,5 +40,27 @@ private func _assertSnapshotForAllBrands<View, Format>(
             testName: testName,
             line: line
         )
+
+        if #available(iOS 13.0, *) {
+            var darkView = viewBuilder()
+            darkView.overrideUserInterfaceStyle = .dark
+
+            assertSnapshot(
+                matching: darkView,
+                as: snapshotting,
+                named: "with-\(brand)-dark-style",
+                file: file,
+                testName: testName,
+                line: line
+            )
+        }
     }
 }
+
+protocol UserInterfaceStyling {
+    @available(iOS 13.0, *)
+    var overrideUserInterfaceStyle: UIUserInterfaceStyle { get set }
+}
+
+extension UIView: UserInterfaceStyling {}
+extension UIViewController: UserInterfaceStyling {}

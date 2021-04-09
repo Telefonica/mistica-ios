@@ -15,6 +15,7 @@
 		0E981C32BBB09DF7A1A9D7F9 /* PopoverMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CF4C7DF842F2471023FC /* PopoverMessageView.swift */; };
 		120C102BBB0AEA7505A51F60 /* HighlightedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B05E30B585FA553637073B /* HighlightedCard.swift */; };
 		1800DE3F25AF575700D5E5DA /* DeterminateStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800DE3E25AF575700D5E5DA /* DeterminateStepperView.swift */; };
+		180ADEDB261C442D0078DA0F /* CheckboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180ADEDA261C442D0078DA0F /* CheckboxTests.swift */; };
 		1860BBBE25B03AD900319CFC /* IndeterminateStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860BBBD25B03AD900319CFC /* IndeterminateStepperView.swift */; };
 		1860BBC125B03AF200319CFC /* DeterminateStepperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860BBC025B03AF200319CFC /* DeterminateStepperTests.swift */; };
 		1860BBC725B03B7100319CFC /* DeterminateStepperXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */; };
@@ -215,6 +216,7 @@
 		16BD1D5B42512D701A4A0490 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		17D9F21C6A536B0C4D6AD02D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1800DE3E25AF575700D5E5DA /* DeterminateStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeterminateStepperView.swift; sourceTree = "<group>"; };
+		180ADEDA261C442D0078DA0F /* CheckboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxTests.swift; sourceTree = "<group>"; };
 		1860BBBD25B03AD900319CFC /* IndeterminateStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndeterminateStepperView.swift; sourceTree = "<group>"; };
 		1860BBC025B03AF200319CFC /* DeterminateStepperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeterminateStepperTests.swift; sourceTree = "<group>"; };
 		1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterminateStepperXIBIntegration.swift; sourceTree = "<group>"; };
@@ -1398,6 +1400,7 @@
 				B8FFFA8B256E602100472C23 /* Fixtures */,
 				B8BCF901256D113B00D2BCCC /* TestHelpers.swift */,
 				CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */,
+				180ADEDA261C442D0078DA0F /* CheckboxTests.swift */,
 				5588A7B025F7C92F00C6AB96 /* RadioButtonTests.swift */,
 				82CF153C257567A000867797 /* BadgeTests.swift */,
 				B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */,
@@ -2266,6 +2269,7 @@
 				B85CCA5925B82EFA00B76426 /* CheckboxXIBIntegration.swift in Sources */,
 				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
 				B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */,
+				180ADEDB261C442D0078DA0F /* CheckboxTests.swift in Sources */,
 				827157F525D2D14D00CD0A8E /* HeaderTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
 				B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */,

@@ -114,6 +114,12 @@ public class DataCard: UIView {
     override public var intrinsicContentSize: CGSize {
         cardBaseView.intrinsicContentSize
     }
+
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        addBorder(color: .border)
+    }
 }
 
 // MARK: Public
@@ -171,7 +177,8 @@ private extension DataCard {
     }
 
     func styleViews() {
-        backgroundColor = .background
+        backgroundColor = .backgroundContainer
+        cardBaseView.contentView.backgroundColor = .backgroundContainer
 
         cardBaseView.contentView.headlineTopSpacing = 8
 

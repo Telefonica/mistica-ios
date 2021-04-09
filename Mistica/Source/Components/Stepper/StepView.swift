@@ -82,15 +82,7 @@ class StepView: UIView {
         label.font = .textPreset1(weight: .medium)
         label.textAlignment = .center
         circularView.addSubview(withDefaultConstraints: label)
-
-        let colorKeypath = AnimationKeypath(keypath: "**.Color")
-        let colorProvider = ColorValueProvider(UIColor.controlActivated.lottieColorValue)
-        animatedView.setValueProvider(colorProvider, keypath: colorKeypath)
-
-        let widthKeypath = AnimationKeypath(keypath: "**.Stroke Width")
-        let widthProvider = FloatValueProvider(Constants.borderWidth)
-        animatedView.setValueProvider(widthProvider, keypath: widthKeypath)
-
+        updateAnimationKeypaths()
         addSubview(withDefaultConstraints: animatedView)
         addSubview(withDefaultConstraints: circularView)
     }
@@ -102,6 +94,13 @@ class StepView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         circularView.makeRounded()
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        didSetState()
+        updateAnimationKeypaths()
     }
 }
 
@@ -131,5 +130,15 @@ extension StepView {
             circularView.backgroundColor = .clear
             accessibilityTraits = []
         }
+    }
+
+    func updateAnimationKeypaths() {
+        let colorKeypath = AnimationKeypath(keypath: "**.Color")
+        let colorProvider = ColorValueProvider(UIColor.controlActivated.lottieColorValue)
+        animatedView.setValueProvider(colorProvider, keypath: colorKeypath)
+
+        let widthKeypath = AnimationKeypath(keypath: "**.Stroke Width")
+        let widthProvider = FloatValueProvider(Constants.borderWidth)
+        animatedView.setValueProvider(widthProvider, keypath: widthKeypath)
     }
 }

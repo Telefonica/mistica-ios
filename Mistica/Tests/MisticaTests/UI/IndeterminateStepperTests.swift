@@ -20,7 +20,7 @@ final class IndeterminateStepperTests: XCTestCase {
     // MARK: - Styles
 
     func testIndeterminateStepperDefaultState() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithStepperState(value: 50)
         )

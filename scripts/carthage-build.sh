@@ -4,9 +4,14 @@
 
 build()
 {
-    xcconfig=$(mktemp /tmp/static.xcconfig.tmp)
-	trap 'rm -f "$xcconfig"' INT TERM HUP EXIT
+	xcconfig='/tmp/static.xcconfig.tmp'
 	
+	# Remove old config file (otherwise, mktemp may fail)
+	rm -f $xcconfig
+
+	# Create a new temporal config file
+	: $(mktemp $xcconfig)
+
 	# Force module stability
     echo "BUILD_LIBRARY_FOR_DISTRIBUTION = YES" >> $xcconfig
 

@@ -20,14 +20,14 @@ final class CheckboxTests: XCTestCase {
     // MARK: - Styles
 
     func testCheckboxDefaultState() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithCheckboxState(isChecked: false)
         )
     }
 
     func testCheckboxActiveCheckedState() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithCheckboxState(isChecked: true)
         )

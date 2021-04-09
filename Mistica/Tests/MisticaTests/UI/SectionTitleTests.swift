@@ -19,14 +19,14 @@ final class SectionTitleTests: XCTestCase {
     }
 
     func testSectionTitle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSectionTitle(title: "Section title test")
         )
     }
 
     func testSectionTitleMultiline() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline text work fine")
         )

@@ -20,7 +20,7 @@ final class DeterminateStepperTests: XCTestCase {
     // MARK: - Styles
 
     func testDeterminateStepperDefaultState() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithStepperState(currentStep: 2, numberOfSteps: 3)
         )

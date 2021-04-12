@@ -649,7 +649,7 @@ final class ListsTests: XCTestCase {
     // MARK: - Font colors based on brands
 
     func testAllLabelsFontColors() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeListTestsViewController(
                 title: AnyValues.title,

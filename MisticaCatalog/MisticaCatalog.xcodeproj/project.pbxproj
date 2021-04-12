@@ -12,6 +12,7 @@
 		B85CCA6725B861BC00B76426 /* UICatalogMediaCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */; };
 		B85CCA6A25B868D900B76426 /* UICatalogDataCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */; };
 		B8D04F6625C4237A00C55FA1 /* UICatalogCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D04F6525C4237A00C55FA1 /* UICatalogCardsViewController.swift */; };
+		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F9902D2546C98700DFBFE9 /* CatalogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990002546C98600DFBFE9 /* CatalogList.swift */; };
 		B8F9902E2546C98700DFBFE9 /* CatalogHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990012546C98600DFBFE9 /* CatalogHeader.swift */; };
@@ -110,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */,
 				B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +279,7 @@
 			name = MisticaCatalog;
 			packageProductDependencies = (
 				B8F990622546CAA500DFBFE9 /* Mistica */,
+				B8EE89F12614B57600F79386 /* AppCenterDistribute */,
 			);
 			productName = MisticaCatalog;
 			productReference = B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */;
@@ -305,6 +308,9 @@
 				Base,
 			);
 			mainGroup = B8F98FE12546C95600DFBFE9;
+			packageReferences = (
+				B8EE89F02614B57600F79386 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */,
+			);
 			productRefGroup = B8F98FEB2546C95600DFBFE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -556,7 +562,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B8EE89F02614B57600F79386 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/microsoft/appcenter-sdk-apple";
+			requirement = {
+				kind = exactVersion;
+				version = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		B8EE89F12614B57600F79386 /* AppCenterDistribute */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8EE89F02614B57600F79386 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
+			productName = AppCenterDistribute;
+		};
 		B8F990622546CAA500DFBFE9 /* Mistica */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Mistica;

@@ -1,3 +1,16 @@
+# [11.0.0](https://github.com/Telefonica/mistica-ios/compare/v10.0.0...v11.0.0) (2021-04-08)
+
+
+### Features
+
+* **DarkMode:** Components now support dark mode ([5a1eb8a](https://github.com/Telefonica/mistica-ios/commit/5a1eb8a7fa8f514fb3d71f214564c4e5927f5141))
+* **FontStyle:** update font styles ([334c49a](https://github.com/Telefonica/mistica-ios/commit/334c49a77abd30288188d3b0492604f6efc4efef))
+
+
+### BREAKING CHANGES
+
+* **FontStyle:** Text preset nomenclature has been reversed from smallest to largest
+
 # [10.0.0](https://github.com/Telefonica/mistica-ios/compare/v9.0.1...v10.0.0) (2021-03-10)
 
 

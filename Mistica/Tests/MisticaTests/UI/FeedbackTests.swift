@@ -31,7 +31,7 @@ final class FeedbackTests: XCTestCase {
     // MARK: Simple views
 
     func testSuccessTitle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .success,
@@ -44,7 +44,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testInformativeTitleAndSubtitle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .informative,
@@ -57,7 +57,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testErrorTitleAndSubtitle() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .error,
@@ -72,7 +72,7 @@ final class FeedbackTests: XCTestCase {
     // MARK: Multiline
 
     func testSuccessMultiline() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .success,
@@ -85,7 +85,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testInformativeMultilineScroll() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .informative,
@@ -98,7 +98,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testErrorMultilineScrollWithButtons() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .error,
@@ -113,7 +113,7 @@ final class FeedbackTests: XCTestCase {
     // MARK: Primary Button
 
     func testSuccessPrimaryButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .success,
@@ -126,7 +126,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testInformativePrimaryButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .informative,
@@ -139,7 +139,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testErrorPrimaryRetryButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .error,
@@ -158,7 +158,7 @@ final class FeedbackTests: XCTestCase {
     // MARK: Secondary Button
 
     func testSuccessSecondaryButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .success,
@@ -171,7 +171,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testInformativeSecondaryButtonLink() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .informative,
@@ -184,7 +184,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testErrorSecondaryButtonLink() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .error,
@@ -199,7 +199,7 @@ final class FeedbackTests: XCTestCase {
     // MARK: Button combinations
 
     func testSuccessPrimaryAndSecondaryButton() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .success,
@@ -212,7 +212,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testInformativePrimaryAndSecondaryButtonLink() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .informative,
@@ -225,7 +225,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testErrorPrimaryRetryAndSecondaryButtonLink() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .error,
@@ -244,7 +244,7 @@ final class FeedbackTests: XCTestCase {
     // MARK: Custom View
 
     func testSuccessPrimaryAndSecondaryButtonLinkCustomView() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .success,
@@ -258,7 +258,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testInformativeSecondaryButtonLinkCustomView() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .informative,
@@ -272,7 +272,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testErrorSecondaryPrimaryButtonCustomView() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: feedbackViewController(
                 style: .error,

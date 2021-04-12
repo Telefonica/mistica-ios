@@ -22,9 +22,7 @@ final class MediaCardTests: XCTestCase {
     func testBrandStyles() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeBasicCard()
-
-        assertSnapshotForAllBrands(as: .image, viewBuilder: view)
+        assertSnapshotForAllBrandsAndStyles(as: .image, viewBuilder: makeBasicCard())
     }
 
     // MARK: - Layout

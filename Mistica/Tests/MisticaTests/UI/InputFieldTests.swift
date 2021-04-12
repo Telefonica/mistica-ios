@@ -25,7 +25,7 @@ final class InputFieldTests: XCTestCase {
     // MARK: - Styles
 
     func testInputFieldWithDefaultStyleAndAllStates() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeInputFieldWithAllStates(
                 withStyle: .default,
@@ -35,42 +35,42 @@ final class InputFieldTests: XCTestCase {
     }
 
     func testInputFieldWithEmailStyleAndAllStates() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeInputFieldWithEmailStyleAndAllStates()
         )
     }
 
     func testInputFieldWithPasswordStyleAndAllStates() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeInputFieldWithPasswordStyleAndAllStates()
         )
     }
 
     func testInputFieldWithPhoneNumberStyleAndAllStates() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeInputFieldWithPhoneNumberStyleAndAllStates()
         )
     }
 
     func testInputFieldWithDropdownStyleAndAllStates() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeInputFieldWithDropdownStyleAndAllStates()
         )
     }
 
     func testInputFieldWithMultilineStyleAndAllStates() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeInputFieldWithMultilineStyleAndAllStates()
         )
     }
 
     func testInputFieldWithInverseStyleAndAllStates() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeInputFieldWithInverseStyleAndAllStates()
         )

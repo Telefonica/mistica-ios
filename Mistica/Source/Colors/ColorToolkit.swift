@@ -101,6 +101,11 @@ public extension UIColor {
         MisticaConfig.currentColors.textButtonPrimary
     }
 
+    @objc(textButtonPrimaryDisabledColor)
+    static var textButtonPrimaryDisabled: UIColor {
+        MisticaConfig.currentColors.textButtonPrimaryDisabled
+    }
+
     @objc(textButtonPrimaryInverseColor)
     static var textButtonPrimaryInverse: UIColor {
         MisticaConfig.currentColors.textButtonPrimaryInverse
@@ -181,6 +186,11 @@ public extension UIColor {
     @objc(backgroundColor)
     static var background: UIColor {
         MisticaConfig.currentColors.background
+    }
+
+    @objc(backgroundContainerColor)
+    static var backgroundContainer: UIColor {
+        MisticaConfig.currentColors.backgroundContainer
     }
 
     @objc(backgroundBrandColor)

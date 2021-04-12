@@ -53,7 +53,6 @@ extension UICatalogCheckboxViewController {
 
     override func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let checkBox = Checkbox()
-        checkBox.isUserInteractionEnabled = false
 
         if indexPath.section == 0 {
             checkBox.isChecked = true

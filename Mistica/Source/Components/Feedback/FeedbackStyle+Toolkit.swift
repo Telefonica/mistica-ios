@@ -63,7 +63,7 @@ extension FeedbackStyle {
             guard let animation = animation else { return .none }
             return .animation(animation)
         case .informative:
-            guard let iconNotificationInfo = UIImage.iconNotificationInfo else { return .none }
+            guard let iconNotificationInfo = UIImage.iconNotificationInfo?.withRenderingMode(.alwaysTemplate) else { return .none }
             return .asset(iconNotificationInfo)
         }
     }

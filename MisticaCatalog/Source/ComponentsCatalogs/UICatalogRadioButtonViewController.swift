@@ -53,7 +53,6 @@ extension UICatalogRadioButtonViewController {
 
     override func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let activatedRadioButton = RadioButton()
-        activatedRadioButton.isUserInteractionEnabled = false
 
         if indexPath.section == 0 {
             activatedRadioButton.isActivated = true

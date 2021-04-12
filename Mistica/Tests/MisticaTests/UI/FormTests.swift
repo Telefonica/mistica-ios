@@ -32,7 +32,7 @@ final class FormsTests: XCTestCase {
             // to do nothing
         }
 
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: FormTestsViewController(
                 formView: makeFormView(
@@ -51,7 +51,7 @@ final class FormsTests: XCTestCase {
             // to do nothing
         }
 
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: FormTestsViewController(
                 formView: makeFormView(

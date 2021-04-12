@@ -108,9 +108,14 @@ public class SegmentSelector: UIView {
 
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        guard traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass else { return }
-        setUpSegmentsContentMode(for: traitCollection)
-        setUpLayout(for: segmentsContentMode)
+        if traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass {
+            setUpSegmentsContentMode(for: traitCollection)
+            setUpLayout(for: segmentsContentMode)
+        }
+
+        if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
+            themeDidChange()
+        }
     }
 }
 

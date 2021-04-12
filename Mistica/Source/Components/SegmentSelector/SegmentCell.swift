@@ -55,7 +55,7 @@ extension SegmentCell {
     }
 
     func showSelected() {
-        backgroundColor = .textNavigationBarPrimary
+        backgroundColor = .inverse
         title.textColor = .navigationBarBackground
     }
 

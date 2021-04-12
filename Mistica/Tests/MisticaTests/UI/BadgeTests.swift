@@ -18,11 +18,11 @@ final class BadgeTests: XCTestCase {
     }
 
     func testFlagBadge() {
-        assertSnapshotForAllBrands(as: .image, viewBuilder: makeFlagBadge())
+        assertSnapshotForAllBrandsAndStyles(as: .image, viewBuilder: makeFlagBadge())
     }
 
     func testNumericBadge() {
-        assertSnapshotForAllBrands(as: .image, viewBuilder: makeNumericBadge())
+        assertSnapshotForAllBrandsAndStyles(as: .image, viewBuilder: makeNumericBadge())
     }
 
     func testXIBIntegration() {

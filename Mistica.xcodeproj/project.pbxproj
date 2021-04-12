@@ -15,6 +15,7 @@
 		0E981C32BBB09DF7A1A9D7F9 /* PopoverMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C2CF4C7DF842F2471023FC /* PopoverMessageView.swift */; };
 		120C102BBB0AEA7505A51F60 /* HighlightedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B05E30B585FA553637073B /* HighlightedCard.swift */; };
 		1800DE3F25AF575700D5E5DA /* DeterminateStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800DE3E25AF575700D5E5DA /* DeterminateStepperView.swift */; };
+		180ADEDB261C442D0078DA0F /* CheckboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180ADEDA261C442D0078DA0F /* CheckboxTests.swift */; };
 		1860BBBE25B03AD900319CFC /* IndeterminateStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860BBBD25B03AD900319CFC /* IndeterminateStepperView.swift */; };
 		1860BBC125B03AF200319CFC /* DeterminateStepperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860BBC025B03AF200319CFC /* DeterminateStepperTests.swift */; };
 		1860BBC725B03B7100319CFC /* DeterminateStepperXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */; };
@@ -61,6 +62,9 @@
 		45165BE25062A3F6F3258CF2 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9982D822AACCA74B34989A6 /* ListViewCell.swift */; };
 		5236C2BE900CA9A69C0B58B6 /* PhoneNumberInputFieldValidationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A67DB1DF67BD581B687361 /* PhoneNumberInputFieldValidationStrategy.swift */; };
 		5336A071B18BBC9ABCE45530 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC2D0EBC9A630B3017747EF /* HeaderView.swift */; };
+		551A2E31261C6AEB000B3CD7 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551A2E2D261C6AB6000B3CD7 /* TagTests.swift */; };
+		551A2E41261C6DA5000B3CD7 /* TagXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551A2E40261C6DA5000B3CD7 /* TagXIBIntegration.xib */; };
+		551A2E44261C6DB6000B3CD7 /* TagXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551A2E43261C6DB6000B3CD7 /* TagXIBIntegration.swift */; };
 		5588A7B425F7C93600C6AB96 /* RadioButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588A7B025F7C92F00C6AB96 /* RadioButtonTests.swift */; };
 		5C50E1F5A7510E7807736AF2 /* MisticaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F2FC75B7ADFCAE01D5BBD0 /* MisticaConfig.swift */; };
 		5E9996DC83EFB50DB7E2B9B6 /* CellStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABF99EE0334AA102A64EA9 /* CellStyle+Toolkit.swift */; };
@@ -220,6 +224,7 @@
 		16BD1D5B42512D701A4A0490 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		17D9F21C6A536B0C4D6AD02D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1800DE3E25AF575700D5E5DA /* DeterminateStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeterminateStepperView.swift; sourceTree = "<group>"; };
+		180ADEDA261C442D0078DA0F /* CheckboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxTests.swift; sourceTree = "<group>"; };
 		1860BBBD25B03AD900319CFC /* IndeterminateStepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndeterminateStepperView.swift; sourceTree = "<group>"; };
 		1860BBC025B03AF200319CFC /* DeterminateStepperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeterminateStepperTests.swift; sourceTree = "<group>"; };
 		1860BBC525B03B7100319CFC /* DeterminateStepperXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterminateStepperXIBIntegration.swift; sourceTree = "<group>"; };
@@ -339,6 +344,9 @@
 		53B320DA610626010206CE6E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		54711F8AFAC0F18D6A64E816 /* NavigationPresetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPresetView.swift; sourceTree = "<group>"; };
 		54C0985876FB2710A64B9A33 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		551A2E2D261C6AB6000B3CD7 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
+		551A2E40261C6DA5000B3CD7 /* TagXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagXIBIntegration.xib; sourceTree = "<group>"; };
+		551A2E43261C6DB6000B3CD7 /* TagXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagXIBIntegration.swift; sourceTree = "<group>"; };
 		554D39571DC178CA7D98AAAD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5588A7B025F7C92F00C6AB96 /* RadioButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonTests.swift; sourceTree = "<group>"; };
 		56FBB044C1F47FE38007C053 /* FeedbackUIAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackUIAssets.swift; sourceTree = "<group>"; };
@@ -1409,6 +1417,7 @@
 				B8FFFA8B256E602100472C23 /* Fixtures */,
 				B8BCF901256D113B00D2BCCC /* TestHelpers.swift */,
 				CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */,
+				180ADEDA261C442D0078DA0F /* CheckboxTests.swift */,
 				5588A7B025F7C92F00C6AB96 /* RadioButtonTests.swift */,
 				82CF153C257567A000867797 /* BadgeTests.swift */,
 				B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */,
@@ -1425,6 +1434,7 @@
 				90D602A92602288300DC2375 /* TabsTests.swift */,
 				B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
+				551A2E2D261C6AB6000B3CD7 /* TagTests.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1852,6 +1862,8 @@
 				B835993525D4227F00246981 /* HighlightedCardXIBIntegration.xib */,
 				9022A95B2608BF5E007C8A82 /* TabsXIBIntegration.swift */,
 				9022A9612608BFA0007C8A82 /* TabsXIBIntegration.xib */,
+				551A2E40261C6DA5000B3CD7 /* TagXIBIntegration.xib */,
+				551A2E43261C6DB6000B3CD7 /* TagXIBIntegration.swift */,
 			);
 			path = XIBIntegration;
 			sourceTree = "<group>";
@@ -2268,6 +2280,7 @@
 				90E9624225BF1B94006E6170 /* FormXIBIntegration.xib in Resources */,
 				18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
+				551A2E41261C6DA5000B3CD7 /* TagXIBIntegration.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2291,6 +2304,7 @@
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
 				B857855B25B8292E00E76B4C /* MediaCardXIBIntegration.swift in Sources */,
 				F74CB4F42576606100260675 /* ControlsTests.swift in Sources */,
+				551A2E44261C6DB6000B3CD7 /* TagXIBIntegration.swift in Sources */,
 				90D602AC2602289600DC2375 /* TabsTests.swift in Sources */,
 				90E9623625BEBE54006E6170 /* FormTests.swift in Sources */,
 				1860BBC725B03B7100319CFC /* DeterminateStepperXIBIntegration.swift in Sources */,
@@ -2302,6 +2316,7 @@
 				9022A95E2608BF69007C8A82 /* TabsXIBIntegration.swift in Sources */,
 				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
 				B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */,
+				180ADEDB261C442D0078DA0F /* CheckboxTests.swift in Sources */,
 				827157F525D2D14D00CD0A8E /* HeaderTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
 				B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */,
@@ -2310,6 +2325,7 @@
 				82CF1540257567C700867797 /* BadgeTests.swift in Sources */,
 				8209DE0925769860006D91F2 /* BadgeXIBIntegration.swift in Sources */,
 				18CDBD4D25ACA17600928474 /* IndeterminateStepperTests.swift in Sources */,
+				551A2E31261C6AEB000B3CD7 /* TagTests.swift in Sources */,
 				B8BCF902256D113B00D2BCCC /* TestHelpers.swift in Sources */,
 				1EB4FB6925CD59DC004537CC /* ListsXIBIntegration.swift in Sources */,
 				1860BBC125B03AF200319CFC /* DeterminateStepperTests.swift in Sources */,

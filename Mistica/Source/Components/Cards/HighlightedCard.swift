@@ -191,9 +191,15 @@ public class HighlightedCard: UIView {
 
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        guard traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory else { return }
-        updateFonts()
-        updateRightImageViewVisibility()
+
+        if traitCollection.preferredContentSizeCategory != previousTraitCollection?.preferredContentSizeCategory {
+            updateFonts()
+            updateRightImageViewVisibility()
+        }
+
+        if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
+            addBorder(color: .border)
+        }
     }
 }
 

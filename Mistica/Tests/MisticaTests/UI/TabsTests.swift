@@ -67,7 +67,7 @@ final class TabsTests: XCTestCase {
     // MARK: - Mobile Width Styles
 
     func testTabsDefaultState() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateView(tabItems: Constants.threeItem)
         )

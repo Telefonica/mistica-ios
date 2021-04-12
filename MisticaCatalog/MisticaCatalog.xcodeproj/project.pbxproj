@@ -166,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				B8F990002546C98600DFBFE9 /* CatalogList.swift */,
-				B8F990012546C98600DFBFE9 /* CatalogHeader.swift */,
 				B8F990022546C98600DFBFE9 /* UICatalogViewController.swift */,
 			);
 			path = Catalog;
@@ -217,6 +216,7 @@
 		B8F990162546C98600DFBFE9 /* ComponentsCatalogs */ = {
 			isa = PBXGroup;
 			children = (
+				B8F990012546C98600DFBFE9 /* CatalogHeader.swift */,
 				B8F990172546C98600DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift */,
 				B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */,
 				B8F990182546C98600DFBFE9 /* UICatalogFeedbacksViewController.swift */,

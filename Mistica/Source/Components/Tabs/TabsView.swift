@@ -50,12 +50,8 @@ public class TabsView: UIView {
         return layout
     }()
 
-    private lazy var divider: UIView = {
-        let divider = UIView()
-        divider.backgroundColor = .divider
-        return divider
-    }()
-
+    private lazy var divider = SeparatorView(axis: .horizontal)
+    
     private var firstIndexPathForSelectedItem: IndexPath?
 
     private var tabsItems: [TabItem] = []

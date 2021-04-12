@@ -19,7 +19,7 @@ final class TagTests: XCTestCase {
     }
 
     func testTagView() {
-        assertSnapshotForAllBrands(
+        assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 100.0, height: 33.0)),
             viewBuilder: makeTag(text: "Tag")
         )

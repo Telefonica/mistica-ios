@@ -51,7 +51,7 @@ public class TabsView: UIView {
     }()
 
     private lazy var divider = SeparatorView(axis: .horizontal)
-    
+
     private var firstIndexPathForSelectedItem: IndexPath?
 
     private var tabsItems: [TabItem] = []

@@ -66,6 +66,7 @@
 		551A2E41261C6DA5000B3CD7 /* TagXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 551A2E40261C6DA5000B3CD7 /* TagXIBIntegration.xib */; };
 		551A2E44261C6DB6000B3CD7 /* TagXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551A2E43261C6DB6000B3CD7 /* TagXIBIntegration.swift */; };
 		5588A7B425F7C93600C6AB96 /* RadioButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588A7B025F7C92F00C6AB96 /* RadioButtonTests.swift */; };
+		558F872A2611EF7A00079EC0 /* SectionTitleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558F87262611EF5F00079EC0 /* SectionTitleTests.swift */; };
 		5C50E1F5A7510E7807736AF2 /* MisticaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F2FC75B7ADFCAE01D5BBD0 /* MisticaConfig.swift */; };
 		5E9996DC83EFB50DB7E2B9B6 /* CellStyle+Toolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ABF99EE0334AA102A64EA9 /* CellStyle+Toolkit.swift */; };
 		631476E90140ED8EC617FE48 /* CustomCroutonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C0D32D83E30260E11717BF /* CustomCroutonContainer.swift */; };
@@ -349,6 +350,7 @@
 		551A2E43261C6DB6000B3CD7 /* TagXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagXIBIntegration.swift; sourceTree = "<group>"; };
 		554D39571DC178CA7D98AAAD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5588A7B025F7C92F00C6AB96 /* RadioButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonTests.swift; sourceTree = "<group>"; };
+		558F87262611EF5F00079EC0 /* SectionTitleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleTests.swift; sourceTree = "<group>"; };
 		56FBB044C1F47FE38007C053 /* FeedbackUIAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackUIAssets.swift; sourceTree = "<group>"; };
 		57F2FC75B7ADFCAE01D5BBD0 /* MisticaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisticaConfig.swift; sourceTree = "<group>"; };
 		58907706683E9F942656CB1D /* lists-fullwidth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lists-fullwidth.png"; sourceTree = "<group>"; };
@@ -1434,6 +1436,7 @@
 				90D602A92602288300DC2375 /* TabsTests.swift */,
 				B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
+				558F87262611EF5F00079EC0 /* SectionTitleTests.swift */,
 				551A2E2D261C6AB6000B3CD7 /* TagTests.swift */,
 			);
 			path = UI;
@@ -2322,6 +2325,7 @@
 				B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */,
 				18CDBD7825ACB1AD00928474 /* IndeterminateStepperXIBIntegration.swift in Sources */,
 				90594A7B25C15BE50021142B /* InputFieldTests.swift in Sources */,
+				558F872A2611EF7A00079EC0 /* SectionTitleTests.swift in Sources */,
 				82CF1540257567C700867797 /* BadgeTests.swift in Sources */,
 				8209DE0925769860006D91F2 /* BadgeXIBIntegration.swift in Sources */,
 				18CDBD4D25ACA17600928474 /* IndeterminateStepperTests.swift in Sources */,

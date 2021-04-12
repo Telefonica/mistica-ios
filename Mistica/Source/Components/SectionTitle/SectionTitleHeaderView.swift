@@ -24,6 +24,7 @@ public class SectionTitleHeaderView: UITableViewHeaderFooterView {
         }
         set {
             titleLabel.text = newValue?.uppercased()
+            layoutIfNeeded()
         }
     }
 
@@ -37,23 +38,6 @@ public class SectionTitleHeaderView: UITableViewHeaderFooterView {
         super.init(coder: coder)
 
         setUpView()
-    }
-
-    override public func systemLayoutSizeFitting(_ targetSize: CGSize,
-                                                 withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
-                                                 verticalFittingPriority: UILayoutPriority) -> CGSize {
-        let size = super.systemLayoutSizeFitting(
-            targetSize,
-            withHorizontalFittingPriority: horizontalFittingPriority,
-            verticalFittingPriority: verticalFittingPriority
-        )
-        let sectionTitleViewSize = titleLabel.systemLayoutSizeFitting(
-            targetSize,
-            withHorizontalFittingPriority: horizontalFittingPriority,
-            verticalFittingPriority: verticalFittingPriority
-        )
-
-        return CGSize(width: size.width, height: max(sectionTitleViewSize.height, ViewStyles.minimumHeight))
     }
 }
 

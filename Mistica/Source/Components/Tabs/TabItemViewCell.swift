@@ -51,7 +51,7 @@ public class TabItemViewCell: UICollectionViewCell {
     }()
 
     private var overridenAccessibilityLabel: String?
-    
+
     private lazy var title: UILabel = {
         let label = UILabel()
         label.font = .textPreset3(weight: .regular)

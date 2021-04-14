@@ -27,6 +27,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case sectionTitle
     case segmentSelector
     case stepper
+    case tabs
     case tag
     case tooltip
     case viewStates
@@ -177,6 +178,8 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogCheckboxViewController(), sender: self)
         case .stepper:
             show(UICatalogStepperViewController(), sender: self)
+        case .tabs:
+            show(UICatalogTabsViewController(), sender: self)
         }
     }
 }
@@ -273,6 +276,8 @@ private extension UICatalogRow {
             return "Cards"
         case .stepper:
             return "Stepper"
+        case .tabs:
+            return "Tabs"
         }
     }
 
@@ -318,6 +323,8 @@ private extension UICatalogRow {
             return .cardIcon
         case .stepper:
             return .stepperIcon
+        case .tabs:
+            return .tabsIcon
         }
     }
 }

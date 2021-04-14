@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct KeyboardInfo {
+public struct KeyboardInfo {
     public let duration: TimeInterval
     public let curve: UIView.AnimationCurve
     public let frameEnd: CGRect

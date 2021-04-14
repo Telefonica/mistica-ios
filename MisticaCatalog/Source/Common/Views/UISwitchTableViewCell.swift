@@ -16,6 +16,8 @@ public class UISwitchTableViewCell: UITableViewCell {
         set { `switch`.isOn = newValue }
     }
 
+    public var didValueChange: ((UISwitch) -> Void)?
+
     public init(reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         setUp()
@@ -29,5 +31,12 @@ public class UISwitchTableViewCell: UITableViewCell {
     func setUp() {
         selectionStyle = .none
         accessoryView = `switch`
+        `switch`.addTarget(self, action: #selector(didValueChange(_:)), for: .valueChanged)
+    }
+}
+
+private extension UISwitchTableViewCell {
+    @objc func didValueChange(_ sender: UISwitch) {
+        didValueChange?(sender)
     }
 }

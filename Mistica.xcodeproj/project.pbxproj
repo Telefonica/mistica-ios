@@ -95,8 +95,14 @@
 		86E4D10F795ADC42295ADD69 /* UIViewPropertyAnimator+InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E761686C428884CF07312D /* UIViewPropertyAnimator+InputField.swift */; };
 		88882FCE598E7589DBB0E8D8 /* VerticallyCenteredPresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */; };
 		8F2A23EC9EAF5C65182B2DB3 /* UITableViewHeaderFooterView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9F8965B378478A270E995 /* UITableViewHeaderFooterView+Utils.swift */; };
+		9022A95E2608BF69007C8A82 /* TabsXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9022A95B2608BF5E007C8A82 /* TabsXIBIntegration.swift */; };
+		9022A9622608BFA0007C8A82 /* TabsXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9022A9612608BFA0007C8A82 /* TabsXIBIntegration.xib */; };
+		9055F91225C9519700ED3507 /* TabItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9055F91125C9519700ED3507 /* TabItemViewCell.swift */; };
 		90594A7B25C15BE50021142B /* InputFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90594A7825C15B980021142B /* InputFieldTests.swift */; };
 		9069ACD1BD3E576D4291C424 /* UIButton+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0CAB80603A17B9E35DE3E8 /* UIButton+Utils.swift */; };
+		9071229225C84EC1009E3727 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9071229125C84EC1009E3727 /* TabsView.swift */; };
+		9071229625C85AE2009E3727 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9071229525C85AE2009E3727 /* TabItem.swift */; };
+		90D602AC2602289600DC2375 /* TabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D602A92602288300DC2375 /* TabsTests.swift */; };
 		90E9623625BEBE54006E6170 /* FormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9ADCD25BB004800EB911D /* FormTests.swift */; };
 		90E9624025BF1B8C006E6170 /* FormXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9623C25BF19E7006E6170 /* FormXIBIntegration.swift */; };
 		90E9624225BF1B94006E6170 /* FormXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */; };
@@ -401,10 +407,17 @@
 		85FE9079D1C9C80AD4FB45F3 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		8614CC19ABBC171200631823 /* IntrinsictImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsictImageView.swift; sourceTree = "<group>"; };
 		899E67590D803757F4002E1F /* min-max-size.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "min-max-size.gif"; sourceTree = "<group>"; };
+		9022A95B2608BF5E007C8A82 /* TabsXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsXIBIntegration.swift; sourceTree = "<group>"; };
+		9022A9612608BFA0007C8A82 /* TabsXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabsXIBIntegration.xib; sourceTree = "<group>"; };
+		9055F91125C9519700ED3507 /* TabItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemViewCell.swift; sourceTree = "<group>"; };
 		9058FF7F30809B474D27B6CE /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		90594A7825C15B980021142B /* InputFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldTests.swift; sourceTree = "<group>"; };
+		9071229125C84EC1009E3727 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		9071229525C85AE2009E3727 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		908C0EB625C8301400D1687A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90B0FC7CFADA89D838495A21 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = "<group>"; };
 		90C0D32D83E30260E11717BF /* CustomCroutonContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCroutonContainer.swift; sourceTree = "<group>"; };
+		90D602A92602288300DC2375 /* TabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTests.swift; sourceTree = "<group>"; };
 		90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXIBIntegration.xib; sourceTree = "<group>"; };
 		90E9623C25BF19E7006E6170 /* FormXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormXIBIntegration.swift; sourceTree = "<group>"; };
 		90E9ADCD25BB004800EB911D /* FormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTests.swift; sourceTree = "<group>"; };
@@ -1420,6 +1433,7 @@
 				18CDBD4C25ACA17600928474 /* IndeterminateStepperTests.swift */,
 				90594A7825C15B980021142B /* InputFieldTests.swift */,
 				1E6AAD2925CC7AF300FB6D3C /* ListsTests.swift */,
+				90D602A92602288300DC2375 /* TabsTests.swift */,
 				B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */,
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 				558F87262611EF5F00079EC0 /* SectionTitleTests.swift */,
@@ -1459,6 +1473,7 @@
 				3B0D0BA976A82CFB6036BD8A /* SegmentSelector */,
 				18726449259A242300B9CD0D /* Stepper */,
 				43BB6276F1C3E9AF175B9E38 /* Switch */,
+				908C0EB525C82FCC00D1687A /* Tabs */,
 				259C74E42CE5B71F29FF51D1 /* Tag */,
 				57CA13571D72A84014EE76AD /* ViewStates */,
 			);
@@ -1538,6 +1553,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		9071229425C85A1C009E3727 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9071229525C85AE2009E3727 /* TabItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9082E6939D6470C17B83896A /* MisticaTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1545,6 +1568,17 @@
 				7C2AED6530F1CF8E9E78EA7B /* UI */,
 			);
 			path = MisticaTests;
+			sourceTree = "<group>";
+		};
+		908C0EB525C82FCC00D1687A /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				908C0EB625C8301400D1687A /* README.md */,
+				9071229125C84EC1009E3727 /* TabsView.swift */,
+				9055F91125C9519700ED3507 /* TabItemViewCell.swift */,
+				9071229425C85A1C009E3727 /* Model */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		93302F4B8C783EB7188C93C1 /* Layouts */ = {
@@ -1829,6 +1863,8 @@
 				1EB4FB6B25CD5AE8004537CC /* ListsXIBIntegration.xib */,
 				B835993625D4227F00246981 /* HighlightedCardXIBIntegration.swift */,
 				B835993525D4227F00246981 /* HighlightedCardXIBIntegration.xib */,
+				9022A95B2608BF5E007C8A82 /* TabsXIBIntegration.swift */,
+				9022A9612608BFA0007C8A82 /* TabsXIBIntegration.xib */,
 				551A2E40261C6DA5000B3CD7 /* TagXIBIntegration.xib */,
 				551A2E43261C6DB6000B3CD7 /* TagXIBIntegration.swift */,
 			);
@@ -2242,6 +2278,7 @@
 				1EB4FB6C25CD5AE8004537CC /* ListsXIBIntegration.xib in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
 				B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */,
+				9022A9622608BFA0007C8A82 /* TabsXIBIntegration.xib in Resources */,
 				B835993925D4230D00246981 /* HighlightedCardXIBIntegration.xib in Resources */,
 				90E9624225BF1B94006E6170 /* FormXIBIntegration.xib in Resources */,
 				18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */,
@@ -2271,6 +2308,7 @@
 				B857855B25B8292E00E76B4C /* MediaCardXIBIntegration.swift in Sources */,
 				F74CB4F42576606100260675 /* ControlsTests.swift in Sources */,
 				551A2E44261C6DB6000B3CD7 /* TagXIBIntegration.swift in Sources */,
+				90D602AC2602289600DC2375 /* TabsTests.swift in Sources */,
 				90E9623625BEBE54006E6170 /* FormTests.swift in Sources */,
 				1860BBC725B03B7100319CFC /* DeterminateStepperXIBIntegration.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
@@ -2278,6 +2316,7 @@
 				B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */,
 				B81D7D4A25CD64F600930392 /* HighlightedCardTests.swift in Sources */,
 				B85CCA5925B82EFA00B76426 /* CheckboxXIBIntegration.swift in Sources */,
+				9022A95E2608BF69007C8A82 /* TabsXIBIntegration.swift in Sources */,
 				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
 				B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */,
 				180ADEDB261C442D0078DA0F /* CheckboxTests.swift in Sources */,
@@ -2372,10 +2411,13 @@
 				190ACC76F0CF54920934555A /* MisticaAppearance.swift in Sources */,
 				5C50E1F5A7510E7807736AF2 /* MisticaConfig.swift in Sources */,
 				3F006F4799D9309B0DD2564E /* MovistarColorPalette.swift in Sources */,
+				9071229225C84EC1009E3727 /* TabsView.swift in Sources */,
 				6DD3F85E5BBB1BA948A068E0 /* NavigationPresetView.swift in Sources */,
 				ACA2D756B1ED80BCC78EB01A /* NovumBarButtonItem.swift in Sources */,
 				3453703B4F61CA22BD3F4BEC /* O2ClassicColorPalette.swift in Sources */,
+				9071229625C85AE2009E3727 /* TabItem.swift in Sources */,
 				AAAA24925B4326EF16A1B300 /* O2ColorPalette.swift in Sources */,
+				9055F91225C9519700ED3507 /* TabItemViewCell.swift in Sources */,
 				F343B351B4E71C9AD816E7AA /* Optional+Utils.swift in Sources */,
 				A75A3C79308EEFE9B2657FE8 /* PaddingLabel.swift in Sources */,
 				D3DC00209006534C72A7B2F2 /* PasswordInputFieldValidationStrategy.swift in Sources */,

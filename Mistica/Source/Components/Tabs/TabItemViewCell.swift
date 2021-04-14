@@ -50,6 +50,8 @@ public class TabItemViewCell: UICollectionViewCell {
         return imageView
     }()
 
+    private var overridenAccessibilityLabel: String?
+    
     private lazy var title: UILabel = {
         let label = UILabel()
         label.font = .textPreset3(weight: .regular)
@@ -174,7 +176,15 @@ public extension TabItemViewCell {
     }
 
     override var accessibilityLabel: String? {
-        get { title.text }
-        set {}
+        get {
+            if overridenAccessibilityLabel != nil {
+                return overridenAccessibilityLabel
+            } else {
+                return title.text
+            }
+        }
+        set {
+            overridenAccessibilityLabel = newValue
+        }
     }
 }

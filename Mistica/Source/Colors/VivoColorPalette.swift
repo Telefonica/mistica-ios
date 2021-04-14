@@ -31,7 +31,7 @@ struct VivoColors: Colors {
 
     // BUTTONS
     let buttonDangerBackground = VivoColorPalette.pepper
-    let buttonDangerBackgroundDisabled = VivoColorPalette.pepperLight30 |  VivoColorPalette.white.withAlphaComponent(0.05)
+    let buttonDangerBackgroundDisabled = VivoColorPalette.pepperLight30 | VivoColorPalette.white.withAlphaComponent(0.05)
     let buttonDangerBackgroundSelected = VivoColorPalette.pepperDark
     let buttonDangerBackgroundHover = VivoColorPalette.pepperDark
 

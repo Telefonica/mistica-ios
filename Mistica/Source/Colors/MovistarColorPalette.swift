@@ -33,7 +33,7 @@ struct MovistarColors: Colors {
 
     // BUTTONS
     let buttonDangerBackground = MovistarColorPalette.pepper
-    let buttonDangerBackgroundDisabled = MovistarColorPalette.pepperLight30 | MovistarColorPalette.darkModeGrey
+    let buttonDangerBackgroundDisabled = MovistarColorPalette.pepperLight30 | MovistarColorPalette.white.withAlphaComponent(0.05)
     let buttonDangerBackgroundSelected = MovistarColorPalette.pepperDark
     let buttonDangerBackgroundHover = MovistarColorPalette.pepperDark
 
@@ -41,17 +41,17 @@ struct MovistarColors: Colors {
     let buttonLinkBackgroundSelectedInverse = MovistarColorPalette.white.withAlphaComponent(0.2) | MovistarColorPalette.darkModeGrey
 
     let buttonPrimaryBackground = MovistarColorPalette.movistarGreen | MovistarColorPalette.movistarGreen
-    let buttonPrimaryBackgroundDisabled = MovistarColorPalette.movistarGreenLight50 | MovistarColorPalette.darkModeGrey
-    let buttonPrimaryBackgroundDisabledInverse = MovistarColorPalette.movistarBlueLight50 | MovistarColorPalette.darkModeGrey
+    let buttonPrimaryBackgroundDisabled = MovistarColorPalette.movistarGreenLight50 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    let buttonPrimaryBackgroundDisabledInverse = MovistarColorPalette.movistarBlueLight50 | MovistarColorPalette.white.withAlphaComponent(0.05)
     let buttonPrimaryBackgroundInverse = MovistarColorPalette.white | MovistarColorPalette.movistarGreen
     let buttonPrimaryBackgroundSelected = MovistarColorPalette.movistarGreenDark | MovistarColorPalette.movistarGreenDark
     let buttonPrimaryBackgroundHover = MovistarColorPalette.movistarGreenDark | MovistarColorPalette.movistarGreenDark // web only
     let buttonPrimaryBackgroundSelectedInverse = MovistarColorPalette.movistarBlueLight50 | MovistarColorPalette.movistarGreenDark
 
     let buttonSecondaryBackground = MovistarColorPalette.movistarGreen | MovistarColorPalette.movistarGreen
-    let buttonSecondaryBackgroundDisabled = MovistarColorPalette.movistarGreenLight50 | MovistarColorPalette.darkModeGrey
+    let buttonSecondaryBackgroundDisabled = MovistarColorPalette.movistarGreenLight50 | MovistarColorPalette.white.withAlphaComponent(0.05)
     let buttonSecondaryBackgroundSelected = MovistarColorPalette.movistarGreenDark | MovistarColorPalette.movistarGreenDark
-    let buttonSecondaryBorderDisabledInverse = MovistarColorPalette.movistarBlueLight50 | MovistarColorPalette.darkModeGrey
+    let buttonSecondaryBorderDisabledInverse = MovistarColorPalette.movistarBlueLight50 | MovistarColorPalette.white.withAlphaComponent(0.05)
     let buttonSecondaryBorderInverse = MovistarColorPalette.white | MovistarColorPalette.movistarGreen
     let buttonSecondaryBorderSelectedInverse = MovistarColorPalette.movistarBlueLight50 | MovistarColorPalette.movistarGreenDark
 
@@ -79,13 +79,13 @@ struct MovistarColors: Colors {
     let controlActivated = MovistarColorPalette.movistarBlue | MovistarColorPalette.movistarBlue
     let controlError = MovistarColorPalette.pepper
     let loadingBar = MovistarColorPalette.movistarGreen | MovistarColorPalette.movistarBlue
-    let loadingBarBackground = MovistarColorPalette.movistarGreenLight50 | MovistarColorPalette.darkModeGrey
+    let loadingBarBackground = MovistarColorPalette.movistarGreenLight50 | MovistarColorPalette.white.withAlphaComponent(0.05)
     let loadingBarBackgroundInverse = MovistarColorPalette.movistarBlueDark | MovistarColorPalette.movistarGreenDark
     let loadingBarInverse = MovistarColorPalette.movistarBlueLight50 | MovistarColorPalette.movistarGreenLight50
 
     // DIVIDERS
-    let divider = MovistarColorPalette.grey2 | MovistarColorPalette.darkModeGrey
-    let dividerInverse = MovistarColorPalette.movistarBlueDark | MovistarColorPalette.grey6
+    let divider = MovistarColorPalette.grey2 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    let dividerInverse = MovistarColorPalette.movistarBlueDark | MovistarColorPalette.white.withAlphaComponent(0.05)
     var navigationBarDivider: UIColor {
         UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) | MovistarColorPalette.darkModeBlack
     }

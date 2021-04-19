@@ -30,24 +30,24 @@ struct O2Colors: Colors {
 
     // BUTTONS
     let buttonDangerBackground = O2ColorPalette.pepper
-    let buttonDangerBackgroundDisabled = O2ColorPalette.pepperLight30 | O2ColorPalette.darkModeGrey
+    let buttonDangerBackgroundDisabled = O2ColorPalette.pepperLight30 | O2ColorPalette.white.withAlphaComponent(0.05)
     let buttonDangerBackgroundSelected = O2ColorPalette.pepperDark
 
     let buttonLinkBackgroundSelected = O2ColorPalette.o2BluePrimaryLight10 | O2ColorPalette.darkModeGrey
     let buttonLinkBackgroundSelectedInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.darkModeGrey
 
     let buttonPrimaryBackground = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
-    let buttonPrimaryBackgroundDisabled = O2ColorPalette.o2BluePrimaryLight10 | O2ColorPalette.darkModeGrey
-    let buttonPrimaryBackgroundDisabledInverse = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.darkModeGrey
+    let buttonPrimaryBackgroundDisabled = O2ColorPalette.o2BluePrimaryLight10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    let buttonPrimaryBackgroundDisabledInverse = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.white.withAlphaComponent(0.05)
     let buttonPrimaryBackgroundInverse = O2ColorPalette.white | O2ColorPalette.darkModeO2BluePrimary
     let buttonPrimaryBackgroundSelected = O2ColorPalette.o2BluePrimaryDark | O2ColorPalette.darkModeO2BluePrimaryDark
     let buttonPrimaryBackgroundHover = O2ColorPalette.o2BluePrimaryDark | O2ColorPalette.darkModeO2BluePrimaryDark
     let buttonPrimaryBackgroundSelectedInverse = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.darkModeO2BluePrimaryDark
 
     let buttonSecondaryBackground = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
-    let buttonSecondaryBackgroundDisabled = O2ColorPalette.o2BluePrimaryLight10 | O2ColorPalette.darkModeGrey
+    let buttonSecondaryBackgroundDisabled = O2ColorPalette.o2BluePrimaryLight10 | O2ColorPalette.white.withAlphaComponent(0.05)
     let buttonSecondaryBackgroundSelected = O2ColorPalette.o2BluePrimaryDark | O2ColorPalette.darkModeO2BluePrimaryDark
-    let buttonSecondaryBorderDisabledInverse = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.darkModeGrey
+    let buttonSecondaryBorderDisabledInverse = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.white.withAlphaComponent(0.05)
     let buttonSecondaryBorderInverse = O2ColorPalette.white | O2ColorPalette.darkModeO2BluePrimary
     let buttonSecondaryBorderSelectedInverse = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.darkModeO2BluePrimaryDark
 
@@ -75,13 +75,13 @@ struct O2Colors: Colors {
     let controlActivated = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimaryLight50
     let controlError = O2ColorPalette.pepper
     let loadingBar = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
-    let loadingBarBackground = O2ColorPalette.grey1 | O2ColorPalette.darkModeGrey6
+    let loadingBarBackground = O2ColorPalette.grey1 | O2ColorPalette.white.withAlphaComponent(0.05)
     let loadingBarBackgroundInverse = O2ColorPalette.grey1 | O2ColorPalette.grey1
     let loadingBarInverse = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
 
     // DIVIDERS
-    let divider = O2ColorPalette.grey2 | O2ColorPalette.darkModeGrey
-    let dividerInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.darkModeGrey
+    let divider = O2ColorPalette.grey2 | O2ColorPalette.white.withAlphaComponent(0.05)
+    let dividerInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.white.withAlphaComponent(0.05)
     let navigationBarDivider = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
 
     // FEEDBACKS

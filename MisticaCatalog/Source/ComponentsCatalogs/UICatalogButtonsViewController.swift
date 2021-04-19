@@ -108,7 +108,7 @@ class UICatalogButtonsViewController: UITableViewController {
 
         let button = state.makeButton(style: style.buttonStyle, title: "Title", loadingTitle: "Loading Title", isSmall: style.isSmall)
         cell.configure(with: button)
-        cell.contentView.backgroundColor = style.isInverse ? .brand : .background
+        cell.contentView.backgroundColor = style.isInverse ? .navigationBarBackground : .backgroundContainer
 
         return cell
     }

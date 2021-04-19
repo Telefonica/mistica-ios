@@ -97,6 +97,8 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 }
 ```
 
+Every component in mistica supports dark mode. In order to configure dark mode in you app, you can follow [Apple guidelines](https://developer.apple.com/documentation/xcode/supporting_dark_mode_in_your_interface/choosing_a_specific_interface_style_for_your_ios_app).
+
 ## Components
 
 * [Badge](./Mistica/Source/Components/Badge/)

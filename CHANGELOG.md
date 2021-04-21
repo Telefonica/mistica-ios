@@ -1,3 +1,16 @@
+# [11.1.0](https://github.com/Telefonica/mistica-ios/compare/v11.0.0...v11.1.0) (2021-04-21)
+
+
+### Bug Fixes
+
+* **DarkMode:** Update background color of Button ([a4b466e](https://github.com/Telefonica/mistica-ios/commit/a4b466e96d64d5076d02ecf2981291bd1a9992cb))
+* **SectionTitle:** fix more than one line. Add snapshot test.  ([36a75c7](https://github.com/Telefonica/mistica-ios/commit/36a75c7b1a1ab76d9229d5c7dd7c6e8ff02a9a89))
+
+
+### Features
+
+* **Tabs:** Add tabs ([d1274c4](https://github.com/Telefonica/mistica-ios/commit/d1274c41dabe38eaf9cca573855fba8394238c15))
+
 # [11.0.0](https://github.com/Telefonica/mistica-ios/compare/v10.0.0...v11.0.0) (2021-04-08)
 
 

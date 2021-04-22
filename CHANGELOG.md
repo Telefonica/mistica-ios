@@ -1,3 +1,10 @@
+## [11.1.1](https://github.com/Telefonica/mistica-ios/compare/v11.1.0...v11.1.1) (2021-04-22)
+
+
+### Bug Fixes
+
+* **Mistica:** IOS-6687 Updating lottie-ios version ([#106](https://github.com/Telefonica/mistica-ios/issues/106)) ([1ee1286](https://github.com/Telefonica/mistica-ios/commit/1ee128696bc839d6211d711d92040716aeb47af6))
+
 # [11.1.0](https://github.com/Telefonica/mistica-ios/compare/v11.0.0...v11.1.0) (2021-04-21)
 
 

@@ -24,6 +24,8 @@ jobs:
             mistica-ios-carthage-
 
       - name: Setup Ruby and execute bundle install
+        env:
+          ImageOS: macos10154
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6

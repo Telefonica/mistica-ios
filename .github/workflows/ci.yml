@@ -33,8 +33,8 @@ jobs:
 
       - name: Setup Ruby
         env:
-          RBENV_ROOT=~/.rbenv/shims
-          PATH="${RBENV_ROOT}:$PATH"
+          RBENV_ROOT: ~/.rbenv/shims
+          PATH: "${RBENV_ROOT}:$PATH"
         run: |
           rbenv install 2.6.0 -s
           rbenv local 2.6.0

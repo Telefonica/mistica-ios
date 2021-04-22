@@ -38,10 +38,11 @@ jobs:
           rbenv install 2.6.0 -s
           rbenv local 2.6.0
           which ruby
+          rbenv which
+          which gem
       
       - name: Bundle Install
         run: |
-          which gem
           gem install bundle
           bundle config path vendor/bundle
           bundle install

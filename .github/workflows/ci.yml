@@ -32,9 +32,10 @@ jobs:
             mistica-ios-carthage-
 
       - name: Setup Ruby
+        env:
+          RBENV_ROOT=~/.rbenv/shims
+          PATH="${RBENV_ROOT}:$PATH"
         run: |
-          export RBENV_ROOT=~/.rbenv/shims
-          export PATH="${RBENV_ROOT}:$PATH"
           rbenv install 2.6.0 -s
           rbenv local 2.6.0
           which ruby
@@ -42,7 +43,6 @@ jobs:
           rbenv which ruby
           which gem
           echo $PATH
-          echo 
       
       - name: Bundle Install
         run: |

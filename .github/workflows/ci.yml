@@ -4,10 +4,6 @@ on:
   pull_request:
         branches: [main]
 
-env:
-  RBENV_ROOT: ~/.rbenv/shims
-  PATH: ${{RBENV_ROOT}}/bin:${{PATH}}
-
 jobs:
   test:
     runs-on: self-hosted-novum-mac
@@ -42,7 +38,6 @@ jobs:
           rbenv which ruby
           which gem
           echo $PATH
-          
           rbenv install 2.6.0 -s
           rbenv local 2.6.0
       

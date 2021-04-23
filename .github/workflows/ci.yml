@@ -31,6 +31,9 @@ jobs:
           restore-keys: |
             mistica-ios-carthage-
 
+      - name: Setup rbenv environment
+        run: echo "~/.rbenv/shims" >> $GITHUB_PATH
+
       - name: Setup Ruby
         run: |
           which ruby
@@ -39,25 +42,9 @@ jobs:
           which gem
           echo $PATH
           echo $GITHUB_PATH
-
-          export RBENV_ROOT=~/.rbenv/shims
-          export PATH="${RBENV_ROOT}:$PATH"
-          echo "${RBENV_ROOT}" >> $GITHUB_PATH
-
-          which ruby
-          rbenv which gem
-          rbenv which ruby
-          which gem
-          echo $PATH
-          echo $GITHUB_PATH
-
+          
           rbenv install 2.6.0 -s
           rbenv local 2.6.0
-
-          which ruby
-          rbenv which gem
-          rbenv which ruby
-          which gem
       
       - name: Bundle Install
         run: |

@@ -4,6 +4,10 @@ on:
   pull_request:
         branches: [main]
 
+env:
+  RBENV_ROOT: ~/.rbenv/shims
+  PATH: ${RBENV_ROOT}/bin:$PATH
+
 jobs:
   test:
     runs-on: self-hosted-novum-mac
@@ -14,6 +18,14 @@ jobs:
       - name: Clean tmp directory
         run: rm -rf tmp/*
       
+      - name: RubyGems Cache
+        uses: actions/cache@v2.1.4
+        with:
+          path: vendor/bundle
+          key: mistica-ios-gems-${{ hashFiles('Gemfile.lock') }}
+          restore-keys: |
+            mistica-ios-gems-
+      
       - name: Carthage Cache
         uses: actions/cache@v2.1.4
         id: carthage-cache
@@ -23,13 +35,28 @@ jobs:
           restore-keys: |
             mistica-ios-carthage-
 
-      - name: Setup Ruby and execute bundle install
-        env:
-          ImageOS: macos10154
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.6
-          bundler-cache: true
+      - name: Setup Ruby
+        run: |
+          which ruby
+          rbenv which gem
+          rbenv which ruby
+          which gem
+          echo $PATH
+          
+          rbenv install 2.6.0 -s
+          rbenv local 2.6.0
+      
+      - name: Bundle Install
+        run: |
+          which ruby
+          rbenv which gem
+          rbenv which ruby
+          which gem
+          echo $PATH
+
+          gem install bundle
+          bundle config path vendor/bundle
+          bundle install
       
       - name: Setup Project Dependencies
         run: bundle exec fastlane setup

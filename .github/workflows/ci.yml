@@ -33,9 +33,16 @@ jobs:
 
       - name: Setup Ruby
         run: |
-          export RBENV_ROOT=~/.rbenv/shims/test
+          which ruby
+          rbenv which gem
+          rbenv which ruby
+          which gem
+          echo $PATH
+          echo $GITHUB_PATH
+
+          export RBENV_ROOT=~/.rbenv/shims
           export PATH="${RBENV_ROOT}:$PATH"
-          echo "$RBENV_ROOT" >> $GITHUB_PATH
+          echo "${RBENV_ROOT}" >> $GITHUB_PATH
 
           which ruby
           rbenv which gem
@@ -43,8 +50,10 @@ jobs:
           which gem
           echo $PATH
           echo $GITHUB_PATH
+
           rbenv install 2.6.0 -s
           rbenv local 2.6.0
+
           which ruby
           rbenv which gem
           rbenv which ruby
@@ -57,6 +66,7 @@ jobs:
           rbenv which ruby
           which gem
           echo $PATH
+          echo $GITHUB_PATH
           
           gem install bundle
           bundle config path vendor/bundle

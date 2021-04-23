@@ -6,7 +6,7 @@ on:
 
 env:
   RBENV_ROOT: ~/.rbenv/shims
-  PATH: ${RBENV_ROOT}/bin:$PATH
+  PATH: ${{RBENV_ROOT}}/bin:${{PATH}}
 
 jobs:
   test:

@@ -27,7 +27,7 @@ struct O2ClassicColors: Colors {
     let borderLight = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeBlack
     let border = O2ClassicColorPalette.grey3 | O2ClassicColorPalette.darkModeGrey
     let borderDark = O2ClassicColorPalette.grey5 | O2ClassicColorPalette.grey5
-    let borderSelected = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2SkyBlue
+    let borderSelected = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2Gem
 
     // BUTTONS
     let buttonDangerBackground = O2ClassicColorPalette.pepper
@@ -74,12 +74,12 @@ struct O2ClassicColors: Colors {
 
     // CONTROLS
     let control = O2ClassicColorPalette.grey3 | O2ClassicColorPalette.darkModeGrey6
-    let controlActivated = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2SkyBlue
+    let controlActivated = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2Gem
     let controlError = O2ClassicColorPalette.pepper
-    let loadingBar = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2SkyBlue
+    let loadingBar = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2Gem
     let loadingBarBackground = O2ClassicColorPalette.o2GemLight30 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
     let loadingBarBackgroundInverse = O2ClassicColorPalette.o2GemLight30 | O2ClassicColorPalette.darkModeGrey // deprecated soon
-    let loadingBarInverse = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2SkyBlue // deprecated soon
+    let loadingBarInverse = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2Gem // deprecated soon
 
     // DIVIDERS
     let divider = O2ClassicColorPalette.grey2 | O2ClassicColorPalette.white.withAlphaComponent(0.05)

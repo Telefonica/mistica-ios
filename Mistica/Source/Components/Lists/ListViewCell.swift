@@ -344,10 +344,10 @@ private extension ListViewCell {
     func updateCellStyle() {
         contentView.directionalLayoutMargins = cellStyle.contentViewLayoutMargins
         contentView.preservesSuperviewLayoutMargins = false
+        contentView.backgroundColor = .background
 
         cellContentView.isLayoutMarginsRelativeArrangement = true
         cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins
-        cellContentView.backgroundColor = .background
 
         cellBorderView.backgroundColor = cellStyle.backgroundColor
         cellBorderView.layer.cornerRadius = cellStyle.cornerRadius

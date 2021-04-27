@@ -123,6 +123,7 @@ Every component in mistica supports dark mode. In order to configure dark mode i
 * [SegmentSelector](./Mistica/Source/Components/SegmentSelector/)
 * [Stepper](./Mistica/Source/Components/Stepper/)
 * [Switch](./Mistica/Source/Components/Switch/)
+* [Tabs](./Mistica/Source/Components/Tabs)
 * [Tag](./Mistica/Source/Components/Tag/)
 * [ViewStates](./Mistica/Source/Components/ViewStates/)
 

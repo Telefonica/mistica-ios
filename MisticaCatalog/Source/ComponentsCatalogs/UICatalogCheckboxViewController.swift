@@ -72,8 +72,8 @@ private class CellView: UITableViewCell {
 
         checkBox.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(checkBox, constraints: [
-            checkBox.topAnchor.constraint(equalTo: contentView.topAnchor),
-            checkBox.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            checkBox.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            checkBox.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             checkBox.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             checkBox.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])

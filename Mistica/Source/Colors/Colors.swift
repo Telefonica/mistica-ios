@@ -70,8 +70,6 @@ protocol Colors {
     var controlError: UIColor { get }
     var loadingBar: UIColor { get }
     var loadingBarBackground: UIColor { get }
-    var loadingBarBackgroundInverse: UIColor { get }
-    var loadingBarInverse: UIColor { get }
 
     // DIVIDERS
     var divider: UIColor { get }

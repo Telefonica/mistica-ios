@@ -76,8 +76,6 @@ struct O2Colors: Colors {
     let controlError = O2ColorPalette.pepper
     let loadingBar = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
     let loadingBarBackground = O2ColorPalette.grey1 | O2ColorPalette.white.withAlphaComponent(0.05)
-    let loadingBarBackgroundInverse = O2ColorPalette.grey1 | O2ColorPalette.grey1
-    let loadingBarInverse = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
 
     // DIVIDERS
     let divider = O2ColorPalette.grey2 | O2ColorPalette.white.withAlphaComponent(0.05)

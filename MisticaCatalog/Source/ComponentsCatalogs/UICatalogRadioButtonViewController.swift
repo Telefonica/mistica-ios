@@ -72,8 +72,8 @@ private class CellView: UITableViewCell {
 
         radioButton.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(radioButton, constraints: [
-            radioButton.topAnchor.constraint(equalTo: contentView.topAnchor),
-            radioButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            radioButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            radioButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             radioButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             radioButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])

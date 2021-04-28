@@ -13,7 +13,6 @@ private enum UICatalogRow: Int, CaseIterable {
     case badge
     case buttons
     case cards
-    case checkbox
     case controls
     case crouton
     case feedbacks
@@ -22,7 +21,6 @@ private enum UICatalogRow: Int, CaseIterable {
     case header
     case inputFields
     case lists
-    case radioButton
     case scrollContentIndicator
     case sectionTitle
     case segmentSelector
@@ -158,8 +156,6 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogInputFieldsViewController(), sender: self)
         case .forms:
             show(UICatalogFormViewController(), sender: self)
-        case .radioButton:
-            show(UICatalogRadioButtonViewController(), sender: self)
         case .scrollContentIndicator:
             show(UICatalogScrollContentIndicatorViewController(), sender: self)
         case .tag:
@@ -174,8 +170,6 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogControlsViewController(), sender: self)
         case .cards:
             show(UICatalogCardsViewController(), sender: self)
-        case .checkbox:
-            show(UICatalogCheckboxViewController(), sender: self)
         case .stepper:
             show(UICatalogStepperViewController(), sender: self)
         case .tabs:
@@ -240,8 +234,6 @@ private extension UICatalogRow {
             return "Buttons"
         case .feedbacks:
             return "Feedbacks"
-        case .checkbox:
-            return "Checkbox"
         case .crouton:
             return "Crouton"
         case .segmentSelector:
@@ -258,8 +250,6 @@ private extension UICatalogRow {
             return "InputFields"
         case .forms:
             return "Forms"
-        case .radioButton:
-            return "Radio Button"
         case .scrollContentIndicator:
             return "Scroll Content Indicator"
         case .tag:
@@ -289,8 +279,6 @@ private extension UICatalogRow {
             return .feedbacksIcon
         case .crouton:
             return .croutonIcon
-        case .checkbox:
-            return .controlsIcon
         case .segmentSelector:
             return .segmentSelectorIcon
         case .tooltip:
@@ -305,8 +293,6 @@ private extension UICatalogRow {
             return .inputFieldsIcon
         case .forms:
             return .inputFieldsIcon
-        case .radioButton:
-            return .controlsIcon
         case .scrollContentIndicator:
             return .scrollContentIndicatorIcon
         case .tag:

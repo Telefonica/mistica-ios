@@ -105,7 +105,7 @@ private extension Checkbox {
         } else {
             imageView.image = nil
             addBorder(color: .control)
-            imageView.backgroundColor = .clear
+            imageView.backgroundColor = .background
         }
     }
 

@@ -43,12 +43,12 @@ public class Checkbox: UIControl {
         commonInit()
     }
 
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         isCheckedChanged(checked: isChecked)
     }
-    
+
     override public var intrinsicContentSize: CGSize {
         let diameter: CGFloat = UIFontMetrics.default.scaledValue(for: Constants.viewWidth)
 

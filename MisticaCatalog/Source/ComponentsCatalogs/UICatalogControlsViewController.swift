@@ -54,9 +54,9 @@ class UICatalogControlsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        70
     }
-    
+
     override func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let control = UIControlRow.allCases[indexPath.section]
         let cell = UITableViewCell()
@@ -104,7 +104,7 @@ private extension UICatalogControlsViewController {
         case .radioButton:
             controlView = configureRadioButton()
         }
-        
+
         cell.backgroundColor = .backgroundContainer
         cell.contentView.addSubview(controlView, constraints: [
             controlView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
@@ -149,13 +149,13 @@ private extension UICatalogControlsViewController {
 
         return pageControl
     }
-    
+
     func configureCheckbox() -> UIView {
         let checkBox = Checkbox()
         checkBox.isChecked = true
         return checkBox
     }
-    
+
     func configureRadioButton() -> UIView {
         let radioButton = RadioButton()
         radioButton.isActivated = true

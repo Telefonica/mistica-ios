@@ -11,7 +11,7 @@ import UIKit
 
 public class Checkbox: UIControl {
     private enum Constants {
-        static let viewWidth = CGFloat(24)
+        static let viewWidth = CGFloat(18)
         static let cornerRadius = CGFloat(2)
     }
 

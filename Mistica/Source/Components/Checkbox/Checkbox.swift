@@ -20,7 +20,7 @@ public class Checkbox: UIControl {
     // A Boolean value that determines the off/on state of the Checkbox
     public var isChecked = false {
         didSet {
-            isCheckedChanged(checked: isChecked)
+            checkedValueChanged(checked: isChecked)
         }
     }
 
@@ -46,7 +46,7 @@ public class Checkbox: UIControl {
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
-        isCheckedChanged(checked: isChecked)
+        checkedValueChanged(checked: isChecked)
     }
 
     override public var intrinsicContentSize: CGSize {
@@ -77,7 +77,7 @@ private extension Checkbox {
     func commonInit() {
         layoutView()
 
-        isCheckedChanged(checked: isChecked)
+        checkedValueChanged(checked: isChecked)
         makeRounded(cornerRadius: Constants.cornerRadius)
 
         setContentHuggingPriority(.defaultHigh, for: .horizontal)
@@ -97,7 +97,7 @@ private extension Checkbox {
         addSubview(withDefaultConstraints: imageView)
     }
 
-    func isCheckedChanged(checked: Bool) {
+    func checkedValueChanged(checked: Bool) {
         if checked {
             imageView.image = UIImage(named: "icn_checkbox_check", type: .common)
             removeBorder()

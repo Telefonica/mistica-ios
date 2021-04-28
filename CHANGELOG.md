@@ -1,3 +1,11 @@
+## [11.1.2](https://github.com/Telefonica/mistica-ios/compare/v11.1.1...v11.1.2) (2021-04-28)
+
+
+### Bug Fixes
+
+* **DarkMode:** Fix dark mode colors in classic o2 ([#109](https://github.com/Telefonica/mistica-ios/issues/109)) ([7e6a7f6](https://github.com/Telefonica/mistica-ios/commit/7e6a7f69776419880a1f64ca250dc63a83723790))
+* **DarkMode:** Update backgroundColor of ListViewCell ([#110](https://github.com/Telefonica/mistica-ios/issues/110)) ([91b22b2](https://github.com/Telefonica/mistica-ios/commit/91b22b232d8b4e54e53a4606f7a9af7ed6a27373))
+
 ## [11.1.1](https://github.com/Telefonica/mistica-ios/compare/v11.1.0...v11.1.1) (2021-04-22)
 
 

@@ -113,10 +113,13 @@ private extension UICatalogControlsViewController {
     }
 
     func configureForSwitch() -> UIView {
-        let switchView = UISwitch()
-        switchView.isOn = true
-
-        return switchView
+        let offSwitch = UISwitch()
+        offSwitch.isOn = false
+        
+        let onSwitch = UISwitch()
+        onSwitch.isOn = true
+        
+        return stackView(arrangedSubviews: [offSwitch, onSwitch])
     }
 
     func configureForSegmentedControl() -> UIView {
@@ -151,15 +154,29 @@ private extension UICatalogControlsViewController {
     }
 
     func configureCheckbox() -> UIView {
-        let checkBox = Checkbox()
-        checkBox.isChecked = true
-        return checkBox
+        let nonChecked = Checkbox()
+        nonChecked.isChecked = false
+        
+        let checked = Checkbox()
+        checked.isChecked = true
+        
+        return stackView(arrangedSubviews: [nonChecked, checked])
     }
 
     func configureRadioButton() -> UIView {
-        let radioButton = RadioButton()
-        radioButton.isActivated = true
-        return radioButton
+        let deactivated = RadioButton()
+        deactivated.isActivated = false
+        
+        let activated = RadioButton()
+        activated.isActivated = true
+        
+        return stackView(arrangedSubviews: [deactivated, activated])
+    }
+    
+    func stackView(arrangedSubviews: [UIView]) -> UIStackView {
+        let stackview = UIStackView(arrangedSubviews: arrangedSubviews)
+        stackview.spacing = 10
+        return stackview
     }
 }
 

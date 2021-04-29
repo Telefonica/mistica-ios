@@ -103,6 +103,9 @@ private extension RadioButton {
 
         sendActions(for: .valueChanged)
         onValueChanged?(isActivated)
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
     }
 
     func activatedValueChanged(activated: Bool) {

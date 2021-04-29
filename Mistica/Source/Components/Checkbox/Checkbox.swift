@@ -118,7 +118,7 @@ private extension Checkbox {
         let animation = CAAnimationGroup()
         
         let width = intrinsicContentSize.width
-        let duration = 0.1
+        let duration = 0.2
         
         let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
         borderWidthAnimation.fromValue = borderView.layer.borderWidth
@@ -128,12 +128,14 @@ private extension Checkbox {
         borderColorAnimation.fromValue = borderView.layer.borderColor
         borderColorAnimation.duration = duration
         
+        let smallTranform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        
         if checked {
-            imageView.fade(toAlpha: 1, duration: duration)
+            CATransaction.setCompletionBlock { self.animateImageView(from: smallTranform, to: .identity, duration: duration) }
             borderView.layer.borderColor = UIColor.controlActivated.cgColor
             borderView.layer.borderWidth = width / 2.0
         } else {
-            imageView.fade(toAlpha: 0, duration: duration)
+            animateImageView(from: .identity, to: smallTranform, duration: duration)
             borderView.layer.borderColor = UIColor.border.cgColor
             borderView.layer.borderWidth = 1
         }
@@ -145,5 +147,18 @@ private extension Checkbox {
         animation.duration = duration
 
         borderView.layer.add(animation, forKey: "group")
+        CATransaction.commit()
+    }
+    
+    func animateImageView(from fromTranform: CGAffineTransform, to toTransform: CGAffineTransform, duration: Double) {
+        imageView.transform = fromTranform
+        UIView.animate(
+            withDuration: duration,
+            delay: 0.0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 0.3,
+            options: .beginFromCurrentState,
+            animations: { self.imageView.transform = toTransform },
+            completion: nil)
     }
 }

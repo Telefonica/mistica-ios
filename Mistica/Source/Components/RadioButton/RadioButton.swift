@@ -109,7 +109,7 @@ private extension RadioButton {
         let animation = CAAnimationGroup()
         
         let width = intrinsicContentSize.width
-        let duration = 0.1
+        let duration = 0.2
         
         let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
         borderWidthAnimation.fromValue = layer.borderWidth

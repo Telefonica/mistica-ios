@@ -17,7 +17,7 @@ public class RadioButton: UIControl {
     // A Boolean value that determines the off/on state of the RadioButton
     public var isActivated = false {
         didSet {
-            setNeedsDisplay()
+            activatedValueChanged(activated: isActivated)
         }
     }
 
@@ -39,6 +39,11 @@ public class RadioButton: UIControl {
 
         commonInit()
     }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.width / 2.0
+    }
 
     override public var accessibilityTraits: UIAccessibilityTraits {
         get {
@@ -59,39 +64,13 @@ public class RadioButton: UIControl {
 
     override public var intrinsicContentSize: CGSize {
         let diameter = UIFontMetrics.default.scaledValue(for: Constants.viewWidth)
-
         return CGSize(width: diameter, height: diameter)
     }
 
-    override public func draw(_ rect: CGRect) {
-        super.draw(rect)
-
-        let outerCircleFillColor: UIColor
-        let innerCircleFillColor: UIColor
-        let innerCircleRect: CGRect
-
-        if isActivated {
-            outerCircleFillColor = .controlActivated
-            innerCircleFillColor = .white
-            let innerCircleDiameter = (rect.width / 2)
-            let x = (rect.width - innerCircleDiameter) / 2
-            let y = (rect.height - innerCircleDiameter) / 2
-            innerCircleRect = CGRect(x: x, y: y, width: innerCircleDiameter, height: innerCircleDiameter)
-        } else {
-            outerCircleFillColor = .control
-            innerCircleFillColor = .background
-            innerCircleRect = rect.insetBy(dx: 1, dy: 1)
-        }
-
-        // Draw outer circle
-        let outerCiclePath = UIBezierPath(ovalIn: rect)
-        outerCircleFillColor.setFill()
-        outerCiclePath.fill()
-
-        // Draw innter circle
-        let innerCirclePath = UIBezierPath(ovalIn: innerCircleRect)
-        innerCircleFillColor.setFill()
-        innerCirclePath.fill()
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        activatedValueChanged(activated: isActivated)
     }
 }
 
@@ -105,7 +84,8 @@ private extension RadioButton {
     }
 
     func commonInit() {
-        backgroundColor = .clear
+        activatedValueChanged(activated: isActivated)
+        layer.cornerRadius = Constants.viewWidth / 2.0
 
         setContentHuggingPriority(.required, for: .horizontal)
         setContentHuggingPriority(.required, for: .vertical)
@@ -123,5 +103,38 @@ private extension RadioButton {
 
         sendActions(for: .valueChanged)
         onValueChanged?(isActivated)
+    }
+
+    func activatedValueChanged(activated: Bool) {
+        let animation = CAAnimationGroup()
+        
+        let width = intrinsicContentSize.width
+        let duration = 0.1
+        
+        let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
+        borderWidthAnimation.fromValue = layer.borderWidth
+        borderWidthAnimation.duration = duration
+        
+        let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
+        borderColorAnimation.fromValue = layer.borderColor
+        borderColorAnimation.duration = duration
+        
+        if activated {
+            layer.backgroundColor = UIColor.white.cgColor
+            layer.borderColor = UIColor.controlActivated.cgColor
+            layer.borderWidth = width / 4.0
+        } else {
+            layer.backgroundColor = UIColor.background.cgColor
+            layer.borderColor = UIColor.border.cgColor
+            layer.borderWidth = 1
+        }
+        
+        borderWidthAnimation.toValue = layer.borderWidth
+        borderColorAnimation.toValue = layer.borderColor
+        
+        animation.animations = [borderWidthAnimation, borderColorAnimation]
+        animation.duration = duration
+
+        layer.add(animation, forKey: "group")
     }
 }

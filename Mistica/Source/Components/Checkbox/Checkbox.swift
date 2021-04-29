@@ -15,8 +15,9 @@ public class Checkbox: UIControl {
         static let cornerRadius = CGFloat(2)
     }
 
-    private let imageView = UIImageView()
-
+    private let imageView = UIImageView(image: .checkmarkIcon)
+    private let borderView = UIView()
+    
     // A Boolean value that determines the off/on state of the Checkbox
     public var isChecked = false {
         didSet {
@@ -50,8 +51,7 @@ public class Checkbox: UIControl {
     }
 
     override public var intrinsicContentSize: CGSize {
-        let diameter: CGFloat = UIFontMetrics.default.scaledValue(for: Constants.viewWidth)
-
+        let diameter = UIFontMetrics.default.scaledValue(for: Constants.viewWidth)
         return CGSize(width: diameter, height: diameter)
     }
 
@@ -78,8 +78,8 @@ private extension Checkbox {
         layoutView()
 
         checkedValueChanged(checked: isChecked)
-        makeRounded(cornerRadius: Constants.cornerRadius)
-
+        borderView.makeRounded(cornerRadius: Constants.cornerRadius)
+        
         setContentHuggingPriority(.defaultHigh, for: .horizontal)
         setContentHuggingPriority(.defaultHigh, for: .vertical)
         setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -94,19 +94,10 @@ private extension Checkbox {
 
     func layoutView() {
         imageView.contentMode = .center
+        imageView.backgroundColor = .clear
+        backgroundColor = .background
+        addSubview(withDefaultConstraints: borderView)
         addSubview(withDefaultConstraints: imageView)
-    }
-
-    func checkedValueChanged(checked: Bool) {
-        if checked {
-            imageView.image = UIImage(named: "icn_checkbox_check", type: .common)
-            removeBorder()
-            imageView.backgroundColor = .controlActivated
-        } else {
-            imageView.image = nil
-            addBorder(color: .control)
-            imageView.backgroundColor = .background
-        }
     }
 
     @objc func didTap() {
@@ -121,5 +112,38 @@ private extension Checkbox {
     @available(iOS, introduced: 11.0, deprecated: 13.0, message: "We're using an undocumented traits of UISwitch. Please verify that this works before increment the deprecated version number")
     func setupAccessibilityTraits() {
         accessibilityTraits = UISwitch().accessibilityTraits
+    }
+
+    func checkedValueChanged(checked: Bool) {
+        let animation = CAAnimationGroup()
+        
+        let width = intrinsicContentSize.width
+        let duration = 0.1
+        
+        let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
+        borderWidthAnimation.fromValue = borderView.layer.borderWidth
+        borderWidthAnimation.duration = duration
+        
+        let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
+        borderColorAnimation.fromValue = borderView.layer.borderColor
+        borderColorAnimation.duration = duration
+        
+        if checked {
+            imageView.fade(toAlpha: 1, duration: duration)
+            borderView.layer.borderColor = UIColor.controlActivated.cgColor
+            borderView.layer.borderWidth = width / 2.0
+        } else {
+            imageView.fade(toAlpha: 0, duration: duration)
+            borderView.layer.borderColor = UIColor.border.cgColor
+            borderView.layer.borderWidth = 1
+        }
+        
+        borderWidthAnimation.toValue = borderView.layer.borderWidth
+        borderColorAnimation.toValue = borderView.layer.borderColor
+        
+        animation.animations = [borderWidthAnimation, borderColorAnimation]
+        animation.duration = duration
+
+        borderView.layer.add(animation, forKey: "group")
     }
 }

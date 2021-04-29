@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    static var checkmarkIconSmall: UIImage {
-        UIImage(named: "icn_check_selected_small", type: .common)!
+    static var checkmarkIcon: UIImage {
+        UIImage(named: "icn_checkbox_check", type: .common)!
     }
 }

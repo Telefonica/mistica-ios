@@ -12,6 +12,8 @@ import UIKit
 public class RadioButton: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(20)
+        static let animationDuration = Double(0.4)
+        static let timingFunction = CAMediaTimingFunction(controlPoints: 0.77, 0, 0.175, 1)
     }
 
     // A Boolean value that determines the off/on state of the RadioButton
@@ -112,7 +114,7 @@ private extension RadioButton {
         let animation = CAAnimationGroup()
         
         let width = intrinsicContentSize.width
-        let duration = 0.2
+        let duration = Constants.animationDuration
         
         let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
         borderWidthAnimation.fromValue = layer.borderWidth
@@ -137,6 +139,7 @@ private extension RadioButton {
         
         animation.animations = [borderWidthAnimation, borderColorAnimation]
         animation.duration = duration
+        animation.timingFunction = Constants.timingFunction
 
         layer.add(animation, forKey: "group")
     }

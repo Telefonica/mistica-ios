@@ -13,6 +13,8 @@ public class Checkbox: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(18)
         static let cornerRadius = CGFloat(2)
+        static let animationDuration = Double(0.4)
+        static let timingFunction = CAMediaTimingFunction(controlPoints: 0.77, 0, 0.175, 1)
     }
 
     private let imageView = UIImageView(image: .checkmarkIcon)
@@ -121,7 +123,7 @@ private extension Checkbox {
         let animation = CAAnimationGroup()
         
         let width = intrinsicContentSize.width
-        let duration = 0.2
+        let duration = Constants.animationDuration
         
         let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
         borderWidthAnimation.fromValue = borderView.layer.borderWidth
@@ -131,25 +133,33 @@ private extension Checkbox {
         borderColorAnimation.fromValue = borderView.layer.borderColor
         borderColorAnimation.duration = duration
         
-        let smallTranform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        
+        let transformAnimation = CABasicAnimation(keyPath: "transform")
+        transformAnimation.fromValue = imageView.layer.transform
+        transformAnimation.duration = duration
+                
         if checked {
-            CATransaction.setCompletionBlock { self.animateImageView(from: smallTranform, to: .identity, duration: duration) }
+            imageView.layer.transform = CATransform3DIdentity
             borderView.layer.borderColor = UIColor.controlActivated.cgColor
             borderView.layer.borderWidth = width / 2.0
         } else {
-            animateImageView(from: .identity, to: smallTranform, duration: duration)
+            imageView.layer.transform = CATransform3DScale(imageView.layer.transform, 0.01, 0.01, 0.01)
             borderView.layer.borderColor = UIColor.border.cgColor
             borderView.layer.borderWidth = 1
         }
         
+        let timingFunction = Constants.timingFunction
+        
         borderWidthAnimation.toValue = borderView.layer.borderWidth
         borderColorAnimation.toValue = borderView.layer.borderColor
+        transformAnimation.toValue = imageView.layer.transform
+        transformAnimation.timingFunction = timingFunction
         
         animation.animations = [borderWidthAnimation, borderColorAnimation]
         animation.duration = duration
-
+        animation.timingFunction = timingFunction
+        
         borderView.layer.add(animation, forKey: "group")
+        imageView.layer.add(transformAnimation, forKey: "transform")
         CATransaction.commit()
     }
     

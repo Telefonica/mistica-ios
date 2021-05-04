@@ -27,6 +27,7 @@ public class Checkbox: UIControl {
             _isChecked
         }
         set {
+            guard _isChecked != newValue else { return }
             _isChecked = newValue
             updateViewStyleAnimated(checked: newValue)
         }
@@ -80,6 +81,8 @@ public class Checkbox: UIControl {
     }
 
     public func setChecked(_ checked: Bool, animated: Bool) {
+        guard _isChecked != checked else { return }
+
         _isChecked = checked
         if animated {
             updateViewStyleAnimated(checked: checked)
@@ -95,7 +98,8 @@ private extension Checkbox {
 
         updateViewStyle(checked: isChecked)
         borderView.layer.cornerRadius = Constants.cornerRadius
-
+        borderView.layer.masksToBounds = true
+        
         setContentHuggingPriority(.defaultHigh, for: .horizontal)
         setContentHuggingPriority(.defaultHigh, for: .vertical)
         setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -134,8 +138,6 @@ private extension Checkbox {
     }
 
     func updateViewStyleAnimated(checked: Bool) {
-        let animation = CAAnimationGroup()
-
         let duration = Constants.animationDuration
 
         let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
@@ -150,6 +152,10 @@ private extension Checkbox {
         transformAnimation.fromValue = imageView.layer.transform
         transformAnimation.duration = duration
 
+        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+        opacityAnimation.fromValue = imageView.layer.opacity
+        opacityAnimation.duration = duration
+
         updateViewStyle(checked: checked)
 
         let timingFunction = Constants.timingFunction
@@ -157,22 +163,30 @@ private extension Checkbox {
         borderWidthAnimation.toValue = borderView.layer.borderWidth
         borderColorAnimation.toValue = borderView.layer.borderColor
         transformAnimation.toValue = imageView.layer.transform
-        transformAnimation.timingFunction = timingFunction
+        opacityTransform.toValue = imageView.layer.opacity
+        
+        let borderAnimation = CAAnimationGroup()
+        borderAnimation.animations = [borderWidthAnimation, borderColorAnimation]
+        borderAnimation.duration = duration
+        borderAnimation.timingFunction = timingFunction
 
-        animation.animations = [borderWidthAnimation, borderColorAnimation]
-        animation.duration = duration
-        animation.timingFunction = timingFunction
-
-        borderView.layer.add(animation, forKey: "group")
-        imageView.layer.add(transformAnimation, forKey: "transform")
+        let imageAnimation = CAAnimationGroup()
+        imageAnimation.animations = [opacityAnimation, transformAnimation]
+        imageAnimation.duration = duration
+        imageAnimation.timingFunction = timingFunction
+        
+        borderView.layer.add(borderAnimation, forKey: "group")
+        imageView.layer.add(imageAnimation, forKey: "group")
     }
 
     func updateViewStyle(checked: Bool) {
         if checked {
+            imageView.layer.opacity = 1
             imageView.layer.transform = CATransform3DIdentity
             borderView.layer.borderColor = UIColor.controlActivated.cgColor
             borderView.layer.borderWidth = intrinsicContentSize.width / 2.0
         } else {
+            imageView.layer.opacity = 0
             imageView.layer.transform = CATransform3DScale(imageView.layer.transform, 0.01, 0.01, 0.01)
             borderView.layer.borderColor = UIColor.border.cgColor
             borderView.layer.borderWidth = 1

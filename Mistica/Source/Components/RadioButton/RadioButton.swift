@@ -23,6 +23,7 @@ public class RadioButton: UIControl {
             _isActivated
         }
         set {
+            guard _isActivated != newValue else { return }
             _isActivated = newValue
             updateViewStyleAnimated(activated: newValue)
         }
@@ -81,6 +82,8 @@ public class RadioButton: UIControl {
     }
 
     public func setActivated(_ activated: Bool, animated: Bool) {
+        guard _isActivated != activated else { return }
+
         _isActivated = activated
         if animated {
             updateViewStyleAnimated(activated: activated)

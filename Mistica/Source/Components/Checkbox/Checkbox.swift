@@ -163,7 +163,7 @@ private extension Checkbox {
         borderWidthAnimation.toValue = borderView.layer.borderWidth
         borderColorAnimation.toValue = borderView.layer.borderColor
         transformAnimation.toValue = imageView.layer.transform
-        opacityTransform.toValue = imageView.layer.opacity
+        opacityAnimation.toValue = imageView.layer.opacity
         
         let borderAnimation = CAAnimationGroup()
         borderAnimation.animations = [borderWidthAnimation, borderColorAnimation]

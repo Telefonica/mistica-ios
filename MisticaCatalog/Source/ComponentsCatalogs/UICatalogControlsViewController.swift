@@ -9,6 +9,15 @@
 import Mistica
 import UIKit
 
+private enum UIControlRow: Int, CaseIterable {
+    case `switch`
+    case segmentedControl
+    case tabBar
+    case pageControl
+    case radioButton
+    case checkbox
+}
+
 class UICatalogControlsViewController: UITableViewController {
     init() {
         if #available(iOS 13.0, *) {
@@ -33,7 +42,7 @@ class UICatalogControlsViewController: UITableViewController {
     }
 
     override func numberOfSections(in _: UITableView) -> Int {
-        MisticaControlStyle.allCases.count
+        UIControlRow.allCases.count
     }
 
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
@@ -41,11 +50,15 @@ class UICatalogControlsViewController: UITableViewController {
     }
 
     override func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
-        MisticaControlStyle.allCases[section].sectionTitle
+        UIControlRow.allCases[section].title
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        70
     }
 
     override func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let control = MisticaControlStyle.allCases[indexPath.section]
+        let control = UIControlRow.allCases[indexPath.section]
         let cell = UITableViewCell()
 
         configureCell(cell, for: control)
@@ -54,8 +67,8 @@ class UICatalogControlsViewController: UITableViewController {
     }
 }
 
-private extension MisticaControlStyle {
-    var sectionTitle: String {
+private extension UIControlRow {
+    var title: String {
         switch self {
         case .switch:
             return "UISwitch"
@@ -65,12 +78,16 @@ private extension MisticaControlStyle {
             return "UITabBar"
         case .pageControl:
             return "UIPageControl"
+        case .radioButton:
+            return "RadioButton"
+        case .checkbox:
+            return "Checkbox"
         }
     }
 }
 
 private extension UICatalogControlsViewController {
-    func configureCell(_ cell: UITableViewCell, for control: MisticaControlStyle) {
+    func configureCell(_ cell: UITableViewCell, for control: UIControlRow) {
         let controlView: UIView
 
         switch control {
@@ -82,8 +99,13 @@ private extension UICatalogControlsViewController {
             controlView = configureForTabBar()
         case .pageControl:
             controlView = configureForPageIndicator()
+        case .checkbox:
+            controlView = configureCheckbox()
+        case .radioButton:
+            controlView = configureRadioButton()
         }
 
+        cell.backgroundColor = .backgroundContainer
         cell.contentView.addSubview(controlView, constraints: [
             controlView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
             controlView.centerXAnchor.constraint(equalTo: cell.contentView.centerXAnchor)
@@ -91,10 +113,13 @@ private extension UICatalogControlsViewController {
     }
 
     func configureForSwitch() -> UIView {
-        let switchView = UISwitch()
-        switchView.isOn = true
+        let offSwitch = UISwitch()
+        offSwitch.isOn = false
 
-        return switchView
+        let onSwitch = UISwitch()
+        onSwitch.isOn = true
+
+        return stackView(arrangedSubviews: [offSwitch, onSwitch])
     }
 
     func configureForSegmentedControl() -> UIView {
@@ -102,9 +127,8 @@ private extension UICatalogControlsViewController {
         segmentedControl.insertSegment(withTitle: "Segment 1", at: 0, animated: true)
         segmentedControl.insertSegment(withTitle: "Segment 2", at: 1, animated: true)
         segmentedControl.insertSegment(withTitle: "Segment 3", at: 2, animated: true)
-        segmentedControl.insertSegment(withTitle: "Segment 4", at: 3, animated: true)
 
-        segmentedControl.selectedSegmentIndex = 2
+        segmentedControl.selectedSegmentIndex = 1
 
         return segmentedControl
     }
@@ -127,6 +151,32 @@ private extension UICatalogControlsViewController {
         pageControl.currentPage = 2
 
         return pageControl
+    }
+
+    func configureCheckbox() -> UIView {
+        let nonChecked = Checkbox()
+        nonChecked.isChecked = false
+
+        let checked = Checkbox()
+        checked.isChecked = true
+
+        return stackView(arrangedSubviews: [nonChecked, checked])
+    }
+
+    func configureRadioButton() -> UIView {
+        let deactivated = RadioButton()
+        deactivated.isActivated = false
+
+        let activated = RadioButton()
+        activated.isActivated = true
+
+        return stackView(arrangedSubviews: [deactivated, activated])
+    }
+
+    func stackView(arrangedSubviews: [UIView]) -> UIStackView {
+        let stackview = UIStackView(arrangedSubviews: arrangedSubviews)
+        stackview.spacing = 10
+        return stackview
     }
 }
 

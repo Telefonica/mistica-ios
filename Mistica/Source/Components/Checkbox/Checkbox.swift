@@ -11,7 +11,8 @@ import UIKit
 
 public class Checkbox: UIControl {
     private enum Constants {
-        static let viewWidth = CGFloat(24)
+        static let viewWidth = CGFloat(18)
+        static let cornerRadius = CGFloat(2)
     }
 
     private let imageView = UIImageView()
@@ -19,7 +20,7 @@ public class Checkbox: UIControl {
     // A Boolean value that determines the off/on state of the Checkbox
     public var isChecked = false {
         didSet {
-            changeIcon(checked: isChecked)
+            checkedValueChanged(checked: isChecked)
         }
     }
 
@@ -40,6 +41,12 @@ public class Checkbox: UIControl {
         super.init(coder: coder)
 
         commonInit()
+    }
+
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        checkedValueChanged(checked: isChecked)
     }
 
     override public var intrinsicContentSize: CGSize {
@@ -70,9 +77,8 @@ private extension Checkbox {
     func commonInit() {
         layoutView()
 
-        changeIcon(checked: isChecked)
-
-        backgroundColor = .clear
+        checkedValueChanged(checked: isChecked)
+        makeRounded(cornerRadius: Constants.cornerRadius)
 
         setContentHuggingPriority(.defaultHigh, for: .horizontal)
         setContentHuggingPriority(.defaultHigh, for: .vertical)
@@ -87,14 +93,19 @@ private extension Checkbox {
     }
 
     func layoutView() {
+        imageView.contentMode = .center
         addSubview(withDefaultConstraints: imageView)
     }
 
-    func changeIcon(checked: Bool) {
+    func checkedValueChanged(checked: Bool) {
         if checked {
-            imageView.image = UIImage(named: "icn_checkbox_on", type: .brandedAndThemed)
+            imageView.image = UIImage(named: "icn_checkbox_check", type: .common)
+            removeBorder()
+            imageView.backgroundColor = .controlActivated
         } else {
-            imageView.image = UIImage(named: "icn_checkbox_off", type: .common)
+            imageView.image = nil
+            addBorder(color: .control)
+            imageView.backgroundColor = .background
         }
     }
 

@@ -11,7 +11,7 @@ import UIKit
 
 public class RadioButton: UIControl {
     private enum Constants {
-        static let viewWidth = CGFloat(24)
+        static let viewWidth = CGFloat(20)
     }
 
     // A Boolean value that determines the off/on state of the RadioButton
@@ -67,16 +67,19 @@ public class RadioButton: UIControl {
         super.draw(rect)
 
         let outerCircleFillColor: UIColor
+        let innerCircleFillColor: UIColor
         let innerCircleRect: CGRect
 
         if isActivated {
             outerCircleFillColor = .controlActivated
+            innerCircleFillColor = .white
             let innerCircleDiameter = (rect.width / 2)
             let x = (rect.width - innerCircleDiameter) / 2
             let y = (rect.height - innerCircleDiameter) / 2
             innerCircleRect = CGRect(x: x, y: y, width: innerCircleDiameter, height: innerCircleDiameter)
         } else {
             outerCircleFillColor = .control
+            innerCircleFillColor = .background
             innerCircleRect = rect.insetBy(dx: 1, dy: 1)
         }
 
@@ -87,7 +90,7 @@ public class RadioButton: UIControl {
 
         // Draw innter circle
         let innerCirclePath = UIBezierPath(ovalIn: innerCircleRect)
-        UIColor.background.setFill()
+        innerCircleFillColor.setFill()
         innerCirclePath.fill()
     }
 }

@@ -312,16 +312,6 @@ public extension UIColor {
         MisticaConfig.currentColors.loadingBarBackground
     }
 
-    @objc(loadingBarBackgroundInverseColor)
-    static var loadingBarBackgroundInverse: UIColor {
-        MisticaConfig.currentColors.loadingBarBackgroundInverse
-    }
-
-    @objc(loadingBarInverseColor)
-    static var loadingBarInverse: UIColor {
-        MisticaConfig.currentColors.loadingBarInverse
-    }
-
     // MARK: Dividers
 
     @objc(dividerColor)

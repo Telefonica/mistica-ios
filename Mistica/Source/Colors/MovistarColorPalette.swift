@@ -80,8 +80,6 @@ struct MovistarColors: Colors {
     let controlError = MovistarColorPalette.pepper
     let loadingBar = MovistarColorPalette.movistarGreen | MovistarColorPalette.movistarBlue
     let loadingBarBackground = MovistarColorPalette.movistarGreenLight50 | MovistarColorPalette.white.withAlphaComponent(0.05)
-    let loadingBarBackgroundInverse = MovistarColorPalette.movistarBlueDark | MovistarColorPalette.movistarGreenDark
-    let loadingBarInverse = MovistarColorPalette.movistarBlueLight50 | MovistarColorPalette.movistarGreenLight50
 
     // DIVIDERS
     let divider = MovistarColorPalette.grey2 | MovistarColorPalette.white.withAlphaComponent(0.05)

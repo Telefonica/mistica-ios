@@ -78,8 +78,6 @@ struct O2ClassicColors: Colors {
     let controlError = O2ClassicColorPalette.pepper
     let loadingBar = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2Gem
     let loadingBarBackground = O2ClassicColorPalette.o2GemLight30 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-    let loadingBarBackgroundInverse = O2ClassicColorPalette.o2GemLight30 | O2ClassicColorPalette.darkModeGrey // deprecated soon
-    let loadingBarInverse = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2Gem // deprecated soon
 
     // DIVIDERS
     let divider = O2ClassicColorPalette.grey2 | O2ClassicColorPalette.white.withAlphaComponent(0.05)

@@ -78,8 +78,6 @@ struct VivoColors: Colors {
     let controlError = VivoColorPalette.pepper
     let loadingBar = VivoColorPalette.pink | VivoColorPalette.vivoPurpleLight80
     let loadingBarBackground = VivoColorPalette.pepperLight30 | VivoColorPalette.white.withAlphaComponent(0.05)
-    let loadingBarBackgroundInverse = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.grey1
-    let loadingBarInverse = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
 
     // DIVIDERS
     let divider = VivoColorPalette.grey2 | VivoColorPalette.white.withAlphaComponent(0.05)

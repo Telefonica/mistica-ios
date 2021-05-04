@@ -99,7 +99,7 @@ private extension Checkbox {
         updateViewStyle(checked: isChecked)
         borderView.layer.cornerRadius = Constants.cornerRadius
         borderView.layer.masksToBounds = true
-        
+
         setContentHuggingPriority(.defaultHigh, for: .horizontal)
         setContentHuggingPriority(.defaultHigh, for: .vertical)
         setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -164,7 +164,7 @@ private extension Checkbox {
         borderColorAnimation.toValue = borderView.layer.borderColor
         transformAnimation.toValue = imageView.layer.transform
         opacityTransform.toValue = imageView.layer.opacity
-        
+
         let borderAnimation = CAAnimationGroup()
         borderAnimation.animations = [borderWidthAnimation, borderColorAnimation]
         borderAnimation.duration = duration
@@ -174,7 +174,7 @@ private extension Checkbox {
         imageAnimation.animations = [opacityAnimation, transformAnimation]
         imageAnimation.duration = duration
         imageAnimation.timingFunction = timingFunction
-        
+
         borderView.layer.add(borderAnimation, forKey: "group")
         imageView.layer.add(imageAnimation, forKey: "group")
     }

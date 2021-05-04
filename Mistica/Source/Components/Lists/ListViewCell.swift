@@ -344,6 +344,7 @@ private extension ListViewCell {
     func updateCellStyle() {
         contentView.directionalLayoutMargins = cellStyle.contentViewLayoutMargins
         contentView.preservesSuperviewLayoutMargins = false
+        contentView.backgroundColor = .background
 
         cellContentView.isLayoutMarginsRelativeArrangement = true
         cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins

@@ -16,10 +16,15 @@ public class RadioButton: UIControl {
         static let timingFunction = CAMediaTimingFunction(controlPoints: 0.77, 0, 0.175, 1)
     }
 
-    // A Boolean value that determines the off/on state of the RadioButton
-    public var isActivated = false {
-        didSet {
-            activatedValueChanged(activated: isActivated)
+    private var _isActivated = false
+    /// A Boolean value that determines the off/on state of the RadioButton
+    public var isActivated: Bool {
+        get {
+            _isActivated
+        }
+        set {
+            _isActivated = newValue
+            updateViewStyleAnimated(activated: newValue)
         }
     }
 
@@ -72,7 +77,16 @@ public class RadioButton: UIControl {
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
-        activatedValueChanged(activated: isActivated)
+        updateViewStyleAnimated(activated: isActivated)
+    }
+    
+    public func setActivated(_ activated: Bool, animated: Bool) {
+        _isActivated = activated
+        if animated {
+            updateViewStyleAnimated(activated: activated)
+        } else {
+            updateViewStyle(activated: activated)
+        }
     }
 }
 
@@ -86,8 +100,7 @@ private extension RadioButton {
     }
 
     func commonInit() {
-        activatedValueChanged(activated: isActivated)
-        layer.cornerRadius = Constants.viewWidth / 2.0
+        updateViewStyle(activated: isActivated)
 
         setContentHuggingPriority(.required, for: .horizontal)
         setContentHuggingPriority(.required, for: .vertical)
@@ -109,11 +122,10 @@ private extension RadioButton {
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
     }
-
-    func activatedValueChanged(activated: Bool) {
+    
+    func updateViewStyleAnimated(activated: Bool) {
         let animation = CAAnimationGroup()
         
-        let width = intrinsicContentSize.width
         let duration = Constants.animationDuration
         
         let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
@@ -124,15 +136,7 @@ private extension RadioButton {
         borderColorAnimation.fromValue = layer.borderColor
         borderColorAnimation.duration = duration
         
-        if activated {
-            layer.backgroundColor = UIColor.white.cgColor
-            layer.borderColor = UIColor.controlActivated.cgColor
-            layer.borderWidth = width / 4.0
-        } else {
-            layer.backgroundColor = UIColor.background.cgColor
-            layer.borderColor = UIColor.border.cgColor
-            layer.borderWidth = 1
-        }
+        updateViewStyle(activated: activated)
         
         borderWidthAnimation.toValue = layer.borderWidth
         borderColorAnimation.toValue = layer.borderColor
@@ -142,5 +146,17 @@ private extension RadioButton {
         animation.timingFunction = Constants.timingFunction
 
         layer.add(animation, forKey: "group")
+    }
+    
+    func updateViewStyle(activated: Bool) {
+        if activated {
+            layer.backgroundColor = UIColor.white.cgColor
+            layer.borderColor = UIColor.controlActivated.cgColor
+            layer.borderWidth = intrinsicContentSize.width / 4.0
+        } else {
+            layer.backgroundColor = UIColor.background.cgColor
+            layer.borderColor = UIColor.border.cgColor
+            layer.borderWidth = 1
+        }
     }
 }

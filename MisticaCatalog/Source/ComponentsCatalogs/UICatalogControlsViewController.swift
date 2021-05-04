@@ -158,7 +158,7 @@ private extension UICatalogControlsViewController {
         nonChecked.setChecked(false, animated: false)
 
         let checked = Checkbox()
-        nonChecked.setChecked(true, animated: false)
+        checked.setChecked(true, animated: false)
 
         return stackView(arrangedSubviews: [nonChecked, checked])
     }
@@ -168,7 +168,7 @@ private extension UICatalogControlsViewController {
         deactivated.setActivated(false, animated: false)
 
         let activated = RadioButton()
-        deactivated.setActivated(true, animated: false)
+        activated.setActivated(true, animated: false)
 
         return stackView(arrangedSubviews: [deactivated, activated])
     }

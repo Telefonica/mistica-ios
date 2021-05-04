@@ -46,8 +46,8 @@ public class RadioButton: UIControl {
 
         commonInit()
     }
-    
-    public override func layoutSubviews() {
+
+    override public func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.width / 2.0
     }
@@ -74,12 +74,12 @@ public class RadioButton: UIControl {
         return CGSize(width: diameter, height: diameter)
     }
 
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         updateViewStyleAnimated(activated: isActivated)
     }
-    
+
     public func setActivated(_ activated: Bool, animated: Bool) {
         _isActivated = activated
         if animated {
@@ -118,36 +118,36 @@ private extension RadioButton {
 
         sendActions(for: .valueChanged)
         onValueChanged?(isActivated)
-        
+
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
     }
-    
+
     func updateViewStyleAnimated(activated: Bool) {
         let animation = CAAnimationGroup()
-        
+
         let duration = Constants.animationDuration
-        
+
         let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
         borderWidthAnimation.fromValue = layer.borderWidth
         borderWidthAnimation.duration = duration
-        
+
         let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
         borderColorAnimation.fromValue = layer.borderColor
         borderColorAnimation.duration = duration
-        
+
         updateViewStyle(activated: activated)
-        
+
         borderWidthAnimation.toValue = layer.borderWidth
         borderColorAnimation.toValue = layer.borderColor
-        
+
         animation.animations = [borderWidthAnimation, borderColorAnimation]
         animation.duration = duration
         animation.timingFunction = Constants.timingFunction
 
         layer.add(animation, forKey: "group")
     }
-    
+
     func updateViewStyle(activated: Bool) {
         if activated {
             layer.backgroundColor = UIColor.white.cgColor

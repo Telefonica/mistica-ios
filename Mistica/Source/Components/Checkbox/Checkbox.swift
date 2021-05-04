@@ -19,7 +19,7 @@ public class Checkbox: UIControl {
 
     private let imageView = UIImageView(image: .checkmarkIcon)
     private let borderView = UIView()
-    
+
     private var _isChecked = false
     /// A Boolean value that determines the off/on state of the Checkbox
     public var isChecked: Bool {
@@ -78,7 +78,7 @@ public class Checkbox: UIControl {
             super.accessibilityValue = newValue
         }
     }
-    
+
     public func setChecked(_ checked: Bool, animated: Bool) {
         _isChecked = checked
         if animated {
@@ -95,7 +95,7 @@ private extension Checkbox {
 
         updateViewStyle(checked: isChecked)
         borderView.layer.cornerRadius = Constants.cornerRadius
-        
+
         setContentHuggingPriority(.defaultHigh, for: .horizontal)
         setContentHuggingPriority(.defaultHigh, for: .vertical)
         setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
@@ -123,7 +123,7 @@ private extension Checkbox {
         onValueChanged?(isChecked)
 
         setNeedsDisplay()
-        
+
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
     }
@@ -135,38 +135,38 @@ private extension Checkbox {
 
     func updateViewStyleAnimated(checked: Bool) {
         let animation = CAAnimationGroup()
-        
+
         let duration = Constants.animationDuration
-        
+
         let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
         borderWidthAnimation.fromValue = borderView.layer.borderWidth
         borderWidthAnimation.duration = duration
-        
+
         let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
         borderColorAnimation.fromValue = borderView.layer.borderColor
         borderColorAnimation.duration = duration
-        
+
         let transformAnimation = CABasicAnimation(keyPath: "transform")
         transformAnimation.fromValue = imageView.layer.transform
         transformAnimation.duration = duration
-                
+
         updateViewStyle(checked: checked)
-        
+
         let timingFunction = Constants.timingFunction
-        
+
         borderWidthAnimation.toValue = borderView.layer.borderWidth
         borderColorAnimation.toValue = borderView.layer.borderColor
         transformAnimation.toValue = imageView.layer.transform
         transformAnimation.timingFunction = timingFunction
-        
+
         animation.animations = [borderWidthAnimation, borderColorAnimation]
         animation.duration = duration
         animation.timingFunction = timingFunction
-        
+
         borderView.layer.add(animation, forKey: "group")
         imageView.layer.add(transformAnimation, forKey: "transform")
     }
-    
+
     func updateViewStyle(checked: Bool) {
         if checked {
             imageView.layer.transform = CATransform3DIdentity

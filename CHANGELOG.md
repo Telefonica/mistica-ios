@@ -1,3 +1,15 @@
+# [11.2.0](https://github.com/Telefonica/mistica-ios/compare/v11.1.2...v11.2.0) (2021-05-05)
+
+
+### Bug Fixes
+
+* **DarkMode:** Update neutralHigh and skeletonWave colors ([#113](https://github.com/Telefonica/mistica-ios/issues/113)) ([19397f1](https://github.com/Telefonica/mistica-ios/commit/19397f12e635f3464d807c446a5bbd2917033637))
+
+
+### Features
+
+* **Controls:** Make Checkbox Squared. ([#111](https://github.com/Telefonica/mistica-ios/issues/111)) ([77455e1](https://github.com/Telefonica/mistica-ios/commit/77455e1cea67b6cd97c2ee6f0b7877c8b2a41ca0))
+
 ## [11.1.2](https://github.com/Telefonica/mistica-ios/compare/v11.1.1...v11.1.2) (2021-04-28)
 
 

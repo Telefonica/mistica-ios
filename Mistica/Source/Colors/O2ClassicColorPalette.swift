@@ -20,8 +20,7 @@ struct O2ClassicColors: Colors {
     let navigationBarBackground = O2ClassicColorPalette.o2Blue | O2ClassicColorPalette.darkModeBlack
     let backgroundAlternative = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeGrey
     let backgroundFeedbackBottom = O2ClassicColorPalette.o2GradientFourth | O2ClassicColorPalette.darkModeBlack
-
-    let skeletonWave = O2ClassicColorPalette.grey2 | O2ClassicColorPalette.grey5
+    let skeletonWave = O2ClassicColorPalette.grey2 | O2ClassicColorPalette.grey5.withAlphaComponent(0.3)
 
     // BORDERS
     let borderLight = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeBlack
@@ -93,7 +92,7 @@ struct O2ClassicColors: Colors {
     let brand = O2ClassicColorPalette.o2Blue | O2ClassicColorPalette.o2SkyBlue
     let brandDark = O2ClassicColorPalette.o2BlueDark | O2ClassicColorPalette.darkModeGrey6
     let inverse = O2ClassicColorPalette.white | O2ClassicColorPalette.grey2
-    let neutralHigh = O2ClassicColorPalette.grey6 | O2ClassicColorPalette.grey4
+    let neutralHigh = O2ClassicColorPalette.grey6 | O2ClassicColorPalette.grey2
     let neutralMedium = O2ClassicColorPalette.grey5 | O2ClassicColorPalette.grey5
     let neutralLow = O2ClassicColorPalette.grey3 | O2ClassicColorPalette.darkModeGrey6
     let promo = O2ClassicColorPalette.pink

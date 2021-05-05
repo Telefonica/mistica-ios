@@ -23,7 +23,7 @@ struct MovistarColors: Colors {
 
     let backgroundAlternative = MovistarColorPalette.grey1 | MovistarColorPalette.darkModeGrey // (seguramente mejor darkModeBlack)
     let backgroundFeedbackBottom = MovistarColorPalette.movistarBlue | MovistarColorPalette.darkModeBlack
-    let skeletonWave = MovistarColorPalette.grey2 | MovistarColorPalette.grey5
+    let skeletonWave = MovistarColorPalette.grey2 | MovistarColorPalette.grey5.withAlphaComponent(0.3)
 
     // BORDERS
     let borderLight = MovistarColorPalette.grey1 | MovistarColorPalette.darkModeBlack
@@ -97,7 +97,7 @@ struct MovistarColors: Colors {
     let brand = MovistarColorPalette.movistarBlue
     let brandDark = MovistarColorPalette.movistarBlueDark | MovistarColorPalette.grey6
     let inverse = MovistarColorPalette.white | MovistarColorPalette.grey2
-    let neutralHigh = MovistarColorPalette.grey6 | MovistarColorPalette.grey4
+    let neutralHigh = MovistarColorPalette.grey6 | MovistarColorPalette.grey2
     let neutralMedium = MovistarColorPalette.grey5 | MovistarColorPalette.grey5
     let neutralLow = MovistarColorPalette.grey3 | MovistarColorPalette.grey6
     let promo = MovistarColorPalette.purple

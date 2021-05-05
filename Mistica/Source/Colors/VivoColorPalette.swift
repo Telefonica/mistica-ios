@@ -20,8 +20,7 @@ struct VivoColors: Colors {
     let navigationBarBackground = VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
     let backgroundAlternative = VivoColorPalette.grey1 | VivoColorPalette.darkModeGrey
     let backgroundFeedbackBottom = VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
-
-    let skeletonWave = VivoColorPalette.grey2 | VivoColorPalette.grey5
+    let skeletonWave = VivoColorPalette.grey2 | VivoColorPalette.grey5.withAlphaComponent(0.3)
 
     // BORDERS
     let borderLight = VivoColorPalette.grey1 | VivoColorPalette.darkModeBlack
@@ -93,7 +92,7 @@ struct VivoColors: Colors {
     let brand = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
     let brandDark = VivoColorPalette.vivoPurpleDark | VivoColorPalette.darkModeGrey6
     let inverse = VivoColorPalette.white | VivoColorPalette.grey2
-    let neutralHigh = VivoColorPalette.grey6 | VivoColorPalette.grey4
+    let neutralHigh = VivoColorPalette.grey6 | VivoColorPalette.grey2
     let neutralMedium = VivoColorPalette.grey5 | VivoColorPalette.grey5
     let neutralLow = VivoColorPalette.grey3 | VivoColorPalette.darkModeGrey6
     let promo = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80

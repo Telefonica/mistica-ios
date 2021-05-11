@@ -12,12 +12,20 @@ import UIKit
 public class RadioButton: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(20)
+        static let animationDuration = Double(0.4)
+        static let timingFunction = CAMediaTimingFunction(controlPoints: 0.77, 0, 0.175, 1)
     }
 
-    // A Boolean value that determines the off/on state of the RadioButton
-    public var isActivated = false {
-        didSet {
-            setNeedsDisplay()
+    private var _isActivated = false
+    /// A Boolean value that determines the off/on state of the RadioButton
+    public var isActivated: Bool {
+        get {
+            _isActivated
+        }
+        set {
+            guard _isActivated != newValue else { return }
+            _isActivated = newValue
+            updateViewStyleAnimated(activated: newValue)
         }
     }
 
@@ -40,6 +48,11 @@ public class RadioButton: UIControl {
         commonInit()
     }
 
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.width / 2.0
+    }
+
     override public var accessibilityTraits: UIAccessibilityTraits {
         get {
             if super.accessibilityTraits != customAccessiblityTraits {
@@ -59,39 +72,24 @@ public class RadioButton: UIControl {
 
     override public var intrinsicContentSize: CGSize {
         let diameter = UIFontMetrics.default.scaledValue(for: Constants.viewWidth)
-
         return CGSize(width: diameter, height: diameter)
     }
 
-    override public func draw(_ rect: CGRect) {
-        super.draw(rect)
+    override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        updateViewStyleAnimated(activated: isActivated)
+    }
 
-        let outerCircleFillColor: UIColor
-        let innerCircleFillColor: UIColor
-        let innerCircleRect: CGRect
+    public func setActivated(_ activated: Bool, animated: Bool) {
+        guard _isActivated != activated else { return }
 
-        if isActivated {
-            outerCircleFillColor = .controlActivated
-            innerCircleFillColor = .white
-            let innerCircleDiameter = (rect.width / 2)
-            let x = (rect.width - innerCircleDiameter) / 2
-            let y = (rect.height - innerCircleDiameter) / 2
-            innerCircleRect = CGRect(x: x, y: y, width: innerCircleDiameter, height: innerCircleDiameter)
+        _isActivated = activated
+        if animated {
+            updateViewStyleAnimated(activated: activated)
         } else {
-            outerCircleFillColor = .control
-            innerCircleFillColor = .background
-            innerCircleRect = rect.insetBy(dx: 1, dy: 1)
+            updateViewStyle(activated: activated)
         }
-
-        // Draw outer circle
-        let outerCiclePath = UIBezierPath(ovalIn: rect)
-        outerCircleFillColor.setFill()
-        outerCiclePath.fill()
-
-        // Draw innter circle
-        let innerCirclePath = UIBezierPath(ovalIn: innerCircleRect)
-        innerCircleFillColor.setFill()
-        innerCirclePath.fill()
     }
 }
 
@@ -105,7 +103,7 @@ private extension RadioButton {
     }
 
     func commonInit() {
-        backgroundColor = .clear
+        updateViewStyle(activated: isActivated)
 
         setContentHuggingPriority(.required, for: .horizontal)
         setContentHuggingPriority(.required, for: .vertical)
@@ -123,5 +121,45 @@ private extension RadioButton {
 
         sendActions(for: .valueChanged)
         onValueChanged?(isActivated)
+
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+    }
+
+    func updateViewStyleAnimated(activated: Bool) {
+        let animation = CAAnimationGroup()
+
+        let duration = Constants.animationDuration
+
+        let borderWidthAnimation = CABasicAnimation(keyPath: "borderWidth")
+        borderWidthAnimation.fromValue = layer.borderWidth
+        borderWidthAnimation.duration = duration
+
+        let borderColorAnimation = CABasicAnimation(keyPath: "borderColor")
+        borderColorAnimation.fromValue = layer.borderColor
+        borderColorAnimation.duration = duration
+
+        updateViewStyle(activated: activated)
+
+        borderWidthAnimation.toValue = layer.borderWidth
+        borderColorAnimation.toValue = layer.borderColor
+
+        animation.animations = [borderWidthAnimation, borderColorAnimation]
+        animation.duration = duration
+        animation.timingFunction = Constants.timingFunction
+
+        layer.add(animation, forKey: "group")
+    }
+
+    func updateViewStyle(activated: Bool) {
+        if activated {
+            layer.backgroundColor = UIColor.white.cgColor
+            layer.borderColor = UIColor.controlActivated.cgColor
+            layer.borderWidth = intrinsicContentSize.width / 4.0
+        } else {
+            layer.backgroundColor = UIColor.background.cgColor
+            layer.borderColor = UIColor.border.cgColor
+            layer.borderWidth = 1
+        }
     }
 }

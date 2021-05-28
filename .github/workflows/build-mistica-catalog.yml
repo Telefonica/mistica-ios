@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
         
       - name: RubyGems Cache
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v2.1.6
         with:
           path: vendor/bundle
           key: mistica-ios-gems-${{ hashFiles('Gemfile.lock') }}
@@ -28,7 +28,7 @@ jobs:
             mistica-ios-gems-
           
       - name: Carthage Cache
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v2.1.6
         id: carthage-cache
         with:
           path: Carthage

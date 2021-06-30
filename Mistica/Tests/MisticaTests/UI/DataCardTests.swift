@@ -11,6 +11,7 @@ import SnapshotTesting
 import XCTest
 
 final class DataCardTests: XCTestCase {
+    
     override class func setUp() {
         super.setUp()
 

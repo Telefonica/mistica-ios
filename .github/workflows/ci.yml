@@ -13,7 +13,10 @@ jobs:
       
       - name: Clean tmp directory
         run: rm -rf tmp/*
-      
+
+      - name: Echo $PATH
+        run: echo $PATH
+
       - name: RubyGems Cache
         uses: actions/cache@v2.1.6
         with:

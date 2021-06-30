@@ -1,9 +1,8 @@
 name: CI
 
 on:
-  workflow_dispatch:
   pull_request:
-        branches: [fix-github-action]
+        branches: [main]
 
 jobs:
   test:

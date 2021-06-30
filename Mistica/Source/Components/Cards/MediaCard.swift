@@ -161,7 +161,7 @@ private extension MediaCard {
         baseCardView.contentView.titleLabel.numberOfLines = 0
         baseCardView.contentView.titleTopSpacing = 8
 
-        baseCardView.contentView.subtitleLabel.font = .textPreset4(weight: .light)
+        baseCardView.contentView.subtitleLabel.font = .textPreset4(weight: .regular)
         baseCardView.contentView.subtitleLabel.textColor = .textPrimary
         baseCardView.contentView.subtitleLabel.minHeight = 24
         baseCardView.contentView.subtitleLabel.numberOfLines = 0

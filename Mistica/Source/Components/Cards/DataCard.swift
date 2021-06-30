@@ -182,7 +182,7 @@ private extension DataCard {
 
         cardBaseView.contentView.headlineTopSpacing = 8
 
-        cardBaseView.contentView.titleLabel.font = .textPreset4(weight: .light)
+        cardBaseView.contentView.titleLabel.font = .textPreset4(weight: .regular)
         cardBaseView.contentView.titleLabel.textColor = .textPrimary
         cardBaseView.contentView.titleLabel.minHeight = 24
         cardBaseView.contentView.titleLabel.numberOfLines = 0

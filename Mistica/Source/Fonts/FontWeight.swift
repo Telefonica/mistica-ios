@@ -34,7 +34,7 @@ public extension FontStyle {
     }
 
     enum TextPreset6Weight: String, FontWeightConvertible {
-        case light
+        case light, regular
     }
 
     enum TextPreset7Weight: String, FontWeightConvertible {

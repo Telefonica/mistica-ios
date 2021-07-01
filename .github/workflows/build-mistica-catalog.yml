@@ -18,7 +18,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
+      
+      - name: Install rbenv
+        run: brew install rbenv
+      
       - name: RubyGems Cache
         uses: actions/cache@v2.1.6
         with:
@@ -38,10 +41,10 @@ jobs:
       
       - name: Setup Ruby
         run: |
-          export RBENV_ROOT=/usr/local/rbenv
-          export PATH="${RBENV_ROOT}/bin:$PATH"
           rbenv install 2.6.0 -s
           rbenv local 2.6.0
+          which ruby
+          rbenv which ruby
       
       - name: Bundle Install
         run: |

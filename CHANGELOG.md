@@ -1,3 +1,10 @@
+# [11.3.0](https://github.com/Telefonica/mistica-ios/compare/v11.2.0...v11.3.0) (2021-07-01)
+
+
+### Features
+
+* **Controls:** Update Checkbox and RadioButton animations ([#112](https://github.com/Telefonica/mistica-ios/issues/112)) ([ff570de](https://github.com/Telefonica/mistica-ios/commit/ff570dee9b8223ce25006d55ed6da71a236c40fe))
+
 # [11.2.0](https://github.com/Telefonica/mistica-ios/compare/v11.1.2...v11.2.0) (2021-05-05)
 
 

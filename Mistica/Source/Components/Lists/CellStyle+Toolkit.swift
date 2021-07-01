@@ -14,14 +14,14 @@ extension ListViewCell.CellStyle {
         switch self {
         case .fullWidth:
             return 0
-        case .boxed:
+        case .boxed, .boxedInverse:
             return 4
         }
     }
 
     var borderWidth: CGFloat {
         switch self {
-        case .fullWidth:
+        case .fullWidth, .boxedInverse:
             return 0
         case .boxed:
             return 1
@@ -30,7 +30,7 @@ extension ListViewCell.CellStyle {
 
     var borderColor: CGColor? {
         switch self {
-        case .fullWidth:
+        case .fullWidth, .boxedInverse:
             return nil
         case .boxed:
             return UIColor.border.cgColor
@@ -41,7 +41,7 @@ extension ListViewCell.CellStyle {
         switch self {
         case .fullWidth:
             return false
-        case .boxed:
+        case .boxed, .boxedInverse:
             return true
         }
     }
@@ -50,7 +50,7 @@ extension ListViewCell.CellStyle {
         switch self {
         case .fullWidth:
             return 72.0
-        case .boxed:
+        case .boxed, .boxedInverse:
             return 92.0
         }
     }
@@ -59,7 +59,7 @@ extension ListViewCell.CellStyle {
         switch self {
         case .fullWidth:
             return .zero
-        case .boxed:
+        case .boxed, .boxedInverse:
             return NSDirectionalEdgeInsets(
                 top: 8,
                 leading: 16,
@@ -84,6 +84,26 @@ extension ListViewCell.CellStyle {
             return .background
         case .boxed:
             return .backgroundContainer
+        case .boxedInverse:
+            return .backgroundBrand
+        }
+    }
+
+    var titleTextColor: UIColor {
+        switch self {
+        case .fullWidth, .boxed:
+            return .textPrimary
+        case .boxedInverse:
+            return .textPrimaryInverse
+        }
+    }
+
+    var subtitleTextColor: UIColor {
+        switch self {
+        case .fullWidth, .boxed:
+            return .textSecondary
+        case .boxedInverse:
+            return .textSecondaryInverse
         }
     }
 }

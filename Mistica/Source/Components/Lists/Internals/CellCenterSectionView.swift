@@ -24,6 +24,19 @@ class CellCenterSectionView: UIStackView {
     lazy var subtitleLabel = IntrinsictHeightLabel()
     lazy var detailLabel = IntrinsictHeightLabel()
 
+    var titleTextColor: UIColor = .textPrimary {
+        didSet {
+            titleLabel.textColor = titleTextColor
+        }
+    }
+
+    var subtitleTextColor: UIColor = .textSecondary {
+        didSet {
+            subtitleLabel.textColor = subtitleTextColor
+            detailLabel.textColor = subtitleTextColor
+        }
+    }
+
     var hasSubtitleText: Bool {
         subtitleLabel.text != nil || subtitleLabel.attributedText != nil
     }
@@ -46,9 +59,9 @@ class CellCenterSectionView: UIStackView {
 
     override var isUserInteractionEnabled: Bool {
         didSet {
-            titleLabel.textColor = isUserInteractionEnabled ? .textPrimary : .textDisabled
-            detailLabel.textColor = isUserInteractionEnabled ? .textSecondary : .textDisabled
-            subtitleLabel.textColor = isUserInteractionEnabled ? .textSecondary : .textDisabled
+            titleLabel.textColor = isUserInteractionEnabled ? titleTextColor : .textDisabled
+            detailLabel.textColor = isUserInteractionEnabled ? subtitleTextColor : .textDisabled
+            subtitleLabel.textColor = isUserInteractionEnabled ? subtitleTextColor : .textDisabled
         }
     }
 
@@ -89,7 +102,7 @@ private extension CellCenterSectionView {
     func styleViews() {
         titleLabel.numberOfLines = 0
         titleLabel.font = .textPreset3(weight: .regular)
-        titleLabel.textColor = .textPrimary
+        titleLabel.textColor = titleTextColor
         titleLabel.minHeight = 24
         titleLabel.lineBreakMode = .byTruncatingTail
         titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)

@@ -26,6 +26,7 @@ class UICatalogListsViewController: UITableViewController {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "layoutStyleCell")
         cell.segmentedControl.insertSegment(withTitle: "Full Width", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Boxed", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Boxed Inverse", at: 2, animated: false)
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
@@ -140,6 +141,8 @@ extension UICatalogListsViewController {
             sampleVC.cellLayoutStyle = .fullWidth
         case 1:
             sampleVC.cellLayoutStyle = .boxed
+        case 2:
+            sampleVC.cellLayoutStyle = .boxedInverse
         default:
             break
         }

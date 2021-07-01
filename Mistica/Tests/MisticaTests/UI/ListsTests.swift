@@ -624,6 +624,69 @@ final class ListsTests: XCTestCase {
         )
     }
 
+    // MARK: - Boxed inverse style
+
+    func testCellWithTitleAndBoxedInverseStyle() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            cellLayoutStyle: .boxedInverse
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
+    func testAllLabelsAndBoxedInverseStyleMoreThanOneRow() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.titleMultiline,
+            subtitle: AnyValues.subtitleMultiline,
+            detailText: AnyValues.detailTextMultiline,
+            cellLayoutStyle: .boxedInverse,
+            numberOfRows: 3
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
+    func testAllLabelsAndVerticallyPresetAndBoxedInverseStyleMoreThanOneRow() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.titleMultiline,
+            subtitle: AnyValues.subtitleMultiline,
+            detailText: AnyValues.detailTextMultiline,
+            customControl: .custom(makeVerticallyCenteredPreset),
+            cellLayoutStyle: .boxedInverse,
+            numberOfRows: 3
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
+    func testAllLabelsWithMultilinesAndHeadlineAndImageAndNavigationPresetAndBoxedInverseStyleMoreThanOneRow() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitleMultiline,
+            detailText: AnyValues.detailTextMultiline,
+            assetType: .image(AnyValues.image),
+            customControl: .navigation(makeNavigationPresetViewWithoutBagde),
+            showHeadline: true,
+            cellLayoutStyle: .boxedInverse,
+            numberOfRows: 3
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
     // MARK: - XIB integration
 
     func testXIBIntegration() {

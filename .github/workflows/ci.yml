@@ -14,8 +14,8 @@ jobs:
       - name: Clean tmp directory
         run: rm -rf tmp/*
 
-      - name: Echo $PATH
-        run: echo $PATH
+      - name: Source bash profile
+        run: source ~/.bash_profile
 
       - name: RubyGems Cache
         uses: actions/cache@v2.1.6

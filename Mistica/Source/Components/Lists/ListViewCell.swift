@@ -363,6 +363,10 @@ private extension ListViewCell {
         cellBorderView.layer.borderWidth = cellStyle.borderWidth
 
         cellSeparatorView.isHidden = cellStyle.cellSeparatorIsHidden
+
+        if cellStyle == .boxedInverse {
+            controlView?.tintColor = .white
+        }
     }
 
     func updateAssetView() {

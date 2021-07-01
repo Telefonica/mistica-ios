@@ -33,6 +33,16 @@ public class NavigationPresetView: UIStackView {
         }
     }
 
+    public override var tintColor: UIColor! {
+        get {
+            super.tintColor
+        }
+        set {
+            super.tintColor = newValue
+            imageView.tintColor = newValue
+        }
+    }
+
     public convenience init() {
         self.init(frame: .zero)
     }

@@ -64,6 +64,12 @@ platform :ios do
         export_team_id: "JA666WMX28",
         output_directory: BUILD_OUTPUT_PATH,
         export_method: 'enterprise',
+        export_options: {
+          signingStyle: "manual",
+          provisioningProfiles: {
+            "com.telefonica.mistica.enterprise": "mistica-app" 
+          }
+        },
         clean: true
     )
 

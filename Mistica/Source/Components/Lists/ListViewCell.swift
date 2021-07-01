@@ -21,6 +21,7 @@ open class ListViewCell: UITableViewCell {
     public enum CellStyle {
         case fullWidth
         case boxed
+        case boxedInverse
     }
 
     @frozen
@@ -181,6 +182,10 @@ open class ListViewCell: UITableViewCell {
             oldValue?.removeFromSuperview()
 
             if let view = controlView {
+                if cellStyle == .boxedInverse {
+                    view.tintColor = .white
+                }
+
                 cellContentView.addArrangedSubview(view)
             }
         }
@@ -188,7 +193,7 @@ open class ListViewCell: UITableViewCell {
 
     public var isCellSeparatorHidden: Bool = true {
         didSet {
-            guard cellStyle != .boxed else { return }
+            guard cellStyle != .boxed && cellStyle != .boxedInverse else { return }
 
             cellSeparatorView.isHidden = isCellSeparatorHidden
         }
@@ -314,7 +319,7 @@ public extension ListViewCell {
 private extension ListViewCell {
     var highlightedView: UIView {
         switch cellStyle {
-        case .fullWidth:
+        case .fullWidth, .boxedInverse:
             return contentView
         case .boxed:
             return cellBorderView
@@ -345,6 +350,9 @@ private extension ListViewCell {
         contentView.directionalLayoutMargins = cellStyle.contentViewLayoutMargins
         contentView.preservesSuperviewLayoutMargins = false
         contentView.backgroundColor = .background
+
+        centerSection.titleTextColor = cellStyle.titleTextColor
+        centerSection.subtitleTextColor = cellStyle.subtitleTextColor
 
         cellContentView.isLayoutMarginsRelativeArrangement = true
         cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins

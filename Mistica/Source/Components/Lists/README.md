@@ -1,12 +1,12 @@
 #  Lists
 
-Lists are continous group of text whit images and/or controls. We currently provide two classes `ListView.swift` and `ListViewCell.swift`. 
+Lists are continous group of text with images and/or controls. We currently provide two classes `ListView.swift` and `ListViewCell.swift`.
 
-Lists has two styles of cells `FullWidth` and `Boxed`
+Lists has two styles of cells `FullWidth`, `Boxed` and `BoxedInverse`
 
-| FullWidth   |      Boxed      |
-|----------|:-------------:|
-| <img src="./docs/images/lists-fullwidth.png" alt="drawing" width="300"/> |  <img src="./docs/images/lists-boxed.png" alt="drawing" width="300"/> |
+| FullWidth   |      Boxed      | Boxed Inverse |
+|----------|:-------------:|:-------------:|
+| <img src="./docs/images/lists-fullwidth.png" alt="drawing" width="300"/> |  <img src="./docs/images/lists-boxed.png" alt="drawing" width="300"/> |  <img src="./docs/images/lists-boxed-inverse.png" alt="drawing" width="300"/> |
 
 
 #  ListViewCell
@@ -56,25 +56,25 @@ public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
 	cell.detailText = "My detail text"
 	cell.assetType = .largeIcon(UIImage(named: "myAsset"), backgroundColor: .iconDisabled)
 	cell.isCellSeparatorHidden = isLastCell(indexPath)
-	
+
 	return cell
 }
 ```
 
 #### Control Customization
 
-`ListViewCell.swift` can be configured with a custom control like 
+`ListViewCell.swift` can be configured with a custom control like
 
 ```swift
 public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 	let cell = listView.dequeueReusableCell(withIdentifier: "ListViewCell", for: indexPath) as! ListViewCell
 
 	...
-	
+
 	cell.controlView = myCustomControlView
-	
+
 	...
-	
+
 	return cell
 }
 ```

@@ -33,7 +33,7 @@ public class NavigationPresetView: UIStackView {
         }
     }
 
-    public override var tintColor: UIColor! {
+    override public var tintColor: UIColor! {
         get {
             super.tintColor
         }

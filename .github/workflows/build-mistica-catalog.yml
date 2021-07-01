@@ -35,7 +35,10 @@ jobs:
           key: mistica-ios-carthage-${{ hashFiles('Cartfile.resolved') }}
           restore-keys: |
             mistica-ios-carthage-
-      
+
+      - name: Setup rbenv environment
+        run: echo "~/.rbenv/shims" >> $GITHUB_PATH
+
       - name: Setup Ruby
         run: |
           export RBENV_ROOT=/usr/local/rbenv

@@ -73,6 +73,10 @@
 		6402705AE1EA5AA50384018E /* SegmentSelectorCenteredContentLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224711C2166F020E0B2326C /* SegmentSelectorCenteredContentLayout.swift */; };
 		64DDAA4BF38945645F39B702 /* CroutonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4879FB92B4EAB99BE49D827 /* CroutonController.swift */; };
 		66B5882C5804A1CFBD693298 /* CellCenterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2099839700895B3419EF3BC /* CellCenterSectionView.swift */; };
+		672715EF26A57BC900415F23 /* Telefonica-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 672715EC26A57BC800415F23 /* Telefonica-Light.otf */; };
+		672715F026A57BC900415F23 /* Telefonica-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 672715ED26A57BC800415F23 /* Telefonica-Regular.otf */; };
+		672715F126A57BC900415F23 /* Telefonica-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 672715EE26A57BC900415F23 /* Telefonica-Bold.otf */; };
+		672715F426A57BF900415F23 /* FontStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672715F326A57BF900415F23 /* FontStyleTests.swift */; };
 		6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9610EA2D50FAFD36A47F9 /* ButtonTests.swift */; };
 		69B7063AEE070561B5D83375 /* KeyboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BB86FA0A8DAFEFB59BF31 /* KeyboardInfo.swift */; };
 		6DD3F85E5BBB1BA948A068E0 /* NavigationPresetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54711F8AFAC0F18D6A64E816 /* NavigationPresetView.swift */; };
@@ -361,6 +365,10 @@
 		60B05E30B585FA553637073B /* HighlightedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCard.swift; sourceTree = "<group>"; };
 		62A18AC10F3F6FF18F3ECC3A /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		64EB2FF52F0B92407878CA43 /* IntrinsicMaxButtonWidthContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrinsicMaxButtonWidthContainerView.swift; sourceTree = "<group>"; };
+		672715EC26A57BC800415F23 /* Telefonica-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica-Light.otf"; sourceTree = "<group>"; };
+		672715ED26A57BC800415F23 /* Telefonica-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica-Regular.otf"; sourceTree = "<group>"; };
+		672715EE26A57BC900415F23 /* Telefonica-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica-Bold.otf"; sourceTree = "<group>"; };
+		672715F326A57BF900415F23 /* FontStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleTests.swift; sourceTree = "<group>"; };
 		67CCE0C19AECBF4FAC221920 /* highlighted-card-inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "highlighted-card-inverse.png"; sourceTree = "<group>"; };
 		68F3F224D83384B81453E522 /* highlighted-card-image-fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "highlighted-card-image-fill.png"; sourceTree = "<group>"; };
 		69541AC5995B9C4D3A74359A /* CGSize+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Utils.swift"; sourceTree = "<group>"; };
@@ -1370,6 +1378,24 @@
 			path = docs;
 			sourceTree = "<group>";
 		};
+		672715EB26A57BA300415F23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				672715EE26A57BC900415F23 /* Telefonica-Bold.otf */,
+				672715EC26A57BC800415F23 /* Telefonica-Light.otf */,
+				672715ED26A57BC800415F23 /* Telefonica-Regular.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		672715F226A57BD100415F23 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				672715F326A57BF900415F23 /* FontStyleTests.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		71283B7461C11B66B34E18F8 /* docs */ = {
 			isa = PBXGroup;
 			children = (
@@ -1564,6 +1590,8 @@
 		9082E6939D6470C17B83896A /* MisticaTests */ = {
 			isa = PBXGroup;
 			children = (
+				672715F226A57BD100415F23 /* Fonts */,
+				672715EB26A57BA300415F23 /* Resources */,
 				B8FFFA9A256E6DBB00472C23 /* Utils */,
 				7C2AED6530F1CF8E9E78EA7B /* UI */,
 			);
@@ -2276,6 +2304,7 @@
 				B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */,
 				B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */,
 				1EB4FB6C25CD5AE8004537CC /* ListsXIBIntegration.xib in Resources */,
+				672715EF26A57BC900415F23 /* Telefonica-Light.otf in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
 				B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */,
 				9022A9622608BFA0007C8A82 /* TabsXIBIntegration.xib in Resources */,
@@ -2283,6 +2312,8 @@
 				90E9624225BF1B94006E6170 /* FormXIBIntegration.xib in Resources */,
 				18D4BAA525B97A75002D2BC8 /* DeterminateStepperXIBIntegration.xib in Resources */,
 				B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */,
+				672715F026A57BC900415F23 /* Telefonica-Regular.otf in Resources */,
+				672715F126A57BC900415F23 /* Telefonica-Bold.otf in Resources */,
 				551A2E41261C6DA5000B3CD7 /* TagXIBIntegration.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2337,6 +2368,7 @@
 				B4C66DD7256EB8A50087E4B5 /* FeedbackTests.swift in Sources */,
 				1E6AAD2A25CC7AF300FB6D3C /* ListsTests.swift in Sources */,
 				B857852925B223DF00E76B4C /* UIImage+Utils.swift in Sources */,
+				672715F426A57BF900415F23 /* FontStyleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

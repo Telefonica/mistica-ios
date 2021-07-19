@@ -10,13 +10,17 @@
 
 Mistica is a framework that contains reusable UI components and utilities for the Telefonica Design System ([Mistica](https://github.com/Telefonica/mistica))
 
-* [Instalation](#instalation)
-* [Configuration](#configuration)
-* [Components](#components)
-* [Demo app](#demo-app)
-* [Contributing](#contributing)
+- [Installation](#installation)
+  - [Swift Package Manager](#swift-package-manager)
+  - [Carthage](#carthage)
+  - [Cocoapods](#cocoapods)
+- [Configuration](#configuration)
+- [Fonts](#fonts)
+- [Components](#components)
+- [Demo app](#demo-app)
+- [Contributing](#contributing)
 
-## Instalation
+## Installation
 
 ### Swift Package Manager
 
@@ -81,7 +85,7 @@ In applications before iOS 13, the initialziation should be done in the **UIAppl
 func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Set up Mistica
     MisticaConfig.brandStyle = .vivo
-    
+
     return true
 }
 ```
@@ -98,6 +102,10 @@ func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene
 ```
 
 Every component in mistica supports dark mode. In order to configure dark mode in you app, you can follow [Apple guidelines](https://developer.apple.com/documentation/xcode/supporting_dark_mode_in_your_interface/choosing_a_specific_interface_style_for_your_ios_app).
+
+## Fonts
+
+By default mistica uses the system font, but if you need to use a custom font (Telefonica font, On-Air, etc) you can follow [these instructions](./Mistica/Source/Fonts/).
 
 ## Components
 

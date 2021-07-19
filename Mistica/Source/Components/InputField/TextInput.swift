@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol TextInput: AnyObject, UITextInput {
+protocol TextInput: UITextInput {
     var content: String? { get set }
     var font: UIFont? { get set }
     var textAlignment: NSTextAlignment { get set }

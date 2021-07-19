@@ -44,11 +44,11 @@ public extension UIFont {
     }
 
     static func textPreset9(weight: FontStyle.TextPreset9Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
-        FontStyle.textPreset8.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+        FontStyle.textPreset9.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
-    static func textPreset10(weight: FontStyle.TextPreset9Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
-        FontStyle.textPreset8.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+    static func textPreset10(weight: FontStyle.TextPreset10Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+        FontStyle.textPreset10.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
     static func preferredFont(for fontStyle: FontStyle, weight: UIFont.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory) -> UIFont {

@@ -29,10 +29,17 @@ import UIKit
             preferredSize = constrainedSize
         }
 
-        let sizePoints = points(prerredContentSize: preferredSize, horizontalSizeClass: horizontalSizeClass)
+        let sizePoints = points(preferredContentSize: preferredSize, horizontalSizeClass: horizontalSizeClass)
 
-        return UIFont.systemFont(ofSize: sizePoints, weight: weight)
+        if let fontName = Self.fontNameForWeight?(weight),
+           let customFont = UIFont(name: fontName, size: sizePoints) {
+            return customFont
+        } else {
+            return UIFont.systemFont(ofSize: sizePoints, weight: weight)
+        }
     }
+
+    public static var fontNameForWeight: ((UIFont.Weight) -> String)? = nil
 
     public var description: String {
         switch self {
@@ -90,10 +97,10 @@ private extension FontStyle {
         }
     }
 
-    func points(prerredContentSize: UIContentSizeCategory, horizontalSizeClass: UIUserInterfaceSizeClass?) -> CGFloat {
+    func points(preferredContentSize: UIContentSizeCategory, horizontalSizeClass: UIUserInterfaceSizeClass?) -> CGFloat {
         var size = baseSize
 
-        let preferredContentSizeDelta = deltaPoints(preferredSize: prerredContentSize)
+        let preferredContentSizeDelta = deltaPoints(preferredSize: preferredContentSize)
         let sizeClassDelta = deltaPoints(horizontalSizeClass: horizontalSizeClass)
 
         size += preferredContentSizeDelta

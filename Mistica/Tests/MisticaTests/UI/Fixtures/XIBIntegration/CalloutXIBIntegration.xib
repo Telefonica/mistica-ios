@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9RR-JB-JNV" userLabel="CalloutXIB Integration" customClass="CalloutXIBIntegration" customModule="MisticaTests">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9t-SZ-kSe" userLabel="Callout" customClass="Callout" customModule="Mistica">
+                    <rect key="frame" x="20" y="379" width="374" height="148"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="148" id="Y83-xt-Llo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="7Ip-hh-Gnv"/>
+            <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+            <constraints>
+                <constraint firstItem="U9t-SZ-kSe" firstAttribute="leading" secondItem="7Ip-hh-Gnv" secondAttribute="leading" constant="20" id="39l-al-fgt"/>
+                <constraint firstItem="7Ip-hh-Gnv" firstAttribute="trailing" secondItem="U9t-SZ-kSe" secondAttribute="trailing" constant="20" id="ir9-Ve-dzP"/>
+                <constraint firstItem="U9t-SZ-kSe" firstAttribute="centerY" secondItem="7Ip-hh-Gnv" secondAttribute="centerY" id="jcx-qC-SVv"/>
+            </constraints>
+            <connections>
+                <outlet property="callout" destination="U9t-SZ-kSe" id="eTQ-Wk-3hO"/>
+            </connections>
+            <point key="canvasLocation" x="-213" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

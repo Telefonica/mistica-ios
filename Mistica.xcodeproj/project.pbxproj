@@ -30,6 +30,18 @@
 		18F193E6259C8E9A00A09E20 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F193E4259C8E9A00A09E20 /* StepView.swift */; };
 		190ACC76F0CF54920934555A /* MisticaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E652CA9FBAF97F95CAECEDC1 /* MisticaAppearance.swift */; };
 		1AC0CB498E3D8F82A59378EB /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A537081C1AA8EA1B01445938 /* FontStyle.swift */; };
+		1CAC72F126AFFC03002917EF /* CalloutTitleActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F026AFFC03002917EF /* CalloutTitleActions.swift */; };
+		1CAC72F426AFFC32002917EF /* CalloutMessagesContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F326AFFC32002917EF /* CalloutMessagesContent.swift */; };
+		1CAC72F626AFFCDE002917EF /* CalloutContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F526AFFCDE002917EF /* CalloutContentItem.swift */; };
+		1CAC72F826AFFE1E002917EF /* CalloutButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F726AFFE1E002917EF /* CalloutButtons.swift */; };
+		1CAC72FA26AFFF9E002917EF /* Callout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F926AFFF9E002917EF /* Callout.swift */; };
+		1CAC72FC26B0019E002917EF /* CalloutAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72FB26B0019E002917EF /* CalloutAsset.swift */; };
+		1CAC72FE26B013F2002917EF /* CalloutContentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72FD26B013F2002917EF /* CalloutContentBase.swift */; };
+		1CAC730026B400F9002917EF /* CalloutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72FF26B400F9002917EF /* CalloutTests.swift */; };
+		1CAC730326B40A05002917EF /* CalloutXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC730126B40A02002917EF /* CalloutXIBIntegration.swift */; };
+		1CAC730526B40A1A002917EF /* CalloutXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CAC730426B40A1A002917EF /* CalloutXIBIntegration.xib */; };
+		1CFE255526AAB2D100D3952F /* CalloutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE255426AAB2D100D3952F /* CalloutButton.swift */; };
+		1CFE255926AAD1BE00D3952F /* CalloutConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE255826AAD1BE00D3952F /* CalloutConfiguration.swift */; };
 		1E6AAD2A25CC7AF300FB6D3C /* ListsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AAD2925CC7AF300FB6D3C /* ListsTests.swift */; };
 		1EB4FB6925CD59DC004537CC /* ListsXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4FB6825CD59DC004537CC /* ListsXIBIntegration.swift */; };
 		1EB4FB6C25CD5AE8004537CC /* ListsXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB4FB6B25CD5AE8004537CC /* ListsXIBIntegration.xib */; };
@@ -268,6 +280,47 @@
 		18F65F48542EBF9B8472E8C1 /* PopoverContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverContentView.swift; sourceTree = "<group>"; };
 		1929FD98AEC3F04A744E1458 /* BoundsChangeInvalidatingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundsChangeInvalidatingFlowLayout.swift; sourceTree = "<group>"; };
 		1A6C443D987AD4CDAFD35525 /* MovistarColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovistarColorPalette.swift; sourceTree = "<group>"; };
+		1C0F993926A838CC00C53802 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1CAC72F026AFFC03002917EF /* CalloutTitleActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutTitleActions.swift; sourceTree = "<group>"; };
+		1CAC72F326AFFC32002917EF /* CalloutMessagesContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutMessagesContent.swift; sourceTree = "<group>"; };
+		1CAC72F526AFFCDE002917EF /* CalloutContentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutContentItem.swift; sourceTree = "<group>"; };
+		1CAC72F726AFFE1E002917EF /* CalloutButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutButtons.swift; sourceTree = "<group>"; };
+		1CAC72F926AFFF9E002917EF /* Callout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callout.swift; sourceTree = "<group>"; };
+		1CAC72FB26B0019E002917EF /* CalloutAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutAsset.swift; sourceTree = "<group>"; };
+		1CAC72FD26B013F2002917EF /* CalloutContentBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutContentBase.swift; sourceTree = "<group>"; };
+		1CAC72FF26B400F9002917EF /* CalloutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutTests.swift; sourceTree = "<group>"; };
+		1CAC730126B40A02002917EF /* CalloutXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutXIBIntegration.swift; sourceTree = "<group>"; };
+		1CAC730426B40A1A002917EF /* CalloutXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalloutXIBIntegration.xib; sourceTree = "<group>"; };
+		1CEE40E126B4267A00BB1CF9 /* testFullContentWithoutTitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutTitle.1.png; sourceTree = "<group>"; };
+		1CEE40E226B4267A00BB1CF9 /* testFullContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContent.1.png; sourceTree = "<group>"; };
+		1CEE40E326B4267A00BB1CF9 /* testPrimaryButtonOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryButtonOnly.1.png; sourceTree = "<group>"; };
+		1CEE40E426B4267A00BB1CF9 /* testBrandStyles.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-vivo-style.png"; sourceTree = "<group>"; };
+		1CEE40E526B4267A00BB1CF9 /* testPrimaryButtonOnlyWithoutAsset.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryButtonOnlyWithoutAsset.1.png; sourceTree = "<group>"; };
+		1CEE40E626B4267A00BB1CF9 /* testBrandStyles.with-o2Classic-dark-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2Classic-dark-style.png"; sourceTree = "<group>"; };
+		1CEE40E726B4267A00BB1CF9 /* testShowAsset.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowAsset.1.png; sourceTree = "<group>"; };
+		1CEE40E826B4267A00BB1CF9 /* testBrandStyles.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-movistar-style.png"; sourceTree = "<group>"; };
+		1CEE40E926B4267A00BB1CF9 /* testBrandStyles.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		1CEE40EA26B4267A00BB1CF9 /* testBrandStyles.with-movistar-dark-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-movistar-dark-style.png"; sourceTree = "<group>"; };
+		1CEE40EB26B4267A00BB1CF9 /* testSecondaryAndLinkButtonsOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSecondaryAndLinkButtonsOnly.1.png; sourceTree = "<group>"; };
+		1CEE40EC26B4267A00BB1CF9 /* testMinimumContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testMinimumContent.1.png; sourceTree = "<group>"; };
+		1CEE40ED26B4267A00BB1CF9 /* testSecondaryAndLinkButtonsOnlyWithoutAsset.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSecondaryAndLinkButtonsOnlyWithoutAsset.1.png; sourceTree = "<group>"; };
+		1CEE40EE26B4267A00BB1CF9 /* testPrimaryAndSecondaryButtonsOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryAndSecondaryButtonsOnly.1.png; sourceTree = "<group>"; };
+		1CEE40EF26B4267A00BB1CF9 /* testSecondaryButtonOnlyWithoutAsset.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSecondaryButtonOnlyWithoutAsset.1.png; sourceTree = "<group>"; };
+		1CEE40F026B4267A00BB1CF9 /* testPrimaryAndSecondaryButtonsOnlyWithoutAsset.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryAndSecondaryButtonsOnlyWithoutAsset.1.png; sourceTree = "<group>"; };
+		1CEE40F126B4267A00BB1CF9 /* testLinkButtonOnlyWithoutAsset.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testLinkButtonOnlyWithoutAsset.1.png; sourceTree = "<group>"; };
+		1CEE40F226B4267A00BB1CF9 /* testBrandStyles.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2-style.png"; sourceTree = "<group>"; };
+		1CEE40F326B4267A00BB1CF9 /* testBrandStyles.with-o2-dark-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2-dark-style.png"; sourceTree = "<group>"; };
+		1CEE40F426B4267A00BB1CF9 /* testSecondaryButtonOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testSecondaryButtonOnly.1.png; sourceTree = "<group>"; };
+		1CEE40F526B4267A00BB1CF9 /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
+		1CEE40F626B4267A00BB1CF9 /* testPrimaryAndLinkButtonsOnlyWithoutAsset.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryAndLinkButtonsOnlyWithoutAsset.1.png; sourceTree = "<group>"; };
+		1CEE40F726B4267A00BB1CF9 /* testLinkButtonOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testLinkButtonOnly.1.png; sourceTree = "<group>"; };
+		1CEE40F826B4267A00BB1CF9 /* testBrandStyles.with-vivo-dark-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-vivo-dark-style.png"; sourceTree = "<group>"; };
+		1CEE40F926B4267A00BB1CF9 /* testShowLoadingStateForButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowLoadingStateForButtons.1.png; sourceTree = "<group>"; };
+		1CEE40FA26B4267A00BB1CF9 /* testFullContentWithoutIcon.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutIcon.1.png; sourceTree = "<group>"; };
+		1CEE40FB26B4267A00BB1CF9 /* testPrimaryAndLinkButtonsOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryAndLinkButtonsOnly.1.png; sourceTree = "<group>"; };
+		1CEE411726B7E05200BB1CF9 /* callout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = callout.png; sourceTree = "<group>"; };
+		1CFE255426AAB2D100D3952F /* CalloutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutButton.swift; sourceTree = "<group>"; };
+		1CFE255826AAD1BE00D3952F /* CalloutConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutConfiguration.swift; sourceTree = "<group>"; };
 		1DB9C744C2F3DB61CFB1CA3C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1DD335591DC2EBA13809C8D8 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		1E6AAD2925CC7AF300FB6D3C /* ListsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsTests.swift; sourceTree = "<group>"; };
@@ -833,6 +886,7 @@
 		0B3C024EEA152B58A19951D6 /* __Snapshots__ */ = {
 			isa = PBXGroup;
 			children = (
+				1CEE40E026B4267A00BB1CF9 /* CalloutTests */,
 				827157FC25D2E36A00CD0A8E /* HeaderTests */,
 				1EB4FBA725D2700E004537CC /* ListsTests */,
 				B85CCA4725B82A0B00B76426 /* MediaCardTests */,
@@ -960,6 +1014,90 @@
 				E15D12CED157D6A6BC3DE751 /* images */,
 			);
 			path = docs;
+			sourceTree = "<group>";
+		};
+		1C0F993B26A8398500C53802 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F993C26A8398900C53802 /* images */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		1C0F993C26A8398900C53802 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1CEE411726B7E05200BB1CF9 /* callout.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		1CAC72EF26AFFBDC002917EF /* Callout */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F993926A838CC00C53802 /* README.md */,
+				1C0F993B26A8398500C53802 /* docs */,
+				1CFE255326AAB2C300D3952F /* Model */,
+				1CAC72F926AFFF9E002917EF /* Callout.swift */,
+				1CFE255826AAD1BE00D3952F /* CalloutConfiguration.swift */,
+				1CAC72F226AFFC1A002917EF /* Internals */,
+			);
+			path = Callout;
+			sourceTree = "<group>";
+		};
+		1CAC72F226AFFC1A002917EF /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC72FD26B013F2002917EF /* CalloutContentBase.swift */,
+				1CAC72F026AFFC03002917EF /* CalloutTitleActions.swift */,
+				1CAC72F326AFFC32002917EF /* CalloutMessagesContent.swift */,
+				1CAC72F726AFFE1E002917EF /* CalloutButtons.swift */,
+			);
+			path = Internals;
+			sourceTree = "<group>";
+		};
+		1CEE40E026B4267A00BB1CF9 /* CalloutTests */ = {
+			isa = PBXGroup;
+			children = (
+				1CEE40E126B4267A00BB1CF9 /* testFullContentWithoutTitle.1.png */,
+				1CEE40E226B4267A00BB1CF9 /* testFullContent.1.png */,
+				1CEE40E326B4267A00BB1CF9 /* testPrimaryButtonOnly.1.png */,
+				1CEE40E426B4267A00BB1CF9 /* testBrandStyles.with-vivo-style.png */,
+				1CEE40E526B4267A00BB1CF9 /* testPrimaryButtonOnlyWithoutAsset.1.png */,
+				1CEE40E626B4267A00BB1CF9 /* testBrandStyles.with-o2Classic-dark-style.png */,
+				1CEE40E726B4267A00BB1CF9 /* testShowAsset.1.png */,
+				1CEE40E826B4267A00BB1CF9 /* testBrandStyles.with-movistar-style.png */,
+				1CEE40E926B4267A00BB1CF9 /* testBrandStyles.with-o2Classic-style.png */,
+				1CEE40EA26B4267A00BB1CF9 /* testBrandStyles.with-movistar-dark-style.png */,
+				1CEE40EB26B4267A00BB1CF9 /* testSecondaryAndLinkButtonsOnly.1.png */,
+				1CEE40EC26B4267A00BB1CF9 /* testMinimumContent.1.png */,
+				1CEE40ED26B4267A00BB1CF9 /* testSecondaryAndLinkButtonsOnlyWithoutAsset.1.png */,
+				1CEE40EE26B4267A00BB1CF9 /* testPrimaryAndSecondaryButtonsOnly.1.png */,
+				1CEE40EF26B4267A00BB1CF9 /* testSecondaryButtonOnlyWithoutAsset.1.png */,
+				1CEE40F026B4267A00BB1CF9 /* testPrimaryAndSecondaryButtonsOnlyWithoutAsset.1.png */,
+				1CEE40F126B4267A00BB1CF9 /* testLinkButtonOnlyWithoutAsset.1.png */,
+				1CEE40F226B4267A00BB1CF9 /* testBrandStyles.with-o2-style.png */,
+				1CEE40F326B4267A00BB1CF9 /* testBrandStyles.with-o2-dark-style.png */,
+				1CEE40F426B4267A00BB1CF9 /* testSecondaryButtonOnly.1.png */,
+				1CEE40F526B4267A00BB1CF9 /* testXIBIntegration.1.png */,
+				1CEE40F626B4267A00BB1CF9 /* testPrimaryAndLinkButtonsOnlyWithoutAsset.1.png */,
+				1CEE40F726B4267A00BB1CF9 /* testLinkButtonOnly.1.png */,
+				1CEE40F826B4267A00BB1CF9 /* testBrandStyles.with-vivo-dark-style.png */,
+				1CEE40F926B4267A00BB1CF9 /* testShowLoadingStateForButtons.1.png */,
+				1CEE40FA26B4267A00BB1CF9 /* testFullContentWithoutIcon.1.png */,
+				1CEE40FB26B4267A00BB1CF9 /* testPrimaryAndLinkButtonsOnly.1.png */,
+			);
+			path = CalloutTests;
+			sourceTree = "<group>";
+		};
+		1CFE255326AAB2C300D3952F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CAC72FB26B0019E002917EF /* CalloutAsset.swift */,
+				1CAC72F526AFFCDE002917EF /* CalloutContentItem.swift */,
+				1CFE255426AAB2D100D3952F /* CalloutButton.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1EB4FBA725D2700E004537CC /* ListsTests */ = {
@@ -1464,6 +1602,7 @@
 				0B3C024EEA152B58A19951D6 /* __Snapshots__ */,
 				558F87262611EF5F00079EC0 /* SectionTitleTests.swift */,
 				551A2E2D261C6AB6000B3CD7 /* TagTests.swift */,
+				1CAC72FF26B400F9002917EF /* CalloutTests.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1479,6 +1618,7 @@
 		7EC27C08C547CB235571FBA5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1CAC72EF26AFFBDC002917EF /* Callout */,
 				B8D7193925B20FF0006510CC /* Cards */,
 				8EFBC877A9A7C576B013980D /* Badge */,
 				6029222399A3A1EDFFD001E6 /* Button */,
@@ -1895,6 +2035,8 @@
 				9022A9612608BFA0007C8A82 /* TabsXIBIntegration.xib */,
 				551A2E40261C6DA5000B3CD7 /* TagXIBIntegration.xib */,
 				551A2E43261C6DB6000B3CD7 /* TagXIBIntegration.swift */,
+				1CAC730126B40A02002917EF /* CalloutXIBIntegration.swift */,
+				1CAC730426B40A1A002917EF /* CalloutXIBIntegration.xib */,
 			);
 			path = XIBIntegration;
 			sourceTree = "<group>";
@@ -2305,6 +2447,7 @@
 				B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */,
 				1EB4FB6C25CD5AE8004537CC /* ListsXIBIntegration.xib in Resources */,
 				672715EF26A57BC900415F23 /* Telefonica-Light.otf in Resources */,
+				1CAC730526B40A1A002917EF /* CalloutXIBIntegration.xib in Resources */,
 				18D8894625ADA1000098EED3 /* IndeterminateStepperXIBIntegration.xib in Resources */,
 				B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */,
 				9022A9622608BFA0007C8A82 /* TabsXIBIntegration.xib in Resources */,
@@ -2349,6 +2492,7 @@
 				B85CCA5925B82EFA00B76426 /* CheckboxXIBIntegration.swift in Sources */,
 				9022A95E2608BF69007C8A82 /* TabsXIBIntegration.swift in Sources */,
 				8209DDFE25764401006D91F2 /* CroutonTests.swift in Sources */,
+				1CAC730326B40A05002917EF /* CalloutXIBIntegration.swift in Sources */,
 				B857855625B823B400E76B4C /* MediaCardTests.swift in Sources */,
 				180ADEDB261C442D0078DA0F /* CheckboxTests.swift in Sources */,
 				827157F525D2D14D00CD0A8E /* HeaderTests.swift in Sources */,
@@ -2358,6 +2502,7 @@
 				90594A7B25C15BE50021142B /* InputFieldTests.swift in Sources */,
 				558F872A2611EF7A00079EC0 /* SectionTitleTests.swift in Sources */,
 				82CF1540257567C700867797 /* BadgeTests.swift in Sources */,
+				1CAC730026B400F9002917EF /* CalloutTests.swift in Sources */,
 				8209DE0925769860006D91F2 /* BadgeXIBIntegration.swift in Sources */,
 				18CDBD4D25ACA17600928474 /* IndeterminateStepperTests.swift in Sources */,
 				551A2E31261C6AEB000B3CD7 /* TagTests.swift in Sources */,
@@ -2388,6 +2533,7 @@
 				ACD4AE703FCE73CE31944564 /* Button.swift in Sources */,
 				412183A67D2A3B6A43410022 /* ButtonContentView.swift in Sources */,
 				EBFCB2B2EC327639E367F87F /* ButtonStyle+Toolkit.swift in Sources */,
+				1CAC72F426AFFC32002917EF /* CalloutMessagesContent.swift in Sources */,
 				DB22553A7102F1F55492B9E3 /* CGSize+Utils.swift in Sources */,
 				66B5882C5804A1CFBD693298 /* CellCenterSectionView.swift in Sources */,
 				6E8008A4ABEF555F16D885DA /* CellLeftSectionView.swift in Sources */,
@@ -2413,8 +2559,10 @@
 				5336A071B18BBC9ABCE45530 /* HeaderView.swift in Sources */,
 				18D4BA9B25B976F2002D2BC8 /* StepperUIAssets.swift in Sources */,
 				D32EAC728C217E538048802C /* HeaderViewStyle.swift in Sources */,
+				1CAC72F126AFFC03002917EF /* CalloutTitleActions.swift in Sources */,
 				120C102BBB0AEA7505A51F60 /* HighlightedCard.swift in Sources */,
 				1860BBBE25B03AD900319CFC /* IndeterminateStepperView.swift in Sources */,
+				1CAC72F826AFFE1E002917EF /* CalloutButtons.swift in Sources */,
 				18F193E5259C8E9A00A09E20 /* SegmentView.swift in Sources */,
 				99C0CEAA095F01C0FC3DB241 /* HighlightedCardStyle.swift in Sources */,
 				6F2DC585A16D86F7FFFD778D /* InputField.swift in Sources */,
@@ -2428,6 +2576,7 @@
 				FF695537B060674584B2F14D /* IntrinsicHeightTextView.swift in Sources */,
 				FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
 				18D4BA9E25B97725002D2BC8 /* NSDataAsset+Utils.swift in Sources */,
+				1CAC72FE26B013F2002917EF /* CalloutContentBase.swift in Sources */,
 				43B97750F1AABDAC15224AC8 /* IntrinsictHeightLabel.swift in Sources */,
 				AF443028E947CEFC57C78C6D /* IntrinsictImageView.swift in Sources */,
 				69B7063AEE070561B5D83375 /* KeyboardInfo.swift in Sources */,
@@ -2435,6 +2584,7 @@
 				5E9996DC83EFB50DB7E2B9B6 /* CellStyle+Toolkit.swift in Sources */,
 				45165BE25062A3F6F3258CF2 /* ListViewCell.swift in Sources */,
 				B8D7194725B20FF0006510CC /* CardBase.swift in Sources */,
+				1CAC72FA26AFFF9E002917EF /* Callout.swift in Sources */,
 				B4C99EA94307852447D672A1 /* ListView.swift in Sources */,
 				ABCDBD7FEBCC5710EAB9AD55 /* ListsAssets.swift in Sources */,
 				A8EA4F98CE276934610F9C3E /* LoadErrorViewController.swift in Sources */,
@@ -2445,11 +2595,13 @@
 				3F006F4799D9309B0DD2564E /* MovistarColorPalette.swift in Sources */,
 				9071229225C84EC1009E3727 /* TabsView.swift in Sources */,
 				6DD3F85E5BBB1BA948A068E0 /* NavigationPresetView.swift in Sources */,
+				1CFE255926AAD1BE00D3952F /* CalloutConfiguration.swift in Sources */,
 				ACA2D756B1ED80BCC78EB01A /* NovumBarButtonItem.swift in Sources */,
 				3453703B4F61CA22BD3F4BEC /* O2ClassicColorPalette.swift in Sources */,
 				9071229625C85AE2009E3727 /* TabItem.swift in Sources */,
 				AAAA24925B4326EF16A1B300 /* O2ColorPalette.swift in Sources */,
 				9055F91225C9519700ED3507 /* TabItemViewCell.swift in Sources */,
+				1CFE255526AAB2D100D3952F /* CalloutButton.swift in Sources */,
 				F343B351B4E71C9AD816E7AA /* Optional+Utils.swift in Sources */,
 				A75A3C79308EEFE9B2657FE8 /* PaddingLabel.swift in Sources */,
 				D3DC00209006534C72A7B2F2 /* PasswordInputFieldValidationStrategy.swift in Sources */,
@@ -2461,6 +2613,7 @@
 				2E2AF2C793F73E8F9765065A /* PopoverContentView.swift in Sources */,
 				0E981C32BBB09DF7A1A9D7F9 /* PopoverMessageView.swift in Sources */,
 				18F193E6259C8E9A00A09E20 /* StepView.swift in Sources */,
+				1CAC72FC26B0019E002917EF /* CalloutAsset.swift in Sources */,
 				2AC87076A6AC9FB3B66D64A3 /* PopoverView.swift in Sources */,
 				730E74166CA8DF6FE7233484 /* PreprocessorChecks.swift in Sources */,
 				83C49A0982B41B48B95AF7C8 /* RadioButton.swift in Sources */,
@@ -2476,6 +2629,7 @@
 				0DD8E673DA431A9A500A04AB /* SeparatorView.swift in Sources */,
 				FB5A638A94B3B96ECAA3AC4A /* SpacerView.swift in Sources */,
 				0B6F292895FEC275550798B1 /* String+Utils.swift in Sources */,
+				1CAC72F626AFFCDE002917EF /* CalloutContentItem.swift in Sources */,
 				0B762F342DEA1C67BF7F438B /* TagView.swift in Sources */,
 				930BDEF8014BD8B8104C4F8B /* TextInput.swift in Sources */,
 				2A6BB74DD4788FC5991A70FD /* ThemeVariant.swift in Sources */,

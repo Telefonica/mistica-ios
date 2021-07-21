@@ -749,7 +749,7 @@ extension ListsTests {
         static var image = UIImage(color: .green)
     }
 
-    fileprivate func makeListTestsViewController(
+    private func makeListTestsViewController(
         listView: ListView = ListView(),
         title: String? = nil,
         subtitle: String? = nil,

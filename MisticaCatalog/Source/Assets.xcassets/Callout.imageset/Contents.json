@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Callouts.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

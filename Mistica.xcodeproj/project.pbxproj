@@ -30,6 +30,9 @@
 		18F193E6259C8E9A00A09E20 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F193E4259C8E9A00A09E20 /* StepView.swift */; };
 		190ACC76F0CF54920934555A /* MisticaAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E652CA9FBAF97F95CAECEDC1 /* MisticaAppearance.swift */; };
 		1AC0CB498E3D8F82A59378EB /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A537081C1AA8EA1B01445938 /* FontStyle.swift */; };
+		1C37E32C26C18C8700062775 /* EmptyStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37E32B26C18C8700062775 /* EmptyStatesTests.swift */; };
+		1C37E32F26C195FA00062775 /* EmptyStateXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37E32D26C195F900062775 /* EmptyStateXIBIntegration.swift */; };
+		1C37E33026C2843E00062775 /* EmptyStateXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C37E32E26C195FA00062775 /* EmptyStateXIBIntegration.xib */; };
 		1CAC72F126AFFC03002917EF /* CalloutTitleActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F026AFFC03002917EF /* CalloutTitleActions.swift */; };
 		1CAC72F426AFFC32002917EF /* CalloutMessagesContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F326AFFC32002917EF /* CalloutMessagesContent.swift */; };
 		1CAC72F626AFFCDE002917EF /* CalloutContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F526AFFCDE002917EF /* CalloutContentItem.swift */; };
@@ -40,6 +43,13 @@
 		1CAC730026B400F9002917EF /* CalloutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72FF26B400F9002917EF /* CalloutTests.swift */; };
 		1CAC730326B40A05002917EF /* CalloutXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC730126B40A02002917EF /* CalloutXIBIntegration.swift */; };
 		1CAC730526B40A1A002917EF /* CalloutXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CAC730426B40A1A002917EF /* CalloutXIBIntegration.xib */; };
+		1CEE412026B942FB00BB1CF9 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE411F26B942FB00BB1CF9 /* EmptyState.swift */; };
+		1CEE412226B9432D00BB1CF9 /* EmptyStateContentBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412126B9432D00BB1CF9 /* EmptyStateContentBase.swift */; };
+		1CEE412426B943B900BB1CF9 /* EmptyStateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412326B943B900BB1CF9 /* EmptyStateConfiguration.swift */; };
+		1CEE412626B9446400BB1CF9 /* EmptyStateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412526B9446400BB1CF9 /* EmptyStateButton.swift */; };
+		1CEE412826B9ADB000BB1CF9 /* EmptyStateMessagesContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412726B9ADB000BB1CF9 /* EmptyStateMessagesContent.swift */; };
+		1CEE412A26B9ADFF00BB1CF9 /* EmptyStateContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412926B9ADFF00BB1CF9 /* EmptyStateContentItem.swift */; };
+		1CEE412E26B9B25C00BB1CF9 /* EmptyStateButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412D26B9B25C00BB1CF9 /* EmptyStateButtons.swift */; };
 		1CFE255526AAB2D100D3952F /* CalloutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE255426AAB2D100D3952F /* CalloutButton.swift */; };
 		1CFE255926AAD1BE00D3952F /* CalloutConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE255826AAD1BE00D3952F /* CalloutConfiguration.swift */; };
 		1E6AAD2A25CC7AF300FB6D3C /* ListsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6AAD2925CC7AF300FB6D3C /* ListsTests.swift */; };
@@ -281,6 +291,11 @@
 		1929FD98AEC3F04A744E1458 /* BoundsChangeInvalidatingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundsChangeInvalidatingFlowLayout.swift; sourceTree = "<group>"; };
 		1A6C443D987AD4CDAFD35525 /* MovistarColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovistarColorPalette.swift; sourceTree = "<group>"; };
 		1C0F993926A838CC00C53802 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1C37E32826C18B8400062775 /* callout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = callout.png; sourceTree = "<group>"; };
+		1C37E32A26C18BAD00062775 /* emptyState.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyState.png; sourceTree = "<group>"; };
+		1C37E32B26C18C8700062775 /* EmptyStatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatesTests.swift; sourceTree = "<group>"; };
+		1C37E32D26C195F900062775 /* EmptyStateXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateXIBIntegration.swift; sourceTree = "<group>"; };
+		1C37E32E26C195FA00062775 /* EmptyStateXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateXIBIntegration.xib; sourceTree = "<group>"; };
 		1CAC72F026AFFC03002917EF /* CalloutTitleActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutTitleActions.swift; sourceTree = "<group>"; };
 		1CAC72F326AFFC32002917EF /* CalloutMessagesContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutMessagesContent.swift; sourceTree = "<group>"; };
 		1CAC72F526AFFCDE002917EF /* CalloutContentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutContentItem.swift; sourceTree = "<group>"; };
@@ -318,7 +333,14 @@
 		1CEE40F926B4267A00BB1CF9 /* testShowLoadingStateForButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowLoadingStateForButtons.1.png; sourceTree = "<group>"; };
 		1CEE40FA26B4267A00BB1CF9 /* testFullContentWithoutIcon.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutIcon.1.png; sourceTree = "<group>"; };
 		1CEE40FB26B4267A00BB1CF9 /* testPrimaryAndLinkButtonsOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryAndLinkButtonsOnly.1.png; sourceTree = "<group>"; };
-		1CEE411726B7E05200BB1CF9 /* callout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = callout.png; sourceTree = "<group>"; };
+		1CEE411A26B93CE300BB1CF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1CEE411F26B942FB00BB1CF9 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
+		1CEE412126B9432D00BB1CF9 /* EmptyStateContentBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateContentBase.swift; sourceTree = "<group>"; };
+		1CEE412326B943B900BB1CF9 /* EmptyStateConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateConfiguration.swift; sourceTree = "<group>"; };
+		1CEE412526B9446400BB1CF9 /* EmptyStateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateButton.swift; sourceTree = "<group>"; };
+		1CEE412726B9ADB000BB1CF9 /* EmptyStateMessagesContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateMessagesContent.swift; sourceTree = "<group>"; };
+		1CEE412926B9ADFF00BB1CF9 /* EmptyStateContentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateContentItem.swift; sourceTree = "<group>"; };
+		1CEE412D26B9B25C00BB1CF9 /* EmptyStateButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateButtons.swift; sourceTree = "<group>"; };
 		1CFE255426AAB2D100D3952F /* CalloutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutButton.swift; sourceTree = "<group>"; };
 		1CFE255826AAD1BE00D3952F /* CalloutConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutConfiguration.swift; sourceTree = "<group>"; };
 		1DB9C744C2F3DB61CFB1CA3C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1027,7 +1049,7 @@
 		1C0F993C26A8398900C53802 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				1CEE411726B7E05200BB1CF9 /* callout.png */,
+				1C37E32826C18B8400062775 /* callout.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -1088,6 +1110,54 @@
 				1CEE40FB26B4267A00BB1CF9 /* testPrimaryAndLinkButtonsOnly.1.png */,
 			);
 			path = CalloutTests;
+			sourceTree = "<group>";
+		};
+		1CEE411926B93CC800BB1CF9 /* EmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				1CEE411E26B93D0C00BB1CF9 /* Model */,
+				1CEE411D26B93D0600BB1CF9 /* Internals */,
+				1CEE411B26B93CEE00BB1CF9 /* docs */,
+				1CEE411A26B93CE300BB1CF9 /* README.md */,
+				1CEE411F26B942FB00BB1CF9 /* EmptyState.swift */,
+				1CEE412326B943B900BB1CF9 /* EmptyStateConfiguration.swift */,
+			);
+			path = EmptyState;
+			sourceTree = "<group>";
+		};
+		1CEE411B26B93CEE00BB1CF9 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				1CEE411C26B93CF800BB1CF9 /* images */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		1CEE411C26B93CF800BB1CF9 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1C37E32A26C18BAD00062775 /* emptyState.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		1CEE411D26B93D0600BB1CF9 /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				1CEE412126B9432D00BB1CF9 /* EmptyStateContentBase.swift */,
+				1CEE412726B9ADB000BB1CF9 /* EmptyStateMessagesContent.swift */,
+				1CEE412D26B9B25C00BB1CF9 /* EmptyStateButtons.swift */,
+			);
+			path = Internals;
+			sourceTree = "<group>";
+		};
+		1CEE411E26B93D0C00BB1CF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CEE412526B9446400BB1CF9 /* EmptyStateButton.swift */,
+				1CEE412926B9ADFF00BB1CF9 /* EmptyStateContentItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1CFE255326AAB2C300D3952F /* Model */ = {
@@ -1603,6 +1673,7 @@
 				558F87262611EF5F00079EC0 /* SectionTitleTests.swift */,
 				551A2E2D261C6AB6000B3CD7 /* TagTests.swift */,
 				1CAC72FF26B400F9002917EF /* CalloutTests.swift */,
+				1C37E32B26C18C8700062775 /* EmptyStatesTests.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1619,6 +1690,7 @@
 			isa = PBXGroup;
 			children = (
 				1CAC72EF26AFFBDC002917EF /* Callout */,
+				1CEE411926B93CC800BB1CF9 /* EmptyState */,
 				B8D7193925B20FF0006510CC /* Cards */,
 				8EFBC877A9A7C576B013980D /* Badge */,
 				6029222399A3A1EDFFD001E6 /* Button */,
@@ -2037,6 +2109,8 @@
 				551A2E43261C6DB6000B3CD7 /* TagXIBIntegration.swift */,
 				1CAC730126B40A02002917EF /* CalloutXIBIntegration.swift */,
 				1CAC730426B40A1A002917EF /* CalloutXIBIntegration.xib */,
+				1C37E32D26C195F900062775 /* EmptyStateXIBIntegration.swift */,
+				1C37E32E26C195FA00062775 /* EmptyStateXIBIntegration.xib */,
 			);
 			path = XIBIntegration;
 			sourceTree = "<group>";
@@ -2445,6 +2519,7 @@
 				8209DE0325769688006D91F2 /* BadgeXIBIntegration.xib in Resources */,
 				B85CCA5B25B82EFD00B76426 /* CheckboxXIBIntegration.xib in Resources */,
 				B857855C25B8292E00E76B4C /* MediaCardXIBIntegration.xib in Resources */,
+				1C37E33026C2843E00062775 /* EmptyStateXIBIntegration.xib in Resources */,
 				1EB4FB6C25CD5AE8004537CC /* ListsXIBIntegration.xib in Resources */,
 				672715EF26A57BC900415F23 /* Telefonica-Light.otf in Resources */,
 				1CAC730526B40A1A002917EF /* CalloutXIBIntegration.xib in Resources */,
@@ -2478,6 +2553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B835993825D4230D00246981 /* HighlightedCardXIBIntegration.swift in Sources */,
+				1C37E32C26C18C8700062775 /* EmptyStatesTests.swift in Sources */,
 				B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */,
 				B857855B25B8292E00E76B4C /* MediaCardXIBIntegration.swift in Sources */,
 				F74CB4F42576606100260675 /* ControlsTests.swift in Sources */,
@@ -2497,6 +2573,7 @@
 				180ADEDB261C442D0078DA0F /* CheckboxTests.swift in Sources */,
 				827157F525D2D14D00CD0A8E /* HeaderTests.swift in Sources */,
 				B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */,
+				1C37E32F26C195FA00062775 /* EmptyStateXIBIntegration.swift in Sources */,
 				B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */,
 				18CDBD7825ACB1AD00928474 /* IndeterminateStepperXIBIntegration.swift in Sources */,
 				90594A7B25C15BE50021142B /* InputFieldTests.swift in Sources */,
@@ -2522,6 +2599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80B7145DD7C350BC8E8CCBF /* AlignmentImageView.swift in Sources */,
+				1CEE412826B9ADB000BB1CF9 /* EmptyStateMessagesContent.swift in Sources */,
 				27321C77876795284B43C40E /* Array+NSAttributedString.swift in Sources */,
 				CAF27E0ABEBFB611FC0EE3BF /* AssetCatalog+Themed.swift in Sources */,
 				B8D7194625B20FF0006510CC /* CardButtonsView.swift in Sources */,
@@ -2549,6 +2627,7 @@
 				94E1463C1F9E3507C48E7C27 /* FeedbackConfiguration.swift in Sources */,
 				D12862D0FBD1099F36722D26 /* FeedbackStyle+Toolkit.swift in Sources */,
 				7C5C4FA51C8DD0174E91ACA0 /* FeedbackUIAssets.swift in Sources */,
+				1CEE412626B9446400BB1CF9 /* EmptyStateButton.swift in Sources */,
 				91D9EEEA06D35D3B7254A7F5 /* FeedbackView.swift in Sources */,
 				6F0544B24A92EFC9F9DE30BF /* FeedbackViewController.swift in Sources */,
 				1AC0CB498E3D8F82A59378EB /* FontStyle.swift in Sources */,
@@ -2574,6 +2653,7 @@
 				FD91D9B40E070D425FA48CDC /* InputFieldValidationStrategy.swift in Sources */,
 				B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */,
 				FF695537B060674584B2F14D /* IntrinsicHeightTextView.swift in Sources */,
+				1CEE412A26B9ADFF00BB1CF9 /* EmptyStateContentItem.swift in Sources */,
 				FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
 				18D4BA9E25B97725002D2BC8 /* NSDataAsset+Utils.swift in Sources */,
 				1CAC72FE26B013F2002917EF /* CalloutContentBase.swift in Sources */,
@@ -2594,10 +2674,12 @@
 				5C50E1F5A7510E7807736AF2 /* MisticaConfig.swift in Sources */,
 				3F006F4799D9309B0DD2564E /* MovistarColorPalette.swift in Sources */,
 				9071229225C84EC1009E3727 /* TabsView.swift in Sources */,
+				1CEE412226B9432D00BB1CF9 /* EmptyStateContentBase.swift in Sources */,
 				6DD3F85E5BBB1BA948A068E0 /* NavigationPresetView.swift in Sources */,
 				1CFE255926AAD1BE00D3952F /* CalloutConfiguration.swift in Sources */,
 				ACA2D756B1ED80BCC78EB01A /* NovumBarButtonItem.swift in Sources */,
 				3453703B4F61CA22BD3F4BEC /* O2ClassicColorPalette.swift in Sources */,
+				1CEE412026B942FB00BB1CF9 /* EmptyState.swift in Sources */,
 				9071229625C85AE2009E3727 /* TabItem.swift in Sources */,
 				AAAA24925B4326EF16A1B300 /* O2ColorPalette.swift in Sources */,
 				9055F91225C9519700ED3507 /* TabItemViewCell.swift in Sources */,
@@ -2637,6 +2719,7 @@
 				9069ACD1BD3E576D4291C424 /* UIButton+Utils.swift in Sources */,
 				759D8FD6321204FA71C221E8 /* UICollectionViewCell+Utils.swift in Sources */,
 				B85CCA5E25B848C300B76426 /* DataCardAsset.swift in Sources */,
+				1CEE412E26B9B25C00BB1CF9 /* EmptyStateButtons.swift in Sources */,
 				B347848A473FEE0AB4E04D27 /* UIColor+Utils.swift in Sources */,
 				1F552724291C5BF268DA82B3 /* UIImage+Utils.swift in Sources */,
 				34567C60C964C6D4997CEC4C /* UINavigationBar+Mistica.swift in Sources */,
@@ -2648,6 +2731,7 @@
 				25E473FF87B1DBA4D4BE354E /* ValidatableView.swift in Sources */,
 				88882FCE598E7589DBB0E8D8 /* VerticallyCenteredPresetView.swift in Sources */,
 				E766AA35AA028C67A3E525D5 /* VivoColorPalette.swift in Sources */,
+				1CEE412426B943B900BB1CF9 /* EmptyStateConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

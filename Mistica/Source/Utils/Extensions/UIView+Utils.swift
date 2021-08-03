@@ -233,6 +233,10 @@ extension UIView {
         clipsToBounds = true
     }
 
+    func removeRounded() {
+        layer.cornerRadius = 0.0
+    }
+
     func addBorder(color: UIColor) {
         layer.borderColor = color.cgColor
         layer.borderWidth = 1

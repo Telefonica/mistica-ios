@@ -30,6 +30,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case tooltip
     case viewStates
     case callout
+    case emptyState
 }
 
 private enum UICatalogSection: Int, CaseIterable {
@@ -177,6 +178,8 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogTabsViewController(), sender: self)
         case .callout:
             show(UICatalogCalloutViewController(), sender: self)
+        case .emptyState:
+            show(UICatalogEmptyStateViewController(), sender: self)
         }
     }
 }
@@ -273,6 +276,8 @@ private extension UICatalogRow {
             return "Tabs"
         case .callout:
             return "Callout"
+        case .emptyState:
+            return "Empty State"
         }
     }
 
@@ -318,6 +323,8 @@ private extension UICatalogRow {
             return .tabsIcon
         case .callout:
             return .calloutIcon
+        case .emptyState:
+            return .emptyStateIcon
         }
     }
 }

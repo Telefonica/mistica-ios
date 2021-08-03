@@ -68,7 +68,9 @@ let package = Package(
                 "Components/Tabs/README.md",
                 "Components/Callout/README.md",
                 "Components/Callout/docs",
-                "Fonts/README.md"
+                "Fonts/README.md",
+                "Components/EmptyState/README.md",
+                "Components/EmptyState/docs"
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")

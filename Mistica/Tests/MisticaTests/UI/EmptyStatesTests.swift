@@ -39,11 +39,10 @@ final class EmptyStatesTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         let view = makeEmptyStateWithContentAndButtons(
-            asset: .smallImage(image: AnyValues.smallImage, card: false),
+            type: .default(.smallImage(AnyValues.smallImage)),
             title: AnyValues.title,
             description: AnyValues.description,
-            actions: .primary(AnyValues.primary),
-            isCard: false
+            actions: .primary(AnyValues.primary)
         )
 
         assertSnapshot(matching: view, as: .image)
@@ -53,7 +52,7 @@ final class EmptyStatesTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         let view = makeEmptyStateWithContentAndButtons(
-            asset: .icon(image: AnyValues.iconImage, card: true),
+            type: .card(.icon(AnyValues.iconImage)),
             title: AnyValues.title,
             description: AnyValues.description,
             actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link)
@@ -113,7 +112,7 @@ final class EmptyStatesTests: XCTestCase {
     func testSecondaryButtonOnlyAsACard() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeEmptyStateWithContentAndButtons(actions: .secondary(AnyValues.secondary), isCard: true)
+        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .secondary(AnyValues.secondary))
 
         assertSnapshot(matching: view, as: .image)
     }
@@ -121,7 +120,7 @@ final class EmptyStatesTests: XCTestCase {
     func testSecondaryAndLinkButtonsOnlyAsACard() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeEmptyStateWithContentAndButtons(actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link), isCard: true)
+        let view = makeEmptyStateWithContentAndButtons(type: .card(.smallImage(AnyValues.smallImage)), actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
 
         assertSnapshot(matching: view, as: .image)
     }
@@ -137,7 +136,7 @@ final class EmptyStatesTests: XCTestCase {
     func testLinkButtonOnlyAsACard() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeEmptyStateWithContentAndButtons(actions: .empty, isCard: true)
+        let view = makeEmptyStateWithContentAndButtons(type: .default(.smallImage(AnyValues.smallImage)), actions: .empty)
 
         assertSnapshot(matching: view, as: .image)
     }
@@ -159,7 +158,7 @@ final class EmptyStatesTests: XCTestCase {
         MisticaConfig.brandStyle = .vivo
 
         let configurationWithActions = EmptyStateConfiguration(
-            asset: .fullWidthImage(AnyValues.fullImage),
+            type: .default(.fullWidthImage(AnyValues.fullImage)),
             title: AnyValues.title,
             description: AnyValues.description,
             actions: .primary(AnyValues.primary)
@@ -191,7 +190,7 @@ extension EmptyStatesTests {
 
     func makeBasicEmptyState() -> EmptyState {
         let configuration = EmptyStateConfiguration(
-            asset: .smallImage(image: AnyValues.smallImage, card: false),
+            type: .default(.smallImage(AnyValues.smallImage)),
             title: AnyValues.title,
             description: nil,
             actions: .empty
@@ -205,12 +204,11 @@ extension EmptyStatesTests {
         return emptyState
     }
 
-    func makeEmptyStateWithContentAndButtons(asset: EmptyStateConfiguration.EmptyStateAssetType = .smallImage(image: AnyValues.smallImage, card: false),
+    func makeEmptyStateWithContentAndButtons(type: EmptyStateConfiguration.EmptyStateType = .default(.smallImage(AnyValues.smallImage)),
                                              title: String = AnyValues.title,
                                              description: String? = AnyValues.description,
-                                             actions: EmptyStateConfiguration.EmptyStateActions = .primary(AnyValues.primary),
-                                             isCard: Bool = false) -> EmptyState {
-        let configuration = EmptyStateConfiguration(asset: asset, title: title, description: description, actions: actions)
+                                             actions: EmptyStateConfiguration.EmptyStateActions = .primary(AnyValues.primary)) -> EmptyState {
+        let configuration = EmptyStateConfiguration(type: type, title: title, description: description, actions: actions)
 
         let emptyState = EmptyState()
         emptyState.contentConfiguration = configuration

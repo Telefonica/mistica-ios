@@ -145,22 +145,7 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         tableView.deselectRow(animated: true)
         view.endEditing(true)
 
-        let isCard = isCardCell.segmentedControl.selectedSegmentIndex == 0 ? true : false
-
-        let assetType: EmptyStateConfiguration.EmptyStateAssetType
-        switch assetCell.segmentedControl.selectedSegmentIndex {
-        case 0:
-            assetType = .icon(image: UIImage(color: .success), card: isCard)
-        case 1:
-            assetType = .smallImage(image: UIImage(color: .success), card: isCard)
-        case 2:
-            let image = UIImage(named: "avengers-movie-logo")!
-            assetType = .fullWidthImage(image)
-        default: fatalError("Case not implemented")
-        }
-
         let actions: EmptyStateConfiguration.EmptyStateActions
-
         switch buttonsCell.segmentedControl.selectedSegmentIndex {
         case 0:
             actions = .primary(EmptyStateButton(title: "Button small", loadingTitle: nil, tapHandler: nil))
@@ -182,7 +167,36 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
             fatalError("Case not implemented")
         }
 
-        let configuration = EmptyStateConfiguration(asset: assetType, title: emptyStateTitle, description: emptyStateMessage, actions: actions)
+        let configuration: EmptyStateConfiguration
+        let isCard = isCardCell.segmentedControl.selectedSegmentIndex == 0 ? true : false
+        if isCard {
+            let image = UIImage(color: .success)
+            let asset: EmptyStateConfiguration.EmptyStateCardAsset
+            switch assetCell.segmentedControl.selectedSegmentIndex {
+            case 0:
+                asset = .icon(image)
+            case 1:
+                asset = .smallImage(image)
+            default:
+                fatalError("Case not implemented")
+            }
+            configuration = EmptyStateConfiguration(type: .card(asset), title: emptyStateTitle, description: emptyStateMessage, actions: actions)
+        } else {
+            let imageDefault = UIImage(color: .success)
+            let asset: EmptyStateConfiguration.EmptyStateDefaultAsset
+            switch assetCell.segmentedControl.selectedSegmentIndex {
+            case 0:
+                asset = .icon(imageDefault)
+            case 1:
+                asset = .smallImage(imageDefault)
+            case 2:
+                let image = UIImage(named: "avengers-movie-logo")!
+                asset = .fullWidthImage(image)
+            default:
+                fatalError("Case not implemented")
+            }
+            configuration = EmptyStateConfiguration(type: .default(asset), title: emptyStateTitle, description: emptyStateMessage, actions: actions)
+        }
         let vc = EmptyStateViewSampleViewController()
         vc.emptyState.contentConfiguration = configuration
 

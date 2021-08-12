@@ -44,7 +44,7 @@ class EmptyStateButtons: UIStackView {
 // MARK: Internal
 
 extension EmptyStateButtons {
-    func configureButtons(primaryButton: EmptyStateButton?, secondaryButton: EmptyStateButton?, linkButton: EmptyStateLinkButton?) {
+    func configureButtons(primaryButton: EmptyStateButton? = nil, secondaryButton: EmptyStateButton? = nil, linkButton: EmptyStateLinkButton? = nil) {
         configure(for: self.primaryButton, with: primaryButton, actionHandler: primaryActionHandler)
         configure(for: self.secondaryButton, with: secondaryButton, actionHandler: secondaryActionHandler)
         configure(for: self.linkButton, with: linkButton, actionHandler: linkActionHandler)

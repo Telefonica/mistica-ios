@@ -10,8 +10,8 @@ import UIKit
 
 /// EmptyStateMessagesContent is a custom UIStackView where we will have the message section
 class EmptyStateMessagesContent: UIStackView {
-    let titleLabel = EmptyStateContentItem<IntrinsictHeightLabel>(topSpacing: 0)
-    let descriptionLabel = EmptyStateContentItem<IntrinsictHeightLabel>(topSpacing: 0)
+    let titleLabel = StackViewContentItem<IntrinsictHeightLabel>(topSpacing: 0)
+    let descriptionLabel = StackViewContentItem<IntrinsictHeightLabel>(topSpacing: 0)
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,12 +33,7 @@ extension EmptyStateMessagesContent {
         }
         set {
             titleLabel.text = newValue
-
-            if titleLabel.text == nil {
-                titleLabel.removeFromSuperview()
-            } else if titleLabel.superview == nil {
-                insertArrangedSubview(titleLabel, at: 0)
-            }
+            titleLabel.isHidden = titleLabel.text == nil
         }
     }
 
@@ -48,12 +43,7 @@ extension EmptyStateMessagesContent {
         }
         set {
             descriptionLabel.text = newValue
-
-            if descriptionLabel.text == nil {
-                descriptionLabel.removeFromSuperview()
-            } else if descriptionLabel.superview == nil {
-                addArrangedSubview(descriptionLabel)
-            }
+            descriptionLabel.isHidden = descriptionLabel.text == nil
         }
     }
 

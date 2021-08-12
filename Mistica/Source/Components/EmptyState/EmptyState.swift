@@ -118,8 +118,10 @@ private extension EmptyState {
             addSubview(constrainedToLayoutMarginsGuideOf: emptyStateContentBase)
             addBorder(color: .border)
             makeRounded(cornerRadius: Constants.cornerRadius)
+            backgroundColor = .backgroundContainer
         } else {
             addSubview(withDefaultConstraints: emptyStateContentBase)
+            backgroundColor = .background
         }
         emptyStateContentBase.configure(withConfiguration: configuration)
 

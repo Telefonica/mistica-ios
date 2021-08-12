@@ -33,9 +33,9 @@
 		1C37E32C26C18C8700062775 /* EmptyStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37E32B26C18C8700062775 /* EmptyStatesTests.swift */; };
 		1C37E32F26C195FA00062775 /* EmptyStateXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37E32D26C195F900062775 /* EmptyStateXIBIntegration.swift */; };
 		1C37E33026C2843E00062775 /* EmptyStateXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C37E32E26C195FA00062775 /* EmptyStateXIBIntegration.xib */; };
+		1C3CAF2A26C52B39000D45BC /* StackViewContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3CAF2926C52B39000D45BC /* StackViewContentItem.swift */; };
 		1CAC72F126AFFC03002917EF /* CalloutTitleActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F026AFFC03002917EF /* CalloutTitleActions.swift */; };
 		1CAC72F426AFFC32002917EF /* CalloutMessagesContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F326AFFC32002917EF /* CalloutMessagesContent.swift */; };
-		1CAC72F626AFFCDE002917EF /* CalloutContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F526AFFCDE002917EF /* CalloutContentItem.swift */; };
 		1CAC72F826AFFE1E002917EF /* CalloutButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F726AFFE1E002917EF /* CalloutButtons.swift */; };
 		1CAC72FA26AFFF9E002917EF /* Callout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72F926AFFF9E002917EF /* Callout.swift */; };
 		1CAC72FC26B0019E002917EF /* CalloutAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAC72FB26B0019E002917EF /* CalloutAsset.swift */; };
@@ -48,7 +48,6 @@
 		1CEE412426B943B900BB1CF9 /* EmptyStateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412326B943B900BB1CF9 /* EmptyStateConfiguration.swift */; };
 		1CEE412626B9446400BB1CF9 /* EmptyStateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412526B9446400BB1CF9 /* EmptyStateButton.swift */; };
 		1CEE412826B9ADB000BB1CF9 /* EmptyStateMessagesContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412726B9ADB000BB1CF9 /* EmptyStateMessagesContent.swift */; };
-		1CEE412A26B9ADFF00BB1CF9 /* EmptyStateContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412926B9ADFF00BB1CF9 /* EmptyStateContentItem.swift */; };
 		1CEE412E26B9B25C00BB1CF9 /* EmptyStateButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE412D26B9B25C00BB1CF9 /* EmptyStateButtons.swift */; };
 		1CFE255526AAB2D100D3952F /* CalloutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE255426AAB2D100D3952F /* CalloutButton.swift */; };
 		1CFE255926AAD1BE00D3952F /* CalloutConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE255826AAD1BE00D3952F /* CalloutConfiguration.swift */; };
@@ -169,7 +168,6 @@
 		B8D7194525B20FF0006510CC /* CardCommonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193D25B20FF0006510CC /* CardCommonContent.swift */; };
 		B8D7194625B20FF0006510CC /* CardButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193E25B20FF0006510CC /* CardButtonsView.swift */; };
 		B8D7194725B20FF0006510CC /* CardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193F25B20FF0006510CC /* CardBase.swift */; };
-		B8D7194825B20FF0006510CC /* CardContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7194025B20FF0006510CC /* CardContentItem.swift */; };
 		B8D7194925B20FF0006510CC /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7194225B20FF0006510CC /* CardButton.swift */; };
 		B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7195C25B21ADB006510CC /* DataCardTests.swift */; };
 		B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */; };
@@ -296,9 +294,9 @@
 		1C37E32B26C18C8700062775 /* EmptyStatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatesTests.swift; sourceTree = "<group>"; };
 		1C37E32D26C195F900062775 /* EmptyStateXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateXIBIntegration.swift; sourceTree = "<group>"; };
 		1C37E32E26C195FA00062775 /* EmptyStateXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateXIBIntegration.xib; sourceTree = "<group>"; };
+		1C3CAF2926C52B39000D45BC /* StackViewContentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewContentItem.swift; sourceTree = "<group>"; };
 		1CAC72F026AFFC03002917EF /* CalloutTitleActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutTitleActions.swift; sourceTree = "<group>"; };
 		1CAC72F326AFFC32002917EF /* CalloutMessagesContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutMessagesContent.swift; sourceTree = "<group>"; };
-		1CAC72F526AFFCDE002917EF /* CalloutContentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutContentItem.swift; sourceTree = "<group>"; };
 		1CAC72F726AFFE1E002917EF /* CalloutButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutButtons.swift; sourceTree = "<group>"; };
 		1CAC72F926AFFF9E002917EF /* Callout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callout.swift; sourceTree = "<group>"; };
 		1CAC72FB26B0019E002917EF /* CalloutAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutAsset.swift; sourceTree = "<group>"; };
@@ -339,7 +337,6 @@
 		1CEE412326B943B900BB1CF9 /* EmptyStateConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateConfiguration.swift; sourceTree = "<group>"; };
 		1CEE412526B9446400BB1CF9 /* EmptyStateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateButton.swift; sourceTree = "<group>"; };
 		1CEE412726B9ADB000BB1CF9 /* EmptyStateMessagesContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateMessagesContent.swift; sourceTree = "<group>"; };
-		1CEE412926B9ADFF00BB1CF9 /* EmptyStateContentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateContentItem.swift; sourceTree = "<group>"; };
 		1CEE412D26B9B25C00BB1CF9 /* EmptyStateButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateButtons.swift; sourceTree = "<group>"; };
 		1CFE255426AAB2D100D3952F /* CalloutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutButton.swift; sourceTree = "<group>"; };
 		1CFE255826AAD1BE00D3952F /* CalloutConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutConfiguration.swift; sourceTree = "<group>"; };
@@ -647,7 +644,6 @@
 		B8D7193D25B20FF0006510CC /* CardCommonContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCommonContent.swift; sourceTree = "<group>"; };
 		B8D7193E25B20FF0006510CC /* CardButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardButtonsView.swift; sourceTree = "<group>"; };
 		B8D7193F25B20FF0006510CC /* CardBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBase.swift; sourceTree = "<group>"; };
-		B8D7194025B20FF0006510CC /* CardContentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardContentItem.swift; sourceTree = "<group>"; };
 		B8D7194225B20FF0006510CC /* CardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 		B8D7194B25B21065006510CC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B8D7195425B21589006510CC /* card-extra-content.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "card-extra-content.jpg"; sourceTree = "<group>"; };
@@ -1025,6 +1021,7 @@
 				855DAA88944E0E8383B91ACB /* ScrollStackView.swift */,
 				B88DE71DF455B000DEED6A29 /* SeparatorView.swift */,
 				D5D1E862C434A3F09F5E2251 /* SpacerView.swift */,
+				1C3CAF2926C52B39000D45BC /* StackViewContentItem.swift */,
 				5CF03DE5724C50E334D25D05 /* Keyboard */,
 			);
 			path = Views;
@@ -1155,7 +1152,6 @@
 			isa = PBXGroup;
 			children = (
 				1CEE412526B9446400BB1CF9 /* EmptyStateButton.swift */,
-				1CEE412926B9ADFF00BB1CF9 /* EmptyStateContentItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1164,7 +1160,6 @@
 			isa = PBXGroup;
 			children = (
 				1CAC72FB26B0019E002917EF /* CalloutAsset.swift */,
-				1CAC72F526AFFCDE002917EF /* CalloutContentItem.swift */,
 				1CFE255426AAB2D100D3952F /* CalloutButton.swift */,
 			);
 			path = Model;
@@ -2036,7 +2031,6 @@
 				B8D7193D25B20FF0006510CC /* CardCommonContent.swift */,
 				B8D7193E25B20FF0006510CC /* CardButtonsView.swift */,
 				B8D7193F25B20FF0006510CC /* CardBase.swift */,
-				B8D7194025B20FF0006510CC /* CardContentItem.swift */,
 			);
 			path = Internals;
 			sourceTree = "<group>";
@@ -2653,7 +2647,6 @@
 				FD91D9B40E070D425FA48CDC /* InputFieldValidationStrategy.swift in Sources */,
 				B8D7194325B20FF0006510CC /* MediaCard.swift in Sources */,
 				FF695537B060674584B2F14D /* IntrinsicHeightTextView.swift in Sources */,
-				1CEE412A26B9ADFF00BB1CF9 /* EmptyStateContentItem.swift in Sources */,
 				FCB2B910EBD049265C3F5A82 /* IntrinsicMaxButtonWidthContainerView.swift in Sources */,
 				18D4BA9E25B97725002D2BC8 /* NSDataAsset+Utils.swift in Sources */,
 				1CAC72FE26B013F2002917EF /* CalloutContentBase.swift in Sources */,
@@ -2686,11 +2679,11 @@
 				1CFE255526AAB2D100D3952F /* CalloutButton.swift in Sources */,
 				F343B351B4E71C9AD816E7AA /* Optional+Utils.swift in Sources */,
 				A75A3C79308EEFE9B2657FE8 /* PaddingLabel.swift in Sources */,
+				1C3CAF2A26C52B39000D45BC /* StackViewContentItem.swift in Sources */,
 				D3DC00209006534C72A7B2F2 /* PasswordInputFieldValidationStrategy.swift in Sources */,
 				5236C2BE900CA9A69C0B58B6 /* PhoneNumberInputFieldValidationStrategy.swift in Sources */,
 				2413001847ED6200A13CC1D6 /* PopoverAssets.swift in Sources */,
 				B8D7194925B20FF0006510CC /* CardButton.swift in Sources */,
-				B8D7194825B20FF0006510CC /* CardContentItem.swift in Sources */,
 				AE568ECA9A69A30366BD05ED /* PopoverConfiguration.swift in Sources */,
 				2E2AF2C793F73E8F9765065A /* PopoverContentView.swift in Sources */,
 				0E981C32BBB09DF7A1A9D7F9 /* PopoverMessageView.swift in Sources */,
@@ -2711,7 +2704,6 @@
 				0DD8E673DA431A9A500A04AB /* SeparatorView.swift in Sources */,
 				FB5A638A94B3B96ECAA3AC4A /* SpacerView.swift in Sources */,
 				0B6F292895FEC275550798B1 /* String+Utils.swift in Sources */,
-				1CAC72F626AFFCDE002917EF /* CalloutContentItem.swift in Sources */,
 				0B762F342DEA1C67BF7F438B /* TagView.swift in Sources */,
 				930BDEF8014BD8B8104C4F8B /* TextInput.swift in Sources */,
 				2A6BB74DD4788FC5991A70FD /* ThemeVariant.swift in Sources */,

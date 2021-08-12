@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public struct EmptyStateConfiguration {
-    static let empty = EmptyStateConfiguration(asset: .icon(image: UIImage(color: .success), card: false), title: "Basic configuration", description: "This is a basic configuration for the empty state", actions: nil)
+    static let empty = EmptyStateConfiguration(type: .default(.icon(UIImage(color: .success))), title: "Basic configuration", description: "This is a basic configuration for the empty state", actions: nil)
 
     public enum EmptyStateActions {
         case primary(EmptyStateButton)
@@ -21,30 +21,41 @@ public struct EmptyStateConfiguration {
     }
 
     @frozen
-    public enum EmptyStateAssetType: Equatable {
-        case icon(image: UIImage, card: Bool)
-        case smallImage(image: UIImage, card: Bool)
+    public enum EmptyStateCardAsset: Equatable {
+        case icon(UIImage)
+        case smallImage(UIImage)
+    }
+
+    @frozen
+    public enum EmptyStateDefaultAsset: Equatable {
+        case icon(UIImage)
+        case smallImage(UIImage)
         case fullWidthImage(UIImage)
     }
 
-    let asset: EmptyStateAssetType
+    public enum EmptyStateType {
+        case card(EmptyStateCardAsset)
+        case `default`(EmptyStateDefaultAsset)
+    }
+
+    let type: EmptyStateType
     let title: String
     let description: String?
     let actions: EmptyStateActions?
 
-    public init(asset: EmptyStateAssetType = .icon(image: UIImage(), card: false), title: String, description: String?, actions: EmptyStateActions? = nil) {
-        self.asset = asset
+    public init(type: EmptyStateType = .default(.icon(UIImage())), title: String, description: String?, actions: EmptyStateActions? = nil) {
+        self.type = type
         self.title = title
         self.description = description
         self.actions = actions
     }
 
     func isInCard() -> Bool {
-        switch asset {
-        case let .icon(_, isCard),
-             let .smallImage(_, isCard):
-            return isCard
-        default: return false
+        switch type {
+        case .card:
+            return true
+        default:
+            return false
         }
     }
 }

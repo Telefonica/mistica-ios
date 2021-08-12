@@ -10,8 +10,8 @@ import UIKit
 
 /// CalloutMessagesContent is a custom UIStackView where we will have the messages section
 class CalloutMessagesContent: UIStackView {
-    let titleLabel = CalloutContentItem<IntrinsictHeightLabel>(topSpacing: 0)
-    let descriptionLabel = CalloutContentItem<IntrinsictHeightLabel>(topSpacing: 0)
+    let titleLabel = StackViewContentItem<IntrinsictHeightLabel>(topSpacing: 0)
+    let descriptionLabel = StackViewContentItem<IntrinsictHeightLabel>(topSpacing: 0)
 
     override public init(frame: CGRect) {
         super.init(frame: frame)

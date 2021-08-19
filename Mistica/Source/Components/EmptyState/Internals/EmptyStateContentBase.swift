@@ -13,8 +13,11 @@ private enum Constants {
     static let contentLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 24, trailing: 16)
     static let fullWidthMargin: CGFloat = 24.0
     static let iconWidthMargin: CGFloat = 24.0
+    static let iconHeight: CGFloat = 64.0
     static let smallImageHeight: CGFloat = 112.0
     static let actionsHeight: CGFloat = 48.0
+    static let descriptionTopSpacingCard: CGFloat = 16.0
+    static let descriptionTopSpacingDefault: CGFloat = 24.0
 }
 
 /// EmptyStateContentBase is a horizontal stackview where we will have the image - message&buttons - close button
@@ -22,8 +25,7 @@ class EmptyStateContentBase: UIStackView {
     let emptyStateMessages = EmptyStateMessagesContent()
     let emptyStateButtons = EmptyStateButtons()
 
-    private let messageActionsSeparator = SpacerView(axis: .vertical, amount: 24)
-    private let actionsBottomSeparator = SpacerView(axis: .vertical, amount: 24)
+    private let messageActionsSeparator = SpacerView(axis: .vertical, amount: Constants.descriptionTopSpacingDefault)
 
     private var iconContainerView = UIView()
     private var iconImage = UIImageView()
@@ -80,30 +82,10 @@ extension EmptyStateContentBase {
     }
 
     func configure(withConfiguration configuration: EmptyStateConfiguration) {
-        emptyStateMessages.title = configuration.title
-        emptyStateMessages.descriptionTitle = configuration.description
-
-        var hideButtons = false
-        switch configuration.actions {
-        case let .primary(primaryButton):
-			emptyStateButtons.configureButtons(primaryButton: primaryButton, isCard: configuration.isInCard())
-        case let .primaryAndLink(primaryButton, linkButton):
-            emptyStateButtons.configureButtons(primaryButton: primaryButton, linkButton: linkButton, isCard: configuration.isInCard())
-        case let .secondary(secondaryButton):
-            emptyStateButtons.configureButtons(secondaryButton: secondaryButton, isCard: configuration.isInCard())
-        case let .secondaryAndLink(secondaryButton, linkButton):
-            emptyStateButtons.configureButtons(secondaryButton: secondaryButton, linkButton: linkButton, isCard: configuration.isInCard())
-        case .empty, .none:
-            hideButtons = true
-            emptyStateButtons.configureButtons()
-        }
+        configureMessagesContent(withConfiguration: configuration)
         // Asset is mandatory
         configureImageViewContainer(configuration: configuration)
-        if configuration.isInCard() && !hideButtons {
-            addArrangedSubview(actionsBottomSeparator)
-        } else {
-            actionsBottomSeparator.removeFromSuperview()
-        }
+        configureButtonsContent(withConfiguration: configuration)
     }
 }
 
@@ -131,9 +113,7 @@ private extension EmptyStateContentBase {
         case .card(let cardAsset):
             switch cardAsset {
             case .icon(let image):
-				configureSmallContainer(image: image)
-            case .smallImage(let image):
-                configureSmallContainer(image: image)
+                configureIconContainer(image: image)
             }
         case .default(let defaultAsset):
             switch defaultAsset {
@@ -163,13 +143,13 @@ private extension EmptyStateContentBase {
     }
 
     func configureIconContainer(image: UIImage) {
-        iconContainerView.heightAnchor.constraint(equalToConstant: Constants.iconWidthMargin).isActive = true
+        iconContainerView.heightAnchor.constraint(equalToConstant: Constants.iconHeight).isActive = true
         iconImage.image = image
         iconImage.contentMode = .scaleToFill
         iconContainerView.addSubview(iconImage, constraints: [
             iconImage.bottomAnchor.constraint(equalTo: iconContainerView.bottomAnchor),
-            iconImage.widthAnchor.constraint(equalToConstant: Constants.iconWidthMargin),
-            iconImage.heightAnchor.constraint(equalToConstant: Constants.iconWidthMargin)
+            iconImage.widthAnchor.constraint(equalToConstant: Constants.iconHeight),
+            iconImage.heightAnchor.constraint(equalToConstant: Constants.iconHeight)
         ])
     }
 
@@ -195,5 +175,33 @@ private extension EmptyStateContentBase {
         let fixedHeight: CGFloat = Constants.smallImageHeight
         let ratio = image.size.width / image.size.height
         return ratio * fixedHeight
+    }
+
+    func configureMessagesContent(withConfiguration configuration: EmptyStateConfiguration) {
+        emptyStateMessages.configure(withConfiguration: configuration)
+    }
+
+    func configureButtonsContent(withConfiguration configuration: EmptyStateConfiguration) {
+        var hideButtons = false
+        switch configuration.actions {
+        case let .primary(primaryButton):
+            emptyStateButtons.configureButtons(primaryButton: primaryButton, isCard: configuration.isInCard())
+        case let .primaryAndLink(primaryButton, linkButton):
+            emptyStateButtons.configureButtons(primaryButton: primaryButton, linkButton: linkButton, isCard: configuration.isInCard())
+        case let .secondary(secondaryButton):
+            emptyStateButtons.configureButtons(secondaryButton: secondaryButton, isCard: configuration.isInCard())
+        case let .secondaryAndLink(secondaryButton, linkButton):
+            emptyStateButtons.configureButtons(secondaryButton: secondaryButton, linkButton: linkButton, isCard: configuration.isInCard())
+        case let .link(linkButton):
+            emptyStateButtons.configureButtons(linkButton: linkButton, isCard: configuration.isInCard())
+        case .empty, .none:
+            hideButtons = true
+            emptyStateButtons.configureButtons()
+        }
+        if configuration.isInCard() && !hideButtons {
+            messageActionsSeparator.amount = Constants.descriptionTopSpacingCard
+        } else if hideButtons {
+            removeArrangedSubview(messageActionsSeparator)
+        }
     }
 }

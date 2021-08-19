@@ -17,13 +17,13 @@ public struct EmptyStateConfiguration {
         case primaryAndLink(primary: EmptyStateButton, link: EmptyStateLinkButton)
         case secondary(EmptyStateButton)
         case secondaryAndLink(secondary: EmptyStateButton, link: EmptyStateLinkButton)
+        case link(EmptyStateLinkButton)
         case empty
     }
 
     @frozen
     public enum EmptyStateCardAsset: Equatable {
         case icon(UIImage)
-        case smallImage(UIImage)
     }
 
     @frozen

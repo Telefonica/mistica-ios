@@ -18,15 +18,24 @@ private enum Section: Int, CaseIterable {
     case show
 }
 
-private enum CardCellValueIndex: Int{
-	case yes = 0
-	case no = 1
+private enum CardCellValueIndex: Int {
+    case yes = 0
+    case no = 1
 }
 
-private enum AssetCellValueIndex: Int{
-	case icon = 0
-	case small = 1
-	case full = 2
+private enum AssetCellValueIndex: Int {
+    case icon = 0
+    case small = 1
+    case full = 2
+}
+
+private enum ButtonsCellValueIndex: Int {
+    case primary = 0
+    case primaryLink = 1
+    case secondary = 2
+    case secondaryLink = 3
+    case link = 4
+    case empty = 5
 }
 
 class UICatalogEmptyStateViewController: UIViewController {
@@ -41,7 +50,7 @@ class UICatalogEmptyStateViewController: UIViewController {
     private lazy var assetCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "asset")
 
-		cell.segmentedControl.insertSegment(withTitle: "Icon", at: AssetCellValueIndex.icon.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Icon", at: AssetCellValueIndex.icon.rawValue, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Small", at: AssetCellValueIndex.small.rawValue, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Full", at: AssetCellValueIndex.full.rawValue, animated: false)
         cell.segmentedControl.selectedSegmentIndex = AssetCellValueIndex.icon.rawValue
@@ -66,12 +75,13 @@ class UICatalogEmptyStateViewController: UIViewController {
     private lazy var buttonsCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "ActionButtonStyleCell")
 
-        cell.segmentedControl.insertSegment(withTitle: "P", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "P + L", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "S", at: 2, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "S + L", at: 3, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "EMPTY", at: 4, animated: false)
-        cell.segmentedControl.selectedSegmentIndex = 0
+        cell.segmentedControl.insertSegment(withTitle: "P", at: ButtonsCellValueIndex.primary.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "P + L", at: ButtonsCellValueIndex.primaryLink.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "S", at: ButtonsCellValueIndex.secondary.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "S + L", at: ButtonsCellValueIndex.secondaryLink.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "L", at: ButtonsCellValueIndex.link.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "EMPTY", at: ButtonsCellValueIndex.empty.rawValue, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = ButtonsCellValueIndex.primary.rawValue
 
         return cell
     }()
@@ -79,10 +89,10 @@ class UICatalogEmptyStateViewController: UIViewController {
     private lazy var isCardCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "isCardStyle")
 
-		cell.segmentedControl.insertSegment(withTitle: "Yes", at: CardCellValueIndex.yes.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Yes", at: CardCellValueIndex.yes.rawValue, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "No", at: CardCellValueIndex.no.rawValue, animated: false)
         cell.segmentedControl.selectedSegmentIndex = CardCellValueIndex.no.rawValue
-		
+
         return cell
     }()
 
@@ -124,8 +134,9 @@ class UICatalogEmptyStateViewController: UIViewController {
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
 
-		isCardCell.segmentedControl.addTarget(self, action: #selector(cardCellValueChanged(_:)), for: .valueChanged)
-		assetCell.segmentedControl.addTarget(self, action: #selector(assetCellValueChanged(_:)), for: .valueChanged)
+        isCardCell.segmentedControl.addTarget(self, action: #selector(cardCellValueChanged(_:)), for: .valueChanged)
+        assetCell.segmentedControl.addTarget(self, action: #selector(assetCellValueChanged(_:)), for: .valueChanged)
+        buttonsCell.segmentedControl.addTarget(self, action: #selector(actionsCellValueChanged(_:)), for: .valueChanged)
     }
 
     @objc func dismissKeyboard(_: UITapGestureRecognizer) {
@@ -135,26 +146,34 @@ class UICatalogEmptyStateViewController: UIViewController {
         }
     }
 
-	//We have to avoid user selects the assets that are not allowed in card state
-	@objc func cardCellValueChanged(_: UISegmentedControl) {
+    // We have to avoid user selects the assets that are not allowed in card state
+    @objc func cardCellValueChanged(_: UISegmentedControl) {
+        // If user selects a card the asset value must be forced to "Icon"
+        if isCardCell.segmentedControl.selectedSegmentIndex == CardCellValueIndex.yes.rawValue {
+            assetCell.segmentedControl.selectedSegmentIndex = AssetCellValueIndex.icon.rawValue
+        }
+    }
 
-		//If user selects a card the asset value must be forced to "Small"
-		if isCardCell.segmentedControl.selectedSegmentIndex == CardCellValueIndex.yes.rawValue {
+    // We have to avoid user selects the card style if the asset selected is full or icon
+    @objc func assetCellValueChanged(_: UISegmentedControl) {
+        // If user selects a card the asset value must be forced to "Small"
+        if assetCell.segmentedControl.selectedSegmentIndex == AssetCellValueIndex.small.rawValue ||
+            assetCell.segmentedControl.selectedSegmentIndex == AssetCellValueIndex.full.rawValue
+        {
+            isCardCell.segmentedControl.selectedSegmentIndex = CardCellValueIndex.no.rawValue
+            if buttonsCell.segmentedControl.selectedSegmentIndex == ButtonsCellValueIndex.link.rawValue {
+                buttonsCell.segmentedControl.selectedSegmentIndex = ButtonsCellValueIndex.primary.rawValue
+            }
+        }
+    }
 
-			self.assetCell.segmentedControl.selectedSegmentIndex = AssetCellValueIndex.small.rawValue
-		}
-	}
-
-	//We have to avoid user selects the card style if the asset selected is full or icon
-	@objc func assetCellValueChanged(_: UISegmentedControl) {
-
-		//If user selects a card the asset value must be forced to "Small"
-		if assetCell.segmentedControl.selectedSegmentIndex == AssetCellValueIndex.icon.rawValue ||
-			assetCell.segmentedControl.selectedSegmentIndex == AssetCellValueIndex.full.rawValue
-		{
-			self.isCardCell.segmentedControl.selectedSegmentIndex = CardCellValueIndex.no.rawValue
-		}
-	}
+    // Only link button is allowed to be alone inside a card
+    @objc func actionsCellValueChanged(_: UISegmentedControl) {
+        if buttonsCell.segmentedControl.selectedSegmentIndex == ButtonsCellValueIndex.link.rawValue {
+            isCardCell.segmentedControl.selectedSegmentIndex = CardCellValueIndex.yes.rawValue
+            assetCell.segmentedControl.selectedSegmentIndex = AssetCellValueIndex.icon.rawValue
+        }
+    }
 }
 
 extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewDelegate {
@@ -196,6 +215,8 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
                 link: EmptyStateLinkButton(title: "Link", tapHandler: nil)
             )
         case 4:
+            actions = .link(EmptyStateLinkButton(title: "Link", tapHandler: nil))
+        case 5:
             actions = .empty
         default:
             fatalError("Case not implemented")
@@ -205,15 +226,7 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         let isCard = isCardCell.segmentedControl.selectedSegmentIndex == 0 ? true : false
         if isCard {
             let image = UIImage(color: .success)
-            let asset: EmptyStateConfiguration.EmptyStateCardAsset
-            switch assetCell.segmentedControl.selectedSegmentIndex {
-            case 0:
-                asset = .icon(image)
-            case 1:
-                asset = .smallImage(image)
-            default:
-                fatalError("Case not implemented")
-            }
+            let asset = EmptyStateConfiguration.EmptyStateCardAsset.icon(image)
             configuration = EmptyStateConfiguration(type: .card(asset), title: emptyStateTitle, description: emptyStateMessage, actions: actions)
         } else {
             let imageDefault = UIImage(color: .success)
@@ -269,7 +282,7 @@ private class EmptyStateViewSampleViewController: UIViewController {
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .background
-        view.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+        view.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 24)
 
         view.addSubview(emptyState, constraints: [
             emptyState.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),

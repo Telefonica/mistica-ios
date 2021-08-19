@@ -8,6 +8,13 @@
 
 import UIKit
 
+private enum Constants {
+    static let titleTopSpacingDefault: CGFloat = 24.0
+    static let titleTopSpacingCard: CGFloat = 16.0
+    static let descriptionTopSpacingCard: CGFloat = 8.0
+    static let descriptionTopSpacingDefault: CGFloat = 16.0
+}
+
 /// EmptyStateMessagesContent is a custom UIStackView where we will have the message section
 class EmptyStateMessagesContent: UIStackView {
     let titleLabel = StackViewContentItem<IntrinsictHeightLabel>(topSpacing: 0)
@@ -64,6 +71,18 @@ extension EmptyStateMessagesContent {
             descriptionLabel.topSpacing = newValue
         }
     }
+
+    func configure(withConfiguration configuration: EmptyStateConfiguration) {
+        title = configuration.title
+        descriptionTitle = configuration.description
+        let isCard: Bool = configuration.isInCard()
+        let titleSpacing: CGFloat = isCard ? Constants.titleTopSpacingCard : Constants.titleTopSpacingDefault
+        titleTopSpacing = titleSpacing
+        let descriptionSpacing: CGFloat = isCard ? Constants.descriptionTopSpacingCard : Constants.descriptionTopSpacingDefault
+        descriptionTitleTopSpacing = descriptionSpacing
+        titleLabel.font = isCard ? .textPreset4(weight: .regular) : .textPreset6(weight: .light)
+        descriptionLabel.font = isCard ? .textPreset2(weight: .regular) : .textPreset4(weight: .light)
+    }
 }
 
 // MARK: Private
@@ -86,8 +105,8 @@ private extension EmptyStateMessagesContent {
         titleLabel.font = .textPreset6(weight: .light)
         titleLabel.textColor = .textPrimary
         titleLabel.minHeight = 32
-        titleLabel.numberOfLines = 1
-        titleLabel.topSpacing = 32
+        titleLabel.numberOfLines = 0
+        titleLabel.topSpacing = 24
 
         descriptionLabel.font = .textPreset4(weight: .light)
         descriptionLabel.textColor = .textSecondary

@@ -44,7 +44,7 @@ class EmptyStateButtons: UIStackView {
 // MARK: Internal
 
 extension EmptyStateButtons {
-	func configureButtons(primaryButton: EmptyStateButton? = nil, secondaryButton: EmptyStateButton? = nil, linkButton: EmptyStateLinkButton? = nil, isCard: Bool = false) {
+    func configureButtons(primaryButton: EmptyStateButton? = nil, secondaryButton: EmptyStateButton? = nil, linkButton: EmptyStateLinkButton? = nil, isCard: Bool = false) {
         configure(for: self.primaryButton, with: primaryButton, isCard: isCard, actionHandler: primaryActionHandler)
         configure(for: self.secondaryButton, with: secondaryButton, isCard: isCard, actionHandler: secondaryActionHandler)
         configure(for: self.linkButton, with: linkButton, isCard: isCard, actionHandler: linkActionHandler)
@@ -60,7 +60,7 @@ extension EmptyStateButtons {
 private extension EmptyStateButtons {
     func commomInit() {
         axis = .horizontal
-        alignment = .trailing
+        alignment = .center
         spacing = 20.0
 
         primaryButton.addTarget(self, action: #selector(primaryActionTapped), for: .touchUpInside)
@@ -76,11 +76,11 @@ private extension EmptyStateButtons {
         linkButton.style = .link
     }
 
-	func configure(for button: Button, with emptyButton: EmptyStateButton?, isCard: Bool = false, actionHandler: (() -> Void)?) {
+    func configure(for button: Button, with emptyButton: EmptyStateButton?, isCard: Bool = false, actionHandler: (() -> Void)?) {
         if let configButton = emptyButton {
             button.title = configButton.title
             button.loadingTitle = configButton.loadingTitle
-			button.isSmall = isCard
+            button.isSmall = isCard
             if button.superview == nil {
                 addArrangedSubview(button)
             }
@@ -93,7 +93,7 @@ private extension EmptyStateButtons {
         if let linkButton = emptyLinkButton {
             link.title = linkButton.title
             link.contentMode = .left
-			link.isSmall = isCard
+            link.isSmall = isCard
 
             if link.superview == nil {
                 addArrangedSubview(link)

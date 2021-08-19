@@ -86,13 +86,13 @@ extension EmptyStateContentBase {
         var hideButtons = false
         switch configuration.actions {
         case let .primary(primaryButton):
-            emptyStateButtons.configureButtons(primaryButton: primaryButton)
+			emptyStateButtons.configureButtons(primaryButton: primaryButton, isCard: configuration.isInCard())
         case let .primaryAndLink(primaryButton, linkButton):
-            emptyStateButtons.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
+            emptyStateButtons.configureButtons(primaryButton: primaryButton, linkButton: linkButton, isCard: configuration.isInCard())
         case let .secondary(secondaryButton):
-            emptyStateButtons.configureButtons(secondaryButton: secondaryButton)
+            emptyStateButtons.configureButtons(secondaryButton: secondaryButton, isCard: configuration.isInCard())
         case let .secondaryAndLink(secondaryButton, linkButton):
-            emptyStateButtons.configureButtons(secondaryButton: secondaryButton, linkButton: linkButton)
+            emptyStateButtons.configureButtons(secondaryButton: secondaryButton, linkButton: linkButton, isCard: configuration.isInCard())
         case .empty, .none:
             hideButtons = true
             emptyStateButtons.configureButtons()
@@ -131,7 +131,7 @@ private extension EmptyStateContentBase {
         case .card(let cardAsset):
             switch cardAsset {
             case .icon(let image):
-                configureIconContainer(image: image)
+				configureSmallContainer(image: image)
             case .smallImage(let image):
                 configureSmallContainer(image: image)
             }

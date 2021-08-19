@@ -18,6 +18,17 @@ private enum Section: Int, CaseIterable {
     case show
 }
 
+private enum CardCellValueIndex: Int{
+	case yes = 0
+	case no = 1
+}
+
+private enum AssetCellValueIndex: Int{
+	case icon = 0
+	case small = 1
+	case full = 2
+}
+
 class UICatalogEmptyStateViewController: UIViewController {
     private lazy var tableView: UITableView = {
         if #available(iOS 13.0, *) {
@@ -30,11 +41,10 @@ class UICatalogEmptyStateViewController: UIViewController {
     private lazy var assetCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "asset")
 
-        cell.segmentedControl.insertSegment(withTitle: "Icon", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Small", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Full", at: 2, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
+		cell.segmentedControl.insertSegment(withTitle: "Icon", at: AssetCellValueIndex.icon.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Small", at: AssetCellValueIndex.small.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Full", at: AssetCellValueIndex.full.rawValue, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = AssetCellValueIndex.icon.rawValue
 
         return cell
     }()
@@ -69,10 +79,10 @@ class UICatalogEmptyStateViewController: UIViewController {
     private lazy var isCardCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "isCardStyle")
 
-        cell.segmentedControl.insertSegment(withTitle: "Yes", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 1, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
+		cell.segmentedControl.insertSegment(withTitle: "Yes", at: CardCellValueIndex.yes.rawValue, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "No", at: CardCellValueIndex.no.rawValue, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = CardCellValueIndex.no.rawValue
+		
         return cell
     }()
 
@@ -113,6 +123,9 @@ class UICatalogEmptyStateViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
+
+		isCardCell.segmentedControl.addTarget(self, action: #selector(cardCellValueChanged(_:)), for: .valueChanged)
+		assetCell.segmentedControl.addTarget(self, action: #selector(assetCellValueChanged(_:)), for: .valueChanged)
     }
 
     @objc func dismissKeyboard(_: UITapGestureRecognizer) {
@@ -121,6 +134,27 @@ class UICatalogEmptyStateViewController: UIViewController {
             textFieldCell.textField.resignFirstResponder()
         }
     }
+
+	//We have to avoid user selects the assets that are not allowed in card state
+	@objc func cardCellValueChanged(_: UISegmentedControl) {
+
+		//If user selects a card the asset value must be forced to "Small"
+		if isCardCell.segmentedControl.selectedSegmentIndex == CardCellValueIndex.yes.rawValue {
+
+			self.assetCell.segmentedControl.selectedSegmentIndex = AssetCellValueIndex.small.rawValue
+		}
+	}
+
+	//We have to avoid user selects the card style if the asset selected is full or icon
+	@objc func assetCellValueChanged(_: UISegmentedControl) {
+
+		//If user selects a card the asset value must be forced to "Small"
+		if assetCell.segmentedControl.selectedSegmentIndex == AssetCellValueIndex.icon.rawValue ||
+			assetCell.segmentedControl.selectedSegmentIndex == AssetCellValueIndex.full.rawValue
+		{
+			self.isCardCell.segmentedControl.selectedSegmentIndex = CardCellValueIndex.no.rawValue
+		}
+	}
 }
 
 extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewDelegate {

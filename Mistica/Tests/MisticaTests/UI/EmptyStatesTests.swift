@@ -1,0 +1,233 @@
+//
+//  EmptyStatesTests.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
+import Mistica
+import SnapshotTesting
+import XCTest
+
+final class EmptyStatesTests: XCTestCase {
+    override class func setUp() {
+        super.setUp()
+
+        isRecording = false
+    }
+
+    // MARK: - Styles
+
+    func testBrandStyles() {
+        MisticaConfig.brandStyle = .movistar
+
+        assertSnapshotForAllBrandsAndStyles(as: .image, viewBuilder: makeBasicEmptyState())
+    }
+
+    // MARK: - Layout
+
+    func testMinimumContent() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeBasicEmptyState()
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testShowActions() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(
+            type: .default(.smallImage(AnyValues.smallImage)),
+            title: AnyValues.title,
+            description: AnyValues.description,
+            actions: .primary(AnyValues.primary)
+        )
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testFullContentAsACard() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(
+            type: .card(.icon(AnyValues.iconImage)),
+            title: AnyValues.title,
+            description: AnyValues.description,
+            actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link)
+        )
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testFullContentWithoutDescription() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(description: nil)
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testPrimaryButtonOnly() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(actions: .primary(AnyValues.primary))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testPrimaryAndLinkButtonsOnly() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testPrimaryAndLinkButtonsOnlyAsACard() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testSecondaryAndLinkButtonsOnly() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testSecondaryButtonOnly() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(actions: .secondary(AnyValues.secondary))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testSecondaryButtonOnlyAsACard() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .secondary(AnyValues.secondary))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testSecondaryAndLinkButtonsOnlyAsACard() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.smallImage)), actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testEmptyButtonOnly() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(actions: .empty)
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testEmptyButtonOnlyAsACard() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.smallImage)), actions: .empty)
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    func testLinkButtonOnlyAsACard() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.smallImage)), actions: .link(AnyValues.link))
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    // MARK: Behaviour
+
+    func testShowLoadingStateForButtons() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeEmptyStateWithContentAndButtons(actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
+        view.primaryButton.isLoading = true
+
+        assertSnapshot(matching: view, as: .image)
+    }
+
+    // MARK: XIB integration
+
+    func testXIBIntegration() {
+        MisticaConfig.brandStyle = .vivo
+
+        let configurationWithActions = EmptyStateConfiguration(
+            type: .default(.fullWidthImage(AnyValues.fullImage)),
+            title: AnyValues.title,
+            description: AnyValues.description,
+            actions: .primary(AnyValues.primary)
+        )
+
+        let view = EmptyStateXIBIntegration.viewFromNib()
+        view.emptyState.contentConfiguration = configurationWithActions
+
+        assertSnapshot(
+            matching: view.asRootOfViewController(),
+            as: .image(on: .iPhoneX)
+        )
+    }
+}
+
+// MARK: - Helpers
+
+extension EmptyStatesTests {
+    enum AnyValues {
+        static let primary = EmptyStateButton(title: "Primary", loadingTitle: nil, tapHandler: nil)
+        static let secondary = EmptyStateButton(title: "Secondary", loadingTitle: nil, tapHandler: nil)
+        static let link = EmptyStateLinkButton(title: "Link", tapHandler: nil)
+        static let smallImage = UIImage(color: .success, width: 112.0, height: 112.0)
+        static let fullImage = UIImage(color: .success, width: 327.0, height: 184.0)
+        static let iconImage = UIImage(color: .success, width: 64.0, height: 64.0)
+        static let title: String = "This is a mandatory title"
+        static let description: String = "This is a basic configuration for the empty state"
+    }
+
+    func makeBasicEmptyState() -> EmptyState {
+        let configuration = EmptyStateConfiguration(
+            type: .default(.smallImage(AnyValues.smallImage)),
+            title: AnyValues.title,
+            description: nil,
+            actions: .empty
+        )
+        let emptyState = EmptyState()
+        emptyState.contentConfiguration = configuration
+
+        let emptyStateSize = emptyState.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        emptyState.frame = CGRect(x: 0, y: 0, width: emptyStateSize.width, height: emptyStateSize.height)
+
+        return emptyState
+    }
+
+    func makeEmptyStateWithContentAndButtons(type: EmptyStateConfiguration.EmptyStateType = .default(.smallImage(AnyValues.smallImage)),
+                                             title: String = AnyValues.title,
+                                             description: String? = AnyValues.description,
+                                             actions: EmptyStateConfiguration.EmptyStateActions = .primary(AnyValues.primary)) -> EmptyState {
+        let configuration = EmptyStateConfiguration(type: type, title: title, description: description, actions: actions)
+
+        let emptyState = EmptyState()
+        emptyState.contentConfiguration = configuration
+
+        let emptyStateSize = emptyState.systemLayoutSizeFitting(
+            CGSize(width: 300, height: 0),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .defaultLow
+        )
+        emptyState.frame = CGRect(x: 0, y: 0, width: emptyStateSize.width, height: emptyStateSize.height)
+
+        return emptyState
+    }
+}

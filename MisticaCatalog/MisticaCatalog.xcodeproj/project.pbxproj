@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */; };
+		1C37E32626BBF83B00062775 /* UICatalogEmptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37E32526BBF83B00062775 /* UICatalogEmptyStateViewController.swift */; };
 		1CFE255E26AAE3CB00D3952F /* UICatalogCalloutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE255D26AAE3CB00D3952F /* UICatalogCalloutViewController.swift */; };
 		908C0EB325C82CDC00D1687A /* UICatalogTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908C0EB225C82CDC00D1687A /* UICatalogTabsViewController.swift */; };
 		B85CCA6725B861BC00B76426 /* UICatalogMediaCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogStepperViewController.swift; sourceTree = "<group>"; };
+		1C37E32526BBF83B00062775 /* UICatalogEmptyStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogEmptyStateViewController.swift; sourceTree = "<group>"; };
 		1CFE255D26AAE3CB00D3952F /* UICatalogCalloutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogCalloutViewController.swift; sourceTree = "<group>"; };
 		908C0EB225C82CDC00D1687A /* UICatalogTabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogTabsViewController.swift; sourceTree = "<group>"; };
 		B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogMediaCardViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				B8D04F6525C4237A00C55FA1 /* UICatalogCardsViewController.swift */,
 				908C0EB225C82CDC00D1687A /* UICatalogTabsViewController.swift */,
 				1CFE255D26AAE3CB00D3952F /* UICatalogCalloutViewController.swift */,
+				1C37E32526BBF83B00062775 /* UICatalogEmptyStateViewController.swift */,
 			);
 			path = ComponentsCatalogs;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				B8F990392546C98700DFBFE9 /* Bundle+MisticaCatalog.swift in Sources */,
 				B8F990512546C98700DFBFE9 /* UICatalogHeaderViewController.swift in Sources */,
 				B8F990492546C98700DFBFE9 /* UICatalogSegmentSelectorViewController.swift in Sources */,
+				1C37E32626BBF83B00062775 /* UICatalogEmptyStateViewController.swift in Sources */,
 				B8F990312546C98700DFBFE9 /* NavigationBarStyles.swift in Sources */,
 				18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */,
 				B8F9904D2546C98700DFBFE9 /* UICatalogListsViewController.swift in Sources */,

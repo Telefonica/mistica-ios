@@ -330,7 +330,7 @@ private extension SegmentSelector {
     }
 
     func reloadContent() {
-        let selectedSegment = selectedSegment
+        let selectedSegment = self.selectedSegment
         collectionView.reloadData()
         if let selectedSegment = selectedSegment {
             select(selectedSegment)

@@ -117,8 +117,8 @@ public class SegmentSelector: UIView {
             themeDidChange()
         }
     }
-    
-    public override var intrinsicContentSize: CGSize {
+
+    override public var intrinsicContentSize: CGSize {
         collectionView.intrinsicContentSize
     }
 }

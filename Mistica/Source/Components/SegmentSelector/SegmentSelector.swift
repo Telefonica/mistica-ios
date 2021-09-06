@@ -117,6 +117,10 @@ public class SegmentSelector: UIView {
             themeDidChange()
         }
     }
+
+    override public var intrinsicContentSize: CGSize {
+        collectionView.intrinsicContentSize
+    }
 }
 
 // MARK: Public API
@@ -166,7 +170,7 @@ extension SegmentSelector: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 
 extension SegmentSelector: UICollectionViewDelegate {
-    public func collectionView(_: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         // We allow selection only when the cell is not already selected.
         indexPath.item != selectedSegmentIndex
     }
@@ -326,7 +330,11 @@ private extension SegmentSelector {
     }
 
     func reloadContent() {
+        let selectedSegment = self.selectedSegment
         collectionView.reloadData()
+        if let selectedSegment = selectedSegment {
+            select(selectedSegment)
+        }
         scrollToFirstItemIfNeeded()
     }
 

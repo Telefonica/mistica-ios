@@ -184,7 +184,7 @@ private extension Checkbox {
             imageView.layer.opacity = 1
             imageView.layer.transform = CATransform3DIdentity
             borderView.layer.borderColor = UIColor.controlActivated.cgColor
-            borderView.layer.borderWidth = intrinsicContentSize.width / 2.0
+            borderView.layer.borderWidth = max(bounds.width, intrinsicContentSize.width) / 2.0
         } else {
             imageView.layer.opacity = 0
             imageView.layer.transform = CATransform3DScale(imageView.layer.transform, 0.01, 0.01, 0.01)

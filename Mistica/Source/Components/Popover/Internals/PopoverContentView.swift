@@ -206,6 +206,7 @@ private extension PopoverContentView {
     func configureImageView() {
         imageView.intrinsicHeight = ViewStyles.imageHeight
         imageView.intrinsicWidth = ViewStyles.imageWidth
+        imageView.contentMode = .scaleAspectFit
     }
 
     func configureCloseImageView() {

@@ -74,7 +74,9 @@ public class PopoverView: UIView {
 // MARK: Public
 
 public extension PopoverView {
-    class func show(tipDirection: TipDirection, title: String?, subtitle: String? = nil,
+    class func show(tipDirection: TipDirection,
+                    title: String?,
+                    subtitle: String? = nil,
                     pointingAtView targetView: UIView,
                     in containerView: UIView,
                     animated: Bool) {

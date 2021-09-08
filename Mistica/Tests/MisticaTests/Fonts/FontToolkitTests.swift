@@ -11,7 +11,7 @@ import SnapshotTesting
 import UIKit
 import XCTest
 
-final class FontToolkitests: XCTestCase {
+final class FontToolkitTests: XCTestCase {
     override class func setUp() {
         super.setUp()
 

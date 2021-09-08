@@ -100,7 +100,7 @@ final class FontToolkitTests: XCTestCase {
     }
 }
 
-private extension FontToolkitests {
+private extension FontToolkitTests {
     func makeLabel(text: String, font: UIFont) -> UILabel {
         let label = UILabel()
         label.text = text

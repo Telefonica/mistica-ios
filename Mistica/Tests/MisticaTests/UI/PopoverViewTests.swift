@@ -109,7 +109,7 @@ final class PopoverViewTests: XCTestCase {
 
     // MARK: - Close
 
-    func testNoCloe() {
+    func testNoClose() {
         let popover = makePopover(tipDirection: .down, canClose: false)
 
         assertSnapshot(

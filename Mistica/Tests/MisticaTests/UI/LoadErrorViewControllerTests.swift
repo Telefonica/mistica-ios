@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-
 @testable import Mistica
 import SnapshotTesting
 import XCTest
@@ -14,7 +13,7 @@ import XCTest
 final class LoadErrorViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
-        
+
         isRecording = false
     }
 }
@@ -26,21 +25,21 @@ extension LoadErrorViewControllerTests {
             viewBuilder: makeLoadErrorViewController()
         )
     }
-    
+
     func testNoTitle() {
         assertSnapshot(
             matching: makeLoadErrorViewController(title: nil),
             as: .image
         )
     }
-    
+
     func testNoAction() {
         assertSnapshot(
             matching: makeLoadErrorViewController(showActionButton: false),
             as: .image
         )
     }
-    
+
     func testEmptyDescriptionAction() {
         assertSnapshot(
             matching: makeLoadErrorViewController(descriptionText: ""),
@@ -56,7 +55,7 @@ extension LoadErrorViewControllerTests {
         actionButtonTitle: String = "Nostrud",
         showActionButton: Bool = true
     ) -> LoadErrorViewController {
-       LoadErrorViewController(
+        LoadErrorViewController(
             title: title,
             descriptionText: descriptionText,
             actionButtonTitle: actionButtonTitle,

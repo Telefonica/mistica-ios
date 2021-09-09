@@ -60,7 +60,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             matching: popover,
-            as: .image(size: .init(width: 400, height: 150))
+            as: .image(size: .init(width: 200, height: 100))
         )
     }
 
@@ -80,7 +80,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             matching: popover,
-            as: .image(size: .init(width: 400, height: 150))
+            as: .image(size: .init(width: 200, height: 100))
         )
     }
 
@@ -114,7 +114,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             matching: popover,
-            as: .image(size: .init(width: 400, height: 150))
+            as: .image(size: .init(width: 200, height: 100))
         )
     }
 }

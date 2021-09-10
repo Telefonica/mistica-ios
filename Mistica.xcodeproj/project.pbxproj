@@ -152,6 +152,7 @@
 		B81D7D4A25CD64F600930392 /* HighlightedCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */; };
 		B835993825D4230D00246981 /* HighlightedCardXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B835993625D4227F00246981 /* HighlightedCardXIBIntegration.swift */; };
 		B835993925D4230D00246981 /* HighlightedCardXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B835993525D4227F00246981 /* HighlightedCardXIBIntegration.xib */; };
+		B84A9B2826E231F000620151 /* FontToolkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84A9B2626E231E900620151 /* FontToolkitTests.swift */; };
 		B857851E25B2228700E76B4C /* DataCardXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B857851D25B2228700E76B4C /* DataCardXIBIntegration.xib */; };
 		B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857852025B2229000E76B4C /* DataCardXIBIntegration.swift */; };
 		B857852925B223DF00E76B4C /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B857852525B223DC00E76B4C /* UIImage+Utils.swift */; };
@@ -529,6 +530,8 @@
 		B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardTests.swift; sourceTree = "<group>"; };
 		B835993525D4227F00246981 /* HighlightedCardXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightedCardXIBIntegration.xib; sourceTree = "<group>"; };
 		B835993625D4227F00246981 /* HighlightedCardXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardXIBIntegration.swift; sourceTree = "<group>"; };
+		B84A9B2626E231E900620151 /* FontToolkitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontToolkitTests.swift; sourceTree = "<group>"; };
+		B84A9B2B26E6240C00620151 /* testFonts.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFonts.1.png; sourceTree = "<group>"; };
 		B857851D25B2228700E76B4C /* DataCardXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataCardXIBIntegration.xib; sourceTree = "<group>"; };
 		B857852025B2229000E76B4C /* DataCardXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardXIBIntegration.swift; sourceTree = "<group>"; };
 		B857852525B223DC00E76B4C /* UIImage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
@@ -1595,6 +1598,8 @@
 			isa = PBXGroup;
 			children = (
 				672715F326A57BF900415F23 /* FontStyleTests.swift */,
+				B84A9B2626E231E900620151 /* FontToolkitTests.swift */,
+				B84A9B2926E6240C00620151 /* __Snapshots__ */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1961,6 +1966,22 @@
 				B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */,
 			);
 			path = ControlPresets;
+			sourceTree = "<group>";
+		};
+		B84A9B2926E6240C00620151 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				B84A9B2A26E6240C00620151 /* FontToolkitTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		B84A9B2A26E6240C00620151 /* FontToolkitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B84A9B2B26E6240C00620151 /* testFonts.1.png */,
+			);
+			path = FontToolkitTests;
 			sourceTree = "<group>";
 		};
 		B85CCA4725B82A0B00B76426 /* MediaCardTests */ = {
@@ -2555,6 +2576,7 @@
 				90D602AC2602289600DC2375 /* TabsTests.swift in Sources */,
 				90E9623625BEBE54006E6170 /* FormTests.swift in Sources */,
 				1860BBC725B03B7100319CFC /* DeterminateStepperXIBIntegration.swift in Sources */,
+				B84A9B2826E231F000620151 /* FontToolkitTests.swift in Sources */,
 				6778FEB596940DE0BD7F6816 /* ButtonTests.swift in Sources */,
 				5588A7B425F7C93600C6AB96 /* RadioButtonTests.swift in Sources */,
 				B857852325B2229200E76B4C /* DataCardXIBIntegration.swift in Sources */,

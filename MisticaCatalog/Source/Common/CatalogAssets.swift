@@ -22,7 +22,7 @@ extension UIImage {
     static let popoverIcon = UIImage(named: "Popovers", in: .misticaCatalog, compatibleWith: nil)!
     static let scrollContentIndicatorIcon = UIImage(named: "Popovers", in: .misticaCatalog, compatibleWith: nil)!
     static let sectionTitleIcon = UIImage(named: "Lists", in: .misticaCatalog, compatibleWith: nil)!
-    static let segmentSelectorIcon = UIImage(named: "Tabs", in: .misticaCatalog, compatibleWith: nil)!
+    static let filterIcon = UIImage(named: "Tabs", in: .misticaCatalog, compatibleWith: nil)!
     static let tagsIcon = UIImage(named: "Labels", in: .misticaCatalog, compatibleWith: nil)!
     static let viewStatesIcon = UIImage(named: "EmptyStates", in: .misticaCatalog, compatibleWith: nil)!
     static let badgeIcon = UIImage(named: "Notifications", in: .misticaCatalog, compatibleWith: nil)!

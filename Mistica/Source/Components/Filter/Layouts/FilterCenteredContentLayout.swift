@@ -1,5 +1,5 @@
 //
-//  SegmentSelectorCenteredContentLayout.swift
+//  FilterCenteredContentLayout.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -20,7 +20,7 @@ import UIKit
 ///
 /// This layout inherits from `BoundsChangeInvalidatingFlowLayout`, which will invalidate layout only when `bounds.size`
 /// changes.
-class SegmentSelectorCenteredContentLayout: BoundsChangeInvalidatingFlowLayout {
+class FilterCenteredContentLayout: BoundsChangeInvalidatingFlowLayout {
     // Override the contentSize because we are also overriding layoutAttributesForElements, and there we are adding a
     // padding to the left of every attribute, which we need to take in account when calculating the contentSize.
     // Otherwise the rightmost cells might even get deallocated, since the UICollectionView might consider them not
@@ -62,7 +62,7 @@ class SegmentSelectorCenteredContentLayout: BoundsChangeInvalidatingFlowLayout {
     }
 }
 
-private extension SegmentSelectorCenteredContentLayout {
+private extension FilterCenteredContentLayout {
     var totalHorizontalInsets: CGFloat {
         guard let collectionView = collectionView else { return 0 }
         return collectionView.adjustedContentInset.left + collectionView.adjustedContentInset.right

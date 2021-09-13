@@ -1,5 +1,5 @@
 //
-//  SegmentSelectorTests.swift
+//  FilterTests.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -10,34 +10,34 @@
 import SnapshotTesting
 import XCTest
 
-final class SegmentSelectorTests: XCTestCase {
+final class FilterTests: XCTestCase {
     override func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
 
-        isRecording = false
+        isRecording = true
     }
 
-    func testSegmentsInSegmentSelector() {
+    func testSegmentsInFilter() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 320, height: 49)),
-            viewBuilder: makeSegmentSelector(segments: 5, hasSelectedItem: false)
+            viewBuilder: makeFilter(segments: 5, hasSelectedItem: false)
         )
     }
 
-    func testSelectedSegmentsInSegmentSelector() {
+    func testSelectedSegmentsInFilter() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 320, height: 49)),
-            viewBuilder: makeSegmentSelector(segments: 5, hasSelectedItem: true)
+            viewBuilder: makeFilter(segments: 5, hasSelectedItem: true)
         )
     }
 
-    func makeSegmentSelector(segments: Int, hasSelectedItem: Bool) -> SegmentSelector {
+    func makeFilter(segments: Int, hasSelectedItem: Bool) -> Filter {
         let segments = (0 ..< segments).map { Segment(id: "\($0)", title: "Segment") }
-        let segmentSelector = SegmentSelector(segments: segments)
+        let filter = Filter(segments: segments)
         if hasSelectedItem, let segment = segments.first {
-            segmentSelector.select(segment)
+            filter.select(segment)
         }
-        return segmentSelector
+        return filter
     }
 }

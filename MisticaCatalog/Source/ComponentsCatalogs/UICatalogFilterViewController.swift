@@ -1,5 +1,5 @@
 //
-//  UICatalogSegmentSelectorViewController.swift
+//  UICatalogFilterViewController.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -69,8 +69,8 @@ private class DatasetCell: UITableViewCell {
     }
 }
 
-class UICatalogSegmentSelectorViewController: UIViewController {
-    private let segmentSelector = SegmentSelector(segments: [])
+class UICatalogFilterViewController: UIViewController {
+    private let filter = Filter(segments: [])
     private let console = UILabel()
     private let optionsTable: UITableView
     private let datasets: [SegmentsDataset] = [.threeItems, .fiveItems, .nineItems, .fiftyItems]
@@ -95,7 +95,7 @@ class UICatalogSegmentSelectorViewController: UIViewController {
         view.backgroundColor = .background
         title = "Segment Selector"
 
-        setUpSegmentSelector()
+        setUpFilter()
         setUpConsole()
         setUpOptionsTable()
 
@@ -103,20 +103,20 @@ class UICatalogSegmentSelectorViewController: UIViewController {
     }
 }
 
-private extension UICatalogSegmentSelectorViewController {
-    func setUpSegmentSelector() {
-        view.addSubview(segmentSelector, constraints: [
-            segmentSelector.topAnchor.constraint(equalTo: view.topAnchor),
-            segmentSelector.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            segmentSelector.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+private extension UICatalogFilterViewController {
+    func setUpFilter() {
+        view.addSubview(filter, constraints: [
+            filter.topAnchor.constraint(equalTo: view.topAnchor),
+            filter.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            filter.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-        segmentSelector.delegate = self
+        filter.delegate = self
     }
 
     func setUpConsole() {
         console.textColor = .textSecondary
         view.addSubview(console, constraints: [
-            console.topAnchor.constraint(equalTo: segmentSelector.bottomAnchor, constant: 32),
+            console.topAnchor.constraint(equalTo: filter.bottomAnchor, constant: 32),
             console.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             console.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16)
         ])
@@ -139,17 +139,17 @@ private extension UICatalogSegmentSelectorViewController {
 
     func setUpInitialState() {
         optionsTable.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
-        segmentSelector.segments = datasets.first!.segments
-        segmentSelector.select(segmentSelector.segments.first!)
+        filter.segments = datasets.first!.segments
+        filter.select(filter.segments.first!)
         console.text = ConsoleTexts.emptyCase
     }
 
-    func resetSegmentSelector() {
-        segmentSelector.select(segmentSelector.segments.first!)
+    func resetFilter() {
+        filter.select(filter.segments.first!)
     }
 }
 
-extension UICatalogSegmentSelectorViewController: UITableViewDataSource {
+extension UICatalogFilterViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         datasets.count
     }
@@ -169,19 +169,19 @@ extension UICatalogSegmentSelectorViewController: UITableViewDataSource {
     }
 }
 
-extension UICatalogSegmentSelectorViewController: UITableViewDelegate {
+extension UICatalogFilterViewController: UITableViewDelegate {
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        segmentSelector.segments = datasets[indexPath.row].segments
-        resetSegmentSelector()
+        filter.segments = datasets[indexPath.row].segments
+        resetFilter()
     }
 }
 
-extension UICatalogSegmentSelectorViewController: SegmentSelectorDelegate {
-    func segmentSelector(_: SegmentSelector, didProgramaticallySelectSegment segment: Segment) {
+extension UICatalogFilterViewController: FilterDelegate {
+    func filter(_: Filter, didProgramaticallySelectSegment segment: Segment) {
         console.text = ConsoleTexts.currentSelection + " " + segment.title
     }
 
-    func segmentSelector(_: SegmentSelector, didManuallySelectSegment segment: Segment) {
+    func filter(_: Filter, didManuallySelectSegment segment: Segment) {
         console.text = ConsoleTexts.currentSelection + " " + segment.title
     }
 }

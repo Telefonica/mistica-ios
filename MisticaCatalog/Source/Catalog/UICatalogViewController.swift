@@ -23,7 +23,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case lists
     case scrollContentIndicator
     case sectionTitle
-    case segmentSelector
+    case filter
     case stepper
     case tabs
     case tag
@@ -144,8 +144,8 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogFeedbacksViewController(), sender: self)
         case .crouton:
             show(UICatalogCroutonViewController(), sender: self)
-        case .segmentSelector:
-            show(UICatalogSegmentSelectorViewController(), sender: self)
+        case .filter:
+            show(UICatalogFilterViewController(), sender: self)
         case .tooltip:
             show(UICatalogPopoverViewController(), sender: self)
         case .viewStates:
@@ -242,7 +242,7 @@ private extension UICatalogRow {
             return "Feedbacks"
         case .crouton:
             return "Crouton"
-        case .segmentSelector:
+        case .filter:
             return "Scrollable Segmented Control"
         case .tooltip:
             return "Popover"
@@ -289,8 +289,8 @@ private extension UICatalogRow {
             return .feedbacksIcon
         case .crouton:
             return .croutonIcon
-        case .segmentSelector:
-            return .segmentSelectorIcon
+        case .filter:
+            return .filterIcon
         case .tooltip:
             return .popoverIcon
         case .viewStates:

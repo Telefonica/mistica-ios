@@ -42,7 +42,7 @@
 		B8F990462546C98700DFBFE9 /* UICatalogInputFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901E2546C98600DFBFE9 /* UICatalogInputFieldsViewController.swift */; };
 		B8F990472546C98700DFBFE9 /* UICatalogViewStatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901F2546C98600DFBFE9 /* UICatalogViewStatesViewController.swift */; };
 		B8F990482546C98700DFBFE9 /* UICatalogControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990202546C98600DFBFE9 /* UICatalogControlsViewController.swift */; };
-		B8F990492546C98700DFBFE9 /* UICatalogSegmentSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990212546C98600DFBFE9 /* UICatalogSegmentSelectorViewController.swift */; };
+		B8F990492546C98700DFBFE9 /* UICatalogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990212546C98600DFBFE9 /* UICatalogFilterViewController.swift */; };
 		B8F9904B2546C98700DFBFE9 /* UICatalogTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990232546C98600DFBFE9 /* UICatalogTagsViewController.swift */; };
 		B8F9904C2546C98700DFBFE9 /* UICatalogPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990242546C98600DFBFE9 /* UICatalogPopoverViewController.swift */; };
 		B8F9904D2546C98700DFBFE9 /* UICatalogListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990252546C98600DFBFE9 /* UICatalogListsViewController.swift */; };
@@ -92,7 +92,7 @@
 		B8F9901E2546C98600DFBFE9 /* UICatalogInputFieldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogInputFieldsViewController.swift; sourceTree = "<group>"; };
 		B8F9901F2546C98600DFBFE9 /* UICatalogViewStatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogViewStatesViewController.swift; sourceTree = "<group>"; };
 		B8F990202546C98600DFBFE9 /* UICatalogControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogControlsViewController.swift; sourceTree = "<group>"; };
-		B8F990212546C98600DFBFE9 /* UICatalogSegmentSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogSegmentSelectorViewController.swift; sourceTree = "<group>"; };
+		B8F990212546C98600DFBFE9 /* UICatalogFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFilterViewController.swift; sourceTree = "<group>"; };
 		B8F990232546C98600DFBFE9 /* UICatalogTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogTagsViewController.swift; sourceTree = "<group>"; };
 		B8F990242546C98600DFBFE9 /* UICatalogPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogPopoverViewController.swift; sourceTree = "<group>"; };
 		B8F990252546C98600DFBFE9 /* UICatalogListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogListsViewController.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				B8F9901E2546C98600DFBFE9 /* UICatalogInputFieldsViewController.swift */,
 				B8F9901F2546C98600DFBFE9 /* UICatalogViewStatesViewController.swift */,
 				B8F990202546C98600DFBFE9 /* UICatalogControlsViewController.swift */,
-				B8F990212546C98600DFBFE9 /* UICatalogSegmentSelectorViewController.swift */,
+				B8F990212546C98600DFBFE9 /* UICatalogFilterViewController.swift */,
 				B8F990232546C98600DFBFE9 /* UICatalogTagsViewController.swift */,
 				B8F990242546C98600DFBFE9 /* UICatalogPopoverViewController.swift */,
 				B8F990252546C98600DFBFE9 /* UICatalogListsViewController.swift */,
@@ -362,7 +362,7 @@
 				B8F990502546C98700DFBFE9 /* UICatalogBadgeViewController.swift in Sources */,
 				B8F990392546C98700DFBFE9 /* Bundle+MisticaCatalog.swift in Sources */,
 				B8F990512546C98700DFBFE9 /* UICatalogHeaderViewController.swift in Sources */,
-				B8F990492546C98700DFBFE9 /* UICatalogSegmentSelectorViewController.swift in Sources */,
+				B8F990492546C98700DFBFE9 /* UICatalogFilterViewController.swift in Sources */,
 				1C37E32626BBF83B00062775 /* UICatalogEmptyStateViewController.swift in Sources */,
 				B8F990312546C98700DFBFE9 /* NavigationBarStyles.swift in Sources */,
 				18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */,

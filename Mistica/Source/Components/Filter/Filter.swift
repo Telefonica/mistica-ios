@@ -1,5 +1,5 @@
 //
-//  SegmentSelector.swift
+//  Filter.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -9,31 +9,31 @@
 import Foundation
 import UIKit
 
-/// The different segment rendering modes supported by `SegmentSelector`.
+/// The different segment rendering modes supported by `Filter`.
 private enum SegmentsContentMode {
     case leading
     case center
 }
 
-/// The SegmentSelectorDelegate protocol defines methods that allow you to manage the selection and deselection of
-/// segments in a `SegmentSelector`. The methods of this protocol are all optional.
-public protocol SegmentSelectorDelegate: AnyObject {
-    func segmentSelector(_ segmentSelector: SegmentSelector, didProgramaticallySelectSegment segment: Segment)
-    func segmentSelector(_ segmentSelector: SegmentSelector, didManuallySelectSegment segment: Segment)
-    func segmentSelector(_ segmentSelector: SegmentSelector, didDeselectSegment segment: Segment)
+/// The FilterDelegate protocol defines methods that allow you to manage the selection and deselection of
+/// segments in a `Filter`. The methods of this protocol are all optional.
+public protocol FilterDelegate: AnyObject {
+    func filter(_ filter: Filter, didProgramaticallySelectSegment segment: Segment)
+    func filter(_ filter: Filter, didManuallySelectSegment segment: Segment)
+    func filter(_ filter: Filter, didDeselectSegment segment: Segment)
 }
 
 /// Provide default empty implementations for all methods.
-public extension SegmentSelectorDelegate {
-    func segmentSelector(_: SegmentSelector, didProgramaticallySelectSegment _: Segment) {}
-    func segmentSelector(_: SegmentSelector, didManuallySelectSegment _: Segment) {}
-    func segmentSelector(_: SegmentSelector, didDeselectSegment _: Segment) {}
+public extension FilterDelegate {
+    func filter(_: Filter, didProgramaticallySelectSegment _: Segment) {}
+    func filter(_: Filter, didManuallySelectSegment _: Segment) {}
+    func filter(_: Filter, didDeselectSegment _: Segment) {}
 }
 
-/// `SegmentSelector` is used to render a scrollable selector that will typically be placed below the navigation bar,
+/// `Filter` is used to render a scrollable selector that will typically be placed below the navigation bar,
 /// and which is used to let the user select one segment among a list of them. You will typically use the selected
 /// segment to filter or categorize the content below.
-public class SegmentSelector: UIView {
+public class Filter: UIView {
     private enum Constants {
         /// This component has a fixed height.
         static let componentHeight: CGFloat = 49
@@ -48,7 +48,7 @@ public class SegmentSelector: UIView {
     private let bottomSeparator: UIImageView
 
     /// Set this delegate to receive notifications about selection/deselection of segments
-    public weak var delegate: SegmentSelectorDelegate?
+    public weak var delegate: FilterDelegate?
 
     /// The list of segments shown by the component. Setting this property causes the component to reload.
     public var segments: [Segment] = [] {
@@ -71,7 +71,7 @@ public class SegmentSelector: UIView {
 
     /// The mode in which the segments will be rendered.
     ///
-    /// There are two modes of displaying the segments inside a `SegmentSelector`:
+    /// There are two modes of displaying the segments inside a `Filter`:
     /// - `leading`: Segments are always aligned to the left of the screen.
     /// - `center`: When the bounds of the component are bigger than the `contentSize`
     ///  plus the separators and insets, segments will be rendered in the center of the
@@ -125,7 +125,7 @@ public class SegmentSelector: UIView {
 
 // MARK: Public API
 
-public extension SegmentSelector {
+public extension Filter {
     /// Use this method to programatically select a Segment.
     ///
     /// Calling this method causes `segment` to be selected if it exists. Otherwise, nothing will happen.
@@ -150,7 +150,7 @@ public extension SegmentSelector {
 
 // MARK: UICollectionViewDataSource
 
-extension SegmentSelector: UICollectionViewDataSource {
+extension Filter: UICollectionViewDataSource {
     public func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         segments.count
     }
@@ -169,7 +169,7 @@ extension SegmentSelector: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegate
 
-extension SegmentSelector: UICollectionViewDelegate {
+extension Filter: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         // We allow selection only when the cell is not already selected.
         indexPath.item != selectedSegmentIndex
@@ -187,7 +187,7 @@ extension SegmentSelector: UICollectionViewDelegate {
 // MARK: UILargeContentViewerInteractionDelegate
 
 @available(iOS 13, *)
-extension SegmentSelector: UILargeContentViewerInteractionDelegate {
+extension Filter: UILargeContentViewerInteractionDelegate {
     public func largeContentViewerInteraction(_: UILargeContentViewerInteraction, didEndOn item: UILargeContentViewerItem?, at _: CGPoint) {
         guard let cell = item as? SegmentCell,
               let indexPath = collectionView.indexPath(for: cell),
@@ -199,7 +199,7 @@ extension SegmentSelector: UILargeContentViewerInteractionDelegate {
 
 // MARK: Private
 
-private extension SegmentSelector {
+private extension Filter {
     func setUpSegmentsContentMode(for traitCollection: UITraitCollection) {
         switch traitCollection.horizontalSizeClass {
         case .regular:
@@ -217,7 +217,7 @@ private extension SegmentSelector {
         case .leading:
             layout = UICollectionViewFlowLayout()
         case .center:
-            layout = SegmentSelectorCenteredContentLayout()
+            layout = FilterCenteredContentLayout()
         }
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = Constants.intersegmentSpacing
@@ -289,17 +289,17 @@ private extension SegmentSelector {
 
     func notifyProgrammaticSelection(at indexPath: IndexPath) {
         guard let segment = segment(atIndex: indexPath.item) else { return }
-        delegate?.segmentSelector(self, didProgramaticallySelectSegment: segment)
+        delegate?.filter(self, didProgramaticallySelectSegment: segment)
     }
 
     func notifyUserSelection(at indexPath: IndexPath) {
         guard let segment = segment(atIndex: indexPath.item) else { return }
-        delegate?.segmentSelector(self, didManuallySelectSegment: segment)
+        delegate?.filter(self, didManuallySelectSegment: segment)
     }
 
     func notifySegmentDeselection(at indexPath: IndexPath) {
         guard let segment = segment(atIndex: indexPath.item) else { return }
-        delegate?.segmentSelector(self, didDeselectSegment: segment)
+        delegate?.filter(self, didDeselectSegment: segment)
     }
 
     /// Adjusts the content offset so if the selected cell is slightly out of the screen, the collectionView will
@@ -307,7 +307,7 @@ private extension SegmentSelector {
     func adjustContentOffsetIfNeeded(in collectionView: UICollectionView, forCellSelectedAt indexPath: IndexPath) {
         // Force a layout pass immediately, since we depend on the attributes to perform contentOffset adjustments, and
         // this method might be called right after a layout invalidation.
-        // For example, the first time SegmentSelector appear on screen, we want to set the initial list of segments (this
+        // For example, the first time Filter appear on screen, we want to set the initial list of segments (this
         // calls reloadData and invalidateLayout), and then we might also want to preselect a segment (i.e. deeplink with
         // categoryId parameter). In that case, we need to force layout or the attributes of the item won't be calculated yet.
         collectionView.layoutIfNeeded()
@@ -360,7 +360,7 @@ private extension SegmentSelector {
 
 // MARK: Theme Variant did change notification
 
-@objc extension SegmentSelector {
+@objc extension Filter {
     func themeDidChange() {
         collectionView.backgroundColor = .navigationBarBackground
         bottomSeparator.image = UIImage(color: .navigationBarDivider)

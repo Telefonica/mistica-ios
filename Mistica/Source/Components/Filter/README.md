@@ -1,6 +1,6 @@
-#  SegmentSelector
+#  Filter
 
-`SegmentSelector` is used to render a scrollable selector that will typically be placed below the navigation bar, and which is used to let the user select one segment among a list of them. You will typically use the selected segment to filter or categorize the content below.
+`Filter` is used to render a scrollable selector that will typically be placed below the navigation bar, and which is used to let the user select one segment among a list of them. You will typically use the selected segment to filter or categorize the content below.
 
 ![demo static](./docs/images/demo.png)
 
@@ -22,7 +22,7 @@ Also, there are two modes of displaying the segments:
 
 ## Accessibility
 
-Given that this component is designed to be placed below a navigation bar (or in substitution of the NavBar), the component opts out of Dynamic Type, and makes use of Large Content Viewer. This means that when the user selects an accessibility text size, the user can long press in the `SegmentSelector` to show a HUD with the name of the categories, similarly to what happens in native toolbars.
+Given that this component is designed to be placed below a navigation bar (or in substitution of the NavBar), the component opts out of Dynamic Type, and makes use of Large Content Viewer. This means that when the user selects an accessibility text size, the user can long press in the `Filter` to show a HUD with the name of the categories, similarly to what happens in native toolbars.
 
 ![demo-accessibility](./docs/images/demo-accessibility.gif)
 
@@ -33,14 +33,14 @@ Finally, the component is optimized for VoiceOver.
 
 ## Usage
 
-Create an instance of `SegmentSelector` by providing a list of `Segment`'s to be displayed, and optionally a `SegmentsContentMode`.
+Create an instance of `Filter` by providing a list of `Segment`'s to be displayed, and optionally a `SegmentsContentMode`.
 
 ```swift
 let segments = [
 	Segment(id: "0", title: "segment 0"),
 	Segment(id: "1", title: "segment 1")
 ]
-let segmentsSelector = SegmentSelector(segments: segments, 
+let segmentsSelector = Filter(segments: segments, 
                                        scrollableContentMode: .center)
 ```
 
@@ -51,16 +51,16 @@ Set a delegate for the component if you want to be notified when a segment is se
 
 ### Interface Builder
 
-You can also embed  `SegmentSelector` in a xib. Just put a plain UIView in your canvas and then in the Identity Editor tab, set  `SegmentSelector` as the class name. Then you can create an outlet and add segments in `viewDidLoad()` or wherever fits better your problem.
+You can also embed  `Filter` in a xib. Just put a plain UIView in your canvas and then in the Identity Editor tab, set  `Filter` as the class name. Then you can create an outlet and add segments in `viewDidLoad()` or wherever fits better your problem.
 
 ```swift
 class ViewController: UIViewController {
 
-	@IBOutlet var segmentSelector: SegmentSelector!
+	@IBOutlet var filter: Filter!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		segmentSelector.segments = [
+		filter.segments = [
 			Segment(id: "0", title: "TV"),
 			Segment(id: "1", title: "Sports")
 		]
@@ -71,4 +71,4 @@ class ViewController: UIViewController {
 
 ## Sizing
 
-`SegmentSelector` has a **fixed height** of 48 points. So keep this in mind when laying out this component.
+`Filter` has a **fixed height** of 48 points. So keep this in mind when laying out this component.

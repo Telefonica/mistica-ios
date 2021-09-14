@@ -1,3 +1,17 @@
+# [11.4.0](https://github.com/Telefonica/mistica-ios/compare/v11.3.0...v11.4.0) (2021-09-14)
+
+
+### Bug Fixes
+
+* **SegmentSelector:** Fix segment selection after theme changes ([#131](https://github.com/Telefonica/mistica-ios/issues/131)) ([27afa2e](https://github.com/Telefonica/mistica-ios/commit/27afa2eccd2c1bf3f60a0caa4dc88187836fcf86))
+
+
+### Features
+
+* **Callouts:** Callouts component. ([cea08de](https://github.com/Telefonica/mistica-ios/commit/cea08de4c91987119290ddf90124ea8b373f8afb))
+* **EmptyState:** Empty state component. ([211eb4d](https://github.com/Telefonica/mistica-ios/commit/211eb4da3bd419623ac8c665fcf10c3b04d5c806))
+* **Font:** Update font weights in Rowlist and Cards ([17dabdf](https://github.com/Telefonica/mistica-ios/commit/17dabdfdc05f4c3ca8fab91fd1180e31412571cd))
+
 # [11.3.0](https://github.com/Telefonica/mistica-ios/compare/v11.2.0...v11.3.0) (2021-07-01)
 
 

@@ -15,7 +15,7 @@ final class FilterTests: XCTestCase {
         super.setUp()
         UIView.setAnimationsEnabled(false)
 
-        isRecording = true
+        isRecording = false
     }
 
     func testSegmentsInFilter() {

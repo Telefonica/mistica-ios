@@ -137,7 +137,7 @@ final class EmptyStatesTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .empty)
-		
+
         assertSnapshot(matching: view, as: .image)
     }
 

@@ -44,6 +44,8 @@ private extension MisticaConfig {
             currentColors = O2Colors()
         case .o2Classic:
             currentColors = O2ClassicColors()
+        case .blau:
+            currentColors = BlauColors()
         }
     }
 }

@@ -14,4 +14,5 @@ public enum BrandStyle: String, CaseIterable {
     case vivo
     case o2
     case o2Classic
+    case blau
 }

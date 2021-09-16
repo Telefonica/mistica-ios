@@ -1,3 +1,18 @@
+# [12.0.0](https://github.com/Telefonica/mistica-ios/compare/v11.4.0...v12.0.0) (2021-09-16)
+
+
+### Bug Fixes
+
+* **EmptyState:** Controlador de estado vacío de botones IOS-7012 ([#137](https://github.com/Telefonica/mistica-ios/issues/137)) ([d14a4fd](https://github.com/Telefonica/mistica-ios/commit/d14a4fda11dc03d64ec39c7bcf8e902a1cbf79ae))
+
+
+* refactor(SegmentSelector) Rename SegmentSelector to Filter (#136) ([6830ea9](https://github.com/Telefonica/mistica-ios/commit/6830ea9a15dd8a00eb61ab514f519d3f49a8df4a)), closes [#136](https://github.com/Telefonica/mistica-ios/issues/136)
+
+
+### BREAKING CHANGES
+
+* SegmentSelector as been renamed to Filter.
+
 # [11.4.0](https://github.com/Telefonica/mistica-ios/compare/v11.3.0...v11.4.0) (2021-09-14)
 
 

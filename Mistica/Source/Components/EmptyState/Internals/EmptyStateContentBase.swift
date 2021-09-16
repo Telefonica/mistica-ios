@@ -81,6 +81,15 @@ extension EmptyStateContentBase {
         }
     }
 
+    var iconTintColor: UIColor {
+        get {
+            iconImage.tintColor
+        }
+        set {
+            iconImage.tintColor = newValue
+        }
+    }
+
     func configure(withConfiguration configuration: EmptyStateConfiguration) {
         configureMessagesContent(withConfiguration: configuration)
         // Asset is mandatory

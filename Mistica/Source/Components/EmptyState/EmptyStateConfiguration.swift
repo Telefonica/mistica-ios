@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public struct EmptyStateConfiguration {
-    static let empty = EmptyStateConfiguration(type: .default(.icon(UIImage(color: .success))), title: "Basic configuration", description: "This is a basic configuration for the empty state", actions: nil)
+    static let empty = EmptyStateConfiguration(type: .default(.icon(UIImage())), title: "Basic configuration", description: "This is a basic configuration for the empty state", actions: nil)
 
     public enum EmptyStateActions {
         case primary(EmptyStateButton)
@@ -43,7 +43,7 @@ public struct EmptyStateConfiguration {
     let description: String?
     let actions: EmptyStateActions?
 
-    public init(type: EmptyStateType = .default(.icon(UIImage())), title: String, description: String?, actions: EmptyStateActions? = nil) {
+    public init(type: EmptyStateType, title: String, description: String?, actions: EmptyStateActions? = nil) {
         self.type = type
         self.title = title
         self.description = description

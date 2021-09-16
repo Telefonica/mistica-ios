@@ -232,7 +232,7 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
             let asset = EmptyStateConfiguration.EmptyStateCardAsset.icon(image)
             configuration = EmptyStateConfiguration(type: .card(asset), title: emptyStateTitle, description: emptyStateMessage, actions: actions)
         } else {
-            let imageDefault = UIImage(color: .success)
+			let imageDefault = UIImage(color: .success)
             let asset: EmptyStateConfiguration.EmptyStateDefaultAsset
             switch assetCell.segmentedControl.selectedSegmentIndex {
             case 0:
@@ -249,6 +249,7 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         }
         let vc = EmptyStateViewSampleViewController()
         vc.emptyState.contentConfiguration = configuration
+		vc.emptyState.iconTintColor = .systemPink
 
         show(vc, sender: self)
     }

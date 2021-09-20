@@ -199,23 +199,26 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         view.endEditing(true)
 
         let actions: EmptyStateConfiguration.EmptyStateActions
+        let handler: () -> Void = {
+            CroutonController.shared.showCrouton(withText: "The user has tapped any button")
+        }
         switch buttonsCell.segmentedControl.selectedSegmentIndex {
         case 0:
-            actions = .primary(EmptyStateButton(title: "Button small", loadingTitle: nil, tapHandler: nil))
+            actions = .primary(EmptyStateButton(title: "Button small", loadingTitle: nil, tapHandler: handler))
         case 1:
             actions = .primaryAndLink(
-                primary: EmptyStateButton(title: "Button small", loadingTitle: nil, tapHandler: nil),
-                link: EmptyStateLinkButton(title: "Link", tapHandler: nil)
+                primary: EmptyStateButton(title: "Button small", loadingTitle: nil, tapHandler: handler),
+                link: EmptyStateLinkButton(title: "Link", tapHandler: handler)
             )
         case 2:
-            actions = .secondary(EmptyStateButton(title: "Secondary", loadingTitle: nil, tapHandler: nil))
+            actions = .secondary(EmptyStateButton(title: "Secondary", loadingTitle: nil, tapHandler: handler))
         case 3:
             actions = .secondaryAndLink(
-                secondary: EmptyStateButton(title: "Secondary", loadingTitle: nil, tapHandler: nil),
-                link: EmptyStateLinkButton(title: "Link", tapHandler: nil)
+                secondary: EmptyStateButton(title: "Secondary", loadingTitle: nil, tapHandler: handler),
+                link: EmptyStateLinkButton(title: "Link", tapHandler: handler)
             )
         case 4:
-            actions = .link(EmptyStateLinkButton(title: "Link", tapHandler: nil))
+            actions = .link(EmptyStateLinkButton(title: "Link", tapHandler: handler))
         case 5:
             actions = .empty
         default:
@@ -246,6 +249,7 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         }
         let vc = EmptyStateViewSampleViewController()
         vc.emptyState.contentConfiguration = configuration
+        vc.emptyState.iconTintColor = .systemPink
 
         show(vc, sender: self)
     }

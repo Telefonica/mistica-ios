@@ -73,6 +73,15 @@ public extension EmptyState {
         }
     }
 
+    var iconTintColor: UIColor {
+        get {
+            emptyStateContentBase.iconTintColor
+        }
+        set {
+            emptyStateContentBase.iconTintColor = newValue
+        }
+    }
+
     var primaryButton: Button {
         emptyStateContentBase.emptyStateButtons.primaryButton
     }

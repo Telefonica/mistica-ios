@@ -120,7 +120,7 @@ final class EmptyStatesTests: XCTestCase {
     func testSecondaryAndLinkButtonsOnlyAsACard() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.smallImage)), actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
+        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
 
         assertSnapshot(matching: view, as: .image)
     }
@@ -136,7 +136,7 @@ final class EmptyStatesTests: XCTestCase {
     func testEmptyButtonOnlyAsACard() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.smallImage)), actions: .empty)
+        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .empty)
 
         assertSnapshot(matching: view, as: .image)
     }
@@ -144,7 +144,7 @@ final class EmptyStatesTests: XCTestCase {
     func testLinkButtonOnlyAsACard() {
         MisticaConfig.brandStyle = .movistar
 
-        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.smallImage)), actions: .link(AnyValues.link))
+        let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .link(AnyValues.link))
 
         assertSnapshot(matching: view, as: .image)
     }

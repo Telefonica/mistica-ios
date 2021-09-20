@@ -119,41 +119,38 @@ struct BlauColors: Colors {
     let textNavigationSearchBarText = BlauColorPalette.white | BlauColorPalette.grey2
 
     // GRADIENTS
-    #warning("TBD")
-    let backgroundBrandGradient = [
-        BlauColorPalette.blauBlue
-    ]
+    let backgroundBrandGradient = [UIColor]()
 }
 
 public enum BlauColorPalette {
-    static let blauBlueLight = UIColor(hex: "#00B6F1")!
-    static let blauBlueLight30 = UIColor(hex: "#B3E9FB")!
-    static let blauBlueLight20 = UIColor(hex: "#E5F6FD")!
-    static let blauBlueLight10 = UIColor(hex: "#F7FDFF")!
-    static let blauBlueDark = UIColor(hex: "#005B9D")!
-    static let blauBlue = UIColor(hex: "#0070BF")!
-    static let blauBlue60 = UIColor(hex: "#66A9D9")!
-    static let blauBlue30 = UIColor(hex: "#B3D4EC")!
-    static let blauBlue10 = UIColor(hex: "#E5F1F9")!
-    static let blauPurple = UIColor(hex: "#7814B3")!
-    static let blauPurpleLight50 = UIColor(hex: "#B280CC")!
-    static let blauPurpleLight10 = UIColor(hex: "#F2E8F8")!
-    static let blauYellowDark = UIColor(hex: "#F09500")!
-    static let blauYellow = UIColor(hex: "#FFA922")!
-    static let blauGreen = UIColor(hex: "#30D300")!
-    static let blauRedDark = UIColor(hex: "#E03308")!
-    static let blauRed = UIColor(hex: "#F64417")!
-    static let blauRedLight60 = UIColor(hex: "#FA9E87")!
-    static let blauRedLight20 = UIColor(hex: "#FDDAD1")!
-
-    static let grey1 = UIColor(hex: "#F3F5F6")!
-    static let grey2 = UIColor(hex: "#F2F2F2")!
-    static let grey3 = UIColor(hex: "#E6E6E7")!
-    static let grey4 = UIColor(hex: "#BFC0C2")!
-    static let grey5 = UIColor(hex: "#808285")!
-    static let grey6 = UIColor(hex: "#000000")!
-    static let white = UIColor(hex: "#FFFFFF")!
-
-    static let darkModeBlack = UIColor(hex: "#191919")!
-    static let darkModeGrey = UIColor(hex: "#242424")!
+    public static let blauBlueLight = UIColor(hex: "#00B6F1")!
+    public static let blauBlueLight30 = UIColor(hex: "#B3E9FB")!
+    public static let blauBlueLight20 = UIColor(hex: "#E5F6FD")!
+    public static let blauBlueLight10 = UIColor(hex: "#F7FDFF")!
+    public static let blauBlueDark = UIColor(hex: "#005B9D")!
+    public static let blauBlue = UIColor(hex: "#0070BF")!
+    public static let blauBlue60 = UIColor(hex: "#66A9D9")!
+    public static let blauBlue30 = UIColor(hex: "#B3D4EC")!
+    public static let blauBlue10 = UIColor(hex: "#E5F1F9")!
+    public static let blauPurple = UIColor(hex: "#7814B3")!
+    public static let blauPurpleLight50 = UIColor(hex: "#B280CC")!
+    public static let blauPurpleLight10 = UIColor(hex: "#F2E8F8")!
+    public static let blauYellowDark = UIColor(hex: "#F09500")!
+    public static let blauYellow = UIColor(hex: "#FFA922")!
+    public static let blauGreen = UIColor(hex: "#30D300")!
+    public static let blauRedDark = UIColor(hex: "#E03308")!
+    public static let blauRed = UIColor(hex: "#F64417")!
+    public static let blauRedLight60 = UIColor(hex: "#FA9E87")!
+    public static let blauRedLight20 = UIColor(hex: "#FDDAD1")!
+    
+    public static let grey1 = UIColor(hex: "#F3F5F6")!
+    public static let grey2 = UIColor(hex: "#F2F2F2")!
+    public static let grey3 = UIColor(hex: "#E6E6E7")!
+    public static let grey4 = UIColor(hex: "#BFC0C2")!
+    public static let grey5 = UIColor(hex: "#808285")!
+    public static let grey6 = UIColor(hex: "#000000")!
+    public static let white = UIColor(hex: "#FFFFFF")!
+    
+    public static let darkModeBlack = UIColor(hex: "#191919")!
+    public static let darkModeGrey = UIColor(hex: "#242424")!
 }

@@ -175,6 +175,7 @@
 		B8D7194725B20FF0006510CC /* CardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7193F25B20FF0006510CC /* CardBase.swift */; };
 		B8D7194925B20FF0006510CC /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7194225B20FF0006510CC /* CardButton.swift */; };
 		B8D7195D25B21ADB006510CC /* DataCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D7195C25B21ADB006510CC /* DataCardTests.swift */; };
+		B8E4A5F326F21F32006B44E8 /* BlauColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E4A5F226F21F32006B44E8 /* BlauColorPalette.swift */; };
 		B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */; };
 		B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA9B256E6DCA00472C23 /* UIView+Utils.swift */; };
 		B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA96256E6CB300472C23 /* ButtonXIBIntegration.swift */; };
@@ -659,6 +660,7 @@
 		B8D7195825B21594006510CC /* data-card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "data-card.jpg"; sourceTree = "<group>"; };
 		B8D7195C25B21ADB006510CC /* DataCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardTests.swift; sourceTree = "<group>"; };
 		B8E2A39F5B5DB61EEAACDDFE /* VerticallyCenteredPresetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredPresetView.swift; sourceTree = "<group>"; };
+		B8E4A5F226F21F32006B44E8 /* BlauColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlauColorPalette.swift; sourceTree = "<group>"; };
 		B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonXIBIntegration.xib; sourceTree = "<group>"; };
 		B8FFFA92256E6C9800472C23 /* testLinkStyleAndContentModeLeft.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testLinkStyleAndContentModeLeft.1.png; sourceTree = "<group>"; };
 		B8FFFA93256E6C9800472C23 /* testLinkStyleAndContentModeRight.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testLinkStyleAndContentModeRight.1.png; sourceTree = "<group>"; };
@@ -1586,6 +1588,7 @@
 				2EDD39A8DF179A5F9023F6CD /* O2ClassicColorPalette.swift */,
 				D257D6A8C64BB2F8C0A5EBF4 /* O2ColorPalette.swift */,
 				B15709C90D275DCFABDE247B /* VivoColorPalette.swift */,
+				B8E4A5F226F21F32006B44E8 /* BlauColorPalette.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -2636,6 +2639,7 @@
 				DB22553A7102F1F55492B9E3 /* CGSize+Utils.swift in Sources */,
 				66B5882C5804A1CFBD693298 /* CellCenterSectionView.swift in Sources */,
 				6E8008A4ABEF555F16D885DA /* CellLeftSectionView.swift in Sources */,
+				B8E4A5F326F21F32006B44E8 /* BlauColorPalette.swift in Sources */,
 				2DA33370AE8CA80CBAC89747 /* Checkbox.swift in Sources */,
 				E1E628216A0ADAACB444973E /* CheckboxAssets.swift in Sources */,
 				2E0C605AFDBC5ACC8CCC9C79 /* Colors.swift in Sources */,

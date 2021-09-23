@@ -1,3 +1,15 @@
+# [13.0.0](https://github.com/Telefonica/mistica-ios/compare/v12.0.0...v13.0.0) (2021-09-23)
+
+
+### Features
+
+* **Blau brand style:** Add new brand style: Blau ([19bae89](https://github.com/Telefonica/mistica-ios/commit/19bae895565088ff8707c0a1880f1d2771c9791b))
+
+
+### BREAKING CHANGES
+
+* **Blau brand style:** The enum BrandStyle has a new case: blau
+
 # [12.0.0](https://github.com/Telefonica/mistica-ios/compare/v11.4.0...v12.0.0) (2021-09-16)
 
 

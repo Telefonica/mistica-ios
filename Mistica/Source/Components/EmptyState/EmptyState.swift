@@ -58,7 +58,7 @@ public class EmptyState: UIView {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         guard let configuration = contentConfiguration else { return }
-        
+
         if configuration.isInCard() {
             addBorder(color: .border)
         }

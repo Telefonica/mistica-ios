@@ -57,7 +57,11 @@ public class EmptyState: UIView {
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
-        addBorder(color: .border)
+        guard let configuration = contentConfiguration else { return }
+
+        if configuration.isInCard() {
+            addBorder(color: .border)
+        }
     }
 }
 

@@ -1,3 +1,10 @@
+## [13.0.1](https://github.com/Telefonica/mistica-ios/compare/v13.0.0...v13.0.1) (2021-09-28)
+
+
+### Bug Fixes
+
+* **EmptyState:** Do not show border in non card styled empty states ([#140](https://github.com/Telefonica/mistica-ios/issues/140)) ([6a741de](https://github.com/Telefonica/mistica-ios/commit/6a741de60681c3b5330493b2a037d5ea326fd7a8))
+
 # [13.0.0](https://github.com/Telefonica/mistica-ios/compare/v12.0.0...v13.0.0) (2021-09-23)
 
 

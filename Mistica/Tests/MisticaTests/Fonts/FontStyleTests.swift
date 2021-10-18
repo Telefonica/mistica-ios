@@ -12,7 +12,7 @@ import UIKit
 import XCTest
 
 final class FontStyleTests: XCTestCase {
-    override class func setUp() {       
+    override class func setUp() {
         FontStyle.fontNameForWeight = { weight in
             switch weight {
             case .light, .ultraLight, .thin:

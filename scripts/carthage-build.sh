@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-# This script is used to update and buld carthage dependencies 
+# This script is used to update and build carthage dependencies 
 
 build()
 {

@@ -119,7 +119,12 @@ struct BlauColors: Colors {
     let textNavigationSearchBarText = BlauColorPalette.white | BlauColorPalette.grey2
 
     // GRADIENTS
-    let backgroundBrandGradient = [UIColor]()
+    let backgroundBrandGradient = [
+        BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack,
+        BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack,
+        BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack,
+        BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack
+    ]
 }
 
 public enum BlauColorPalette {

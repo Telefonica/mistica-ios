@@ -1,3 +1,16 @@
+# [14.0.0](https://github.com/Telefonica/mistica-ios/compare/v13.0.1...v14.0.0) (2021-10-19)
+
+
+### Features
+
+* **Blau Color Palette:** Update colors of Blau brand style ([81c01a9](https://github.com/Telefonica/mistica-ios/commit/81c01a9c0b34975251f621f489a35521b592a7b9))
+* **Xcode 13 & Swift 5.5:** Add support for Xcode 13 and Swift 5.5 ([b6b0d12](https://github.com/Telefonica/mistica-ios/commit/b6b0d122a1d66194c075bc75acfb37a2f0fabe11))
+
+
+### BREAKING CHANGES
+
+* **Xcode 13 & Swift 5.5:** Now the library support Swift 5.5, it means that it not compatible with projects using previous versions.
+
 ## [13.0.1](https://github.com/Telefonica/mistica-ios/compare/v13.0.0...v13.0.1) (2021-09-28)
 
 

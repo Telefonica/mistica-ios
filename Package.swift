@@ -25,7 +25,6 @@ let package = Package(
             ],
             path: "Mistica/Source",
             exclude: [
-                "SupportFiles",
                 "Components/Badge/docs",
                 "Components/Badge/README.md",
                 "Components/Button/docs",
@@ -40,7 +39,6 @@ let package = Package(
                 "Components/Form/README.md",
                 "Components/Header/docs",
                 "Components/Header/README.md",
-                "Components/HighlightedCard/docs",
                 "Components/HighlightedCard/README.md",
                 "Components/InputField/docs",
                 "Components/InputField/README.md",
@@ -84,7 +82,9 @@ let package = Package(
             ],
             path: "Mistica/Tests/MisticaTests",
             exclude: [
-                "UI/__Snapshots__"
+                "UI/__Snapshots__",
+                "Fonts/__Snapshots__",
+                "Resources"
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")

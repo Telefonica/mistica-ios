@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,7 +63,6 @@
 		1F552724291C5BF268DA82B3 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B507CCDEE6EC6869F757EE /* UIImage+Utils.swift */; };
 		205E03827FDA8AA677CC107E /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9704F853EB23963C4BBF6E82 /* BadgeView.swift */; };
 		21E9E8E6F439B119869C6B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1A7208E6E5600206FA6F36 /* Assets.xcassets */; };
-		2339F923EC2E3796F49A5725 /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B0FC7CFADA89D838495A21 /* SnapshotTesting.framework */; };
 		2413001847ED6200A13CC1D6 /* PopoverAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2771E355D52B9143E83F277C /* PopoverAssets.swift */; };
 		244AF2F1FA472CECF71F4212 /* ScrollContentIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6D8338256A346AA4459CB /* ScrollContentIndicator.swift */; };
 		25E473FF87B1DBA4D4BE354E /* ValidatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D47AE6092313F868EE500 /* ValidatableView.swift */; };
@@ -152,6 +151,8 @@
 		B347848A473FEE0AB4E04D27 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5F4F9885708D1D3909E98 /* UIColor+Utils.swift */; };
 		B4C66DD7256EB8A50087E4B5 /* FeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */; };
 		B4C99EA94307852447D672A1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE9079D1C9C80AD4FB45F3 /* ListView.swift */; };
+		B80594BB271DC02B009C7994 /* SnapshotTesting.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80594BA271DC02B009C7994 /* SnapshotTesting.xcframework */; };
+		B80594BD271DC051009C7994 /* Lottie.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80594BC271DC051009C7994 /* Lottie.xcframework */; };
 		B805C38E65D802F520DB0931 /* LoadErrorViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CAF7C86C74F12CE2700B8 /* LoadErrorViewControllerDelegate.swift */; };
 		B81D7D4A25CD64F600930392 /* HighlightedCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */; };
 		B835993825D4230D00246981 /* HighlightedCardXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B835993625D4227F00246981 /* HighlightedCardXIBIntegration.swift */; };
@@ -402,7 +403,6 @@
 		1EB4FBD325D2700E004537CC /* testCellWithAllLabelsAndNavigationPresetWithoutBadge.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testCellWithAllLabelsAndNavigationPresetWithoutBadge.1.png; sourceTree = "<group>"; };
 		1EB4FBD425D2700E004537CC /* testCellWithAllLabelsAndVerticallyCenteredPreset.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testCellWithAllLabelsAndVerticallyCenteredPreset.1.png; sourceTree = "<group>"; };
 		1EB4FBD525D2700E004537CC /* testCellWithAllLabelsAndImage.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testCellWithAllLabelsAndImage.1.png; sourceTree = "<group>"; };
-		1FE90047164FD5C3A2AB9469 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Lottie.framework; sourceTree = "<group>"; };
 		204A0C023382C7D869CDF717 /* InputFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldDelegate.swift; sourceTree = "<group>"; };
 		225AB94BA8732E0D48D79E58 /* NovumBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovumBarButtonItem.swift; sourceTree = "<group>"; };
 		2395E3391D3DEA5F341B6941 /* UICollectionViewCell+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Utils.swift"; sourceTree = "<group>"; };
@@ -503,7 +503,6 @@
 		9071229125C84EC1009E3727 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		9071229525C85AE2009E3727 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		908C0EB625C8301400D1687A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		90B0FC7CFADA89D838495A21 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapshotTesting.framework; sourceTree = "<group>"; };
 		90C0D32D83E30260E11717BF /* CustomCroutonContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCroutonContainer.swift; sourceTree = "<group>"; };
 		90D602A92602288300DC2375 /* TabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTests.swift; sourceTree = "<group>"; };
 		90E9623925BF19C1006E6170 /* FormXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormXIBIntegration.xib; sourceTree = "<group>"; };
@@ -533,6 +532,8 @@
 		B4C66DD6256EB8A50087E4B5 /* FeedbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTests.swift; sourceTree = "<group>"; };
 		B4CDCA7FBA5511616538F84A /* FeedbackConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackConfiguration.swift; sourceTree = "<group>"; };
 		B5F3A3A2B59695E7D19E2CE2 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		B80594BA271DC02B009C7994 /* SnapshotTesting.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapshotTesting.xcframework; path = Carthage/Build/SnapshotTesting.xcframework; sourceTree = "<group>"; };
+		B80594BC271DC051009C7994 /* Lottie.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Lottie.xcframework; path = Carthage/Build/Lottie.xcframework; sourceTree = "<group>"; };
 		B81D7D4925CD64F600930392 /* HighlightedCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardTests.swift; sourceTree = "<group>"; };
 		B835993525D4227F00246981 /* HighlightedCardXIBIntegration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightedCardXIBIntegration.xib; sourceTree = "<group>"; };
 		B835993625D4227F00246981 /* HighlightedCardXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardXIBIntegration.swift; sourceTree = "<group>"; };
@@ -860,8 +861,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80594BB271DC02B009C7994 /* SnapshotTesting.xcframework in Frameworks */,
 				B885222F25668C3500CBF9D4 /* Mistica.framework in Frameworks */,
-				2339F923EC2E3796F49A5725 /* SnapshotTesting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,6 +870,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80594BD271DC051009C7994 /* Lottie.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,15 +928,6 @@
 				244B1E13DB639AE1DC1620F0 /* ButtonTests */,
 			);
 			path = __Snapshots__;
-			sourceTree = "<group>";
-		};
-		0DCA11FFCD6770F9BAED6362 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				1FE90047164FD5C3A2AB9469 /* Lottie.framework */,
-				90B0FC7CFADA89D838495A21 /* SnapshotTesting.framework */,
-			);
-			path = iOS;
 			sourceTree = "<group>";
 		};
 		1179CD11C75B0D5034666914 /* Tests */ = {
@@ -1667,7 +1660,8 @@
 		78D767E2E3795E6B9D1CF8C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA01A46D0A1900FECBE8E146 /* Carthage */,
+				B80594BC271DC051009C7994 /* Lottie.xcframework */,
+				B80594BA271DC02B009C7994 /* SnapshotTesting.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1914,15 +1908,6 @@
 				E88C0621BC2B004A9CAF0A85 /* UIView+Utils.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		AA01A46D0A1900FECBE8E146 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				0DCA11FFCD6770F9BAED6362 /* iOS */,
-			);
-			name = Carthage;
-			path = Carthage/Build;
 			sourceTree = "<group>";
 		};
 		AB63F4C8C09776C5491E940A /* images */ = {

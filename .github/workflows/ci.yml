@@ -22,8 +22,6 @@ jobs:
         with:
           path: vendor/bundle
           key: mistica-ios-gems-${{ hashFiles('Gemfile.lock') }}
-          restore-keys: |
-            mistica-ios-gems-
       
       - name: Carthage Cache
         uses: actions/cache@v2.1.6
@@ -31,8 +29,6 @@ jobs:
         with:
           path: Carthage
           key: mistica-ios-carthage-${{ hashFiles('Cartfile.resolved') }}
-          restore-keys: |
-            mistica-ios-carthage-
 
       - name: Setup rbenv environment
         run: echo "~/.rbenv/shims" >> $GITHUB_PATH

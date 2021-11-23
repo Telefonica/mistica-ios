@@ -42,6 +42,7 @@ public struct FeedbackConfiguration: Equatable {
     public let style: FeedbackStyle
     public let title: String
     public let subtitle: String?
+	public let errorReference: String?
     public let primaryAction: FeedbackPrimaryAction
     public let secondaryAction: FeedbackSecondaryAction
     public let extraContent: UIView?
@@ -53,6 +54,7 @@ public struct FeedbackConfiguration: Equatable {
     public init(style: FeedbackStyle,
                 title: String,
                 subtitle: String?,
+				errorReference: String?,
                 primaryAction: FeedbackPrimaryAction,
                 secondaryAction: FeedbackSecondaryAction = .none,
                 extraContent: UIView? = nil,
@@ -63,6 +65,7 @@ public struct FeedbackConfiguration: Equatable {
         self.style = style
         self.title = title
         self.subtitle = subtitle
+		self.errorReference = errorReference
         self.primaryAction = primaryAction
         self.secondaryAction = secondaryAction
         self.extraContent = extraContent

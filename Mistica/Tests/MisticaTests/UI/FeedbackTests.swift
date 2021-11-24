@@ -131,8 +131,8 @@ final class FeedbackTests: XCTestCase {
 		 as: .image(on: .iPhoneSe),
 		 viewBuilder: feedbackViewController(
 			 style: .error,
-			 title: Constants.multiLineTitle,
-			 subtitle: String(repeating: Constants.multiLineSubtitle, count: 20),
+			 title: Constants.singleLineTitle,
+			 subtitle: Constants.singleLineSubtitle,
 			 errorReference: Constants.multiLineErrorReference,
 			 primaryAction: .button(title: Constants.primartyActionTitle, completion: {}),
 			 secondaryAction: .button(title: Constants.secondaryActionTitle, completion: {})

@@ -134,7 +134,10 @@ public class FeedbackView: UIView {
     }()
 
     private lazy var contentContainerStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel, errorReferenceLabel])
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+		if !errorReference.isEmpty {
+			stackView.addArrangedSubview(errorReferenceLabel)
+		}
         if let extraContent = extraContent {
             stackView.addArrangedSubview(extraContent)
         }

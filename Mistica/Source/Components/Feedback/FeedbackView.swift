@@ -29,6 +29,7 @@ public class FeedbackView: UIView {
     private let secondaryAction: FeedbackSecondaryAction
     private let title: String
     private let subtitle: String?
+    private let errorReference: String?
 
     // Private views
     private lazy var gradientView: GradientView = {
@@ -66,6 +67,15 @@ public class FeedbackView: UIView {
         let label = UILabel()
         label.text = subtitle
         label.font = .textPreset4(weight: .light)
+        label.textColor = style.feedbackTextSecondary
+        label.numberOfLines = 0
+        return label
+    }()
+
+    private lazy var errorReferenceLabel: UILabel = {
+        let label = UILabel()
+        label.text = errorReference
+        label.font = .textPreset2(weight: .regular)
         label.textColor = style.feedbackTextSecondary
         label.numberOfLines = 0
         return label
@@ -125,6 +135,9 @@ public class FeedbackView: UIView {
 
     private lazy var contentContainerStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+        if !errorReference.isEmpty {
+            stackView.addArrangedSubview(errorReferenceLabel)
+        }
         if let extraContent = extraContent {
             stackView.addArrangedSubview(extraContent)
         }
@@ -145,6 +158,7 @@ public class FeedbackView: UIView {
         extraContent = configuration.extraContent
         title = configuration.title
         subtitle = configuration.subtitle
+        errorReference = configuration.errorReference
 
         super.init(frame: .zero)
         setupView()

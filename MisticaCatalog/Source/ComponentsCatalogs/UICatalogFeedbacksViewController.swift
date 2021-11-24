@@ -13,6 +13,7 @@ import UIKit
 private enum Section: Int, CaseIterable {
     case title
     case subtitle
+    case errorReference
     case primaryButton
     case secondaryButton
     case extraContent
@@ -32,6 +33,12 @@ class UICatalogFeedbacksViewController: UITableViewController {
     private lazy var subtitleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "subtitleCell")
         cell.textField.text = "Insert here the message that will be included in the feedback."
+        return cell
+    }()
+
+    private lazy var errorReferenceCell: UITextFieldTableViewCell = {
+        let cell = UITextFieldTableViewCell(reuseIdentifier: "errorReferenceCell")
+        cell.textField.text = "Insert here the error reference message that will be included in the feedback."
         return cell
     }()
 
@@ -130,6 +137,7 @@ class UICatalogFeedbacksViewController: UITableViewController {
     private lazy var cells = [
         [titleCell],
         [subtitleCell],
+        [errorReferenceCell],
         [primaryActionStyleCell, primaryActionTitleCell, primaryActionLoadingTitleCell, primaryActionLoadingTitleVisibleCell],
         [secondaryActionStyleCell, secondaryActionTitleCell],
         [extraContentCell],
@@ -213,6 +221,7 @@ private extension UICatalogFeedbacksViewController {
             style: selectedStyle,
             title: titleCell.textField.text ?? "",
             subtitle: subtitleCell.textField.text ?? "",
+            errorReference: errorReferenceCell.textField.text ?? "",
             primaryAction: primaryAction,
             secondaryAction: secondaryAction,
             extraContent: shouldUseExtraContent ? buildExtraView() : nil,
@@ -370,6 +379,8 @@ private extension Section {
             return "Title"
         case .subtitle:
             return "Subtitle"
+        case .errorReference:
+            return "Error Reference"
         case .primaryButton:
             return "Primary button"
         case .secondaryButton:

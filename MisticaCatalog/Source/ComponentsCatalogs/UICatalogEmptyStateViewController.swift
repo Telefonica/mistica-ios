@@ -230,13 +230,15 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         if isCard {
             let image = UIImage(color: .success)
             let asset = EmptyStateConfiguration.EmptyStateCardAsset.icon(image)
-            configuration = EmptyStateConfiguration(type: .card(asset),
-                                                    title: emptyStateTitle,
-                                                    description: emptyStateMessage,
-                                                    titleAccesibilityIdentifier: "empty_state_card_title_id",
-                                                    descriptionAccesibilityIdentifier: "empty_state_card_description_id",
-                                                    assetAccesibilityIdentifier: "empty_state_card_asset_id",
-                                                    actions: actions)
+            configuration = EmptyStateConfiguration(
+                type: .card(asset),
+                title: emptyStateTitle,
+                description: emptyStateMessage,
+                titleAccesibilityIdentifier: "empty_state_card_title_id",
+                descriptionAccesibilityIdentifier: "empty_state_card_description_id",
+                assetAccesibilityIdentifier: "empty_state_card_asset_id",
+                actions: actions
+            )
         } else {
             let imageDefault = UIImage(color: .success)
             let asset: EmptyStateConfiguration.EmptyStateDefaultAsset
@@ -251,13 +253,15 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
             default:
                 fatalError("Case not implemented")
             }
-            configuration = EmptyStateConfiguration(type: .default(asset),
-                                                    title: emptyStateTitle,
-                                                    description: emptyStateMessage,
-                                                    titleAccesibilityIdentifier: "empty_state_title_id",
-                                                    descriptionAccesibilityIdentifier: "empty_state_description_id",
-                                                    assetAccesibilityIdentifier: "empty_state_asset_id",
-                                                    actions: actions)
+            configuration = EmptyStateConfiguration(
+                type: .default(asset),
+                title: emptyStateTitle,
+                description: emptyStateMessage,
+                titleAccesibilityIdentifier: "empty_state_title_id",
+                descriptionAccesibilityIdentifier: "empty_state_description_id",
+                assetAccesibilityIdentifier: "empty_state_asset_id",
+                actions: actions
+            )
         }
         let vc = EmptyStateViewSampleViewController()
         vc.emptyState.contentConfiguration = configuration

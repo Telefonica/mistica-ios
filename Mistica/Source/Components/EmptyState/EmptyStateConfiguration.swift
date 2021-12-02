@@ -59,7 +59,7 @@ public struct EmptyStateConfiguration {
         self.titleAccesibilityIdentifier = titleAccesibilityIdentifier
         self.descriptionAccesibilityIdentifier = descriptionAccesibilityIdentifier
         self.assetAccesibilityIdentifier = assetAccesibilityIdentifier
-        
+
         self.actions = actions
     }
 

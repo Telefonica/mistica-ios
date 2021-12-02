@@ -75,6 +75,8 @@ extension EmptyStateMessagesContent {
     func configure(withConfiguration configuration: EmptyStateConfiguration) {
         title = configuration.title
         descriptionTitle = configuration.description
+        titleLabel.item.accessibilityIdentifier = configuration.titleAccesibilityIdentifier
+        descriptionLabel.item.accessibilityIdentifier = configuration.descriptionAccesibilityIdentifier
         let isCard: Bool = configuration.isInCard()
         let titleSpacing: CGFloat = isCard ? Constants.titleTopSpacingCard : Constants.titleTopSpacingDefault
         titleTopSpacing = titleSpacing

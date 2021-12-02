@@ -84,6 +84,7 @@ private extension EmptyStateButtons {
             button.title = configButton.title
             button.loadingTitle = configButton.loadingTitle
             button.isSmall = isCard
+            button.accessibilityIdentifier = configButton.accesibilityIdentifier
             if button.superview == nil {
                 addArrangedSubview(button)
             }
@@ -97,6 +98,7 @@ private extension EmptyStateButtons {
             link.title = linkButton.title
             link.contentMode = .left
             link.isSmall = isCard
+            link.accessibilityIdentifier = linkButton.accesibilityIdentifier
 
             if link.superview == nil {
                 addArrangedSubview(link)

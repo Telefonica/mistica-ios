@@ -41,12 +41,25 @@ public struct EmptyStateConfiguration {
     let type: EmptyStateType
     let title: String
     let description: String?
+    let titleAccesibilityIdentifier: String?
+    let descriptionAccesibilityIdentifier: String?
+    let assetAccesibilityIdentifier: String?
     let actions: EmptyStateActions?
 
-    public init(type: EmptyStateType, title: String, description: String?, actions: EmptyStateActions? = nil) {
+    public init(type: EmptyStateType,
+                title: String,
+                description: String?,
+                titleAccesibilityIdentifier: String? = nil,
+                descriptionAccesibilityIdentifier: String? = nil,
+                assetAccesibilityIdentifier: String? = nil,
+                actions: EmptyStateActions? = nil) {
         self.type = type
         self.title = title
         self.description = description
+        self.titleAccesibilityIdentifier = titleAccesibilityIdentifier
+        self.descriptionAccesibilityIdentifier = descriptionAccesibilityIdentifier
+        self.assetAccesibilityIdentifier = assetAccesibilityIdentifier
+        
         self.actions = actions
     }
 

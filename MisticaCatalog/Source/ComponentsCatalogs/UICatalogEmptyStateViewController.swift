@@ -204,21 +204,21 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         }
         switch buttonsCell.segmentedControl.selectedSegmentIndex {
         case 0:
-            actions = .primary(EmptyStateButton(title: "Button small", loadingTitle: nil, tapHandler: handler))
+            actions = .primary(EmptyStateButton(title: "Button small", loadingTitle: nil, accesibilityIdentifier: "button_small_id", tapHandler: handler))
         case 1:
             actions = .primaryAndLink(
-                primary: EmptyStateButton(title: "Button small", loadingTitle: nil, tapHandler: handler),
-                link: EmptyStateLinkButton(title: "Link", tapHandler: handler)
+                primary: EmptyStateButton(title: "Button small", loadingTitle: nil, accesibilityIdentifier: "button_small_id", tapHandler: handler),
+                link: EmptyStateLinkButton(title: "Link", accesibilityIdentifier: "link_id", tapHandler: handler)
             )
         case 2:
-            actions = .secondary(EmptyStateButton(title: "Secondary", loadingTitle: nil, tapHandler: handler))
+            actions = .secondary(EmptyStateButton(title: "Secondary", loadingTitle: nil, accesibilityIdentifier: "secondary_id", tapHandler: handler))
         case 3:
             actions = .secondaryAndLink(
-                secondary: EmptyStateButton(title: "Secondary", loadingTitle: nil, tapHandler: handler),
-                link: EmptyStateLinkButton(title: "Link", tapHandler: handler)
+                secondary: EmptyStateButton(title: "Secondary", loadingTitle: nil, accesibilityIdentifier: "secondary_id", tapHandler: handler),
+                link: EmptyStateLinkButton(title: "Link", accesibilityIdentifier: "link_id", tapHandler: handler)
             )
         case 4:
-            actions = .link(EmptyStateLinkButton(title: "Link", tapHandler: handler))
+            actions = .link(EmptyStateLinkButton(title: "Link", accesibilityIdentifier: "link_id", tapHandler: handler))
         case 5:
             actions = .empty
         default:
@@ -230,7 +230,13 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         if isCard {
             let image = UIImage(color: .success)
             let asset = EmptyStateConfiguration.EmptyStateCardAsset.icon(image)
-            configuration = EmptyStateConfiguration(type: .card(asset), title: emptyStateTitle, description: emptyStateMessage, actions: actions)
+            configuration = EmptyStateConfiguration(type: .card(asset),
+                                                    title: emptyStateTitle,
+                                                    description: emptyStateMessage,
+                                                    titleAccesibilityIdentifier: "empty_state_card_title_id",
+                                                    descriptionAccesibilityIdentifier: "empty_state_card_description_id",
+                                                    assetAccesibilityIdentifier: "empty_state_card_asset_id",
+                                                    actions: actions)
         } else {
             let imageDefault = UIImage(color: .success)
             let asset: EmptyStateConfiguration.EmptyStateDefaultAsset
@@ -245,7 +251,13 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
             default:
                 fatalError("Case not implemented")
             }
-            configuration = EmptyStateConfiguration(type: .default(asset), title: emptyStateTitle, description: emptyStateMessage, actions: actions)
+            configuration = EmptyStateConfiguration(type: .default(asset),
+                                                    title: emptyStateTitle,
+                                                    description: emptyStateMessage,
+                                                    titleAccesibilityIdentifier: "empty_state_title_id",
+                                                    descriptionAccesibilityIdentifier: "empty_state_description_id",
+                                                    assetAccesibilityIdentifier: "empty_state_asset_id",
+                                                    actions: actions)
         }
         let vc = EmptyStateViewSampleViewController()
         vc.emptyState.contentConfiguration = configuration

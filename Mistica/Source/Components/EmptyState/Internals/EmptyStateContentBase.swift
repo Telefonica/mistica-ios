@@ -135,6 +135,7 @@ private extension EmptyStateContentBase {
             }
         }
         iconContainerView.backgroundColor = .clear
+        iconImage.accessibilityIdentifier = configuration.assetAccesibilityIdentifier
         insertArrangedSubview(iconContainerView, at: 0)
     }
 

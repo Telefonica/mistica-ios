@@ -90,6 +90,33 @@ extension EmptyStateContentBase {
         }
     }
 
+    var titleAccessibilityIdentifier: String? {
+        get {
+            emptyStateMessages.titleAccessibilityIdentifier
+        }
+        set {
+            emptyStateMessages.titleAccessibilityIdentifier = newValue
+        }
+    }
+
+    var descriptionAccessibilityIdentifier: String? {
+        get {
+            emptyStateMessages.descriptionAccessibilityIdentifier
+        }
+        set {
+            emptyStateMessages.descriptionAccessibilityIdentifier = newValue
+        }
+    }
+
+    var assetAccessibilityIdentifier: String? {
+        get {
+            iconImage.accessibilityIdentifier
+        }
+        set {
+            iconImage.accessibilityIdentifier = newValue
+        }
+    }
+
     func configure(withConfiguration configuration: EmptyStateConfiguration) {
         configureMessagesContent(withConfiguration: configuration)
         // Asset is mandatory
@@ -135,7 +162,6 @@ private extension EmptyStateContentBase {
             }
         }
         iconContainerView.backgroundColor = .clear
-        iconImage.accessibilityIdentifier = configuration.assetAccesibilityIdentifier
         insertArrangedSubview(iconContainerView, at: 0)
     }
 

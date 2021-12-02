@@ -234,9 +234,6 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
                 type: .card(asset),
                 title: emptyStateTitle,
                 description: emptyStateMessage,
-                titleAccesibilityIdentifier: "empty_state_card_title_id",
-                descriptionAccesibilityIdentifier: "empty_state_card_description_id",
-                assetAccesibilityIdentifier: "empty_state_card_asset_id",
                 actions: actions
             )
         } else {
@@ -257,16 +254,15 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
                 type: .default(asset),
                 title: emptyStateTitle,
                 description: emptyStateMessage,
-                titleAccesibilityIdentifier: "empty_state_title_id",
-                descriptionAccesibilityIdentifier: "empty_state_description_id",
-                assetAccesibilityIdentifier: "empty_state_asset_id",
                 actions: actions
             )
         }
         let vc = EmptyStateViewSampleViewController()
         vc.emptyState.contentConfiguration = configuration
         vc.emptyState.iconTintColor = .systemPink
-
+        vc.emptyState.titleAccessibilityIdentifier = "empty_state_title_id"
+        vc.emptyState.descriptionAccessibilityIdentifier = "empty_state_card_id"
+        vc.emptyState.assetAccessibilityIdentifier = "empty_state_card_id"
         show(vc, sender: self)
     }
 }

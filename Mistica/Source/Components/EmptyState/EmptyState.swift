@@ -106,6 +106,33 @@ public extension EmptyState {
             emptyStateAccessibilityElement.accessibilityTraits = newValue
         }
     }
+
+    var titleAccessibilityIdentifier: String? {
+        get {
+            emptyStateContentBase.titleAccessibilityIdentifier
+        }
+        set {
+            emptyStateContentBase.titleAccessibilityIdentifier = newValue
+        }
+    }
+
+    var descriptionAccessibilityIdentifier: String? {
+        get {
+            emptyStateContentBase.descriptionAccessibilityIdentifier
+        }
+        set {
+            emptyStateContentBase.descriptionAccessibilityIdentifier = newValue
+        }
+    }
+
+    var assetAccessibilityIdentifier: String? {
+        get {
+            emptyStateContentBase.assetAccessibilityIdentifier
+        }
+        set {
+            emptyStateContentBase.assetAccessibilityIdentifier = newValue
+        }
+    }
 }
 
 // MARK: Private

@@ -133,8 +133,8 @@ public extension EmptyState {
             emptyStateContentBase.assetAccessibilityIdentifier = newValue
         }
     }
-    
-    var  secondaryButtonAccessibilityIdentifier: String? {
+
+    var secondaryButtonAccessibilityIdentifier: String? {
         get {
             emptyStateContentBase.secondaryButtonAccessibilityIdentifier
         }
@@ -142,7 +142,7 @@ public extension EmptyState {
             emptyStateContentBase.secondaryButtonAccessibilityIdentifier = newValue
         }
     }
-    
+
     var primaryButtonAccessibilityIdentifier: String? {
         get {
             emptyStateContentBase.primaryButtonAccessibilityIdentifier
@@ -151,7 +151,7 @@ public extension EmptyState {
             emptyStateContentBase.primaryButtonAccessibilityIdentifier = newValue
         }
     }
-    
+
     var linkAccessibilityIdentifier: String? {
         get {
             emptyStateContentBase.linkAccessibilityIdentifier

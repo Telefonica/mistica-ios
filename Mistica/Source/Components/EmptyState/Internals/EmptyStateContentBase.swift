@@ -116,8 +116,8 @@ extension EmptyStateContentBase {
             iconImage.accessibilityIdentifier = newValue
         }
     }
-    
-    var  secondaryButtonAccessibilityIdentifier: String? {
+
+    var secondaryButtonAccessibilityIdentifier: String? {
         get {
             emptyStateButtons.secondaryButtonAccessibilityIdentifier
         }
@@ -125,7 +125,7 @@ extension EmptyStateContentBase {
             emptyStateButtons.secondaryButtonAccessibilityIdentifier = newValue
         }
     }
-    
+
     var primaryButtonAccessibilityIdentifier: String? {
         get {
             emptyStateButtons.primaryButtonAccessibilityIdentifier
@@ -134,7 +134,7 @@ extension EmptyStateContentBase {
             emptyStateButtons.primaryButtonAccessibilityIdentifier = newValue
         }
     }
-    
+
     var linkAccessibilityIdentifier: String? {
         get {
             emptyStateButtons.linkAccessibilityIdentifier

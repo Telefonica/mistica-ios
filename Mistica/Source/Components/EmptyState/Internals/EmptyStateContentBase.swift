@@ -116,6 +116,33 @@ extension EmptyStateContentBase {
             iconImage.accessibilityIdentifier = newValue
         }
     }
+    
+    var  secondaryButtonAccessibilityIdentifier: String? {
+        get {
+            emptyStateButtons.secondaryButtonAccessibilityIdentifier
+        }
+        set {
+            emptyStateButtons.secondaryButtonAccessibilityIdentifier = newValue
+        }
+    }
+    
+    var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            emptyStateButtons.primaryButtonAccessibilityIdentifier
+        }
+        set {
+            emptyStateButtons.primaryButtonAccessibilityIdentifier = newValue
+        }
+    }
+    
+    var linkAccessibilityIdentifier: String? {
+        get {
+            emptyStateButtons.linkAccessibilityIdentifier
+        }
+        set {
+            emptyStateButtons.linkAccessibilityIdentifier = newValue
+        }
+    }
 
     func configure(withConfiguration configuration: EmptyStateConfiguration) {
         configureMessagesContent(withConfiguration: configuration)

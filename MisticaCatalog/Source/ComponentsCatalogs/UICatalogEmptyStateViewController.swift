@@ -204,21 +204,21 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         }
         switch buttonsCell.segmentedControl.selectedSegmentIndex {
         case 0:
-            actions = .primary(EmptyStateButton(title: "Button small", loadingTitle: nil, accesibilityIdentifier: "button_small_id", tapHandler: handler))
+            actions = .primary(EmptyStateButton(title: "Button small", loadingTitle: nil, tapHandler: handler))
         case 1:
             actions = .primaryAndLink(
-                primary: EmptyStateButton(title: "Button small", loadingTitle: nil, accesibilityIdentifier: "button_small_id", tapHandler: handler),
-                link: EmptyStateLinkButton(title: "Link", accesibilityIdentifier: "link_id", tapHandler: handler)
+                primary: EmptyStateButton(title: "Button small", loadingTitle: nil, tapHandler: handler),
+                link: EmptyStateLinkButton(title: "Link", tapHandler: handler)
             )
         case 2:
-            actions = .secondary(EmptyStateButton(title: "Secondary", loadingTitle: nil, accesibilityIdentifier: "secondary_id", tapHandler: handler))
+            actions = .secondary(EmptyStateButton(title: "Secondary", loadingTitle: nil, tapHandler: handler))
         case 3:
             actions = .secondaryAndLink(
-                secondary: EmptyStateButton(title: "Secondary", loadingTitle: nil, accesibilityIdentifier: "secondary_id", tapHandler: handler),
-                link: EmptyStateLinkButton(title: "Link", accesibilityIdentifier: "link_id", tapHandler: handler)
+                secondary: EmptyStateButton(title: "Secondary", loadingTitle: nil, tapHandler: handler),
+                link: EmptyStateLinkButton(title: "Link", tapHandler: handler)
             )
         case 4:
-            actions = .link(EmptyStateLinkButton(title: "Link", accesibilityIdentifier: "link_id", tapHandler: handler))
+            actions = .link(EmptyStateLinkButton(title: "Link", tapHandler: handler))
         case 5:
             actions = .empty
         default:
@@ -261,8 +261,11 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         vc.emptyState.contentConfiguration = configuration
         vc.emptyState.iconTintColor = .systemPink
         vc.emptyState.titleAccessibilityIdentifier = "empty_state_title_id"
-        vc.emptyState.descriptionAccessibilityIdentifier = "empty_state_card_id"
-        vc.emptyState.assetAccessibilityIdentifier = "empty_state_card_id"
+        vc.emptyState.descriptionAccessibilityIdentifier = "empty_state_description_id"
+        vc.emptyState.assetAccessibilityIdentifier = "empty_state_assert_id"
+        vc.emptyState.secondaryButtonAccessibilityIdentifier = "empty_state_secondary_button_id"
+        vc.emptyState.primaryButtonAccessibilityIdentifier = "empty_state_primary_button_id"
+        vc.emptyState.linkAccessibilityIdentifier = "empty_state_link_button_id"
         show(vc, sender: self)
     }
 }

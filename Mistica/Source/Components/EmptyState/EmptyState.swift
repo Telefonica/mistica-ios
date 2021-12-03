@@ -133,6 +133,33 @@ public extension EmptyState {
             emptyStateContentBase.assetAccessibilityIdentifier = newValue
         }
     }
+    
+    var  secondaryButtonAccessibilityIdentifier: String? {
+        get {
+            emptyStateContentBase.secondaryButtonAccessibilityIdentifier
+        }
+        set {
+            emptyStateContentBase.secondaryButtonAccessibilityIdentifier = newValue
+        }
+    }
+    
+    var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            emptyStateContentBase.primaryButtonAccessibilityIdentifier
+        }
+        set {
+            emptyStateContentBase.primaryButtonAccessibilityIdentifier = newValue
+        }
+    }
+    
+    var linkAccessibilityIdentifier: String? {
+        get {
+            emptyStateContentBase.linkAccessibilityIdentifier
+        }
+        set {
+            emptyStateContentBase.linkAccessibilityIdentifier = newValue
+        }
+    }
 }
 
 // MARK: Private

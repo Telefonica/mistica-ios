@@ -44,6 +44,33 @@ class EmptyStateButtons: UIStackView {
 // MARK: Internal
 
 extension EmptyStateButtons {
+    var  secondaryButtonAccessibilityIdentifier: String? {
+        get {
+            secondaryButton.accessibilityIdentifier
+        }
+        set {
+            secondaryButton.accessibilityIdentifier = newValue
+        }
+    }
+    
+    var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            primaryButton.accessibilityIdentifier
+        }
+        set {
+            primaryButton.accessibilityIdentifier = newValue
+        }
+    }
+    
+    var linkAccessibilityIdentifier: String? {
+        get {
+            linkButton.accessibilityIdentifier
+        }
+        set {
+            linkButton.accessibilityIdentifier = newValue
+        }
+    }
+    
     func configureButtons(primaryButton: EmptyStateButton? = nil, secondaryButton: EmptyStateButton? = nil, linkButton: EmptyStateLinkButton? = nil, isCard: Bool = false) {
         configure(for: self.primaryButton, with: primaryButton, isCard: isCard)
         primaryActionHandler = primaryButton?.tapHandler
@@ -84,7 +111,6 @@ private extension EmptyStateButtons {
             button.title = configButton.title
             button.loadingTitle = configButton.loadingTitle
             button.isSmall = isCard
-            button.accessibilityIdentifier = configButton.accesibilityIdentifier
             if button.superview == nil {
                 addArrangedSubview(button)
             }
@@ -98,7 +124,6 @@ private extension EmptyStateButtons {
             link.title = linkButton.title
             link.contentMode = .left
             link.isSmall = isCard
-            link.accessibilityIdentifier = linkButton.accesibilityIdentifier
 
             if link.superview == nil {
                 addArrangedSubview(link)

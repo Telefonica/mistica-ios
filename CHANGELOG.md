@@ -1,3 +1,15 @@
+# [14.1.0](https://github.com/Telefonica/mistica-ios/compare/v14.0.0...v14.1.0) (2021-12-03)
+
+
+### Bug Fixes
+
+* **EmptyState:** Missing accessibility ids on the Empty State - SMARTWIFI-3093 ([#148](https://github.com/Telefonica/mistica-ios/issues/148)) ([72d4f2b](https://github.com/Telefonica/mistica-ios/commit/72d4f2b43e4d6b93a9ec37dcb4764b0645b35122))
+
+
+### Features
+
+* **Feedback:** IOS-7129 ADD: Error Reference inside feedback component ([#144](https://github.com/Telefonica/mistica-ios/issues/144)) ([6da246c](https://github.com/Telefonica/mistica-ios/commit/6da246cdcdd3ab6d7d4fd017fa0d048be8751290))
+
 # [14.0.0](https://github.com/Telefonica/mistica-ios/compare/v13.0.1...v14.0.0) (2021-10-19)
 
 

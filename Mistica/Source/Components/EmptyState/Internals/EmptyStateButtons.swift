@@ -44,6 +44,33 @@ class EmptyStateButtons: UIStackView {
 // MARK: Internal
 
 extension EmptyStateButtons {
+    var secondaryButtonAccessibilityIdentifier: String? {
+        get {
+            secondaryButton.accessibilityIdentifier
+        }
+        set {
+            secondaryButton.accessibilityIdentifier = newValue
+        }
+    }
+
+    var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            primaryButton.accessibilityIdentifier
+        }
+        set {
+            primaryButton.accessibilityIdentifier = newValue
+        }
+    }
+
+    var linkAccessibilityIdentifier: String? {
+        get {
+            linkButton.accessibilityIdentifier
+        }
+        set {
+            linkButton.accessibilityIdentifier = newValue
+        }
+    }
+
     func configureButtons(primaryButton: EmptyStateButton? = nil, secondaryButton: EmptyStateButton? = nil, linkButton: EmptyStateLinkButton? = nil, isCard: Bool = false) {
         configure(for: self.primaryButton, with: primaryButton, isCard: isCard)
         primaryActionHandler = primaryButton?.tapHandler

@@ -90,6 +90,60 @@ extension EmptyStateContentBase {
         }
     }
 
+    var titleAccessibilityIdentifier: String? {
+        get {
+            emptyStateMessages.titleAccessibilityIdentifier
+        }
+        set {
+            emptyStateMessages.titleAccessibilityIdentifier = newValue
+        }
+    }
+
+    var descriptionAccessibilityIdentifier: String? {
+        get {
+            emptyStateMessages.descriptionAccessibilityIdentifier
+        }
+        set {
+            emptyStateMessages.descriptionAccessibilityIdentifier = newValue
+        }
+    }
+
+    var assetAccessibilityIdentifier: String? {
+        get {
+            iconImage.accessibilityIdentifier
+        }
+        set {
+            iconImage.accessibilityIdentifier = newValue
+        }
+    }
+
+    var secondaryButtonAccessibilityIdentifier: String? {
+        get {
+            emptyStateButtons.secondaryButtonAccessibilityIdentifier
+        }
+        set {
+            emptyStateButtons.secondaryButtonAccessibilityIdentifier = newValue
+        }
+    }
+
+    var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            emptyStateButtons.primaryButtonAccessibilityIdentifier
+        }
+        set {
+            emptyStateButtons.primaryButtonAccessibilityIdentifier = newValue
+        }
+    }
+
+    var linkAccessibilityIdentifier: String? {
+        get {
+            emptyStateButtons.linkAccessibilityIdentifier
+        }
+        set {
+            emptyStateButtons.linkAccessibilityIdentifier = newValue
+        }
+    }
+
     func configure(withConfiguration configuration: EmptyStateConfiguration) {
         configureMessagesContent(withConfiguration: configuration)
         // Asset is mandatory

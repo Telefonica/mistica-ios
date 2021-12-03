@@ -230,7 +230,12 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         if isCard {
             let image = UIImage(color: .success)
             let asset = EmptyStateConfiguration.EmptyStateCardAsset.icon(image)
-            configuration = EmptyStateConfiguration(type: .card(asset), title: emptyStateTitle, description: emptyStateMessage, actions: actions)
+            configuration = EmptyStateConfiguration(
+                type: .card(asset),
+                title: emptyStateTitle,
+                description: emptyStateMessage,
+                actions: actions
+            )
         } else {
             let imageDefault = UIImage(color: .success)
             let asset: EmptyStateConfiguration.EmptyStateDefaultAsset
@@ -245,12 +250,22 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
             default:
                 fatalError("Case not implemented")
             }
-            configuration = EmptyStateConfiguration(type: .default(asset), title: emptyStateTitle, description: emptyStateMessage, actions: actions)
+            configuration = EmptyStateConfiguration(
+                type: .default(asset),
+                title: emptyStateTitle,
+                description: emptyStateMessage,
+                actions: actions
+            )
         }
         let vc = EmptyStateViewSampleViewController()
         vc.emptyState.contentConfiguration = configuration
         vc.emptyState.iconTintColor = .systemPink
-
+        vc.emptyState.titleAccessibilityIdentifier = "empty_state_title_id"
+        vc.emptyState.descriptionAccessibilityIdentifier = "empty_state_description_id"
+        vc.emptyState.assetAccessibilityIdentifier = "empty_state_assert_id"
+        vc.emptyState.secondaryButtonAccessibilityIdentifier = "empty_state_secondary_button_id"
+        vc.emptyState.primaryButtonAccessibilityIdentifier = "empty_state_primary_button_id"
+        vc.emptyState.linkAccessibilityIdentifier = "empty_state_link_button_id"
         show(vc, sender: self)
     }
 }

@@ -17,7 +17,7 @@ import UIKit
 /// the spaces between the texts of a letter. When a text is not configured, her vertical spacing is also ignored.
 @dynamicMemberLookup
 class StackViewContentItem<Element: UIView>: UIStackView {
-    private var item: Element
+    var item: Element
 
     var topSpacing: CGFloat {
         didSet {

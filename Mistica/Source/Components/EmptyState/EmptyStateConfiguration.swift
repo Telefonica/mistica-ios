@@ -43,7 +43,10 @@ public struct EmptyStateConfiguration {
     let description: String?
     let actions: EmptyStateActions?
 
-    public init(type: EmptyStateType, title: String, description: String?, actions: EmptyStateActions? = nil) {
+    public init(type: EmptyStateType,
+                title: String,
+                description: String?,
+                actions: EmptyStateActions? = nil) {
         self.type = type
         self.title = title
         self.description = description

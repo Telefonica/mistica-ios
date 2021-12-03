@@ -72,6 +72,24 @@ extension EmptyStateMessagesContent {
         }
     }
 
+    var titleAccessibilityIdentifier: String? {
+        get {
+            titleLabel.item.accessibilityIdentifier
+        }
+        set {
+            titleLabel.item.accessibilityIdentifier = newValue
+        }
+    }
+
+    var descriptionAccessibilityIdentifier: String? {
+        get {
+            descriptionLabel.item.accessibilityIdentifier
+        }
+        set {
+            descriptionLabel.item.accessibilityIdentifier = newValue
+        }
+    }
+
     func configure(withConfiguration configuration: EmptyStateConfiguration) {
         title = configuration.title
         descriptionTitle = configuration.description

@@ -1,3 +1,10 @@
+# [14.2.0](https://github.com/Telefonica/mistica-ios/compare/v14.1.0...v14.2.0) (2021-12-20)
+
+
+### Features
+
+* **Xcode:** Supports Xcode 13.2 ([#149](https://github.com/Telefonica/mistica-ios/issues/149)) ([9ad19dc](https://github.com/Telefonica/mistica-ios/commit/9ad19dc803721f74fc495b9a115ecf5926c176cf))
+
 # [14.1.0](https://github.com/Telefonica/mistica-ios/compare/v14.0.0...v14.1.0) (2021-12-03)
 
 

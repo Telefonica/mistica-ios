@@ -19,7 +19,7 @@ MISTICA_CATALOG_IPA_PATH = File.join(BUILD_OUTPUT_PATH, "MisticaCatalog.ipa")
 XCRESULT_FILE_PATH = File.join(TEST_OUTPUT_PATH, "Mistica.xcresult")
 SCREENSHOT_DIFFS_OUTPUT_PATH = File.join(TEST_OUTPUT_PATH, "diff_output")
 
-DEVICES_USED_FOR_TESTING = ["iPhone 13"]
+DEVICES_USED_FOR_TESTING = ["iPhone 13 (15.2)"]
 
 platform :ios do
 

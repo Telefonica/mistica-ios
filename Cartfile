@@ -1,1 +1,1 @@
-github "airbnb/lottie-ios" ~> 3.2.0
+github "airbnb/lottie-ios" == 3.2.3

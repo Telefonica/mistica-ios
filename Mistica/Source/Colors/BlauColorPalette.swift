@@ -125,6 +125,20 @@ struct BlauColors: Colors {
         BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack,
         BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack
     ]
+    
+    // TAGS
+    var tagBackgroundSuccess = BlauColorPalette.blauGreen10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundWarning = BlauColorPalette.blauYellow10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundError = BlauColorPalette.blauRed10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundPromo = BlauColorPalette.blauPurple10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundActive = BlauColorPalette.blauBlueSecondary10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundInactive = BlauColorPalette.grey2 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var textTagSuccess = BlauColorPalette.blauGreen70 | BlauColorPalette.blauGreen30
+    var textTagWarning = BlauColorPalette.blauYellow70 | BlauColorPalette.blauYellow40
+    var textTagError = BlauColorPalette.blauRed70 | BlauColorPalette.blauRed40
+    var textTagPromo = BlauColorPalette.blauPurple | BlauColorPalette.blauPurple30
+    var textTagActive = BlauColorPalette.blauBlueSecondary | BlauColorPalette.blauBluePrimary30
+    var textTagInactive = BlauColorPalette.grey5 | BlauColorPalette.grey4
 }
 
 public enum BlauColorPalette {
@@ -143,16 +157,19 @@ public enum BlauColorPalette {
     public static let blauPurple30 = UIColor(hex: "#BB89D9")!
     public static let blauYellow = UIColor(hex: "#FFA922")!
     public static let blauYellow10 = UIColor(hex: "#FFF6E9")!
+    public static let blauYellow40 = UIColor(hex: "#FFC364")!
     public static let blauYellow60 = UIColor(hex: "#F09500")!
     public static let blauYellow70 = UIColor(hex: "#996614")!
     public static let blauGreen = UIColor(hex: "#30D300")!
     public static let blauRed = UIColor(hex: "#F64417")!
     public static let blauRed10 = UIColor(hex: "#FEECE8")!
-    public static let blauRed70 = UIColor(hex: "#C93712")!
-    public static let blauRed30 = UIColor(hex: "#FA9E87")!
     public static let blauRed20 = UIColor(hex: "#FCC7B9")!
+    public static let blauRed30 = UIColor(hex: "#FA9E87")!
+    public static let blauRed40 = UIColor(hex: "#F97C5D")!
+    public static let blauRed70 = UIColor(hex: "#C93712")!
     public static let blauGreen10 = UIColor(hex: "#EAFBE5")!
     public static let blauGreen70 = UIColor(hex: "#1D7F00")!
+    public static let blauGreen30 = UIColor(hex: "#97E980")!
 
     public static let grey1 = UIColor(hex: "#F5F9FA")!
     public static let grey2 = UIColor(hex: "#E7E7E7")!

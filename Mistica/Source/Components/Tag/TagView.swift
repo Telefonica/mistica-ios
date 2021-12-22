@@ -11,12 +11,13 @@ import UIKit
 public class TagView: UIView {
     @frozen
     public enum Style {
-        public static let horizontalMargin: CGFloat = 8
+        public static let horizontalMargin: CGFloat = 12
         public static let verticalMargin: CGFloat = 2
-        public static let minWidth: CGFloat = 48
-        public static let minHeight: CGFloat = 20
-        public static var font: UIFont { .textPreset1(weight: .medium) }
-        static let cornerRadius: CGFloat = 2
+        public static let minWidth: CGFloat = 56
+        public static let minHeight: CGFloat = 28
+        public static var font: UIFont { .textPreset2(weight: .medium) }
+        public static let iconSize: CGFloat = 14
+        static let cornerRadius: CGFloat = 15
         static let emptyContent = " "
     }
 
@@ -26,9 +27,10 @@ public class TagView: UIView {
         let label = UILabel(frame: .zero)
 
         setUpFont(label)
-        label.textColor = .textPrimaryInverse
         label.textAlignment = .center
         label.numberOfLines = 1
+        label.adjustsFontSizeToFitWidth = false
+        label.lineBreakMode = .byTruncatingTail
 
         return label
     }()
@@ -40,7 +42,27 @@ public class TagView: UIView {
             textDidSet()
         }
     }
-
+    
+    public var style: TagViewStyle = .promo {
+        didSet {
+            updateColors()
+        }
+    }
+    
+    private var stackView: UIStackView?
+    private var icon: UIImage?
+    private var resizedIconImageView: UIImageView? {
+        guard let icon = icon else { return nil }
+        let iconBounds = CGSize(width: Style.iconSize, height: Style.iconSize)
+        let resizedIcon = icon.resized(with: .scaleAspectFit, bounds: iconBounds)
+        let iconView = UIImageView(image: resizedIcon.withRenderingMode(.alwaysTemplate))
+        iconView.tintColor = style.textColor
+        if let accessibilityIdentifier = label.accessibilityIdentifier {
+            iconView.accessibilityIdentifier = "\(accessibilityIdentifier)-icon"
+        }
+        return iconView
+    }
+    
     // MARK: Init
 
     public init() {
@@ -61,12 +83,15 @@ public class TagView: UIView {
         commonInit()
     }
 
-    public init(text: String? = nil, accessibilityIdentifier: String? = nil) {
+    public init(text: String? = nil, style: TagViewStyle = .promo, icon: UIImage? = nil, accessibilityIdentifier: String? = nil) {
         super.init(frame: .zero)
+        
         self.text = text
+        self.style = style
+        self.icon = icon
         label.accessibilityIdentifier = accessibilityIdentifier
+        
         textDidSet()
-
         commonInit()
     }
 
@@ -111,27 +136,44 @@ public class TagView: UIView {
 
 private extension TagView {
     func commonInit() {
-        addSubview(label, constraints: [
+        let stackView = UIStackView()
+        stackView.spacing = 8
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.sizeToFit()
+        
+        if let resizedIconImageView = resizedIconImageView {
+            stackView.addArrangedSubview(resizedIconImageView)
+        }
+        
+        stackView.addArrangedSubview(label)
+        
+        addSubview(stackView, constraints: [
             topAnchor.constraint(
-                equalTo: label.topAnchor,
+                equalTo: stackView.topAnchor,
                 constant: -Style.verticalMargin
             ),
             bottomAnchor.constraint(
-                equalTo: label.bottomAnchor,
+                equalTo: stackView.bottomAnchor,
                 constant: Style.verticalMargin
             ),
             leadingAnchor.constraint(
-                equalTo: label.leadingAnchor,
+                equalTo: stackView.leadingAnchor,
                 constant: -Style.horizontalMargin
             ),
             trailingAnchor.constraint(
-                equalTo: label.trailingAnchor,
+                equalTo: stackView.trailingAnchor,
                 constant: Style.horizontalMargin
             )
         ])
 
         makeRounded(cornerRadius: Style.cornerRadius)
-        backgroundColor = .promo
+        updateColors()
+    }
+    
+    func updateColors() {
+        backgroundColor = style.backgroundColor
+        label.textColor = style.textColor
     }
 
     func textDidSet() {
@@ -153,7 +195,6 @@ private extension TagView {
             // to the label.
             return Style.emptyContent
         }
-
-        return text.uppercased()
+        return text.capitalized
     }
 }

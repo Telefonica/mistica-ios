@@ -113,7 +113,7 @@ protocol Colors {
 
     // GRADIENTS
     var backgroundBrandGradient: [UIColor] { get }
-    
+
     // TAGS
     var tagBackgroundPromo: UIColor { get }
     var tagBackgroundActive: UIColor { get }

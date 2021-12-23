@@ -31,35 +31,35 @@ final class TagTests: XCTestCase {
             viewBuilder: TagView(text: "Active tag", style: .active)
         )
     }
-    
+
     func testInactiveTagView() {
         assertSnapshotForAllBrandsAndStyles(
             as: Snapshotting.image(size: CGSize(width: 150.0, height: 33.0)),
             viewBuilder: TagView(text: "Inactive tag", style: .inactive)
         )
     }
-    
+
     func testSuccessTagView() {
         assertSnapshotForAllBrandsAndStyles(
             as: Snapshotting.image(size: CGSize(width: 150.0, height: 33.0)),
             viewBuilder: TagView(text: "Success tag", style: .success)
         )
     }
-    
+
     func testWarningTagView() {
         assertSnapshotForAllBrandsAndStyles(
             as: Snapshotting.image(size: CGSize(width: 150.0, height: 33.0)),
             viewBuilder: TagView(text: "Warning tag", style: .warning)
         )
     }
-    
+
     func testErrorTagView() {
         assertSnapshotForAllBrandsAndStyles(
             as: Snapshotting.image(size: CGSize(width: 150.0, height: 33.0)),
             viewBuilder: TagView(text: "Error tag", style: .error)
         )
     }
-    
+
     func testTagViewWithIcon() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 100.0, height: 33.0)),

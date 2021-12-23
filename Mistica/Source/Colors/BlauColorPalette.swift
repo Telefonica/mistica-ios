@@ -125,7 +125,7 @@ struct BlauColors: Colors {
         BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack,
         BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack
     ]
-    
+
     // TAGS
     var tagBackgroundSuccess = BlauColorPalette.blauGreen10 | BlauColorPalette.white.withAlphaComponent(0.05)
     var tagBackgroundWarning = BlauColorPalette.blauYellow10 | BlauColorPalette.white.withAlphaComponent(0.05)

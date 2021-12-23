@@ -125,7 +125,7 @@ struct VivoColors: Colors {
         VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack,
         VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
     ]
-    
+
     // TAGS
     var tagBackgroundSuccess = VivoColorPalette.vivoGreenLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
     var tagBackgroundWarning = VivoColorPalette.orangeLight10 | VivoColorPalette.white.withAlphaComponent(0.05)

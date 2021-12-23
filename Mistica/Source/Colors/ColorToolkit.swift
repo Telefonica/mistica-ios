@@ -446,64 +446,64 @@ public extension UIColor {
     static var backgroundBrandGradient: [UIColor] {
         MisticaConfig.currentColors.backgroundBrandGradient
     }
-    
+
     // MARK: Tag
 
     @objc(tagBackgroundPromoColor)
     static var tagBackgroundPromo: UIColor {
         MisticaConfig.currentColors.tagBackgroundPromo
     }
-    
+
     @objc(tagBackgroundActiveColor)
     static var tagBackgroundActive: UIColor {
         MisticaConfig.currentColors.tagBackgroundActive
     }
-    
+
     @objc(tagBackgroundInactiveColor)
     static var tagBackgroundInactive: UIColor {
         MisticaConfig.currentColors.tagBackgroundInactive
     }
-    
+
     @objc(tagBackgroundSuccessColor)
     static var tagBackgroundSuccess: UIColor {
         MisticaConfig.currentColors.tagBackgroundSuccess
     }
-    
+
     @objc(tagBackgroundWarningColor)
     static var tagBackgroundWarning: UIColor {
         MisticaConfig.currentColors.tagBackgroundWarning
     }
-    
+
     @objc(tagBackgroundErrorColor)
     static var tagBackgroundError: UIColor {
         MisticaConfig.currentColors.tagBackgroundError
     }
-    
+
     @objc(textTagPromoColor)
     static var textTagPromo: UIColor {
         MisticaConfig.currentColors.textTagPromo
     }
-    
+
     @objc(textTagActiveColor)
     static var textTagActive: UIColor {
         MisticaConfig.currentColors.textTagActive
     }
-    
+
     @objc(textTagInactiveColor)
     static var textTagInactive: UIColor {
         MisticaConfig.currentColors.textTagInactive
     }
-    
+
     @objc(textTagSuccessColor)
     static var textTagSuccess: UIColor {
         MisticaConfig.currentColors.textTagSuccess
     }
-    
+
     @objc(textTagWarningColor)
     static var textTagWarning: UIColor {
         MisticaConfig.currentColors.textTagWarning
     }
-    
+
     @objc(textTagErrorColor)
     static var textTagError: UIColor {
         MisticaConfig.currentColors.textTagError

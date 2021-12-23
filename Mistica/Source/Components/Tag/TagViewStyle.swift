@@ -1,8 +1,9 @@
 //
 //  TagViewStyle.swift
-//  
 //
-//  Created by Jose Salavert on 21/12/21.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation

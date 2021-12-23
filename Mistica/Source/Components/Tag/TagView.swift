@@ -43,13 +43,13 @@ public class TagView: UIView {
             textDidSet()
         }
     }
-    
+
     public var style: TagViewStyle = .promo {
         didSet {
             updateColors()
         }
     }
-    
+
     private var stackView: UIStackView?
     private var icon: UIImage?
     private var resizedIconImageView: UIImageView? {
@@ -63,7 +63,7 @@ public class TagView: UIView {
         }
         return iconView
     }
-    
+
     // MARK: Init
 
     public init() {
@@ -86,12 +86,12 @@ public class TagView: UIView {
 
     public init(text: String? = nil, style: TagViewStyle = .promo, icon: UIImage? = nil, accessibilityIdentifier: String? = nil) {
         super.init(frame: .zero)
-        
+
         self.text = text
         self.style = style
         self.icon = icon
         label.accessibilityIdentifier = accessibilityIdentifier
-        
+
         textDidSet()
         commonInit()
     }
@@ -142,13 +142,13 @@ private extension TagView {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.sizeToFit()
-        
+
         if let resizedIconImageView = resizedIconImageView {
             stackView.addArrangedSubview(resizedIconImageView)
         }
-        
+
         stackView.addArrangedSubview(label)
-        
+
         addSubview(stackView, constraints: [
             topAnchor.constraint(
                 equalTo: stackView.topAnchor,
@@ -171,7 +171,7 @@ private extension TagView {
         makeRounded(cornerRadius: Style.cornerRadius)
         updateColors()
     }
-    
+
     func updateColors() {
         backgroundColor = style.backgroundColor
         label.textColor = style.textColor

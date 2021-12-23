@@ -124,7 +124,7 @@ struct O2Colors: Colors {
         O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack,
         O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
     ]
-    
+
     // TAGS
     var tagBackgroundSuccess = O2ColorPalette.o2Green10 | O2ColorPalette.white.withAlphaComponent(0.05)
     var tagBackgroundWarning = O2ColorPalette.o2Orange10 | O2ColorPalette.white.withAlphaComponent(0.05)

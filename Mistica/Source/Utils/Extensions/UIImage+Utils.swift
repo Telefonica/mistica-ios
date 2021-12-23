@@ -49,11 +49,11 @@ extension UIImage {
 
         return roundedImage!
     }
-    
+
     func resized(with contentMode: UIView.ContentMode, bounds: CGSize) -> UIImage {
         resized(with: contentMode, bounds: bounds, scale: UIScreen.main.scale)
     }
-    
+
     func resized(with contentMode: UIView.ContentMode, bounds: CGSize, scale: CGFloat) -> UIImage {
         let ratio = resizeRatio(with: contentMode, bounds: bounds)
         let newSize = CGSize(width: size.width * ratio, height: size.height * ratio)

@@ -125,7 +125,7 @@ struct O2ClassicColors: Colors {
         O2ClassicColorPalette.o2GradientThird | O2ClassicColorPalette.darkModeBlack,
         O2ClassicColorPalette.o2GradientFourth | O2ClassicColorPalette.darkModeBlack
     ]
-    
+
     // TAGS
     var tagBackgroundSuccess = O2ClassicColorPalette.o2Green10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
     var tagBackgroundWarning = O2ClassicColorPalette.orange10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)

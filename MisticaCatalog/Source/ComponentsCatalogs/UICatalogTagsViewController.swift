@@ -21,7 +21,7 @@ private enum Constants {
         static let margin: CGFloat = 25
         static let cornerRadius: CGFloat = 4
     }
-    
+
     enum Tag {
         static let topMargin: CGFloat = 16
         static let leadingMargin: CGFloat = 16
@@ -37,15 +37,15 @@ class UICatalogTagsViewController: UIViewController {
     private var tagViews: [TagView] {
         [tagPromo, tagActive, tagInactive, tagSuccess, tagWarning, tagError]
     }
-    
+
     private var tagViewsWithImages: [TagView] {
         [tagPromoWithIcon, tagActiveWithIcon, tagInactiveWithIcon, tagSuccessWithIcon, tagWarningWithIcon, tagErrorWithIcon]
     }
-    
+
     private var tagViewsInverse: [TagView] {
         [tagInverse]
     }
-    
+
     private lazy var tableView: UITableView = {
         if #available(iOS 13.0, *) {
             return UITableView(frame: .zero, style: .insetGrouped)
@@ -72,16 +72,16 @@ class UICatalogTagsViewController: UIViewController {
     private lazy var tagSuccess = TagView(text: "Success", style: .success)
     private lazy var tagWarning = TagView(text: "Warning", style: .warning)
     private lazy var tagError = TagView(text: "Error", style: .error)
-    
+
     private lazy var tagPromoWithIcon = TagView(text: "Promo", style: .promo, icon: UIImage(systemName: Constants.defaultIconName))
     private lazy var tagActiveWithIcon = TagView(text: "Active", style: .active, icon: UIImage(systemName: Constants.defaultIconName))
     private lazy var tagInactiveWithIcon = TagView(text: "Inactive", style: .inactive, icon: UIImage(systemName: Constants.defaultIconName))
     private lazy var tagSuccessWithIcon = TagView(text: "Success", style: .success, icon: UIImage(systemName: Constants.defaultIconName))
     private lazy var tagWarningWithIcon = TagView(text: "Warning", style: .warning, icon: UIImage(systemName: Constants.defaultIconName))
     private lazy var tagErrorWithIcon = TagView(text: "Error", style: .error, icon: UIImage(systemName: Constants.defaultIconName))
-    
+
     private lazy var tagInverse = TagView(text: "Inverse", style: .inverse)
-    
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -144,7 +144,7 @@ private extension UICatalogTagsViewController {
         cell.contentView.backgroundColor = hasInverseTags ? .navigationBarBackground : .backgroundContainer
         return cell
     }
-    
+
     @objc func textDidChange(_ textField: UITextField) {
         tagPromo.text = textField.text
         tagActive.text = textField.text
@@ -152,14 +152,14 @@ private extension UICatalogTagsViewController {
         tagSuccess.text = textField.text
         tagWarning.text = textField.text
         tagError.text = textField.text
-        
+
         tagPromoWithIcon.text = textField.text
         tagActiveWithIcon.text = textField.text
         tagInactiveWithIcon.text = textField.text
         tagSuccessWithIcon.text = textField.text
         tagWarningWithIcon.text = textField.text
         tagErrorWithIcon.text = textField.text
-        
+
         tagInverse.text = textField.text
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 public class TagView: UIView {
     @frozen
     public enum Style {
-        public static let horizontalMargin: CGFloat = 12
+        public static let horizontalMargin: CGFloat = 9.35
         public static let verticalMargin: CGFloat = 4
         public static let minWidth: CGFloat = 56
         public static let minHeight: CGFloat = 28
@@ -19,7 +19,7 @@ public class TagView: UIView {
         public static let iconSize: CGFloat = 14
         public static let cornerRadius: CGFloat = 14
         public static let emptyContent = " "
-        public static let stackViewSpacing: CGFloat = 8
+        public static let stackViewSpacing: CGFloat = 5.54
     }
 
     // MARK: UI Subcomponents
@@ -196,6 +196,6 @@ private extension TagView {
             // to the label.
             return Style.emptyContent
         }
-        return text.capitalized
+        return text.prefix(1).capitalized + text.dropFirst()
     }
 }

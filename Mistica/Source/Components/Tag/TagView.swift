@@ -11,7 +11,7 @@ import UIKit
 public class TagView: UIView {
     @frozen
     public enum Style {
-        public static let horizontalMargin: CGFloat = 9.35
+        public static let horizontalMargin: CGFloat = 12
         public static let verticalMargin: CGFloat = 4
         public static let minWidth: CGFloat = 56
         public static let minHeight: CGFloat = 28
@@ -141,7 +141,6 @@ private extension TagView {
         stackView.spacing = Style.stackViewSpacing
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.sizeToFit()
 
         if let resizedIconImageView = resizedIconImageView {
             stackView.addArrangedSubview(resizedIconImageView)

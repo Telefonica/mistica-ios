@@ -126,9 +126,9 @@ final class MediaCardTests: XCTestCase {
         let configurationWithActions = MediaCardConfiguration(
             richMedia: AnyValues.richMedia,
             headline: "headline",
-            title: "Title",
-            pretitle: "movistar likes",
-            descriptionTitle: "Description",
+            title: "Item title",
+            pretitle: "Pretitle",
+            descriptionTitle: "This is a description",
             button: AnyValues.button,
             link: AnyValues.link
         )
@@ -152,7 +152,7 @@ extension MediaCardTests {
         static var richMedia: UIImageView {
             let image = UIImageView(image: UIImage(color: .green))
 
-            image.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            image.heightAnchor.constraint(equalToConstant: 192).isActive = true
 
             return image
         }
@@ -180,7 +180,7 @@ extension MediaCardTests {
         richMedia: UIView = AnyValues.richMedia,
         headline: String? = "headline",
         title: String? = "Item title",
-        pretitle: String? = "Movistar Likes",
+        pretitle: String? = "Pretitle",
         descriptionTitle: String = "This is a description",
         primaryButton: CardButton? = AnyValues.button,
         linkButton: CardLinkButton? = AnyValues.link,

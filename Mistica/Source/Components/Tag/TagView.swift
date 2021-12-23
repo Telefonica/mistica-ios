@@ -12,12 +12,12 @@ public class TagView: UIView {
     @frozen
     public enum Style {
         public static let horizontalMargin: CGFloat = 12
-        public static let verticalMargin: CGFloat = 2
+        public static let verticalMargin: CGFloat = 4
         public static let minWidth: CGFloat = 56
         public static let minHeight: CGFloat = 28
         public static var font: UIFont { .textPreset2(weight: .medium) }
         public static let iconSize: CGFloat = 14
-        static let cornerRadius: CGFloat = 15
+        static let cornerRadius: CGFloat = 14
         static let emptyContent = " "
     }
 

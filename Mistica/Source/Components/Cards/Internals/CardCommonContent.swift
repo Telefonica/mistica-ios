@@ -10,7 +10,7 @@ import UIKit
 
 /// CardCommonContent is a custom view which contains the texts shared between DataCard and MediaCard
 class CardCommonContent: UIStackView {
-    let headlineTagView = StackViewContentItem<TagView>(topSpacing: 8)
+    let headlineTagView = StackViewContentItem<TagView>(topSpacing: 16)
     let titleLabel = StackViewContentItem<IntrinsictHeightLabel>(topSpacing: 4)
     let subtitleLabel = StackViewContentItem<IntrinsictHeightLabel>(topSpacing: 4)
     let descriptionLabel = StackViewContentItem<IntrinsictHeightLabel>(topSpacing: 8)

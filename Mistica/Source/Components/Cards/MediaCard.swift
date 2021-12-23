@@ -153,13 +153,13 @@ private extension MediaCard {
         backgroundColor = .backgroundContainer
         baseCardView.contentView.backgroundColor = .backgroundContainer
 
-        baseCardView.contentView.headlineTopSpacing = 8
+        baseCardView.contentView.headlineTopSpacing = 16
 
         baseCardView.contentView.titleLabel.font = .textPreset1(weight: .regular)
         baseCardView.contentView.titleLabel.textColor = .textPrimary
         baseCardView.contentView.titleLabel.minHeight = 16
         baseCardView.contentView.titleLabel.numberOfLines = 0
-        baseCardView.contentView.titleTopSpacing = 8
+        baseCardView.contentView.titleTopSpacing = 16
 
         baseCardView.contentView.subtitleLabel.font = .textPreset4(weight: .regular)
         baseCardView.contentView.subtitleLabel.textColor = .textPrimary

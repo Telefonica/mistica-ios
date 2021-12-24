@@ -12,11 +12,12 @@ public class TagView: UIView {
     @frozen
     public enum Style {
         public static let horizontalMargin: CGFloat = 12
+        public static let horizontalLeadingMarginWithIcon: CGFloat = 5
         public static let verticalMargin: CGFloat = 4
         public static let minWidth: CGFloat = 56
         public static let minHeight: CGFloat = 28
         public static var font: UIFont { .textPreset2(weight: .medium) }
-        public static let iconSize: CGFloat = 14
+        public static let iconSize: CGFloat = 16
         public static let cornerRadius: CGFloat = 14
         public static let emptyContent = " "
         public static let stackViewSpacing: CGFloat = 5.54
@@ -52,18 +53,25 @@ public class TagView: UIView {
 
     private var stackView: UIStackView?
     private var icon: UIImage?
-    private var resizedIconImageView: UIImageView? {
+    private var iconImageView: UIImageView? {
         guard let icon = icon else { return nil }
-        let iconBounds = CGSize(width: Style.iconSize, height: Style.iconSize)
-        let resizedIcon = icon.resized(with: .scaleAspectFit, bounds: iconBounds)
-        let iconView = UIImageView(image: resizedIcon.withRenderingMode(.alwaysTemplate))
+        let iconView = UIImageView(image: icon.withRenderingMode(.alwaysTemplate))
         iconView.tintColor = style.textColor
+        iconView.contentMode = .scaleAspectFit
         if let accessibilityIdentifier = label.accessibilityIdentifier {
             iconView.accessibilityIdentifier = "\(accessibilityIdentifier)-icon"
         }
         return iconView
     }
-
+    
+    private var labelLeadingMargin: CGFloat {
+        if icon != nil {
+            return Style.horizontalLeadingMarginWithIcon
+        } else {
+            return Style.horizontalMargin
+        }
+    }
+    
     // MARK: Init
 
     public init() {
@@ -99,7 +107,7 @@ public class TagView: UIView {
     // MARK: Sizing
 
     override public var intrinsicContentSize: CGSize {
-        let intrinsicWidth = Style.horizontalMargin
+        let intrinsicWidth = labelLeadingMargin
             + label.intrinsicContentSize.width
             + Style.horizontalMargin
         let intrinsicHeight = Style.verticalMargin
@@ -141,9 +149,13 @@ private extension TagView {
         stackView.spacing = Style.stackViewSpacing
         stackView.axis = .horizontal
         stackView.alignment = .center
-
-        if let resizedIconImageView = resizedIconImageView {
-            stackView.addArrangedSubview(resizedIconImageView)
+        
+        if let iconImageView = iconImageView {
+            stackView.addArrangedSubview(iconImageView)
+            NSLayoutConstraint.activate([
+                iconImageView.heightAnchor.constraint(equalToConstant: Style.iconSize),
+                iconImageView.widthAnchor.constraint(equalToConstant: Style.iconSize)
+            ])
         }
 
         stackView.addArrangedSubview(label)

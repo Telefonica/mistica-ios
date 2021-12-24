@@ -180,6 +180,7 @@
 		B8FFFA8D256E605200472C23 /* ButtonXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FFFA8C256E605200472C23 /* ButtonXIBIntegration.xib */; };
 		B8FFFA9C256E6DCA00472C23 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA9B256E6DCA00472C23 /* UIView+Utils.swift */; };
 		B8FFFAA6256E6F1500472C23 /* ButtonXIBIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FFFA96256E6CB300472C23 /* ButtonXIBIntegration.swift */; };
+		BB0700FF2775E94000400AC2 /* TagViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0700FE2775E94000400AC2 /* TagViewStyle.swift */; };
 		BFB222960EE616A5A31A2131 /* InputFieldAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7535DFA147C89CCF74339E /* InputFieldAssets.swift */; };
 		C5E9FAF7E42216E75566AF37 /* ColorToolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9599F7A2556D8108E656F8C1 /* ColorToolkit.swift */; };
 		C8652B0AFC082F85242A7D32 /* ScrollContentIndicatorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CACD6580FB1410D9152A7E /* ScrollContentIndicatorStyle.swift */; };
@@ -669,6 +670,7 @@
 		B8FFFA96256E6CB300472C23 /* ButtonXIBIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonXIBIntegration.swift; sourceTree = "<group>"; };
 		B8FFFA9B256E6DCA00472C23 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		BA329D03E282F314F2B98DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BB0700FE2775E94000400AC2 /* TagViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewStyle.swift; sourceTree = "<group>"; };
 		BBE6D8338256A346AA4459CB /* ScrollContentIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContentIndicator.swift; sourceTree = "<group>"; };
 		BF1CAF7C86C74F12CE2700B8 /* LoadErrorViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadErrorViewControllerDelegate.swift; sourceTree = "<group>"; };
 		BF54E058C5410911828CA619 /* secondary-none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "secondary-none.png"; sourceTree = "<group>"; };
@@ -1360,6 +1362,7 @@
 			children = (
 				00DD92C631789A649E5179D8 /* README.md */,
 				72AC06094943731A95C45A7F /* TagView.swift */,
+				BB0700FE2775E94000400AC2 /* TagViewStyle.swift */,
 				DAA8BE59F3DB2B951F841F50 /* docs */,
 			);
 			path = Tag;
@@ -2721,6 +2724,7 @@
 				0B762F342DEA1C67BF7F438B /* TagView.swift in Sources */,
 				930BDEF8014BD8B8104C4F8B /* TextInput.swift in Sources */,
 				2A6BB74DD4788FC5991A70FD /* ThemeVariant.swift in Sources */,
+				BB0700FF2775E94000400AC2 /* TagViewStyle.swift in Sources */,
 				E67C11529DD9E1699278458A /* UIBarButtonItem+Utils.swift in Sources */,
 				9069ACD1BD3E576D4291C424 /* UIButton+Utils.swift in Sources */,
 				759D8FD6321204FA71C221E8 /* UICollectionViewCell+Utils.swift in Sources */,

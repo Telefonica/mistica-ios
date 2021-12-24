@@ -63,7 +63,7 @@ public class TagView: UIView {
         }
         return iconView
     }
-    
+
     private var labelLeadingMargin: CGFloat {
         if icon != nil {
             return Style.horizontalLeadingMarginWithIcon
@@ -71,7 +71,7 @@ public class TagView: UIView {
             return Style.horizontalMargin
         }
     }
-    
+
     // MARK: Init
 
     public init() {
@@ -149,7 +149,7 @@ private extension TagView {
         stackView.spacing = Style.stackViewSpacing
         stackView.axis = .horizontal
         stackView.alignment = .center
-        
+
         if let iconImageView = iconImageView {
             stackView.addArrangedSubview(iconImageView)
             NSLayoutConstraint.activate([

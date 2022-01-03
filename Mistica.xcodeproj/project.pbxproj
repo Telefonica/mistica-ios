@@ -656,6 +656,27 @@
 		B8FFFA9B256E6DCA00472C23 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		BA329D03E282F314F2B98DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB0700FE2775E94000400AC2 /* TagViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewStyle.swift; sourceTree = "<group>"; };
+		BB0A137E278337D400444F28 /* testBrandStyles.with-o2-dark-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2-dark-style.png"; sourceTree = "<group>"; };
+		BB0A137F278337D400444F28 /* testMinimumContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testMinimumContent.1.png; sourceTree = "<group>"; };
+		BB0A1380278337D400444F28 /* testFullContentWithoutPretitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutPretitle.1.png; sourceTree = "<group>"; };
+		BB0A1381278337D400444F28 /* testFullContentWithoutHeadline.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutHeadline.1.png; sourceTree = "<group>"; };
+		BB0A1382278337D400444F28 /* testPrimaryButtonsOnly.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryButtonsOnly.1.png; sourceTree = "<group>"; };
+		BB0A1383278337D400444F28 /* testShowLoadingStateForButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testShowLoadingStateForButtons.1.png; sourceTree = "<group>"; };
+		BB0A1384278337D400444F28 /* testBrandStyles.with-o2-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2-style.png"; sourceTree = "<group>"; };
+		BB0A1385278337D400444F28 /* testBrandStyles.with-movistar-dark-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-movistar-dark-style.png"; sourceTree = "<group>"; };
+		BB0A1386278337D400444F28 /* testBrandStyles.with-o2Classic-dark-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2Classic-dark-style.png"; sourceTree = "<group>"; };
+		BB0A1387278337D500444F28 /* testBrandStyles.with-o2Classic-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-o2Classic-style.png"; sourceTree = "<group>"; };
+		BB0A1388278337D500444F28 /* testBrandStyles.with-vivo-dark-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-vivo-dark-style.png"; sourceTree = "<group>"; };
+		BB0A1389278337D500444F28 /* testTextsWithMultiLine.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testTextsWithMultiLine.1.png; sourceTree = "<group>"; };
+		BB0A138A278337D500444F28 /* testFullContentWithoutTitle.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutTitle.1.png; sourceTree = "<group>"; };
+		BB0A138B278337D500444F28 /* testFullContentWithoutFragment.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContentWithoutFragment.1.png; sourceTree = "<group>"; };
+		BB0A138C278337D500444F28 /* testPrimaryAndLinkButtons.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testPrimaryAndLinkButtons.1.png; sourceTree = "<group>"; };
+		BB0A138D278337D500444F28 /* testBrandStyles.with-vivo-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-vivo-style.png"; sourceTree = "<group>"; };
+		BB0A138E278337D500444F28 /* testBrandStyles.with-blau-dark-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-blau-dark-style.png"; sourceTree = "<group>"; };
+		BB0A138F278337D500444F28 /* testBrandStyles.with-blau-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-blau-style.png"; sourceTree = "<group>"; };
+		BB0A1390278337D500444F28 /* testBrandStyles.with-movistar-style.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "testBrandStyles.with-movistar-style.png"; sourceTree = "<group>"; };
+		BB0A1391278337D500444F28 /* testFullContent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testFullContent.1.png; sourceTree = "<group>"; };
+		BB0A1392278337D500444F28 /* testXIBIntegration.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testXIBIntegration.1.png; sourceTree = "<group>"; };
 		BBE6D8338256A346AA4459CB /* ScrollContentIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContentIndicator.swift; sourceTree = "<group>"; };
 		BF1CAF7C86C74F12CE2700B8 /* LoadErrorViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadErrorViewControllerDelegate.swift; sourceTree = "<group>"; };
 		BF54E058C5410911828CA619 /* secondary-none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "secondary-none.png"; sourceTree = "<group>"; };
@@ -1977,6 +1998,27 @@
 		B85CCA4725B82A0B00B76426 /* MediaCardTests */ = {
 			isa = PBXGroup;
 			children = (
+				BB0A138E278337D500444F28 /* testBrandStyles.with-blau-dark-style.png */,
+				BB0A138F278337D500444F28 /* testBrandStyles.with-blau-style.png */,
+				BB0A1385278337D400444F28 /* testBrandStyles.with-movistar-dark-style.png */,
+				BB0A1390278337D500444F28 /* testBrandStyles.with-movistar-style.png */,
+				BB0A137E278337D400444F28 /* testBrandStyles.with-o2-dark-style.png */,
+				BB0A1384278337D400444F28 /* testBrandStyles.with-o2-style.png */,
+				BB0A1386278337D400444F28 /* testBrandStyles.with-o2Classic-dark-style.png */,
+				BB0A1387278337D500444F28 /* testBrandStyles.with-o2Classic-style.png */,
+				BB0A1388278337D500444F28 /* testBrandStyles.with-vivo-dark-style.png */,
+				BB0A138D278337D500444F28 /* testBrandStyles.with-vivo-style.png */,
+				BB0A1391278337D500444F28 /* testFullContent.1.png */,
+				BB0A138B278337D500444F28 /* testFullContentWithoutFragment.1.png */,
+				BB0A1381278337D400444F28 /* testFullContentWithoutHeadline.1.png */,
+				BB0A1380278337D400444F28 /* testFullContentWithoutPretitle.1.png */,
+				BB0A138A278337D500444F28 /* testFullContentWithoutTitle.1.png */,
+				BB0A137F278337D400444F28 /* testMinimumContent.1.png */,
+				BB0A138C278337D500444F28 /* testPrimaryAndLinkButtons.1.png */,
+				BB0A1382278337D400444F28 /* testPrimaryButtonsOnly.1.png */,
+				BB0A1383278337D400444F28 /* testShowLoadingStateForButtons.1.png */,
+				BB0A1389278337D500444F28 /* testTextsWithMultiLine.1.png */,
+				BB0A1392278337D500444F28 /* testXIBIntegration.1.png */,
 			);
 			path = MediaCardTests;
 			sourceTree = "<group>";

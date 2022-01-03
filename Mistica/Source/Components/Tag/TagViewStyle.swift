@@ -36,7 +36,7 @@ extension TagViewStyle {
         case .error:
             return .tagBackgroundError
         case .inverse:
-            return .white
+            return .inverse
         }
     }
 

@@ -139,7 +139,7 @@ extension UICatalogTagsViewController: UITextFieldDelegate {
 private extension UICatalogTagsViewController {
     private func tagViewsCell(with tags: [TagView]) -> UITableViewCell {
         let cell = UITableViewCell()
-        let hasInverseTags = tags.filter { $0.style == .inverse }.count > 0
+        let hasInverseTags = tags.contains { $0.style == .inverse }
         cell.configure(with: tags)
         cell.contentView.backgroundColor = hasInverseTags ? .navigationBarBackground : .backgroundContainer
         return cell

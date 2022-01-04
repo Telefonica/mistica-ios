@@ -12,7 +12,7 @@ public class TagView: UIView {
     @frozen
     public enum Style {
         public static let horizontalMargin: CGFloat = 12
-        public static let horizontalLeadingMarginWithIcon: CGFloat = 5
+        public static let labelHorizontalLeadingMarginWithIcon: CGFloat = 5
         public static let verticalMargin: CGFloat = 4
         public static let minWidth: CGFloat = 56
         public static let minHeight: CGFloat = 28
@@ -20,7 +20,8 @@ public class TagView: UIView {
         public static let iconSize: CGFloat = 16
         public static let cornerRadius: CGFloat = 14
         public static let emptyContent = " "
-        public static let stackViewSpacing: CGFloat = 5.54
+        public static let stackViewSpacing: CGFloat = 4
+        public static let stackViewHorizontalLeadingMarginWithIcon: CGFloat = 8
     }
 
     // MARK: UI Subcomponents
@@ -66,7 +67,15 @@ public class TagView: UIView {
 
     private var labelLeadingMargin: CGFloat {
         if icon != nil {
-            return Style.horizontalLeadingMarginWithIcon
+            return Style.labelHorizontalLeadingMarginWithIcon
+        } else {
+            return Style.horizontalMargin
+        }
+    }
+
+    private var scrollViewLeadingMargin: CGFloat {
+        if icon != nil {
+            return Style.stackViewHorizontalLeadingMarginWithIcon
         } else {
             return Style.horizontalMargin
         }
@@ -110,13 +119,10 @@ public class TagView: UIView {
         let intrinsicWidth = labelLeadingMargin
             + label.intrinsicContentSize.width
             + Style.horizontalMargin
-        let intrinsicHeight = Style.verticalMargin
-            + label.intrinsicContentSize.height
-            + Style.verticalMargin
-
+        
         return CGSize(
             width: max(Style.minWidth, intrinsicWidth),
-            height: max(Style.minHeight, intrinsicHeight)
+            height: Style.minHeight
         )
     }
 
@@ -171,7 +177,7 @@ private extension TagView {
             ),
             leadingAnchor.constraint(
                 equalTo: stackView.leadingAnchor,
-                constant: -Style.horizontalMargin
+                constant: -scrollViewLeadingMargin
             ),
             trailingAnchor.constraint(
                 equalTo: stackView.trailingAnchor,

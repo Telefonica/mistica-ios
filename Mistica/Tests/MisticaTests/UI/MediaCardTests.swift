@@ -152,7 +152,7 @@ extension MediaCardTests {
         static var richMedia: UIImageView {
             let image = UIImageView(image: UIImage(color: .green))
 
-            image.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            image.heightAnchor.constraint(equalToConstant: 110).isActive = true
 
             return image
         }

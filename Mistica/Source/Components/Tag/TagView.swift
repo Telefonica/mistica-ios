@@ -119,7 +119,7 @@ public class TagView: UIView {
         let intrinsicWidth = labelLeadingMargin
             + label.intrinsicContentSize.width
             + Style.horizontalMargin
-        
+
         return CGSize(
             width: max(Style.minWidth, intrinsicWidth),
             height: Style.minHeight

@@ -124,10 +124,26 @@ struct O2Colors: Colors {
         O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack,
         O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
     ]
+
+    // TAGS
+    var tagBackgroundSuccess = O2ColorPalette.o2Green10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundWarning = O2ColorPalette.o2Orange10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundError = O2ColorPalette.pepper10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundPromo = O2ColorPalette.o2Purple10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundActive = O2ColorPalette.o2BluePrimary10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundInactive = O2ColorPalette.grey1 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var textTagSuccess = O2ColorPalette.o2Green80 | O2ColorPalette.o2Green40
+    var textTagWarning = O2ColorPalette.o2Orange75 | O2ColorPalette.o2Orange40
+    var textTagError = O2ColorPalette.pepper60 | O2ColorPalette.pepper40
+    var textTagPromo = O2ColorPalette.o2Purple | O2ColorPalette.o2Purple30
+    var textTagActive = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimary15
+    var textTagInactive = O2ColorPalette.grey5 | O2ColorPalette.grey4
 }
 
 public enum O2ColorPalette {
     public static let o2BluePrimary = UIColor(hex: "#0019A5")!
+    public static let o2BluePrimary10 = UIColor(hex: "#E5E8F6")!
+    public static let o2BluePrimary15 = UIColor(hex: "#CCD1ED")!
     public static let o2BluePrimaryDark = UIColor(hex: "#000066")!
     public static let o2BluePrimaryLight50 = UIColor(hex: "#808CD2")!
     public static let o2BluePrimaryLight10 = UIColor(hex: "#CCD1ED")!
@@ -141,15 +157,26 @@ public enum O2ColorPalette {
     public static let o2TealDark = UIColor(hex: "#099E9B")!
     public static let o2TealLight = UIColor(hex: "#B1E4E3")!
     public static let o2Green = UIColor(hex: "#91C90E")!
+    public static let o2Green10 = UIColor(hex: "#F4FAE7")!
+    public static let o2Green40 = UIColor(hex: "#B2D956")!
+    public static let o2Green80 = UIColor(hex: "#415A06")!
     public static let o2GreenLight = UIColor(hex: "#DEEEB7")!
     public static let o2Yellow = UIColor(hex: "#FEDB00")!
     public static let o2YellowLight = UIColor(hex: "#FEF6C3")!
     public static let o2Orange = UIColor(hex: "#FF7F41")!
+    public static let o2Orange10 = UIColor(hex: "#FFF2EC")!
+    public static let o2Orange40 = UIColor(hex: "#FFA57A")!
+    public static let o2Orange75 = UIColor(hex: "#A6522A")!
     public static let o2OrangeLight = UIColor(hex: "#FFD6C2")!
     public static let o2Coral = UIColor(hex: "#FF706E")!
     public static let o2Pink = UIColor(hex: "#CB31A0")!
     public static let o2Purple = UIColor(hex: "#953698")!
+    public static let o2Purple10 = UIColor(hex: "#F4EAF5")!
+    public static let o2Purple30 = UIColor(hex: "#CA9ACB")!
     public static let pepper = UIColor(hex: "#FF374A")!
+    public static let pepper10 = UIColor(hex: "#FEEBED")!
+    public static let pepper40 = UIColor(hex: "#FF7380")!
+    public static let pepper60 = UIColor(hex: "#C32B3D")!
     public static let pepperDark = UIColor(hex: "#D73241")!
     public static let pepperLight30 = UIColor(hex: "#FFC3C8")!
     public static let grey1 = UIColor(hex: "#F6F6F6")!

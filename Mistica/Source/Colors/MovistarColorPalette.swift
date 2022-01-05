@@ -137,25 +137,53 @@ struct MovistarColors: Colors {
             UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) | MovistarColorPalette.darkModeBlack
         ]
     }
+
+    // TAGS
+    var tagBackgroundSuccess = MovistarColorPalette.movistarGreen10 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundWarning = MovistarColorPalette.egg10 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundError = MovistarColorPalette.pepper10 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundPromo = MovistarColorPalette.purple10 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundActive = MovistarColorPalette.movistarBlue10 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundInactive = MovistarColorPalette.grey1 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    var textTagSuccess = MovistarColorPalette.movistarGreen70 | MovistarColorPalette.movistarGreen40
+    var textTagWarning = MovistarColorPalette.egg80 | MovistarColorPalette.egg40
+    var textTagError = MovistarColorPalette.pepper70 | MovistarColorPalette.pepper40
+    var textTagPromo = MovistarColorPalette.purple70 | MovistarColorPalette.purple40
+    var textTagActive = MovistarColorPalette.movistarBlue | MovistarColorPalette.movistarBlue40
+    var textTagInactive = MovistarColorPalette.grey5 | MovistarColorPalette.grey4
 }
 
 public enum MovistarColorPalette {
     public static let movistarBlue = UIColor(hex: "#019DF4")!
+    public static let movistarBlue10 = UIColor(hex: "#E6F5FD")!
+    public static let movistarBlue40 = UIColor(hex: "#4DBAF7")!
     public static let movistarBlueDark = UIColor(hex: "#008EDD")!
     public static let movistarBlueLight50 = UIColor(hex: "#80CEF9")!
     public static let movistarBlueLight30 = UIColor(hex: "#B3E1FB")!
     public static let movistarBlueLight10 = UIColor(hex: "#E6F5FD")!
     public static let movistarGreen = UIColor(hex: "#5CB615")!
+    public static let movistarGreen10 = UIColor(hex: "#EFF8E8")!
+    public static let movistarGreen40 = UIColor(hex: "#8DCC5B")!
+    public static let movistarGreen70 = UIColor(hex: "#407F0F")!
     public static let movistarGreenDark = UIColor(hex: "#499110")!
     public static let movistarGreenLight50 = UIColor(hex: "#ADDA8A")!
     public static let movistarGreenLight30 = UIColor(hex: "#CEE9B9")!
     public static let pepper = UIColor(hex: "#FF374A")!
+    public static let pepper10 = UIColor(hex: "#FFEBED")!
+    public static let pepper40 = UIColor(hex: "#FF7380")!
+    public static let pepper70 = UIColor(hex: "#B22634")!
     public static let pepperDark = UIColor(hex: "#D73241")!
     public static let pepperLight30 = UIColor(hex: "#FFC3C8")!
     public static let egg = UIColor(hex: "#F28D15")!
+    public static let egg10 = UIColor(hex: "#FEF4E8")!
+    public static let egg40 = UIColor(hex: "#F6AF5B")!
+    public static let egg80 = UIColor(hex: "#6D3F09")!
     public static let eggLight = UIColor(hex: "#F8D2B3")!
     public static let pink = UIColor(hex: "#E63780")!
     public static let purple = UIColor(hex: "#A13EA1")!
+    public static let purple10 = UIColor(hex: "#F6ECF6")!
+    public static let purple40 = UIColor(hex: "#BD78BD")!
+    public static let purple70 = UIColor(hex: "#712B71")!
     public static let grey1 = UIColor(hex: "#F6F6F6")!
     public static let grey2 = UIColor(hex: "#EEEEEE")!
     public static let grey3 = UIColor(hex: "#DDDDDD")!
@@ -164,6 +192,8 @@ public enum MovistarColorPalette {
     public static let grey6 = UIColor(hex: "#313235")!
     public static let white = UIColor(hex: "#FFFFFF")!
     public static let movistarProminentBlue = UIColor(hex: "#0B2739")!
+    public static let movistarProminentBlue10 = UIColor(hex: "#E6F5FD")!
+    public static let movistarProminentBlue40 = UIColor(hex: "#4DBAF7")!
     public static let movistarProminentBlueDark = UIColor(hex: "#081F2D")!
     public static let movistarProminentBlueLight20 = UIColor(hex: "#CED3D7")!
     public static let movistarProminentBlueLight50 = UIColor(hex: "#85939C")!

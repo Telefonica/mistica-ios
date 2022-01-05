@@ -11,13 +11,17 @@ import UIKit
 public class TagView: UIView {
     @frozen
     public enum Style {
-        public static let horizontalMargin: CGFloat = 8
-        public static let verticalMargin: CGFloat = 2
-        public static let minWidth: CGFloat = 48
-        public static let minHeight: CGFloat = 20
-        public static var font: UIFont { .textPreset1(weight: .medium) }
-        static let cornerRadius: CGFloat = 2
-        static let emptyContent = " "
+        public static let horizontalMargin: CGFloat = 12
+        public static let labelHorizontalLeadingMarginWithIcon: CGFloat = 5
+        public static let verticalMargin: CGFloat = 4
+        public static let minWidth: CGFloat = 56
+        public static let minHeight: CGFloat = 28
+        public static var font: UIFont { .textPreset2(weight: .medium) }
+        public static let iconSize: CGFloat = 16
+        public static let cornerRadius: CGFloat = 14
+        public static let emptyContent = " "
+        public static let stackViewSpacing: CGFloat = 4
+        public static let stackViewHorizontalLeadingMarginWithIcon: CGFloat = 8
     }
 
     // MARK: UI Subcomponents
@@ -26,9 +30,10 @@ public class TagView: UIView {
         let label = UILabel(frame: .zero)
 
         setUpFont(label)
-        label.textColor = .textPrimaryInverse
         label.textAlignment = .center
         label.numberOfLines = 1
+        label.adjustsFontSizeToFitWidth = false
+        label.lineBreakMode = .byTruncatingTail
 
         return label
     }()
@@ -38,6 +43,41 @@ public class TagView: UIView {
     public var text: String? {
         didSet {
             textDidSet()
+        }
+    }
+
+    public var style: TagViewStyle = .promo {
+        didSet {
+            updateColors()
+        }
+    }
+
+    private var stackView: UIStackView?
+    private var icon: UIImage?
+    private var iconImageView: UIImageView? {
+        guard let icon = icon else { return nil }
+        let iconView = UIImageView(image: icon.withRenderingMode(.alwaysTemplate))
+        iconView.tintColor = style.textColor
+        iconView.contentMode = .scaleAspectFit
+        if let accessibilityIdentifier = label.accessibilityIdentifier {
+            iconView.accessibilityIdentifier = "\(accessibilityIdentifier)-icon"
+        }
+        return iconView
+    }
+
+    private var labelLeadingMargin: CGFloat {
+        if icon != nil {
+            return Style.labelHorizontalLeadingMarginWithIcon
+        } else {
+            return Style.horizontalMargin
+        }
+    }
+
+    private var scrollViewLeadingMargin: CGFloat {
+        if icon != nil {
+            return Style.stackViewHorizontalLeadingMarginWithIcon
+        } else {
+            return Style.horizontalMargin
         }
     }
 
@@ -61,28 +101,28 @@ public class TagView: UIView {
         commonInit()
     }
 
-    public init(text: String? = nil, accessibilityIdentifier: String? = nil) {
+    public init(text: String? = nil, style: TagViewStyle = .promo, icon: UIImage? = nil, accessibilityIdentifier: String? = nil) {
         super.init(frame: .zero)
-        self.text = text
-        label.accessibilityIdentifier = accessibilityIdentifier
-        textDidSet()
 
+        self.text = text
+        self.style = style
+        self.icon = icon
+        label.accessibilityIdentifier = accessibilityIdentifier
+
+        textDidSet()
         commonInit()
     }
 
     // MARK: Sizing
 
     override public var intrinsicContentSize: CGSize {
-        let intrinsicWidth = Style.horizontalMargin
+        let intrinsicWidth = labelLeadingMargin
             + label.intrinsicContentSize.width
             + Style.horizontalMargin
-        let intrinsicHeight = Style.verticalMargin
-            + label.intrinsicContentSize.height
-            + Style.verticalMargin
 
         return CGSize(
             width: max(Style.minWidth, intrinsicWidth),
-            height: max(Style.minHeight, intrinsicHeight)
+            height: Style.minHeight
         )
     }
 
@@ -111,27 +151,47 @@ public class TagView: UIView {
 
 private extension TagView {
     func commonInit() {
-        addSubview(label, constraints: [
+        let stackView = UIStackView()
+        stackView.spacing = Style.stackViewSpacing
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+
+        if let iconImageView = iconImageView {
+            stackView.addArrangedSubview(iconImageView)
+            NSLayoutConstraint.activate([
+                iconImageView.heightAnchor.constraint(equalToConstant: Style.iconSize),
+                iconImageView.widthAnchor.constraint(equalToConstant: Style.iconSize)
+            ])
+        }
+
+        stackView.addArrangedSubview(label)
+
+        addSubview(stackView, constraints: [
             topAnchor.constraint(
-                equalTo: label.topAnchor,
+                equalTo: stackView.topAnchor,
                 constant: -Style.verticalMargin
             ),
             bottomAnchor.constraint(
-                equalTo: label.bottomAnchor,
+                equalTo: stackView.bottomAnchor,
                 constant: Style.verticalMargin
             ),
             leadingAnchor.constraint(
-                equalTo: label.leadingAnchor,
-                constant: -Style.horizontalMargin
+                equalTo: stackView.leadingAnchor,
+                constant: -scrollViewLeadingMargin
             ),
             trailingAnchor.constraint(
-                equalTo: label.trailingAnchor,
+                equalTo: stackView.trailingAnchor,
                 constant: Style.horizontalMargin
             )
         ])
 
         makeRounded(cornerRadius: Style.cornerRadius)
-        backgroundColor = .promo
+        updateColors()
+    }
+
+    func updateColors() {
+        backgroundColor = style.backgroundColor
+        label.textColor = style.textColor
     }
 
     func textDidSet() {
@@ -153,7 +213,6 @@ private extension TagView {
             // to the label.
             return Style.emptyContent
         }
-
-        return text.uppercased()
+        return text.prefix(1).capitalized + text.dropFirst()
     }
 }

@@ -113,4 +113,18 @@ protocol Colors {
 
     // GRADIENTS
     var backgroundBrandGradient: [UIColor] { get }
+
+    // TAGS
+    var tagBackgroundPromo: UIColor { get }
+    var tagBackgroundActive: UIColor { get }
+    var tagBackgroundInactive: UIColor { get }
+    var tagBackgroundSuccess: UIColor { get }
+    var tagBackgroundWarning: UIColor { get }
+    var tagBackgroundError: UIColor { get }
+    var textTagPromo: UIColor { get }
+    var textTagActive: UIColor { get }
+    var textTagInactive: UIColor { get }
+    var textTagSuccess: UIColor { get }
+    var textTagWarning: UIColor { get }
+    var textTagError: UIColor { get }
 }

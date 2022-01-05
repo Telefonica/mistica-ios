@@ -1,3 +1,15 @@
+# [15.0.0](https://github.com/Telefonica/mistica-ios/compare/v14.2.0...v15.0.0) (2022-01-05)
+
+
+### Features
+
+* **Tag:** IOS-7115 Tags evolution ([#150](https://github.com/Telefonica/mistica-ios/issues/150)) ([3ef6d49](https://github.com/Telefonica/mistica-ios/commit/3ef6d496fec931fb3ff17b469e78ce32d6d21214))
+
+
+### BREAKING CHANGES
+
+* **Tag:** The existing Tag component has changed in many ways: size, color, font and icon support.
+
 # [14.2.0](https://github.com/Telefonica/mistica-ios/compare/v14.1.0...v14.2.0) (2021-12-20)
 
 

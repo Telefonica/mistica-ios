@@ -13,7 +13,7 @@ jobs:
         run: scripts/swiftformat .
         env:
           DEVELOPER_DIR: /Applications/Xcode-12.app/Contents/Developer
-      - uses: stefanzweifel/git-auto-commit-action@v4.11.0
+      - uses: stefanzweifel/git-auto-commit-action@v4.13.1
         with:
           commit_message: Run swiftformat
         env:

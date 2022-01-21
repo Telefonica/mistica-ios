@@ -127,12 +127,12 @@ struct VivoColors: Colors {
     ]
 
     // TAGS
-    var tagBackgroundSuccess = VivoColorPalette.vivoGreenLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundWarning = VivoColorPalette.orangeLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundError = VivoColorPalette.pepperLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundPromo = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundActive = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundInactive = VivoColorPalette.grey1 | VivoColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundSuccess = VivoColorPalette.vivoGreenLight10 | VivoColorPalette.darkModeGrey
+    var tagBackgroundWarning = VivoColorPalette.orangeLight10 | VivoColorPalette.darkModeGrey
+    var tagBackgroundError = VivoColorPalette.pepperLight10 | VivoColorPalette.darkModeGrey
+    var tagBackgroundPromo = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.darkModeGrey
+    var tagBackgroundActive = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.darkModeGrey
+    var tagBackgroundInactive = VivoColorPalette.grey1 | VivoColorPalette.darkModeGrey
     var textTagSuccess = VivoColorPalette.vivoGreenDark | VivoColorPalette.vivoGreenLight30
     var textTagWarning = VivoColorPalette.orangeDark | VivoColorPalette.orangeLight40
     var textTagError = VivoColorPalette.pepperDark80 | VivoColorPalette.pepperLight40

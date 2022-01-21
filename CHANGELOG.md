@@ -1,3 +1,10 @@
+## [15.0.1](https://github.com/Telefonica/mistica-ios/compare/v15.0.0...v15.0.1) (2022-01-21)
+
+
+### Bug Fixes
+
+* **Tags:** Fix tag background colors on dark mode - IOS-7221 ([#157](https://github.com/Telefonica/mistica-ios/issues/157)) ([3406dc2](https://github.com/Telefonica/mistica-ios/commit/3406dc241ab3438edce43fa203633b9f29bd017d))
+
 # [15.0.0](https://github.com/Telefonica/mistica-ios/compare/v14.2.0...v15.0.0) (2022-01-05)
 
 

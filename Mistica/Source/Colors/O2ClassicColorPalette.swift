@@ -127,12 +127,12 @@ struct O2ClassicColors: Colors {
     ]
 
     // TAGS
-    var tagBackgroundSuccess = O2ClassicColorPalette.o2Green10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundWarning = O2ClassicColorPalette.orange10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundError = O2ClassicColorPalette.pepper10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundPromo = O2ClassicColorPalette.pink10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundActive = O2ClassicColorPalette.o2Blue10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundInactive = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundSuccess = O2ClassicColorPalette.o2Green10 | O2ClassicColorPalette.darkModeGrey
+    var tagBackgroundWarning = O2ClassicColorPalette.orange10 | O2ClassicColorPalette.darkModeGrey
+    var tagBackgroundError = O2ClassicColorPalette.pepper10 | O2ClassicColorPalette.darkModeGrey
+    var tagBackgroundPromo = O2ClassicColorPalette.pink10 | O2ClassicColorPalette.darkModeGrey
+    var tagBackgroundActive = O2ClassicColorPalette.o2Blue10 | O2ClassicColorPalette.darkModeGrey
+    var tagBackgroundInactive = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeGrey
     var textTagSuccess = O2ClassicColorPalette.o2Green75 | O2ClassicColorPalette.o2Green40
     var textTagWarning = O2ClassicColorPalette.orange80 | O2ClassicColorPalette.orange40
     var textTagError = O2ClassicColorPalette.pepper70 | O2ClassicColorPalette.pepper40

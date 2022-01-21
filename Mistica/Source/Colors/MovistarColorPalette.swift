@@ -139,12 +139,12 @@ struct MovistarColors: Colors {
     }
 
     // TAGS
-    var tagBackgroundSuccess = MovistarColorPalette.movistarGreen10 | MovistarColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundWarning = MovistarColorPalette.egg10 | MovistarColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundError = MovistarColorPalette.pepper10 | MovistarColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundPromo = MovistarColorPalette.purple10 | MovistarColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundActive = MovistarColorPalette.movistarBlue10 | MovistarColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundInactive = MovistarColorPalette.grey1 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundSuccess = MovistarColorPalette.movistarGreen10 | MovistarColorPalette.darkModeGrey
+    var tagBackgroundWarning = MovistarColorPalette.egg10 | MovistarColorPalette.darkModeGrey
+    var tagBackgroundError = MovistarColorPalette.pepper10 | MovistarColorPalette.darkModeGrey
+    var tagBackgroundPromo = MovistarColorPalette.purple10 | MovistarColorPalette.darkModeGrey
+    var tagBackgroundActive = MovistarColorPalette.movistarBlue10 | MovistarColorPalette.darkModeGrey
+    var tagBackgroundInactive = MovistarColorPalette.grey1 | MovistarColorPalette.darkModeGrey
     var textTagSuccess = MovistarColorPalette.movistarGreen70 | MovistarColorPalette.movistarGreen40
     var textTagWarning = MovistarColorPalette.egg80 | MovistarColorPalette.egg40
     var textTagError = MovistarColorPalette.pepper70 | MovistarColorPalette.pepper40

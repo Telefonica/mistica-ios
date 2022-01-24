@@ -14,7 +14,6 @@ final class TagTests: XCTestCase {
     override func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
-
         isRecording = false
     }
 

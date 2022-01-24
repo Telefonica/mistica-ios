@@ -1,4 +1,4 @@
-#  Feedbacks
+#  Feedback
 
 The Feedback view will be in charge of rendering different types of feedbacks. Its content is customisable while the appearance is automatically configured per brand based on the selected feedback style. Background color, icon, animations, fonts and colors are predefined and can't be changed.
 

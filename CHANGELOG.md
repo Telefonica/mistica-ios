@@ -1,3 +1,10 @@
+# [15.1.0](https://github.com/Telefonica/mistica-ios/compare/v15.0.1...v15.1.0) (2022-01-25)
+
+
+### Features
+
+* **Feedback:** Add error animation for feedback view for vivo IOS-7087 ([#159](https://github.com/Telefonica/mistica-ios/issues/159)) ([3c85ab8](https://github.com/Telefonica/mistica-ios/commit/3c85ab89de6b672c8a18dca5a4643bf1f886f1e4))
+
 ## [15.0.1](https://github.com/Telefonica/mistica-ios/compare/v15.0.0...v15.0.1) (2022-01-21)
 
 

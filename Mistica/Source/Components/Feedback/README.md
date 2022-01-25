@@ -33,7 +33,7 @@ For the primary action, there are three different options:
 |-------------|-----------------|
 | ![custom](./docs/images/primary-button.jpg) | ![custom](./docs/images/primary-retry.gif)  |
 
-⚠️ For the **Retry Button** is important execute the `completionHanlder` closure when the async retry task is finished.
+⚠️ For the **Retry Button** is important execute the `completionHandler` closure when the async retry task is finished.
 ```swift
 retryCompletion: { completionHandler in
     // Do async retry task

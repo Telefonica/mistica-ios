@@ -28,18 +28,6 @@ public class EmptyState: UIView {
         }
     }
 
-    override public var accessibilityElements: [Any]? {
-        get {
-            // We must set the frame and be sure it is already calculated.
-            emptyStateAccessibilityElement.accessibilityFrameInContainerSpace = bounds
-            return [
-                emptyStateAccessibilityElement,
-                emptyStateContentBase
-            ].compactMap { $0 }
-        }
-        set {}
-    }
-
     override public init(frame: CGRect) {
         super.init(frame: frame)
         commomInit()

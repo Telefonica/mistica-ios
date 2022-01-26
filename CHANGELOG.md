@@ -1,3 +1,11 @@
+## [14.2.1](https://github.com/Telefonica/mistica-ios/compare/v14.2.0...v14.2.1) (2022-01-26)
+
+
+### Bug Fixes
+
+* **EmptyState:** Missing accesiblity IDS in Empty state -  SMARTWIFI-3416 ([37802bc](https://github.com/Telefonica/mistica-ios/commit/37802bce6ec550daa09ca78d22bc5610964129e0))
+* **InputField:** Border color ([b9da1b4](https://github.com/Telefonica/mistica-ios/commit/b9da1b4a848a3a8869dad97cb2f80ff79dc86c94))
+
 # [14.2.0](https://github.com/Telefonica/mistica-ios/compare/v14.1.0...v14.2.0) (2021-12-20)
 
 

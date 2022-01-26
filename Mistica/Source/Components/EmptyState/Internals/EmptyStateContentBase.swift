@@ -63,15 +63,6 @@ extension EmptyStateContentBase {
         }
     }
 
-    override var accessibilityElements: [Any]? {
-        get {
-            [
-                emptyStateButtons
-            ].compactMap { $0 }
-        }
-        set {}
-    }
-
     var iconContentMode: UIView.ContentMode {
         get {
             iconImage.contentMode
@@ -113,6 +104,7 @@ extension EmptyStateContentBase {
             iconImage.accessibilityIdentifier
         }
         set {
+            iconImage.isAccessibilityElement = true
             iconImage.accessibilityIdentifier = newValue
         }
     }

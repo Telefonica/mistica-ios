@@ -291,16 +291,6 @@ public class InputField: UIView {
         }
     }
 
-    @objc public var borderColor: CGColor? {
-        get { borderedView.layer.borderColor }
-        set { borderedView.layer.borderColor = newValue }
-    }
-
-    @objc public var borderWidth: CGFloat {
-        get { borderedView.layer.borderWidth }
-        set { borderedView.layer.borderWidth = newValue }
-    }
-
     @objc public var returnKeyType: UIReturnKeyType {
         get { textInputView?.returnKeyType ?? .default }
         set { textInputView?.returnKeyType = newValue }
@@ -395,7 +385,7 @@ public class InputField: UIView {
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
-        borderColor = UIColor.divider.cgColor
+        borderColor = UIColor.border.cgColor
     }
 }
 

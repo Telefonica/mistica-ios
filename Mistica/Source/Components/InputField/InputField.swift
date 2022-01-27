@@ -395,7 +395,7 @@ public class InputField: UIView {
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
-        borderColor = UIColor.divider.cgColor
+        borderColor = UIColor.border.cgColor
     }
 }
 

@@ -61,6 +61,7 @@ jobs:
           BRAND_VARIANT: MisticaApp
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
+          IOS_APPLE_CERTS: ${{ secrets.APPLE_CERTS }}
 
       - name: Install provisioning profiles and certificate
         run: bash /usr/local/bin/install_prov_profiles_and_cert_in_osx -i
@@ -69,6 +70,7 @@ jobs:
           BRAND_VARIANT: MisticaApp
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
+          IOS_APPLE_CERTS: ${{ secrets.APPLE_CERTS }}
 
       - name: Build Mistica catalog and upload to AppCenter 
         run:  bundle exec fastlane build_and_deploy_mistica_catalog
@@ -81,3 +83,4 @@ jobs:
           BRAND_VARIANT: MisticaApp
           IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
+          IOS_APPLE_CERTS: ${{ secrets.APPLE_CERTS }}

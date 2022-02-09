@@ -181,6 +181,7 @@ extension MediaCardTests {
         headline: String? = "headline",
         title: String? = "Item title",
         pretitle: String? = "Pretitle",
+        pretitleColor: UIColor? = .red,
         descriptionTitle: String = "This is a description",
         primaryButton: CardButton? = AnyValues.button,
         linkButton: CardLinkButton? = AnyValues.link,
@@ -191,6 +192,7 @@ extension MediaCardTests {
             headline: headline,
             title: title,
             pretitle: pretitle,
+            pretitleColor: pretitleColor,
             descriptionTitle: descriptionTitle,
             button: primaryButton,
             link: linkButton

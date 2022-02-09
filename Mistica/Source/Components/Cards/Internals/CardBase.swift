@@ -50,6 +50,15 @@ extension CardBase {
             contentView.title = newValue
         }
     }
+    
+    var titleColor: UIColor? {
+        get {
+            contentView.titleColor
+        }
+        set {
+            contentView.titleColor = newValue
+        }
+    }
 
     var headline: String? {
         get {

@@ -14,6 +14,7 @@ private enum Section: Int, CaseIterable {
     case richMedia
     case headline
     case pretitle
+    case pretitleColor
     case title
     case description
     case buttons
@@ -48,6 +49,18 @@ class UICatalogMediaCardViewController: UIViewController {
     private lazy var pretitleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Pretitle")
         cell.textField.text = "movistar likes"
+        return cell
+    }()
+    
+    private lazy var pretitleColorsCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "PretitleColor")
+        
+        cell.segmentedControl.insertSegment(withTitle: "Black", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Green", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Red", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Blue", at: 3, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = 0
+
         return cell
     }()
 
@@ -86,6 +99,7 @@ class UICatalogMediaCardViewController: UIViewController {
         [richMediaCell],
         [headlineCell],
         [pretitleCell],
+        [pretitleColorsCell],
         [titleCell],
         [descriptionCell],
         [buttonsCell],
@@ -184,12 +198,28 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
         default:
             fatalError("Case not implemented")
         }
+        
+        let color: UIColor?
+        
+        switch pretitleColorsCell.segmentedControl.selectedSegmentIndex {
+        case 0:
+            color = .black
+        case 1:
+            color = .green
+        case 2:
+            color = .red
+        case 3:
+            color = .blue
+        default:
+            fatalError("Case not implemented")
+        }
 
         let configuration = MediaCardConfiguration(
             richMedia: richMedia,
             headline: headlineCell.textField.text.valueOrNil,
             title: titleCell.textField.text.valueOrNil,
             pretitle: pretitleCell.textField.text.valueOrNil,
+            pretitleColor: color,
             descriptionTitle: descriptionCell.textField.text.valueOrNil ?? "Mandatory field",
             button: button,
             link: linkButton
@@ -233,6 +263,8 @@ private extension Section {
             return "Headline"
         case .pretitle:
             return "Pretitle"
+        case .pretitleColor:
+            return "Pretitle color"
         case .title:
             return "Title"
         case .description:

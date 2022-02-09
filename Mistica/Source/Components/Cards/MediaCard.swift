@@ -16,6 +16,7 @@ public struct MediaCardConfiguration {
     let headline: String?
     let title: String?
     let pretitle: String?
+    let pretitleColor: UIColor?
     let descriptionTitle: String
     let button: CardButton?
     let link: CardLinkButton?
@@ -25,6 +26,7 @@ public struct MediaCardConfiguration {
         headline: String? = nil,
         title: String? = nil,
         pretitle: String? = nil,
+        pretitleColor: UIColor? = nil,
         descriptionTitle: String,
         button: CardButton? = nil,
         link: CardLinkButton? = nil
@@ -33,6 +35,7 @@ public struct MediaCardConfiguration {
         self.headline = headline
         self.title = title
         self.pretitle = pretitle
+        self.pretitleColor = pretitleColor
         self.descriptionTitle = descriptionTitle
         self.button = button
         self.link = link
@@ -185,6 +188,7 @@ private extension MediaCard {
 
         baseCardView.headline = configuration.headline
         baseCardView.title = configuration.pretitle?.uppercased()
+        baseCardView.titleColor = configuration.pretitleColor
         baseCardView.subtitle = configuration.title
         baseCardView.descriptionTitle = configuration.descriptionTitle
 

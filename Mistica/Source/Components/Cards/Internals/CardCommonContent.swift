@@ -59,6 +59,15 @@ extension CardCommonContent {
             }
         }
     }
+    
+    var titleColor: UIColor? {
+        get {
+            titleLabel.textColor
+        }
+        set {
+            titleLabel.textColor = newValue
+        }
+    }
 
     var subtitle: String? {
         get {

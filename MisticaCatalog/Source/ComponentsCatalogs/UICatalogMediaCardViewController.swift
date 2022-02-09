@@ -51,10 +51,10 @@ class UICatalogMediaCardViewController: UIViewController {
         cell.textField.text = "movistar likes"
         return cell
     }()
-    
+
     private lazy var pretitleColorsCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "PretitleColor")
-        
+
         cell.segmentedControl.insertSegment(withTitle: "Black", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Green", at: 1, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Red", at: 2, animated: false)
@@ -198,9 +198,9 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
         default:
             fatalError("Case not implemented")
         }
-        
+
         let color: UIColor?
-        
+
         switch pretitleColorsCell.segmentedControl.selectedSegmentIndex {
         case 0:
             color = .black

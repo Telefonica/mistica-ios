@@ -50,7 +50,7 @@ extension CardBase {
             contentView.title = newValue
         }
     }
-    
+
     var titleColor: UIColor? {
         get {
             contentView.titleColor

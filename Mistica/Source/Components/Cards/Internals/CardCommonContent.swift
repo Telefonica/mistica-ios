@@ -59,7 +59,7 @@ extension CardCommonContent {
             }
         }
     }
-    
+
     var titleColor: UIColor? {
         get {
             titleLabel.textColor

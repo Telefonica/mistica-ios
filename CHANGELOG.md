@@ -1,3 +1,15 @@
+# [15.2.0](https://github.com/Telefonica/mistica-ios/compare/v15.1.0...v15.2.0) (2022-02-15)
+
+
+### Bug Fixes
+
+* **EmptyState:** Missing accesiblity IDS in Empty state. Fix wrong color on InputField borders - SMARTWIFI-3416 ([#161](https://github.com/Telefonica/mistica-ios/issues/161)) ([4c61058](https://github.com/Telefonica/mistica-ios/commit/4c610582c606af26f63f1eecf0dd2e5bacb6d417))
+
+
+### Features
+
+* **Feedback:** IOS-7228 Updating feedback success/error lottie animations ([#164](https://github.com/Telefonica/mistica-ios/issues/164)) ([bb378eb](https://github.com/Telefonica/mistica-ios/commit/bb378ebc79679c353fd3cd675535175701ee73d6))
+
 # [15.1.0](https://github.com/Telefonica/mistica-ios/compare/v15.0.1...v15.1.0) (2022-01-25)
 
 

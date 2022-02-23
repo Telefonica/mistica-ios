@@ -213,6 +213,6 @@ private extension TagView {
             // to the label.
             return Style.emptyContent
         }
-        return text.prefix(1).capitalized + text.dropFirst()
+        return text
     }
 }

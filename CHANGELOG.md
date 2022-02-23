@@ -1,3 +1,10 @@
+## [15.2.1](https://github.com/Telefonica/mistica-ios/compare/v15.2.0...v15.2.1) (2022-02-23)
+
+
+### Bug Fixes
+
+* **Tags:** IOS-7304 Tags won´t capitalize its text anymore ([#165](https://github.com/Telefonica/mistica-ios/issues/165)) ([b6a102d](https://github.com/Telefonica/mistica-ios/commit/b6a102d87484315e008276acd3c08278a47a3228))
+
 # [15.2.0](https://github.com/Telefonica/mistica-ios/compare/v15.1.0...v15.2.0) (2022-02-15)
 
 

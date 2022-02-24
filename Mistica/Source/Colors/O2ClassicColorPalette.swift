@@ -14,41 +14,41 @@ struct O2ClassicColors: Colors {
     let background = O2ClassicColorPalette.white | O2ClassicColorPalette.darkModeBlack
     let backgroundContainer = O2ClassicColorPalette.white | O2ClassicColorPalette.darkModeGrey
     let backgroundBrand = O2ClassicColorPalette.o2Blue | O2ClassicColorPalette.darkModeBlack
-    let backgroundOverlay = O2ClassicColorPalette.grey6.withAlphaComponent(0.6) | O2ClassicColorPalette.darkModeGrey
+    let backgroundOverlay = O2ClassicColorPalette.grey6 | O2ClassicColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeGrey6
-    let backgroundSkeletonInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.darkModeGrey6
+    let backgroundSkeletonInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.darkModeGrey6
     let navigationBarBackground = O2ClassicColorPalette.o2Blue | O2ClassicColorPalette.darkModeBlack
     let backgroundAlternative = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeGrey
     let backgroundFeedbackBottom = O2ClassicColorPalette.o2GradientFourth | O2ClassicColorPalette.darkModeBlack
-    let skeletonWave = O2ClassicColorPalette.grey2 | O2ClassicColorPalette.grey5.withAlphaComponent(0.3)
+    let skeletonWave = O2ClassicColorPalette.grey2 | O2ClassicColorPalette.grey5
 
     // BORDERS
     let borderLight = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeBlack
     let border = O2ClassicColorPalette.grey3 | O2ClassicColorPalette.darkModeGrey
     let borderDark = O2ClassicColorPalette.grey5 | O2ClassicColorPalette.grey5
-    let borderSelected = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2Gem
+    let borderSelected = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2SkyBlue
 
     // BUTTONS
     let buttonDangerBackground = O2ClassicColorPalette.pepper
-    let buttonDangerBackgroundDisabled = O2ClassicColorPalette.pepperLight30 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let buttonDangerBackgroundDisabled = O2ClassicColorPalette.pepperLight30 | O2ClassicColorPalette.darkModeGrey
     let buttonDangerBackgroundSelected = O2ClassicColorPalette.pepperDark
     let buttonDangerBackgroundHover = O2ClassicColorPalette.pepperDark
 
-    let buttonLinkBackgroundSelected = O2ClassicColorPalette.o2SkyBlueLight10 | O2ClassicColorPalette.darkModeGrey
-    let buttonLinkBackgroundSelectedInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.darkModeGrey
+    let buttonLinkBackgroundSelected = O2ClassicColorPalette.o2SkyBlueLight10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let buttonLinkBackgroundSelectedInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.white.withAlphaComponent(0.05)
 
     let buttonPrimaryBackground = O2ClassicColorPalette.o2SkyBlue
-    let buttonPrimaryBackgroundDisabled = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-    let buttonPrimaryBackgroundDisabledInverse = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let buttonPrimaryBackgroundDisabled = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.darkModeGrey
+    let buttonPrimaryBackgroundDisabledInverse = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.darkModeGrey
     let buttonPrimaryBackgroundInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.o2SkyBlue
     let buttonPrimaryBackgroundSelected = O2ClassicColorPalette.o2SkyBlueDark
     let buttonPrimaryBackgroundHover = O2ClassicColorPalette.o2SkyBlueDark
     let buttonPrimaryBackgroundSelectedInverse = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.o2SkyBlueDark
 
     let buttonSecondaryBackground = O2ClassicColorPalette.o2SkyBlue
-    let buttonSecondaryBackgroundDisabled = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let buttonSecondaryBackgroundDisabled = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.darkModeGrey
     let buttonSecondaryBackgroundSelected = O2ClassicColorPalette.o2SkyBlueDark
-    let buttonSecondaryBorderDisabledInverse = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let buttonSecondaryBorderDisabledInverse = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.darkModeGrey
     let buttonSecondaryBorderInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.o2SkyBlue
     let buttonSecondaryBorderSelectedInverse = O2ClassicColorPalette.o2SkyBlueLight50 | O2ClassicColorPalette.o2SkyBlueDark
 
@@ -68,19 +68,19 @@ struct O2ClassicColors: Colors {
     let textLink = O2ClassicColorPalette.o2SkyBlue | O2ClassicColorPalette.o2SkyBlueLight
     let textLinkDanger = O2ClassicColorPalette.pepper
     let textLinkDangerDisabled = O2ClassicColorPalette.pepperLight30 | O2ClassicColorPalette.grey5
-    let textLinkDisabled = O2ClassicColorPalette.o2SkyBlueLight | O2ClassicColorPalette.grey5
+    let textLinkDisabled = O2ClassicColorPalette.o2SkyBlueLight | O2ClassicColorPalette.darkModeGrey6
     let textLinkSnackbar = O2ClassicColorPalette.o2SkyBlueLight | O2ClassicColorPalette.o2SkyBlueLight
 
     // CONTROLS
     let control = O2ClassicColorPalette.grey3 | O2ClassicColorPalette.darkModeGrey6
-    let controlActivated = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2Gem
+    let controlActivated = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2SkyBlue
     let controlError = O2ClassicColorPalette.pepper
-    let loadingBar = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2Gem
-    let loadingBarBackground = O2ClassicColorPalette.o2GemLight30 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let loadingBar = O2ClassicColorPalette.o2Gem | O2ClassicColorPalette.o2SkyBlue
+    let loadingBarBackground = O2ClassicColorPalette.o2GemLight30 | O2ClassicColorPalette.darkModeGrey
 
     // DIVIDERS
     let divider = O2ClassicColorPalette.grey2 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-    let dividerInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let dividerInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.white.withAlphaComponent(0.05)
     let navigationBarDivider = O2ClassicColorPalette.o2Blue | O2ClassicColorPalette.darkModeBlack
 
     // FEEDBACKS
@@ -127,12 +127,12 @@ struct O2ClassicColors: Colors {
     ]
 
     // TAGS
-    var tagBackgroundSuccess = O2ClassicColorPalette.o2Green10 | O2ClassicColorPalette.darkModeGrey
-    var tagBackgroundWarning = O2ClassicColorPalette.orange10 | O2ClassicColorPalette.darkModeGrey
-    var tagBackgroundError = O2ClassicColorPalette.pepper10 | O2ClassicColorPalette.darkModeGrey
-    var tagBackgroundPromo = O2ClassicColorPalette.pink10 | O2ClassicColorPalette.darkModeGrey
-    var tagBackgroundActive = O2ClassicColorPalette.o2Blue10 | O2ClassicColorPalette.darkModeGrey
-    var tagBackgroundInactive = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeGrey
+    var tagBackgroundSuccess = O2ClassicColorPalette.o2Green10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundWarning = O2ClassicColorPalette.orange10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundError = O2ClassicColorPalette.pepper10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundPromo = O2ClassicColorPalette.pink10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundActive = O2ClassicColorPalette.o2Blue10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundInactive = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
     var textTagSuccess = O2ClassicColorPalette.o2Green75 | O2ClassicColorPalette.o2Green40
     var textTagWarning = O2ClassicColorPalette.orange80 | O2ClassicColorPalette.orange40
     var textTagError = O2ClassicColorPalette.pepper70 | O2ClassicColorPalette.pepper40

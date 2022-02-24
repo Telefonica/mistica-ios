@@ -72,7 +72,7 @@ struct BlauColors: Colors {
     let textLinkSnackbar = BlauColorPalette.blauPurple30
 
     // CONTROLS
-    let control = BlauColorPalette.grey2 | BlauColorPalette.grey5
+    let control = BlauColorPalette.grey2 | BlauColorPalette.darkModeGrey
     let controlActivated = BlauColorPalette.blauBlueSecondary
     let controlError = BlauColorPalette.blauRed
     let loadingBar = BlauColorPalette.blauBlueSecondary | BlauColorPalette.blauBluePrimary
@@ -127,12 +127,12 @@ struct BlauColors: Colors {
     ]
 
     // TAGS
-    var tagBackgroundSuccess = BlauColorPalette.blauGreen10 | BlauColorPalette.darkModeGrey
-    var tagBackgroundWarning = BlauColorPalette.blauYellow10 | BlauColorPalette.darkModeGrey
-    var tagBackgroundError = BlauColorPalette.blauRed10 | BlauColorPalette.darkModeGrey
-    var tagBackgroundPromo = BlauColorPalette.blauPurple10 | BlauColorPalette.darkModeGrey
-    var tagBackgroundActive = BlauColorPalette.blauBlueSecondary10 | BlauColorPalette.darkModeGrey
-    var tagBackgroundInactive = BlauColorPalette.grey2 | BlauColorPalette.darkModeGrey
+    var tagBackgroundSuccess = BlauColorPalette.blauGreen10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundWarning = BlauColorPalette.blauYellow10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundError = BlauColorPalette.blauRed10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundPromo = BlauColorPalette.blauPurple10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundActive = BlauColorPalette.blauBlueSecondary10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var tagBackgroundInactive = BlauColorPalette.grey2 | BlauColorPalette.white.withAlphaComponent(0.05)
     var textTagSuccess = BlauColorPalette.blauGreen70 | BlauColorPalette.blauGreen30
     var textTagWarning = BlauColorPalette.blauYellow70 | BlauColorPalette.blauYellow40
     var textTagError = BlauColorPalette.blauRed70 | BlauColorPalette.blauRed40

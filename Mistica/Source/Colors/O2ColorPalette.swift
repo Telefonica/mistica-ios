@@ -30,8 +30,8 @@ struct O2Colors: Colors {
 
     // BUTTONS
     let buttonDangerBackground = O2ColorPalette.pepper
-    let buttonDangerBackgroundDisabled = O2ColorPalette.pepperLight30 | O2ColorPalette.darkModeGrey
-    let buttonDangerBackgroundSelected = O2ColorPalette.pepperDark
+    let buttonDangerBackgroundDisabled = O2ColorPalette.pepper20 | O2ColorPalette.darkModeGrey
+    let buttonDangerBackgroundSelected = O2ColorPalette.pepper60
 
     let buttonLinkBackgroundSelected = O2ColorPalette.o2BluePrimary10 | O2ColorPalette.white.withAlphaComponent(0.05)
     let buttonLinkBackgroundSelectedInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.white.withAlphaComponent(0.05)
@@ -66,7 +66,7 @@ struct O2Colors: Colors {
 
     let textLink = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimaryLight50
     let textLinkDanger = O2ColorPalette.pepper
-    let textLinkDangerDisabled = O2ColorPalette.pepperLight30 | O2ColorPalette.grey5
+    let textLinkDangerDisabled = O2ColorPalette.pepper20 | O2ColorPalette.grey5
     let textLinkDisabled = O2ColorPalette.o2BluePrimaryLight50 | O2ColorPalette.darkModeGrey6
     let textLinkSnackbar = O2ColorPalette.o2BluePrimaryLight50
 
@@ -175,6 +175,7 @@ public enum O2ColorPalette {
     public static let o2Purple30 = UIColor(hex: "#CA9ACB")!
     public static let pepper = UIColor(hex: "#FF374A")!
     public static let pepper10 = UIColor(hex: "#FEEBED")!
+    public static let pepper20 = UIColor(hex: "#FCC3C9")!
     public static let pepper40 = UIColor(hex: "#FF7380")!
     public static let pepper60 = UIColor(hex: "#C32B3D")!
     public static let pepperDark = UIColor(hex: "#D73241")!

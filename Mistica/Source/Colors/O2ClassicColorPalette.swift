@@ -181,7 +181,7 @@ public enum O2ClassicColorPalette {
     public static let orange40 = UIColor(hex: "#FFA57A")!
     public static let orange80 = UIColor(hex: "#73391D")!
     public static let coral = UIColor(hex: "#FF706E")!
-    
+
     public static let pink = UIColor(hex: "#EB3C7D")!
     public static let pink10 = UIColor(hex: "#FDEBF2")!
     public static let pink40 = UIColor(hex: "#F59DBE")!

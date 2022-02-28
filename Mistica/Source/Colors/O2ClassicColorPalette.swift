@@ -151,7 +151,7 @@ public enum O2ClassicColorPalette {
     public static let o2SkyBlue = UIColor(hex: "#0090D0")!
     public static let o2SkyBlue55 = UIColor(hex: "#057DB2")!
 
-    public static let o2SkyBlueLight = UIColor(hex: "#E9F5FB")!
+    public static let o2SkyBlueLight = UIColor(hex: "#65B4E4")!
     public static let o2SkyBlueLight10 = UIColor(hex: "#E9F5FB")!
     public static let o2SkyBlueLight20 = UIColor(hex: "#D0E8F6")!
     public static let o2SkyBlueLight45 = UIColor(hex: "#80C7E7")!

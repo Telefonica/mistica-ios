@@ -161,15 +161,15 @@ public enum BlauColorPalette {
     public static let blauYellow60 = UIColor(hex: "#F09500")!
     public static let blauYellow70 = UIColor(hex: "#996614")!
     public static let blauGreen = UIColor(hex: "#30D300")!
+    public static let blauGreen10 = UIColor(hex: "#EAFBE5")!
+    public static let blauGreen30 = UIColor(hex: "#97E980")!
+    public static let blauGreen70 = UIColor(hex: "#1D7F00")!
     public static let blauRed = UIColor(hex: "#F64417")!
     public static let blauRed10 = UIColor(hex: "#FEECE8")!
     public static let blauRed20 = UIColor(hex: "#FCC7B9")!
     public static let blauRed30 = UIColor(hex: "#FA9E87")!
     public static let blauRed40 = UIColor(hex: "#F97C5D")!
     public static let blauRed70 = UIColor(hex: "#C93712")!
-    public static let blauGreen10 = UIColor(hex: "#EAFBE5")!
-    public static let blauGreen30 = UIColor(hex: "#97E980")!
-    public static let blauGreen70 = UIColor(hex: "#1D7F00")!
 
     public static let grey1 = UIColor(hex: "#F5F9FA")!
     public static let grey2 = UIColor(hex: "#E7E7E7")!

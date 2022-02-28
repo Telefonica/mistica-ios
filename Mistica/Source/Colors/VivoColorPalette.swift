@@ -144,29 +144,33 @@ struct VivoColors: Colors {
 public enum VivoColorPalette {
     public static let vivoPurple = UIColor(hex: "#660099")!
     public static let vivoPurpleDark = UIColor(hex: "#461E5F")!
-    public static let vivoPurpleLight90 = UIColor(hex: "#751AA3")!
-    public static let vivoPurpleLight80 = UIColor(hex: "#8433AD")!
-    public static let vivoPurpleLight50 = UIColor(hex: "#B280CC")!
-    public static let vivoPurpleLight20 = UIColor(hex: "#E0CCEB")!
     public static let vivoPurpleLight10 = UIColor(hex: "#EFE5F4")!
+    public static let vivoPurpleLight20 = UIColor(hex: "#E0CCEB")!
+    public static let vivoPurpleLight50 = UIColor(hex: "#B280CC")!
+    public static let vivoPurpleLight80 = UIColor(hex: "#8433AD")!
+    public static let vivoPurpleLight90 = UIColor(hex: "#751AA3")!
+
     public static let vivoGreen = UIColor(hex: "#99CC33")!
-    public static let vivoGreenDark = UIColor(hex: "#33A14A")!
+    public static let vivoGreenDark = UIColor(hex: "#225C3D")!
     public static let vivoGreenLight10 = UIColor(hex: "#EDF8E8")!
     public static let vivoGreenLight30 = UIColor(hex: "#91AE9E")!
-    public static let vivoGreenLight40 = UIColor(hex: "#D6EAAD")!
+
     public static let vivoBlue = UIColor(hex: "#00ABDB")!
+
     public static let orange = UIColor(hex: "#FF9900")!
-    public static let orangeDark = UIColor(hex: "#FA6324")!
-    public static let orangeLight = UIColor(hex: "#FFD699")!
+    public static let orangeDark = UIColor(hex: "#972A1D")!
     public static let orangeLight10 = UIColor(hex: "#FFEFE1")!
     public static let orangeLight40 = UIColor(hex: "#FFB84C")!
+
     public static let pink = UIColor(hex: "#EB3D7D")!
+
     public static let pepper = UIColor(hex: "#CC1F59")!
     public static let pepperDark = UIColor(hex: "#B71D63")!
     public static let pepperDark80 = UIColor(hex: "#8F2052")!
     public static let pepperLight10 = UIColor(hex: "#FCE4EF")!
     public static let pepperLight30 = UIColor(hex: "#F7B1CB")!
     public static let pepperLight40 = UIColor(hex: "#DB628B")!
+
     public static let grey1 = UIColor(hex: "#F6F6F6")!
     public static let grey2 = UIColor(hex: "#EEEEEE")!
     public static let grey3 = UIColor(hex: "#DDDDDD")!

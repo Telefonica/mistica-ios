@@ -1,3 +1,10 @@
+## [14.2.2](https://github.com/Telefonica/mistica-ios/compare/v14.2.1...v14.2.2) (2022-03-02)
+
+
+### Bug Fixes
+
+* **RadioButton:** Accesibility traits ([8263ca6](https://github.com/Telefonica/mistica-ios/commit/8263ca6fc8d923437f8287ae4510f212708dbb1e))
+
 ## [14.2.1](https://github.com/Telefonica/mistica-ios/compare/v14.2.0...v14.2.1) (2022-01-26)
 
 

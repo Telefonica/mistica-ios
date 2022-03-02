@@ -1,4 +1,4 @@
-{
+q{
     "plugins": [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
@@ -11,5 +11,5 @@
         }],
         "@semantic-release/github"
     ],
-    "branches": ["14.2.1","main"]
+    "branches": ["14.2.2","main"]
 }

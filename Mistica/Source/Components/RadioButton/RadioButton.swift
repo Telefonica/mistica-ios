@@ -55,10 +55,10 @@ public class RadioButton: UIControl {
 
     override public var accessibilityTraits: UIAccessibilityTraits {
         get {
-            if super.accessibilityTraits != customAccessiblityTraits {
-                return super.accessibilityTraits
+            if isActivated {
+                return super.accessibilityTraits.union([.button, .selected])
             } else {
-                return customAccessiblityTraits
+                return super.accessibilityTraits.union([.button])
             }
         }
         set {
@@ -94,14 +94,6 @@ public class RadioButton: UIControl {
 }
 
 private extension RadioButton {
-    var customAccessiblityTraits: UIAccessibilityTraits {
-        if isActivated {
-            return [.button, .selected]
-        } else {
-            return [.button]
-        }
-    }
-
     func commonInit() {
         updateViewStyle(activated: isActivated)
 

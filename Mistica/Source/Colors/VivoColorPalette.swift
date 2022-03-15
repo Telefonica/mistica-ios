@@ -66,6 +66,7 @@ struct VivoColors: Colors {
     let textButtonSecondaryInverseSelected = VivoColorPalette.white | VivoColorPalette.grey4
 
     let textLink = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight50
+    let textLinkInverse = VivoColorPalette.white | VivoColorPalette.vivoPurpleLight50
     let textLinkDanger = VivoColorPalette.pepper
     let textLinkDangerDisabled = VivoColorPalette.pepperLight30 | VivoColorPalette.grey5
     let textLinkDisabled = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.darkModeGrey6

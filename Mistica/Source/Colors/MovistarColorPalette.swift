@@ -67,6 +67,7 @@ struct MovistarColors: Colors {
     let textButtonSecondaryInverseSelected = MovistarColorPalette.white | MovistarColorPalette.grey4
 
     let textLink = MovistarColorPalette.movistarBlue | MovistarColorPalette.movistarBlue
+    let textLinkInverse = MovistarColorPalette.white | MovistarColorPalette.movistarBlue
     let textLinkDanger = MovistarColorPalette.pepper
     let textLinkDangerDisabled = MovistarColorPalette.pepper20 | MovistarColorPalette.grey5
     let textLinkDisabled = MovistarColorPalette.movistarBlue30 | MovistarColorPalette.grey6

@@ -156,6 +156,11 @@ public extension UIColor {
         MisticaConfig.currentColors.textLink
     }
 
+    @objc(textLinkInverseColor)
+    static var textLinkInverse: UIColor {
+        MisticaConfig.currentColors.textLinkInverse
+    }
+
     @objc(textLinkDangerColor)
     static var textLinkDanger: UIColor {
         MisticaConfig.currentColors.textLinkDanger

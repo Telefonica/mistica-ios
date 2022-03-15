@@ -66,6 +66,7 @@ struct O2ClassicColors: Colors {
     let textButtonSecondaryInverseSelected = O2ClassicColorPalette.white | O2ClassicColorPalette.grey4
 
     let textLink = O2ClassicColorPalette.o2SkyBlue | O2ClassicColorPalette.o2SkyBlueLight
+    let textLinkInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.o2SkyBlueLight
     let textLinkDanger = O2ClassicColorPalette.pepper
     let textLinkDangerDisabled = O2ClassicColorPalette.pepper20 | O2ClassicColorPalette.grey5
     let textLinkDisabled = O2ClassicColorPalette.o2SkyBlueLight | O2ClassicColorPalette.darkModeGrey6

@@ -151,6 +151,7 @@ public enum O2ColorPalette {
     public static let o2BlueMid = UIColor(hex: "#0090D0")!
     public static let o2BlueLight = UIColor(hex: "#41B6E6")!
     public static let o2BlueLight30 = UIColor(hex: "#C6E9F7")!
+    public static let o2BlueLight35 = UIColor(hex: "#8DD3F0")!
 
     public static let o2Teal = UIColor(hex: "#01B7B4")!
     public static let o2Green = UIColor(hex: "#91C90E")!

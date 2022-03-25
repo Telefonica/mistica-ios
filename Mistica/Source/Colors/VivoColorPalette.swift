@@ -152,6 +152,7 @@ public enum VivoColorPalette {
     public static let vivoPurpleLight90 = UIColor(hex: "#751AA3")!
 
     public static let vivoGreen = UIColor(hex: "#99CC33")!
+    public static let vivoGreen25 = UIColor(hex: "#D6EBAD")!
     public static let vivoGreenDark = UIColor(hex: "#225C3D")!
     public static let vivoGreenLight10 = UIColor(hex: "#EDF8E8")!
     public static let vivoGreenLight30 = UIColor(hex: "#91AE9E")!
@@ -159,6 +160,7 @@ public enum VivoColorPalette {
     public static let vivoBlue = UIColor(hex: "#00ABDB")!
 
     public static let orange = UIColor(hex: "#FF9900")!
+    public static let orange25 = UIColor(hex: "#FFD699")!
     public static let orangeDark = UIColor(hex: "#972A1D")!
     public static let orangeLight10 = UIColor(hex: "#FFEFE1")!
     public static let orangeLight40 = UIColor(hex: "#FFB84C")!

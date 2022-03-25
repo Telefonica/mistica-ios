@@ -155,6 +155,7 @@ public enum MovistarColorPalette {
 
     public static let movistarGreen = UIColor(hex: "#5CB615")!
     public static let movistarGreen10 = UIColor(hex: "#EFF8E8")!
+    public static let movistarGreen20 = UIColor(hex: "#CEE9B9")!
     public static let movistarGreen30 = UIColor(hex: "#ADDA8A")!
     public static let movistarGreen40 = UIColor(hex: "#8DCC5B")!
     public static let movistarGreen60 = UIColor(hex: "#499110")!
@@ -169,6 +170,7 @@ public enum MovistarColorPalette {
 
     public static let egg = UIColor(hex: "#F28D15")!
     public static let egg10 = UIColor(hex: "#FEF4E8")!
+    public static let egg25 = UIColor(hex: "#FAD1A1")!
     public static let egg40 = UIColor(hex: "#F6AF5B")!
     public static let egg80 = UIColor(hex: "#6D3F09")!
 

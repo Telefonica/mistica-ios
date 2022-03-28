@@ -65,7 +65,7 @@ struct BlauColors: Colors {
     let textButtonSecondaryInverseSelected = BlauColorPalette.white | BlauColorPalette.blauBlueSecondary60
     let textButtonSecondarySelected = BlauColorPalette.blauBlueSecondary60 | BlauColorPalette.blauBlueSecondary60
 
-    let textLink = BlauColorPalette.blauPurple
+    let textLink = BlauColorPalette.blauPurple | BlauColorPalette.blauPurple30
     let textLinkInverse = BlauColorPalette.white | BlauColorPalette.blauPurple
     let textLinkDanger = BlauColorPalette.blauRed
     let textLinkDangerDisabled = BlauColorPalette.blauRed20 | BlauColorPalette.grey5

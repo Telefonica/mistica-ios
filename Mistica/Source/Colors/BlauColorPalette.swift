@@ -18,7 +18,7 @@ struct BlauColors: Colors {
     let backgroundFeedbackBottom = BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack
     let backgroundOverlay = BlauColorPalette.blauBlueSecondary.withAlphaComponent(0.75) | BlauColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = BlauColorPalette.grey2 | BlauColorPalette.darkModeGrey
-    let backgroundSkeletonInverse = BlauColorPalette.white | BlauColorPalette.darkModeGrey
+    let backgroundSkeletonInverse = BlauColorPalette.white.withAlphaComponent(0.2) | BlauColorPalette.darkModeGrey
     let navigationBarBackground = BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack
     let skeletonWave = BlauColorPalette.grey2 | BlauColorPalette.grey5
 

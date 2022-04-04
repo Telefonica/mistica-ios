@@ -54,6 +54,18 @@ public class FeedbackView: UIView {
         return animation
     }()
 
+    var assetAccessibilityIdentifier: String? {
+        get {
+            icon.accessibilityIdentifier
+        }
+        set {
+            icon.isAccessibilityElement = true
+            icon.accessibilityIdentifier = newValue
+            animatedIcon.isAccessibilityElement = true
+            animatedIcon.accessibilityIdentifier = newValue
+        }
+    }
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = title
@@ -62,6 +74,16 @@ public class FeedbackView: UIView {
         label.numberOfLines = 0
         return label
     }()
+
+    var titleAccessibilityIdentifier: String? {
+        get {
+            titleLabel.accessibilityIdentifier
+        }
+        set {
+            titleLabel.isAccessibilityElement = true
+            titleLabel.accessibilityIdentifier = newValue
+        }
+    }
 
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
@@ -72,6 +94,16 @@ public class FeedbackView: UIView {
         return label
     }()
 
+    var subtitleAccessibilityIdentifier: String? {
+        get {
+            subtitleLabel.accessibilityIdentifier
+        }
+        set {
+            subtitleLabel.isAccessibilityElement = true
+            subtitleLabel.accessibilityIdentifier = newValue
+        }
+    }
+
     private lazy var errorReferenceLabel: UILabel = {
         let label = UILabel()
         label.text = errorReference
@@ -80,6 +112,16 @@ public class FeedbackView: UIView {
         label.numberOfLines = 0
         return label
     }()
+
+    var errorReferenceAccessibilityIdentifier: String? {
+        get {
+            errorReferenceLabel.accessibilityIdentifier
+        }
+        set {
+            errorReferenceLabel.isAccessibilityElement = true
+            errorReferenceLabel.accessibilityIdentifier = newValue
+        }
+    }
 
     private lazy var primaryButton: Button? = {
         let button: Button?
@@ -95,6 +137,16 @@ public class FeedbackView: UIView {
         return button
     }()
 
+    var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            primaryButton?.accessibilityIdentifier
+        }
+        set {
+            primaryButton?.isAccessibilityElement = true
+            primaryButton?.accessibilityIdentifier = newValue
+        }
+    }
+
     private lazy var secondaryButton: Button? = {
         let button: Button?
         switch secondaryAction {
@@ -108,6 +160,16 @@ public class FeedbackView: UIView {
         button?.addTarget(self, action: #selector(secondaryButtonTapped), for: .touchUpInside)
         return button
     }()
+
+    var secondaryButtonAccessibilityIdentifier: String? {
+        get {
+            secondaryButton?.accessibilityIdentifier
+        }
+        set {
+            secondaryButton?.isAccessibilityElement = true
+            secondaryButton?.accessibilityIdentifier = newValue
+        }
+    }
 
     private lazy var buttonsView: UIView = {
         let buttonsView = UIStackView(arrangedSubviews: [])

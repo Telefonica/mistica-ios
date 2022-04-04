@@ -54,7 +54,7 @@ public class FeedbackView: UIView {
         return animation
     }()
 
-    var iconAccessibilityIdentifier: String? {
+    var assetAccessibilityIdentifier: String? {
         get {
             icon.accessibilityIdentifier ?? animatedIcon.accessibilityIdentifier
         }
@@ -72,7 +72,6 @@ public class FeedbackView: UIView {
         label.font = .textPreset6(weight: .light)
         label.textColor = style.feedbackTextPrimary
         label.numberOfLines = 0
-        label.isAccessibilityElement = true
         return label
     }()
 
@@ -92,7 +91,6 @@ public class FeedbackView: UIView {
         label.font = .textPreset4(weight: .light)
         label.textColor = style.feedbackTextSecondary
         label.numberOfLines = 0
-        label.isAccessibilityElement = true
         return label
     }()
 
@@ -136,7 +134,6 @@ public class FeedbackView: UIView {
             button = nil
         }
         button?.addTarget(self, action: #selector(primaryButtonTapped), for: .touchUpInside)
-        button?.isAccessibilityElement = true
         return button
     }()
 

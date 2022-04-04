@@ -56,7 +56,7 @@ public class FeedbackView: UIView {
 
     var assetAccessibilityIdentifier: String? {
         get {
-            icon.accessibilityIdentifier ?? animatedIcon.accessibilityIdentifier
+            icon.accessibilityIdentifier
         }
         set {
             icon.isAccessibilityElement = true

@@ -114,6 +114,8 @@ public class FeedbackView: UIView {
         label.font = .textPreset2(weight: .regular)
         label.textColor = style.feedbackTextSecondary
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
+        label.accessibilityIdentifier = DefaultIdentifiers.Feedback.errorLabel
         return label
     }()
 
@@ -122,7 +124,6 @@ public class FeedbackView: UIView {
             errorReferenceLabel.accessibilityIdentifier
         }
         set {
-            errorReferenceLabel.isAccessibilityElement = true
             errorReferenceLabel.accessibilityIdentifier = newValue
         }
     }
@@ -163,6 +164,8 @@ public class FeedbackView: UIView {
             button = nil
         }
         button?.addTarget(self, action: #selector(secondaryButtonTapped), for: .touchUpInside)
+        button?.isAccessibilityElement = true
+        button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.secondButton
         return button
     }()
 
@@ -171,7 +174,6 @@ public class FeedbackView: UIView {
             secondaryButton?.accessibilityIdentifier
         }
         set {
-            secondaryButton?.isAccessibilityElement = true
             secondaryButton?.accessibilityIdentifier = newValue
         }
     }

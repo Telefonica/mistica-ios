@@ -13,6 +13,8 @@ enum DefaultIdentifiers {
         static let asset: String = "icon"
         static let title: String = "title"
         static let subtitle: String = "subtitle"
+        static let errorLabel: String = "error_reference"
         static let firstButton: String = "first_button"
+        static let secondButton: String = "second_button"
     }
 }

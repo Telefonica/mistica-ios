@@ -1,8 +1,9 @@
 //
 //  DefaultIdentifiers.swift
-//  Mistica
 //
-//  Created by Víctor Jimenez on 5/4/22.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation

@@ -42,6 +42,8 @@ public class FeedbackView: UIView {
         let icon = UIImageView()
         icon.contentMode = .scaleAspectFit
         icon.tintColor = .brand
+        icon.isAccessibilityElement = true
+        icon.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return icon
     }()
 
@@ -51,6 +53,8 @@ public class FeedbackView: UIView {
         animation.contentMode = .scaleAspectFit
         animation.loopMode = .playOnce
         animation.isUserInteractionEnabled = false
+        animation.isAccessibilityElement = true
+        animation.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return animation
     }()
 
@@ -59,9 +63,7 @@ public class FeedbackView: UIView {
             icon.accessibilityIdentifier
         }
         set {
-            icon.isAccessibilityElement = true
             icon.accessibilityIdentifier = newValue
-            animatedIcon.isAccessibilityElement = true
             animatedIcon.accessibilityIdentifier = newValue
         }
     }
@@ -72,6 +74,8 @@ public class FeedbackView: UIView {
         label.font = .textPreset6(weight: .light)
         label.textColor = style.feedbackTextPrimary
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
+        label.accessibilityIdentifier = DefaultIdentifiers.Feedback.title
         return label
     }()
 
@@ -80,7 +84,6 @@ public class FeedbackView: UIView {
             titleLabel.accessibilityIdentifier
         }
         set {
-            titleLabel.isAccessibilityElement = true
             titleLabel.accessibilityIdentifier = newValue
         }
     }
@@ -91,6 +94,8 @@ public class FeedbackView: UIView {
         label.font = .textPreset4(weight: .light)
         label.textColor = style.feedbackTextSecondary
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
+        label.accessibilityIdentifier = DefaultIdentifiers.Feedback.subtitle
         return label
     }()
 
@@ -99,7 +104,6 @@ public class FeedbackView: UIView {
             subtitleLabel.accessibilityIdentifier
         }
         set {
-            subtitleLabel.isAccessibilityElement = true
             subtitleLabel.accessibilityIdentifier = newValue
         }
     }
@@ -134,6 +138,8 @@ public class FeedbackView: UIView {
             button = nil
         }
         button?.addTarget(self, action: #selector(primaryButtonTapped), for: .touchUpInside)
+        button?.isAccessibilityElement = true
+        button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.firstButton
         return button
     }()
 
@@ -142,7 +148,6 @@ public class FeedbackView: UIView {
             primaryButton?.accessibilityIdentifier
         }
         set {
-            primaryButton?.isAccessibilityElement = true
             primaryButton?.accessibilityIdentifier = newValue
         }
     }

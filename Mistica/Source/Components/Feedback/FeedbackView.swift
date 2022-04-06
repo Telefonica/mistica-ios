@@ -42,6 +42,8 @@ public class FeedbackView: UIView {
         let icon = UIImageView()
         icon.contentMode = .scaleAspectFit
         icon.tintColor = .brand
+        icon.isAccessibilityElement = true
+        icon.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return icon
     }()
 
@@ -51,8 +53,20 @@ public class FeedbackView: UIView {
         animation.contentMode = .scaleAspectFit
         animation.loopMode = .playOnce
         animation.isUserInteractionEnabled = false
+        animation.isAccessibilityElement = true
+        animation.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return animation
     }()
+
+    var assetAccessibilityIdentifier: String? {
+        get {
+            icon.accessibilityIdentifier
+        }
+        set {
+            icon.accessibilityIdentifier = newValue
+            animatedIcon.accessibilityIdentifier = newValue
+        }
+    }
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -60,8 +74,19 @@ public class FeedbackView: UIView {
         label.font = .textPreset6(weight: .light)
         label.textColor = style.feedbackTextPrimary
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
+        label.accessibilityIdentifier = DefaultIdentifiers.Feedback.title
         return label
     }()
+
+    var titleAccessibilityIdentifier: String? {
+        get {
+            titleLabel.accessibilityIdentifier
+        }
+        set {
+            titleLabel.accessibilityIdentifier = newValue
+        }
+    }
 
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
@@ -69,8 +94,19 @@ public class FeedbackView: UIView {
         label.font = .textPreset4(weight: .light)
         label.textColor = style.feedbackTextSecondary
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
+        label.accessibilityIdentifier = DefaultIdentifiers.Feedback.subtitle
         return label
     }()
+
+    var subtitleAccessibilityIdentifier: String? {
+        get {
+            subtitleLabel.accessibilityIdentifier
+        }
+        set {
+            subtitleLabel.accessibilityIdentifier = newValue
+        }
+    }
 
     private lazy var errorReferenceLabel: UILabel = {
         let label = UILabel()
@@ -78,8 +114,19 @@ public class FeedbackView: UIView {
         label.font = .textPreset2(weight: .regular)
         label.textColor = style.feedbackTextSecondary
         label.numberOfLines = 0
+        label.isAccessibilityElement = true
+        label.accessibilityIdentifier = DefaultIdentifiers.Feedback.errorLabel
         return label
     }()
+
+    var errorReferenceAccessibilityIdentifier: String? {
+        get {
+            errorReferenceLabel.accessibilityIdentifier
+        }
+        set {
+            errorReferenceLabel.accessibilityIdentifier = newValue
+        }
+    }
 
     private lazy var primaryButton: Button? = {
         let button: Button?
@@ -92,8 +139,19 @@ public class FeedbackView: UIView {
             button = nil
         }
         button?.addTarget(self, action: #selector(primaryButtonTapped), for: .touchUpInside)
+        button?.isAccessibilityElement = true
+        button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.firstButton
         return button
     }()
+
+    var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            primaryButton?.accessibilityIdentifier
+        }
+        set {
+            primaryButton?.accessibilityIdentifier = newValue
+        }
+    }
 
     private lazy var secondaryButton: Button? = {
         let button: Button?
@@ -106,8 +164,19 @@ public class FeedbackView: UIView {
             button = nil
         }
         button?.addTarget(self, action: #selector(secondaryButtonTapped), for: .touchUpInside)
+        button?.isAccessibilityElement = true
+        button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.secondButton
         return button
     }()
+
+    var secondaryButtonAccessibilityIdentifier: String? {
+        get {
+            secondaryButton?.accessibilityIdentifier
+        }
+        set {
+            secondaryButton?.accessibilityIdentifier = newValue
+        }
+    }
 
     private lazy var buttonsView: UIView = {
         let buttonsView = UIStackView(arrangedSubviews: [])

@@ -33,6 +33,60 @@ public class FeedbackViewController: UIViewController {
 }
 
 public extension FeedbackViewController {
+    var assetAccessibilityIdentifier: String? {
+        get {
+            feedbackView.assetAccessibilityIdentifier
+        }
+        set {
+            feedbackView.assetAccessibilityIdentifier = newValue
+        }
+    }
+
+    var titleAccessibilityIdentifier: String? {
+        get {
+            feedbackView.titleAccessibilityIdentifier
+        }
+        set {
+            feedbackView.titleAccessibilityIdentifier = newValue
+        }
+    }
+
+    var subtitleAccessibilityIdentifier: String? {
+        get {
+            feedbackView.subtitleAccessibilityIdentifier
+        }
+        set {
+            feedbackView.subtitleAccessibilityIdentifier = newValue
+        }
+    }
+
+    var errorReferenceAccessibilityIdentifier: String? {
+        get {
+            feedbackView.errorReferenceAccessibilityIdentifier
+        }
+        set {
+            feedbackView.errorReferenceAccessibilityIdentifier = newValue
+        }
+    }
+
+    var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            feedbackView.primaryButtonAccessibilityIdentifier
+        }
+        set {
+            feedbackView.primaryButtonAccessibilityIdentifier = newValue
+        }
+    }
+
+    var secondaryButtonAccessibilityIdentifier: String? {
+        get {
+            feedbackView.secondaryButtonAccessibilityIdentifier
+        }
+        set {
+            feedbackView.secondaryButtonAccessibilityIdentifier = newValue
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()

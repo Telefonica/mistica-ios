@@ -61,9 +61,9 @@ private extension BrandStyle {
     func assetPath(_ name: String, variant: ThemeVariant) -> String {
         switch variant {
         case .standard:
-            return "\(rawValue)/\(name)"
+            return "\(description)/\(name)"
         default:
-            return "\(rawValue)/\(variant.rawValue)/\(name)"
+            return "\(description)/\(variant.rawValue)/\(name)"
         }
     }
 }

@@ -60,8 +60,20 @@ private extension Button.Style {
     }
 
     static var croutonCriticalLink: Button.Style {
-        var style = Button.Style.linkInverse
+        let backgroundColor: UIColor = .clear
+
+        var style = Button.Style(
+            allowsBleedingAlignment: true,
+            stateStyleByState: [
+                .normal: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textLinkDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .loading: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
+            ]
+        )
+
         style.overriddenSizes = croutonOverriddenSizes
+
         return style
     }
 

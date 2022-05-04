@@ -59,6 +59,7 @@ protocol Colors {
     var textButtonSecondaryInverseDisabled: UIColor { get }
     var textButtonSecondaryInverseSelected: UIColor { get }
     var textLink: UIColor { get }
+    var textLinkInverse: UIColor { get }
     var textLinkDanger: UIColor { get }
     var textLinkDangerDisabled: UIColor { get }
     var textLinkDisabled: UIColor { get }

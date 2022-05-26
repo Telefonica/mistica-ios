@@ -39,9 +39,6 @@ jobs:
           path: Carthage
           key: mistica-ios-carthage-${{ hashFiles('Cartfile.resolved') }}
 
-      - name: Setup needed external dependencies
-        run:  bundle exec fastlane setup
-
       - name: Provision Novum Mac
         uses: ./.github/shared-actions/novum/mac-provisioning
         with:
@@ -50,6 +47,9 @@ jobs:
           provisioning-profiles: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
           certificate-password: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
           apple-system-certs: ${{ secrets.APPLE_CERTS }}
+
+      - name: Setup needed external dependencies
+        run:  bundle exec fastlane setup
 
       - name: Build Mistica catalog and upload to AppCenter
         run:  bundle exec fastlane build_and_deploy_mistica_catalog

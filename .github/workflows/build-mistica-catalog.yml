@@ -27,13 +27,13 @@ jobs:
           path: .github/shared-actions
 
       - name: RubyGems Cache
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v3.0.2
         with:
           path: vendor/bundle
           key: mistica-ios-gems-${{ hashFiles('Gemfile.lock') }}
 
       - name: Carthage Cache
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v3.0.2
         id: carthage-cache
         with:
           path: Carthage

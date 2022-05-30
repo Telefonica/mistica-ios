@@ -18,16 +18,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
-      - name: Install rbenv
-        run: brew install rbenv
-      
+
+      - name: Checkout Telefonica/github-actions repo
+        uses: actions/checkout@v2
+        with:
+          repository: Telefonica/github-actions
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+          path: .github/shared-actions
+
       - name: RubyGems Cache
         uses: actions/cache@v2.1.6
         with:
           path: vendor/bundle
           key: mistica-ios-gems-${{ hashFiles('Gemfile.lock') }}
-          
+
       - name: Carthage Cache
         uses: actions/cache@v2.1.6
         id: carthage-cache
@@ -35,52 +39,19 @@ jobs:
           path: Carthage
           key: mistica-ios-carthage-${{ hashFiles('Cartfile.resolved') }}
 
-      - name: Setup rbenv environment
-        run: echo "~/.rbenv/shims" >> $GITHUB_PATH
+      - name: Provision Novum Mac
+        uses: ./.github/shared-actions/novum/mac-provisioning
+        with:
+          setup-ruby: true
+          brand-variant: MisticaApp
+          provisioning-profiles: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
+          certificate-password: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
+          apple-system-certs: ${{ secrets.APPLE_CERTS }}
 
-      - name: Setup Ruby
-        run: |
-          rbenv install 2.6.0 -s
-          rbenv local 2.6.0
-          which ruby
-          rbenv which ruby
-      
-      - name: Bundle Install
-        run: |
-          gem install bundle
-          bundle config path vendor/bundle
-          bundle install
-                
-      - name: Setup needed external dependencies 
+      - name: Setup needed external dependencies
         run:  bundle exec fastlane setup
 
-      - name: Uninstall provisioning profiles and certificate
-        run: bash /usr/local/bin/install_prov_profiles_and_cert_in_osx -u
-        shell: bash
-        env:
-          BRAND_VARIANT: MisticaApp
-          IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
-          ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
-          IOS_APPLE_CERTS: ${{ secrets.APPLE_CERTS }}
-
-      - name: Install provisioning profiles and certificate
-        run: bash /usr/local/bin/install_prov_profiles_and_cert_in_osx -i
-        shell: bash
-        env:
-          BRAND_VARIANT: MisticaApp
-          IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
-          ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
-          IOS_APPLE_CERTS: ${{ secrets.APPLE_CERTS }}
-
-      - name: Build Mistica catalog and upload to AppCenter 
+      - name: Build Mistica catalog and upload to AppCenter
         run:  bundle exec fastlane build_and_deploy_mistica_catalog
         env:
-          APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }}
-
-      - name: Check provisioning profiles and certificate expiry day
-        run: bash /usr/local/bin/check_cert_and_prov_profiles_expiration_date -p -c
-        env:
-          BRAND_VARIANT: MisticaApp
-          IOS_ENTERPRISE_PROV_PROFILES: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
-          ENTERPRISE_CERT_PWD: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
-          IOS_APPLE_CERTS: ${{ secrets.APPLE_CERTS }}
+          APPCENTER_API_TOKEN: ${{ secrets.APPCENTER_API_TOKEN }} 

@@ -1,3 +1,38 @@
+# [16.0.0](https://github.com/Telefonica/mistica-ios/compare/v15.2.1...v16.0.0) (2022-05-30)
+
+
+### Bug Fixes
+
+* **RadioButton:** Accesibility traits ([#170](https://github.com/Telefonica/mistica-ios/issues/170)) ([447a167](https://github.com/Telefonica/mistica-ios/commit/447a1672c347a7a7ecb739301b2080d8bc698f1b))
+
+
+* IOS-7087 Remove logic in error and info feedback screen in asset in vivo (#183) ([a538277](https://github.com/Telefonica/mistica-ios/commit/a53827728d4eeb4ac826fbba3164b92158847880)), closes [#183](https://github.com/Telefonica/mistica-ios/issues/183)
+
+
+### Features
+
+* **Colors:** Update colors to match web and Android ([#166](https://github.com/Telefonica/mistica-ios/issues/166)) ([03341d3](https://github.com/Telefonica/mistica-ios/commit/03341d31fa52b1abe851f64dc7b7889611868f5f))
+
+
+### BREAKING CHANGES
+
+* Update colors to match web and Android
+fix(feedback): add an icon in the information feedback screen
+
+* IOS-7087 add icnNotificationInfo to Vivo brand
+
+* IOS-7087 fix snapshots tests
+
+* IOS-7087 add mac-provisioning github action to test
+
+* IOS-7087 add github-actions
+
+* IOS-7087 unnecessary tasks eliminated
+
+* IOS-7087 run fastlane setup after mac-provisioning task
+
+* IOS-7087 run fastlane setup after mac-provisioning task
+
 ## [15.2.1](https://github.com/Telefonica/mistica-ios/compare/v15.2.0...v15.2.1) (2022-02-23)
 
 

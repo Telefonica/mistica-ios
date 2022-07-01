@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */; };
+		1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1882EF40286EFF5F00F959FA /* MisticaSwiftUI */; };
 		1C37E32626BBF83B00062775 /* UICatalogEmptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37E32526BBF83B00062775 /* UICatalogEmptyStateViewController.swift */; };
 		1CFE255E26AAE3CB00D3952F /* UICatalogCalloutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE255D26AAE3CB00D3952F /* UICatalogCalloutViewController.swift */; };
 		908C0EB325C82CDC00D1687A /* UICatalogTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908C0EB225C82CDC00D1687A /* UICatalogTabsViewController.swift */; };
@@ -112,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */,
+				1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */,
 				B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +282,7 @@
 			packageProductDependencies = (
 				B8F990622546CAA500DFBFE9 /* Mistica */,
 				B8EE89F12614B57600F79386 /* AppCenterDistribute */,
+				1882EF40286EFF5F00F959FA /* MisticaSwiftUI */,
 			);
 			productName = MisticaCatalog;
 			productReference = B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */;
@@ -574,6 +577,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1882EF40286EFF5F00F959FA /* MisticaSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MisticaSwiftUI;
+		};
 		B8EE89F12614B57600F79386 /* AppCenterDistribute */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B8EE89F02614B57600F79386 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;

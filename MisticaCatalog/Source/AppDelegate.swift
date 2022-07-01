@@ -10,6 +10,7 @@ import AppCenter
 import AppCenterDistribute
 import Mistica
 import UIKit
+import MisticaSwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
@@ -19,6 +20,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         // Configure brand style before initializing the UI
         MisticaConfig.brandStyle = .movistar
         MisticaConfig.styleControls(MisticaControlStyle.allCases)
+        let button = Mistica.Button.init()
+        let button2 = MisticaSwiftUI.Button.init()
 
         return true
     }

@@ -11,7 +11,12 @@ let package = Package(
         .library(
             name: "Mistica",
             targets: ["Mistica"]
-        )
+        ),
+        .library(
+            name: "MisticaSwiftUI",
+            targets: ["MisticaSwiftUI"]
+        ),
+        .library(name: "Shared", targets: ["Shared"])
     ],
     dependencies: [
         .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8")),
@@ -19,18 +24,32 @@ let package = Package(
     ],
     targets: [
         .target(
+            name: "Shared",
+            exclude: [
+                "Fonts/README.md",
+                "Components/Controls/README.md",
+            ]
+        ),
+        
+        .target(
+            name: "MisticaSwiftUI",
+            dependencies: [
+                "Lottie",
+                "Shared"
+            ]
+        ),
+        
+        .target(
             name: "Mistica",
             dependencies: [
                 "Lottie"
             ],
-            path: "Mistica/Source",
             exclude: [
                 "Components/Badge/docs",
                 "Components/Badge/README.md",
                 "Components/Button/docs",
                 "Components/Button/README.md",
                 "Components/Checkbox/README.md",
-                "Components/Controls/README.md",
                 "Components/Crouton/docs",
                 "Components/Crouton/README.md",
                 "Components/Feedback/docs",
@@ -66,7 +85,6 @@ let package = Package(
                 "Components/Tabs/README.md",
                 "Components/Callout/README.md",
                 "Components/Callout/docs",
-                "Fonts/README.md",
                 "Components/EmptyState/README.md",
                 "Components/EmptyState/docs"
             ],
@@ -74,13 +92,13 @@ let package = Package(
                 .define("SWIFT_PACKAGE")
             ]
         ),
+        
         .testTarget(
             name: "MisticaTests",
             dependencies: [
                 "Mistica",
                 "SnapshotTesting"
             ],
-            path: "Mistica/Tests/MisticaTests",
             exclude: [
                 "UI/__Snapshots__",
                 "Fonts/__Snapshots__",

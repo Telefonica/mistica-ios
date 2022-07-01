@@ -341,9 +341,9 @@ public extension UIColor {
         MisticaConfig.currentColors.brand
     }
 
-    @objc(brandDarkColor)
-    static var brandDark: UIColor {
-        MisticaConfig.currentColors.brandDark
+    @objc(brandHighColor)
+    static var brandHigh: UIColor {
+        MisticaConfig.currentColors.brandHigh
     }
 
     @objc(inverseColor)
@@ -401,11 +401,6 @@ public extension UIColor {
         MisticaConfig.currentColors.textDisabled
     }
 
-    @objc(textAmountColor)
-    static var textAmount: UIColor {
-        MisticaConfig.currentColors.textAmount
-    }
-
     // MARK: States
 
     @objc(errorColor)
@@ -454,64 +449,49 @@ public extension UIColor {
 
     // MARK: Tag
 
-    @objc(tagBackgroundPromoColor)
-    static var tagBackgroundPromo: UIColor {
-        MisticaConfig.currentColors.tagBackgroundPromo
+    @objc(promoLowColor)
+    static var promoLow: UIColor {
+        MisticaConfig.currentColors.promoLow
     }
 
-    @objc(tagBackgroundActiveColor)
-    static var tagBackgroundActive: UIColor {
-        MisticaConfig.currentColors.tagBackgroundActive
+    @objc(brandLowColor)
+    static var brandLow: UIColor {
+        MisticaConfig.currentColors.brandLow
     }
 
-    @objc(tagBackgroundInactiveColor)
-    static var tagBackgroundInactive: UIColor {
-        MisticaConfig.currentColors.tagBackgroundInactive
+    @objc(successLowColor)
+    static var successLow: UIColor {
+        MisticaConfig.currentColors.successLow
     }
 
-    @objc(tagBackgroundSuccessColor)
-    static var tagBackgroundSuccess: UIColor {
-        MisticaConfig.currentColors.tagBackgroundSuccess
+    @objc(warningLowColor)
+    static var warningLow: UIColor {
+        MisticaConfig.currentColors.warningLow
     }
 
-    @objc(tagBackgroundWarningColor)
-    static var tagBackgroundWarning: UIColor {
-        MisticaConfig.currentColors.tagBackgroundWarning
+    @objc(errorLowColor)
+    static var errorLow: UIColor {
+        MisticaConfig.currentColors.errorLow
     }
 
-    @objc(tagBackgroundErrorColor)
-    static var tagBackgroundError: UIColor {
-        MisticaConfig.currentColors.tagBackgroundError
+    @objc(promoHighColor)
+    static var promoHigh: UIColor {
+        MisticaConfig.currentColors.promoHigh
     }
 
-    @objc(textTagPromoColor)
-    static var textTagPromo: UIColor {
-        MisticaConfig.currentColors.textTagPromo
+    @objc(successHighColor)
+    static var successHigh: UIColor {
+        MisticaConfig.currentColors.successHigh
     }
 
-    @objc(textTagActiveColor)
-    static var textTagActive: UIColor {
-        MisticaConfig.currentColors.textTagActive
+    @objc(warningHighColor)
+    static var warningHigh: UIColor {
+        MisticaConfig.currentColors.warningHigh
     }
 
-    @objc(textTagInactiveColor)
-    static var textTagInactive: UIColor {
-        MisticaConfig.currentColors.textTagInactive
-    }
-
-    @objc(textTagSuccessColor)
-    static var textTagSuccess: UIColor {
-        MisticaConfig.currentColors.textTagSuccess
-    }
-
-    @objc(textTagWarningColor)
-    static var textTagWarning: UIColor {
-        MisticaConfig.currentColors.textTagWarning
-    }
-
-    @objc(textTagErrorColor)
-    static var textTagError: UIColor {
-        MisticaConfig.currentColors.textTagError
+    @objc(errorHighColor)
+    static var errorHigh: UIColor {
+        MisticaConfig.currentColors.errorHigh
     }
 }
 

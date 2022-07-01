@@ -84,7 +84,7 @@ protocol Colors {
 
     // GLOBAL
     var brand: UIColor { get }
-    var brandDark: UIColor { get }
+    var brandHigh: UIColor { get }
     var inverse: UIColor { get }
     var neutralHigh: UIColor { get }
     var neutralLow: UIColor { get }
@@ -97,7 +97,6 @@ protocol Colors {
     var textSecondary: UIColor { get }
     var textSecondaryInverse: UIColor { get }
     var textDisabled: UIColor { get }
-    var textAmount: UIColor { get }
 
     // STATES
     var error: UIColor { get }
@@ -116,16 +115,13 @@ protocol Colors {
     var backgroundBrandGradient: [UIColor] { get }
 
     // TAGS
-    var tagBackgroundPromo: UIColor { get }
-    var tagBackgroundActive: UIColor { get }
-    var tagBackgroundInactive: UIColor { get }
-    var tagBackgroundSuccess: UIColor { get }
-    var tagBackgroundWarning: UIColor { get }
-    var tagBackgroundError: UIColor { get }
-    var textTagPromo: UIColor { get }
-    var textTagActive: UIColor { get }
-    var textTagInactive: UIColor { get }
-    var textTagSuccess: UIColor { get }
-    var textTagWarning: UIColor { get }
-    var textTagError: UIColor { get }
+    var promoLow: UIColor { get }
+    var brandLow: UIColor { get }
+    var successLow: UIColor { get }
+    var warningLow: UIColor { get }
+    var errorLow: UIColor { get }
+    var promoHigh: UIColor { get }
+    var successHigh: UIColor { get }
+    var warningHigh: UIColor { get }
+    var errorHigh: UIColor { get }
 }

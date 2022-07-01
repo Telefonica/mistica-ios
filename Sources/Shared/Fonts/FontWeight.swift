@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol FontWeightConvertible: CaseIterable {
-    var systemWeight: UIFont.Weight { get }
+    @available(iOS 13.0, *)
+    var systemWeight: Font.Weight { get }
+    var systemUIFontWeight: UIFont.Weight { get }
 }
 
 public extension FontStyle {
@@ -55,7 +58,22 @@ public extension FontStyle {
 }
 
 extension RawRepresentable where RawValue == String {
-    var systemWeight: UIFont.Weight {
+    @available(iOS 13.0, *)
+    var systemWeight: Font.Weight {
+        switch rawValue {
+        case "light":
+            return .light
+        case "regular":
+            return .regular
+        case "medium":
+            return .medium
+        default:
+            assertionFailure("TextPreset should be an instance of light, regular or medium")
+            return .light
+        }
+    }
+    
+    var systemUIFontWeight: UIFont.Weight {
         switch rawValue {
         case "light":
             return .light

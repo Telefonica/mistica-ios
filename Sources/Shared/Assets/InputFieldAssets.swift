@@ -21,4 +21,12 @@ public extension UIImage {
     static var arrowDown: UIImage {
         UIImage(named: "icn_dropmenu", type: .common)!
     }
+    
+    static var search: UIImage {
+        UIImage(named: "icn_search", type: .common)!
+    }
+    
+    static var calendar: UIImage {
+        UIImage(named: "calendar", type: .common)!
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 @frozen
 @objc public enum FontStyle: Int, CaseIterable, CustomStringConvertible {
@@ -21,9 +22,10 @@ import UIKit
     case textPreset9
     case textPreset10
 
-    func preferredFont(weight: UIFont.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+    @available(iOS 13.0, *)
+    func preferredFont(weight: Font.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> Font {
         let horizontalSizeClass = UIScreen.main.traitCollection.horizontalSizeClass
-        var preferredSize = self.preferredSize
+        var preferredSize = preferredSize
 
         if let constrainedSize = constrainedPreferredSize, preferredSize.isGreaterThan(constrainedSize) {
             preferredSize = constrainedSize
@@ -31,7 +33,27 @@ import UIKit
 
         let sizePoints = points(preferredContentSize: preferredSize, horizontalSizeClass: horizontalSizeClass)
 
-        if let fontName = Self.fontNameForWeight?(weight),
+        if let fontName = Self.fontNameForWeight?(weight) {
+            return Font.custom(fontName, size: sizePoints)
+        } else {
+            return Font.system(size: sizePoints, weight: weight, design: .default)
+        }
+    }
+
+    @available(iOS 13.0, *)
+    public static var fontNameForWeight: ((Font.Weight) -> String)? = nil
+
+    func preferredFont(weight: UIFont.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+        let horizontalSizeClass = UIScreen.main.traitCollection.horizontalSizeClass
+        var preferredSize = preferredSize
+
+        if let constrainedSize = constrainedPreferredSize, preferredSize.isGreaterThan(constrainedSize) {
+            preferredSize = constrainedSize
+        }
+
+        let sizePoints = points(preferredContentSize: preferredSize, horizontalSizeClass: horizontalSizeClass)
+
+        if let fontName = Self.uiFontNameForWeight?(weight),
            let customFont = UIFont(name: fontName, size: sizePoints) {
             return customFont
         } else {
@@ -39,7 +61,7 @@ import UIKit
         }
     }
 
-    public static var fontNameForWeight: ((UIFont.Weight) -> String)? = nil
+    public static var uiFontNameForWeight: ((UIFont.Weight) -> String)? = nil
 
     public var description: String {
         switch self {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Colors {
+public protocol Colors {
     // BACKGROUNDS
     var appBarBackground: UIColor { get }
     var background: UIColor { get }

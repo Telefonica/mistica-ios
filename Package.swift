@@ -16,7 +16,10 @@ let package = Package(
             name: "MisticaSwiftUI",
             targets: ["MisticaSwiftUI"]
         ),
-        .library(name: "Shared", targets: ["Shared"])
+        .library(
+            name: "Shared",
+            targets: ["Shared"]
+        )
     ],
     dependencies: [
         .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8")),

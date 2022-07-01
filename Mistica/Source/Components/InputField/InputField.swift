@@ -24,8 +24,8 @@ public class InputField: UIView {
         static let horizontalPlaceholderSpacing: CGFloat = 4
         static let verticalPlaceholderHeightThreshold: CGFloat = 4
 
-				static let enabledAlpha: CGFloat = 1.0
-				static let disabledAlpha: CGFloat = 0.5
+        static let enabledAlpha: CGFloat = 1.0
+        static let disabledAlpha: CGFloat = 0.5
     }
 
     @frozen
@@ -827,7 +827,7 @@ private extension InputField {
         textInputView?.isEnabled = state != .disabled
 
         textInputView?.textColor = stateStyle.textColor
-				textInputView.alpha = state != .disabled ? Constants.enabledAlpha : Constants.disabledAlpha
+        textInputView.alpha = state != .disabled ? Constants.enabledAlpha : Constants.disabledAlpha
 
         delegate?.inputFieldDidUpdateState(self)
     }

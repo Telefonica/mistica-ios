@@ -15,8 +15,8 @@ open class Button: UIControl {
         static let animationCurveControlPoint2 = CGPoint(x: 0.175, y: 1)
         static let cornerRadius: CGFloat = 4
         static let borderWidth: CGFloat = 1.5
-				static let enabledAlpha: CGFloat = 1.0
-				static let disabledAlpha: CGFloat = 0.5
+        static let enabledAlpha: CGFloat = 1.0
+        static let disabledAlpha: CGFloat = 0.5
     }
 
     public struct Style {
@@ -50,7 +50,7 @@ open class Button: UIControl {
         public let backgroundColor: UIColor
         public let borderColor: UIColor
 
-				public init(textColor: UIColor, backgroundColor: UIColor, borderColor: UIColor) {
+        public init(textColor: UIColor, backgroundColor: UIColor, borderColor: UIColor) {
             self.textColor = textColor
             self.backgroundColor = backgroundColor
             self.borderColor = borderColor
@@ -259,7 +259,7 @@ private extension Button {
         container.textColor = stateStyle.textColor
         backgroundColor = stateStyle.backgroundColor
         layer.borderColor = stateStyle.borderColor.cgColor
-				alpha = state != .disabled ? Constants.enabledAlpha : Constants.disabledAlpha
+        alpha = state != .disabled ? Constants.enabledAlpha : Constants.disabledAlpha
     }
 
     func didUpdateState() {

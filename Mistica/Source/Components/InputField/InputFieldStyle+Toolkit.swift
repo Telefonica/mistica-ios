@@ -9,7 +9,7 @@
 import UIKit
 
 public extension InputField.Style {
-		private static let disabledAlpha: CGFloat = 0.5
+    private static let disabledAlpha: CGFloat = 0.5
 
     private static var primaryStateStyleByState: [InputField.State: InputField.StateStyle] {
         [

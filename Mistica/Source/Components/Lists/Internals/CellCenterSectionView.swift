@@ -59,7 +59,7 @@ class CellCenterSectionView: UIStackView {
 
     override var isUserInteractionEnabled: Bool {
         didSet {
-						titleLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
+            titleLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
             detailLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
             subtitleLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
         }

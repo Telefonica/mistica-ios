@@ -99,7 +99,7 @@ extension EmptyStateMessagesContent {
         let descriptionSpacing: CGFloat = isCard ? Constants.descriptionTopSpacingCard : Constants.descriptionTopSpacingDefault
         descriptionTitleTopSpacing = descriptionSpacing
         titleLabel.font = isCard ? .textPreset4(weight: .regular) : .textPreset6(weight: .light)
-        descriptionLabel.font = isCard ? .textPreset2(weight: .regular) : .textPreset4(weight: .light)
+        descriptionLabel.font = isCard ? .textPreset2(weight: .regular) : .textPreset3(weight: .regular)
     }
 }
 
@@ -126,7 +126,7 @@ private extension EmptyStateMessagesContent {
         titleLabel.numberOfLines = 0
         titleLabel.topSpacing = 24
 
-        descriptionLabel.font = .textPreset4(weight: .light)
+        descriptionLabel.font = .textPreset3(weight: .regular)
         descriptionLabel.textColor = .textSecondary
         descriptionLabel.minHeight = 18
         descriptionLabel.numberOfLines = 0

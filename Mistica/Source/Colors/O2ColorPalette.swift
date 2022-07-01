@@ -90,7 +90,7 @@ struct O2Colors: Colors {
 
     // GLOBAL
     let brand = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimary30
-		let brandHigh = O2ColorPalette.o2BluePrimary70 | O2ColorPalette.white.withAlphaComponent(0.05)
+    let brandHigh = O2ColorPalette.o2BluePrimary70 | O2ColorPalette.white.withAlphaComponent(0.05)
     let inverse = O2ColorPalette.white | O2ColorPalette.grey2
     let neutralHigh = O2ColorPalette.grey6 | O2ColorPalette.grey2
     let neutralMedium = O2ColorPalette.grey5

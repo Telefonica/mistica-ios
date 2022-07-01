@@ -14,9 +14,9 @@ struct O2ClassicColors: Colors {
     let background = O2ClassicColorPalette.white | O2ClassicColorPalette.darkModeBlack
     let backgroundContainer = O2ClassicColorPalette.white | O2ClassicColorPalette.darkModeGrey
     let backgroundBrand = O2ClassicColorPalette.o2Blue | O2ClassicColorPalette.darkModeBlack
-		let backgroundOverlay = O2ClassicColorPalette.grey6.withAlphaComponent(0.6) | O2ClassicColorPalette.darkModeGrey.withAlphaComponent(0.8)
+    let backgroundOverlay = O2ClassicColorPalette.grey6.withAlphaComponent(0.6) | O2ClassicColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeGrey6
-		let backgroundSkeletonInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.darkModeGrey6
+    let backgroundSkeletonInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.darkModeGrey6
     let navigationBarBackground = O2ClassicColorPalette.o2Blue | O2ClassicColorPalette.darkModeBlack
     let backgroundAlternative = O2ClassicColorPalette.grey1 | O2ClassicColorPalette.darkModeGrey
     let backgroundFeedbackBottom = O2ClassicColorPalette.o2GradientFourth | O2ClassicColorPalette.darkModeBlack
@@ -35,7 +35,7 @@ struct O2ClassicColors: Colors {
     let buttonDangerBackgroundHover = O2ClassicColorPalette.pepper55
 
     let buttonLinkBackgroundSelected = O2ClassicColorPalette.o2SkyBlueLight10 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-		let buttonLinkBackgroundSelectedInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let buttonLinkBackgroundSelectedInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.white.withAlphaComponent(0.05)
 
     let buttonPrimaryBackground = O2ClassicColorPalette.o2SkyBlue
     let buttonPrimaryBackgroundDisabled = O2ClassicColorPalette.o2SkyBlueLight45 | O2ClassicColorPalette.darkModeGrey
@@ -81,7 +81,7 @@ struct O2ClassicColors: Colors {
 
     // DIVIDERS
     let divider = O2ClassicColorPalette.grey2 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
-		let dividerInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let dividerInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.white.withAlphaComponent(0.05)
     let navigationBarDivider = O2ClassicColorPalette.o2Blue | O2ClassicColorPalette.darkModeBlack
 
     // FEEDBACKS
@@ -91,7 +91,7 @@ struct O2ClassicColors: Colors {
 
     // GLOBAL
     let brand = O2ClassicColorPalette.o2Blue | O2ClassicColorPalette.o2SkyBlue
-		let brandHigh = O2ClassicColorPalette.o2Blue55 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
+    let brandHigh = O2ClassicColorPalette.o2Blue55 | O2ClassicColorPalette.white.withAlphaComponent(0.05)
     let inverse = O2ClassicColorPalette.white | O2ClassicColorPalette.grey2
     let neutralHigh = O2ClassicColorPalette.grey6 | O2ClassicColorPalette.grey2
     let neutralMedium = O2ClassicColorPalette.grey5

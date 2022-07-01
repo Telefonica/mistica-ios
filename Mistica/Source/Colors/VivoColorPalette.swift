@@ -91,7 +91,7 @@ struct VivoColors: Colors {
 
     // GLOBAL
     let brand = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
-		let brandHigh = VivoColorPalette.vivoPurpleDark | VivoColorPalette.white.withAlphaComponent(0.05)
+    let brandHigh = VivoColorPalette.vivoPurpleDark | VivoColorPalette.white.withAlphaComponent(0.05)
     let inverse = VivoColorPalette.white | VivoColorPalette.grey2
     let neutralHigh = VivoColorPalette.grey6 | VivoColorPalette.grey2
     let neutralMedium = VivoColorPalette.grey5

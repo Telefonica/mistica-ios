@@ -92,7 +92,7 @@ struct MovistarColors: Colors {
 
     // GLOBAL
     let brand = MovistarColorPalette.movistarBlue
-		let brandHigh = MovistarColorPalette.movistarBlue55 | MovistarColorPalette.white.withAlphaComponent(0.05)
+    let brandHigh = MovistarColorPalette.movistarBlue55 | MovistarColorPalette.white.withAlphaComponent(0.05)
     let inverse = MovistarColorPalette.white | MovistarColorPalette.grey2
     let neutralHigh = MovistarColorPalette.grey6 | MovistarColorPalette.grey2
     let neutralMedium = MovistarColorPalette.grey5

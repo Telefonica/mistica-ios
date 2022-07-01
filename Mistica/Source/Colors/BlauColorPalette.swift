@@ -91,7 +91,7 @@ struct BlauColors: Colors {
 
     // GLOBAL
     let brand = BlauColorPalette.blauBluePrimary
-		let brandHigh = BlauColorPalette.blauBlueSecondary | BlauColorPalette.white.withAlphaComponent(0.05)
+    let brandHigh = BlauColorPalette.blauBlueSecondary | BlauColorPalette.white.withAlphaComponent(0.05)
     let inverse = BlauColorPalette.white | BlauColorPalette.grey2
     let highlight = BlauColorPalette.blauBluePrimary
     let neutralHigh = BlauColorPalette.grey6 | BlauColorPalette.grey2
@@ -178,5 +178,5 @@ public enum BlauColorPalette {
 
     public static let darkModeBlack = UIColor(hex: "#191919")!
     public static let darkModeGrey = UIColor(hex: "#242424")!
-		public static let darkModeGrey6 = UIColor(hex: "#313235")!
+    public static let darkModeGrey6 = UIColor(hex: "#313235")!
 }

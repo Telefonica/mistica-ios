@@ -21,7 +21,6 @@ public extension Button.Style {
     private static var smallMinimumWidth: CGFloat = 104
     private static var linkMinimumWidth: CGFloat = 0
 
-
     static var primary: Button.Style {
         Button.Style(
             allowsBleedingAlignment: false,

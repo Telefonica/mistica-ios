@@ -9,9 +9,11 @@
 import UIKit
 
 public extension Button.Style {
+		private static let disabledAlpha: CGFloat = 0.5
+
     private static let regularInsets: UIEdgeInsets = .init(top: 12, left: 16, bottom: 12, right: 16)
-    private static let smallInsets: UIEdgeInsets = .init(top: 5, left: 16, bottom: 5, right: 16)
-    private static let linkInsets: UIEdgeInsets = .init(top: 5, left: 8, bottom: 5, right: 8)
+    private static let smallInsets: UIEdgeInsets = .init(top: 5, left: 12, bottom: 5, right: 12)
+    private static let linkInsets: UIEdgeInsets = .init(top: 5, left: 12, bottom: 5, right: 12)
 
     private static var regularFont: UIFont { .textPreset3(weight: .medium) }
     private static var smallFont: UIFont { .textPreset2(weight: .medium) }
@@ -21,13 +23,14 @@ public extension Button.Style {
     private static var smallMinimumWidth: CGFloat = 104
     private static var linkMinimumWidth: CGFloat = 0
 
+
     static var primary: Button.Style {
         Button.Style(
             allowsBleedingAlignment: false,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground),
                 .selected: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackgroundSelected, borderColor: .buttonPrimaryBackgroundSelected),
-                .disabled: Button.StateStyle(textColor: .textButtonPrimaryDisabled, backgroundColor: .buttonPrimaryBackgroundDisabled, borderColor: .buttonPrimaryBackgroundDisabled),
+                .disabled: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground, alpha: disabledAlpha),
                 .loading: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground)
             ]
         )
@@ -41,7 +44,7 @@ public extension Button.Style {
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackground),
                 .selected: Button.StateStyle(textColor: .textButtonSecondarySelected, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackgroundSelected),
-                .disabled: Button.StateStyle(textColor: .textButtonSecondaryDisabled, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackgroundDisabled),
+                .disabled: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackground, alpha: disabledAlpha),
                 .loading: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackground)
             ]
         )
@@ -55,7 +58,7 @@ public extension Button.Style {
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackground, borderColor: .buttonDangerBackground),
                 .selected: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackgroundSelected, borderColor: .buttonDangerBackgroundSelected),
-                .disabled: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackgroundDisabled, borderColor: .buttonDangerBackgroundDisabled),
+                .disabled: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackground, borderColor: .buttonDangerBackground, alpha: disabledAlpha),
                 .loading: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackground, borderColor: .buttonDangerBackground)
             ]
         )
@@ -69,7 +72,7 @@ public extension Button.Style {
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLink, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .selected: Button.StateStyle(textColor: .textLink, backgroundColor: .buttonLinkBackgroundSelected, borderColor: backgroundColor),
-                .disabled: Button.StateStyle(textColor: .textLinkDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textLink, backgroundColor: backgroundColor, borderColor: backgroundColor, alpha: disabledAlpha),
                 .loading: Button.StateStyle(textColor: .textLink, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]
         )
@@ -85,7 +88,7 @@ public extension Button.Style {
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse),
                 .selected: Button.StateStyle(textColor: .textButtonPrimaryInverseSelected, backgroundColor: .buttonPrimaryBackgroundSelectedInverse, borderColor: .buttonPrimaryBackgroundSelectedInverse),
-                .disabled: Button.StateStyle(textColor: .textButtonPrimaryInverseDisabled, backgroundColor: .buttonPrimaryBackgroundDisabledInverse, borderColor: .buttonPrimaryBackgroundDisabledInverse),
+                .disabled: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse, alpha: disabledAlpha),
                 .loading: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse)
             ]
         )
@@ -97,7 +100,7 @@ public extension Button.Style {
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse),
                 .selected: Button.StateStyle(textColor: .textButtonSecondaryInverseSelected, backgroundColor: .clear, borderColor: .buttonSecondaryBorderSelectedInverse),
-                .disabled: Button.StateStyle(textColor: .textButtonSecondaryInverseDisabled, backgroundColor: .clear, borderColor: .buttonSecondaryBorderDisabledInverse),
+                .disabled: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse, alpha: disabledAlpha),
                 .loading: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse)
             ]
         )

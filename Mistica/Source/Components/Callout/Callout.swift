@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 private enum Constants {
-    static let cornerRadius: CGFloat = 4
+    static let cornerRadius: CGFloat = 8
     static let messageToCloseTrailingMargin: CGFloat = 44
     static let calloutLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 24, trailing: messageToCloseTrailingMargin)
     static let closeButtonTopMargin: CGFloat = 16

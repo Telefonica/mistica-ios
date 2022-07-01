@@ -47,11 +47,13 @@ open class Button: UIControl {
         public let textColor: UIColor
         public let backgroundColor: UIColor
         public let borderColor: UIColor
+				public let alpha: CGFloat
 
-        public init(textColor: UIColor, backgroundColor: UIColor, borderColor: UIColor) {
+				public init(textColor: UIColor, backgroundColor: UIColor, borderColor: UIColor, alpha: CGFloat = 1.0) {
             self.textColor = textColor
             self.backgroundColor = backgroundColor
             self.borderColor = borderColor
+						self.alpha = alpha
         }
     }
 
@@ -250,25 +252,14 @@ private extension Button {
     }
 
     func applyStyleColors() {
-        let stateStyle: StateStyle?
-
-        if isLoading {
-            stateStyle = style.stateStyleByState[.loading]
-        } else if !isEnabled {
-            stateStyle = style.stateStyleByState[.disabled]
-        } else if isSelected || isHighlighted {
-            stateStyle = style.stateStyleByState[.selected]
-        } else {
-            stateStyle = style.stateStyleByState[.normal]
-        }
-
-        guard stateStyle != nil else {
+        guard let stateStyle = style.stateStyleByState[state] else {
             preconditionFailure("Style \(style) does not have stateStyle for state \(state). Check that the current style is defined properly.")
         }
 
-        container.textColor = stateStyle!.textColor
-        backgroundColor = stateStyle!.backgroundColor
-        layer.borderColor = stateStyle!.borderColor.cgColor
+        container.textColor = stateStyle.textColor
+        backgroundColor = stateStyle.backgroundColor
+        layer.borderColor = stateStyle.borderColor.cgColor
+				alpha = stateStyle.alpha
     }
 
     func didUpdateState() {

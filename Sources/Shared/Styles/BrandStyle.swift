@@ -33,4 +33,8 @@ public enum BrandStyle {
             return "custom"
         }
     }
+    
+    public static var allCases: [BrandStyle] {
+        [.movistar, .vivo, .o2, .o2Classic, .blau]
+    }
 }

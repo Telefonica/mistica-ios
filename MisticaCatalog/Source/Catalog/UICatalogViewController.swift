@@ -8,6 +8,7 @@
 
 import Mistica
 import UIKit
+import Shared
 
 private enum UICatalogRow: Int, CaseIterable {
     case badge
@@ -209,9 +210,9 @@ private extension UICatalogViewController {
 
     func setUpBrandsSegmentedControl() {
         BrandStyle.allCases.enumerated().forEach { offset, brand in
-            brandsSegmentedControl.insertSegment(withTitle: brand.rawValue, at: offset, animated: false)
+            brandsSegmentedControl.insertSegment(withTitle: brand.id, at: offset, animated: false)
 
-            if brand == MisticaConfig.brandStyle {
+            if brand.id == MisticaConfig.brandStyle.id {
                 brandsSegmentedControl.selectedSegmentIndex = offset
             }
         }

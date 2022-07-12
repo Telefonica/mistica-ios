@@ -98,8 +98,8 @@ extension EmptyStateMessagesContent {
         titleTopSpacing = titleSpacing
         let descriptionSpacing: CGFloat = isCard ? Constants.descriptionTopSpacingCard : Constants.descriptionTopSpacingDefault
         descriptionTitleTopSpacing = descriptionSpacing
-		titleLabel.font = isCard ? .textPreset4(weight: .regular) : .textPreset6()
-		descriptionLabel.font = isCard ? .textPreset2(weight: .regular) : .textPreset3(weight: .regular)
+        titleLabel.font = isCard ? .textPreset4(weight: .regular) : .textPreset6()
+        descriptionLabel.font = isCard ? .textPreset2(weight: .regular) : .textPreset3(weight: .regular)
     }
 }
 

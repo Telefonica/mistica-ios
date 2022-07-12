@@ -24,7 +24,7 @@ final class TitleViewTests: XCTestCase {
             viewBuilder: makeSectionTitle(title: "Title text", style: .title1)
         )
     }
-    
+
     func testTitle1WithLink() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -38,21 +38,21 @@ final class TitleViewTests: XCTestCase {
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline text work fine", style: .title1)
         )
     }
-    
+
     func testTitle1MultilineAndLink() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline text work fine", linkTitle: "Link text", style: .title1)
         )
     }
-    
+
     func testTitle2() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSectionTitle(title: "Title text", style: .title2)
         )
     }
-    
+
     func testTitle2WithLink() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -66,7 +66,7 @@ final class TitleViewTests: XCTestCase {
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", style: .title2)
         )
     }
-    
+
     func testTitle2MultilineAndLink() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -85,7 +85,7 @@ private class SectionTitleViewController: UITableViewController {
     private let titleText: String
     private let linkTitleText: String?
     private let style: TitleView.Style
-    
+
     init(titleText: String, linkTitleText: String?, style: TitleView.Style) {
         self.titleText = titleText
         self.linkTitleText = linkTitleText

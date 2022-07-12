@@ -19,7 +19,7 @@ public class TitleView: UITableViewHeaderFooterView {
     public enum Style {
         case title1
         case title2
-        
+
         var font: UIFont {
             switch self {
             case .title1:
@@ -28,7 +28,7 @@ public class TitleView: UITableViewHeaderFooterView {
                 return .textPreset5()
             }
         }
-        
+
         var textColor: UIColor {
             switch self {
             case .title1:
@@ -37,7 +37,7 @@ public class TitleView: UITableViewHeaderFooterView {
                 return .textPrimary
             }
         }
-        
+
         func format(text: String?) -> String? {
             switch self {
             case .title1:
@@ -47,18 +47,18 @@ public class TitleView: UITableViewHeaderFooterView {
             }
         }
     }
-    
+
     private lazy var titleLabel = UILabel()
     private lazy var linkLabel = UILabel()
 
     public var onLinkLabelTapped: (() -> Void)?
-    
+
     public var style: Style = .title1 {
         didSet {
             updateStyle()
         }
     }
-    
+
     private var unformattedTitle: String?
     public var title: String? {
         get {
@@ -70,7 +70,7 @@ public class TitleView: UITableViewHeaderFooterView {
             layoutIfNeeded()
         }
     }
-    
+
     public var linkTitle: String? {
         get {
             linkLabel.text
@@ -90,14 +90,14 @@ public class TitleView: UITableViewHeaderFooterView {
 
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         commonInit()
     }
-    
+
     public init(style: Style, reuseIdentifier: String? = nil) {
         super.init(reuseIdentifier: reuseIdentifier)
         self.style = style
-        
+
         commonInit()
     }
 }
@@ -107,7 +107,7 @@ private extension TitleView {
         layoutViews()
         updateStyle()
     }
-    
+
     func updateStyle() {
         contentView.backgroundColor = .background
 
@@ -115,25 +115,24 @@ private extension TitleView {
         titleLabel.font = style.font
         titleLabel.textColor = style.textColor
         titleLabel.numberOfLines = 0
-        
+
         linkLabel.font = .textPreset2(weight: .medium)
         linkLabel.textColor = .textLink
         linkLabel.isHidden = linkLabel.text.isEmpty
-
     }
 
     func layoutViews() {
         linkLabel.setContentHuggingPriority(.required, for: .horizontal)
         linkLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
         linkLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(linkLabelTapped)))
-        
+
         let stackView = UIStackView(arrangedSubviews: [
             titleLabel,
             linkLabel
         ])
         stackView.spacing = 16
         stackView.alignment = .top
-        
+
         preservesSuperviewLayoutMargins = false
         contentView.preservesSuperviewLayoutMargins = false
         contentView.addSubview(constrainedToLayoutMarginsGuideOf: stackView)
@@ -144,7 +143,7 @@ private extension TitleView {
             trailing: ViewStyles.horizontalMargin
         )
     }
-    
+
     @objc func linkLabelTapped() {
         onLinkLabelTapped?()
     }

@@ -42,33 +42,33 @@ final class FontToolkitTests: XCTestCase {
         let textPreset4 = FontStyle.TextPreset4Weight.allCases.map { weight in
             makeLabel(
                 text: "textPreset4 \(weight)",
-				font: .textPreset4(weight: weight)
-			)
-		}
-		let textPreset5 = makeLabel(
-			text: "textPreset5",
-			font: .textPreset5()
-		)
-		let textPreset6 = makeLabel(
-			text: "textPreset6",
-			font: .textPreset6()
-		)
-		let textPreset7 = makeLabel(
-			text: "textPreset7",
-			font: .textPreset7()
-		)
-		let textPreset8 = makeLabel(
-			text: "textPreset8",
-			font: .textPreset8()
-		)
-		let textPreset9 = makeLabel(
-			text: "textPreset9",
-			font: .textPreset9()
-		)
-		let textPreset10 = makeLabel(
-			text: "textPreset10",
-			font: .textPreset10()
-		)
+                font: .textPreset4(weight: weight)
+            )
+        }
+        let textPreset5 = makeLabel(
+            text: "textPreset5",
+            font: .textPreset5()
+        )
+        let textPreset6 = makeLabel(
+            text: "textPreset6",
+            font: .textPreset6()
+        )
+        let textPreset7 = makeLabel(
+            text: "textPreset7",
+            font: .textPreset7()
+        )
+        let textPreset8 = makeLabel(
+            text: "textPreset8",
+            font: .textPreset8()
+        )
+        let textPreset9 = makeLabel(
+            text: "textPreset9",
+            font: .textPreset9()
+        )
+        let textPreset10 = makeLabel(
+            text: "textPreset10",
+            font: .textPreset10()
+        )
 
         labels.append(contentsOf: textPreset1)
         labels.append(contentsOf: textPreset2)
@@ -81,10 +81,10 @@ final class FontToolkitTests: XCTestCase {
         labels.append(textPreset9)
         labels.append(textPreset10)
 
-		assertSnapshotForAllBrandsAndStyles(
-			as: .image,
-			viewBuilder: makeTemplate(labels)
-		)
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplate(labels)
+        )
     }
 }
 

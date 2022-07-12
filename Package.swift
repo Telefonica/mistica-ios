@@ -83,14 +83,14 @@ let package = Package(
             path: "Mistica/Tests/MisticaTests",
             exclude: [
                 "UI/__Snapshots__",
-                "Fonts/__Snapshots__",
+                "Fonts/__Snapshots__"
 //                "Resources"
             ],
-			resources: [
-				.process("Resources/Telefonica-Bold.otf"),
-				.process("Resources/Telefonica-Light.otf"),
-				.process("Resources/Telefonica-Regular.otf"),
-			],
+            resources: [
+                .process("Resources/Telefonica-Bold.otf"),
+                .process("Resources/Telefonica-Light.otf"),
+                .process("Resources/Telefonica-Regular.otf")
+            ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
             ]

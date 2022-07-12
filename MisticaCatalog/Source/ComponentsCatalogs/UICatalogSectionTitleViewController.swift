@@ -15,10 +15,10 @@ private enum Constants {
         let title: String
         let linkTitle: String?
     }
-    
+
     static let listCellReusableIdentifier = "listCellReusableIdentifier"
     static let sectionTitleReusableIdentifier = "sectionTitleReusableIdentifier"
-    
+
     static var styles: [Style] {
         [
             Style(titleStyle: .title1, title: "Title1 with link", linkTitle: "Text link"),
@@ -28,7 +28,7 @@ private enum Constants {
             Style(titleStyle: .title2, title: "Title2 with link", linkTitle: "Text link"),
             Style(titleStyle: .title2, title: "Title2 with no link", linkTitle: nil),
             Style(titleStyle: .title2, title: "Title1 with link and some large title using 2 lines", linkTitle: "Text link"),
-            Style(titleStyle: .title2, title: "Title1 with no link and some large title using 2 lines", linkTitle: nil),
+            Style(titleStyle: .title2, title: "Title1 with no link and some large title using 2 lines", linkTitle: nil)
         ]
     }
 }

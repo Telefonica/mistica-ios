@@ -12,6 +12,21 @@ protocol FontWeightConvertible: CaseIterable {
     var systemWeight: UIFont.Weight { get }
 }
 
+protocol FontWeightBrandeable: CaseIterable {
+    static var light: Self { get }
+    static var bold: Self { get }
+}
+
+extension FontWeightBrandeable {
+    static var branded: Self {
+        if MisticaConfig.brandStyle.usesBoldForTextPreset5AndAbove {
+            return .bold
+        } else {
+            return .light
+        }
+    }
+}
+
 public extension FontStyle {
     enum TextPreset1Weight: String, FontWeightConvertible {
         case regular, medium
@@ -29,28 +44,28 @@ public extension FontStyle {
         case light, regular, medium
     }
 
-    enum TextPreset5Weight: String, FontWeightConvertible {
-        case light
+    enum TextPreset5Weight: String, FontWeightConvertible, FontWeightBrandeable {
+        case light, bold
     }
 
-    enum TextPreset6Weight: String, FontWeightConvertible {
-        case light, regular
+    enum TextPreset6Weight: String, FontWeightConvertible, FontWeightBrandeable {
+        case light, bold
     }
 
-    enum TextPreset7Weight: String, FontWeightConvertible {
-        case light
+    enum TextPreset7Weight: String, FontWeightConvertible, FontWeightBrandeable {
+        case light, bold
     }
 
-    enum TextPreset8Weight: String, FontWeightConvertible {
-        case light
+    enum TextPreset8Weight: String, FontWeightConvertible, FontWeightBrandeable {
+        case light, bold
     }
 
-    enum TextPreset9Weight: String, FontWeightConvertible {
-        case light
+    enum TextPreset9Weight: String, FontWeightConvertible, FontWeightBrandeable {
+        case light, bold
     }
 
-    enum TextPreset10Weight: String, FontWeightConvertible {
-        case light
+    enum TextPreset10Weight: String, FontWeightConvertible, FontWeightBrandeable {
+        case light, bold
     }
 }
 
@@ -63,6 +78,8 @@ extension RawRepresentable where RawValue == String {
             return .regular
         case "medium":
             return .medium
+        case "bold":
+            return .bold
         default:
             assertionFailure("TextPreset should be an instance of light, regular or medium")
             return .light

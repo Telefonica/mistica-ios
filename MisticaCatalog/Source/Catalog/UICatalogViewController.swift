@@ -22,7 +22,7 @@ private enum UICatalogRow: Int, CaseIterable {
     case inputFields
     case lists
     case scrollContentIndicator
-    case sectionTitle
+    case title
     case filter
     case stepper
     case tabs
@@ -164,7 +164,7 @@ extension UICatalogViewController: UITableViewDataSource, UITableViewDelegate {
             show(UICatalogTagsViewController(), sender: self)
         case .lists:
             show(UICatalogListsViewController(), sender: self)
-        case .sectionTitle:
+        case .title:
             show(UICatalogSectionTitleViewController(), sender: self)
         case .header:
             show(UICatalogHeaderViewController(), sender: self)
@@ -262,8 +262,8 @@ private extension UICatalogRow {
             return "Tags"
         case .lists:
             return "Lists"
-        case .sectionTitle:
-            return "Section Title"
+        case .title:
+            return "Title"
         case .header:
             return "Headers"
         case .controls:
@@ -309,7 +309,7 @@ private extension UICatalogRow {
             return .tagsIcon
         case .lists:
             return .listIcon
-        case .sectionTitle:
+        case .title:
             return .sectionTitleIcon
         case .header:
             return .headerIcon

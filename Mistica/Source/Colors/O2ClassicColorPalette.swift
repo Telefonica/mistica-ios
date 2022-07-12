@@ -30,7 +30,6 @@ struct O2ClassicColors: Colors {
 
     // BUTTONS
     let buttonDangerBackground = O2ClassicColorPalette.pepper
-    let buttonDangerBackgroundDisabled = O2ClassicColorPalette.pepper20 | O2ClassicColorPalette.darkModeGrey
     let buttonDangerBackgroundSelected = O2ClassicColorPalette.pepper55
     let buttonDangerBackgroundHover = O2ClassicColorPalette.pepper55
 
@@ -38,38 +37,28 @@ struct O2ClassicColors: Colors {
     let buttonLinkBackgroundSelectedInverse = O2ClassicColorPalette.white.withAlphaComponent(0.2) | O2ClassicColorPalette.white.withAlphaComponent(0.05)
 
     let buttonPrimaryBackground = O2ClassicColorPalette.o2SkyBlue
-    let buttonPrimaryBackgroundDisabled = O2ClassicColorPalette.o2SkyBlueLight45 | O2ClassicColorPalette.darkModeGrey
-    let buttonPrimaryBackgroundDisabledInverse = O2ClassicColorPalette.o2SkyBlueLight45 | O2ClassicColorPalette.darkModeGrey
     let buttonPrimaryBackgroundInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.o2SkyBlue
     let buttonPrimaryBackgroundSelected = O2ClassicColorPalette.o2SkyBlue55
     let buttonPrimaryBackgroundHover = O2ClassicColorPalette.o2SkyBlue55
     let buttonPrimaryBackgroundSelectedInverse = O2ClassicColorPalette.o2SkyBlueLight45 | O2ClassicColorPalette.o2SkyBlue55
 
     let buttonSecondaryBackground = O2ClassicColorPalette.o2SkyBlue
-    let buttonSecondaryBackgroundDisabled = O2ClassicColorPalette.o2SkyBlueLight45 | O2ClassicColorPalette.darkModeGrey
     let buttonSecondaryBackgroundSelected = O2ClassicColorPalette.o2SkyBlue55
-    let buttonSecondaryBorderDisabledInverse = O2ClassicColorPalette.o2SkyBlueLight45 | O2ClassicColorPalette.darkModeGrey
     let buttonSecondaryBorderInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.o2SkyBlue
     let buttonSecondaryBorderSelectedInverse = O2ClassicColorPalette.o2SkyBlueLight45 | O2ClassicColorPalette.o2SkyBlue55
 
     let textButtonPrimary = O2ClassicColorPalette.white | O2ClassicColorPalette.grey2
-    let textButtonPrimaryDisabled = O2ClassicColorPalette.white | O2ClassicColorPalette.grey5
     let textButtonPrimaryInverse = O2ClassicColorPalette.o2SkyBlue | O2ClassicColorPalette.grey2
-    let textButtonPrimaryInverseDisabled = O2ClassicColorPalette.o2SkyBlueLight20 | O2ClassicColorPalette.grey5
     let textButtonPrimaryInverseSelected = O2ClassicColorPalette.o2SkyBlue | O2ClassicColorPalette.grey2
 
     let textButtonSecondary = O2ClassicColorPalette.o2SkyBlue | O2ClassicColorPalette.grey2
-    let textButtonSecondaryDisabled = O2ClassicColorPalette.o2SkyBlueLight45 | O2ClassicColorPalette.grey5
     let textButtonSecondarySelected = O2ClassicColorPalette.o2SkyBlue55 | O2ClassicColorPalette.grey4
     let textButtonSecondaryInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.grey2
-    let textButtonSecondaryInverseDisabled = O2ClassicColorPalette.o2SkyBlueLight45 | O2ClassicColorPalette.grey5
     let textButtonSecondaryInverseSelected = O2ClassicColorPalette.white | O2ClassicColorPalette.grey4
 
     let textLink = O2ClassicColorPalette.o2SkyBlue | O2ClassicColorPalette.o2SkyBlueLight
     let textLinkInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.o2SkyBlueLight
     let textLinkDanger = O2ClassicColorPalette.pepper
-    let textLinkDangerDisabled = O2ClassicColorPalette.pepper20 | O2ClassicColorPalette.grey5
-    let textLinkDisabled = O2ClassicColorPalette.o2SkyBlueLight | O2ClassicColorPalette.darkModeGrey6
     let textLinkSnackbar = O2ClassicColorPalette.o2SkyBlueLight
 
     // CONTROLS
@@ -103,7 +92,6 @@ struct O2ClassicColors: Colors {
     let textPrimaryInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.grey2
     let textSecondary = O2ClassicColorPalette.grey5 | O2ClassicColorPalette.grey4
     let textSecondaryInverse = O2ClassicColorPalette.white | O2ClassicColorPalette.grey4
-    let textDisabled = O2ClassicColorPalette.grey3 | O2ClassicColorPalette.grey5
 
     // STATES
     let error = O2ClassicColorPalette.pepper

@@ -30,39 +30,28 @@ protocol Colors {
 
     // BORDERS
     var buttonDangerBackground: UIColor { get }
-    var buttonDangerBackgroundDisabled: UIColor { get }
     var buttonDangerBackgroundSelected: UIColor { get }
     var buttonLinkBackgroundSelected: UIColor { get }
     var buttonLinkBackgroundSelectedInverse: UIColor { get }
     var buttonPrimaryBackground: UIColor { get }
-    var buttonPrimaryBackgroundDisabled: UIColor { get }
-    var buttonPrimaryBackgroundDisabledInverse: UIColor { get }
     var buttonPrimaryBackgroundInverse: UIColor { get }
     var buttonPrimaryBackgroundSelected: UIColor { get }
     var buttonPrimaryBackgroundSelectedInverse: UIColor { get }
     var buttonSecondaryBackground: UIColor { get }
-    var buttonSecondaryBackgroundDisabled: UIColor { get }
     var buttonSecondaryBackgroundSelected: UIColor { get }
-    var buttonSecondaryBorderDisabledInverse: UIColor { get }
     var buttonSecondaryBorderInverse: UIColor { get }
     var buttonSecondaryBorderSelectedInverse: UIColor { get }
 
     var textButtonPrimary: UIColor { get }
-    var textButtonPrimaryDisabled: UIColor { get }
     var textButtonPrimaryInverse: UIColor { get }
-    var textButtonPrimaryInverseDisabled: UIColor { get }
     var textButtonPrimaryInverseSelected: UIColor { get }
     var textButtonSecondary: UIColor { get }
-    var textButtonSecondaryDisabled: UIColor { get }
     var textButtonSecondarySelected: UIColor { get }
     var textButtonSecondaryInverse: UIColor { get }
-    var textButtonSecondaryInverseDisabled: UIColor { get }
     var textButtonSecondaryInverseSelected: UIColor { get }
     var textLink: UIColor { get }
     var textLinkInverse: UIColor { get }
     var textLinkDanger: UIColor { get }
-    var textLinkDangerDisabled: UIColor { get }
-    var textLinkDisabled: UIColor { get }
     var textLinkSnackbar: UIColor { get }
 
     // CONTROLS
@@ -96,7 +85,6 @@ protocol Colors {
     var textPrimaryInverse: UIColor { get }
     var textSecondary: UIColor { get }
     var textSecondaryInverse: UIColor { get }
-    var textDisabled: UIColor { get }
 
     // STATES
     var error: UIColor { get }

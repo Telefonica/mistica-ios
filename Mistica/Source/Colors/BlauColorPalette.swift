@@ -30,7 +30,6 @@ struct BlauColors: Colors {
 
     // BUTTONS
     let buttonDangerBackground = BlauColorPalette.blauRed
-    let buttonDangerBackgroundDisabled = BlauColorPalette.blauRed20 | BlauColorPalette.darkModeGrey
     let buttonDangerBackgroundHover = BlauColorPalette.blauRed70
     let buttonDangerBackgroundSelected = BlauColorPalette.blauRed70
 
@@ -38,38 +37,28 @@ struct BlauColors: Colors {
     let buttonLinkBackgroundSelectedInverse = BlauColorPalette.white.withAlphaComponent(0.3) | BlauColorPalette.blauPurple.withAlphaComponent(0.3)
 
     let buttonPrimaryBackground = BlauColorPalette.blauBlueSecondary
-    let buttonPrimaryBackgroundDisabled = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.darkModeGrey
-    let buttonPrimaryBackgroundDisabledInverse = BlauColorPalette.blauBluePrimary30 | BlauColorPalette.darkModeGrey
     let buttonPrimaryBackgroundHover = BlauColorPalette.blauBlueSecondary60
     let buttonPrimaryBackgroundInverse = BlauColorPalette.white | BlauColorPalette.blauBluePrimary
     let buttonPrimaryBackgroundSelected = BlauColorPalette.blauBlueSecondary60
     let buttonPrimaryBackgroundSelectedInverse = BlauColorPalette.blauBluePrimary30 | BlauColorPalette.blauBlueSecondary60
 
     let buttonSecondaryBackground = BlauColorPalette.blauBlueSecondary
-    let buttonSecondaryBackgroundDisabled = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.darkModeGrey
     let buttonSecondaryBackgroundSelected = BlauColorPalette.blauBlueSecondary60
-    let buttonSecondaryBorderDisabledInverse = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.darkModeGrey
     let buttonSecondaryBorderInverse = BlauColorPalette.white | BlauColorPalette.blauBluePrimary
     let buttonSecondaryBorderSelectedInverse = BlauColorPalette.blauBluePrimary30 | BlauColorPalette.blauBlueSecondary60
 
     let textButtonPrimary = BlauColorPalette.white | BlauColorPalette.grey2
-    let textButtonPrimaryDisabled = BlauColorPalette.white | BlauColorPalette.grey5
     let textButtonPrimaryInverse = BlauColorPalette.blauBlueSecondary | BlauColorPalette.grey2
-    let textButtonPrimaryInverseDisabled = BlauColorPalette.blauBluePrimary10 | BlauColorPalette.grey5
     let textButtonPrimaryInverseSelected = BlauColorPalette.blauBlueSecondary60 | BlauColorPalette.grey2
 
     let textButtonSecondary = BlauColorPalette.blauBlueSecondary | BlauColorPalette.grey2
-    let textButtonSecondaryDisabled = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.grey5
     let textButtonSecondaryInverse = BlauColorPalette.white | BlauColorPalette.grey2
-    let textButtonSecondaryInverseDisabled = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.grey5
     let textButtonSecondaryInverseSelected = BlauColorPalette.white | BlauColorPalette.blauBlueSecondary60
     let textButtonSecondarySelected = BlauColorPalette.blauBlueSecondary60
 
     let textLink = BlauColorPalette.blauPurple | BlauColorPalette.blauPurple30
     let textLinkInverse = BlauColorPalette.white | BlauColorPalette.blauPurple30
     let textLinkDanger = BlauColorPalette.blauRed
-    let textLinkDangerDisabled = BlauColorPalette.blauRed20 | BlauColorPalette.grey5
-    let textLinkDisabled = BlauColorPalette.blauPurple30 | BlauColorPalette.grey5
     let textLinkSnackbar = BlauColorPalette.blauPurple30
 
     // CONTROLS
@@ -99,7 +88,6 @@ struct BlauColors: Colors {
     let neutralMedium = BlauColorPalette.grey5
     let promo = BlauColorPalette.blauPurple
 
-    let textDisabled = BlauColorPalette.grey3 | BlauColorPalette.grey5
     let textPrimary = BlauColorPalette.grey6 | BlauColorPalette.grey2
     let textPrimaryInverse = BlauColorPalette.white | BlauColorPalette.grey2
     let textSecondary = BlauColorPalette.grey5 | BlauColorPalette.grey4

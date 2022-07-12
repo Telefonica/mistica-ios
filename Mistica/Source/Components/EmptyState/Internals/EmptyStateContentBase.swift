@@ -13,7 +13,7 @@ private enum Constants {
     static let contentLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 24, trailing: 16)
     static let fullWidthMargin: CGFloat = 24.0
     static let iconWidthMargin: CGFloat = 24.0
-    static let iconHeight: CGFloat = 64.0
+    static let iconHeight: CGFloat = 48.0
     static let smallImageHeight: CGFloat = 112.0
     static let actionsHeight: CGFloat = 48.0
     static let descriptionTopSpacingCard: CGFloat = 16.0

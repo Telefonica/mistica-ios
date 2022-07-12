@@ -15,6 +15,8 @@ open class Button: UIControl {
         static let animationCurveControlPoint2 = CGPoint(x: 0.175, y: 1)
         static let cornerRadius: CGFloat = 4
         static let borderWidth: CGFloat = 1.5
+        static let enabledAlpha: CGFloat = 1.0
+        static let disabledAlpha: CGFloat = 0.5
     }
 
     public struct Style {
@@ -250,25 +252,14 @@ private extension Button {
     }
 
     func applyStyleColors() {
-        let stateStyle: StateStyle?
-
-        if isLoading {
-            stateStyle = style.stateStyleByState[.loading]
-        } else if !isEnabled {
-            stateStyle = style.stateStyleByState[.disabled]
-        } else if isSelected || isHighlighted {
-            stateStyle = style.stateStyleByState[.selected]
-        } else {
-            stateStyle = style.stateStyleByState[.normal]
-        }
-
-        guard stateStyle != nil else {
+        guard let stateStyle = style.stateStyleByState[state] else {
             preconditionFailure("Style \(style) does not have stateStyle for state \(state). Check that the current style is defined properly.")
         }
 
-        container.textColor = stateStyle!.textColor
-        backgroundColor = stateStyle!.backgroundColor
-        layer.borderColor = stateStyle!.borderColor.cgColor
+        container.textColor = stateStyle.textColor
+        backgroundColor = stateStyle.backgroundColor
+        layer.borderColor = stateStyle.borderColor.cgColor
+        alpha = state != .disabled ? Constants.enabledAlpha : Constants.disabledAlpha
     }
 
     func didUpdateState() {

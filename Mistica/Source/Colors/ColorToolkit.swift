@@ -16,11 +16,6 @@ public extension UIColor {
         MisticaConfig.currentColors.buttonDangerBackground
     }
 
-    @objc(buttonDangerBackgroundDisabledColor)
-    static var buttonDangerBackgroundDisabled: UIColor {
-        MisticaConfig.currentColors.buttonDangerBackgroundDisabled
-    }
-
     @objc(buttonDangerBackgroundSelectedColor)
     static var buttonDangerBackgroundSelected: UIColor {
         MisticaConfig.currentColors.buttonDangerBackgroundSelected
@@ -39,16 +34,6 @@ public extension UIColor {
     @objc(buttonPrimaryBackgroundColor)
     static var buttonPrimaryBackground: UIColor {
         MisticaConfig.currentColors.buttonPrimaryBackground
-    }
-
-    @objc(buttonPrimaryBackgroundDisabledColor)
-    static var buttonPrimaryBackgroundDisabled: UIColor {
-        MisticaConfig.currentColors.buttonPrimaryBackgroundDisabled
-    }
-
-    @objc(buttonPrimaryBackgroundDisabledInverseColor)
-    static var buttonPrimaryBackgroundDisabledInverse: UIColor {
-        MisticaConfig.currentColors.buttonPrimaryBackgroundDisabledInverse
     }
 
     @objc(buttonPrimaryBackgroundInverseColor)
@@ -71,19 +56,9 @@ public extension UIColor {
         MisticaConfig.currentColors.buttonSecondaryBackground
     }
 
-    @objc(buttonSecondaryBackgroundDisabledColor)
-    static var buttonSecondaryBackgroundDisabled: UIColor {
-        MisticaConfig.currentColors.buttonSecondaryBackgroundDisabled
-    }
-
     @objc(buttonSecondaryBackgroundSelectedColor)
     static var buttonSecondaryBackgroundSelected: UIColor {
         MisticaConfig.currentColors.buttonSecondaryBackgroundSelected
-    }
-
-    @objc(buttonSecondaryBorderDisabledInverseColor)
-    static var buttonSecondaryBorderDisabledInverse: UIColor {
-        MisticaConfig.currentColors.buttonSecondaryBorderDisabledInverse
     }
 
     @objc(buttonSecondaryBorderInverseColor)
@@ -101,19 +76,9 @@ public extension UIColor {
         MisticaConfig.currentColors.textButtonPrimary
     }
 
-    @objc(textButtonPrimaryDisabledColor)
-    static var textButtonPrimaryDisabled: UIColor {
-        MisticaConfig.currentColors.textButtonPrimaryDisabled
-    }
-
     @objc(textButtonPrimaryInverseColor)
     static var textButtonPrimaryInverse: UIColor {
         MisticaConfig.currentColors.textButtonPrimaryInverse
-    }
-
-    @objc(textButtonPrimaryInverseDisabledColor)
-    static var textButtonPrimaryInverseDisabled: UIColor {
-        MisticaConfig.currentColors.textButtonPrimaryInverseDisabled
     }
 
     @objc(textButtonPrimaryInverseSelectedColor)
@@ -126,11 +91,6 @@ public extension UIColor {
         MisticaConfig.currentColors.textButtonSecondary
     }
 
-    @objc(textButtonSecondaryDisabledColor)
-    static var textButtonSecondaryDisabled: UIColor {
-        MisticaConfig.currentColors.textButtonSecondaryDisabled
-    }
-
     @objc(textButtonSecondarySelectedColor)
     static var textButtonSecondarySelected: UIColor {
         MisticaConfig.currentColors.textButtonSecondarySelected
@@ -139,11 +99,6 @@ public extension UIColor {
     @objc(textButtonSecondaryInverseColor)
     static var textButtonSecondaryInverse: UIColor {
         MisticaConfig.currentColors.textButtonSecondaryInverse
-    }
-
-    @objc(textButtonSecondaryInverseDisabledColor)
-    static var textButtonSecondaryInverseDisabled: UIColor {
-        MisticaConfig.currentColors.textButtonSecondaryInverseDisabled
     }
 
     @objc(textButtonSecondaryInverseSelectedColor)
@@ -164,16 +119,6 @@ public extension UIColor {
     @objc(textLinkDangerColor)
     static var textLinkDanger: UIColor {
         MisticaConfig.currentColors.textLinkDanger
-    }
-
-    @objc(textLinkDangerDisabledColor)
-    static var textLinkDangerDisabled: UIColor {
-        MisticaConfig.currentColors.textLinkDangerDisabled
-    }
-
-    @objc(textLinkDisabledColor)
-    static var textLinkDisabled: UIColor {
-        MisticaConfig.currentColors.textLinkDisabled
     }
 
     @objc(textLinkSnackbarColor)
@@ -394,11 +339,6 @@ public extension UIColor {
     @objc(textSecondaryInverseColor)
     static var textSecondaryInverse: UIColor {
         MisticaConfig.currentColors.textSecondaryInverse
-    }
-
-    @objc(textDisabledColor)
-    static var textDisabled: UIColor {
-        MisticaConfig.currentColors.textDisabled
     }
 
     // MARK: States

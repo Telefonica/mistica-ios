@@ -83,8 +83,8 @@ let package = Package(
             path: "Mistica/Tests/MisticaTests",
             exclude: [
                 "UI/__Snapshots__",
-                "Fonts/__Snapshots__"
-//                "Resources"
+                "Fonts/__Snapshots__",
+                "Resources"
             ],
             resources: [
                 .process("Resources/Telefonica-Bold.otf"),

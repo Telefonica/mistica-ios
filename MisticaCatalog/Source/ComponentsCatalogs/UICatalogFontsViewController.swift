@@ -23,12 +23,12 @@ class UICatalogFontsViewController: UITableViewController {
         (fontStyle: FontStyle.textPreset4, weight: FontStyle.TextPreset4Weight.light.rawValue),
         (fontStyle: FontStyle.textPreset4, weight: FontStyle.TextPreset4Weight.regular.rawValue),
         (fontStyle: FontStyle.textPreset4, weight: FontStyle.TextPreset4Weight.medium.rawValue),
-        (fontStyle: FontStyle.textPreset5, weight: FontStyle.TextPreset5Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset6, weight: FontStyle.TextPreset6Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset7, weight: FontStyle.TextPreset7Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset8, weight: FontStyle.TextPreset8Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset9, weight: FontStyle.TextPreset9Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset10, weight: FontStyle.TextPreset10Weight.light.rawValue)
+        (fontStyle: FontStyle.textPreset5, weight: FontStyle.TextPreset5Weight.default.rawValue),
+        (fontStyle: FontStyle.textPreset6, weight: FontStyle.TextPreset6Weight.default.rawValue),
+        (fontStyle: FontStyle.textPreset7, weight: FontStyle.TextPreset7Weight.default.rawValue),
+        (fontStyle: FontStyle.textPreset8, weight: FontStyle.TextPreset8Weight.default.rawValue),
+        (fontStyle: FontStyle.textPreset9, weight: FontStyle.TextPreset9Weight.default.rawValue),
+        (fontStyle: FontStyle.textPreset10, weight: FontStyle.TextPreset10Weight.default.rawValue)
     ]
 
     init() {

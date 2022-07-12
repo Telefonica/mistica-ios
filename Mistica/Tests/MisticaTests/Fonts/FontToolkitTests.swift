@@ -79,7 +79,7 @@ private extension FontToolkitTests {
             font: .textPreset8()
         )
         let textPreset9 = makeLabel(
-            text: "textPreset5 \(FontStyle.TextPreset9Weight.default)",
+            text: "textPreset9 \(FontStyle.TextPreset9Weight.default)",
             font: .textPreset9()
         )
         let textPreset10 = makeLabel(

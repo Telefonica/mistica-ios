@@ -12,12 +12,12 @@ protocol FontWeightConvertible: CaseIterable {
     var systemWeight: UIFont.Weight { get }
 }
 
-protocol FontWeightBrandable: CaseIterable {
+public protocol FontWeightBrandable: CaseIterable {
     static var light: Self { get }
     static var bold: Self { get }
 }
 
-extension FontWeightBrandable {
+public extension FontWeightBrandable {
     static var `default`: Self {
         if MisticaConfig.brandStyle.usesBoldForTextPreset5AndAbove {
             return .bold

@@ -12,13 +12,13 @@ protocol FontWeightConvertible: CaseIterable {
     var systemWeight: UIFont.Weight { get }
 }
 
-protocol FontWeightBrandeable: CaseIterable {
+protocol FontWeightBrandable: CaseIterable {
     static var light: Self { get }
     static var bold: Self { get }
 }
 
-extension FontWeightBrandeable {
-    static var branded: Self {
+extension FontWeightBrandable {
+    static var `default`: Self {
         if MisticaConfig.brandStyle.usesBoldForTextPreset5AndAbove {
             return .bold
         } else {
@@ -44,27 +44,27 @@ public extension FontStyle {
         case light, regular, medium
     }
 
-    enum TextPreset5Weight: String, FontWeightConvertible, FontWeightBrandeable {
+    enum TextPreset5Weight: String, FontWeightConvertible, FontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset6Weight: String, FontWeightConvertible, FontWeightBrandeable {
+    enum TextPreset6Weight: String, FontWeightConvertible, FontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset7Weight: String, FontWeightConvertible, FontWeightBrandeable {
+    enum TextPreset7Weight: String, FontWeightConvertible, FontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset8Weight: String, FontWeightConvertible, FontWeightBrandeable {
+    enum TextPreset8Weight: String, FontWeightConvertible, FontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset9Weight: String, FontWeightConvertible, FontWeightBrandeable {
+    enum TextPreset9Weight: String, FontWeightConvertible, FontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset10Weight: String, FontWeightConvertible, FontWeightBrandeable {
+    enum TextPreset10Weight: String, FontWeightConvertible, FontWeightBrandable {
         case light, bold
     }
 }

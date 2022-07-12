@@ -71,7 +71,7 @@ public class FeedbackView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = title
-        label.font = .textPreset6(weight: .light)
+        label.font = .textPreset6()
         label.textColor = style.feedbackTextPrimary
         label.numberOfLines = 0
         label.isAccessibilityElement = true

@@ -25,7 +25,7 @@ public class TitleView: UITableViewHeaderFooterView {
             case .title1:
                 return .textPreset1(weight: .medium)
             case .title2:
-                return .textPreset5(weight: .branded)
+                return .textPreset5()
             }
         }
         

@@ -48,37 +48,37 @@ final class FontToolkitTests: XCTestCase {
         let textPreset5 = FontStyle.TextPreset5Weight.allCases.map { weight in
             makeLabel(
                 text: "textPreset5 \(weight)",
-                font: .textPreset5(weight: weight)
+                font: .textPreset5()
             )
         }
         let textPreset6 = FontStyle.TextPreset6Weight.allCases.map { weight in
             makeLabel(
                 text: "textPreset6 \(weight)",
-                font: .textPreset6(weight: weight)
+                font: .textPreset6()
             )
         }
         let textPreset7 = FontStyle.TextPreset7Weight.allCases.map { weight in
             makeLabel(
                 text: "textPreset7 \(weight)",
-                font: .textPreset7(weight: weight)
+                font: .textPreset7()
             )
         }
         let textPreset8 = FontStyle.TextPreset8Weight.allCases.map { weight in
             makeLabel(
                 text: "textPreset8 \(weight)",
-                font: .textPreset8(weight: weight)
+                font: .textPreset8()
             )
         }
         let textPreset9 = FontStyle.TextPreset9Weight.allCases.map { weight in
             makeLabel(
                 text: "textPreset9 \(weight)",
-                font: .textPreset9(weight: weight)
+                font: .textPreset9()
             )
         }
         let textPreset10 = FontStyle.TextPreset10Weight.allCases.map { weight in
             makeLabel(
                 text: "textPreset10 \(weight)",
-                font: .textPreset10(weight: weight)
+                font: .textPreset10()
             )
         }
 

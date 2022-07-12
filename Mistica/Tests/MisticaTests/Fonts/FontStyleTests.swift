@@ -44,13 +44,13 @@ final class FontStyleTests: XCTestCase {
         XCTAssertEqual(UIFont.textPreset4(weight: .light).fontName, "Telefonica-Light")
         XCTAssertEqual(UIFont.textPreset4(weight: .regular).fontName, "Telefonica-Regular")
         XCTAssertEqual(UIFont.textPreset4(weight: .medium).fontName, "Telefonica-Bold")
-        XCTAssertEqual(UIFont.textPreset5(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset6(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset6(weight: .regular).fontName, "Telefonica-Regular")
-        XCTAssertEqual(UIFont.textPreset7(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset8(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset9(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset10(weight: .light).fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset5().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset6().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset6().fontName, "Telefonica-Regular")
+        XCTAssertEqual(UIFont.textPreset7().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset8().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset9().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset10().fontName, "Telefonica-Light")
     }
 }
 

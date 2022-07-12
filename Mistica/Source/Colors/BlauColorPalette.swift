@@ -18,7 +18,7 @@ struct BlauColors: Colors {
     let backgroundFeedbackBottom = BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack
     let backgroundOverlay = BlauColorPalette.blauBlueSecondary.withAlphaComponent(0.75) | BlauColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = BlauColorPalette.grey2 | BlauColorPalette.darkModeGrey
-    let backgroundSkeletonInverse = BlauColorPalette.white.withAlphaComponent(0.2) | BlauColorPalette.darkModeGrey
+    let backgroundSkeletonInverse = BlauColorPalette.white | BlauColorPalette.darkModeGrey
     let navigationBarBackground = BlauColorPalette.blauBluePrimary | BlauColorPalette.darkModeBlack
     let skeletonWave = BlauColorPalette.grey2 | BlauColorPalette.grey5
 
@@ -30,7 +30,6 @@ struct BlauColors: Colors {
 
     // BUTTONS
     let buttonDangerBackground = BlauColorPalette.blauRed
-    let buttonDangerBackgroundDisabled = BlauColorPalette.blauRed20 | BlauColorPalette.darkModeGrey
     let buttonDangerBackgroundHover = BlauColorPalette.blauRed70
     let buttonDangerBackgroundSelected = BlauColorPalette.blauRed70
 
@@ -38,38 +37,28 @@ struct BlauColors: Colors {
     let buttonLinkBackgroundSelectedInverse = BlauColorPalette.white.withAlphaComponent(0.3) | BlauColorPalette.blauPurple.withAlphaComponent(0.3)
 
     let buttonPrimaryBackground = BlauColorPalette.blauBlueSecondary
-    let buttonPrimaryBackgroundDisabled = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.darkModeGrey
-    let buttonPrimaryBackgroundDisabledInverse = BlauColorPalette.blauBluePrimary30 | BlauColorPalette.darkModeGrey
     let buttonPrimaryBackgroundHover = BlauColorPalette.blauBlueSecondary60
     let buttonPrimaryBackgroundInverse = BlauColorPalette.white | BlauColorPalette.blauBluePrimary
     let buttonPrimaryBackgroundSelected = BlauColorPalette.blauBlueSecondary60
     let buttonPrimaryBackgroundSelectedInverse = BlauColorPalette.blauBluePrimary30 | BlauColorPalette.blauBlueSecondary60
 
     let buttonSecondaryBackground = BlauColorPalette.blauBlueSecondary
-    let buttonSecondaryBackgroundDisabled = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.darkModeGrey
     let buttonSecondaryBackgroundSelected = BlauColorPalette.blauBlueSecondary60
-    let buttonSecondaryBorderDisabledInverse = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.darkModeGrey
     let buttonSecondaryBorderInverse = BlauColorPalette.white | BlauColorPalette.blauBluePrimary
     let buttonSecondaryBorderSelectedInverse = BlauColorPalette.blauBluePrimary30 | BlauColorPalette.blauBlueSecondary60
 
     let textButtonPrimary = BlauColorPalette.white | BlauColorPalette.grey2
-    let textButtonPrimaryDisabled = BlauColorPalette.white | BlauColorPalette.grey5
     let textButtonPrimaryInverse = BlauColorPalette.blauBlueSecondary | BlauColorPalette.grey2
-    let textButtonPrimaryInverseDisabled = BlauColorPalette.blauBluePrimary10 | BlauColorPalette.grey5
     let textButtonPrimaryInverseSelected = BlauColorPalette.blauBlueSecondary60 | BlauColorPalette.grey2
 
     let textButtonSecondary = BlauColorPalette.blauBlueSecondary | BlauColorPalette.grey2
-    let textButtonSecondaryDisabled = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.grey5
     let textButtonSecondaryInverse = BlauColorPalette.white | BlauColorPalette.grey2
-    let textButtonSecondaryInverseDisabled = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.grey5
     let textButtonSecondaryInverseSelected = BlauColorPalette.white | BlauColorPalette.blauBlueSecondary60
-    let textButtonSecondarySelected = BlauColorPalette.blauBlueSecondary60 | BlauColorPalette.blauBlueSecondary60
+    let textButtonSecondarySelected = BlauColorPalette.blauBlueSecondary60
 
     let textLink = BlauColorPalette.blauPurple | BlauColorPalette.blauPurple30
     let textLinkInverse = BlauColorPalette.white | BlauColorPalette.blauPurple30
     let textLinkDanger = BlauColorPalette.blauRed
-    let textLinkDangerDisabled = BlauColorPalette.blauRed20 | BlauColorPalette.grey5
-    let textLinkDisabled = BlauColorPalette.blauPurple30 | BlauColorPalette.grey5
     let textLinkSnackbar = BlauColorPalette.blauPurple30
 
     // CONTROLS
@@ -90,17 +79,15 @@ struct BlauColors: Colors {
     let feedbackInfoBackground = BlauColorPalette.grey6 | BlauColorPalette.darkModeGrey
 
     // GLOBAL
-    let brand = BlauColorPalette.blauBluePrimary | BlauColorPalette.blauBluePrimary
-    let brandDark = BlauColorPalette.blauBlueSecondary | BlauColorPalette.grey5
+    let brand = BlauColorPalette.blauBluePrimary
+    let brandHigh = BlauColorPalette.blauBlueSecondary | BlauColorPalette.white.withAlphaComponent(0.05)
     let inverse = BlauColorPalette.white | BlauColorPalette.grey2
     let highlight = BlauColorPalette.blauBluePrimary
     let neutralHigh = BlauColorPalette.grey6 | BlauColorPalette.grey2
-    let neutralLow = BlauColorPalette.grey2 | BlauColorPalette.darkModeGrey
-    let neutralMedium = BlauColorPalette.grey5 | BlauColorPalette.grey5
+    let neutralLow = BlauColorPalette.grey2 | BlauColorPalette.darkModeGrey6
+    let neutralMedium = BlauColorPalette.grey5
     let promo = BlauColorPalette.blauPurple
 
-    let textAmount = BlauColorPalette.blauBlueSecondary | BlauColorPalette.blauBlueSecondary
-    let textDisabled = BlauColorPalette.grey3 | BlauColorPalette.grey5
     let textPrimary = BlauColorPalette.grey6 | BlauColorPalette.grey2
     let textPrimaryInverse = BlauColorPalette.white | BlauColorPalette.grey2
     let textSecondary = BlauColorPalette.grey5 | BlauColorPalette.grey4
@@ -112,7 +99,7 @@ struct BlauColors: Colors {
     let warning = BlauColorPalette.blauYellow
 
     // BARS TEXTS
-    let textAppBar = BlauColorPalette.grey5 | BlauColorPalette.grey5
+    let textAppBar = BlauColorPalette.grey5
     let textAppBarSelected = BlauColorPalette.blauBlueSecondary60 | BlauColorPalette.grey2
     let textNavigationBarPrimary = BlauColorPalette.white | BlauColorPalette.grey2
     let textNavigationBarSecondary = BlauColorPalette.blauBlueSecondary20 | BlauColorPalette.grey4
@@ -128,18 +115,15 @@ struct BlauColors: Colors {
     ]
 
     // TAGS
-    var tagBackgroundSuccess = BlauColorPalette.blauGreen10 | BlauColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundWarning = BlauColorPalette.blauYellow10 | BlauColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundError = BlauColorPalette.blauRed10 | BlauColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundPromo = BlauColorPalette.blauPurple10 | BlauColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundActive = BlauColorPalette.blauBlueSecondary10 | BlauColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundInactive = BlauColorPalette.grey2 | BlauColorPalette.white.withAlphaComponent(0.05)
-    var textTagSuccess = BlauColorPalette.blauGreen70 | BlauColorPalette.blauGreen30
-    var textTagWarning = BlauColorPalette.blauYellow70 | BlauColorPalette.blauYellow40
-    var textTagError = BlauColorPalette.blauRed70 | BlauColorPalette.blauRed40
-    var textTagPromo = BlauColorPalette.blauPurple | BlauColorPalette.blauPurple30
-    var textTagActive = BlauColorPalette.blauBlueSecondary | BlauColorPalette.blauBluePrimary30
-    var textTagInactive = BlauColorPalette.grey5 | BlauColorPalette.grey4
+    var successLow = BlauColorPalette.blauGreen10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var warningLow = BlauColorPalette.blauYellow10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var errorLow = BlauColorPalette.blauRed10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var promoLow = BlauColorPalette.blauPurple10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var brandLow = BlauColorPalette.blauBlueSecondary10 | BlauColorPalette.white.withAlphaComponent(0.05)
+    var successHigh = BlauColorPalette.blauGreen70 | BlauColorPalette.blauGreen30
+    var warningHigh = BlauColorPalette.blauYellow70 | BlauColorPalette.blauYellow40
+    var errorHigh = BlauColorPalette.blauRed70 | BlauColorPalette.blauRed40
+    var promoHigh = BlauColorPalette.blauPurple | BlauColorPalette.blauPurple30
 }
 
 public enum BlauColorPalette {
@@ -182,4 +166,5 @@ public enum BlauColorPalette {
 
     public static let darkModeBlack = UIColor(hex: "#191919")!
     public static let darkModeGrey = UIColor(hex: "#242424")!
+    public static let darkModeGrey6 = UIColor(hex: "#313235")!
 }

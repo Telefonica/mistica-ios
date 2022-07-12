@@ -25,50 +25,39 @@ struct O2Colors: Colors {
     // BORDERS
     let borderLight = O2ColorPalette.grey1 | O2ColorPalette.darkModeBlack
     let border = O2ColorPalette.grey3 | O2ColorPalette.darkModeGrey
-    let borderDark = O2ColorPalette.grey5 | O2ColorPalette.grey5
-    let borderSelected = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
+    let borderDark = O2ColorPalette.grey5
+    let borderSelected = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimary30
 
     // BUTTONS
     let buttonDangerBackground = O2ColorPalette.pepper
-    let buttonDangerBackgroundDisabled = O2ColorPalette.pepper20 | O2ColorPalette.darkModeGrey
     let buttonDangerBackgroundSelected = O2ColorPalette.pepper60
 
     let buttonLinkBackgroundSelected = O2ColorPalette.o2BluePrimary10 | O2ColorPalette.white.withAlphaComponent(0.05)
     let buttonLinkBackgroundSelectedInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.white.withAlphaComponent(0.05)
 
     let buttonPrimaryBackground = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
-    let buttonPrimaryBackgroundDisabled = O2ColorPalette.o2BluePrimary15 | O2ColorPalette.darkModeGrey
-    let buttonPrimaryBackgroundDisabledInverse = O2ColorPalette.o2BluePrimary30 | O2ColorPalette.darkModeGrey
     let buttonPrimaryBackgroundInverse = O2ColorPalette.white | O2ColorPalette.darkModeO2BluePrimary
     let buttonPrimaryBackgroundSelected = O2ColorPalette.o2BluePrimary70 | O2ColorPalette.darkModeO2BluePrimaryDark
     let buttonPrimaryBackgroundHover = O2ColorPalette.o2BluePrimary70 | O2ColorPalette.darkModeO2BluePrimaryDark
     let buttonPrimaryBackgroundSelectedInverse = O2ColorPalette.o2BluePrimary30 | O2ColorPalette.darkModeO2BluePrimaryDark
 
     let buttonSecondaryBackground = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeO2BluePrimary
-    let buttonSecondaryBackgroundDisabled = O2ColorPalette.o2BluePrimary15 | O2ColorPalette.darkModeGrey
     let buttonSecondaryBackgroundSelected = O2ColorPalette.o2BluePrimary70 | O2ColorPalette.darkModeO2BluePrimaryDark
-    let buttonSecondaryBorderDisabledInverse = O2ColorPalette.o2BluePrimary30 | O2ColorPalette.darkModeGrey
     let buttonSecondaryBorderInverse = O2ColorPalette.white | O2ColorPalette.darkModeO2BluePrimary
     let buttonSecondaryBorderSelectedInverse = O2ColorPalette.o2BluePrimary30 | O2ColorPalette.darkModeO2BluePrimaryDark
 
     let textButtonPrimary = O2ColorPalette.white | O2ColorPalette.grey2
-    let textButtonPrimaryDisabled = O2ColorPalette.white | O2ColorPalette.grey5
     let textButtonPrimaryInverse = O2ColorPalette.o2BluePrimary | O2ColorPalette.grey2
-    let textButtonPrimaryInverseDisabled = O2ColorPalette.o2BluePrimary15 | O2ColorPalette.grey5
     let textButtonPrimaryInverseSelected = O2ColorPalette.o2BluePrimary70 | O2ColorPalette.grey2
 
     let textButtonSecondary = O2ColorPalette.o2BluePrimary | O2ColorPalette.grey2
-    let textButtonSecondaryDisabled = O2ColorPalette.o2BluePrimary15 | O2ColorPalette.grey5
     let textButtonSecondarySelected = O2ColorPalette.o2BluePrimary70 | O2ColorPalette.grey4
     let textButtonSecondaryInverse = O2ColorPalette.white | O2ColorPalette.grey2
-    let textButtonSecondaryInverseDisabled = O2ColorPalette.o2BluePrimary30 | O2ColorPalette.grey5
     let textButtonSecondaryInverseSelected = O2ColorPalette.white | O2ColorPalette.grey4
 
     let textLink = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimary30
     let textLinkInverse = O2ColorPalette.white | O2ColorPalette.o2BluePrimary30
     let textLinkDanger = O2ColorPalette.pepper
-    let textLinkDangerDisabled = O2ColorPalette.pepper20 | O2ColorPalette.grey5
-    let textLinkDisabled = O2ColorPalette.o2BluePrimary30 | O2ColorPalette.darkModeGrey6
     let textLinkSnackbar = O2ColorPalette.o2BluePrimary30
 
     // CONTROLS
@@ -90,11 +79,11 @@ struct O2Colors: Colors {
 
     // GLOBAL
     let brand = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimary30
-    let brandDark = O2ColorPalette.o2BluePrimary70 | O2ColorPalette.darkModeGrey6
+    let brandHigh = O2ColorPalette.o2BluePrimary70 | O2ColorPalette.white.withAlphaComponent(0.05)
     let inverse = O2ColorPalette.white | O2ColorPalette.grey2
     let neutralHigh = O2ColorPalette.grey6 | O2ColorPalette.grey2
-    let neutralMedium = O2ColorPalette.grey5 | O2ColorPalette.grey5
-    let neutralLow = O2ColorPalette.grey3 | O2ColorPalette.darkModeGrey6
+    let neutralMedium = O2ColorPalette.grey5
+    let neutralLow = O2ColorPalette.grey1 | O2ColorPalette.darkModeGrey6
     let promo = O2ColorPalette.o2Purple
     let highlight = O2ColorPalette.o2Pink
 
@@ -102,8 +91,6 @@ struct O2Colors: Colors {
     let textPrimaryInverse = O2ColorPalette.white | O2ColorPalette.grey2
     let textSecondary = O2ColorPalette.grey5 | O2ColorPalette.grey4
     let textSecondaryInverse = O2ColorPalette.white | O2ColorPalette.grey4
-    let textDisabled = O2ColorPalette.grey3 | O2ColorPalette.grey5
-    let textAmount = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimary10
 
     // STATES
     let error = O2ColorPalette.pepper
@@ -127,18 +114,15 @@ struct O2Colors: Colors {
     ]
 
     // TAGS
-    var tagBackgroundSuccess = O2ColorPalette.o2Green10 | O2ColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundWarning = O2ColorPalette.o2Orange10 | O2ColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundError = O2ColorPalette.pepper10 | O2ColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundPromo = O2ColorPalette.o2Purple10 | O2ColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundActive = O2ColorPalette.o2BluePrimary10 | O2ColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundInactive = O2ColorPalette.grey1 | O2ColorPalette.white.withAlphaComponent(0.05)
-    var textTagSuccess = O2ColorPalette.o2Green80 | O2ColorPalette.o2Green40
-    var textTagWarning = O2ColorPalette.o2Orange75 | O2ColorPalette.o2Orange40
-    var textTagError = O2ColorPalette.pepper60 | O2ColorPalette.pepper40
-    var textTagPromo = O2ColorPalette.o2Purple | O2ColorPalette.o2Purple30
-    var textTagActive = O2ColorPalette.o2BluePrimary | O2ColorPalette.o2BluePrimary15
-    var textTagInactive = O2ColorPalette.grey5 | O2ColorPalette.grey4
+    var successLow = O2ColorPalette.o2Green10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var warningLow = O2ColorPalette.o2Orange10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var errorLow = O2ColorPalette.pepper10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var promoLow = O2ColorPalette.o2Purple10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var brandLow = O2ColorPalette.o2BluePrimary10 | O2ColorPalette.white.withAlphaComponent(0.05)
+    var successHigh = O2ColorPalette.o2Green80 | O2ColorPalette.o2Green40
+    var warningHigh = O2ColorPalette.o2Orange75 | O2ColorPalette.o2Orange40
+    var errorHigh = O2ColorPalette.pepper60 | O2ColorPalette.pepper40
+    var promoHigh = O2ColorPalette.o2Purple | O2ColorPalette.o2Purple30
 }
 
 public enum O2ColorPalette {

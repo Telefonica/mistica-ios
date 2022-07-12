@@ -84,8 +84,13 @@ let package = Package(
             exclude: [
                 "UI/__Snapshots__",
                 "Fonts/__Snapshots__",
-                "Resources"
+//                "Resources"
             ],
+			resources: [
+				.process("Resources/Telefonica-Bold.otf"),
+				.process("Resources/Telefonica-Light.otf"),
+				.process("Resources/Telefonica-Regular.otf"),
+			],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
             ]

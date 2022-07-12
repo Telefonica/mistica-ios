@@ -49,7 +49,7 @@ github "Telefonica/mistica-ios"
 And then run:
 
 ```
-carthage update --platform iOS --use-ssh
+carthage update --platform iOS --use-ssh --use-xcframeworks
 ```
 
 > More information about Carthage integration [here](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)

@@ -25,8 +25,8 @@ struct VivoColors: Colors {
     // BORDERS
     let borderLight = VivoColorPalette.grey1 | VivoColorPalette.darkModeBlack
     let border = VivoColorPalette.grey3 | VivoColorPalette.darkModeGrey
-    let borderDark = VivoColorPalette.grey5 | VivoColorPalette.grey5
-    let borderSelected = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
+    let borderDark = VivoColorPalette.grey5
+    let borderSelected = VivoColorPalette.vivoPurple
 
     // BUTTONS
     let buttonDangerBackground = VivoColorPalette.pepper
@@ -41,13 +41,13 @@ struct VivoColors: Colors {
     let buttonPrimaryBackgroundDisabled = VivoColorPalette.vivoPurpleLight20 | VivoColorPalette.darkModeGrey
     let buttonPrimaryBackgroundDisabledInverse = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.darkModeGrey
     let buttonPrimaryBackgroundInverse = VivoColorPalette.white | VivoColorPalette.vivoPurpleLight80
-    let buttonPrimaryBackgroundSelected = VivoColorPalette.vivoPurpleDark | VivoColorPalette.vivoPurpleDark
-    let buttonPrimaryBackgroundHover = VivoColorPalette.vivoPurpleDark | VivoColorPalette.vivoPurpleDark
+    let buttonPrimaryBackgroundSelected = VivoColorPalette.vivoPurpleDark
+    let buttonPrimaryBackgroundHover = VivoColorPalette.vivoPurpleDark
     let buttonPrimaryBackgroundSelectedInverse = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.vivoPurpleDark
 
     let buttonSecondaryBackground = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
     let buttonSecondaryBackgroundDisabled = VivoColorPalette.vivoPurpleLight20 | VivoColorPalette.darkModeGrey
-    let buttonSecondaryBackgroundSelected = VivoColorPalette.vivoPurpleDark | VivoColorPalette.vivoPurpleDark
+    let buttonSecondaryBackgroundSelected = VivoColorPalette.vivoPurpleDark
     let buttonSecondaryBorderDisabledInverse = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.darkModeGrey
     let buttonSecondaryBorderInverse = VivoColorPalette.white | VivoColorPalette.vivoPurpleLight80
     let buttonSecondaryBorderSelectedInverse = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.vivoPurpleDark
@@ -87,15 +87,15 @@ struct VivoColors: Colors {
     // FEEDBACKS
     let badge = VivoColorPalette.pepperDark
     let feedbackErrorBackground = VivoColorPalette.pepper
-    let feedbackInfoBackground = VivoColorPalette.grey6 | VivoColorPalette.darkModeGrey6
+    let feedbackInfoBackground = VivoColorPalette.grey6
 
     // GLOBAL
     let brand = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
-    let brandDark = VivoColorPalette.vivoPurpleDark | VivoColorPalette.darkModeGrey6
+    let brandHigh = VivoColorPalette.vivoPurpleDark | VivoColorPalette.white.withAlphaComponent(0.05)
     let inverse = VivoColorPalette.white | VivoColorPalette.grey2
     let neutralHigh = VivoColorPalette.grey6 | VivoColorPalette.grey2
-    let neutralMedium = VivoColorPalette.grey5 | VivoColorPalette.grey5
-    let neutralLow = VivoColorPalette.grey3 | VivoColorPalette.darkModeGrey6
+    let neutralMedium = VivoColorPalette.grey5
+    let neutralLow = VivoColorPalette.grey1 | VivoColorPalette.darkModeGrey6
     let promo = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
     let highlight = VivoColorPalette.pink
 
@@ -104,7 +104,6 @@ struct VivoColors: Colors {
     let textSecondary = VivoColorPalette.grey5 | VivoColorPalette.grey4
     let textSecondaryInverse = VivoColorPalette.white | VivoColorPalette.grey4
     let textDisabled = VivoColorPalette.grey3 | VivoColorPalette.grey5
-    let textAmount = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight50
 
     // STATES
     let error = VivoColorPalette.pepper
@@ -128,18 +127,15 @@ struct VivoColors: Colors {
     ]
 
     // TAGS
-    var tagBackgroundSuccess = VivoColorPalette.vivoGreenLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundWarning = VivoColorPalette.orangeLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundError = VivoColorPalette.pepperLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundPromo = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundActive = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var tagBackgroundInactive = VivoColorPalette.grey1 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var textTagSuccess = VivoColorPalette.vivoGreenDark | VivoColorPalette.vivoGreenLight30
-    var textTagWarning = VivoColorPalette.orangeDark | VivoColorPalette.orangeLight40
-    var textTagError = VivoColorPalette.pepperDark80 | VivoColorPalette.pepperLight40
-    var textTagPromo = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight50
-    var textTagActive = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight50
-    var textTagInactive = VivoColorPalette.grey5 | VivoColorPalette.grey4
+    var successLow = VivoColorPalette.vivoGreenLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
+    var warningLow = VivoColorPalette.orangeLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
+    var errorLow = VivoColorPalette.pepperLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
+    var promoLow = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
+    var brandLow = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
+    var successHigh = VivoColorPalette.vivoGreenDark | VivoColorPalette.vivoGreenLight30
+    var warningHigh = VivoColorPalette.orangeDark | VivoColorPalette.orangeLight40
+    var errorHigh = VivoColorPalette.pepperDark80 | VivoColorPalette.pepperLight40
+    var promoHigh = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight50
 }
 
 public enum VivoColorPalette {

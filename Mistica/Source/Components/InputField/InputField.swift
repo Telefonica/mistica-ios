@@ -827,7 +827,7 @@ private extension InputField {
         textInputView?.isEnabled = state != .disabled
 
         textInputView?.textColor = stateStyle.textColor
-        textInputView.alpha = state != .disabled ? Constants.enabledAlpha : Constants.disabledAlpha
+        textInputView.alpha = state == .disabled ? Constants.disabledAlpha : Constants.enabledAlpha
 
         delegate?.inputFieldDidUpdateState(self)
     }

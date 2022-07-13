@@ -11,7 +11,7 @@ import UIKit
 
 class UICatalogFontsViewController: UITableViewController {
     typealias FontType = (font: UIFont, name: String)
-    
+
     private let fonts: [FontType] = [
         (font: .textPreset1(weight: .regular, constrainedToPreferredSize: .mainScreenSize), name: "textPreset1(weight: .regular)"),
         (font: .textPreset1(weight: .medium, constrainedToPreferredSize: .mainScreenSize), name: "textPreset1(weight: .medium)"),
@@ -28,7 +28,7 @@ class UICatalogFontsViewController: UITableViewController {
         (font: .textPreset7(constrainedToPreferredSize: .mainScreenSize), name: "textPreset7()"),
         (font: .textPreset8(constrainedToPreferredSize: .mainScreenSize), name: "textPreset8()"),
         (font: .textPreset9(constrainedToPreferredSize: .mainScreenSize), name: "textPreset9()"),
-        (font: .textPreset10(constrainedToPreferredSize: .mainScreenSize), name: "textPreset10()"),
+        (font: .textPreset10(constrainedToPreferredSize: .mainScreenSize), name: "textPreset10()")
     ]
 
     init() {

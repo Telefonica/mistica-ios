@@ -131,7 +131,7 @@ private extension TitleView {
             linkLabel
         ])
         stackView.spacing = 16
-        stackView.alignment = .top
+        stackView.alignment = .firstBaseline
 
         preservesSuperviewLayoutMargins = false
         contentView.preservesSuperviewLayoutMargins = false

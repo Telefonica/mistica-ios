@@ -8,26 +8,26 @@ The title is always in uppercase.
 
 ## Usage
 
-`SectionTitle.swift` inherit from `UITableViewHeaderFooterView` so you should configure  `SectionTitle.swift` in a `UITableView` like this
+`TitleView.swift` inherit from `UITableViewHeaderFooterView` so you should configure `TitleView.swift` in a `UITableView` like this
 
 ```swift
-tableView.register(SectionTitle.self, forHeaderFooterViewReuseIdentifier: "SectionTitle")
+tableView.register(TitleView.self, forHeaderFooterViewReuseIdentifier: "SectionTitle")
 ```
 
-`SectionTitle.swift` supports self sizing so the `UITableView` must be configured like
+`TitleView.swift` supports self sizing so the `UITableView` must be configured like
 
 ```swift
 tableView.sectionHeaderHeight = UITableView.automaticDimension
 tableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
 ```
-and finally return the `SectionTitle.swift` like
+and finally return the `TitleView.swift` like
 
 ```swift
 override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-	let headerView = SectionTitleHeaderView.dequeueReusableHeaderFooterView(withIdentifier: "SectionTitle")
+	let titleView = TitleView.dequeueReusableHeaderFooterView(withIdentifier: "SectionTitle")
 
-	headerView.title = "My Section Title"
+    titleView.title = "My Section Title"
 
-	return headerView
+	return titleView
 }
 ```

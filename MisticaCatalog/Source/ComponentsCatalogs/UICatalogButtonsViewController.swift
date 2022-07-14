@@ -38,6 +38,11 @@ class UICatalogButtonsViewController: UITableViewController {
                 Button(style: .primary, title: "OK", isSmall: true),
                 Button(style: .link, title: "OK")
             ], .center),
+            ("Padding", [
+                Button(style: .primary, title: "Some very large title"),
+                Button(style: .primary, title: "Some very large title", isSmall: true),
+                Button(style: .link, title: "Some very large title")
+            ], .center),
             ("Left Bleeding Alignment", [
                 Button(style: .primary, title: "OK"),
                 Button(style: .primary, title: "OK", isSmall: true),

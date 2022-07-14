@@ -33,9 +33,9 @@ public extension UITabBarAppearance {
     static func applyMisticaStyle() {
         let appearance = UITabBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.shadowImage = UIImage()
         appearance.shadowImage = UIImage(color: .divider)
-        UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().backgroundColor = .appBarBackground
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().isTranslucent = true
     }
 }

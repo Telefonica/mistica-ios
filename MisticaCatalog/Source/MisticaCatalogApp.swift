@@ -22,7 +22,10 @@ struct MisticaCatalogApp: App {
         WindowGroup {
             TabView(selection: $selection) {
                 tab(selectedFramework: .uiKit)
+                    .tag(0)
+
                 tab(selectedFramework: .swiftUI)
+                    .tag(1)
             }
             .misticaTabViewStyle()
             .id(id)
@@ -36,7 +39,7 @@ struct MisticaCatalogApp: App {
                 UITabBarAppearance.applyMisticaStyle()
                 UINavigationBarAppearance.applyMisticaStyle()
 
-                // Force a relaod
+                // Force a reloads
                 withAnimation { id = UUID() }
             })
             .animation(Animation.default, value: id)
@@ -46,22 +49,21 @@ struct MisticaCatalogApp: App {
     func tab(
         selectedFramework: Framework
     ) -> some View {
-        ContentView(
-            selectedBrandIndex: $selectedBrandIndex,
-            brands: brands,
-            selectedFramework: selectedFramework
-        )
-        .tag(selectedFramework.name)
+        NavigationView {
+            ContentView(
+                selectedBrandIndex: $selectedBrandIndex,
+                brands: brands,
+                selectedFramework: selectedFramework
+            )
+            .misticaNavigationBarStyle()
+            .navigationTitle("Mistica \(selectedFramework.name)")
+        }
         .tabItem {
             Label(
                 selectedFramework.name,
                 systemImage: selectedFramework.tabImageName
             )
         }
-        .frame(
-            width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height
-        )
     }
 }
 

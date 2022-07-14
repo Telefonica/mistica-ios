@@ -17,36 +17,31 @@ struct ContentView: View {
     let selectedFramework: Framework
 
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading, spacing: 0) {
-                Tabs(brands.map { TabItem(text: $0.id) }, selection: $selectedBrandIndex)
-                    .background(Color.white)
+        VStack(alignment: .leading, spacing: 0) {
+            Tabs(brands.map { TabItem(text: $0.id) }, selection: $selectedBrandIndex)
+                .background(Color.white)
 
-                CatalogList(
-                    framework: selectedFramework,
-                    rows: CatalogRow.allCases
-                )
-            }
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    if let misticaVersion = misticaVersion {
-                        Text(misticaVersion)
-                            .font(.textPreset4(weight: .medium))
-                            .foregroundColor(.textNavigationBarPrimary)
-                    }
-                }
-
-                ToolbarItem(placement: .principal) {
-                    Image("mistica-logo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 32)
-                }
-            }
-            .misticaNavigationBarStyle()
-            .navigationTitle("Mistica \(selectedFramework.name)")
+            CatalogList(
+                framework: selectedFramework,
+                rows: CatalogRow.allCases
+            )
         }
-        .navigationViewStyle(.stack)
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+                if let misticaVersion = misticaVersion {
+                    Text(misticaVersion)
+                        .font(.textPreset4(weight: .medium))
+                        .foregroundColor(.textNavigationBarPrimary)
+                }
+            }
+
+            ToolbarItem(placement: .principal) {
+                Image("mistica-logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100, height: 32)
+            }
+        }
     }
 }
 

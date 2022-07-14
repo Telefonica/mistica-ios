@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct O2ClassicColors: Colors {
+struct O2ClassicColors: MisticaColors {
     // BACKGROUNDS
     let appBarBackground = O2ClassicColorPalette.white | O2ClassicColorPalette.darkModeGrey
     let background = O2ClassicColorPalette.white | O2ClassicColorPalette.darkModeBlack

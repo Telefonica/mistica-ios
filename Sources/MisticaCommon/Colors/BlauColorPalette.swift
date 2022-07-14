@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct BlauColors: Colors {
+struct BlauColors: MisticaColors {
     // BACKGROUNDS
     let appBarBackground = BlauColorPalette.white | BlauColorPalette.darkModeGrey
     let background = BlauColorPalette.white | BlauColorPalette.darkModeBlack

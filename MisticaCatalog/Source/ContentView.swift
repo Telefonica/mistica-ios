@@ -7,8 +7,8 @@
 //
 
 import Mistica
-import MisticaSwiftUI
 import MisticaCommon
+import MisticaSwiftUI
 import SwiftUI
 
 struct ContentView: View {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct VivoColors: Colors {
+struct VivoColors: MisticaColors {
     // BACKGROUNDS
     let appBarBackground = VivoColorPalette.white | VivoColorPalette.darkModeGrey
     let background = VivoColorPalette.white | VivoColorPalette.darkModeBlack

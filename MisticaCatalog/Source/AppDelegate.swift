@@ -9,8 +9,8 @@
 import AppCenter
 import AppCenterDistribute
 import Mistica
-import MisticaSwiftUI
 import MisticaCommon
+import MisticaSwiftUI
 import UIKit
 
 class AppDelegate: NSObject, UIApplicationDelegate {

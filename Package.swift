@@ -33,7 +33,7 @@ let package = Package(
                 "Controls/README.md"
             ]
         ),
-        
+
         .testTarget(
             name: "MisticaCommonTests",
             dependencies: [
@@ -127,8 +127,6 @@ let package = Package(
                 "Components/RadioButton/README.md",
                 "Components/ScrollContentIndicator/docs",
                 "Components/ScrollContentIndicator/README.md",
-                "Components/Title/docs",
-                "Components/Title/README.md",
                 "Components/Filter/docs",
                 "Components/Filter/README.md",
                 "Components/Switch/README.md",

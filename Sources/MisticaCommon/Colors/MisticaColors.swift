@@ -1,5 +1,5 @@
 //
-//  Colors.swift
+//  MisticaColors.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol Colors {
+public protocol MisticaColors {
     // BACKGROUNDS
     var appBarBackground: UIColor { get }
     var background: UIColor { get }

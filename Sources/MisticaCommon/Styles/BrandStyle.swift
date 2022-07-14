@@ -15,7 +15,7 @@ public enum BrandStyle {
     case o2
     case o2Classic
     case blau
-    case custom(Colors)
+    case custom(MisticaColors, MisticaBrandAssets)
 
     public var id: String {
         switch self {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct MovistarColors: Colors {
+struct MovistarColors: MisticaColors {
     // BACKGROUNDS
     let appBarBackground = MovistarColorPalette.white | MovistarColorPalette.darkModeGrey
     let background = MovistarColorPalette.white | MovistarColorPalette.darkModeBlack

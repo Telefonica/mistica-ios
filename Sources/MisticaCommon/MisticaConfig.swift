@@ -9,7 +9,8 @@
 import Foundation
 
 public enum MisticaConfig {
-    static var currentColors: Colors = MovistarColors()
+    static var currentColors: MisticaColors = MovistarColors()
+    static var currentBrandAssets: MisticaBrandAssets = DefaultMisticaBrandAssets()
     static var currentStyledControls = [MisticaControlStyle]()
 
     // MARK: Public Setup
@@ -38,16 +39,22 @@ private extension MisticaConfig {
         switch brandStyle {
         case .movistar:
             currentColors = MovistarColors()
+            currentBrandAssets = DefaultMisticaBrandAssets()
         case .vivo:
             currentColors = VivoColors()
+            currentBrandAssets = DefaultMisticaBrandAssets()
         case .o2:
             currentColors = O2Colors()
+            currentBrandAssets = DefaultMisticaBrandAssets()
         case .o2Classic:
             currentColors = O2ClassicColors()
+            currentBrandAssets = DefaultMisticaBrandAssets()
         case .blau:
             currentColors = BlauColors()
-        case .custom(let colors):
+            currentBrandAssets = DefaultMisticaBrandAssets()
+        case .custom(let colors, let assets):
             currentColors = colors
+            currentBrandAssets = assets
         }
     }
 }

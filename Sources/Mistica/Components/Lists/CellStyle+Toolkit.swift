@@ -16,7 +16,7 @@ extension ListViewCell.CellStyle {
         case .fullWidth:
             return 0
         case .boxed, .boxedInverse:
-            return 4
+            return 8
         }
     }
 

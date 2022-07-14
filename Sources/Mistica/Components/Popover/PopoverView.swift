@@ -15,7 +15,7 @@ import Shared
 private enum ViewStyles {
     static let tipSize = CGSize(width: 12, height: 7)
     static let gapBetweenTipAndTargetView = CGFloat(2)
-    static let cornerRadius = CGFloat(6)
+    static let cornerRadius = CGFloat(8)
     static let shadowOpacity = Float(0.3)
     static let shadowOffset = CGSize(width: 0, height: 3)
     static let horizontalPadding = CGFloat(16)

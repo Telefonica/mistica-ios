@@ -130,13 +130,13 @@ private extension Chip {
     func backgroundColor(_ isSelected: Bool) -> Color {
         switch style {
         case .normal where isSelected:
-            return .tagBackgroundActive
+            return .brandLow
         case .normal:
             return .backgroundContainer
         case .inverse where isSelected:
             return .backgroundContainer
         case .inverse:
-            return .brandDark
+            return .brandHigh
         }
     }
 

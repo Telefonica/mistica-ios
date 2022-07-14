@@ -107,6 +107,11 @@ let package = Package(
                 "Fonts/__Snapshots__",
                 "Resources"
             ],
+            resources: [
+                .process("Resources/Telefonica-Bold.otf"),
+                .process("Resources/Telefonica-Light.otf"),
+                .process("Resources/Telefonica-Regular.otf")
+            ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
             ]

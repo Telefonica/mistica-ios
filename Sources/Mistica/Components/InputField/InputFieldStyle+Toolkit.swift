@@ -8,13 +8,16 @@
 
 import Foundation
 import Shared
+import UIKit
 
 public extension InputField.Style {
+    private static let disabledAlpha: CGFloat = 0.5
+
     private static var primaryStateStyleByState: [InputField.State: InputField.StateStyle] {
         [
             .normal: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textSecondary, textColor: .textPrimary, editingPlaceholderTextColor: .controlActivated),
             .invalid: InputField.StateStyle(placeholderTextColor: .error, assistiveTextColor: .error, textColor: .textPrimary, editingPlaceholderTextColor: .error),
-            .disabled: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textSecondary, textColor: .textDisabled, editingPlaceholderTextColor: .textSecondary)
+            .disabled: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textSecondary, textColor: .textPrimary, editingPlaceholderTextColor: .textSecondary)
         ]
     }
 
@@ -22,7 +25,7 @@ public extension InputField.Style {
         [
             .normal: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textPrimaryInverse, textColor: .textPrimary, editingPlaceholderTextColor: .controlActivated),
             .invalid: InputField.StateStyle(placeholderTextColor: .error, assistiveTextColor: .textPrimaryInverse, textColor: .textPrimary, editingPlaceholderTextColor: .error),
-            .disabled: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textPrimaryInverse, textColor: .textDisabled, editingPlaceholderTextColor: .textSecondary)
+            .disabled: InputField.StateStyle(placeholderTextColor: .textSecondary, assistiveTextColor: .textPrimaryInverse, textColor: .textPrimary, editingPlaceholderTextColor: .textSecondary)
         ]
     }
 

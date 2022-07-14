@@ -37,4 +37,17 @@ public enum BrandStyle {
     public static var allCases: [BrandStyle] {
         [.movistar, .vivo, .o2, .o2Classic, .blau]
     }
+    
+    public var usesBoldForTextPreset5AndAbove: Bool {
+        switch self {
+        case .movistar:
+            return true
+        case .vivo,
+             .o2,
+             .o2Classic,
+             .blau,
+             .custom:
+            return false
+        }
+    }
 }

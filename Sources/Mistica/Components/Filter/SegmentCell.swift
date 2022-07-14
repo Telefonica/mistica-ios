@@ -61,7 +61,7 @@ extension SegmentCell {
     }
 
     func showDeselected() {
-        backgroundColor = .brandDark
+        backgroundColor = .brandHigh
         title.textColor = .textNavigationBarPrimary
     }
 }

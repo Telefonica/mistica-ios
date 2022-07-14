@@ -62,7 +62,7 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
                         .frame(height: 24)
 
                     Text(title)
-                        .font(.textPreset6(weight: .light))
+                        .font(.textPreset6())
                         .foregroundColor(titleForegroundColor)
                         .accessibilityIdentifier(titleAccessibilityIdentifier)
                         .accessibilityLabel(titleAccessibilityLabel)

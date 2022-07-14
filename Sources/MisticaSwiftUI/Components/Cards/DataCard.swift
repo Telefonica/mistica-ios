@@ -128,7 +128,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
         .padding(.bottom, 24)
         .expandHorizontally(alignment: .leading)
         .background(Color.backgroundContainer)
-        .border(cornerRadius: 4, borderColor: Color.border, lineWidth: 1)
+        .border(cornerRadius: 8, borderColor: Color.border, lineWidth: 1)
         .fixedSize(horizontal: false, vertical: fixedVerticalContentSize)
         .overlay(dismissView)
     }
@@ -496,7 +496,7 @@ public extension DataCard {
                                 .foregroundColor(.textSecondary)
                                 .expandHorizontally(alignment: .leading)
                             Text("00,00 €")
-                                .font(.textPreset6(weight: .light))
+                                .font(.textPreset6())
                                 .foregroundColor(.textPrimary)
                                 .expandHorizontally(alignment: .leading)
                             Text("Bottom description")

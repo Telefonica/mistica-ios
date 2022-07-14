@@ -33,7 +33,8 @@ final class FontStyleTests: XCTestCase {
         FontStyle.fontNameForWeight = nil
     }
 
-    func testCustomFonts() {
+    func testMovistarCustomFonts() {
+        MisticaConfig.brandStyle = .movistar
         XCTAssertEqual(UIFont.textPreset1(weight: .regular).fontName, "Telefonica-Regular")
         XCTAssertEqual(UIFont.textPreset1(weight: .medium).fontName, "Telefonica-Bold")
         XCTAssertEqual(UIFont.textPreset2(weight: .regular).fontName, "Telefonica-Regular")
@@ -44,13 +45,32 @@ final class FontStyleTests: XCTestCase {
         XCTAssertEqual(UIFont.textPreset4(weight: .light).fontName, "Telefonica-Light")
         XCTAssertEqual(UIFont.textPreset4(weight: .regular).fontName, "Telefonica-Regular")
         XCTAssertEqual(UIFont.textPreset4(weight: .medium).fontName, "Telefonica-Bold")
-        XCTAssertEqual(UIFont.textPreset5(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset6(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset6(weight: .regular).fontName, "Telefonica-Regular")
-        XCTAssertEqual(UIFont.textPreset7(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset8(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset9(weight: .light).fontName, "Telefonica-Light")
-        XCTAssertEqual(UIFont.textPreset10(weight: .light).fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset5().fontName, "Telefonica-Bold")
+        XCTAssertEqual(UIFont.textPreset6().fontName, "Telefonica-Bold")
+        XCTAssertEqual(UIFont.textPreset7().fontName, "Telefonica-Bold")
+        XCTAssertEqual(UIFont.textPreset8().fontName, "Telefonica-Bold")
+        XCTAssertEqual(UIFont.textPreset9().fontName, "Telefonica-Bold")
+        XCTAssertEqual(UIFont.textPreset10().fontName, "Telefonica-Bold")
+    }
+
+    func testOtherCustomFonts() {
+        MisticaConfig.brandStyle = .vivo
+        XCTAssertEqual(UIFont.textPreset1(weight: .regular).fontName, "Telefonica-Regular")
+        XCTAssertEqual(UIFont.textPreset1(weight: .medium).fontName, "Telefonica-Bold")
+        XCTAssertEqual(UIFont.textPreset2(weight: .regular).fontName, "Telefonica-Regular")
+        XCTAssertEqual(UIFont.textPreset2(weight: .medium).fontName, "Telefonica-Bold")
+        XCTAssertEqual(UIFont.textPreset3(weight: .light).fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset3(weight: .regular).fontName, "Telefonica-Regular")
+        XCTAssertEqual(UIFont.textPreset3(weight: .medium).fontName, "Telefonica-Bold")
+        XCTAssertEqual(UIFont.textPreset4(weight: .light).fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset4(weight: .regular).fontName, "Telefonica-Regular")
+        XCTAssertEqual(UIFont.textPreset4(weight: .medium).fontName, "Telefonica-Bold")
+        XCTAssertEqual(UIFont.textPreset5().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset6().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset7().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset8().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset9().fontName, "Telefonica-Light")
+        XCTAssertEqual(UIFont.textPreset10().fontName, "Telefonica-Light")
     }
 }
 
@@ -58,21 +78,21 @@ class FontLoader {
     class func loadCustomFonts(for fontExtension: String) {
         let fileManager = FileManager.default
         let bundleURL = Bundle(for: FontLoader.self).bundleURL
-        do {
-            let contents = try fileManager.contentsOfDirectory(at: bundleURL, includingPropertiesForKeys: [], options: .skipsHiddenFiles)
-            for url in contents {
-                if url.pathExtension == fontExtension {
-                    guard let fontData = NSData(contentsOf: url),
-                          let provider = CGDataProvider(data: fontData),
-                          let font = CGFont(provider) else {
-                        continue
-                    }
+        guard let enumerator = fileManager.enumerator(at: bundleURL, includingPropertiesForKeys: [.isRegularFileKey], options: .skipsHiddenFiles) else {
+            print("Error loading font")
+            return
+        }
 
-                    CTFontManagerRegisterGraphicsFont(font, nil)
+        for case let url as URL in enumerator {
+            if url.pathExtension == fontExtension {
+                guard let fontData = NSData(contentsOf: url),
+                      let provider = CGDataProvider(data: fontData),
+                      let font = CGFont(provider) else {
+                    continue
                 }
+
+                CTFontManagerRegisterGraphicsFont(font, nil)
             }
-        } catch {
-            print("Error loading font: \(error)")
         }
     }
 }

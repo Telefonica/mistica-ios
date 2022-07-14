@@ -58,7 +58,7 @@ public struct Snackbar<Button: View>: View {
             case .normal:
                 content
                     .background(backgroundColor)
-                    .round(cornerRadius: 4)
+                    .round(cornerRadius: 8)
                     .padding(8)
 
             case .crouton:

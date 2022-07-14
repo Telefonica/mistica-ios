@@ -11,7 +11,7 @@ import Shared
 
 public extension UINavigationBar {
     class var misticaLargeTitleTextAttributes: [NSAttributedString.Key: Any] {
-        textAttributes(for: .textPreset7(weight: .light, constrainedToPreferredSize: .large), color: UIColor.textNavigationBarPrimary)
+        textAttributes(for: .textPreset7(constrainedToPreferredSize: .large), color: UIColor.textNavigationBarPrimary)
     }
 
     class var misticaTitleTextAttributes: [NSAttributedString.Key: Any] {

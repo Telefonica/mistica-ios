@@ -24,6 +24,9 @@ public class InputField: UIView {
 
         static let horizontalPlaceholderSpacing: CGFloat = 4
         static let verticalPlaceholderHeightThreshold: CGFloat = 4
+
+        static let enabledAlpha: CGFloat = 1.0
+        static let disabledAlpha: CGFloat = 0.5
     }
 
     @frozen
@@ -97,7 +100,7 @@ public class InputField: UIView {
         let view = UIView()
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.border.cgColor
-        view.layer.cornerRadius = 4
+        view.layer.cornerRadius = 8
         view.backgroundColor = .backgroundContainer
 
         horizontalTextInputStackView.alignment = .fill
@@ -825,6 +828,7 @@ private extension InputField {
         textInputView?.isEnabled = state != .disabled
 
         textInputView?.textColor = stateStyle.textColor
+        textInputView.alpha = state == .disabled ? Constants.disabledAlpha : Constants.enabledAlpha
 
         delegate?.inputFieldDidUpdateState(self)
     }

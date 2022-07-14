@@ -50,7 +50,7 @@ public struct EmptyState<PrimaryButton: View, SecondaryButton: View>: View {
             Spacer().frame(height: 24)
 
             Text(title)
-                .font(.textPreset6(weight: .light))
+                .font(.textPreset6())
                 .foregroundColor(.textPrimary)
                 .lineLimit(titleLineLimit)
                 .accessibilityLabel(titleAccessibilityLabel)
@@ -86,7 +86,7 @@ public struct EmptyState<PrimaryButton: View, SecondaryButton: View>: View {
 @available(iOS 13.0, *)
 public extension EmptyState {
     func cardStyle() -> some View {
-        border(cornerRadius: 4, borderColor: .border, lineWidth: 1)
+        border(cornerRadius: 8, borderColor: .border, lineWidth: 1)
     }
 
     func titleLineLimit(_ titleLineLimit: Int) -> EmptyState {

@@ -11,7 +11,7 @@ import UIKit
 import Shared
 
 private enum Constants {
-    static let cornerRadius: CGFloat = 4.0
+    static let cornerRadius: CGFloat = 8.0
     static let emptyStateLayoutMargins = NSDirectionalEdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16)
 }
 

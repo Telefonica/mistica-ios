@@ -96,7 +96,7 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
         }
         .padding(16)
         .background(Color.backgroundAlternative)
-        .round(cornerRadius: 4)
+        .round(cornerRadius: 8)
     }
 
     private var hasButton: Bool {

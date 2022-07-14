@@ -35,9 +35,9 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                         borderColor: .buttonPrimaryBackgroundSelected
                     ),
                     .disabled: MisticaButton.StateStyle(
-                        textColor: .textButtonPrimaryDisabled,
-                        backgroundColor: .buttonPrimaryBackgroundDisabled,
-                        borderColor: .buttonPrimaryBackgroundDisabled
+                        textColor: .textButtonPrimary,
+                        backgroundColor: .buttonPrimaryBackground,
+                        borderColor: .buttonPrimaryBackground
                     ),
                     .loading: MisticaButton.StateStyle(
                         textColor: .textButtonPrimary,
@@ -69,9 +69,9 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                         borderColor: .buttonPrimaryBackgroundSelectedInverse
                     ),
                     .disabled: MisticaButton.StateStyle(
-                        textColor: .textButtonPrimaryInverseDisabled,
-                        backgroundColor: .buttonPrimaryBackgroundDisabledInverse,
-                        borderColor: .buttonPrimaryBackgroundDisabledInverse
+                        textColor: .textButtonPrimaryInverse,
+                        backgroundColor: .buttonPrimaryBackgroundInverse,
+                        borderColor: .buttonPrimaryBackgroundInverse
                     ),
                     .loading: MisticaButton.StateStyle(
                         textColor: .textButtonPrimaryInverse,
@@ -103,9 +103,9 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                         borderColor: .buttonSecondaryBackgroundSelected
                     ),
                     .disabled: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryDisabled,
+                        textColor: .textButtonSecondary,
                         backgroundColor: .clear,
-                        borderColor: .buttonSecondaryBackgroundDisabled
+                        borderColor: .buttonSecondaryBackground
                     ),
                     .loading: MisticaButton.StateStyle(
                         textColor: .textButtonSecondary,
@@ -137,9 +137,9 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                         borderColor: .buttonSecondaryBorderSelectedInverse
                     ),
                     .disabled: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInverseDisabled,
+                        textColor: .textButtonSecondaryInverse,
                         backgroundColor: .clear,
-                        borderColor: .buttonSecondaryBorderDisabledInverse
+                        borderColor: .buttonSecondaryBorderInverse
                     ),
                     .loading: MisticaButton.StateStyle(
                         textColor: .textButtonSecondaryInverse,
@@ -172,8 +172,8 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                     ),
                     .disabled: MisticaButton.StateStyle(
                         textColor: .textButtonPrimary,
-                        backgroundColor: .buttonDangerBackgroundDisabled,
-                        borderColor: .buttonDangerBackgroundDisabled
+                        backgroundColor: .buttonDangerBackground,
+                        borderColor: .buttonDangerBackground
                     ),
                     .loading: MisticaButton.StateStyle(
                         textColor: .textButtonPrimary,
@@ -206,7 +206,7 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                         borderColor: .clear
                     ),
                     .disabled: MisticaButton.StateStyle(
-                        textColor: .textLinkDisabled,
+                        textColor: .textLink,
                         backgroundColor: .clear,
                         borderColor: .clear
                     ),
@@ -241,7 +241,7 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                         borderColor: .clear
                     ),
                     .disabled: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInverseDisabled,
+                        textColor: .textButtonSecondaryInverse,
                         backgroundColor: .clear,
                         borderColor: .clear
                     ),

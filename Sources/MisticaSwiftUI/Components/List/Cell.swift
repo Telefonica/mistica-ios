@@ -8,6 +8,7 @@ private enum Constants {
     static let borderRadius: CGFloat = 4
     static let largeImageSize: CGFloat = 40
     static let smallImageSize: CGFloat = 24
+    static let minCellHeight: CGFloat = 72
 }
 
 public enum CellStyle {
@@ -137,6 +138,7 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
             presetView
         }
         .padding(Constants.spacing)
+        .frame(minHeight: Constants.minCellHeight)
         .background(background)
         .animation(.linear(duration: 0.1), value: isPressed)
         .listRowBackground(Color.background)
@@ -157,7 +159,7 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
             image
                 .renderingMode(.original)
                 .frame(width: size.width, height: size.height, alignment: .center)
-                .round(cornerRadius: 4)
+                .round(cornerRadius: 8)
 
         case let .smallIcon(image, tintColor):
             image
@@ -470,16 +472,22 @@ public extension View {
 
         static func section(style: CellStyle, headerText: String) -> some View {
             Section {
-                Cell(style: style, title: "Title", subtitle: "subtitle")
-                Cell(style: style, title: "Title", subtitle: "subtitle", description: "description")
-                Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .roundImage(photo))
-                Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .largeIcon(photo, foregroundColor: .white, backgroundColor: .brandDark))
-                Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark))
-                Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset() })
-                Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset(badgeStyle: .flag) })
-                Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset(badgeStyle: .numeric(10)) })
-                Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { Toggle("", isOn: $isEnabled) })
-                Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), headlineView: { Tag(style: .promo, text: "TAG LABEL") })
+                Group {
+                     Cell(style: style, title: "Title")
+                     Cell(style: style, title: "Title", subtitle: "subtitle")
+                     Cell(style: style, title: "Title", subtitle: "subtitle", description: "description")
+                     Cell(style: style, title: "Title", assetType: .smallIcon(photo, foregroundColor: .borderDark))
+                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .roundImage(photo))
+                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .largeIcon(photo, foregroundColor: .white, backgroundColor: .brandHigh))
+                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark))
+                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset() })
+                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset(badgeStyle: .flag) })
+                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset(badgeStyle: .numeric(10)) })
+                 }
+                 Group {
+                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { Toggle("", isOn: $isEnabled) })
+                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), headlineView: { Tag(style: .promo, text: "TAG LABEL") })
+                 }
             } header: {
                 Text(headerText)
                     .font(.textPreset4(weight: .medium))

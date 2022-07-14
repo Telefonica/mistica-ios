@@ -50,34 +50,34 @@ public struct Tag: View {
 
         switch style {
         case .promo:
-            return .tagBackgroundPromo
+            return .promoLow
         case .success:
-            return .tagBackgroundSuccess
+            return .successLow
         case .active:
-            return .tagBackgroundActive
+            return .brandLow
         case .inactive:
-            return .tagBackgroundInactive
+            return .neutralLow
         case .warning:
-            return .tagBackgroundWarning
+            return .warningLow
         case .error:
-            return .tagBackgroundError
+            return .errorLow
         }
     }
 
     private var foregroundColor: Color {
         switch style {
         case .promo:
-            return .textTagPromo
+            return .promo
         case .success:
-            return .textTagSuccess
+            return .success
         case .active:
-            return .textTagActive
+            return .brand
         case .inactive:
-            return .textTagInactive
+            return .neutralMedium
         case .warning:
-            return .textTagWarning
+            return .warning
         case .error:
-            return .textTagError
+            return .error
         }
     }
 }

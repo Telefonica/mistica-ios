@@ -49,14 +49,14 @@ private struct MisticaNavigationViewStyle: ViewModifier {
 
 private var misticaLargeTitleTextAttributes: [NSAttributedString.Key: Any] {
     textAttributes(
-        for: .textPreset7(weight: .light, constrainedToPreferredSize: .large),
+        for: .textPreset7(constrainedToPreferredSize: .large),
         color: .textNavigationBarPrimary
     )
 }
 
 private var hiddenTitleTextAttributes: [NSAttributedString.Key: Any] {
     textAttributes(
-        for: .textPreset7(weight: .light, constrainedToPreferredSize: .large),
+        for: .textPreset7(constrainedToPreferredSize: .large),
         color: .clear
     )
 }

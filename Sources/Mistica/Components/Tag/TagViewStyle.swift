@@ -25,17 +25,17 @@ extension TagViewStyle {
     var backgroundColor: UIColor {
         switch self {
         case .promo:
-            return .tagBackgroundPromo
+            return .promoLow
         case .active:
-            return .tagBackgroundActive
+            return .brandLow
         case .inactive:
-            return .tagBackgroundInactive
+            return .neutralLow
         case .success:
-            return .tagBackgroundSuccess
+            return .successLow
         case .warning:
-            return .tagBackgroundWarning
+            return .warningLow
         case .error:
-            return .tagBackgroundError
+            return .errorLow
         case .inverse:
             return .inverse
         }
@@ -44,19 +44,19 @@ extension TagViewStyle {
     var textColor: UIColor {
         switch self {
         case .promo:
-            return .textTagPromo
+            return .promoHigh
         case .active:
-            return .textTagActive
+            return .brand
         case .inactive:
-            return .textTagInactive
+            return .neutralMedium
         case .success:
-            return .textTagSuccess
+            return .successHigh
         case .warning:
-            return .textTagWarning
+            return .warningHigh
         case .error:
-            return .textTagError
+            return .errorHigh
         case .inverse:
-            return .textTagActive
+            return .brand
         }
     }
 }

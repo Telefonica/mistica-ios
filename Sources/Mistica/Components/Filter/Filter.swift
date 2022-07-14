@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import MisticaCommon
 import UIKit
-import Shared
 
 /// The different segment rendering modes supported by `Filter`.
 private enum SegmentsContentMode {

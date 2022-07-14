@@ -7,8 +7,8 @@
 //
 
 import Mistica
-import UIKit
 import SwiftUI
+import UIKit
 
 private enum Section: Int, CaseIterable {
     case asset

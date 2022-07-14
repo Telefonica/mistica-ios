@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
+import MisticaCommon
 import UIKit
-import Shared
 
 extension UIButton {
     func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {

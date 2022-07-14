@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import SwiftUI
+import UIKit
 
 @frozen
 @objc public enum FontStyle: Int, CaseIterable, CustomStringConvertible {

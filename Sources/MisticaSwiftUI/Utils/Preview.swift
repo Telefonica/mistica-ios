@@ -1,3 +1,11 @@
+//
+//  Preview.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import SwiftUI
 
 @available(iOS 13.0, *)

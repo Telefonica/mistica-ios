@@ -7,8 +7,8 @@
 //
 
 import Lottie
+import MisticaCommon
 import UIKit
-import Shared
 
 public class FeedbackView: UIView {
     private enum Constants {

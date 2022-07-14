@@ -7,8 +7,8 @@
 //
 
 import Mistica
+import MisticaCommon
 import SwiftUI
-import Shared
 
 @main
 struct MisticaCatalogApp: App {
@@ -17,7 +17,7 @@ struct MisticaCatalogApp: App {
     @State var selectedBrandIndex = 0
     @State var selection = 0
     let brands = BrandStyle.allCases
-    
+
     var body: some Scene {
         WindowGroup {
             TabView(selection: $selection) {
@@ -31,18 +31,18 @@ struct MisticaCatalogApp: App {
 
                 MisticaConfig.brandStyle = newBrandStyle
                 MisticaConfig.styleControls(MisticaControlStyle.allCases)
-                
+
                 // Force navigation view updates
                 UITabBarAppearance.applyMisticaStyle()
                 UINavigationBarAppearance.applyMisticaStyle()
-                
+
                 // Force a relaod
                 withAnimation { id = UUID() }
             })
             .animation(Animation.default, value: id)
         }
     }
-    
+
     func tab(
         selectedFramework: Framework
     ) -> some View {

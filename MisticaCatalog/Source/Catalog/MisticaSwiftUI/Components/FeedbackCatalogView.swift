@@ -1,3 +1,11 @@
+//
+//  FeedbackCatalogView.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import MisticaSwiftUI
 import SwiftUI
 

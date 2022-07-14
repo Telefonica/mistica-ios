@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import MisticaCommon
 import UIKit
-import Shared
 
 @objc public protocol FormViewDelegate: AnyObject {
     func formViewButtonShouldBeEnabled(_ formView: FormView) -> Bool

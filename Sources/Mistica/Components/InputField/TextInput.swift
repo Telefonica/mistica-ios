@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import MisticaCommon
 import UIKit
-import Shared
 
 protocol TextInput: UITextInput {
     var content: String? { get set }

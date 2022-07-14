@@ -1,6 +1,14 @@
+//
+//  Carousel.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Combine
+import MisticaCommon
 import SwiftUI
-import Shared
 
 @available(iOS 14.0, *)
 public struct Carousel<Data: RandomAccessCollection, ID: Hashable, Content: View>: View {

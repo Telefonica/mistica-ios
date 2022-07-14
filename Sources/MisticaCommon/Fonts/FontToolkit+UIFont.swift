@@ -1,5 +1,5 @@
 //
-//  FontToolkit.swift
+//  FontToolkit+UIFont.swift
 //
 //  Made with ❤️ by Novum
 //

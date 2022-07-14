@@ -1,3 +1,11 @@
+//
+//  View+Utils.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Combine
 import SwiftUI
 

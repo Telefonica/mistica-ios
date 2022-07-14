@@ -1,6 +1,14 @@
+//
+//  Cell.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Foundation
+import MisticaCommon
 import SwiftUI
-import Shared
 
 @available(iOS 13.0, *)
 private enum Constants {
@@ -473,21 +481,21 @@ public extension View {
         static func section(style: CellStyle, headerText: String) -> some View {
             Section {
                 Group {
-                     Cell(style: style, title: "Title")
-                     Cell(style: style, title: "Title", subtitle: "subtitle")
-                     Cell(style: style, title: "Title", subtitle: "subtitle", description: "description")
-                     Cell(style: style, title: "Title", assetType: .smallIcon(photo, foregroundColor: .borderDark))
-                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .roundImage(photo))
-                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .largeIcon(photo, foregroundColor: .white, backgroundColor: .brandHigh))
-                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark))
-                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset() })
-                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset(badgeStyle: .flag) })
-                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset(badgeStyle: .numeric(10)) })
-                 }
-                 Group {
-                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { Toggle("", isOn: $isEnabled) })
-                     Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), headlineView: { Tag(style: .promo, text: "TAG LABEL") })
-                 }
+                    Cell(style: style, title: "Title")
+                    Cell(style: style, title: "Title", subtitle: "subtitle")
+                    Cell(style: style, title: "Title", subtitle: "subtitle", description: "description")
+                    Cell(style: style, title: "Title", assetType: .smallIcon(photo, foregroundColor: .borderDark))
+                    Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .roundImage(photo))
+                    Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .largeIcon(photo, foregroundColor: .white, backgroundColor: .brandHigh))
+                    Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark))
+                    Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset() })
+                    Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset(badgeStyle: .flag) })
+                    Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset(badgeStyle: .numeric(10)) })
+                }
+                Group {
+                    Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { Toggle("", isOn: $isEnabled) })
+                    Cell(style: style, title: "Title", subtitle: "subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), headlineView: { Tag(style: .promo, text: "TAG LABEL") })
+                }
             } header: {
                 Text(headerText)
                     .font(.textPreset4(weight: .medium))

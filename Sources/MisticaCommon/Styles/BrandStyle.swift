@@ -16,7 +16,7 @@ public enum BrandStyle {
     case o2Classic
     case blau
     case custom(Colors)
-    
+
     public var id: String {
         switch self {
         case .movistar:
@@ -33,11 +33,11 @@ public enum BrandStyle {
             return "custom"
         }
     }
-    
+
     public static var allCases: [BrandStyle] {
         [.movistar, .vivo, .o2, .o2Classic, .blau]
     }
-    
+
     public var usesBoldForTextPreset5AndAbove: Bool {
         switch self {
         case .movistar:

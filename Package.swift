@@ -17,8 +17,8 @@ let package = Package(
             targets: ["MisticaSwiftUI"]
         ),
         .library(
-            name: "Shared",
-            targets: ["Shared"]
+            name: "MisticaCommon",
+            targets: ["MisticaCommon"]
         )
     ],
     dependencies: [
@@ -27,29 +27,22 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Shared",
+            name: "MisticaCommon",
             exclude: [
                 "Fonts/README.md",
-                "Components/Controls/README.md",
-            ]
-        ),
-        
-        .target(
-            name: "MisticaSwiftUI",
-            dependencies: [
-                "Lottie",
-                "Shared"
+                "Controls/README.md"
             ]
         ),
         
         .testTarget(
-            name: "MisticaSwiftUITests",
+            name: "MisticaCommonTests",
             dependencies: [
-                "MisticaSwiftUI",
+                "MisticaCommon",
                 "SnapshotTesting"
             ],
             exclude: [
-                "UI/__Snapshots__"
+                "Fonts/__Snapshots__",
+                "Resources"
             ],
             resources: [
                 .process("Resources/Telefonica-Bold.otf"),
@@ -60,11 +53,54 @@ let package = Package(
                 .define("SWIFT_PACKAGE")
             ]
         ),
-        
+
+        .target(
+            name: "MisticaSwiftUI",
+            dependencies: [
+                "Lottie",
+                "MisticaCommon"
+            ],
+            exclude: [
+                "Components/Button/README.md",
+                "Components/Badge/README.md",
+                "Components/Tag/README.md",
+                "Components/List/README.md",
+                "Components/List/docs",
+                "Components/Feedback/README.md",
+                "Components/Feedback/docs",
+                "Components/Cards/README.md",
+                "Components/Cards/docs",
+                "Components/Checkbox/README.md",
+                "Components/RadioButton/README.md",
+                "Components/Tabs/README.md",
+                "Components/Callout/README.md",
+                "Components/Callout/docs",
+                "Components/Callout/docs",
+                "Components/Carousel/README.md",
+                "Components/EmptyState/README.md",
+                "Components/Chip/README.md"
+            ]
+        ),
+
+        .testTarget(
+            name: "MisticaSwiftUITests",
+            dependencies: [
+                "MisticaSwiftUI",
+                "SnapshotTesting"
+            ],
+            exclude: [
+                "UI/__Snapshots__"
+            ],
+            swiftSettings: [
+                .define("SWIFT_PACKAGE")
+            ]
+        ),
+
         .target(
             name: "Mistica",
             dependencies: [
-                "Lottie"
+                "Lottie",
+                "MisticaCommon"
             ],
             exclude: [
                 "Components/Badge/docs",
@@ -91,8 +127,8 @@ let package = Package(
                 "Components/RadioButton/README.md",
                 "Components/ScrollContentIndicator/docs",
                 "Components/ScrollContentIndicator/README.md",
-                "Components/SectionTitle/docs",
-                "Components/SectionTitle/README.md",
+                "Components/Title/docs",
+                "Components/Title/README.md",
                 "Components/Filter/docs",
                 "Components/Filter/README.md",
                 "Components/Switch/README.md",
@@ -114,7 +150,7 @@ let package = Package(
                 .define("SWIFT_PACKAGE")
             ]
         ),
-        
+
         .testTarget(
             name: "MisticaTests",
             dependencies: [
@@ -122,14 +158,7 @@ let package = Package(
                 "SnapshotTesting"
             ],
             exclude: [
-                "UI/__Snapshots__",
-                "Fonts/__Snapshots__",
-                "Resources"
-            ],
-            resources: [
-                .process("Resources/Telefonica-Bold.otf"),
-                .process("Resources/Telefonica-Light.otf"),
-                .process("Resources/Telefonica-Regular.otf")
+                "UI/__Snapshots__"
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")

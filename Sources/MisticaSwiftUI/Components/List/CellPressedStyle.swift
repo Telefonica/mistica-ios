@@ -1,6 +1,14 @@
+//
+//  CellPressedStyle.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Foundation
+import MisticaCommon
 import SwiftUI
-import Shared
 
 // Style to track the pressed state of the button\
 @available(iOS 13.0, *)

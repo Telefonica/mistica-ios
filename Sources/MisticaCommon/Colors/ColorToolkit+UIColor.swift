@@ -1,5 +1,5 @@
 //
-//  ColorToolkit.swift
+//  ColorToolkit+UIColor.swift
 //
 //  Made with ❤️ by Novum
 //

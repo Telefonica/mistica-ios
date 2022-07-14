@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
+import MisticaCommon
 import UIKit
-import Shared
 
 extension UIBarButtonItem {
     convenience init(icon _: UIImage,

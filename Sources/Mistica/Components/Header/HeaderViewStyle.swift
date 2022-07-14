@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import MisticaCommon
 import UIKit
-import Shared
 
 @frozen
 public enum HeaderViewStyle {

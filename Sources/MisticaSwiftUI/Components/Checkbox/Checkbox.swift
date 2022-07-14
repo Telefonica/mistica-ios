@@ -1,6 +1,14 @@
+//
+//  Checkbox.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Foundation
+import MisticaCommon
 import SwiftUI
-import Shared
 
 @available(iOS 13.0, *)
 public struct Checkbox: View {

@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import MisticaCommon
 import UIKit
-import Shared
 
 public class InputField: UIView {
     private typealias TextInputView = UIView & TextInput

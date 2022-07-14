@@ -7,8 +7,8 @@
 //
 
 import CoreGraphics
+import MisticaCommon
 import UIKit
-import Shared
 
 public class RadioButton: UIControl {
     private enum Constants {

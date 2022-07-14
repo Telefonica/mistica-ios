@@ -1,3 +1,11 @@
+//
+//  EmptyStateTests.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 @testable import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI

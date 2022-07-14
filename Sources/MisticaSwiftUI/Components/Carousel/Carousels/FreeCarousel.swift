@@ -1,7 +1,15 @@
+//
+//  FreeCarousel.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Combine
 import Foundation
+import MisticaCommon
 import SwiftUI
-import Shared
 
 @available(iOS 14.0, *)
 struct FreeCarousel<Element: Hashable, Content: View>: View {

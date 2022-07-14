@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
+import MisticaCommon
 import UIKit
-import Shared
 
 public extension ScrollContentIndicator.Style {
     static var primaryClear: Button.Style {

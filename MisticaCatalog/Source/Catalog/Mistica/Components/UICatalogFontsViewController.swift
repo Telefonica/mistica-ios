@@ -7,8 +7,8 @@
 //
 
 import Mistica
+import MisticaCommon
 import UIKit
-import Shared
 
 class UICatalogFontsViewController: UITableViewController {
     typealias FontType = (font: UIFont, name: String)

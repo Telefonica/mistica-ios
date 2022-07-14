@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import SwiftUI
+import UIKit
 
 protocol FontWeightConvertible: CaseIterable {
     @available(iOS 13.0, *)
@@ -89,7 +89,7 @@ extension RawRepresentable where RawValue == String {
             return .light
         }
     }
-    
+
     var systemUIFontWeight: UIFont.Weight {
         switch rawValue {
         case "light":

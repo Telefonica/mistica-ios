@@ -1,5 +1,5 @@
 //
-//  UICatalogViewController.swift
+//  Framework.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -11,7 +11,7 @@ import Foundation
 enum Framework {
     case swiftUI
     case uiKit
-    
+
     var name: String {
         switch self {
         case .swiftUI:
@@ -20,7 +20,7 @@ enum Framework {
             return "UIKit"
         }
     }
-    
+
     func next() -> Self {
         switch self {
         case .swiftUI:
@@ -29,7 +29,7 @@ enum Framework {
             return .swiftUI
         }
     }
-    
+
     mutating func toggle() {
         switch self {
         case .swiftUI:

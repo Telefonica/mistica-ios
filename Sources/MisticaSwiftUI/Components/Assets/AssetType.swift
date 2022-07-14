@@ -1,5 +1,13 @@
+//
+//  AssetType.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Foundation
-import Shared
+import MisticaCommon
 
 enum AssetType {
     // The asset is shared on all brands styles
@@ -33,6 +41,6 @@ extension BrandStyle {
     ///   - name: asset name
     /// - Returns: path to asset inside the asset catalog
     func assetPath(_ name: String) -> String {
-        "\(self.id)/\(name)"
+        "\(id)/\(name)"
     }
 }

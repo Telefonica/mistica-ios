@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import MisticaCommon
 import UIKit
-import Shared
 
 /// CalloutTitleActions is where we will manage the messages and buttons view.
 class CalloutTitleActions: UIStackView {

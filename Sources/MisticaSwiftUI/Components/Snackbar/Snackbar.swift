@@ -1,6 +1,14 @@
+//
+//  Snackbar.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Foundation
+import MisticaCommon
 import SwiftUI
-import Shared
 
 public enum SnackbarStyle {
     case normal

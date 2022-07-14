@@ -1,6 +1,14 @@
+//
+//  Callout.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Foundation
+import MisticaCommon
 import SwiftUI
-import Shared
 
 @available(iOS 13.0, *)
 public enum CalloutAssetType {
@@ -315,7 +323,7 @@ public extension Callout {
 // MARK: Previews
 
 #if DEBUG
-    
+
     @available(iOS 13.0, *)
     struct Callout_Previews: PreviewProvider {
         static var previews: some View {

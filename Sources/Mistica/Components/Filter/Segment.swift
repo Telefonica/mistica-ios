@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Shared
+import MisticaCommon
 
 public struct Segment: Equatable {
     public let id: String

@@ -1,7 +1,15 @@
+//
+//  PaginatedCarousel.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Combine
 import Foundation
+import MisticaCommon
 import SwiftUI
-import Shared
 
 @available(iOS 13.0, *)
 struct PaginatedCarousel<Element, Content: View>: View {

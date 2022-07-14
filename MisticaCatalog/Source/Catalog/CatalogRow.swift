@@ -1,5 +1,5 @@
 //
-//  UICatalogViewController.swift
+//  CatalogRow.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Shared
+import MisticaCommon
 import UIKit
 
 enum CatalogRow: Int, CaseIterable, Identifiable {
@@ -34,12 +34,11 @@ enum CatalogRow: Int, CaseIterable, Identifiable {
     case viewStates
     case callout
     case emptyState
-    
+
     var id: Int {
         rawValue
     }
 }
-
 
 extension CatalogRow {
     var title: String {

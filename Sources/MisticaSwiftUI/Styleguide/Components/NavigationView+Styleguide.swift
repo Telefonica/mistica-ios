@@ -1,6 +1,14 @@
+//
+//  NavigationView+Styleguide.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
+import MisticaCommon
 import SwiftUI
 import UIKit
-import Shared
 
 @available(iOS 13.0, *)
 public extension View {

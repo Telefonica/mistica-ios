@@ -1,7 +1,15 @@
+//
+//  LegacyTextField.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Foundation
+import MisticaCommon
 import SwiftUI
 import UIKit
-import Shared
 
 enum LegacyTextFieldInputStyle {
     case picker(options: [String], initialSelectionIndex: Int?)

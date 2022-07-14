@@ -1,5 +1,13 @@
+//
+//  MisticaButton.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
+import MisticaCommon
 import SwiftUI
-import Shared
 
 public enum ButtonBleedingAlignment {
     case leading, trailing, none

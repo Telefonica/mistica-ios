@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import MisticaCommon
 import UIKit
-import Shared
 
 extension ListViewCell.CellStyle {
     var cornerRadius: CGFloat {

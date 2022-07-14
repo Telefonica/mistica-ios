@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import MisticaCommon
 import UIKit
-import Shared
 
 private enum Constants {
     static let spacingAfterIconView = CGFloat(16.0)

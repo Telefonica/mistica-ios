@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Shared
+import MisticaCommon
 import UIKit
 
 public extension InputField.Style {

@@ -8,8 +8,8 @@
 
 import Foundation
 import Lottie
+import MisticaCommon
 import UIKit
-import Shared
 
 class StepView: UIView {
     private enum Constants {

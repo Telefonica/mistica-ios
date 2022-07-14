@@ -1,18 +1,18 @@
 //
-//  UICatalogViewController.swift
+//  CatalogList.swift
 //
 //  Made with ❤️ by Novum
 //
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import SwiftUI
 import MisticaSwiftUI
+import SwiftUI
 
 struct CatalogList: View {
     let framework: Framework
     let rows: [CatalogRow]
-    
+
     var body: some View {
         List {
             Section {
@@ -37,7 +37,7 @@ struct CatalogList: View {
         }
         .misticaListStyle()
     }
-    
+
     @ViewBuilder
     func componentView(for row: CatalogRow) -> some View {
         switch framework {
@@ -49,7 +49,7 @@ struct CatalogList: View {
     }
 }
 
-fileprivate extension CatalogRow {
+private extension CatalogRow {
     @ViewBuilder
     var swiftUIComponent: some View {
         switch self {
@@ -93,10 +93,10 @@ fileprivate extension CatalogRow {
             notImplementedView
         }
     }
-    
+
     @ViewBuilder
     var uiKitComponent: some View {
-        switch self  {
+        switch self {
         case .buttons:
             ComponentViewController(UICatalogButtonsViewController())
         case .feedbacks:
@@ -155,11 +155,11 @@ fileprivate extension CatalogRow {
 
 struct ComponentViewController: UIViewControllerRepresentable {
     let viewController: UIViewController
-    
+
     init(_ viewController: UIViewController) {
         self.viewController = viewController
     }
-    
+
     func makeUIViewController(context: Context) -> UIViewController {
         viewController
     }
@@ -168,7 +168,6 @@ struct ComponentViewController: UIViewControllerRepresentable {
         // Do nothing
     }
 }
-
 
 #if DEBUG
     struct CatalogList_Previews: PreviewProvider {

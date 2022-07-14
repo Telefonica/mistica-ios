@@ -52,6 +52,7 @@
 		18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */; };
 		18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */; };
 		18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */; };
+		18FB8A9B2880661E0043CA80 /* MisticaCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 18FB8A9A2880661E0043CA80 /* MisticaCommon */; };
 		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F990032546C98600DFBFE9 /* Assets.xcassets */; };
@@ -146,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FB8A9B2880661E0043CA80 /* MisticaCommon in Frameworks */,
 				B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */,
 				1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */,
 				B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */,
@@ -360,6 +362,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				18FB8A9D288067980043CA80 /* PBXTargetDependency */,
 				18E42D48287F181700BB7B39 /* PBXTargetDependency */,
 				18E42D4A287F181700BB7B39 /* PBXTargetDependency */,
 			);
@@ -368,6 +371,7 @@
 				B8F990622546CAA500DFBFE9 /* Mistica */,
 				B8EE89F12614B57600F79386 /* AppCenterDistribute */,
 				1882EF40286EFF5F00F959FA /* MisticaSwiftUI */,
+				18FB8A9A2880661E0043CA80 /* MisticaCommon */,
 			);
 			productName = MisticaCatalog;
 			productReference = B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */;
@@ -498,11 +502,16 @@
 			isa = PBXTargetDependency;
 			productRef = 18E42D49287F181700BB7B39 /* MisticaSwiftUI */;
 		};
+		18FB8A9D288067980043CA80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 18FB8A9C288067980043CA80 /* MisticaCommon */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B8F98FF72546C95800DFBFE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F990562546C99300DFBFE9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -564,6 +573,7 @@
 		};
 		B8F98FF82546C95800DFBFE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F990562546C99300DFBFE9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -624,6 +634,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = JA666WMX28;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
@@ -632,7 +643,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION_NUMBER)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "mistica-app-development";
@@ -647,6 +658,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = JA666WMX28;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
@@ -655,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "$(VERSION_NUMBER)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "mistica-app";
@@ -709,6 +721,14 @@
 		18E42D49287F181700BB7B39 /* MisticaSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MisticaSwiftUI;
+		};
+		18FB8A9A2880661E0043CA80 /* MisticaCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MisticaCommon;
+		};
+		18FB8A9C288067980043CA80 /* MisticaCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MisticaCommon;
 		};
 		B8EE89F12614B57600F79386 /* AppCenterDistribute */ = {
 			isa = XCSwiftPackageProductDependency;

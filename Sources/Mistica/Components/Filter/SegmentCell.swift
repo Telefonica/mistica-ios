@@ -7,8 +7,8 @@
 //
 
 import Foundation
+import MisticaCommon
 import UIKit
-import Shared
 
 class SegmentCell: UICollectionViewCell {
     private enum Constants {

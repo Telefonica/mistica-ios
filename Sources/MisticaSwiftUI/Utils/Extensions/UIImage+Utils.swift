@@ -1,3 +1,11 @@
+//
+//  UIImage+Utils.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import SwiftUI
 import UIKit
 

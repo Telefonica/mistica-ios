@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
+import MisticaCommon
 import UIKit
-import Shared
 
 /// The TabsViewDelegate protocol defines methods that allow you to manage the selection and deselection of
 /// segments in a `TabsView`. The methods of this protocol are all optional.

@@ -1,5 +1,13 @@
+//
+//  Tag.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
+import MisticaCommon
 import SwiftUI
-import Shared
 
 private enum Constants {
     static let cornerRadius: CGFloat = 50

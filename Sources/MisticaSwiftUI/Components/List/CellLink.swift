@@ -1,6 +1,14 @@
+//
+//  CellLink.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Foundation
+import MisticaCommon
 import SwiftUI
-import Shared
 
 /// View to be used as an overlay of the cell that acts as a NavigationLink but providers the caller with highlighting effects.
 @available(iOS 13.0, *)
@@ -27,7 +35,7 @@ public struct CellLink<Destination: View>: View {
             // the button to replace the label for an empty view.
             Rectangle().foregroundColor(Color.backgroundContainer.opacity(0.001))
         })
-        .background(NavigationLink(isActive: $navigationLinkIsActive, destination: { destination }, label: {}).opacity(0))
-        .buttonStyle(CellPressedStyle(isPressed: $isPressed))
+            .background(NavigationLink(isActive: $navigationLinkIsActive, destination: { destination }, label: {}).opacity(0))
+            .buttonStyle(CellPressedStyle(isPressed: $isPressed))
     }
 }

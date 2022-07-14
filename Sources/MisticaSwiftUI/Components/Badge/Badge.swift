@@ -1,5 +1,13 @@
+//
+//  Badge.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
+import MisticaCommon
 import SwiftUI
-import Shared
 
 private enum Constants {
     static let maximumValue = 9
@@ -60,7 +68,7 @@ public struct Badge: View {
 }
 
 #if DEBUG
-    
+
     @available(iOS 13.0, *)
     struct Badge_Previews: PreviewProvider {
         static var previews: some View {

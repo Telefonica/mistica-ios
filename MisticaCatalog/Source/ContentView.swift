@@ -7,9 +7,9 @@
 //
 
 import Mistica
-import SwiftUI
-import Shared
 import MisticaSwiftUI
+import MisticaCommon
+import SwiftUI
 
 struct ContentView: View {
     @Binding var selectedBrandIndex: Int
@@ -19,7 +19,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 0) {
-                Tabs(brands.map({ TabItem(text: $0.id) }), selection: $selectedBrandIndex)
+                Tabs(brands.map { TabItem(text: $0.id) }, selection: $selectedBrandIndex)
                     .background(Color.white)
 
                 CatalogList(
@@ -31,11 +31,11 @@ struct ContentView: View {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     if let misticaVersion = misticaVersion {
                         Text(misticaVersion)
-                            .font(.textPreset5())
+                            .font(.textPreset4(weight: .medium))
                             .foregroundColor(.textNavigationBarPrimary)
                     }
                 }
-                
+
                 ToolbarItem(placement: .principal) {
                     Image("mistica-logo")
                         .resizable()

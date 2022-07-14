@@ -1,0 +1,104 @@
+@testable import Mistica
+import SnapshotTesting
+import SwiftUI
+import XCTest
+
+final class CroutonTests: XCTestCase {
+    override class func setUp() {
+        isRecording = false
+    }
+
+    func testTitle() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .crouton(
+                isVisible: .constant(true),
+                title: "Title"
+            )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testLargeTitle() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .crouton(
+                isVisible: .constant(true),
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testTitleAndAction() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .crouton(
+                isVisible: .constant(true),
+                title: "Title",
+                buttonTitle: "Action",
+                buttonAction: {}
+            )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testError() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .crouton(
+                isVisible: .constant(true),
+                style: .error,
+                title: "Title",
+                buttonTitle: "Action",
+                buttonAction: {}
+            )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testLargeButton() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .crouton(
+                isVisible: .constant(true),
+                buttonStyle: .large,
+                title: "Title",
+                buttonTitle: "Some large action title",
+                buttonAction: {}
+            )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testNotVisible() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .crouton(
+                isVisible: .constant(false),
+                title: "Title",
+                buttonTitle: "Action",
+                buttonAction: {}
+            )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+}

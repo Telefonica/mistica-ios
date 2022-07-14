@@ -1,4 +1,4 @@
-import Mistica
+import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest

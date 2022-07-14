@@ -1,8 +1,9 @@
-import Mistica
+import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@available(iOS 13.0, *)
 final class FeedbackTests: XCTestCase {
     private enum Constants {
         static let singleLineTitle = "Title"
@@ -136,6 +137,7 @@ final class FeedbackTests: XCTestCase {
     }
 }
 
+@available(iOS 13.0, *)
 private extension FeedbackTests {
     func makeTemplate(
         style: FeedbackStyle,

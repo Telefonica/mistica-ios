@@ -1,8 +1,9 @@
-import Mistica
+import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@available(iOS 13.0, *)
 final class CalloutTests: XCTestCase {
     override class func setUp() {
         super.setUp()

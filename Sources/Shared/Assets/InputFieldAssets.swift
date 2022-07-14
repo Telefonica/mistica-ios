@@ -27,6 +27,6 @@ public extension UIImage {
     }
     
     static var calendar: UIImage {
-        UIImage(named: "calendar", type: .common)!
+        UIImage(named: "icn_calendar", type: .common)!
     }
 }

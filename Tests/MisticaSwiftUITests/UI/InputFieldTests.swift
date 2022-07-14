@@ -1,8 +1,9 @@
-import Mistica
+import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@available(iOS 13.0, *)
 final class InputFieldTests: XCTestCase {
     override class func setUp() {
         super.setUp()
@@ -66,6 +67,7 @@ final class InputFieldTests: XCTestCase {
     }
 }
 
+@available(iOS 13.0, *)
 private extension InputFieldTests {
     func makeTemplate(
         style: InputField.Style,

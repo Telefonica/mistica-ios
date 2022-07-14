@@ -1,8 +1,9 @@
-import Mistica
+import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@available(iOS 13.0, *)
 final class StepperTests: XCTestCase {
     override class func setUp() {
         super.setUp()
@@ -39,6 +40,7 @@ final class StepperTests: XCTestCase {
     }
 }
 
+@available(iOS 13.0, *)
 private extension StepperTests {
     func makeTemplate(
         step: Int,

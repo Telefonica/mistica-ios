@@ -1,8 +1,9 @@
-@testable import Mistica
+@testable import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@available(iOS 13.0, *)
 final class ListTests: XCTestCase {
     override class func setUp() {
         isRecording = false
@@ -90,6 +91,7 @@ final class ListTests: XCTestCase {
 
 // MARK: - Helpers
 
+@available(iOS 13.0, *)
 private extension ListTests {
     func makeTemplateWithStyle(style: CellStyle) -> some View {
         let photo = Image(systemName: "photo")
@@ -101,7 +103,7 @@ private extension ListTests {
 
             Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .roundImage(photo), presetView: { CellNavigationPreset() })
             Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .squaredImage(photo, size: .init(width: 80, height: 80)), presetView: { CellNavigationPreset() })
-            Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .largeIcon(photo, foregroundColor: .white, backgroundColor: .brandDark), presetView: { CellNavigationPreset() })
+            Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .largeIcon(photo, foregroundColor: .white, backgroundColor: .brandHigh), presetView: { CellNavigationPreset() })
             Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset() })
 
             Cell(style: style, title: "Title", subtitle: "Subtitle", presetView: { Toggle("", isOn: .constant(false)) })

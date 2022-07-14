@@ -1,4 +1,4 @@
-@testable import Mistica
+@testable import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest

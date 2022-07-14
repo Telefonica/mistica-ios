@@ -1,8 +1,9 @@
-@testable import Mistica
+@testable import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@available(iOS 13.0, *)
 final class ButtonTests: XCTestCase {
     override class func setUp() {
         isRecording = false
@@ -113,6 +114,7 @@ final class ButtonTests: XCTestCase {
 
 // MARK: - Helpers
 
+@available(iOS 13.0, *)
 private extension ButtonTests {
     func makeTemplateWithAllButtonStates(style: MisticaButtonStyle, inverse: Bool = false) -> some View {
         HStack {

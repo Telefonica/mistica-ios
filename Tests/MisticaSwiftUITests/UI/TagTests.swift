@@ -1,8 +1,9 @@
-@testable import Mistica
+@testable import MisticaSwiftUI
 import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@available(iOS 13.0, *)
 final class TagTests: XCTestCase {
     override class func setUp() {
         isRecording = false
@@ -25,6 +26,7 @@ final class TagTests: XCTestCase {
 
 // MARK: - Helpers
 
+@available(iOS 13.0, *)
 private extension TagTests {
     func makeTemplateWithAllTags(content: String) -> some View {
         VStack {

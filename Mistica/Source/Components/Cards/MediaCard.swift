@@ -43,7 +43,7 @@ public struct MediaCardConfiguration {
 
 public class MediaCard: UIView {
     private enum Constants {
-        static let cornerRadius = CGFloat(4)
+        static let cornerRadius = CGFloat(8)
         static let cardLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 24, trailing: 16)
         static let spacingAfterRichMediaView = CGFloat(8)
     }

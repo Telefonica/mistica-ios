@@ -16,3 +16,14 @@ public enum BrandStyle: String, CaseIterable {
     case o2Classic
     case blau
 }
+
+extension BrandStyle {
+    var usesBoldForTextPreset5AndAbove: Bool {
+        switch self {
+        case .movistar:
+            return true
+        case .vivo, .o2, .o2Classic, .blau:
+            return false
+        }
+    }
+}

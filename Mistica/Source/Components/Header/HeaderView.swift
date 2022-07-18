@@ -416,7 +416,7 @@ private extension HeaderView {
     }
 
     func styleTitleLabel() {
-        titleLabel.font = .textPreset6(weight: .light)
+        titleLabel.font = .textPreset6()
         titleLabel.textColor = _style.textPrimaryColor
         titleLabel.numberOfLines = 0
     }
@@ -429,7 +429,7 @@ private extension HeaderView {
 
     func styleAmountLabel() {
         amountLabel.isHidden = true
-        amountLabel.font = .textPreset8(weight: .light)
+        amountLabel.font = .textPreset8()
         amountLabel.textColor = _style.textPrimaryColor
     }
 

@@ -59,9 +59,9 @@ class CellCenterSectionView: UIStackView {
 
     override var isUserInteractionEnabled: Bool {
         didSet {
-            titleLabel.textColor = isUserInteractionEnabled ? titleTextColor : .textDisabled
-            detailLabel.textColor = isUserInteractionEnabled ? subtitleTextColor : .textDisabled
-            subtitleLabel.textColor = isUserInteractionEnabled ? subtitleTextColor : .textDisabled
+            titleLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
+            detailLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
+            subtitleLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
         }
     }
 

@@ -49,7 +49,7 @@ private extension Button.Style {
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .selected: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: .buttonLinkBackgroundSelected, borderColor: backgroundColor),
-                .disabled: Button.StateStyle(textColor: .textLinkDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .loading: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]
         )
@@ -67,7 +67,7 @@ private extension Button.Style {
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .selected: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .disabled: Button.StateStyle(textColor: .textLinkDisabled, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .loading: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]
         )

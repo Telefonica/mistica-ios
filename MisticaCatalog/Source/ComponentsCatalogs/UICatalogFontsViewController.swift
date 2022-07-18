@@ -10,25 +10,25 @@ import Mistica
 import UIKit
 
 class UICatalogFontsViewController: UITableViewController {
-    typealias FontType = (fontStyle: FontStyle, weight: String)
+    typealias FontType = (font: UIFont, name: String)
 
     private let fonts: [FontType] = [
-        (fontStyle: FontStyle.textPreset1, weight: FontStyle.TextPreset1Weight.regular.rawValue),
-        (fontStyle: FontStyle.textPreset1, weight: FontStyle.TextPreset1Weight.medium.rawValue),
-        (fontStyle: FontStyle.textPreset2, weight: FontStyle.TextPreset2Weight.regular.rawValue),
-        (fontStyle: FontStyle.textPreset2, weight: FontStyle.TextPreset2Weight.medium.rawValue),
-        (fontStyle: FontStyle.textPreset3, weight: FontStyle.TextPreset3Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset3, weight: FontStyle.TextPreset3Weight.regular.rawValue),
-        (fontStyle: FontStyle.textPreset3, weight: FontStyle.TextPreset3Weight.medium.rawValue),
-        (fontStyle: FontStyle.textPreset4, weight: FontStyle.TextPreset4Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset4, weight: FontStyle.TextPreset4Weight.regular.rawValue),
-        (fontStyle: FontStyle.textPreset4, weight: FontStyle.TextPreset4Weight.medium.rawValue),
-        (fontStyle: FontStyle.textPreset5, weight: FontStyle.TextPreset5Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset6, weight: FontStyle.TextPreset6Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset7, weight: FontStyle.TextPreset7Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset8, weight: FontStyle.TextPreset8Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset9, weight: FontStyle.TextPreset9Weight.light.rawValue),
-        (fontStyle: FontStyle.textPreset10, weight: FontStyle.TextPreset10Weight.light.rawValue)
+        (font: .textPreset1(weight: .regular, constrainedToPreferredSize: .mainScreenSize), name: "textPreset1(weight: .regular)"),
+        (font: .textPreset1(weight: .medium, constrainedToPreferredSize: .mainScreenSize), name: "textPreset1(weight: .medium)"),
+        (font: .textPreset2(weight: .regular, constrainedToPreferredSize: .mainScreenSize), name: "textPreset2(weight: .regular)"),
+        (font: .textPreset2(weight: .medium, constrainedToPreferredSize: .mainScreenSize), name: "textPreset2(weight: .medium)"),
+        (font: .textPreset3(weight: .light, constrainedToPreferredSize: .mainScreenSize), name: "textPreset3(weight: .light)"),
+        (font: .textPreset3(weight: .regular, constrainedToPreferredSize: .mainScreenSize), name: "textPreset3(weight: .regular)"),
+        (font: .textPreset3(weight: .medium, constrainedToPreferredSize: .mainScreenSize), name: "textPreset3(weight: .medium)"),
+        (font: .textPreset4(weight: .light, constrainedToPreferredSize: .mainScreenSize), name: "textPreset4(weight: .light)"),
+        (font: .textPreset4(weight: .regular, constrainedToPreferredSize: .mainScreenSize), name: "textPreset4(weight: .regular)"),
+        (font: .textPreset4(weight: .medium, constrainedToPreferredSize: .mainScreenSize), name: "textPreset4(weight: .medium)"),
+        (font: .textPreset5(constrainedToPreferredSize: .mainScreenSize), name: "textPreset5()"),
+        (font: .textPreset6(constrainedToPreferredSize: .mainScreenSize), name: "textPreset6()"),
+        (font: .textPreset7(constrainedToPreferredSize: .mainScreenSize), name: "textPreset7()"),
+        (font: .textPreset8(constrainedToPreferredSize: .mainScreenSize), name: "textPreset8()"),
+        (font: .textPreset9(constrainedToPreferredSize: .mainScreenSize), name: "textPreset9()"),
+        (font: .textPreset10(constrainedToPreferredSize: .mainScreenSize), name: "textPreset10()")
     ]
 
     init() {
@@ -67,22 +67,23 @@ class UICatalogFontsViewController: UITableViewController {
 
     override func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
         let fontType = fonts[section]
-
-        return "\(fontType.fontStyle.description) \(fontType.weight)"
+        return fontType.name
     }
 
     func configureCell(at indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "showTooltip")
-        let fontStyle = fonts[indexPath.section].fontStyle
-        let fontWeight = fonts[indexPath.section].weight
-        let preferredContentSizeCategory = UIScreen.main.traitCollection.preferredContentSizeCategory
+        let font = fonts[indexPath.section].font
 
         cell.textLabel?.text = "lorem ipsum dolor"
-        cell.textLabel?.font = .preferredFont(for: fontStyle, weight: fontWeight.systemWeight, constrainedToPreferredSize: preferredContentSizeCategory)
+        cell.textLabel?.font = font
         cell.textLabel?.numberOfLines = 0
 
         return cell
     }
+}
+
+extension UIContentSizeCategory {
+    static let mainScreenSize = UIScreen.main.traitCollection.preferredContentSizeCategory
 }
 
 private extension String {

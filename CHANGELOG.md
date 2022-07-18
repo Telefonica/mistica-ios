@@ -1,3 +1,15 @@
+# [17.0.0](https://github.com/Telefonica/mistica-ios/compare/v16.0.0...v17.0.0) (2022-07-18)
+
+
+### Features
+
+* **MisticaEvolution:** Update corner radios, textPreset, Title component and colors.  ([#193](https://github.com/Telefonica/mistica-ios/issues/193)) ([2dd4c9c](https://github.com/Telefonica/mistica-ios/commit/2dd4c9cac869f0565a7db51b717b61079ca0889d))
+
+
+### BREAKING CHANGES
+
+* **MisticaEvolution:** Text presets from 5 to 10 does not need to receive weight.
+
 # [16.0.0](https://github.com/Telefonica/mistica-ios/compare/v15.2.1...v16.0.0) (2022-05-30)
 
 

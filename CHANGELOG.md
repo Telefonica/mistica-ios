@@ -1,3 +1,10 @@
+## [17.0.1](https://github.com/Telefonica/mistica-ios/compare/v17.0.0...v17.0.1) (2022-07-20)
+
+
+### Bug Fixes
+
+* **TitleView:** Make TitleView and TitleViewTest public adding them i… ([#195](https://github.com/Telefonica/mistica-ios/issues/195)) ([ff70de4](https://github.com/Telefonica/mistica-ios/commit/ff70de4d36f61a6c85dffc641609b64cfe9de2e0))
+
 # [17.0.0](https://github.com/Telefonica/mistica-ios/compare/v16.0.0...v17.0.0) (2022-07-18)
 
 

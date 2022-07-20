@@ -1,6 +1,6 @@
-#  SectionTitle
+#  TitleView
 
-`SectionTitle.swift` is used to separate sections within the same screen.
+`TitleView.swift` is used to separate sections within the same screen.
 
 ![cusomt](./docs/images/sectiontitle.png)
 

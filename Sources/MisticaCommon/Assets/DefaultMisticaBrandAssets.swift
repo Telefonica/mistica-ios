@@ -39,7 +39,7 @@ struct DefaultMisticaBrandAssets: MisticaBrandAssets {
     }
 
     var iconNotificationInfo: UIImage? {
-        UIImage(named: "icn_notification_info", type: .branded)
+        UIImage(named: "iconNotificationInfo", type: .branded)
     }
 
     var closeButtonBlackSmallIcon: UIImage {

@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import SwiftUI
+import Lottie
 
 extension UIImage {
     /// Returns an image for the provided asset type.
@@ -32,6 +34,20 @@ extension NSDataAsset {
     convenience init?(named: String, type: AssetType) {
         let name = type.assetPath(named)
         self.init(name: name, bundle: .mistica)
+    }
+}
+
+@available(iOS 13.0, *)
+extension Image {
+    /// Returns an image for the provided asset type.
+    /// The assets should be located in the appropriated asset catalog namespace
+    ///
+    /// - Parameters:
+    ///   - brandedImageNamed: asset name
+    ///   - type: if the asset can change per brand, theme or is common
+    init?(named: String, type: AssetType) {
+        let name = type.assetPath(named)
+        self.init(name, bundle: .mistica)
     }
 }
 

@@ -150,7 +150,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
                     Button {
                         dismissAction()
                     } label: {
-                        Image.close
+                        Image.closeButtonBlackSmallIcon
                             .frame(width: 40, height: 40)
                             .foregroundColor(.neutralHigh)
                     }

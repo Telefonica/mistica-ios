@@ -43,7 +43,7 @@ public struct Checkbox: View {
 
     @ViewBuilder
     var checkImage: some View {
-        Image.checkboxCheck
+        Image.checkmarkIcon
             .resizable()
             .frame(width: 10, height: 10)
             .scaleEffect(imageScale)

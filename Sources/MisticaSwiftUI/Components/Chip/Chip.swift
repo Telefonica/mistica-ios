@@ -123,7 +123,7 @@ private extension Chip {
     var trailingView: some View {
         if let onDismiss = onDismiss {
             Button(action: onDismiss) {
-                Image.close
+                Image.closeButtonBlackSmallIcon
                     .resizable()
                     .frame(
                         width: Constants.iconSize,

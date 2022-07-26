@@ -123,7 +123,7 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
 
     @ViewBuilder
     var dismissView: some View {
-        Image.close.frame(width: 22, height: 22, alignment: .center)
+        Image.closeButtonBlackSmallIcon.frame(width: 22, height: 22, alignment: .center)
     }
 }
 
@@ -335,7 +335,7 @@ public extension Callout {
                 )
 
                 Callout(
-                    assetType: .image(image: .close),
+                    assetType: .image(image: .closeButtonBlackSmallIcon),
                     title: "Hola",
                     description: "Description",
                     primaryButton: { Button("Primary") {} }

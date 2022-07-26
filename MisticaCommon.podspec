@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint Mistica.podspec' to ensure this is a
+# Be sure to run `pod lib lint MisticaCommon.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'Mistica'
+  s.name             = 'MisticaCommon'
   s.version          = '17.0.1'
   s.summary          = 'Mistica is an iOS framework that contains reusable UI components and utilities for the Telefonica group.'
   s.description      = <<-DESC
@@ -21,9 +21,8 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'Sources/Mistica/**/*.swift'
+  s.source_files = 'Sources/MisticaCommon/**/*.swift'
+  s.resources = ['Sources/MisticaCommon/Resources/*']
 
   s.frameworks = 'UIKit'
-  s.dependency 'lottie-ios', '3.1.8'
-  s.dependency 'MisticaCommon'
 end

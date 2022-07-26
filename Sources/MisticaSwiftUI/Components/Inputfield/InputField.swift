@@ -146,7 +146,7 @@ private extension InputField {
         }
 
         if case .search = style {
-            Image.close
+            Image.checkmarkIcon
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.neutralHigh)
@@ -154,7 +154,7 @@ private extension InputField {
         }
 
         if case .dropdown = style {
-            Image.dropdown
+            Image.arrowDown
                 .resizable()
                 .scaledToFit()
         }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Mistica'
-  s.version          = '16.0.0'
+  s.version          = '17.0.1'
   s.summary          = 'Mistica is an iOS framework that contains reusable UI components and utilities for the Telefonica group.'
   s.description      = <<-DESC
   Mistica is an iOS framework that contains reusable UI components and utilities for the Telefonica group.

@@ -42,7 +42,6 @@ let package = Package(
             ],
             exclude: [
                 "Fonts/__Snapshots__",
-                "Resources"
             ],
             resources: [
                 .process("Resources/Telefonica-Bold.otf"),

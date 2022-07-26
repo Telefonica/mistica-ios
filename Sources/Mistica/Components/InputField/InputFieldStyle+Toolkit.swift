@@ -6,8 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import Foundation
-import MisticaCommon
 import UIKit
 
 public extension InputField.Style {

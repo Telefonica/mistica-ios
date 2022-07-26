@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MisticaCommon
 
 private enum ViewStyles {
     static let horizontalMargin: CGFloat = 16
@@ -135,7 +136,7 @@ private extension TitleView {
 
         preservesSuperviewLayoutMargins = false
         contentView.preservesSuperviewLayoutMargins = false
-//        contentView.addSubview(constrainedToLayoutMarginsGuideOf: stackView)
+        contentView.addSubview(constrainedToLayoutMarginsGuideOf: stackView)
         contentView.directionalLayoutMargins = NSDirectionalEdgeInsets(
             top: ViewStyles.topMargin,
             leading: ViewStyles.horizontalMargin,

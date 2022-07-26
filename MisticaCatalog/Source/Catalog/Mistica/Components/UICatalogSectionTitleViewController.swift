@@ -46,6 +46,7 @@ class UICatalogSectionTitleViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Title"
         tableView.separatorStyle = .none
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView(frame: CGRect.zero)

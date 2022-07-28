@@ -28,6 +28,9 @@ let package = Package(
     targets: [
         .target(
             name: "MisticaCommon",
+            dependencies: [
+                "Lottie"
+            ],
             exclude: [
                 "Fonts/README.md",
                 "Controls/README.md"

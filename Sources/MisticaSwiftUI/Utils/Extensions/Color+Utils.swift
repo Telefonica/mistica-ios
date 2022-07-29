@@ -19,6 +19,29 @@ public extension Color {
             return UIColor(red: components.r, green: components.g, blue: components.b, alpha: components.a)
         }
     }
+    
+    init?(hex: String) {
+        guard let uiColor = UIColor(hex: hex) else { return nil }
+        self.init(uiColor)
+    }
+}
+
+infix operator |: AdditionPrecedence
+
+@available(iOS 13.0, *)
+public extension Color {
+    /// Easily define two colors for both light and dark mode.
+    /// - Parameters:
+    ///   - lightMode: The color to use in light mode.
+    ///   - darkMode: The color to use in dark mode.
+    /// - Returns: A dynamic color that uses both given colors respectively for the given user interface style.
+    static func | (lightMode: Color, darkMode: Color) -> Color {
+        return Color(
+            UIColor { (traitCollection) -> UIColor in
+                traitCollection.userInterfaceStyle == .light ? lightMode.uiColor : darkMode.uiColor
+            }
+        )
+    }
 }
 
 @available(iOS 13.0, *)

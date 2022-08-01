@@ -17,10 +17,10 @@ struct MovistarColors: Colors {
     let backgroundOverlay = MovistarColorPalette.grey6.withAlphaComponent(0.6) | MovistarColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = MovistarColorPalette.grey1 | MovistarColorPalette.grey6
     let backgroundSkeletonInverse = MovistarColorPalette.movistarBlue55 | MovistarColorPalette.grey6
-    let navigationBarBackground = MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack
+    var navigationBarBackground: UIColor { MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack }
 
     let backgroundAlternative = MovistarColorPalette.grey1 | MovistarColorPalette.darkModeGrey
-    let backgroundFeedbackBottom = MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack
+    var backgroundFeedbackBottom: UIColor { MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack }
     let skeletonWave = MovistarColorPalette.grey2 | MovistarColorPalette.grey5
 
     // BORDERS
@@ -65,15 +65,15 @@ struct MovistarColors: Colors {
 
     // CONTROLS
     let control = MovistarColorPalette.grey3 | MovistarColorPalette.grey6
-    let controlActivated = MovistarColorPalette.movistarBlueWithProminentVariant
+    var controlActivated: UIColor { MovistarColorPalette.movistarBlueWithProminentVariant }
     let controlError = MovistarColorPalette.pepper
     let loadingBar = MovistarColorPalette.movistarBlue30 | MovistarColorPalette.movistarBlue
     let loadingBarBackground = MovistarColorPalette.movistarBlue55 | MovistarColorPalette.darkModeGrey
 
     // DIVIDERS
     let divider = MovistarColorPalette.grey2 | MovistarColorPalette.white.withAlphaComponent(0.05)
-    let dividerInverse = MovistarColorPalette.movistarBlue55WithProminentVariant | MovistarColorPalette.white.withAlphaComponent(0.05)
-    var navigationBarDivider = MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack
+    var dividerInverse: UIColor { MovistarColorPalette.movistarBlue55WithProminentVariant | MovistarColorPalette.white.withAlphaComponent(0.05) }
+    var navigationBarDivider: UIColor { MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack }
 
     // FEEDBACKS
     let badge = MovistarColorPalette.pepper55
@@ -81,8 +81,8 @@ struct MovistarColors: Colors {
     let feedbackInfoBackground = MovistarColorPalette.grey6
 
     // GLOBAL
-    let brand = MovistarColorPalette.movistarBlueWithProminentVariant
-    let brandHigh = MovistarColorPalette.movistarBlue55WithProminentVariant | MovistarColorPalette.white.withAlphaComponent(0.05)
+    var brand: UIColor { MovistarColorPalette.movistarBlueWithProminentVariant }
+    var brandHigh: UIColor { MovistarColorPalette.movistarBlue55WithProminentVariant | MovistarColorPalette.white.withAlphaComponent(0.05) }
     let inverse = MovistarColorPalette.white | MovistarColorPalette.grey2
     let neutralHigh = MovistarColorPalette.grey6 | MovistarColorPalette.grey2
     let neutralMedium = MovistarColorPalette.grey5
@@ -106,15 +106,15 @@ struct MovistarColors: Colors {
     let textNavigationSearchBarHint = MovistarColorPalette.movistarBlue20 | MovistarColorPalette.grey4 // iOS only
     let textNavigationSearchBarText = MovistarColorPalette.white | MovistarColorPalette.grey2 // iOS only
     let textAppBar = MovistarColorPalette.grey4 | MovistarColorPalette.grey5
-    let textAppBarSelected = MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.grey2
+    var textAppBarSelected: UIColor { MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.grey2 }
 
     // GRADIENTS
     var backgroundBrandGradient: [UIColor] {
         [
-            UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) | MovistarColorPalette.darkModeBlack,
-            UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) | MovistarColorPalette.darkModeBlack,
-            UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) | MovistarColorPalette.darkModeBlack,
-            UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue]) | MovistarColorPalette.darkModeBlack
+            MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack,
+            MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack,
+            MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack,
+            MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack
         ]
     }
 
@@ -183,6 +183,10 @@ public enum MovistarColorPalette {
     public static let darkModeGrey = UIColor(hex: "#242424")!
     
     // Prominent and default
-    static let movistarBlueWithProminentVariant = UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue])
-    static let movistarBlue55WithProminentVariant = UIColor(MovistarColorPalette.movistarBlue55, variants: [.prominent: MovistarColorPalette.movistarProminentBlueDark])
+    static var movistarBlueWithProminentVariant: UIColor {
+        UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue])
+    }
+    static var movistarBlue55WithProminentVariant: UIColor {
+        UIColor(MovistarColorPalette.movistarBlue55, variants: [.prominent: MovistarColorPalette.movistarProminentBlueDark])
+    }
 }

@@ -13,7 +13,7 @@ struct MovistarColors: Colors {
     let appBarBackground = MovistarColorPalette.white | MovistarColorPalette.darkModeGrey
     let background = MovistarColorPalette.white | MovistarColorPalette.darkModeBlack
     let backgroundContainer = MovistarColorPalette.white | MovistarColorPalette.darkModeGrey
-    let backgroundBrand = MovistarColorPalette.movistarBlue | MovistarColorPalette.darkModeBlack
+    var backgroundBrand: UIColor { MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack }
     let backgroundOverlay = MovistarColorPalette.grey6.withAlphaComponent(0.6) | MovistarColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = MovistarColorPalette.grey1 | MovistarColorPalette.grey6
     let backgroundSkeletonInverse = MovistarColorPalette.movistarBlue55 | MovistarColorPalette.grey6

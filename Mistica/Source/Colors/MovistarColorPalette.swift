@@ -181,11 +181,12 @@ public enum MovistarColorPalette {
 
     public static let darkModeBlack = UIColor(hex: "#191919")!
     public static let darkModeGrey = UIColor(hex: "#242424")!
-    
+
     // Prominent and default
     static var movistarBlueWithProminentVariant: UIColor {
         UIColor(MovistarColorPalette.movistarBlue, variants: [.prominent: MovistarColorPalette.movistarProminentBlue])
     }
+
     static var movistarBlue55WithProminentVariant: UIColor {
         UIColor(MovistarColorPalette.movistarBlue55, variants: [.prominent: MovistarColorPalette.movistarProminentBlueDark])
     }

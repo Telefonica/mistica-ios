@@ -23,7 +23,7 @@ public enum MisticaConfig {
     public static var themeVariant: ThemeVariant = .standard {
         didSet {
             MisticaAppearance.setUp(controls: currentStyledControls)
-            NotificationCenter.default.post(.themeVariantDidChange)
+            NotificationCenter.default.post(name: .themeVariantDidChange, object: nil)
         }
     }
 

@@ -117,7 +117,7 @@ private extension TabsView {
         updateEstimatedItemSize()
 
         // Listen to theme variant changes
-        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChangeName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChange, object: nil)
     }
 
     func setUpView() {

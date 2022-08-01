@@ -1,3 +1,15 @@
+# [17.1.0](https://github.com/Telefonica/mistica-ios/compare/v17.0.1...v17.1.0) (2022-08-01)
+
+
+### Bug Fixes
+
+* **Prominent:** Fix prominent theme colors for Movistar ([#199](https://github.com/Telefonica/mistica-ios/issues/199)) ([7c74ba6](https://github.com/Telefonica/mistica-ios/commit/7c74ba666aa0f13999e4cb018634c1188c4fbbe4))
+
+
+### Features
+
+* **Logo:** changed new Mística logo ([c97e7ce](https://github.com/Telefonica/mistica-ios/commit/c97e7cedff332fdffffef74ab85fd57ee6cd73c6))
+
 ## [17.0.1](https://github.com/Telefonica/mistica-ios/compare/v17.0.0...v17.0.1) (2022-07-20)
 
 

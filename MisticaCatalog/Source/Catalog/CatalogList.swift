@@ -6,16 +6,176 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
+import MisticaSwiftUI
 import SwiftUI
 
-struct CatalogList: UIViewControllerRepresentable {
-    typealias UIViewControllerType = UICatalogViewController
+struct CatalogList: View {
+    let framework: Framework
+    let rows: [CatalogRow]
 
-    func makeUIViewController(context: Context) -> UICatalogViewController {
-        UICatalogViewController()
+    var body: some View {
+        List {
+            Section {
+                ForEach(rows) { row in
+                    Cell(
+                        style: .fullwidth,
+                        title: row.title,
+                        assetType: .smallIcon(
+                            Image(uiImage: row.icon),
+                            foregroundColor: nil
+                        ),
+                        presetView: { CellNavigationPreset() }
+                    )
+                    .navigationLink {
+                        componentView(for: row)
+                            .navigationTitle(row.title)
+                    }
+                }
+            } header: {
+                Text("Components")
+            }
+        }
+        .misticaListStyle()
     }
 
-    func updateUIViewController(_ uiViewController: UICatalogViewController, context: Context) {
-        // do nothing
+    @ViewBuilder
+    func componentView(for row: CatalogRow) -> some View {
+        switch framework {
+        case .swiftUI:
+            row.swiftUIComponent
+        case .uiKit:
+            row.uiKitComponent
+        }
     }
 }
+
+private extension CatalogRow {
+    @ViewBuilder
+    var swiftUIComponent: some View {
+        switch self {
+        case .badge:
+            BadgeCatalogView()
+        case .buttons:
+            ButtonsCatalogView()
+        case .cards:
+            DataCardCatalogView()
+        case .crouton:
+            SnackbarCatalogView()
+        case .feedbacks:
+            FeedbackCatalogView()
+        case .inputFields:
+            InputFieldCatalogView()
+        case .stepper:
+            StepperCatalogView()
+        case .tabs:
+            TabsCatalogView()
+        case .tag:
+            TagCatalogView()
+        case .callout:
+            CalloutCatalogView()
+        case .emptyState:
+            EmptyStateCatalogView()
+        case .lists:
+            ListCatalogView()
+        case .carousel:
+            CarouselCatalogView()
+        case .chips:
+            ChipCatalogView()
+        case .tooltip,
+             .viewStates,
+             .title,
+             .filter,
+             .scrollContentIndicator,
+             .header,
+             .fonts,
+             .forms,
+             .controls:
+            notImplementedView
+        }
+    }
+
+    @ViewBuilder
+    var uiKitComponent: some View {
+        switch self {
+        case .buttons:
+            ComponentViewController(UICatalogButtonsViewController())
+        case .feedbacks:
+            ComponentViewController(UICatalogFeedbacksViewController())
+        case .crouton:
+            ComponentViewController(UICatalogCroutonViewController())
+        case .filter:
+            ComponentViewController(UICatalogFilterViewController())
+        case .tooltip:
+            ComponentViewController(UICatalogPopoverViewController())
+        case .viewStates:
+            ComponentViewController(UICatalogViewStatesViewController())
+        case .fonts:
+            ComponentViewController(UICatalogFontsViewController())
+        case .badge:
+            ComponentViewController(UICatalogBadgeViewController())
+        case .inputFields:
+            ComponentViewController(UICatalogInputFieldsViewController())
+        case .forms:
+            ComponentViewController(UICatalogFormViewController())
+        case .scrollContentIndicator:
+            ComponentViewController(UICatalogScrollContentIndicatorViewController())
+        case .tag:
+            ComponentViewController(UICatalogTagsViewController())
+        case .lists:
+            ComponentViewController(UICatalogListsViewController())
+        case .title:
+            ComponentViewController(UICatalogSectionTitleViewController())
+        case .header:
+            ComponentViewController(UICatalogHeaderViewController())
+        case .controls:
+            ComponentViewController(UICatalogControlsViewController())
+        case .cards:
+            ComponentViewController(UICatalogCardsViewController())
+        case .stepper:
+            ComponentViewController(UICatalogStepperViewController())
+        case .tabs:
+            ComponentViewController(UICatalogTabsViewController())
+        case .callout:
+            ComponentViewController(UICatalogCalloutViewController())
+        case .emptyState:
+            ComponentViewController(UICatalogEmptyStateViewController())
+        case .chips,
+             .carousel:
+            notImplementedView
+        }
+    }
+
+    @ViewBuilder
+    var notImplementedView: some View {
+        Text("Not implemented yet")
+            .font(.textPreset5())
+            .foregroundColor(.textPrimary)
+    }
+}
+
+struct ComponentViewController: UIViewControllerRepresentable {
+    let viewController: UIViewController
+
+    init(_ viewController: UIViewController) {
+        self.viewController = viewController
+    }
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        viewController
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        // Do nothing
+    }
+}
+
+#if DEBUG
+    struct CatalogList_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationView {
+                CatalogList(framework: .uiKit, rows: CatalogRow.allCases)
+            }
+            .misticaNavigationViewStyle()
+        }
+    }
+#endif

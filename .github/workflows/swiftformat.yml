@@ -7,13 +7,16 @@ jobs:
   format:
     name: SwiftFormat
     runs-on: self-hosted-novum-mac
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2
+      
       - name: Format
-        run: scripts/swiftformat .
-        env:
-          DEVELOPER_DIR: /Applications/Xcode-12.app/Contents/Developer
-      - uses: stefanzweifel/git-auto-commit-action@v4.11.0
+        run: make format
+      
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Run swiftformat
         env:

@@ -72,7 +72,7 @@ struct MovistarColors: Colors {
 
     // DIVIDERS
     let divider = MovistarColorPalette.grey2 | MovistarColorPalette.white.withAlphaComponent(0.05)
-    let dividerInverse = movistarBlue55WithProminentVariant | MovistarColorPalette.white.withAlphaComponent(0.05)
+    let dividerInverse = MovistarColorPalette.movistarBlue55WithProminentVariant | MovistarColorPalette.white.withAlphaComponent(0.05)
     var navigationBarDivider = MovistarColorPalette.movistarBlueWithProminentVariant | MovistarColorPalette.darkModeBlack
 
     // FEEDBACKS

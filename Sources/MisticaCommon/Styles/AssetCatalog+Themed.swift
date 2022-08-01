@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import UIKit
-import SwiftUI
 import Lottie
+import SwiftUI
+import UIKit
 
 extension UIImage {
     /// Returns an image for the provided asset type.

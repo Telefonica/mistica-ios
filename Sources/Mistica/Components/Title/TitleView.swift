@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import MisticaCommon
+import UIKit
 
 private enum ViewStyles {
     static let horizontalMargin: CGFloat = 16

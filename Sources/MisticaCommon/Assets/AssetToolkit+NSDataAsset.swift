@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import Lottie
+import UIKit
 
 public extension NSDataAsset {
     static var checkAnimation: NSDataAsset? {

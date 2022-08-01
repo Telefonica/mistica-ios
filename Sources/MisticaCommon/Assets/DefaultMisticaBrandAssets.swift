@@ -13,7 +13,7 @@ public struct DefaultMisticaBrandAssets: MisticaBrandAssets {
     public init() {
         // Do nothing
     }
-    
+
     public var arrowRight: UIImage {
         UIImage(named: "icn_arrow_right", type: .common)!
     }

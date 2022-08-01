@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import SwiftUI
 import MisticaCommon
+import SwiftUI
 
 @available(iOS 13.0, *)
 public extension Image {

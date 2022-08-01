@@ -15,5 +15,9 @@ public enum ThemeVariant: String, CaseIterable {
 }
 
 public extension Notification.Name {
-    static let themeVariantDidChange = Notification.Name("mistica.themeVariantDidChange")
+    static let themeVariantDidChangeName = Notification.Name("mistica.themeVariantDidChange")
+}
+
+public extension Notification {
+    static let themeVariantDidChange = Notification(name: .themeVariantDidChangeName, object: nil, userInfo: nil)
 }

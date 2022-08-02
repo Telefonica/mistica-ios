@@ -10,15 +10,11 @@ let package = Package(
     products: [
         .library(
             name: "Mistica",
-            targets: ["Mistica"]
+            targets: ["Mistica", "MisticaCommon"]
         ),
         .library(
             name: "MisticaSwiftUI",
-            targets: ["MisticaSwiftUI"]
-        ),
-        .library(
-            name: "MisticaCommon",
-            targets: ["MisticaCommon"]
+            targets: ["MisticaSwiftUI", "MisticaCommon"]
         )
     ],
     dependencies: [

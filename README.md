@@ -20,6 +20,16 @@ Mistica is a framework that contains reusable UI components and utilities for th
 - [Demo app](#demo-app)
 - [Contributing](#contributing)
 
+## Packages
+
+This repo has contains three different pacakges:
+
+- `MisticaCommon`: It contains all the common elements for both UIKit and SwiftUI implementation, including assets, colors and fonts. 
+- `Mistica`: It contains all the components of Mistica for `UIKit`.
+- `MisticaSwiftUI`: It contains all the components of Mistica for `SwiftUI`.
+
+Normally, you will work with `MisticaCommon` and `Mistica` or `MisticaSwiftUI`.
+
 ## Installation
 
 ### Swift Package Manager
@@ -28,7 +38,7 @@ You can add Mistica to an Xcode project by adding it as a package dependency.
 
 1. From the **File** menu, select **Swift Package** > **Add Package Dependency**.
 2. Enter "[https://github.com/Telefonica/mistica-ios](https://github.com/Telefonica/mistica-ios)" into the package repository URL text field.
-3. From the **Add Package to App** window, select **Mistica** library.
+3. From the **Add Package to App** window, select **MisticaCommon** and **Mistica** or **MisticaSwiftUI** library.
 
 You also can integrate Mitica to Swift Package, add the following as a dependency to your `Package.swift`:
 
@@ -36,7 +46,7 @@ You also can integrate Mitica to Swift Package, add the following as a dependenc
 .package(name: "Mistica", url: "https://github.com/Telefonica/mistica-ios.git", .from("2.0.0"))
 ```
 
-and then specify `"Mistica"` as a dependency of the Target in which you wish to use Mistica.
+and then specify `"MisticaCommon"` and `"Mistica"` or `"MisticaSwiftUI"` as dependencies of the target in which you wish to use Mistica.
 
 ### Carthage
 
@@ -59,6 +69,7 @@ carthage update --platform iOS --use-ssh --use-xcframeworks
 Add Mistica to your `Podfile`:
 
 ```
+pod 'MisticaCommon', :git => 'git@github.com:Telefonica/mistica-ios.git'
 pod 'Mistica', :git => 'git@github.com:Telefonica/mistica-ios.git'
 ```
 
@@ -105,36 +116,61 @@ Every component in mistica supports dark mode. In order to configure dark mode i
 
 ## Fonts
 
-By default mistica uses the system font, but if you need to use a custom font (Telefonica font, On-Air, etc) you can follow [these instructions](./Mistica/Source/Fonts/).
+By default mistica uses the system font, but if you need to use a custom font (Telefonica font, On-Air, etc) you can follow [these instructions](./Sources/Mistica/Fonts/).
 
 ## Components
 
-* [Badge](./Mistica/Source/Components/Badge/)
-* [Button](./Mistica/Source/Components/Button/)
-* [Cards](./Mistica/Source/Components/Cards/)
-	* [DataCard](./Mistica/Source/Components/Cards/#datacard)
-	* [MediaCard](./Mistica/Source/Components/Cards/#mediacard)
-	* [HighlightedCard](./Mistica/Source/Components/Cards/#highlightedcard)
-* [Checkbox](./Mistica/Source/Components/Checkbox/)
-* [Controls](./Mistica/Source/Components/Controls/)
-* [Crouton](./Mistica/Source/Components/Crouton/)
-* [EmptyState](./Mistica/Source/Components/EmptyState/)
-* [Feedbacks](./Mistica/Source/Components/Feedback/)
-* [Filter](./Mistica/Source/Components/Filter/)
-* [Form](./Mistica/Source/Components/Form/)
-* [Header](./Mistica/Source/Components/Header/)
-* [InputFields](./Mistica/Source/Components/InputField/)
-* [Lists](./Mistica/Source/Components/Lists/)
-* [NavigationBar](./Mistica/Source/Components/NavigationBar/)
-* [Popover](./Mistica/Source/Components/Popover/)
-* [RadioButton](./Mistica/Source/Components/RadioButton/)
-* [ScrollContentIndicator](./Mistica/Source/Components/ScrollContentIndicator/)
-* [SectionTitle](./Mistica/Source/Components/SectionTitle/)
-* [Stepper](./Mistica/Source/Components/Stepper/)
-* [Switch](./Mistica/Source/Components/Switch/)
-* [Tabs](./Mistica/Source/Components/Tabs)
-* [Tag](./Mistica/Source/Components/Tag/)
-* [ViewStates](./Mistica/Source/Components/ViewStates/)
+### UIKit 
+* [Badge](./Sources/Mistica/Components/Badge/)
+* [Button](./Sources/Mistica/Components/Button/)
+* [Cards](./Sources/Mistica/Components/Cards/)
+	* [DataCard](./Sources/Mistica/Components/Cards/#datacard)
+	* [MediaCard](./Sources/Mistica/Components/Cards/#mediacard)
+	* [HighlightedCard](./Sources/Mistica/Components/Cards/#highlightedcard)
+* [Checkbox](./Sources/Mistica/Components/Checkbox/)
+* [Controls](./Sources/Mistica/Components/Controls/)
+* [Crouton](./Sources/Mistica/Components/Crouton/)
+* [EmptyState](./Sources/Mistica/Components/EmptyState/)
+* [Feedbacks](./Sources/Mistica/Components/Feedback/)
+* [Filter](./Sources/Mistica/Components/Filter/)
+* [Form](./Sources/Mistica/Components/Form/)
+* [Header](./Sources/Mistica/Components/Header/)
+* [InputFields](./Sources/Mistica/Components/InputField/)
+* [Lists](./Sources/Mistica/Components/Lists/)
+* [NavigationBar](./Sources/Mistica/Components/NavigationBar/)
+* [Popover](./Sources/Mistica/Components/Popover/)
+* [RadioButton](./Sources/Mistica/Components/RadioButton/)
+* [ScrollContentIndicator](./Sources/Mistica/Components/ScrollContentIndicator/)
+* [SectionTitle](./Sources/Mistica/Components/SectionTitle/)
+* [Stepper](./Sources/Mistica/Components/Stepper/)
+* [Switch](./Sources/Mistica/Components/Switch/)
+* [Tabs](./Sources/Mistica/Components/Tabs)
+* [Tag](./Sources/Mistica/Components/Tag/)
+* [ViewStates](./Sources/Mistica/Components/ViewStates/)
+
+### SwiftUI
+* [Badge](./Sources/MisticaSwiftUI/Components/Badge/)
+* [Button](./Sources/MisticaSwiftUI/Components/Button/)
+* [Cards](./Sources/MisticaSwiftUI/Components/Cards/)
+    * [DataCard](./Sources/MisticaSwiftUI/Components/Cards/#datacard)
+    * [Not Implemented][MediaCard](./Sources/MisticaSwiftUI/Components/Cards/#mediacard)
+    * [Not Implemented][HighlightedCard](./Sources/MisticaSwiftUI/Components/Cards/#highlightedcard)
+* [Checkbox](./Sources/MisticaSwiftUI/Components/Checkbox/)
+* [Crouton](./Sources/MisticaSwiftUI/Components/Snackbar/)
+* [EmptyState](./Sources/MisticaSwiftUI/Components/EmptyState/)
+* [Feedbacks](./Sources/MisticaSwiftUI/Components/Feedback/)
+* [Not Implemented][Filter](./Sources/MisticaSwiftUI/Components/Filter/)
+* [Not Implemented][Header](./Sources/MisticaSwiftUI/Components/Header/)
+* [InputFields](./Sources/MisticaSwiftUI/Components/InputField/)
+* [Lists](./Sources/MisticaSwiftUI/Components/Lists/)
+* [Popover](./Sources/Mistica/Components/Popover/)
+* [RadioButton](./Sources/MisticaSwiftUI/Components/RadioButton/)
+* [ScrollContentIndicator](./Sources/Mistica/Components/ScrollContentIndicator/)
+* [SectionTitle](./Sources/MisticaSwiftUI/Components/SectionTitle/)
+* [Stepper](./Sources/MisticaSwiftUI/Components/Stepper/)
+* [Tabs](./Sources/MisticaSwiftUI/Components/Tabs)
+* [Tag](./Sources/MisticaSwiftUI/Components/Tag/)
+* [Not Implemented][ViewStates](./Sources/MisticaSwiftUI/Components/ViewStates/)
 
 ## Demo app
 Included in this repository there's a demo app showcasing all implemented components. With each new release, a new version of the mistica catalog app is created. It can be installed with this [link](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-ios/distribution_groups/public) or by using the following QR:

@@ -40,7 +40,7 @@ let package = Package(
                 "SnapshotTesting"
             ],
             exclude: [
-                "Fonts/__Snapshots__",
+                "Fonts/__Snapshots__"
             ],
             resources: [
                 .process("Resources/Telefonica-Bold.otf"),

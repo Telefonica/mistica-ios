@@ -13,7 +13,7 @@ public struct DefaultMisticaBrandAssets: MisticaBrandAssets {
     public init() {
         // Do nothing
     }
-    
+
     public var arrowRight: UIImage {
         UIImage(named: "icn_arrow_right", type: .common)!
     }
@@ -43,7 +43,7 @@ public struct DefaultMisticaBrandAssets: MisticaBrandAssets {
     }
 
     public var iconNotificationInfo: UIImage? {
-        UIImage(named: "iconNotificationInfo", type: .branded)
+        UIImage(named: "icnNotificationInfo", type: .branded)!.withRenderingMode(.alwaysTemplate)
     }
 
     public var closeButtonBlackSmallIcon: UIImage {
@@ -51,14 +51,14 @@ public struct DefaultMisticaBrandAssets: MisticaBrandAssets {
     }
 
     public var checkAnimation: NSDataAsset? {
-        NSDataAsset(named: "StepperSuccess", type: .branded)
+        NSDataAsset(named: "StepperSuccess", type: .branded)!
     }
 
     public var successAnimation: NSDataAsset? {
-        NSDataAsset(named: "FeedbackSuccess", type: .branded)
+        NSDataAsset(named: "FeedbackSuccess", type: .branded)!
     }
 
     public var errorAnimation: NSDataAsset? {
-        NSDataAsset(named: "FeedbackError", type: .branded)
+        NSDataAsset(named: "FeedbackError", type: .branded)!
     }
 }

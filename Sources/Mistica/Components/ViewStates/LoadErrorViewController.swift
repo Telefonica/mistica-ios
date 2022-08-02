@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import MisticaCommon
 import UIKit
 
 /// Manages the view hierarchy for the load error view.

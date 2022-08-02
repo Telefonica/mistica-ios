@@ -13,7 +13,7 @@ import XCTest
 
 final class FontStyleTests: XCTestCase {
     override class func setUp() {
-        FontStyle.fontNameForWeight = { weight in
+        FontStyle.uiFontNameForWeight = { weight in
             switch weight {
             case .light, .ultraLight, .thin:
                 return "Telefonica-Light"
@@ -30,7 +30,7 @@ final class FontStyleTests: XCTestCase {
     }
 
     override class func tearDown() {
-        FontStyle.fontNameForWeight = nil
+        FontStyle.uiFontNameForWeight = nil
     }
 
     func testMovistarCustomFonts() {

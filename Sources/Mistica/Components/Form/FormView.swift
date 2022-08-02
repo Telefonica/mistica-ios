@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MisticaCommon
+
 import UIKit
 
 @objc public protocol FormViewDelegate: AnyObject {

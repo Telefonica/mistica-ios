@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import MisticaCommon
 import UIKit
 
 /// CalloutMessagesContent is a custom UIStackView where we will have the messages section

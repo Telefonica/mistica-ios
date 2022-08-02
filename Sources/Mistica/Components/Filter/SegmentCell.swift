@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MisticaCommon
+
 import UIKit
 
 class SegmentCell: UICollectionViewCell {

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MisticaCommon
+
 import UIKit
 
 /// The different segment rendering modes supported by `Filter`.

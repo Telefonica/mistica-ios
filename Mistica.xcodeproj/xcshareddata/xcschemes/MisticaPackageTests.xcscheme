@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18EFF8592897F5520094A6CD"
-               BuildableName = "MisticaCommon.framework"
-               BlueprintName = "MisticaCommon"
+               BlueprintIdentifier = "Mistica::MisticaPackageTests::ProductTarget"
+               BuildableName = "MisticaPackageTests"
+               BlueprintName = "MisticaPackageTests"
                ReferencedContainer = "container:Mistica.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,29 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1847135028990652007AAA7E"
+               BlueprintIdentifier = "Mistica::MisticaCommonTests"
                BuildableName = "MisticaCommonTests.xctest"
                BlueprintName = "MisticaCommonTests"
+               ReferencedContainer = "container:Mistica.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "Mistica::MisticaSwiftUITests"
+               BuildableName = "MisticaSwiftUITests.xctest"
+               BlueprintName = "MisticaSwiftUITests"
+               ReferencedContainer = "container:Mistica.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "Mistica::MisticaTests"
+               BuildableName = "MisticaTests.xctest"
+               BlueprintName = "MisticaTests"
                ReferencedContainer = "container:Mistica.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -60,9 +80,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18EFF8592897F5520094A6CD"
-            BuildableName = "MisticaCommon.framework"
-            BlueprintName = "MisticaCommon"
+            BlueprintIdentifier = "Mistica::MisticaPackageTests::ProductTarget"
+            BuildableName = "MisticaPackageTests"
+            BlueprintName = "MisticaPackageTests"
             ReferencedContainer = "container:Mistica.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

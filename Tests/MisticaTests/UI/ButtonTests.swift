@@ -6,7 +6,7 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import Mistica
+@testable import Mistica
 import SnapshotTesting
 import XCTest
 

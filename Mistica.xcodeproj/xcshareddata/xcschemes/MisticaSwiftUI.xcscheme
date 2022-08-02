@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18EFFFAC2897F6090094A6CD"
+               BlueprintIdentifier = "Mistica::MisticaSwiftUI"
                BuildableName = "MisticaSwiftUI.framework"
                BlueprintName = "MisticaSwiftUI"
                ReferencedContainer = "container:Mistica.xcodeproj">
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1847136328990685007AAA7E"
-               BuildableName = "MisticaSwiftUITests.xctest"
-               BlueprintName = "MisticaSwiftUITests"
-               ReferencedContainer = "container:Mistica.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -60,7 +50,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18EFFFAC2897F6090094A6CD"
+            BlueprintIdentifier = "Mistica::MisticaSwiftUI"
             BuildableName = "MisticaSwiftUI.framework"
             BlueprintName = "MisticaSwiftUI"
             ReferencedContainer = "container:Mistica.xcodeproj">

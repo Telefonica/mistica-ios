@@ -8,7 +8,6 @@
 
 import Foundation
 import Lottie
-import MisticaCommon
 import UIKit
 
 class StepView: UIView {

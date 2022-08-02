@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MisticaCommon
+
 import UIKit
 
 public class InputField: UIView {

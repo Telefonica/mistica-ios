@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import MisticaCommon
 import SwiftUI
 
 private enum Constants {
@@ -146,7 +145,7 @@ private extension InputField {
         }
 
         if case .search = style {
-            Image.checkmarkIcon
+            Image.closeButtonBlackSmallIcon
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.neutralHigh)

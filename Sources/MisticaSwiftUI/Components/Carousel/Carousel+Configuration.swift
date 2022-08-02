@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import MisticaCommon
 
 public enum CarouselStyle: CaseIterable {
     case `default`

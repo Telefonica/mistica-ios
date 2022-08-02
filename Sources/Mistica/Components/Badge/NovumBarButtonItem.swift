@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import MisticaCommon
 import UIKit
 
 /// Creates a UITabBarItem with the Badge style of Novum

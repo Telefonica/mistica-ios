@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MisticaCommon
+
 import SwiftUI
 
 /// View to be used as an overlay of the cell that acts as a NavigationLink but providers the caller with highlighting effects.

@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftUI
-import MisticaCommon
 
 @available(iOS 13.0, *)
 public extension Image {

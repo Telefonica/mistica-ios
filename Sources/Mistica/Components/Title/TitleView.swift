@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MisticaCommon
 
 private enum ViewStyles {
     static let horizontalMargin: CGFloat = 16

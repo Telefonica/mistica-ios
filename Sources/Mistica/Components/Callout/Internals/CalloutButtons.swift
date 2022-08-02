@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import MisticaCommon
 import UIKit
 
 /// CardButtons is a custom view which contains the buttons  that belong for the callouts

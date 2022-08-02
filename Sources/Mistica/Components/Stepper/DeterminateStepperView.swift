@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MisticaCommon
+
 import UIKit
 
 open class DeterminateStepperView: UIControl {

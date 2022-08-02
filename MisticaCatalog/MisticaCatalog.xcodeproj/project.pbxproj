@@ -52,7 +52,6 @@
 		18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */; };
 		18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */; };
 		18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */; };
-		18FB8A9B2880661E0043CA80 /* MisticaCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 18FB8A9A2880661E0043CA80 /* MisticaCommon */; };
 		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F990032546C98600DFBFE9 /* Assets.xcassets */; };
@@ -147,7 +146,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18FB8A9B2880661E0043CA80 /* MisticaCommon in Frameworks */,
 				B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */,
 				1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */,
 				B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */,
@@ -371,7 +369,6 @@
 				B8F990622546CAA500DFBFE9 /* Mistica */,
 				B8EE89F12614B57600F79386 /* AppCenterDistribute */,
 				1882EF40286EFF5F00F959FA /* MisticaSwiftUI */,
-				18FB8A9A2880661E0043CA80 /* MisticaCommon */,
 			);
 			productName = MisticaCatalog;
 			productReference = B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */;
@@ -721,10 +718,6 @@
 		18E42D49287F181700BB7B39 /* MisticaSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MisticaSwiftUI;
-		};
-		18FB8A9A2880661E0043CA80 /* MisticaCommon */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MisticaCommon;
 		};
 		18FB8A9C288067980043CA80 /* MisticaCommon */ = {
 			isa = XCSwiftPackageProductDependency;

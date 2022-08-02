@@ -7,7 +7,7 @@
 //
 
 import Lottie
-import MisticaCommon
+
 import UIKit
 
 public class FeedbackView: UIView {

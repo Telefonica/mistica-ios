@@ -8,7 +8,7 @@
 
 import Foundation
 import Lottie
-import MisticaCommon
+
 import UIKit
 
 @frozen

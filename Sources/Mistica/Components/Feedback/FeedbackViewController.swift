@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import MisticaCommon
 import UIKit
 
 public class FeedbackViewController: UIViewController {

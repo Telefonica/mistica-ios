@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MisticaCommon
+
 import SwiftUI
 
 public enum SnackbarStyle {

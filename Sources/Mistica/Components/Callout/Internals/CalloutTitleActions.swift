@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MisticaCommon
+
 import UIKit
 
 /// CalloutTitleActions is where we will manage the messages and buttons view.

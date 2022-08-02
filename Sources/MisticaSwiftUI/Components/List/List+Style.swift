@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import MisticaCommon
 import SwiftUI
 
 @available(iOS 13.0, *)

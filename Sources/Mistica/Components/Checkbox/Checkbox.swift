@@ -7,7 +7,7 @@
 //
 
 import CoreGraphics
-import MisticaCommon
+
 import UIKit
 
 public class Checkbox: UIControl {

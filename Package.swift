@@ -18,8 +18,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8")),
-        .package(name: "SnapshotTesting", url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .exact("1.8.2"))
+        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.2.3")),
+        .package(name: "SnapshotTesting", url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .exact("1.9.0"))
     ],
     targets: [
         .target(

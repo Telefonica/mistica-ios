@@ -13,7 +13,7 @@ import XCTest
 final class DeterminateStepperTests: XCTestCase {
     override class func setUp() {
         super.setUp()
-
+        UIView.setAnimationsEnabled(false)
         isRecording = false
     }
 

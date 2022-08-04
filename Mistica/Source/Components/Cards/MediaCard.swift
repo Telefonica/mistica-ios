@@ -69,7 +69,7 @@ public class MediaCard: UIView {
         }
         set {}
     }
-    
+
     public var reachMediaAccessibilityIdentifier: String? {
         get {
             richMediaContainerView.accessibilityIdentifier
@@ -78,7 +78,7 @@ public class MediaCard: UIView {
             richMediaContainerView.accessibilityIdentifier = newValue
         }
     }
-    
+
     public var headlineAccessibilityIdentifier: String? {
         get {
             baseCardView.contentView.headlineAccessibilityIdentifier
@@ -87,7 +87,7 @@ public class MediaCard: UIView {
             baseCardView.contentView.headlineAccessibilityIdentifier = newValue
         }
     }
-    
+
     public var pretitleAccessibilityIdentifier: String? {
         get {
             baseCardView.contentView.titleAccessibilityIdentifier
@@ -96,7 +96,7 @@ public class MediaCard: UIView {
             baseCardView.contentView.titleAccessibilityIdentifier = newValue
         }
     }
-    
+
     public var titleAccessibilityIdentifier: String? {
         get {
             baseCardView.contentView.subtitleAccessibilityIdentifier
@@ -105,7 +105,7 @@ public class MediaCard: UIView {
             baseCardView.contentView.subtitleAccessibilityIdentifier = newValue
         }
     }
-    
+
     public var descriptionAccessibilityIdentifier: String? {
         get {
             baseCardView.contentView.descriptionAccessibilityIdentifier
@@ -114,7 +114,7 @@ public class MediaCard: UIView {
             baseCardView.contentView.descriptionAccessibilityIdentifier = newValue
         }
     }
-    
+
     public var primaryButtonAccessibilityIdentifier: String? {
         get {
             baseCardView.buttonsView.primaryButtonAccessibilityIdentifier
@@ -123,7 +123,7 @@ public class MediaCard: UIView {
             baseCardView.buttonsView.primaryButtonAccessibilityIdentifier = newValue
         }
     }
-    
+
     public var linkButtonAccessibilityIdentifier: String? {
         get {
             baseCardView.buttonsView.linkButtonAccessibilityIdentifier
@@ -241,7 +241,7 @@ private extension MediaCard {
 
         addBorder(color: .border)
     }
-    
+
     func addDefaultAccessibilityIds() {
         richMediaContainerView.isAccessibilityElement = true
         richMediaContainerView.accessibilityIdentifier = DefaultIdentifiers.MediaCard.asset

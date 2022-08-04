@@ -26,7 +26,7 @@ class CardButtons: UIStackView {
         }
         set {}
     }
-    
+
     var primaryButtonAccessibilityIdentifier: String? {
         get {
             primaryButton.accessibilityIdentifier
@@ -35,7 +35,7 @@ class CardButtons: UIStackView {
             primaryButton.accessibilityIdentifier = newValue
         }
     }
-    
+
     var linkButtonAccessibilityIdentifier: String? {
         get {
             linkButton.accessibilityIdentifier

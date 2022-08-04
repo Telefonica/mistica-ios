@@ -129,7 +129,7 @@ extension CardCommonContent {
             descriptionLabel.topSpacing = newValue
         }
     }
-    
+
     var headlineAccessibilityIdentifier: String? {
         get {
             headlineTagView.item.accessibilityIdentifier
@@ -138,7 +138,7 @@ extension CardCommonContent {
             headlineTagView.item.accessibilityIdentifier = newValue
         }
     }
-    
+
     var titleAccessibilityIdentifier: String? {
         get {
             titleLabel.item.accessibilityIdentifier
@@ -147,7 +147,7 @@ extension CardCommonContent {
             titleLabel.item.accessibilityIdentifier = newValue
         }
     }
-    
+
     var subtitleAccessibilityIdentifier: String? {
         get {
             subtitleLabel.item.accessibilityIdentifier
@@ -156,7 +156,7 @@ extension CardCommonContent {
             subtitleLabel.item.accessibilityIdentifier = newValue
         }
     }
-    
+
     var descriptionAccessibilityIdentifier: String? {
         get {
             descriptionLabel.item.accessibilityIdentifier

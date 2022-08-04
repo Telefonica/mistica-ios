@@ -26,6 +26,24 @@ class CardButtons: UIStackView {
         }
         set {}
     }
+    
+    var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            primaryButton.accessibilityIdentifier
+        }
+        set {
+            primaryButton.accessibilityIdentifier = newValue
+        }
+    }
+    
+    var linkButtonAccessibilityIdentifier: String? {
+        get {
+            linkButton.accessibilityIdentifier
+        }
+        set {
+            linkButton.accessibilityIdentifier = newValue
+        }
+    }
 
     override public init(frame: CGRect) {
         super.init(frame: frame)

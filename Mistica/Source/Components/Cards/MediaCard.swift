@@ -69,6 +69,69 @@ public class MediaCard: UIView {
         }
         set {}
     }
+    
+    public var reachMediaAccessibilityIdentifier: String? {
+        get {
+            richMediaContainerView.accessibilityIdentifier
+        }
+        set {
+            richMediaContainerView.accessibilityIdentifier = newValue
+        }
+    }
+    
+    public var headlineAccessibilityIdentifier: String? {
+        get {
+            baseCardView.contentView.headlineAccessibilityIdentifier
+        }
+        set {
+            baseCardView.contentView.headlineAccessibilityIdentifier = newValue
+        }
+    }
+    
+    public var pretitleAccessibilityIdentifier: String? {
+        get {
+            baseCardView.contentView.titleAccessibilityIdentifier
+        }
+        set {
+            baseCardView.contentView.titleAccessibilityIdentifier = newValue
+        }
+    }
+    
+    public var titleAccessibilityIdentifier: String? {
+        get {
+            baseCardView.contentView.subtitleAccessibilityIdentifier
+        }
+        set {
+            baseCardView.contentView.subtitleAccessibilityIdentifier = newValue
+        }
+    }
+    
+    public var descriptionAccessibilityIdentifier: String? {
+        get {
+            baseCardView.contentView.descriptionAccessibilityIdentifier
+        }
+        set {
+            baseCardView.contentView.descriptionAccessibilityIdentifier = newValue
+        }
+    }
+    
+    public var primaryButtonAccessibilityIdentifier: String? {
+        get {
+            baseCardView.buttonsView.primaryButtonAccessibilityIdentifier
+        }
+        set {
+            baseCardView.buttonsView.primaryButtonAccessibilityIdentifier = newValue
+        }
+    }
+    
+    public var linkButtonAccessibilityIdentifier: String? {
+        get {
+            baseCardView.buttonsView.linkButtonAccessibilityIdentifier
+        }
+        set {
+            baseCardView.buttonsView.linkButtonAccessibilityIdentifier = newValue
+        }
+    }
 
     public var contentConfiguration: MediaCardConfiguration? {
         didSet {
@@ -186,8 +249,8 @@ private extension MediaCard {
         baseCardView.contentView.titleAccessibilityIdentifier = DefaultIdentifiers.MediaCard.pretitle
         baseCardView.contentView.subtitleAccessibilityIdentifier = DefaultIdentifiers.MediaCard.title
         baseCardView.contentView.descriptionAccessibilityIdentifier = DefaultIdentifiers.MediaCard.description
-        baseCardView.buttonsView.primaryButton.accessibilityIdentifier = DefaultIdentifiers.MediaCard.primaryButton
-        baseCardView.buttonsView.linkButton.accessibilityIdentifier = DefaultIdentifiers.MediaCard.linkButton
+        baseCardView.buttonsView.primaryButtonAccessibilityIdentifier = DefaultIdentifiers.MediaCard.primaryButton
+        baseCardView.buttonsView.linkButtonAccessibilityIdentifier = DefaultIdentifiers.MediaCard.linkButton
     }
 
     func configure(with configuration: MediaCardConfiguration) {

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {
-//        setBackgroundImage(UIImage(color: color), for: state)
+        setBackgroundImage(UIImage(color: color), for: state)
     }
 
     private var states: [UIControl.State] {

@@ -129,6 +129,7 @@ private extension MediaCard {
     func commomInit() {
         layoutViews()
         styleViews()
+        addDefaultAccessibilityIds()
     }
 
     func layoutViews() {
@@ -176,6 +177,17 @@ private extension MediaCard {
         richMediaContainerView.clipsToBounds = true
 
         addBorder(color: .border)
+    }
+    
+    func addDefaultAccessibilityIds() {
+        richMediaContainerView.isAccessibilityElement = true
+        richMediaContainerView.accessibilityIdentifier = DefaultIdentifiers.MediaCard.asset
+        baseCardView.contentView.headlineAccessibilityIdentifier = DefaultIdentifiers.MediaCard.headline
+        baseCardView.contentView.titleAccessibilityIdentifier = DefaultIdentifiers.MediaCard.pretitle
+        baseCardView.contentView.subtitleAccessibilityIdentifier = DefaultIdentifiers.MediaCard.title
+        baseCardView.contentView.descriptionAccessibilityIdentifier = DefaultIdentifiers.MediaCard.description
+        baseCardView.buttonsView.primaryButton.accessibilityIdentifier = DefaultIdentifiers.MediaCard.primaryButton
+        baseCardView.buttonsView.linkButton.accessibilityIdentifier = DefaultIdentifiers.MediaCard.linkButton
     }
 
     func configure(with configuration: MediaCardConfiguration) {

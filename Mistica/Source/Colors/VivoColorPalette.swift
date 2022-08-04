@@ -16,7 +16,7 @@ struct VivoColors: Colors {
     let backgroundBrand = VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
     let backgroundOverlay = VivoColorPalette.grey6.withAlphaComponent(0.6) | VivoColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = VivoColorPalette.grey1 | VivoColorPalette.darkModeGrey6
-    let backgroundSkeletonInverse = VivoColorPalette.white | VivoColorPalette.darkModeGrey6
+    let backgroundSkeletonInverse = VivoColorPalette.white.withAlphaComponent(0.2)  | VivoColorPalette.darkModeGrey6
     let navigationBarBackground = VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
     let backgroundAlternative = VivoColorPalette.grey1 | VivoColorPalette.darkModeGrey
     let backgroundFeedbackBottom = VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack

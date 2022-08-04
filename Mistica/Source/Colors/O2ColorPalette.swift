@@ -16,7 +16,7 @@ struct O2Colors: Colors {
     let backgroundBrand = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
     let backgroundOverlay = O2ColorPalette.grey6.withAlphaComponent(0.6) | O2ColorPalette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = O2ColorPalette.grey1 | O2ColorPalette.darkModeGrey6
-    let backgroundSkeletonInverse = O2ColorPalette.white | O2ColorPalette.darkModeGrey6
+    let backgroundSkeletonInverse = O2ColorPalette.white.withAlphaComponent(0.2) | O2ColorPalette.darkModeGrey6
     let navigationBarBackground = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack
     let backgroundAlternative = O2ColorPalette.grey1 | O2ColorPalette.darkModeGrey
     let backgroundFeedbackBottom = O2ColorPalette.o2BluePrimary | O2ColorPalette.darkModeBlack

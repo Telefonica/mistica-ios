@@ -30,8 +30,6 @@
 		183FF60428997725004B233F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 183FF60328997725004B233F /* SnapshotTesting */; };
 		183FF60628997735004B233F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 183FF60528997735004B233F /* SnapshotTesting */; };
 		183FF60828997739004B233F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 183FF60728997739004B233F /* SnapshotTesting */; };
-		183FF60A289977EE004B233F /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_335 /* TestHelpers.swift */; };
-		183FF60B289977EF004B233F /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_335 /* TestHelpers.swift */; };
 		183FF61628997BC0004B233F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183FF61528997BC0004B233F /* Assets.xcassets */; };
 		183FF61C28997C15004B233F /* Telefonica-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 183FF61928997C15004B233F /* Telefonica-Light.otf */; };
 		183FF61D28997C15004B233F /* Telefonica-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 183FF61A28997C15004B233F /* Telefonica-Regular.otf */; };
@@ -50,6 +48,9 @@
 		183FF63928997D38004B233F /* ListsXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183FF62428997D10004B233F /* ListsXIBIntegration.xib */; };
 		183FF63A28997D38004B233F /* BadgeXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183FF61F28997D0F004B233F /* BadgeXIBIntegration.xib */; };
 		183FF63B28997D38004B233F /* FormXIBIntegration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183FF62728997D10004B233F /* FormXIBIntegration.xib */; };
+		18743022289ABEC3005B7513 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18743021289ABEC3005B7513 /* TestHelpers.swift */; };
+		18743027289ABFB9005B7513 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18743023289ABECA005B7513 /* TestHelpers.swift */; };
+		18743028289ABFBC005B7513 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18743025289ABEDB005B7513 /* TestHelpers.swift */; };
 		OBJ_1000 /* ButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_297 /* ButtonTests.swift */; };
 		OBJ_1001 /* CalloutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_298 /* CalloutTests.swift */; };
 		OBJ_1002 /* CheckboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_299 /* CheckboxTests.swift */; };
@@ -86,7 +87,6 @@
 		OBJ_1033 /* RadioButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_332 /* RadioButtonTests.swift */; };
 		OBJ_1034 /* TabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_333 /* TabsTests.swift */; };
 		OBJ_1035 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_334 /* TagTests.swift */; };
-		OBJ_1036 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_335 /* TestHelpers.swift */; };
 		OBJ_1037 /* TitleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_336 /* TitleViewTests.swift */; };
 		OBJ_1039 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_339 /* UIView+Utils.swift */; };
 		OBJ_726 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* BadgeView.swift */; };
@@ -397,6 +397,9 @@
 		183FF62A28997D10004B233F /* MediaCardXIBIntegration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaCardXIBIntegration.xib; sourceTree = "<group>"; };
 		183FF62B28997D10004B233F /* DeterminateStepperXIBIntegration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeterminateStepperXIBIntegration.xib; sourceTree = "<group>"; };
 		183FF62C28997D10004B233F /* TabsXIBIntegration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabsXIBIntegration.xib; sourceTree = "<group>"; };
+		18743021289ABEC3005B7513 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		18743023289ABECA005B7513 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		18743025289ABEDB005B7513 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		OBJ_100 /* UINavigationBar+Mistica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Mistica.swift"; sourceTree = "<group>"; };
 		OBJ_103 /* PopoverContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverContentView.swift; sourceTree = "<group>"; };
 		OBJ_104 /* PopoverMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverMessageView.swift; sourceTree = "<group>"; };
@@ -594,7 +597,6 @@
 		OBJ_332 /* RadioButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonTests.swift; sourceTree = "<group>"; };
 		OBJ_333 /* TabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTests.swift; sourceTree = "<group>"; };
 		OBJ_334 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
-		OBJ_335 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		OBJ_336 /* TitleViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewTests.swift; sourceTree = "<group>"; };
 		OBJ_339 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		OBJ_34 /* CardButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonsView.swift; sourceTree = "<group>"; };
@@ -1291,6 +1293,7 @@
 		OBJ_271 /* MisticaCommonTests */ = {
 			isa = PBXGroup;
 			children = (
+				18743025289ABEDB005B7513 /* TestHelpers.swift */,
 				183FF61828997C15004B233F /* Resources */,
 				OBJ_272 /* Fonts */,
 			);
@@ -1310,6 +1313,7 @@
 		OBJ_275 /* MisticaSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
+				18743023289ABECA005B7513 /* TestHelpers.swift */,
 				OBJ_276 /* UI */,
 			);
 			name = MisticaSwiftUITests;
@@ -1390,7 +1394,6 @@
 				OBJ_332 /* RadioButtonTests.swift */,
 				OBJ_333 /* TabsTests.swift */,
 				OBJ_334 /* TagTests.swift */,
-				OBJ_335 /* TestHelpers.swift */,
 				OBJ_336 /* TitleViewTests.swift */,
 			);
 			path = UI;
@@ -1453,6 +1456,7 @@
 		OBJ_337 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				18743021289ABEC3005B7513 /* TestHelpers.swift */,
 				OBJ_339 /* UIView+Utils.swift */,
 			);
 			path = Utils;
@@ -2099,7 +2103,7 @@
 			files = (
 				OBJ_880 /* FontStyleTests.swift in Sources */,
 				OBJ_881 /* FontToolkitTests.swift in Sources */,
-				183FF60B289977EF004B233F /* TestHelpers.swift in Sources */,
+				18743028289ABFBC005B7513 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2181,7 +2185,7 @@
 				OBJ_983 /* StepperTests.swift in Sources */,
 				OBJ_984 /* TabsTests.swift in Sources */,
 				OBJ_985 /* TagTests.swift in Sources */,
-				183FF60A289977EE004B233F /* TestHelpers.swift in Sources */,
+				18743027289ABFB9005B7513 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2191,6 +2195,7 @@
 			files = (
 				OBJ_999 /* BadgeTests.swift in Sources */,
 				OBJ_1000 /* ButtonTests.swift in Sources */,
+				18743022289ABEC3005B7513 /* TestHelpers.swift in Sources */,
 				OBJ_1001 /* CalloutTests.swift in Sources */,
 				OBJ_1002 /* CheckboxTests.swift in Sources */,
 				OBJ_1003 /* ControlsTests.swift in Sources */,
@@ -2226,7 +2231,6 @@
 				OBJ_1033 /* RadioButtonTests.swift in Sources */,
 				OBJ_1034 /* TabsTests.swift in Sources */,
 				OBJ_1035 /* TagTests.swift in Sources */,
-				OBJ_1036 /* TestHelpers.swift in Sources */,
 				OBJ_1037 /* TitleViewTests.swift in Sources */,
 				OBJ_1039 /* UIView+Utils.swift in Sources */,
 			);
@@ -2478,7 +2482,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2497,6 +2503,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = MisticaCommonTests;
@@ -2509,7 +2516,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2528,6 +2537,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = MisticaCommonTests;
@@ -2622,7 +2632,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2641,6 +2653,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = MisticaSwiftUITests;
@@ -2653,7 +2666,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2672,6 +2687,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = MisticaSwiftUITests;
@@ -2684,7 +2700,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2703,6 +2721,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = MisticaTests;
@@ -2715,7 +2734,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2734,6 +2755,7 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = MisticaTests;
@@ -2825,7 +2847,7 @@
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
 				kind = exactVersion;
-				version = 3.2.3;
+				version = 3.1.8;
 			};
 		};
 		183FF60228997725004B233F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
@@ -2833,7 +2855,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.9.0;
+				version = 1.8.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -24,9 +24,6 @@ struct LottieView: UIViewRepresentable {
         let animationView = AnimationView()
         animationView.animation = asset.lottieAnimation
         updateUIView(animationView, context: context)
-        if context.transaction.disablesAnimations {
-            animationView.currentProgress = 1
-        }
         return animationView
     }
 
@@ -49,7 +46,13 @@ struct LottieView: UIViewRepresentable {
             animationView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
             animationView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         }
-
-        animationView.play()
+        
+        if UIView.areAnimationsEnabled {
+            animationView.play()
+        } else {
+            animationView.currentProgress = 1
+            animationView.forceDisplayUpdate()
+            animationView.layoutIfNeeded()
+        }
     }
 }

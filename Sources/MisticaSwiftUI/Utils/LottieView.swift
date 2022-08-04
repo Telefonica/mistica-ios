@@ -46,7 +46,7 @@ struct LottieView: UIViewRepresentable {
             animationView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
             animationView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         }
-        
+
         if UIView.areAnimationsEnabled {
             animationView.play()
         } else {

@@ -49,7 +49,7 @@ public extension UIImage {
 
         return roundedImage!
     }
-    
+
     /// Creates an UIImage with a centered circle
     class func circle(diameter: CGFloat, color: UIColor) -> UIImage? {
         let rect = CGRect(x: 0, y: 0, width: diameter, height: diameter)

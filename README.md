@@ -22,13 +22,11 @@ Mistica is a framework that contains reusable UI components and utilities for th
 
 ## Packages
 
-This repo has contains three different pacakges:
+This repo has contains three different packages:
 
-- `MisticaCommon`: It contains all the common elements for both UIKit and SwiftUI implementation, including assets, colors and fonts. 
 - `Mistica`: It contains all the components of Mistica for `UIKit`.
 - `MisticaSwiftUI`: It contains all the components of Mistica for `SwiftUI`.
-
-Normally, you will work with `MisticaCommon` and `Mistica` or `MisticaSwiftUI`.
+- `MisticaCommon`: It contains all the common elements for both UIKit and SwiftUI implementation, including assets, colors and fonts. It is internal, so you won't need to import it in any case.
 
 ## Installation
 
@@ -46,7 +44,7 @@ You also can integrate Mitica to Swift Package, add the following as a dependenc
 .package(name: "Mistica", url: "https://github.com/Telefonica/mistica-ios.git", .from("2.0.0"))
 ```
 
-and then specify `"MisticaCommon"` and `"Mistica"` or `"MisticaSwiftUI"` as dependencies of the target in which you wish to use Mistica.
+and then specify `"Mistica"` or `"MisticaSwiftUI"` as dependencies of the target in which you wish to use Mistica.
 
 ### Carthage
 
@@ -69,7 +67,10 @@ carthage update --platform iOS --use-ssh --use-xcframeworks
 Add Mistica to your `Podfile`:
 
 ```
-pod 'MisticaCommon', :git => 'git@github.com:Telefonica/mistica-ios.git'
+pod 'MisticaSwiftUI', :git => 'git@github.com:Telefonica/mistica-ios.git'
+```
+or 
+```
 pod 'Mistica', :git => 'git@github.com:Telefonica/mistica-ios.git'
 ```
 

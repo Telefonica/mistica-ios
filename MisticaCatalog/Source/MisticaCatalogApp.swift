@@ -76,5 +76,10 @@ struct MisticaCatalogApp: App {
         
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().tintColor = .misticaCatalogTint | .white
     }
+}
+
+extension UIColor {
+    static var misticaCatalogTint = UIColor(hex: "#0066FF")!
 }

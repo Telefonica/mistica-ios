@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Framework {
+enum Framework: CaseIterable {
     case swiftUI
     case uiKit
 
@@ -18,24 +18,6 @@ enum Framework {
             return "SwiftUI"
         case .uiKit:
             return "UIKit"
-        }
-    }
-
-    func next() -> Self {
-        switch self {
-        case .swiftUI:
-            return .uiKit
-        case .uiKit:
-            return .swiftUI
-        }
-    }
-
-    mutating func toggle() {
-        switch self {
-        case .swiftUI:
-            self = .uiKit
-        case .uiKit:
-            self = .swiftUI
         }
     }
 }

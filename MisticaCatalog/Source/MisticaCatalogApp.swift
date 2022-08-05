@@ -6,74 +6,75 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import Mistica
-import MisticaCommon
+import MisticaSwiftUI
 import SwiftUI
 
 @main
 struct MisticaCatalogApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @State var id = UUID()
+    @State var reloadId = UUID()
     @State var selectedBrandIndex = 0
-    @State var selection = 0
+    @State var selectedTab = 0
     let brands = BrandStyle.allCases
 
     var body: some Scene {
         WindowGroup {
-            TabView(selection: $selection) {
-                tab(selectedFramework: .uiKit)
-                    .tag(0)
-
-                tab(selectedFramework: .swiftUI)
-                    .tag(1)
+            TabView(selection: $selectedTab) {
+                tab(name: "Components", image: selectedTab == 0 ? "ComponentsFilled" : "Components") {
+                    ComponentsView(
+                        selectedBrandIndex: $selectedBrandIndex,
+                        brands: brands
+                    )
+                }
+                .tag(0)
+                
+                tab(name: "Fonts", image: selectedTab == 1 ? "FontsFilled" : "Fonts") {
+                    FontView()
+                }
+                .tag(1)
             }
             .misticaTabViewStyle()
-            .id(id)
+            .onAppear {
+                setUpAppearance()
+            }
             .onChange(of: selectedBrandIndex, perform: { selectedBrandIndex in
-                let newBrandStyle = brands[selectedBrandIndex]
-
-                MisticaConfig.brandStyle = newBrandStyle
-                MisticaConfig.styleControls(MisticaControlStyle.allCases)
-
-                // Force navigation view updates
-                UITabBarAppearance.applyMisticaStyle()
-                UINavigationBarAppearance.applyMisticaStyle()
-
-                // Force a reloads
-                withAnimation { id = UUID() }
+                MisticaConfig.brandStyle = brands[selectedBrandIndex]
+                withAnimation { reloadId = UUID() }
             })
-            .animation(Animation.default, value: id)
+            .id(reloadId)
         }
     }
-
+    
+    @ViewBuilder
     func tab(
-        selectedFramework: Framework
+        name: String,
+        image: String,
+        @ViewBuilder content: () -> some View
     ) -> some View {
         NavigationView {
-            ContentView(
-                selectedBrandIndex: $selectedBrandIndex,
-                brands: brands,
-                selectedFramework: selectedFramework
-            )
-            .misticaNavigationBarStyle()
-            .navigationTitle("Mistica \(selectedFramework.name)")
+            content()
+                .navigationTitle(name)
         }
         .tabItem {
-            Label(
-                selectedFramework.name,
-                systemImage: selectedFramework.tabImageName
-            )
+            Image(image)
+                .foregroundColor(.black)
         }
     }
-}
+    
+    func setUpAppearance() {
+        let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
+        buttonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
 
-extension Framework {
-    var tabImageName: String {
-        switch self {
-        case .swiftUI:
-            return "swift"
-        case .uiKit:
-            return "applelogo"
-        }
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.buttonAppearance = buttonAppearance
+        appearance.shadowColor = nil
+        appearance.shadowImage = nil
+        appearance.largeTitleTextAttributes[.font] = UIFont.systemFont(ofSize: 28, weight: .light)
+        appearance.titleTextAttributes[.font] = UIFont.systemFont(ofSize: 18, weight: .regular)
+        appearance.backgroundColor = .background
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }

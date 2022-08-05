@@ -18,6 +18,7 @@ public enum MisticaConfig {
     public static var brandStyle: BrandStyle = .movistar {
         didSet {
             configureColorPalette(for: brandStyle)
+            MisticaAppearance.setUp(controls: currentStyledControls)
         }
     }
 

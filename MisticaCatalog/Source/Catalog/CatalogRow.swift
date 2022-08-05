@@ -19,7 +19,6 @@ enum CatalogRow: Int, CaseIterable, Identifiable {
     case chips
     case carousel
     case feedbacks
-    case fonts
     case forms
     case header
     case inputFields
@@ -55,8 +54,6 @@ extension CatalogRow {
             return "Popover"
         case .viewStates:
             return "View States"
-        case .fonts:
-            return "Fonts"
         case .badge:
             return "Badge"
         case .inputFields:
@@ -106,8 +103,6 @@ extension CatalogRow {
             return .popoverIcon
         case .viewStates:
             return .viewStatesIcon
-        case .fonts:
-            return .fontsIcon
         case .badge:
             return .badgeIcon
         case .inputFields:

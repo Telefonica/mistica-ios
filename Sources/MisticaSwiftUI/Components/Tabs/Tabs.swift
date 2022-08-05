@@ -40,6 +40,7 @@ public struct Tabs: View {
         }
         .onChange(of: items, perform: { _ in itemWidth = [:] })
         .frame(height: 56)
+        .background(Color.background)
     }
 
     @ViewBuilder

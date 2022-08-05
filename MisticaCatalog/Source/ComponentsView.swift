@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ComponentsView.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -11,41 +11,32 @@ import MisticaCommon
 import MisticaSwiftUI
 import SwiftUI
 
-struct ContentView: View {
+struct ComponentsView: View {
     @Binding var selectedBrandIndex: Int
     let brands: [BrandStyle]
-    let selectedFramework: Framework
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Tabs(brands.map { TabItem(text: $0.id) }, selection: $selectedBrandIndex)
-                .background(Color.white)
+            Tabs(brands.map { TabItem(text: $0.name) }, selection: $selectedBrandIndex)
+                .background(Color.background)
 
             CatalogList(
-                framework: selectedFramework,
                 rows: CatalogRow.allCases
             )
         }
         .toolbar {
-            ToolbarItemGroup(placement: .navigationBarLeading) {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
                 if let misticaVersion = misticaVersion {
                     Text(misticaVersion)
-                        .font(.textPreset4(weight: .medium))
-                        .foregroundColor(.textNavigationBarPrimary)
+                        .font(.textPreset2(weight: .regular))
+                        .foregroundColor(.textSecondary)
                 }
-            }
-
-            ToolbarItem(placement: .principal) {
-                Image("mistica-logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 32)
             }
         }
     }
 }
 
-private extension ContentView {
+private extension ComponentsView {
     var misticaVersion: String? {
         guard let infoPlist = Bundle.main.infoDictionary,
               let version = infoPlist["CFBundleShortVersionString"] as? String else { return nil }

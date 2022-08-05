@@ -10,41 +10,45 @@ import MisticaSwiftUI
 import SwiftUI
 
 struct CatalogList: View {
-    let framework: Framework
+    @State var selectedFrameworkIndex = 0
     let rows: [CatalogRow]
 
     var body: some View {
         List {
-            Section {
-                ForEach(rows) { row in
-                    Cell(
-                        style: .fullwidth,
-                        title: row.title,
-                        assetType: .smallIcon(
-                            Image(uiImage: row.icon),
-                            foregroundColor: nil
-                        ),
-                        presetView: { CellNavigationPreset() }
-                    )
-                    .navigationLink {
-                        componentView(for: row)
-                            .navigationTitle(row.title)
-                    }
+            ForEach(rows) { row in
+                Cell(
+                    style: .fullwidth,
+                    title: row.title,
+                    assetType: .smallIcon(
+                        Image(uiImage: row.icon),
+                        foregroundColor: nil
+                    ),
+                    presetView: { CellNavigationPreset() }
+                )
+                .navigationLink {
+                    componentView(for: row)
+                        .navigationTitle(row.title)
+                        .navigationBarTitleDisplayMode(.inline)
                 }
-            } header: {
-                Text("Components")
             }
         }
         .misticaListStyle()
     }
-
+    
     @ViewBuilder
     func componentView(for row: CatalogRow) -> some View {
-        switch framework {
-        case .swiftUI:
-            row.swiftUIComponent
-        case .uiKit:
-            row.uiKitComponent
+        VStack(spacing: 0) {
+            Tabs(
+                Framework.allCases.map { TabItem(text: $0.name) },
+                selection: $selectedFrameworkIndex
+            )
+            
+            switch Framework.allCases[selectedFrameworkIndex] {
+            case .swiftUI:
+                row.swiftUIComponent.expandVertically()
+            case .uiKit:
+                row.uiKitComponent.expandVertically()
+            }
         }
     }
 }
@@ -87,7 +91,6 @@ private extension CatalogRow {
              .filter,
              .scrollContentIndicator,
              .header,
-             .fonts,
              .forms,
              .controls:
             notImplementedView
@@ -109,8 +112,6 @@ private extension CatalogRow {
             ComponentViewController(UICatalogPopoverViewController())
         case .viewStates:
             ComponentViewController(UICatalogViewStatesViewController())
-        case .fonts:
-            ComponentViewController(UICatalogFontsViewController())
         case .badge:
             ComponentViewController(UICatalogBadgeViewController())
         case .inputFields:
@@ -173,7 +174,7 @@ struct ComponentViewController: UIViewControllerRepresentable {
     struct CatalogList_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                CatalogList(framework: .uiKit, rows: CatalogRow.allCases)
+                CatalogList(rows: CatalogRow.allCases)
             }
             .misticaNavigationViewStyle()
         }

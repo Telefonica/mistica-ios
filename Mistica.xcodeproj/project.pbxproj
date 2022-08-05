@@ -2775,6 +2775,7 @@
 				);
 				SUPPORTS_MACCATALYST = NO;
 				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_NUMBER = 14.2.3;
 			};
 			name = Debug;
 		};
@@ -2956,6 +2957,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_NUMBER = 14.2.3;
 			};
 			name = Release;
 		};

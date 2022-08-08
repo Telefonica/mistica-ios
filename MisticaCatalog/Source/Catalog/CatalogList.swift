@@ -34,7 +34,7 @@ struct CatalogList: View {
         }
         .misticaListStyle()
     }
-    
+
     @ViewBuilder
     func componentView(for row: CatalogRow) -> some View {
         VStack(spacing: 0) {
@@ -42,7 +42,7 @@ struct CatalogList: View {
                 Framework.allCases.map { TabItem(text: $0.name) },
                 selection: $selectedFrameworkIndex
             )
-            
+
             switch Framework.allCases[selectedFrameworkIndex] {
             case .swiftUI:
                 row.swiftUIComponent.expandVertically()

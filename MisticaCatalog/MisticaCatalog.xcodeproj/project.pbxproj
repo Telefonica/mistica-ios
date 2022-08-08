@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1860058F28A136CE009C3778 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860058E28A136CE009C3778 /* ColorsView.swift */; };
 		1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1882EF40286EFF5F00F959FA /* MisticaSwiftUI */; };
 		18E17AED287FFFBF0051E505 /* CatalogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17AEC287FFFBF0051E505 /* CatalogRow.swift */; };
 		18E17AEF288007340051E505 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17AEE288007340051E505 /* Framework.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1860058E28A136CE009C3778 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
 		18E17AEC287FFFBF0051E505 /* CatalogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRow.swift; sourceTree = "<group>"; };
 		18E17AEE288007340051E505 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 		18E3452B289D46C5005E6D81 /* FontsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				B8F990152546C98600DFBFE9 /* MisticaCatalogApp.swift */,
 				B8F9902B2546C98600DFBFE9 /* ComponentsView.swift */,
 				18E3452B289D46C5005E6D81 /* FontsView.swift */,
+				1860058E28A136CE009C3778 /* ColorsView.swift */,
 				B8F98FFF2546C98600DFBFE9 /* Catalog */,
 				B8F990042546C98600DFBFE9 /* Styles */,
 				B8F990062546C98600DFBFE9 /* Common */,
@@ -438,6 +441,7 @@
 				18E48584287F19EB0052A6F2 /* CarouselCatalogView.swift in Sources */,
 				18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */,
 				18E485A3287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift in Sources */,
+				1860058F28A136CE009C3778 /* ColorsView.swift in Sources */,
 				B8F9903D2546C98700DFBFE9 /* UITextFieldTableViewCell.swift in Sources */,
 				18E48587287F19EB0052A6F2 /* DataCardCatalogView.swift in Sources */,
 				B8F9903E2546C98700DFBFE9 /* MisticaCatalogApp.swift in Sources */,

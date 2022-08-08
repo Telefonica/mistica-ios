@@ -33,7 +33,7 @@ public enum BrandStyle {
             return "custom"
         }
     }
-    
+
     public var name: String {
         switch self {
         case .movistar:

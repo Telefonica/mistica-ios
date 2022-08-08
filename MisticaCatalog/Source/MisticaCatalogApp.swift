@@ -11,27 +11,39 @@ import SwiftUI
 
 @main
 struct MisticaCatalogApp: App {
+    enum Tabs: Hashable {
+        case fonts
+        case components
+        case colors
+    }
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State var reloadId = UUID()
     @State var selectedBrandIndex = 0
-    @State var selectedTab = 0
+    @State var selectedTab = Tabs.components
     let brands = BrandStyle.allCases
 
     var body: some Scene {
         WindowGroup {
             TabView(selection: $selectedTab) {
-                tab(name: "Components", image: selectedTab == 0 ? "ComponentsFilled" : "Components") {
+                tab(name: "Components", image: selectedTab == .components ? "ComponentsFilled" : "Components") {
                     ComponentsView(
                         selectedBrandIndex: $selectedBrandIndex,
                         brands: brands
                     )
                 }
-                .tag(0)
-                
-                tab(name: "Fonts", image: selectedTab == 1 ? "FontsFilled" : "Fonts") {
+                .tag(Tabs.components)
+
+                tab(name: "Colors", image: selectedTab == .colors ? "ColorsFilled" : "Colors") {
+                    ColorsView()
+                }
+                .tag(Tabs.colors)
+
+                tab(name: "Fonts", image: selectedTab == .fonts ? "FontsFilled" : "Fonts") {
                     FontView()
                 }
-                .tag(1)
+                .tag(Tabs.fonts)
+
             }
             .misticaTabViewStyle()
             .onAppear {
@@ -44,7 +56,7 @@ struct MisticaCatalogApp: App {
             .id(reloadId)
         }
     }
-    
+
     @ViewBuilder
     func tab(
         name: String,
@@ -60,7 +72,7 @@ struct MisticaCatalogApp: App {
                 .foregroundColor(.black)
         }
     }
-    
+
     func setUpAppearance() {
         let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
         buttonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
@@ -73,7 +85,7 @@ struct MisticaCatalogApp: App {
         appearance.largeTitleTextAttributes[.font] = UIFont.systemFont(ofSize: 28, weight: .light)
         appearance.titleTextAttributes[.font] = UIFont.systemFont(ofSize: 18, weight: .regular)
         appearance.backgroundColor = .background
-        
+
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = .misticaCatalogTint | .white

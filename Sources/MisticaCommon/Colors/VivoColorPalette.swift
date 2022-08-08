@@ -9,164 +9,168 @@
 import UIKit
 
 struct VivoColors: MisticaColors {
+    static let palette = VivoColorPalette()
+
     // BACKGROUNDS
-    let appBarBackground = VivoColorPalette.white | VivoColorPalette.darkModeGrey
-    let background = VivoColorPalette.white | VivoColorPalette.darkModeBlack
-    let backgroundContainer = VivoColorPalette.white | VivoColorPalette.darkModeGrey
-    let backgroundBrand = VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
-    let backgroundOverlay = VivoColorPalette.grey6.withAlphaComponent(0.6) | VivoColorPalette.darkModeGrey.withAlphaComponent(0.8)
-    let backgroundSkeleton = VivoColorPalette.grey1 | VivoColorPalette.darkModeGrey6
-    let backgroundSkeletonInverse = VivoColorPalette.white | VivoColorPalette.darkModeGrey6
-    let navigationBarBackground = VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
-    let backgroundAlternative = VivoColorPalette.grey1 | VivoColorPalette.darkModeGrey
-    let backgroundFeedbackBottom = VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
-    let skeletonWave = VivoColorPalette.grey2 | VivoColorPalette.grey5
+    let appBarBackground = palette.white | palette.darkModeGrey
+    let background = palette.white | palette.darkModeBlack
+    let backgroundContainer = palette.white | palette.darkModeGrey
+    let backgroundBrand = palette.vivoPurple | palette.darkModeBlack
+    let backgroundOverlay = palette.grey6.withAlphaComponent(0.6) | palette.darkModeGrey.withAlphaComponent(0.8)
+    let backgroundSkeleton = palette.grey1 | palette.darkModeGrey6
+    let backgroundSkeletonInverse = palette.white | palette.darkModeGrey6
+    let navigationBarBackground = palette.vivoPurple | palette.darkModeBlack
+    let backgroundAlternative = palette.grey1 | palette.darkModeGrey
+    let backgroundFeedbackBottom = palette.vivoPurple | palette.darkModeBlack
+    let skeletonWave = palette.grey2 | palette.grey5
 
     // BORDERS
-    let borderLight = VivoColorPalette.grey1 | VivoColorPalette.darkModeBlack
-    let border = VivoColorPalette.grey3 | VivoColorPalette.darkModeGrey
-    let borderDark = VivoColorPalette.grey5
-    let borderSelected = VivoColorPalette.vivoPurple
+    let borderLight = palette.grey1 | palette.darkModeBlack
+    let border = palette.grey3 | palette.darkModeGrey
+    let borderDark = palette.grey5
+    let borderSelected = palette.vivoPurple
 
     // BUTTONS
-    let buttonDangerBackground = VivoColorPalette.pepper
-    let buttonDangerBackgroundSelected = VivoColorPalette.pepperDark
-    let buttonDangerBackgroundHover = VivoColorPalette.pepperDark
+    let buttonDangerBackground = palette.pepper
+    let buttonDangerBackgroundSelected = palette.pepperDark
+    let buttonDangerBackgroundHover = palette.pepperDark
 
-    let buttonLinkBackgroundSelected = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    let buttonLinkBackgroundSelectedInverse = VivoColorPalette.white.withAlphaComponent(0.2) | VivoColorPalette.white.withAlphaComponent(0.05)
+    let buttonLinkBackgroundSelected = palette.vivoPurpleLight10 | palette.white.withAlphaComponent(0.05)
+    let buttonLinkBackgroundSelectedInverse = palette.white.withAlphaComponent(0.2) | palette.white.withAlphaComponent(0.05)
 
-    let buttonPrimaryBackground = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
-    let buttonPrimaryBackgroundInverse = VivoColorPalette.white | VivoColorPalette.vivoPurpleLight80
-    let buttonPrimaryBackgroundSelected = VivoColorPalette.vivoPurpleDark
-    let buttonPrimaryBackgroundHover = VivoColorPalette.vivoPurpleDark
-    let buttonPrimaryBackgroundSelectedInverse = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.vivoPurpleDark
+    let buttonPrimaryBackground = palette.vivoPurple | palette.vivoPurpleLight80
+    let buttonPrimaryBackgroundInverse = palette.white | palette.vivoPurpleLight80
+    let buttonPrimaryBackgroundSelected = palette.vivoPurpleDark
+    let buttonPrimaryBackgroundHover = palette.vivoPurpleDark
+    let buttonPrimaryBackgroundSelectedInverse = palette.vivoPurpleLight50 | palette.vivoPurpleDark
 
-    let buttonSecondaryBackground = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
-    let buttonSecondaryBackgroundSelected = VivoColorPalette.vivoPurpleDark
-    let buttonSecondaryBorderInverse = VivoColorPalette.white | VivoColorPalette.vivoPurpleLight80
-    let buttonSecondaryBorderSelectedInverse = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.vivoPurpleDark
+    let buttonSecondaryBackground = palette.vivoPurple | palette.vivoPurpleLight80
+    let buttonSecondaryBackgroundSelected = palette.vivoPurpleDark
+    let buttonSecondaryBorderInverse = palette.white | palette.vivoPurpleLight80
+    let buttonSecondaryBorderSelectedInverse = palette.vivoPurpleLight50 | palette.vivoPurpleDark
 
-    let textButtonPrimary = VivoColorPalette.white | VivoColorPalette.grey2
-    let textButtonPrimaryInverse = VivoColorPalette.vivoPurple | VivoColorPalette.grey2
-    let textButtonPrimaryInverseSelected = VivoColorPalette.vivoPurple | VivoColorPalette.grey2
+    let textButtonPrimary = palette.white | palette.grey2
+    let textButtonPrimaryInverse = palette.vivoPurple | palette.grey2
+    let textButtonPrimaryInverseSelected = palette.vivoPurple | palette.grey2
 
-    let textButtonSecondary = VivoColorPalette.vivoPurple | VivoColorPalette.grey2
-    let textButtonSecondarySelected = VivoColorPalette.vivoPurpleDark | VivoColorPalette.grey4
-    let textButtonSecondaryInverse = VivoColorPalette.white | VivoColorPalette.grey2
-    let textButtonSecondaryInverseSelected = VivoColorPalette.white | VivoColorPalette.grey4
+    let textButtonSecondary = palette.vivoPurple | palette.grey2
+    let textButtonSecondarySelected = palette.vivoPurpleDark | palette.grey4
+    let textButtonSecondaryInverse = palette.white | palette.grey2
+    let textButtonSecondaryInverseSelected = palette.white | palette.grey4
 
-    let textLink = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight50
-    let textLinkInverse = VivoColorPalette.white | VivoColorPalette.vivoPurpleLight50
-    let textLinkDanger = VivoColorPalette.pepper
-    let textLinkSnackbar = VivoColorPalette.vivoPurpleLight50
+    let textLink = palette.vivoPurple | palette.vivoPurpleLight50
+    let textLinkInverse = palette.white | palette.vivoPurpleLight50
+    let textLinkDanger = palette.pepper
+    let textLinkSnackbar = palette.vivoPurpleLight50
 
     // CONTROLS
-    let control = VivoColorPalette.grey3 | VivoColorPalette.darkModeGrey6
-    let controlActivated = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
-    let controlError = VivoColorPalette.pepper
-    let loadingBar = VivoColorPalette.pink | VivoColorPalette.vivoPurpleLight80
-    let loadingBarBackground = VivoColorPalette.pepperLight30 | VivoColorPalette.darkModeGrey6
+    let control = palette.grey3 | palette.darkModeGrey6
+    let controlActivated = palette.vivoPurple | palette.vivoPurpleLight80
+    let controlError = palette.pepper
+    let loadingBar = palette.pink | palette.vivoPurpleLight80
+    let loadingBarBackground = palette.pepperLight30 | palette.darkModeGrey6
 
     // DIVIDERS
-    let divider = VivoColorPalette.grey2 | VivoColorPalette.white.withAlphaComponent(0.05)
-    let dividerInverse = VivoColorPalette.white | VivoColorPalette.white.withAlphaComponent(0.05)
-    let navigationBarDivider = VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
+    let divider = palette.grey2 | palette.white.withAlphaComponent(0.05)
+    let dividerInverse = palette.white | palette.white.withAlphaComponent(0.05)
+    let navigationBarDivider = palette.vivoPurple | palette.darkModeBlack
 
     // FEEDBACKS
-    let badge = VivoColorPalette.pepperDark
-    let feedbackErrorBackground = VivoColorPalette.pepper
-    let feedbackInfoBackground = VivoColorPalette.grey6
+    let badge = palette.pepperDark
+    let feedbackErrorBackground = palette.pepper
+    let feedbackInfoBackground = palette.grey6
 
     // GLOBAL
-    let brand = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
-    let brandHigh = VivoColorPalette.vivoPurpleDark | VivoColorPalette.white.withAlphaComponent(0.05)
-    let inverse = VivoColorPalette.white | VivoColorPalette.grey2
-    let neutralHigh = VivoColorPalette.grey6 | VivoColorPalette.grey2
-    let neutralMedium = VivoColorPalette.grey5
-    let neutralLow = VivoColorPalette.grey1 | VivoColorPalette.darkModeGrey6
-    let promo = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight80
-    let highlight = VivoColorPalette.pink
+    let brand = palette.vivoPurple | palette.vivoPurpleLight80
+    let brandHigh = palette.vivoPurpleDark | palette.white.withAlphaComponent(0.05)
+    let inverse = palette.white | palette.grey2
+    let neutralHigh = palette.grey6 | palette.grey2
+    let neutralMedium = palette.grey5
+    let neutralLow = palette.grey1 | palette.darkModeGrey6
+    let promo = palette.vivoPurple | palette.vivoPurpleLight80
+    let highlight = palette.pink
 
-    let textPrimary = VivoColorPalette.grey6 | VivoColorPalette.grey2
-    let textPrimaryInverse = VivoColorPalette.white | VivoColorPalette.grey2
-    let textSecondary = VivoColorPalette.grey5 | VivoColorPalette.grey4
-    let textSecondaryInverse = VivoColorPalette.white | VivoColorPalette.grey4
+    let textPrimary = palette.grey6 | palette.grey2
+    let textPrimaryInverse = palette.white | palette.grey2
+    let textSecondary = palette.grey5 | palette.grey4
+    let textSecondaryInverse = palette.white | palette.grey4
 
     // STATES
-    let error = VivoColorPalette.pepper
-    let success = VivoColorPalette.vivoGreen
-    let warning = VivoColorPalette.orange
+    let error = palette.pepper
+    let success = palette.vivoGreen
+    let warning = palette.orange
 
     // BARS TEXTS
-    let textNavigationBarPrimary = VivoColorPalette.white | VivoColorPalette.grey2
-    let textNavigationBarSecondary = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.grey4
-    let textNavigationSearchBarHint = VivoColorPalette.vivoPurpleLight50 | VivoColorPalette.grey4
-    let textNavigationSearchBarText = VivoColorPalette.white | VivoColorPalette.grey2
-    let textAppBar = VivoColorPalette.grey4 | VivoColorPalette.grey5
-    let textAppBarSelected = VivoColorPalette.vivoPurple | VivoColorPalette.grey2
+    let textNavigationBarPrimary = palette.white | palette.grey2
+    let textNavigationBarSecondary = palette.vivoPurpleLight50 | palette.grey4
+    let textNavigationSearchBarHint = palette.vivoPurpleLight50 | palette.grey4
+    let textNavigationSearchBarText = palette.white | palette.grey2
+    let textAppBar = palette.grey4 | palette.grey5
+    let textAppBarSelected = palette.vivoPurple | palette.grey2
 
     // GRADIENTS
     let backgroundBrandGradient = [
-        VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack,
-        VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack,
-        VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack,
-        VivoColorPalette.vivoPurple | VivoColorPalette.darkModeBlack
+        palette.vivoPurple | palette.darkModeBlack,
+        palette.vivoPurple | palette.darkModeBlack,
+        palette.vivoPurple | palette.darkModeBlack,
+        palette.vivoPurple | palette.darkModeBlack
     ]
 
     // TAGS
-    var successLow = VivoColorPalette.vivoGreenLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var warningLow = VivoColorPalette.orangeLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var errorLow = VivoColorPalette.pepperLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var promoLow = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var brandLow = VivoColorPalette.vivoPurpleLight10 | VivoColorPalette.white.withAlphaComponent(0.05)
-    var successHigh = VivoColorPalette.vivoGreenDark | VivoColorPalette.vivoGreenLight30
-    var warningHigh = VivoColorPalette.orangeDark | VivoColorPalette.orangeLight40
-    var errorHigh = VivoColorPalette.pepperDark80 | VivoColorPalette.pepperLight40
-    var promoHigh = VivoColorPalette.vivoPurple | VivoColorPalette.vivoPurpleLight50
+    var successLow = palette.vivoGreenLight10 | palette.white.withAlphaComponent(0.05)
+    var warningLow = palette.orangeLight10 | palette.white.withAlphaComponent(0.05)
+    var errorLow = palette.pepperLight10 | palette.white.withAlphaComponent(0.05)
+    var promoLow = palette.vivoPurpleLight10 | palette.white.withAlphaComponent(0.05)
+    var brandLow = palette.vivoPurpleLight10 | palette.white.withAlphaComponent(0.05)
+    var successHigh = palette.vivoGreenDark | palette.vivoGreenLight30
+    var warningHigh = palette.orangeDark | palette.orangeLight40
+    var errorHigh = palette.pepperDark80 | palette.pepperLight40
+    var promoHigh = palette.vivoPurple | palette.vivoPurpleLight50
 }
 
-public enum VivoColorPalette {
-    public static let vivoPurple = UIColor(hex: "#660099")!
-    public static let vivoPurpleDark = UIColor(hex: "#461E5F")!
-    public static let vivoPurpleLight10 = UIColor(hex: "#EFE5F4")!
-    public static let vivoPurpleLight20 = UIColor(hex: "#E0CCEB")!
-    public static let vivoPurpleLight50 = UIColor(hex: "#B280CC")!
-    public static let vivoPurpleLight80 = UIColor(hex: "#8433AD")!
-    public static let vivoPurpleLight90 = UIColor(hex: "#751AA3")!
+public struct VivoColorPalette {
+    public init() { }
 
-    public static let vivoGreen = UIColor(hex: "#99CC33")!
-    public static let vivoGreen25 = UIColor(hex: "#D6EBAD")!
-    public static let vivoGreenDark = UIColor(hex: "#225C3D")!
-    public static let vivoGreenLight10 = UIColor(hex: "#EDF8E8")!
-    public static let vivoGreenLight30 = UIColor(hex: "#91AE9E")!
+    public let vivoPurple = UIColor(hex: "#660099")!
+    public let vivoPurpleDark = UIColor(hex: "#461E5F")!
+    public let vivoPurpleLight10 = UIColor(hex: "#EFE5F4")!
+    public let vivoPurpleLight20 = UIColor(hex: "#E0CCEB")!
+    public let vivoPurpleLight50 = UIColor(hex: "#B280CC")!
+    public let vivoPurpleLight80 = UIColor(hex: "#8433AD")!
+    public let vivoPurpleLight90 = UIColor(hex: "#751AA3")!
 
-    public static let vivoBlue = UIColor(hex: "#00ABDB")!
+    public let vivoGreen = UIColor(hex: "#99CC33")!
+    public let vivoGreen25 = UIColor(hex: "#D6EBAD")!
+    public let vivoGreenDark = UIColor(hex: "#225C3D")!
+    public let vivoGreenLight10 = UIColor(hex: "#EDF8E8")!
+    public let vivoGreenLight30 = UIColor(hex: "#91AE9E")!
 
-    public static let orange = UIColor(hex: "#FF9900")!
-    public static let orange25 = UIColor(hex: "#FFD699")!
-    public static let orangeDark = UIColor(hex: "#972A1D")!
-    public static let orangeLight10 = UIColor(hex: "#FFEFE1")!
-    public static let orangeLight40 = UIColor(hex: "#FFB84C")!
+    public let vivoBlue = UIColor(hex: "#00ABDB")!
 
-    public static let pink = UIColor(hex: "#EB3D7D")!
+    public let orange = UIColor(hex: "#FF9900")!
+    public let orange25 = UIColor(hex: "#FFD699")!
+    public let orangeDark = UIColor(hex: "#972A1D")!
+    public let orangeLight10 = UIColor(hex: "#FFEFE1")!
+    public let orangeLight40 = UIColor(hex: "#FFB84C")!
 
-    public static let pepper = UIColor(hex: "#CC1F59")!
-    public static let pepperDark = UIColor(hex: "#B71D63")!
-    public static let pepperDark80 = UIColor(hex: "#8F2052")!
-    public static let pepperLight10 = UIColor(hex: "#FCE4EF")!
-    public static let pepperLight30 = UIColor(hex: "#F7B1CB")!
-    public static let pepperLight40 = UIColor(hex: "#DB628B")!
+    public let pink = UIColor(hex: "#EB3D7D")!
 
-    public static let grey1 = UIColor(hex: "#F6F6F6")!
-    public static let grey2 = UIColor(hex: "#EEEEEE")!
-    public static let grey3 = UIColor(hex: "#DDDDDD")!
-    public static let grey4 = UIColor(hex: "#999999")!
-    public static let grey5 = UIColor(hex: "#666666")!
-    public static let grey6 = UIColor(hex: "#000000")!
-    public static let white = UIColor(hex: "#FFFFFF")!
+    public let pepper = UIColor(hex: "#CC1F59")!
+    public let pepperDark = UIColor(hex: "#B71D63")!
+    public let pepperDark80 = UIColor(hex: "#8F2052")!
+    public let pepperLight10 = UIColor(hex: "#FCE4EF")!
+    public let pepperLight30 = UIColor(hex: "#F7B1CB")!
+    public let pepperLight40 = UIColor(hex: "#DB628B")!
 
-    public static let darkModeBlack = UIColor(hex: "#191919")!
-    public static let darkModeGrey = UIColor(hex: "#242424")!
-    public static let darkModeGrey6 = UIColor(hex: "#313235")!
+    public let grey1 = UIColor(hex: "#F6F6F6")!
+    public let grey2 = UIColor(hex: "#EEEEEE")!
+    public let grey3 = UIColor(hex: "#DDDDDD")!
+    public let grey4 = UIColor(hex: "#999999")!
+    public let grey5 = UIColor(hex: "#666666")!
+    public let grey6 = UIColor(hex: "#000000")!
+    public let white = UIColor(hex: "#FFFFFF")!
+
+    public let darkModeBlack = UIColor(hex: "#191919")!
+    public let darkModeGrey = UIColor(hex: "#242424")!
+    public let darkModeGrey6 = UIColor(hex: "#313235")!
 }

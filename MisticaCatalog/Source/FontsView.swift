@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  FontsView.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -29,7 +29,7 @@ struct FontView: View {
         ("text-preset1 medium", .textPreset1(weight: .medium)),
         ("text-preset1 regular", .textPreset1(weight: .regular))
     ]
-    
+
     var body: some View {
         List {
             ForEach(fonts, id: \.name) { item in
@@ -37,7 +37,7 @@ struct FontView: View {
                     Text(item.name)
                         .font(.textPreset1(weight: .regular))
                         .foregroundColor(.textSecondary)
-                    
+
                     Text("A wizard's job is to vex chumps quickly in fog.")
                         .font(item.font)
                         .foregroundColor(.textPrimary)

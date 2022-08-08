@@ -1,3 +1,13 @@
+## [14.2.3](https://github.com/Telefonica/mistica-ios/compare/v14.2.2...v14.2.3) (2022-08-08)
+
+
+### Bug Fixes
+
+* **Media Card:** Add default accessibility ids ([8263ca6](https://github.com/Telefonica/mistica-ios/commit/3b9833a9531cc8526798f4c21fd243cf1c233cf4))
+
+* **FeedbackView:** Add default accessibility ids ([8263ca6](https://github.com/Telefonica/mistica-ios/commit/3b9833a9531cc8526798f4c21fd243cf1c233cf4))
+
+
 ## [14.2.2](https://github.com/Telefonica/mistica-ios/compare/v14.2.1...v14.2.2) (2022-03-02)
 
 

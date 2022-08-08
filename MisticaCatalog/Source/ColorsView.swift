@@ -12,6 +12,8 @@ import MisticaSwiftUI
 import SwiftUI
 
 struct ColorsView: View {
+    @State var searchText = ""
+    
     var body: some View {
         List {
             ForEach(colors, id: \.name) { item in
@@ -26,6 +28,7 @@ struct ColorsView: View {
             }
         }
         .misticaListStyle()
+        .modifier(Searchable(text: $searchText))
     }
 
     var paletteColors: Any {
@@ -55,10 +58,31 @@ struct ColorsView: View {
                 return (name: name, paletteName: paletteName, color: color)
             }
             .sorted { lItem, rItem in lItem.name < rItem.name }
+            .filter { element in
+                guard !searchText.isEmpty else { return true }
+                let name = element.name.lowercased()
+                let paletteName = (element.paletteName ?? "").lowercased()
+                let hex = element.color.hexString.lowercased()
+                let searchText = searchText.lowercased()
+                return name.contains(searchText) || paletteName.contains(searchText) || hex.contains(searchText)
+            }
     }
 }
 
 // MARK: Helpers
+
+struct Searchable: ViewModifier {
+    @Binding var text: String
+    
+    func body(content: Content) -> some View {
+        if #available(iOS 15.0, *) {
+            content
+                .searchable(text: $text)
+        } else {
+            content
+        }
+    }
+}
 
 extension UIColor {
     var hexString: String {

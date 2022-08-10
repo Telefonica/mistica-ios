@@ -12,6 +12,22 @@ import UIKit
 
 private struct MisticaNavigationBarStyle: ViewModifier {
     init() {
+        UINavigationBarAppearance.applyMisticaStyle()
+    }
+
+    func body(content: Content) -> some View {
+        content
+    }
+}
+
+extension View {
+    func misticaNavigationBarStyle() -> some View {
+        modifier(MisticaNavigationBarStyle())
+    }
+}
+
+public extension UINavigationBarAppearance {
+    static func applyMisticaStyle() {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.shadowColor = .clear
@@ -25,15 +41,5 @@ private struct MisticaNavigationBarStyle: ViewModifier {
         UINavigationBar.appearance().isTranslucent = true
         UINavigationBar.appearance().tintColor = .textNavigationBarPrimary
         UINavigationBar.appearance().barTintColor = .navigationBarBackground
-    }
-
-    func body(content: Content) -> some View {
-        content
-    }
-}
-
-extension View {
-    func misticaNavigationBarStyle() -> some View {
-        modifier(MisticaNavigationBarStyle())
     }
 }

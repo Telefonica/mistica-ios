@@ -21,10 +21,9 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'Mistica/Source/**/*.swift'
-
-  s.resources = ['Mistica/Source/Resources/*']
-
+  s.source_files = 'Sources/Mistica/**/*.swift', 'Sources/MisticaCommon/**/*.swift'
+  s.exclude_files = 'Sources/Mistica/Export.swift'
+  s.resources = ['Sources/MisticaCommon/Resources/*']
   s.frameworks = 'UIKit'
   s.dependency 'lottie-ios', '3.1.8'
 end

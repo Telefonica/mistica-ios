@@ -7,18 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */; };
-		1C37E32626BBF83B00062775 /* UICatalogEmptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37E32526BBF83B00062775 /* UICatalogEmptyStateViewController.swift */; };
-		1CFE255E26AAE3CB00D3952F /* UICatalogCalloutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE255D26AAE3CB00D3952F /* UICatalogCalloutViewController.swift */; };
-		908C0EB325C82CDC00D1687A /* UICatalogTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908C0EB225C82CDC00D1687A /* UICatalogTabsViewController.swift */; };
-		B85CCA6725B861BC00B76426 /* UICatalogMediaCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */; };
-		B85CCA6A25B868D900B76426 /* UICatalogDataCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */; };
-		B8D04F6625C4237A00C55FA1 /* UICatalogCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D04F6525C4237A00C55FA1 /* UICatalogCardsViewController.swift */; };
+		1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1882EF40286EFF5F00F959FA /* MisticaSwiftUI */; };
+		18E17AED287FFFBF0051E505 /* CatalogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17AEC287FFFBF0051E505 /* CatalogRow.swift */; };
+		18E17AEF288007340051E505 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17AEE288007340051E505 /* Framework.swift */; };
+		18E4857B287F19EB0052A6F2 /* CatalogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48549287F19EB0052A6F2 /* CatalogList.swift */; };
+		18E4857C287F19EB0052A6F2 /* View+Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4854B287F19EB0052A6F2 /* View+Catalog.swift */; };
+		18E4857D287F19EB0052A6F2 /* InputFieldCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4854D287F19EB0052A6F2 /* InputFieldCatalogView.swift */; };
+		18E4857E287F19EB0052A6F2 /* StepperCatalogVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4854E287F19EB0052A6F2 /* StepperCatalogVIew.swift */; };
+		18E4857F287F19EB0052A6F2 /* EmptyStateCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4854F287F19EB0052A6F2 /* EmptyStateCatalogView.swift */; };
+		18E48580287F19EB0052A6F2 /* SnackbarCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48550287F19EB0052A6F2 /* SnackbarCatalogView.swift */; };
+		18E48581287F19EB0052A6F2 /* CalloutCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48551287F19EB0052A6F2 /* CalloutCatalogView.swift */; };
+		18E48582287F19EB0052A6F2 /* FeedbackCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48552287F19EB0052A6F2 /* FeedbackCatalogView.swift */; };
+		18E48583287F19EB0052A6F2 /* RadioButtonCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48553287F19EB0052A6F2 /* RadioButtonCatalogView.swift */; };
+		18E48584287F19EB0052A6F2 /* CarouselCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48554287F19EB0052A6F2 /* CarouselCatalogView.swift */; };
+		18E48585287F19EB0052A6F2 /* ChipCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48555287F19EB0052A6F2 /* ChipCatalogView.swift */; };
+		18E48586287F19EB0052A6F2 /* ButtonCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48556287F19EB0052A6F2 /* ButtonCatalogView.swift */; };
+		18E48587287F19EB0052A6F2 /* DataCardCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48557287F19EB0052A6F2 /* DataCardCatalogView.swift */; };
+		18E48588287F19EB0052A6F2 /* CheckboxCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48558287F19EB0052A6F2 /* CheckboxCatalogView.swift */; };
+		18E48589287F19EB0052A6F2 /* TabsCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48559287F19EB0052A6F2 /* TabsCatalogView.swift */; };
+		18E4858A287F19EB0052A6F2 /* BadgeCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4855A287F19EB0052A6F2 /* BadgeCatalogView.swift */; };
+		18E4858B287F19EB0052A6F2 /* TagCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4855B287F19EB0052A6F2 /* TagCatalogView.swift */; };
+		18E4858C287F19EB0052A6F2 /* ListCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4855C287F19EB0052A6F2 /* ListCatalogView.swift */; };
+		18E4858F287F19EB0052A6F2 /* UICatalogScrollContentIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48560287F19EB0052A6F2 /* UICatalogScrollContentIndicatorViewController.swift */; };
+		18E48590287F19EB0052A6F2 /* UICatalogFeedbacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48561287F19EB0052A6F2 /* UICatalogFeedbacksViewController.swift */; };
+		18E48591287F19EB0052A6F2 /* UICatalogHighlightedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48562287F19EB0052A6F2 /* UICatalogHighlightedCardViewController.swift */; };
+		18E48592287F19EB0052A6F2 /* UICatalogDataCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48563287F19EB0052A6F2 /* UICatalogDataCardViewController.swift */; };
+		18E48593287F19EB0052A6F2 /* UICatalogEmptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48564287F19EB0052A6F2 /* UICatalogEmptyStateViewController.swift */; };
+		18E48594287F19EB0052A6F2 /* UICatalogMediaCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48565287F19EB0052A6F2 /* UICatalogMediaCardViewController.swift */; };
+		18E48595287F19EB0052A6F2 /* UICatalogButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48566287F19EB0052A6F2 /* UICatalogButtonsViewController.swift */; };
+		18E48596287F19EB0052A6F2 /* UICatalogFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48567287F19EB0052A6F2 /* UICatalogFormViewController.swift */; };
+		18E48597287F19EB0052A6F2 /* UICatalogCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48568287F19EB0052A6F2 /* UICatalogCardsViewController.swift */; };
+		18E48598287F19EB0052A6F2 /* UICatalogStepperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48569287F19EB0052A6F2 /* UICatalogStepperViewController.swift */; };
+		18E48599287F19EB0052A6F2 /* UICatalogFontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4856A287F19EB0052A6F2 /* UICatalogFontsViewController.swift */; };
+		18E4859A287F19EB0052A6F2 /* UICatalogInputFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4856B287F19EB0052A6F2 /* UICatalogInputFieldsViewController.swift */; };
+		18E4859B287F19EB0052A6F2 /* UICatalogViewStatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4856C287F19EB0052A6F2 /* UICatalogViewStatesViewController.swift */; };
+		18E4859C287F19EB0052A6F2 /* UICatalogControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4856D287F19EB0052A6F2 /* UICatalogControlsViewController.swift */; };
+		18E4859D287F19EB0052A6F2 /* UICatalogCalloutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4856E287F19EB0052A6F2 /* UICatalogCalloutViewController.swift */; };
+		18E4859E287F19EB0052A6F2 /* UICatalogTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4856F287F19EB0052A6F2 /* UICatalogTagsViewController.swift */; };
+		18E4859F287F19EB0052A6F2 /* UICatalogPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48570287F19EB0052A6F2 /* UICatalogPopoverViewController.swift */; };
+		18E485A0287F19EB0052A6F2 /* UICatalogListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48571287F19EB0052A6F2 /* UICatalogListsViewController.swift */; };
+		18E485A1287F19EB0052A6F2 /* UICatalogTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48572287F19EB0052A6F2 /* UICatalogTabsViewController.swift */; };
+		18E485A2287F19EB0052A6F2 /* UICatalogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48573287F19EB0052A6F2 /* UICatalogFilterViewController.swift */; };
+		18E485A3287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48574287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift */; };
+		18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */; };
+		18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */; };
+		18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */; };
 		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
-		B8F9902D2546C98700DFBFE9 /* CatalogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990002546C98600DFBFE9 /* CatalogList.swift */; };
-		B8F9902E2546C98700DFBFE9 /* CatalogHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990012546C98600DFBFE9 /* CatalogHeader.swift */; };
-		B8F9902F2546C98700DFBFE9 /* UICatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990022546C98600DFBFE9 /* UICatalogViewController.swift */; };
 		B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F990032546C98600DFBFE9 /* Assets.xcassets */; };
 		B8F990312546C98700DFBFE9 /* NavigationBarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990052546C98600DFBFE9 /* NavigationBarStyles.swift */; };
 		B8F990322546C98700DFBFE9 /* CatalogAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990072546C98600DFBFE9 /* CatalogAssets.swift */; };
@@ -33,42 +68,59 @@
 		B8F9903C2546C98700DFBFE9 /* UISegmentedControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990132546C98600DFBFE9 /* UISegmentedControlTableViewCell.swift */; };
 		B8F9903D2546C98700DFBFE9 /* UITextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990142546C98600DFBFE9 /* UITextFieldTableViewCell.swift */; };
 		B8F9903E2546C98700DFBFE9 /* MisticaCatalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990152546C98600DFBFE9 /* MisticaCatalogApp.swift */; };
-		B8F9903F2546C98700DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990172546C98600DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift */; };
-		B8F990402546C98700DFBFE9 /* UICatalogFeedbacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990182546C98600DFBFE9 /* UICatalogFeedbacksViewController.swift */; };
-		B8F990412546C98700DFBFE9 /* UICatalogHighlightedCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990192546C98600DFBFE9 /* UICatalogHighlightedCardViewController.swift */; };
-		B8F990432546C98700DFBFE9 /* UICatalogButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901B2546C98600DFBFE9 /* UICatalogButtonsViewController.swift */; };
-		B8F990442546C98700DFBFE9 /* UICatalogFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901C2546C98600DFBFE9 /* UICatalogFormViewController.swift */; };
-		B8F990452546C98700DFBFE9 /* UICatalogFontsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901D2546C98600DFBFE9 /* UICatalogFontsViewController.swift */; };
-		B8F990462546C98700DFBFE9 /* UICatalogInputFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901E2546C98600DFBFE9 /* UICatalogInputFieldsViewController.swift */; };
-		B8F990472546C98700DFBFE9 /* UICatalogViewStatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9901F2546C98600DFBFE9 /* UICatalogViewStatesViewController.swift */; };
-		B8F990482546C98700DFBFE9 /* UICatalogControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990202546C98600DFBFE9 /* UICatalogControlsViewController.swift */; };
-		B8F990492546C98700DFBFE9 /* UICatalogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990212546C98600DFBFE9 /* UICatalogFilterViewController.swift */; };
-		B8F9904B2546C98700DFBFE9 /* UICatalogTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990232546C98600DFBFE9 /* UICatalogTagsViewController.swift */; };
-		B8F9904C2546C98700DFBFE9 /* UICatalogPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990242546C98600DFBFE9 /* UICatalogPopoverViewController.swift */; };
-		B8F9904D2546C98700DFBFE9 /* UICatalogListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990252546C98600DFBFE9 /* UICatalogListsViewController.swift */; };
-		B8F9904E2546C98700DFBFE9 /* UICatalogSectionTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990262546C98600DFBFE9 /* UICatalogSectionTitleViewController.swift */; };
-		B8F9904F2546C98700DFBFE9 /* UICatalogCroutonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990272546C98600DFBFE9 /* UICatalogCroutonViewController.swift */; };
-		B8F990502546C98700DFBFE9 /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990282546C98600DFBFE9 /* UICatalogBadgeViewController.swift */; };
-		B8F990512546C98700DFBFE9 /* UICatalogHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990292546C98600DFBFE9 /* UICatalogHeaderViewController.swift */; };
 		B8F990522546C98700DFBFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9902A2546C98600DFBFE9 /* AppDelegate.swift */; };
 		B8F990532546C98700DFBFE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9902B2546C98600DFBFE9 /* ContentView.swift */; };
 		B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */ = {isa = PBXBuildFile; productRef = B8F990622546CAA500DFBFE9 /* Mistica */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogStepperViewController.swift; sourceTree = "<group>"; };
-		1C37E32526BBF83B00062775 /* UICatalogEmptyStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogEmptyStateViewController.swift; sourceTree = "<group>"; };
-		1CFE255D26AAE3CB00D3952F /* UICatalogCalloutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogCalloutViewController.swift; sourceTree = "<group>"; };
-		908C0EB225C82CDC00D1687A /* UICatalogTabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogTabsViewController.swift; sourceTree = "<group>"; };
-		B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogMediaCardViewController.swift; sourceTree = "<group>"; };
-		B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogDataCardViewController.swift; sourceTree = "<group>"; };
-		B8D04F6525C4237A00C55FA1 /* UICatalogCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogCardsViewController.swift; sourceTree = "<group>"; };
+		18E17AEC287FFFBF0051E505 /* CatalogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRow.swift; sourceTree = "<group>"; };
+		18E17AEE288007340051E505 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
+		18E48549287F19EB0052A6F2 /* CatalogList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogList.swift; sourceTree = "<group>"; };
+		18E4854B287F19EB0052A6F2 /* View+Catalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Catalog.swift"; sourceTree = "<group>"; };
+		18E4854D287F19EB0052A6F2 /* InputFieldCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputFieldCatalogView.swift; sourceTree = "<group>"; };
+		18E4854E287F19EB0052A6F2 /* StepperCatalogVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperCatalogVIew.swift; sourceTree = "<group>"; };
+		18E4854F287F19EB0052A6F2 /* EmptyStateCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateCatalogView.swift; sourceTree = "<group>"; };
+		18E48550287F19EB0052A6F2 /* SnackbarCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackbarCatalogView.swift; sourceTree = "<group>"; };
+		18E48551287F19EB0052A6F2 /* CalloutCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutCatalogView.swift; sourceTree = "<group>"; };
+		18E48552287F19EB0052A6F2 /* FeedbackCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackCatalogView.swift; sourceTree = "<group>"; };
+		18E48553287F19EB0052A6F2 /* RadioButtonCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonCatalogView.swift; sourceTree = "<group>"; };
+		18E48554287F19EB0052A6F2 /* CarouselCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselCatalogView.swift; sourceTree = "<group>"; };
+		18E48555287F19EB0052A6F2 /* ChipCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipCatalogView.swift; sourceTree = "<group>"; };
+		18E48556287F19EB0052A6F2 /* ButtonCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCatalogView.swift; sourceTree = "<group>"; };
+		18E48557287F19EB0052A6F2 /* DataCardCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCardCatalogView.swift; sourceTree = "<group>"; };
+		18E48558287F19EB0052A6F2 /* CheckboxCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxCatalogView.swift; sourceTree = "<group>"; };
+		18E48559287F19EB0052A6F2 /* TabsCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsCatalogView.swift; sourceTree = "<group>"; };
+		18E4855A287F19EB0052A6F2 /* BadgeCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCatalogView.swift; sourceTree = "<group>"; };
+		18E4855B287F19EB0052A6F2 /* TagCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCatalogView.swift; sourceTree = "<group>"; };
+		18E4855C287F19EB0052A6F2 /* ListCatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCatalogView.swift; sourceTree = "<group>"; };
+		18E48560287F19EB0052A6F2 /* UICatalogScrollContentIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogScrollContentIndicatorViewController.swift; sourceTree = "<group>"; };
+		18E48561287F19EB0052A6F2 /* UICatalogFeedbacksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFeedbacksViewController.swift; sourceTree = "<group>"; };
+		18E48562287F19EB0052A6F2 /* UICatalogHighlightedCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHighlightedCardViewController.swift; sourceTree = "<group>"; };
+		18E48563287F19EB0052A6F2 /* UICatalogDataCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogDataCardViewController.swift; sourceTree = "<group>"; };
+		18E48564287F19EB0052A6F2 /* UICatalogEmptyStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogEmptyStateViewController.swift; sourceTree = "<group>"; };
+		18E48565287F19EB0052A6F2 /* UICatalogMediaCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogMediaCardViewController.swift; sourceTree = "<group>"; };
+		18E48566287F19EB0052A6F2 /* UICatalogButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogButtonsViewController.swift; sourceTree = "<group>"; };
+		18E48567287F19EB0052A6F2 /* UICatalogFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFormViewController.swift; sourceTree = "<group>"; };
+		18E48568287F19EB0052A6F2 /* UICatalogCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCardsViewController.swift; sourceTree = "<group>"; };
+		18E48569287F19EB0052A6F2 /* UICatalogStepperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogStepperViewController.swift; sourceTree = "<group>"; };
+		18E4856A287F19EB0052A6F2 /* UICatalogFontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFontsViewController.swift; sourceTree = "<group>"; };
+		18E4856B287F19EB0052A6F2 /* UICatalogInputFieldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogInputFieldsViewController.swift; sourceTree = "<group>"; };
+		18E4856C287F19EB0052A6F2 /* UICatalogViewStatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogViewStatesViewController.swift; sourceTree = "<group>"; };
+		18E4856D287F19EB0052A6F2 /* UICatalogControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogControlsViewController.swift; sourceTree = "<group>"; };
+		18E4856E287F19EB0052A6F2 /* UICatalogCalloutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCalloutViewController.swift; sourceTree = "<group>"; };
+		18E4856F287F19EB0052A6F2 /* UICatalogTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogTagsViewController.swift; sourceTree = "<group>"; };
+		18E48570287F19EB0052A6F2 /* UICatalogPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogPopoverViewController.swift; sourceTree = "<group>"; };
+		18E48571287F19EB0052A6F2 /* UICatalogListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogListsViewController.swift; sourceTree = "<group>"; };
+		18E48572287F19EB0052A6F2 /* UICatalogTabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogTabsViewController.swift; sourceTree = "<group>"; };
+		18E48573287F19EB0052A6F2 /* UICatalogFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFilterViewController.swift; sourceTree = "<group>"; };
+		18E48574287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogSectionTitleViewController.swift; sourceTree = "<group>"; };
+		18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCroutonViewController.swift; sourceTree = "<group>"; };
+		18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogBadgeViewController.swift; sourceTree = "<group>"; };
+		18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHeaderViewController.swift; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B8F990002546C98600DFBFE9 /* CatalogList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogList.swift; sourceTree = "<group>"; };
-		B8F990012546C98600DFBFE9 /* CatalogHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogHeader.swift; sourceTree = "<group>"; };
-		B8F990022546C98600DFBFE9 /* UICatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogViewController.swift; sourceTree = "<group>"; };
 		B8F990032546C98600DFBFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8F990052546C98600DFBFE9 /* NavigationBarStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarStyles.swift; sourceTree = "<group>"; };
 		B8F990072546C98600DFBFE9 /* CatalogAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogAssets.swift; sourceTree = "<group>"; };
@@ -83,23 +135,6 @@
 		B8F990132546C98600DFBFE9 /* UISegmentedControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlTableViewCell.swift; sourceTree = "<group>"; };
 		B8F990142546C98600DFBFE9 /* UITextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		B8F990152546C98600DFBFE9 /* MisticaCatalogApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MisticaCatalogApp.swift; sourceTree = "<group>"; };
-		B8F990172546C98600DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogScrollContentIndicatorViewController.swift; sourceTree = "<group>"; };
-		B8F990182546C98600DFBFE9 /* UICatalogFeedbacksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFeedbacksViewController.swift; sourceTree = "<group>"; };
-		B8F990192546C98600DFBFE9 /* UICatalogHighlightedCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHighlightedCardViewController.swift; sourceTree = "<group>"; };
-		B8F9901B2546C98600DFBFE9 /* UICatalogButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogButtonsViewController.swift; sourceTree = "<group>"; };
-		B8F9901C2546C98600DFBFE9 /* UICatalogFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFormViewController.swift; sourceTree = "<group>"; };
-		B8F9901D2546C98600DFBFE9 /* UICatalogFontsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFontsViewController.swift; sourceTree = "<group>"; };
-		B8F9901E2546C98600DFBFE9 /* UICatalogInputFieldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogInputFieldsViewController.swift; sourceTree = "<group>"; };
-		B8F9901F2546C98600DFBFE9 /* UICatalogViewStatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogViewStatesViewController.swift; sourceTree = "<group>"; };
-		B8F990202546C98600DFBFE9 /* UICatalogControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogControlsViewController.swift; sourceTree = "<group>"; };
-		B8F990212546C98600DFBFE9 /* UICatalogFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFilterViewController.swift; sourceTree = "<group>"; };
-		B8F990232546C98600DFBFE9 /* UICatalogTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogTagsViewController.swift; sourceTree = "<group>"; };
-		B8F990242546C98600DFBFE9 /* UICatalogPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogPopoverViewController.swift; sourceTree = "<group>"; };
-		B8F990252546C98600DFBFE9 /* UICatalogListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogListsViewController.swift; sourceTree = "<group>"; };
-		B8F990262546C98600DFBFE9 /* UICatalogSectionTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogSectionTitleViewController.swift; sourceTree = "<group>"; };
-		B8F990272546C98600DFBFE9 /* UICatalogCroutonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCroutonViewController.swift; sourceTree = "<group>"; };
-		B8F990282546C98600DFBFE9 /* UICatalogBadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogBadgeViewController.swift; sourceTree = "<group>"; };
-		B8F990292546C98600DFBFE9 /* UICatalogHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHeaderViewController.swift; sourceTree = "<group>"; };
 		B8F9902A2546C98600DFBFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F9902B2546C98600DFBFE9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B8F990562546C99300DFBFE9 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -112,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */,
+				1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */,
 				B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +155,85 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18E48548287F19EB0052A6F2 /* MisticaSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				18E4854A287F19EB0052A6F2 /* Extensions */,
+				18E4854C287F19EB0052A6F2 /* Components */,
+			);
+			path = MisticaSwiftUI;
+			sourceTree = "<group>";
+		};
+		18E4854A287F19EB0052A6F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18E4854B287F19EB0052A6F2 /* View+Catalog.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18E4854C287F19EB0052A6F2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				18E4854D287F19EB0052A6F2 /* InputFieldCatalogView.swift */,
+				18E4854E287F19EB0052A6F2 /* StepperCatalogVIew.swift */,
+				18E4854F287F19EB0052A6F2 /* EmptyStateCatalogView.swift */,
+				18E48550287F19EB0052A6F2 /* SnackbarCatalogView.swift */,
+				18E48551287F19EB0052A6F2 /* CalloutCatalogView.swift */,
+				18E48552287F19EB0052A6F2 /* FeedbackCatalogView.swift */,
+				18E48553287F19EB0052A6F2 /* RadioButtonCatalogView.swift */,
+				18E48554287F19EB0052A6F2 /* CarouselCatalogView.swift */,
+				18E48555287F19EB0052A6F2 /* ChipCatalogView.swift */,
+				18E48556287F19EB0052A6F2 /* ButtonCatalogView.swift */,
+				18E48557287F19EB0052A6F2 /* DataCardCatalogView.swift */,
+				18E48558287F19EB0052A6F2 /* CheckboxCatalogView.swift */,
+				18E48559287F19EB0052A6F2 /* TabsCatalogView.swift */,
+				18E4855A287F19EB0052A6F2 /* BadgeCatalogView.swift */,
+				18E4855B287F19EB0052A6F2 /* TagCatalogView.swift */,
+				18E4855C287F19EB0052A6F2 /* ListCatalogView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		18E4855F287F19EB0052A6F2 /* Mistica */ = {
+			isa = PBXGroup;
+			children = (
+				18E485A7287F1A870052A6F2 /* Components */,
+			);
+			path = Mistica;
+			sourceTree = "<group>";
+		};
+		18E485A7287F1A870052A6F2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				18E48560287F19EB0052A6F2 /* UICatalogScrollContentIndicatorViewController.swift */,
+				18E48561287F19EB0052A6F2 /* UICatalogFeedbacksViewController.swift */,
+				18E48562287F19EB0052A6F2 /* UICatalogHighlightedCardViewController.swift */,
+				18E48563287F19EB0052A6F2 /* UICatalogDataCardViewController.swift */,
+				18E48564287F19EB0052A6F2 /* UICatalogEmptyStateViewController.swift */,
+				18E48565287F19EB0052A6F2 /* UICatalogMediaCardViewController.swift */,
+				18E48566287F19EB0052A6F2 /* UICatalogButtonsViewController.swift */,
+				18E48567287F19EB0052A6F2 /* UICatalogFormViewController.swift */,
+				18E48568287F19EB0052A6F2 /* UICatalogCardsViewController.swift */,
+				18E48569287F19EB0052A6F2 /* UICatalogStepperViewController.swift */,
+				18E4856A287F19EB0052A6F2 /* UICatalogFontsViewController.swift */,
+				18E4856B287F19EB0052A6F2 /* UICatalogInputFieldsViewController.swift */,
+				18E4856C287F19EB0052A6F2 /* UICatalogViewStatesViewController.swift */,
+				18E4856D287F19EB0052A6F2 /* UICatalogControlsViewController.swift */,
+				18E4856E287F19EB0052A6F2 /* UICatalogCalloutViewController.swift */,
+				18E4856F287F19EB0052A6F2 /* UICatalogTagsViewController.swift */,
+				18E48570287F19EB0052A6F2 /* UICatalogPopoverViewController.swift */,
+				18E48571287F19EB0052A6F2 /* UICatalogListsViewController.swift */,
+				18E48572287F19EB0052A6F2 /* UICatalogTabsViewController.swift */,
+				18E48573287F19EB0052A6F2 /* UICatalogFilterViewController.swift */,
+				18E48574287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift */,
+				18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */,
+				18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */,
+				18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B8E161F82546EF8300DA3743 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +270,6 @@
 				B8F990152546C98600DFBFE9 /* MisticaCatalogApp.swift */,
 				B8F9902B2546C98600DFBFE9 /* ContentView.swift */,
 				B8F98FFF2546C98600DFBFE9 /* Catalog */,
-				B8F990162546C98600DFBFE9 /* ComponentsCatalogs */,
 				B8F990042546C98600DFBFE9 /* Styles */,
 				B8F990062546C98600DFBFE9 /* Common */,
 			);
@@ -165,8 +279,11 @@
 		B8F98FFF2546C98600DFBFE9 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
-				B8F990002546C98600DFBFE9 /* CatalogList.swift */,
-				B8F990022546C98600DFBFE9 /* UICatalogViewController.swift */,
+				18E48549287F19EB0052A6F2 /* CatalogList.swift */,
+				18E17AEE288007340051E505 /* Framework.swift */,
+				18E17AEC287FFFBF0051E505 /* CatalogRow.swift */,
+				18E4855F287F19EB0052A6F2 /* Mistica */,
+				18E48548287F19EB0052A6F2 /* MisticaSwiftUI */,
 			);
 			path = Catalog;
 			sourceTree = "<group>";
@@ -213,38 +330,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B8F990162546C98600DFBFE9 /* ComponentsCatalogs */ = {
-			isa = PBXGroup;
-			children = (
-				B8F990012546C98600DFBFE9 /* CatalogHeader.swift */,
-				B8F990172546C98600DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift */,
-				B85CCA6925B868D900B76426 /* UICatalogDataCardViewController.swift */,
-				B8F990182546C98600DFBFE9 /* UICatalogFeedbacksViewController.swift */,
-				B8F990192546C98600DFBFE9 /* UICatalogHighlightedCardViewController.swift */,
-				B85CCA6625B861BC00B76426 /* UICatalogMediaCardViewController.swift */,
-				B8F9901B2546C98600DFBFE9 /* UICatalogButtonsViewController.swift */,
-				B8F9901C2546C98600DFBFE9 /* UICatalogFormViewController.swift */,
-				B8F9901D2546C98600DFBFE9 /* UICatalogFontsViewController.swift */,
-				B8F9901E2546C98600DFBFE9 /* UICatalogInputFieldsViewController.swift */,
-				B8F9901F2546C98600DFBFE9 /* UICatalogViewStatesViewController.swift */,
-				B8F990202546C98600DFBFE9 /* UICatalogControlsViewController.swift */,
-				B8F990212546C98600DFBFE9 /* UICatalogFilterViewController.swift */,
-				B8F990232546C98600DFBFE9 /* UICatalogTagsViewController.swift */,
-				B8F990242546C98600DFBFE9 /* UICatalogPopoverViewController.swift */,
-				B8F990252546C98600DFBFE9 /* UICatalogListsViewController.swift */,
-				B8F990262546C98600DFBFE9 /* UICatalogSectionTitleViewController.swift */,
-				B8F990272546C98600DFBFE9 /* UICatalogCroutonViewController.swift */,
-				B8F990282546C98600DFBFE9 /* UICatalogBadgeViewController.swift */,
-				B8F990292546C98600DFBFE9 /* UICatalogHeaderViewController.swift */,
-				18726450259A27CF00B9CD0D /* UICatalogStepperViewController.swift */,
-				B8D04F6525C4237A00C55FA1 /* UICatalogCardsViewController.swift */,
-				908C0EB225C82CDC00D1687A /* UICatalogTabsViewController.swift */,
-				1CFE255D26AAE3CB00D3952F /* UICatalogCalloutViewController.swift */,
-				1C37E32526BBF83B00062775 /* UICatalogEmptyStateViewController.swift */,
-			);
-			path = ComponentsCatalogs;
-			sourceTree = "<group>";
-		};
 		B8F990552546C99300DFBFE9 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,11 +360,15 @@
 			buildRules = (
 			);
 			dependencies = (
+				18FB8A9D288067980043CA80 /* PBXTargetDependency */,
+				18E42D48287F181700BB7B39 /* PBXTargetDependency */,
+				18E42D4A287F181700BB7B39 /* PBXTargetDependency */,
 			);
 			name = MisticaCatalog;
 			packageProductDependencies = (
 				B8F990622546CAA500DFBFE9 /* Mistica */,
 				B8EE89F12614B57600F79386 /* AppCenterDistribute */,
+				1882EF40286EFF5F00F959FA /* MisticaSwiftUI */,
 			);
 			productName = MisticaCatalog;
 			productReference = B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */;
@@ -338,55 +427,88 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F9903B2546C98700DFBFE9 /* DefaultTableHeaderView.swift in Sources */,
-				B8F990482546C98700DFBFE9 /* UICatalogControlsViewController.swift in Sources */,
-				B8F990472546C98700DFBFE9 /* UICatalogViewStatesViewController.swift in Sources */,
 				B8F990382546C98700DFBFE9 /* UIImage+Utils.swift in Sources */,
-				B85CCA6A25B868D900B76426 /* UICatalogDataCardViewController.swift in Sources */,
-				B8F9904C2546C98700DFBFE9 /* UICatalogPopoverViewController.swift in Sources */,
+				18E4857E287F19EB0052A6F2 /* StepperCatalogVIew.swift in Sources */,
+				18E4859D287F19EB0052A6F2 /* UICatalogCalloutViewController.swift in Sources */,
+				18E48595287F19EB0052A6F2 /* UICatalogButtonsViewController.swift in Sources */,
+				18E4859E287F19EB0052A6F2 /* UICatalogTagsViewController.swift in Sources */,
+				18E4859C287F19EB0052A6F2 /* UICatalogControlsViewController.swift in Sources */,
+				18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */,
+				18E48581287F19EB0052A6F2 /* CalloutCatalogView.swift in Sources */,
+				18E48584287F19EB0052A6F2 /* CarouselCatalogView.swift in Sources */,
+				18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */,
+				18E485A3287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift in Sources */,
 				B8F9903D2546C98700DFBFE9 /* UITextFieldTableViewCell.swift in Sources */,
+				18E48587287F19EB0052A6F2 /* DataCardCatalogView.swift in Sources */,
 				B8F9903E2546C98700DFBFE9 /* MisticaCatalogApp.swift in Sources */,
-				1CFE255E26AAE3CB00D3952F /* UICatalogCalloutViewController.swift in Sources */,
 				B8F990532546C98700DFBFE9 /* ContentView.swift in Sources */,
-				B8F990442546C98700DFBFE9 /* UICatalogFormViewController.swift in Sources */,
-				B8D04F6625C4237A00C55FA1 /* UICatalogCardsViewController.swift in Sources */,
 				B8F9903C2546C98700DFBFE9 /* UISegmentedControlTableViewCell.swift in Sources */,
-				B8F990402546C98700DFBFE9 /* UICatalogFeedbacksViewController.swift in Sources */,
-				908C0EB325C82CDC00D1687A /* UICatalogTabsViewController.swift in Sources */,
-				B8F9902E2546C98700DFBFE9 /* CatalogHeader.swift in Sources */,
+				18E48591287F19EB0052A6F2 /* UICatalogHighlightedCardViewController.swift in Sources */,
+				18E48582287F19EB0052A6F2 /* FeedbackCatalogView.swift in Sources */,
 				B8F990522546C98700DFBFE9 /* AppDelegate.swift in Sources */,
-				B8F9903F2546C98700DFBFE9 /* UICatalogScrollContentIndicatorViewController.swift in Sources */,
-				B85CCA6725B861BC00B76426 /* UICatalogMediaCardViewController.swift in Sources */,
 				B8F990322546C98700DFBFE9 /* CatalogAssets.swift in Sources */,
-				B8F9904E2546C98700DFBFE9 /* UICatalogSectionTitleViewController.swift in Sources */,
-				B8F990452546C98700DFBFE9 /* UICatalogFontsViewController.swift in Sources */,
-				B8F990502546C98700DFBFE9 /* UICatalogBadgeViewController.swift in Sources */,
+				18E4859A287F19EB0052A6F2 /* UICatalogInputFieldsViewController.swift in Sources */,
+				18E48589287F19EB0052A6F2 /* TabsCatalogView.swift in Sources */,
+				18E48585287F19EB0052A6F2 /* ChipCatalogView.swift in Sources */,
+				18E17AEF288007340051E505 /* Framework.swift in Sources */,
+				18E4857D287F19EB0052A6F2 /* InputFieldCatalogView.swift in Sources */,
+				18E48588287F19EB0052A6F2 /* CheckboxCatalogView.swift in Sources */,
+				18E4857C287F19EB0052A6F2 /* View+Catalog.swift in Sources */,
+				18E4857F287F19EB0052A6F2 /* EmptyStateCatalogView.swift in Sources */,
+				18E4859F287F19EB0052A6F2 /* UICatalogPopoverViewController.swift in Sources */,
 				B8F990392546C98700DFBFE9 /* Bundle+MisticaCatalog.swift in Sources */,
-				B8F990512546C98700DFBFE9 /* UICatalogHeaderViewController.swift in Sources */,
-				B8F990492546C98700DFBFE9 /* UICatalogFilterViewController.swift in Sources */,
-				1C37E32626BBF83B00062775 /* UICatalogEmptyStateViewController.swift in Sources */,
+				18E17AED287FFFBF0051E505 /* CatalogRow.swift in Sources */,
+				18E48598287F19EB0052A6F2 /* UICatalogStepperViewController.swift in Sources */,
+				18E485A1287F19EB0052A6F2 /* UICatalogTabsViewController.swift in Sources */,
+				18E48580287F19EB0052A6F2 /* SnackbarCatalogView.swift in Sources */,
+				18E485A2287F19EB0052A6F2 /* UICatalogFilterViewController.swift in Sources */,
+				18E48590287F19EB0052A6F2 /* UICatalogFeedbacksViewController.swift in Sources */,
+				18E48597287F19EB0052A6F2 /* UICatalogCardsViewController.swift in Sources */,
+				18E48596287F19EB0052A6F2 /* UICatalogFormViewController.swift in Sources */,
 				B8F990312546C98700DFBFE9 /* NavigationBarStyles.swift in Sources */,
-				18726451259A27CF00B9CD0D /* UICatalogStepperViewController.swift in Sources */,
-				B8F9904D2546C98700DFBFE9 /* UICatalogListsViewController.swift in Sources */,
-				B8F9902D2546C98700DFBFE9 /* CatalogList.swift in Sources */,
-				B8F9904F2546C98700DFBFE9 /* UICatalogCroutonViewController.swift in Sources */,
+				18E48592287F19EB0052A6F2 /* UICatalogDataCardViewController.swift in Sources */,
+				18E48599287F19EB0052A6F2 /* UICatalogFontsViewController.swift in Sources */,
+				18E4858B287F19EB0052A6F2 /* TagCatalogView.swift in Sources */,
+				18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */,
 				B8F990362546C98700DFBFE9 /* UITableViewCell+Utils.swift in Sources */,
+				18E48593287F19EB0052A6F2 /* UICatalogEmptyStateViewController.swift in Sources */,
 				B8F990332546C98700DFBFE9 /* UIView+Utils.swift in Sources */,
-				B8F990462546C98700DFBFE9 /* UICatalogInputFieldsViewController.swift in Sources */,
+				18E4858A287F19EB0052A6F2 /* BadgeCatalogView.swift in Sources */,
+				18E48583287F19EB0052A6F2 /* RadioButtonCatalogView.swift in Sources */,
+				18E4858F287F19EB0052A6F2 /* UICatalogScrollContentIndicatorViewController.swift in Sources */,
+				18E4857B287F19EB0052A6F2 /* CatalogList.swift in Sources */,
+				18E48586287F19EB0052A6F2 /* ButtonCatalogView.swift in Sources */,
 				B8F990372546C98700DFBFE9 /* Optional+Utils.swift in Sources */,
 				B8F9903A2546C98700DFBFE9 /* UISwitchTableViewCell.swift in Sources */,
-				B8F990432546C98700DFBFE9 /* UICatalogButtonsViewController.swift in Sources */,
-				B8F9902F2546C98700DFBFE9 /* UICatalogViewController.swift in Sources */,
-				B8F990412546C98700DFBFE9 /* UICatalogHighlightedCardViewController.swift in Sources */,
+				18E4859B287F19EB0052A6F2 /* UICatalogViewStatesViewController.swift in Sources */,
+				18E485A0287F19EB0052A6F2 /* UICatalogListsViewController.swift in Sources */,
+				18E4858C287F19EB0052A6F2 /* ListCatalogView.swift in Sources */,
 				B8F990352546C98700DFBFE9 /* UITableView+Utils.swift in Sources */,
-				B8F9904B2546C98700DFBFE9 /* UICatalogTagsViewController.swift in Sources */,
+				18E48594287F19EB0052A6F2 /* UICatalogMediaCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		18E42D48287F181700BB7B39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 18E42D47287F181700BB7B39 /* Mistica */;
+		};
+		18E42D4A287F181700BB7B39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 18E42D49287F181700BB7B39 /* MisticaSwiftUI */;
+		};
+		18FB8A9D288067980043CA80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 18FB8A9C288067980043CA80 /* MisticaCommon */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		B8F98FF72546C95800DFBFE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F990562546C99300DFBFE9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -448,6 +570,7 @@
 		};
 		B8F98FF82546C95800DFBFE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F990562546C99300DFBFE9 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -503,39 +626,49 @@
 		};
 		B8F98FFA2546C95800DFBFE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8F990562546C99300DFBFE9 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = JA666WMX28;
 				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MisticaCatalog;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = "$(VERSION_NUMBER)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "mistica-app-development";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		B8F98FFB2546C95800DFBFE9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8F990562546C99300DFBFE9 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				DEVELOPMENT_TEAM = JA666WMX28;
 				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MisticaCatalog;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = "$(VERSION_NUMBER)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "mistica-app";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -574,6 +707,22 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1882EF40286EFF5F00F959FA /* MisticaSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MisticaSwiftUI;
+		};
+		18E42D47287F181700BB7B39 /* Mistica */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Mistica;
+		};
+		18E42D49287F181700BB7B39 /* MisticaSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MisticaSwiftUI;
+		};
+		18FB8A9C288067980043CA80 /* MisticaCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MisticaCommon;
+		};
 		B8EE89F12614B57600F79386 /* AppCenterDistribute */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B8EE89F02614B57600F79386 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;

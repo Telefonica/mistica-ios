@@ -58,18 +58,17 @@ struct MisticaCatalogApp: App {
     }
 
     @ViewBuilder
-    func tab(
+    func tab<Content: View>(
         name: String,
         image: String,
-        @ViewBuilder content: () -> some View
+        @ViewBuilder content: () -> Content
     ) -> some View {
         NavigationView {
             content()
                 .navigationTitle(name)
         }
         .tabItem {
-            Image(image)
-                .foregroundColor(.black)
+            Image(image).renderingMode(.original)
         }
     }
 

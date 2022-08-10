@@ -10,7 +10,7 @@ import UIKit
 
 struct MovistarColors: MisticaColors {
     static let palette = MovistarColorPalette()
-    
+
     // BACKGROUNDS
     let appBarBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
     let background = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
@@ -133,7 +133,7 @@ struct MovistarColors: MisticaColors {
 }
 
 public struct MovistarColorPalette {
-    public init() { }
+    public init() {}
 
     public let movistarBlue = UIColor(hex: "#019DF4")!
     public let movistarBlue10 = UIColor(hex: "#E6F5FD")!

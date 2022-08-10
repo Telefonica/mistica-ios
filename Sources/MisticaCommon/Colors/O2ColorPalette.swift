@@ -128,8 +128,8 @@ struct O2Colors: MisticaColors {
 }
 
 public struct O2ColorPalette {
-    public init() { }
-    
+    public init() {}
+
     public let o2BluePrimary = UIColor(hex: "#0019A5")!
     public let o2BluePrimary10 = UIColor(hex: "#E5E8F6")!
     public let o2BluePrimary15 = UIColor(hex: "#CCD1ED")!

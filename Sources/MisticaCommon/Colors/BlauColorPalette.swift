@@ -10,7 +10,7 @@ import UIKit
 
 struct BlauColors: MisticaColors {
     static let palette = BlauColorPalette()
-    
+
     // BACKGROUNDS
     let appBarBackground = palette.white | palette.darkModeGrey
     let background = palette.white | palette.darkModeBlack
@@ -129,7 +129,7 @@ struct BlauColors: MisticaColors {
 }
 
 public struct BlauColorPalette {
-    public init() { }
+    public init() {}
 
     public let blauBluePrimary = UIColor(hex: "#00B6F1")!
     public let blauBluePrimary30 = UIColor(hex: "#B3E9FB")!

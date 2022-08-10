@@ -13,7 +13,7 @@ import SwiftUI
 
 struct ColorsView: View {
     @State var searchText = ""
-    
+
     var body: some View {
         List {
             ForEach(colors, id: \.name) { item in
@@ -22,8 +22,11 @@ struct ColorsView: View {
                     title: item.name,
                     subtitle: item.paletteName,
                     description: item.color.hexString.uppercased(),
-                    assetType: .largeIcon(Image(systemName: "circle.fill")
-                        .resizable(), foregroundColor: Color(item.color))
+                    assetType: .largeIcon(
+                        Image(systemName: "circle.fill")
+                            .resizable(),
+                        foregroundColor: Color(item.color)
+                    )
                 )
             }
         }
@@ -47,11 +50,11 @@ struct ColorsView: View {
             return colors
         }
     }
-    
+
     var colors: [(name: String, paletteName: String?, color: UIColor)] {
         let misticaColorsByName = ColorInspector(value: MisticaConfig.currentColors).colorsByName
         let paletteColorsByName = ColorInspector(value: paletteColors).colorsByName
-        
+
         return misticaColorsByName
             .map { name, color in
                 let paletteName = paletteColorsByName.first { $0.value.hexString == color.hexString }?.key
@@ -73,7 +76,7 @@ struct ColorsView: View {
 
 struct Searchable: ViewModifier {
     @Binding var text: String
-    
+
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
             content
@@ -101,8 +104,8 @@ extension UIColor {
 
 struct ColorInspector {
     let value: Any
-    
-    var colorsByName:  [String: UIColor] {
+
+    var colorsByName: [String: UIColor] {
         var result: [String: UIColor] = [:]
 
         let mirror = Mirror(reflecting: value)
@@ -111,7 +114,7 @@ struct ColorInspector {
             guard let property = property else {
                 continue
             }
-            
+
             guard let color = value as? UIColor else {
                 continue
             }

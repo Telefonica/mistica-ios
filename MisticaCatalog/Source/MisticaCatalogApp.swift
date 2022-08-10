@@ -16,7 +16,7 @@ struct MisticaCatalogApp: App {
         case components
         case colors
     }
-    
+
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State var reloadId = UUID()
     @State var selectedBrandIndex = 0
@@ -43,7 +43,6 @@ struct MisticaCatalogApp: App {
                     FontView()
                 }
                 .tag(Tabs.fonts)
-
             }
             .misticaTabViewStyle()
             .onAppear {
@@ -62,7 +61,7 @@ struct MisticaCatalogApp: App {
               let version = infoPlist["CFBundleShortVersionString"] as? String else { return "" }
         return "v\(version)"
     }
-    
+
     @ViewBuilder
     func tab<Content: View>(
         name: String,

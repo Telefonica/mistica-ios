@@ -57,6 +57,12 @@ struct MisticaCatalogApp: App {
         }
     }
 
+    var misticaVersion: String {
+        guard let infoPlist = Bundle.main.infoDictionary,
+              let version = infoPlist["CFBundleShortVersionString"] as? String else { return "" }
+        return "v\(version)"
+    }
+    
     @ViewBuilder
     func tab<Content: View>(
         name: String,
@@ -66,6 +72,13 @@ struct MisticaCatalogApp: App {
         NavigationView {
             content()
                 .navigationTitle(name)
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        Text(misticaVersion)
+                            .font(.textPreset2(weight: .regular))
+                            .foregroundColor(.textSecondary)
+                    }
+                }
         }
         .tabItem {
             Image(image).renderingMode(.original)

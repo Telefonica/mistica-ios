@@ -24,22 +24,5 @@ struct ComponentsView: View {
                 rows: CatalogRow.allCases
             )
         }
-        .toolbar {
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                if let misticaVersion = misticaVersion {
-                    Text(misticaVersion)
-                        .font(.textPreset2(weight: .regular))
-                        .foregroundColor(.textSecondary)
-                }
-            }
-        }
-    }
-}
-
-private extension ComponentsView {
-    var misticaVersion: String? {
-        guard let infoPlist = Bundle.main.infoDictionary,
-              let version = infoPlist["CFBundleShortVersionString"] as? String else { return nil }
-        return "v\(version)"
     }
 }

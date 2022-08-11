@@ -22,16 +22,22 @@ struct ColorsView: View {
                     title: item.name,
                     subtitle: item.paletteName,
                     description: item.color.hexString.uppercased(),
-                    assetType: .largeIcon(
-                        Image(systemName: "circle.fill")
-                            .resizable(),
-                        foregroundColor: Color(item.color)
-                    )
+                    assetType: .roundImage(circle(with: item.color))
                 )
             }
         }
         .misticaListStyle()
         .modifier(Searchable(text: $searchText))
+    }
+    
+    func circle(with color: UIColor) -> Image {
+        let uiImage = UIImage(color: color, width: 40, height: 40)
+            .bordered(color: borderColor(with: color))
+        return Image(uiImage: uiImage)
+    }
+    
+    func borderColor(with color: UIColor) -> UIColor {
+        color == .border ? .borderDark : .border
     }
 
     var paletteColors: Any {
@@ -84,6 +90,25 @@ struct Searchable: ViewModifier {
         } else {
             content
         }
+    }
+}
+
+extension UIImage {
+    func bordered(borderWidth: CGFloat = 1, color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContext(size)
+        let imageRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        self.draw(in: imageRect)
+        
+        let context = UIGraphicsGetCurrentContext()
+        let borderRect = imageRect.insetBy(dx: borderWidth / 2, dy: borderWidth / 2)
+        
+        context?.setStrokeColor(color.cgColor)
+        context?.setLineWidth(borderWidth)
+        context?.strokeEllipse(in: borderRect)
+        
+        let borderedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return borderedImage
     }
 }
 

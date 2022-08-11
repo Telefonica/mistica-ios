@@ -45,7 +45,7 @@ public extension Font {
         FontStyle.textPreset8.preferredFont(weight: FontStyle.TextPreset8Weight.default.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
-    static func textPreset9(weight: FontStyle.TextPreset9Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> Font {
+    static func textPreset9(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> Font {
         FontStyle.textPreset8.preferredFont(weight: FontStyle.TextPreset9Weight.default.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 

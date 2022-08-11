@@ -34,6 +34,23 @@ public enum BrandStyle {
         }
     }
 
+    public var name: String {
+        switch self {
+        case .movistar:
+            return "Movistar"
+        case .vivo:
+            return "Vivo"
+        case .o2:
+            return "O2"
+        case .o2Classic:
+            return "O2 Classic"
+        case .blau:
+            return "Blau"
+        case .custom:
+            return "Custom"
+        }
+    }
+
     public static var allCases: [BrandStyle] {
         [.movistar, .vivo, .o2, .o2Classic, .blau]
     }

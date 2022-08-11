@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIImage {
-    convenience init(color: UIColor) {
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+    convenience init(color: UIColor, width: CGFloat = 1, height: CGFloat = 1) {
+        let rect = CGRect(x: 0, y: 0, width: width, height: height)
 
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
 

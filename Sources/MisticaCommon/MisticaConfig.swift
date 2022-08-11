@@ -9,15 +9,16 @@
 import Foundation
 
 public enum MisticaConfig {
-    static var currentColors: MisticaColors = MovistarColors()
-    static var currentBrandAssets: MisticaBrandAssets = DefaultMisticaBrandAssets()
-    static var currentStyledControls = [MisticaControlStyle]()
+    public private(set) static var currentColors: MisticaColors = MovistarColors()
+    public private(set) static var currentBrandAssets: MisticaBrandAssets = DefaultMisticaBrandAssets()
+    public private(set) static var currentStyledControls = [MisticaControlStyle]()
 
     // MARK: Public Setup
 
     public static var brandStyle: BrandStyle = .movistar {
         didSet {
             configureColorPalette(for: brandStyle)
+            MisticaAppearance.setUp(controls: currentStyledControls)
         }
     }
 

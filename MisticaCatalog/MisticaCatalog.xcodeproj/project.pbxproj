@@ -137,7 +137,7 @@
 		B8F990152546C98600DFBFE9 /* MisticaCatalogApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MisticaCatalogApp.swift; sourceTree = "<group>"; };
 		B8F9902A2546C98600DFBFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8F9902B2546C98600DFBFE9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B8F990562546C99300DFBFE9 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		B8F990562546C99300DFBFE9 /* MisticaCatalogConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MisticaCatalogConfig.xcconfig; sourceTree = "<group>"; };
 		B8F990572546C99300DFBFE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -333,7 +333,7 @@
 		B8F990552546C99300DFBFE9 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				B8F990562546C99300DFBFE9 /* Config.xcconfig */,
+				B8F990562546C99300DFBFE9 /* MisticaCatalogConfig.xcconfig */,
 				B8F990572546C99300DFBFE9 /* Info.plist */,
 			);
 			path = SupportFiles;
@@ -508,7 +508,7 @@
 /* Begin XCBuildConfiguration section */
 		B8F98FF72546C95800DFBFE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8F990562546C99300DFBFE9 /* Config.xcconfig */;
+			baseConfigurationReference = B8F990562546C99300DFBFE9 /* MisticaCatalogConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -570,7 +570,7 @@
 		};
 		B8F98FF82546C95800DFBFE9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B8F990562546C99300DFBFE9 /* Config.xcconfig */;
+			baseConfigurationReference = B8F990562546C99300DFBFE9 /* MisticaCatalogConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

@@ -1,3 +1,21 @@
+# [18.0.0](https://github.com/Telefonica/mistica-ios/compare/v17.1.0...v18.0.0) (2022-08-11)
+
+
+### Code Refactoring
+
+* **Colors:** Update Color Palette definition. ([#206](https://github.com/Telefonica/mistica-ios/issues/206)) ([f433140](https://github.com/Telefonica/mistica-ios/commit/f4331403faf3642d71f46453a0d25bdcee5d902c))
+
+
+### Features
+
+* **SwiftUI:** Support Mistica in SwiftUI ([#200](https://github.com/Telefonica/mistica-ios/issues/200)) ([b2689ef](https://github.com/Telefonica/mistica-ios/commit/b2689ef7dc64b259aa9706b6110e8161c4456724))
+
+
+### BREAKING CHANGES
+
+* **Colors:** Color palette properties are no longer static variabales.
+* **SwiftUI:** Custom brands are now supported.
+
 # [17.1.0](https://github.com/Telefonica/mistica-ios/compare/v17.0.1...v17.1.0) (2022-08-01)
 
 

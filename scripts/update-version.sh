@@ -12,4 +12,4 @@ cd Mistica &>/dev/null
 cd .. &>/dev/null
 
 find . -name "Mistica*.podspec" -exec sed -i '' -E "s/(s.version[[:space:]]+=[[:space:]]+').*(')/\1$VERSION_NUMBER\2/" {} +
-find . -name "Mistica*Config.xcconfig" -exec sed -i '' -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" {} +
+find . -name "Mistica*.xcconfig" -exec sed -i '' -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" {} +

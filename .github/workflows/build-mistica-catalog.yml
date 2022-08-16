@@ -44,7 +44,7 @@ jobs:
           node-version: 14.17
 
       - name: Upload ipa to AppCenter
-        run: npx -p appcenter-cli appcenter distribute release -a Tuenti-Organization/Mistica-SwiftUI-iOS -f ./build/ios.ipa -g Public --token ${{ secrets.APPCENTER_API_TOKEN }}
+        run: npx -p appcenter-cli appcenter distribute release -a Tuenti-Organization/Mistica-iOS -f ./build/ios.ipa -g Public --token ${{ secrets.APPCENTER_API_TOKEN }}
         
       - name: Upload dsyms to AppCenter
-        run: npx -p appcenter-cli appcenter crashes upload-symbols -a Tuenti-Organization/Mistica-SwiftUI-iOS -s ./build/ios.dSYM --token ${{ secrets.APPCENTER_API_TOKEN }}
+        run: npx -p appcenter-cli appcenter crashes upload-symbols -a Tuenti-Organization/Mistica-iOS -s ./build/ios.dSYM --token ${{ secrets.APPCENTER_API_TOKEN }}

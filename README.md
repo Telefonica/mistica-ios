@@ -1,5 +1,5 @@
-<img alt="Mística for iOS" src="./mistica-ios.svg">
-<br>
+![Mistica for iOS](doc/images/mistica-ios-light.svg#gh-light-mode-only)
+![Mistica for iOS](doc/images/mistica-ios-dark.svg#gh-dark-mode-only)
 
 [![Platform](https://img.shields.io/badge/platform-iOS-%23989898.svg)](https://github.com/Telefonica/mistica-ios)
 [![iOS Version](https://img.shields.io/badge/Support-%3E%3D%20iOS%2012.0-brightgreen.svg)](https://github.com/Telefonica/mistica-ios)

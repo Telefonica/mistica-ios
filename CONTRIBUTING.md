@@ -92,17 +92,9 @@ or [open an issue](https://github.com/Telefonica/mistica/issues) in the main Mis
 To create or modify components from the Mistica library follow the next steps:
 
 1. Clone this repo
-2. Run the following commands
-
-```sh
-sudo gem install bundler
-bundle install
-bundle exec fastlane setup
-```
-
-3. Open `Mistica.xcodeproj`
-4. Place the new component under the `Components` folder. The component should have a proper definition by the design team.
-5. Add a new entry to MisticaCatalog showing how the new component works and documentation with component details and usage.
+2. Open `Package.swift`
+3. Place the new component under the `Components` folder. The component should have a proper definition by the design team.
+4. Add a new entry to MisticaCatalog showing how the new component works and documentation with component details and usage.
 
 When implementing the component, try to have in mind the following guidelines:
 

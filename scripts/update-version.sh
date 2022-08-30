@@ -11,6 +11,5 @@ echo "Updating podspec, xcconfig and mistica catalog version number to $VERSION_
 cd Mistica &>/dev/null
 cd .. &>/dev/null
 
-sed -i '' -E "s/(s.version[[:space:]]+=[[:space:]]+').*(')/\1$VERSION_NUMBER\2/" Mistica.podspec
-sed -i '' -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" Mistica/SupportFiles/Mistica.xcconfig
-sed -i '' -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" MisticaCatalog/SupportFiles/Config.xcconfig
+find . -name "Mistica*.podspec" -exec sed -i '' -E "s/(s.version[[:space:]]+=[[:space:]]+').*(')/\1$VERSION_NUMBER\2/" {} +
+find . -name "Mistica*.xcconfig" -exec sed -i '' -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" {} +

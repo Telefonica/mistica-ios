@@ -28,7 +28,7 @@ private struct MisticaNavigationViewStyle: ViewModifier {
 
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = Color.navigationBarBackground.uiColor
+        appearance.backgroundColor = .navigationBarBackground
         appearance.largeTitleTextAttributes = misticaLargeTitleTextAttributes
         appearance.titleTextAttributes = misticaTitleTextAttributes
         appearance.shadowColor = .clear

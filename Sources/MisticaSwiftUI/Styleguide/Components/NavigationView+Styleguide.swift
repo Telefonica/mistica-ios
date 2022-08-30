@@ -37,7 +37,7 @@ private struct MisticaNavigationViewStyle: ViewModifier {
 
         let scrollEdgeAppearance = UINavigationBarAppearance()
         scrollEdgeAppearance.configureWithTransparentBackground()
-        scrollEdgeAppearance.backgroundColor = Color.navigationBarBackground.uiColor
+        scrollEdgeAppearance.backgroundColor = .navigationBarBackground
         scrollEdgeAppearance.largeTitleTextAttributes = misticaLargeTitleTextAttributes
         scrollEdgeAppearance.titleTextAttributes = misticaTitleTextAttributes
         scrollEdgeAppearance.backButtonAppearance = backButtonAppearance
@@ -46,8 +46,8 @@ private struct MisticaNavigationViewStyle: ViewModifier {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = scrollEdgeAppearance
-        UINavigationBar.appearance().tintColor = Color.textNavigationBarPrimary.uiColor
-        UINavigationBar.appearance().barTintColor = Color.navigationBarBackground.uiColor
+        UINavigationBar.appearance().tintColor = .textNavigationBarPrimary
+        UINavigationBar.appearance().barTintColor = .navigationBarBackground
 
         let textFieldSearchBarAppearance = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
         textFieldSearchBarAppearance.defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -74,11 +74,10 @@ private var hiddenTitleTextAttributes: [NSAttributedString.Key: Any] {
     )
 }
 
-@available(iOS 13.0, *)
 private var misticaTitleTextAttributes: [NSAttributedString.Key: Any] {
     textAttributes(
         for: .textPreset4(weight: .medium, constrainedToPreferredSize: .large),
-        color: Color.textNavigationBarPrimary.uiColor
+        color: .textNavigationBarPrimary
     )
 }
 

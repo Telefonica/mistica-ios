@@ -19,29 +19,35 @@ public extension View {
 @available(iOS 13.0, *)
 private struct MisticaNavigationViewStyle: ViewModifier {
     init() {
-        let backButtonAppearance = UIBarButtonItemAppearance(style: .plain)
+        let backButtonAppearance = UIBarButtonItemAppearance()
         backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
+        let backButtonImage = UIImage(systemName: "chevron.backward")?.withTintColor(
+            Color.textNavigationBarPrimary.uiColor,
+            renderingMode: .alwaysOriginal
+        )
 
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .navigationBarBackground
+        appearance.backgroundColor = Color.navigationBarBackground.uiColor
         appearance.largeTitleTextAttributes = misticaLargeTitleTextAttributes
         appearance.titleTextAttributes = misticaTitleTextAttributes
         appearance.shadowColor = .clear
         appearance.backButtonAppearance = backButtonAppearance
+        appearance.setBackIndicatorImage(backButtonImage, transitionMaskImage: backButtonImage)
 
         let scrollEdgeAppearance = UINavigationBarAppearance()
         scrollEdgeAppearance.configureWithTransparentBackground()
-        scrollEdgeAppearance.backgroundColor = .navigationBarBackground
+        scrollEdgeAppearance.backgroundColor = Color.navigationBarBackground.uiColor
         scrollEdgeAppearance.largeTitleTextAttributes = misticaLargeTitleTextAttributes
         scrollEdgeAppearance.titleTextAttributes = misticaTitleTextAttributes
         scrollEdgeAppearance.backButtonAppearance = backButtonAppearance
+        scrollEdgeAppearance.setBackIndicatorImage(backButtonImage, transitionMaskImage: backButtonImage)
 
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = scrollEdgeAppearance
-        UINavigationBar.appearance().tintColor = .textNavigationBarPrimary
-        UINavigationBar.appearance().barTintColor = .navigationBarBackground
+        UINavigationBar.appearance().tintColor = Color.textNavigationBarPrimary.uiColor
+        UINavigationBar.appearance().barTintColor = Color.navigationBarBackground.uiColor
 
         let textFieldSearchBarAppearance = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
         textFieldSearchBarAppearance.defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -68,10 +74,11 @@ private var hiddenTitleTextAttributes: [NSAttributedString.Key: Any] {
     )
 }
 
+@available(iOS 13.0, *)
 private var misticaTitleTextAttributes: [NSAttributedString.Key: Any] {
     textAttributes(
         for: .textPreset4(weight: .medium, constrainedToPreferredSize: .large),
-        color: .textNavigationBarPrimary
+        color: Color.textNavigationBarPrimary.uiColor
     )
 }
 

@@ -17,7 +17,7 @@ struct MovistarColors: MisticaColors {
     let backgroundContainer = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
     var backgroundBrand: UIColor { MovistarColors.palette.movistarBlueWithProminentVariant | MovistarColors.palette.darkModeBlack }
     let backgroundOverlay = MovistarColors.palette.grey6.withAlphaComponent(0.6) | MovistarColors.palette.darkModeGrey.withAlphaComponent(0.8)
-    let backgroundSkeleton = MovistarColors.palette.grey1 | MovistarColors.palette.grey6
+    let backgroundSkeleton = MovistarColors.palette.grey2 | MovistarColors.palette.grey6
     let backgroundSkeletonInverse = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.grey6
     var navigationBarBackground: UIColor { MovistarColors.palette.movistarBlueWithProminentVariant | MovistarColors.palette.darkModeBlack }
 

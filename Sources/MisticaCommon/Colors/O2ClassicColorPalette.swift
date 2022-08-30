@@ -17,7 +17,7 @@ struct O2ClassicColors: MisticaColors {
     let backgroundContainer = palette.white | palette.darkModeGrey
     let backgroundBrand = palette.o2Blue | palette.darkModeBlack
     let backgroundOverlay = palette.grey6.withAlphaComponent(0.6) | palette.darkModeGrey.withAlphaComponent(0.8)
-    let backgroundSkeleton = palette.grey1 | palette.darkModeGrey6
+    let backgroundSkeleton = palette.grey2 | palette.darkModeGrey6
     let backgroundSkeletonInverse = palette.white.withAlphaComponent(0.2) | palette.darkModeGrey6
     let navigationBarBackground = palette.o2Blue | palette.darkModeBlack
     let backgroundAlternative = palette.grey1 | palette.darkModeGrey

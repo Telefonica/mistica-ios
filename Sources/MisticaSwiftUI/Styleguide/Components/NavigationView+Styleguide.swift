@@ -19,8 +19,12 @@ public extension View {
 @available(iOS 13.0, *)
 private struct MisticaNavigationViewStyle: ViewModifier {
     init() {
-        let backButtonAppearance = UIBarButtonItemAppearance(style: .plain)
+        let backButtonAppearance = UIBarButtonItemAppearance()
         backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
+        let backButtonImage = UIImage(systemName: "chevron.backward")?.withTintColor(
+            Color.textNavigationBarPrimary.uiColor,
+            renderingMode: .alwaysOriginal
+        )
 
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -29,6 +33,7 @@ private struct MisticaNavigationViewStyle: ViewModifier {
         appearance.titleTextAttributes = misticaTitleTextAttributes
         appearance.shadowColor = .clear
         appearance.backButtonAppearance = backButtonAppearance
+        appearance.setBackIndicatorImage(backButtonImage, transitionMaskImage: backButtonImage)
 
         let scrollEdgeAppearance = UINavigationBarAppearance()
         scrollEdgeAppearance.configureWithTransparentBackground()
@@ -36,6 +41,7 @@ private struct MisticaNavigationViewStyle: ViewModifier {
         scrollEdgeAppearance.largeTitleTextAttributes = misticaLargeTitleTextAttributes
         scrollEdgeAppearance.titleTextAttributes = misticaTitleTextAttributes
         scrollEdgeAppearance.backButtonAppearance = backButtonAppearance
+        scrollEdgeAppearance.setBackIndicatorImage(backButtonImage, transitionMaskImage: backButtonImage)
 
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance

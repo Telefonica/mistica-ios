@@ -56,7 +56,6 @@
 		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F990032546C98600DFBFE9 /* Assets.xcassets */; };
-		B8F990312546C98700DFBFE9 /* NavigationBarStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990052546C98600DFBFE9 /* NavigationBarStyles.swift */; };
 		B8F990322546C98700DFBFE9 /* CatalogAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990072546C98600DFBFE9 /* CatalogAssets.swift */; };
 		B8F990332546C98700DFBFE9 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990092546C98600DFBFE9 /* UIView+Utils.swift */; };
 		B8F990352546C98700DFBFE9 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9900B2546C98600DFBFE9 /* UITableView+Utils.swift */; };
@@ -124,7 +123,6 @@
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8F990032546C98600DFBFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B8F990052546C98600DFBFE9 /* NavigationBarStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarStyles.swift; sourceTree = "<group>"; };
 		B8F990072546C98600DFBFE9 /* CatalogAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogAssets.swift; sourceTree = "<group>"; };
 		B8F990092546C98600DFBFE9 /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		B8F9900B2546C98600DFBFE9 /* UITableView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
@@ -294,7 +292,6 @@
 		B8F990042546C98600DFBFE9 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				B8F990052546C98600DFBFE9 /* NavigationBarStyles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -470,7 +467,6 @@
 				18E3452C289D46C5005E6D81 /* FontsView.swift in Sources */,
 				18E48597287F19EB0052A6F2 /* UICatalogCardsViewController.swift in Sources */,
 				18E48596287F19EB0052A6F2 /* UICatalogFormViewController.swift in Sources */,
-				B8F990312546C98700DFBFE9 /* NavigationBarStyles.swift in Sources */,
 				18E48592287F19EB0052A6F2 /* UICatalogDataCardViewController.swift in Sources */,
 				18E4858B287F19EB0052A6F2 /* TagCatalogView.swift in Sources */,
 				18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */,

@@ -1,3 +1,12 @@
+## [18.0.1](https://github.com/Telefonica/mistica-ios/compare/v18.0.0...v18.0.1) (2022-08-31)
+
+
+### Bug Fixes
+
+* **Assets:** IOS-7644 Exclude common assets from  protocol ([#211](https://github.com/Telefonica/mistica-ios/issues/211)) ([e664ecc](https://github.com/Telefonica/mistica-ios/commit/e664ecca0897a323af1652c647287e177e216c1e))
+* **SwiftUI:** Fix navigation bar back tint color for iOS 16 ([7eca013](https://github.com/Telefonica/mistica-ios/commit/7eca013d1aecbb7c3542c5260bc8e4d318b22693))
+* **Version:** Fix mistica version and catalog version ([#209](https://github.com/Telefonica/mistica-ios/issues/209)) ([a3aaffa](https://github.com/Telefonica/mistica-ios/commit/a3aaffaaead1c78f2a3ee1ee0e8dfc78373f74d5))
+
 # [18.0.0](https://github.com/Telefonica/mistica-ios/compare/v17.1.0...v18.0.0) (2022-08-11)
 
 

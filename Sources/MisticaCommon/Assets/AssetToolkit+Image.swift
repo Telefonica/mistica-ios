@@ -12,31 +12,31 @@ import SwiftUI
 @available(iOS 13.0, *)
 public extension Image {
     static var arrowRight: Image {
-        Image(uiImage: MisticaConfig.currentBrandAssets.arrowRight)
+        Image(uiImage: .arrowRight)
     }
 
     static var checkmarkIcon: Image {
-        Image(uiImage: MisticaConfig.currentBrandAssets.checkmarkIcon)
+        Image(uiImage: .checkmarkIcon)
     }
 
     static var eyeEnabled: Image {
-        Image(uiImage: MisticaConfig.currentBrandAssets.eyeEnabled)
+        Image(uiImage: .eyeEnabled)
     }
 
     static var eyeDisabled: Image {
-        Image(uiImage: MisticaConfig.currentBrandAssets.eyeDisabled)
+        Image(uiImage: .eyeDisabled)
     }
 
     static var arrowDown: Image {
-        Image(uiImage: MisticaConfig.currentBrandAssets.arrowDown)
+        Image(uiImage: .arrowDown)
     }
 
     static var search: Image {
-        Image(uiImage: MisticaConfig.currentBrandAssets.search)
+        Image(uiImage: .search)
     }
 
     static var calendar: Image {
-        Image(uiImage: MisticaConfig.currentBrandAssets.calendar)
+        Image(uiImage: .calendar)
     }
 
     static var iconNotificationInfo: Image? {
@@ -44,6 +44,6 @@ public extension Image {
     }
 
     static var closeButtonBlackSmallIcon: Image {
-        Image(uiImage: MisticaConfig.currentBrandAssets.closeButtonBlackSmallIcon)
+        Image(uiImage: .closeButtonBlackSmallIcon)
     }
 }

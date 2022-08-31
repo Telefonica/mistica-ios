@@ -11,31 +11,31 @@ import UIKit
 
 public extension UIImage {
     static var arrowRight: UIImage {
-        MisticaConfig.currentBrandAssets.arrowRight
+        UIImage(named: "icn_arrow_right", type: .common)!
     }
 
     static var checkmarkIcon: UIImage {
-        MisticaConfig.currentBrandAssets.checkmarkIcon
+        UIImage(named: "icn_checkbox_check", type: .common)!
     }
 
     static var eyeEnabled: UIImage {
-        MisticaConfig.currentBrandAssets.eyeEnabled
+        UIImage(named: "icn_eye_enabled", type: .common)!
     }
 
     static var eyeDisabled: UIImage {
-        MisticaConfig.currentBrandAssets.eyeDisabled
+        UIImage(named: "icn_eye_disabled", type: .common)!
     }
 
     static var arrowDown: UIImage {
-        MisticaConfig.currentBrandAssets.arrowDown
+        UIImage(named: "icn_dropmenu", type: .common)!
     }
 
     static var search: UIImage {
-        MisticaConfig.currentBrandAssets.search
+        UIImage(named: "icn_search", type: .common)!
     }
 
     static var calendar: UIImage {
-        MisticaConfig.currentBrandAssets.calendar
+        UIImage(named: "icn_calendar", type: .common)!
     }
 
     static var iconNotificationInfo: UIImage? {
@@ -43,6 +43,6 @@ public extension UIImage {
     }
 
     static var closeButtonBlackSmallIcon: UIImage {
-        MisticaConfig.currentBrandAssets.closeButtonBlackSmallIcon
+        UIImage(named: "icn_close_black_small", type: .common)!
     }
 }

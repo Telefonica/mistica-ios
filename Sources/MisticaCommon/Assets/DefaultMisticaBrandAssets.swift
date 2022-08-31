@@ -14,40 +14,8 @@ public struct DefaultMisticaBrandAssets: MisticaBrandAssets {
         // Do nothing
     }
 
-    public var arrowRight: UIImage {
-        UIImage(named: "icn_arrow_right", type: .common)!
-    }
-
-    public var checkmarkIcon: UIImage {
-        UIImage(named: "icn_checkbox_check", type: .common)!
-    }
-
-    public var eyeEnabled: UIImage {
-        UIImage(named: "icn_eye_enabled", type: .common)!
-    }
-
-    public var eyeDisabled: UIImage {
-        UIImage(named: "icn_eye_disabled", type: .common)!
-    }
-
-    public var arrowDown: UIImage {
-        UIImage(named: "icn_dropmenu", type: .common)!
-    }
-
-    public var search: UIImage {
-        UIImage(named: "icn_search", type: .common)!
-    }
-
-    public var calendar: UIImage {
-        UIImage(named: "icn_calendar", type: .common)!
-    }
-
     public var iconNotificationInfo: UIImage? {
         UIImage(named: "icnNotificationInfo", type: .branded)!.withRenderingMode(.alwaysTemplate)
-    }
-
-    public var closeButtonBlackSmallIcon: UIImage {
-        UIImage(named: "icn_close_black_small", type: .common)!
     }
 
     public var checkAnimation: NSDataAsset? {

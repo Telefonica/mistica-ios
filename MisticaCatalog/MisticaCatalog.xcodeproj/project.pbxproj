@@ -53,6 +53,8 @@
 		18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */; };
 		18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */; };
 		18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */; };
+		392E03DC28C6153C0081780B /* UICatalogBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E03DB28C6153C0081780B /* UICatalogBottomSheetViewController.swift */; };
+		3968C75E28C9E19600561194 /* UIStepperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3968C75D28C9E19600561194 /* UIStepperTableViewCell.swift */; };
 		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F990032546C98600DFBFE9 /* Assets.xcassets */; };
@@ -119,6 +121,8 @@
 		18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCroutonViewController.swift; sourceTree = "<group>"; };
 		18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogBadgeViewController.swift; sourceTree = "<group>"; };
 		18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHeaderViewController.swift; sourceTree = "<group>"; };
+		392E03DB28C6153C0081780B /* UICatalogBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogBottomSheetViewController.swift; sourceTree = "<group>"; };
+		3968C75D28C9E19600561194 /* UIStepperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStepperTableViewCell.swift; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */,
 				18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */,
 				18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */,
+				392E03DB28C6153C0081780B /* UICatalogBottomSheetViewController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				B8F990122546C98600DFBFE9 /* DefaultTableHeaderView.swift */,
 				B8F990132546C98600DFBFE9 /* UISegmentedControlTableViewCell.swift */,
 				B8F990142546C98600DFBFE9 /* UITextFieldTableViewCell.swift */,
+				3968C75D28C9E19600561194 /* UIStepperTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3968C75E28C9E19600561194 /* UIStepperTableViewCell.swift in Sources */,
 				B8F9903B2546C98700DFBFE9 /* DefaultTableHeaderView.swift in Sources */,
 				B8F990382546C98700DFBFE9 /* UIImage+Utils.swift in Sources */,
 				18E4857E287F19EB0052A6F2 /* StepperCatalogVIew.swift in Sources */,
@@ -435,6 +442,7 @@
 				18E4859C287F19EB0052A6F2 /* UICatalogControlsViewController.swift in Sources */,
 				18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */,
 				18E48581287F19EB0052A6F2 /* CalloutCatalogView.swift in Sources */,
+				392E03DC28C6153C0081780B /* UICatalogBottomSheetViewController.swift in Sources */,
 				18E48584287F19EB0052A6F2 /* CarouselCatalogView.swift in Sources */,
 				18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */,
 				18E485A3287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift in Sources */,

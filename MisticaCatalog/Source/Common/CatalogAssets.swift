@@ -34,6 +34,7 @@ extension UIImage {
     static let tabsIcon = UIImage(named: "Tabs", in: .misticaCatalog, compatibleWith: nil)!
     static let calloutIcon = UIImage(named: "Callout", in: .misticaCatalog, compatibleWith: nil)!
     static let emptyStateIcon = UIImage(named: "EmptyStates", in: .misticaCatalog, compatibleWith: nil)!
+	static let bottomSheet = UIImage(named: "BottomSheets", in: .misticaCatalog, compatibleWith: nil)!
 
     static let highlightedCardImageSample = UIImage(named: "HighlightedCardImageSample", in: .misticaCatalog, compatibleWith: nil)!
     static let highlightedCardBackgroundImageSample = UIImage(named: "HighlightedCardBackgroundSample", in: .misticaCatalog, compatibleWith: nil)!

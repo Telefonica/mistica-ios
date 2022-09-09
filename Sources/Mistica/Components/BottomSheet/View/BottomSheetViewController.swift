@@ -33,9 +33,15 @@ public class BottomSheetViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        bottomSheetView.dismissBottomSheet = { [weak self] selectionResponse in
-            self?.completionHandler(selectionResponse)
-            self?.dismiss(animated: true)
-        }
-    }
+		bottomSheetView.dismissBottomSheet = { [weak self] in
+			self?.dismiss(animated: true)
+		}
+	}
+
+	public override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		if isBeingDismissed {
+			self.completionHandler(bottomSheetView.bottomSheetSelectionResponse)
+		}
+	}
 }

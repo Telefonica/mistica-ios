@@ -106,6 +106,7 @@ final class SheetPresentationController: UIPresentationController {
             }
 
             self.presentedView?.layer.cornerRadius = self.cornerRadius
+			self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         })
     }
 
@@ -138,6 +139,7 @@ final class SheetPresentationController: UIPresentationController {
 
             self.presentedView?.layer.cornerRadius = .zero
             self.backgroundView.effect = nil
+			self.backgroundView.backgroundColor = .clear
         })
     }
 

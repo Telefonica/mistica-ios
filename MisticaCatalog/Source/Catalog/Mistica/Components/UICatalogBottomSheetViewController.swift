@@ -168,7 +168,9 @@ extension UICatalogBottomSheetViewController: UITableViewDataSource, UITableView
             content: [content]
         )
 
-        let viewController = BottomSheetViewController(configuration: configuration) { _ in }
+        let viewController = BottomSheetViewController(configuration: configuration) { sheetResponse in
+			print("TEST - BOTTOM SHEET RESPONSE: \(sheetResponse.selectedIds)")
+		}
         viewController.transitioningDelegate = bottomSheetTransitioningDelegate
         viewController.modalPresentationStyle = .custom
 

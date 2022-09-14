@@ -15,11 +15,16 @@ public enum BottomSheetActionResponse: String {
 
 public class BottomSheetSelectionResponse {
     public var action: BottomSheetActionResponse
-    public var content: [String: String]
+    public var selectedIds: [SheetResponseResult]
 
     public init(action: BottomSheetActionResponse = .dismiss,
-                content: [String: String] = [:]) {
+				selectedIds: [SheetResponseResult] = []) {
         self.action = action
-        self.content = content
+        self.selectedIds = selectedIds
     }
+}
+
+public struct SheetResponseResult: Encodable, Equatable {
+	let id: String
+	let selected: [String]
 }

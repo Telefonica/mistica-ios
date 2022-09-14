@@ -39,7 +39,7 @@ public class BottomSheetView: UIView {
 
     private let config: BottomSheetConfiguration
     private var contentInfo: [String: [String: RadioButton]] = [:]
-    private var contentSelected: [String: String] = [:]
+    private var contentSelected: [SheetResponseResult] = []
     public var dismissBottomSheet: (() -> Void)?
     private var isDismissing: Bool = false
     public var bottomSheetSelectionResponse: BottomSheetSelectionResponse
@@ -55,10 +55,8 @@ public class BottomSheetView: UIView {
         // Initial value for a dismissed response
         bottomSheetSelectionResponse = .init(
             action: .dismiss,
-            content: config.content.reduce([:]) {
-                var dict: [String: String] = [:]
-                dict[$1.id] = $1.selectedId ?? $1.items.first?.id
-                return dict
+            selectedIds: config.content.map {
+				SheetResponseResult(id: $0.id, selected: ($0.selectedId != nil) ? [$0.selectedId!] : [])
             }
         )
         super.init(frame: .zero)
@@ -234,13 +232,13 @@ private extension BottomSheetView {
 
     @objc private func selectItem(_ sender: ItemInformationTapGesture) {
         if let content = contentInfo[sender.contentId], let item = content[sender.itemId] {
-            contentSelected[sender.contentId] = sender.itemId
+			contentSelected.append(.init(id: sender.contentId, selected: [sender.itemId]))
             content.filter { $0.key != sender.itemId }.forEach { $1.isActivated = false }
             item.isActivated = true
             if !isDismissing && sender.autoSubmit {
                 isDismissing = true
                 bottomSheetSelectionResponse.action = .submit
-                bottomSheetSelectionResponse.content = contentSelected
+                bottomSheetSelectionResponse.selectedIds = contentSelected
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.dismissBottomSheet?()
                 }

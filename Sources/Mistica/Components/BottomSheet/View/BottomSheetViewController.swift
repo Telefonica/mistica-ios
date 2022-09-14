@@ -14,7 +14,7 @@ public class BottomSheetViewController: UIViewController {
     public let completionHandler: ((BottomSheetSelectionResponse) -> Void)?
 
     public init(configuration: BottomSheetConfiguration,
-                completionHandler: @escaping (BottomSheetSelectionResponse) -> Void) {
+				completionHandler: ((BottomSheetSelectionResponse) -> Void)?) {
         self.configuration = configuration
         self.completionHandler = completionHandler
         bottomSheetView = BottomSheetView(configuration: configuration)

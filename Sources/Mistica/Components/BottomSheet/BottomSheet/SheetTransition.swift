@@ -53,65 +53,65 @@ final class SheetTransition: UIPercentDrivenInteractiveTransition, UIViewControl
 }
 
 private extension SheetTransition {
-	func presentationInterruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
-		guard let toViewController = transitionContext.viewController(forKey: .to), let toView = transitionContext.view(forKey: .to) else {
-			return UIViewPropertyAnimator()
-		}
+    func presentationInterruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
+        guard let toViewController = transitionContext.viewController(forKey: .to), let toView = transitionContext.view(forKey: .to) else {
+            return UIViewPropertyAnimator()
+        }
 
-		let animator = UIViewPropertyAnimator(duration: transitionDuration(using: transitionContext), dampingRatio: 0.9)
-		presentationAnimator = animator
+        let animator = UIViewPropertyAnimator(duration: transitionDuration(using: transitionContext), dampingRatio: 0.9)
+        presentationAnimator = animator
 
-		toView.frame = transitionContext.finalFrame(for: toViewController)
-		toView.frame.origin.y = transitionContext.containerView.frame.maxY
+        toView.frame = transitionContext.finalFrame(for: toViewController)
+        toView.frame.origin.y = transitionContext.containerView.frame.maxY
 
-		transitionContext.containerView.addSubview(toView)
+        transitionContext.containerView.addSubview(toView)
 
-		animator.addAnimations {
-			toView.frame = transitionContext.finalFrame(for: toViewController)
-		}
+        animator.addAnimations {
+            toView.frame = transitionContext.finalFrame(for: toViewController)
+        }
 
-		animator.addCompletion { position in
-			if case .end = position {
-				transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-				return
-			}
+        animator.addCompletion { position in
+            if case .end = position {
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                return
+            }
 
-			transitionContext.completeTransition(false)
-		}
+            transitionContext.completeTransition(false)
+        }
 
-		animator.addCompletion { [weak self] _ in
-			self?.presentationAnimator = nil
-		}
+        animator.addCompletion { [weak self] _ in
+            self?.presentationAnimator = nil
+        }
 
-		return animator
-	}
+        return animator
+    }
 
-	func dismissInterruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
-		guard let fromView = transitionContext.view(forKey: .from) else {
-			return UIViewPropertyAnimator()
-		}
+    func dismissInterruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
+        guard let fromView = transitionContext.view(forKey: .from) else {
+            return UIViewPropertyAnimator()
+        }
 
-		let animator = UIViewPropertyAnimator(duration: transitionDuration(using: transitionContext), dampingRatio: 0.9)
-		dismissAnimator = animator
+        let animator = UIViewPropertyAnimator(duration: transitionDuration(using: transitionContext), dampingRatio: 0.9)
+        dismissAnimator = animator
 
-		animator.addAnimations {
-			fromView.frame.origin.y = fromView.frame.maxY
-		}
+        animator.addAnimations {
+            fromView.frame.origin.y = fromView.frame.maxY
+        }
 
-		animator.addCompletion { position in
-			if case .end = position {
-				fromView.removeFromSuperview()
-				transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-				return
-			}
+        animator.addCompletion { position in
+            if case .end = position {
+                fromView.removeFromSuperview()
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                return
+            }
 
-			transitionContext.completeTransition(false)
-		}
+            transitionContext.completeTransition(false)
+        }
 
-		animator.addCompletion { [weak self] _ in
-			self?.dismissAnimator = nil
-		}
+        animator.addCompletion { [weak self] _ in
+            self?.dismissAnimator = nil
+        }
 
-		return animator
-	}
+        return animator
+    }
 }

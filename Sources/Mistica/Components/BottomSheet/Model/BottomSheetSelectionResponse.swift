@@ -25,6 +25,12 @@ public class BottomSheetSelectionResponse {
 }
 
 public struct SheetResponseResult: Encodable, Equatable {
-	let id: String
-	let selected: [String]
+	public let id: String
+	public let selected: [String]
+
+	public init(id: String,
+				selected: [String]) {
+		self.id = id
+		self.selected = selected
+	}
 }

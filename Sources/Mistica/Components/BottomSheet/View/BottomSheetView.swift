@@ -88,7 +88,7 @@ private extension BottomSheetView {
         contentStackView.axis = .vertical
         contentStackView.distribution = .fill
         contentStackView.alignment = .leading
-		contentStackView.spacing = 16.0
+        contentStackView.spacing = 16.0
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
 
         // Header section for bottom sheet information

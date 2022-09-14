@@ -121,7 +121,7 @@ private extension BottomSheetView {
         itemsStackView.axis = .vertical
         itemsStackView.distribution = .equalSpacing
         itemsStackView.alignment = .leading
-		itemsStackView.spacing = 8.0
+        itemsStackView.spacing = 8.0
         itemsStackView.translatesAutoresizingMaskIntoConstraints = false
 
         for content in config.content {
@@ -186,11 +186,11 @@ private extension BottomSheetView {
                 itemStackView.addArrangedSubview((contentInfo[content.id]?[item.id])!)
                 itemsStackView.addArrangedSubview(itemStackView)
 
-				let divider = UIView()
-				divider.backgroundColor = .divider
-				itemsStackView.addArrangedSubview(divider)
-				divider.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
-				divider.widthAnchor.constraint(equalTo: itemStackView.widthAnchor).isActive = true
+                let divider = UIView()
+                divider.backgroundColor = .divider
+                itemsStackView.addArrangedSubview(divider)
+                divider.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
+                divider.widthAnchor.constraint(equalTo: itemStackView.widthAnchor).isActive = true
 
                 itemStackView.widthAnchor.constraint(equalTo: itemsStackView.widthAnchor).isActive = true
             }

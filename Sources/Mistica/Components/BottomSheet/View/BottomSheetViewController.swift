@@ -11,7 +11,7 @@ import UIKit
 public class BottomSheetViewController: UIViewController {
     private let bottomSheetView: BottomSheetView
     private let configuration: BottomSheetConfiguration
-    public let completionHandler: (BottomSheetSelectionResponse) -> Void
+    public let completionHandler: ((BottomSheetSelectionResponse) -> Void)?
 
     public init(configuration: BottomSheetConfiguration,
                 completionHandler: @escaping (BottomSheetSelectionResponse) -> Void) {
@@ -41,7 +41,7 @@ public class BottomSheetViewController: UIViewController {
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if isBeingDismissed {
-            completionHandler(bottomSheetView.bottomSheetSelectionResponse)
+            completionHandler?(bottomSheetView.bottomSheetSelectionResponse)
         }
     }
 }

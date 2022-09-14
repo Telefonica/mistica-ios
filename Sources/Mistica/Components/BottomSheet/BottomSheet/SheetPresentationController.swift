@@ -142,121 +142,123 @@ final class SheetPresentationController: UIPresentationController {
             self.backgroundView.backgroundColor = .clear
         })
     }
+}
 
-    // MARK: - Private Helpers
+private extension SheetPresentationController {
+	// MARK: - Private Helpers
 
-    /// Lays out the accessory views of the presentation.
-    private func layoutAccessoryViews() {
-        guard let containerView = containerView else {
-            return
-        }
+	/// Lays out the accessory views of the presentation.
+	private func layoutAccessoryViews() {
+		guard let containerView = containerView else {
+			return
+		}
 
-        backgroundView.frame = containerView.bounds
+		backgroundView.frame = containerView.bounds
 
-        guard let presentedView = presentedView else {
-            return
-        }
+		guard let presentedView = presentedView else {
+			return
+		}
 
-        handleView.frame.origin.y = 8
-        handleView.center.x = presentedView.center.x
+		handleView.frame.origin.y = 8
+		handleView.center.x = presentedView.center.x
 
-        handleView.layer.cornerRadius = handleView.frame.height / 2
-    }
+		handleView.layer.cornerRadius = handleView.frame.height / 2
+	}
 
-    /// Sets up the interaction on the `presentedView`.
-    ///
-    /// If the view embeds a `UIScrollView` we will ask the presented view to lay out its contents, then ask for the scroll view's content size.
-    /// If the content size is bigger than the frame of the scroll view, then we use the drag of the scroll as driver for the dismiss interaction.
-    /// Otherwise we just add the pan gesture recognizer to the presented view.
-    private func setupPresentedViewInteraction() {
-        guard let presentedView = presentedView else {
-            return
-        }
+	/// Sets up the interaction on the `presentedView`.
+	///
+	/// If the view embeds a `UIScrollView` we will ask the presented view to lay out its contents, then ask for the scroll view's content size.
+	/// If the content size is bigger than the frame of the scroll view, then we use the drag of the scroll as driver for the dismiss interaction.
+	/// Otherwise we just add the pan gesture recognizer to the presented view.
+	private func setupPresentedViewInteraction() {
+		guard let presentedView = presentedView else {
+			return
+		}
 
-        guard let presentedScrollView = presentedScrollView else {
-            presentedView.addGestureRecognizer(panGesture)
-            return
-        }
+		guard let presentedScrollView = presentedScrollView else {
+			presentedView.addGestureRecognizer(panGesture)
+			return
+		}
 
-        presentedView.layoutIfNeeded()
+		presentedView.layoutIfNeeded()
 
-        if presentedScrollView.contentSize.height > presentedScrollView.frame.height {
-            presentedScrollView.delegate = self
-        } else {
-            presentedView.addGestureRecognizer(panGesture)
-        }
-    }
+		if presentedScrollView.contentSize.height > presentedScrollView.frame.height {
+			presentedScrollView.delegate = self
+		} else {
+			presentedView.addGestureRecognizer(panGesture)
+		}
+	}
 
-    /// Triggers the dismiss transition in an interactive manner.
-    /// - Parameter isInteractive: Whether the transition should be started interactively by the user.
-    private func dismiss(interactively isInteractive: Bool) {
-        transitioningDelegate?.transition.wantsInteractiveStart = isInteractive
-        presentedViewController.dismiss(animated: true)
-    }
+	/// Triggers the dismiss transition in an interactive manner.
+	/// - Parameter isInteractive: Whether the transition should be started interactively by the user.
+	private func dismiss(interactively isInteractive: Bool) {
+		transitioningDelegate?.transition.wantsInteractiveStart = isInteractive
+		presentedViewController.dismiss(animated: true)
+	}
 
-    /// Updates the progress of the dismiss transition.
-    /// - Parameter translation: The translation of the presented view used to calculate the progress.
-    private func updateTransitionProgress(for translation: CGPoint) {
-        guard let transitioningDelegate = transitioningDelegate else {
-            return
-        }
+	/// Updates the progress of the dismiss transition.
+	/// - Parameter translation: The translation of the presented view used to calculate the progress.
+	private func updateTransitionProgress(for translation: CGPoint) {
+		guard let transitioningDelegate = transitioningDelegate else {
+			return
+		}
 
-        guard let presentedView = presentedView else {
-            return
-        }
+		guard let presentedView = presentedView else {
+			return
+		}
 
-        let adjustedHeight = presentedView.frame.height - translation.y
-        let progress = 1 - (adjustedHeight / presentedView.frame.height)
-        transitioningDelegate.transition.update(progress)
-    }
+		let adjustedHeight = presentedView.frame.height - translation.y
+		let progress = 1 - (adjustedHeight / presentedView.frame.height)
+		transitioningDelegate.transition.update(progress)
+	}
 
-    /// Handles the ended interaction, either a drag or scroll, on the presented view.
-    private func handleEndedInteraction() {
-        guard let transitioningDelegate = transitioningDelegate else {
-            return
-        }
+	/// Handles the ended interaction, either a drag or scroll, on the presented view.
+	private func handleEndedInteraction() {
+		guard let transitioningDelegate = transitioningDelegate else {
+			return
+		}
 
-        if transitioningDelegate.transition.dismissFractionComplete > dismissThreshold {
-            transitioningDelegate.transition.finish()
-        } else {
-            transitioningDelegate.transition.cancel()
-        }
-    }
+		if transitioningDelegate.transition.dismissFractionComplete > dismissThreshold {
+			transitioningDelegate.transition.finish()
+		} else {
+			transitioningDelegate.transition.cancel()
+		}
+	}
 
-    @objc
-    private func tappedBackgroundView() {
-        dismiss(interactively: false)
-    }
+	@objc
+	private func tappedBackgroundView() {
+		dismiss(interactively: false)
+	}
 
-    @objc
-    private func pannedPresentedView(_ recognizer: UIPanGestureRecognizer) {
-        guard let presentedView = presentedView, let containerView = containerView else {
-            return
-        }
+	@objc
+	private func pannedPresentedView(_ recognizer: UIPanGestureRecognizer) {
+		guard let presentedView = presentedView, let containerView = containerView else {
+			return
+		}
 
-        switch recognizer.state {
-        case .began:
-            dismiss(interactively: true)
+		switch recognizer.state {
+		case .began:
+			dismiss(interactively: true)
 
-        case .changed:
-            guard presentedView.frame.maxY >= containerView.frame.maxY else {
-                return
-            }
+		case .changed:
+			guard presentedView.frame.maxY >= containerView.frame.maxY else {
+				return
+			}
 
-            let translation = recognizer.translation(in: presentedView)
-            updateTransitionProgress(for: translation)
+			let translation = recognizer.translation(in: presentedView)
+			updateTransitionProgress(for: translation)
 
-        case .ended, .cancelled, .failed:
-            handleEndedInteraction()
+		case .ended, .cancelled, .failed:
+			handleEndedInteraction()
 
-        // swiftlint:disable:next unnecessary_case_break
-        case .possible:
-            break
+		// swiftlint:disable:next unnecessary_case_break
+		case .possible:
+			break
 
-        @unknown default:
-            break
-        }
-    }
+		@unknown default:
+			break
+		}
+	}
 }
 
 extension SheetPresentationController: UIScrollViewDelegate {

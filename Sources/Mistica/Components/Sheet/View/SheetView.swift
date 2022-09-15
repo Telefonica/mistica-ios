@@ -80,12 +80,11 @@ private extension SheetView {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
 
         let wrapperView = UIView()
-        scrollView.addSubview(wrapperView)
         wrapperView.translatesAutoresizingMaskIntoConstraints = false
 
         let contentStackView = UIStackView()
         contentStackView.axis = .vertical
-        contentStackView.distribution = .fillProportionally
+		contentStackView.distribution = .fill
         contentStackView.alignment = .leading
         contentStackView.spacing = 16.0
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -93,17 +92,19 @@ private extension SheetView {
         // Header section for sheet information
         let headerStackView = UIStackView()
         headerStackView.axis = .vertical
-        headerStackView.distribution = .fillProportionally
+		headerStackView.distribution = .fillEqually
         headerStackView.alignment = .leading
         headerStackView.spacing = 8.0
-
+		headerStackView.translatesAutoresizingMaskIntoConstraints = false
         headerStackView.addArrangedSubview(subtitleLabel)
         headerStackView.addArrangedSubview(descriptionLabel)
+		subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+		descriptionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
 
         // Section for every item in sheet request content
         let itemsStackView = UIStackView()
         itemsStackView.axis = .vertical
-        itemsStackView.distribution = .equalSpacing
+        itemsStackView.distribution = .fill
         itemsStackView.alignment = .leading
         itemsStackView.spacing = 16.0
         itemsStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -192,7 +193,7 @@ private extension SheetView {
         scrollHeightMax.priority = .required
         scrollHeightMax.isActive = true
 
-        let scrollHeight = scrollView.heightAnchor.constraint(equalTo: wrapperView.heightAnchor)
+		let scrollHeight = scrollView.heightAnchor.constraint(equalTo: wrapperView.heightAnchor)
         scrollHeight.priority = .defaultHigh
         scrollHeight.isActive = true
 

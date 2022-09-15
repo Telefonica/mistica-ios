@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "BottomSheets.pdf",
+      "filename" : "Bottom Sheets.svg",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Bottom Sheets_Dark.pdf",
+      "filename" : "Bottom Sheets_Dark.svg",
       "idiom" : "universal"
     }
   ],

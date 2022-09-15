@@ -14,14 +14,14 @@ public enum SheetActionResponse: String {
 }
 
 public class SheetSelectionResponse {
-	public var action: SheetActionResponse
-	public var selectedIds: [SheetResponseResult]
+    public var action: SheetActionResponse
+    public var selectedIds: [SheetResponseResult]
 
-	public init(action: SheetActionResponse = .dismiss,
-				selectedIds: [SheetResponseResult] = []) {
-		self.action = action
-		self.selectedIds = selectedIds
-	}
+    public init(action: SheetActionResponse = .dismiss,
+                selectedIds: [SheetResponseResult] = []) {
+        self.action = action
+        self.selectedIds = selectedIds
+    }
 }
 
 public struct SheetResponseResult: Encodable, Equatable {

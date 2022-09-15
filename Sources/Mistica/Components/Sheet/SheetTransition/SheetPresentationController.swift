@@ -13,7 +13,7 @@ final class SheetPresentationController: UIPresentationController {
     // MARK: - Constants
 
     /// The corner radius of the sheet.
-	private let cornerRadius: CGFloat = 8.0
+    private let cornerRadius: CGFloat = 8.0
 
     /// The percentage to trigger the dismiss transition.
     private let dismissThreshold: CGFloat = 0.3
@@ -72,8 +72,8 @@ final class SheetPresentationController: UIPresentationController {
     /// The view displayed behind the presented controller.
     private lazy var overlayView: UIView = {
         let view = UIView()
-		view.alpha = .zero
-		view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        view.alpha = .zero
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedBackgroundView)))
         return view
     }()
@@ -81,7 +81,7 @@ final class SheetPresentationController: UIPresentationController {
     /// The view displaying a handle on the presented view.
     private let handleView: UIView = {
         let view = UIView()
-		view.backgroundColor = .control
+        view.backgroundColor = .control
         view.frame.size = CGSize(width: 40, height: 4)
         return view
     }()
@@ -98,7 +98,7 @@ final class SheetPresentationController: UIPresentationController {
 
         presentedView?.addSubview(handleView)
 
-		overlayView.fade(toAlpha: 0.5, duration: 0.25)
+        overlayView.fade(toAlpha: 0.5, duration: 0.25)
 
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { [weak self] _ in
             guard let self = self else {
@@ -137,7 +137,7 @@ final class SheetPresentationController: UIPresentationController {
             }
 
             self.presentedView?.layer.cornerRadius = .zero
-			self.overlayView.fade(toAlpha: 0.0, duration: 0.25)
+            self.overlayView.fade(toAlpha: 0.0, duration: 0.25)
         })
     }
 }

@@ -39,7 +39,7 @@ public class SheetView: UIView {
 
     private let config: SheetConfiguration
     private var contentInfo: [String: [String: RadioButton]] = [:]
-	private var contentSelected: [SheetResponseResult] = []
+    private var contentSelected: [SheetResponseResult] = []
     public var dismissSheet: (() -> Void)?
     private var isDismissing: Bool = false
     public var sheetSelectionResponse: SheetSelectionResponse
@@ -73,7 +73,7 @@ public class SheetView: UIView {
 private extension SheetView {
     func setupView() {
         backgroundColor = .backgroundContainer
-		titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
@@ -105,7 +105,7 @@ private extension SheetView {
         itemsStackView.axis = .vertical
         itemsStackView.distribution = .equalSpacing
         itemsStackView.alignment = .leading
-		itemsStackView.spacing = 16.0
+        itemsStackView.spacing = 16.0
         itemsStackView.translatesAutoresizingMaskIntoConstraints = false
 
         for content in config.content {
@@ -182,7 +182,7 @@ private extension SheetView {
 
         contentStackView.addArrangedSubview(headerStackView)
         contentStackView.addArrangedSubview(itemsStackView)
-		addSubview(titleLabel)
+        addSubview(titleLabel)
         addSubview(scrollView)
         scrollView.addSubview(wrapperView)
         wrapperView.addSubview(contentStackView)
@@ -197,11 +197,11 @@ private extension SheetView {
         scrollHeight.isActive = true
 
         NSLayoutConstraint.activate([
-			titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24.0),
-			titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
-			titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24.0),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
 
-			scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
+            scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
             scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
@@ -217,7 +217,7 @@ private extension SheetView {
             contentStackView.bottomAnchor.constraint(equalTo: wrapperView.bottomAnchor, constant: -8.0),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
 
-            itemsStackView.widthAnchor.constraint(equalTo: contentStackView.widthAnchor),
+            itemsStackView.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)
         ])
     }
 
@@ -229,7 +229,7 @@ private extension SheetView {
             if !isDismissing && sender.autoSubmit {
                 isDismissing = true
                 sheetSelectionResponse.action = .submit
-				sheetSelectionResponse.selectedIds = contentSelected
+                sheetSelectionResponse.selectedIds = contentSelected
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.dismissSheet?()
                 }

@@ -11,10 +11,10 @@ import UIKit
 public class SheetViewController: UIViewController {
     private let sheetView: SheetView
     private let configuration: SheetConfiguration
-	public let completionHandler: ((SheetSelectionResponse) -> Void)?
+    public let completionHandler: ((SheetSelectionResponse) -> Void)?
 
     public init(configuration: SheetConfiguration,
-				completionHandler: ((SheetSelectionResponse) -> Void)?) {
+                completionHandler: ((SheetSelectionResponse) -> Void)?) {
         self.configuration = configuration
         self.completionHandler = completionHandler
         sheetView = SheetView(configuration: configuration)
@@ -41,7 +41,7 @@ public class SheetViewController: UIViewController {
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if isBeingDismissed {
-			completionHandler?(sheetView.sheetSelectionResponse)
+            completionHandler?(sheetView.sheetSelectionResponse)
         }
     }
 }

@@ -84,7 +84,7 @@ private extension SheetView {
 
         let contentStackView = UIStackView()
         contentStackView.axis = .vertical
-		contentStackView.distribution = .fill
+        contentStackView.distribution = .fill
         contentStackView.alignment = .leading
         contentStackView.spacing = 16.0
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -92,14 +92,14 @@ private extension SheetView {
         // Header section for sheet information
         let headerStackView = UIStackView()
         headerStackView.axis = .vertical
-		headerStackView.distribution = .fillEqually
+        headerStackView.distribution = .fillEqually
         headerStackView.alignment = .leading
         headerStackView.spacing = 8.0
-		headerStackView.translatesAutoresizingMaskIntoConstraints = false
+        headerStackView.translatesAutoresizingMaskIntoConstraints = false
         headerStackView.addArrangedSubview(subtitleLabel)
         headerStackView.addArrangedSubview(descriptionLabel)
-		subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-		descriptionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        descriptionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
 
         // Section for every item in sheet request content
         let itemsStackView = UIStackView()
@@ -193,7 +193,7 @@ private extension SheetView {
         scrollHeightMax.priority = .required
         scrollHeightMax.isActive = true
 
-		let scrollHeight = scrollView.heightAnchor.constraint(equalTo: wrapperView.heightAnchor)
+        let scrollHeight = scrollView.heightAnchor.constraint(equalTo: wrapperView.heightAnchor)
         scrollHeight.priority = .defaultHigh
         scrollHeight.isActive = true
 

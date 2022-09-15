@@ -1,5 +1,5 @@
 //
-//  BottomSheetView.swift
+//  SheetView.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class BottomSheetView: UIView {
+public class SheetView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = config.header.title
@@ -37,12 +37,12 @@ public class BottomSheetView: UIView {
         return label
     }()
 
-    private let config: BottomSheetConfiguration
+    private let config: SheetConfiguration
     private var contentInfo: [String: [String: RadioButton]] = [:]
-    private var contentSelected: [SheetResponseResult] = []
-    public var dismissBottomSheet: (() -> Void)?
+	private var contentSelected: [SheetResponseResult] = []
+    public var dismissSheet: (() -> Void)?
     private var isDismissing: Bool = false
-    public var bottomSheetSelectionResponse: BottomSheetSelectionResponse
+    public var sheetSelectionResponse: SheetSelectionResponse
 
     private class ItemInformationTapGesture: UITapGestureRecognizer {
         var contentId: String = ""
@@ -50,10 +50,10 @@ public class BottomSheetView: UIView {
         var autoSubmit: Bool = false
     }
 
-    public init(configuration: BottomSheetConfiguration) {
+    public init(configuration: SheetConfiguration) {
         config = configuration
         // Initial value for a dismissed response
-        bottomSheetSelectionResponse = .init(
+        sheetSelectionResponse = .init(
             action: .dismiss,
             selectedIds: config.content.map {
                 SheetResponseResult(id: $0.id, selected: ($0.selectedId != nil) ? [$0.selectedId!] : [])
@@ -70,9 +70,10 @@ public class BottomSheetView: UIView {
     }
 }
 
-private extension BottomSheetView {
+private extension SheetView {
     func setupView() {
-        backgroundColor = .white
+        backgroundColor = .backgroundContainer
+		titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
@@ -84,42 +85,27 @@ private extension BottomSheetView {
 
         let contentStackView = UIStackView()
         contentStackView.axis = .vertical
-        contentStackView.distribution = .fill
+        contentStackView.distribution = .fillProportionally
         contentStackView.alignment = .leading
         contentStackView.spacing = 16.0
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
 
-        // Header section for bottom sheet information
+        // Header section for sheet information
         let headerStackView = UIStackView()
         headerStackView.axis = .vertical
-        headerStackView.distribution = .fill
+        headerStackView.distribution = .fillProportionally
         headerStackView.alignment = .leading
-        headerStackView.spacing = 4.0
+        headerStackView.spacing = 8.0
 
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 20.0)
-        ])
-        headerStackView.addArrangedSubview(titleLabel)
-
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            subtitleLabel.heightAnchor.constraint(equalToConstant: 20.0)
-        ])
         headerStackView.addArrangedSubview(subtitleLabel)
-
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            descriptionLabel.heightAnchor.constraint(equalToConstant: 20.0)
-        ])
         headerStackView.addArrangedSubview(descriptionLabel)
 
-        // Section for every item in bottom sheet request content
+        // Section for every item in sheet request content
         let itemsStackView = UIStackView()
         itemsStackView.axis = .vertical
         itemsStackView.distribution = .equalSpacing
         itemsStackView.alignment = .leading
-        itemsStackView.spacing = 8.0
+		itemsStackView.spacing = 16.0
         itemsStackView.translatesAutoresizingMaskIntoConstraints = false
 
         for content in config.content {
@@ -196,11 +182,12 @@ private extension BottomSheetView {
 
         contentStackView.addArrangedSubview(headerStackView)
         contentStackView.addArrangedSubview(itemsStackView)
+		addSubview(titleLabel)
         addSubview(scrollView)
         scrollView.addSubview(wrapperView)
         wrapperView.addSubview(contentStackView)
 
-        // Set bottom sheet maximum height in 70% of device screen height.
+        // Set sheet maximum height in 70% of device screen height.
         let scrollHeightMax = scrollView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height * 0.7)
         scrollHeightMax.priority = .required
         scrollHeightMax.isActive = true
@@ -210,7 +197,11 @@ private extension BottomSheetView {
         scrollHeight.isActive = true
 
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: topAnchor, constant: 16.0),
+			titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24.0),
+			titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
+			titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
+
+			scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
             scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
@@ -226,7 +217,7 @@ private extension BottomSheetView {
             contentStackView.bottomAnchor.constraint(equalTo: wrapperView.bottomAnchor, constant: -8.0),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
 
-            itemsStackView.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)
+            itemsStackView.widthAnchor.constraint(equalTo: contentStackView.widthAnchor),
         ])
     }
 
@@ -237,10 +228,10 @@ private extension BottomSheetView {
             item.isActivated = true
             if !isDismissing && sender.autoSubmit {
                 isDismissing = true
-                bottomSheetSelectionResponse.action = .submit
-                bottomSheetSelectionResponse.selectedIds = contentSelected
+                sheetSelectionResponse.action = .submit
+				sheetSelectionResponse.selectedIds = contentSelected
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.dismissBottomSheet?()
+                    self.dismissSheet?()
                 }
             }
         }

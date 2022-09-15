@@ -93,7 +93,7 @@ private extension CatalogRow {
              .header,
              .forms,
              .controls,
-             .bottomSheet:
+             .sheet:
             notImplementedView
         }
     }
@@ -141,8 +141,8 @@ private extension CatalogRow {
             ComponentViewController(UICatalogCalloutViewController())
         case .emptyState:
             ComponentViewController(UICatalogEmptyStateViewController())
-        case .bottomSheet:
-            ComponentViewController(UICatalogBottomSheetViewController())
+        case .sheet:
+            ComponentViewController(UICatalogSheetViewController())
         case .chips,
              .carousel:
             notImplementedView

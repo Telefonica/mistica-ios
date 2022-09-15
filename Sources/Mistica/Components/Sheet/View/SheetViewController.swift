@@ -1,5 +1,5 @@
 //
-//  BottomSheetViewController.swift
+//  SheetViewController.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class BottomSheetViewController: UIViewController {
-    private let bottomSheetView: BottomSheetView
-    private let configuration: BottomSheetConfiguration
-    public let completionHandler: ((BottomSheetSelectionResponse) -> Void)?
+public class SheetViewController: UIViewController {
+    private let sheetView: SheetView
+    private let configuration: SheetConfiguration
+	public let completionHandler: ((SheetSelectionResponse) -> Void)?
 
-    public init(configuration: BottomSheetConfiguration,
-                completionHandler: ((BottomSheetSelectionResponse) -> Void)?) {
+    public init(configuration: SheetConfiguration,
+				completionHandler: ((SheetSelectionResponse) -> Void)?) {
         self.configuration = configuration
         self.completionHandler = completionHandler
-        bottomSheetView = BottomSheetView(configuration: configuration)
+        sheetView = SheetView(configuration: configuration)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -27,13 +27,13 @@ public class BottomSheetViewController: UIViewController {
     }
 
     override public func loadView() {
-        view = bottomSheetView
+        view = sheetView
     }
 
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        bottomSheetView.dismissBottomSheet = { [weak self] in
+        sheetView.dismissSheet = { [weak self] in
             self?.dismiss(animated: true)
         }
     }
@@ -41,7 +41,7 @@ public class BottomSheetViewController: UIViewController {
     override public func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if isBeingDismissed {
-            completionHandler?(bottomSheetView.bottomSheetSelectionResponse)
+			completionHandler?(sheetView.sheetSelectionResponse)
         }
     }
 }

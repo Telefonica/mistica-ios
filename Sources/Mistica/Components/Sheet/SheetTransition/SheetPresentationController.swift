@@ -8,12 +8,12 @@
 
 import UIKit
 
-/// An object that manages the presentation of a controller with a bottom sheet appearance.
+/// An object that manages the presentation of a controller with a  sheet appearance.
 final class SheetPresentationController: UIPresentationController {
     // MARK: - Constants
 
     /// The corner radius of the sheet.
-    private let cornerRadius: CGFloat = 24
+	private let cornerRadius: CGFloat = 8.0
 
     /// The percentage to trigger the dismiss transition.
     private let dismissThreshold: CGFloat = 0.3
@@ -70,8 +70,10 @@ final class SheetPresentationController: UIPresentationController {
     // MARK: - UI Elements
 
     /// The view displayed behind the presented controller.
-    private lazy var backgroundView: UIVisualEffectView = {
-        let view = UIVisualEffectView(effect: nil)
+    private lazy var overlayView: UIView = {
+        let view = UIView()
+		view.alpha = .zero
+		view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedBackgroundView)))
         return view
     }()
@@ -79,11 +81,7 @@ final class SheetPresentationController: UIPresentationController {
     /// The view displaying a handle on the presented view.
     private let handleView: UIView = {
         let view = UIView()
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemFill
-        } else {
-            view.backgroundColor = .lightGray
-        }
+		view.backgroundColor = .control
         view.frame.size = CGSize(width: 40, height: 4)
         return view
     }()
@@ -96,9 +94,11 @@ final class SheetPresentationController: UIPresentationController {
     override func presentationTransitionWillBegin() {
         super.presentationTransitionWillBegin()
 
-        containerView?.addSubview(backgroundView)
+        containerView?.addSubview(overlayView)
 
         presentedView?.addSubview(handleView)
+
+		overlayView.fade(toAlpha: 0.5, duration: 0.25)
 
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { [weak self] _ in
             guard let self = self else {
@@ -106,7 +106,6 @@ final class SheetPresentationController: UIPresentationController {
             }
 
             self.presentedView?.layer.cornerRadius = self.cornerRadius
-            self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         })
     }
 
@@ -138,8 +137,7 @@ final class SheetPresentationController: UIPresentationController {
             }
 
             self.presentedView?.layer.cornerRadius = .zero
-            self.backgroundView.effect = nil
-            self.backgroundView.backgroundColor = .clear
+			self.overlayView.fade(toAlpha: 0.0, duration: 0.25)
         })
     }
 }
@@ -153,7 +151,7 @@ private extension SheetPresentationController {
             return
         }
 
-        backgroundView.frame = containerView.bounds
+        overlayView.frame = containerView.bounds
 
         guard let presentedView = presentedView else {
             return

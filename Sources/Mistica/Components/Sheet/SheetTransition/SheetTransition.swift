@@ -22,7 +22,7 @@ final class SheetTransition: UIPercentDrivenInteractiveTransition, UIViewControl
     private var presentationAnimator: UIViewPropertyAnimator?
 
     /// The duration of the transition animation.
-    private let animationDuration: TimeInterval = 0.75
+    private let animationDuration: TimeInterval = 0.5
 
     // MARK: - Computed Properties
 

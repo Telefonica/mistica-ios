@@ -1,5 +1,5 @@
 //
-//  BottomSheetConfiguration.swift
+//  SheetConfiguration.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -9,18 +9,18 @@
 import Foundation
 import UIKit
 
-public struct BottomSheetConfiguration {
-    public var header: BottomSheetHeader
-    public var content: [BottomSheetList]
+public struct SheetConfiguration {
+    public var header: SheetHeader
+    public var content: [SheetList]
 
-    public init(header: BottomSheetHeader,
-                content: [BottomSheetList]) {
+    public init(header: SheetHeader,
+                content: [SheetList]) {
         self.header = header
         self.content = content
     }
 }
 
-public struct BottomSheetHeader {
+public struct SheetHeader {
     public var title: String?
     public var subtitle: String?
     public var description: String?
@@ -34,20 +34,20 @@ public struct BottomSheetHeader {
     }
 }
 
-public struct BottomSheetList {
+public struct SheetList {
     public var id: String
     public var type: String
     public var listType: String?
     public var autoSubmit: Bool?
     public var selectedId: String?
-    public var items: [BottomSheetListRow]
+    public var items: [SheetListRow]
 
     public init(id: String,
                 type: String,
                 listType: String? = nil,
                 autoSubmit: Bool? = nil,
                 selectedId: String? = nil,
-                items: [BottomSheetListRow]) {
+                items: [SheetListRow]) {
         self.id = id
         self.type = type
         self.listType = listType
@@ -57,7 +57,7 @@ public struct BottomSheetList {
     }
 }
 
-public struct BottomSheetListRow {
+public struct SheetListRow {
     public var id: String
     public var title: String?
     public var description: String?

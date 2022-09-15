@@ -1,5 +1,5 @@
 //
-//  UICatalogBottomSheetViewController.swift
+//  UICatalogSheetViewController.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -15,10 +15,10 @@ private enum Section: Int, CaseIterable {
     case description
     case numberOfElements
     case hasAsset
-    case showBottom
+    case showSheet
 }
 
-class UICatalogBottomSheetViewController: UIViewController {
+class UICatalogSheetViewController: UIViewController {
     private lazy var tableView: UITableView = {
         if #available(iOS 13.0, *) {
             return UITableView(frame: .zero, style: .insetGrouped)
@@ -67,10 +67,10 @@ class UICatalogBottomSheetViewController: UIViewController {
         return cell
     }()
 
-    private lazy var showBottomSheetCell: UITableViewCell = {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "showBottomSheet")
+    private lazy var showSheetCell: UITableViewCell = {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "showSheet")
         cell.textLabel?.textColor = .textLink
-        cell.textLabel?.text = "Show Bottom Sheet"
+        cell.textLabel?.text = "Show Sheet"
         return cell
     }()
 
@@ -80,10 +80,10 @@ class UICatalogBottomSheetViewController: UIViewController {
         [descriptionCell],
         [numberOfElementsCell],
         [assetCell],
-        [showBottomSheetCell]
+        [showSheetCell]
     ]
 
-    private let bottomSheetTransitioningDelegate = SheetTransitioningDelegate()
+    private let sheetTransitioningDelegate = SheetTransitioningDelegate()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -119,7 +119,7 @@ class UICatalogBottomSheetViewController: UIViewController {
     }
 }
 
-extension UICatalogBottomSheetViewController: UITableViewDataSource, UITableViewDelegate {
+extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in _: UITableView) -> Int {
         Section.allCases.count
     }
@@ -141,8 +141,8 @@ extension UICatalogBottomSheetViewController: UITableViewDataSource, UITableView
         tableView.deselectRow(animated: true)
         view.endEditing(true)
 
-        var rows: [BottomSheetListRow] = []
-        for index in 1 ... bottomSheetNumElements {
+        var rows: [SheetListRow] = []
+        for index in 1 ... sheetNumElements {
             rows.append(.init(
                 id: index.description,
                 title: "Element \(index)",
@@ -150,7 +150,7 @@ extension UICatalogBottomSheetViewController: UITableViewDataSource, UITableView
                 icon: assetCell.segmentedControl.selectedSegmentIndex == 0 ? .imageIcon : nil
             ))
         }
-        let content: BottomSheetList = .init(
+        let content: SheetList = .init(
             id: UUID().uuidString,
             type: "LIST",
             listType: "SINGLE_SELECTION",
@@ -159,40 +159,40 @@ extension UICatalogBottomSheetViewController: UITableViewDataSource, UITableView
             items: rows
         )
 
-        let configuration = BottomSheetConfiguration(
+        let configuration = SheetConfiguration(
             header: .init(
-                title: bottomSheetTitle,
-                subtitle: bottomSheetSubtitle,
-                description: bottomSheetDescription
+                title: sheetTitle,
+                subtitle: sheetSubtitle,
+                description: sheetDescription
             ),
             content: [content]
         )
 
-        let viewController = BottomSheetViewController(configuration: configuration) { _ in }
-        viewController.transitioningDelegate = bottomSheetTransitioningDelegate
+        let viewController = SheetViewController(configuration: configuration) { _ in }
+        viewController.transitioningDelegate = sheetTransitioningDelegate
         viewController.modalPresentationStyle = .custom
 
         present(viewController, animated: true)
     }
 }
 
-private extension UICatalogBottomSheetViewController {
-    var bottomSheetTitle: String? {
+private extension UICatalogSheetViewController {
+    var sheetTitle: String? {
         guard let text = titleCell.textField.text, !text.isEmpty else { return nil }
         return text
     }
 
-    var bottomSheetSubtitle: String? {
+    var sheetSubtitle: String? {
         guard let text = subtitleCell.textField.text, !text.isEmpty else { return nil }
         return text
     }
 
-    var bottomSheetDescription: String? {
+    var sheetDescription: String? {
         guard let text = descriptionCell.textField.text, !text.isEmpty else { return nil }
         return text
     }
 
-    var bottomSheetNumElements: Int {
+    var sheetNumElements: Int {
         Int(numberOfElementsCell.currentValue)
     }
 }
@@ -205,7 +205,7 @@ private extension Section {
         case .description: return "Description"
         case .numberOfElements: return "Configuration"
         case .hasAsset: return "Has asset"
-        case .showBottom: return nil
+        case .showSheet: return nil
         }
     }
 }

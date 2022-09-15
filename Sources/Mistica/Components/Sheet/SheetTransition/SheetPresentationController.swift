@@ -73,7 +73,7 @@ final class SheetPresentationController: UIPresentationController {
     private lazy var overlayView: UIView = {
         let view = UIView()
         view.alpha = .zero
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+		view.backgroundColor = .backgroundOverlay
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedBackgroundView)))
         return view
     }()

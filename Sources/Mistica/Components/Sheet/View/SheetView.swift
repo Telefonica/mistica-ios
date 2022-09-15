@@ -112,12 +112,11 @@ private extension SheetView {
         for content in config.content {
             contentInfo[content.id] = [:]
             for item in content.items {
-
-				let containerItemStackView = UIStackView()
-				containerItemStackView.axis = .horizontal
-				containerItemStackView.distribution = .fill
-				containerItemStackView.alignment = .center
-				containerItemStackView.spacing = 16.0
+                let containerItemStackView = UIStackView()
+                containerItemStackView.axis = .horizontal
+                containerItemStackView.distribution = .fill
+                containerItemStackView.alignment = .center
+                containerItemStackView.spacing = 16.0
 
                 let itemStackView = UIStackView()
                 itemStackView.axis = .horizontal
@@ -133,8 +132,8 @@ private extension SheetView {
 
                 if let icon = item.icon {
                     let imageView = UIImageView()
-					imageView.heightAnchor.constraint(equalToConstant: 24.0).isActive = true
-					imageView.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
+                    imageView.heightAnchor.constraint(equalToConstant: 24.0).isActive = true
+                    imageView.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
                     imageView.contentMode = .scaleAspectFit
                     imageView.image = icon
                     itemStackView.addArrangedSubview(imageView)
@@ -151,7 +150,7 @@ private extension SheetView {
                 titleElementLabel.textColor = .textPrimary
                 titleElementLabel.font = .textPreset3(weight: .regular)
                 titleElementLabel.textAlignment = .left
-				titleElementLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+                titleElementLabel.setContentCompressionResistancePriority(.required, for: .vertical)
 
                 elementTextStackView.addArrangedSubview(titleElementLabel)
 
@@ -162,12 +161,12 @@ private extension SheetView {
                     descriptionElementLabel.textColor = .textSecondary
                     descriptionElementLabel.font = .textPreset2(weight: .regular)
                     descriptionElementLabel.textAlignment = .left
-					descriptionElementLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+                    descriptionElementLabel.setContentCompressionResistancePriority(.required, for: .vertical)
                     elementTextStackView.addArrangedSubview(descriptionElementLabel)
                 }
 
                 itemStackView.addArrangedSubview(elementTextStackView)
-				containerItemStackView.addArrangedSubview(itemStackView)
+                containerItemStackView.addArrangedSubview(itemStackView)
 
                 let radioButton = RadioButton()
                 radioButton.isActivated = item.id == content.selectedId
@@ -176,7 +175,7 @@ private extension SheetView {
                 radioButton.widthAnchor.constraint(equalToConstant: 20.0).isActive = true
 
                 contentInfo[content.id]?[item.id] = radioButton
-				containerItemStackView.addArrangedSubview((contentInfo[content.id]?[item.id])!)
+                containerItemStackView.addArrangedSubview((contentInfo[content.id]?[item.id])!)
                 itemsStackView.addArrangedSubview(containerItemStackView)
 
                 let divider = UIView()

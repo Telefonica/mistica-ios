@@ -116,7 +116,7 @@ private extension SheetView {
                 // Stack View
                 itemStackView.axis = .horizontal
                 itemStackView.distribution = .fill
-				itemStackView.alignment = (item.description != nil) ? .top : .center
+                itemStackView.alignment = (item.description != nil) ? .top : .center
                 itemStackView.spacing = 16.0
 
                 let itemTapGesture = ItemInformationTapGesture(target: self, action: #selector(selectItem(_:)))

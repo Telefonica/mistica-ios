@@ -181,14 +181,14 @@ private extension SheetView {
             }
         }
 
-		let containerView = UIView()
-		containerView.translatesAutoresizingMaskIntoConstraints = false
+        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
 
         contentStackView.addArrangedSubview(headerStackView)
         contentStackView.addArrangedSubview(itemsStackView)
-		addSubview(containerView)
-		containerView.addSubview(titleLabel)
-		containerView.addSubview(scrollView)
+        addSubview(containerView)
+        containerView.addSubview(titleLabel)
+        containerView.addSubview(scrollView)
         scrollView.addSubview(wrapperView)
         wrapperView.addSubview(contentStackView)
 
@@ -202,19 +202,19 @@ private extension SheetView {
         scrollHeight.isActive = true
 
         NSLayoutConstraint.activate([
-			containerView.topAnchor.constraint(equalTo: topAnchor),
-			containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-			containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
-			containerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
 
-			titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24.0),
-			titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0),
-			titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24.0),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0),
+            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
 
-			scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
-			scrollView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0),
-			scrollView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
-			scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
+            scrollView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0),
+            scrollView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
+            scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
 
             wrapperView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             wrapperView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),

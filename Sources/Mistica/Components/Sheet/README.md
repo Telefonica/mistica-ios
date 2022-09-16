@@ -8,7 +8,7 @@ Sheet provide lightweight bottom selector view. It is possible to display differ
 
 ## Usage
 
-To display a sheet, make an instance of `SheetViewController` class, the controller has a `SheetView` that is self-managing in its presentation. It is also necessary to instantiate and assign as transition delegate to the `SheetTransitioningDelegate` class.
+To display a sheet, make an instance of `SheetViewController`, the controller has a `SheetView` that is self-managing in its presentation. It is also necessary to instantiate and assign as transition delegate to the `SheetTransitioningDelegate` class.
 
 ## Dismiss / Submit
 

@@ -1,3 +1,10 @@
+# [18.1.0](https://github.com/Telefonica/mistica-ios/compare/v18.0.1...v18.1.0) (2022-09-16)
+
+
+### Features
+
+* **BottomSheet:** IOS-7624 Add BottomSheet component ([4e28ce1](https://github.com/Telefonica/mistica-ios/commit/4e28ce1c60303640ff2ce7faac37c14df4b35ddf))
+
 ## [18.0.1](https://github.com/Telefonica/mistica-ios/compare/v18.0.0...v18.0.1) (2022-08-31)
 
 

@@ -1,6 +1,6 @@
 #  Sheet
 
-Sheet provide lightweight bottom selector view. They show a brief message at the bottom of the screen. It is possible to display different types of content, although currently support is made for a single selection list. Each row of the list can be composed of an icon, text and a radioButton to select the option.
+Sheet provide lightweight bottom selector view. It is possible to display different types of content, although currently support is made for a single selection list. Each row of the list can be composed of an icon, text and a radioButton to select the option.
 
 <p align="center">
 <img width="400" alt="portfolio_view" src="./docs/images/list-single-selection.png">

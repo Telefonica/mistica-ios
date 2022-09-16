@@ -92,7 +92,8 @@ private extension CatalogRow {
              .scrollContentIndicator,
              .header,
              .forms,
-             .controls:
+             .controls,
+             .sheet:
             notImplementedView
         }
     }
@@ -140,6 +141,8 @@ private extension CatalogRow {
             ComponentViewController(UICatalogCalloutViewController())
         case .emptyState:
             ComponentViewController(UICatalogEmptyStateViewController())
+        case .sheet:
+            ComponentViewController(UICatalogSheetViewController())
         case .chips,
              .carousel:
             notImplementedView

@@ -45,6 +45,4 @@ jobs:
 
       - name: Upload ipa to AppCenter
         run: npx -p appcenter-cli appcenter distribute release -a Tuenti-Organization/Mistica-iOS -f ./build/ios.ipa -g Public --token ${{ secrets.APPCENTER_API_TOKEN }}
-        
-      - name: Upload dsyms to AppCenter
-        run: npx -p appcenter-cli appcenter crashes upload-symbols -a Tuenti-Organization/Mistica-iOS -s ./build/ios.dSYM --token ${{ secrets.APPCENTER_API_TOKEN }}
+  

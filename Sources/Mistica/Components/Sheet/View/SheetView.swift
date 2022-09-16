@@ -184,7 +184,7 @@ private extension SheetView {
                 divider.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
                 divider.widthAnchor.constraint(equalTo: itemsStackView.widthAnchor).isActive = true
 
-				itemStackView.widthAnchor.constraint(equalTo: itemsStackView.widthAnchor, constant: -40.0).isActive = true
+                itemStackView.widthAnchor.constraint(equalTo: itemsStackView.widthAnchor, constant: -40.0).isActive = true
             }
         }
 

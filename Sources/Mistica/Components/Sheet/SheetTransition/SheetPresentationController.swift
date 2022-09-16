@@ -98,7 +98,7 @@ final class SheetPresentationController: UIPresentationController {
 
         presentedView?.addSubview(handleView)
 
-        overlayView.fade(toAlpha: 0.5, duration: 0.25)
+		overlayView.fade(toAlpha: 1.0, duration: 0.25)
 
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { [weak self] _ in
             guard let self = self else {

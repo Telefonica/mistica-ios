@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 public struct SheetConfiguration {
-    public var header: SheetHeader
-    public var content: [SheetList]
+    let header: SheetHeader
+	let content: [SheetList]
 
     public init(header: SheetHeader,
                 content: [SheetList]) {
@@ -21,9 +21,9 @@ public struct SheetConfiguration {
 }
 
 public struct SheetHeader {
-    public var title: String?
-    public var subtitle: String?
-    public var description: String?
+	let title: String?
+	let subtitle: String?
+	let description: String?
 
     public init(title: String? = nil,
                 subtitle: String? = nil,
@@ -35,12 +35,12 @@ public struct SheetHeader {
 }
 
 public struct SheetList {
-    public var id: String
-    public var type: String
-    public var listType: String?
-    public var autoSubmit: Bool?
-    public var selectedId: String?
-    public var items: [SheetListRow]
+	let id: String
+	let type: String
+	let listType: String?
+	let autoSubmit: Bool?
+	let selectedId: String?
+	let items: [SheetListRow]
 
     public init(id: String,
                 type: String,
@@ -58,11 +58,11 @@ public struct SheetList {
 }
 
 public struct SheetListRow {
-    public var id: String
-    public var title: String?
-    public var description: String?
-    public var icon: UIImage?
-    public var isSelected: Bool
+	let id: String
+	let title: String?
+	let description: String?
+	let icon: UIImage?
+	let isSelected: Bool
 
     public init(id: String,
                 title: String? = nil,

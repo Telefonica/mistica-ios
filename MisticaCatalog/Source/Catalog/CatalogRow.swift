@@ -12,6 +12,7 @@ import UIKit
 
 enum CatalogRow: Int, CaseIterable, Identifiable {
     case badge
+    case sheet
     case buttons
     case cards
     case controls
@@ -86,6 +87,8 @@ extension CatalogRow {
             return "Chips"
         case .carousel:
             return "Carousel"
+        case .sheet:
+            return "Sheet"
         }
     }
 
@@ -135,6 +138,8 @@ extension CatalogRow {
             return .tagsIcon
         case .carousel:
             return .listIcon
+        case .sheet:
+            return .sheetIcon
         }
     }
 }

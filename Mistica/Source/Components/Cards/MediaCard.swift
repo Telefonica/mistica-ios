@@ -58,18 +58,6 @@ public class MediaCard: UIView {
         }
     }
 
-    override public var accessibilityElements: [Any]? {
-        get {
-            cardAccessibilityElement.accessibilityFrameInContainerSpace = bounds
-            return [
-                cardAccessibilityElement,
-                fragmentView as Any,
-                baseCardView.buttonsView
-            ].compactMap { $0 }
-        }
-        set {}
-    }
-
     public var reachMediaAccessibilityIdentifier: String? {
         get {
             richMediaContainerView.accessibilityIdentifier

@@ -1,7 +1,7 @@
 .PHONY: help setup format test simulator archive export clean
 
 # Simulator
-OS_VERSION := 15.2
+OS_VERSION := 15.5
 DEVICE_NAME := iPhone 13
 SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)

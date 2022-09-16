@@ -24,7 +24,7 @@ XCODEBUILD := set -o pipefail && xcodebuild
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode-13.4.1.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode-13.2.app/Contents/Developer
 endif
 
 # Targets

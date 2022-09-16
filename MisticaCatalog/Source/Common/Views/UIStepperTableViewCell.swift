@@ -15,29 +15,29 @@ public class UIStepperTableViewCell: UITableViewCell {
     private let numberOfStepsLabel = UILabel()
     private lazy var textStackView = UIStackView(arrangedSubviews: [titleLabel, numberOfStepsLabel])
     private lazy var numberOfStepsStackView = UIStackView(arrangedSubviews: [textStackView, numberOfStepsStepper])
-	var didValueChange: ((UIStepper) -> Void)?
+    var didValueChange: ((UIStepper) -> Void)?
 
-	var minValue: Double {
+    var minValue: Double {
         get { numberOfStepsStepper.minimumValue }
         set { numberOfStepsStepper.minimumValue = newValue }
     }
 
-	var currentValue: Double {
+    var currentValue: Double {
         get { numberOfStepsStepper.value }
         set { numberOfStepsStepper.value = newValue }
     }
 
-	var maxValue: Double {
+    var maxValue: Double {
         get { numberOfStepsStepper.maximumValue }
         set { numberOfStepsStepper.maximumValue = newValue }
     }
 
-	var title: String? {
+    var title: String? {
         get { titleLabel.text }
         set { titleLabel.text = newValue }
     }
 
-	var numberOfSteps: String? {
+    var numberOfSteps: String? {
         get { numberOfStepsLabel.text }
         set { numberOfStepsLabel.text = newValue }
     }

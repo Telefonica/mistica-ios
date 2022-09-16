@@ -142,15 +142,15 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
         view.endEditing(true)
 
         var rows: [SheetListRow] = []
-		for index in 1 ... sheetNumElements {
-			let item = SheetListRow(
-				id: index.description,
-				title: "Element \(index)",
-				description: "Description",
-				icon: assetCell.segmentedControl.selectedSegmentIndex == 0 ? .imageIcon : nil
-			)
-			rows.append(item)
-		}
+        for index in 1 ... sheetNumElements {
+            let item = SheetListRow(
+                id: index.description,
+                title: "Element \(index)",
+                description: "Description",
+                icon: assetCell.segmentedControl.selectedSegmentIndex == 0 ? .imageIcon : nil
+            )
+            rows.append(item)
+        }
         let content = SheetList(
             id: UUID().uuidString,
             type: "LIST",
@@ -160,18 +160,18 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
             items: rows
         )
 
-		let configuration = SheetConfiguration(
-			header: SheetHeader(
-				title: sheetTitle,
-				subtitle: sheetSubtitle,
-				description: sheetDescription
-			),
-			content: [content]
-		)
+        let configuration = SheetConfiguration(
+            header: SheetHeader(
+                title: sheetTitle,
+                subtitle: sheetSubtitle,
+                description: sheetDescription
+            ),
+            content: [content]
+        )
 
         let viewController = SheetViewController(configuration: configuration) { sheetResponse in
-			print("Sheet selection response: \(sheetResponse)")
-		}
+            print("Sheet selection response: \(sheetResponse)")
+        }
         viewController.transitioningDelegate = sheetTransitioningDelegate
         viewController.modalPresentationStyle = .custom
 
@@ -180,9 +180,9 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
 }
 
 private extension UICatalogSheetViewController {
-	var sheetTitle: String? {
-		titleCell.textField.text
-	}
+    var sheetTitle: String? {
+        titleCell.textField.text
+    }
 
     var sheetSubtitle: String? {
         subtitleCell.textField.text

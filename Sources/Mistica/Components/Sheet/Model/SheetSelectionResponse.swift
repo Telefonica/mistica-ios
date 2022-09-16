@@ -16,8 +16,8 @@ public enum SheetActionResponse: String {
 }
 
 public class SheetSelectionResponse {
-	var action: SheetActionResponse
-	var selectedIds: [SheetResponseResult]
+    var action: SheetActionResponse
+    var selectedIds: [SheetResponseResult]
 
     public init(action: SheetActionResponse = .dismiss,
                 selectedIds: [SheetResponseResult] = []) {
@@ -27,8 +27,8 @@ public class SheetSelectionResponse {
 }
 
 public struct SheetResponseResult: Encodable, Equatable {
-	let id: String
-	let selected: [String]
+    let id: String
+    let selected: [String]
 
     public init(id: String,
                 selected: [String]) {

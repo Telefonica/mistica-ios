@@ -11,7 +11,7 @@ import UIKit
 
 public struct SheetConfiguration {
     let header: SheetHeader
-	let content: [SheetList]
+    let content: [SheetList]
 
     public init(header: SheetHeader,
                 content: [SheetList]) {
@@ -21,9 +21,9 @@ public struct SheetConfiguration {
 }
 
 public struct SheetHeader {
-	let title: String?
-	let subtitle: String?
-	let description: String?
+    let title: String?
+    let subtitle: String?
+    let description: String?
 
     public init(title: String? = nil,
                 subtitle: String? = nil,
@@ -35,12 +35,12 @@ public struct SheetHeader {
 }
 
 public struct SheetList {
-	let id: String
-	let type: String
-	let listType: String?
-	let autoSubmit: Bool?
-	let selectedId: String?
-	let items: [SheetListRow]
+    let id: String
+    let type: String
+    let listType: String?
+    let autoSubmit: Bool?
+    let selectedId: String?
+    let items: [SheetListRow]
 
     public init(id: String,
                 type: String,
@@ -58,11 +58,11 @@ public struct SheetList {
 }
 
 public struct SheetListRow {
-	let id: String
-	let title: String?
-	let description: String?
-	let icon: UIImage?
-	let isSelected: Bool
+    let id: String
+    let title: String?
+    let description: String?
+    let icon: UIImage?
+    let isSelected: Bool
 
     public init(id: String,
                 title: String? = nil,

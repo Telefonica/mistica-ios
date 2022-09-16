@@ -141,7 +141,7 @@ let package = Package(
                 "Components/Callout/docs",
                 "Components/EmptyState/README.md",
                 "Components/EmptyState/docs",
-				"Components/Sheet/docs"
+                "Components/Sheet/docs"
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")

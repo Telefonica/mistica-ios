@@ -128,7 +128,7 @@ private extension SheetView {
                 itemTapGesture.contentId = content.id
                 itemTapGesture.itemId = item.id
                 itemTapGesture.autoSubmit = content.autoSubmit ?? false
-                itemStackView.addGestureRecognizer(itemTapGesture)
+                containerItemStackView.addGestureRecognizer(itemTapGesture)
 
                 if let icon = item.icon {
                     let imageView = UIImageView()

@@ -1,7 +1,7 @@
 .PHONY: help setup format test simulator archive export clean
 
 # Simulator
-OS_VERSION := 15.2
+OS_VERSION := 15.5
 DEVICE_NAME := iPhone 13
 SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)
@@ -24,7 +24,7 @@ XCODEBUILD := set -o pipefail && xcodebuild
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode-13.2.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode-13.4.1.app/Contents/Developer
 endif
 
 # Targets

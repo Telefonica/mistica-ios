@@ -30,6 +30,9 @@ let package = Package(
             exclude: [
                 "Fonts/README.md",
                 "Controls/README.md"
+            ],
+            swiftSettings: [
+                .define("SWIFT_PACKAGE")
             ]
         ),
 
@@ -77,6 +80,12 @@ let package = Package(
                 "Components/Carousel/README.md",
                 "Components/EmptyState/README.md",
                 "Components/Chip/README.md"
+            ],
+            swiftSettings: [
+                .define("SWIFT_PACKAGE")
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-Xlinker", "-no_application_extension"])
             ]
         ),
 
@@ -145,6 +154,9 @@ let package = Package(
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-Xlinker", "-no_application_extension"])
             ]
         ),
 

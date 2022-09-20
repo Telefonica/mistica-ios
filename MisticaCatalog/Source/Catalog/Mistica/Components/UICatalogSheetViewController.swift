@@ -147,7 +147,7 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
                 id: index.description,
                 title: "Element \(index)",
                 description: "Description",
-                icon: assetCell.segmentedControl.selectedSegmentIndex == 0 ? .imageIcon : nil
+                icon: assetCell.segmentedControl.selectedSegmentIndex == 0 ? SheetListRowIcon(url: "https://img.icons8.com/ios-glyphs/344/bookmark.png", urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png"): nil
             )
             rows.append(item)
         }

@@ -1,8 +1,8 @@
 .PHONY: help setup format test simulator archive export clean
 
 # Simulator
-OS_VERSION := 15.5
-DEVICE_NAME := iPhone 13
+OS_VERSION := 16
+DEVICE_NAME := iPhone 14
 SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)
 
@@ -24,7 +24,7 @@ XCODEBUILD := set -o pipefail && xcodebuild
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode-13.4.1.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode-14.0.app/Contents/Developer
 endif
 
 # Targets
@@ -47,7 +47,7 @@ format:
 
 test: clean setup simulator
 	@echo "Testing with simulator $(SIMULATOR_NAME)"
-	$(XCODEBUILD) -scheme $(TEST_SCHEMA) test -sdk iphonesimulator -resultBundlePath $(XCRESULT_FILE_PATH) -destination 'platform=iOS Simulator,name=$(SIMULATOR_NAME)' | xcbeautify
+	$(XCODEBUILD) -scheme $(TEST_SCHEMA) test -sdk iphonesimulator -resultBundlePath $(XCRESULT_FILE_PATH) -destination 'platform=iOS Simulator,name=$(SIMULATOR_NAME),OS=$(OS_VERSION)' | xcbeautify
 
 extract_tests_attachments:
 	@xcparse attachments $(XCRESULT_FILE_PATH) $(SCREENSHOT_DIFFS_OUTPUT_PATH) --uti public.plain-text public.image --test

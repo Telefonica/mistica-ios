@@ -18,7 +18,7 @@ extension View {
     @ViewBuilder
     func picker<Selection: CustomStringConvertible>(_ selection: Binding<Int>, options: [Selection]) -> some View {
         Picker("", selection: selection) {
-            ForEach(0 ..< options.count) { index in
+            ForEach(0 ..< options.count, id: \.self) { index in
                 Text(options[index].description)
                     .expand(alignment: .leading)
                     .tag(index)

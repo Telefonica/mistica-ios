@@ -83,6 +83,9 @@ let package = Package(
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-Xlinker", "-no_application_extension"])
             ]
         ),
 
@@ -151,6 +154,9 @@ let package = Package(
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-Xlinker", "-no_application_extension"])
             ]
         ),
 

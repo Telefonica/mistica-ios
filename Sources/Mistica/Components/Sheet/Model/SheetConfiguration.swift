@@ -80,13 +80,6 @@ public struct SheetListRow {
 public struct SheetListRowIcon {
     let url: String
     let urlDark: String?
-    var urlToDisplay: String? {
-        if #available(iOS 13.0, *) {
-            return UITraitCollection.current.userInterfaceStyle == .light ? url : urlDark
-        } else {
-            return url
-        }
-    }
 
     public init(url: String,
                 urlDark: String? = nil) {

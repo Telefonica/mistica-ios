@@ -40,7 +40,7 @@ struct PageControl: View {
     var body: some View {
         ZStack(alignment: .leading) {
             HStack(spacing: Constants.bulletMargin) {
-                ForEach(0 ..< items, id:\.self) { index in
+                ForEach(0 ..< items, id: \.self) { index in
                     Circle()
                         .foregroundColor(foregroundColor(at: index))
                         .frame(width: Constants.bulletDiameter, height: Constants.bulletDiameter)

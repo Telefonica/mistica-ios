@@ -1,3 +1,10 @@
+# [18.2.0](https://github.com/Telefonica/mistica-ios/compare/v18.1.0...v18.2.0) (2022-09-21)
+
+
+### Features
+
+* **Sheet:** Add dark mode support in icon rows ([b475f2d](https://github.com/Telefonica/mistica-ios/commit/b475f2d859092fb886794323c8989b1b6e7fb5fa))
+
 # [18.1.0](https://github.com/Telefonica/mistica-ios/compare/v18.0.1...v18.1.0) (2022-09-16)
 
 

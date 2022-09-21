@@ -135,7 +135,17 @@ private extension SheetView {
                     imageView.heightAnchor.constraint(equalToConstant: 24.0).isActive = true
                     imageView.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
                     imageView.contentMode = .scaleAspectFit
-                    imageView.image = icon
+                    if let url = URL(string: icon.url),
+                       let data = try? Data(contentsOf: url) {
+                        let lightImage = UIImage(data: data)
+                        if let iconDark = icon.urlDark,
+                           let urlDark = URL(string: iconDark),
+                           let dataDark = try? Data(contentsOf: urlDark),
+                           let darkImage = UIImage(data: dataDark) {
+                            lightImage?.imageAsset?.register(darkImage, with: .init(userInterfaceStyle: .dark))
+                        }
+                        imageView.image = lightImage
+                    }
                     itemStackView.addArrangedSubview(imageView)
                 }
 

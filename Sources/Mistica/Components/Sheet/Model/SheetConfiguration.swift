@@ -61,18 +61,29 @@ public struct SheetListRow {
     let id: String
     let title: String?
     let description: String?
-    let icon: UIImage?
+    let icon: SheetListRowIcon?
     let isSelected: Bool
 
     public init(id: String,
                 title: String? = nil,
                 description: String? = nil,
-                icon: UIImage? = nil,
+                icon: SheetListRowIcon? = nil,
                 isSelected: Bool = false) {
         self.id = id
         self.title = title
         self.description = description
         self.icon = icon
         self.isSelected = isSelected
+    }
+}
+
+public struct SheetListRowIcon {
+    let url: String
+    let urlDark: String?
+
+    public init(url: String,
+                urlDark: String? = nil) {
+        self.url = url
+        self.urlDark = urlDark
     }
 }

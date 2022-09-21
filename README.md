@@ -1,6 +1,8 @@
 <img alt="Mística for iOS" src="./mistica-ios.svg">
 <br>
 
+[![Swift Version](https://img.shields.io/badge/Swift-5.7-orange?style=flat)](https://github.com/Telefonica/mistica-ios/blob/main/.swift-version)
+[![Xcode Version](https://img.shields.io/badge/Xcode-14.0-blue)](https://github.com/Telefonica/mistica-ios/blob/main/Makefile#L27)
 [![Platform](https://img.shields.io/badge/platform-iOS-%23989898.svg)](https://github.com/Telefonica/mistica-ios)
 [![iOS Version](https://img.shields.io/badge/Support-%3E%3D%20iOS%2012.0-brightgreen.svg)](https://github.com/Telefonica/mistica-ios)
 [![Languages](https://img.shields.io/badge/languages-Swift-orange.svg)](https://github.com/Telefonica/mistica-ios)

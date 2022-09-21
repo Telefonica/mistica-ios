@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.7
 
 import PackageDescription
 
@@ -18,14 +18,14 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(name: "Lottie", url: "https://github.com/airbnb/lottie-ios.git", .exact("3.1.8")),
-        .package(name: "SnapshotTesting", url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .exact("1.8.2"))
+        .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "3.1.8"),
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.8.2")
     ],
     targets: [
         .target(
             name: "MisticaCommon",
             dependencies: [
-                "Lottie"
+                .product(name: "Lottie", package: "lottie-ios")
             ],
             exclude: [
                 "Fonts/README.md",
@@ -40,7 +40,7 @@ let package = Package(
             name: "MisticaCommonTests",
             dependencies: [
                 "MisticaCommon",
-                "SnapshotTesting"
+                .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
             ],
             exclude: [
                 "Fonts/__Snapshots__"
@@ -58,8 +58,8 @@ let package = Package(
         .target(
             name: "MisticaSwiftUI",
             dependencies: [
-                "Lottie",
-                "MisticaCommon"
+                "MisticaCommon",
+                .product(name: "Lottie", package: "lottie-ios")
             ],
             exclude: [
                 "Components/Button/README.md",
@@ -93,7 +93,7 @@ let package = Package(
             name: "MisticaSwiftUITests",
             dependencies: [
                 "MisticaSwiftUI",
-                "SnapshotTesting"
+                .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
             ],
             exclude: [
                 "UI/__Snapshots__"
@@ -106,7 +106,7 @@ let package = Package(
         .target(
             name: "Mistica",
             dependencies: [
-                "Lottie",
+                .product(name: "Lottie", package: "lottie-ios"),
                 "MisticaCommon"
             ],
             exclude: [
@@ -164,7 +164,7 @@ let package = Package(
             name: "MisticaTests",
             dependencies: [
                 "Mistica",
-                "SnapshotTesting"
+                .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
             ],
             exclude: [
                 "UI/__Snapshots__"

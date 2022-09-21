@@ -47,7 +47,7 @@ format:
 
 test: clean setup simulator
 	@echo "Testing with simulator $(SIMULATOR_NAME)"
-	$(XCODEBUILD) -scheme $(TEST_SCHEMA) test -sdk iphonesimulator -resultBundlePath $(XCRESULT_FILE_PATH) -destination 'platform=iOS Simulator,name=$(SIMULATOR_NAME),OS=$(OS_VERSION)' | xcbeautify
+	$(XCODEBUILD) -project "$(PROJECT_PATH)" -scheme $(TEST_SCHEMA) test -sdk iphonesimulator -resultBundlePath $(XCRESULT_FILE_PATH) -destination 'platform=iOS Simulator,name=$(SIMULATOR_NAME),OS=$(OS_VERSION)' | xcbeautify
 
 extract_tests_attachments:
 	@xcparse attachments $(XCRESULT_FILE_PATH) $(SCREENSHOT_DIFFS_OUTPUT_PATH) --uti public.plain-text public.image --test

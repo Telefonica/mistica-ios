@@ -1,3 +1,10 @@
+## [18.2.1](https://github.com/Telefonica/mistica-ios/compare/v18.2.0...v18.2.1) (2022-09-22)
+
+
+### Bug Fixes
+
+* **Accesibility:** Fix infinite loop in accesibility modifiers (SwiftUI) ([1274626](https://github.com/Telefonica/mistica-ios/commit/127462611b79e7ffd860441fcd63eec419786537))
+
 # [18.2.0](https://github.com/Telefonica/mistica-ios/compare/v18.1.0...v18.2.0) (2022-09-21)
 
 

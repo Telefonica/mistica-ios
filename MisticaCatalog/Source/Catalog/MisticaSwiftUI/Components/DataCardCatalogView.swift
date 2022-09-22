@@ -38,6 +38,9 @@ struct DataCardCatalogView: View {
                 } linkButton: {
                     Button("Link") {}
                 }
+                .titleAccessibilityLabel("Title")
+                .subtitleAccessibilityIdentifier("Subtitle")
+                .accessibilityIdentifier("Identifier")
                 .padding(.horizontal, 16)
                 .navigationBarTitle("DataCard")
                 .navigationBarTitleDisplayMode(.inline)

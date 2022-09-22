@@ -30,6 +30,16 @@ extension MisticaBackport where Content: View {
         }
     }
 
+    @ViewBuilder func accessibilityIdentifier(_ text: String) -> some View {
+        if #available(iOS 14.0, *) {
+            content
+                .accessibilityIdentifier(text)
+        } else {
+            content
+                .accessibility(identifier: text)
+        }
+    }
+    
     @ViewBuilder func accessibilityLabel(_ text: Text) -> some View {
         if #available(iOS 14.0, *) {
             content

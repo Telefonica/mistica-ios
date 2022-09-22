@@ -26,7 +26,7 @@ struct OptionalAccessibilityIdentifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if let identifier = identifier {
-            content.accessibilityIdentifier(identifier)
+            content.misticaBackport.accessibilityIdentifier(identifier)
         } else {
             content
         }

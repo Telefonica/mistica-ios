@@ -40,6 +40,8 @@ struct FeedbackCatalogView: View {
                 primaryButton: { Button("Primary", action: {}) },
                 secondaryButton: { Button("Secondary", action: {}) }
             )
+            .titleAccessibilityLabel("Title")
+            .imageAccessibilityIdentifier("Image")
         }
     }
 

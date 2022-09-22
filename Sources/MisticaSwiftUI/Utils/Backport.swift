@@ -39,7 +39,7 @@ extension MisticaBackport where Content: View {
                 .accessibility(identifier: text)
         }
     }
-    
+
     @ViewBuilder func accessibilityLabel(_ text: Text) -> some View {
         if #available(iOS 14.0, *) {
             content

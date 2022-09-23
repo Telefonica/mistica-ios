@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 public struct SheetConfiguration {
-    let header: SheetHeader
-    let content: [SheetList]
+    public let header: SheetHeader
+    public let content: [SheetList]
 
     public init(header: SheetHeader,
                 content: [SheetList]) {
@@ -21,9 +21,9 @@ public struct SheetConfiguration {
 }
 
 public struct SheetHeader {
-    let title: String?
-    let subtitle: String?
-    let description: String?
+    public let title: String?
+    public let subtitle: String?
+    public let description: String?
 
     public init(title: String? = nil,
                 subtitle: String? = nil,
@@ -35,12 +35,12 @@ public struct SheetHeader {
 }
 
 public struct SheetList {
-    let id: String
-    let type: String
-    let listType: String?
-    let autoSubmit: Bool?
-    let selectedId: String?
-    let items: [SheetListRow]
+    public let id: String
+    public let type: String
+    public let listType: String?
+    public let autoSubmit: Bool?
+    public let selectedId: String?
+    public let items: [SheetListRow]
 
     public init(id: String,
                 type: String,
@@ -58,11 +58,11 @@ public struct SheetList {
 }
 
 public struct SheetListRow {
-    let id: String
-    let title: String?
-    let description: String?
-    let icon: SheetListRowIcon?
-    let isSelected: Bool
+    public let id: String
+    public let title: String?
+    public let description: String?
+    public let icon: SheetListRowIcon?
+    public let isSelected: Bool
 
     public init(id: String,
                 title: String? = nil,
@@ -92,9 +92,9 @@ public struct SheetListRowIcon {
         }
     }
 
-    let url: String
-    let urlDark: String?
-    let size: Size
+    public let url: String
+    public let urlDark: String?
+    public let size: Size
 
     public init(url: String,
                 urlDark: String? = nil,

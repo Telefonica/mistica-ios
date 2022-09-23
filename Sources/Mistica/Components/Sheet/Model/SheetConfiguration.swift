@@ -78,12 +78,29 @@ public struct SheetListRow {
 }
 
 public struct SheetListRowIcon {
+    public enum Size {
+        case small
+        case large
+
+        var value: CGFloat {
+            switch self {
+            case .small:
+                return 24
+            case .large:
+                return 40
+            }
+        }
+    }
+
     let url: String
     let urlDark: String?
+    let size: Size
 
     public init(url: String,
-                urlDark: String? = nil) {
+                urlDark: String? = nil,
+                size: Size = .large) {
         self.url = url
         self.urlDark = urlDark
+        self.size = size
     }
 }

@@ -1,3 +1,10 @@
+## [18.2.2](https://github.com/Telefonica/mistica-ios/compare/v18.2.1...v18.2.2) (2022-09-23)
+
+
+### Bug Fixes
+
+* **Sheet:** IOS-7720 Fix asset size ([5b957c7](https://github.com/Telefonica/mistica-ios/commit/5b957c781929f3a0eeae1f1c3a6177c71fcf5d03))
+
 ## [18.2.1](https://github.com/Telefonica/mistica-ios/compare/v18.2.0...v18.2.1) (2022-09-22)
 
 

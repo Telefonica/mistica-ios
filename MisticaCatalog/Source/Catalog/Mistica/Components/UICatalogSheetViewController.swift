@@ -15,6 +15,7 @@ private enum Section: Int, CaseIterable {
     case description
     case numberOfElements
     case hasAsset
+    case assetSize
     case showSheet
 }
 
@@ -67,6 +68,16 @@ class UICatalogSheetViewController: UIViewController {
         return cell
     }()
 
+    private lazy var assetSizeCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "assetSize")
+
+        cell.segmentedControl.insertSegment(withTitle: "Small", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Large", at: 1, animated: false)
+
+        cell.segmentedControl.selectedSegmentIndex = 1
+        return cell
+    }()
+
     private lazy var showSheetCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "showSheet")
         cell.textLabel?.textColor = .textLink
@@ -80,6 +91,7 @@ class UICatalogSheetViewController: UIViewController {
         [descriptionCell],
         [numberOfElementsCell],
         [assetCell],
+        [assetSizeCell],
         [showSheetCell]
     ]
 
@@ -147,7 +159,13 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
                 id: index.description,
                 title: "Element \(index)",
                 description: "Description",
-                icon: assetCell.segmentedControl.selectedSegmentIndex == 0 ? SheetListRowIcon(url: "https://img.icons8.com/ios-glyphs/344/bookmark.png", urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png") : nil
+                icon: assetCell.segmentedControl.selectedSegmentIndex == 0
+                    ? SheetListRowIcon(
+                        url: "https://img.icons8.com/ios-glyphs/344/bookmark.png",
+                        urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png",
+                        size: assetSizeCell.segmentedControl.selectedSegmentIndex == 0 ? .small : .large
+                    )
+                    : nil
             )
             rows.append(item)
         }
@@ -205,6 +223,7 @@ private extension Section {
         case .description: return "Description"
         case .numberOfElements: return "Configuration"
         case .hasAsset: return "Has asset"
+        case .assetSize: return "Asset size"
         case .showSheet: return nil
         }
     }

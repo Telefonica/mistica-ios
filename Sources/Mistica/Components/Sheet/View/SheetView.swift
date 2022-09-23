@@ -132,8 +132,8 @@ private extension SheetView {
 
                 if let icon = item.icon {
                     let imageView = UIImageView()
-                    imageView.heightAnchor.constraint(equalToConstant: 24.0).isActive = true
-                    imageView.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
+                    imageView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+                    imageView.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
                     imageView.contentMode = .scaleAspectFit
                     if let url = URL(string: icon.url),
                        let data = try? Data(contentsOf: url) {

@@ -1,3 +1,10 @@
+## [18.2.3](https://github.com/Telefonica/mistica-ios/compare/v18.2.2...v18.2.3) (2022-09-27)
+
+
+### Bug Fixes
+
+* **Sheet:** IOS-7725 Load icons asynchronously ([#221](https://github.com/Telefonica/mistica-ios/issues/221)) ([f167058](https://github.com/Telefonica/mistica-ios/commit/f16705828e2c2c064ae0f8c60db67cd8a577ae07))
+
 ## [18.2.2](https://github.com/Telefonica/mistica-ios/compare/v18.2.1...v18.2.2) (2022-09-23)
 
 

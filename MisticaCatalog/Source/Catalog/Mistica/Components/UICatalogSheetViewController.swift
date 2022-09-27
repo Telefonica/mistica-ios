@@ -188,7 +188,9 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
         )
 
         let viewController = SheetViewController(configuration: configuration) { sheetResponse in
-            print("Sheet selection response: \(sheetResponse)")
+            print("Sheet selection response:")
+            print("\tAction:\(sheetResponse.action)")
+            print("\tSelected ids:\(sheetResponse.selectedIds)")
         }
         viewController.transitioningDelegate = sheetTransitioningDelegate
         viewController.modalPresentationStyle = .custom

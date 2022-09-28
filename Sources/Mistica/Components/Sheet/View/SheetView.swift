@@ -10,31 +10,40 @@ import Foundation
 import UIKit
 
 public class SheetView: UIView {
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = config.header.title
-        label.numberOfLines = 0
-        label.textColor = .textPrimary
-        label.font = .textPreset4(weight: .regular)
-        return label
+    private lazy var titleLabel: UILabel? = {
+		if let title = config.header.title {
+			let label = UILabel()
+			label.text = title
+			label.numberOfLines = 0
+			label.textColor = .textPrimary
+			label.font = .textPreset4(weight: .regular)
+			return label
+		}
+		return nil
     }()
 
-    private lazy var subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = config.header.subtitle
-        label.numberOfLines = 0
-        label.textColor = .textPrimary
-        label.font = .textPreset2(weight: .regular)
-        return label
+    private lazy var subtitleLabel: UILabel? = {
+		if let subtitle = config.header.subtitle {
+			let label = UILabel()
+			label.text = subtitle
+			label.numberOfLines = 0
+			label.textColor = .textPrimary
+			label.font = .textPreset2(weight: .regular)
+			return label
+		}
+		return nil
     }()
 
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = config.header.description
-        label.numberOfLines = 0
-        label.textColor = .textSecondary
-        label.font = .textPreset2(weight: .regular)
-        return label
+    private lazy var descriptionLabel: UILabel? = {
+		if let description = config.header.description {
+			let label = UILabel()
+			label.text = description
+			label.numberOfLines = 0
+			label.textColor = .textSecondary
+			label.font = .textPreset2(weight: .regular)
+			return label
+		}
+		return nil
     }()
 
     private let config: SheetConfiguration
@@ -73,14 +82,10 @@ public class SheetView: UIView {
 private extension SheetView {
     func setupView() {
         backgroundColor = .backgroundContainer
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-
-        let wrapperView = UIView()
-        wrapperView.translatesAutoresizingMaskIntoConstraints = false
 
         let contentStackView = UIStackView()
         contentStackView.axis = .vertical
@@ -92,19 +97,25 @@ private extension SheetView {
         // Header section for sheet information
         let headerStackView = UIStackView()
         headerStackView.axis = .vertical
-        headerStackView.distribution = .fillEqually
+        headerStackView.distribution = .fill
         headerStackView.alignment = .leading
         headerStackView.spacing = 8.0
         headerStackView.translatesAutoresizingMaskIntoConstraints = false
-        headerStackView.addArrangedSubview(subtitleLabel)
-        headerStackView.addArrangedSubview(descriptionLabel)
-        subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-        descriptionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+
+		if let subtitleLabel = subtitleLabel {
+			headerStackView.addArrangedSubview(subtitleLabel)
+			subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+		}
+
+		if let descriptionLabel = descriptionLabel {
+			headerStackView.addArrangedSubview(descriptionLabel)
+			descriptionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+		}
 
         // Section for every item in sheet request content
         let itemsStackView = UIStackView()
         itemsStackView.axis = .vertical
-        itemsStackView.distribution = .fill
+        itemsStackView.distribution = .equalSpacing
         itemsStackView.alignment = .leading
         itemsStackView.spacing = 16.0
         itemsStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -198,23 +209,45 @@ private extension SheetView {
             }
         }
 
-        let containerView = UIView()
+        let containerView = UIStackView()
+		containerView.axis = .vertical
+		containerView.distribution = .fill
+		containerView.alignment = .leading
+		containerView.spacing = 8.0
         containerView.translatesAutoresizingMaskIntoConstraints = false
+		addSubview(containerView)
 
-        contentStackView.addArrangedSubview(headerStackView)
-        contentStackView.addArrangedSubview(itemsStackView)
-        addSubview(containerView)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(scrollView)
-        scrollView.addSubview(wrapperView)
-        wrapperView.addSubview(contentStackView)
+		if let titleLabel = titleLabel {
+			titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+
+			containerView.addArrangedSubview(titleLabel)
+			containerView.addArrangedSubview(scrollView)
+			scrollView.addSubview(contentStackView)
+			contentStackView.addArrangedSubview(headerStackView)
+			contentStackView.addArrangedSubview(itemsStackView)
+
+			NSLayoutConstraint.activate([
+				titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24.0),
+				titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0),
+				titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
+				titleLabel.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -8.0)
+			])
+		} else {
+			containerView.addSubview(scrollView)
+			scrollView.addSubview(contentStackView)
+			contentStackView.addArrangedSubview(headerStackView)
+			contentStackView.addArrangedSubview(itemsStackView)
+			NSLayoutConstraint.activate([
+				scrollView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24.0)
+			])
+		}
 
         // Set sheet maximum height in 70% of device screen height.
         let scrollHeightMax = scrollView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height * 0.7)
         scrollHeightMax.priority = .required
         scrollHeightMax.isActive = true
 
-        let scrollHeight = scrollView.heightAnchor.constraint(equalTo: wrapperView.heightAnchor)
+        let scrollHeight = scrollView.heightAnchor.constraint(equalTo: contentStackView.heightAnchor)
         scrollHeight.priority = .defaultHigh
         scrollHeight.isActive = true
 
@@ -224,24 +257,14 @@ private extension SheetView {
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
             containerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
 
-            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24.0),
-            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0),
-            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
-
-            scrollView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
             scrollView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0),
             scrollView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
             scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
 
-            wrapperView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            wrapperView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            wrapperView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            wrapperView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-
-            contentStackView.topAnchor.constraint(equalTo: wrapperView.topAnchor),
-            contentStackView.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor),
-            contentStackView.trailingAnchor.constraint(equalTo: wrapperView.trailingAnchor),
-            contentStackView.bottomAnchor.constraint(equalTo: wrapperView.bottomAnchor, constant: -8.0),
+            contentStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -8.0),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
 
             itemsStackView.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)

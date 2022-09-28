@@ -26,12 +26,10 @@ public class SheetViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override public func loadView() {
-        view = sheetView
-    }
-
     override public func viewDidLoad() {
         super.viewDidLoad()
+
+		view.addSubview(withDefaultConstraints: sheetView)
 
         sheetView.dismissSheet = { [weak self] in
             self?.dismiss(animated: true)

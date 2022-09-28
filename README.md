@@ -143,6 +143,7 @@ By default mistica uses the system font, but if you need to use a custom font (T
 * [RadioButton](./Sources/Mistica/Components/RadioButton/)
 * [ScrollContentIndicator](./Sources/Mistica/Components/ScrollContentIndicator/)
 * [SectionTitle](./Sources/Mistica/Components/SectionTitle/)
+* [Sheet](./Sources/Mistica/Components/Sheet/)
 * [Stepper](./Sources/Mistica/Components/Stepper/)
 * [Switch](./Sources/Mistica/Components/Switch/)
 * [Tabs](./Sources/Mistica/Components/Tabs)

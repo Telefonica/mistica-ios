@@ -43,3 +43,34 @@ public class SheetViewController: UIViewController {
         }
     }
 }
+
+// MARK: Custom Accessibilities
+
+public extension SheetViewController {
+	var titleAccessibilityIdentifier: String? {
+		get {
+			sheetView.titleAccessibilityIdentifier
+		}
+		set {
+			sheetView.titleAccessibilityIdentifier = newValue
+		}
+	}
+
+	var subtitleAccessibilityIdentifier: String? {
+		get {
+			sheetView.subtitleAccessibilityIdentifier
+		}
+		set {
+			sheetView.subtitleAccessibilityIdentifier = newValue
+		}
+	}
+
+	var descriptionAccessibilityIdentifier: String? {
+		get {
+			sheetView.descriptionAccessibilityIdentifier
+		}
+		set {
+			sheetView.descriptionAccessibilityIdentifier = newValue
+		}
+	}
+}

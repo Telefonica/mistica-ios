@@ -22,6 +22,15 @@ public class SheetView: UIView {
 		return nil
     }()
 
+	var titleAccessibilityIdentifier: String? {
+		get {
+			titleLabel.accessibilityIdentifier
+		}
+		set {
+			titleLabel.accessibilityIdentifier = newValue
+		}
+	}
+
     private lazy var subtitleLabel: UILabel? = {
 		if let subtitle = config.header.subtitle {
 			let label = UILabel()
@@ -34,6 +43,15 @@ public class SheetView: UIView {
 		return nil
     }()
 
+	var subtitleAccessibilityIdentifier: String? {
+		get {
+			subtitleLabel.accessibilityIdentifier
+		}
+		set {
+			subtitleLabel.accessibilityIdentifier = newValue
+		}
+	}
+
     private lazy var descriptionLabel: UILabel? = {
 		if let description = config.header.description {
 			let label = UILabel()
@@ -45,6 +63,15 @@ public class SheetView: UIView {
 		}
 		return nil
     }()
+
+	var descriptionAccessibilityIdentifier: String? {
+		get {
+			descriptionLabel.accessibilityIdentifier
+		}
+		set {
+			descriptionLabel.accessibilityIdentifier = newValue
+		}
+	}
 
     private let config: SheetConfiguration
     private var contentInfo: [String: [String: RadioButton]] = [:]
@@ -243,9 +270,9 @@ private extension SheetView {
 		}
 
         // Set sheet maximum height in 70% of device screen height.
-//        let scrollHeightMax = scrollView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height * 0.7)
-//        scrollHeightMax.priority = .required
-//        scrollHeightMax.isActive = true
+        let scrollHeightMax = scrollView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height * 0.7)
+        scrollHeightMax.priority = .required
+        scrollHeightMax.isActive = true
 
         let scrollHeight = scrollView.heightAnchor.constraint(equalTo: contentStackView.heightAnchor)
         scrollHeight.priority = .defaultHigh

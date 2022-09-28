@@ -52,7 +52,6 @@ final class SheetTests: XCTestCase {
 		)
 
 		let sheetVC = SheetViewController(configuration: .init(header: .init(title: nil, subtitle: nil, description: nil), content: [content]), completionHandler: nil)
-		sheetVC.view.backgroundColor = .background
 
 		assertSnapshot(
 			matching: sheetVC,

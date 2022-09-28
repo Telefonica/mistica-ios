@@ -97,6 +97,15 @@ public class TagView: UIView {
         }
     }
 
+    public var labelAccessibilityIdentifier: String? {
+        get {
+            label.accessibilityIdentifier
+        }
+        set {
+            label.accessibilityIdentifier = newValue
+        }
+    }
+
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 

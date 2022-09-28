@@ -243,9 +243,9 @@ private extension SheetView {
 		}
 
         // Set sheet maximum height in 70% of device screen height.
-        let scrollHeightMax = scrollView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height * 0.7)
-        scrollHeightMax.priority = .required
-        scrollHeightMax.isActive = true
+//        let scrollHeightMax = scrollView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height * 0.7)
+//        scrollHeightMax.priority = .required
+//        scrollHeightMax.isActive = true
 
         let scrollHeight = scrollView.heightAnchor.constraint(equalTo: contentStackView.heightAnchor)
         scrollHeight.priority = .defaultHigh

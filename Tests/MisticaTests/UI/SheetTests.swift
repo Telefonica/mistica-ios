@@ -15,7 +15,7 @@ final class SheetTests: XCTestCase {
 		super.setUp()
 		UIView.setAnimationsEnabled(false)
 
-		isRecording = true
+		isRecording = false
 	}
 
 	func testEmptyContent() {

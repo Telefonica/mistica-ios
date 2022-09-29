@@ -19,14 +19,11 @@ final class SheetTests: XCTestCase {
 	}
 
 	func testEmptyContent() {
-		let sheetVC = SheetViewController(configuration: .init(header: .init(
-			title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-			content: []), completionHandler: nil)
-
 		assertSnapshot(
-			matching: sheetVC,
+			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  content: []),
 			as: .image
 		)
 	}
@@ -51,10 +48,8 @@ final class SheetTests: XCTestCase {
 			items: rows
 		)
 
-		let sheetVC = SheetViewController(configuration: .init(header: .init(title: nil, subtitle: nil, description: nil), content: [content]), completionHandler: nil)
-
 		assertSnapshot(
-			matching: sheetVC,
+			matching: sheetViewController(content: [content]),
 			as: .image
 		)
 	}
@@ -79,14 +74,11 @@ final class SheetTests: XCTestCase {
 			items: rows
 		)
 
-		let sheetVC = SheetViewController(configuration: .init(header: .init(
-			title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-			content: [content]), completionHandler: nil)
-
 		assertSnapshot(
-			matching: sheetVC,
+			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  content: [content]),
 			as: .image
 		)
 	}
@@ -111,14 +103,11 @@ final class SheetTests: XCTestCase {
 			items: rows
 		)
 
-		let sheetVC = SheetViewController(configuration: .init(header: .init(
-			title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-			content: [content]), completionHandler: nil)
-
 		assertSnapshot(
-			matching: sheetVC,
+			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  content: [content]),
 			as: .image
 		)
 	}
@@ -143,14 +132,40 @@ final class SheetTests: XCTestCase {
 			items: rows
 		)
 
-		let sheetVC = SheetViewController(configuration: .init(header: .init(
-			title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-			content: [content]), completionHandler: nil)
+		assertSnapshot(
+			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  content: [content]),
+			as: .image
+		)
+	}
+
+	func testContentWithSmallIcons() {
+		var rows: [SheetListRow] = []
+		for index in 1 ... 5 {
+			let item = SheetListRow(
+				id: index.description,
+				title: "Element \(index)",
+				description: "Description",
+				icon: .init(url: "https://img.icons8.com/ios-glyphs/344/bookmark.png", size: .small)
+			)
+			rows.append(item)
+		}
+		let content = SheetList(
+			id: UUID().uuidString,
+			type: "LIST",
+			listType: "SINGLE_SELECTION",
+			autoSubmit: true,
+			selectedId: "1",
+			items: rows
+		)
 
 		assertSnapshot(
-			matching: sheetVC,
+			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  content: [content]),
 			as: .image
 		)
 	}
@@ -175,14 +190,11 @@ final class SheetTests: XCTestCase {
 			items: rows
 		)
 
-		let sheetVC = SheetViewController(configuration: .init(header: .init(
-			title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-			content: [content]), completionHandler: nil)
-
 		assertSnapshot(
-			matching: sheetVC,
+			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  content: [content]),
 			as: .image
 		)
 	}
@@ -207,12 +219,9 @@ final class SheetTests: XCTestCase {
 			items: rows
 		)
 
-		let sheetVC = SheetViewController(configuration: .init(header: .init(
-			title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-			content: [content]), completionHandler: nil)
-
 		assertSnapshot(
-			matching: sheetVC,
+			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  content: [content]),
 			as: .image
 		)
 	}
@@ -237,14 +246,30 @@ final class SheetTests: XCTestCase {
 			items: rows
 		)
 
-		let sheetVC = SheetViewController(configuration: .init(header: .init(
-			title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-			content: [content]), completionHandler: nil)
 
 		assertSnapshot(
-			matching: sheetVC,
+			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+										  content: [content]),
 			as: .image
 		)
+	}
+}
+
+private extension SheetTests {
+	func sheetViewController(
+		title: String? = nil,
+		subtitle: String? = nil,
+		description: String? = nil,
+		content: [SheetList]
+	) -> SheetViewController {
+		let configuration = SheetConfiguration(header: .init(title: title,
+															 subtitle: subtitle,
+															 description: description),
+											   content: content)
+		let sheetVc = SheetViewController(configuration: configuration, completionHandler: nil)
+		sheetVc.view.frame = CGRect(x: 0, y: 0, width: 300, height: 600)
+
+		return sheetVc
 	}
 }

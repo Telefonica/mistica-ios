@@ -109,6 +109,7 @@ public class SheetView: UIView {
 private extension SheetView {
     func setupView() {
         backgroundColor = .backgroundContainer
+		makeRounded(cornerRadius: 8.0)
 
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
@@ -245,19 +246,23 @@ private extension SheetView {
 		addSubview(containerView)
 
 		if let titleLabel = titleLabel {
+			let titleStackView = UIStackView()
+			titleStackView.axis = .horizontal
+			titleStackView.distribution = .fill
+			titleStackView.alignment = .leading
+			titleStackView.translatesAutoresizingMaskIntoConstraints = false
+
 			titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
 
-			containerView.addArrangedSubview(titleLabel)
+			titleStackView.addArrangedSubview(titleLabel)
+			containerView.addArrangedSubview(titleStackView)
 			containerView.addArrangedSubview(scrollView)
 			scrollView.addSubview(contentStackView)
 			contentStackView.addArrangedSubview(headerStackView)
 			contentStackView.addArrangedSubview(itemsStackView)
 
 			NSLayoutConstraint.activate([
-				titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24.0),
-				titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0),
-				titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
-				titleLabel.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -8.0)
+				titleStackView.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -8.0)
 			])
 		} else {
 			containerView.addSubview(scrollView)
@@ -279,19 +284,18 @@ private extension SheetView {
         scrollHeight.isActive = true
 
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: topAnchor),
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+			containerView.topAnchor.constraint(equalTo: topAnchor, constant: 24.0),
+			containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
+			containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
             containerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
 
-            scrollView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16.0),
-            scrollView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16.0),
             scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+			scrollView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
 
-            contentStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -8.0),
+			contentStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+			contentStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+			contentStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+			contentStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
 
             itemsStackView.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)

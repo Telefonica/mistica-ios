@@ -24,10 +24,10 @@ public class SheetView: UIView {
 
 	var titleAccessibilityIdentifier: String? {
 		get {
-			titleLabel.accessibilityIdentifier
+			titleLabel?.accessibilityIdentifier
 		}
 		set {
-			titleLabel.accessibilityIdentifier = newValue
+			titleLabel?.accessibilityIdentifier = newValue
 		}
 	}
 
@@ -45,10 +45,10 @@ public class SheetView: UIView {
 
 	var subtitleAccessibilityIdentifier: String? {
 		get {
-			subtitleLabel.accessibilityIdentifier
+			subtitleLabel?.accessibilityIdentifier
 		}
 		set {
-			subtitleLabel.accessibilityIdentifier = newValue
+			subtitleLabel?.accessibilityIdentifier = newValue
 		}
 	}
 
@@ -66,10 +66,10 @@ public class SheetView: UIView {
 
 	var descriptionAccessibilityIdentifier: String? {
 		get {
-			descriptionLabel.accessibilityIdentifier
+			descriptionLabel?.accessibilityIdentifier
 		}
 		set {
-			descriptionLabel.accessibilityIdentifier = newValue
+			descriptionLabel?.accessibilityIdentifier = newValue
 		}
 	}
 

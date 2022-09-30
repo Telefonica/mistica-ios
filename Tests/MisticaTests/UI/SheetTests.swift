@@ -20,7 +20,7 @@ final class SheetTests: XCTestCase {
 
 	func testEmptyContent() {
 		assertSnapshot(
-			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			matching: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  content: []),
@@ -49,7 +49,7 @@ final class SheetTests: XCTestCase {
 		)
 
 		assertSnapshot(
-			matching: sheetViewController(content: [content]),
+			matching: sheetView(content: [content]),
 			as: .image
 		)
 	}
@@ -75,7 +75,7 @@ final class SheetTests: XCTestCase {
 		)
 
 		assertSnapshot(
-			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			matching: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  content: [content]),
@@ -104,7 +104,7 @@ final class SheetTests: XCTestCase {
 		)
 
 		assertSnapshot(
-			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			matching: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  content: [content]),
@@ -133,7 +133,7 @@ final class SheetTests: XCTestCase {
 		)
 
 		assertSnapshot(
-			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			matching: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  content: [content]),
@@ -162,7 +162,7 @@ final class SheetTests: XCTestCase {
 		)
 
 		assertSnapshot(
-			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			matching: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  content: [content]),
@@ -191,7 +191,7 @@ final class SheetTests: XCTestCase {
 		)
 
 		assertSnapshot(
-			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			matching: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  content: [content]),
@@ -220,7 +220,7 @@ final class SheetTests: XCTestCase {
 		)
 
 		assertSnapshot(
-			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			matching: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  content: [content]),
 			as: .image
 		)
@@ -248,7 +248,7 @@ final class SheetTests: XCTestCase {
 
 
 		assertSnapshot(
-			matching: sheetViewController(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			matching: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 										  content: [content]),
 			as: .image
@@ -257,19 +257,16 @@ final class SheetTests: XCTestCase {
 }
 
 private extension SheetTests {
-	func sheetViewController(
+	func sheetView(
 		title: String? = nil,
 		subtitle: String? = nil,
 		description: String? = nil,
 		content: [SheetList]
-	) -> SheetViewController {
+	) -> SheetView {
 		let configuration = SheetConfiguration(header: .init(title: title,
 															 subtitle: subtitle,
 															 description: description),
 											   content: content)
-		let sheetVc = SheetViewController(configuration: configuration, completionHandler: nil)
-		sheetVc.view.frame = CGRect(x: 0, y: 0, width: 300, height: 600)
-
-		return sheetVc
+		return SheetView(configuration: configuration)
 	}
 }

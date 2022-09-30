@@ -267,6 +267,8 @@ private extension SheetTests {
 															 subtitle: subtitle,
 															 description: description),
 											   content: content)
-		return SheetView(configuration: configuration)
+		let sheetView = SheetView(configuration: configuration)
+		sheetView.frame = CGRect(x: 0, y: 0, width: 300, height: 600)
+		return sheetView
 	}
 }

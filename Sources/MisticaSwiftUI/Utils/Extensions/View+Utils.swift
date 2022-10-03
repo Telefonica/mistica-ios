@@ -127,6 +127,7 @@ public extension View {
         }
     }
 
+    @available(iOSApplicationExtension, unavailable)
     func endEditingOnTap() -> some View {
         onTapGesture {
             UIApplication.shared

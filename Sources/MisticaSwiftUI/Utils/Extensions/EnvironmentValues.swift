@@ -12,6 +12,7 @@ import SwiftUI
 // MARK: Safe area insets
 
 @available(iOS 13.0, *)
+@available(iOSApplicationExtension, unavailable)
 public extension EnvironmentValues {
     var safeAreaInsets: EdgeInsets {
         self[SafeAreaInsetsKey.self]
@@ -19,6 +20,7 @@ public extension EnvironmentValues {
 }
 
 @available(iOS 13.0, *)
+@available(iOSApplicationExtension, unavailable)
 private struct SafeAreaInsetsKey: EnvironmentKey {
     static var defaultValue: EdgeInsets {
         UIApplication.shared.keyWindow?.safeAreaInsets.swiftUiInsets ?? EdgeInsets()
@@ -38,6 +40,7 @@ private extension UIEdgeInsets {
 }
 
 @available(iOS 13.0, *)
+@available(iOSApplicationExtension, unavailable)
 private extension UIApplication {
     var keyWindow: UIWindow? {
         connectedScenes

@@ -36,7 +36,7 @@ public struct DeterminedStepper: View {
     public var body: some View {
         GeometryReader { _ in
             HStack {
-                ForEach(0 ..< steps) { stepIndex in
+                ForEach(0 ..< steps, id: \.self) { stepIndex in
                     step(for: stepIndex)
                         .frame(width: Constants.height, height: Constants.height)
                     undeterminedStepper(for: stepIndex)

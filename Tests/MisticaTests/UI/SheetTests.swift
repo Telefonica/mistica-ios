@@ -17,16 +17,18 @@ final class SheetTests: XCTestCase {
 
         isRecording = false
     }
-    
-	func testEmptyContent() {
+
+    func testEmptyContent() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
-            viewBuilder: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                                    subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                                    content: [])
-		)
-	}
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: []
+            )
+        )
+    }
 
     func testEmptyHeader() {
         var rows: [SheetListRow] = []
@@ -50,8 +52,8 @@ final class SheetTests: XCTestCase {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(content: [content])
-		)
-	}
+        )
+    }
 
     func testContentWithoutIcons() {
         var rows: [SheetListRow] = []
@@ -72,15 +74,17 @@ final class SheetTests: XCTestCase {
             selectedId: "1",
             items: rows
         )
-        
+
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
-			viewBuilder: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  content: [content])
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: [content]
+            )
         )
-	}
+    }
 
     func testContentWithoutIconsAndDescriptions() {
         var rows: [SheetListRow] = []
@@ -104,12 +108,14 @@ final class SheetTests: XCTestCase {
 
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
-			viewBuilder: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  content: [content])
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: [content]
+            )
         )
-	}
+    }
 
     func testContentWithIcons() {
         var rows: [SheetListRow] = []
@@ -133,12 +139,14 @@ final class SheetTests: XCTestCase {
 
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
-			viewBuilder: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  content: [content])
-		)
-	}
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: [content]
+            )
+        )
+    }
 
     func testContentWithSmallIcons() {
         var rows: [SheetListRow] = []
@@ -162,12 +170,14 @@ final class SheetTests: XCTestCase {
 
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
-			viewBuilder: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  content: [content])
-		)
-	}
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: [content]
+            )
+        )
+    }
 
     func testContentWithIconsAndWithoutDescriptions() {
         var rows: [SheetListRow] = []
@@ -191,12 +201,14 @@ final class SheetTests: XCTestCase {
 
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
-			viewBuilder: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  content: [content])
-		)
-	}
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: [content]
+            )
+        )
+    }
 
     func testNoSubtitleAndDescription() {
         var rows: [SheetListRow] = []
@@ -220,10 +232,12 @@ final class SheetTests: XCTestCase {
 
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
-            viewBuilder: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                                   content: [content])
-		)
-	}
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: [content]
+            )
+        )
+    }
 
     func testNoDescription() {
         var rows: [SheetListRow] = []
@@ -247,11 +261,13 @@ final class SheetTests: XCTestCase {
 
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
-			viewBuilder: sheetView(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-										  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-								content: [content])
-		)
-	}
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: [content]
+            )
+        )
+    }
 }
 
 private extension SheetTests {

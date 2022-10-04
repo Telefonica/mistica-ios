@@ -187,12 +187,12 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
             content: [content]
         )
 
-		let viewController = SheetViewController(configuration: configuration, completionHandler: { sheetResponse in
-			print("Sheet selection response:")
-			print("\tAction:\(sheetResponse.action)")
-			print("\tSelected ids:\(sheetResponse.selectedIds)")
-		})
-		viewController.delegate = sheetTransitioningDelegate
+        let viewController = SheetViewController(configuration: configuration, completionHandler: { sheetResponse in
+            print("Sheet selection response:")
+            print("\tAction:\(sheetResponse.action)")
+            print("\tSelected ids:\(sheetResponse.selectedIds)")
+        })
+        viewController.delegate = sheetTransitioningDelegate
         viewController.transitioningDelegate = sheetTransitioningDelegate
         viewController.modalPresentationStyle = .custom
 
@@ -201,20 +201,20 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
 }
 
 private extension UICatalogSheetViewController {
-	var sheetTitle: String? {
-		guard let title = titleCell.textField.text, !title.isEmpty else { return nil }
-		return title
-	}
+    var sheetTitle: String? {
+        guard let title = titleCell.textField.text, !title.isEmpty else { return nil }
+        return title
+    }
 
-	var sheetSubtitle: String? {
-		guard let subtitle = subtitleCell.textField.text, !subtitle.isEmpty else { return nil }
-		return subtitle
-	}
+    var sheetSubtitle: String? {
+        guard let subtitle = subtitleCell.textField.text, !subtitle.isEmpty else { return nil }
+        return subtitle
+    }
 
-	var sheetDescription: String? {
-		guard let description = descriptionCell.textField.text, !description.isEmpty else { return nil }
-		return description
-	}
+    var sheetDescription: String? {
+        guard let description = descriptionCell.textField.text, !description.isEmpty else { return nil }
+        return description
+    }
 
     var sheetNumElements: Int {
         Int(numberOfElementsCell.currentValue)

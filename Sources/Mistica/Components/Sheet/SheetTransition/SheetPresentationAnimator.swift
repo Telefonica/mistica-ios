@@ -1,5 +1,5 @@
 //
-//  SheetTransitioningDelegate.swift
+//  SheetPresentationAnimator.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -13,46 +13,46 @@ import UIKit
  It will be dismissed in the opposite direction.
  */
 class SheetPresentationAnimator: NSObject {
-	private let isPresentation: Bool
-	init(isPresentation: Bool) {
-		self.isPresentation = isPresentation
-	}
+    private let isPresentation: Bool
+    init(isPresentation: Bool) {
+        self.isPresentation = isPresentation
+    }
 }
 
 extension SheetPresentationAnimator: UIViewControllerAnimatedTransitioning {
-	func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-		UIView.defaultAnimationDuration
-	}
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        UIView.defaultAnimationDuration
+    }
 
-	func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-		let key = isPresentation ? UITransitionContextViewControllerKey.to : UITransitionContextViewControllerKey.from
-		let controller = transitionContext.viewController(forKey: key)!
-		let animationDuration = transitionDuration(using: transitionContext)
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let key = isPresentation ? UITransitionContextViewControllerKey.to : UITransitionContextViewControllerKey.from
+        let controller = transitionContext.viewController(forKey: key)!
+        let animationDuration = transitionDuration(using: transitionContext)
 
-		let presentedFrame = transitionContext.finalFrame(for: controller)
-		var dismissedFrame = presentedFrame
-		dismissedFrame.origin.y = transitionContext.containerView.frame.size.height
+        let presentedFrame = transitionContext.finalFrame(for: controller)
+        var dismissedFrame = presentedFrame
+        dismissedFrame.origin.y = transitionContext.containerView.frame.size.height
 
-		let initialFrame: CGRect
-		let finalFrame: CGRect
-		let options: UIView.AnimationOptions
+        let initialFrame: CGRect
+        let finalFrame: CGRect
+        let options: UIView.AnimationOptions
 
-		if isPresentation {
-			transitionContext.containerView.addSubview(controller.view)
-			initialFrame = dismissedFrame
-			finalFrame = presentedFrame
-			options = .curveEaseOut
-		} else {
-			initialFrame = presentedFrame
-			finalFrame = dismissedFrame
-			options = .curveEaseIn
-		}
+        if isPresentation {
+            transitionContext.containerView.addSubview(controller.view)
+            initialFrame = dismissedFrame
+            finalFrame = presentedFrame
+            options = .curveEaseOut
+        } else {
+            initialFrame = presentedFrame
+            finalFrame = dismissedFrame
+            options = .curveEaseIn
+        }
 
-		controller.view.frame = initialFrame
-		UIView.animate(withDuration: animationDuration, delay: 0, options: options, animations: {
-			controller.view.frame = finalFrame
-		}) { _ in
-			transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-		}
-	}
+        controller.view.frame = initialFrame
+        UIView.animate(withDuration: animationDuration, delay: 0, options: options, animations: {
+            controller.view.frame = finalFrame
+        }) { _ in
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        }
+    }
 }

@@ -135,6 +135,11 @@ public class SheetViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+	override public func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		completionHandler?(sheetSelectionResponse)
+	}
 }
 
 public extension SheetViewController {
@@ -393,7 +398,6 @@ private extension SheetViewController {
 				sheetSelectionResponse.action = .submit
 				sheetSelectionResponse.selectedIds = contentSelected
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-					self.completionHandler?(self.sheetSelectionResponse)
 					self.dismiss(animated: true)
 				}
 			}

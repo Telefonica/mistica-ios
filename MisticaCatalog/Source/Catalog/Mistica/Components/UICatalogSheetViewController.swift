@@ -201,17 +201,20 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
 }
 
 private extension UICatalogSheetViewController {
-    var sheetTitle: String? {
-        titleCell.textField.text
-    }
+	var sheetTitle: String? {
+		guard let title = titleCell.textField.text, !title.isEmpty else { return nil }
+		return title
+	}
 
-    var sheetSubtitle: String? {
-        subtitleCell.textField.text
-    }
+	var sheetSubtitle: String? {
+		guard let subtitle = subtitleCell.textField.text, !subtitle.isEmpty else { return nil }
+		return subtitle
+	}
 
-    var sheetDescription: String? {
-        descriptionCell.textField.text
-    }
+	var sheetDescription: String? {
+		guard let description = descriptionCell.textField.text, !description.isEmpty else { return nil }
+		return description
+	}
 
     var sheetNumElements: Int {
         Int(numberOfElementsCell.currentValue)

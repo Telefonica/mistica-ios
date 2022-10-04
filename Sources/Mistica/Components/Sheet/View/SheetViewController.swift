@@ -155,10 +155,6 @@ public extension SheetViewController {
 		containerView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(containerView)
 
-		let scrollView = UIScrollView()
-		scrollView.showsVerticalScrollIndicator = false
-		scrollView.translatesAutoresizingMaskIntoConstraints = false
-
 		let topStackView = UIStackView()
 		topStackView.axis = .vertical
 		topStackView.distribution = .fill
@@ -170,6 +166,19 @@ public extension SheetViewController {
 		handleView.heightAnchor.constraint(equalToConstant: 4.0).isActive = true
 		handleView.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
 		topStackView.addArrangedSubview(handleView)
+		containerView.addArrangedSubview(topStackView)
+
+		if let titleLabel = titleLabel {
+			titleLabel.translatesAutoresizingMaskIntoConstraints = false
+			titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+			topStackView.addArrangedSubview(titleLabel)
+			titleLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
+		}
+
+		let scrollView = UIScrollView()
+		scrollView.showsVerticalScrollIndicator = false
+		scrollView.translatesAutoresizingMaskIntoConstraints = false
+		containerView.addArrangedSubview(scrollView)
 
 		let contentStackView = UIStackView()
 		contentStackView.axis = .vertical
@@ -177,6 +186,7 @@ public extension SheetViewController {
 		contentStackView.alignment = .leading
 		contentStackView.spacing = 16.0
 		contentStackView.translatesAutoresizingMaskIntoConstraints = false
+		scrollView.addSubview(contentStackView)
 
 		// Header section for sheet information
 		let headerStackView = UIStackView()
@@ -185,6 +195,7 @@ public extension SheetViewController {
 		headerStackView.alignment = .leading
 		headerStackView.spacing = 8.0
 		headerStackView.translatesAutoresizingMaskIntoConstraints = false
+		contentStackView.addArrangedSubview(headerStackView)
 
 		if let subtitleLabel = subtitleLabel {
 			headerStackView.addArrangedSubview(subtitleLabel)
@@ -203,6 +214,7 @@ public extension SheetViewController {
 		itemsStackView.alignment = .leading
 		itemsStackView.spacing = 16.0
 		itemsStackView.translatesAutoresizingMaskIntoConstraints = false
+		contentStackView.addArrangedSubview(itemsStackView)
 
 		for content in config.content {
 			contentInfo[content.id] = [:]
@@ -293,29 +305,6 @@ public extension SheetViewController {
 			}
 		}
 
-		if let titleLabel = titleLabel {
-			titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-			topStackView.addArrangedSubview(titleLabel)
-			containerView.addArrangedSubview(topStackView)
-			containerView.addArrangedSubview(scrollView)
-			scrollView.addSubview(contentStackView)
-			contentStackView.addArrangedSubview(headerStackView)
-			contentStackView.addArrangedSubview(itemsStackView)
-
-			NSLayoutConstraint.activate([
-				titleLabel.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-				topStackView.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -8.0)
-			])
-		} else {
-			containerView.addSubview(scrollView)
-			scrollView.addSubview(contentStackView)
-			contentStackView.addArrangedSubview(headerStackView)
-			contentStackView.addArrangedSubview(itemsStackView)
-			NSLayoutConstraint.activate([
-				scrollView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 24.0)
-			])
-		}
-
 		// Set sheet maximum height in 70% of device screen height.
 		let scrollHeightMax = containerView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height * 0.7)
 		scrollHeightMax.priority = .required
@@ -332,6 +321,7 @@ public extension SheetViewController {
 			containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 
 			topStackView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
+			topStackView.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -8.0),
 
 			scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
 			scrollView.widthAnchor.constraint(equalTo: containerView.widthAnchor),

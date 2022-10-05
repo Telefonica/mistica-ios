@@ -380,7 +380,7 @@ private extension SheetViewController {
     @objc private func selectItem(_ sender: ItemInformationTapGesture) {
         if let content = contentInfo[sender.contentId], let item = content[sender.itemId] {
             contentSelected.append(.init(id: sender.contentId, selected: [sender.itemId]))
-			content.forEach { $1.isActivated = $1 == item }
+            content.forEach { $1.isActivated = $1 == item }
             if !isDismissing && sender.autoSubmit {
                 isDismissing = true
                 sheetSelectionResponse.action = .submit

@@ -128,7 +128,7 @@ private extension SheetTests {
             items: rows
         )
     }
-    
+
     func sheetView(
         title: String? = nil,
         subtitle: String? = nil,

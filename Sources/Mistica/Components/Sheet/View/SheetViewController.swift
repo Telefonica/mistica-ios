@@ -242,17 +242,7 @@ public extension SheetViewController {
                     imageView.heightAnchor.constraint(equalToConstant: icon.size.value).isActive = true
                     imageView.widthAnchor.constraint(equalToConstant: icon.size.value).isActive = true
                     imageView.contentMode = .scaleAspectFit
-                    if let url = URL(string: icon.url),
-                       let data = try? Data(contentsOf: url) {
-                        let lightImage = UIImage(data: data)
-                        if let iconDark = icon.urlDark,
-                           let urlDark = URL(string: iconDark),
-                           let dataDark = try? Data(contentsOf: urlDark),
-                           let darkImage = UIImage(data: dataDark) {
-                            lightImage?.imageAsset?.register(darkImage, with: .init(userInterfaceStyle: .dark))
-                        }
-                        imageView.image = lightImage
-                    }
+                    load(icon: icon, in: imageView)
                     itemStackView.addArrangedSubview(imageView)
                 }
 

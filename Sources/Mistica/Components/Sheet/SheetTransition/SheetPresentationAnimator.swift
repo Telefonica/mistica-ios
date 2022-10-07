@@ -26,7 +26,7 @@ extension SheetPresentationAnimator: UIViewControllerAnimatedTransitioning {
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let key = isPresentation ? UITransitionContextViewControllerKey.to : UITransitionContextViewControllerKey.from
-        let controller = transitionContext.viewController(forKey: key)!
+        guard let controller = transitionContext.viewController(forKey: key) else { return }
         let animationDuration = transitionDuration(using: transitionContext)
 
         let presentedFrame = transitionContext.finalFrame(for: controller)

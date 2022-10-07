@@ -18,259 +18,117 @@ final class SheetTests: XCTestCase {
         isRecording = false
     }
 
-    func testEmptyContent() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
-            viewBuilder: sheetView(
-                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: []
-            )
-        )
-    }
-
     func testEmptyHeader() {
-        var rows: [SheetListRow] = []
-        for index in 1 ... 10 {
-            let item = SheetListRow(
-                id: index.description,
-                title: "Element \(index)",
-                description: "Description",
-                icon: nil
-            )
-            rows.append(item)
-        }
-        let content = SheetList(
-            id: UUID().uuidString,
-            type: "LIST",
-            listType: "SINGLE_SELECTION",
-            autoSubmit: true,
-            selectedId: "1",
-            items: rows
-        )
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
-            viewBuilder: sheetView(content: [content])
+            viewBuilder: sheetView(content: makeSheetContent())
         )
     }
 
     func testContentWithoutIcons() {
-        var rows: [SheetListRow] = []
-        for index in 1 ... 10 {
-            let item = SheetListRow(
-                id: index.description,
-                title: "Element \(index)",
-                description: "Description",
-                icon: nil
-            )
-            rows.append(item)
-        }
-        let content = SheetList(
-            id: UUID().uuidString,
-            type: "LIST",
-            listType: "SINGLE_SELECTION",
-            autoSubmit: true,
-            selectedId: "1",
-            items: rows
-        )
-
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: [content]
+                content: makeSheetContent()
             )
         )
     }
 
     func testContentWithoutIconsAndDescriptions() {
-        var rows: [SheetListRow] = []
-        for index in 1 ... 10 {
-            let item = SheetListRow(
-                id: index.description,
-                title: "Element \(index)",
-                description: nil,
-                icon: nil
-            )
-            rows.append(item)
-        }
-        let content = SheetList(
-            id: UUID().uuidString,
-            type: "LIST",
-            listType: "SINGLE_SELECTION",
-            autoSubmit: true,
-            selectedId: "1",
-            items: rows
-        )
-
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: [content]
+                content: makeSheetContent()
             )
         )
     }
 
     func testContentWithIcons() {
-        var rows: [SheetListRow] = []
-        for index in 1 ... 5 {
-            let item = SheetListRow(
-                id: index.description,
-                title: "Element \(index)",
-                description: "Description",
-                icon: .init(url: "https://img.icons8.com/ios-glyphs/344/bookmark.png")
-            )
-            rows.append(item)
-        }
-        let content = SheetList(
-            id: UUID().uuidString,
-            type: "LIST",
-            listType: "SINGLE_SELECTION",
-            autoSubmit: true,
-            selectedId: "1",
-            items: rows
-        )
-
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: [content]
+                content: makeSheetContent(iconEnabled: true)
             )
         )
     }
 
     func testContentWithSmallIcons() {
-        var rows: [SheetListRow] = []
-        for index in 1 ... 5 {
-            let item = SheetListRow(
-                id: index.description,
-                title: "Element \(index)",
-                description: "Description",
-                icon: .init(url: "https://img.icons8.com/ios-glyphs/344/bookmark.png", size: .small)
-            )
-            rows.append(item)
-        }
-        let content = SheetList(
-            id: UUID().uuidString,
-            type: "LIST",
-            listType: "SINGLE_SELECTION",
-            autoSubmit: true,
-            selectedId: "1",
-            items: rows
-        )
-
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: [content]
+                content: makeSheetContent(iconEnabled: true, isLargeIcon: false)
             )
         )
     }
 
     func testContentWithIconsAndWithoutDescriptions() {
-        var rows: [SheetListRow] = []
-        for index in 1 ... 5 {
-            let item = SheetListRow(
-                id: index.description,
-                title: "Element \(index)",
-                description: nil,
-                icon: .init(url: "https://img.icons8.com/ios-glyphs/344/bookmark.png")
-            )
-            rows.append(item)
-        }
-        let content = SheetList(
-            id: UUID().uuidString,
-            type: "LIST",
-            listType: "SINGLE_SELECTION",
-            autoSubmit: true,
-            selectedId: "1",
-            items: rows
-        )
-
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: [content]
+                content: makeSheetContent(iconEnabled: true)
             )
         )
     }
 
     func testNoSubtitleAndDescription() {
-        var rows: [SheetListRow] = []
-        for index in 1 ... 10 {
-            let item = SheetListRow(
-                id: index.description,
-                title: "Element \(index)",
-                description: "Description",
-                icon: nil
-            )
-            rows.append(item)
-        }
-        let content = SheetList(
-            id: UUID().uuidString,
-            type: "LIST",
-            listType: "SINGLE_SELECTION",
-            autoSubmit: true,
-            selectedId: "1",
-            items: rows
-        )
-
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: [content]
+                content: makeSheetContent()
             )
         )
     }
 
     func testNoDescription() {
-        var rows: [SheetListRow] = []
-        for index in 1 ... 10 {
-            let item = SheetListRow(
-                id: index.description,
-                title: "Element \(index)",
-                description: "Description",
-                icon: nil
-            )
-            rows.append(item)
-        }
-        let content = SheetList(
-            id: UUID().uuidString,
-            type: "LIST",
-            listType: "SINGLE_SELECTION",
-            autoSubmit: true,
-            selectedId: "1",
-            items: rows
-        )
-
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: [content]
+                content: makeSheetContent()
             )
         )
     }
 }
 
 private extension SheetTests {
+    func makeSheetContent(iconEnabled: Bool = false, isLargeIcon: Bool = true) -> [SheetList] {
+        var rows: [SheetListRow] = []
+        for index in 1 ... 10 {
+            let item = SheetListRow(
+                id: index.description,
+                title: "Element \(index)",
+                description: "Description",
+                icon: iconEnabled ? .init(url: "https://img.icons8.com/ios-glyphs/344/bookmark.png", size: isLargeIcon ? .large : .small) : nil
+            )
+            rows.append(item)
+        }
+        let content = SheetList(
+            id: UUID().uuidString,
+            type: "LIST",
+            listType: "SINGLE_SELECTION",
+            autoSubmit: true,
+            selectedId: "1",
+            items: rows
+        )
+    }
+    
     func sheetView(
         title: String? = nil,
         subtitle: String? = nil,

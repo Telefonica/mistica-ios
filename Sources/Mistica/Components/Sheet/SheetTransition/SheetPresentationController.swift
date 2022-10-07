@@ -88,9 +88,7 @@ class SheetPresentationController: UIPresentationController {
 
 private extension SheetPresentationController {
     var maxTopOffset: CGFloat {
-        let safeTopInset: CGFloat
-        safeTopInset = containerView?.safeAreaInsets.top ?? 0
-
+        let safeTopInset = containerView?.safeAreaInsets.top ?? 0
         return Constants.maxTopOffset + safeTopInset
     }
 
@@ -102,7 +100,6 @@ private extension SheetPresentationController {
         dimmingView.translatesAutoresizingMaskIntoConstraints = false
         dimmingView.backgroundColor = .backgroundOverlay
         dimmingView.alpha = 0.0
-        dimmingView.accessibilityIdentifier = "dimmingView"
 
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(tapOnDimmingView))
         dimmingView.addGestureRecognizer(recognizer)
@@ -119,9 +116,7 @@ private extension SheetPresentationController {
             coordinator.animate(alongsideTransition: { _ in
                 animation()
             })
-        } else {
-            animation()
-        }
+        } else { return }
     }
 
     @objc private func tapOnDimmingView() {

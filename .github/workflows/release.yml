@@ -14,7 +14,7 @@ jobs:
     runs-on: self-hosted-novum-mac
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.1.0
         with:
           token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
 
@@ -29,7 +29,7 @@ jobs:
         run: npx -p @semantic-release/changelog -p @semantic-release/git -p @semantic-release/exec -p semantic-release semantic-release ${{ github.event.inputs.cliArgs }}
 
       - name: Checkout Telefonica/github-actions repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.1.0
         with:
           repository: Telefonica/github-actions
           token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"

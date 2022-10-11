@@ -8,17 +8,54 @@
 
 import UIKit
 
-/// An object that manages the presentation of a controller with a  sheet appearance.
-final class SheetPresentationController: UIPresentationController {
-    // MARK: - Constants
+/**
+ This class handles a custom presentation where the View Controller will be shown from the bottom
+ to a custom top offset. A dimming view will be shown to darken the rest of the background.
+ */
+class SheetPresentationController: UIPresentationController {
+    private enum Constants {
+        static let maxTopOffset: CGFloat = 180
+    }
 
-    /// The corner radius of the sheet.
-    private let cornerRadius: CGFloat = 8.0
+    private let dimmingView = UIView()
 
-    /// The percentage to trigger the dismiss transition.
-    private let dismissThreshold: CGFloat = 0.3
+    init(
+        presented: UIViewController,
+        presenting: UIViewController?
+    ) {
+        super.init(presentedViewController: presented, presenting: presenting)
+        setUpDimmingView()
+        setUpMaskedCorners()
+    }
 
-    // MARK: - Computed Properties
+    override func presentationTransitionWillBegin() {
+        guard let containerView = containerView else {
+            super.presentationTransitionWillBegin()
+            return
+        }
+
+        containerView.insertSubview(dimmingView, at: 0)
+        NSLayoutConstraint.activate([
+            dimmingView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            dimmingView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            dimmingView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            dimmingView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        ])
+
+        let presentationAction = {
+            self.dimmingView.alpha = 0.4
+        }
+
+        animateAlongsideTransitionIfPossible(presentationAction)
+    }
+
+    override func dismissalTransitionWillBegin() {
+        let dismissalAction = {
+            self.dimmingView.alpha = 0.0
+        }
+
+        animateAlongsideTransitionIfPossible(dismissalAction)
+    }
 
     override var frameOfPresentedViewInContainerView: CGRect {
         guard let containerView = containerView, let presentedView = presentedView else {
@@ -47,242 +84,42 @@ final class SheetPresentationController: UIPresentationController {
 
         return CGRect(origin: targetOrigin, size: targetSize)
     }
-
-    /// The `UIScrollView` embedded in the `presentedView`.
-    /// When available, the drag of the scroll view will be used to drive the interactive dismiss transition.
-    private var presentedScrollView: UIScrollView? {
-        guard let presentedView = presentedView else {
-            return nil
-        }
-
-        if let scrollView = presentedView.subviews.first(where: { $0 is UIScrollView }) as? UIScrollView {
-            return scrollView
-        }
-
-        return nil
-    }
-
-    /// The object that is managing the presentation and transition.
-    private var transitioningDelegate: SheetTransitioningDelegate? {
-        presentedViewController.transitioningDelegate as? SheetTransitioningDelegate
-    }
-
-    // MARK: - UI Elements
-
-    /// The view displayed behind the presented controller.
-    private lazy var overlayView: UIView = {
-        let view = UIView()
-        view.alpha = .zero
-        view.backgroundColor = .backgroundOverlay
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedBackgroundView)))
-        return view
-    }()
-
-    /// The view displaying a handle on the presented view.
-    private let handleView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .control
-        view.frame.size = CGSize(width: 40, height: 4)
-        return view
-    }()
-
-    /// The pan gesture used to drag and interactively dismiss the sheet.
-    private lazy var panGesture = UIPanGestureRecognizer(target: self, action: #selector(pannedPresentedView))
-
-    // MARK: - Methods
-
-    override func presentationTransitionWillBegin() {
-        super.presentationTransitionWillBegin()
-
-        containerView?.addSubview(overlayView)
-
-        presentedView?.addSubview(handleView)
-
-        overlayView.fade(toAlpha: 1.0, duration: 0.25)
-
-        presentedViewController.transitionCoordinator?.animate(alongsideTransition: { [weak self] _ in
-            guard let self = self else {
-                return
-            }
-
-            self.presentedView?.layer.cornerRadius = self.cornerRadius
-        })
-    }
-
-    override func containerViewDidLayoutSubviews() {
-        super.containerViewDidLayoutSubviews()
-
-        layoutAccessoryViews()
-
-        guard let presentedView = presentedView else {
-            return
-        }
-
-        setupPresentedViewInteraction()
-
-        if #available(iOS 13.0, *) {
-            presentedView.layer.cornerCurve = .continuous
-        }
-        presentedView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-
-        presentedViewController.additionalSafeAreaInsets.top = handleView.frame.maxY
-    }
-
-    override func dismissalTransitionWillBegin() {
-        super.dismissalTransitionWillBegin()
-
-        presentedViewController.transitionCoordinator?.animate(alongsideTransition: { [weak self] _ in
-            guard let self = self else {
-                return
-            }
-
-            self.presentedView?.layer.cornerRadius = .zero
-            self.overlayView.fade(toAlpha: 0.0, duration: 0.25)
-        })
-    }
 }
 
 private extension SheetPresentationController {
-    // MARK: - Private Helpers
-
-    /// Lays out the accessory views of the presentation.
-    private func layoutAccessoryViews() {
-        guard let containerView = containerView else {
-            return
-        }
-
-        overlayView.frame = containerView.bounds
-
-        guard let presentedView = presentedView else {
-            return
-        }
-
-        handleView.frame.origin.y = 8
-        handleView.center.x = presentedView.center.x
-
-        handleView.layer.cornerRadius = handleView.frame.height / 2
+    var maxTopOffset: CGFloat {
+        let safeTopInset = containerView?.safeAreaInsets.top ?? 0
+        return Constants.maxTopOffset + safeTopInset
     }
 
-    /// Sets up the interaction on the `presentedView`.
-    ///
-    /// If the view embeds a `UIScrollView` we will ask the presented view to lay out its contents, then ask for the scroll view's content size.
-    /// If the content size is bigger than the frame of the scroll view, then we use the drag of the scroll as driver for the dismiss interaction.
-    /// Otherwise we just add the pan gesture recognizer to the presented view.
-    private func setupPresentedViewInteraction() {
-        guard let presentedView = presentedView else {
-            return
-        }
-
-        guard let presentedScrollView = presentedScrollView else {
-            presentedView.addGestureRecognizer(panGesture)
-            return
-        }
-
-        presentedView.layoutIfNeeded()
-
-        if presentedScrollView.contentSize.height > presentedScrollView.frame.height {
-            presentedScrollView.delegate = self
-        } else {
-            presentedView.addGestureRecognizer(panGesture)
-        }
+    var bottomSafeArea: CGFloat {
+        containerView?.safeAreaInsets.bottom ?? 0
     }
 
-    /// Triggers the dismiss transition in an interactive manner.
-    /// - Parameter isInteractive: Whether the transition should be started interactively by the user.
-    private func dismiss(interactively isInteractive: Bool) {
-        transitioningDelegate?.transition.wantsInteractiveStart = isInteractive
-        presentedViewController.dismiss(animated: true)
+    func setUpDimmingView() {
+        dimmingView.translatesAutoresizingMaskIntoConstraints = false
+        dimmingView.backgroundColor = .backgroundOverlay
+        dimmingView.alpha = 0.0
+
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(tapOnDimmingView))
+        dimmingView.addGestureRecognizer(recognizer)
     }
 
-    /// Updates the progress of the dismiss transition.
-    /// - Parameter translation: The translation of the presented view used to calculate the progress.
-    private func updateTransitionProgress(for translation: CGPoint) {
-        guard let transitioningDelegate = transitioningDelegate else {
-            return
-        }
-
-        guard let presentedView = presentedView else {
-            return
-        }
-
-        let adjustedHeight = presentedView.frame.height - translation.y
-        let progress = 1 - (adjustedHeight / presentedView.frame.height)
-        transitioningDelegate.transition.update(progress)
+    func setUpMaskedCorners() {
+        presentedView?.layer.cornerRadius = 12
+        presentedView?.clipsToBounds = true
+        presentedView?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
-    /// Handles the ended interaction, either a drag or scroll, on the presented view.
-    private func handleEndedInteraction() {
-        guard let transitioningDelegate = transitioningDelegate else {
-            return
-        }
-
-        if transitioningDelegate.transition.dismissFractionComplete > dismissThreshold {
-            transitioningDelegate.transition.finish()
-        } else {
-            transitioningDelegate.transition.cancel()
-        }
+    func animateAlongsideTransitionIfPossible(_ animation: @escaping () -> Void) {
+        if let coordinator = presentedViewController.transitionCoordinator {
+            coordinator.animate(alongsideTransition: { _ in
+                animation()
+            })
+        } else { return }
     }
 
-    @objc
-    private func tappedBackgroundView() {
-        dismiss(interactively: false)
-    }
-
-    @objc
-    private func pannedPresentedView(_ recognizer: UIPanGestureRecognizer) {
-        guard let presentedView = presentedView, let containerView = containerView else {
-            return
-        }
-
-        switch recognizer.state {
-        case .began:
-            dismiss(interactively: true)
-
-        case .changed:
-            guard presentedView.frame.maxY >= containerView.frame.maxY else {
-                return
-            }
-
-            let translation = recognizer.translation(in: presentedView)
-            updateTransitionProgress(for: translation)
-
-        case .ended, .cancelled, .failed:
-            handleEndedInteraction()
-
-        // swiftlint:disable:next unnecessary_case_break
-        case .possible:
-            break
-
-        @unknown default:
-            break
-        }
-    }
-}
-
-extension SheetPresentationController: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        guard scrollView.contentOffset.y <= .zero else {
-            return
-        }
-
-        dismiss(interactively: true)
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let presentedView = presentedView else {
-            return
-        }
-
-        if scrollView.contentOffset.y < .zero {
-            let originalOffset = CGPoint(x: scrollView.contentOffset.x, y: -scrollView.safeAreaInsets.top)
-            scrollView.setContentOffset(originalOffset, animated: false)
-        }
-
-        let translation = scrollView.panGestureRecognizer.translation(in: presentedView)
-        updateTransitionProgress(for: translation)
-    }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        handleEndedInteraction()
+    @objc private func tapOnDimmingView() {
+        presentingViewController.dismiss(animated: true)
     }
 }

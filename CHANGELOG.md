@@ -1,3 +1,10 @@
+## [18.2.4](https://github.com/Telefonica/mistica-ios/compare/v18.2.3...v18.2.4) (2022-10-11)
+
+
+### Bug Fixes
+
+* **Sheet:** Fix dismissal bug and TestUI in Sheet ([427d1dd](https://github.com/Telefonica/mistica-ios/commit/427d1dd1e5b5b8cb147fcf03dbecb6cc40349348))
+
 ## [18.2.3](https://github.com/Telefonica/mistica-ios/compare/v18.2.2...v18.2.3) (2022-09-27)
 
 

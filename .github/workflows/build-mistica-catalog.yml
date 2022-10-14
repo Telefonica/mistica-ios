@@ -39,7 +39,7 @@ jobs:
         run: make export
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3.5.0
+        uses: actions/setup-node@v3.5.1
         with:
           node-version: 14.17
 

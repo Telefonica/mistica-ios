@@ -16,6 +16,9 @@ private enum Section: Int, CaseIterable {
     case numberOfElements
     case hasAsset
     case assetSize
+    case sheetType
+    case informativeIconType
+    case actionStyle
     case showSheet
 }
 
@@ -78,6 +81,38 @@ class UICatalogSheetViewController: UIViewController {
         return cell
     }()
 
+    private lazy var sheetTypeCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "sheetType")
+
+        cell.segmentedControl.insertSegment(withTitle: "Single Selection", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Informative", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Action", at: 2, animated: false)
+
+        cell.segmentedControl.selectedSegmentIndex = 0
+        return cell
+    }()
+    
+    private lazy var informativeIconTypeCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "informativeIconType")
+
+        cell.segmentedControl.insertSegment(withTitle: "bullet", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "regular", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "small", at: 2, animated: false)
+
+        cell.segmentedControl.selectedSegmentIndex = 0
+        return cell
+    }()
+    
+    private lazy var actionStyleCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "actionStyle")
+
+        cell.segmentedControl.insertSegment(withTitle: "default", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "destructive", at: 1, animated: false)
+
+        cell.segmentedControl.selectedSegmentIndex = 0
+        return cell
+    }()
+    
     private lazy var showSheetCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "showSheet")
         cell.textLabel?.textColor = .textLink
@@ -92,6 +127,9 @@ class UICatalogSheetViewController: UIViewController {
         [numberOfElementsCell],
         [assetCell],
         [assetSizeCell],
+        [sheetTypeCell],
+        [informativeIconTypeCell],
+        [actionStyleCell],
         [showSheetCell]
     ]
 
@@ -153,39 +191,18 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
         tableView.deselectRow(animated: true)
         view.endEditing(true)
 
-        var rows: [SheetListRow] = []
-        for index in 1 ... sheetNumElements {
-            let item = SheetListRow(
-                id: index.description,
-                title: "Element \(index)",
-                description: "Description",
-                icon: assetCell.segmentedControl.selectedSegmentIndex == 0
-                    ? SheetListRowIcon(
-                        url: "https://img.icons8.com/ios-glyphs/344/bookmark.png",
-                        urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png",
-                        size: assetSizeCell.segmentedControl.selectedSegmentIndex == 0 ? .small : .large
-                    )
-                    : nil
-            )
-            rows.append(item)
+        let configuration: SheetConfiguration
+        
+        switch sheetTypeCell.segmentedControl.selectedSegmentIndex {
+        case 0:
+            configuration = singleSelectionSheet
+        case 1:
+            configuration = informativeSheet
+        case 2:
+            configuration = actionSheet
+        default:
+            fatalError("Unhandled sheet type")
         }
-        let content = SheetList(
-            id: UUID().uuidString,
-            type: "LIST",
-            listType: "SINGLE_SELECTION",
-            autoSubmit: true,
-            selectedId: "1",
-            items: rows
-        )
-
-        let configuration = SheetConfiguration(
-            header: SheetHeader(
-                title: sheetTitle,
-                subtitle: sheetSubtitle,
-                description: sheetDescription
-            ),
-            content: [content]
-        )
 
         let viewController = SheetViewController(configuration: configuration) { sheetResponse in
             print("Sheet selection response:")
@@ -219,6 +236,129 @@ private extension UICatalogSheetViewController {
     var sheetNumElements: Int {
         Int(numberOfElementsCell.currentValue)
     }
+    
+    var singleSelectionSheet: SheetConfiguration {
+        var rows: [SingleSelectionItem] = []
+        
+        for index in 1 ... sheetNumElements {
+            let item = SingleSelectionItem(
+                id: index.description,
+                title: "Element \(index)",
+                description: "Description",
+                icon: assetCell.segmentedControl.selectedSegmentIndex == 0
+                    ? SingleSelectionItemIcon(
+                        url: "https://img.icons8.com/ios-glyphs/344/bookmark.png",
+                        urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png",
+                        size: assetSizeCell.segmentedControl.selectedSegmentIndex == 0 ? .small : .large
+                    )
+                    : nil
+            )
+            rows.append(item)
+        }
+        let content = SheetList(
+            id: UUID().uuidString,
+            type: "LIST",
+            listType: .singleSelection(items: rows),
+            autoSubmit: true,
+            selectedId: "1"
+        )
+
+        let configuration = SheetConfiguration(
+            header: SheetHeader(
+                title: sheetTitle,
+                subtitle: sheetSubtitle,
+                description: sheetDescription
+            ),
+            content: [content]
+        )
+        
+        return configuration
+    }
+    
+    var informativeSheet: SheetConfiguration {
+        var rows: [InformativeItem] = []
+        
+        let icon: InformativeItemIcon
+        
+        switch informativeIconTypeCell.segmentedControl.selectedSegmentIndex {
+        case 0:
+            icon = .bullet
+        case 1:
+            icon = .regular(
+                url: "https://img.icons8.com/ios-glyphs/344/bookmark.png",
+                urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png"
+            )
+        case 2:
+            icon = .small(
+                url: "https://img.icons8.com/ios-glyphs/344/bookmark.png",
+                urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png"
+            )
+        default:
+            fatalError("Unhandled informative icon type")
+        }
+        
+        for index in 1 ... sheetNumElements {
+            let item = InformativeItem(
+                id: index.description,
+                title: "List Item \(index)",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet odio erat, a auctor augue faucibus id.",
+                icon: icon
+            )
+            rows.append(item)
+        }
+        let content = SheetList(
+            id: UUID().uuidString,
+            type: "LIST",
+            listType: .informative(items: rows),
+            autoSubmit: true,
+            selectedId: "1"
+        )
+
+        let configuration = SheetConfiguration(
+            header: SheetHeader(
+                title: sheetTitle,
+                subtitle: sheetSubtitle,
+                description: sheetDescription
+            ),
+            content: [content]
+        )
+        
+        return configuration
+    }
+    
+    var actionSheet: SheetConfiguration {
+        var rows: [ActionItem] = []
+        
+        for index in 1 ... sheetNumElements {
+            let item = ActionItem(
+                id: index.description,
+                title: "List ItemList ItemList ItemList ItemList ItemList ItemList ItemList ItemList ItemList ItemList ItemList Item \(index)",
+                style: actionStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .destructive,
+                url: "https://img.icons8.com/ios-glyphs/344/bookmark.png",
+                urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png"
+            )
+            
+            rows.append(item)
+        }
+        let content = SheetList(
+            id: UUID().uuidString,
+            type: "LIST",
+            listType: .actions(items: rows),
+            autoSubmit: true,
+            selectedId: "1"
+        )
+
+        let configuration = SheetConfiguration(
+            header: SheetHeader(
+                title: sheetTitle,
+                subtitle: sheetSubtitle,
+                description: sheetDescription
+            ),
+            content: [content]
+        )
+        
+        return configuration
+    }
 }
 
 private extension Section {
@@ -229,7 +369,10 @@ private extension Section {
         case .description: return "Description"
         case .numberOfElements: return "Configuration"
         case .hasAsset: return "Has asset"
+        case .sheetType: return "Sheet type"
         case .assetSize: return "Asset size"
+        case .informativeIconType: return "Informative icon type"
+        case .actionStyle: return "Action style"
         case .showSheet: return nil
         }
     }

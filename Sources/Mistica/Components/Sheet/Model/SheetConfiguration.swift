@@ -12,9 +12,11 @@ import UIKit
 public struct SheetConfiguration {
     public let header: SheetHeader
     public let content: [SheetList]
-
-    public init(header: SheetHeader,
-                content: [SheetList]) {
+    
+    public init(
+        header: SheetHeader,
+        content: [SheetList]
+    ) {
         self.header = header
         self.content = content
     }
@@ -24,7 +26,7 @@ public struct SheetHeader {
     public let title: String?
     public let subtitle: String?
     public let description: String?
-
+    
     public init(title: String? = nil,
                 subtitle: String? = nil,
                 description: String? = nil) {
@@ -37,51 +39,55 @@ public struct SheetHeader {
 public struct SheetList {
     public let id: String
     public let type: String
-    public let listType: String?
-    public let autoSubmit: Bool?
+    public let listType: SheetListType
+    public let autoSubmit: Bool
     public let selectedId: String?
-    public let items: [SheetListRow]
-
-    public init(id: String,
-                type: String,
-                listType: String? = nil,
-                autoSubmit: Bool? = nil,
-                selectedId: String? = nil,
-                items: [SheetListRow]) {
+    
+    public init(
+        id: String,
+        type: String,
+        listType: SheetListType,
+        autoSubmit: Bool,
+        selectedId: String
+    ) {
         self.id = id
         self.type = type
         self.listType = listType
         self.autoSubmit = autoSubmit
         self.selectedId = selectedId
-        self.items = items
     }
 }
 
-public struct SheetListRow {
+public enum SheetListType {
+    case singleSelection(items: [SingleSelectionItem])
+    case actions(items: [ActionItem])
+    case informative(items: [InformativeItem])
+}
+
+public struct SingleSelectionItem {
     public let id: String
     public let title: String?
     public let description: String?
-    public let icon: SheetListRowIcon?
-    public let isSelected: Bool
-
-    public init(id: String,
-                title: String? = nil,
-                description: String? = nil,
-                icon: SheetListRowIcon? = nil,
-                isSelected: Bool = false) {
-        self.id = id
-        self.title = title
-        self.description = description
-        self.icon = icon
-        self.isSelected = isSelected
-    }
+    public let icon: SingleSelectionItemIcon?
+    
+    public init(
+        id: String,
+        title: String? = nil,
+        description: String? = nil,
+        icon: SingleSelectionItemIcon? = nil
+    ) {
+            self.id = id
+            self.title = title
+            self.description = description
+            self.icon = icon
+        }
 }
 
-public struct SheetListRowIcon {
+public struct SingleSelectionItemIcon {
     public enum Size {
         case small
         case large
-
+        
         var value: CGFloat {
             switch self {
             case .small:
@@ -91,16 +97,82 @@ public struct SheetListRowIcon {
             }
         }
     }
-
+    
     public let url: String
     public let urlDark: String?
     public let size: Size
-
-    public init(url: String,
-                urlDark: String? = nil,
-                size: Size = .large) {
+    
+    public init(
+        url: String,
+        urlDark: String? = nil,
+        size: Size = .large
+    ) {
         self.url = url
         self.urlDark = urlDark
         self.size = size
+    }
+}
+
+public struct InformativeItem {
+    public let id: String
+    public let title: String
+    public let description: String?
+    public let icon: InformativeItemIcon
+    
+    public init(
+        id: String,
+        title: String,
+        description: String?,
+        icon: InformativeItemIcon
+    ) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.icon = icon
+    }
+}
+
+public enum InformativeItemIcon {
+    case regular(url: String, urlDark: String?)
+    case small(url: String, urlDark: String?)
+    case bullet
+    
+    var size: CGSize {
+        switch self {
+        case .bullet:
+            return .init(width: 8, height: 8)
+        case .small:
+            return .init(width: 12, height: 24)
+        case .regular:
+            return .init(width: 20, height: 24)
+        }
+    }
+}
+
+
+public struct ActionItem {
+    public enum Style {
+        case normal
+        case destructive
+    }
+    
+    public let id: String
+    public let title: String
+    public let style: Style
+    public let url: String
+    public let urlDark: String?
+    
+    public init(
+        id: String,
+        title: String,
+        style: ActionItem.Style,
+        url: String,
+        urlDark: String?
+    ) {
+        self.id = id
+        self.title = title
+        self.style = style
+        self.url = url
+        self.urlDark = urlDark
     }
 }

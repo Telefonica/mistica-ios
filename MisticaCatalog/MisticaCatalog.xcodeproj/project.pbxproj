@@ -276,7 +276,6 @@
 				18E3452B289D46C5005E6D81 /* FontsView.swift */,
 				1860058E28A136CE009C3778 /* ColorsView.swift */,
 				B8F98FFF2546C98600DFBFE9 /* Catalog */,
-				B8F990042546C98600DFBFE9 /* Styles */,
 				B8F990062546C98600DFBFE9 /* Common */,
 			);
 			path = Source;
@@ -292,13 +291,6 @@
 				18E48548287F19EB0052A6F2 /* MisticaSwiftUI */,
 			);
 			path = Catalog;
-			sourceTree = "<group>";
-		};
-		B8F990042546C98600DFBFE9 /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Styles;
 			sourceTree = "<group>";
 		};
 		B8F990062546C98600DFBFE9 /* Common */ = {

@@ -19,9 +19,10 @@ public protocol SheetViewControllerDelegate: AnyObject {
 }
 
 public class SheetViewController: UIViewController {
-    private lazy var titleLabel: UILabel? = {
+    private lazy var titleLabel: IntrinsictHeightLabel? = {
         if let title = config.header.title {
-            let label = UILabel()
+            let label = IntrinsictHeightLabel()
+            label.minHeight = 24
             label.text = title
             label.numberOfLines = 0
             label.textAlignment = .left
@@ -101,7 +102,8 @@ public class SheetViewController: UIViewController {
     private var contentSelected: [SheetResponseResult] = []
     private var panGestureBeginningY: CGFloat = 0
     private var isDismissing: Bool = false
-
+    private var selectedItemsByContent: [String: [String]] = [:]
+    
     private class ItemInformationTapGesture: UITapGestureRecognizer {
         var contentId: String = ""
         var itemId: String = ""
@@ -149,44 +151,36 @@ public extension SheetViewController {
 
         let containerView = UIStackView()
         containerView.axis = .vertical
-        containerView.distribution = .fill
-        containerView.alignment = .leading
-        containerView.spacing = 8.0
         containerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(containerView)
 
         let topStackView = UIStackView()
         topStackView.axis = .vertical
         topStackView.distribution = .fill
-        topStackView.alignment = .center
         topStackView.spacing = 12.0
         topStackView.translatesAutoresizingMaskIntoConstraints = false
 
         handleView.translatesAutoresizingMaskIntoConstraints = false
         handleView.heightAnchor.constraint(equalToConstant: 4.0).isActive = true
         handleView.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
-        topStackView.addArrangedSubview(handleView)
+        topStackView.addArrangedSubview(CenterView(arrangedSubview: handleView, axis: .horizontal))
         containerView.addArrangedSubview(topStackView)
 
+        containerView.setCustomSpacing(8, after: topStackView)
+        
         if let titleLabel = titleLabel {
-            titleLabel.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
             topStackView.addArrangedSubview(titleLabel)
-            titleLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
         }
 
-        let scrollView = UIScrollView()
+        let scrollView = ScrollStackView(arrangedSubviews: [])
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addArrangedSubview(scrollView)
 
         let contentStackView = UIStackView()
         contentStackView.axis = .vertical
-        contentStackView.distribution = .fill
-        contentStackView.alignment = .leading
-        contentStackView.spacing = 16.0
         contentStackView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(contentStackView)
+        scrollView.addSubview(withDefaultConstraints: contentStackView)
 
         // Header section for sheet information
         let headerStackView = UIStackView()
@@ -208,91 +202,33 @@ public extension SheetViewController {
         }
 
         // Section for every item in sheet request content
-        let itemsStackView = UIStackView()
-        itemsStackView.axis = .vertical
-        itemsStackView.distribution = .equalSpacing
-        itemsStackView.alignment = .leading
-        itemsStackView.spacing = 16.0
-        itemsStackView.translatesAutoresizingMaskIntoConstraints = false
-        contentStackView.addArrangedSubview(itemsStackView)
-
+        
         for content in config.content {
-            contentInfo[content.id] = [:]
-            for item in content.items {
-                let containerItemStackView = UIStackView()
-                containerItemStackView.axis = .horizontal
-                containerItemStackView.distribution = .fill
-                containerItemStackView.alignment = .center
-                containerItemStackView.spacing = 16.0
-
-                let itemStackView = UIStackView()
-                itemStackView.axis = .horizontal
-                itemStackView.distribution = .fill
-                itemStackView.alignment = (item.description != nil) ? .top : .center
-                itemStackView.spacing = 16.0
-
-                let itemTapGesture = ItemInformationTapGesture(target: self, action: #selector(selectItem(_:)))
-                itemTapGesture.contentId = content.id
-                itemTapGesture.itemId = item.id
-                itemTapGesture.autoSubmit = content.autoSubmit ?? false
-                containerItemStackView.addGestureRecognizer(itemTapGesture)
-
-                if let icon = item.icon {
-                    let imageView = UIImageView()
-                    imageView.heightAnchor.constraint(equalToConstant: icon.size.value).isActive = true
-                    imageView.widthAnchor.constraint(equalToConstant: icon.size.value).isActive = true
-                    imageView.contentMode = .scaleAspectFit
-                    load(icon: icon, in: imageView)
-                    itemStackView.addArrangedSubview(imageView)
-                }
-
-                let elementTextStackView = UIStackView()
-                elementTextStackView.axis = .vertical
-                elementTextStackView.distribution = .fill
-                elementTextStackView.alignment = .leading
-
-                let titleElementLabel = UILabel()
-                titleElementLabel.text = item.title
-                titleElementLabel.numberOfLines = 0
-                titleElementLabel.textColor = .textPrimary
-                titleElementLabel.font = .textPreset3(weight: .regular)
-                titleElementLabel.textAlignment = .left
-                titleElementLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-
-                elementTextStackView.addArrangedSubview(titleElementLabel)
-
-                if let description = item.description {
-                    let descriptionElementLabel = UILabel()
-                    descriptionElementLabel.text = description
-                    descriptionElementLabel.numberOfLines = 0
-                    descriptionElementLabel.textColor = .textSecondary
-                    descriptionElementLabel.font = .textPreset2(weight: .regular)
-                    descriptionElementLabel.textAlignment = .left
-                    descriptionElementLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-                    elementTextStackView.addArrangedSubview(descriptionElementLabel)
-                }
-
-                itemStackView.addArrangedSubview(elementTextStackView)
-                containerItemStackView.addArrangedSubview(itemStackView)
-
-                let radioButton = RadioButton()
-                radioButton.isActivated = item.id == content.selectedId
-                radioButton.isUserInteractionEnabled = false
-                radioButton.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
-                radioButton.widthAnchor.constraint(equalToConstant: 20.0).isActive = true
-
-                contentInfo[content.id]?[item.id] = radioButton
-                containerItemStackView.addArrangedSubview((contentInfo[content.id]?[item.id])!)
-                itemsStackView.addArrangedSubview(containerItemStackView)
-
-                let divider = UIView()
-                divider.backgroundColor = .divider
-                itemsStackView.addArrangedSubview(divider)
-                divider.heightAnchor.constraint(equalToConstant: 1.0).isActive = true
-                divider.widthAnchor.constraint(equalTo: itemsStackView.widthAnchor).isActive = true
-
-                itemStackView.widthAnchor.constraint(equalTo: itemsStackView.widthAnchor, constant: -40.0).isActive = true
-            }
+            contentStackView.addArrangedSubview(
+                ListFragmentView(
+                    sheetList: content,
+                    didTapItem: { [weak self] id, selectedId, autoSubmit in
+                        guard let s = self else { return }
+                        var selectedIds = s.selectedItemsByContent[id] ?? [String]()
+                        selectedIds.append(selectedId)
+                        s.selectedItemsByContent[id] = selectedIds
+                        
+                        if !s.isDismissing && autoSubmit {
+                            s.isDismissing = true
+                            let selectedIdsResult = s.selectedItemsByContent.map { (key, value) in
+                                SheetResponseResult(id: id, selected: value)
+                            }
+                            s.sheetSelectionResponse = .init(
+                                action: .dismiss,
+                                selectedIds: selectedIdsResult
+                            )
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                                s.dismiss(animated: true)
+                            }
+                        }
+                    }
+                )
+            )
         }
 
         // Set sheet maximum height in 70% of device screen height.
@@ -309,20 +245,6 @@ public extension SheetViewController {
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
             containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-
-            topStackView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
-            topStackView.bottomAnchor.constraint(equalTo: scrollView.topAnchor, constant: -8.0),
-
-            scrollView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            scrollView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
-
-            contentStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-
-            itemsStackView.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)
         ])
     }
 
@@ -343,16 +265,6 @@ public extension SheetViewController {
 }
 
 private extension SheetViewController {
-    func load(icon: SheetListRowIcon, in imageView: UIImageView) {
-        guard let url = URL(string: icon.url) else { return }
-        if let urlDark = icon.urlDark,
-           let urlForDarkMode = URL(string: urlDark) {
-            imageView.load(url: url, urlForDarkMode: urlForDarkMode)
-        } else {
-            imageView.load(url: url)
-        }
-    }
-
     @objc func didPan(gesture: UIPanGestureRecognizer) {
         if gesture.state == .began {
             panGestureBeginningY = gesture.translation(in: view).y
@@ -364,21 +276,6 @@ private extension SheetViewController {
         } else {
             panGestureBeginningY = 0 // just sanitizing it...
             delegate?.sheetViewControllerDidEndDragging(self)
-        }
-    }
-
-    @objc private func selectItem(_ sender: ItemInformationTapGesture) {
-        if let content = contentInfo[sender.contentId], let item = content[sender.itemId] {
-            contentSelected.append(.init(id: sender.contentId, selected: [sender.itemId]))
-            content.forEach { $1.isActivated = $1 == item }
-            if !isDismissing && sender.autoSubmit {
-                isDismissing = true
-                sheetSelectionResponse.action = .submit
-                sheetSelectionResponse.selectedIds = contentSelected
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                    self.dismiss(animated: true)
-                }
-            }
         }
     }
 }

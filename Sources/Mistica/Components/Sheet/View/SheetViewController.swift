@@ -102,7 +102,6 @@ public class SheetViewController: UIViewController {
     private var contentSelected: [SheetResponseResult] = []
     private var panGestureBeginningY: CGFloat = 0
     private var isDismissing: Bool = false
-    private var selectedItemsByContent: [String: [String]] = [:]
     
     private class ItemInformationTapGesture: UITapGestureRecognizer {
         var contentId: String = ""
@@ -207,25 +206,9 @@ public extension SheetViewController {
             contentStackView.addArrangedSubview(
                 ListFragmentView(
                     sheetList: content,
-                    didTapItem: { [weak self] id, selectedId, autoSubmit in
+                    didTapItem: { [weak self] tapItem in
                         guard let s = self else { return }
-                        var selectedIds = s.selectedItemsByContent[id] ?? [String]()
-                        selectedIds.append(selectedId)
-                        s.selectedItemsByContent[id] = selectedIds
-                        
-                        if !s.isDismissing && autoSubmit {
-                            s.isDismissing = true
-                            let selectedIdsResult = s.selectedItemsByContent.map { (key, value) in
-                                SheetResponseResult(id: id, selected: value)
-                            }
-                            s.sheetSelectionResponse = .init(
-                                action: .dismiss,
-                                selectedIds: selectedIdsResult
-                            )
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                                s.dismiss(animated: true)
-                            }
-                        }
+                        s.handleListRowTapped(content, rowTapped: tapItem)
                     }
                 )
             )
@@ -277,5 +260,26 @@ private extension SheetViewController {
             panGestureBeginningY = 0 // just sanitizing it...
             delegate?.sheetViewControllerDidEndDragging(self)
         }
+    }
+    
+    func handleListRowTapped(_ sheetList: SheetList, rowTapped: ListFragmentView.ItemTappedType) {
+        if !isDismissing && sheetList.autoSubmit {
+            isDismissing = true
+            
+            switch rowTapped {
+            case .action(let item):
+                sheetSelectionResponse = .init(action: .dismiss, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
+            case .informative:
+                sheetSelectionResponse = .init(action: .dismiss, selectedIds: [])
+            case .singleSelection(let item):
+                sheetSelectionResponse = .init(action: .dismiss, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in
+                guard let s = self else { return }
+                s.dismiss(animated: true)
+            }
+        }
+        
     }
 }

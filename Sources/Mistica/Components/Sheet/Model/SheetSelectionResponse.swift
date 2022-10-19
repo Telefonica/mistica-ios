@@ -19,8 +19,10 @@ public class SheetSelectionResponse {
     public var action: SheetActionResponse
     public var selectedIds: [SheetResponseResult]
 
-    public init(action: SheetActionResponse = .dismiss,
-                selectedIds: [SheetResponseResult] = []) {
+    public init(
+        action: SheetActionResponse,
+        selectedIds: [SheetResponseResult]
+    ) {
         self.action = action
         self.selectedIds = selectedIds
     }
@@ -30,8 +32,10 @@ public struct SheetResponseResult: Encodable, Equatable {
     public var id: String
     public var selected: [String]
 
-    public init(id: String,
-                selected: [String]) {
+    public init(
+        id: String,
+        selected: [String]
+    ) {
         self.id = id
         self.selected = selected
     }

@@ -332,7 +332,7 @@ private extension UICatalogSheetViewController {
         for index in 1 ... sheetNumElements {
             let item = ActionItem(
                 id: index.description,
-                title: "List ItemList ItemList ItemList ItemList ItemList ItemList ItemList ItemList ItemList ItemList ItemList Item \(index)",
+                title: "List Item \(index)",
                 style: actionStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .destructive,
                 url: "https://img.icons8.com/ios-glyphs/344/bookmark.png",
                 urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png"

@@ -2,7 +2,7 @@ import UIKit
 
 class ActionRow: UIStackView {
     
-    private let item: ActionItem
+    let item: ActionItem
     
     init(item: ActionItem) {
         self.item = item

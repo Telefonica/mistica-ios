@@ -8,6 +8,12 @@ class ListFragmentView: UIView {
         let autoSubmit: Bool
     }
     
+    enum ItemTappedType {
+        case singleSelection(item: SingleSelectionItem)
+        case informative(item: InformativeItem)
+        case action(item: ActionItem)
+    }
+    
     private var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -20,11 +26,11 @@ class ListFragmentView: UIView {
     private let sheetList: SheetList
     
     private weak var selectedRow: SingleSelectionRowView?
-    private var delegate: (String, String, Bool) -> Void
+    private var delegate: (ItemTappedType) -> Void
     
     init(
         sheetList: SheetList,
-        didTapItem: @escaping (String, String, Bool) -> Void
+        didTapItem: @escaping (ItemTappedType) -> Void
     ) {
         self.sheetList = sheetList
         self.delegate = didTapItem
@@ -93,14 +99,32 @@ private extension ListFragmentView {
     }
     
     @objc private func selectItem(_ sender: UITapGestureRecognizer) {
-        guard let tappedView = sender.view as? SingleSelectionRowView else { return }
-
+        
+        
+        if let tappedView = sender.view as? SingleSelectionRowView {
+            handleSingleSelectionRowTap(tappedView)
+        } else if let tappedView = sender.view as? InformativeRow {
+            handleInformativeRowTap(tappedView)
+        } else if let tappedView = sender.view as? ActionRow {
+            handleActionsRowTap(tappedView)
+        }
+    }
+    
+    func handleSingleSelectionRowTap(_ tappedView: SingleSelectionRowView) {
         if !tappedView.isSelected {
             selectedRow?.isSelected = false
             tappedView.isSelected = true
             selectedRow = tappedView
         }
         
-        delegate(sheetList.id, tappedView.item.id, sheetList.autoSubmit)
+        delegate(.singleSelection(item: tappedView.item))
+    }
+    
+    func handleInformativeRowTap(_ tappedView: InformativeRow) {
+        delegate(.informative(item: tappedView.item))
+    }
+    
+    func handleActionsRowTap(_ tappedView: ActionRow) {
+        delegate(.action(item: tappedView.item))
     }
 }

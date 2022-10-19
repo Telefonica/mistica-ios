@@ -14,7 +14,7 @@ class InformativeRow: UIView {
         case centerInTitleHeight
     }
     
-    private let item: InformativeItem
+    let item: InformativeItem
     
     // MARK: Initializers
     

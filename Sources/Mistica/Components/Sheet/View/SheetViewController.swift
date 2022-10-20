@@ -172,7 +172,7 @@ public extension SheetViewController {
             topStackView.addArrangedSubview(titleLabel)
         }
 
-        let contentStackView = ScrollStackView(arrangedSubviews: [])
+        let contentStackView = FittingCompressedScrollStackView(arrangedSubviews: [])
         contentStackView.axis = .vertical
         contentStackView.showsVerticalScrollIndicator = false
         containerView.addArrangedSubview(contentStackView)
@@ -268,5 +268,18 @@ private extension SheetViewController {
             }
         }
         
+    }
+}
+
+private class FittingCompressedScrollStackView: ScrollStackView {
+    override var intrinsicContentSize: CGSize {
+        stackView.systemLayoutSizeFitting(
+            CGSize(
+                width: UIScreen.main.bounds.width,
+                height: UIView.layoutFittingCompressedSize.height
+            ),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .defaultLow
+        )
     }
 }

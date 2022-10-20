@@ -174,6 +174,7 @@ public extension SheetViewController {
 
         let contentStackView = FittingCompressedScrollStackView(arrangedSubviews: [])
         contentStackView.axis = .vertical
+        contentStackView.layoutMargins = .zero
         contentStackView.showsVerticalScrollIndicator = false
         containerView.addArrangedSubview(contentStackView)
 

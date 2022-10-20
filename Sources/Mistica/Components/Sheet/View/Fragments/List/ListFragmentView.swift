@@ -45,7 +45,7 @@ class ListFragmentView: UIView {
 
         super.init(frame: .zero)
 
-        setUp()
+        commonInit()
     }
 
     @available(*, unavailable)
@@ -55,7 +55,7 @@ class ListFragmentView: UIView {
 }
 
 private extension ListFragmentView {
-    func setUp() {
+    func commonInit() {
         addSubview(withDefaultConstraints: stackView)
 
         switch sheetList.listType {

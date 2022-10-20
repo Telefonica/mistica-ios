@@ -14,6 +14,8 @@ class SingleSelectionRowView: UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 16
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = .init(top: 16, left: 0, bottom: 0, right: 0)
         return stackView
     }()
 
@@ -116,5 +118,16 @@ private extension SingleSelectionRowView {
         } else {
             imageView.load(url: url)
         }
+    }
+}
+
+extension SingleSelectionRowView: Touchable {
+    func touchBegan() {
+        backgroundColor = .backgroundAlternative
+        
+    }
+    
+    func touchEnded() {
+        backgroundColor = .background
     }
 }

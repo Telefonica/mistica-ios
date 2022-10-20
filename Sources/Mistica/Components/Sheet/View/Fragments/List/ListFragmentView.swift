@@ -25,9 +25,6 @@ class ListFragmentView: UIView {
     private var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 16
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = .init(top: 16, left: 0, bottom: 0, right: 0)
         return stackView
     }()
 
@@ -72,10 +69,11 @@ private extension ListFragmentView {
         for item in items {
             let rowView = SingleSelectionRowView(item: item)
 
-            let itemTapGesture = UITapGestureRecognizer(
+            let itemTapGesture = UILongPressGestureRecognizer(
                 target: self,
-                action: #selector(selectItem(_:))
+                action: #selector(didTouchItem(_:))
             )
+            itemTapGesture.minimumPressDuration = 0
             rowView.addGestureRecognizer(itemTapGesture)
 
             if sheetList.selectedId.contains(item.id) {
@@ -99,20 +97,38 @@ private extension ListFragmentView {
         for item in items {
             let rowView = ActionRow(item: item)
 
-            let itemTapGesture = UITapGestureRecognizer(
+            let itemTapGesture = UILongPressGestureRecognizer(
                 target: self,
-                action: #selector(selectItem(_:))
+                action: #selector(didTouchItem(_:))
             )
+            itemTapGesture.minimumPressDuration = 0
             rowView.addGestureRecognizer(itemTapGesture)
             stackView.addArrangedSubview(rowView)
         }
     }
 
-    @objc private func selectItem(_ sender: UITapGestureRecognizer) {
-        if let tappedView = sender.view as? SingleSelectionRowView {
-            handleSingleSelectionRowTap(tappedView)
-        } else if let tappedView = sender.view as? ActionRow {
-            handleActionsRowTap(tappedView)
+    @objc private func didTouchItem(_ sender: UITapGestureRecognizer) {
+        guard let touchable = sender.view as? Touchable else { return }
+        
+        switch sender.state {
+        case .began:
+            touchable.touchBegan()
+        case .changed, .possible, .failed:
+            // ignores this states
+            break
+        case .cancelled:
+            touchable.touchEnded()
+        case .ended:
+            touchable.touchEnded()
+            
+            if let tappedView = sender.view as? SingleSelectionRowView {
+                handleSingleSelectionRowTap(tappedView)
+            } else if let tappedView = sender.view as? ActionRow {
+                handleActionsRowTap(tappedView)
+            }
+        @unknown default:
+            // ignores this states
+            break
         }
     }
 

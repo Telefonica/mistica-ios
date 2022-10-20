@@ -187,6 +187,8 @@ public extension SheetViewController {
         headerStackView.translatesAutoresizingMaskIntoConstraints = false
         contentStackView.addArrangedSubview(headerStackView)
 
+        contentStackView.stackView.setCustomSpacing(4, after: headerStackView)
+        
         if let subtitleLabel = subtitleLabel {
             headerStackView.addArrangedSubview(subtitleLabel)
             subtitleLabel.setContentCompressionResistancePriority(.required, for: .vertical)

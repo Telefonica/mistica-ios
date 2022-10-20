@@ -63,7 +63,7 @@ class SheetPresentationController: UIPresentationController {
         }
 
         /// The maximum height allowed for the sheet. We allow the sheet to reach the top safe area inset.
-        let maximumHeight = containerView.frame.height - containerView.safeAreaInsets.top - containerView.safeAreaInsets.bottom
+        let maximumHeight = UIScreen.main.bounds.size.height * 0.7
 
         let fittingSize = CGSize(width: containerView.bounds.width, height: UIView.layoutFittingCompressedSize.height)
         let presentedViewHeight = presentedView.systemLayoutSizeFitting(

@@ -23,10 +23,6 @@ class SingleSelectionRowView: UIView {
         titleElementLabel.numberOfLines = 0
         titleElementLabel.textColor = .textPrimary
         titleElementLabel.font = .textPreset3(weight: .regular)
-        titleElementLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        titleElementLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-        titleElementLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        
         return titleElementLabel
     }()
     
@@ -38,8 +34,6 @@ class SingleSelectionRowView: UIView {
             descriptionElementLabel.numberOfLines = 0
             descriptionElementLabel.textColor = .textSecondary
             descriptionElementLabel.font = .textPreset2(weight: .regular)
-            descriptionElementLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-            descriptionElementLabel.setContentCompressionResistancePriority(.required, for: .vertical)
             return descriptionElementLabel
         }
         

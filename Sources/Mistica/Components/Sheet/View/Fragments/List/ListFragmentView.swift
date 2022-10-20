@@ -68,7 +68,12 @@ private extension ListFragmentView {
                 action: #selector(selectItem(_:))
             )
             rowView.addGestureRecognizer(itemTapGesture)
-            rowView.isSelected = sheetList.selectedId.contains(item.id)
+            
+            if sheetList.selectedId.contains(item.id) {
+                rowView.isSelected = true
+                selectedRow?.isSelected = false
+                selectedRow = rowView
+            }
             
             stackView.addArrangedSubview(rowView)
         }

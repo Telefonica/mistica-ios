@@ -309,7 +309,7 @@ private extension UICatalogSheetViewController {
             id: UUID().uuidString,
             listType: .informative(items: rows),
             autoSubmit: true,
-            selectedId: ["1"]
+            selectedId: []
         )
 
         let configuration = SheetConfiguration(
@@ -342,7 +342,7 @@ private extension UICatalogSheetViewController {
             id: UUID().uuidString,
             listType: .actions(items: rows),
             autoSubmit: true,
-            selectedId: ["1"]
+            selectedId: []
         )
 
         let configuration = SheetConfiguration(

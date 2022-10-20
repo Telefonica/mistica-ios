@@ -61,6 +61,17 @@ public enum SheetListType {
     case singleSelection(items: [SingleSelectionItem])
     case actions(items: [ActionItem])
     case informative(items: [InformativeItem])
+    
+    var isInformative: Bool {
+        switch self {
+        case .informative:
+            return true
+        case .singleSelection:
+            return false
+        case .actions:
+            return false
+        }
+    }
 }
 
 public struct SingleSelectionItem {

@@ -122,9 +122,9 @@ public class SheetViewController: UIViewController {
         // Initial value for a dismissed response
         sheetSelectionResponse = .init(
             action: .dismiss,
-            selectedIds: config.content.map {
-                SheetResponseResult(id: $0.id, selected: $0.selectedId)
-            }
+            selectedIds: config.content
+                .filter{ $0.listType.isInformative == false }
+                .map { SheetResponseResult(id: $0.id, selected: $0.selectedId) }
         )
 
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))

@@ -91,12 +91,6 @@ private extension ListFragmentView {
     func fillListWithInformativeItems(_ items: [InformativeItem]) {
         for item in items {
             let rowView = InformativeRow(item: item)
-
-            let itemTapGesture = UITapGestureRecognizer(
-                target: self,
-                action: #selector(selectItem(_:))
-            )
-            rowView.addGestureRecognizer(itemTapGesture)
             stackView.addArrangedSubview(rowView)
         }
     }
@@ -117,8 +111,6 @@ private extension ListFragmentView {
     @objc private func selectItem(_ sender: UITapGestureRecognizer) {
         if let tappedView = sender.view as? SingleSelectionRowView {
             handleSingleSelectionRowTap(tappedView)
-        } else if let tappedView = sender.view as? InformativeRow {
-            handleInformativeRowTap(tappedView)
         } else if let tappedView = sender.view as? ActionRow {
             handleActionsRowTap(tappedView)
         }
@@ -132,10 +124,6 @@ private extension ListFragmentView {
         }
 
         delegate(.singleSelection(item: tappedView.item))
-    }
-
-    func handleInformativeRowTap(_ tappedView: InformativeRow) {
-        delegate(.informative(item: tappedView.item))
     }
 
     func handleActionsRowTap(_ tappedView: ActionRow) {

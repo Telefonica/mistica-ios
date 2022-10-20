@@ -95,9 +95,9 @@ class UICatalogSheetViewController: UIViewController {
     private lazy var informativeIconTypeCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "informativeIconType")
 
-        cell.segmentedControl.insertSegment(withTitle: "bullet", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "regular", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "small", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Bullet", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Regular", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Small", at: 2, animated: false)
 
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
@@ -106,8 +106,8 @@ class UICatalogSheetViewController: UIViewController {
     private lazy var actionStyleCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "actionStyle")
 
-        cell.segmentedControl.insertSegment(withTitle: "default", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "destructive", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Default", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Destructive", at: 1, animated: false)
 
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell

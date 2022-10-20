@@ -59,7 +59,8 @@ private extension ActionRow {
         }
 
         if let url = item.url {
-            load(url: url, urlDark: item.urlDark, in: iconImageView, tintColor: imageTintColor)
+            load(url: url, urlDark: item.urlDark, in: iconImageView)
+            iconImageView.tintColor = imageTintColor
         } else {
             iconImageView.isHidden = true
         }
@@ -73,13 +74,13 @@ private extension ActionRow {
         addArrangedSubview(titleLabel)
     }
 
-    func load(url: String, urlDark: String?, in imageView: UIImageView, tintColor: UIColor) {
+    func load(url: String, urlDark: String?, in imageView: UIImageView) {
         guard let url = URL(string: url) else { return }
         if let urlDark = urlDark,
            let urlForDarkMode = URL(string: urlDark) {
-            imageView.load(url: url, urlForDarkMode: urlForDarkMode, tintColor: tintColor)
+            imageView.load(url: url, urlForDarkMode: urlForDarkMode)
         } else {
-            imageView.load(url: url, tintColor: tintColor)
+            imageView.load(url: url)
         }
     }
 }

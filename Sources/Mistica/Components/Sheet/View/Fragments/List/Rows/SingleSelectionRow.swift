@@ -54,7 +54,7 @@ class SingleSelectionRowView: UIView {
 
         super.init(frame: .zero)
 
-        setUp()
+        commonInit()
     }
 
     @available(*, unavailable)
@@ -75,7 +75,7 @@ extension SingleSelectionRowView {
 }
 
 private extension SingleSelectionRowView {
-    func setUp() {
+    func commonInit() {
         addSubview(withDefaultConstraints: stackView)
 
         let itemStackView = UIStackView()

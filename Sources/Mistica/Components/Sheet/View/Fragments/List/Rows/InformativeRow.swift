@@ -175,7 +175,6 @@ private class TopContentView: UIView {
 
         frontStackView.addArrangedSubview(dummyView)
         frontStackView.addArrangedSubview(titleLabel)
-
     }
 
     func load(icon: InformativeItemIcon, in imageView: UIImageView) {

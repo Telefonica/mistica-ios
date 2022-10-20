@@ -33,17 +33,6 @@ class ScrollStackView: UIScrollView {
         preservesSuperviewLayoutMargins = true
     }
 
-    override var intrinsicContentSize: CGSize {
-        stackView.systemLayoutSizeFitting(
-            CGSize(
-                width: UIScreen.main.bounds.width,
-                height: UIView.layoutFittingCompressedSize.height
-            ),
-            withHorizontalFittingPriority: .required,
-            verticalFittingPriority: .defaultLow
-        )
-    }
-
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

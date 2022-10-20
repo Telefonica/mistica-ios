@@ -150,11 +150,11 @@ public enum InformativeItemIcon {
     var size: CGSize {
         switch self {
         case .bullet:
-            return .init(width: 8, height: 8)
+            return .init(width: 6, height: 8)
         case .small:
-            return .init(width: 12, height: 24)
+            return .init(width: 16, height: 24)
         case .regular:
-            return .init(width: 20, height: 24)
+            return .init(width: 24, height: 24)
         }
     }
 }

@@ -1,3 +1,11 @@
+//
+//  CenterView.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import UIKit
 
 class CenterView: UIView {
@@ -5,9 +13,9 @@ class CenterView: UIView {
         case vertical
         case horizontal
     }
-    
+
     private let axis: Axis
-    
+
     private let stackView = UIStackView()
 
     var arrangedSubview: UIView? {
@@ -22,13 +30,14 @@ class CenterView: UIView {
 
     init(arrangedSubview: UIView, axis: Axis) {
         self.axis = axis
-        
+
         super.init(frame: .zero)
 
         stackView.addArrangedSubview(arrangedSubview)
         commonInit()
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -39,7 +48,7 @@ private extension CenterView {
         addSubview(withDefaultConstraints: stackView)
 
         switch axis {
-        case.vertical:
+        case .vertical:
             stackView.axis = .horizontal
         case .horizontal:
             stackView.axis = .vertical

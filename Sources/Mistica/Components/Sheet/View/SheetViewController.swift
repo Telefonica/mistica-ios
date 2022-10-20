@@ -102,7 +102,7 @@ public class SheetViewController: UIViewController {
     private var contentSelected: [SheetResponseResult] = []
     private var panGestureBeginningY: CGFloat = 0
     private var isDismissing: Bool = false
-    
+
     private class ItemInformationTapGesture: UITapGestureRecognizer {
         var contentId: String = ""
         var itemId: String = ""
@@ -128,7 +128,7 @@ public class SheetViewController: UIViewController {
         )
 
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
-        
+
         setupView()
     }
 
@@ -166,7 +166,7 @@ public extension SheetViewController {
         containerView.addArrangedSubview(topStackView)
 
         containerView.setCustomSpacing(8, after: topStackView)
-        
+
         if let titleLabel = titleLabel {
             titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
             topStackView.addArrangedSubview(titleLabel)
@@ -176,7 +176,7 @@ public extension SheetViewController {
         contentStackView.axis = .vertical
         contentStackView.showsVerticalScrollIndicator = false
         containerView.addArrangedSubview(contentStackView)
-        
+
         // Header section for sheet information
         let headerStackView = UIStackView()
         headerStackView.axis = .vertical
@@ -197,7 +197,7 @@ public extension SheetViewController {
         }
 
         // Section for every item in sheet request content
-        
+
         for content in config.content {
             contentStackView.addArrangedSubview(
                 ListFragmentView(
@@ -214,7 +214,7 @@ public extension SheetViewController {
             containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8.0),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
-            containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 
@@ -248,11 +248,11 @@ private extension SheetViewController {
             delegate?.sheetViewControllerDidEndDragging(self)
         }
     }
-    
+
     func handleListRowTapped(_ sheetList: SheetList, rowTapped: ListFragmentView.ItemTappedType) {
         if !isDismissing && sheetList.autoSubmit {
             isDismissing = true
-            
+
             switch rowTapped {
             case .action(let item):
                 sheetSelectionResponse = .init(action: .submit, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
@@ -267,7 +267,6 @@ private extension SheetViewController {
                 s.dismiss(animated: true)
             }
         }
-        
     }
 }
 

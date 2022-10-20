@@ -12,7 +12,7 @@ import UIKit
 public struct SheetConfiguration {
     public let header: SheetHeader
     public let content: [SheetList]
-    
+
     public init(
         header: SheetHeader,
         content: [SheetList]
@@ -26,7 +26,7 @@ public struct SheetHeader {
     public let title: String?
     public let subtitle: String?
     public let description: String?
-    
+
     public init(
         title: String? = nil,
         subtitle: String? = nil,
@@ -43,7 +43,7 @@ public struct SheetList {
     public let listType: SheetListType
     public let autoSubmit: Bool
     public let selectedId: [String]
-    
+
     public init(
         id: String,
         listType: SheetListType,
@@ -68,25 +68,25 @@ public struct SingleSelectionItem {
     public let title: String?
     public let description: String?
     public let icon: SingleSelectionItemIcon?
-    
+
     public init(
         id: String,
         title: String? = nil,
         description: String? = nil,
         icon: SingleSelectionItemIcon? = nil
     ) {
-            self.id = id
-            self.title = title
-            self.description = description
-            self.icon = icon
-        }
+        self.id = id
+        self.title = title
+        self.description = description
+        self.icon = icon
+    }
 }
 
 public struct SingleSelectionItemIcon {
     public enum Size {
         case small
         case large
-        
+
         var value: CGFloat {
             switch self {
             case .small:
@@ -96,11 +96,11 @@ public struct SingleSelectionItemIcon {
             }
         }
     }
-    
+
     public let url: String
     public let urlDark: String?
     public let size: Size
-    
+
     public init(
         url: String,
         urlDark: String? = nil,
@@ -117,7 +117,7 @@ public struct InformativeItem {
     public let title: String
     public let description: String?
     public let icon: InformativeItemIcon
-    
+
     public init(
         id: String,
         title: String,
@@ -135,7 +135,7 @@ public enum InformativeItemIcon {
     case regular(url: String, urlDark: String?)
     case small(url: String, urlDark: String?)
     case bullet
-    
+
     var size: CGSize {
         switch self {
         case .bullet:
@@ -148,19 +148,18 @@ public enum InformativeItemIcon {
     }
 }
 
-
 public struct ActionItem {
     public enum Style {
         case normal
         case destructive
     }
-    
+
     public let id: String
     public let title: String
     public let style: Style
     public let url: String?
     public let urlDark: String?
-    
+
     public init(
         id: String,
         title: String,

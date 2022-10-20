@@ -91,7 +91,7 @@ class UICatalogSheetViewController: UIViewController {
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
-    
+
     private lazy var informativeIconTypeCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "informativeIconType")
 
@@ -102,7 +102,7 @@ class UICatalogSheetViewController: UIViewController {
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
-    
+
     private lazy var actionStyleCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "actionStyle")
 
@@ -112,7 +112,7 @@ class UICatalogSheetViewController: UIViewController {
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
-    
+
     private lazy var showSheetCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "showSheet")
         cell.textLabel?.textColor = .textLink
@@ -192,7 +192,7 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
         view.endEditing(true)
 
         let configuration: SheetConfiguration
-        
+
         switch sheetTypeCell.segmentedControl.selectedSegmentIndex {
         case 0:
             configuration = singleSelectionSheet
@@ -236,10 +236,10 @@ private extension UICatalogSheetViewController {
     var sheetNumElements: Int {
         Int(numberOfElementsCell.currentValue)
     }
-    
+
     var singleSelectionSheet: SheetConfiguration {
         var rows: [SingleSelectionItem] = []
-        
+
         for index in 1 ... sheetNumElements {
             let item = SingleSelectionItem(
                 id: index.description,
@@ -270,15 +270,15 @@ private extension UICatalogSheetViewController {
             ),
             content: [content]
         )
-        
+
         return configuration
     }
-    
+
     var informativeSheet: SheetConfiguration {
         var rows: [InformativeItem] = []
-        
+
         let icon: InformativeItemIcon
-        
+
         switch informativeIconTypeCell.segmentedControl.selectedSegmentIndex {
         case 0:
             icon = .bullet
@@ -295,7 +295,7 @@ private extension UICatalogSheetViewController {
         default:
             fatalError("Unhandled informative icon type")
         }
-        
+
         for index in 1 ... sheetNumElements {
             let item = InformativeItem(
                 id: index.description,
@@ -320,13 +320,13 @@ private extension UICatalogSheetViewController {
             ),
             content: [content]
         )
-        
+
         return configuration
     }
-    
+
     var actionSheet: SheetConfiguration {
         var rows: [ActionItem] = []
-        
+
         for index in 1 ... sheetNumElements {
             let item = ActionItem(
                 id: index.description,
@@ -335,7 +335,7 @@ private extension UICatalogSheetViewController {
                 url: "https://img.icons8.com/ios-glyphs/344/bookmark.png",
                 urlDark: "https://img.icons8.com/ios/344/bookmark--v1.png"
             )
-            
+
             rows.append(item)
         }
         let content = SheetList(
@@ -353,7 +353,7 @@ private extension UICatalogSheetViewController {
             ),
             content: [content]
         )
-        
+
         return configuration
     }
 }

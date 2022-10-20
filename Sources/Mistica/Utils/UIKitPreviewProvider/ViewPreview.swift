@@ -1,5 +1,13 @@
-import UIKit
+//
+//  ViewPreview.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import SwiftUI
+import UIKit
 
 @available(iOS 13.0.0, *)
 struct ViewPreview: UIViewRepresentable {

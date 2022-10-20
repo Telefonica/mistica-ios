@@ -28,14 +28,14 @@ private extension UIImageView {
         DispatchQueue.main.async { [weak self] in
             var lightImage = UIImage(data: imageData)
             var darkImage = UIImage(data: darkImageData)
-            
+
             if let tintColor = tintColor {
                 lightImage = lightImage?.withTintColor(tintColor)
                 darkImage = darkImage?.withTintColor(tintColor)
             }
-            
+
             self?.image = lightImage
-            
+
             if let darkImage = darkImage {
                 self?.image?.imageAsset?.register(darkImage, with: .init(userInterfaceStyle: .dark))
             }

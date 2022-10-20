@@ -43,7 +43,7 @@ class ScrollStackView: UIScrollView {
             verticalFittingPriority: .defaultLow
         )
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

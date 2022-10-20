@@ -1,3 +1,11 @@
+//
+//  SheetTests.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 ////
 ////  SheetTests.swift
 ////
@@ -6,11 +14,11 @@
 ////  Copyright © Telefonica. All rights reserved.
 ////
 //
-//@testable import Mistica
-//import SnapshotTesting
-//import XCTest
+// @testable import Mistica
+// import SnapshotTesting
+// import XCTest
 //
-//final class SheetTests: XCTestCase {
+// final class SheetTests: XCTestCase {
 //    override func setUp() {
 //        super.setUp()
 //        UIView.setAnimationsEnabled(false)
@@ -105,9 +113,9 @@
 //            )
 //        )
 //    }
-//}
+// }
 //
-//private extension SheetTests {
+// private extension SheetTests {
 //    func makeSheetContent(iconEnabled: Bool = false, isLargeIcon: Bool = true) -> [SheetList] {
 //        var rows: [SingleSelectionItem] = []
 //        for index in 1 ... 10 {
@@ -147,4 +155,4 @@
 //        sheetVC.view.frame = CGRect(x: 0, y: 0, width: 300, height: 600)
 //        return sheetVC
 //    }
-//}
+// }

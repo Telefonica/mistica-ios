@@ -30,18 +30,11 @@ class InformativeRow: UIView {
     
     // MARK: SubViews
     
-    private let contentView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.distribution = .fillProportionally
-        stackView.alignment = .leading
-        return stackView
-    }()
-    
     private let centerSection: UIStackView = {
         let stackView = UIStackView()
         stackView.spacing = 2
+        stackView.alignment = .leading
         stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
         return stackView
     }()
     
@@ -59,8 +52,6 @@ class InformativeRow: UIView {
         label.font = .textPreset2(weight: .regular)
         label.textColor = .textSecondary
         label.minHeight = 20
-        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        label.setContentCompressionResistancePriority(.required, for: .vertical)
         return label
     }()
     
@@ -86,17 +77,13 @@ private extension InformativeRow {
     }
     
     func layoutViews() {
-        addSubview(withDefaultConstraints: contentView)
+        addSubview(withDefaultConstraints: centerSection)
         
         bottomContent.addArrangedSubview(dummyView)
         bottomContent.addArrangedSubview(detailLabel)
         
         centerSection.addArrangedSubview(topContent)
         centerSection.addArrangedSubview(bottomContent)
-        
-        contentView.addArrangedSubview(centerSection)
-        
-        setContentHuggingPriority(.defaultHigh, for: .vertical)
     }
 }
 
@@ -126,9 +113,6 @@ private class TopContentView: UIView {
         label.minHeight = 24
         label.numberOfLines = 0
         label.textColor = .textPrimary
-        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        label.setContentCompressionResistancePriority(.required, for: .vertical)
-        label.setContentHuggingPriority(.defaultLow, for: .vertical)
         return label
     }()
     
@@ -137,9 +121,6 @@ private class TopContentView: UIView {
         label.minHeight = 24
         label.numberOfLines = 1
         label.textColor = .clear
-        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        label.setContentCompressionResistancePriority(.required, for: .vertical)
-        label.setContentHuggingPriority(.defaultLow, for: .vertical)
         return label
     }()
     
@@ -193,7 +174,7 @@ private class TopContentView: UIView {
         case .bullet:
             imageView.image = UIImage.circle(diameter: 6, color: .neutralHigh)
         case .small(let url, let urlDark),
-                .regular(let url, let urlDark):
+             .regular(let url, let urlDark):
             guard let url = URL(string: url) else { return }
             if let urlDark = urlDark,
                let urlForDarkMode = URL(string: urlDark) {

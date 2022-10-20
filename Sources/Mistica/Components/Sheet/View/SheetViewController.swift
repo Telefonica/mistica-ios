@@ -112,8 +112,6 @@ public class SheetViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        setupView()
-
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(didPan(gesture:)))
         view.addGestureRecognizer(gesture)
     }
@@ -130,6 +128,8 @@ public class SheetViewController: UIViewController {
         )
 
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
+        
+        setupView()
     }
 
     @available(*, unavailable)
@@ -172,15 +172,11 @@ public extension SheetViewController {
             topStackView.addArrangedSubview(titleLabel)
         }
 
-        let scrollView = ScrollStackView(arrangedSubviews: [])
-        scrollView.showsVerticalScrollIndicator = false
-        containerView.addArrangedSubview(scrollView)
-
-        let contentStackView = UIStackView()
+        let contentStackView = FittingCompressedScrollStackView(arrangedSubviews: [])
         contentStackView.axis = .vertical
-        contentStackView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(withDefaultConstraints: contentStackView)
-
+        contentStackView.showsVerticalScrollIndicator = false
+        containerView.addArrangedSubview(contentStackView)
+        
         // Header section for sheet information
         let headerStackView = UIStackView()
         headerStackView.axis = .vertical
@@ -213,15 +209,6 @@ public extension SheetViewController {
                 )
             )
         }
-
-        // Set sheet maximum height in 70% of device screen height.
-        let scrollHeightMax = containerView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height * 0.7)
-        scrollHeightMax.priority = .required
-        scrollHeightMax.isActive = true
-
-        let scrollHeight = scrollView.heightAnchor.constraint(equalTo: contentStackView.heightAnchor)
-        scrollHeight.priority = .defaultHigh
-        scrollHeight.isActive = true
 
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8.0),
@@ -281,5 +268,18 @@ private extension SheetViewController {
             }
         }
         
+    }
+}
+
+private class FittingCompressedScrollStackView: ScrollStackView {
+    override var intrinsicContentSize: CGSize {
+        stackView.systemLayoutSizeFitting(
+            CGSize(
+                width: UIScreen.main.bounds.width,
+                height: UIView.layoutFittingCompressedSize.height
+            ),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .defaultLow
+        )
     }
 }

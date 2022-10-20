@@ -60,11 +60,9 @@ private extension ActionRow {
     func layoutViews() {
         spacing = 16
         alignment = .center
-        distribution = .fillProportionally
         
         addArrangedSubview(iconImageView)
         addArrangedSubview(titleLabel)
-        
     }
     
     func load(url: String, urlDark: String?, in imageView: UIImageView, tintColor: UIColor) {

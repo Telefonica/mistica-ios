@@ -109,9 +109,9 @@ final class SheetTests: XCTestCase {
 
 private extension SheetTests {
     func makeSheetContent(iconEnabled: Bool = false, isLargeIcon: Bool = true) -> [SheetList] {
-        var rows: [SingleSelectionRow] = []
+        var rows: [SingleSelectionItem] = []
         for index in 1 ... 10 {
-            let item = SingleSelectionRow(
+            let item = SingleSelectionItem(
                 id: index.description,
                 title: "Element \(index)",
                 description: "Description",
@@ -121,10 +121,9 @@ private extension SheetTests {
         }
         let content = SheetList(
             id: UUID().uuidString,
-            type: "LIST",
             listType: .singleSelection(items: rows),
             autoSubmit: true,
-            selectedId: "1"
+            selectedId: ["1"]
         )
 
         return [content]

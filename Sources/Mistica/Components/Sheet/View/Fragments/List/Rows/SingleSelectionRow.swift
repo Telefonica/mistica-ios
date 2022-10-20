@@ -78,7 +78,7 @@ private extension SingleSelectionRowView {
 
         let itemStackView = UIStackView()
         itemStackView.spacing = 16.0
-        itemStackView.alignment = .leading
+        itemStackView.alignment = .center
         
         if let icon = item.icon {
             let imageView = IntrinsictImageView()

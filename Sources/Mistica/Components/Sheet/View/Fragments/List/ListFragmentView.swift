@@ -19,7 +19,7 @@ class ListFragmentView: UIView {
         stackView.axis = .vertical
         stackView.spacing = 16
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = .init(top: 16, left: 0, bottom: 0, right: 16)
+        stackView.layoutMargins = .init(top: 16, left: 0, bottom: 0, right: 0)
         return stackView
     }()
     
@@ -68,6 +68,8 @@ private extension ListFragmentView {
                 action: #selector(selectItem(_:))
             )
             rowView.addGestureRecognizer(itemTapGesture)
+            rowView.isSelected = sheetList.selectedId.contains(item.id)
+            
             stackView.addArrangedSubview(rowView)
         }
     }

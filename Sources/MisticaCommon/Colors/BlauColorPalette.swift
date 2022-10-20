@@ -20,7 +20,7 @@ struct BlauColors: MisticaColors {
     let backgroundFeedbackBottom = palette.blauBluePrimary | palette.darkModeBlack
     let backgroundOverlay = palette.blauBlueSecondary.withAlphaComponent(0.75) | palette.darkModeGrey.withAlphaComponent(0.8)
     let backgroundSkeleton = palette.grey2 | palette.darkModeGrey
-    let backgroundSkeletonInverse = palette.white | palette.darkModeGrey
+    let backgroundSkeletonInverse = palette.white.withAlphaComponent(0.2) | palette.darkModeGrey
     let navigationBarBackground = palette.blauBluePrimary | palette.darkModeBlack
     let skeletonWave = palette.grey2 | palette.grey5
 

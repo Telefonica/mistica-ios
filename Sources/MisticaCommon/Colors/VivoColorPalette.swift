@@ -17,8 +17,8 @@ struct VivoColors: MisticaColors {
     let backgroundContainer = palette.white | palette.darkModeGrey
     let backgroundBrand = palette.vivoPurple | palette.darkModeBlack
     let backgroundOverlay = palette.grey6.withAlphaComponent(0.6) | palette.darkModeGrey.withAlphaComponent(0.8)
-    let backgroundSkeleton = palette.grey1 | palette.darkModeGrey6
-    let backgroundSkeletonInverse = palette.white | palette.darkModeGrey6
+    let backgroundSkeleton = palette.grey2 | palette.darkModeGrey6
+    let backgroundSkeletonInverse = palette.white.withAlphaComponent(0.2) | palette.darkModeGrey6
     let navigationBarBackground = palette.vivoPurple | palette.darkModeBlack
     let backgroundAlternative = palette.grey1 | palette.darkModeGrey
     let backgroundFeedbackBottom = palette.vivoPurple | palette.darkModeBlack

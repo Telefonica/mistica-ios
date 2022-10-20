@@ -109,7 +109,7 @@ private extension ListFragmentView {
 
     @objc private func didTouchItem(_ sender: UITapGestureRecognizer) {
         guard let touchable = sender.view as? Touchable else { return }
-        
+
         switch sender.state {
         case .began:
             touchable.touchBegan()
@@ -120,7 +120,7 @@ private extension ListFragmentView {
             touchable.touchEnded()
         case .ended:
             touchable.touchEnded()
-            
+
             if let tappedView = sender.view as? SingleSelectionRowView {
                 handleSingleSelectionRowTap(tappedView)
             } else if let tappedView = sender.view as? ActionRow {

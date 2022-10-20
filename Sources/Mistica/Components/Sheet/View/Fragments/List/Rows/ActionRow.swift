@@ -69,7 +69,7 @@ private extension ActionRow {
     func layoutViews() {
         spacing = 16
         alignment = .center
-        
+
         addArrangedSubview(iconImageView)
         addArrangedSubview(titleLabel)
     }
@@ -88,9 +88,8 @@ private extension ActionRow {
 extension ActionRow: Touchable {
     func touchBegan() {
         backgroundColor = .backgroundAlternative
-        
     }
-    
+
     func touchEnded() {
         backgroundColor = .background
     }

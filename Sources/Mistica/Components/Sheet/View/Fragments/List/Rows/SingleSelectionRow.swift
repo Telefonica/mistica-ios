@@ -124,9 +124,8 @@ private extension SingleSelectionRowView {
 extension SingleSelectionRowView: Touchable {
     func touchBegan() {
         backgroundColor = .backgroundAlternative
-        
     }
-    
+
     func touchEnded() {
         backgroundColor = .background
     }

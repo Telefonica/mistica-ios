@@ -123,7 +123,7 @@ public class SheetViewController: UIViewController {
         sheetSelectionResponse = .init(
             action: .dismiss,
             selectedIds: config.content
-                .filter{ $0.listType.isInformative == false }
+                .filter { $0.listType.isInformative == false }
                 .map { SheetResponseResult(id: $0.id, selected: $0.selectedId) }
         )
 

@@ -50,7 +50,11 @@ private extension ActionRow {
             imageTintColor = .neutralHigh
         }
         
-        load(icon: item, in: iconImageView, tintColor: imageTintColor)
+        if let url = item.url {
+            load(url: url, urlDark: item.urlDark, in: iconImageView, tintColor: imageTintColor)
+        } else {
+            iconImageView.isHidden = true
+        }
     }
     
     func layoutViews() {
@@ -63,9 +67,9 @@ private extension ActionRow {
         
     }
     
-    func load(icon: ActionItem, in imageView: UIImageView, tintColor: UIColor) {
-        guard let url = URL(string: icon.url) else { return }
-        if let urlDark = icon.urlDark,
+    func load(url: String, urlDark: String?, in imageView: UIImageView, tintColor: UIColor) {
+        guard let url = URL(string: url) else { return }
+        if let urlDark = urlDark,
            let urlForDarkMode = URL(string: urlDark) {
             imageView.load(url: url, urlForDarkMode: urlForDarkMode, tintColor: tintColor)
         } else {

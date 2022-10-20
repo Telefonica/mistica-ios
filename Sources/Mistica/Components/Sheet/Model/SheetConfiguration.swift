@@ -158,14 +158,14 @@ public struct ActionItem {
     public let id: String
     public let title: String
     public let style: Style
-    public let url: String
+    public let url: String?
     public let urlDark: String?
     
     public init(
         id: String,
         title: String,
         style: ActionItem.Style,
-        url: String,
+        url: String?,
         urlDark: String?
     ) {
         self.id = id

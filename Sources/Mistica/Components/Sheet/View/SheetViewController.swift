@@ -268,11 +268,11 @@ private extension SheetViewController {
             
             switch rowTapped {
             case .action(let item):
-                sheetSelectionResponse = .init(action: .dismiss, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
+                sheetSelectionResponse = .init(action: .submit, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
             case .informative:
-                sheetSelectionResponse = .init(action: .dismiss, selectedIds: [])
+                sheetSelectionResponse = .init(action: .submit, selectedIds: [])
             case .singleSelection(let item):
-                sheetSelectionResponse = .init(action: .dismiss, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
+                sheetSelectionResponse = .init(action: .submit, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
             }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in

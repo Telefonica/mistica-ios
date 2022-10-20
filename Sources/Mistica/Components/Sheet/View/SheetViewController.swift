@@ -125,7 +125,7 @@ public class SheetViewController: UIViewController {
         sheetSelectionResponse = .init(
             action: .dismiss,
             selectedIds: config.content.map {
-                SheetResponseResult(id: $0.id, selected: ($0.selectedId != nil) ? [$0.selectedId!] : [])
+                SheetResponseResult(id: $0.id, selected: $0.selectedId)
             }
         )
 

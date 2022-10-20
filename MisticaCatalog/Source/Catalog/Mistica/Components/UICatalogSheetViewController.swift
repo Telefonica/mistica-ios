@@ -257,10 +257,9 @@ private extension UICatalogSheetViewController {
         }
         let content = SheetList(
             id: UUID().uuidString,
-            type: "LIST",
             listType: .singleSelection(items: rows),
             autoSubmit: true,
-            selectedId: "1"
+            selectedId: ["1"]
         )
 
         let configuration = SheetConfiguration(
@@ -308,10 +307,9 @@ private extension UICatalogSheetViewController {
         }
         let content = SheetList(
             id: UUID().uuidString,
-            type: "LIST",
             listType: .informative(items: rows),
             autoSubmit: true,
-            selectedId: "1"
+            selectedId: ["1"]
         )
 
         let configuration = SheetConfiguration(
@@ -342,10 +340,9 @@ private extension UICatalogSheetViewController {
         }
         let content = SheetList(
             id: UUID().uuidString,
-            type: "LIST",
             listType: .actions(items: rows),
             autoSubmit: true,
-            selectedId: "1"
+            selectedId: ["1"]
         )
 
         let configuration = SheetConfiguration(

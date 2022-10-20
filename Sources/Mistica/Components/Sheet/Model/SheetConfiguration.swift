@@ -27,9 +27,11 @@ public struct SheetHeader {
     public let subtitle: String?
     public let description: String?
     
-    public init(title: String? = nil,
-                subtitle: String? = nil,
-                description: String? = nil) {
+    public init(
+        title: String? = nil,
+        subtitle: String? = nil,
+        description: String? = nil
+    ) {
         self.title = title
         self.subtitle = subtitle
         self.description = description
@@ -38,20 +40,17 @@ public struct SheetHeader {
 
 public struct SheetList {
     public let id: String
-    public let type: String
     public let listType: SheetListType
     public let autoSubmit: Bool
-    public let selectedId: String?
+    public let selectedId: [String]
     
     public init(
         id: String,
-        type: String,
         listType: SheetListType,
         autoSubmit: Bool,
-        selectedId: String
+        selectedId: [String]
     ) {
         self.id = id
-        self.type = type
         self.listType = listType
         self.autoSubmit = autoSubmit
         self.selectedId = selectedId

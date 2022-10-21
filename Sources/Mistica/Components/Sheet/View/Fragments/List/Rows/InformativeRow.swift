@@ -123,6 +123,7 @@ private class TopContentView: UIView {
         let label = IntrinsictHeightLabel()
         label.minHeight = 24
         label.numberOfLines = 0
+        label.font = .textPreset3(weight: .regular)
         label.textColor = .textPrimary
         return label
     }()
@@ -131,6 +132,7 @@ private class TopContentView: UIView {
         let label = IntrinsictHeightLabel()
         label.minHeight = 24
         label.numberOfLines = 1
+        label.font = .textPreset3(weight: .regular)
         label.textColor = .clear
         return label
     }()

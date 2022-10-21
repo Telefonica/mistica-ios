@@ -32,6 +32,9 @@ class ListFragmentView: UIView {
 
     private weak var selectedRow: SingleSelectionRowView?
     private var delegate: (ItemTappedType) -> Void
+    
+    private var longPressStartPoint: CGPoint? = nil
+    private var longPressCancelled = false
 
     init(
         sheetList: SheetList,
@@ -63,6 +66,8 @@ private extension ListFragmentView {
         case .informative(let items):
             fillListWithInformativeItems(items)
         }
+        
+        backgroundColor = .backgroundContainer
     }
 
     func fillListWithSingleSelectionItems(_ items: [SingleSelectionItem]) {
@@ -102,18 +107,33 @@ private extension ListFragmentView {
                 action: #selector(didTouchItem(_:))
             )
             itemTapGesture.minimumPressDuration = 0
+            itemTapGesture.delegate = self
             rowView.addGestureRecognizer(itemTapGesture)
             stackView.addArrangedSubview(rowView)
         }
     }
 
-    @objc private func didTouchItem(_ sender: UITapGestureRecognizer) {
+    @objc private func didTouchItem(_ sender: UILongPressGestureRecognizer) {
         guard let touchable = sender.view as? Touchable else { return }
 
+        let currentPoint = sender.location(in: self)
+        
         switch sender.state {
         case .began:
+            longPressCancelled = false
+            longPressStartPoint = currentPoint
             touchable.touchBegan()
-        case .changed, .possible, .failed:
+        case .changed:
+            guard !longPressCancelled else { return }
+            guard let longPressStartPoint = self.longPressStartPoint else { return }
+            
+            let distance = hypotf(Float(currentPoint.x - longPressStartPoint.x), Float(currentPoint.y - longPressStartPoint.y))
+            print(distance)
+            if distance > 10 {
+                longPressCancelled = true
+            }
+            
+        case .possible, .failed:
             // ignores this states
             break
         case .cancelled:
@@ -121,6 +141,8 @@ private extension ListFragmentView {
         case .ended:
             touchable.touchEnded()
 
+            guard !longPressCancelled else { return }
+            
             if let tappedView = sender.view as? SingleSelectionRowView {
                 handleSingleSelectionRowTap(tappedView)
             } else if let tappedView = sender.view as? ActionRow {
@@ -144,5 +166,11 @@ private extension ListFragmentView {
 
     func handleActionsRowTap(_ tappedView: ActionRow) {
         delegate(.action(item: tappedView.item))
+    }
+}
+
+extension ListFragmentView: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        true
     }
 }

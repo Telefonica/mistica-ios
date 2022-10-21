@@ -1,3 +1,10 @@
+# [18.3.0](https://github.com/Telefonica/mistica-ios/compare/v18.2.4...v18.3.0) (2022-10-21)
+
+
+### Features
+
+* **Sheet:** Implement Sheet v2 (informative and action styles) ([08581b1](https://github.com/Telefonica/mistica-ios/commit/08581b198aa1d2371102da608ed9bdf760b26174))
+
 ## [18.2.4](https://github.com/Telefonica/mistica-ios/compare/v18.2.3...v18.2.4) (2022-10-11)
 
 

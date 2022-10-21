@@ -151,6 +151,8 @@ private class TopContentView: UIView {
             dummyView.amount = iconImageView.intrinsicWidth
 
             load(icon: icon, in: iconImageView)
+            
+            iconImageView.tintColor = .neutralHigh
         }
     }
 
@@ -182,15 +184,15 @@ private class TopContentView: UIView {
     func load(icon: InformativeItemIcon, in imageView: UIImageView) {
         switch icon {
         case .bullet:
-            imageView.image = UIImage.circle(diameter: 6, color: .neutralHigh)
+            imageView.image = .bullet.withRenderingMode(.alwaysTemplate)
         case .small(let url, let urlDark),
              .regular(let url, let urlDark):
             guard let url = URL(string: url) else { return }
             if let urlDark = urlDark,
                let urlForDarkMode = URL(string: urlDark) {
-                imageView.load(url: url, urlForDarkMode: urlForDarkMode)
+                imageView.load(url: url, urlForDarkMode: urlForDarkMode, renderAsTemplate: true)
             } else {
-                imageView.load(url: url)
+                imageView.load(url: url, renderAsTemplate: true)
             }
         }
     }

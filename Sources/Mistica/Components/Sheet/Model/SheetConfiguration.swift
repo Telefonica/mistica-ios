@@ -142,7 +142,7 @@ public struct InformativeItem {
     }
 }
 
-public enum InformativeItemIcon {
+public enum InformativeItemIcon: Equatable {
     case regular(url: String, urlDark: String?)
     case small(url: String, urlDark: String?)
     case bullet
@@ -150,7 +150,7 @@ public enum InformativeItemIcon {
     var size: CGSize {
         switch self {
         case .bullet:
-            return .init(width: 6, height: 8)
+            return .init(width: 6, height: 6)
         case .small:
             return .init(width: 16, height: 24)
         case .regular:

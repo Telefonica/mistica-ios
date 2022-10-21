@@ -148,7 +148,7 @@ private class TopContentView: UIView {
         didSet {
             iconImageView.intrinsicHeight = icon.size.height
             iconImageView.intrinsicWidth = icon.size.width
-            dummyView.amount = iconImageView.intrinsicWidth
+            dummyView.amount = icon.size.width
 
             load(icon: icon, in: iconImageView)
 

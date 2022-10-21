@@ -73,7 +73,7 @@ class SheetPresentationController: UIPresentationController {
         ).height
 
         /// The target height of the presented view.
-        /// If the size of the of the presented view could not be computed, meaning its equal to zero, we default to the maximum height.
+        /// If the size of the presented view could not be computed, meaning its equal to zero, we default to the maximum height.
         let targetHeight = presentedViewHeight == .zero ? maximumHeight : presentedViewHeight
 
         // Adjust the height of the view by adding the bottom safe area inset.

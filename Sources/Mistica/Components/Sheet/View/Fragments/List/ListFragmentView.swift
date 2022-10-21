@@ -79,6 +79,7 @@ private extension ListFragmentView {
                 action: #selector(didTouchItem(_:))
             )
             itemTapGesture.minimumPressDuration = 0
+            itemTapGesture.delegate = self
             rowView.addGestureRecognizer(itemTapGesture)
 
             if sheetList.selectedId.contains(item.id) {

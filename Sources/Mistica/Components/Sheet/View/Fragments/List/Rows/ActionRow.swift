@@ -79,9 +79,9 @@ private extension ActionRow {
         guard let url = URL(string: url) else { return }
         if let urlDark = urlDark,
            let urlForDarkMode = URL(string: urlDark) {
-            imageView.load(url: url, urlForDarkMode: urlForDarkMode)
+            imageView.load(url: url, urlForDarkMode: urlForDarkMode, renderAsTemplate: true)
         } else {
-            imageView.load(url: url)
+            imageView.load(url: url, renderAsTemplate: true)
         }
     }
 }

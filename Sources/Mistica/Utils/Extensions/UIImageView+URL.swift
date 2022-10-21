@@ -28,12 +28,12 @@ private extension UIImageView {
         DispatchQueue.main.async { [weak self] in
             var lightImage = UIImage(data: imageData)
             var darkImage = UIImage(data: darkImageData)
-1¡
+            1¡
             if renderAsTemplate {
                 lightImage = lightImage?.withRenderingMode(.alwaysTemplate)
                 darkImage = darkImage?.withRenderingMode(.alwaysTemplate)
             }
-            
+
             self?.image = lightImage
 
             if let darkImage = darkImage {
@@ -45,11 +45,11 @@ private extension UIImageView {
     func updateImage(imageData: Data, renderAsTemplate: Bool = false) {
         DispatchQueue.main.async { [weak self] in
             var image = UIImage(data: imageData)
-            
+
             if renderAsTemplate {
                 image = image?.withRenderingMode(.alwaysTemplate)
             }
-            
+
             self?.image = image
         }
     }

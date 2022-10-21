@@ -151,7 +151,7 @@ private class TopContentView: UIView {
             dummyView.amount = iconImageView.intrinsicWidth
 
             load(icon: icon, in: iconImageView)
-            
+
             iconImageView.tintColor = .neutralHigh
         }
     }

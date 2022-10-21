@@ -10,32 +10,47 @@ import UIKit
 
 extension UIImageView {
     /// Loads the urls asynchronously
-    func load(url: URL, urlForDarkMode: URL? = nil) {
+    func load(url: URL, urlForDarkMode: URL? = nil, renderAsTemplate: Bool = false) {
         DispatchQueue.global().async { [weak self] in
             guard let imageData = try? Data(contentsOf: url) else { return }
             if let urlForDarkMode = urlForDarkMode,
                let darkImageData = try? Data(contentsOf: urlForDarkMode) {
-                self?.updateImage(imageData: imageData, darkImageData: darkImageData)
+                self?.updateImage(imageData: imageData, darkImageData: darkImageData, renderAsTemplate: renderAsTemplate)
             } else {
-                self?.updateImage(imageData: imageData)
+                self?.updateImage(imageData: imageData, renderAsTemplate: renderAsTemplate)
             }
         }
     }
 }
 
 private extension UIImageView {
-    func updateImage(imageData: Data, darkImageData: Data) {
+    func updateImage(imageData: Data, darkImageData: Data, renderAsTemplate: Bool = false) {
         DispatchQueue.main.async { [weak self] in
-            self?.image = UIImage(data: imageData)
-            if let darkImage = UIImage(data: darkImageData) {
+            var lightImage = UIImage(data: imageData)
+            var darkImage = UIImage(data: darkImageData)
+
+            if renderAsTemplate {
+                lightImage = lightImage?.withRenderingMode(.alwaysTemplate)
+                darkImage = darkImage?.withRenderingMode(.alwaysTemplate)
+            }
+
+            self?.image = lightImage
+
+            if let darkImage = darkImage {
                 self?.image?.imageAsset?.register(darkImage, with: .init(userInterfaceStyle: .dark))
             }
         }
     }
 
-    func updateImage(imageData: Data) {
+    func updateImage(imageData: Data, renderAsTemplate: Bool = false) {
         DispatchQueue.main.async { [weak self] in
-            self?.image = UIImage(data: imageData)
+            var image = UIImage(data: imageData)
+
+            if renderAsTemplate {
+                image = image?.withRenderingMode(.alwaysTemplate)
+            }
+
+            self?.image = image
         }
     }
 }

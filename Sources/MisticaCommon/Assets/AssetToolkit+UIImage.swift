@@ -45,4 +45,8 @@ public extension UIImage {
     static var closeButtonBlackSmallIcon: UIImage {
         UIImage(named: "icn_close_black_small", type: .common)!
     }
+
+    static var bullet: UIImage {
+        UIImage(named: "icn_bullet", type: .common)!
+    }
 }

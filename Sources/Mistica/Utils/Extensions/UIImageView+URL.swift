@@ -28,7 +28,7 @@ private extension UIImageView {
         DispatchQueue.main.async { [weak self] in
             var lightImage = UIImage(data: imageData)
             var darkImage = UIImage(data: darkImageData)
-            1¡
+
             if renderAsTemplate {
                 lightImage = lightImage?.withRenderingMode(.alwaysTemplate)
                 darkImage = darkImage?.withRenderingMode(.alwaysTemplate)

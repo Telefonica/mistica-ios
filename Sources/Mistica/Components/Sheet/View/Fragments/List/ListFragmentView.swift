@@ -32,7 +32,7 @@ class ListFragmentView: UIView {
 
     private weak var selectedRow: SingleSelectionRowView?
     private var delegate: (ItemTappedType) -> Void
-    
+
     private var longPressStartPoint: CGPoint? = nil
     private var longPressCancelled = false
 
@@ -66,7 +66,7 @@ private extension ListFragmentView {
         case .informative(let items):
             fillListWithInformativeItems(items)
         }
-        
+
         backgroundColor = .backgroundContainer
     }
 
@@ -118,7 +118,7 @@ private extension ListFragmentView {
         guard let touchable = sender.view as? Touchable else { return }
 
         let currentPoint = sender.location(in: self)
-        
+
         switch sender.state {
         case .began:
             longPressCancelled = false
@@ -127,13 +127,13 @@ private extension ListFragmentView {
         case .changed:
             guard !longPressCancelled else { return }
             guard let longPressStartPoint = self.longPressStartPoint else { return }
-            
+
             let distance = hypotf(Float(currentPoint.x - longPressStartPoint.x), Float(currentPoint.y - longPressStartPoint.y))
             print(distance)
             if distance > 10 {
                 longPressCancelled = true
             }
-            
+
         case .possible, .failed:
             // ignores this states
             break
@@ -143,7 +143,7 @@ private extension ListFragmentView {
             touchable.touchEnded()
 
             guard !longPressCancelled else { return }
-            
+
             if let tappedView = sender.view as? SingleSelectionRowView {
                 handleSingleSelectionRowTap(tappedView)
             } else if let tappedView = sender.view as? ActionRow {

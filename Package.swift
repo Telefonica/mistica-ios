@@ -150,7 +150,8 @@ let package = Package(
                 "Components/Sheet/docs"
             ],
             swiftSettings: [
-                .define("SWIFT_PACKAGE")
+                .define("SWIFT_PACKAGE"),
+                .unsafeFlags(["-Xlinker", "-rpath", "-Xlinker", "$(inherited)"])
             ]
         ),
 

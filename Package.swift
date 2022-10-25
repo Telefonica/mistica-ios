@@ -151,7 +151,7 @@ let package = Package(
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE"),
-                .unsafeFlags(["-Xlinker", "-rpath", "-Xlinker", "$(inherited)"])
+                .unsafeFlags(["-Xlinker", "-rpath", "-Xlinker", "@executable_path/Frameworks"])
             ]
         ),
 

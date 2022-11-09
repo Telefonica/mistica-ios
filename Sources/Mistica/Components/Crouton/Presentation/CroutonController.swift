@@ -46,7 +46,7 @@ public extension CroutonController {
             action: action,
             style: style,
             dismissHandler: dismissHandler,
-            rootViewController: UIApplication.shared.keyWindow?.rootViewController
+            rootViewController: UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController
         )
     }
 

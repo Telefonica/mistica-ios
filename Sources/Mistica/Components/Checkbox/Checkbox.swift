@@ -133,7 +133,7 @@ private extension Checkbox {
         generator.impactOccurred()
     }
 
-    @available(iOS, introduced: 11.0, deprecated: 13.0, message: "We're using an undocumented traits of UISwitch. Please verify that this works before increment the deprecated version number")
+    @available(iOS, introduced: 11.0, deprecated: 14.0, message: "We're using an undocumented traits of UISwitch. Please verify that this works before increment the deprecated version number")
     func setupAccessibilityTraits() {
         accessibilityTraits = UISwitch().accessibilityTraits
     }

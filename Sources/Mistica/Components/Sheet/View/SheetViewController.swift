@@ -19,6 +19,22 @@ public protocol SheetViewControllerDelegate: AnyObject {
 }
 
 public class SheetViewController: UIViewController {
+    private lazy var bottomSheetTransitioningDelegate = BottomSheetTransitioningDelegate()
+    
+    public override var modalPresentationStyle: UIModalPresentationStyle {
+        get {
+            .custom
+        }
+        set { }
+    }
+
+    public override var transitioningDelegate: UIViewControllerTransitioningDelegate? {
+        get {
+            bottomSheetTransitioningDelegate
+        }
+        set { }
+    }
+    
     private lazy var titleLabel: IntrinsictHeightLabel? = {
         if let title = config.header.title {
             let label = IntrinsictHeightLabel()
@@ -128,8 +144,6 @@ public class SheetViewController: UIViewController {
         )
 
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
-
-        setupView()
     }
 
     @available(*, unavailable)
@@ -141,12 +155,16 @@ public class SheetViewController: UIViewController {
         super.viewDidDisappear(animated)
         completionHandler?(sheetSelectionResponse)
     }
+    
+    public override func loadView() {
+        view = UIView()
+        setupView()
+    }
 }
 
 public extension SheetViewController {
     func setupView() {
         view.backgroundColor = .backgroundContainer
-        view.makeRounded(cornerRadius: 8.0)
 
         let containerView = UIStackView()
         containerView.axis = .vertical

@@ -19,6 +19,8 @@ public protocol SheetViewControllerDelegate: AnyObject {
 }
 
 public class SheetViewController: UIViewController {
+    static var isTesting = false
+    
     private lazy var bottomSheetTransitioningDelegate = BottomSheetTransitioningDelegate()
     
     public override var modalPresentationStyle: UIModalPresentationStyle {

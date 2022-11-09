@@ -27,7 +27,7 @@ import UIKit
         let horizontalSizeClass = UIScreen.main.traitCollection.horizontalSizeClass
         var preferredSize = preferredSize
 
-        if let constrainedSize = constrainedPreferredSize, preferredSize.isGreaterThan(constrainedSize) {
+        if let constrainedSize = constrainedPreferredSize, preferredSize > constrainedSize {
             preferredSize = constrainedSize
         }
 
@@ -47,7 +47,7 @@ import UIKit
         let horizontalSizeClass = UIScreen.main.traitCollection.horizontalSizeClass
         var preferredSize = preferredSize
 
-        if let constrainedSize = constrainedPreferredSize, preferredSize.isGreaterThan(constrainedSize) {
+        if let constrainedSize = constrainedPreferredSize, preferredSize > constrainedSize {
             preferredSize = constrainedSize
         }
 
@@ -187,44 +187,6 @@ private extension FontStyle {
              .textPreset8,
              .textPreset9,
              .textPreset10:
-            return 0
-        }
-    }
-}
-
-// This extension can go away when we drop support for iOS versions lower than 11
-public extension UIContentSizeCategory {
-    func isGreaterThan(_ other: UIContentSizeCategory) -> Bool {
-        self > other
-    }
-
-    private var weight: Int {
-        switch self {
-        case .extraSmall:
-            return -3
-        case .small:
-            return -2
-        case .medium:
-            return -1
-        case .large: // Default
-            return 0
-        case .extraLarge:
-            return 1
-        case .extraExtraLarge:
-            return 2
-        case .extraExtraExtraLarge:
-            return 3
-        case .accessibilityMedium:
-            return 4
-        case .accessibilityLarge:
-            return 5
-        case .accessibilityExtraLarge:
-            return 6
-        case .accessibilityExtraExtraLarge:
-            return 7
-        case .accessibilityExtraExtraExtraLarge:
-            return 8
-        default:
             return 0
         }
     }

@@ -14,18 +14,19 @@ extension UIImageView {
         guard UIView.areAnimationsEnabled else {
             downloadImage(
                 url: url,
-                urlForDarkMode: urlForDarkMode) { [weak self] lightImageData, darkImageData in
-                    guard let lightImageData else { return }
-                    self?.updateImage(imageData: lightImageData, darkImageData: darkImageData)
-                }
+                urlForDarkMode: urlForDarkMode
+            ) { [weak self] lightImageData, darkImageData in
+                guard let lightImageData else { return }
+                self?.updateImage(imageData: lightImageData, darkImageData: darkImageData)
+            }
             return
         }
-        
+
         DispatchQueue.global().async { [weak self] in
             self?.downloadImage(
                 url: url,
                 urlForDarkMode: urlForDarkMode,
-                completion:{ [weak self] lightImageData, darkImageData in
+                completion: { [weak self] lightImageData, darkImageData in
                     guard let lightImageData else { return }
                     self?.updateImage(imageData: lightImageData, darkImageData: darkImageData)
                 }
@@ -40,20 +41,20 @@ private extension UIImageView {
             completion(nil, nil)
             return
         }
-        
+
         var darkImageData: Data?
-        
+
         if let urlForDarkMode = urlForDarkMode {
             darkImageData = try? Data(contentsOf: urlForDarkMode)
         }
-        
+
         completion(lightImageData, darkImageData)
     }
-    
+
     func updateImage(imageData: Data, darkImageData: Data?, renderAsTemplate: Bool = false) {
         var lightImage = UIImage(data: imageData)
         var darkImage: UIImage?
-        
+
         if let darkImageData {
             darkImage = .init(data: darkImageData)
         }

@@ -1,3 +1,11 @@
+//
+//  BottomSheetPresentationController.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import UIKit
 
 final class BottomSheetPresentationController: UIPresentationController {
@@ -8,9 +16,9 @@ final class BottomSheetPresentationController: UIPresentationController {
         }
         return view
     }()
-    
+
     let bottomSheetInteractiveDismissalTransition = BottomSheetInteractiveDismissalTransition()
-    
+
     private lazy var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(onPan))
 
     @objc private func onPan(_ gestureRecognizer: UIPanGestureRecognizer) {
@@ -20,7 +28,7 @@ final class BottomSheetPresentationController: UIPresentationController {
 
         let translation = gestureRecognizer.translation(in: presentedView)
         let progress = translation.y / presentedView.frame.height
-        
+
         switch gestureRecognizer.state {
         case .began:
             bottomSheetInteractiveDismissalTransition.start(
@@ -98,14 +106,14 @@ final class BottomSheetPresentationController: UIPresentationController {
             return
         }
 
-        transitionCoordinator.animate { context in
+        transitionCoordinator.animate { _ in
             self.backgroundDimmingView.dimState = .max
         }
     }
 
     override func presentationTransitionDidEnd(_ completed: Bool) {
         guard !completed else { return }
-        
+
         backgroundDimmingView.removeFromSuperview()
         presentedView?.removeGestureRecognizer(panGestureRecognizer)
     }
@@ -115,14 +123,14 @@ final class BottomSheetPresentationController: UIPresentationController {
             return
         }
 
-        transitionCoordinator.animate { context in
+        transitionCoordinator.animate { _ in
             self.backgroundDimmingView.dimState = .off
         }
     }
 
     override func dismissalTransitionDidEnd(_ completed: Bool) {
         guard completed else { return }
-        
+
         backgroundDimmingView.removeFromSuperview()
         presentedView?.removeGestureRecognizer(panGestureRecognizer)
     }

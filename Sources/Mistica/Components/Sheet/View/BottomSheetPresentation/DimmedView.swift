@@ -1,3 +1,11 @@
+//
+//  DimmedView.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import UIKit
 
 class DimmedView: UIView {
@@ -5,7 +13,7 @@ class DimmedView: UIView {
         case max
         case off
     }
-    
+
     var dimState: DimState = .off {
         didSet {
             switch dimState {
@@ -16,12 +24,12 @@ class DimmedView: UIView {
             }
         }
     }
-    
+
     /// The closure to be executed when a tap occurs
     var didTap: ((_ recognizer: UIGestureRecognizer) -> Void)?
-    
+
     private lazy var tapGesture: UIGestureRecognizer = {
-        return UITapGestureRecognizer(target: self, action: #selector(didTapView))
+        UITapGestureRecognizer(target: self, action: #selector(didTapView))
     }()
 
     // MARK: - Initializers
@@ -33,7 +41,8 @@ class DimmedView: UIView {
         addGestureRecognizer(tapGesture)
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    public required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
 
@@ -42,5 +51,4 @@ class DimmedView: UIView {
     @objc private func didTapView() {
         didTap?(tapGesture)
     }
-
 }

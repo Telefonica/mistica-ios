@@ -1,8 +1,9 @@
 //
 //  BottomSheetTransitioningDelegate.swift
-//  BottomSheetController
 //
-//  Created by Thomas Asheim Smedmann on 04/05/2022.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import UIKit
@@ -10,7 +11,6 @@ import UIKit
 // MARK: BottomSheetTransitioningDelegate
 
 final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
-
     private weak var bottomSheetPresentationController: BottomSheetPresentationController?
 
     func presentationController(
@@ -48,5 +48,3 @@ final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerTransiti
 }
 
 // MARK: BottomSheetInteractiveDismissalTransition
-
-

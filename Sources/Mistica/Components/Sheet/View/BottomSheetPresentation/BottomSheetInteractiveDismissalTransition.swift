@@ -1,3 +1,11 @@
+//
+//  BottomSheetInteractiveDismissalTransition.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import UIKit
 
 final class BottomSheetInteractiveDismissalTransition: NSObject {
@@ -34,7 +42,7 @@ extension BottomSheetInteractiveDismissalTransition {
 
     func move(_ presentedView: UIView, using translation: CGFloat) {
         let progress = translation / presentedView.frame.height
-        
+
         heightAnimator?.fractionComplete = progress * -1
         offsetAnimator?.fractionComplete = progress
 
@@ -54,7 +62,7 @@ extension BottomSheetInteractiveDismissalTransition {
         transitionContext?.updateInteractiveTransition(progress)
 
         let finishDismiss = velocity.y > 100 || progress > 0.45
-        
+
         heightAnimator?.isReversed = true
         offsetAnimator?.isReversed = !finishDismiss
 
@@ -207,8 +215,8 @@ private extension BottomSheetInteractiveDismissalTransition {
         propertyAnimator.addCompletion { position in
             self.bottomConstraint?.constant = position == .end ? offset : 0
         }
-        
-        propertyAnimator.addCompletion { position in
+
+        propertyAnimator.addCompletion { _ in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
 

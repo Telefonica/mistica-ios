@@ -20,23 +20,23 @@ public protocol SheetViewControllerDelegate: AnyObject {
 
 public class SheetViewController: UIViewController {
     static var isTesting = false
-    
+
     private lazy var bottomSheetTransitioningDelegate = BottomSheetTransitioningDelegate()
-    
-    public override var modalPresentationStyle: UIModalPresentationStyle {
+
+    override public var modalPresentationStyle: UIModalPresentationStyle {
         get {
             .custom
         }
-        set { }
+        set {}
     }
 
-    public override var transitioningDelegate: UIViewControllerTransitioningDelegate? {
+    override public var transitioningDelegate: UIViewControllerTransitioningDelegate? {
         get {
             bottomSheetTransitioningDelegate
         }
-        set { }
+        set {}
     }
-    
+
     private lazy var titleLabel: IntrinsictHeightLabel? = {
         if let title = config.header.title {
             let label = IntrinsictHeightLabel()
@@ -157,8 +157,8 @@ public class SheetViewController: UIViewController {
         super.viewDidDisappear(animated)
         completionHandler?(sheetSelectionResponse)
     }
-    
-    public override func loadView() {
+
+    override public func loadView() {
         view = UIView()
         setupView()
     }

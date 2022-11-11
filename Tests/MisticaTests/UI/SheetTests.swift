@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-
 @testable import Mistica
 import SnapshotTesting
 import XCTest
@@ -15,19 +14,19 @@ final class SheetTests: XCTestCase {
     override func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
-        
+
         isRecording = false
     }
-    
+
     // MARK: Common behaviour
-    
+
     func testEmptyHeader() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(content: makeSingleSelectionContent())
         )
     }
-    
+
     func testNoSubtitleAndDescription() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -37,7 +36,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testNoDescription() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -48,9 +47,9 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     // MARK: Single selection list type
-    
+
     func testContentWithoutIcons() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -62,7 +61,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testContentWithoutIconsAndDescriptions() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -74,7 +73,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testContentWithIcons() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -86,7 +85,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testContentWithSmallIcons() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -98,7 +97,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testContentWithIconsAndWithoutDescriptions() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -110,9 +109,9 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     // MARK: Informative list type
-    
+
     func testInformativeWithoutDescriptionAndBulletIcon() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -127,7 +126,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testInformativeWithoutDescriptionAndRegularIcon() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -142,7 +141,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testInformativeWithDescriptionAndRegularIcon() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -157,7 +156,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testInformativeWithoutDescriptionAndSmallIcon() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -172,7 +171,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testInformativeWithDescriptionAndSmallIcon() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -187,9 +186,9 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     // MARK: Action list type
-    
+
     func testActionWithoutUrls() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -201,7 +200,7 @@ final class SheetTests: XCTestCase {
             )
         )
     }
-    
+
     func testActionWithUrls() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
@@ -222,10 +221,10 @@ private extension SheetTests {
         guard let url = Bundle.module.url(forResource: "circleRed", withExtension: "png") else {
             fatalError("Asset named circleRed not found")
         }
-        
+
         return url.absoluteString
     }
-    
+
     func makeSingleSelectionContent(iconEnabled: Bool = false, isLargeIcon: Bool = true) -> [SheetList] {
         var rows: [SingleSelectionItem] = []
         for index in 1 ... 10 {
@@ -243,10 +242,10 @@ private extension SheetTests {
             autoSubmit: true,
             selectedId: ["1"]
         )
-        
+
         return [content]
     }
-    
+
     func makeInformativeContent(
         description: String? = nil,
         icon: InformativeItemIcon = .bullet
@@ -267,10 +266,10 @@ private extension SheetTests {
             autoSubmit: true,
             selectedId: []
         )
-        
+
         return [content]
     }
-    
+
     func makeActionContent(
         url: String? = nil,
         urlDark: String? = nil
@@ -278,7 +277,7 @@ private extension SheetTests {
         var rows: [ActionItem] = []
         for index in 1 ... 10 {
             let style = index == 5 ? ActionItem.Style.destructive : ActionItem.Style.normal
-            
+
             let item = ActionItem(
                 id: "\(index)",
                 title: "Title \(index)",
@@ -294,10 +293,10 @@ private extension SheetTests {
             autoSubmit: true,
             selectedId: []
         )
-        
+
         return [content]
     }
-    
+
     func sheetView(
         title: String? = nil,
         subtitle: String? = nil,

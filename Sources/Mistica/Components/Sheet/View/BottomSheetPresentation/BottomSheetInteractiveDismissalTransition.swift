@@ -9,9 +9,11 @@
 import UIKit
 
 final class BottomSheetInteractiveDismissalTransition: NSObject {
-    private let maxBouncingHeight: CGFloat = 250
-    private let animationDuration: CGFloat = UIView.defaultAnimationDuration
-    private let animationCurve: UIView.AnimationCurve = .easeOut
+    private enum Constants {
+        static let maxBouncingHeight: CGFloat = 250
+        static let animationDuration: CGFloat = UIView.defaultAnimationDuration
+        static let animationCurve: UIView.AnimationCurve = .easeOut
+    }
 
     private weak var transitionContext: UIViewControllerContextTransitioning?
 
@@ -207,7 +209,6 @@ private extension BottomSheetInteractiveDismissalTransition {
         )
 
         propertyAnimator.addAnimations {
-            print(offset)
             self.bottomConstraint?.constant = offset
             view.superview?.layoutIfNeeded()
         }

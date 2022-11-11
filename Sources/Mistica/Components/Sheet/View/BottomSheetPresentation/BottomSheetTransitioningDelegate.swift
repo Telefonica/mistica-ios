@@ -46,4 +46,3 @@ final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerTransiti
         animator as? BottomSheetInteractiveDismissalTransition
     }
 }
-

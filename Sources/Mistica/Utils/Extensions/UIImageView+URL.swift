@@ -28,7 +28,7 @@ extension UIImageView {
                 urlForDarkMode: urlForDarkMode,
                 completion: { [weak self] lightImageData, darkImageData in
                     guard let lightImageData else { return }
-                    
+
                     DispatchQueue.main.async {
                         self?.updateImage(imageData: lightImageData, darkImageData: darkImageData)
                     }

@@ -77,10 +77,12 @@ struct LegacyTextField: UIViewRepresentable {
         textField.textColor = Color.textPrimary.uiColor
 
         if isResponder && !textField.isFirstResponder {
-            textField.becomeFirstResponder()
+            context.coordinator.task?.cancel()
+            context.coordinator.task = Task(priority: .userInitiated) { textField.becomeFirstResponder() }
         }
         else if !isResponder && textField.isFirstResponder {
-            textField.resignFirstResponder()
+            context.coordinator.task?.cancel()
+            context.coordinator.task = Task(priority: .userInitiated) { textField.resignFirstResponder() }
         }
     }
 
@@ -101,6 +103,7 @@ struct LegacyTextField: UIViewRepresentable {
 class LegacyTextFieldCoordinator: NSObject {
     let formatter = DateFormatter()
     weak var textField: UITextField?
+    var task: Task<Void, Never>?
 
     @Binding var text: String
     @Binding var isResponder: Bool

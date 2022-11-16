@@ -78,9 +78,10 @@ struct LegacyTextField: UIViewRepresentable {
 
         if isResponder && !textField.isFirstResponder {
             textField.becomeFirstResponder()
-        } else if !isResponder && textField.isFirstResponder {
-            textField.resignFirstResponder()
         }
+//        else if !isResponder && textField.isFirstResponder {
+//            textField.resignFirstResponder()
+//        }
     }
 
     func addToolbar(_ textField: UITextField, context: UIViewRepresentableContext<LegacyTextField>) {

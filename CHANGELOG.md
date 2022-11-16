@@ -1,3 +1,10 @@
+## [18.3.1](https://github.com/Telefonica/mistica-ios/compare/v18.3.0...v18.3.1) (2022-11-16)
+
+
+### Bug Fixes
+
+* **LegacyTextFieldCoordinator:** Fixing focus ([#230](https://github.com/Telefonica/mistica-ios/issues/230)) ([d419ed9](https://github.com/Telefonica/mistica-ios/commit/d419ed9698bf64c762fd122d8bf1fef02c1d0c93))
+
 # [18.3.0](https://github.com/Telefonica/mistica-ios/compare/v18.2.4...v18.3.0) (2022-10-21)
 
 

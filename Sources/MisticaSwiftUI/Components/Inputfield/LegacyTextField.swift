@@ -125,15 +125,11 @@ extension LegacyTextFieldCoordinator: UITextFieldDelegate {
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        DispatchQueue.main.async {
-            self.isResponder = true
-        }
+        isResponder = true
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        DispatchQueue.main.async {
-            self.isResponder = false
-        }
+        isResponder = false
     }
 }
 

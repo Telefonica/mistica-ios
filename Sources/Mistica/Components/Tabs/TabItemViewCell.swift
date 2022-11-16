@@ -164,7 +164,6 @@ private extension TabItemViewCell {
 // MARK: Accessibility
 
 public extension TabItemViewCell {
-    @available(iOS 13, *)
     override var largeContentTitle: String? {
         get { title.largeContentTitle }
         set {}

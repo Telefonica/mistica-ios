@@ -187,7 +187,6 @@ extension Filter: UICollectionViewDelegate {
 
 // MARK: UILargeContentViewerInteractionDelegate
 
-@available(iOS 13, *)
 extension Filter: UILargeContentViewerInteractionDelegate {
     public func largeContentViewerInteraction(_: UILargeContentViewerInteraction, didEndOn item: UILargeContentViewerItem?, at _: CGPoint) {
         guard let cell = item as? SegmentCell,

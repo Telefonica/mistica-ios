@@ -28,9 +28,7 @@ class DimmedView: UIView {
     /// The closure to be executed when a tap occurs
     var didTap: ((_ recognizer: UIGestureRecognizer) -> Void)?
 
-    private lazy var tapGesture: UIGestureRecognizer = {
-        UITapGestureRecognizer(target: self, action: #selector(didTapView))
-    }()
+    private lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView))
 
     // MARK: - Initializers
 

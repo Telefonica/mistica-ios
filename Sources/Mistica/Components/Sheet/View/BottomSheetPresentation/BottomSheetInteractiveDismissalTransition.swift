@@ -98,7 +98,7 @@ extension BottomSheetInteractiveDismissalTransition {
 
 extension BottomSheetInteractiveDismissalTransition: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        animationDuration
+        Constants.animationDuration
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -164,7 +164,7 @@ extension BottomSheetInteractiveDismissalTransition: UIViewControllerInteractive
     }
 
     var completionCurve: UIView.AnimationCurve {
-        animationCurve
+        Constants.animationCurve
     }
 }
 
@@ -176,14 +176,14 @@ private extension BottomSheetInteractiveDismissalTransition {
         from height: CGFloat
     ) -> UIViewPropertyAnimator {
         let propertyAnimator = UIViewPropertyAnimator(
-            duration: animationDuration,
-            curve: animationCurve
+            duration: Constants.animationDuration,
+            curve: Constants.animationCurve
         )
 
         heightConstraint?.constant = height
         heightConstraint?.isActive = true
 
-        let finalHeight = height + maxBouncingHeight
+        let finalHeight = height + Constants.maxBouncingHeight
 
         propertyAnimator.addAnimations {
             self.heightConstraint?.constant = finalHeight
@@ -204,8 +204,8 @@ private extension BottomSheetInteractiveDismissalTransition {
         transitionContext: UIViewControllerContextTransitioning
     ) -> UIViewPropertyAnimator {
         let propertyAnimator = UIViewPropertyAnimator(
-            duration: animationDuration,
-            curve: animationCurve
+            duration: Constants.animationDuration,
+            curve: Constants.animationCurve
         )
 
         propertyAnimator.addAnimations {

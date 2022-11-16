@@ -239,7 +239,6 @@ extension TabsView: UICollectionViewDelegate {
 
 // MARK: UILargeContentViewerInteractionDelegate
 
-@available(iOS 13, *)
 extension TabsView: UILargeContentViewerInteractionDelegate {
     public func largeContentViewerInteraction(_: UILargeContentViewerInteraction, didEndOn item: UILargeContentViewerItem?, at _: CGPoint) {
         guard let cell = item as? TabItemViewCell,

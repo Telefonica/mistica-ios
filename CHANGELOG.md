@@ -1,3 +1,15 @@
+# [19.0.0](https://github.com/Telefonica/mistica-ios/compare/v18.3.1...v19.0.0) (2022-11-17)
+
+
+### Bug Fixes
+
+* **Sheet:** improvements and ui fixes. ([864e1d4](https://github.com/Telefonica/mistica-ios/commit/864e1d4d4cc0efde8b7c5bdce7a46dcd9b25e9d1))
+
+
+### BREAKING CHANGES
+
+* **Sheet:** The API of Sheet component is simpler, now is not needed to change the presentation as style as it is not needed to pass a transition delegate.
+
 ## [18.3.1](https://github.com/Telefonica/mistica-ios/compare/v18.3.0...v18.3.1) (2022-11-16)
 
 

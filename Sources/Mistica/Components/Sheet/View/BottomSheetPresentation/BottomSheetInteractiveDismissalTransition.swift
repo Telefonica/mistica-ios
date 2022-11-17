@@ -144,7 +144,7 @@ extension BottomSheetInteractiveDismissalTransition: UIViewControllerInteractive
 
         offsetAnimator?.stopAnimation(true)
 
-        let offset = presentedView.frame.height
+        let offset = transitionContext.containerView.frame.height
         let offsetAnimator = createOffsetAnimator(
             animating: presentedView,
             to: offset,

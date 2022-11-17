@@ -70,12 +70,6 @@ final class BottomSheetPresentationController: UIPresentationController {
 
         containerView.addSubview(withDefaultConstraints: backgroundDimmingView)
 
-        let preferredHeightConstraint = presentedView.heightAnchor.constraint(
-            equalTo: containerView.heightAnchor
-        )
-
-        preferredHeightConstraint.priority = .fittingSizeLevel
-
         let topConstraint = presentedView.topAnchor.constraint(
             greaterThanOrEqualTo: containerView.topAnchor,
             constant: UIScreen.main.bounds.size.height * 0.3
@@ -95,8 +89,7 @@ final class BottomSheetPresentationController: UIPresentationController {
             presentedView.trailingAnchor.constraint(
                 equalTo: containerView.trailingAnchor
             ),
-            bottomConstraint,
-            preferredHeightConstraint
+            bottomConstraint
         ])
 
         bottomSheetInteractiveDismissalTransition.bottomConstraint = bottomConstraint
@@ -109,13 +102,6 @@ final class BottomSheetPresentationController: UIPresentationController {
         transitionCoordinator.animate { _ in
             self.backgroundDimmingView.dimState = .max
         }
-    }
-
-    override func presentationTransitionDidEnd(_ completed: Bool) {
-        guard !completed else { return }
-
-        backgroundDimmingView.removeFromSuperview()
-        presentedView?.removeGestureRecognizer(panGestureRecognizer)
     }
 
     override func dismissalTransitionWillBegin() {

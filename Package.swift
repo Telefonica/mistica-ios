@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "Mistica",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v13)
     ],
     products: [
         .library(
@@ -153,7 +153,6 @@ let package = Package(
                 .define("SWIFT_PACKAGE")
             ]
         ),
-
         .testTarget(
             name: "MisticaTests",
             dependencies: [
@@ -162,6 +161,9 @@ let package = Package(
             ],
             exclude: [
                 "UI/__Snapshots__"
+            ],
+            resources: [
+                .process("UI/Fixtures/Icons")
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")

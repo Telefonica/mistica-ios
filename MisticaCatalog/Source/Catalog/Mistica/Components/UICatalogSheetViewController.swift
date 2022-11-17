@@ -133,8 +133,6 @@ class UICatalogSheetViewController: UIViewController {
         [showSheetCell]
     ]
 
-    private let sheetTransitioningDelegate = SheetTransitioningDelegate()
-
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -209,9 +207,6 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
             print("\tAction:\(sheetResponse.action)")
             print("\tSelected ids:\(sheetResponse.selectedIds)")
         }
-        viewController.delegate = sheetTransitioningDelegate
-        viewController.transitioningDelegate = sheetTransitioningDelegate
-        viewController.modalPresentationStyle = .custom
 
         present(viewController, animated: true)
     }

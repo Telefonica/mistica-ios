@@ -129,7 +129,6 @@ private extension ListFragmentView {
             guard let longPressStartPoint = self.longPressStartPoint else { return }
 
             let distance = hypotf(Float(currentPoint.x - longPressStartPoint.x), Float(currentPoint.y - longPressStartPoint.y))
-            print(distance)
             if distance > 10 {
                 longPressCancelled = true
             }

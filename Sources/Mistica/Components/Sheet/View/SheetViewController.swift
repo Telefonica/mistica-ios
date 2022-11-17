@@ -9,16 +9,23 @@
 import Foundation
 import UIKit
 
-public protocol SheetViewControllerDelegate: AnyObject {
-    func sheetViewControllerDidStartDragging(_ sheetViewController: SheetViewController)
-    func sheetViewController(
-        _ sheetViewController: SheetViewController,
-        didDrag percentage: CGFloat
-    )
-    func sheetViewControllerDidEndDragging(_ selectorViewController: SheetViewController)
-}
-
 public class SheetViewController: UIViewController {
+    private lazy var bottomSheetTransitioningDelegate = BottomSheetTransitioningDelegate()
+
+    override public var modalPresentationStyle: UIModalPresentationStyle {
+        get {
+            .custom
+        }
+        set {}
+    }
+
+    override public var transitioningDelegate: UIViewControllerTransitioningDelegate? {
+        get {
+            bottomSheetTransitioningDelegate
+        }
+        set {}
+    }
+
     private lazy var titleLabel: IntrinsictHeightLabel? = {
         if let title = config.header.title {
             let label = IntrinsictHeightLabel()
@@ -95,13 +102,10 @@ public class SheetViewController: UIViewController {
 
     public var completionHandler: ((SheetSelectionResponse) -> Void)?
     public var sheetSelectionResponse: SheetSelectionResponse
-    public weak var delegate: SheetViewControllerDelegate?
 
     private let config: SheetConfiguration
     private var contentInfo: [String: [String: RadioButton]] = [:]
     private var contentSelected: [SheetResponseResult] = []
-    private var panGestureBeginningY: CGFloat = 0
-    private var isDismissing: Bool = false
 
     private class ItemInformationTapGesture: UITapGestureRecognizer {
         var contentId: String = ""
@@ -111,9 +115,6 @@ public class SheetViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(didPan(gesture:)))
-        view.addGestureRecognizer(gesture)
     }
 
     public init(configuration: SheetConfiguration, completionHandler: ((SheetSelectionResponse) -> Void)?) {
@@ -128,8 +129,6 @@ public class SheetViewController: UIViewController {
         )
 
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
-
-        setupView()
     }
 
     @available(*, unavailable)
@@ -141,12 +140,16 @@ public class SheetViewController: UIViewController {
         super.viewDidDisappear(animated)
         completionHandler?(sheetSelectionResponse)
     }
+
+    override public func loadView() {
+        view = UIView()
+        setupView()
+    }
 }
 
 public extension SheetViewController {
     func setupView() {
         view.backgroundColor = .backgroundContainer
-        view.makeRounded(cornerRadius: 8.0)
 
         let containerView = UIStackView()
         containerView.axis = .vertical
@@ -220,42 +223,11 @@ public extension SheetViewController {
             containerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 0 && scrollView.isTracking {
-            let percentage = 2 * -scrollView.contentOffset.y / scrollView.frame.height
-            delegate?.sheetViewController(self, didDrag: percentage)
-        }
-    }
-
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        delegate?.sheetViewControllerDidStartDragging(self)
-    }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        delegate?.sheetViewControllerDidEndDragging(self)
-    }
 }
 
 private extension SheetViewController {
-    @objc func didPan(gesture: UIPanGestureRecognizer) {
-        if gesture.state == .began {
-            panGestureBeginningY = gesture.translation(in: view).y
-            delegate?.sheetViewControllerDidStartDragging(self)
-        } else if gesture.state == .changed {
-            let y = max(0, gesture.translation(in: view).y)
-            let percentage = y / view.frame.height
-            delegate?.sheetViewController(self, didDrag: percentage)
-        } else {
-            panGestureBeginningY = 0 // just sanitizing it...
-            delegate?.sheetViewControllerDidEndDragging(self)
-        }
-    }
-
     func handleListRowTapped(_ sheetList: SheetList, rowTapped: ListFragmentView.ItemTappedType) {
-        if !isDismissing && sheetList.autoSubmit {
-            isDismissing = true
-
+        if sheetList.autoSubmit {
             switch rowTapped {
             case .action(let item):
                 sheetSelectionResponse = .init(action: .submit, selectedIds: [.init(id: sheetList.id, selected: [item.id])])

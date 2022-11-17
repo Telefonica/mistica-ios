@@ -18,7 +18,7 @@ class ButtonContentView: UIView {
     }()
 
     private lazy var loadingIndicator: UIActivityIndicatorView = {
-        let loadingIndicator = UIActivityIndicatorView(style: .gray)
+        let loadingIndicator = UIActivityIndicatorView(style: .medium)
         loadingIndicator.startAnimating()
         return loadingIndicator
     }()

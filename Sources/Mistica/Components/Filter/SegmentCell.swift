@@ -33,7 +33,6 @@ class SegmentCell: UICollectionViewCell {
 
     /// Delegate the Large Content Title on the `title` UILabel, which will provide the correct value (i.e. the
     /// content of `text`).
-    @available(iOS 13, *)
     override var largeContentTitle: String? {
         get { title.largeContentTitle }
         set {}

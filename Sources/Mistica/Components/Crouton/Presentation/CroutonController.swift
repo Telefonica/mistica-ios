@@ -39,14 +39,16 @@ public extension CroutonController {
         withText text: String,
         action: ActionConfig? = nil,
         style: CroutonStyle = .info,
-        dismissHandler: DismissHandlerBlock? = nil
+        dismissHandler: DismissHandlerBlock? = nil,
+        croutonDismissInterval: CroutonDismissInterval? = nil
     ) -> Token {
         showCrouton(
             withText: text,
             action: action,
             style: style,
             dismissHandler: dismissHandler,
-            rootViewController: UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController
+            rootViewController: UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController,
+            croutonDismissInterval: croutonDismissInterval
         )
     }
 
@@ -63,11 +65,12 @@ public extension CroutonController {
         action: ActionConfig? = nil,
         style: CroutonStyle = .info,
         dismissHandler: DismissHandlerBlock? = nil,
-        rootViewController: @escaping @autoclosure () -> UIViewController?
+        rootViewController: @escaping @autoclosure () -> UIViewController?,
+        croutonDismissInterval: CroutonDismissInterval? = nil
     ) -> Token {
         assertMainThread()
 
-        let config = CroutonConfig(style: style)
+        let config = CroutonConfig(style: style, croutonDismissInterval: croutonDismissInterval)
 
         let dismissHandler = {
             self.dismissCurrentCrouton()

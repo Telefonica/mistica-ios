@@ -252,8 +252,13 @@ private extension CroutonView {
     }
 
     func addCountdownToDismiss() {
-        let dismissInterval = (action == nil) ? Constants.actionlessDismissInterval
-            : Constants.withActionDismissInterval
+        let dismissInterval: TimeInterval
+        if let overrideDismissInterval = config.overrideDismissInterval {
+            dismissInterval = overrideDismissInterval
+        } else {
+            dismissInterval = (action == nil) ? Constants.actionlessDismissInterval
+                : Constants.withActionDismissInterval
+        }
 
         timer = Timer.scheduledTimer(
             timeInterval: dismissInterval,

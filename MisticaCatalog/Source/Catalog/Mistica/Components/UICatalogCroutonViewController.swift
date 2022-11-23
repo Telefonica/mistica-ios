@@ -44,11 +44,21 @@ class UICatalogCroutonViewController: UITableViewController {
         cell.textLabel?.text = "Show Crouton"
         return cell
     }()
+    
+    private lazy var croutonDismissIntervalCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "crouton-dismiss-interval")
+        for interval in  CroutonDismissInterval.allCases {
+            cell.segmentedControl.insertSegment(withTitle: "\(interval.rawValue) seconds", at: 0, animated: false)
+        }
+        cell.segmentedControl.selectedSegmentIndex = 0
+        return cell
+    }()
 
     private lazy var cells = [
         [titleCell],
         [actionTitleCell],
-        [croutonStyleCell, showCroutonCell]
+        [croutonStyleCell],
+        [croutonDismissIntervalCell, showCroutonCell]
     ]
 
     init() {
@@ -99,7 +109,8 @@ extension UICatalogCroutonViewController {
             CroutonController.shared.showCrouton(
                 withText: titleCell.textField.text ?? "",
                 action: croutonAction,
-                style: selectedCroutonStyle
+                style: selectedCroutonStyle,
+                croutonDismissInterval: croutonDismissInterval
             )
         } else {
             let sampleTabBarViewController = SampleTabBarViewController()
@@ -122,6 +133,11 @@ private extension UICatalogCroutonViewController {
         guard let title = actionTitleCell.textField.text, !title.isEmpty else { return nil }
         return CroutonController.ActionConfig(text: title, handler: { print("Crouton Action Tapped") })
     }
+    
+    var croutonDismissInterval: CroutonDismissInterval? {
+        let selectedCroutonDismissIntervalIndex = croutonDismissIntervalCell.segmentedControl.selectedSegmentIndex
+        return CroutonDismissInterval(rawValue: selectedCroutonDismissIntervalIndex)
+    }
 }
 
 private extension CroutonStyle {
@@ -141,6 +157,19 @@ private extension Section {
         case .title: return "Title"
         case .action: return "Action Title"
         case .show, .showInTab: return nil
+        }
+    }
+}
+
+extension CroutonDismissInterval {
+    public init?(rawValue: Int) {
+        switch rawValue {
+        case 0:
+            self = .tenSeconds
+        case 1:
+            self = .fiveSeconds
+        default:
+            return nil
         }
     }
 }

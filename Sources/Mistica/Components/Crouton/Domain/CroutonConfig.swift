@@ -14,12 +14,25 @@ import UIKit
     case critical
 }
 
+public enum CroutonDismissInterval: Int, CaseIterable {
+    case fiveSeconds = 5
+    case tenSeconds = 10
+}
+
+public extension CroutonDismissInterval {
+    var timeInterval: TimeInterval {
+        TimeInterval(self.rawValue)
+    }
+}
+
+
 public struct CroutonConfig {
     let backgroundColor: UIColor
     let textColor: UIColor
     let actionStyle: Button.Style
+    let overrideDismissInterval: TimeInterval?
 
-    public init(style: CroutonStyle) {
+    public init(style: CroutonStyle, croutonDismissInterval: CroutonDismissInterval? = nil) {
         switch style {
         case .info:
             backgroundColor = .feedbackInfoBackground
@@ -30,6 +43,7 @@ public struct CroutonConfig {
             textColor = .textPrimaryInverse
             actionStyle = .croutonCriticalLink
         }
+        overrideDismissInterval = croutonDismissInterval?.timeInterval
     }
 }
 

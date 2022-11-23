@@ -21,10 +21,9 @@ public enum CroutonDismissInterval: Int, CaseIterable {
 
 public extension CroutonDismissInterval {
     var timeInterval: TimeInterval {
-        TimeInterval(self.rawValue)
+        TimeInterval(rawValue)
     }
 }
-
 
 public struct CroutonConfig {
     let backgroundColor: UIColor

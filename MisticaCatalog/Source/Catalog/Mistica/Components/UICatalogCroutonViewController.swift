@@ -44,10 +44,10 @@ class UICatalogCroutonViewController: UITableViewController {
         cell.textLabel?.text = "Show Crouton"
         return cell
     }()
-    
+
     private lazy var croutonDismissIntervalCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "crouton-dismiss-interval")
-        for interval in  CroutonDismissInterval.allCases {
+        for interval in CroutonDismissInterval.allCases {
             cell.segmentedControl.insertSegment(withTitle: "\(interval.rawValue) seconds", at: 0, animated: false)
         }
         cell.segmentedControl.selectedSegmentIndex = 0
@@ -133,7 +133,7 @@ private extension UICatalogCroutonViewController {
         guard let title = actionTitleCell.textField.text, !title.isEmpty else { return nil }
         return CroutonController.ActionConfig(text: title, handler: { print("Crouton Action Tapped") })
     }
-    
+
     var croutonDismissInterval: CroutonDismissInterval? {
         let selectedCroutonDismissIntervalIndex = croutonDismissIntervalCell.segmentedControl.selectedSegmentIndex
         return CroutonDismissInterval(rawValue: selectedCroutonDismissIntervalIndex)
@@ -161,8 +161,8 @@ private extension Section {
     }
 }
 
-extension CroutonDismissInterval {
-    public init?(rawValue: Int) {
+public extension CroutonDismissInterval {
+    init?(rawValue: Int) {
         switch rawValue {
         case 0:
             self = .tenSeconds

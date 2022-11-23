@@ -1,3 +1,10 @@
+# [19.1.0](https://github.com/Telefonica/mistica-ios/compare/v19.0.0...v19.1.0) (2022-11-23)
+
+
+### Features
+
+* **Crouton:** Added the option to customize the time to dismissed the Crouton (UIKit)([#231](https://github.com/Telefonica/mistica-ios/issues/231)) ([94195ca](https://github.com/Telefonica/mistica-ios/commit/94195ca43540e73091de8ecf74a6525541f2b966))
+
 # [19.0.0](https://github.com/Telefonica/mistica-ios/compare/v18.3.1...v19.0.0) (2022-11-17)
 
 

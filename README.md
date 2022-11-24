@@ -119,7 +119,7 @@ Every component in mistica supports dark mode. In order to configure dark mode i
 
 ## Fonts
 
-By default mistica uses the system font, but if you need to use a custom font (Telefonica font, On-Air, etc) you can follow [these instructions](./Sources/Mistica/Fonts/).
+By default mistica uses the system font, but if you need to use a custom font (Telefonica font, On-Air, etc) you can follow [these instructions](./Sources/MisticaCommon/Fonts/).
 
 ## Components
 

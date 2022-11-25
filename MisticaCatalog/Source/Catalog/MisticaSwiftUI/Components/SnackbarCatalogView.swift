@@ -63,6 +63,7 @@ struct SnackbarCatalogView: View {
         .crouton(
             isVisible: $presentingCrouton,
             style: styles[selectedStyleIndex],
+            isInsideTabbar: true,
             buttonStyle: buttonStyles[selectedButtonStyleIndex],
             autoDismissDelay: TimeInterval(autoDismissDelay),
             title: title,

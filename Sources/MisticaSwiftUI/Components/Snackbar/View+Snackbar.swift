@@ -17,6 +17,7 @@ public extension View {
     func crouton(
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
+        isInsideTabbar: Bool = false,
         autoDismissDelay: TimeInterval? = 5,
         title: String
     ) -> some View {
@@ -24,7 +25,8 @@ public extension View {
             SnackbarModifier(
                 isVisible: isVisible,
                 style: style,
-                presentationMode: .crouton,
+                isInsideTabbar: isInsideTabbar,
+                presentationMode: .crouton(isInsideTabbar: isInsideTabbar),
                 autoDismissDelay: autoDismissDelay,
                 title: title
             )
@@ -35,6 +37,7 @@ public extension View {
     func crouton(
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
+        isInsideTabbar: Bool = false,
         buttonStyle: SnackbarButtonStyle = .short,
         autoDismissDelay: TimeInterval? = 10,
         title: String,
@@ -45,8 +48,9 @@ public extension View {
             SnackbarModifier(
                 isVisible: isVisible,
                 style: style,
+                isInsideTabbar: isInsideTabbar,
                 buttonStyle: buttonStyle,
-                presentationMode: .crouton,
+                presentationMode: .crouton(isInsideTabbar: isInsideTabbar),
                 autoDismissDelay: autoDismissDelay,
                 title: title,
                 buttonTitle: buttonTitle,
@@ -109,6 +113,7 @@ public extension View {
 private struct SnackbarModifier: ViewModifier {
     @Binding var isVisible: Bool
     var style: SnackbarStyle = .normal
+    var isInsideTabbar: Bool = false
     var buttonStyle: SnackbarButtonStyle = .short
     var presentationMode: SnackbarPresentationMode = .normal
     var autoDismissDelay: TimeInterval? = nil
@@ -156,7 +161,7 @@ private struct SnackbarModifier: ViewModifier {
         case .normal:
             return []
         case .crouton:
-            return .bottom
+            return isInsideTabbar ? [] : .bottom
         }
     }
 

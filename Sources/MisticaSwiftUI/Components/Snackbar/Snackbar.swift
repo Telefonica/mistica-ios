@@ -17,7 +17,7 @@ public enum SnackbarStyle {
 
 public enum SnackbarPresentationMode {
     case normal
-    case crouton
+    case crouton(isInsideTabbar: Bool = false)
 }
 
 public enum SnackbarButtonStyle {

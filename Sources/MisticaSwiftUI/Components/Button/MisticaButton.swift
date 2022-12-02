@@ -25,11 +25,11 @@ public struct MisticaButton: View {
         static let transitionOffset: CGFloat = 40
     }
 
-    enum ButtonState {
+    public enum ButtonState {
         case normal, selected, disabled, loading
     }
 
-    struct Style {
+    public struct Style {
         let bleedingAlignment: ButtonBleedingAlignment
         let styleByState: [ButtonState: StateStyle]
         let hasMinWidth: Bool
@@ -57,7 +57,7 @@ public struct MisticaButton: View {
         }
     }
 
-    struct StateStyle {
+    public struct StateStyle {
         let textColor: Color
         let backgroundColor: Color
         let borderColor: Color

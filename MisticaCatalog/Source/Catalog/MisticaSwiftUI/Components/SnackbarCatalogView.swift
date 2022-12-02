@@ -12,26 +12,33 @@ import SwiftUI
 struct SnackbarCatalogView: View {
     @State var title: String = "Message"
     @State var buttonTitle: String = "Action"
-
     @State var selectedStyleIndex = 0
     @State var styles: [SnackbarStyle] = [.normal, .error]
-
     @State var selectedButtonStyleIndex = 0
     @State var buttonStyles: [SnackbarButtonStyle] = [.short, .large]
-
-    @State var autoDismissDelay = 3
-
     @State var presentingSnackbar = false
     @State var presentingCrouton = false
+    @State var autoDismissDelay = 3
 
     var body: some View {
         List {
-            section("Title") { TextField("Title", text: $title) }
-            section("Button") { TextField("Button Title", text: $buttonTitle) }
+            section("Title") {
+                TextField(
+                    "Title",
+                    text: $title
+                )
+                .endEditingOnTap()
+            }
+            section("Button") {
+                TextField(
+                    "Button Title",
+                    text: $buttonTitle
+                )
+                .endEditingOnTap()
+            }
             section("Style") { stylePicker }
-            section("Auto Dismiss Delay") { SwiftUI.Stepper("\(autoDismissDelay)s", value: $autoDismissDelay) }
+            section("Auto Dismiss Delay") { Stepper("\(autoDismissDelay) seconds", value: $autoDismissDelay) }
             section("Button Style") { buttonStylePicker }
-
             section("Snackbar") {
                 Button("Show snackbar") {
                     withAnimation {
@@ -40,7 +47,6 @@ struct SnackbarCatalogView: View {
                 }
                 .buttonStyle(.misticaPrimary())
             }
-
             section("Crouton") {
                 Button("Show crouton") {
                     withAnimation {
@@ -50,7 +56,6 @@ struct SnackbarCatalogView: View {
                 .buttonStyle(.misticaPrimary())
             }
         }
-        .endEditingOnTap()
         .snackbar(
             isVisible: $presentingSnackbar,
             style: styles[selectedStyleIndex],

@@ -15,6 +15,14 @@ public struct MisticaButtonStyle: ButtonStyle {
     let style: MisticaButton.Style
     let small: Bool
 
+    public init(
+        style: MisticaButton.Style,
+        small: Bool
+    ) {
+        self.style = style
+        self.small = small
+    }
+    
     public func makeBody(configuration: Configuration) -> some View {
         MisticaButton(configuration: configuration, style: style, small: small)
     }

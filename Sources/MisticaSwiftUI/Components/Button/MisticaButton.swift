@@ -58,15 +58,35 @@ public struct MisticaButton: View {
     }
 
     public struct StateStyle {
-        public let textColor: Color
-        public let backgroundColor: Color
-        public let borderColor: Color
+        let textColor: Color
+        let backgroundColor: Color
+        let borderColor: Color
+        
+        public init(
+            textColor: Color,
+            backgroundColor: Color,
+            borderColor: Color
+        ) {
+            self.textColor = textColor
+            self.backgroundColor = backgroundColor
+            self.borderColor = borderColor
+        }
     }
 
     let configuration: ButtonStyle.Configuration
     let style: Style
     let small: Bool
 
+    public init(
+        configuration: ButtonStyle.Configuration,
+        style: Style,
+        small: Bool
+    ) {
+        self.configuration = configuration
+        self.style = style
+        self.small = small
+    }
+    
     @Environment(\.misticaButtonLoadingInfo) private var loadingInfo
     @Environment(\.isEnabled) private var isEnabled
 

@@ -22,7 +22,7 @@ public struct MisticaButtonStyle: ButtonStyle {
         self.style = style
         self.small = small
     }
-    
+
     public func makeBody(configuration: Configuration) -> some View {
         MisticaButton(configuration: configuration, style: style, small: small)
     }

@@ -61,7 +61,7 @@ public struct MisticaButton: View {
         let textColor: Color
         let backgroundColor: Color
         let borderColor: Color
-        
+
         public init(
             textColor: Color,
             backgroundColor: Color,
@@ -86,7 +86,7 @@ public struct MisticaButton: View {
         self.style = style
         self.small = small
     }
-    
+
     @Environment(\.misticaButtonLoadingInfo) private var loadingInfo
     @Environment(\.isEnabled) private var isEnabled
 

@@ -34,7 +34,7 @@ public struct MisticaButton: View {
         let styleByState: [ButtonState: StateStyle]
         let hasMinWidth: Bool
 
-        init(
+        public init(
             bleedingAlignment: ButtonBleedingAlignment = .none,
             hasMinWidth: Bool = true,
             styleByState: [ButtonState: StateStyle]
@@ -58,9 +58,9 @@ public struct MisticaButton: View {
     }
 
     public struct StateStyle {
-        let textColor: Color
-        let backgroundColor: Color
-        let borderColor: Color
+        public let textColor: Color
+        public let backgroundColor: Color
+        public let borderColor: Color
     }
 
     let configuration: ButtonStyle.Configuration

@@ -13,7 +13,7 @@ public enum ButtonBleedingAlignment {
 }
 
 @available(iOS 13.0, *)
-struct MisticaButton: View {
+public struct MisticaButton: View {
     enum Constants {
         static let minWidth: CGFloat = 76
         static let height: CGFloat = 24

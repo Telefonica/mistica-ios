@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.2.0
 
       - name: Checkout Telefonica/github-actions repo
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.2.0
         with:
           repository: Telefonica/github-actions
           token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"

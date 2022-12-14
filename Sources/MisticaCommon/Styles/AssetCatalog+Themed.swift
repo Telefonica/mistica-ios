@@ -37,7 +37,6 @@ extension NSDataAsset {
     }
 }
 
-@available(iOS 13.0, *)
 extension Image {
     /// Returns an image for the provided asset type.
     /// The assets should be located in the appropriated asset catalog namespace

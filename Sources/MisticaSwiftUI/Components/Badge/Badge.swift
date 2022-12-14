@@ -16,7 +16,6 @@ private enum Constants {
     static let horizontalInset: CGFloat = 2
 }
 
-@available(iOS 13.0, *)
 public struct Badge: View {
     public enum Style {
         case numeric(Int)
@@ -68,7 +67,6 @@ public struct Badge: View {
 
 #if DEBUG
 
-    @available(iOS 13.0, *)
     struct Badge_Previews: PreviewProvider {
         static var previews: some View {
             Preview {

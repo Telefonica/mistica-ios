@@ -12,7 +12,6 @@ public enum ButtonBleedingAlignment {
     case leading, trailing, none
 }
 
-@available(iOS 13.0, *)
 struct MisticaButton: View {
     enum Constants {
         static let minWidth: CGFloat = 76
@@ -186,12 +185,10 @@ public struct MisticaButtonLoadingInfo {
     public let loadingTitle: String
 }
 
-@available(iOS 13.0, *)
 private struct MisticaButtonEnvironmentKey: EnvironmentKey {
     static let defaultValue = MisticaButtonLoadingInfo(isLoading: false, loadingTitle: "")
 }
 
-@available(iOS 13.0, *)
 public extension EnvironmentValues {
     var misticaButtonLoadingInfo: MisticaButtonLoadingInfo {
         get { self[MisticaButtonEnvironmentKey.self] }
@@ -199,7 +196,6 @@ public extension EnvironmentValues {
     }
 }
 
-@available(iOS 13.0, *)
 public extension Button {
     func loading(_ loading: Bool, title: String = "") -> some View {
         environment(\.misticaButtonLoadingInfo, MisticaButtonLoadingInfo(isLoading: loading, loadingTitle: title))
@@ -207,7 +203,7 @@ public extension Button {
 }
 
 // This is only to support iOS 13 and replace ProgressView()
-@available(iOS 13.0, *)
+@available(iOS, introduced: 13.0, deprecated: 14.0, message: "This is only to support iOS 13 and replace ProgressView()")
 private struct ActivityIndicator: UIViewRepresentable {
     @Binding var isAnimating: Bool
     let style: UIActivityIndicatorView.Style
@@ -228,7 +224,6 @@ private struct ActivityIndicator: UIViewRepresentable {
 
 #if DEBUG
 
-    @available(iOS 13.0, *)
     struct MisticaButton_Previews: PreviewProvider {
         static var previews: some View {
             Preview {

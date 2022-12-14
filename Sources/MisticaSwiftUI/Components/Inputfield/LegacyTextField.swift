@@ -19,7 +19,6 @@ enum LegacyTextFieldInputStyle {
 
 // Wrapper around UITextField to properly work with responders.
 
-@available(iOS 13.0, *)
 struct LegacyTextField: UIViewRepresentable {
     @Binding var text: String
     @Binding var isResponder: Bool
@@ -96,7 +95,6 @@ struct LegacyTextField: UIViewRepresentable {
 
 // MARK: Coordinator
 
-@available(iOS 13.0, *)
 class LegacyTextFieldCoordinator: NSObject {
     let formatter = DateFormatter()
     weak var textField: UITextField?
@@ -118,7 +116,6 @@ class LegacyTextFieldCoordinator: NSObject {
 
 // MARK: UITextFieldDelegate
 
-@available(iOS 13.0, *)
 extension LegacyTextFieldCoordinator: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         text = textField.text ?? ""
@@ -135,7 +132,6 @@ extension LegacyTextFieldCoordinator: UITextFieldDelegate {
 
 // MARK: UIPickerViewDelegate and UIPickerViewDataSource
 
-@available(iOS 13.0, *)
 extension LegacyTextFieldCoordinator: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
@@ -159,7 +155,6 @@ extension LegacyTextFieldCoordinator: UIPickerViewDelegate, UIPickerViewDataSour
 
 // MARK: Date picker
 
-@available(iOS 13.0, *)
 extension LegacyTextFieldCoordinator {
     @objc func doneButtonTapped(sender: UIBarButtonItem) {
         textField?.endEditing(true)
@@ -174,7 +169,6 @@ extension LegacyTextFieldCoordinator {
 
 // MARK: ActionsTextField
 
-@available(iOS 13.0, *)
 private class ActionsTextField: UITextField {
     var canPerformActions = true
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {

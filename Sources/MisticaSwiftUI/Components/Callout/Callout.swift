@@ -10,13 +10,11 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public enum CalloutAssetType {
     case none
     case image(image: Image)
 }
 
-@available(iOS 13.0, *)
 public struct Callout<LeadingButton: View, TrailingButton: View>: View {
     private let assetType: CalloutAssetType
     private let title: String?
@@ -129,7 +127,6 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
 
 // MARK: Initialisation
 
-@available(iOS 13.0, *)
 public extension Callout {
     init(
         assetType: CalloutAssetType = .none,
@@ -269,7 +266,6 @@ public extension Callout {
 
 // MARK: Modifiers
 
-@available(iOS 13.0, *)
 public extension Callout {
     func assetAccessibilityLabel(_ assetAccessibilityLaber: String?) -> Callout {
         var callout = self
@@ -324,7 +320,6 @@ public extension Callout {
 
 #if DEBUG
 
-    @available(iOS 13.0, *)
     struct Callout_Previews: PreviewProvider {
         static var previews: some View {
             VStack {

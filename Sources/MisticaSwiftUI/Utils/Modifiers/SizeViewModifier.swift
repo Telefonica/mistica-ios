@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 13.0, *)
 struct SizePreferenceKey: PreferenceKey {
     static var defaultValue: CGSize = .zero
 
@@ -18,7 +17,6 @@ struct SizePreferenceKey: PreferenceKey {
     }
 }
 
-@available(iOS 13.0, *)
 struct SizeModifier: ViewModifier {
     private var sizeView: some View {
         GeometryReader { geometry in
@@ -31,7 +29,6 @@ struct SizeModifier: ViewModifier {
     }
 }
 
-@available(iOS 13.0, *)
 public extension View {
     func onSizeChange(_ callback: @escaping (CGSize) -> Void) -> some View {
         modifier(SizeModifier())

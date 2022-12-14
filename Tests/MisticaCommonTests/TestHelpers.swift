@@ -41,25 +41,22 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
             line: line
         )
 
-        if #available(iOS 13.0, *) {
-            var darkView = viewBuilder()
-            darkView.overrideUserInterfaceStyle = .dark
-
-            assertSnapshot(
-                matching: darkView,
-                as: snapshotting,
-                named: "with-\(brand)-dark-style",
-                file: file,
-                testName: testName,
-                line: line
-            )
-        }
+        var darkView = viewBuilder()
+        darkView.overrideUserInterfaceStyle = .dark
+        
+        assertSnapshot(
+            matching: darkView,
+            as: snapshotting,
+            named: "with-\(brand)-dark-style",
+            file: file,
+            testName: testName,
+            line: line
+        )
     }
 }
 
 protocol UserInterfaceStyling {
-    @available(iOS 13.0, *)
-    var overrideUserInterfaceStyle: UIUserInterfaceStyle { get set }
+        var overrideUserInterfaceStyle: UIUserInterfaceStyle { get set }
 }
 
 extension UIView: UserInterfaceStyling {}

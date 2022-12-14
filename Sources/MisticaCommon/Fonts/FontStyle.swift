@@ -22,7 +22,6 @@ import UIKit
     case textPreset9
     case textPreset10
 
-    @available(iOS 13.0, *)
     func preferredFont(weight: Font.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> Font {
         let horizontalSizeClass = UIScreen.main.traitCollection.horizontalSizeClass
         var preferredSize = preferredSize
@@ -40,7 +39,6 @@ import UIKit
         }
     }
 
-    @available(iOS 13.0, *)
     public static var fontNameForWeight: ((Font.Weight) -> String)? = nil
 
     func preferredFont(weight: UIFont.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil) -> UIFont {

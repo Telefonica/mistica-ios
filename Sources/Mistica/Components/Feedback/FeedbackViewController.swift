@@ -21,7 +21,7 @@ public class FeedbackViewController: UIViewController {
             self.modalPresentationStyle = modalPresentationStyle
         }
 
-        if #available(iOS 13.0, *), configuration.shouldDisableSwipeToDismiss {
+        if configuration.shouldDisableSwipeToDismiss {
             isModalInPresentation = true
         }
     }

@@ -179,7 +179,7 @@ private extension CardCommonContent {
         titleLabel.item.isAccessibilityElement = true
         subtitleLabel.item.isAccessibilityElement = true
         descriptionLabel.item.isAccessibilityElement = true
-        
+
         layoutViews()
         styleViews()
     }

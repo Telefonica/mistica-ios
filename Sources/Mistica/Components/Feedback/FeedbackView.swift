@@ -168,7 +168,7 @@ public class FeedbackView: UIView {
         }
         button?.addTarget(self, action: #selector(secondaryButtonTapped), for: .touchUpInside)
         button?.isAccessibilityElement = true
-        
+
         return button
     }()
 

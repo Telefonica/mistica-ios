@@ -136,7 +136,7 @@ public class TagView: UIView {
             label.accessibilityLabel = newValue
         }
     }
-    
+
     public var labelAccessibilityIdentifier: String? {
         get {
             label.accessibilityIdentifier

@@ -70,7 +70,7 @@ public class MediaCard: UIView {
         }
         set {}
     }
-    
+
     public var reachMediaAccessibilityIdentifier: String? {
         get {
             richMediaContainerView.accessibilityIdentifier
@@ -193,7 +193,7 @@ private extension MediaCard {
     func commomInit() {
         layoutViews()
         styleViews()
-        
+
         addDefaultAccessibilityIds()
     }
 
@@ -243,7 +243,7 @@ private extension MediaCard {
 
         addBorder(color: .border)
     }
-    
+
     func addDefaultAccessibilityIds() {
         richMediaContainerView.isAccessibilityElement = true
         richMediaContainerView.accessibilityIdentifier = DefaultIdentifiers.MediaCard.asset

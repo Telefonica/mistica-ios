@@ -36,9 +36,9 @@ class CardButtons: UIStackView {
         super.init(coder: coder)
         commomInit()
     }
-    
+
     // MARK: Accessibility
-    
+
     var primaryButtonAccessibilityIdentifier: String? {
         get {
             primaryButton.accessibilityIdentifier
@@ -68,7 +68,7 @@ extension CardButtons {
             self.primaryButton.isAccessibilityElement = true
 
             primaryActionHandler = primaryAction.tapHandler
-            
+
             if self.primaryButton.superview == nil {
                 addArrangedSubview(self.primaryButton)
             }
@@ -80,7 +80,7 @@ extension CardButtons {
             self.linkButton.title = linkButton.title
             self.linkButton.contentMode = .left
             self.linkButton.isAccessibilityElement = true
-            
+
             linkActionHandler = linkButton.tapHandler
 
             if self.linkButton.superview == nil {

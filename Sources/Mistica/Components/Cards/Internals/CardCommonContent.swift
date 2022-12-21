@@ -131,10 +131,55 @@ extension CardCommonContent {
     }
 }
 
+// MARK: Accessibility
+
+extension CardCommonContent {
+    var headlineAccessibilityIdentifier: String? {
+        get {
+            headlineTagView.item.accessibilityIdentifier
+        }
+        set {
+            headlineTagView.item.accessibilityIdentifier = newValue
+        }
+    }
+
+    var titleAccessibilityIdentifier: String? {
+        get {
+            titleLabel.item.accessibilityIdentifier
+        }
+        set {
+            titleLabel.item.accessibilityIdentifier = newValue
+        }
+    }
+
+    var subtitleAccessibilityIdentifier: String? {
+        get {
+            subtitleLabel.item.accessibilityIdentifier
+        }
+        set {
+            subtitleLabel.item.accessibilityIdentifier = newValue
+        }
+    }
+
+    var descriptionAccessibilityIdentifier: String? {
+        get {
+            descriptionLabel.item.accessibilityIdentifier
+        }
+        set {
+            descriptionLabel.item.accessibilityIdentifier = newValue
+        }
+    }
+}
+
 // MARK: Private
 
 private extension CardCommonContent {
     func commomInit() {
+        headlineTagView.item.isAccessibilityElement = true
+        titleLabel.item.isAccessibilityElement = true
+        subtitleLabel.item.isAccessibilityElement = true
+        descriptionLabel.item.isAccessibilityElement = true
+        
         layoutViews()
         styleViews()
     }

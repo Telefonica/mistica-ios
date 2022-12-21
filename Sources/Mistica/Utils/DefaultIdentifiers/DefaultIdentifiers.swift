@@ -16,6 +16,7 @@ enum DefaultIdentifiers {
         static let errorLabel: String = "error_reference"
         static let firstButton: String = "first_button"
         static let secondButton: String = "second_button"
+        static let linkButton: String = "link_button"
     }
     
     enum MediaCard {

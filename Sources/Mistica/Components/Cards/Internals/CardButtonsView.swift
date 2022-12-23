@@ -36,26 +36,6 @@ class CardButtons: UIStackView {
         super.init(coder: coder)
         commomInit()
     }
-
-    // MARK: Accessibility
-
-    var primaryButtonAccessibilityIdentifier: String? {
-        get {
-            primaryButton.accessibilityIdentifier
-        }
-        set {
-            primaryButton.accessibilityIdentifier = newValue
-        }
-    }
-
-    var linkButtonAccessibilityIdentifier: String? {
-        get {
-            linkButton.accessibilityIdentifier
-        }
-        set {
-            linkButton.accessibilityIdentifier = newValue
-        }
-    }
 }
 
 // MARK: Internal
@@ -65,7 +45,6 @@ extension CardButtons {
         if let primaryAction = primaryButton {
             self.primaryButton.title = primaryAction.title
             self.primaryButton.loadingTitle = primaryAction.loadingTitle
-            self.primaryButton.isAccessibilityElement = true
 
             primaryActionHandler = primaryAction.tapHandler
 
@@ -79,7 +58,6 @@ extension CardButtons {
         if let linkButton = linkButton {
             self.linkButton.title = linkButton.title
             self.linkButton.contentMode = .left
-            self.linkButton.isAccessibilityElement = true
 
             linkActionHandler = linkButton.tapHandler
 

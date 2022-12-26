@@ -26,17 +26,12 @@ import UIKit
         weight: Font.Weight,
         constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil
     ) -> Font {
-        let fontMetrics = UIFontMetrics(forTextStyle: uiFontPressetsCorrelations)
-        let scaledSize = round(fontMetrics.scaledValue(for: baseSize)) // scaledValue sometines returns decimal numbers, in this case we need to round up the number.
+        let pointSize = calculateFontSize(constrainedToPreferredSize: constrainedPreferredSize)
         
         if let fontName = Self.fontNameForWeight?(weight) {
-            if #available(iOS 14.0, *) {
-                return Font.custom(fontName, size: baseSize, relativeTo: fontPressetsCorrelations)
-            } else {
-                return Font.custom(fontName, size: scaledSize)
-            }
+            return Font.custom(fontName, size: pointSize)
         } else {
-            return Font.system(size: scaledSize, weight: weight, design: .default)
+            return Font.system(size: pointSize, weight: weight, design: .default)
         }
     }
     
@@ -46,14 +41,13 @@ import UIKit
         weight: UIFont.Weight,
         constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil
     ) -> UIFont {
-        let fontMetrics = UIFontMetrics(forTextStyle: uiFontPressetsCorrelations)
-        let scaledSize = round(fontMetrics.scaledValue(for: baseSize)) // scaledValue sometines returns decimal numbers, in this case we need to round up the number.
-        
+        let pointSize = calculateFontSize(constrainedToPreferredSize: constrainedPreferredSize)
+
         if let fontName = Self.uiFontNameForWeight?(weight),
-           let customFont = UIFont(name: fontName, size: scaledSize) {
+           let customFont = UIFont(name: fontName, size: pointSize) {
             return customFont
         } else {
-            return UIFont.systemFont(ofSize: scaledSize, weight: weight)
+            return UIFont.systemFont(ofSize: pointSize, weight: weight)
         }
     }
     
@@ -86,8 +80,27 @@ import UIKit
 }
 
 private extension FontStyle {
-    var preferredSize: UIContentSizeCategory {
-        UIScreen.main.traitCollection.preferredContentSizeCategory
+    func calculateFontSize(constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory?) -> CGFloat {
+        let fontMetrics = UIFontMetrics(forTextStyle: uiFontPressetsCorrelations)
+        var scaledBaseSize = round(fontMetrics.scaledValue(for: baseSize))
+        
+        if let constrainedPreferredSize = maximumFonSize(constrainedPreferredSize: constrainedPreferredSize) {
+            scaledBaseSize = min(scaledBaseSize, constrainedPreferredSize)
+        }
+        
+        return scaledBaseSize
+    }
+    
+    func maximumFonSize(constrainedPreferredSize: UIContentSizeCategory?) -> CGFloat? {
+        guard let constrainedPreferredSize else  { return nil }
+        
+        let traitCollection = UITraitCollection(preferredContentSizeCategory: constrainedPreferredSize)
+        let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(
+            withTextStyle: uiFontPressetsCorrelations,
+            compatibleWith: traitCollection
+        )
+        
+        return fontDescriptor.pointSize
     }
     
     var baseSize: CGFloat {
@@ -166,33 +179,6 @@ private extension FontStyle {
                 .textPreset9,
                 .textPreset10:
             return .largeTitle
-        }
-    }
-}
-
-fileprivate extension Font.Weight {
-    var uiFontWeight: UIFont.Weight {
-        switch self {
-        case .black:
-            return .black
-        case .bold:
-            return .bold
-        case .heavy:
-            return .heavy
-        case .light:
-            return .light
-        case .medium:
-            return .medium
-        case .regular:
-            return .regular
-        case .semibold:
-            return .semibold
-        case .thin:
-            return .thin
-        case .ultraLight:
-            return .ultraLight
-        default:
-            fatalError("Unhandled Font.Height named: \(self)")
         }
     }
 }

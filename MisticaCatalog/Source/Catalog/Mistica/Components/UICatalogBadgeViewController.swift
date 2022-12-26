@@ -17,7 +17,7 @@ class UICatalogBadgeViewController: UITableViewController {
     private lazy var numericBadgeCell: CellView = {
         var badges = [BadgeView]()
 
-        for index in 0 ... 10 {
+        for index in 1 ... 10 {
             let badgeView = BadgeView(style: .numeric)
             badgeView.value = index
             badges.append(badgeView)

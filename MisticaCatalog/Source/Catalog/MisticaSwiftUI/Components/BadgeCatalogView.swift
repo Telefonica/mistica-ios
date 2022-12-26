@@ -14,18 +14,18 @@ struct BadgeCatalogView: View {
         List {
             section("Flag") {
                 HStack {
-                    ForEach(0 ..< 11) { _ in
-                        Badge(style: .flag)
-                    }
+                    Badge(style: .flag)
                 }
+                .frame(maxWidth: .infinity, alignment: .center)
             }
 
             section("Numeric") {
                 HStack {
-                    ForEach(0 ..< 11) {
+                    ForEach(1 ..< 11) {
                         Badge(style: .numeric($0))
                     }
                 }
+                .frame(maxWidth: .infinity, alignment: .center)
             }
         }
     }

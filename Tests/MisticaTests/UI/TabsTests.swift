@@ -262,6 +262,6 @@ extension UIImage {
     static let antenna = generateImage("antenna.radiowaves.left.and.right")
 
     static func generateImage(_ name: String) -> UIImage? {
-        return UIImage(systemName: name)
+        UIImage(systemName: name)
     }
 }

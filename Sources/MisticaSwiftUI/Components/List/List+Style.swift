@@ -26,7 +26,7 @@ private struct MisticaListStyle: ViewModifier {
 
 #if DEBUG
 
-        struct MisticaList_Previews: PreviewProvider {
+    struct MisticaList_Previews: PreviewProvider {
         static var previews: some View {
             Preview {
                 NavigationView {

@@ -57,7 +57,7 @@ public extension Stepper {
 // MARK: Previews
 
 #if DEBUG
-        struct StepperPreview: View {
+    struct StepperPreview: View {
         @State var step = 0
 
         var body: some View {
@@ -70,7 +70,7 @@ public extension Stepper {
         }
     }
 
-        struct Stepper_Previews: PreviewProvider {
+    struct Stepper_Previews: PreviewProvider {
         static var previews: some View {
             StepperPreview()
         }

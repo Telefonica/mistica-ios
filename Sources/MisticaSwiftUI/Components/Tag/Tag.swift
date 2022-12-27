@@ -101,7 +101,7 @@ public extension Tag {
 // MARK: Previews
 
 #if DEBUG
-        struct Tag_Previews: PreviewProvider {
+    struct Tag_Previews: PreviewProvider {
         static var previews: some View {
             Preview {
                 VStack {

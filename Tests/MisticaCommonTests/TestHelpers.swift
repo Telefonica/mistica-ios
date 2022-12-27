@@ -43,7 +43,7 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
 
         var darkView = viewBuilder()
         darkView.overrideUserInterfaceStyle = .dark
-        
+
         assertSnapshot(
             matching: darkView,
             as: snapshotting,
@@ -56,7 +56,7 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
 }
 
 protocol UserInterfaceStyling {
-        var overrideUserInterfaceStyle: UIUserInterfaceStyle { get set }
+    var overrideUserInterfaceStyle: UIUserInterfaceStyle { get set }
 }
 
 extension UIView: UserInterfaceStyling {}

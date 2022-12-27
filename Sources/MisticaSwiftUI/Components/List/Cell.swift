@@ -447,7 +447,7 @@ public extension View {
 // MARK: Previews
 
 #if DEBUG
-        struct Cell_Previews: PreviewProvider {
+    struct Cell_Previews: PreviewProvider {
         static let photo = Image(systemName: "photo")
         @State static var isEnabled = false
 

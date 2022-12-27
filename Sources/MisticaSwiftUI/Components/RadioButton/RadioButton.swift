@@ -37,7 +37,7 @@ public struct RadioButton: View {
 }
 
 #if DEBUG
-        struct RadioButton_Previews: PreviewProvider {
+    struct RadioButton_Previews: PreviewProvider {
         static var previews: some View {
             VStack {
                 RadioButton(isSelected: .constant(true))

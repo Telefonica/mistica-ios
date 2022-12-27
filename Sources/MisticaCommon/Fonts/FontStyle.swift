@@ -21,22 +21,22 @@ import UIKit
     case textPreset8
     case textPreset9
     case textPreset10
-    
+
     func preferredFont(
         weight: Font.Weight,
         constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil
     ) -> Font {
         let pointSize = calculateFontSize(constrainedToPreferredSize: constrainedPreferredSize)
-        
+
         if let fontName = Self.fontNameForWeight?(weight) {
             return Font.custom(fontName, size: pointSize)
         } else {
             return Font.system(size: pointSize, weight: weight, design: .default)
         }
     }
-    
+
     public static var fontNameForWeight: ((Font.Weight) -> String)? = nil
-    
+
     func preferredFont(
         weight: UIFont.Weight,
         constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory? = nil
@@ -50,9 +50,9 @@ import UIKit
             return UIFont.systemFont(ofSize: pointSize, weight: weight)
         }
     }
-    
+
     public static var uiFontNameForWeight: ((UIFont.Weight) -> String)? = nil
-    
+
     public var description: String {
         switch self {
         case .textPreset1:
@@ -83,26 +83,26 @@ private extension FontStyle {
     func calculateFontSize(constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory?) -> CGFloat {
         let fontMetrics = UIFontMetrics(forTextStyle: uiFontPressetsCorrelations)
         var scaledBaseSize = round(fontMetrics.scaledValue(for: baseSize))
-        
+
         if let constrainedPreferredSize = maximumFonSize(constrainedPreferredSize: constrainedPreferredSize) {
             scaledBaseSize = min(scaledBaseSize, constrainedPreferredSize)
         }
-        
+
         return scaledBaseSize
     }
-    
+
     func maximumFonSize(constrainedPreferredSize: UIContentSizeCategory?) -> CGFloat? {
-        guard let constrainedPreferredSize else  { return nil }
-        
+        guard let constrainedPreferredSize else { return nil }
+
         let traitCollection = UITraitCollection(preferredContentSizeCategory: constrainedPreferredSize)
         let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(
             withTextStyle: uiFontPressetsCorrelations,
             compatibleWith: traitCollection
         )
-        
+
         return fontDescriptor.pointSize
     }
-    
+
     var baseSize: CGFloat {
         switch self {
         case .textPreset1:
@@ -127,7 +127,7 @@ private extension FontStyle {
             return 32
         }
     }
-    
+
     var uiFontPressetsCorrelations: UIFont.TextStyle {
         switch self {
         case .textPreset1:
@@ -145,12 +145,12 @@ private extension FontStyle {
         case .textPreset7:
             return .title1
         case .textPreset8,
-                .textPreset9,
-                .textPreset10:
+             .textPreset9,
+             .textPreset10:
             return .largeTitle
         }
     }
-    
+
     var fontPressetsCorrelations: Font.TextStyle {
         switch self {
         case .textPreset1:
@@ -176,8 +176,8 @@ private extension FontStyle {
         case .textPreset7:
             return .title
         case .textPreset8,
-                .textPreset9,
-                .textPreset10:
+             .textPreset9,
+             .textPreset10:
             return .largeTitle
         }
     }

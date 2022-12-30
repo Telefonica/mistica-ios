@@ -1,3 +1,15 @@
+# [20.0.0](https://github.com/Telefonica/mistica-ios/compare/v19.1.0...v20.0.0) (2022-12-30)
+
+
+### Bug Fixes
+
+* **FontToolKit:** Font size calculus algorithm improvements  ([#237](https://github.com/Telefonica/mistica-ios/issues/237)) ([98b2663](https://github.com/Telefonica/mistica-ios/commit/98b266378cc1422110044601e14d1ff1ca22fa7c))
+
+
+### BREAKING CHANGES
+
+* **FontToolKit:** Now Mistica uses UIFontMetricts for calculating the font size based on the dynamic type selected by the user. It must work as before but we can found some differences.
+
 # [19.1.0](https://github.com/Telefonica/mistica-ios/compare/v19.0.0...v19.1.0) (2022-11-23)
 
 

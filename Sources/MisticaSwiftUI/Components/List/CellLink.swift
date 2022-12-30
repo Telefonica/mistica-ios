@@ -11,7 +11,6 @@ import Foundation
 import SwiftUI
 
 /// View to be used as an overlay of the cell that acts as a NavigationLink but providers the caller with highlighting effects.
-@available(iOS 13.0, *)
 public struct CellLink<Destination: View>: View {
     @State var navigationLinkIsActive = false
     @Binding var isPressed: Bool

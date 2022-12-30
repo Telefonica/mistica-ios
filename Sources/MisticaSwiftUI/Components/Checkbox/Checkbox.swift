@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct Checkbox: View {
     @Binding var isSelected: Bool
 
@@ -51,7 +50,6 @@ public struct Checkbox: View {
 }
 
 #if DEBUG
-    @available(iOS 13.0, *)
     struct Checkbox_Previews: PreviewProvider {
         static var previews: some View {
             VStack {

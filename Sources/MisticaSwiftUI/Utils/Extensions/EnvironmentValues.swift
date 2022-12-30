@@ -11,7 +11,6 @@ import SwiftUI
 
 // MARK: Safe area insets
 
-@available(iOS 13.0, *)
 @available(iOSApplicationExtension, unavailable)
 public extension EnvironmentValues {
     var safeAreaInsets: EdgeInsets {
@@ -19,7 +18,6 @@ public extension EnvironmentValues {
     }
 }
 
-@available(iOS 13.0, *)
 @available(iOSApplicationExtension, unavailable)
 private struct SafeAreaInsetsKey: EnvironmentKey {
     static var defaultValue: EdgeInsets {
@@ -27,7 +25,6 @@ private struct SafeAreaInsetsKey: EnvironmentKey {
     }
 }
 
-@available(iOS 13.0, *)
 private extension UIEdgeInsets {
     var swiftUiInsets: EdgeInsets {
         EdgeInsets(
@@ -39,7 +36,6 @@ private extension UIEdgeInsets {
     }
 }
 
-@available(iOS 13.0, *)
 @available(iOSApplicationExtension, unavailable)
 private extension UIApplication {
     var keyWindow: UIWindow? {

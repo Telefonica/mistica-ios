@@ -10,14 +10,12 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 enum FeedbackIconStyle {
     case none
     case image(Image)
     case animation(LottieView)
 }
 
-@available(iOS 13.0, *)
 public enum FeedbackStyle {
     case success
     case error(reference: String?)

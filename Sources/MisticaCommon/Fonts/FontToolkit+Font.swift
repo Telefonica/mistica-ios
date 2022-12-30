@@ -11,7 +11,6 @@ import SwiftUI
 
 // MARK: Font
 
-@available(iOS 13.0, *)
 public extension Font {
     static func textPreset1(weight: FontStyle.TextPreset1Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> Font {
         FontStyle.textPreset1.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)

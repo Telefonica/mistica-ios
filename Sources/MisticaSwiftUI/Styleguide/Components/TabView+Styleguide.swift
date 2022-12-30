@@ -9,14 +9,12 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 13.0, *)
 public extension View {
     func misticaTabViewStyle() -> some View {
         modifier(MisticaTabViewStyle())
     }
 }
 
-@available(iOS 13.0, *)
 private struct MisticaTabViewStyle: ViewModifier {
     init() {
         UITabBarAppearance.applyMisticaStyle()
@@ -28,7 +26,6 @@ private struct MisticaTabViewStyle: ViewModifier {
     }
 }
 
-@available(iOS 13.0, *)
 public extension UITabBarAppearance {
     static func applyMisticaStyle() {
         let appearance = UITabBarAppearance()

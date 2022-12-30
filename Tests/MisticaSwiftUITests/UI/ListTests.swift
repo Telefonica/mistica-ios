@@ -11,7 +11,6 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
-@available(iOS 13.0, *)
 final class ListTests: XCTestCase {
     override class func setUp() {
         isRecording = false
@@ -99,7 +98,6 @@ final class ListTests: XCTestCase {
 
 // MARK: - Helpers
 
-@available(iOS 13.0, *)
 private extension ListTests {
     func makeTemplateWithStyle(style: CellStyle) -> some View {
         let photo = Image(systemName: "photo")

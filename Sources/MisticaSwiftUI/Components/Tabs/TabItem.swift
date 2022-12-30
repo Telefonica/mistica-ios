@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct TabItem: View, Equatable {
     private let text: String
     private let image: Image?
@@ -47,7 +46,6 @@ public struct TabItem: View, Equatable {
 
 // MARK: Modifiers
 
-@available(iOS 13.0, *)
 public extension TabItem {
     func textAccessibilityLabel(_ textAccessibilityLabel: String?) -> TabItem {
         var tabItem = self

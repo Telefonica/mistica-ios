@@ -10,14 +10,12 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public enum EmptyStateAssetType {
     case fullWidth(Image)
     case image(Image)
     case icon(Image, foregroundColor: Color?, backgroundColor: Color?)
 }
 
-@available(iOS 13.0, *)
 public struct EmptyState<PrimaryButton: View, SecondaryButton: View>: View {
     let assetType: EmptyStateAssetType
     let title: String
@@ -91,7 +89,6 @@ public struct EmptyState<PrimaryButton: View, SecondaryButton: View>: View {
 
 // MARK: Public
 
-@available(iOS 13.0, *)
 public extension EmptyState {
     func cardStyle() -> some View {
         border(cornerRadius: 8, borderColor: .border, lineWidth: 1)
@@ -148,7 +145,6 @@ public extension EmptyState {
 
 // MARK: Private
 
-@available(iOS 13.0, *)
 private extension EmptyState {
     @ViewBuilder
     var assetView: some View {
@@ -176,7 +172,6 @@ private extension EmptyState {
 
 // MARK: Inits
 
-@available(iOS 13.0, *)
 public extension EmptyState {
     init(
         assetType: EmptyStateAssetType,
@@ -195,7 +190,6 @@ public extension EmptyState {
     }
 }
 
-@available(iOS 13.0, *)
 public extension EmptyState where PrimaryButton == EmptyView {
     init(
         assetType: EmptyStateAssetType,
@@ -213,7 +207,6 @@ public extension EmptyState where PrimaryButton == EmptyView {
     }
 }
 
-@available(iOS 13.0, *)
 public extension EmptyState where SecondaryButton == EmptyView {
     init(
         assetType: EmptyStateAssetType,
@@ -231,7 +224,6 @@ public extension EmptyState where SecondaryButton == EmptyView {
     }
 }
 
-@available(iOS 13.0, *)
 public extension EmptyState where PrimaryButton == EmptyView, SecondaryButton == EmptyView {
     init(
         assetType: EmptyStateAssetType,
@@ -249,7 +241,6 @@ public extension EmptyState where PrimaryButton == EmptyView, SecondaryButton ==
 }
 
 #if DEBUG
-    @available(iOS 13.0, *)
     struct EmptyCase_Previews: PreviewProvider {
         static var previews: some View {
             EmptyState(

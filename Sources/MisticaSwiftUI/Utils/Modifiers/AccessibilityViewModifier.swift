@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 13.0, *)
 public extension View {
     func accessibilityIdentifier(_ identifier: String?) -> some View {
         modifier(OptionalAccessibilityIdentifier(identifier: identifier))
@@ -20,7 +19,6 @@ public extension View {
     }
 }
 
-@available(iOS 13.0, *)
 struct OptionalAccessibilityIdentifier: ViewModifier {
     var identifier: String?
 
@@ -33,7 +31,6 @@ struct OptionalAccessibilityIdentifier: ViewModifier {
     }
 }
 
-@available(iOS 13.0, *)
 struct OptionalAccessibilityLabel: ViewModifier {
     var label: String?
 

@@ -10,7 +10,6 @@ import SwiftUI
 import UIKit
 
 protocol FontWeightConvertible: CaseIterable {
-    @available(iOS 13.0, *)
     var systemWeight: Font.Weight { get }
     var systemUIFontWeight: UIFont.Weight { get }
 }
@@ -73,7 +72,6 @@ public extension FontStyle {
 }
 
 extension RawRepresentable where RawValue == String {
-    @available(iOS 13.0, *)
     var systemWeight: Font.Weight {
         switch rawValue {
         case "light":

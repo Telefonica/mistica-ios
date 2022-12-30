@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 struct Preview<Content: View>: View {
     let content: Content
 

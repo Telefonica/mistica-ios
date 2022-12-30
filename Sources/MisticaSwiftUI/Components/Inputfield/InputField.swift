@@ -17,7 +17,6 @@ private enum Constants {
     static let textfieldHeight: CGFloat = 24
 }
 
-@available(iOS 13.0, *)
 public struct InputField: View {
     public enum ValidationState: Int, Identifiable, Equatable {
         case normal
@@ -117,7 +116,6 @@ public struct InputField: View {
 
 // MARK: Private
 
-@available(iOS 13.0, *)
 private extension InputField {
     @ViewBuilder
     var leadingImage: some View {
@@ -256,7 +254,6 @@ private extension InputField {
 
 // MARK: Modifiers
 
-@available(iOS 13.0, *)
 public extension InputField {
     func style(_ style: Style) -> InputField {
         var view = self
@@ -267,7 +264,6 @@ public extension InputField {
 
 // MARK: Previews
 
-@available(iOS 13.0, *)
 struct InputField_Previews: PreviewProvider {
     @State static var text1 = ""
     @State static var text2 = "Text"

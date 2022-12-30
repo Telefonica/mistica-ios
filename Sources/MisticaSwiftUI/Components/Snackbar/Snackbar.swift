@@ -25,7 +25,6 @@ public enum SnackbarButtonStyle {
     case short
 }
 
-@available(iOS 13.0, *)
 public struct Snackbar<Button: View>: View {
     @Environment(\.safeAreaInsets) private var safeAreaInsets
 
@@ -80,7 +79,6 @@ public struct Snackbar<Button: View>: View {
 
 // MARK: Private
 
-@available(iOS 13.0, *)
 private extension Snackbar {
     @ViewBuilder
     func stack<T: View>(@ViewBuilder content: () -> T) -> some View {
@@ -126,7 +124,6 @@ private extension Snackbar {
 
 // MARK: Modifiers
 
-@available(iOS 13.0, *)
 public extension Snackbar {
     func style(_ style: SnackbarStyle) -> Snackbar {
         var view = self

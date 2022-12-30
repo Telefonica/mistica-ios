@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 private enum Constants {
     static let spacing: CGFloat = 16
     static let borderRadius: CGFloat = 4
@@ -24,7 +23,6 @@ public enum CellStyle {
     case fullwidth
 }
 
-@available(iOS 13.0, *)
 public enum CellAssetType: Equatable {
     case none
     case roundImage(Image)
@@ -33,7 +31,6 @@ public enum CellAssetType: Equatable {
     case largeIcon(Image, foregroundColor: Color? = nil, backgroundColor: Color? = nil)
 }
 
-@available(iOS 13.0, *)
 public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: View {
     private let style: CellStyle
     private let title: String
@@ -202,7 +199,6 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
 
 // MARK: Utils
 
-@available(iOS 13.0, *)
 public extension Cell {
     /// Sets a NavigationLink as a background with no opacity. This behaves as a workaround to avoid
     /// NavigationLinks to add extra views to the Cell inside List. Otherwise, the system will add the default chevron.
@@ -224,7 +220,6 @@ public extension Cell {
 
 // MARK: Cell with no preset nor headline
 
-@available(iOS 13.0, *)
 public extension Cell where Destination == EmptyView {
     init(
         style: CellStyle,
@@ -248,7 +243,6 @@ public extension Cell where Destination == EmptyView {
     }
 }
 
-@available(iOS 13.0, *)
 public extension Cell where PresetView == EmptyView, HeadlineView == EmptyView, Destination == EmptyView {
     init(
         style: CellStyle,
@@ -271,7 +265,6 @@ public extension Cell where PresetView == EmptyView, HeadlineView == EmptyView, 
 
 // MARK: Cell with no preset
 
-@available(iOS 13.0, *)
 public extension Cell where PresetView == EmptyView, Destination == EmptyView {
     init(
         style: CellStyle,
@@ -295,7 +288,6 @@ public extension Cell where PresetView == EmptyView, Destination == EmptyView {
 
 // MARK: Cell with no headline
 
-@available(iOS 13.0, *)
 public extension Cell where HeadlineView == EmptyView, Destination == EmptyView {
     init(
         style: CellStyle,
@@ -319,7 +311,6 @@ public extension Cell where HeadlineView == EmptyView, Destination == EmptyView 
 
 // MARK: Modifiers
 
-@available(iOS 13.0, *)
 public extension Cell {
     func titleAccessibilityLabel(_ titleAccessibilityLabel: String?) -> Cell {
         var cell = self
@@ -409,7 +400,6 @@ public extension Cell {
 
 // MARK: Helpers
 
-@available(iOS 13.0, *)
 struct ListSeparatorHiddenModifieriOS15: ViewModifier {
     public func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
@@ -430,7 +420,6 @@ struct ListSeparatorHiddenModifieriOS15: ViewModifier {
     }
 }
 
-@available(iOS 13.0, *)
 struct ListSeparatorHiddenModifier: ViewModifier {
     public func body(content: Content) -> some View {
         content
@@ -445,7 +434,6 @@ struct ListSeparatorHiddenModifier: ViewModifier {
     }
 }
 
-@available(iOS 13.0, *)
 public extension View {
     func listSeparatorHidden() -> some View {
         conditionalModifier(
@@ -459,7 +447,6 @@ public extension View {
 // MARK: Previews
 
 #if DEBUG
-    @available(iOS 13.0, *)
     struct Cell_Previews: PreviewProvider {
         static let photo = Image(systemName: "photo")
         @State static var isEnabled = false

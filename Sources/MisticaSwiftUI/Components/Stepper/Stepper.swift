@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct Stepper: View {
     public enum Style {
         case determined
@@ -47,7 +46,6 @@ public struct Stepper: View {
 
 // MARK: Modifiers
 
-@available(iOS 13.0, *)
 public extension Stepper {
     func style(_ style: Stepper.Style) -> Stepper {
         var stepper = self
@@ -59,7 +57,6 @@ public extension Stepper {
 // MARK: Previews
 
 #if DEBUG
-    @available(iOS 13.0, *)
     struct StepperPreview: View {
         @State var step = 0
 
@@ -73,7 +70,6 @@ public extension Stepper {
         }
     }
 
-    @available(iOS 13.0, *)
     struct Stepper_Previews: PreviewProvider {
         static var previews: some View {
             StepperPreview()

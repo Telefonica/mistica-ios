@@ -8,17 +8,14 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 struct MisticaBackport<Content> {
     let content: Content
 }
 
-@available(iOS 13.0, *)
 extension View {
     var misticaBackport: MisticaBackport<Self> { MisticaBackport(content: self) }
 }
 
-@available(iOS 13.0, *)
 extension MisticaBackport where Content: View {
     @ViewBuilder func accesibilityHidden(_ hidden: Bool) -> some View {
         if #available(iOS 14.0, *) {

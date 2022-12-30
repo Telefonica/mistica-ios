@@ -82,11 +82,7 @@ private extension MisticaAppearance {
                                                   tintColor: UIColor,
                                                   textColor: UIColor,
                                                   selectedTextColor: UIColor) {
-        if #available(iOS 13.0, *) {
-            segmentedControlAppearance.selectedSegmentTintColor = tintColor
-        } else {
-            segmentedControlAppearance.tintColor = tintColor
-        }
+        segmentedControlAppearance.selectedSegmentTintColor = tintColor
 
         let normalTextAttributes = [
             NSAttributedString.Key.foregroundColor: textColor,

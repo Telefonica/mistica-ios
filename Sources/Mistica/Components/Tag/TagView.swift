@@ -137,7 +137,7 @@ public class TagView: UIView {
         }
     }
 
-    public var labelAccessibilityIdentifier: String? {
+    override public var accessibilityIdentifier: String? {
         get {
             label.accessibilityIdentifier
         }

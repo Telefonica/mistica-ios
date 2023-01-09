@@ -159,14 +159,16 @@ public class FeedbackView: UIView {
         switch secondaryAction {
         case .button(let title, _):
             button = Button(style: style.feedbackSecondary, title: title)
+            button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.secondButton
         case .link(let title, _):
             button = Button(style: style.feedbackLink, title: title)
+            button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.linkButton
         case .none:
             button = nil
         }
         button?.addTarget(self, action: #selector(secondaryButtonTapped), for: .touchUpInside)
         button?.isAccessibilityElement = true
-        button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.secondButton
+
         return button
     }()
 

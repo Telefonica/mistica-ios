@@ -45,6 +45,7 @@ extension CardButtons {
         if let primaryAction = primaryButton {
             self.primaryButton.title = primaryAction.title
             self.primaryButton.loadingTitle = primaryAction.loadingTitle
+
             primaryActionHandler = primaryAction.tapHandler
 
             if self.primaryButton.superview == nil {
@@ -57,6 +58,7 @@ extension CardButtons {
         if let linkButton = linkButton {
             self.linkButton.title = linkButton.title
             self.linkButton.contentMode = .left
+
             linkActionHandler = linkButton.tapHandler
 
             if self.linkButton.superview == nil {

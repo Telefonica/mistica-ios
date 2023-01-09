@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct Divider: View {
     private let color: Color
 

@@ -11,7 +11,6 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
-@available(iOS 13.0, *)
 final class CheckboxTests: XCTestCase {
     override class func setUp() {
         isRecording = false

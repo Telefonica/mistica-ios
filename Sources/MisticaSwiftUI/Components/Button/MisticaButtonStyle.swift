@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct MisticaButtonStyle: ButtonStyle {
     let style: MisticaButton.Style
     let small: Bool
@@ -22,7 +21,6 @@ public struct MisticaButtonStyle: ButtonStyle {
 
 // MARK: Styles
 
-@available(iOS 13.0, *)
 public extension ButtonStyle where Self == MisticaButtonStyle {
     static func misticaPrimary(
         small: Bool = false,

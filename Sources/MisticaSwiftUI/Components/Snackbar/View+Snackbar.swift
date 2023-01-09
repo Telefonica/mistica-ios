@@ -11,7 +11,6 @@ import SwiftUI
 
 // MARK: Crouton
 
-@available(iOS 13.0, *)
 public extension View {
     @ViewBuilder
     func crouton(
@@ -58,7 +57,6 @@ public extension View {
 
 // MARK: Snackbar
 
-@available(iOS 13.0, *)
 public extension View {
     @ViewBuilder
     func snackbar(
@@ -105,7 +103,6 @@ public extension View {
 
 // MARK: Modifier
 
-@available(iOS 13.0, *)
 private struct SnackbarModifier: ViewModifier {
     @Binding var isVisible: Bool
     var style: SnackbarStyle = .normal

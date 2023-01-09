@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct Chip: View {
     public enum Style {
         case normal
@@ -82,7 +81,6 @@ public struct Chip: View {
 
 // MARK: Private methods
 
-@available(iOS 13.0, *)
 private extension Chip {
     var shouldShowDismissButton: Bool { onDismiss != nil }
 
@@ -188,7 +186,6 @@ private extension Chip {
 // MARK: Previews
 
 #if DEBUG
-    @available(iOS 13.0, *)
     struct Chip_Previews: PreviewProvider {
         static var previews: some View {
             VStack {

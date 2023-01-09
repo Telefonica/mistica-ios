@@ -16,7 +16,6 @@ private enum Constants {
     static let minHeight: CGFloat = 20
 }
 
-@available(iOS 13.0, *)
 public struct Tag: View {
     public enum Style: CaseIterable {
         case promo
@@ -91,7 +90,6 @@ public struct Tag: View {
 
 // MARK: Modifiers
 
-@available(iOS 13.0, *)
 public extension Tag {
     func inverse(_ isInverse: Bool) -> Tag {
         var tag = self
@@ -103,7 +101,6 @@ public extension Tag {
 // MARK: Previews
 
 #if DEBUG
-    @available(iOS 13.0, *)
     struct Tag_Previews: PreviewProvider {
         static var previews: some View {
             Preview {

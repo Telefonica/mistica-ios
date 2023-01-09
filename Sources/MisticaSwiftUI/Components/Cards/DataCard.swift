@@ -8,14 +8,12 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public enum DataCardAssetType {
     case none
     case icon(image: Image, foregroundColor: Color?, backgroundColor: Color?)
     case image(image: Image)
 }
 
-@available(iOS 13.0, *)
 public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, LinkButton: View>: View {
     private let assetType: DataCardAssetType
     private let headline: Headline?
@@ -193,7 +191,6 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
 
 // MARK: Modifiers
 
-@available(iOS 13.0, *)
 public extension DataCard {
     func fixedVerticalContentSize(_ fixedVerticalContentSize: Bool) -> DataCard {
         var dataCard = self
@@ -282,7 +279,6 @@ public extension DataCard {
 
 // MARK: - Initialisers
 
-@available(iOS 13.0, *)
 public extension DataCard {
     // MARK: Headline & Buttons
 
@@ -450,7 +446,6 @@ public extension DataCard {
 
 #if DEBUG
 
-    @available(iOS 13.0, *)
     struct DataCard_Previews: PreviewProvider {
         static var previews: some View {
             Preview {

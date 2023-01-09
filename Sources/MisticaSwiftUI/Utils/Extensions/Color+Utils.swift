@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 13.0, *)
 public extension Color {
     var uiColor: UIColor {
         if #available(iOS 14.0, *) {
@@ -28,7 +27,6 @@ public extension Color {
 
 infix operator |: AdditionPrecedence
 
-@available(iOS 13.0, *)
 public extension Color {
     /// Easily define two colors for both light and dark mode.
     /// - Parameters:
@@ -44,7 +42,6 @@ public extension Color {
     }
 }
 
-@available(iOS 13.0, *)
 private extension Color {
     func components() -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
         let scanner = Scanner(string: description.trimmingCharacters(in: CharacterSet.alphanumerics.inverted))

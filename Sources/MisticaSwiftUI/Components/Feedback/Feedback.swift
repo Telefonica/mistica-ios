@@ -15,7 +15,6 @@ private enum Constants {
     static let shadowRadius: CGFloat = 4
 }
 
-@available(iOS 13.0, *)
 public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: View>: View {
     private let style: FeedbackStyle
     private let title: String
@@ -177,7 +176,6 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
 
 // MARK: Initialisers
 
-@available(iOS 13.0, *)
 public extension Feedback {
     init(
         style: FeedbackStyle,
@@ -291,7 +289,6 @@ public extension Feedback {
 
 // MARK: Modifiers
 
-@available(iOS 13.0, *)
 public extension Feedback {
     func titleAccessibilityLabel(_ titleAccessibilityLabel: String?) -> Feedback {
         var feedback = self
@@ -333,7 +330,6 @@ public extension Feedback {
 // MARK: Previews
 
 #if DEBUG
-    @available(iOS 13.0, *)
     struct Feedback_Previews: PreviewProvider {
         static var previews: some View {
             Feedback(

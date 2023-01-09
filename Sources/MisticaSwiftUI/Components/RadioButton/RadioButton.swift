@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct RadioButton: View {
     @Binding var isSelected: Bool
 
@@ -38,7 +37,6 @@ public struct RadioButton: View {
 }
 
 #if DEBUG
-    @available(iOS 13.0, *)
     struct RadioButton_Previews: PreviewProvider {
         static var previews: some View {
             VStack {

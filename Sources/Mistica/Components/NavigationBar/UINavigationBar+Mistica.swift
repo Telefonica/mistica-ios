@@ -31,20 +31,15 @@ private extension UINavigationBar {
         layoutMargins.left = 16
         layoutMargins.right = 16
 
-        if #available(iOS 13.0, *) {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.shadowColor = .clear
-            navBarAppearance.backgroundColor = .navigationBarBackground
-            navBarAppearance.largeTitleTextAttributes = UINavigationBar.misticaLargeTitleTextAttributes
-            navBarAppearance.titleTextAttributes = UINavigationBar.misticaTitleTextAttributes
-            standardAppearance = navBarAppearance
-            compactAppearance = navBarAppearance
-            scrollEdgeAppearance = navBarAppearance
-        } else {
-            largeTitleTextAttributes = UINavigationBar.misticaLargeTitleTextAttributes
-            titleTextAttributes = UINavigationBar.misticaTitleTextAttributes
-        }
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.shadowColor = .clear
+        navBarAppearance.backgroundColor = .navigationBarBackground
+        navBarAppearance.largeTitleTextAttributes = UINavigationBar.misticaLargeTitleTextAttributes
+        navBarAppearance.titleTextAttributes = UINavigationBar.misticaTitleTextAttributes
+        standardAppearance = navBarAppearance
+        compactAppearance = navBarAppearance
+        scrollEdgeAppearance = navBarAppearance
     }
 
     class func textAttributes(for font: UIFont, color: UIColor) -> [NSAttributedString.Key: Any] {

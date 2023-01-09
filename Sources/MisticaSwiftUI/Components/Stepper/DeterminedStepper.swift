@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct DeterminedStepper: View {
     private enum Constants {
         static let height: CGFloat = 24
@@ -50,7 +49,6 @@ public struct DeterminedStepper: View {
 
 // MARK: Private
 
-@available(iOS 13.0, *)
 private extension DeterminedStepper {
     func stepBorderWidth(for step: Int) -> CGFloat {
         self.step == step ? 0 : Constants.borderWidth

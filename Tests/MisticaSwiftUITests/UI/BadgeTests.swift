@@ -11,7 +11,6 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
-@available(iOS 13.0, *)
 final class BadgeTests: XCTestCase {
     override class func setUp() {
         isRecording = false
@@ -34,7 +33,6 @@ final class BadgeTests: XCTestCase {
 
 // MARK: - Helpers
 
-@available(iOS 13.0, *)
 private extension BadgeTests {
     func makeTemplateWithNumericBadge() -> some View {
         HStack {

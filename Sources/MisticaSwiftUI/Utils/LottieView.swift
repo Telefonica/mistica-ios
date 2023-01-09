@@ -12,7 +12,6 @@ import Lottie
 import SwiftUI
 import UIKit
 
-@available(iOS 13.0, *)
 struct LottieView: UIViewRepresentable {
     var loopMode: LottieLoopMode = .loop
     var asset: NSDataAsset?

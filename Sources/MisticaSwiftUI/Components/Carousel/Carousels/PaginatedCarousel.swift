@@ -11,7 +11,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 struct PaginatedCarousel<Element, Content: View>: View {
     @Binding var index: Int
     private var itemWidth: CGFloat
@@ -51,7 +50,6 @@ struct PaginatedCarousel<Element, Content: View>: View {
     }
 }
 
-@available(iOS 13.0, *)
 private extension PaginatedCarousel {
     var actualItemWidth: CGFloat {
         itemWidth + spacing

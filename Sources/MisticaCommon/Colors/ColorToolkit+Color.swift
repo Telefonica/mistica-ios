@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public extension Color {
     // MARK: Buttons
 
@@ -358,7 +357,6 @@ public extension Color {
 }
 
 extension UIColor {
-    @available(iOS 13.0, *)
     var color: Color {
         Color(self)
     }

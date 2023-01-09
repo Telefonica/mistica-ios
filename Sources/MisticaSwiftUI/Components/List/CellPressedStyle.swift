@@ -11,7 +11,6 @@ import Foundation
 import SwiftUI
 
 // Style to track the pressed state of the button\
-@available(iOS 13.0, *)
 struct CellPressedStyle: ButtonStyle {
     @Binding var isPressed: Bool
 

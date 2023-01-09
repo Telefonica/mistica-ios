@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct TrackableScrollView<Content>: View where Content: View {
     private let axes: Axis.Set
     private let showsIndicators: Bool
@@ -43,7 +42,6 @@ public struct TrackableScrollView<Content>: View where Content: View {
 
 // MARK: Private
 
-@available(iOS 13.0, *)
 private extension TrackableScrollView {
     func calculateContentOffset(fromOutsideProxy outsideProxy: GeometryProxy, insideProxy: GeometryProxy) -> CGPoint {
         let xOffset = outsideProxy.frame(in: .global).minX - insideProxy.frame(in: .global).minX
@@ -65,7 +63,6 @@ private extension TrackableScrollView {
 
 // MARK: PreferenceKey
 
-@available(iOS 13.0, *)
 struct ScrollOffsetPreferenceKey: PreferenceKey {
     typealias Value = [CGPoint]
 

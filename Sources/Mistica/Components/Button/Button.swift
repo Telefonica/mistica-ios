@@ -238,9 +238,7 @@ private extension Button {
 
     func setUpView() {
         layer.cornerRadius = Constants.cornerRadius
-        if #available(iOS 13.0, *) {
-            layer.cornerCurve = .continuous
-        }
+        layer.cornerCurve = .continuous
         layer.borderWidth = Constants.borderWidth
         isAccessibilityElement = true
         updateTraits()

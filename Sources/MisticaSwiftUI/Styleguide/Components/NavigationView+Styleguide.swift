@@ -9,14 +9,12 @@
 import SwiftUI
 import UIKit
 
-@available(iOS 13.0, *)
 public extension View {
     func misticaNavigationViewStyle() -> some View {
         modifier(MisticaNavigationViewStyle())
     }
 }
 
-@available(iOS 13.0, *)
 private struct MisticaNavigationViewStyle: ViewModifier {
     init() {
         let backButtonAppearance = UIBarButtonItemAppearance()

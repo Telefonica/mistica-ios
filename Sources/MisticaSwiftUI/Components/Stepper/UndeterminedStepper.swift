@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 13.0, *)
 public struct UndeterminedStepper: View {
     @Binding var step: Int
     var steps: Int

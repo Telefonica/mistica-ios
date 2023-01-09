@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 13.0, *)
 public extension Image {
     init(color: Color) {
         self.init(uiImage: UIImage(color: color.uiColor))

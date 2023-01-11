@@ -1,3 +1,16 @@
+# [20.1.0](https://github.com/Telefonica/mistica-ios/compare/v20.0.0...v20.1.0) (2023-01-11)
+
+
+### Bug Fixes
+
+* **semantic-release:** Fix version to 20.0.2 ([9c5bb6f](https://github.com/Telefonica/mistica-ios/commit/9c5bb6f9a7aa44c02fedfce51560ffd00c976486))
+* **semantic-release:** Move version specification to semantic-release package argument ([bbc5e23](https://github.com/Telefonica/mistica-ios/commit/bbc5e2353dd6275b37162dabdfa2d6534b4bb614))
+
+
+### Features
+
+* **Accessibility:** Allow TagView's label accessibility identifier edition and default accessibility identifier of FeedbackView ([0e21390](https://github.com/Telefonica/mistica-ios/commit/0e21390956165197b7927c394e7fdb2879aebb5f))
+
 # [20.0.0](https://github.com/Telefonica/mistica-ios/compare/v19.1.0...v20.0.0) (2022-12-30)
 
 

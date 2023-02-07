@@ -5,11 +5,10 @@ if [[ ! $1 =~ (0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-((0|[1-9][0-9]*
 fi
 
 VERSION_NUMBER=$1
-echo "Updating podspec, xcconfig and mistica catalog version number to $VERSION_NUMBER"
+echo "Updating xcconfig and mistica catalog version number to $VERSION_NUMBER"
 
 # Execute from the root project folder
 cd Mistica &>/dev/null
 cd .. &>/dev/null
 
-find . -name "Mistica*.podspec" -exec sed -i '' -E "s/(s.version[[:space:]]+=[[:space:]]+').*(')/\1$VERSION_NUMBER\2/" {} +
 find . -name "Mistica*.xcconfig" -exec sed -i '' -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" {} +

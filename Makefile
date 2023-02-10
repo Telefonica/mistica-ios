@@ -1,7 +1,7 @@
 .PHONY: help setup format test simulator archive export clean
 
 # Simulator
-OS_VERSION := 16.0
+OS_VERSION := 16.2
 DEVICE_NAME := iPhone 14
 SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)
@@ -24,7 +24,7 @@ XCODEBUILD := set -o pipefail && xcodebuild
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode-14.0.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode-14.2.app/Contents/Developer
 endif
 
 # Targets
@@ -45,15 +45,15 @@ trace:
 	@echo "Available devices"
 	@xcrun xctrace list devices
 	@xcrun --sdk iphonesimulator --show-sdk-path
-	
+
 setup: trace
 	@echo "Installing dependencies..."
 	@brew ls chargepoint/xcparse/xcparse --versions || brew install chargepoint/xcparse/xcparse
 	@brew ls xcbeautify --versions || brew install xcbeautify
-	
+
 format:
 	Scripts/swiftformat .
-          
+
 test: clean setup simulator
 	@echo "Testing with simulator $(SIMULATOR_NAME)"
 	$(XCODEBUILD) build-for-testing -scheme $(TEST_SCHEMA) -destination "platform=iOS Simulator,name=$(SIMULATOR_NAME)" | xcbeautify
@@ -76,19 +76,19 @@ clean:
 
 export: clean setup
 	@echo "Building $(SCHEMA)"
-	
+
 	@echo "Removing previous build..."
 	@rm -rf "$(BUILD_PATH)"
-	
+
 	@echo "Archiving..."
 	$(XCODEBUILD) -project "$(PROJECT_PATH)" -scheme $(SCHEMA) clean archive -configuration release -sdk iphoneos -archivePath "$(ARCHIVE_PATH)" | xcbeautify
-	
+
 	@echo "Exporting..."
 	$(XCODEBUILD) -exportArchive -archivePath "$(ARCHIVE_PATH)" -exportPath "$(TMP_ROOT_PATH)" -exportOptionsPlist "$(EXPORTED_OPTIONS_PATH)" | xcbeautify
-	
+
 	@echo "Moving artifacts to $(BUILD_PATH)"
 	@mkdir -p "$(BUILD_PATH)"
 	@find "$(TMP_ROOT_PATH)" -name "*.ipa" | xargs -I '{}' mv {} "$(BUILD_PATH)/ios.ipa"
 	@find "$(TMP_ROOT_PATH)" -name "*.dSYM" | xargs -I '{}' mv {} "$(BUILD_PATH)/ios.dSYM"
-	
+
 	@rm -rf "$(TMP_ROOT_PATH)"

@@ -1,3 +1,10 @@
+# [20.2.0](https://github.com/Telefonica/mistica-ios/compare/v20.1.1...v20.2.0) (2023-02-10)
+
+
+### Features
+
+* **XCode:** Update to XCode 14.2 ([#245](https://github.com/Telefonica/mistica-ios/issues/245)) ([3d464cd](https://github.com/Telefonica/mistica-ios/commit/3d464cd7b0257cc8933dbb6c398fce9172d2ffd0))
+
 ## [20.1.1](https://github.com/Telefonica/mistica-ios/compare/v20.1.0...v20.1.1) (2023-02-10)
 
 

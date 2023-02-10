@@ -83,7 +83,7 @@ struct MovistarColors: MisticaColors {
     let feedbackInfoBackground = MovistarColors.palette.grey6
 
     // GLOBAL
-    var brand: UIColor { MovistarColors.palette.movistarBlueWithProminentVariant }
+    var brand: UIColor { MovistarColors.palette.movistarBlueWithProminentVariant | MovistarColors.palette.movistarBlue }
     var brandHigh: UIColor { MovistarColors.palette.movistarBlue55WithProminentVariant | MovistarColors.palette.white.withAlphaComponent(0.05) }
     let inverse = MovistarColors.palette.white | MovistarColors.palette.grey2
     let neutralHigh = MovistarColors.palette.grey6 | MovistarColors.palette.grey2

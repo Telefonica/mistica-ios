@@ -1,3 +1,11 @@
+## [20.1.1](https://github.com/Telefonica/mistica-ios/compare/v20.1.0...v20.1.1) (2023-02-10)
+
+
+### Bug Fixes
+
+* **MisticaColors:** Fix brand color for dark mode in MovistarColorPalette ([5635d89](https://github.com/Telefonica/mistica-ios/commit/5635d89f50e05697296e13855767b65d154ae744))
+* **semantic-release:** Update Node to latest version available ([ca5cd24](https://github.com/Telefonica/mistica-ios/commit/ca5cd24f57ce77eb9868e94a55b1143b666ad788))
+
 # [20.1.0](https://github.com/Telefonica/mistica-ios/compare/v20.0.0...v20.1.0) (2023-01-11)
 
 

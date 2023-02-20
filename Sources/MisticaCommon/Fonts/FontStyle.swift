@@ -114,7 +114,7 @@ private extension FontStyle {
         case .textPreset4:
             return 18
         case .textPreset5:
-            return 22
+            return 20
         case .textPreset6:
             return 24
         case .textPreset7:
@@ -122,9 +122,9 @@ private extension FontStyle {
         case .textPreset8:
             return 32
         case .textPreset9:
-            return 32
+            return 40
         case .textPreset10:
-            return 32
+            return 48
         }
     }
 

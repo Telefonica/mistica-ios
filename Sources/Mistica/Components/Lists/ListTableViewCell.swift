@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  ListTableViewCell.swift
 //
-//  Created by Alejandro Ruiz on 17/2/23.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation

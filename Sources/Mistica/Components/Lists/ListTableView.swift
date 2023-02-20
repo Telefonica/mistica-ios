@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ListTableView: UITableView {
+open class ListTableView: UITableView {
     public init() {
         super.init(frame: .zero, style: .plain)
 
@@ -21,7 +21,7 @@ public class ListTableView: UITableView {
         setUp()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         setUp()

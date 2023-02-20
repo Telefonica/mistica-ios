@@ -20,7 +20,7 @@ private enum Constants {
 }
 
 public class UICatalogCardsViewController: UIViewController {
-    private let tableView = ListView()
+    private let tableView = ListTableView()
 
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -51,13 +51,13 @@ extension UICatalogCardsViewController: UITableViewDataSource, UITableViewDelega
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReusableIdentifier, for: indexPath) as! ListViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReusableIdentifier, for: indexPath) as! ListTableViewCell
 
         let catalogRow = UICardRow(rawValue: indexPath.row)!
 
-        cell.title = catalogRow.title
-        cell.assetType = .smallIcon(catalogRow.icon)
-        cell.controlView = NavigationPresetView()
+        cell.listViewCell.title = catalogRow.title
+        cell.listViewCell.assetType = .smallIcon(catalogRow.icon)
+        cell.listViewCell.controlView = NavigationPresetView()
 
         return cell
     }

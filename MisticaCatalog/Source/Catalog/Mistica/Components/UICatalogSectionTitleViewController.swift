@@ -65,9 +65,9 @@ class UICatalogSectionTitleViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.listCellReusableIdentifier, for: indexPath) as! ListViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.listCellReusableIdentifier, for: indexPath) as! ListTableViewCell
 
-        cell.title = "Lorem ipsum dolor sit amet"
+        cell.listViewCell.title = "Lorem ipsum dolor sit amet"
         cell.isCellSeparatorHidden = indexPath.section == 2 && indexPath.row == 1
 
         return cell

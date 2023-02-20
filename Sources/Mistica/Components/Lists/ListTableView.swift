@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ListView: UITableView {
+public class ListTableView: UITableView {
     public init() {
         super.init(frame: .zero, style: .plain)
 

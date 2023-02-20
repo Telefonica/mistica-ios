@@ -219,7 +219,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
         case custom
     }
 
-    private let listView = ListView()
+    private let listView = ListTableView()
 
     var text: String?
     var detailText: String?
@@ -245,7 +245,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
 
         navigationItem.largeTitleDisplayMode = .never
         listView.dataSource = self
-        ListViewCell.register(on: listView)
+        ListTableViewCell.register(on: listView)
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
@@ -253,30 +253,30 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ListViewCell.dequeueReusableCell(for: indexPath, from: tableView)
+        let cell = ListTableViewCell.dequeueReusableCell(for: indexPath, from: tableView)
 
-        cell.title = text
-        cell.subtitle = subtitle
-        cell.detailText = detailText
-        cell.assetType = assetType
-        cell.subtitle = subtitle
-        cell.cellStyle = cellLayoutStyle
+        cell.listViewCell.title = text
+        cell.listViewCell.subtitle = subtitle
+        cell.listViewCell.detailText = detailText
+        cell.listViewCell.assetType = assetType
+        cell.listViewCell.subtitle = subtitle
+        cell.listViewCell.cellStyle = cellLayoutStyle
 
         if showHeadline {
-            cell.headlineView = TagView(text: "HEADLINE")
+            cell.listViewCell.headlineView = TagView(text: "HEADLINE")
         }
 
         switch customControl {
         case .none:
-            cell.controlView = nil
+            cell.listViewCell.controlView = nil
         case .navigation:
             let navigationPreset = NavigationPresetView()
             navigationPreset.isBadgeHidden = false
             navigationPreset.badgeView.style = .numeric
             navigationPreset.badgeView.value = Int.random(in: 1 ... 10)
-            cell.controlView = navigationPreset
+            cell.listViewCell.controlView = navigationPreset
         case .custom:
-            cell.controlView = CustomPresetView()
+            cell.listViewCell.controlView = CustomPresetView()
         }
 
         cell.isCellSeparatorHidden = indexPath.row == (numberOfRows - 1)

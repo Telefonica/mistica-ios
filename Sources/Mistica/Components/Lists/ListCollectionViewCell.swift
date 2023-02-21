@@ -28,10 +28,29 @@ open class ListCollectionViewCell: UICollectionViewCell {
     
     func layoutViews() {
         contentView.addSubview(listViewCell, constraints: [
-            listViewCell.topAnchor.constraint(equalTo: contentView.topAnchor),
-            listViewCell.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            listViewCell.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            listViewCell.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+            contentView.topAnchor.constraint(equalTo: listViewCell.topAnchor),
+            contentView.trailingAnchor.constraint(equalTo: listViewCell.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: listViewCell.bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: listViewCell.leadingAnchor),
+            contentView.widthAnchor.constraint(equalToConstant: 324.0)
         ])
+    }
+    
+    override public func systemLayoutSizeFitting(_ targetSize: CGSize,
+                                                 withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
+                                                 verticalFittingPriority: UILayoutPriority) -> CGSize {
+        let size = super.systemLayoutSizeFitting(
+            targetSize,
+            withHorizontalFittingPriority: horizontalFittingPriority,
+            verticalFittingPriority: verticalFittingPriority
+        )
+
+        return CGSize(width: size.width, height: max(size.height, listViewCell.cellStyle.minHeight))
+    }
+    
+    override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        listViewCell.cellBorderView.layer.borderColor = listViewCell.cellStyle.borderColor
     }
 }

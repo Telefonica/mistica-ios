@@ -15,6 +15,7 @@ open class ListViewCell: UIView {
     // MARK: View Styles
     public enum ViewStyles {
         static let horizontalPadding: CGFloat = 16
+        static let cellWidth: CGFloat = 324
     }
     
     @frozen

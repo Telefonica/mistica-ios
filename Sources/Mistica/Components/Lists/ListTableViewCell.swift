@@ -10,10 +10,9 @@ import Foundation
 import UIKit
 
 open class ListTableViewCell: UITableViewCell {
-    
-    public var listViewCell: ListViewCell = ListViewCell()
+    public var listViewCell = ListViewCell()
     private lazy var cellSeparatorView = SeparatorView(axis: .horizontal)
-    
+
     public var isCellSeparatorHidden: Bool = true {
         didSet {
             guard listViewCell.cellStyle != .boxed && listViewCell.cellStyle != .boxedInverse else { return }
@@ -21,20 +20,21 @@ open class ListTableViewCell: UITableViewCell {
             cellSeparatorView.isHidden = isCellSeparatorHidden
         }
     }
+
     // MARK: Initializers
-    
+
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+
         commonInit()
     }
-    
+
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         commonInit()
     }
-    
+
     // MARK: UITableViewCell Overrides
 
     override public func systemLayoutSizeFitting(_ targetSize: CGSize,
@@ -72,12 +72,12 @@ open class ListTableViewCell: UITableViewCell {
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         listViewCell.cellBorderView.layer.borderColor = listViewCell.cellStyle.borderColor
     }
-    
+
     func commonInit() {
         layoutViews()
         updateCellStyle()
     }
-    
+
     func layoutViews() {
         contentView.addSubview(constrainedToLayoutMarginsGuideOf: listViewCell)
 
@@ -88,6 +88,7 @@ open class ListTableViewCell: UITableViewCell {
             cellSeparatorView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
+
     func updateCellStyle() {
         directionalLayoutMargins = listViewCell.cellStyle.contentViewLayoutMargins
         preservesSuperviewLayoutMargins = false

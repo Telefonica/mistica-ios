@@ -9,23 +9,23 @@
 import UIKit
 
 open class ListCollectionViewCell: UICollectionViewCell {
-
-    public var listViewCell: ListViewCell = ListViewCell()
+    public var listViewCell = ListViewCell()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         commonInit()
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     func commonInit() {
         layoutViews()
     }
-    
+
     func layoutViews() {
         contentView.addSubview(listViewCell, constraints: [
             contentView.topAnchor.constraint(equalTo: listViewCell.topAnchor),
@@ -35,7 +35,7 @@ open class ListCollectionViewCell: UICollectionViewCell {
             contentView.widthAnchor.constraint(equalToConstant: ListViewCell.ViewStyles.cellWidth)
         ])
     }
-    
+
     override public func systemLayoutSizeFitting(_ targetSize: CGSize,
                                                  withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                                  verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -47,7 +47,7 @@ open class ListCollectionViewCell: UICollectionViewCell {
 
         return CGSize(width: size.width, height: max(size.height, listViewCell.cellStyle.minHeight))
     }
-    
+
     override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }

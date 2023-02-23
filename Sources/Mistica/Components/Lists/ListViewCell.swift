@@ -11,13 +11,13 @@ import UIKit
 // MARK: ListViewCell
 
 open class ListViewCell: UIView {
-    
     // MARK: View Styles
+
     public enum ViewStyles {
         static let horizontalPadding: CGFloat = 16
         static let cellWidth: CGFloat = 324
     }
-    
+
     @frozen
     public enum CellStyle {
         case fullWidth
@@ -176,7 +176,7 @@ open class ListViewCell: UIView {
             }
         }
     }
-    
+
     convenience init() {
         self.init(frame: .zero)
     }
@@ -188,10 +188,9 @@ open class ListViewCell: UIView {
     }
 
     @available(*, unavailable)
-    required public init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
 
 // MARK: Custom Accessibilities
@@ -273,7 +272,6 @@ public extension ListViewCell {
 // MARK: Private
 
 private extension ListViewCell {
-
     func commonInit() {
         layoutViews()
         updateCellStyle()
@@ -282,7 +280,6 @@ private extension ListViewCell {
     func layoutViews() {
         addSubview(constrainedToLayoutMarginsGuideOf: cellBorderView)
         addSubview(constrainedToLayoutMarginsGuideOf: cellContentView)
-
 
         cellContentView.addArrangedSubview(centerSection)
         cellContentView.spacing = ViewStyles.horizontalPadding

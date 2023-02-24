@@ -80,6 +80,8 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     func layoutViews() {
+        listCellContentView.directionalLayoutMargins = listCellContentView.cellStyle.contentViewLayoutMargins
+        listCellContentView.preservesSuperviewLayoutMargins = false
         contentView.addSubview(withDefaultConstraints: listCellContentView)
 
         contentView.addSubview(cellSeparatorView, constraints: [
@@ -97,7 +99,8 @@ open class ListTableViewCell: UITableViewCell {
 
 extension ListTableViewCell: ListCellContentTableViewDelegate {
     public func cellStyleChanged() {
-        cellSeparatorView.isHidden = listCellContentView.cellStyle == .boxed || listCellContentView.cellStyle == .boxedInverse
+        listCellContentView.directionalLayoutMargins = listCellContentView.cellStyle.contentViewLayoutMargins
+        cellSeparatorView.isHidden = listCellContentView.cellStyle.cellSeparatorIsHidden
     }
 }
 

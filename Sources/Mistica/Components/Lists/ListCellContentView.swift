@@ -290,9 +290,6 @@ private extension ListCellContentView {
     }
 
     func updateCellStyle() {
-        directionalLayoutMargins = cellStyle.contentViewLayoutMargins
-        preservesSuperviewLayoutMargins = false
-
         centerSection.titleTextColor = cellStyle.titleTextColor
         centerSection.subtitleTextColor = cellStyle.subtitleTextColor
 

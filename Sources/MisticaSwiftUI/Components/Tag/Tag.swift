@@ -11,11 +11,11 @@ import SwiftUI
 private enum Constants {
     static let cornerRadius: CGFloat = 50
     static let horizontalInset: CGFloat = 8
+    static let horizontalInsetWithIcon: CGFloat = 5
     static let verticalInset: CGFloat = 4
     static let minWidth: CGFloat = 48
     static let minHeight: CGFloat = 20
     static let iconSize: CGFloat = 16
-    static let horizontalInsetWithIcon: CGFloat = 5
 }
 
 public struct Tag: View {
@@ -59,7 +59,6 @@ public struct Tag: View {
                 .accessibilityIdentifier(textAccessibilityIdentifierIcon)
             Text(text)
                 .foregroundColor(foregroundColor)
-                .background(backgroundColor)
                 .font(.textPreset2(weight: .medium))
         }
         .padding(.horizontal, Constants.horizontalInset)
@@ -112,7 +111,6 @@ public struct Tag: View {
 // MARK: Modifiers
 
 public extension Tag {
-
     func inverse(_ isInverse: Bool) -> Tag {
         var tag = self
         tag.isInverse = isInverse

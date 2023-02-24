@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-extension ListViewCell.CellStyle {
+extension ListCellContentView.CellStyle {
     var cornerRadius: CGFloat {
         switch self {
         case .fullWidth:

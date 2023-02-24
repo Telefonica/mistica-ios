@@ -754,10 +754,10 @@ extension ListsTests {
         title: String? = nil,
         subtitle: String? = nil,
         detailText: String? = nil,
-        assetType: ListViewCell.CellAssetType = .none,
+        assetType: ListCellContentView.CellAssetType = .none,
         customControl: ListsTestsViewController.CustomControl = .none,
         showHeadline: Bool = false,
-        cellLayoutStyle: ListViewCell.CellStyle = .fullWidth,
+        cellLayoutStyle: ListCellContentView.CellStyle = .fullWidth,
         numberOfRows: Int = 1
     ) -> ListsTestsViewController {
         let listTestsViewController = ListsTestsViewController(listView: listView)
@@ -838,9 +838,9 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
     var detailText: String?
     var subtitle: String?
     var showHeadline = false
-    var assetType = ListViewCell.CellAssetType.none
+    var assetType = ListCellContentView.CellAssetType.none
     var customControl = CustomControl.none
-    var cellLayoutStyle = ListViewCell.CellStyle.fullWidth
+    var cellLayoutStyle = ListCellContentView.CellStyle.fullWidth
 
     private let listView: ListTableView
     var numberOfRows = 1
@@ -871,25 +871,25 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ListTableViewCell.dequeueReusableCell(for: indexPath, from: tableView)
 
-        cell.listViewCell.title = text
-        cell.listViewCell.subtitle = subtitle
-        cell.listViewCell.detailText = detailText
-        cell.listViewCell.assetType = assetType
-        cell.listViewCell.subtitle = subtitle
-        cell.listViewCell.cellStyle = cellLayoutStyle
+        cell.listCellContentView.title = text
+        cell.listCellContentView.subtitle = subtitle
+        cell.listCellContentView.detailText = detailText
+        cell.listCellContentView.assetType = assetType
+        cell.listCellContentView.subtitle = subtitle
+        cell.listCellContentView.cellStyle = cellLayoutStyle
         cell.isCellSeparatorHidden = false
 
         if showHeadline {
-            cell.listViewCell.headlineView = TagView(text: "HEADLINE")
+            cell.listCellContentView.headlineView = TagView(text: "HEADLINE")
         }
 
         switch customControl {
         case .none:
-            cell.listViewCell.controlView = nil
+            cell.listCellContentView.controlView = nil
         case .navigation(let makeNavigationPreset):
-            cell.listViewCell.controlView = makeNavigationPreset()
+            cell.listCellContentView.controlView = makeNavigationPreset()
         case .custom(let makeCustomControl):
-            cell.listViewCell.controlView = makeCustomControl()
+            cell.listCellContentView.controlView = makeCustomControl()
         }
 
         return cell

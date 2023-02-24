@@ -55,9 +55,9 @@ extension UICatalogCardsViewController: UITableViewDataSource, UITableViewDelega
 
         let catalogRow = UICardRow(rawValue: indexPath.row)!
 
-        cell.listViewCell.title = catalogRow.title
-        cell.listViewCell.assetType = .smallIcon(catalogRow.icon)
-        cell.listViewCell.controlView = NavigationPresetView()
+        cell.listCellContentView.title = catalogRow.title
+        cell.listCellContentView.assetType = .smallIcon(catalogRow.icon)
+        cell.listCellContentView.controlView = NavigationPresetView()
 
         return cell
     }
@@ -93,7 +93,7 @@ private extension UICatalogCardsViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(ListViewCell.self, forCellReuseIdentifier: Constants.cellReusableIdentifier)
+        tableView.register(ListCellContentView.self, forCellReuseIdentifier: Constants.cellReusableIdentifier)
     }
 }
 

@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 open class ListTableViewCell: UITableViewCell {
-    public var listViewCell = ListViewCell()
+    public var listCellContentView = ListCellContentView()
     private lazy var cellSeparatorView = SeparatorView(axis: .horizontal)
 
     public var isCellSeparatorHidden: Bool = true {
         didSet {
-            guard listViewCell.cellStyle != .boxed && listViewCell.cellStyle != .boxedInverse else { return }
+            guard listCellContentView.cellStyle != .boxed && listCellContentView.cellStyle != .boxedInverse else { return }
 
             cellSeparatorView.isHidden = isCellSeparatorHidden
         }
@@ -46,7 +46,7 @@ open class ListTableViewCell: UITableViewCell {
             verticalFittingPriority: verticalFittingPriority
         )
 
-        return CGSize(width: size.width, height: max(size.height, listViewCell.cellStyle.minHeight))
+        return CGSize(width: size.width, height: max(size.height, listCellContentView.cellStyle.minHeight))
     }
 
     override public func setHighlighted(_ highlighted: Bool, animated _: Bool) {
@@ -63,29 +63,29 @@ open class ListTableViewCell: UITableViewCell {
 
     override open var isUserInteractionEnabled: Bool {
         didSet {
-            listViewCell.centerSection.isUserInteractionEnabled = isUserInteractionEnabled
+            listCellContentView.centerSection.isUserInteractionEnabled = isUserInteractionEnabled
         }
     }
 
     override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
-        listViewCell.cellBorderView.layer.borderColor = listViewCell.cellStyle.borderColor
+        listCellContentView.cellBorderView.layer.borderColor = listCellContentView.cellStyle.borderColor
     }
 
     func commonInit() {
-        listViewCell.tableViewDelegate = self
+        listCellContentView.tableViewDelegate = self
         layoutViews()
         updateCellStyle()
     }
 
     func layoutViews() {
-        contentView.addSubview(withDefaultConstraints: listViewCell)
+        contentView.addSubview(withDefaultConstraints: listCellContentView)
 
         contentView.addSubview(cellSeparatorView, constraints: [
             cellSeparatorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            cellSeparatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ListViewCell.ViewStyles.horizontalPadding),
-            cellSeparatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ListViewCell.ViewStyles.horizontalPadding),
+            cellSeparatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ListCellContentView.ViewStyles.horizontalPadding),
+            cellSeparatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ListCellContentView.ViewStyles.horizontalPadding),
             cellSeparatorView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
@@ -95,19 +95,19 @@ open class ListTableViewCell: UITableViewCell {
     }
 }
 
-extension ListTableViewCell: ListViewCellTableViewDelegate {
+extension ListTableViewCell: ListCellContentTableViewDelegate {
     public func cellStyleChanged() {
-        cellSeparatorView.isHidden = listViewCell.cellStyle == .boxed || listViewCell.cellStyle == .boxedInverse
+        cellSeparatorView.isHidden = listCellContentView.cellStyle == .boxed || listCellContentView.cellStyle == .boxedInverse
     }
 }
 
 private extension ListTableViewCell {
     var highlightedView: UIView {
-        switch listViewCell.cellStyle {
+        switch listCellContentView.cellStyle {
         case .fullWidth, .boxedInverse:
             return contentView
         case .boxed:
-            return listViewCell.cellBorderView
+            return listCellContentView.cellBorderView
         }
     }
 }

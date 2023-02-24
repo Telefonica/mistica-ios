@@ -9,7 +9,7 @@
 import UIKit
 
 open class ListCollectionViewCell: UICollectionViewCell {
-    public var listViewCell = ListViewCell()
+    public var listViewCell = ListCellContentView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +32,7 @@ open class ListCollectionViewCell: UICollectionViewCell {
             contentView.trailingAnchor.constraint(equalTo: listViewCell.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: listViewCell.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: listViewCell.leadingAnchor),
-            contentView.widthAnchor.constraint(equalToConstant: ListViewCell.ViewStyles.cellWidth)
+            contentView.widthAnchor.constraint(equalToConstant: ListCellContentView.ViewStyles.cellWidth)
         ])
     }
 

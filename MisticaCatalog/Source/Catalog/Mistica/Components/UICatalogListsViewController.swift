@@ -157,7 +157,7 @@ extension UICatalogListsViewController {
 
         switch assetStyleCell.segmentedControl.selectedSegmentIndex {
         case 0:
-            sampleVC.assetType = ListViewCell.CellAssetType.none
+            sampleVC.assetType = ListCellContentView.CellAssetType.none
         case 1:
             sampleVC.assetType = .largeIcon(.imageIcon, backgroundColor: .neutralLow)
         case 2:
@@ -219,15 +219,15 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
         case custom
     }
 
-    private let listView = ListTableView()
+    private let listTableView = ListTableView()
 
     var text: String?
     var detailText: String?
     var subtitle: String?
     var showHeadline: Bool = false
-    var assetType: ListViewCell.CellAssetType!
+    var assetType: ListCellContentView.CellAssetType!
     var customControl = CustomControl.none
-    var cellLayoutStyle: ListViewCell.CellStyle!
+    var cellLayoutStyle: ListCellContentView.CellStyle!
 
     let numberOfRows = 30
 
@@ -235,7 +235,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
         let view = UIView()
         view.backgroundColor = .background
 
-        view.addSubview(withDefaultConstraints: listView)
+        view.addSubview(withDefaultConstraints: listTableView)
 
         self.view = view
     }
@@ -244,8 +244,8 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
         super.viewDidLoad()
 
         navigationItem.largeTitleDisplayMode = .never
-        listView.dataSource = self
-        ListTableViewCell.register(on: listView)
+        listTableView.dataSource = self
+        ListTableViewCell.register(on: listTableView)
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
@@ -255,28 +255,28 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ListTableViewCell.dequeueReusableCell(for: indexPath, from: tableView)
 
-        cell.listViewCell.title = text
-        cell.listViewCell.subtitle = subtitle
-        cell.listViewCell.detailText = detailText
-        cell.listViewCell.assetType = assetType
-        cell.listViewCell.subtitle = subtitle
-        cell.listViewCell.cellStyle = cellLayoutStyle
+        cell.listCellContentView.title = text
+        cell.listCellContentView.subtitle = subtitle
+        cell.listCellContentView.detailText = detailText
+        cell.listCellContentView.assetType = assetType
+        cell.listCellContentView.subtitle = subtitle
+        cell.listCellContentView.cellStyle = cellLayoutStyle
 
         if showHeadline {
-            cell.listViewCell.headlineView = TagView(text: "HEADLINE")
+            cell.listCellContentView.headlineView = TagView(text: "HEADLINE")
         }
 
         switch customControl {
         case .none:
-            cell.listViewCell.controlView = nil
+            cell.listCellContentView.controlView = nil
         case .navigation:
             let navigationPreset = NavigationPresetView()
             navigationPreset.isBadgeHidden = false
             navigationPreset.badgeView.style = .numeric
             navigationPreset.badgeView.value = Int.random(in: 1 ... 10)
-            cell.listViewCell.controlView = navigationPreset
+            cell.listCellContentView.controlView = navigationPreset
         case .custom:
-            cell.listViewCell.controlView = CustomPresetView()
+            cell.listCellContentView.controlView = CustomPresetView()
         }
 
         cell.isCellSeparatorHidden = indexPath.row == (numberOfRows - 1)

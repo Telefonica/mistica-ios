@@ -1,5 +1,5 @@
 //
-//  ListViewCell.swift
+//  ListCellContentView.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol ListViewCellTableViewDelegate {
+protocol ListCellContentTableViewDelegate {
     func cellStyleChanged()
 }
 
-// MARK: ListViewCell
+// MARK: ListCellContentView
 
-open class ListViewCell: UIView {
+open class ListCellContentView: UIView {
     // MARK: View Styles
 
     public enum ViewStyles {
@@ -42,7 +42,7 @@ open class ListViewCell: UIView {
     /// View used in `ListCellStyle.boxed` style for show a rounded border arround the content
     lazy var cellBorderView = UIView()
     private lazy var cellContentView = UIStackView()
-    var tableViewDelegate: ListViewCellTableViewDelegate?
+    var tableViewDelegate: ListCellContentTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
     lazy var centerSection = CellCenterSectionView()
 
@@ -199,7 +199,7 @@ open class ListViewCell: UIView {
 
 // MARK: Custom Accessibilities
 
-public extension ListViewCell {
+public extension ListCellContentView {
     var titleAccessibilityLabel: String? {
         get {
             centerSection.titleLabel.accessibilityLabel
@@ -275,7 +275,7 @@ public extension ListViewCell {
 
 // MARK: Private
 
-private extension ListViewCell {
+private extension ListCellContentView {
     func commonInit() {
         layoutViews()
         updateCellStyle()

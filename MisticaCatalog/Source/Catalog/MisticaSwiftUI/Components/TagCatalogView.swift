@@ -20,9 +20,16 @@ struct TagCatalogView: View {
             section("Title") { TextField("Title", text: $tagText) }
             section("Style") { stylePicker }
 
-            section("Result") {
+            section("Text only") {
                 Tag(style: styles[selectedStyleIndex], text: tagText)
             }
+            section("With icon") {
+                Tag(style: styles[selectedStyleIndex], text: tagText, icon: Image(systemName: "star.fill"))
+            }
+            section("Inverse") {
+                Tag(style: styles[selectedStyleIndex], text: tagText).inverse(true)
+            }
+            .listRowBackground(Color(.navigationBarBackground))
         }
     }
 

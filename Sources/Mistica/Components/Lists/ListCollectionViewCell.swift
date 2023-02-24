@@ -9,7 +9,7 @@
 import UIKit
 
 open class ListCollectionViewCell: UICollectionViewCell {
-    public var listViewCell = ListCellContentView()
+    public var listCellContentView = ListCellContentView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,11 +27,11 @@ open class ListCollectionViewCell: UICollectionViewCell {
     }
 
     func layoutViews() {
-        contentView.addSubview(listViewCell, constraints: [
-            contentView.topAnchor.constraint(equalTo: listViewCell.topAnchor),
-            contentView.trailingAnchor.constraint(equalTo: listViewCell.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: listViewCell.bottomAnchor),
-            contentView.leadingAnchor.constraint(equalTo: listViewCell.leadingAnchor),
+        contentView.addSubview(listCellContentView, constraints: [
+            contentView.topAnchor.constraint(equalTo: listCellContentView.topAnchor),
+            contentView.trailingAnchor.constraint(equalTo: listCellContentView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: listCellContentView.bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: listCellContentView.leadingAnchor),
             contentView.widthAnchor.constraint(equalToConstant: ListCellContentView.ViewStyles.cellWidth)
         ])
     }
@@ -45,12 +45,12 @@ open class ListCollectionViewCell: UICollectionViewCell {
             verticalFittingPriority: verticalFittingPriority
         )
 
-        return CGSize(width: size.width, height: max(size.height, listViewCell.cellStyle.minHeight))
+        return CGSize(width: size.width, height: max(size.height, listCellContentView.cellStyle.minHeight))
     }
 
     override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
-        listViewCell.cellBorderView.layer.borderColor = listViewCell.cellStyle.borderColor
+        listCellContentView.cellBorderView.layer.borderColor = listCellContentView.cellStyle.borderColor
     }
 }

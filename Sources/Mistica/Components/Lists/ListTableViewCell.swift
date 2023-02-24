@@ -74,6 +74,7 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     func commonInit() {
+        listViewCell.tableViewDelegate = self
         layoutViews()
         updateCellStyle()
     }
@@ -93,6 +94,12 @@ open class ListTableViewCell: UITableViewCell {
         directionalLayoutMargins = listViewCell.cellStyle.contentViewLayoutMargins
         preservesSuperviewLayoutMargins = false
         backgroundColor = .background
+    }
+}
+
+extension ListTableViewCell: ListViewCellTableViewDelegate {
+    public func cellStyleChanged() {
+        cellSeparatorView.isHidden = listViewCell.cellStyle == .boxed || listViewCell.cellStyle == .boxedInverse
     }
 }
 

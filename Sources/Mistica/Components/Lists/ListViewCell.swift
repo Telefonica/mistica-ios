@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ListViewCellTableViewDelegate {
+    func cellStyleChanged()
+}
+
 // MARK: ListViewCell
 
 open class ListViewCell: UIView {
@@ -38,7 +42,7 @@ open class ListViewCell: UIView {
     /// View used in `ListCellStyle.boxed` style for show a rounded border arround the content
     lazy var cellBorderView = UIView()
     private lazy var cellContentView = UIStackView()
-
+    var tableViewDelegate: ListViewCellTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
     lazy var centerSection = CellCenterSectionView()
 
@@ -300,6 +304,8 @@ private extension ListViewCell {
         if cellStyle == .boxedInverse {
             controlView?.tintColor = .white
         }
+        
+        tableViewDelegate?.cellStyleChanged()
     }
 
     func updateAssetView() {

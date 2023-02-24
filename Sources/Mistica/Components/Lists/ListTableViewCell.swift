@@ -80,7 +80,7 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     func layoutViews() {
-        contentView.addSubview(constrainedToLayoutMarginsGuideOf: listViewCell)
+        contentView.addSubview(withDefaultConstraints: listViewCell)
 
         contentView.addSubview(cellSeparatorView, constraints: [
             cellSeparatorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
@@ -91,8 +91,6 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     func updateCellStyle() {
-        directionalLayoutMargins = listViewCell.cellStyle.contentViewLayoutMargins
-        preservesSuperviewLayoutMargins = false
         backgroundColor = .background
     }
 }

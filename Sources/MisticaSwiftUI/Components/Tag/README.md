@@ -19,9 +19,11 @@ Tag(
 The `Tag` component accepts the following parameters:
 - `style`: The style will change the background and foreground color of the `Tag`. You can choose between following styles: promo, active, inactive, success, warning, error and inverse.
 - `text`: Content which will be presented inside of the `Tag` as capitalized with center text alignment.
-- `icon`: An icon send as `Image` can be added to the `Tag` component.
+- `icon`: An icon sent as `Image` can be added to the `Tag` component.
+
 
 ![tag-example-app](./docs/images/tag-example-app.gif)
+
 
 ## Accessibility
 

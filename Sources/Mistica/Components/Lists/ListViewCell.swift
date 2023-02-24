@@ -304,7 +304,7 @@ private extension ListViewCell {
         if cellStyle == .boxedInverse {
             controlView?.tintColor = .white
         }
-        
+
         tableViewDelegate?.cellStyleChanged()
     }
 

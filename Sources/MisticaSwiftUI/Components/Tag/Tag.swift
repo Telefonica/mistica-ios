@@ -138,10 +138,10 @@ public extension Tag {
                             icon: Image(systemName: "star.fill")
                         )
                     }
-                    ForEach(0..<Tag.Style.allCases.count, id: \.self) { index in
+                    ForEach(0 ..< Tag.Style.allCases.count, id: \.self) { index in
                         Tag(style: Tag.Style.allCases[index], text: "TAG CONTENT")
                     }
-                    ForEach(0..<Tag.Style.allCases.count, id: \.self) { index in
+                    ForEach(0 ..< Tag.Style.allCases.count, id: \.self) { index in
                         Tag(style: Tag.Style.allCases[index], text: "INVERSE TAG")
                             .inverse(true)
                     }

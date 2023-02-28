@@ -33,7 +33,7 @@ public struct Tag: View {
     private let icon: Image?
     private var isInverse = false
     private var textAccessibilityIdentifier: String?
-    private var textAccessibilityIdentifierIcon: String? {
+    private var iconAccessibilityIdentifier: String? {
         textAccessibilityIdentifier != nil ? textAccessibilityIdentifier! + "-icon" : nil
     }
 
@@ -56,7 +56,7 @@ public struct Tag: View {
                 .renderingMode(.template)
                 .frame(width: Constants.iconSize, height: Constants.iconSize)
                 .foregroundColor(foregroundColor)
-                .accessibilityIdentifier(textAccessibilityIdentifierIcon)
+                .accessibilityIdentifier(iconAccessibilityIdentifier)
             Text(text)
                 .foregroundColor(foregroundColor)
                 .font(.textPreset2(weight: .medium))

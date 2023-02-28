@@ -34,7 +34,10 @@ public struct Tag: View {
     private var isInverse = false
     private var textAccessibilityIdentifier: String?
     private var iconAccessibilityIdentifier: String? {
-        textAccessibilityIdentifier != nil ? textAccessibilityIdentifier! + "-icon" : nil
+        guard let textAccessibilityIdentifier = textAccessibilityIdentifier else {
+            return nil
+        }
+        return textAccessibilityIdentifier + "-icon"
     }
 
     public init(

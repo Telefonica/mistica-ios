@@ -13,15 +13,15 @@ import XCTest
 final class CarouselTests: XCTestCase {
     override func setUp() {
         super.setUp()
-        
+
         isRecording = false
         MisticaConfig.brandStyle = .movistar
     }
-    
+
     // MARK: - Layout
-    
+
     // MARK: - Default config
-    
+
     func testCellWithTitle() {
         let carouselTestsViewController = makeCarouselTestsViewController(
             title: AnyValues.title
@@ -32,7 +32,7 @@ final class CarouselTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithTitleAndImage() {
         let carouselTestsViewController = makeCarouselTestsViewController(
             title: AnyValues.title,
@@ -44,7 +44,7 @@ final class CarouselTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithTitleAndSubtitle() {
         let carouselTestsViewController = makeCarouselTestsViewController(
             title: AnyValues.title,
@@ -56,8 +56,8 @@ final class CarouselTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
-    func testCellWithTitleAndSubtitleAndImage () {
+
+    func testCellWithTitleAndSubtitleAndImage() {
         let carouselTestsViewController = makeCarouselTestsViewController(
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
@@ -69,8 +69,8 @@ final class CarouselTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
-    func testCellWithTitleAndSubtitleAndImageWithHeadline () {
+
+    func testCellWithTitleAndSubtitleAndImageWithHeadline() {
         let carouselTestsViewController = makeCarouselTestsViewController(
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
@@ -83,8 +83,8 @@ final class CarouselTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
-    func testCellWithTitleAndSubtitleAndImageWithHeadlineAndNavigationPreset () {
+
+    func testCellWithTitleAndSubtitleAndImageWithHeadlineAndNavigationPreset() {
         let carouselTestsViewController = makeCarouselTestsViewController(
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
@@ -98,8 +98,7 @@ final class CarouselTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
-    
+
     private func makeCarouselTestsViewController(
         title: String? = nil,
         subtitle: String? = nil,
@@ -131,9 +130,7 @@ private extension CarouselTests {
     }
 }
 
-
 private class CarouselTestsViewController: UIViewController, UICollectionViewDataSource {
-    
     enum CustomControl {
         case none
         case navigation(() -> NavigationPresetView)
@@ -164,7 +161,7 @@ private class CarouselTestsViewController: UIViewController, UICollectionViewDat
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         return layout
     }()
-    
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -185,11 +182,11 @@ private class CarouselTestsViewController: UIViewController, UICollectionViewDat
             collectionView.heightAnchor.constraint(equalToConstant: 180)
         ])
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         numberOfCells
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = ListCollectionViewCell.dequeueReusableCell(for: indexPath, from: collectionView)
 

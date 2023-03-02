@@ -57,6 +57,7 @@ public struct Tag: View {
             self.icon?
                 .resizable()
                 .renderingMode(.template)
+                .aspectRatio(contentMode: .fit)
                 .frame(width: Constants.iconSize, height: Constants.iconSize)
                 .foregroundColor(foregroundColor)
                 .accessibilityIdentifier(iconAccessibilityIdentifier)

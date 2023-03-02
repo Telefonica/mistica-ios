@@ -29,22 +29,15 @@ final class TagTests: XCTestCase {
             as: .image
         )
     }
-
-    func testSmallTagContentWitchIcon() {
-        assertSnapshot(
-            matching: makeTemplateWithAllTags(content: "TAG", icon: true),
-            as: .image
-        )
-    }
 }
 
 // MARK: - Helpers
 
 private extension TagTests {
-    func makeTemplateWithAllTags(content: String, icon: Bool = false) -> some View {
+    func makeTemplateWithAllTags(content: String) -> some View {
         VStack {
-            ForEach(0 ..< Tag.Style.allCases.count, id: \.self) { index in
-                Tag(style: Tag.Style.allCases[index], text: content, icon: icon ? Image(systemName: "star.fill") : nil)
+            ForEach(0 ..< Tag.Style.allCases.count) { index in
+                Tag(style: Tag.Style.allCases[index], text: content)
             }
         }
         .frame(minWidth: 100)

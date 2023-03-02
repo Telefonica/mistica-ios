@@ -1,3 +1,20 @@
+# [21.0.0](https://github.com/Telefonica/mistica-ios/compare/v20.2.0...v21.0.0) (2023-03-02)
+
+
+### Features
+
+* **ListViewCell:** Refactor ListViewCell as independent view for TableView and CollectionView ([4a8704b](https://github.com/Telefonica/mistica-ios/commit/4a8704bd9f4a33e2211b4ca1f8568981f70bae70))
+
+
+### Reverts
+
+* Revert "LATCH-335 Update component Tag with icon (#249)" (#251) ([516e316](https://github.com/Telefonica/mistica-ios/commit/516e316e32fdf2ad76bc31853b384ac4733d843f)), closes [#249](https://github.com/Telefonica/mistica-ios/issues/249) [#251](https://github.com/Telefonica/mistica-ios/issues/251)
+
+
+### BREAKING CHANGES
+
+* **ListViewCell:** ListViewCell has been independently refactored as a UIView. What we used to use as ListViewCell is now ListTableViewCell for ListTableViews. It has also been exposed as ListCollectionViewCell for CollectionViews.
+
 # [20.2.0](https://github.com/Telefonica/mistica-ios/compare/v20.1.1...v20.2.0) (2023-02-10)
 
 

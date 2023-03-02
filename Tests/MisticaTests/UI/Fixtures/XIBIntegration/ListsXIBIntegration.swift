@@ -10,5 +10,5 @@ import Mistica
 import UIKit
 
 class ListsXIBIntegration: UIView {
-    @IBOutlet var listView: ListView!
+    @IBOutlet var listView: ListTableView!
 }

@@ -1,6 +1,6 @@
 #  Lists
 
-Lists are continous group of text with images and/or controls. We currently provide two classes `ListView.swift` and `ListViewCell.swift`.
+Lists are continous group of text with images and/or controls. We currently provide two classes `ListTableView.swift` and `ListTableViewCell.swift`.
 
 Lists has two styles of cells `FullWidth`, `Boxed` and `BoxedInverse`
 
@@ -9,9 +9,9 @@ Lists has two styles of cells `FullWidth`, `Boxed` and `BoxedInverse`
 | <img src="./docs/images/lists-fullwidth.png" alt="drawing" width="300"/> |  <img src="./docs/images/lists-boxed.png" alt="drawing" width="300"/> |  <img src="./docs/images/lists-boxed-inverse.png" alt="drawing" width="300"/> |
 
 
-#  ListViewCell
+#  ListCellContentView
 
-`ListViewCell` has the following anatomy
+`ListContentViewCell` has the following anatomy
 
 <p align="center">
   <img width="300" src="./docs/images/row-anatomy.png"/>
@@ -30,31 +30,31 @@ Lists has two styles of cells `FullWidth`, `Boxed` and `BoxedInverse`
 
 ## Usage
 
-`ListView` inherit from `UITableView` so you should configure `ListView` as you usually configure a `UITableView`.
+`ListTableView` inherit from `UITableView` so you should configure `ListTableView` as you usually configure a `UITableView`.
 
 ```swift
-let listView = ListView()
-listView.delegate = // set you delegate
-listView.dataSource = // set you datasource
+let listTableView = ListTableView()
+listTableView.delegate = // set you delegate
+listTableView.dataSource = // set you datasource
 ```
 
-Then register the `ListViewCell.swift` on you recently created `ListView`
+Then register the `ListTableViewCell.swift` on you recently created `ListTableView`
 
 ```swift
-listView.register(ListViewCell.self, forCellReuseIdentifier: "ListViewCell")
+listTableView.register(ListTableViewCell.self, forCellReuseIdentifier: "ListTableViewCell")
 ```
 
-### Configuring ListViewCell
+### Configuring ListTableViewCell
 
-You can use `ListViewCell.swift` component directly or inherit from him, a full configuration looks like
+You can use `ListTableViewCell.swift` component directly or inherit from him, a full configuration looks like
 
 ```swift
 public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-	let cell = listView.dequeueReusableCell(withIdentifier: "ListViewCell", for: indexPath) as! ListViewCell
+	let cell = listTableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
 
-	cell.title = "My title"
-	cell.detailText = "My detail text"
-	cell.assetType = .largeIcon(UIImage(named: "myAsset"), backgroundColor: .iconDisabled)
+	cell.listCellContentView.title = "My title"
+	cell.listContentViewCell.detailText = "My detail text"
+	cell.listContentViewCell.assetType = .largeIcon(UIImage(named: "myAsset"), backgroundColor: .iconDisabled)
 	cell.isCellSeparatorHidden = isLastCell(indexPath)
 
 	return cell
@@ -63,15 +63,15 @@ public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPat
 
 #### Control Customization
 
-`ListViewCell.swift` can be configured with a custom control like
+`ListTableViewCell.swift` can be configured with a custom control like
 
 ```swift
 public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-	let cell = listView.dequeueReusableCell(withIdentifier: "ListViewCell", for: indexPath) as! ListViewCell
+	let cell = listTableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
 
 	...
 
-	cell.controlView = myCustomControlView
+	cell.listContentViewCell.controlView = myCustomControlView
 
 	...
 

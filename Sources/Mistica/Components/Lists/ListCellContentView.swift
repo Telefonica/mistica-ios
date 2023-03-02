@@ -1,5 +1,5 @@
 //
-//  ListViewCell.swift
+//  ListCellContentView.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,15 +8,20 @@
 
 import UIKit
 
-// MARK: View Styles
-
-private enum ViewStyles {
-    static let horizontalPadding: CGFloat = 16
+protocol ListCellContentTableViewDelegate {
+    func cellStyleChanged()
 }
 
-// MARK: ListViewCell
+// MARK: ListCellContentView
 
-open class ListViewCell: UITableViewCell {
+open class ListCellContentView: UIView {
+    // MARK: View Styles
+
+    public enum ViewStyles {
+        static let horizontalPadding: CGFloat = 16.0
+        static let cellWidth: CGFloat = 324.0
+    }
+
     @frozen
     public enum CellStyle {
         case fullWidth
@@ -32,29 +37,14 @@ open class ListViewCell: UITableViewCell {
         case largeIcon(UIImage, backgroundColor: UIColor)
     }
 
-    // MARK: Initializers
-
-    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        commonInit()
-    }
-
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        commonInit()
-    }
-
     // MARK: SubViews
 
     /// View used in `ListCellStyle.boxed` style for show a rounded border arround the content
-    private lazy var cellBorderView = UIView()
+    lazy var cellBorderView = UIView()
     private lazy var cellContentView = UIStackView()
-    /// A cell separator visible only in` ListCellStyle.fullWidth`
-    private lazy var cellSeparatorView = SeparatorView(axis: .horizontal)
+    var tableViewDelegate: ListCellContentTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
-    private lazy var centerSection = CellCenterSectionView()
+    lazy var centerSection = CellCenterSectionView()
 
     // MARK: Public
 
@@ -191,56 +181,25 @@ open class ListViewCell: UITableViewCell {
         }
     }
 
-    public var isCellSeparatorHidden: Bool = true {
-        didSet {
-            guard cellStyle != .boxed && cellStyle != .boxedInverse else { return }
-
-            cellSeparatorView.isHidden = isCellSeparatorHidden
-        }
+    convenience init() {
+        self.init(frame: .zero)
     }
 
-    // MARK: UITableViewCell Overrides
+    override init(frame _: CGRect) {
+        super.init(frame: .zero)
 
-    override public func systemLayoutSizeFitting(_ targetSize: CGSize,
-                                                 withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
-                                                 verticalFittingPriority: UILayoutPriority) -> CGSize {
-        let size = super.systemLayoutSizeFitting(
-            targetSize,
-            withHorizontalFittingPriority: horizontalFittingPriority,
-            verticalFittingPriority: verticalFittingPriority
-        )
-
-        return CGSize(width: size.width, height: max(size.height, cellStyle.minHeight))
+        commonInit()
     }
 
-    override public func setHighlighted(_ highlighted: Bool, animated _: Bool) {
-        if highlighted {
-            highlightedView.backgroundColor = .backgroundAlternative
-        } else {
-            highlightedView.backgroundColor = .backgroundContainer
-        }
-    }
-
-    override public func setSelected(_: Bool, animated _: Bool) {
-        // Do nothing
-    }
-
-    override open var isUserInteractionEnabled: Bool {
-        didSet {
-            centerSection.isUserInteractionEnabled = isUserInteractionEnabled
-        }
-    }
-
-    override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
-        cellBorderView.layer.borderColor = cellStyle.borderColor
+    @available(*, unavailable)
+    public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
 // MARK: Custom Accessibilities
 
-public extension ListViewCell {
+public extension ListCellContentView {
     var titleAccessibilityLabel: String? {
         get {
             centerSection.titleLabel.accessibilityLabel
@@ -316,41 +275,21 @@ public extension ListViewCell {
 
 // MARK: Private
 
-private extension ListViewCell {
-    var highlightedView: UIView {
-        switch cellStyle {
-        case .fullWidth, .boxedInverse:
-            return contentView
-        case .boxed:
-            return cellBorderView
-        }
-    }
-
+private extension ListCellContentView {
     func commonInit() {
         layoutViews()
         updateCellStyle()
     }
 
     func layoutViews() {
-        contentView.addSubview(constrainedToLayoutMarginsGuideOf: cellBorderView)
-        contentView.addSubview(constrainedToLayoutMarginsGuideOf: cellContentView)
-
-        contentView.addSubview(cellSeparatorView, constraints: [
-            cellSeparatorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            cellSeparatorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ViewStyles.horizontalPadding),
-            cellSeparatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewStyles.horizontalPadding),
-            cellSeparatorView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-        ])
+        addSubview(constrainedToLayoutMarginsGuideOf: cellBorderView)
+        addSubview(constrainedToLayoutMarginsGuideOf: cellContentView)
 
         cellContentView.addArrangedSubview(centerSection)
         cellContentView.spacing = ViewStyles.horizontalPadding
     }
 
     func updateCellStyle() {
-        contentView.directionalLayoutMargins = cellStyle.contentViewLayoutMargins
-        contentView.preservesSuperviewLayoutMargins = false
-        contentView.backgroundColor = .background
-
         centerSection.titleTextColor = cellStyle.titleTextColor
         centerSection.subtitleTextColor = cellStyle.subtitleTextColor
 
@@ -362,11 +301,11 @@ private extension ListViewCell {
         cellBorderView.layer.borderColor = cellStyle.borderColor
         cellBorderView.layer.borderWidth = cellStyle.borderWidth
 
-        cellSeparatorView.isHidden = cellStyle.cellSeparatorIsHidden
-
         if cellStyle == .boxedInverse {
             controlView?.tintColor = .white
         }
+
+        tableViewDelegate?.cellStyleChanged()
     }
 
     func updateAssetView() {

@@ -1,3 +1,10 @@
+# [21.1.0](https://github.com/Telefonica/mistica-ios/compare/v21.0.0...v21.1.0) (2023-03-03)
+
+
+### Features
+
+* **Tag:** add optional icon to the left of tag text ([0a7f255](https://github.com/Telefonica/mistica-ios/commit/0a7f255aa3e4cbcc3c54c6bb5ef4c419e19c2b1d))
+
 # [21.0.0](https://github.com/Telefonica/mistica-ios/compare/v20.2.0...v21.0.0) (2023-03-02)
 
 

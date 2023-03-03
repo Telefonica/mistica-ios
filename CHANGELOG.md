@@ -1,3 +1,15 @@
+# [22.0.0](https://github.com/Telefonica/mistica-ios/compare/v21.1.0...v22.0.0) (2023-03-03)
+
+
+### Bug Fixes
+
+* **DataCard:** fix compilation error with Xcode 14.3 beta 2 ([e26751b](https://github.com/Telefonica/mistica-ios/commit/e26751b3d8081ae65617f86734b85df1b2715589))
+
+
+### BREAKING CHANGES
+
+* **DataCard:** removes use of optional binding where it's not needed
+
 # [21.1.0](https://github.com/Telefonica/mistica-ios/compare/v21.0.0...v21.1.0) (2023-03-03)
 
 

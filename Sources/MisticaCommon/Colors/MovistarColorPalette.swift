@@ -10,7 +10,7 @@ import UIKit
 
 struct MovistarColors: MisticaColors {
     static let palette = MovistarColorPalette()
-    
+
     // BACKGROUNDS
     let background = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
     let backgroundAlternative = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeGrey
@@ -24,15 +24,13 @@ struct MovistarColors: MisticaColors {
     let appBarBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
     let navigationBarBackground = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
     let skeletonWave = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey
-    
-    
+
     // BORDERS
     let borderLow = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeBlack
     let border = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey
     let borderHigh = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey4
     let borderSelected = MovistarColors.palette.movistarBlue
-    
-    
+
     // BUTTONS
     let buttonDangerBackground = MovistarColors.palette.pepper
     let buttonDangerBackgroundSelected = MovistarColors.palette.pepper55
@@ -63,8 +61,7 @@ struct MovistarColors: MisticaColors {
     let textLinkInverse = MovistarColors.palette.white | MovistarColors.palette.movistarBlue
     let textLinkDanger = MovistarColors.palette.pepper
     let textLinkSnackbar = MovistarColors.palette.movistarBlue30
-    
-    
+
     // CONTROLS
     let control = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey6
     let controlActivated = MovistarColors.palette.movistarBlue
@@ -74,20 +71,17 @@ struct MovistarColors: MisticaColors {
     let toggleAndroidInactive = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey4
     let toggleAndroidBackgroundActive = MovistarColors.palette.movistarBlue20
     let iosControlKnob = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
-    
-    
+
     // DIVIDERS
     let divider = MovistarColors.palette.grey2 | MovistarColors.palette.white.withAlphaComponent(0.05)
     let dividerInverse = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.05)
     let navigationBarDivider = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
-    
-    
+
     // FEEDBACKS
     let badge = MovistarColors.palette.pepper55
     let feedbackErrorBackground = MovistarColors.palette.pepper
     let feedbackInfoBackground = MovistarColors.palette.movistarBlueDark
-    
-    
+
     // GLOBAL
     let brand = MovistarColors.palette.movistarBlue
     let brandHigh = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.darkModeGrey
@@ -100,14 +94,12 @@ struct MovistarColors: MisticaColors {
     let textPrimaryInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
     let textSecondary = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey4
     let textSecondaryInverse = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey4
-    
-    
+
     // STATES
     let success = MovistarColors.palette.movistarGreen
     let warning = MovistarColors.palette.egg
     let error = MovistarColors.palette.pepper
-    
-    
+
     // TAGS
     let promo = MovistarColors.palette.purple
     let highlight = MovistarColors.palette.pink
@@ -124,8 +116,7 @@ struct MovistarColors: MisticaColors {
     let warningHighInverse = MovistarColors.palette.egg80
     let errorHighInverse = MovistarColors.palette.pepper70
     let promoHighInverse = MovistarColors.palette.purple70
-    
-    
+
     /// BARS TEXTS
     let textNavigationBarPrimary = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
     let textNavigationBarSecondary = MovistarColors.palette.movistarBlue20 | MovistarColors.palette.darkModeGrey4
@@ -177,7 +168,7 @@ public struct MovistarColorPalette {
     public let white = UIColor(hex: "#FFFFFF")!
 
     public let movistarBlueDark = UIColor(hex: "#0B2739")!
-    
+
     public let darkModeBlack = UIColor(hex: "#061824")!
     public let darkModeGrey = UIColor(hex: "#092130")!
     public let darkModeGrey2 = UIColor(hex: "#EAEBEE")!

@@ -32,13 +32,6 @@ public class FeedbackView: UIView {
     private let subtitle: String?
     private let errorReference: String?
 
-    // Private views
-    private lazy var gradientView: GradientView = {
-        let view = GradientView()
-        view.applyStyle(.backgroundBrand)
-        return view
-    }()
-
     private lazy var icon: UIImageView = {
         let icon = UIImageView()
         icon.contentMode = .scaleAspectFit
@@ -282,7 +275,7 @@ private extension FeedbackView {
 
     func setupBackground() {
         if style.shouldUseInverseFeedbacks {
-            insertSubview(withDefaultConstraints: gradientView, at: 0)
+            backgroundColor = .backgroundBrand
         } else {
             backgroundColor = .background
         }

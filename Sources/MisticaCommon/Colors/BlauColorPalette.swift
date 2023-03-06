@@ -26,8 +26,8 @@ struct BlauColors: MisticaColors {
 
     // BORDERS
     let border = palette.grey2 | palette.darkModeGrey
-    let borderDark = palette.grey5
-    let borderLight = palette.grey1 | palette.darkModeBlack
+    let borderHigh = palette.grey5
+    let borderLow = palette.grey1 | palette.darkModeBlack
     let borderSelected = palette.blauBlueSecondary60
 
     // BUTTONS
@@ -36,18 +36,18 @@ struct BlauColors: MisticaColors {
     let buttonDangerBackgroundSelected = palette.blauRed70
 
     let buttonLinkBackgroundSelected = palette.blauPurple10 | palette.blauPurple.withAlphaComponent(0.3)
-    let buttonLinkBackgroundSelectedInverse = palette.white.withAlphaComponent(0.3) | palette.blauPurple.withAlphaComponent(0.3)
+    let buttonLinkBackgroundInverseSelected = palette.white.withAlphaComponent(0.3) | palette.blauPurple.withAlphaComponent(0.3)
 
     let buttonPrimaryBackground = palette.blauBlueSecondary
     let buttonPrimaryBackgroundHover = palette.blauBlueSecondary60
     let buttonPrimaryBackgroundInverse = palette.white | palette.blauBluePrimary
     let buttonPrimaryBackgroundSelected = palette.blauBlueSecondary60
-    let buttonPrimaryBackgroundSelectedInverse = palette.blauBluePrimary30 | palette.blauBlueSecondary60
+    let buttonPrimaryBackgroundInverseSelected = palette.blauBluePrimary30 | palette.blauBlueSecondary60
 
-    let buttonSecondaryBackground = palette.blauBlueSecondary
+    let buttonSecondaryBorder = palette.blauBlueSecondary
     let buttonSecondaryBackgroundSelected = palette.blauBlueSecondary60
     let buttonSecondaryBorderInverse = palette.white | palette.blauBluePrimary
-    let buttonSecondaryBorderSelectedInverse = palette.blauBluePrimary30 | palette.blauBlueSecondary60
+    let buttonSecondaryBorderInverseSelected = palette.blauBluePrimary30 | palette.blauBlueSecondary60
 
     let textButtonPrimary = palette.white | palette.grey2
     let textButtonPrimaryInverse = palette.blauBlueSecondary | palette.grey2
@@ -107,14 +107,6 @@ struct BlauColors: MisticaColors {
     let textNavigationBarSecondary = palette.blauBlueSecondary20 | palette.grey4
     let textNavigationSearchBarHint = palette.blauBlueSecondary20 | palette.grey4
     let textNavigationSearchBarText = palette.white | palette.grey2
-
-    // GRADIENTS
-    let backgroundBrandGradient = [
-        palette.blauBluePrimary | palette.darkModeBlack,
-        palette.blauBluePrimary | palette.darkModeBlack,
-        palette.blauBluePrimary | palette.darkModeBlack,
-        palette.blauBluePrimary | palette.darkModeBlack
-    ]
 
     // TAGS
     var successLow = palette.blauGreen10 | palette.white.withAlphaComponent(0.05)

@@ -89,7 +89,7 @@ final class HighlightedCardTests: XCTestCase {
     }
 
     func testRightImageWithFillStyle() {
-        MisticaConfig.brandStyle = .o2Classic
+        MisticaConfig.brandStyle = .vivo
 
         let card = makeCard(
             title: "Lorem",

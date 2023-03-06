@@ -23,8 +23,8 @@ public extension Color {
         MisticaConfig.currentColors.buttonLinkBackgroundSelected.color
     }
 
-    static var buttonLinkBackgroundSelectedInverse: Color {
-        MisticaConfig.currentColors.buttonLinkBackgroundSelectedInverse.color
+    static var buttonLinkBackgroundInverseSelected: Color {
+        MisticaConfig.currentColors.buttonLinkBackgroundInverseSelected.color
     }
 
     static var buttonPrimaryBackground: Color {
@@ -39,12 +39,12 @@ public extension Color {
         MisticaConfig.currentColors.buttonPrimaryBackgroundSelected.color
     }
 
-    static var buttonPrimaryBackgroundSelectedInverse: Color {
-        MisticaConfig.currentColors.buttonPrimaryBackgroundSelectedInverse.color
+    static var buttonPrimaryBackgroundInverseSelected: Color {
+        MisticaConfig.currentColors.buttonPrimaryBackgroundInverseSelected.color
     }
 
-    static var buttonSecondaryBackground: Color {
-        MisticaConfig.currentColors.buttonSecondaryBackground.color
+    static var buttonSecondaryBorder: Color {
+        MisticaConfig.currentColors.buttonSecondaryBorder.color
     }
 
     static var buttonSecondaryBackgroundSelected: Color {
@@ -55,8 +55,8 @@ public extension Color {
         MisticaConfig.currentColors.buttonSecondaryBorderInverse.color
     }
 
-    static var buttonSecondaryBorderSelectedInverse: Color {
-        MisticaConfig.currentColors.buttonSecondaryBorderSelectedInverse.color
+    static var buttonSecondaryBorderInverseSelected: Color {
+        MisticaConfig.currentColors.buttonSecondaryBorderInverseSelected.color
     }
 
     static var textButtonPrimary: Color {
@@ -167,16 +167,16 @@ public extension Color {
 
     // MARK: Borders
 
-    static var borderLight: Color {
-        MisticaConfig.currentColors.borderLight.color
+    static var borderLow: Color {
+        MisticaConfig.currentColors.borderLow.color
     }
 
     static var border: Color {
         MisticaConfig.currentColors.border.color
     }
 
-    static var borderDark: Color {
-        MisticaConfig.currentColors.borderDark.color
+    static var borderHigh: Color {
+        MisticaConfig.currentColors.borderHigh.color
     }
 
     static var borderSelected: Color {
@@ -309,12 +309,6 @@ public extension Color {
 
     static var textNavigationSearchBarText: Color {
         MisticaConfig.currentColors.textNavigationSearchBarText.color
-    }
-
-    // MARK: Gradient
-
-    static var backgroundBrandGradient: [Color] {
-        MisticaConfig.currentColors.backgroundBrandGradient.map(\.color)
     }
 
     // MARK: Tag

@@ -48,8 +48,6 @@ struct ColorsView: View {
             return BlauColorPalette()
         case .o2:
             return O2ColorPalette()
-        case .o2Classic:
-            return O2ClassicColorPalette()
         case .vivo:
             return VivoColorPalette()
         case .custom(let colors, _):

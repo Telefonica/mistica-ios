@@ -13,7 +13,6 @@ public enum BrandStyle {
     case movistar
     case vivo
     case o2
-    case o2Classic
     case blau
     case custom(MisticaColors, MisticaBrandAssets)
 
@@ -25,8 +24,6 @@ public enum BrandStyle {
             return "vivo"
         case .o2:
             return "o2"
-        case .o2Classic:
-            return "o2Classic"
         case .blau:
             return "blau"
         case .custom:
@@ -42,8 +39,6 @@ public enum BrandStyle {
             return "Vivo"
         case .o2:
             return "O2"
-        case .o2Classic:
-            return "O2 Classic"
         case .blau:
             return "Blau"
         case .custom:
@@ -52,7 +47,7 @@ public enum BrandStyle {
     }
 
     public static var allCases: [BrandStyle] {
-        [.movistar, .vivo, .o2, .o2Classic, .blau]
+        [.movistar, .vivo, .o2, .blau]
     }
 
     public var usesBoldForTextPreset5AndAbove: Bool {
@@ -61,7 +56,6 @@ public enum BrandStyle {
             return true
         case .vivo,
              .o2,
-             .o2Classic,
              .blau,
              .custom:
             return false

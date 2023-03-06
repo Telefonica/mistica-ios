@@ -1,3 +1,39 @@
+# [22.0.0](https://github.com/Telefonica/mistica-ios/compare/v21.1.0...v22.0.0) (2023-03-03)
+
+
+### Bug Fixes
+
+* **DataCard:** fix compilation error with Xcode 14.3 beta 2 ([e26751b](https://github.com/Telefonica/mistica-ios/commit/e26751b3d8081ae65617f86734b85df1b2715589))
+
+
+### BREAKING CHANGES
+
+* **DataCard:** removes use of optional binding where it's not needed
+
+# [21.1.0](https://github.com/Telefonica/mistica-ios/compare/v21.0.0...v21.1.0) (2023-03-03)
+
+
+### Features
+
+* **Tag:** add optional icon to the left of tag text ([0a7f255](https://github.com/Telefonica/mistica-ios/commit/0a7f255aa3e4cbcc3c54c6bb5ef4c419e19c2b1d))
+
+# [21.0.0](https://github.com/Telefonica/mistica-ios/compare/v20.2.0...v21.0.0) (2023-03-02)
+
+
+### Features
+
+* **ListViewCell:** Refactor ListViewCell as independent view for TableView and CollectionView ([4a8704b](https://github.com/Telefonica/mistica-ios/commit/4a8704bd9f4a33e2211b4ca1f8568981f70bae70))
+
+
+### Reverts
+
+* Revert "LATCH-335 Update component Tag with icon (#249)" (#251) ([516e316](https://github.com/Telefonica/mistica-ios/commit/516e316e32fdf2ad76bc31853b384ac4733d843f)), closes [#249](https://github.com/Telefonica/mistica-ios/issues/249) [#251](https://github.com/Telefonica/mistica-ios/issues/251)
+
+
+### BREAKING CHANGES
+
+* **ListViewCell:** ListViewCell has been independently refactored as a UIView. What we used to use as ListViewCell is now ListTableViewCell for ListTableViews. It has also been exposed as ListCollectionViewCell for CollectionViews.
+
 # [20.2.0](https://github.com/Telefonica/mistica-ios/compare/v20.1.1...v20.2.0) (2023-02-10)
 
 

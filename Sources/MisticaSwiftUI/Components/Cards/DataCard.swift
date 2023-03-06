@@ -116,15 +116,13 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
                         .buttonStyle(.misticaPrimary(small: true))
                 }
 
-                if let linkButton = linkButton {
-                    linkButton
-                        .buttonStyle(
-                            .misticaLink(
-                                small: true,
-                                bleedingAlignment: hasPrimaryButton ? .none : .leading
-                            )
+                linkButton
+                    .buttonStyle(
+                        .misticaLink(
+                            small: true,
+                            bleedingAlignment: hasPrimaryButton ? .none : .leading
                         )
-                }
+                    )
             }
             .padding(.top, 16)
         }

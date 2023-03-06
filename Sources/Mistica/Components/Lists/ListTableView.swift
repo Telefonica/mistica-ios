@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  ListTableView.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ListView: UITableView {
+open class ListTableView: UITableView {
     public init() {
         super.init(frame: .zero, style: .plain)
 
@@ -21,7 +21,7 @@ public class ListView: UITableView {
         setUp()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         setUp()

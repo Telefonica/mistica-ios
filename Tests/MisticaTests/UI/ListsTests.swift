@@ -750,14 +750,14 @@ extension ListsTests {
     }
 
     private func makeListTestsViewController(
-        listView: ListView = ListView(),
+        listView: ListTableView = ListTableView(),
         title: String? = nil,
         subtitle: String? = nil,
         detailText: String? = nil,
-        assetType: ListViewCell.CellAssetType = .none,
+        assetType: ListCellContentView.CellAssetType = .none,
         customControl: ListsTestsViewController.CustomControl = .none,
         showHeadline: Bool = false,
-        cellLayoutStyle: ListViewCell.CellStyle = .fullWidth,
+        cellLayoutStyle: ListCellContentView.CellStyle = .fullWidth,
         numberOfRows: Int = 1
     ) -> ListsTestsViewController {
         let listTestsViewController = ListsTestsViewController(listView: listView)
@@ -838,14 +838,14 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
     var detailText: String?
     var subtitle: String?
     var showHeadline = false
-    var assetType = ListViewCell.CellAssetType.none
+    var assetType = ListCellContentView.CellAssetType.none
     var customControl = CustomControl.none
-    var cellLayoutStyle = ListViewCell.CellStyle.fullWidth
+    var cellLayoutStyle = ListCellContentView.CellStyle.fullWidth
 
-    private let listView: ListView
+    private let listView: ListTableView
     var numberOfRows = 1
 
-    init(listView: ListView) {
+    init(listView: ListTableView) {
         self.listView = listView
         super.init(nibName: nil, bundle: nil)
     }
@@ -861,7 +861,7 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
 
         view.addSubview(withDefaultConstraints: listView)
         listView.dataSource = self
-        ListViewCell.register(on: listView)
+        ListTableViewCell.register(on: listView)
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
@@ -869,27 +869,27 @@ private class ListsTestsViewController: UIViewController, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ListViewCell.dequeueReusableCell(for: indexPath, from: tableView)
+        let cell = ListTableViewCell.dequeueReusableCell(for: indexPath, from: tableView)
 
-        cell.title = text
-        cell.subtitle = subtitle
-        cell.detailText = detailText
-        cell.assetType = assetType
-        cell.subtitle = subtitle
-        cell.cellStyle = cellLayoutStyle
+        cell.listCellContentView.title = text
+        cell.listCellContentView.subtitle = subtitle
+        cell.listCellContentView.detailText = detailText
+        cell.listCellContentView.assetType = assetType
+        cell.listCellContentView.subtitle = subtitle
+        cell.listCellContentView.cellStyle = cellLayoutStyle
         cell.isCellSeparatorHidden = false
 
         if showHeadline {
-            cell.headlineView = TagView(text: "HEADLINE")
+            cell.listCellContentView.headlineView = TagView(text: "HEADLINE")
         }
 
         switch customControl {
         case .none:
-            cell.controlView = nil
+            cell.listCellContentView.controlView = nil
         case .navigation(let makeNavigationPreset):
-            cell.controlView = makeNavigationPreset()
+            cell.listCellContentView.controlView = makeNavigationPreset()
         case .custom(let makeCustomControl):
-            cell.controlView = makeCustomControl()
+            cell.listCellContentView.controlView = makeCustomControl()
         }
 
         return cell

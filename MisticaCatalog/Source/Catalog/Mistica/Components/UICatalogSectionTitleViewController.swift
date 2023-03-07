@@ -52,7 +52,7 @@ class UICatalogSectionTitleViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.sectionFooterHeight = 0.0
 
-        tableView.register(ListCellContentView.self, forCellReuseIdentifier: Constants.listCellReusableIdentifier)
+        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: Constants.listCellReusableIdentifier)
         tableView.register(TitleView.self, forHeaderFooterViewReuseIdentifier: Constants.sectionTitleReusableIdentifier)
     }
 

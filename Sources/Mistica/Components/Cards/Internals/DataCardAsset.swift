@@ -142,4 +142,3 @@ private extension DataCardConfiguration.AssetType {
         }
     }
 }
-

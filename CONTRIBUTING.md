@@ -130,7 +130,7 @@ Adding `arch -x86_64` will force to be executed as an Intel architecture so you 
 * Go to /Applications
 * Select XCode with the secondary button > _Get Info_
 * Select _Open using Rosetta_
-<img height="175" align="center" alt="Mística Catalog for iOS" src="./doc/images/xcode-rosetta.png">
+<img height="500" alt="Mística Catalog for iOS" src="./doc/images/xcode-rosetta.png">
 * Open XCode
 * Execute/Record the tests
 

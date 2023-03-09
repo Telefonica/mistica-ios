@@ -8,26 +8,33 @@
 
 import UIKit
 
-private enum Constants {
-    static let imageSize = CGFloat(40)
-    static let iconSize = CGFloat(24)
-    static let viewSize = CGFloat(40)
+private enum ImageSize {
+    static let large: CGFloat = 40
+    static let small: CGFloat = 24
 }
 
-class DataCardAsset: UIView {
-    private var imageView = UIImageView()
+class DataCardAsset: UIStackView {
+    private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize)
+    private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize)
+
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.addSubview(withCenterConstraints: imageView)
+        return view
+    }()
+
+    private let imageView = IntrinsictImageView()
 
     var assetType: DataCardConfiguration.AssetType = .none {
         didSet {
+            heightConstraint.constant = assetType.viewSize
+            widthConstraint.constant = assetType.viewSize
+            imageView.intrinsicWidth = assetType.assetSize
+            imageView.intrinsicHeight = assetType.assetSize
             imageView.image = assetType.image
             imageView.contentMode = assetType.contentMode
-            backgroundColor = assetType.backgroundColor
-            makeRounded(cornerRadius: assetType.cornerRadius)
-
-            if assetType != oldValue {
-                setNeedsLayout()
-                invalidateIntrinsicContentSize()
-            }
+            containerView.makeRounded(cornerRadius: assetType.cornerRadius)
+            containerView.backgroundColor = assetType.backgroundColor
         }
     }
 
@@ -37,10 +44,13 @@ class DataCardAsset: UIView {
         commonInit()
     }
 
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-
-        commonInit()
+    var assetTintColor: UIColor? {
+        get {
+            imageView.tintColor
+        }
+        set {
+            imageView.tintColor = newValue
+        }
     }
 
     @available(*, unavailable)
@@ -48,49 +58,60 @@ class DataCardAsset: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override var intrinsicContentSize: CGSize {
-        CGSize(width: Constants.viewSize, height: Constants.viewSize)
+    func centerAlignment() {
+        alignment = .center
+        isLayoutMarginsRelativeArrangement = false
+        directionalLayoutMargins = .zero
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        frame = CGRect(x: 0, y: layoutMargins.top, width: Constants.viewSize, height: Constants.viewSize)
-
-        // ImageView centered at X and Y
-        let imageX = (Constants.viewSize - assetType.assetSize) / 2
-        let imageY = (Constants.viewSize - assetType.assetSize) / 2
-
-        imageView.frame = CGRect(x: imageX, y: imageY, width: assetType.assetSize, height: assetType.assetSize)
+    func topAlignment() {
+        alignment = .top
+        isLayoutMarginsRelativeArrangement = true
+        directionalLayoutMargins = NSDirectionalEdgeInsets(
+            top: 4,
+            leading: 0,
+            bottom: 0,
+            trailing: 0
+        )
     }
 }
 
-// MARK: Private
-
 private extension DataCardAsset {
     func commonInit() {
-        addSubview(imageView)
+        addArrangedSubview(containerView)
+        NSLayoutConstraint.activate([heightConstraint, widthConstraint])
     }
 }
 
 private extension DataCardConfiguration.AssetType {
     var assetSize: CGFloat {
         switch self {
-        case .image:
-            return Constants.imageSize
-        case .icon:
-            return Constants.iconSize
         case .none:
             return 0
+        case .image:
+            return ImageSize.large
+        case .icon:
+            return ImageSize.small
+        }
+    }
+
+    var viewSize: CGFloat {
+        switch self {
+        case .none:
+            return 0
+        case .image:
+            return ImageSize.large
+        case .icon:
+            return ImageSize.small
         }
     }
 
     var cornerRadius: CGFloat {
         switch self {
-        case .image, .none:
+        case .none, .icon:
             return 0
-        case .icon:
-            return Constants.viewSize / 2
+        case .image:
+            return viewSize / 2
         }
     }
 
@@ -105,19 +126,19 @@ private extension DataCardConfiguration.AssetType {
 
     var contentMode: UIView.ContentMode {
         switch self {
-        case .image, .none:
+        case .image:
             return .scaleAspectFill
-        case .icon:
+        case .none, .icon:
             return .scaleAspectFit
         }
     }
 
     var backgroundColor: UIColor {
         switch self {
-        case .image, .none:
-            return .clear
         case .icon(_, let backgroundColor):
             return backgroundColor
+        case .none, .image:
+            return .clear
         }
     }
 }

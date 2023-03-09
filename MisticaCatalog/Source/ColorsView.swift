@@ -37,7 +37,7 @@ struct ColorsView: View {
     }
 
     func borderColor(with color: UIColor) -> UIColor {
-        color == .border ? .borderDark : .border
+        color == .border ? .borderHigh : .border
     }
 
     var paletteColors: Any {

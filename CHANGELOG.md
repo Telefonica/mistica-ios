@@ -1,3 +1,11 @@
+## [22.0.1](https://github.com/Telefonica/mistica-ios/compare/v22.0.0...v22.0.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* **DataCard:** Fix DataCard UI with respect to the latest design requirements. ([b78e0b1](https://github.com/Telefonica/mistica-ios/commit/b78e0b15264092cd1019d44be23e12dcf2a01282))
+* **ListCellContent:** Rename registered ListViewCells in Catalog ([a05cb94](https://github.com/Telefonica/mistica-ios/commit/a05cb9495ce88b1251c27e02181076e3d43179f9))
+
 # [22.0.0](https://github.com/Telefonica/mistica-ios/compare/v21.1.0...v22.0.0) (2023-03-03)
 
 

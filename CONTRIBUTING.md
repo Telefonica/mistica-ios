@@ -102,7 +102,7 @@ When implementing the component, try to have in mind the following guidelines:
 * Make sure the component reiszes correctly (we support iPad multitasking, so any screen can resize at any given time).
 * Don't forget accessibility (VoiceOver, Dynamic Type...).
 * Pay attention to user interaction (Gestures, Haptics, 3D Touch...)
-* Although this should be transparent to you, take into account themes and multiple brands.
+* Although this should be transparent to you, take into account multiple brands.
 * To help other developers, add documentation about the new component.
 
 ## Testing

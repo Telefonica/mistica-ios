@@ -14,7 +14,4 @@ enum AssetType {
 
     // The asset changes per brand style
     case branded
-
-    // The asset changes per brand style and per theme variant
-    case brandedAndThemed
 }

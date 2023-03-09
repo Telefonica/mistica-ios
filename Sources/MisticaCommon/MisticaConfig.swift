@@ -22,13 +22,6 @@ public enum MisticaConfig {
         }
     }
 
-    public static var themeVariant: ThemeVariant = .standard {
-        didSet {
-            MisticaAppearance.setUp(controls: currentStyledControls)
-            NotificationCenter.default.post(name: .themeVariantDidChange, object: nil)
-        }
-    }
-
     public static func styleControls(_ controls: [MisticaControlStyle]) {
         currentStyledControls = controls
         MisticaAppearance.setUp(controls: controls)

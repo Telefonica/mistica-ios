@@ -1,7 +1,8 @@
 name: Deploy Mistica Catalog
 
 on:
-  push:
+  release:
+    types: [published]
   workflow_dispatch:
         inputs:
             app-center-project:
@@ -48,5 +49,5 @@ jobs:
           node-version: 18.13.0
 
       - name: Upload ipa to AppCenter
-        run: npx -p appcenter-cli appcenter distribute release -a Tuenti-Organization/${{ github.event.inputs.app-center-project || 'Mistica-SwiftUI-iOS' }} -f ./build/ios.ipa -g Public --token ${{ secrets.APPCENTER_API_TOKEN }}
+        run: npx -p appcenter-cli appcenter distribute release -a Tuenti-Organization/${{ github.event.inputs.app-center-project || 'Mistica-iOS' }} -f ./build/ios.ipa -g Public --token ${{ secrets.APPCENTER_API_TOKEN }}
 

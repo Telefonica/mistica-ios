@@ -69,7 +69,7 @@ public extension FontStyle {
     enum TextPreset10Weight: String, FontWeightConvertible, FontWeightBrandable {
         case light, bold
     }
-    
+
     enum CardTitlePresetWeight: String, FontWeightConvertible {
         case bold
     }

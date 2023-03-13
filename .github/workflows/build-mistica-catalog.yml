@@ -1,14 +1,15 @@
 name: Deploy Mistica Catalog
 
 on:
-  push:
+  release:
+    types: [published]
   workflow_dispatch:
         inputs:
             app-center-project:
               description: 'App Center app name'
               type: choice
               options:
-              - "Internal Enterprise (iOS-Apps-Core-Misc)"
+              - "Internal Enterprise (Mistica-iOS)"
               - "Alpha (Mistica-SwiftUI-iOS)"
               required: true
 
@@ -21,13 +22,13 @@ jobs:
         shell: bash
         run: |
           echo "::group::Setting variables..."
-          if [ "${{ github.event.inputs.app-center-project }}" = "Internal Enterprise (iOS-Apps-Core-Misc)" ]; then
-              echo 'APP_CENTER_PROJECT=iOS-Apps-Core-Misc' >> $GITHUB_OUTPUT
+          if [ "${{ github.event.inputs.app-center-project }}" = "Internal Enterprise (Mistica-iOS)" ]; then
+              echo 'APP_CENTER_PROJECT=Mistica-iOS' >> $GITHUB_OUTPUT
           elif [ "${{ github.event.inputs.app-center-project }}" = "Alpha (Mistica-SwiftUI-iOS)" ]; then
               echo 'APP_CENTER_PROJECT=Mistica-SwiftUI-iOS' >> $GITHUB_OUTPUT
           else
               # Default value for automatic triggers like `release, `push`, ...
-              echo 'APP_CENTER_PROJECT=iOS-Apps-Core-Misc' >> $GITHUB_OUTPUT
+              echo 'APP_CENTER_PROJECT=Mistica-iOS' >> $GITHUB_OUTPUT
           fi
           echo "::endgroup::"
         id: variables

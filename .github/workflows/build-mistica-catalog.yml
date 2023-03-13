@@ -1,26 +1,37 @@
 name: Deploy Mistica Catalog
 
 on:
-  release:
-    types: [published]
+  push:
   workflow_dispatch:
         inputs:
             app-center-project:
               description: 'App Center app name'
               type: choice
               options:
-              # Internal Enterprise:
-              - Mistica-iOS
-              # Alpha:
-              - Mistica-SwiftUI-iOS
+              - "Internal Enterprise (iOS-Apps-Core-Misc)"
+              - "Alpha (Mistica-SwiftUI-iOS)"
               required: true
 
 jobs:
   deploy-mistica-catalog:
     name: Build enterprise
     runs-on: self-hosted-novum-mac
-
     steps:
+      - name: Set configuration variables
+        shell: bash
+        run: |
+          echo "::group::Setting variables..."
+          if [ "${{ github.event.inputs.app-center-project }}" = "Internal Enterprise (iOS-Apps-Core-Misc)" ]; then
+              echo 'APP_CENTER_PROJECT=iOS-Apps-Core-Misc' >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.inputs.app-center-project }}" = "Alpha (Mistica-SwiftUI-iOS)" ]; then
+              echo 'APP_CENTER_PROJECT=Mistica-SwiftUI-iOS' >> $GITHUB_OUTPUT
+          else
+              # Default value for automatic triggers like `release, `push`, ...
+              echo 'APP_CENTER_PROJECT=iOS-Apps-Core-Misc' >> $GITHUB_OUTPUT
+          fi
+          echo "::endgroup::"
+        id: variables
+
       - name: Checkout
         uses: actions/checkout@v3.1.0
 
@@ -49,5 +60,5 @@ jobs:
           node-version: 18.13.0
 
       - name: Upload ipa to AppCenter
-        run: npx -p appcenter-cli appcenter distribute release -a Tuenti-Organization/${{ github.event.inputs.app-center-project || 'Mistica-iOS' }} -f ./build/ios.ipa -g Public --token ${{ secrets.APPCENTER_API_TOKEN }}
+        run: npx -p appcenter-cli appcenter distribute release -a Tuenti-Organization/${{ steps.variables.outputs.APP_CENTER_PROJECT }} -f ./build/ios.ipa -g Public --token ${{ secrets.APPCENTER_API_TOKEN }}
 

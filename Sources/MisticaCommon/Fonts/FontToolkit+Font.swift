@@ -51,6 +51,10 @@ public extension Font {
     static func textPreset10(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> Font {
         FontStyle.textPreset8.preferredFont(weight: FontStyle.TextPreset10Weight.default.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
+    
+    static func cardTitlePreset(weight: FontStyle.CardTitlePresetWeight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> Font {
+        FontStyle.cardTitlePreset.preferredFont(weight: weight.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+    }
 
     static func preferredFont(for fontStyle: FontStyle, weight: Font.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory) -> Font {
         fontStyle.preferredFont(weight: weight, constrainedToPreferredSize: constrainedPreferredSize)

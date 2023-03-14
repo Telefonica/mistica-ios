@@ -14,20 +14,36 @@ protocol FontWeightConvertible: CaseIterable {
     var systemUIFontWeight: UIFont.Weight { get }
 }
 
-public protocol FontWeightBrandable: CaseIterable {
+public protocol TextPresetFontWeightBrandable: CaseIterable {
     static var light: Self { get }
     static var bold: Self { get }
 }
 
-public extension FontWeightBrandable {
+public extension TextPresetFontWeightBrandable {
     static var `default`: Self {
-        if MisticaConfig.brandStyle.usesBoldForTextPreset5AndAbove {
+        if MisticaConfig.brandStyle.isMovistarBrand {
             return .bold
         } else {
             return .light
         }
     }
 }
+
+public protocol CardFontWeightBrandable: CaseIterable {
+    static var bold: Self { get }
+    static var regular: Self { get }
+}
+
+public extension CardFontWeightBrandable {
+    static var `default`: Self {
+        if MisticaConfig.brandStyle.isMovistarBrand {
+            return .bold
+        } else {
+            return .regular
+        }
+    }
+}
+
 
 public extension FontStyle {
     enum TextPreset1Weight: String, FontWeightConvertible {
@@ -46,32 +62,32 @@ public extension FontStyle {
         case light, regular, medium
     }
 
-    enum TextPreset5Weight: String, FontWeightConvertible, FontWeightBrandable {
+    enum TextPreset5Weight: String, FontWeightConvertible, TextPresetFontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset6Weight: String, FontWeightConvertible, FontWeightBrandable {
+    enum TextPreset6Weight: String, FontWeightConvertible, TextPresetFontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset7Weight: String, FontWeightConvertible, FontWeightBrandable {
+    enum TextPreset7Weight: String, FontWeightConvertible, TextPresetFontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset8Weight: String, FontWeightConvertible, FontWeightBrandable {
+    enum TextPreset8Weight: String, FontWeightConvertible, TextPresetFontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset9Weight: String, FontWeightConvertible, FontWeightBrandable {
+    enum TextPreset9Weight: String, FontWeightConvertible, TextPresetFontWeightBrandable {
         case light, bold
     }
 
-    enum TextPreset10Weight: String, FontWeightConvertible, FontWeightBrandable {
+    enum TextPreset10Weight: String, FontWeightConvertible, TextPresetFontWeightBrandable {
         case light, bold
     }
 
-    enum CardTitlePresetWeight: String, FontWeightConvertible {
-        case bold
+    enum CardTitlePresetWeight: String, CardFontWeightBrandable {
+        case regular, bold
     }
 }
 

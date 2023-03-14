@@ -44,7 +44,6 @@ public extension CardFontWeightBrandable {
     }
 }
 
-
 public extension FontStyle {
     enum TextPreset1Weight: String, FontWeightConvertible {
         case regular, medium

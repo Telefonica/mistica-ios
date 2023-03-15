@@ -50,7 +50,7 @@ public enum BrandStyle {
         [.movistar, .vivo, .o2, .blau]
     }
 
-    public var usesBoldForTextPreset5AndAbove: Bool {
+    public var isMovistarBrand: Bool {
         switch self {
         case .movistar:
             return true

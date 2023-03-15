@@ -58,7 +58,7 @@ private extension BrandStyle {
     ///   - name: asset name
     /// - Returns: path to asset inside the asset catalog
     func assetPath(_ name: String) -> String {
-        return "\(id)/\(name)"
+        "\(id)/\(name)"
     }
 }
 

@@ -21,6 +21,7 @@ import UIKit
     case textPreset8
     case textPreset9
     case textPreset10
+    case cardTitlePreset
 
     func preferredFont(
         weight: Font.Weight,
@@ -75,6 +76,8 @@ import UIKit
             return "TextPreset9"
         case .textPreset10:
             return "TextPreset10"
+        case .cardTitlePreset:
+            return "CardTitlePreset"
         }
     }
 }
@@ -125,6 +128,8 @@ private extension FontStyle {
             return 32
         case .textPreset10:
             return 32
+        case .cardTitlePreset:
+            return 18
         }
     }
 
@@ -136,7 +141,8 @@ private extension FontStyle {
             return .subheadline
         case .textPreset3:
             return .body
-        case .textPreset4:
+        case .textPreset4,
+             .cardTitlePreset:
             return .headline
         case .textPreset5:
             return .title3
@@ -159,7 +165,8 @@ private extension FontStyle {
             return .subheadline
         case .textPreset3:
             return .body
-        case .textPreset4:
+        case .textPreset4,
+             .cardTitlePreset:
             return .headline
         case .textPreset5:
             if #available(iOS 14.0, *) {

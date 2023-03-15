@@ -93,7 +93,7 @@ private extension UICatalogCardsViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(ListCellContentView.self, forCellReuseIdentifier: Constants.cellReusableIdentifier)
+        tableView.register(ListTableViewCell.self, forCellReuseIdentifier: Constants.cellReusableIdentifier)
     }
 }
 

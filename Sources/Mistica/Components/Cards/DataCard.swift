@@ -183,10 +183,10 @@ private extension DataCard {
 
         cardBaseView.contentView.headlineTopSpacing = 8
 
-        cardBaseView.contentView.titleLabel.font = .textPreset4(weight: .regular)
+        cardBaseView.contentView.titleLabel.font = .cardTitlePreset()
         cardBaseView.contentView.titleLabel.textColor = .textPrimary
         cardBaseView.contentView.titleLabel.minHeight = 24
-        cardBaseView.contentView.titleLabel.numberOfLines = 0
+        cardBaseView.contentView.titleLabel.numberOfLines = 2
         cardBaseView.contentView.titleLabel.topSpacing = 4
 
         cardBaseView.contentView.subtitleLabel.font = .textPreset2(weight: .regular)
@@ -198,7 +198,7 @@ private extension DataCard {
         cardBaseView.contentView.descriptionLabel.font = .textPreset2(weight: .regular)
         cardBaseView.contentView.descriptionLabel.textColor = .textSecondary
         cardBaseView.contentView.descriptionLabel.minHeight = 20
-        cardBaseView.contentView.descriptionLabel.numberOfLines = 0
+        cardBaseView.contentView.descriptionLabel.numberOfLines = 3
         cardBaseView.contentView.descriptionLabel.topSpacing = 8
 
         addBorder(color: .border)

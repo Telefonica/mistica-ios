@@ -115,9 +115,6 @@ private extension TabsView {
         setUpDivider()
         setUpCollectionView()
         updateEstimatedItemSize()
-
-        // Listen to theme variant changes
-        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChange, object: nil)
     }
 
     func setUpView() {
@@ -226,14 +223,6 @@ extension TabsView: UICollectionViewDelegate {
 
     public func collectionView(_: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         deselectTabItem(at: indexPath.row)
-    }
-}
-
-// MARK: Theme Variant did change notification
-
-@objc extension TabsView {
-    func themeDidChange() {
-        reloadContent()
     }
 }
 

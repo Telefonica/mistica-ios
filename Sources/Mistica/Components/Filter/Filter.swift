@@ -102,9 +102,6 @@ public class Filter: UIView {
         setUpSegmentsContentMode(for: traitCollection)
         setUpLayout(for: segmentsContentMode)
         setUpCollectionView()
-
-        // Listen to theme variant changes
-        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .themeVariantDidChange, object: nil)
     }
 
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -115,7 +112,9 @@ public class Filter: UIView {
         }
 
         if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
-            themeDidChange()
+            collectionView.backgroundColor = .navigationBarBackground
+            bottomSeparator.image = UIImage(color: .navigationBarDivider)
+            reloadContent()
         }
     }
 
@@ -355,15 +354,5 @@ private extension Filter {
     func segment(atIndex index: Int) -> Segment? {
         guard segments.indices.contains(index) else { return nil }
         return segments[index]
-    }
-}
-
-// MARK: Theme Variant did change notification
-
-@objc extension Filter {
-    func themeDidChange() {
-        collectionView.backgroundColor = .navigationBarBackground
-        bottomSeparator.image = UIImage(color: .navigationBarDivider)
-        reloadContent()
     }
 }

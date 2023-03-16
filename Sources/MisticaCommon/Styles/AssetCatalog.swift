@@ -1,5 +1,5 @@
 //
-//  AssetCatalog+Themed.swift
+//  AssetCatalog.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -17,7 +17,7 @@ extension UIImage {
     ///
     /// - Parameters:
     ///   - brandedImageNamed: asset name
-    ///   - type: if the asset can change per brand, theme or is common
+    ///   - type: if the asset can change per brand or is common
     convenience init?(named: String, type: AssetType) {
         let name = type.assetPath(named)
         self.init(named: name, in: .mistica, compatibleWith: nil)
@@ -30,7 +30,7 @@ extension NSDataAsset {
     ///
     /// - Parameters:
     ///   - brandedImageNamed: asset name
-    ///   - type: if the asset can change per brand, theme or is common
+    ///   - type: if the asset can change per brand or is common
     convenience init?(named: String, type: AssetType) {
         let name = type.assetPath(named)
         self.init(name: name, bundle: .mistica)
@@ -43,48 +43,27 @@ extension Image {
     ///
     /// - Parameters:
     ///   - brandedImageNamed: asset name
-    ///   - type: if the asset can change per brand, theme or is common
+    ///   - type: if the asset can change per brand or is common
     init?(named: String, type: AssetType) {
         let name = type.assetPath(named)
         self.init(name, bundle: .mistica)
     }
 }
 
-extension UIColor {
-    /// Creates a color using the current theme variant.
-    ///
-    /// - Parameters:
-    ///   - defaultColor: color used when the color for the current variant has not been provided
-    ///   - variants: colors for different theme variants
-    convenience init(_ defaultColor: UIColor, variants: [ThemeVariant: UIColor]) {
-        if let current = variants[MisticaConfig.themeVariant] {
-            self.init(cgColor: current.cgColor)
-        } else {
-            self.init(cgColor: defaultColor.cgColor)
-        }
-    }
-}
-
 private extension BrandStyle {
-    /// Build an asset path based on the brand style (movistar, vivo..) and the theme variant (standard, prominent..)
+    /// Build an asset path based on the brand style (movistar, vivo..)
     /// The image name with a 'path' format will be used to locate the asset in the asset catalog.
     ///
     /// - Parameters:
     ///   - name: asset name
-    ///   - variant: brand style variant
     /// - Returns: path to asset inside the asset catalog
-    func assetPath(_ name: String, variant: ThemeVariant) -> String {
-        switch variant {
-        case .standard:
-            return "\(id)/\(name)"
-        default:
-            return "\(id)/\(variant.rawValue)/\(name)"
-        }
+    func assetPath(_ name: String) -> String {
+        "\(id)/\(name)"
     }
 }
 
 private extension AssetType {
-    /// Build an asset path based on the asset type in case the asset can change per brand, theme or is common
+    /// Build an asset path based on the asset type in case the asset can change per brand or is common
     /// The image name with a 'path' format will be used to locate the asset in the asset catalog.
     ///
     /// - Parameter name: asset name
@@ -94,9 +73,7 @@ private extension AssetType {
         case .common:
             return name
         case .branded:
-            return MisticaConfig.brandStyle.assetPath(name, variant: .standard)
-        case .brandedAndThemed:
-            return MisticaConfig.brandStyle.assetPath(name, variant: MisticaConfig.themeVariant)
+            return MisticaConfig.brandStyle.assetPath(name)
         }
     }
 }

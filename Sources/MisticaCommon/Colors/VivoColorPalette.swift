@@ -25,9 +25,9 @@ struct VivoColors: MisticaColors {
     let skeletonWave = palette.grey2 | palette.grey5
 
     // BORDERS
-    let borderLight = palette.grey1 | palette.darkModeBlack
+    let borderLow = palette.grey1 | palette.darkModeBlack
     let border = palette.grey3 | palette.darkModeGrey
-    let borderDark = palette.grey5
+    let borderHigh = palette.grey5
     let borderSelected = palette.vivoPurple
 
     // BUTTONS
@@ -36,18 +36,18 @@ struct VivoColors: MisticaColors {
     let buttonDangerBackgroundHover = palette.pepperDark
 
     let buttonLinkBackgroundSelected = palette.vivoPurpleLight10 | palette.white.withAlphaComponent(0.05)
-    let buttonLinkBackgroundSelectedInverse = palette.white.withAlphaComponent(0.2) | palette.white.withAlphaComponent(0.05)
+    let buttonLinkBackgroundInverseSelected = palette.white.withAlphaComponent(0.2) | palette.white.withAlphaComponent(0.05)
 
     let buttonPrimaryBackground = palette.vivoPurple | palette.vivoPurpleLight80
     let buttonPrimaryBackgroundInverse = palette.white | palette.vivoPurpleLight80
     let buttonPrimaryBackgroundSelected = palette.vivoPurpleDark
     let buttonPrimaryBackgroundHover = palette.vivoPurpleDark
-    let buttonPrimaryBackgroundSelectedInverse = palette.vivoPurpleLight50 | palette.vivoPurpleDark
+    let buttonPrimaryBackgroundInverseSelected = palette.vivoPurpleLight50 | palette.vivoPurpleDark
 
-    let buttonSecondaryBackground = palette.vivoPurple | palette.vivoPurpleLight80
+    let buttonSecondaryBorder = palette.vivoPurple | palette.vivoPurpleLight80
     let buttonSecondaryBackgroundSelected = palette.vivoPurpleDark
     let buttonSecondaryBorderInverse = palette.white | palette.vivoPurpleLight80
-    let buttonSecondaryBorderSelectedInverse = palette.vivoPurpleLight50 | palette.vivoPurpleDark
+    let buttonSecondaryBorderInverseSelected = palette.vivoPurpleLight50 | palette.vivoPurpleDark
 
     let textButtonPrimary = palette.white | palette.grey2
     let textButtonPrimaryInverse = palette.vivoPurple | palette.grey2
@@ -107,14 +107,6 @@ struct VivoColors: MisticaColors {
     let textNavigationSearchBarText = palette.white | palette.grey2
     let textAppBar = palette.grey4 | palette.grey5
     let textAppBarSelected = palette.vivoPurple | palette.grey2
-
-    // GRADIENTS
-    let backgroundBrandGradient = [
-        palette.vivoPurple | palette.darkModeBlack,
-        palette.vivoPurple | palette.darkModeBlack,
-        palette.vivoPurple | palette.darkModeBlack,
-        palette.vivoPurple | palette.darkModeBlack
-    ]
 
     // TAGS
     var successLow = palette.vivoGreenLight10 | palette.white.withAlphaComponent(0.05)

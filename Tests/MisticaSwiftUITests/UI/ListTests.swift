@@ -65,26 +65,26 @@ final class ListTests: XCTestCase {
             Cell(
                 style: .fullwidth,
                 title: "Lorem ipsum dolor",
-                assetType: .smallIcon(photo, foregroundColor: .borderDark)
+                assetType: .smallIcon(photo, foregroundColor: .borderHigh)
             )
             Cell(
                 style: .fullwidth,
                 title: "Lorem ipsum dolor",
                 subtitle: "Lorem ipsum dolor",
-                assetType: .smallIcon(photo, foregroundColor: .borderDark)
+                assetType: .smallIcon(photo, foregroundColor: .borderHigh)
             )
             Cell(
                 style: .fullwidth,
                 title: "Lorem ipsum dolor",
                 description: "Lorem ipsum dolor",
-                assetType: .smallIcon(photo, foregroundColor: .borderDark)
+                assetType: .smallIcon(photo, foregroundColor: .borderHigh)
             )
             Cell(
                 style: .fullwidth,
                 title: "Lorem ipsum dolor",
                 subtitle: "Lorem ipsum dolor",
                 description: "Lorem ipsum dolor",
-                assetType: .smallIcon(photo, foregroundColor: .borderDark)
+                assetType: .smallIcon(photo, foregroundColor: .borderHigh)
             )
         }
         .frame(width: 250, height: 400)
@@ -110,7 +110,7 @@ private extension ListTests {
             Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .roundImage(photo), presetView: { CellNavigationPreset() })
             Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .squaredImage(photo, size: .init(width: 80, height: 80)), presetView: { CellNavigationPreset() })
             Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .largeIcon(photo, foregroundColor: .white, backgroundColor: .brandHigh), presetView: { CellNavigationPreset() })
-            Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .smallIcon(photo, foregroundColor: .borderDark), presetView: { CellNavigationPreset() })
+            Cell(style: style, title: "Title", subtitle: "Subtitle", assetType: .smallIcon(photo, foregroundColor: .borderHigh), presetView: { CellNavigationPreset() })
 
             Cell(style: style, title: "Title", subtitle: "Subtitle", presetView: { Toggle("", isOn: .constant(false)) })
 

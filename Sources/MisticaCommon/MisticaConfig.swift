@@ -47,9 +47,6 @@ private extension MisticaConfig {
         case .o2:
             currentColors = O2Colors()
             currentBrandAssets = DefaultMisticaBrandAssets()
-        case .o2Classic:
-            currentColors = O2ClassicColors()
-            currentBrandAssets = DefaultMisticaBrandAssets()
         case .blau:
             currentColors = BlauColors()
             currentBrandAssets = DefaultMisticaBrandAssets()

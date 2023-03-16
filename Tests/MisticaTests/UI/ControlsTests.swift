@@ -111,7 +111,7 @@ final class ControlsTests: XCTestCase {
     // MARK: - UIPageControl Behaviour
 
     func testPageControlChangeCurrentPage() {
-        MisticaConfig.brandStyle = .o2Classic
+        MisticaConfig.brandStyle = .movistar
         MisticaConfig.styleControls([.pageControl])
 
         let pageControl = UIPageControl()

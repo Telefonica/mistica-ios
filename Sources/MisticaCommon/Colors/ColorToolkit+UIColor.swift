@@ -26,9 +26,9 @@ public extension UIColor {
         MisticaConfig.currentColors.buttonLinkBackgroundSelected
     }
 
-    @objc(buttonLinkBackgroundSelectedInverseColor)
-    static var buttonLinkBackgroundSelectedInverse: UIColor {
-        MisticaConfig.currentColors.buttonLinkBackgroundSelectedInverse
+    @objc(buttonLinkBackgroundInverseSelectedColor)
+    static var buttonLinkBackgroundInverseSelected: UIColor {
+        MisticaConfig.currentColors.buttonLinkBackgroundInverseSelected
     }
 
     @objc(buttonPrimaryBackgroundColor)
@@ -46,14 +46,14 @@ public extension UIColor {
         MisticaConfig.currentColors.buttonPrimaryBackgroundSelected
     }
 
-    @objc(buttonPrimaryBackgroundSelectedInverseColor)
-    static var buttonPrimaryBackgroundSelectedInverse: UIColor {
-        MisticaConfig.currentColors.buttonPrimaryBackgroundSelectedInverse
+    @objc(buttonPrimaryBackgroundInverseSelectedColor)
+    static var buttonPrimaryBackgroundInverseSelected: UIColor {
+        MisticaConfig.currentColors.buttonPrimaryBackgroundInverseSelected
     }
 
-    @objc(buttonSecondaryBackgroundColor)
-    static var buttonSecondaryBackground: UIColor {
-        MisticaConfig.currentColors.buttonSecondaryBackground
+    @objc(buttonSecondaryBorderColor)
+    static var buttonSecondaryBorder: UIColor {
+        MisticaConfig.currentColors.buttonSecondaryBorder
     }
 
     @objc(buttonSecondaryBackgroundSelectedColor)
@@ -66,9 +66,9 @@ public extension UIColor {
         MisticaConfig.currentColors.buttonSecondaryBorderInverse
     }
 
-    @objc(buttonSecondaryBorderSelectedInverseColor)
-    static var buttonSecondaryBorderSelectedInverse: UIColor {
-        MisticaConfig.currentColors.buttonSecondaryBorderSelectedInverse
+    @objc(buttonSecondaryBorderInverseSelectedColor)
+    static var buttonSecondaryBorderInverseSelected: UIColor {
+        MisticaConfig.currentColors.buttonSecondaryBorderInverseSelected
     }
 
     @objc(textButtonPrimaryColor)
@@ -203,9 +203,9 @@ public extension UIColor {
 
     // MARK: Borders
 
-    @objc(borderLightColor)
-    static var borderLight: UIColor {
-        MisticaConfig.currentColors.borderLight
+    @objc(borderLowColor)
+    static var borderLow: UIColor {
+        MisticaConfig.currentColors.borderLow
     }
 
     @objc(borderColor)
@@ -213,9 +213,9 @@ public extension UIColor {
         MisticaConfig.currentColors.border
     }
 
-    @objc(borderDarkColor)
-    static var borderDark: UIColor {
-        MisticaConfig.currentColors.borderDark
+    @objc(borderHighColor)
+    static var borderHigh: UIColor {
+        MisticaConfig.currentColors.borderHigh
     }
 
     @objc(borderSelectedColor)
@@ -380,13 +380,6 @@ public extension UIColor {
         MisticaConfig.currentColors.textNavigationSearchBarText
     }
 
-    // MARK: Gradient
-
-    @objc(backgroundBrandGradientColors)
-    static var backgroundBrandGradient: [UIColor] {
-        MisticaConfig.currentColors.backgroundBrandGradient
-    }
-
     // MARK: Tag
 
     @objc(promoLowColor)
@@ -438,7 +431,7 @@ public extension UIColor {
 public extension BrandStyle {
     var preferredStatusBarStyle: UIStatusBarStyle {
         switch self {
-        case .movistar, .vivo, .o2, .o2Classic, .blau, .custom:
+        case .movistar, .vivo, .o2, .blau, .custom:
             return .lightContent
         }
     }

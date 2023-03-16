@@ -39,10 +39,10 @@ public extension Button.Style {
         return Button.Style(
             allowsBleedingAlignment: false,
             stateStyleByState: [
-                .normal: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackground),
+                .normal: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBorder),
                 .selected: Button.StateStyle(textColor: .textButtonSecondarySelected, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackgroundSelected),
-                .disabled: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackground),
-                .loading: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackground)
+                .disabled: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBorder),
+                .loading: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBorder)
             ]
         )
     }
@@ -84,7 +84,7 @@ public extension Button.Style {
             allowsBleedingAlignment: false,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse),
-                .selected: Button.StateStyle(textColor: .textButtonPrimaryInverseSelected, backgroundColor: .buttonPrimaryBackgroundSelectedInverse, borderColor: .buttonPrimaryBackgroundSelectedInverse),
+                .selected: Button.StateStyle(textColor: .textButtonPrimaryInverseSelected, backgroundColor: .buttonPrimaryBackgroundInverseSelected, borderColor: .buttonPrimaryBackgroundInverseSelected),
                 .disabled: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse),
                 .loading: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse)
             ]
@@ -96,7 +96,7 @@ public extension Button.Style {
             allowsBleedingAlignment: false,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse),
-                .selected: Button.StateStyle(textColor: .textButtonSecondaryInverseSelected, backgroundColor: .clear, borderColor: .buttonSecondaryBorderSelectedInverse),
+                .selected: Button.StateStyle(textColor: .textButtonSecondaryInverseSelected, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverseSelected),
                 .disabled: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse),
                 .loading: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse)
             ]
@@ -109,7 +109,7 @@ public extension Button.Style {
             allowsBleedingAlignment: true,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: .buttonLinkBackgroundSelectedInverse, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: .buttonLinkBackgroundInverseSelected, borderColor: backgroundColor),
                 .disabled: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .loading: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]

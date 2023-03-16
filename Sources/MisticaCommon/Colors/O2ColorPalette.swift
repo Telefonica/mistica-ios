@@ -25,9 +25,9 @@ struct O2Colors: MisticaColors {
     let skeletonWave = palette.grey2 | palette.grey5
 
     // BORDERS
-    let borderLight = palette.grey1 | palette.darkModeBlack
+    let borderLow = palette.grey1 | palette.darkModeBlack
     let border = palette.grey3 | palette.darkModeGrey
-    let borderDark = palette.grey5
+    let borderHigh = palette.grey5
     let borderSelected = palette.o2BluePrimary | palette.o2BluePrimary30
 
     // BUTTONS
@@ -35,18 +35,18 @@ struct O2Colors: MisticaColors {
     let buttonDangerBackgroundSelected = palette.pepper60
 
     let buttonLinkBackgroundSelected = palette.o2BluePrimary10 | palette.white.withAlphaComponent(0.05)
-    let buttonLinkBackgroundSelectedInverse = palette.white.withAlphaComponent(0.2) | palette.white.withAlphaComponent(0.05)
+    let buttonLinkBackgroundInverseSelected = palette.white.withAlphaComponent(0.2) | palette.white.withAlphaComponent(0.05)
 
     let buttonPrimaryBackground = palette.o2BluePrimary | palette.darkModeO2BluePrimary
     let buttonPrimaryBackgroundInverse = palette.white | palette.darkModeO2BluePrimary
     let buttonPrimaryBackgroundSelected = palette.o2BluePrimary70 | palette.darkModeO2BluePrimaryDark
     let buttonPrimaryBackgroundHover = palette.o2BluePrimary70 | palette.darkModeO2BluePrimaryDark
-    let buttonPrimaryBackgroundSelectedInverse = palette.o2BluePrimary30 | palette.darkModeO2BluePrimaryDark
+    let buttonPrimaryBackgroundInverseSelected = palette.o2BluePrimary30 | palette.darkModeO2BluePrimaryDark
 
-    let buttonSecondaryBackground = palette.o2BluePrimary | palette.darkModeO2BluePrimary
+    let buttonSecondaryBorder = palette.o2BluePrimary | palette.darkModeO2BluePrimary
     let buttonSecondaryBackgroundSelected = palette.o2BluePrimary70 | palette.darkModeO2BluePrimaryDark
     let buttonSecondaryBorderInverse = palette.white | palette.darkModeO2BluePrimary
-    let buttonSecondaryBorderSelectedInverse = palette.o2BluePrimary30 | palette.darkModeO2BluePrimaryDark
+    let buttonSecondaryBorderInverseSelected = palette.o2BluePrimary30 | palette.darkModeO2BluePrimaryDark
 
     let textButtonPrimary = palette.white | palette.grey2
     let textButtonPrimaryInverse = palette.o2BluePrimary | palette.grey2
@@ -106,14 +106,6 @@ struct O2Colors: MisticaColors {
     let textNavigationSearchBarText = palette.white | palette.grey2
     let textAppBar = palette.grey4 | palette.grey5
     let textAppBarSelected = palette.o2BluePrimary | palette.grey2
-
-    // GRADIENTS
-    let backgroundBrandGradient = [
-        palette.o2BluePrimary | palette.darkModeBlack,
-        palette.o2BluePrimary | palette.darkModeBlack,
-        palette.o2BluePrimary | palette.darkModeBlack,
-        palette.o2BluePrimary | palette.darkModeBlack
-    ]
 
     // TAGS
     var successLow = palette.o2Green10 | palette.white.withAlphaComponent(0.05)

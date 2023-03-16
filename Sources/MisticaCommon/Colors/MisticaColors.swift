@@ -24,23 +24,23 @@ public protocol MisticaColors {
 
     // BORDERS
     var border: UIColor { get }
-    var borderDark: UIColor { get }
-    var borderLight: UIColor { get }
+    var borderHigh: UIColor { get }
+    var borderLow: UIColor { get }
     var borderSelected: UIColor { get }
 
     // BORDERS
     var buttonDangerBackground: UIColor { get }
     var buttonDangerBackgroundSelected: UIColor { get }
     var buttonLinkBackgroundSelected: UIColor { get }
-    var buttonLinkBackgroundSelectedInverse: UIColor { get }
+    var buttonLinkBackgroundInverseSelected: UIColor { get }
     var buttonPrimaryBackground: UIColor { get }
     var buttonPrimaryBackgroundInverse: UIColor { get }
     var buttonPrimaryBackgroundSelected: UIColor { get }
-    var buttonPrimaryBackgroundSelectedInverse: UIColor { get }
-    var buttonSecondaryBackground: UIColor { get }
+    var buttonPrimaryBackgroundInverseSelected: UIColor { get }
+    var buttonSecondaryBorder: UIColor { get }
     var buttonSecondaryBackgroundSelected: UIColor { get }
     var buttonSecondaryBorderInverse: UIColor { get }
-    var buttonSecondaryBorderSelectedInverse: UIColor { get }
+    var buttonSecondaryBorderInverseSelected: UIColor { get }
 
     var textButtonPrimary: UIColor { get }
     var textButtonPrimaryInverse: UIColor { get }
@@ -98,9 +98,6 @@ public protocol MisticaColors {
     var textNavigationSearchBarText: UIColor { get }
     var textAppBar: UIColor { get }
     var textAppBarSelected: UIColor { get }
-
-    // GRADIENTS
-    var backgroundBrandGradient: [UIColor] { get }
 
     // TAGS
     var promoLow: UIColor { get }

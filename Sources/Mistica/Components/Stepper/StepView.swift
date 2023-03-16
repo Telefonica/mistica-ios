@@ -123,10 +123,10 @@ extension StepView {
             accessibilityTraits = [.selected]
         case .pending(let step):
             label.text = "\(step + 1)"
-            label.textColor = .borderDark
+            label.textColor = .borderHigh
             animatedView.alpha = 0
             circularView.alpha = 1
-            circularView.addBorder(color: .borderDark)
+            circularView.addBorder(color: .borderHigh)
             circularView.backgroundColor = .clear
             accessibilityTraits = []
         }

@@ -1,3 +1,34 @@
+# [23.0.0](https://github.com/Telefonica/mistica-ios/compare/v22.1.0...v23.0.0) (2023-03-16)
+
+
+### Bug Fixes
+
+* **Fonts:** IOS-8196 Fix font weights ([#262](https://github.com/Telefonica/mistica-ios/issues/262)) ([3948321](https://github.com/Telefonica/mistica-ios/commit/394832199db476cfbb8af5c5ada00a9cf74e6e0c))
+
+
+### Features
+
+* **Brand:** New moves brand and remove prominent ([016ad74](https://github.com/Telefonica/mistica-ios/commit/016ad74d501140bc21118feca54a3294e6077b5c))
+
+
+### BREAKING CHANGES
+
+* **Brand:** Renamed some tokens from the color palettes and removed prominent variant theme and all the code related with ThemeVariant
+
+* IOS-7865 Update movistar mistica color palette for digital hub. Removed/renamed some tokens from MisticaColors protocol. Removed GradientView cause now is not used anymore.
+
+* Run swiftformat
+
+* IOS-7865 Removed O2Classic snapshots.
+
+* IOS-7865 Added new snapshots for the new Movistar color palette.
+
+* IOS-7865 Update ColorToolkit+UIColor with some tokens renamed.
+
+* IOS-8052 Removed all code related with theme variants and prominent.
+
+* Run swiftformat
+
 # [22.1.0](https://github.com/Telefonica/mistica-ios/compare/v22.0.1...v22.1.0) (2023-03-15)
 
 

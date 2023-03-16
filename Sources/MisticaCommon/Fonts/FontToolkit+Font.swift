@@ -45,11 +45,11 @@ public extension Font {
     }
 
     static func textPreset9(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> Font {
-        FontStyle.textPreset8.preferredFont(weight: FontStyle.TextPreset9Weight.default.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+        FontStyle.textPreset9.preferredFont(weight: FontStyle.TextPreset9Weight.default.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
     static func textPreset10(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> Font {
-        FontStyle.textPreset8.preferredFont(weight: FontStyle.TextPreset10Weight.default.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+        FontStyle.textPreset10.preferredFont(weight: FontStyle.TextPreset10Weight.default.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
     static func cardTitlePreset(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> Font {

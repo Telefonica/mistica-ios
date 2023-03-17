@@ -27,7 +27,8 @@ public struct Tabs: View {
                 TabItemView(
                     tabItem: tabItem,
                     indexRow: index,
-                    selectedIndexRow: $selection)
+                    selectedIndexRow: $selection
+                )
             )
         }
     }

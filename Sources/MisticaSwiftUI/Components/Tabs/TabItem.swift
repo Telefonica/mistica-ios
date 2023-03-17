@@ -13,7 +13,7 @@ import SwiftUI
 public struct TabItem: Equatable {
     public let text: String
     public let image: Image?
-    
+
     public init(
         text: String,
         image: Image? = nil
@@ -40,7 +40,7 @@ public struct TabItemView: View {
     ) {
         self.tabItem = tabItem
         self.indexRow = indexRow
-        self._selectedIndexRow = selectedIndexRow
+        _selectedIndexRow = selectedIndexRow
     }
 
     public var body: some View {
@@ -72,12 +72,12 @@ public extension TabItemView {
     func iconForegroundColor() -> Color {
         isRowSelected ? Color.neutralHigh : Color.neutralMedium
     }
-    
+
     @ViewBuilder
     func textForegroundColor() -> Color {
         isRowSelected ? Color.textPrimary : Color.textSecondary
     }
-    
+
     func textAccessibilityLabel(_ textAccessibilityLabel: String?) -> TabItemView {
         var tabItem = self
         tabItem.textAccessibilityLabel = textAccessibilityLabel

@@ -26,7 +26,8 @@ public struct Tabs: View {
             tabItemViews.append(TabItemView(
                 tabItem: tabItem,
                 indexRow: index,
-                selectedIndexRow: $selection)
+                selectedIndexRow: $selection
+            )
             )
         }
     }

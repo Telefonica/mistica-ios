@@ -15,12 +15,20 @@ public struct Tabs: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @State private var itemWidth: [Int: CGFloat] = [:]
 
-    private var items: [TabItem]
+    private var items: [TabItem] = []
+    private var tabItemViews: [TabItemView] = []
     @Binding private var selection: Int
 
     public init(_ items: [TabItem], selection: Binding<Int>) {
         _selection = selection
         self.items = items
+        for (index, tabItem) in items.enumerated() {
+            tabItemViews.append(TabItemView(
+                tabItem: tabItem,
+                indexRow: index,
+                selectedIndexRow: $selection)
+            )
+        }
     }
 
     public var body: some View {
@@ -74,7 +82,7 @@ public struct Tabs: View {
 
     @ViewBuilder
     func itemView(for index: Int) -> some View {
-        items[index]
+        tabItemViews[index]
             .padding(.horizontal, itemHorizontalPadding)
     }
 

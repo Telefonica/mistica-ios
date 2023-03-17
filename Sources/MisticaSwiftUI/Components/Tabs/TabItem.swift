@@ -10,15 +10,10 @@ import Foundation
 
 import SwiftUI
 
-public struct TabItem: View, Equatable {
-    private let text: String
-    private let image: Image?
-
-    private var textAccessibilityLabel: String?
-    private var textAccessibilityIdentifier: String?
-    private var imageAccessibilityLabel: String?
-    private var imageAccessibilityIdentifier: String?
-
+public struct TabItem: Equatable {
+    public let text: String
+    public let image: Image?
+    
     public init(
         text: String,
         image: Image? = nil
@@ -26,18 +21,40 @@ public struct TabItem: View, Equatable {
         self.text = text
         self.image = image
     }
+}
+
+public struct TabItemView: View {
+    private var tabItem: TabItem
+    private var indexRow: Int
+    @Binding private var selectedIndexRow: Int
+
+    private var textAccessibilityLabel: String?
+    private var textAccessibilityIdentifier: String?
+    private var imageAccessibilityLabel: String?
+    private var imageAccessibilityIdentifier: String?
+
+    public init(
+        tabItem: TabItem,
+        indexRow: Int,
+        selectedIndexRow: Binding<Int>
+    ) {
+        self.tabItem = tabItem
+        self.indexRow = indexRow
+        self._selectedIndexRow = selectedIndexRow
+    }
 
     public var body: some View {
         HStack(alignment: .center, spacing: 8) {
-            image?
+            tabItem.image?
                 .frame(width: 24, height: 24)
                 .accessibilityIdentifier(imageAccessibilityIdentifier)
                 .accessibilityLabel(imageAccessibilityLabel)
+                .foregroundColor(iconForegroundColor())
 
-            Text(text)
+            Text(tabItem.text)
                 .lineLimit(1)
                 .font(.textPreset2(weight: .regular))
-                .foregroundColor(Color.textSecondary)
+                .foregroundColor(textForegroundColor())
                 .accessibilityIdentifier(textAccessibilityIdentifier)
                 .accessibilityLabel(textAccessibilityLabel)
         }
@@ -46,26 +63,40 @@ public struct TabItem: View, Equatable {
 
 // MARK: Modifiers
 
-public extension TabItem {
-    func textAccessibilityLabel(_ textAccessibilityLabel: String?) -> TabItem {
+public extension TabItemView {
+    private var isRowSelected: Bool {
+        indexRow == selectedIndexRow
+    }
+
+    @ViewBuilder
+    func iconForegroundColor() -> Color {
+        isRowSelected ? Color.neutralHigh : Color.neutralMedium
+    }
+    
+    @ViewBuilder
+    func textForegroundColor() -> Color {
+        isRowSelected ? Color.textPrimary : Color.textSecondary
+    }
+    
+    func textAccessibilityLabel(_ textAccessibilityLabel: String?) -> TabItemView {
         var tabItem = self
         tabItem.textAccessibilityLabel = textAccessibilityLabel
         return tabItem
     }
 
-    func textAccessibilityIdentifier(_ textAccessibilityIdentifier: String?) -> TabItem {
+    func textAccessibilityIdentifier(_ textAccessibilityIdentifier: String?) -> TabItemView {
         var tabItem = self
         tabItem.textAccessibilityIdentifier = textAccessibilityIdentifier
         return tabItem
     }
 
-    func imageAccessibilityLabel(_ imageAccessibilityLabel: String?) -> TabItem {
+    func imageAccessibilityLabel(_ imageAccessibilityLabel: String?) -> TabItemView {
         var tabItem = self
         tabItem.imageAccessibilityLabel = imageAccessibilityLabel
         return tabItem
     }
 
-    func imageAccessibilityIdentifier(_ imageAccessibilityIdentifier: String?) -> TabItem {
+    func imageAccessibilityIdentifier(_ imageAccessibilityIdentifier: String?) -> TabItemView {
         var tabItem = self
         tabItem.imageAccessibilityIdentifier = imageAccessibilityIdentifier
         return tabItem

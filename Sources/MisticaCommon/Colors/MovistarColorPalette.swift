@@ -18,12 +18,12 @@ struct MovistarColors: MisticaColors {
     let backgroundBrandSecondary = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeBlack
     let backgroundContainer = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
     let backgroundOverlay = MovistarColors.palette.movistarBlueDark.withAlphaComponent(0.6) | MovistarColors.palette.darkModeGrey.withAlphaComponent(0.8)
-    let backgroundSkeleton = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
-    let backgroundSkeletonInverse = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.darkModeGrey6
+    let backgroundSkeleton = MovistarColors.palette.grey2 | MovistarColors.palette.movistarBlueDark
+    let backgroundSkeletonInverse = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.movistarBlueDark
     let backgroundFeedbackBottom = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
     let appBarBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
     let navigationBarBackground = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
-    let skeletonWave = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey
+    let skeletonWave = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
 
     // BORDERS
     let borderLow = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeBlack
@@ -89,7 +89,7 @@ struct MovistarColors: MisticaColors {
     let neutralHigh = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeGrey2
     let neutralMedium = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey5
     let neutralMediumInverse = MovistarColors.palette.grey5
-    let neutralLow = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeGrey
+    let neutralLow = MovistarColors.palette.grey1 | MovistarColors.palette.movistarBlueDark
     let textPrimary = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeGrey2
     let textPrimaryInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
     let textSecondary = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey4
@@ -103,11 +103,11 @@ struct MovistarColors: MisticaColors {
     // TAGS
     let promo = MovistarColors.palette.purple
     let highlight = MovistarColors.palette.pink
-    let successLow = MovistarColors.palette.movistarGreen10 | MovistarColors.palette.darkModeGrey
-    let warningLow = MovistarColors.palette.egg10 | MovistarColors.palette.darkModeGrey
-    let errorLow = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey
-    let promoLow = MovistarColors.palette.purple10 | MovistarColors.palette.darkModeGrey
-    let brandLow = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey
+    let successLow = MovistarColors.palette.movistarGreen10 | MovistarColors.palette.movistarBlueDark
+    let warningLow = MovistarColors.palette.egg10 | MovistarColors.palette.movistarBlueDark
+    let errorLow = MovistarColors.palette.pepper10 | MovistarColors.palette.movistarBlueDark
+    let promoLow = MovistarColors.palette.purple10 | MovistarColors.palette.movistarBlueDark
+    let brandLow = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.movistarBlueDark
     let successHigh = MovistarColors.palette.movistarGreen70 | MovistarColors.palette.movistarGreen40
     let warningHigh = MovistarColors.palette.egg80 | MovistarColors.palette.egg40
     let errorHigh = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper40
@@ -124,7 +124,7 @@ struct MovistarColors: MisticaColors {
     let textNavigationSearchBarText = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
     let textAppBar = MovistarColors.palette.grey4 | MovistarColors.palette.darkModeGrey5
     let textAppBarSelected = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeGrey2
-    let customTabsBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
+    let customTabsBackground = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
 }
 
 public struct MovistarColorPalette {
@@ -170,7 +170,7 @@ public struct MovistarColorPalette {
     public let movistarBlueDark = UIColor(hex: "#0B2739")!
 
     public let darkModeBlack = UIColor(hex: "#061824")!
-    public let darkModeGrey = UIColor(hex: "#092130")!
+    public let darkModeGrey = UIColor(hex: "#081F2E")!
     public let darkModeGrey2 = UIColor(hex: "#EAEBEE")!
     public let darkModeGrey3 = UIColor(hex: "#CED4D7")!
     public let darkModeGrey4 = UIColor(hex: "#85939C")!

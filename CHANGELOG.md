@@ -1,3 +1,10 @@
+## [23.0.1](https://github.com/Telefonica/mistica-ios/compare/v23.0.0...v23.0.1) (2023-03-17)
+
+
+### Bug Fixes
+
+* **Brand:** IOS-8206 Updated Movistar color palette with the latest changes. ([#265](https://github.com/Telefonica/mistica-ios/issues/265)) ([09945a8](https://github.com/Telefonica/mistica-ios/commit/09945a8cc81c26e3730ef5084ef39241ac41690a))
+
 # [23.0.0](https://github.com/Telefonica/mistica-ios/compare/v22.1.0...v23.0.0) (2023-03-16)
 
 

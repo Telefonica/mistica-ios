@@ -23,11 +23,11 @@ public struct Tabs: View {
         _selection = selection
         self.items = items
         for (index, tabItem) in items.enumerated() {
-            tabItemViews.append(TabItemView(
-                tabItem: tabItem,
-                indexRow: index,
-                selectedIndexRow: $selection
-            )
+            tabItemViews.append(
+                TabItemView(
+                    tabItem: tabItem,
+                    indexRow: index,
+                    selectedIndexRow: $selection)
             )
         }
     }

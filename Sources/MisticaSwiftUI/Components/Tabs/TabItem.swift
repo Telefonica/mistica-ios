@@ -100,7 +100,7 @@ public extension TabItemView {
         return tabItem
     }
 
-    func imageAccessibilityIdentifier(_ imageAccessibilityIdentifier: String?) -> TabItemView {
+    func imageAccessibilityIdentifier(_ imageAccessibilityIdentifier: String?) -> Self {
         var tabItem = self
         tabItem.imageAccessibilityIdentifier = imageAccessibilityIdentifier
         return tabItem

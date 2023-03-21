@@ -15,12 +15,22 @@ public struct Tabs: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @State private var itemWidth: [Int: CGFloat] = [:]
 
-    private var items: [TabItem]
+    private var tabItemViews: [TabItemView] = []
     @Binding private var selection: Int
+    private var background: Color
 
-    public init(_ items: [TabItem], selection: Binding<Int>) {
+    public init(_ items: [TabItem], selection: Binding<Int>, background: Color = .background) {
         _selection = selection
-        self.items = items
+        self.background = background
+        for (index, tabItem) in items.enumerated() {
+            tabItemViews.append(
+                TabItemView(
+                    tabItem: tabItem,
+                    indexRow: index,
+                    selectedIndexRow: $selection
+                )
+            )
+        }
     }
 
     public var body: some View {
@@ -38,15 +48,15 @@ public struct Tabs: View {
                 }
             }
         }
-        .onChange(of: items, perform: { _ in itemWidth = [:] })
+        .onChange(of: tabItemViews, perform: { _ in itemWidth = [:] })
         .frame(height: 56)
-        .background(Color.background)
+        .background(background)
     }
 
     @ViewBuilder
     func itemsView(parentSize: CGSize) -> some View {
         LazyHStack(spacing: 0) {
-            ForEach(0 ..< self.items.count, id: \.self) { index in
+            ForEach(0 ..< self.tabItemViews.count, id: \.self) { index in
                 itemView(for: index)
                     // The width depends on the number of items.
                     .frame(width: itemWidth(parentSize: parentSize, index: index))
@@ -74,7 +84,7 @@ public struct Tabs: View {
 
     @ViewBuilder
     func itemView(for index: Int) -> some View {
-        items[index]
+        tabItemViews[index]
             .padding(.horizontal, itemHorizontalPadding)
     }
 
@@ -82,7 +92,7 @@ public struct Tabs: View {
         if shouldUseScroll {
             return itemWidth[index]
         } else {
-            return parentSize.width / CGFloat(items.count)
+            return parentSize.width / CGFloat(tabItemViews.count)
         }
     }
 
@@ -113,7 +123,7 @@ public struct Tabs: View {
     }
 
     var shouldUseScroll: Bool {
-        items.count > 3
+        tabItemViews.count > 3
     }
 }
 

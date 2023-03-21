@@ -23,7 +23,7 @@ public struct TabItem: Equatable {
     }
 }
 
-public struct TabItemView: View {
+public struct TabItemView: Equatable, View {
     private var tabItem: TabItem
     private var indexRow: Int
     @Binding private var selectedIndexRow: Int
@@ -41,6 +41,10 @@ public struct TabItemView: View {
         self.tabItem = tabItem
         self.indexRow = indexRow
         _selectedIndexRow = selectedIndexRow
+    }
+
+    public static func == (lhs: TabItemView, rhs: TabItemView) -> Bool {
+        lhs.tabItem == rhs.tabItem && lhs.indexRow == rhs.indexRow
     }
 
     public var body: some View {
@@ -78,19 +82,19 @@ public extension TabItemView {
         isRowSelected ? Color.textPrimary : Color.textSecondary
     }
 
-    func textAccessibilityLabel(_ textAccessibilityLabel: String?) -> TabItemView {
+    func textAccessibilityLabel(_ textAccessibilityLabel: String?) -> Self {
         var tabItem = self
         tabItem.textAccessibilityLabel = textAccessibilityLabel
         return tabItem
     }
 
-    func textAccessibilityIdentifier(_ textAccessibilityIdentifier: String?) -> TabItemView {
+    func textAccessibilityIdentifier(_ textAccessibilityIdentifier: String?) -> Self {
         var tabItem = self
         tabItem.textAccessibilityIdentifier = textAccessibilityIdentifier
         return tabItem
     }
 
-    func imageAccessibilityLabel(_ imageAccessibilityLabel: String?) -> TabItemView {
+    func imageAccessibilityLabel(_ imageAccessibilityLabel: String?) -> Self {
         var tabItem = self
         tabItem.imageAccessibilityLabel = imageAccessibilityLabel
         return tabItem

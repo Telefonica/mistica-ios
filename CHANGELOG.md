@@ -1,3 +1,10 @@
+## [23.0.2](https://github.com/Telefonica/mistica-ios/compare/v23.0.1...v23.0.2) (2023-03-21)
+
+
+### Bug Fixes
+
+* **Tabs:** change the font colour and icon of the selected tab from the one that is not ([d8d27b4](https://github.com/Telefonica/mistica-ios/commit/d8d27b42cc7be18288d881e5a7ceddbd8a4cf2ca))
+
 ## [23.0.1](https://github.com/Telefonica/mistica-ios/compare/v23.0.0...v23.0.1) (2023-03-17)
 
 

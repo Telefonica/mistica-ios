@@ -12,34 +12,34 @@ import UIKit
 public extension FontStyle {
     enum TextPreset1Weight {
         case regular, medium
-        
+
         var value: FontWeightTypable {
             switch self {
-                case .regular: return .regular
-                case .medium: return .medium
+            case .regular: return .regular
+            case .medium: return .medium
             }
         }
     }
 
     enum TextPreset2Weight {
         case regular, medium
-        
+
         var value: FontWeightTypable {
             switch self {
-                case .regular: return .regular
-                case .medium: return .medium
+            case .regular: return .regular
+            case .medium: return .medium
             }
         }
     }
 
     enum TextPreset3Weight {
         case light, regular, medium
-        
+
         var value: FontWeightTypable {
             switch self {
-                case .light: return .light
-                case .regular: return .regular
-                case .medium: return .medium
+            case .light: return .light
+            case .regular: return .regular
+            case .medium: return .medium
             }
         }
     }
@@ -49,10 +49,10 @@ public extension FontStyle {
 
         var value: FontWeightTypable {
             switch self {
-                case .light: return .light
-                case .regular: return .regular
-                case .medium: return .medium
-                case .branded: return MisticaConfig.currentFontWeights.textPreset4
+            case .light: return .light
+            case .regular: return .regular
+            case .medium: return .medium
+            case .branded: return MisticaConfig.currentFontWeights.textPreset4
             }
         }
     }
@@ -97,4 +97,3 @@ struct VivoFontWeights: MisticaFontWeights {
     public var textPreset9: FontWeightTypable = .regular
     public var textPreset10: FontWeightTypable = .regular
 }
-

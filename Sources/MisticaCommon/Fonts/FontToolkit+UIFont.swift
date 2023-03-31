@@ -26,7 +26,7 @@ public extension UIFont {
     static func textPreset4(weight: FontStyle.TextPreset4Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset4.preferredFont(weight: weight.value.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
-    
+
     static func textPreset5(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
         FontStyle.textPreset5.preferredFont(weight: MisticaConfig.currentFontWeights.textPreset5.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }

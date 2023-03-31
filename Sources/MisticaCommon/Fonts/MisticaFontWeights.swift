@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import SwiftUI
+import UIKit
 
 public protocol MisticaFontWeights {
     var textPreset4: FontWeightTypable { get }
@@ -24,7 +24,7 @@ public enum FontWeightTypable {
     case regular
     case medium
     case bold
-    
+
     var systemWeight: Font.Weight {
         switch self {
         case .light:
@@ -51,7 +51,3 @@ public enum FontWeightTypable {
         }
     }
 }
-
-
-
-

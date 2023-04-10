@@ -10,7 +10,7 @@ import SwiftUI
 import UIKit
 
 public extension FontStyle {
-    enum TextPreset1Weight {
+    enum TextPreset1Weight: CaseIterable {
         case regular, medium
 
         var value: MisticaFontWeightType {
@@ -21,7 +21,7 @@ public extension FontStyle {
         }
     }
 
-    enum TextPreset2Weight {
+    enum TextPreset2Weight: CaseIterable {
         case regular, medium
 
         var value: MisticaFontWeightType {
@@ -32,7 +32,7 @@ public extension FontStyle {
         }
     }
 
-    enum TextPreset3Weight {
+    enum TextPreset3Weight: CaseIterable {
         case light, regular, medium
 
         var value: MisticaFontWeightType {
@@ -44,7 +44,7 @@ public extension FontStyle {
         }
     }
 
-    enum TextPreset4Weight {
+    enum TextPreset4Weight: CaseIterable {
         case light, regular, medium, branded
 
         var value: MisticaFontWeightType {

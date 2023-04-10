@@ -10,16 +10,17 @@ import SwiftUI
 import UIKit
 
 public protocol MisticaFontWeights {
-    var textPreset4: FontWeightTypable { get }
-    var textPreset5: FontWeightTypable { get }
-    var textPreset6: FontWeightTypable { get }
-    var textPreset7: FontWeightTypable { get }
-    var textPreset8: FontWeightTypable { get }
-    var textPreset9: FontWeightTypable { get }
-    var textPreset10: FontWeightTypable { get }
+    var textPreset4: MisticaFontWeightType { get }
+    var textPreset5: MisticaFontWeightType { get }
+    var textPreset6: MisticaFontWeightType { get }
+    var textPreset7: MisticaFontWeightType { get }
+    var textPreset8: MisticaFontWeightType { get }
+    var textPreset9: MisticaFontWeightType { get }
+    var textPreset10: MisticaFontWeightType { get }
 }
 
-public enum FontWeightTypable {
+/// Available font weights in Mistica
+public enum MisticaFontWeightType {
     case light
     case regular
     case medium

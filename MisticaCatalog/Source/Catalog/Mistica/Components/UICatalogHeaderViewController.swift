@@ -10,14 +10,17 @@ import Mistica
 import UIKit
 
 private enum Section: Int, CaseIterable {
-    case usingInLargeNavigationBar
-    case inverseColorPalette
     case pretitle
     case title
+    case description
     case show
 }
 
 class UICatalogHeaderViewController: UIViewController {
+    private enum Constants {
+        static let selectedSegmentEnabled = 0
+    }
+    
     private lazy var tableView: UITableView = {
         if #available(iOS 13.0, *) {
             return UITableView(frame: .zero, style: .insetGrouped)
@@ -26,40 +29,12 @@ class UICatalogHeaderViewController: UIViewController {
         }
     }()
 
-    private lazy var usingInLargeNavigationBarCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "usingInLargeNavigationBarCell")
-
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Yes", at: 1, animated: false)
-        cell.segmentedControl.addTarget(self, action: #selector(usingInLargeNavigationBar), for: .valueChanged)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
-    }()
-
-    @objc func usingInLargeNavigationBar(_ sender: UISegmentedControl) {
-        showInverseColorPaletteCell.segmentedControl.isEnabled = sender.selectedSegmentIndex == 0
-    }
-
-    private lazy var showInverseColorPaletteCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "showInverseColorPaletteCell")
-
-        cell.segmentedControl.insertSegment(withTitle: "Normal", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Inverse", at: 1, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
-    }()
-
     private lazy var showPretitleCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "showPretitleCell")
-
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Primary", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Secondary", at: 2, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
+        createSegmentedControl(
+            reuseIdentifier: "showPretitleCell",
+            firstSegmentedTitle: "Yes",
+            secondSegmentedTitle: "No"
+        )
     }()
 
     private lazy var pretitleCell: UITextFieldTableViewCell = {
@@ -69,9 +44,31 @@ class UICatalogHeaderViewController: UIViewController {
         return cell
     }()
 
+    private lazy var showTitleCell: UISegmentedControlTableViewCell = {
+        createSegmentedControl(
+            reuseIdentifier: "showTitleCell",
+            firstSegmentedTitle: "Yes",
+            secondSegmentedTitle: "No"
+        )
+    }()
+
     private lazy var titleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Title")
         cell.textField.text = "Title"
+        return cell
+    }()
+    
+    private lazy var showDescriptionCell: UISegmentedControlTableViewCell = {
+        createSegmentedControl(
+            reuseIdentifier: "showDescriptionCell",
+            firstSegmentedTitle: "Yes",
+            secondSegmentedTitle: "No"
+        )
+    }()
+
+    private lazy var descriptionCell: UITextFieldTableViewCell = {
+       let cell = UITextFieldTableViewCell(reuseIdentifier: "Description")
+        cell.textField.text = "Description"
         return cell
     }()
 
@@ -83,10 +80,9 @@ class UICatalogHeaderViewController: UIViewController {
     }()
 
     private lazy var cells = [
-        [usingInLargeNavigationBarCell],
-        [showInverseColorPaletteCell],
         [showPretitleCell, pretitleCell],
-        [titleCell],
+        [showTitleCell, titleCell],
+        [showDescriptionCell, descriptionCell],
         [showHeaderCell]
     ]
 
@@ -143,23 +139,34 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
 
         let vc = HeaderViewSampleViewController()
 
-        vc.headerView.usingInLargeNavigationBar = usingInLargeNavigationBarCell.segmentedControl.selectedSegmentIndex == 0 ? false : true
-
-        if showInverseColorPaletteCell.segmentedControl.isEnabled {
-            vc.headerView.style = showInverseColorPaletteCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
-        }
-
-        if showPretitleCell.segmentedControl.selectedSegmentIndex > 0 {
+        if showPretitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
             vc.headerView.pretitle = pretitleCell.textField.text
         }
-
-        if showPretitleCell.segmentedControl.selectedSegmentIndex == 2 {
-            vc.headerView.pretitleHasSecondaryColor = true
+        
+        if showTitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
+            vc.headerView.title = titleCell.textField.text
+        }
+        
+        if showDescriptionCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
+            vc.headerView.descriptionValue = descriptionCell.textField.text
         }
 
         vc.headerView.title = titleCell.textField.text!.isEmpty ? nil : titleCell.textField.text
 
         show(vc, sender: self)
+    }
+}
+
+private extension UICatalogHeaderViewController {
+    func createSegmentedControl(reuseIdentifier: String, firstSegmentedTitle: String, secondSegmentedTitle: String) -> UISegmentedControlTableViewCell {
+        let segmented = UISegmentedControlTableViewCell(reuseIdentifier: reuseIdentifier)
+        
+        segmented.segmentedControl.insertSegment(withTitle: firstSegmentedTitle, at: 0, animated: false)
+        segmented.segmentedControl.insertSegment(withTitle: secondSegmentedTitle, at: 1, animated: false)
+        
+        segmented.segmentedControl.selectedSegmentIndex = 0
+
+        return segmented
     }
 }
 
@@ -188,16 +195,14 @@ private class HeaderViewSampleViewController: UIViewController {
 private extension Section {
     var headerTitle: String? {
         switch self {
-        case .inverseColorPalette:
-            return "Use inverse color palette"
-        case .title:
-            return "Title"
         case .pretitle:
             return "Has Pretitle"
+        case .title:
+            return "Has Title"
+        case .description:
+            return "Has Description"
         case .show:
             return nil
-        case .usingInLargeNavigationBar:
-            return "Embeded in Large Navigation Bar"
         }
     }
 }

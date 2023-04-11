@@ -49,6 +49,7 @@ public class HeaderView: UIView {
         }
         set {
             titleLabel.text = newValue
+            updateTitleLabelVisibilityState()
 
             updateSpacing()
         }
@@ -60,39 +61,36 @@ public class HeaderView: UIView {
         }
         set {
             titleLabel.attributedText = newValue
+            updateTitleLabelVisibilityState()
 
             updateSpacing()
         }
     }
 
-    public var usingInLargeNavigationBar = false {
-        didSet {
-            updateLayoutMarginsGuide()
-            _style = .inverse
-            updateColors()
-            setNeedsUpdateConstraints()
-        }
-    }
-
-    private var _style: HeaderViewStyle = .normal
-    public var style: HeaderViewStyle {
+    public var descriptionValue: String? {
         get {
-            _style
+            descriptionLabel.text
         }
         set {
-            guard !usingInLargeNavigationBar else { return }
-
-            _style = newValue
-            updateColors()
+            descriptionLabel.text = newValue
+            updateDescriptionLabelVisibilityState()
+            
+            updateSpacing()
         }
     }
-
-    public var pretitleHasSecondaryColor = false {
-        didSet {
-            pretitleLabel.textColor = pretitleHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
+    
+    public var descriptionAttributedText: NSAttributedString? {
+        get {
+            descriptionLabel.attributedText
+        }
+        set {
+            descriptionLabel.attributedText = newValue
+            updateDescriptionLabelVisibilityState()
+            
+            updateSpacing()
         }
     }
-
+    
     // MARK: - Inits
 
     public convenience init() {
@@ -150,6 +148,24 @@ public extension HeaderView {
             titleLabel.accessibilityIdentifier = newValue
         }
     }
+    
+    var descriptionAccessibilityLabel: String? {
+        get {
+            descriptionLabel.accessibilityLabel
+        }
+        set {
+            descriptionLabel.accessibilityLabel = newValue
+        }
+    }
+    
+    var descriptionAccessibilityIdentifier: String? {
+        get {
+            descriptionLabel.accessibilityIdentifier
+        }
+        set {
+            descriptionLabel.accessibilityIdentifier = newValue
+        }
+    }
 }
 
 // MARK: - Private
@@ -160,6 +176,7 @@ private extension HeaderView {
 
         stylePretitleLabel()
         styleTitleLabel()
+        styleDescriptionLabel()
     }
 
     func layoutView() {
@@ -187,22 +204,29 @@ private extension HeaderView {
 
         topStackView.addArrangedSubview(pretitleLabel)
         topStackView.addArrangedSubview(titleLabel)
+        topStackView.addArrangedSubview(descriptionLabel)
     }
 
     func stylePretitleLabel() {
         pretitleLabel.isHidden = true
         pretitleLabel.font = .textPreset3(weight: .regular)
-        pretitleLabel.textColor = _style.textPrimaryColor
+        pretitleLabel.textColor = .textPrimary
     }
 
     func styleTitleLabel() {
         titleLabel.font = .textPreset6()
-        titleLabel.textColor = _style.textPrimaryColor
-        titleLabel.numberOfLines = 0
+        titleLabel.textColor = .textPrimary
+        titleLabel.numberOfLines = 1
+    }
+    
+    func styleDescriptionLabel() {
+        descriptionLabel.font = .textPreset3(weight: .regular)
+        descriptionLabel.textColor = .textSecondary
+        descriptionLabel.numberOfLines = 1
     }
 
     func updateLayoutMarginsGuide() {
-        let top: CGFloat = usingInLargeNavigationBar ? 0 : 32
+        let top: CGFloat = 32
         directionalLayoutMargins = NSDirectionalEdgeInsets(top: top, leading: 16, bottom: 24, trailing: 32)
     }
 
@@ -223,9 +247,13 @@ private extension HeaderView {
     func updateTitleLabelVisibilityState() {
         titleLabel.isHidden = titleLabel.text == nil && titleLabel.attributedText == nil
     }
+    
+    func updateDescriptionLabelVisibilityState() {
+        descriptionLabel.isHidden = descriptionLabel.text == nil && descriptionLabel.attributedText == nil
+    }
 
     func updateColors() {
-        titleLabel.textColor = _style.textPrimaryColor
-        pretitleLabel.textColor = pretitleHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
+        titleLabel.textColor = .textPrimary
+        pretitleLabel.textColor = .textPrimary
     }
 }

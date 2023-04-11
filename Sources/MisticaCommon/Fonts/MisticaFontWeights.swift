@@ -10,7 +10,7 @@ import SwiftUI
 import UIKit
 
 public protocol MisticaFontWeights {
-    var textPreset4: MisticaFontWeightType { get }
+    var cardTitlePreset: MisticaFontWeightType { get }
     var textPreset5: MisticaFontWeightType { get }
     var textPreset6: MisticaFontWeightType { get }
     var textPreset7: MisticaFontWeightType { get }

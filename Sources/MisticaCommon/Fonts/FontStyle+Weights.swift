@@ -45,21 +45,21 @@ public extension FontStyle {
     }
 
     enum TextPreset4Weight: CaseIterable {
-        case light, regular, medium, branded
+        case light, regular, medium, cardTitle
 
         var value: MisticaFontWeightType {
             switch self {
             case .light: return .light
             case .regular: return .regular
             case .medium: return .medium
-            case .branded: return MisticaConfig.currentFontWeights.textPreset4
+            case .cardTitle: return MisticaConfig.currentFontWeights.cardTitlePreset
             }
         }
     }
 }
 
 struct MovistarFontWeights: MisticaFontWeights {
-    public var textPreset4: MisticaFontWeightType = .bold
+    public var cardTitlePreset: MisticaFontWeightType = .bold
     public var textPreset5: MisticaFontWeightType = .bold
     public var textPreset6: MisticaFontWeightType = .bold
     public var textPreset7: MisticaFontWeightType = .bold
@@ -69,7 +69,7 @@ struct MovistarFontWeights: MisticaFontWeights {
 }
 
 struct O2FontWeights: MisticaFontWeights {
-    public var textPreset4: MisticaFontWeightType = .regular
+    public var cardTitlePreset: MisticaFontWeightType = .regular
     public var textPreset5: MisticaFontWeightType = .light
     public var textPreset6: MisticaFontWeightType = .light
     public var textPreset7: MisticaFontWeightType = .light
@@ -79,7 +79,7 @@ struct O2FontWeights: MisticaFontWeights {
 }
 
 struct BlauFontWeights: MisticaFontWeights {
-    public var textPreset4: MisticaFontWeightType = .regular
+    public var cardTitlePreset: MisticaFontWeightType = .regular
     public var textPreset5: MisticaFontWeightType = .light
     public var textPreset6: MisticaFontWeightType = .light
     public var textPreset7: MisticaFontWeightType = .light
@@ -89,7 +89,7 @@ struct BlauFontWeights: MisticaFontWeights {
 }
 
 struct VivoFontWeights: MisticaFontWeights {
-    public var textPreset4: MisticaFontWeightType = .regular
+    public var cardTitlePreset: MisticaFontWeightType = .regular
     public var textPreset5: MisticaFontWeightType = .regular
     public var textPreset6: MisticaFontWeightType = .regular
     public var textPreset7: MisticaFontWeightType = .regular

@@ -90,10 +90,10 @@ struct BlauFontWeights: MisticaFontWeights {
 
 struct VivoFontWeights: MisticaFontWeights {
     public var cardTitlePreset: MisticaFontWeightType = .regular
-    public var textPreset5: MisticaFontWeightType = .regular
-    public var textPreset6: MisticaFontWeightType = .regular
-    public var textPreset7: MisticaFontWeightType = .regular
-    public var textPreset8: MisticaFontWeightType = .regular
-    public var textPreset9: MisticaFontWeightType = .regular
-    public var textPreset10: MisticaFontWeightType = .regular
+    public var textPreset5: MisticaFontWeightType = .light
+    public var textPreset6: MisticaFontWeightType = .light
+    public var textPreset7: MisticaFontWeightType = .light
+    public var textPreset8: MisticaFontWeightType = .light
+    public var textPreset9: MisticaFontWeightType = .light
+    public var textPreset10: MisticaFontWeightType = .light
 }

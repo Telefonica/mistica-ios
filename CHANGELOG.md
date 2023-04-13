@@ -1,3 +1,10 @@
+# [23.1.0](https://github.com/Telefonica/mistica-ios/compare/v23.0.2...v23.1.0) (2023-04-13)
+
+
+### Features
+
+* **TitleView:** IOS-8290 default title style based on the brand ([#268](https://github.com/Telefonica/mistica-ios/issues/268)) ([7d3a347](https://github.com/Telefonica/mistica-ios/commit/7d3a347cf46bd57510f23172e8c40a38f72c801e))
+
 ## [23.0.2](https://github.com/Telefonica/mistica-ios/compare/v23.0.1...v23.0.2) (2023-03-21)
 
 

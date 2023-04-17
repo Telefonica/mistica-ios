@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1822CA1A29E821D400980D47 /* HeaderCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822CA1929E821D400980D47 /* HeaderCatalogView.swift */; };
 		1860058F28A136CE009C3778 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860058E28A136CE009C3778 /* ColorsView.swift */; };
 		1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1882EF40286EFF5F00F959FA /* MisticaSwiftUI */; };
 		18E17AED287FFFBF0051E505 /* CatalogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17AEC287FFFBF0051E505 /* CatalogRow.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1822CA1929E821D400980D47 /* HeaderCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCatalogView.swift; sourceTree = "<group>"; };
 		1860058E28A136CE009C3778 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
 		18E17AEC287FFFBF0051E505 /* CatalogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRow.swift; sourceTree = "<group>"; };
 		18E17AEE288007340051E505 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				18E4855A287F19EB0052A6F2 /* BadgeCatalogView.swift */,
 				18E4855B287F19EB0052A6F2 /* TagCatalogView.swift */,
 				18E4855C287F19EB0052A6F2 /* ListCatalogView.swift */,
+				1822CA1929E821D400980D47 /* HeaderCatalogView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3968C75E28C9E19600561194 /* UIStepperTableViewCell.swift in Sources */,
+				1822CA1A29E821D400980D47 /* HeaderCatalogView.swift in Sources */,
 				B8F9903B2546C98700DFBFE9 /* DefaultTableHeaderView.swift in Sources */,
 				B8F990382546C98700DFBFE9 /* UIImage+Utils.swift in Sources */,
 				18E4857E287F19EB0052A6F2 /* StepperCatalogVIew.swift in Sources */,

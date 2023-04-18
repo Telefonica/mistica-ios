@@ -16,13 +16,13 @@ struct HeaderCatalogView: View {
     @State var title: String = "The title"
     @State var hasDescription = true
     @State var description: String = "The description"
-    
+
     var body: some View {
         List {
             section("Pretitle") { createSection("has pretitle", hasValue: $hasPretitle, value: $pretitle) }
             section("Title") { createSection("has title", hasValue: $hasTitle, value: $title) }
             section("Description") { createSection("has description", hasValue: $hasDescription, value: $description) }
-            
+
             NavigationLink("Show Header") {
                 Header(
                     pretitle: hasPretitle ? pretitle : nil,
@@ -32,7 +32,7 @@ struct HeaderCatalogView: View {
             }
         }
     }
-            
+
     @ViewBuilder
     func createSection(_ title: String, hasValue: Binding<Bool>, value: Binding<String>) -> some View {
         Toggle(title, isOn: hasValue)
@@ -43,12 +43,12 @@ struct HeaderCatalogView: View {
 }
 
 #if DEBUG
-struct HeaderCatalogView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            HeaderCatalogView()
+    struct HeaderCatalogView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationView {
+                HeaderCatalogView()
+            }
+            .misticaNavigationViewStyle()
         }
-        .misticaNavigationViewStyle()
     }
-}
 #endif

@@ -73,11 +73,11 @@ public class HeaderView: UIView {
         set {
             descriptionLabel.text = newValue
             updateDescriptionLabelVisibilityState()
-            
+
             updateSpacing()
         }
     }
-    
+
     public var descriptionAttributedText: NSAttributedString? {
         get {
             descriptionLabel.attributedText
@@ -85,11 +85,11 @@ public class HeaderView: UIView {
         set {
             descriptionLabel.attributedText = newValue
             updateDescriptionLabelVisibilityState()
-            
+
             updateSpacing()
         }
     }
-    
+
     // MARK: - Inits
 
     public convenience init() {
@@ -147,7 +147,7 @@ public extension HeaderView {
             titleLabel.accessibilityIdentifier = newValue
         }
     }
-    
+
     var descriptionAccessibilityLabel: String? {
         get {
             descriptionLabel.accessibilityLabel
@@ -156,7 +156,7 @@ public extension HeaderView {
             descriptionLabel.accessibilityLabel = newValue
         }
     }
-    
+
     var descriptionAccessibilityIdentifier: String? {
         get {
             descriptionLabel.accessibilityIdentifier
@@ -211,7 +211,7 @@ private extension HeaderView {
         titleLabel.textColor = .textPrimary
         titleLabel.numberOfLines = 1
     }
-    
+
     func styleDescriptionLabel() {
         descriptionLabel.font = .textPreset3(weight: .regular)
         descriptionLabel.textColor = .textSecondary
@@ -240,7 +240,7 @@ private extension HeaderView {
     func updateTitleLabelVisibilityState() {
         titleLabel.isHidden = titleLabel.text == nil && titleLabel.attributedText == nil
     }
-    
+
     func updateDescriptionLabelVisibilityState() {
         descriptionLabel.isHidden = descriptionLabel.text == nil && descriptionLabel.attributedText == nil
     }

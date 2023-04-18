@@ -20,7 +20,7 @@ class UICatalogHeaderViewController: UIViewController {
     private enum Constants {
         static let selectedSegmentEnabled = 0
     }
-    
+
     private lazy var tableView: UITableView = {
         if #available(iOS 13.0, *) {
             return UITableView(frame: .zero, style: .insetGrouped)
@@ -57,7 +57,7 @@ class UICatalogHeaderViewController: UIViewController {
         cell.textField.text = "Title"
         return cell
     }()
-    
+
     private lazy var showDescriptionCell: UISegmentedControlTableViewCell = {
         createSegmentedControl(
             reuseIdentifier: "showDescriptionCell",
@@ -67,7 +67,7 @@ class UICatalogHeaderViewController: UIViewController {
     }()
 
     private lazy var descriptionCell: UITextFieldTableViewCell = {
-       let cell = UITextFieldTableViewCell(reuseIdentifier: "Description")
+        let cell = UITextFieldTableViewCell(reuseIdentifier: "Description")
         cell.textField.text = "Description"
         return cell
     }()
@@ -142,11 +142,11 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
         if showPretitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
             vc.headerView.pretitle = pretitleCell.textField.text
         }
-        
+
         if showTitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
             vc.headerView.title = titleCell.textField.text
         }
-        
+
         if showDescriptionCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
             vc.headerView.descriptionValue = descriptionCell.textField.text
         }
@@ -158,10 +158,10 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
 private extension UICatalogHeaderViewController {
     func createSegmentedControl(reuseIdentifier: String, firstSegmentedTitle: String, secondSegmentedTitle: String) -> UISegmentedControlTableViewCell {
         let segmented = UISegmentedControlTableViewCell(reuseIdentifier: reuseIdentifier)
-        
+
         segmented.segmentedControl.insertSegment(withTitle: firstSegmentedTitle, at: 0, animated: false)
         segmented.segmentedControl.insertSegment(withTitle: secondSegmentedTitle, at: 1, animated: false)
-        
+
         segmented.segmentedControl.selectedSegmentIndex = 0
 
         return segmented

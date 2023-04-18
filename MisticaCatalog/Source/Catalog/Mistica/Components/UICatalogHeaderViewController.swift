@@ -13,6 +13,7 @@ private enum Section: Int, CaseIterable {
     case pretitle
     case title
     case description
+    case style
     case show
 }
 
@@ -71,6 +72,14 @@ class UICatalogHeaderViewController: UIViewController {
         cell.textField.text = "Description"
         return cell
     }()
+    
+    private lazy var headerStyleCell: UISegmentedControlTableViewCell = {
+        createSegmentedControl(
+            reuseIdentifier: "headerStyleCell",
+            firstSegmentedTitle: "normal",
+            secondSegmentedTitle: "inverse"
+        )
+    }()
 
     private lazy var showHeaderCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "showHeaderCell")
@@ -83,6 +92,7 @@ class UICatalogHeaderViewController: UIViewController {
         [showPretitleCell, pretitleCell],
         [showTitleCell, titleCell],
         [showDescriptionCell, descriptionCell],
+        [headerStyleCell],
         [showHeaderCell]
     ]
 
@@ -150,6 +160,9 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
         if showDescriptionCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
             vc.headerView.descriptionValue = descriptionCell.textField.text
         }
+        
+        let style: HeaderView.Style = headerStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
+        vc.headerView.style = style
 
         show(vc, sender: self)
     }
@@ -199,6 +212,8 @@ private extension Section {
             return "Has Title"
         case .description:
             return "Has Description"
+        case .style:
+            return "Style"
         case .show:
             return nil
         }

@@ -9,12 +9,18 @@
 import UIKit
 
 public class HeaderView: UIView {
+    public enum Style {
+        case normal
+        case inverse
+    }
+
     private let stackView = UIStackView()
     private let topStackView = UIStackView()
 
     private let pretitleLabel = UILabel()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
+    private var headerStyle: Style = .normal
 
     // MARK: - Public
 
@@ -87,6 +93,16 @@ public class HeaderView: UIView {
             updateDescriptionLabelVisibilityState()
 
             updateSpacing()
+        }
+    }
+    
+    public var style: Style {
+        get {
+            headerStyle
+        }
+        set {
+            headerStyle = newValue
+            updateColors()
         }
     }
 
@@ -195,14 +211,22 @@ private extension HeaderView {
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = Constants.spacing
+        stackView.backgroundColor = .orange
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(
+            top: Constants.marginTop,
+            left: Constants.marginLeftAndRight,
+            bottom: Constants.marginBottom,
+            right: Constants.marginLeftAndRight
+        )
 
         topStackView.axis = .vertical
         topStackView.spacing = Constants.spacing
 
         addSubview(stackView, constraints: [
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.marginLeftAndRight),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.marginLeftAndRight)
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
 
         stackView.addArrangedSubview(topStackView)
@@ -214,23 +238,21 @@ private extension HeaderView {
 
     func stylePretitleLabel() {
         pretitleLabel.font = .textPreset3(weight: .regular)
-        pretitleLabel.textColor = .textPrimary
         pretitleLabel.numberOfLines = 1
     }
 
     func styleTitleLabel() {
         titleLabel.font = .textPreset6()
-        titleLabel.textColor = .textPrimary
         titleLabel.numberOfLines = 1
     }
 
     func styleDescriptionLabel() {
         descriptionLabel.font = .textPreset3(weight: .regular)
-        descriptionLabel.textColor = .textSecondary
         descriptionLabel.numberOfLines = 1
     }
 
     func updateLayoutMarginsGuide() {
+        updateColors()
         directionalLayoutMargins = NSDirectionalEdgeInsets(
             top: Constants.marginTop,
             leading: Constants.marginLeftAndRight,
@@ -256,7 +278,17 @@ private extension HeaderView {
     }
 
     func updateColors() {
-        titleLabel.textColor = .textPrimary
-        pretitleLabel.textColor = .textPrimary
+        switch style {
+        case .normal:
+            stackView.backgroundColor = .background
+            pretitleLabel.textColor = .textPrimary
+            titleLabel.textColor = .textPrimary
+            descriptionLabel.textColor = .textPrimary
+        case .inverse:
+            stackView.backgroundColor = .backgroundBrand
+            pretitleLabel.textColor = .textPrimaryInverse
+            titleLabel.textColor = .textPrimaryInverse
+            descriptionLabel.textColor = .textPrimaryInverse
+        }
     }
 }

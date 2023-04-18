@@ -16,18 +16,21 @@ struct HeaderCatalogView: View {
     @State var title: String = "The title"
     @State var hasDescription = true
     @State var description: String = "The description"
+    @State var isNormalStyle = true
 
     var body: some View {
         List {
             section("Pretitle") { createSection("has pretitle", hasValue: $hasPretitle, value: $pretitle) }
             section("Title") { createSection("has title", hasValue: $hasTitle, value: $title) }
             section("Description") { createSection("has description", hasValue: $hasDescription, value: $description) }
+            section("Style") { Toggle("is normal style", isOn: $isNormalStyle)}
 
             NavigationLink("Show Header") {
                 Header(
                     pretitle: hasPretitle ? pretitle : nil,
                     title: hasTitle ? title : nil,
-                    description: hasDescription ? description : nil
+                    description: hasDescription ? description : nil,
+                    style: isNormalStyle ? .normal : .inverse
                 )
                 .navigationBarTitle("Header")
             }

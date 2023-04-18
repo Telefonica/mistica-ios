@@ -14,7 +14,7 @@ public struct Header: View {
         static let marginTop = 32.0
         static let marginBottom = 24.0
     }
-    
+
     private let pretitle: String?
     private let title: String?
     private let description: String?

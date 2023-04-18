@@ -176,7 +176,7 @@ private extension HeaderView {
         static let marginBottom = 24.0
         static let spacing: CGFloat = 8
     }
-    
+
     func setUpView() {
         layoutView()
 
@@ -200,11 +200,11 @@ private extension HeaderView {
         topStackView.spacing = Constants.spacing
 
         addSubview(stackView, constraints: [
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor,  constant: Constants.marginLeftAndRight),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.marginLeftAndRight),
             stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.marginLeftAndRight)
         ])
-        
+
         stackView.addArrangedSubview(topStackView)
 
         topStackView.addArrangedSubview(pretitleLabel)
@@ -235,7 +235,8 @@ private extension HeaderView {
             top: Constants.marginTop,
             leading: Constants.marginLeftAndRight,
             bottom: Constants.marginBottom,
-            trailing: Constants.marginLeftAndRight)
+            trailing: Constants.marginLeftAndRight
+        )
     }
 
     func updateSpacing() {

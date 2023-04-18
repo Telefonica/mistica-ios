@@ -11,7 +11,6 @@ import UIKit
 public class HeaderView: UIView {
     private let stackView = UIStackView()
     private let topStackView = UIStackView()
-    private let bottomStackView = UIStackView()
 
     private let pretitleLabel = UILabel()
     private let titleLabel = UILabel()
@@ -192,12 +191,6 @@ private extension HeaderView {
 
         topStackView.axis = .vertical
         topStackView.spacing = 8
-
-        bottomStackView.axis = .vertical
-        bottomStackView.spacing = 16
-        bottomStackView.alignment = .leading
-
-        addSubview(constrainedToLayoutMarginsGuideOf: stackView)
         
         stackView.addArrangedSubview(topStackView)
         stackView.addArrangedSubview(bottomStackView)
@@ -208,9 +201,9 @@ private extension HeaderView {
     }
 
     func stylePretitleLabel() {
-        pretitleLabel.isHidden = true
         pretitleLabel.font = .textPreset3(weight: .regular)
         pretitleLabel.textColor = .textPrimary
+        pretitleLabel.numberOfLines = 1
     }
 
     func styleTitleLabel() {

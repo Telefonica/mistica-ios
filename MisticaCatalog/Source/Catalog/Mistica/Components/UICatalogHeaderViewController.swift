@@ -151,8 +151,6 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
             vc.headerView.descriptionValue = descriptionCell.textField.text
         }
 
-        vc.headerView.title = titleCell.textField.text!.isEmpty ? nil : titleCell.textField.text
-
         show(vc, sender: self)
     }
 }

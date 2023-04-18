@@ -1,3 +1,10 @@
+# [23.2.0](https://github.com/Telefonica/mistica-ios/compare/v23.1.0...v23.2.0) (2023-04-18)
+
+
+### Features
+
+* **FontWeight:** Added brandeable FontWeights ([d4280c2](https://github.com/Telefonica/mistica-ios/commit/d4280c24f4af605aa788c3a7f8390ea0a180f81d))
+
 # [23.1.0](https://github.com/Telefonica/mistica-ios/compare/v23.0.2...v23.1.0) (2023-04-13)
 
 

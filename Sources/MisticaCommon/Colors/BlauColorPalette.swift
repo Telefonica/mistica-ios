@@ -93,7 +93,7 @@ struct BlauColors: MisticaColors {
     let textPrimary = palette.grey6 | palette.grey2
     let textPrimaryInverse = palette.white | palette.grey2
     let textSecondary = palette.grey5 | palette.grey4
-    let textSecondaryInverse = palette.white | palette.grey4
+    let textSecondaryInverse = palette.blauBluePrimary20 | palette.grey4
 
     // STATES
     let error = palette.blauRed

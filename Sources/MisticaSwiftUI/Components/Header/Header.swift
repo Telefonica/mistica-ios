@@ -1,6 +1,6 @@
 //
 //  Header.swift
-//  
+//
 //  Made with ❤️ by Novum
 //
 //  Copyright © Telefonica. All rights reserved.
@@ -12,9 +12,7 @@ public struct Header: View {
     private let pretitle: String?
     private let title: String?
     private let description: String?
-    
-    
-    
+
     public init(
         pretitle: String? = nil,
         title: String? = nil,
@@ -24,9 +22,9 @@ public struct Header: View {
         self.title = title
         self.description = description
     }
-    
+
     public var body: some View {
-        VStack() {
+        VStack {
             if let pretitle = pretitle {
                 Text(pretitle)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -56,16 +54,16 @@ public struct Header: View {
 // MARK: Previews
 
 #if DEBUG
-struct Header_Previews: PreviewProvider {
-    static var previews: some View {
-        Preview {
-            Header(
-                pretitle: "The pretitle",
-                title: "The title",
-                description: "The description value, con un valor muy largo que ocupa muchas lineas..."
-            )
+    struct Header_Previews: PreviewProvider {
+        static var previews: some View {
+            Preview {
+                Header(
+                    pretitle: "The pretitle",
+                    title: "The title",
+                    description: "The description value, con un valor muy largo que ocupa muchas lineas..."
+                )
+            }
+            .previewLayout(.sizeThatFits)
         }
-        .previewLayout(.sizeThatFits)
     }
-}
 #endif

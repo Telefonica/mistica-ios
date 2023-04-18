@@ -170,6 +170,13 @@ public extension HeaderView {
 // MARK: - Private
 
 private extension HeaderView {
+    private enum Constants {
+        static let marginLeftAndRight = 16.0
+        static let marginTop = 32.0
+        static let marginBottom = 24.0
+        static let spacing: CGFloat = 8
+    }
+    
     func setUpView() {
         layoutView()
 
@@ -187,13 +194,18 @@ private extension HeaderView {
 
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
-        stackView.spacing = 24
+        stackView.spacing = Constants.spacing
 
         topStackView.axis = .vertical
-        topStackView.spacing = 8
+        topStackView.spacing = Constants.spacing
 
+        addSubview(stackView, constraints: [
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor,  constant: Constants.marginLeftAndRight),
+            stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.marginLeftAndRight)
+        ])
+        
         stackView.addArrangedSubview(topStackView)
-        stackView.addArrangedSubview(bottomStackView)
 
         topStackView.addArrangedSubview(pretitleLabel)
         topStackView.addArrangedSubview(titleLabel)
@@ -219,18 +231,15 @@ private extension HeaderView {
     }
 
     func updateLayoutMarginsGuide() {
-        let top: CGFloat = 32
-        directionalLayoutMargins = NSDirectionalEdgeInsets(top: top, leading: 16, bottom: 24, trailing: 32)
+        directionalLayoutMargins = NSDirectionalEdgeInsets(
+            top: Constants.marginTop,
+            leading: Constants.marginLeftAndRight,
+            bottom: Constants.marginBottom,
+            trailing: Constants.marginLeftAndRight)
     }
 
     func updateSpacing() {
-        if !pretitleLabel.isHidden {
-            stackView.setCustomSpacing(8, after: pretitleLabel)
-        } else {
-            stackView.setCustomSpacing(0, after: pretitleLabel)
-        }
-
-        stackView.spacing = 24
+        stackView.setCustomSpacing(Constants.spacing, after: pretitleLabel)
     }
 
     func updatePretitleLabelVisibilityState() {

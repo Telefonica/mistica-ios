@@ -9,6 +9,12 @@
 import SwiftUI
 
 public struct Header: View {
+    private enum Constants {
+        static let marginLeftAndRight = 16.0
+        static let marginTop = 32.0
+        static let marginBottom = 24.0
+    }
+    
     private let pretitle: String?
     private let title: String?
     private let description: String?
@@ -73,9 +79,10 @@ public struct Header: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .padding(.leading, 16)
-        .padding(.top, 32)
-        .padding(.trailing, 16)
+        .padding(.leading, Constants.marginLeftAndRight)
+        .padding(.top, Constants.marginTop)
+        .padding(.trailing, Constants.marginLeftAndRight)
+        .padding(.bottom, Constants.marginBottom)
     }
 
     @ViewBuilder

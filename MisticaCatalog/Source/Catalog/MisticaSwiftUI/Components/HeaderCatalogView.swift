@@ -29,6 +29,7 @@ struct HeaderCatalogView: View {
                     title: hasTitle ? title : nil,
                     description: hasDescription ? description : nil
                 )
+                .navigationBarTitle("Header")
             }
         }
     }

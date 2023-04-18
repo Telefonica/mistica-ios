@@ -12,7 +12,7 @@ public struct Header: View {
     private let pretitle: String?
     private let title: String?
     private let description: String?
-    
+
     private var pretitleAccessibilityLabel: String?
     private var pretitleAccessibilityIdentifier: String?
     private var titleAccessibilityLabel: String?
@@ -45,25 +45,31 @@ public struct Header: View {
     public var body: some View {
         VStack(spacing: 8) {
             if let pretitle = pretitle {
-                text(pretitle,
-                     font: .textPreset3(weight: .regular),
-                     foregroundColor: .textPrimary,
-                     accessibilityLabel: pretitleAccessibilityLabel,
-                     accessibilityIdentifier: pretitleAccessibilityIdentifier)
+                text(
+                    pretitle,
+                    font: .textPreset3(weight: .regular),
+                    foregroundColor: .textPrimary,
+                    accessibilityLabel: pretitleAccessibilityLabel,
+                    accessibilityIdentifier: pretitleAccessibilityIdentifier
+                )
             }
             if let title = title {
-                text(title,
-                     font: .textPreset6(),
-                     foregroundColor: .textPrimary,
-                     accessibilityLabel: titleAccessibilityLabel,
-                     accessibilityIdentifier: titleAccessibilityIdentifier)
+                text(
+                    title,
+                    font: .textPreset6(),
+                    foregroundColor: .textPrimary,
+                    accessibilityLabel: titleAccessibilityLabel,
+                    accessibilityIdentifier: titleAccessibilityIdentifier
+                )
             }
             if let description = description {
-                text(description,
-                     font: .textPreset3(weight: .regular),
-                     foregroundColor: .textSecondary,
-                     accessibilityLabel: descriptionAccessibilityLabel,
-                     accessibilityIdentifier: descriptionAccessibilityIdentifier)
+                text(
+                    description,
+                    font: .textPreset3(weight: .regular),
+                    foregroundColor: .textSecondary,
+                    accessibilityLabel: descriptionAccessibilityLabel,
+                    accessibilityIdentifier: descriptionAccessibilityIdentifier
+                )
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -71,14 +77,13 @@ public struct Header: View {
         .padding(.top, 32)
         .padding(.trailing, 16)
     }
-    
+
     @ViewBuilder
     private func text(_ textValue: String,
                       font: Font,
                       foregroundColor: Color,
                       accessibilityLabel: String?,
-                      accessibilityIdentifier: String?
-    ) -> some View {
+                      accessibilityIdentifier: String?) -> some View {
         Text(textValue)
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(font)

@@ -191,7 +191,7 @@ private extension HeaderView {
 
         topStackView.axis = .vertical
         topStackView.spacing = 8
-        
+
         stackView.addArrangedSubview(topStackView)
         stackView.addArrangedSubview(bottomStackView)
 

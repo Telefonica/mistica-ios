@@ -23,7 +23,7 @@ struct HeaderCatalogView: View {
             section("Pretitle") { createSection("has pretitle", hasValue: $hasPretitle, value: $pretitle) }
             section("Title") { createSection("has title", hasValue: $hasTitle, value: $title) }
             section("Description") { createSection("has description", hasValue: $hasDescription, value: $description) }
-            section("Style") { Toggle("is normal style", isOn: $isNormalStyle)}
+            section("Style") { Toggle("is normal style", isOn: $isNormalStyle) }
 
             NavigationLink("Show Header") {
                 Header(

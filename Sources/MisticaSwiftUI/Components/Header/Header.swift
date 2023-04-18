@@ -13,7 +13,7 @@ public struct Header: View {
         case normal
         case inverse
     }
-    
+
     private enum Constants {
         static let marginLeftAndRight = 16.0
         static let marginTop = 32.0
@@ -90,7 +90,8 @@ public struct Header: View {
                 top: Constants.marginTop,
                 leading: Constants.marginLeftAndRight,
                 bottom: Constants.marginBottom,
-                trailing: Constants.marginLeftAndRight)
+                trailing: Constants.marginLeftAndRight
+            )
             )
         }
         .frame(maxWidth: .infinity, alignment: .top)
@@ -131,7 +132,7 @@ public struct Header: View {
             return .textPrimaryInverse
         }
     }
-    
+
     var titleColor: Color {
         switch style {
         case .normal:
@@ -149,7 +150,6 @@ public struct Header: View {
             return .textPrimaryInverse
         }
     }
-
 }
 
 // MARK: Previews

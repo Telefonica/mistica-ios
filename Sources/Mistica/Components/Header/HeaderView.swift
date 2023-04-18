@@ -95,7 +95,7 @@ public class HeaderView: UIView {
             updateSpacing()
         }
     }
-    
+
     public var style: Style {
         get {
             headerStyle

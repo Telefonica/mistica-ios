@@ -72,7 +72,7 @@ class UICatalogHeaderViewController: UIViewController {
         cell.textField.text = "The description"
         return cell
     }()
-    
+
     private lazy var headerStyleCell: UISegmentedControlTableViewCell = {
         createSegmentedControl(
             reuseIdentifier: "headerStyleCell",
@@ -164,7 +164,7 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
         if showDescriptionCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
             descriptionValue = descriptionCell.textField.text
         }
-                
+
         let style: HeaderView.Style = headerStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
 
         vc.headerView.setUpView(

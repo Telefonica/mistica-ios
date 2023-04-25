@@ -24,18 +24,6 @@ public class HeaderView: UIView {
 
     // MARK: - Public
 
-    public var pretitle: String? {
-        get {
-            pretitleLabel.text
-        }
-        set {
-            pretitleLabel.text = newValue
-            updatePretitleLabelVisibilityState()
-
-            updateSpacing()
-        }
-    }
-
     public var pretitleAttributedText: NSAttributedString? {
         get {
             pretitleLabel.attributedText
@@ -43,18 +31,6 @@ public class HeaderView: UIView {
         set {
             pretitleLabel.attributedText = newValue
             updatePretitleLabelVisibilityState()
-
-            updateSpacing()
-        }
-    }
-
-    public var title: String? {
-        get {
-            titleLabel.text
-        }
-        set {
-            titleLabel.text = newValue
-            updateTitleLabelVisibilityState()
 
             updateSpacing()
         }
@@ -72,18 +48,6 @@ public class HeaderView: UIView {
         }
     }
 
-    public var descriptionValue: String? {
-        get {
-            descriptionLabel.text
-        }
-        set {
-            descriptionLabel.text = newValue
-            updateDescriptionLabelVisibilityState()
-
-            updateSpacing()
-        }
-    }
-
     public var descriptionAttributedText: NSAttributedString? {
         get {
             descriptionLabel.attributedText
@@ -96,32 +60,28 @@ public class HeaderView: UIView {
         }
     }
     
-    public var style: Style {
-        get {
-            headerStyle
-        }
-        set {
-            headerStyle = newValue
-            updateColors()
-        }
-    }
-
     // MARK: - Inits
 
     public convenience init() {
         self.init(frame: .zero)
     }
+    
+    public func setUpView(
+        pretitle: String? = nil,
+        title: String? = nil,
+        descriptionValue: String? = nil,
+        style: Style = .normal
+    ) {
+        self.pretitle = pretitle
+        self.title = title
+        self.descriptionValue = descriptionValue
+        self.style = style
+        
+        layoutView()
 
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-
-        setUpView()
-    }
-
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        setUpView()
+        stylePretitleLabel()
+        styleTitleLabel()
+        styleDescriptionLabel()
     }
 }
 
@@ -186,19 +146,57 @@ public extension HeaderView {
 // MARK: - Private
 
 private extension HeaderView {
-    private enum Constants {
+    enum Constants {
         static let marginLeftAndRight = 16.0
         static let marginTop = 32.0
         static let marginBottom = 24.0
         static let spacing: CGFloat = 8
     }
+    
+    var pretitle: String? {
+        get {
+            pretitleLabel.text
+        }
+        set {
+            pretitleLabel.text = newValue
+            updatePretitleLabelVisibilityState()
 
-    func setUpView() {
-        layoutView()
+            updateSpacing()
+        }
+    }
 
-        stylePretitleLabel()
-        styleTitleLabel()
-        styleDescriptionLabel()
+    var title: String? {
+        get {
+            titleLabel.text
+        }
+        set {
+            titleLabel.text = newValue
+            updateTitleLabelVisibilityState()
+
+            updateSpacing()
+        }
+    }
+
+    var descriptionValue: String? {
+        get {
+            descriptionLabel.text
+        }
+        set {
+            descriptionLabel.text = newValue
+            updateDescriptionLabelVisibilityState()
+
+            updateSpacing()
+        }
+    }
+
+    var style: Style {
+        get {
+            headerStyle
+        }
+        set {
+            headerStyle = newValue
+            updateColors()
+        }
     }
 
     func layoutView() {
@@ -211,7 +209,6 @@ private extension HeaderView {
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = Constants.spacing
-        stackView.backgroundColor = .orange
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(
             top: Constants.marginTop,
@@ -225,15 +222,21 @@ private extension HeaderView {
 
         addSubview(stackView, constraints: [
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
 
         stackView.addArrangedSubview(topStackView)
 
-        topStackView.addArrangedSubview(pretitleLabel)
-        topStackView.addArrangedSubview(titleLabel)
-        topStackView.addArrangedSubview(descriptionLabel)
+        if pretitle != nil {
+            topStackView.addArrangedSubview(pretitleLabel)
+        }
+        if title != nil {
+            topStackView.addArrangedSubview(titleLabel)
+        }
+        if descriptionValue != nil {
+            topStackView.addArrangedSubview(descriptionLabel)
+        }
     }
 
     func stylePretitleLabel() {

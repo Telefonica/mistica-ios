@@ -40,7 +40,7 @@ class UICatalogHeaderViewController: UIViewController {
 
     private lazy var pretitleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Pretitle")
-        cell.textField.text = "Pretitle"
+        cell.textField.text = "The pretitle"
         cell.textField.placeholder = "Empty"
         return cell
     }()
@@ -55,7 +55,7 @@ class UICatalogHeaderViewController: UIViewController {
 
     private lazy var titleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Title")
-        cell.textField.text = "Title"
+        cell.textField.text = "The title"
         return cell
     }()
 
@@ -69,7 +69,7 @@ class UICatalogHeaderViewController: UIViewController {
 
     private lazy var descriptionCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Description")
-        cell.textField.text = "Description"
+        cell.textField.text = "The description"
         return cell
     }()
     
@@ -149,20 +149,30 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
 
         let vc = HeaderViewSampleViewController()
 
+        var pretitle: String?
+        var title: String?
+        var descriptionValue: String?
+        
         if showPretitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
-            vc.headerView.pretitle = pretitleCell.textField.text
+            pretitle = pretitleCell.textField.text
         }
 
         if showTitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
-            vc.headerView.title = titleCell.textField.text
+            title = titleCell.textField.text
         }
 
         if showDescriptionCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
-            vc.headerView.descriptionValue = descriptionCell.textField.text
+            descriptionValue = descriptionCell.textField.text
         }
-        
+                
         let style: HeaderView.Style = headerStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
-        vc.headerView.style = style
+
+        vc.headerView.setUpView(
+            pretitle: pretitle,
+            title: title,
+            descriptionValue: descriptionValue,
+            style: style
+        )
 
         show(vc, sender: self)
     }

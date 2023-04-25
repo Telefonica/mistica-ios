@@ -63,27 +63,27 @@ private extension FontToolkitTests {
             )
         }
         let textPreset5 = makeLabel(
-            text: "textPreset5 \(FontStyle.TextPreset5Weight.default)",
+            text: "textPreset5 \(MisticaConfig.currentFontWeights.textPreset5)",
             font: .textPreset5()
         )
         let textPreset6 = makeLabel(
-            text: "textPreset6 \(FontStyle.TextPreset6Weight.default)",
+            text: "textPreset6 \(MisticaConfig.currentFontWeights.textPreset6)",
             font: .textPreset6()
         )
         let textPreset7 = makeLabel(
-            text: "textPreset7 \(FontStyle.TextPreset7Weight.default)",
+            text: "textPreset7 \(MisticaConfig.currentFontWeights.textPreset7)",
             font: .textPreset7()
         )
         let textPreset8 = makeLabel(
-            text: "textPreset8 \(FontStyle.TextPreset8Weight.default)",
+            text: "textPreset8 \(MisticaConfig.currentFontWeights.textPreset8)",
             font: .textPreset8()
         )
         let textPreset9 = makeLabel(
-            text: "textPreset9 \(FontStyle.TextPreset9Weight.default)",
+            text: "textPreset9 \(MisticaConfig.currentFontWeights.textPreset9)",
             font: .textPreset9()
         )
         let textPreset10 = makeLabel(
-            text: "textPreset10 \(FontStyle.TextPreset10Weight.default)",
+            text: "textPreset10 \(MisticaConfig.currentFontWeights.textPreset10)",
             font: .textPreset10()
         )
 

@@ -49,16 +49,4 @@ public enum BrandStyle {
     public static var allCases: [BrandStyle] {
         [.movistar, .vivo, .o2, .blau]
     }
-
-    public var isMovistarBrand: Bool {
-        switch self {
-        case .movistar:
-            return true
-        case .vivo,
-             .o2,
-             .blau,
-             .custom:
-            return false
-        }
-    }
 }

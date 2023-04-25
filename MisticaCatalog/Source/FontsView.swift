@@ -12,12 +12,12 @@ import SwiftUI
 
 struct FontView: View {
     let fonts: [(name: String, font: Font)] = [
-        ("text-preset10 bold", .textPreset10()),
-        ("text-preset9 bold", .textPreset9()),
-        ("text-preset8 bold", .textPreset8()),
-        ("text-preset7 bold", .textPreset7()),
-        ("text-preset6 bold", .textPreset6()),
-        ("text-preset5 bold", .textPreset5()),
+        ("text-preset10", .textPreset10()),
+        ("text-preset9", .textPreset9()),
+        ("text-preset8", .textPreset8()),
+        ("text-preset7", .textPreset7()),
+        ("text-preset6", .textPreset6()),
+        ("text-preset5", .textPreset5()),
         ("text-preset4 medium", .textPreset4(weight: .medium)),
         ("text-preset4 regular", .textPreset4(weight: .regular)),
         ("text-preset4 light", .textPreset4(weight: .light)),

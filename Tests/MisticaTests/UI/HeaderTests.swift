@@ -85,6 +85,26 @@ final class HeaderTests: XCTestCase {
         )
     }
 
+    func testFullHeaderWithAlternateColorsInverse() {
+        assertSnapshot(
+            matching: makeHeader(
+                style: .inverse,
+                pretitle: "Pretitle",
+                pretitleHasSecondaryColor: true,
+                title: "Title",
+                preAmount: "Pre-amount",
+                preAmountHasSecondaryColor: true,
+                amount: "0,00€",
+                amountHasDangerColor: true,
+                primaryActionTitle: "Primary Action",
+                secondaryActionTitle: "Secondary Action",
+                subtitle: "Subtitle",
+                subtitleHasSecondaryColor: true
+            ),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
     func testFullHeaderInNavigationBar() {
         assertSnapshot(
             matching: makeHeader(

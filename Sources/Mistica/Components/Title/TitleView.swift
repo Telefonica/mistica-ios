@@ -53,7 +53,7 @@ public class TitleView: UITableViewHeaderFooterView {
 
     public var onLinkLabelTapped: (() -> Void)?
 
-    public var style: Style = .title1 {
+    public var style: Style = .default {
         didSet {
             updateStyle()
         }
@@ -146,5 +146,16 @@ private extension TitleView {
 
     @objc func linkLabelTapped() {
         onLinkLabelTapped?()
+    }
+}
+
+private extension TitleView.Style {
+    static var `default`: Self {
+        switch MisticaConfig.brandStyle {
+        case .movistar:
+            return .title2
+        case .blau, .o2, .vivo, .custom:
+            return .title1
+        }
     }
 }

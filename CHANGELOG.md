@@ -1,3 +1,10 @@
+# [23.3.0](https://github.com/Telefonica/mistica-ios/compare/v23.2.0...v23.3.0) (2023-04-25)
+
+
+### Features
+
+* **Colors:** Update textSecondaryInverse for all brands ([ac37ba6](https://github.com/Telefonica/mistica-ios/commit/ac37ba619849226157f531eab9b90214043eb272))
+
 # [23.2.0](https://github.com/Telefonica/mistica-ios/compare/v23.1.0...v23.2.0) (2023-04-18)
 
 

@@ -91,7 +91,7 @@ private extension HeaderTests {
 
 private class HeaderViewController: UIViewController {
     let headerView = HeaderView()
-    
+
     func setUpView(
         pretitle: String? = nil,
         title: String? = nil,
@@ -105,7 +105,7 @@ private class HeaderViewController: UIViewController {
             style: style
         )
     }
-    
+
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .background

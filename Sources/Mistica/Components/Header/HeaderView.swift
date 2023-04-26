@@ -54,13 +54,13 @@ public class HeaderView: UIView {
             updateSpacing()
         }
     }
-    
+
     // MARK: - Inits
 
     public convenience init() {
         self.init(frame: .zero)
     }
-    
+
     public func setUpView(
         pretitle: String? = nil,
         title: String? = nil,
@@ -71,7 +71,7 @@ public class HeaderView: UIView {
         self.title = title
         self.descriptionValue = descriptionValue
         self.style = style
-        
+
         layoutView()
 
         stylePretitleLabel()
@@ -147,7 +147,7 @@ private extension HeaderView {
         static let marginBottom = 24.0
         static let spacing: CGFloat = 8
     }
-    
+
     var pretitle: String? {
         get {
             pretitleLabel.text

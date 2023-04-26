@@ -152,7 +152,7 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
         var pretitle: String?
         var title: String?
         var descriptionValue: String?
-        
+
         if showPretitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
             pretitle = pretitleCell.textField.text
         }

@@ -56,7 +56,7 @@ extension HeaderTests {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testMinimalDescriptionHeader() {
         assertSnapshot(
             matching: makeHeader(descriptionValue: "Only a description"),

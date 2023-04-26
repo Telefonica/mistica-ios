@@ -18,24 +18,64 @@ final class HeaderTests: XCTestCase {
         isRecording = false
         MisticaConfig.brandStyle = .movistar
     }
+}
 
-    func testMinimalHeader() {
+// MARK: - Minimal header
+
+extension HeaderTests {
+    func testMinimalPretitleHeader() {
         assertSnapshot(
-            matching: makeHeader(title: "Title"),
+            matching: makeHeader(pretitle: "Only a pretitle"),
             as: .image(on: .iPhoneSe)
         )
     }
 
-    func testMinimalHeaderInNavigationBar() {
+    func testMinimalPretitleHeaderInNavigationBar() {
         assertSnapshot(
             matching: makeHeader(
                 style: .inverse,
-                title: "Title"
+                pretitle: "Only a pretitle"
             ),
             as: .image(on: .iPhoneSe)
         )
     }
 
+    func testMinimalTitleHeader() {
+        assertSnapshot(
+            matching: makeHeader(title: "Only a title"),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
+    func testMinimalTitleHeaderInNavigationBar() {
+        assertSnapshot(
+            matching: makeHeader(
+                style: .inverse,
+                title: "Only a title"
+            ),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+    
+    func testMinimalDescriptionHeader() {
+        assertSnapshot(
+            matching: makeHeader(descriptionValue: "Only a description"),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
+    func testMinimalDescriptionHeaderInNavigationBar() {
+        assertSnapshot(
+            matching: makeHeader(
+                style: .inverse,
+                descriptionValue: "Only a description"
+            ),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+}
+
+extension HeaderTests {
     func testFullHeader() {
         assertSnapshot(
             matching: makeHeader(
@@ -47,12 +87,12 @@ final class HeaderTests: XCTestCase {
         )
     }
 
-    func testFullHeaderWithLongTitle() {
+    func testFullHeaderWithLongTexts() {
         assertSnapshot(
             matching: makeHeader(
-                pretitle: "Pretitle",
+                pretitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                descriptionValue: "Description"
+                descriptionValue: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
             ),
             as: .image(on: .iPhoneSe)
         )
@@ -75,7 +115,7 @@ private extension HeaderTests {
     func makeHeader(
         style: HeaderViewStyle = .normal,
         pretitle: String? = nil,
-        title: String,
+        title: String? = nil,
         descriptionValue: String? = nil
     ) -> UIViewController {
         let viewController = HeaderViewController()

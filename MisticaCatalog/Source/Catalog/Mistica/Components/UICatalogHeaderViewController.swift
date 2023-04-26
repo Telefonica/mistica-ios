@@ -165,7 +165,7 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
             descriptionValue = descriptionCell.textField.text
         }
 
-        let style: HeaderView.Style = headerStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
+        let style: HeaderViewStyle = headerStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
 
         vc.headerView.setUpView(
             pretitle: pretitle,

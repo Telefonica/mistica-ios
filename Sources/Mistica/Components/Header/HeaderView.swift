@@ -9,18 +9,13 @@
 import UIKit
 
 public class HeaderView: UIView {
-    public enum Style {
-        case normal
-        case inverse
-    }
-
     private let stackView = UIStackView()
     private let topStackView = UIStackView()
 
     private let pretitleLabel = UILabel()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
-    private var headerStyle: Style = .normal
+    private var headerStyle: HeaderViewStyle = .normal
 
     // MARK: - Public
 
@@ -70,7 +65,7 @@ public class HeaderView: UIView {
         pretitle: String? = nil,
         title: String? = nil,
         descriptionValue: String? = nil,
-        style: Style = .normal
+        style: HeaderViewStyle = .normal
     ) {
         self.pretitle = pretitle
         self.title = title
@@ -189,7 +184,7 @@ private extension HeaderView {
         }
     }
 
-    var style: Style {
+    var style: HeaderViewStyle {
         get {
             headerStyle
         }

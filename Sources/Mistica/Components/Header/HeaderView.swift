@@ -142,7 +142,8 @@ public extension HeaderView {
 
 private extension HeaderView {
     enum Constants {
-        static let marginLeftAndRight = 16.0
+        static let marginLeft = 16.0
+        static let marginRight = 32.0
         static let marginTop = 32.0
         static let marginBottom = 24.0
         static let spacing: CGFloat = 8
@@ -207,9 +208,9 @@ private extension HeaderView {
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(
             top: Constants.marginTop,
-            left: Constants.marginLeftAndRight,
+            left: Constants.marginLeft,
             bottom: Constants.marginBottom,
-            right: Constants.marginLeftAndRight
+            right: Constants.marginRight
         )
 
         topStackView.axis = .vertical
@@ -253,9 +254,9 @@ private extension HeaderView {
         updateColors()
         directionalLayoutMargins = NSDirectionalEdgeInsets(
             top: Constants.marginTop,
-            leading: Constants.marginLeftAndRight,
+            leading: Constants.marginLeft,
             bottom: Constants.marginBottom,
-            trailing: Constants.marginLeftAndRight
+            trailing: Constants.marginRight
         )
     }
 

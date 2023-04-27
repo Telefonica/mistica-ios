@@ -15,7 +15,8 @@ public struct Header: View {
     }
 
     private enum Constants {
-        static let marginLeftAndRight = 16.0
+        static let marginLeft = 16.0
+        static let marginRight = 32.0
         static let marginTop = 32.0
         static let marginBottom = 24.0
     }
@@ -88,9 +89,9 @@ public struct Header: View {
                 }
             }.padding(EdgeInsets(
                 top: Constants.marginTop,
-                leading: Constants.marginLeftAndRight,
+                leading: Constants.marginLeft,
                 bottom: Constants.marginBottom,
-                trailing: Constants.marginLeftAndRight
+                trailing: Constants.marginRight
             )
             )
         }
@@ -161,12 +162,12 @@ public struct Header: View {
                 Header(
                     pretitle: "The pretitle",
                     title: "The title",
-                    description: "The description value, con un valor muy largo que ocupa muchas lineas..."
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
                 )
                 Header(
                     pretitle: "The pretitle",
                     title: "The title",
-                    description: "The description value, con un valor muy largo que ocupa muchas lineas...",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                     style: .inverse
                 )
             }

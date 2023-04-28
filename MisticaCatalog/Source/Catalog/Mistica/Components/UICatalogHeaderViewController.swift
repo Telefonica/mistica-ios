@@ -149,28 +149,37 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
 
         let vc = HeaderViewSampleViewController()
 
-        var pretitle: String?
-        var title: String?
-        var descriptionValue: String?
+        var pretitleText: HeaderText?
+        var titleText: HeaderText?
+        var descriptionText: HeaderText?
 
         if showPretitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
-            pretitle = pretitleCell.textField.text
+            pretitleText = HeaderText(
+                text: pretitleCell.textField.text ?? "",
+                lineLimit: 0
+            )
         }
 
         if showTitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
-            title = titleCell.textField.text
+            titleText = HeaderText(
+                text: titleCell.textField.text ?? "",
+                lineLimit: 0
+            )
         }
 
         if showDescriptionCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
-            descriptionValue = descriptionCell.textField.text
+            descriptionText = HeaderText(
+                text: descriptionCell.textField.text ?? "",
+                lineLimit: 0
+            )
         }
 
         let style: HeaderViewStyle = headerStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
 
         vc.headerView.setUpView(
-            pretitle: pretitle,
-            title: title,
-            descriptionValue: descriptionValue,
+            pretitleText: pretitleText,
+            titleText: titleText,
+            descriptionText: descriptionText,
             style: style
         )
 

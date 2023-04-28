@@ -25,7 +25,7 @@ final class HeaderTests: XCTestCase {
 extension HeaderTests {
     func testMinimalPretitleHeader() {
         assertSnapshot(
-            matching: makeHeader(pretitle: "Only a pretitle"),
+            matching: makeHeader(pretitle: HeaderText(text: "Only a pretitle")),
             as: .image(on: .iPhoneSe)
         )
     }
@@ -34,7 +34,7 @@ extension HeaderTests {
         assertSnapshot(
             matching: makeHeader(
                 style: .inverse,
-                pretitle: "Only a pretitle"
+                pretitle: HeaderText(text: "Only a pretitle")
             ),
             as: .image(on: .iPhoneSe)
         )
@@ -42,7 +42,7 @@ extension HeaderTests {
 
     func testMinimalTitleHeader() {
         assertSnapshot(
-            matching: makeHeader(title: "Only a title"),
+            matching: makeHeader(title: HeaderText(text: "Only a title")),
             as: .image(on: .iPhoneSe)
         )
     }
@@ -51,7 +51,7 @@ extension HeaderTests {
         assertSnapshot(
             matching: makeHeader(
                 style: .inverse,
-                title: "Only a title"
+                title: HeaderText(text: "Only a title")
             ),
             as: .image(on: .iPhoneSe)
         )
@@ -59,7 +59,7 @@ extension HeaderTests {
 
     func testMinimalDescriptionHeader() {
         assertSnapshot(
-            matching: makeHeader(descriptionValue: "Only a description"),
+            matching: makeHeader(descriptionValue: HeaderText(text: "Only a description")),
             as: .image(on: .iPhoneSe)
         )
     }
@@ -68,7 +68,7 @@ extension HeaderTests {
         assertSnapshot(
             matching: makeHeader(
                 style: .inverse,
-                descriptionValue: "Only a description"
+                descriptionValue: HeaderText(text: "Only a description")
             ),
             as: .image(on: .iPhoneSe)
         )
@@ -79,9 +79,9 @@ extension HeaderTests {
     func testFullHeader() {
         assertSnapshot(
             matching: makeHeader(
-                pretitle: "Pretitle",
-                title: "Title",
-                descriptionValue: "Description"
+                pretitle: HeaderText(text: "Pretitle"),
+                title: HeaderText(text: "Title"),
+                descriptionValue: HeaderText(text: "Description")
             ),
             as: .image(on: .iPhoneSe)
         )
@@ -90,9 +90,20 @@ extension HeaderTests {
     func testFullHeaderWithLongTexts() {
         assertSnapshot(
             matching: makeHeader(
-                pretitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                descriptionValue: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
+                title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
+                descriptionValue: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit")
+            ),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
+    func testFullHeaderWithLongTextsAndLineLimitToTwo() {
+        assertSnapshot(
+            matching: makeHeader(
+                pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
+                title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
+                descriptionValue: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2)
             ),
             as: .image(on: .iPhoneSe)
         )
@@ -102,9 +113,9 @@ extension HeaderTests {
         assertSnapshot(
             matching: makeHeader(
                 style: .inverse,
-                pretitle: "Pretitle",
-                title: "Title",
-                descriptionValue: "Description"
+                pretitle: HeaderText(text: "Pretitle"),
+                title: HeaderText(text: "Title"),
+                descriptionValue: HeaderText(text: "Description")
             ),
             as: .image(on: .iPhoneSe)
         )
@@ -114,9 +125,9 @@ extension HeaderTests {
 private extension HeaderTests {
     func makeHeader(
         style: HeaderViewStyle = .normal,
-        pretitle: String? = nil,
-        title: String? = nil,
-        descriptionValue: String? = nil
+        pretitle: HeaderText? = nil,
+        title: HeaderText? = nil,
+        descriptionValue: HeaderText? = nil
     ) -> UIViewController {
         let viewController = HeaderViewController()
         viewController.setUpView(
@@ -133,15 +144,15 @@ private class HeaderViewController: UIViewController {
     let headerView = HeaderView()
 
     func setUpView(
-        pretitle: String? = nil,
-        title: String? = nil,
-        descriptionValue: String? = nil,
+        pretitle: HeaderText? = nil,
+        title: HeaderText? = nil,
+        descriptionValue: HeaderText? = nil,
         style: HeaderViewStyle = .normal
     ) {
         headerView.setUpView(
-            pretitle: pretitle,
-            title: title,
-            descriptionValue: descriptionValue,
+            pretitleText: pretitle,
+            titleText: title,
+            descriptionText: descriptionValue,
             style: style
         )
     }

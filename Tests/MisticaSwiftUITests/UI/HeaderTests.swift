@@ -124,7 +124,11 @@ extension HeaderTests {
             as: .image(on: .iPhone8)
         )
     }
+}
 
+// MARK: - Long Texts
+
+extension HeaderTests {
     func testFullHeaderWithLongTexts() {
         let header = Header(
             pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
@@ -151,5 +155,20 @@ extension HeaderTests {
             matching: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
+    }
+    
+    func testFullHeaderWithLongTextsAndLineLimitToTwo() {
+        let header = Header(
+            pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
+            title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
+            description: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
+            style: .normal
+        )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: header),
+            as: .image(on: .iPhone8)
+        )
+
     }
 }

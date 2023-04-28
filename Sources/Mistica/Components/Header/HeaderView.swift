@@ -8,10 +8,29 @@
 
 import UIKit
 
+public struct HeaderText {
+    let text: String
+    let lineLimit: Int
+    let accessibilityLabel: String?
+    let accessibilityIdentifier: String?
+    
+    public init(
+        text: String,
+        lineLimit: Int = 0,
+        accessibilityLabel: String? = nil,
+        accessibilityIdentifier: String? = nil
+    ) {
+        self.text = text
+        self.lineLimit = lineLimit
+        self.accessibilityLabel = accessibilityLabel
+        self.accessibilityIdentifier = accessibilityIdentifier
+    }
+}
+
 public class HeaderView: UIView {
     private let stackView = UIStackView()
     private let topStackView = UIStackView()
-
+    
     private let pretitleLabel = UILabel()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
@@ -62,21 +81,21 @@ public class HeaderView: UIView {
     }
 
     public func setUpView(
-        pretitle: String? = nil,
-        title: String? = nil,
-        descriptionValue: String? = nil,
+        pretitleText: HeaderText? = nil,
+        titleText: HeaderText? = nil,
+        descriptionText: HeaderText? = nil,
         style: HeaderViewStyle = .normal
     ) {
-        self.pretitle = pretitle
-        self.title = title
-        self.descriptionValue = descriptionValue
+        self.pretitle = pretitleText?.text
+        self.title = titleText?.text
+        self.descriptionValue = descriptionText?.text
         self.style = style
 
         layoutView()
 
-        stylePretitleLabel()
-        styleTitleLabel()
-        styleDescriptionLabel()
+        stylePretitleLabel(pretitleText)
+        styleTitleLabel(titleText)
+        styleDescriptionLabel(descriptionText)
     }
 }
 
@@ -235,19 +254,31 @@ private extension HeaderView {
         }
     }
 
-    func stylePretitleLabel() {
+    func stylePretitleLabel(_ headerText: HeaderText?) {
         pretitleLabel.font = .textPreset3(weight: .regular)
-        pretitleLabel.numberOfLines = 1
+        if let headerText = headerText {
+            pretitleLabel.numberOfLines = headerText.lineLimit
+            pretitleAccessibilityLabel = headerText.accessibilityLabel
+            pretitleAccessibilityIdentifier = headerText.accessibilityIdentifier
+        }
     }
 
-    func styleTitleLabel() {
+    func styleTitleLabel(_ headerText: HeaderText?) {
         titleLabel.font = .textPreset6()
-        titleLabel.numberOfLines = 1
+        if let headerText = headerText {
+            titleLabel.numberOfLines = headerText.lineLimit
+            titleAccessibilityLabel = headerText.accessibilityLabel
+            titleAccessibilityIdentifier = headerText.accessibilityIdentifier
+        }
     }
 
-    func styleDescriptionLabel() {
+    func styleDescriptionLabel(_ headerText: HeaderText?) {
         descriptionLabel.font = .textPreset3(weight: .regular)
-        descriptionLabel.numberOfLines = 1
+        if let headerText = headerText {
+            descriptionLabel.numberOfLines = headerText.lineLimit
+            descriptionAccessibilityLabel = headerText.accessibilityLabel
+            descriptionAccessibilityIdentifier = headerText.accessibilityIdentifier
+        }
     }
 
     func updateLayoutMarginsGuide() {

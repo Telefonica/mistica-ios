@@ -19,6 +19,7 @@ public struct Header: View {
         static let marginRight = 32.0
         static let marginTop = 32.0
         static let marginBottom = 24.0
+        static let verticalSpacing = 8.0
     }
 
     private let pretitle: String?
@@ -59,7 +60,7 @@ public struct Header: View {
 
     public var body: some View {
         VStack {
-            VStack(spacing: 8) {
+            VStack(spacing: Constants.verticalSpacing) {
                 if let pretitle = pretitle {
                     text(
                         pretitle,
@@ -87,17 +88,17 @@ public struct Header: View {
                         accessibilityIdentifier: descriptionAccessibilityIdentifier
                     )
                 }
-            }.padding(EdgeInsets(
-                top: Constants.marginTop,
-                leading: Constants.marginLeft,
-                bottom: Constants.marginBottom,
-                trailing: Constants.marginRight
-            )
+            }.padding(
+                EdgeInsets(
+                    top: Constants.marginTop,
+                    leading: Constants.marginLeft,
+                    bottom: Constants.marginBottom,
+                    trailing: Constants.marginRight
+                )
             )
         }
         .frame(maxWidth: .infinity, alignment: .top)
         .background(backgroundColor)
-        .padding(0)
         Spacer()
     }
 
@@ -146,9 +147,9 @@ public struct Header: View {
     var descriptionColor: Color {
         switch style {
         case .normal:
-            return .textPrimary
+            return .textSecondary
         case .inverse:
-            return .textPrimaryInverse
+            return .textSecondaryInverse
         }
     }
 }

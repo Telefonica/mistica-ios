@@ -11,11 +11,11 @@ import SwiftUI
 
 struct HeaderCatalogView: View {
     @State var hasPretitle = true
-    @State var pretitle: String = "The pretitle"
+    @State var pretitle = "The pretitle"
     @State var hasTitle = true
-    @State var title: String = "The title"
+    @State var title = "The title"
     @State var hasDescription = true
-    @State var description: String = "The description"
+    @State var description = "The description"
     @State var isNormalStyle = true
 
     var body: some View {

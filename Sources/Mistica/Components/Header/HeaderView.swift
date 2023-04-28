@@ -282,12 +282,12 @@ private extension HeaderView {
             stackView.backgroundColor = .background
             pretitleLabel.textColor = .textPrimary
             titleLabel.textColor = .textPrimary
-            descriptionLabel.textColor = .textPrimary
+            descriptionLabel.textColor = .textSecondary
         case .inverse:
             stackView.backgroundColor = .backgroundBrand
             pretitleLabel.textColor = .textPrimaryInverse
             titleLabel.textColor = .textPrimaryInverse
-            descriptionLabel.textColor = .textPrimaryInverse
+            descriptionLabel.textColor = .textSecondaryInverse
         }
     }
 }

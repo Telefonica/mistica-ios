@@ -25,7 +25,7 @@ final class HeaderTests: XCTestCase {
 extension HeaderTests {
     func testMinimalPretitleHeader() {
         let header = Header(
-            pretitle: "The pretitle",
+            pretitle: HeaderText(text: "The pretitle"),
             style: .normal
         )
 
@@ -37,7 +37,7 @@ extension HeaderTests {
 
     func testMinimalPretitleHeaderWithInverseStyle() {
         let header = Header(
-            pretitle: "The pretitle",
+            pretitle: HeaderText(text: "The pretitle"),
             style: .inverse
         )
 
@@ -49,7 +49,7 @@ extension HeaderTests {
 
     func testMinimalTitleHeader() {
         let header = Header(
-            title: "The title",
+            title: HeaderText(text: "The title"),
             style: .normal
         )
 
@@ -61,7 +61,7 @@ extension HeaderTests {
 
     func testMinimalTitleHeaderWithInverseStyle() {
         let header = Header(
-            title: "The title",
+            title: HeaderText(text: "The title"),
             style: .inverse
         )
 
@@ -73,7 +73,7 @@ extension HeaderTests {
 
     func testMinimalDescriptionHeader() {
         let header = Header(
-            description: "The description",
+            description: HeaderText(text: "The description"),
             style: .normal
         )
 
@@ -85,7 +85,7 @@ extension HeaderTests {
 
     func testMinimalDescriptionHeaderWithInverseStyle() {
         let header = Header(
-            description: "The description",
+            description: HeaderText(text: "The description"),
             style: .inverse
         )
 
@@ -99,9 +99,9 @@ extension HeaderTests {
 extension HeaderTests {
     func testFullHeader() {
         let header = Header(
-            pretitle: "The pretitle",
-            title: "The title",
-            description: "The description",
+            pretitle: HeaderText(text: "The pretitle"),
+            title: HeaderText(text: "The title"),
+            description: HeaderText(text: "The description"),
             style: .normal
         )
 
@@ -113,9 +113,9 @@ extension HeaderTests {
 
     func testFullHeaderWithInverseStyle() {
         let header = Header(
-            pretitle: "The pretitle",
-            title: "The title",
-            description: "The description",
+            pretitle: HeaderText(text: "The pretitle"),
+            title: HeaderText(text: "The title"),
+            description: HeaderText(text: "The description"),
             style: .inverse
         )
 
@@ -127,9 +127,9 @@ extension HeaderTests {
 
     func testFullHeaderWithLongTexts() {
         let header = Header(
-            pretitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
+            title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
+            description: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
             style: .normal
         )
 
@@ -141,9 +141,9 @@ extension HeaderTests {
 
     func testFullHeaderWithLongTextsAndInverseStyle() {
         let header = Header(
-            pretitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
+            title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
+            description: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
             style: .inverse
         )
 

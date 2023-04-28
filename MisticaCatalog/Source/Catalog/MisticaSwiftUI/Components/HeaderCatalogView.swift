@@ -27,9 +27,9 @@ struct HeaderCatalogView: View {
 
             NavigationLink("Show Header") {
                 Header(
-                    pretitle: hasPretitle ? pretitle : nil,
-                    title: hasTitle ? title : nil,
-                    description: hasDescription ? description : nil,
+                    pretitle: hasPretitle ? HeaderText(text: pretitle) : nil,
+                    title: hasTitle ? HeaderText(text: title) : nil,
+                    description: hasDescription ? HeaderText(text: description) : nil,
                     style: isNormalStyle ? .normal : .inverse
                 )
                 .navigationBarTitle("Header")

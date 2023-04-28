@@ -8,12 +8,24 @@
 
 import SwiftUI
 
+public struct HeaderText {
+    let text: String
+    let accessibilityLabel: String?
+    let accessibilityIdentifier: String?
+    
+    public init(text: String, accessibilityLabel: String? = nil, accessibilityIdentifier: String? = nil) {
+        self.text = text
+        self.accessibilityLabel = accessibilityLabel
+        self.accessibilityIdentifier = accessibilityIdentifier
+    }
+}
+
 public struct Header: View {
     public enum HeaderStyle {
         case normal
         case inverse
     }
-
+    
     private enum Constants {
         static let marginLeft = 16.0
         static let marginRight = 32.0
@@ -22,70 +34,51 @@ public struct Header: View {
         static let verticalSpacing = 8.0
     }
 
-    private let pretitle: String?
-    private let title: String?
-    private let description: String?
+    private let pretitle: HeaderText?
+    private let title: HeaderText?
+    private let description: HeaderText?
     private let style: HeaderStyle
 
-    private var pretitleAccessibilityLabel: String?
-    private var pretitleAccessibilityIdentifier: String?
-    private var titleAccessibilityLabel: String?
-    private var titleAccessibilityIdentifier: String?
-    private var descriptionAccessibilityLabel: String?
-    private var descriptionAccessibilityIdentifier: String?
-
     public init(
-        pretitle: String? = nil,
-        pretitleAccessibilityLabel: String? = nil,
-        pretitleAccessibilityIdentifier: String? = nil,
-        title: String? = nil,
-        titleAccessibilityLabel: String? = nil,
-        titleAccessibilityIdentifier: String? = nil,
-        description: String? = nil,
-        descriptionAccessibilityLabel: String? = nil,
-        descriptionAccessibilityIdentifier: String? = nil,
+        pretitle: HeaderText? = nil,
+        title: HeaderText? = nil,
+        description: HeaderText? = nil,
         style: HeaderStyle = .normal
     ) {
         self.pretitle = pretitle
-        self.pretitleAccessibilityLabel = pretitleAccessibilityLabel
-        self.pretitleAccessibilityIdentifier = pretitleAccessibilityIdentifier
         self.title = title
-        self.titleAccessibilityLabel = titleAccessibilityLabel
-        self.titleAccessibilityIdentifier = titleAccessibilityIdentifier
         self.description = description
-        self.descriptionAccessibilityLabel = descriptionAccessibilityLabel
-        self.descriptionAccessibilityIdentifier = descriptionAccessibilityIdentifier
         self.style = style
     }
 
     public var body: some View {
         VStack {
             VStack(spacing: Constants.verticalSpacing) {
-                if let pretitle = pretitle {
+                if let pretitleText = pretitle?.text {
                     text(
-                        pretitle,
+                        pretitleText,
                         font: .textPreset3(weight: .regular),
                         foregroundColor: pretitleColor,
-                        accessibilityLabel: pretitleAccessibilityLabel,
-                        accessibilityIdentifier: pretitleAccessibilityIdentifier
+                        accessibilityLabel: pretitle?.accessibilityLabel,
+                        accessibilityIdentifier: pretitle?.accessibilityIdentifier
                     )
                 }
-                if let title = title {
+                if let titleText = title?.text {
                     text(
-                        title,
+                        titleText,
                         font: .textPreset6(),
                         foregroundColor: titleColor,
-                        accessibilityLabel: titleAccessibilityLabel,
-                        accessibilityIdentifier: titleAccessibilityIdentifier
+                        accessibilityLabel: title?.accessibilityLabel,
+                        accessibilityIdentifier: title?.accessibilityIdentifier
                     )
                 }
-                if let description = description {
+                if let descriptionText = description?.text {
                     text(
-                        description,
+                        descriptionText,
                         font: .textPreset3(weight: .regular),
                         foregroundColor: descriptionColor,
-                        accessibilityLabel: descriptionAccessibilityLabel,
-                        accessibilityIdentifier: descriptionAccessibilityIdentifier
+                        accessibilityLabel: description?.accessibilityLabel,
+                        accessibilityIdentifier: description?.accessibilityIdentifier
                     )
                 }
             }.padding(
@@ -161,14 +154,14 @@ public struct Header: View {
         static var previews: some View {
             Preview {
                 Header(
-                    pretitle: "The pretitle",
-                    title: "The title",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                    pretitle: HeaderText(text: "The pretitle"),
+                    title: HeaderText(text: "The title"),
+                    description: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit")
                 )
                 Header(
-                    pretitle: "The pretitle",
-                    title: "The title",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                    pretitle: HeaderText(text: "The pretitle"),
+                    title: HeaderText(text: "The title"),
+                    description: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
                     style: .inverse
                 )
             }

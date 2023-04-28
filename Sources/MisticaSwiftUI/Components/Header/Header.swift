@@ -10,11 +10,18 @@ import SwiftUI
 
 public struct HeaderText {
     let text: String
+    let lineLimit: Int
     let accessibilityLabel: String?
     let accessibilityIdentifier: String?
     
-    public init(text: String, accessibilityLabel: String? = nil, accessibilityIdentifier: String? = nil) {
+    public init(
+        text: String,
+        lineLimit: Int = 0,
+        accessibilityLabel: String? = nil,
+        accessibilityIdentifier: String? = nil
+    ) {
         self.text = text
+        self.lineLimit = lineLimit
         self.accessibilityLabel = accessibilityLabel
         self.accessibilityIdentifier = accessibilityIdentifier
     }
@@ -54,29 +61,32 @@ public struct Header: View {
     public var body: some View {
         VStack {
             VStack(spacing: Constants.verticalSpacing) {
-                if let pretitleText = pretitle?.text {
+                if let pretitleText = pretitle?.text, let lineLimit = pretitle?.lineLimit {
                     text(
                         pretitleText,
                         font: .textPreset3(weight: .regular),
                         foregroundColor: pretitleColor,
+                        lineLimit: lineLimit,
                         accessibilityLabel: pretitle?.accessibilityLabel,
                         accessibilityIdentifier: pretitle?.accessibilityIdentifier
                     )
                 }
-                if let titleText = title?.text {
+                if let titleText = title?.text, let lineLimit = title?.lineLimit {
                     text(
                         titleText,
                         font: .textPreset6(),
                         foregroundColor: titleColor,
+                        lineLimit: lineLimit,
                         accessibilityLabel: title?.accessibilityLabel,
                         accessibilityIdentifier: title?.accessibilityIdentifier
                     )
                 }
-                if let descriptionText = description?.text {
+                if let descriptionText = description?.text, let lineLimit = description?.lineLimit {
                     text(
                         descriptionText,
                         font: .textPreset3(weight: .regular),
                         foregroundColor: descriptionColor,
+                        lineLimit: lineLimit,
                         accessibilityLabel: description?.accessibilityLabel,
                         accessibilityIdentifier: description?.accessibilityIdentifier
                     )
@@ -99,13 +109,14 @@ public struct Header: View {
     private func text(_ textValue: String,
                       font: Font,
                       foregroundColor: Color,
+                      lineLimit: Int,
                       accessibilityLabel: String?,
                       accessibilityIdentifier: String?) -> some View {
         Text(textValue)
             .frame(maxWidth: .infinity, alignment: .leading)
             .font(font)
             .foregroundColor(foregroundColor)
-            .lineLimit(1)
+            .lineLimit(lineLimit)
             .accessibilityLabel(accessibilityLabel)
             .accessibilityIdentifier(accessibilityIdentifier)
     }

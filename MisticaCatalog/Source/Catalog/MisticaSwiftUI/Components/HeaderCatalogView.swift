@@ -75,9 +75,10 @@ struct HeaderCatalogView: View {
             TextField("", text: value)
             HStack {
                 Text("Line limit")
-                Stepper("\(lineLimit.wrappedValue)",
-                        value: lineLimit,
-                        in: 0...10
+                Stepper(
+                    "\(lineLimit.wrappedValue)",
+                    value: lineLimit,
+                    in: 0 ... 10
                 )
             }
         }

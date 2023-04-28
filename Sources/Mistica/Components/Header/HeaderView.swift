@@ -13,7 +13,7 @@ public struct HeaderText {
     let lineLimit: Int
     let accessibilityLabel: String?
     let accessibilityIdentifier: String?
-    
+
     public init(
         text: String,
         lineLimit: Int = 0,
@@ -30,7 +30,7 @@ public struct HeaderText {
 public class HeaderView: UIView {
     private let stackView = UIStackView()
     private let topStackView = UIStackView()
-    
+
     private let pretitleLabel = UILabel()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
@@ -86,9 +86,9 @@ public class HeaderView: UIView {
         descriptionText: HeaderText? = nil,
         style: HeaderViewStyle = .normal
     ) {
-        self.pretitle = pretitleText?.text
-        self.title = titleText?.text
-        self.descriptionValue = descriptionText?.text
+        pretitle = pretitleText?.text
+        title = titleText?.text
+        descriptionValue = descriptionText?.text
         self.style = style
 
         layoutView()

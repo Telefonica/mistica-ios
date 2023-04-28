@@ -156,7 +156,7 @@ extension HeaderTests {
             as: .image(on: .iPhone8)
         )
     }
-    
+
     func testFullHeaderWithLongTextsAndLineLimitToTwo() {
         let header = Header(
             pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
@@ -169,6 +169,5 @@ extension HeaderTests {
             matching: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
-
     }
 }

@@ -13,7 +13,7 @@ public struct HeaderText {
     let lineLimit: Int
     let accessibilityLabel: String?
     let accessibilityIdentifier: String?
-    
+
     public init(
         text: String,
         lineLimit: Int = 0,
@@ -32,7 +32,7 @@ public struct Header: View {
         case normal
         case inverse
     }
-    
+
     private enum Constants {
         static let marginLeft = 16.0
         static let marginRight = 32.0

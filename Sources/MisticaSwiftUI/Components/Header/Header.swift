@@ -6,14 +6,10 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
+import MisticaCommon
 import SwiftUI
 
 public struct Header: View {
-    public enum HeaderStyle {
-        case normal
-        case inverse
-    }
-
     private enum Constants {
         static let marginLeft = 16.0
         static let marginRight = 32.0
@@ -25,13 +21,14 @@ public struct Header: View {
     private let pretitle: HeaderText?
     private let title: HeaderText?
     private let description: HeaderText?
-    private let style: HeaderStyle
+    private let style: HeaderViewStyle
+    private let style2: HeaderViewStyle? = nil
 
     public init(
         pretitle: HeaderText? = nil,
         title: HeaderText? = nil,
         description: HeaderText? = nil,
-        style: HeaderStyle = .normal
+        style: HeaderViewStyle = .normal
     ) {
         self.pretitle = pretitle
         self.title = title

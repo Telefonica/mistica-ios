@@ -61,7 +61,7 @@ final class FeedbackTests: XCTestCase {
             as: .image(on: .iPhone8)
         )
     }
-    
+
     func testFeedback() {
         let feedback = makeTemplate(style: .feedback(Image(systemName: "swift")))
 

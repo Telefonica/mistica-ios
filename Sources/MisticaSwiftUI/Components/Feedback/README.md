@@ -13,7 +13,7 @@ Multiline strings that will be positioned one below the other. If the content is
 
 ### Style
 
-There are three styles available: `.success`, `.informative` and `.error`:
+There are three fixed styles available: `.success`, `.informative`, `.error`. There's one custom style `.feedback(image)` that can be used to provide an icon that will be used instead of the fixed ones:
 
 | Success     | Informative     | Error     |
 |-------------|-----------------|-----------|

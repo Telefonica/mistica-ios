@@ -13,13 +13,12 @@ Multiline strings that will be positioned one below the other. If the content is
 
 ### Style
 
-There are three fixed styles available: `.success`, `.informative`, `.error`. There's one custom style `.feedback(image)` that can be used to provide an icon that will be used instead of the fixed ones:
+There are three fixed styles available: `.success`, `.informative` and `.error`. There's one custom style `.feedback(image)` that can be used to provide an icon that will be used instead of the fixed ones:
 
-| Success     | Informative     | Error     |
-|-------------|-----------------|-----------|
-| ![custom](./docs/images/success.png) | ![custom](./docs/images/informative.png) | ![custom](./docs/images/error.png) |
+| Success     | Informative     | Error     | Feedback     |
+|-------------|-----------------|-----------|-----------|
+| ![success](./docs/images/success.png) | ![informatice](./docs/images/informative.png) | ![error](./docs/images/error.png) | ![feedback](./docs/images/feedback.png) |
 
-All styles, if presented modally, will show a 'close' button. If they are presented with a push, a back button will show up except when the style is `success`. In that case the actions should dismiss this screen.
 
 ### Primary Action
 

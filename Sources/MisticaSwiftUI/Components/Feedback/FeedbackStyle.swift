@@ -20,12 +20,13 @@ public enum FeedbackStyle {
     case success
     case error(reference: String?)
     case informative
+    case feedback(Image)
 
     var shouldUseInverseFeedbacks: Bool {
         switch self {
         case .success:
             return true
-        case .informative, .error:
+        case .informative, .error, .feedback:
             return false
         }
     }
@@ -50,6 +51,8 @@ public enum FeedbackStyle {
         case .informative:
             guard let image = image else { return .none }
             return .image(image)
+        case .feedback(let image):
+            return .image(image)
         }
     }
 
@@ -59,7 +62,7 @@ public enum FeedbackStyle {
             return .successAnimation
         case .error:
             return .errorAnimation
-        case .informative:
+        case .informative, .feedback:
             return nil
         }
     }
@@ -70,10 +73,12 @@ public enum FeedbackStyle {
             return nil
         case .informative:
             return Image.iconNotificationInfo
+        case .feedback(let image):
+            return image
         }
     }
 
-    var hapticFeedbackStyle: UINotificationFeedbackGenerator.FeedbackType {
+    var hapticFeedbackStyle: UINotificationFeedbackGenerator.FeedbackType? {
         switch self {
         case .success:
             return .success
@@ -81,10 +86,12 @@ public enum FeedbackStyle {
             return .warning
         case .error:
             return .error
+        case .feedback:
+            return nil
         }
     }
 
-    var hapticFeedbackDelay: TimeInterval {
+    var hapticFeedbackDelay: TimeInterval? {
         switch self {
         case .success:
             return 0.45
@@ -92,6 +99,8 @@ public enum FeedbackStyle {
             return 0
         case .error:
             return 0.5
+        case .feedback:
+            return nil
         }
     }
 }

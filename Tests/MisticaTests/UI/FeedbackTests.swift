@@ -70,6 +70,20 @@ final class FeedbackTests: XCTestCase {
             )
         )
     }
+    
+    func testFeedbackTitleAndSubtitle() {
+        isRecording = true
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: feedbackViewController(
+                style: .feedback(icon: UIImage(systemName: "swift")!),
+                title: Constants.singleLineTitle,
+                subtitle: Constants.singleLineSubtitle,
+                primaryAction: .none,
+                secondaryAction: .none
+            )
+        )
+    }
 
     func testErrorTitleSubtitleAndErrorReference() {
         assertSnapshotForAllBrandsAndStyles(

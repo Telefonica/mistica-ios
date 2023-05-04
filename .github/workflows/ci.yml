@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3
 
       - name: Build and Test
         run: make test
@@ -20,7 +20,10 @@ jobs:
       - name: Extract Sceenshot diff from failed Tests
         if: always()
         run: make extract_tests_attachments
-        
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Check Tests result
         uses: Telefonica/github-actions/mistica/upload-failed-screenshots@main
         if: always()

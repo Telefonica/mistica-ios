@@ -1,3 +1,10 @@
+# [23.4.0](https://github.com/Telefonica/mistica-ios/compare/v23.3.0...v23.4.0) (2023-05-04)
+
+
+### Features
+
+* **FontWeight:** Add FontWeights to the ".custom" brand ([#271](https://github.com/Telefonica/mistica-ios/issues/271)) ([85317ee](https://github.com/Telefonica/mistica-ios/commit/85317ee7412ff5a48f5d45ef299571cb456af01a))
+
 # [23.3.0](https://github.com/Telefonica/mistica-ios/compare/v23.2.0...v23.3.0) (2023-04-25)
 
 

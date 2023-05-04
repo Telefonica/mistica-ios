@@ -50,7 +50,7 @@ struct ColorsView: View {
             return O2ColorPalette()
         case .vivo:
             return VivoColorPalette()
-        case .custom(let colors, _):
+        case .custom(let colors, _, _):
             return colors
         }
     }

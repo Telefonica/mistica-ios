@@ -48,9 +48,10 @@ private extension MisticaConfig {
             currentColors = BlauColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = BlauFontWeights()
-        case .custom(let colors, let assets):
+        case .custom(let colors, let assets, let fontWeights):
             currentColors = colors
             currentBrandAssets = assets
+            currentFontWeights = fontWeights
         }
     }
 }

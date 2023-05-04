@@ -20,17 +20,9 @@ jobs:
       - name: Extract Sceenshot diff from failed Tests
         if: always()
         run: make extract_tests_attachments
-
-      - name: Checkout Telefonica/github-actions repo
-        uses: actions/checkout@v3.1.0
-        if: always()
-        with:
-          repository: Telefonica/github-actions
-          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
-          path: .github/actions
-
+        
       - name: Check Tests result
-        uses: ./.github/actions/mistica/upload-failed-screenshots
+        uses: Telefonica/github-actions/mistica/upload-failed-screenshots@main
         if: always()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -14,9 +14,6 @@ jobs:
     runs-on: self-hosted-novum-mac
 
     steps:
-      - uses: actions/checkout@v3.1.0
-        with:
-          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3.6.0
@@ -28,14 +25,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}
         run: npx -p @semantic-release/changelog -p @semantic-release/git -p @semantic-release/exec -p semantic-release@20.0.2 semantic-release ${{ github.event.inputs.cliArgs }}
 
-      - name: Checkout Telefonica/github-actions repo
-        uses: actions/checkout@v3.1.0
-        with:
-          repository: Telefonica/github-actions
-          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
-          path: .github/actions
-
       - name: Send Notification to Teams
-        uses: ./.github/actions/microsoft-teams/notify
+        uses: Telefonica/github-actions/microsoft-teams/notify@main
         with:
           channel: ios_releases

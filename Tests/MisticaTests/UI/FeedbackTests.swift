@@ -72,7 +72,6 @@ final class FeedbackTests: XCTestCase {
     }
 
     func testFeedbackTitleAndSubtitle() {
-        isRecording = true
         assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: feedbackViewController(

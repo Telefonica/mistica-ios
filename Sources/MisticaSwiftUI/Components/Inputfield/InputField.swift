@@ -100,7 +100,7 @@ public struct InputField: View {
             }
             .padding(.horizontal, Constants.horizontalPadding)
             .background(Color.backgroundContainer)
-            .border(cornerRadius: Constants.cornerRadius)
+            .border(radiusStyle: .input)
 
             if !assistiveText.isEmpty {
                 Text(assistiveText)

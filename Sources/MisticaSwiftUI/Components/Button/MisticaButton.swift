@@ -91,7 +91,7 @@ struct MisticaButton: View {
         .padding(.horizontal, Constants.horizontalPadding)
         .background(backgroundColor)
         .foregroundColor(foregroundColor)
-        .border(cornerRadius: Constants.cornerRadius, borderColor: borderColor)
+        .border(radiusStyle: .button, borderColor: borderColor)
         .padding(EdgeInsets(top: 0, leading: leadingInset, bottom: 0, trailing: trailingInset))
         .allowsHitTesting(!loadingInfo.isLoading)
     }

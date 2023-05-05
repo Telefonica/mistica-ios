@@ -109,7 +109,7 @@ public class DataCard: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        makeRounded(cornerRadius: Constants.cornerRadius)
+        setMisticaRadius(.container)
     }
 
     override public var intrinsicContentSize: CGSize {

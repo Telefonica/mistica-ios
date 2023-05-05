@@ -92,7 +92,7 @@ private extension DeterminedStepper {
                     .font(.textPreset1(weight: .regular))
                     .foregroundColor(stepForegroundColor(for: step))
             }
-            .border(cornerRadius: Constants.height / 2, borderColor: .borderHigh, lineWidth: stepBorderWidth(for: step))
+            .border(radiusStyle: .avatar, borderColor: .borderHigh, lineWidth: stepBorderWidth(for: step))
             .transition(.opacity.animation(.misticaTimingCurve))
         }
     }

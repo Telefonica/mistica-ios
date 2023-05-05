@@ -82,7 +82,7 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
         switch style {
         case .boxed:
             coreView
-                .border(cornerRadius: Constants.borderRadius, borderColor: .border)
+                .border(radiusStyle: .container, borderColor: .border)
                 .padding(.vertical, Constants.spacing / 2)
                 .padding(.horizontal, Constants.spacing)
                 .if(allowsPressing) {
@@ -159,13 +159,12 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
             image
                 .renderingMode(.original)
                 .frame(width: Constants.largeImageSize, height: Constants.largeImageSize, alignment: .center)
-                .round(cornerRadius: Constants.largeImageSize / 2)
+                .round(radiusStyle: .avatar)
         case let .squaredImage(image, size):
             image
                 .renderingMode(.original)
                 .frame(width: size.width, height: size.height, alignment: .center)
-                .round(cornerRadius: 8)
-
+                .round(radiusStyle: .container)
         case let .smallIcon(image, tintColor):
             image
                 .renderingMode((tintColor != nil) ? .template : .original)
@@ -177,7 +176,7 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
                 .frame(width: Constants.largeImageSize, height: Constants.largeImageSize, alignment: .center)
                 .foregroundColor(tintColor)
                 .background(backgroundColor)
-                .round(cornerRadius: Constants.largeImageSize / 2)
+                .round(radiusStyle: .avatar)
         }
     }
 

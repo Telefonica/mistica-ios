@@ -70,7 +70,7 @@ public struct Tag: View {
         .frame(minWidth: Constants.minWidth, minHeight: Constants.minHeight, alignment: .center)
         .background(backgroundColor)
         .accessibilityIdentifier(textAccessibilityIdentifier)
-        .round(cornerRadius: Constants.cornerRadius)
+        .round(radiusStyle: .indicator)
     }
 
     private var backgroundColor: Color {

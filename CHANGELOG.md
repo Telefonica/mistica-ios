@@ -1,3 +1,10 @@
+# [23.5.0](https://github.com/Telefonica/mistica-ios/compare/v23.4.0...v23.5.0) (2023-05-05)
+
+
+### Features
+
+* **Feedback:** added a new feedback type with custom icon ([#273](https://github.com/Telefonica/mistica-ios/issues/273)) ([10ebf94](https://github.com/Telefonica/mistica-ios/commit/10ebf9488fae53d74c68edccf7bb641ace8c14bb))
+
 # [23.4.0](https://github.com/Telefonica/mistica-ios/compare/v23.3.0...v23.4.0) (2023-05-04)
 
 

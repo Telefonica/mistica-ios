@@ -320,9 +320,11 @@ private extension FeedbackView {
     }
 
     func triggerHapticFeedback() {
-        Timer.scheduledTimer(withTimeInterval: style.hapticFeedbackDelay, repeats: false) { [weak self] _ in
+        guard let hapticFeedbackStyle = style.hapticFeedbackStyle,
+              let hapticFeedbackDelay = style.hapticFeedbackDelay else { return }
+        Timer.scheduledTimer(withTimeInterval: hapticFeedbackDelay, repeats: false) { [weak self] _ in
             guard let self = self else { return }
-            self.feedbackGenerator?.notificationOccurred(self.style.hapticFeedbackStyle)
+            self.feedbackGenerator?.notificationOccurred(hapticFeedbackStyle)
             self.feedbackGenerator = nil
         }
     }

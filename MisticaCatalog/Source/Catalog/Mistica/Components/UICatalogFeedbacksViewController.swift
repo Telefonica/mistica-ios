@@ -355,7 +355,8 @@ private extension FeedbackStyle {
         [
             .success,
             .informative,
-            .error
+            .error,
+            .feedback(icon: UIImage(named: "feedbackIcon")!)
         ]
     }
 
@@ -367,6 +368,8 @@ private extension FeedbackStyle {
             return "Error"
         case .informative:
             return "Informative"
+        case .feedback:
+            return "Feedback"
         }
     }
 }

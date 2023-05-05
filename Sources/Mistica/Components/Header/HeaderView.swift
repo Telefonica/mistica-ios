@@ -97,6 +97,52 @@ public class HeaderView: UIView {
         styleTitleLabel(titleText)
         styleDescriptionLabel(descriptionText)
     }
+    
+    public var pretitle: String? {
+        get {
+            pretitleLabel.text
+        }
+        set {
+            pretitleLabel.text = newValue
+            updatePretitleLabelVisibilityState()
+
+            updateSpacing()
+        }
+    }
+
+    public var title: String? {
+        get {
+            titleLabel.text
+        }
+        set {
+            titleLabel.text = newValue
+            updateTitleLabelVisibilityState()
+
+            updateSpacing()
+        }
+    }
+
+    public var descriptionValue: String? {
+        get {
+            descriptionLabel.text
+        }
+        set {
+            descriptionLabel.text = newValue
+            updateDescriptionLabelVisibilityState()
+
+            updateSpacing()
+        }
+    }
+
+    public var style: HeaderViewStyle {
+        get {
+            headerStyle
+        }
+        set {
+            headerStyle = newValue
+            updateColors()
+        }
+    }
 }
 
 // MARK: - Accessibility
@@ -166,52 +212,6 @@ private extension HeaderView {
         static let marginTop = 32.0
         static let marginBottom = 24.0
         static let spacing: CGFloat = 8
-    }
-
-    var pretitle: String? {
-        get {
-            pretitleLabel.text
-        }
-        set {
-            pretitleLabel.text = newValue
-            updatePretitleLabelVisibilityState()
-
-            updateSpacing()
-        }
-    }
-
-    var title: String? {
-        get {
-            titleLabel.text
-        }
-        set {
-            titleLabel.text = newValue
-            updateTitleLabelVisibilityState()
-
-            updateSpacing()
-        }
-    }
-
-    var descriptionValue: String? {
-        get {
-            descriptionLabel.text
-        }
-        set {
-            descriptionLabel.text = newValue
-            updateDescriptionLabelVisibilityState()
-
-            updateSpacing()
-        }
-    }
-
-    var style: HeaderViewStyle {
-        get {
-            headerStyle
-        }
-        set {
-            headerStyle = newValue
-            updateColors()
-        }
     }
 
     func layoutView() {

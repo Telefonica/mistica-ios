@@ -97,7 +97,7 @@ public class HeaderView: UIView {
         styleTitleLabel(titleText)
         styleDescriptionLabel(descriptionText)
     }
-    
+
     public var pretitle: String? {
         get {
             pretitleLabel.text

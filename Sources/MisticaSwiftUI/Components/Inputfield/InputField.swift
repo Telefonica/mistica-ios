@@ -11,7 +11,6 @@ import SwiftUI
 private enum Constants {
     static let horizontalPadding: CGFloat = 8
     static let verticalPadding: CGFloat = 8
-    static let cornerRadius: CGFloat = 4
     static let animationDuration: CGFloat = 0.2
     static let placeholderReducedScale: CGFloat = 0.777
     static let textfieldHeight: CGFloat = 24

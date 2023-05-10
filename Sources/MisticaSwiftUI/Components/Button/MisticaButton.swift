@@ -17,7 +17,6 @@ struct MisticaButton: View {
         static let minWidth: CGFloat = 76
         static let height: CGFloat = 24
         static let smallHeight: CGFloat = 16
-        static let cornerRadius: CGFloat = 4
         static let smallVerticalPadding: CGFloat = 8
         static let verticalPadding: CGFloat = 12
         static let horizontalPadding: CGFloat = 16

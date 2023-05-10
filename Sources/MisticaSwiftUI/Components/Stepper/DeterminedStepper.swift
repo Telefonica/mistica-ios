@@ -85,14 +85,15 @@ private extension DeterminedStepper {
             .transition(.opacity.animation(.misticaTimingCurve))
         } else {
             ZStack {
-                Circle()
+                Rectangle()
                     .fill(stepBackgroundColor(for: step))
+                    .round(radiusStyle: .bar)
 
                 Text("\(step + 1)")
                     .font(.textPreset1(weight: .regular))
                     .foregroundColor(stepForegroundColor(for: step))
             }
-            .border(radiusStyle: .avatar, borderColor: .borderHigh, lineWidth: stepBorderWidth(for: step))
+            .border(radiusStyle: .bar, borderColor: .borderHigh, lineWidth: stepBorderWidth(for: step))
             .transition(.opacity.animation(.misticaTimingCurve))
         }
     }

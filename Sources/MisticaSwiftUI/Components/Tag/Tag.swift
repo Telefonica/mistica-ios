@@ -9,7 +9,6 @@
 import SwiftUI
 
 private enum Constants {
-    static let cornerRadius: CGFloat = 50
     static let horizontalInset: CGFloat = 8
     static let horizontalInsetWithIcon: CGFloat = 5
     static let verticalInset: CGFloat = 4

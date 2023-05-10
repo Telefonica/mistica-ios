@@ -26,11 +26,11 @@ public extension UIView {
         }
     }
     
-    private func setMisticaConfigValue(cornerRadiusValue: CornerRadiusValue) {
-        if let value = cornerRadiusValue.value {
-            layer.cornerRadius = value
-        } else if let percentage = cornerRadiusValue.percentage {
-            layer.cornerRadius = (min(frame.size.width, frame.size.height) * (percentage/100))
+    private func setMisticaConfigValue(cornerRadiusValue: CGFloat) {
+        if cornerRadiusValue >= 999 {
+            layer.cornerRadius = min(frame.size.width, frame.size.height) / 2
+        } else {
+            layer.cornerRadius = cornerRadiusValue
         }
         clipsToBounds = true
     }

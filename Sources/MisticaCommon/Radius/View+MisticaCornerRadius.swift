@@ -2,49 +2,58 @@ import SwiftUI
 
 public extension View {
     func round(radiusStyle: CornerRadiusStyle) -> some View {
-        clipShape(RoundedRectangle(cornerRadius: getMisticaConfigValue(radiusStyle, height: 0), style: .continuous))
+        modifier(CornerRadiusModifier(cornerRadiusStyle: radiusStyle))
     }
     
     func border(radiusStyle: CornerRadiusStyle, borderColor: Color = .border, lineWidth: CGFloat = 1) -> some View {
-        GeometryReader { geo in
-            clipShape(RoundedRectangle(cornerRadius: getMisticaConfigValue(radiusStyle, height: geo.size.height), style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: getMisticaConfigValue(radiusStyle, height: geo.size.height), style: .continuous).stroke(borderColor, lineWidth: lineWidth))
-            .frame(width: geo.size.width, height: geo.size.height, alignment: .leading)
-        }
+        modifier(CornerRadiusModifier(cornerRadiusStyle: radiusStyle, borderColor: borderColor, lineWidth: lineWidth))
     }
+}
+
+private struct CornerRadiusModifier: ViewModifier {
+    var cornerRadiusStyle: CornerRadiusStyle
+    var borderColor: Color = .border
+    var lineWidth: CGFloat = 0.0
     
-    private func getMisticaConfigValue(_ radiusStyle: CornerRadiusStyle, height: CGFloat) -> CGFloat {
-        switch radiusStyle {
+    func body(content: Content) -> some View {
+        switch cornerRadiusStyle {
         case .avatar:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.avatar, height: height)
-        case .bar:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.bar, height: height)
+            content
+                .clipShape(Circle())
+                .overlay(Circle().stroke(borderColor, lineWidth: lineWidth))
+        case .bar, .indicator:
+            content
+                .clipShape(Capsule())
+                .overlay(Capsule().stroke(borderColor, lineWidth: lineWidth))
         case .button:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.button, height: height)
+            content
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.button, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.button, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
+
         case .checkbox:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.checkbox, height: height)
+            content
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.checkbox, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.checkbox, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
         case .container:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.container, height: height)
-        case .indicator:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.indicator, height: height)
+            content
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.container, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.container, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
         case .input:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.input, height: height)
+            content
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.input, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.input, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
         case .legacyDisplay:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.legacyDisplay, height: height)
+            content
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.legacyDisplay, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.legacyDisplay, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
         case .popup:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.popup, height: height)
+            content
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.popup, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.popup, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
         case .sheet:
-            return getMisticaCornerRadiusValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.sheet, height: height)
-        }
-    }
-    
-    private func getMisticaCornerRadiusValue(cornerRadiusValue: CornerRadiusValue, height: CGFloat) -> CGFloat {
-        if let value = cornerRadiusValue.value {
-            return value
-        } else if let percentage = cornerRadiusValue.percentage {
-            return height * (percentage/100)
-        } else {
-            return .zero
+            content
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.sheet, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.sheet, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
         }
     }
 }

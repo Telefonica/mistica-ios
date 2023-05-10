@@ -1,71 +1,66 @@
 import Foundation
 
-public struct CornerRadiusValue {
-    var value: CGFloat?
-    var percentage: CGFloat?
-}
-
 public protocol MisticaCornerRadius {
-    var avatar: CornerRadiusValue { get }
-    var bar: CornerRadiusValue { get }
-    var button: CornerRadiusValue { get }
-    var checkbox: CornerRadiusValue { get }
-    var container: CornerRadiusValue { get }
-    var indicator: CornerRadiusValue { get }
-    var input: CornerRadiusValue { get }
-    var legacyDisplay: CornerRadiusValue { get }
-    var popup: CornerRadiusValue { get }
-    var sheet: CornerRadiusValue { get }
+    var avatar: CGFloat { get }
+    var bar: CGFloat { get }
+    var button: CGFloat { get }
+    var checkbox: CGFloat { get }
+    var container: CGFloat { get }
+    var indicator: CGFloat { get }
+    var input: CGFloat { get }
+    var legacyDisplay: CGFloat { get }
+    var popup: CGFloat { get }
+    var sheet: CGFloat { get }
 }
 
 struct MovistarCornerRadius: MisticaCornerRadius {
-    var avatar: CornerRadiusValue = .init(percentage: 50)
-    var bar: CornerRadiusValue = .init(value: 999)
-    var button: CornerRadiusValue = .init(value: 4)
-    var checkbox: CornerRadiusValue = .init(value: 2)
-    var container: CornerRadiusValue  = .init(value: 8)
-    var indicator: CornerRadiusValue = .init(value: 999)
-    var input: CornerRadiusValue = .init(value: 8)
-    var legacyDisplay: CornerRadiusValue = .init(value: 16)
-    var popup: CornerRadiusValue = .init(value: 8)
-    var sheet: CornerRadiusValue = .init(value: 8)
+    var avatar: CGFloat = 999
+    var bar: CGFloat = 999
+    var button: CGFloat = 4
+    var checkbox: CGFloat = 2
+    var container: CGFloat  = 8
+    var indicator: CGFloat = 999
+    var input: CGFloat = 8
+    var legacyDisplay: CGFloat = 16
+    var popup: CGFloat = 8
+    var sheet: CGFloat = 8
 }
 
 struct O2CornerRadius: MisticaCornerRadius {
-    var avatar: CornerRadiusValue = .init(percentage: 50)
-    var bar: CornerRadiusValue = .init(value: 999)
-    var button: CornerRadiusValue = .init(value: 4)
-    var checkbox: CornerRadiusValue = .init(value: 2)
-    var container: CornerRadiusValue  = .init(value: 8)
-    var indicator: CornerRadiusValue = .init(value: 999)
-    var input: CornerRadiusValue = .init(value: 8)
-    var legacyDisplay: CornerRadiusValue = .init(value: 16)
-    var popup: CornerRadiusValue = .init(value: 8)
-    var sheet: CornerRadiusValue = .init(value: 8)
+    var avatar: CGFloat = 999
+    var bar: CGFloat = 999
+    var button: CGFloat = 4
+    var checkbox: CGFloat = 2
+    var container: CGFloat  = 8
+    var indicator: CGFloat = 999
+    var input: CGFloat = 8
+    var legacyDisplay: CGFloat = 16
+    var popup: CGFloat = 8
+    var sheet: CGFloat = 8
 }
 
 struct BlauCornerRadius: MisticaCornerRadius {
-    var avatar: CornerRadiusValue = .init(percentage: 50)
-    var bar: CornerRadiusValue = .init(value: 999)
-    var button: CornerRadiusValue = .init(value: 4)
-    var checkbox: CornerRadiusValue = .init(value: 2)
-    var container: CornerRadiusValue  = .init(value: 8)
-    var indicator: CornerRadiusValue = .init(value: 999)
-    var input: CornerRadiusValue = .init(value: 8)
-    var legacyDisplay: CornerRadiusValue = .init(value: 16)
-    var popup: CornerRadiusValue = .init(value: 8)
-    var sheet: CornerRadiusValue = .init(value: 8)
+    var avatar: CGFloat = 999
+    var bar: CGFloat = 999
+    var button: CGFloat = 4
+    var checkbox: CGFloat = 2
+    var container: CGFloat  = 8
+    var indicator: CGFloat = 999
+    var input: CGFloat = 8
+    var legacyDisplay: CGFloat = 16
+    var popup: CGFloat = 8
+    var sheet: CGFloat = 8
 }
 
 struct VivoCornerRadius: MisticaCornerRadius {
-    var avatar: CornerRadiusValue = .init(percentage: 50)
-    var bar: CornerRadiusValue = .init(value: 999)
-    var button: CornerRadiusValue = .init(value: 4)
-    var checkbox: CornerRadiusValue = .init(value: 2)
-    var container: CornerRadiusValue  = .init(value: 8)
-    var indicator: CornerRadiusValue = .init(value: 999)
-    var input: CornerRadiusValue = .init(value: 8)
-    var legacyDisplay: CornerRadiusValue = .init(value: 16)
-    var popup: CornerRadiusValue = .init(value: 8)
-    var sheet: CornerRadiusValue = .init(value: 8)
+    var avatar: CGFloat = 999
+    var bar: CGFloat = 999
+    var button: CGFloat = 4
+    var checkbox: CGFloat = 2
+    var container: CGFloat  = 8
+    var indicator: CGFloat = 999
+    var input: CGFloat = 8
+    var legacyDisplay: CGFloat = 16
+    var popup: CGFloat = 8
+    var sheet: CGFloat = 8
 }

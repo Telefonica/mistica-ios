@@ -11,7 +11,6 @@ import Foundation
 import UIKit
 
 private enum Constants {
-    static let cornerRadius: CGFloat = 8
     static let messageToCloseTrailingMargin: CGFloat = 44
     static let calloutLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 24, trailing: messageToCloseTrailingMargin)
     static let closeButtonTopMargin: CGFloat = 16
@@ -61,7 +60,7 @@ public class Callout: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        makeRounded(cornerRadius: Constants.cornerRadius)
+        setMisticaRadius(.container)
     }
 
     override public var intrinsicContentSize: CGSize {

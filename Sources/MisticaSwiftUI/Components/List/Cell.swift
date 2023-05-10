@@ -159,7 +159,7 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
             image
                 .renderingMode(.original)
                 .frame(width: Constants.largeImageSize, height: Constants.largeImageSize, alignment: .center)
-                .round(radiusStyle: .avatar)
+                .clipShape(Circle())
         case let .squaredImage(image, size):
             image
                 .renderingMode(.original)
@@ -176,7 +176,7 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
                 .frame(width: Constants.largeImageSize, height: Constants.largeImageSize, alignment: .center)
                 .foregroundColor(tintColor)
                 .background(backgroundColor)
-                .round(radiusStyle: .avatar)
+                .clipShape(Circle())
         }
     }
 

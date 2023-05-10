@@ -32,6 +32,5 @@ public extension UIView {
         } else {
             layer.cornerRadius = cornerRadiusValue
         }
-        clipsToBounds = true
     }
 }

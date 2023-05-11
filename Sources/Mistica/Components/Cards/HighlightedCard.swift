@@ -408,6 +408,7 @@ private extension HighlightedCard {
 
         addBorder(color: .border)
         setMisticaRadius(.container)
+        clipsToBounds = true
     }
 
     func updateRightImageViewVisibility() {

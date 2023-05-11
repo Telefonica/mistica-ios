@@ -109,6 +109,7 @@ public class DataCard: UIView {
     override public func layoutSubviews() {
         super.layoutSubviews()
         setMisticaRadius(.container)
+        clipsToBounds = true
     }
 
     override public var intrinsicContentSize: CGSize {

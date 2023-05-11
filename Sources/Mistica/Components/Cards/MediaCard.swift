@@ -93,6 +93,7 @@ public class MediaCard: UIView {
     override public func layoutSubviews() {
         super.layoutSubviews()
         setMisticaRadius(.container)
+        clipsToBounds = true
     }
 }
 

@@ -157,6 +157,7 @@ public class TagView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         setMisticaRadius(.indicator)
+        clipsToBounds = true
     }
 }
 

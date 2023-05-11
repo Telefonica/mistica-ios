@@ -48,6 +48,8 @@ class SegmentView: UIView {
         super.layoutSubviews()
         backgroundView.setMisticaRadius(.bar)
         trackView.setMisticaRadius(.bar)
+        backgroundView.clipsToBounds = true
+        trackView.clipsToBounds = true
         updateValueConstraint()
     }
 }

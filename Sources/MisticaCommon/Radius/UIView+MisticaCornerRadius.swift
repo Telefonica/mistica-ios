@@ -1,3 +1,11 @@
+//
+//  UIView+MisticaCornerRadius.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import UIKit
 
 public extension UIView {
@@ -25,7 +33,7 @@ public extension UIView {
             setMisticaConfigValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.sheet)
         }
     }
-    
+
     private func setMisticaConfigValue(cornerRadiusValue: CGFloat) {
         if cornerRadiusValue >= 999 {
             layer.cornerRadius = min(frame.size.width, frame.size.height) / 2

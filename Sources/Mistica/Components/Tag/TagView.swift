@@ -153,8 +153,8 @@ public class TagView: UIView {
             invalidateIntrinsicContentSize()
         }
     }
-    
-    public override func layoutSubviews() {
+
+    override public func layoutSubviews() {
         super.layoutSubviews()
         setMisticaRadius(.indicator)
         clipsToBounds = true

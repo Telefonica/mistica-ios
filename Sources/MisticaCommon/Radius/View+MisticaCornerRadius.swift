@@ -1,10 +1,18 @@
+//
+//  View+MisticaCornerRadius.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import SwiftUI
 
 public extension View {
     func round(radiusStyle: CornerRadiusStyle) -> some View {
         modifier(CornerRadiusModifier(cornerRadiusStyle: radiusStyle))
     }
-    
+
     func border(radiusStyle: CornerRadiusStyle, borderColor: Color = .border, lineWidth: CGFloat = 1) -> some View {
         modifier(CornerRadiusModifier(cornerRadiusStyle: radiusStyle, borderColor: borderColor, lineWidth: lineWidth))
     }
@@ -14,7 +22,7 @@ private struct CornerRadiusModifier: ViewModifier {
     var cornerRadiusStyle: CornerRadiusStyle
     var borderColor: Color = .border
     var lineWidth: CGFloat = 0.0
-    
+
     func body(content: Content) -> some View {
         switch cornerRadiusStyle {
         case .avatar:

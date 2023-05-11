@@ -14,7 +14,7 @@ public enum MisticaConfig {
     public private(set) static var currentStyledControls = [MisticaControlStyle]()
     public private(set) static var currentFontWeights: MisticaFontWeights = MovistarFontWeights()
     public private(set) static var currentCornerRadius: MisticaCornerRadius = MovistarCornerRadius()
-    
+
     // MARK: Public Setup
 
     public static var brandStyle: BrandStyle = .movistar {

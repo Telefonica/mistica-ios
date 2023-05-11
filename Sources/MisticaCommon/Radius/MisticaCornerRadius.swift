@@ -1,3 +1,11 @@
+//
+//  MisticaCornerRadius.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
+
 import Foundation
 
 public protocol MisticaCornerRadius {
@@ -18,7 +26,7 @@ struct MovistarCornerRadius: MisticaCornerRadius {
     var bar: CGFloat = 999
     var button: CGFloat = 4
     var checkbox: CGFloat = 2
-    var container: CGFloat  = 8
+    var container: CGFloat = 8
     var indicator: CGFloat = 999
     var input: CGFloat = 8
     var legacyDisplay: CGFloat = 16
@@ -31,7 +39,7 @@ struct O2CornerRadius: MisticaCornerRadius {
     var bar: CGFloat = 999
     var button: CGFloat = 4
     var checkbox: CGFloat = 2
-    var container: CGFloat  = 8
+    var container: CGFloat = 8
     var indicator: CGFloat = 999
     var input: CGFloat = 8
     var legacyDisplay: CGFloat = 16
@@ -44,7 +52,7 @@ struct BlauCornerRadius: MisticaCornerRadius {
     var bar: CGFloat = 999
     var button: CGFloat = 4
     var checkbox: CGFloat = 2
-    var container: CGFloat  = 8
+    var container: CGFloat = 8
     var indicator: CGFloat = 999
     var input: CGFloat = 8
     var legacyDisplay: CGFloat = 16
@@ -57,7 +65,7 @@ struct VivoCornerRadius: MisticaCornerRadius {
     var bar: CGFloat = 999
     var button: CGFloat = 4
     var checkbox: CGFloat = 2
-    var container: CGFloat  = 8
+    var container: CGFloat = 8
     var indicator: CGFloat = 999
     var input: CGFloat = 8
     var legacyDisplay: CGFloat = 16

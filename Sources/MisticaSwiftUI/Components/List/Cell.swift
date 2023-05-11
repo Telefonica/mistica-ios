@@ -12,7 +12,6 @@ import SwiftUI
 
 private enum Constants {
     static let spacing: CGFloat = 16
-    static let borderRadius: CGFloat = 4
     static let largeImageSize: CGFloat = 40
     static let smallImageSize: CGFloat = 24
     static let minCellHeight: CGFloat = 72

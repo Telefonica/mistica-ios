@@ -173,6 +173,7 @@ private extension EmptyState {
             addSubview(constrainedToLayoutMarginsGuideOf: emptyStateContentBase)
             addBorder(color: .border)
             setMisticaRadius(.container)
+            clipsToBounds = true
             backgroundColor = .backgroundContainer
         } else {
             addSubview(withDefaultConstraints: emptyStateContentBase)

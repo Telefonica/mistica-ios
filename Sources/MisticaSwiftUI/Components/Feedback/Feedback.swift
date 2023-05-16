@@ -109,10 +109,12 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
         case .animation(let lottieView):
             lottieView
                 .onAppear {
+                    guard let hapticFeedbackDelay = style.hapticFeedbackDelay,
+                          let hapticFeedbackStyle = style.hapticFeedbackStyle else { return }
                     feedbackGenerator.prepare()
 
-                    Timer.scheduledTimer(withTimeInterval: style.hapticFeedbackDelay, repeats: false) { _ in
-                        feedbackGenerator.notificationOccurred(self.style.hapticFeedbackStyle)
+                    Timer.scheduledTimer(withTimeInterval: hapticFeedbackDelay, repeats: false) { _ in
+                        feedbackGenerator.notificationOccurred(hapticFeedbackStyle)
                     }
                 }
         case .image(let image):
@@ -134,7 +136,7 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
                 .font(.textPreset2(weight: .regular))
                 .foregroundColor(messageForegroundColor)
 
-        case .success, .informative, .error:
+        case .success, .informative, .error, .feedback:
             EmptyView()
         }
     }

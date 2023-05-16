@@ -16,6 +16,7 @@ public enum FeedbackStyle: Equatable {
     case success
     case informative
     case error
+    case feedback(icon: UIImage)
 }
 
 enum FeedbackIconStyle {
@@ -29,7 +30,7 @@ extension FeedbackStyle {
         switch self {
         case .success:
             return true
-        case .informative, .error:
+        case .informative, .error, .feedback:
             return false
         }
     }
@@ -66,6 +67,8 @@ extension FeedbackStyle {
         case .informative:
             guard let iconNotificationInfo = UIImage.iconNotificationInfo?.withRenderingMode(.alwaysTemplate) else { return .none }
             return .asset(iconNotificationInfo)
+        case .feedback(let icon):
+            return .asset(icon)
         }
     }
 
@@ -75,12 +78,12 @@ extension FeedbackStyle {
             return NSDataAsset.successAnimation.lottieAnimation
         case .error:
             return NSDataAsset.errorAnimation.lottieAnimation
-        case .informative:
+        case .informative, .feedback:
             return nil
         }
     }
 
-    var hapticFeedbackStyle: UINotificationFeedbackGenerator.FeedbackType {
+    var hapticFeedbackStyle: UINotificationFeedbackGenerator.FeedbackType? {
         switch self {
         case .success:
             return .success
@@ -88,10 +91,12 @@ extension FeedbackStyle {
             return .warning
         case .error:
             return .error
+        case .feedback:
+            return nil
         }
     }
 
-    var hapticFeedbackDelay: TimeInterval {
+    var hapticFeedbackDelay: TimeInterval? {
         switch self {
         case .success:
             return 0.45
@@ -99,6 +104,8 @@ extension FeedbackStyle {
             return 0
         case .error:
             return 0.5
+        case .feedback:
+            return nil
         }
     }
 }

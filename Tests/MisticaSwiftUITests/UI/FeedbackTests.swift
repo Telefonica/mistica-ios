@@ -62,6 +62,15 @@ final class FeedbackTests: XCTestCase {
         )
     }
 
+    func testFeedback() {
+        let feedback = makeTemplate(style: .feedback(Image(systemName: "swift")))
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: feedback),
+            as: .image(on: .iPhone8)
+        )
+    }
+
     func testMultiline() {
         let feedback = makeTemplate(style: .informative, title: Constants.multiLineTitle, message: Constants.multiLineSubtitle)
 

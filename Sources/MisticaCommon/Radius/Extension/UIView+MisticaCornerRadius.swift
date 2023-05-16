@@ -35,7 +35,7 @@ public extension UIView {
     }
 
     private func setMisticaConfigValue(cornerRadiusValue: CGFloat) {
-        if cornerRadiusValue >= 999 {
+        if cornerRadiusValue >= MisticaRadiusConstants.roundedRadius {
             layer.cornerRadius = min(frame.size.width, frame.size.height) / 2
         } else {
             layer.cornerRadius = cornerRadiusValue

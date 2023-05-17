@@ -1,3 +1,10 @@
+# [23.6.0](https://github.com/Telefonica/mistica-ios/compare/v23.5.0...v23.6.0) (2023-05-17)
+
+
+### Features
+
+* **MisticaTokens:** IOS-8300 added Mistica Tokens cornerRadius for every component. ([c3d569d](https://github.com/Telefonica/mistica-ios/commit/c3d569d7192b3a360b3aa421cfa67f9234211c4e))
+
 # [23.5.0](https://github.com/Telefonica/mistica-ios/compare/v23.4.0...v23.5.0) (2023-05-05)
 
 

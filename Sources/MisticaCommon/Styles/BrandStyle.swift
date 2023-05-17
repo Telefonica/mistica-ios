@@ -14,7 +14,7 @@ public enum BrandStyle {
     case vivo
     case o2
     case blau
-    case custom(MisticaColors, MisticaBrandAssets, MisticaFontWeights)
+    case custom(MisticaColors, MisticaBrandAssets, MisticaFontWeights, MisticaCornerRadius)
 
     public var id: String {
         switch self {

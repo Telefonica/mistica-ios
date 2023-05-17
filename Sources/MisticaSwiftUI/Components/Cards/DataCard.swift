@@ -131,7 +131,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
         .padding(.bottom, 24)
         .expandHorizontally(alignment: .leading)
         .background(Color.backgroundContainer)
-        .border(cornerRadius: 8, borderColor: Color.border, lineWidth: 1)
+        .border(radiusStyle: .container, borderColor: Color.border, lineWidth: 1)
         .fixedSize(horizontal: false, vertical: fixedVerticalContentSize)
         .overlay(dismissView)
     }

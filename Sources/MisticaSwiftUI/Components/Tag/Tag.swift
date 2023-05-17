@@ -9,7 +9,6 @@
 import SwiftUI
 
 private enum Constants {
-    static let cornerRadius: CGFloat = 50
     static let horizontalInset: CGFloat = 8
     static let horizontalInsetWithIcon: CGFloat = 5
     static let verticalInset: CGFloat = 4
@@ -70,7 +69,7 @@ public struct Tag: View {
         .frame(minWidth: Constants.minWidth, minHeight: Constants.minHeight, alignment: .center)
         .background(backgroundColor)
         .accessibilityIdentifier(textAccessibilityIdentifier)
-        .round(cornerRadius: Constants.cornerRadius)
+        .round(radiusStyle: .indicator)
     }
 
     private var backgroundColor: Color {

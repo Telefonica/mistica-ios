@@ -57,7 +57,6 @@ public struct DataCardConfiguration {
 public class DataCard: UIView {
     private enum Constants {
         static let spacingAfterIconView = CGFloat(0)
-        static let cornerRadius = CGFloat(8)
         static let cardLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 24, trailing: 16)
         static let iconLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
         static let imageSize = CGFloat(40)
@@ -109,7 +108,8 @@ public class DataCard: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        makeRounded(cornerRadius: Constants.cornerRadius)
+        setMisticaRadius(.container)
+        clipsToBounds = true
     }
 
     override public var intrinsicContentSize: CGSize {

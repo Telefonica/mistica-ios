@@ -11,7 +11,6 @@ import SwiftUI
 private enum Constants {
     static let horizontalPadding: CGFloat = 8
     static let verticalPadding: CGFloat = 8
-    static let cornerRadius: CGFloat = 4
     static let animationDuration: CGFloat = 0.2
     static let placeholderReducedScale: CGFloat = 0.777
     static let textfieldHeight: CGFloat = 24
@@ -100,7 +99,7 @@ public struct InputField: View {
             }
             .padding(.horizontal, Constants.horizontalPadding)
             .background(Color.backgroundContainer)
-            .border(cornerRadius: Constants.cornerRadius)
+            .border(radiusStyle: .input)
 
             if !assistiveText.isEmpty {
                 Text(assistiveText)

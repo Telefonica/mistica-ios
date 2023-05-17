@@ -65,7 +65,7 @@ public struct Snackbar<Button: View>: View {
             case .normal:
                 content
                     .background(backgroundColor)
-                    .round(cornerRadius: 8)
+                    .round(radiusStyle: .popup)
                     .padding(8)
 
             case .crouton:

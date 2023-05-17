@@ -10,7 +10,6 @@ import UIKit
 
 public class HighlightedCard: UIView {
     private enum Constants {
-        static let cornerRadius: CGFloat = 8
         static let closeButtonAlpha: CGFloat = 0.7
         static let closeButtonHeight: CGFloat = 48
         static let minHeight: CGFloat = 100
@@ -395,7 +394,8 @@ private extension HighlightedCard {
         closeButton.isHidden = true
 
         addBorder(color: .border)
-        makeRounded(cornerRadius: Constants.cornerRadius)
+        setMisticaRadius(.container)
+        clipsToBounds = true
     }
 
     func updateRightImageViewVisibility() {

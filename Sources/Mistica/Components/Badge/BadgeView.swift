@@ -97,7 +97,7 @@ public class BadgeView: UIView {
         let bezierPath: UIBezierPath
 
         if value > Constants.maximumValue {
-            bezierPath = UIBezierPath(roundedRect: rect, cornerRadius: rect.height / 2)
+            bezierPath = UIBezierPath(roundedRect: rect, cornerRadius: MisticaConfig.currentCornerRadius.indicator)
         } else {
             bezierPath = UIBezierPath(ovalIn: rect)
         }

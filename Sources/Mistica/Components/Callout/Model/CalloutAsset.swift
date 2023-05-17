@@ -18,7 +18,6 @@ class CalloutAsset: UIImageView {
             image = assetType.image
             contentMode = assetType.contentMode
             backgroundColor = assetType.backgroundColor
-            makeRounded(cornerRadius: assetType.cornerRadius)
 
             if assetType != oldValue {
                 setNeedsLayout()
@@ -55,13 +54,6 @@ private extension CalloutConfiguration.CalloutAssetType {
         case .smallIcon:
             return Constants.iconSize
         case .none:
-            return 0
-        }
-    }
-
-    var cornerRadius: CGFloat {
-        switch self {
-        case .smallIcon, .none:
             return 0
         }
     }

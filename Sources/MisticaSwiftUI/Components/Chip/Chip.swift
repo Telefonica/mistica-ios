@@ -107,12 +107,9 @@ private extension Chip {
         .padding(.horizontal, Constants.horizontalPadding)
         .frame(minWidth: Constants.minWidth, minHeight: Constants.minHeight)
         .background(
-            Capsule()
-                .strokeBorder(borderColor(isSelected), lineWidth: Constants.strokeWidth)
-                .background(
-                    Capsule()
-                        .fill(backgroundColor(isSelected))
-                )
+            Rectangle()
+                .fill(backgroundColor(isSelected))
+                .border(radiusStyle: .indicator, borderColor: borderColor(isSelected), lineWidth: Constants.strokeWidth)
         )
     }
 

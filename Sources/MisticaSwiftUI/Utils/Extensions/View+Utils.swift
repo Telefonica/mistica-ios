@@ -108,15 +108,6 @@ public extension View {
         }
     }
 
-    func round(cornerRadius: CGFloat = .infinity) -> some View {
-        clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-    }
-
-    func border(cornerRadius: CGFloat, borderColor: Color = .border, lineWidth: CGFloat = 1) -> some View {
-        clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-            .overlay(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
-    }
-
     /// A backwards compatible wrapper for iOS 14 `onChange`
     @ViewBuilder func valueChanged<T: Equatable>(value: T, onChange: @escaping (T) -> Void) -> some View {
         if #available(iOS 14.0, *) {

@@ -19,7 +19,6 @@ private enum Section: Int, CaseIterable {
 private enum Constants {
     enum Container {
         static let margin: CGFloat = 25
-        static let cornerRadius: CGFloat = 4
     }
 
     enum Tag {

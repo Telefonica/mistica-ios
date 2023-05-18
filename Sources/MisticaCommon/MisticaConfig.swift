@@ -9,10 +9,10 @@
 import Foundation
 
 public enum MisticaConfig {
-    public private(set) static var currentColors: MisticaColors = MovistarColors()
-    public private(set) static var currentBrandAssets: MisticaBrandAssets = DefaultMisticaBrandAssets()
+    public private(set) static var currentColors: MisticaColors!
+    public private(set) static var currentBrandAssets: MisticaBrandAssets!
     public private(set) static var currentStyledControls = [MisticaControlStyle]()
-    public private(set) static var currentFontWeights: MisticaFontWeights = MovistarFontWeights()
+    public private(set) static var currentFontWeights: MisticaFontWeights!
 
     // MARK: Public Setup
 
@@ -51,6 +51,7 @@ private extension MisticaConfig {
         case .custom(let colors, let assets):
             currentColors = colors
             currentBrandAssets = assets
+            currentFontWeights = MovistarFontWeights()
         }
     }
 }

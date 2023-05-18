@@ -22,7 +22,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "3.1.8"),
+        .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "4.2.0"),
         .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.8.2")
     ],
     targets: [
@@ -107,8 +107,8 @@ let package = Package(
         .target(
             name: "Mistica",
             dependencies: [
-                .product(name: "Lottie", package: "lottie-ios"),
-                "MisticaCommon"
+                "MisticaCommon",
+                .product(name: "Lottie", package: "lottie-ios")
             ],
             exclude: [
                 "Components/Badge/docs",

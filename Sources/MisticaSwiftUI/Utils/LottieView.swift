@@ -19,14 +19,14 @@ struct LottieView: UIViewRepresentable {
     var borderWidth: CGFloat?
     var scaleToFit = false
 
-    func makeUIView(context: UIViewRepresentableContext<LottieView>) -> AnimationView {
-        let animationView = AnimationView()
+    func makeUIView(context: UIViewRepresentableContext<LottieView>) -> LottieAnimationView {
+        let animationView = LottieAnimationView()
         animationView.animation = asset.lottieAnimation
         updateUIView(animationView, context: context)
         return animationView
     }
 
-    func updateUIView(_ animationView: AnimationView, context: Context) {
+    func updateUIView(_ animationView: LottieAnimationView, context: Context) {
         if let color = color {
             let colorKeypath = AnimationKeypath(keypath: "**.Color")
             let colorProvider = ColorValueProvider(color.lottieColorValue)

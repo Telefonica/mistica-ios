@@ -143,7 +143,6 @@ public class HighlightedCard: UIView {
         get {
             [
                 horizontalStackView,
-                actionButton.isHidden ? nil : actionButton,
                 closeButton.isHidden ? nil : closeButton
             ].compactMap { $0 }
         }

@@ -34,8 +34,9 @@ public struct Badge: View {
             numericView(number)
 
         case .flag:
-            Circle()
+            Rectangle()
                 .fill(Color.badge)
+                .round(radiusStyle: .indicator)
                 .frame(width: Constants.flagBadgeSize, height: Constants.flagBadgeSize)
         }
     }
@@ -44,10 +45,12 @@ public struct Badge: View {
     private func numericView(_ number: Int) -> some View {
         ZStack {
             if number > Constants.maximumValue {
-                Capsule().fill(Color.badge)
+                Rectangle().fill(Color.badge)
+                    .round(radiusStyle: .indicator)
                 label("+\(Constants.maximumValue)")
             } else {
-                Circle().fill(Color.badge)
+                Rectangle().fill(Color.badge)
+                    .round(radiusStyle: .indicator)
                 label("\(number)")
             }
         }

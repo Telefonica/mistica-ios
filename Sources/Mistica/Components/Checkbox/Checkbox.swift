@@ -13,7 +13,6 @@ import UIKit
 public class Checkbox: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(18)
-        static let cornerRadius = CGFloat(2)
         static let animationDuration = Double(0.4)
         static let timingFunction = CAMediaTimingFunction(controlPoints: 0.77, 0, 0.175, 1)
     }
@@ -98,7 +97,7 @@ private extension Checkbox {
         layoutView()
 
         updateViewStyle(checked: isChecked)
-        borderView.layer.cornerRadius = Constants.cornerRadius
+        borderView.setMisticaRadius(.checkbox)
         borderView.layer.masksToBounds = true
 
         setContentHuggingPriority(.defaultHigh, for: .horizontal)

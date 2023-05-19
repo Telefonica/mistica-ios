@@ -18,7 +18,6 @@ public class TagView: UIView {
         public static let minHeight: CGFloat = 28
         public static var font: UIFont { .textPreset2(weight: .medium) }
         public static let iconSize: CGFloat = 16
-        public static let cornerRadius: CGFloat = 14
         public static let emptyContent = " "
         public static let stackViewSpacing: CGFloat = 4
         public static let stackViewHorizontalLeadingMarginWithIcon: CGFloat = 8
@@ -154,6 +153,12 @@ public class TagView: UIView {
             invalidateIntrinsicContentSize()
         }
     }
+
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        setMisticaRadius(.indicator)
+        clipsToBounds = true
+    }
 }
 
 // MARK: Private methods
@@ -194,7 +199,6 @@ private extension TagView {
             )
         ])
 
-        makeRounded(cornerRadius: Style.cornerRadius)
         updateColors()
     }
 

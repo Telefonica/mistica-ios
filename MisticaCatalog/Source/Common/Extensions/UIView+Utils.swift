@@ -224,15 +224,6 @@ extension UIView {
         layer.add(animation, forKey: "lightShake")
     }
 
-    func makeRounded() {
-        makeRounded(cornerRadius: min(frame.size.width, frame.size.height) / 2)
-    }
-
-    func makeRounded(cornerRadius: CGFloat) {
-        layer.cornerRadius = cornerRadius
-        clipsToBounds = true
-    }
-
     func addBorder() {
         layer.borderColor = UIColor.divider.cgColor
         layer.borderWidth = 1.5

@@ -18,8 +18,8 @@ public struct Checkbox: View {
     }
 
     public var body: some View {
-        RoundedRectangle(cornerRadius: 2)
-            .strokeBorder(controlColor, lineWidth: lineWidth)
+        Rectangle()
+            .border(radiusStyle: .checkbox, borderColor: controlColor, lineWidth: lineWidth)
             .frame(width: 24, height: 24)
             .overlay(checkImage)
             .animation(.misticaTimingCurve, value: isSelected)

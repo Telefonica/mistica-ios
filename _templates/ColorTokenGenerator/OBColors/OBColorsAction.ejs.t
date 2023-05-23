@@ -1,32 +1,35 @@
 ---
-to: Sources/MisticaCommon/Colors/<%= name %>ColorPalette.swift
+to: Sources/MisticaCommon/Colors/<%= name[0].toUpperCase() + name.substring(1) %>ColorPalette.swift
 force: true
 ---
-//
-//  <%= name %>ColorPalette.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+<%_
+let className = name[0].toUpperCase() + name.substring(1)
+-%>
 <%_
 colorFromString = function(value) {
   if (value.includes("rgba")) {
     let splitted = value.replace("rgba({","").replace("}, ",",").replace(")","").replace(" ","").split(",")
     let colorName = splitted[0]
     let alphaComponent = splitted[1]
-    return name + "Colors." + colorName + ".withAlphaComponent(" + alphaComponent + ")"
+    return className + "Colors." + colorName + ".withAlphaComponent(" + alphaComponent + ")"
   } else {
     let colorName = value.replace("{","").replace("}","")
-    return name + "Colors." + colorName
+    return className + "Colors." + colorName
   }
 }
 -%>
+//
+//  <%= className %>ColorPalette.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
 
 import UIKit
 
-struct <%= name %>Colors: MisticaColors {
-	static let palette = <%= name %>ColorPalette()
+struct <%= className %>Colors: MisticaColors {
+	static let palette = <%= className %>ColorPalette()
 
 	<%_ Object.keys(jsonData.light).forEach(function(key) { -%>
 		<%_ let lightColorString = jsonData.light[key].value -%>
@@ -43,7 +46,7 @@ struct <%= name %>Colors: MisticaColors {
 	<%_ }); -%>
 }
 
-public struct <%= name %>ColorPalette {
+public struct <%= className %>ColorPalette {
 	public init() {}
 	<%_ Object.keys(jsonData.global.palette).forEach(function(key) { -%>
 	public let <%= key %> = UIColor(hex:"<%= jsonData.global.palette[key].value %>")!

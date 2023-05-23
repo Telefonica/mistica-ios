@@ -1,4 +1,4 @@
-.PHONY: help setup format test simulator archive export clean
+.PHONY: help setup format test simulator archive export clean colors
 
 # Simulator
 OS_VERSION := 16.2
@@ -22,6 +22,15 @@ EXPORTED_OPTIONS_PATH := $(ROOT_DIR)/enterprise.plist
 ARCHIVE_PATH := $(TMP_ROOT_PATH)/ios.xcarchive
 XCODEBUILD := set -o pipefail && xcodebuild
 
+#ColorPalettes
+#All of the brand names should be in lowercase
+Movistar:= movistar
+Blau:= blau
+O2:= o2
+Vivo:= vivo
+BRANDKEYS:= $(Movistar) $(Blau) $(O2) $(Vivo)
+BRAND_URL:= https://raw.githubusercontent.com/Telefonica/mistica-design/$(branch)/tokens/
+
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
 export DEVELOPER_DIR=/Applications/Xcode-14.2.app/Contents/Developer
@@ -36,6 +45,7 @@ help:
 	@echo "  simulator		to install the simulator for testing"
 	@echo "  export		to export the archived project as an .ipa"
 	@echo "  clean    		to remove all temporal files"
+	@echo "  colors 		to regenerate MisticaColors with new palettes from <branch>"
 
 trace:
 	@echo "Current xcodebuild configuration"
@@ -50,6 +60,8 @@ setup: trace
 	@echo "Installing dependencies..."
 	@brew ls chargepoint/xcparse/xcparse --versions || brew install chargepoint/xcparse/xcparse
 	@brew ls xcbeautify --versions || brew install xcbeautify
+	@brew install node
+	@brew brew tap jondot/tap || brew install hygen
 
 format:
 	Scripts/swiftformat .
@@ -92,3 +104,13 @@ export: clean setup
 	@find "$(TMP_ROOT_PATH)" -name "*.dSYM" | xargs -I '{}' mv {} "$(BUILD_PATH)/ios.dSYM"
 
 	@rm -rf "$(TMP_ROOT_PATH)"
+
+colors:
+	@echo "Generating Mistica Color Palettes"
+	curl $(BRAND_URL)$(Movistar).json > $(Movistar).json
+	hygen ColorTokenGenerator MisticaColors --json $(Movistar).json
+	for key in $(BRANDKEYS) ; do \
+		curl $(BRAND_URL)$$key.json > $$key.json; \
+		hygen ColorTokenGenerator OBColors --name $$key --json $$key".json" ; \
+		rm $$key.json; \
+	done

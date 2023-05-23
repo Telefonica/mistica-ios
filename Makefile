@@ -1,4 +1,4 @@
-.PHONY: help setup format test simulator archive export clean colors
+.PHONY: help setup format test simulator archive export clean setupSkin tokenColorTemplates skin
 
 # Simulator
 OS_VERSION := 16.2
@@ -21,15 +21,15 @@ BUILD_PATH := $(ROOT_DIR)/build
 EXPORTED_OPTIONS_PATH := $(ROOT_DIR)/enterprise.plist
 ARCHIVE_PATH := $(TMP_ROOT_PATH)/ios.xcarchive
 XCODEBUILD := set -o pipefail && xcodebuild
+MISTICA_DESIGN_TOKENS := $(ROOT_DIR)/.github/mistica-design/tokens
 
-#ColorPalettes
-#All of the brand names should be in lowercase
+#Skin tokens config
+#All of the brand names should be in lowercase. This variables will be used to get the json file from mistica tokens directory. If new brand is created, it should be added here.
 Movistar:= movistar
 Blau:= blau
 O2:= o2
 Vivo:= vivo
-BRANDKEYS:= $(Movistar) $(Blau) $(O2) $(Vivo)
-BRAND_URL:= https://raw.githubusercontent.com/Telefonica/mistica-design/$(branch)/tokens/
+BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) # List of all the brand file names that will be procesed.
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
@@ -45,7 +45,9 @@ help:
 	@echo "  simulator		to install the simulator for testing"
 	@echo "  export		to export the archived project as an .ipa"
 	@echo "  clean    		to remove all temporal files"
-	@echo "  colors 		to regenerate MisticaColors with new palettes from <branch>"
+	@echo "	 setupSkin		to setup skin dependencies"
+	@echo "  tokenColorTemplates 		to setup and regenerate MisticaColors with new palettes from mistica design"
+	@echo "skin				to setup, regenerate and format tokens from mistica design"
 
 trace:
 	@echo "Current xcodebuild configuration"
@@ -60,6 +62,9 @@ setup: trace
 	@echo "Installing dependencies..."
 	@brew ls chargepoint/xcparse/xcparse --versions || brew install chargepoint/xcparse/xcparse
 	@brew ls xcbeautify --versions || brew install xcbeautify
+
+setupSkin:
+	@echo "Installing tokens generators dependencies"
 	@brew install node
 	@brew tap jondot/tap || brew install hygen
 
@@ -105,12 +110,14 @@ export: clean setup
 
 	@rm -rf "$(TMP_ROOT_PATH)"
 
-colors:
+tokenColorTemplates: setupSkin
 	@echo "Generating Mistica Color Palettes"
-	curl $(BRAND_URL)$(Movistar).json > $(Movistar).json
-	hygen ColorTokenGenerator MisticaColors --json $(Movistar).json
-	for key in $(BRANDKEYS) ; do \
-		curl $(BRAND_URL)$$key.json > $$key.json; \
-		hygen ColorTokenGenerator OBColors --name $$key --json $$key".json" ; \
-		rm $$key.json; \
+	hygen ColorTokenGenerator MisticaColors --json $(MISTICA_DESIGN_TOKENS)/$(Movistar).json # Generates the MisticaColors protocol from the movistar json file.
+
+	# Generates N color palettes for every brand passed in BRAND_FILES
+	for key in $(BRAND_FILES) ; do \
+		hygen ColorTokenGenerator OBColors --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
 	done
+
+skin: tokenColorTemplates format
+

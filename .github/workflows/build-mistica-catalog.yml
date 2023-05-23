@@ -26,11 +26,11 @@ jobs:
         run: make skin
 
       - name: Create Pull Request
-          uses: peter-evans/create-pull-request@v5
-          with:
-            token: ${{ secrets.FLOW_GITHUB_TOKEN }}
-            commit-message: 'feat(skin): update design tokens'
-            title: 'feat(skin): update design tokens from ' ${{github.event.inputs.ref}}
-            branch: 'import-design-tokens'
-            reviewers: 'idenjoe'
-            delete-branch: true
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.FLOW_GITHUB_TOKEN }}
+          commit-message: 'feat(skin): update design tokens'
+          title: 'feat(skin): update design tokens from ${{github.event.inputs.ref}}' 
+          branch: 'import-design-tokens'
+          reviewers: 'idenjoe'
+          delete-branch: true

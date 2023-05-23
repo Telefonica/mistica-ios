@@ -61,7 +61,7 @@ setup: trace
 	@brew ls chargepoint/xcparse/xcparse --versions || brew install chargepoint/xcparse/xcparse
 	@brew ls xcbeautify --versions || brew install xcbeautify
 	@brew install node
-	@brew brew tap jondot/tap || brew install hygen
+	@brew tap jondot/tap || brew install hygen
 
 format:
 	Scripts/swiftformat .

@@ -20,7 +20,7 @@ jobs:
           repository: Telefonica/mistica-design                   
           path: '.github/mistica-design'                   
           ref: ${{github.event.inputs.ref}}                  
-          token: ${{ secrets.FLOW_GITHUB_TOKEN }}
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
 
       - name: Generate Skin
         run: make skin
@@ -28,7 +28,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.FLOW_GITHUB_TOKEN }}
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
           commit-message: 'feat(skin): update design tokens'
           title: 'feat(skin): update design tokens from ${{github.event.inputs.ref}}' 
           branch: 'import-design-tokens'

@@ -32,8 +32,9 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+          add-paths: 'Sources/MisticaCommon/Colors'
           commit-message: 'feat(skin): update design tokens'
-          title: 'feat(skin): update design tokens from ${{github.event.inputs.ref}}' 
+          title: 'feat(skin): update design tokens from mistica-design branch: ${{github.event.inputs.ref}}' 
           branch: 'import-design-tokens'
           reviewers: 'idenjoe'
           delete-branch: true

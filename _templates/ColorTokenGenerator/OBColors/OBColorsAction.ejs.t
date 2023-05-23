@@ -18,13 +18,6 @@ colorFromString = function(value) {
   }
 }
 -%>
-//
-//  <%= className %>ColorPalette.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
 
 import UIKit
 

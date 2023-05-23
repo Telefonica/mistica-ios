@@ -116,7 +116,7 @@ tokenColorTemplates: setupSkin
 
 	# Generates N color palettes for every brand passed in BRAND_FILES
 	for key in $(BRAND_FILES) ; do \
-		hygen ColorTokenGenerator OBColors --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
+		hygen ColorTokenGenerator BrandColors --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
 	done
 
 skin: tokenColorTemplates format

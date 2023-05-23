@@ -1,3 +1,31 @@
+## [23.6.1](https://github.com/Telefonica/mistica-ios/compare/v23.6.0...v23.6.1) (2023-05-23)
+
+
+### Bug Fixes
+
+* **HighlightedCard:** actionButton duplicated for accessibility tool ([#276](https://github.com/Telefonica/mistica-ios/issues/276)) ([3e2794c](https://github.com/Telefonica/mistica-ios/commit/3e2794c8b539033c62c0759c33833b974d6035af))
+
+# [23.6.0](https://github.com/Telefonica/mistica-ios/compare/v23.5.0...v23.6.0) (2023-05-17)
+
+
+### Features
+
+* **MisticaTokens:** IOS-8300 added Mistica Tokens cornerRadius for every component. ([c3d569d](https://github.com/Telefonica/mistica-ios/commit/c3d569d7192b3a360b3aa421cfa67f9234211c4e))
+
+# [23.5.0](https://github.com/Telefonica/mistica-ios/compare/v23.4.0...v23.5.0) (2023-05-05)
+
+
+### Features
+
+* **Feedback:** added a new feedback type with custom icon ([#273](https://github.com/Telefonica/mistica-ios/issues/273)) ([10ebf94](https://github.com/Telefonica/mistica-ios/commit/10ebf9488fae53d74c68edccf7bb641ace8c14bb))
+
+# [23.4.0](https://github.com/Telefonica/mistica-ios/compare/v23.3.0...v23.4.0) (2023-05-04)
+
+
+### Features
+
+* **FontWeight:** Add FontWeights to the ".custom" brand ([#271](https://github.com/Telefonica/mistica-ios/issues/271)) ([85317ee](https://github.com/Telefonica/mistica-ios/commit/85317ee7412ff5a48f5d45ef299571cb456af01a))
+
 # [23.3.0](https://github.com/Telefonica/mistica-ios/compare/v23.2.0...v23.3.0) (2023-04-25)
 
 

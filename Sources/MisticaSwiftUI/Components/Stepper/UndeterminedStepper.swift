@@ -32,7 +32,7 @@ public struct UndeterminedStepper: View {
         }
         .expandHorizontally()
         .frame(height: 4)
-        .round(cornerRadius: 2)
+        .round(radiusStyle: .button)
     }
 
     // Returns a value between 0.0 and 1.0

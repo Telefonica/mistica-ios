@@ -14,7 +14,12 @@ struct FeedbackCatalogView: View {
     @State var message: String = "Insert here the message that will be included in the feedback."
 
     @State var selectedStyleIndex = 0
-    @State var styles: [FeedbackStyle] = [.informative, .success, .error(reference: "Error reference: #1993")]
+    @State var styles: [FeedbackStyle] = [
+        .informative,
+        .success,
+        .error(reference: "Error reference: #1993"),
+        .feedback(Image("feedbackIcon"))
+    ]
 
     @State var presentingFeedback = false
 
@@ -60,6 +65,8 @@ extension FeedbackStyle: CustomStringConvertible {
             return "Error"
         case .informative:
             return "Informative"
+        case .feedback:
+            return "Feedback"
         }
     }
 }

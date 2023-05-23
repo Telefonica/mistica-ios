@@ -13,7 +13,6 @@ open class Button: UIControl {
         static let animationDuration: TimeInterval = 0.3
         static let animationCurveControlPoint1 = CGPoint(x: 0.77, y: 0)
         static let animationCurveControlPoint2 = CGPoint(x: 0.175, y: 1)
-        static let cornerRadius: CGFloat = 4
         static let borderWidth: CGFloat = 1.5
         static let enabledAlpha: CGFloat = 1.0
         static let disabledAlpha: CGFloat = 0.5
@@ -237,7 +236,7 @@ private extension Button {
     }
 
     func setUpView() {
-        layer.cornerRadius = Constants.cornerRadius
+        setMisticaRadius(.button)
         layer.cornerCurve = .continuous
         layer.borderWidth = Constants.borderWidth
         isAccessibilityElement = true

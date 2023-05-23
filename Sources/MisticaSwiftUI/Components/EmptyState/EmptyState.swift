@@ -91,7 +91,7 @@ public struct EmptyState<PrimaryButton: View, SecondaryButton: View>: View {
 
 public extension EmptyState {
     func cardStyle() -> some View {
-        border(cornerRadius: 8, borderColor: .border, lineWidth: 1)
+        border(radiusStyle: .container, borderColor: .border, lineWidth: 1)
     }
 
     func titleLineLimit(_ titleLineLimit: Int) -> EmptyState {

@@ -13,6 +13,7 @@ public enum MisticaConfig {
     public private(set) static var currentBrandAssets: MisticaBrandAssets = DefaultMisticaBrandAssets()
     public private(set) static var currentStyledControls = [MisticaControlStyle]()
     public private(set) static var currentFontWeights: MisticaFontWeights = MovistarFontWeights()
+    public private(set) static var currentCornerRadius: MisticaCornerRadius = MovistarCornerRadius()
 
     // MARK: Public Setup
 
@@ -36,21 +37,27 @@ private extension MisticaConfig {
             currentColors = MovistarColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = MovistarFontWeights()
+            currentCornerRadius = MovistarCornerRadius()
         case .vivo:
             currentColors = VivoColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = VivoFontWeights()
+            currentCornerRadius = VivoCornerRadius()
         case .o2:
             currentColors = O2Colors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = O2FontWeights()
+            currentCornerRadius = O2CornerRadius()
         case .blau:
             currentColors = BlauColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = BlauFontWeights()
-        case .custom(let colors, let assets):
+            currentCornerRadius = BlauCornerRadius()
+        case .custom(let colors, let assets, let fontWeights, let cornerRadius):
             currentColors = colors
             currentBrandAssets = assets
+            currentFontWeights = fontWeights
+            currentCornerRadius = cornerRadius
         }
     }
 }

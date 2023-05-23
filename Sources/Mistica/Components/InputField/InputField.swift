@@ -100,7 +100,7 @@ public class InputField: UIView {
         let view = UIView()
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.border.cgColor
-        view.layer.cornerRadius = 8
+        view.setMisticaRadius(.input)
         view.backgroundColor = .backgroundContainer
 
         horizontalTextInputStackView.alignment = .fill

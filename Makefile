@@ -65,8 +65,8 @@ setup: trace
 
 setupSkin:
 	@echo "Installing tokens generators dependencies"
-	@brew install node
-	@brew tap jondot/tap || brew install hygen
+	@brew ls node --versions || brew install node
+	@brew ls hygen --versions || (brew tap jondot/tap && brew install hygen)
 
 format:
 	Scripts/swiftformat .

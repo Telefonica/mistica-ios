@@ -1,22 +1,9 @@
 ---
-to: Sources/MisticaCommon/Colors/<%= name[0].toUpperCase() + name.substring(1) %>ColorPalette.swift
+to: Sources/MisticaCommon/Colors/<%= h.upFirst(name) %>ColorPalette.swift
 force: true
 ---
 <%_
-let className = name[0].toUpperCase() + name.substring(1)
--%>
-<%_
-colorFromString = function(value) {
-  if (value.includes("rgba")) {
-    let splitted = value.replace("rgba({","").replace("}, ",",").replace(")","").replace(" ","").split(",")
-    let colorName = splitted[0]
-    let alphaComponent = splitted[1]
-    return className + "Colors." + colorName + ".withAlphaComponent(" + alphaComponent + ")"
-  } else {
-    let colorName = value.replace("{","").replace("}","")
-    return className + "Colors." + colorName
-  }
-}
+let className = h.upFirst(name)
 -%>
 
 import UIKit
@@ -27,8 +14,8 @@ struct <%= className %>Colors: MisticaColors {
 	<%_ Object.keys(jsonData.light).forEach(function(key) { -%>
 		<%_ let lightColorString = jsonData.light[key].value -%>
 		<%_ let darkColorString = jsonData.dark[key].value -%>
-		<%_ var lightColor = colorFromString(lightColorString) -%>
-		<%_ var darkColor = colorFromString(darkColorString) -%>
+		<%_ var lightColor = h.colorFromString(lightColorString, className) -%>
+		<%_ var darkColor = h.colorFromString(darkColorString, className) -%>
 		<%_ if (!!lightColor & !!darkColor) { -%>
 			<%_ if (lightColor == darkColor) { -%>
 	let <%= key %> = <%= lightColor %>

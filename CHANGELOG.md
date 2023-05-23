@@ -1,3 +1,10 @@
+## [23.6.1](https://github.com/Telefonica/mistica-ios/compare/v23.6.0...v23.6.1) (2023-05-23)
+
+
+### Bug Fixes
+
+* **HighlightedCard:** actionButton duplicated for accessibility tool ([#276](https://github.com/Telefonica/mistica-ios/issues/276)) ([3e2794c](https://github.com/Telefonica/mistica-ios/commit/3e2794c8b539033c62c0759c33833b974d6035af))
+
 # [23.6.0](https://github.com/Telefonica/mistica-ios/compare/v23.5.0...v23.6.0) (2023-05-17)
 
 

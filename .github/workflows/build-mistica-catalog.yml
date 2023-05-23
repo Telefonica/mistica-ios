@@ -1,17 +1,16 @@
 name: Generate Mistica Tokens
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
-        inputs:
-            ref:                 
-              description: 'mistica-design repo changeset or branch'                 
-              required: false                 
-              default: 'production'
+    inputs:
+      ref:                 
+        description: 'mistica-design repo changeset or branch'                 
+        required: false                 
+        default: 'production'
 
 jobs:
-  import-design-tokens:         
+  import-design-tokens:
+    name: Import Design Tokens   
     runs-on: self-hosted-novum-mac         
     steps:             
       - uses: actions/checkout@v3             

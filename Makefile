@@ -119,5 +119,14 @@ tokenColorTemplates: setupSkin
 		hygen ColorTokenGenerator BrandColors --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
 	done
 
-skin: tokenColorTemplates format
+tokenCornerRadiusTemplates: setupSkin
+	@echo "Generating Mistica Corner Radius Palettes"
+	hygen CornerRadiusTokenGenerator MisticaCornerRadius --json $(MISTICA_DESIGN_TOKENS)/$(Movistar).json # Generates the MisticaCornerRadius protocol from the movistar json file.
+
+	# Generates N corner radius palettes for every brand passed in BRAND_FILES
+	for key in $(BRAND_FILES) ; do \
+		hygen CornerRadiusTokenGenerator BrandCornerRadius --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
+	done
+
+skin: tokenColorTemplates tokenCornerRadiusTemplates format
 

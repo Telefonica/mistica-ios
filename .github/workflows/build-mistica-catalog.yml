@@ -36,5 +36,5 @@ jobs:
           commit-message: 'feat(skin): update design tokens'
           title: 'feat(skin): update design tokens from mistica-design branch: ${{github.event.inputs.ref}}' 
           branch: 'import-design-tokens'
-          reviewers: 'idenjoe'
+          team-reviewers: 'ios'
           delete-branch: true

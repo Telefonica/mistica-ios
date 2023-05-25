@@ -25,9 +25,6 @@ jobs:
       - name: Generate Skin
         run: make skin
 
-      - name: Remove Mistica Design repository
-        run: rm -rf .github/mistica-design
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:

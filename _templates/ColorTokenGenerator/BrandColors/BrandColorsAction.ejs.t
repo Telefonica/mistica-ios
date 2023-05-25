@@ -1,9 +1,16 @@
 ---
-to: Sources/MisticaCommon/Colors/<%= h.upFirst(name) %>ColorPalette.swift
+to: Sources/MisticaCommon/Colors/<%= h.inflection.capitalize(name) %>ColorPalette.swift
 force: true
 ---
+<%# 
+to: The path where the file will be create
+force: If the file can be overwritten or not
+-%>
+
+<%# We need to capitalize the brand name we receive. To do this we used the helper object provided by hygen. -%>
 <%_
-let className = h.upFirst(name)
+let className = h.inflection.capitalize(name)
+let jsonObject = h.params(json)
 -%>
 
 import UIKit
@@ -11,9 +18,9 @@ import UIKit
 struct <%= className %>Colors: MisticaColors {
 	static let palette = <%= className %>ColorPalette()
 
-	<%_ Object.keys(jsonData.light).forEach(function(key) { -%>
-		<%_ let lightColorString = jsonData.light[key].value -%>
-		<%_ let darkColorString = jsonData.dark[key].value -%>
+	<%_ Object.keys(jsonObject.jsonData.light).forEach(function(key) { -%>
+		<%_ let lightColorString = jsonObject.jsonData.light[key].value -%>
+		<%_ let darkColorString = jsonObject.jsonData.dark[key].value -%>
 		<%_ var lightColor = h.colorFromString(lightColorString, className) -%>
 		<%_ var darkColor = h.colorFromString(darkColorString, className) -%>
 		<%_ if (!!lightColor & !!darkColor) { -%>
@@ -28,7 +35,7 @@ struct <%= className %>Colors: MisticaColors {
 
 public struct <%= className %>ColorPalette {
 	public init() {}
-	<%_ Object.keys(jsonData.global.palette).forEach(function(key) { -%>
-	public let <%= key %> = UIColor(hex:"<%= jsonData.global.palette[key].value %>")!
+	<%_ Object.keys(jsonObject.jsonData.global.palette).forEach(function(key) { -%>
+	public let <%= key %> = UIColor(hex:"<%= jsonObject.jsonData.global.palette[key].value %>")!
 	<%_ }); -%>
 }

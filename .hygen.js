@@ -1,6 +1,7 @@
+const fs = require('fs')
+
 module.exports = {
   helpers: {
-    upFirst: s => s[0].toUpperCase() + s.substring(1),
     colorFromString: (s,className) => {
         if (s.includes("rgba")) {
           let splitted = s.replace("rgba({","").replace("}, ",",").replace(")","").replace(" ","").split(",")
@@ -11,6 +12,16 @@ module.exports = {
           let colorName = s.replace("{","").replace("}","")
           return className + "Colors." + colorName
         }
-    }
+    },
+    params: (json) => {
+      let jsonData = {}
+      if (json) {
+        let rawdata = fs.readFileSync(json);
+        jsonData = JSON.parse(rawdata);
+      }
+      return {
+        jsonData
+      }
+    },
   },
 }

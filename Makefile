@@ -1,4 +1,4 @@
-.PHONY: help setup format test simulator archive export clean setupSkin tokenColorTemplates skin
+.PHONY: help setup format test simulator archive export clean skinGeneratorSetup colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration skin
 
 # Simulator
 OS_VERSION := 16.2
@@ -24,12 +24,12 @@ XCODEBUILD := set -o pipefail && xcodebuild
 MISTICA_DESIGN_TOKENS := $(ROOT_DIR)/.github/mistica-design/tokens
 
 #Skin tokens config
-#All of the brand names should be in lowercase. This variables will be used to get the json file from mistica tokens directory. If new brand is created, it should be added here.
+#These variables will be used to get the json file from mistica design repository and later to create the appropiate file and class/struct names. If a new brand/skin needs to be added, it should be added here. All of the brand names should be in lowercase.
 Movistar:= movistar
 Blau:= blau
 O2:= o2
 Vivo:= vivo
-BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) # List of all the brand file names that will be procesed.
+BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) # List of all the brand names that will be procesed.
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
@@ -39,15 +39,17 @@ endif
 # Targets
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  setup    		to set up dependencies"
-	@echo "  format    		to execute swiftformat in Sources directory"
-	@echo "  test     		to build and test the main target"
-	@echo "  simulator		to install the simulator for testing"
-	@echo "  export		to export the archived project as an .ipa"
-	@echo "  clean    		to remove all temporal files"
-	@echo "	 setupSkin		to setup skin dependencies"
-	@echo "  tokenColorTemplates 		to setup and regenerate MisticaColors with new palettes from mistica design"
-	@echo "skin				to setup, regenerate and format tokens from mistica design"
+	@echo "  setup    			to set up dependencies"
+	@echo "  format    			to execute swiftformat in Sources directory"
+	@echo "  test     			to build and test the main target"
+	@echo "  simulator			to install the simulator for testing"
+	@echo "  export			to export the archived project as an .ipa"
+	@echo "  clean    			to remove all temporal files"
+	@echo "  skinGeneratorSetup    	to setup skin dependencies"
+	@echo "  colorPaletteGeneration  	to setup and regenerate MisticaColors with new palettes from mistica design"
+	@echo "  cornerRadiusGeneration  	to setup and regenerate MisticaCornerRadius with new palettes from mistica design"
+	@echo "  fontWeightsGeneration  	to setup and regenerate MisticaFontWeights with new palettes from mistica design"
+	@echo "  skin				to setup, regenerate and format tokens from mistica design"
 
 trace:
 	@echo "Current xcodebuild configuration"
@@ -63,7 +65,7 @@ setup: trace
 	@brew ls chargepoint/xcparse/xcparse --versions || brew install chargepoint/xcparse/xcparse
 	@brew ls xcbeautify --versions || brew install xcbeautify
 
-setupSkin:
+skinGeneratorSetup:
 	@echo "Installing tokens generators dependencies"
 	@brew ls node --versions || brew install node
 	@brew ls hygen --versions || (brew tap jondot/tap && brew install hygen)
@@ -110,7 +112,7 @@ export: clean setup
 
 	@rm -rf "$(TMP_ROOT_PATH)"
 
-tokenColorTemplates: setupSkin
+colorPaletteGeneration: skinGeneratorSetup
 	@echo "Generating Mistica Color Palettes"
 	hygen ColorTokenGenerator MisticaColors --json $(MISTICA_DESIGN_TOKENS)/$(Movistar).json # Generates the MisticaColors protocol from the movistar json file.
 
@@ -119,5 +121,23 @@ tokenColorTemplates: setupSkin
 		hygen ColorTokenGenerator BrandColors --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
 	done
 
-skin: tokenColorTemplates format
+cornerRadiusGeneration: skinGeneratorSetup
+	@echo "Generating Mistica Corner Radius Palettes"
+	hygen CornerRadiusTokenGenerator MisticaCornerRadius --json $(MISTICA_DESIGN_TOKENS)/$(Movistar).json # Generates the MisticaCornerRadius protocol from the movistar json file.
+
+	# Generates N corner radius palettes for every brand passed in BRAND_FILES
+	for key in $(BRAND_FILES) ; do \
+		hygen CornerRadiusTokenGenerator BrandCornerRadius --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
+	done
+	
+fontWeightsGeneration: skinGeneratorSetup
+	@echo "Generating Mistica Font Weight Palettes"
+	hygen FontWeightsTokenGenerator MisticaFontWeights --json $(MISTICA_DESIGN_TOKENS)/$(Movistar).json # Generates the MisticaCornerRadius protocol from the movistar json file.
+
+	# Generates N corner radius palettes for every brand passed in BRAND_FILES
+	for key in $(BRAND_FILES) ; do \
+		hygen FontWeightsTokenGenerator BrandFontWeights --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
+	done
+
+skin: colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration format
 

@@ -79,7 +79,7 @@ public class HeaderView: UIView {
     public convenience init() {
         self.init(frame: .zero)
     }
-    
+
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setUpView()
@@ -102,7 +102,7 @@ public class HeaderView: UIView {
         get {
             guard let text = pretitleLabel.text, !text.isEmpty else { return nil }
             return HeaderText(
-                text:  text,
+                text: text,
                 lineLimit: pretitleLabel.numberOfLines,
                 accessibilityLabel: pretitleLabel.accessibilityLabel,
                 accessibilityIdentifier: pretitleLabel.accessibilityIdentifier
@@ -260,7 +260,7 @@ private extension HeaderView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomAnchor.constraint(equalTo: stackView.bottomAnchor)
         ])
-        
+
         stackView.addArrangedSubview(topStackView)
 
         topStackView.addArrangedSubview(pretitleLabel)

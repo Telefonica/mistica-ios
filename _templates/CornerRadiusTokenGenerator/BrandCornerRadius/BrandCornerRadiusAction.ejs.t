@@ -1,9 +1,9 @@
 ---
-to: Sources/MisticaCommon/Radius/Brands/<%= h.upFirst(name) %>CornerRadius.swift
+to: Sources/MisticaCommon/Radius/Brands/<%= h.inflection.capitalize(name) %>CornerRadius.swift
 force: true
 ---
 <%_
-let className = h.upFirst(name)
+let className = h.inflection.capitalize(name)
 -%>
 
 import Foundation

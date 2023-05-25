@@ -1,9 +1,9 @@
 ---
-to: Sources/MisticaCommon/Colors/<%= h.upFirst(name) %>ColorPalette.swift
+to: Sources/MisticaCommon/Colors/<%= h.inflection.capitalize(name) %>ColorPalette.swift
 force: true
 ---
 <%_
-let className = h.upFirst(name)
+let className = h.inflection.capitalize(name)
 -%>
 
 import UIKit

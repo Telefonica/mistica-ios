@@ -2,6 +2,11 @@
 to: Sources/MisticaCommon/Fonts/MisticaFontWeights.swift
 force: true
 ---
+<%# 
+to: The path where the file will be create
+force: If the file can be overwritten or not
+-%>
+
 import UIKit
 
 public protocol MisticaFontWeights {

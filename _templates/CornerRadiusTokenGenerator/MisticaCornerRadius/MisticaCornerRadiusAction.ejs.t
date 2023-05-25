@@ -2,6 +2,11 @@
 to: Sources/MisticaCommon/Radius/MisticaCornerRadius.swift
 force: true
 ---
+<%# 
+to: The path where the file will be create
+force: If the file can be overwritten or not
+-%>
+
 import Foundation
 
 public enum MisticaRadiusConstants {

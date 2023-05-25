@@ -24,12 +24,12 @@ XCODEBUILD := set -o pipefail && xcodebuild
 MISTICA_DESIGN_TOKENS := $(ROOT_DIR)/.github/mistica-design/tokens
 
 #Skin tokens config
-#All of the brand names should be in lowercase. This variables will be used to get the json file from mistica tokens directory. If new brand is created, it should be added here.
+#These variables will be used to get the json file from mistica design repository and later to create the appropiate file and class/struct names. If a new brand/skin needs to be added, it should be added here. All of the brand names should be in lowercase.
 Movistar:= movistar
 Blau:= blau
 O2:= o2
 Vivo:= vivo
-BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) # List of all the brand file names that will be procesed.
+BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) # List of all the brand names that will be procesed.
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)

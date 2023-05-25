@@ -2,6 +2,11 @@
 to: Sources/MisticaCommon/Fonts/Brands/<%= h.inflection.capitalize(name) %>FontWeights.swift
 force: true
 ---
+<%# 
+to: The path where the file will be create
+force: If the file can be overwritten or not
+-%>
+
 <%# We need to capitalize the brand name we receive. To do this we used the helper object provided by hygen. -%>
 <%_
 let className = h.inflection.capitalize(name)

@@ -5,7 +5,7 @@ force: true
 import UIKit
 
 public protocol MisticaColors {
-<% Object.keys(jsonData.light).forEach(function(key) { %>
+<% Object.keys(jsonData.light).forEach(function(key) { -%>
   var <%= key %>: UIColor { get }
-<% }); %>
+<% }); -%>
 }

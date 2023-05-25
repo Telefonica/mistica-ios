@@ -2,6 +2,7 @@
 to: Sources/MisticaCommon/Colors/<%= h.inflection.capitalize(name) %>ColorPalette.swift
 force: true
 ---
+<%# We need to capitalize the brand name we receive. To do this we used the helper object provided by hygen. -%>
 <%_
 let className = h.inflection.capitalize(name)
 -%>

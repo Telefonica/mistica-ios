@@ -1,4 +1,3 @@
-// _templates/CornerRadiusTokenGenerator/MisticaCornerRadius/index.js
 const fs = require('fs')
 
 module.exports = {

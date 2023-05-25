@@ -1,4 +1,3 @@
-// _templates/ColorTokenGenerator/MisticaColors/index.js
 const fs = require('fs')
 
 module.exports = {

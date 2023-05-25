@@ -1,4 +1,3 @@
-// _templates/CornerRadiusTokenGenerator/BrandCornerRadius/index.js
 const fs = require('fs')
 
 module.exports = {

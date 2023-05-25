@@ -9,8 +9,8 @@ on:
         default: 'production'
 
 jobs:
-  import-design-tokens:
-    name: Import Design Tokens   
+  get-design-tokens:
+    name: Get Design Tokens   
     runs-on: self-hosted-novum-mac         
     steps:             
       - uses: actions/checkout@v3             

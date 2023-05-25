@@ -1,4 +1,4 @@
-.PHONY: help setup format test simulator archive export clean setupSkin tokenColorTemplates skin
+.PHONY: help setup format test simulator archive export clean skinGeneratorSetup colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration skin
 
 # Simulator
 OS_VERSION := 16.2
@@ -39,15 +39,17 @@ endif
 # Targets
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  setup    		to set up dependencies"
-	@echo "  format    		to execute swiftformat in Sources directory"
-	@echo "  test     		to build and test the main target"
-	@echo "  simulator		to install the simulator for testing"
-	@echo "  export		to export the archived project as an .ipa"
-	@echo "  clean    		to remove all temporal files"
-	@echo "	 setupSkin		to setup skin dependencies"
-	@echo "  tokenColorTemplates 		to setup and regenerate MisticaColors with new palettes from mistica design"
-	@echo "skin				to setup, regenerate and format tokens from mistica design"
+	@echo "  setup    			to set up dependencies"
+	@echo "  format    			to execute swiftformat in Sources directory"
+	@echo "  test     			to build and test the main target"
+	@echo "  simulator			to install the simulator for testing"
+	@echo "  export			to export the archived project as an .ipa"
+	@echo "  clean    			to remove all temporal files"
+	@echo "  skinGeneratorSetup    	to setup skin dependencies"
+	@echo "  colorPaletteGeneration  	to setup and regenerate MisticaColors with new palettes from mistica design"
+	@echo "  cornerRadiusGeneration  	to setup and regenerate MisticaCornerRadius with new palettes from mistica design"
+	@echo "  fontWeightsGeneration  	to setup and regenerate MisticaFontWeights with new palettes from mistica design"
+	@echo "  skin				to setup, regenerate and format tokens from mistica design"
 
 trace:
 	@echo "Current xcodebuild configuration"
@@ -63,7 +65,7 @@ setup: trace
 	@brew ls chargepoint/xcparse/xcparse --versions || brew install chargepoint/xcparse/xcparse
 	@brew ls xcbeautify --versions || brew install xcbeautify
 
-setupSkin:
+skinGeneratorSetup:
 	@echo "Installing tokens generators dependencies"
 	@brew ls node --versions || brew install node
 	@brew ls hygen --versions || (brew tap jondot/tap && brew install hygen)
@@ -110,7 +112,7 @@ export: clean setup
 
 	@rm -rf "$(TMP_ROOT_PATH)"
 
-tokenColorTemplates: setupSkin
+colorPaletteGeneration: skinGeneratorSetup
 	@echo "Generating Mistica Color Palettes"
 	hygen ColorTokenGenerator MisticaColors --json $(MISTICA_DESIGN_TOKENS)/$(Movistar).json # Generates the MisticaColors protocol from the movistar json file.
 
@@ -119,7 +121,7 @@ tokenColorTemplates: setupSkin
 		hygen ColorTokenGenerator BrandColors --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
 	done
 
-tokenCornerRadiusTemplates: setupSkin
+cornerRadiusGeneration: skinGeneratorSetup
 	@echo "Generating Mistica Corner Radius Palettes"
 	hygen CornerRadiusTokenGenerator MisticaCornerRadius --json $(MISTICA_DESIGN_TOKENS)/$(Movistar).json # Generates the MisticaCornerRadius protocol from the movistar json file.
 
@@ -128,7 +130,7 @@ tokenCornerRadiusTemplates: setupSkin
 		hygen CornerRadiusTokenGenerator BrandCornerRadius --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
 	done
 	
-tokenFontWeightsTemplates: setupSkin
+fontWeightsGeneration: skinGeneratorSetup
 	@echo "Generating Mistica Font Weight Palettes"
 	hygen FontWeightsTokenGenerator MisticaFontWeights --json $(MISTICA_DESIGN_TOKENS)/$(Movistar).json # Generates the MisticaCornerRadius protocol from the movistar json file.
 
@@ -137,5 +139,5 @@ tokenFontWeightsTemplates: setupSkin
 		hygen FontWeightsTokenGenerator BrandFontWeights --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
 	done
 
-skin: tokenColorTemplates tokenCornerRadiusTemplates tokenFontWeightsTemplates format
+skin: colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration format
 

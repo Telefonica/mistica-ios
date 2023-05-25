@@ -10,13 +10,14 @@ force: If the file can be overwritten or not
 <%# We need to capitalize the brand name we receive. To do this we used the helper object provided by hygen. -%>
 <%_
 let className = h.inflection.capitalize(name)
+let jsonObject = h.params(json)
 -%>
 
 import Foundation
 
 struct <%= className %>FontWeights: MisticaFontWeights {
-  <%_ Object.keys(jsonData.text.weight).forEach(function(key) { -%>
-    <%_ let value = jsonData.text.weight[key].value -%>
+  <%_ Object.keys(jsonObject.jsonData.text.weight).forEach(function(key) { -%>
+    <%_ let value = jsonObject.jsonData.text.weight[key].value -%>
     public var text<%= h.inflection.capitalize(key.replace('-','')) %>: MisticaFontWeightType = .<%= value %>
   <%_ }); -%>
 }

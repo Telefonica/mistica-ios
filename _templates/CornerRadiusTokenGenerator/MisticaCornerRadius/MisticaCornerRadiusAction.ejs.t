@@ -7,6 +7,10 @@ to: The path where the file will be create
 force: If the file can be overwritten or not
 -%>
 
+<%_ 
+let jsonObject = h.params(json)
+-%>
+
 import Foundation
 
 public enum MisticaRadiusConstants {
@@ -14,7 +18,7 @@ public enum MisticaRadiusConstants {
 }
 
 public protocol MisticaCornerRadius {
-<%_ Object.keys(jsonData.radius).forEach(function(key) { -%>
+<%_ Object.keys(jsonObject.jsonData.radius).forEach(function(key) { -%>
   var <%= key %>: CGFloat { get }
 <%_ }); -%>
 }

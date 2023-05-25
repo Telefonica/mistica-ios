@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 module.exports = {
   helpers: {
     colorFromString: (s,className) => {
@@ -10,6 +12,16 @@ module.exports = {
           let colorName = s.replace("{","").replace("}","")
           return className + "Colors." + colorName
         }
-    }
+    },
+    params: (json) => {
+      let jsonData = {}
+      if (json) {
+        let rawdata = fs.readFileSync(json);
+        jsonData = JSON.parse(rawdata);
+      }
+      return {
+        jsonData
+      }
+    },
   },
 }

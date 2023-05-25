@@ -176,12 +176,10 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
 
         let style: HeaderViewStyle = headerStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
 
-        vc.headerView.setUpView(
-            pretitleText: pretitleText,
-            titleText: titleText,
-            descriptionText: descriptionText,
-            style: style
-        )
+        vc.headerView.pretitle = HeaderText(text: pretitleText?.text ?? "")
+        vc.headerView.title = HeaderText(text: titleText?.text ?? "")
+        vc.headerView.descriptionValue = HeaderText(text: descriptionText?.text ?? "")
+        vc.headerView.style = style
 
         show(vc, sender: self)
     }

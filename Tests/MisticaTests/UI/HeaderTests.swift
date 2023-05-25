@@ -149,12 +149,16 @@ private class HeaderViewController: UIViewController {
         descriptionValue: HeaderText? = nil,
         style: HeaderViewStyle = .normal
     ) {
-        headerView.setUpView(
-            pretitleText: pretitle,
-            titleText: title,
-            descriptionText: descriptionValue,
-            style: style
-        )
+        if let pretitle = pretitle {
+            headerView.pretitle = pretitle
+        }
+        if let title = title {
+            headerView.title = title
+        }
+        if let descriptionValue = descriptionValue {
+            headerView.descriptionValue = descriptionValue
+        }
+        headerView.style = style
     }
 
     override func loadView() {

@@ -127,6 +127,15 @@ tokenCornerRadiusTemplates: setupSkin
 	for key in $(BRAND_FILES) ; do \
 		hygen CornerRadiusTokenGenerator BrandCornerRadius --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
 	done
+	
+tokenFontWeightsTemplates: setupSkin
+	@echo "Generating Mistica Font Weight Palettes"
+	hygen FontWeightsTokenGenerator MisticaFontWeights --json $(MISTICA_DESIGN_TOKENS)/$(Movistar).json # Generates the MisticaCornerRadius protocol from the movistar json file.
 
-skin: tokenColorTemplates tokenCornerRadiusTemplates format
+	# Generates N corner radius palettes for every brand passed in BRAND_FILES
+	for key in $(BRAND_FILES) ; do \
+		hygen FontWeightsTokenGenerator BrandFontWeights --name $$key --json $(MISTICA_DESIGN_TOKENS)/$$key.json ; \
+	done
+
+skin: tokenColorTemplates tokenCornerRadiusTemplates tokenFontWeightsTemplates format
 

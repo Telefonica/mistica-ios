@@ -12,15 +12,9 @@ jobs:
   get-design-tokens:
     name: Get Design Tokens   
     runs-on: self-hosted-novum-mac         
-    steps:             
-      - uses: actions/checkout@v3             
-      - name: Checkout mistica-design repo with the tokens               
-        uses: actions/checkout@v3               
-        with:                   
-          repository: Telefonica/mistica-design                   
-          path: '.github/mistica-design'                   
-          ref: ${{github.event.inputs.ref}}                  
-          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3             
 
       - name: Generate Skin
         run: make skin

@@ -10,19 +10,18 @@ import Mistica
 import UIKit
 
 private enum Section: Int, CaseIterable {
-    case usingInLargeNavigationBar
-    case inverseColorPalette
     case pretitle
     case title
-    case preAmountTitle
-    case amount
-    case primaryAction
-    case secondaryAction
-    case subtitle
+    case description
+    case style
     case show
 }
 
 class UICatalogHeaderViewController: UIViewController {
+    private enum Constants {
+        static let selectedSegmentEnabled = 0
+    }
+
     private lazy var tableView: UITableView = {
         if #available(iOS 13.0, *) {
             return UITableView(frame: .zero, style: .insetGrouped)
@@ -31,141 +30,55 @@ class UICatalogHeaderViewController: UIViewController {
         }
     }()
 
-    private lazy var usingInLargeNavigationBarCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "usingInLargeNavigationBarCell")
-
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Yes", at: 1, animated: false)
-        cell.segmentedControl.addTarget(self, action: #selector(usingInLargeNavigationBar), for: .valueChanged)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
-    }()
-
-    @objc func usingInLargeNavigationBar(_ sender: UISegmentedControl) {
-        showInverseColorPaletteCell.segmentedControl.isEnabled = sender.selectedSegmentIndex == 0
-    }
-
-    private lazy var showInverseColorPaletteCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "showInverseColorPaletteCell")
-
-        cell.segmentedControl.insertSegment(withTitle: "Normal", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Inverse", at: 1, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
-    }()
-
     private lazy var showPretitleCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "showPretitleCell")
-
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Primary", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Secondary", at: 2, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
+        createSegmentedControl(
+            reuseIdentifier: "showPretitleCell",
+            firstSegmentedTitle: "Yes",
+            secondSegmentedTitle: "No"
+        )
     }()
 
     private lazy var pretitleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Pretitle")
-        cell.textField.text = "Pretitle"
+        cell.textField.text = "The pretitle"
         cell.textField.placeholder = "Empty"
         return cell
+    }()
+
+    private lazy var showTitleCell: UISegmentedControlTableViewCell = {
+        createSegmentedControl(
+            reuseIdentifier: "showTitleCell",
+            firstSegmentedTitle: "Yes",
+            secondSegmentedTitle: "No"
+        )
     }()
 
     private lazy var titleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "Title")
-        cell.textField.text = "Title"
+        cell.textField.text = "The title"
         return cell
     }()
 
-    private lazy var showPreAmountTitleCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "PreAmountTitleCell")
+    private lazy var showDescriptionCell: UISegmentedControlTableViewCell = {
+        createSegmentedControl(
+            reuseIdentifier: "showDescriptionCell",
+            firstSegmentedTitle: "Yes",
+            secondSegmentedTitle: "No"
+        )
+    }()
 
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Primary", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Secondary", at: 2, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
+    private lazy var descriptionCell: UITextFieldTableViewCell = {
+        let cell = UITextFieldTableViewCell(reuseIdentifier: "Description")
+        cell.textField.text = "The description"
         return cell
     }()
 
-    private lazy var preAmountTitleCell: UITextFieldTableViewCell = {
-        let cell = UITextFieldTableViewCell(reuseIdentifier: "Preamount Title")
-        cell.textField.text = "Preamount Title"
-        cell.textField.placeholder = "Empty"
-        return cell
-    }()
-
-    private lazy var showAmountCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "showAmountCell")
-
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Normal", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Danger", at: 2, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
-    }()
-
-    private lazy var amountCell: UITextFieldTableViewCell = {
-        let cell = UITextFieldTableViewCell(reuseIdentifier: "Amount")
-        cell.textField.text = "00,00€"
-        cell.textField.placeholder = "Empty"
-        return cell
-    }()
-
-    private lazy var showSubtitleCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "showSubtitleCell")
-
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Primary", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Secondary", at: 2, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
-    }()
-
-    private lazy var subtitleCell: UITextFieldTableViewCell = {
-        let cell = UITextFieldTableViewCell(reuseIdentifier: "Subtitle")
-        cell.textField.text = "Subtitle"
-        cell.textField.placeholder = "Empty"
-        return cell
-    }()
-
-    private lazy var showPrimaryButtonCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "showPrimaryButton")
-
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "YES", at: 1, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
-    }()
-
-    private lazy var primaryButtonCell: UITextFieldTableViewCell = {
-        let cell = UITextFieldTableViewCell(reuseIdentifier: "PrimaryButton")
-        cell.textField.text = "Primary Action"
-        cell.textField.placeholder = "Empty"
-        return cell
-    }()
-
-    private lazy var showSecondaryButtonCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "showSecondaryButton")
-
-        cell.segmentedControl.insertSegment(withTitle: "No", at: 0, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "YES", at: 1, animated: false)
-
-        cell.segmentedControl.selectedSegmentIndex = 0
-        return cell
-    }()
-
-    private lazy var secondaryButtonCell: UITextFieldTableViewCell = {
-        let cell = UITextFieldTableViewCell(reuseIdentifier: "SecondaryButton")
-        cell.textField.text = "Secondary Action"
-        cell.textField.placeholder = "Empty"
-        return cell
+    private lazy var headerStyleCell: UISegmentedControlTableViewCell = {
+        createSegmentedControl(
+            reuseIdentifier: "headerStyleCell",
+            firstSegmentedTitle: "normal",
+            secondSegmentedTitle: "inverse"
+        )
     }()
 
     private lazy var showHeaderCell: UITableViewCell = {
@@ -176,15 +89,10 @@ class UICatalogHeaderViewController: UIViewController {
     }()
 
     private lazy var cells = [
-        [usingInLargeNavigationBarCell],
-        [showInverseColorPaletteCell],
         [showPretitleCell, pretitleCell],
-        [titleCell],
-        [showPreAmountTitleCell, preAmountTitleCell],
-        [showAmountCell, amountCell],
-        [showPrimaryButtonCell, primaryButtonCell],
-        [showSecondaryButtonCell, secondaryButtonCell],
-        [showSubtitleCell, subtitleCell],
+        [showTitleCell, titleCell],
+        [showDescriptionCell, descriptionCell],
+        [headerStyleCell],
         [showHeaderCell]
     ]
 
@@ -241,55 +149,52 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
 
         let vc = HeaderViewSampleViewController()
 
-        vc.headerView.usingInLargeNavigationBar = usingInLargeNavigationBarCell.segmentedControl.selectedSegmentIndex == 0 ? false : true
+        var pretitleText: HeaderText?
+        var titleText: HeaderText?
+        var descriptionText: HeaderText?
 
-        if showInverseColorPaletteCell.segmentedControl.isEnabled {
-            vc.headerView.style = showInverseColorPaletteCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
+        if showPretitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
+            pretitleText = HeaderText(
+                text: pretitleCell.textField.text ?? "",
+                lineLimit: 0
+            )
         }
 
-        if showPretitleCell.segmentedControl.selectedSegmentIndex > 0 {
-            vc.headerView.pretitle = pretitleCell.textField.text
+        if showTitleCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
+            titleText = HeaderText(
+                text: titleCell.textField.text ?? "",
+                lineLimit: 0
+            )
         }
 
-        if showPretitleCell.segmentedControl.selectedSegmentIndex == 2 {
-            vc.headerView.pretitleHasSecondaryColor = true
+        if showDescriptionCell.segmentedControl.selectedSegmentIndex == Constants.selectedSegmentEnabled {
+            descriptionText = HeaderText(
+                text: descriptionCell.textField.text ?? "",
+                lineLimit: 0
+            )
         }
 
-        vc.headerView.title = titleCell.textField.text!.isEmpty ? nil : titleCell.textField.text
+        let style: HeaderViewStyle = headerStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
 
-        if showPreAmountTitleCell.segmentedControl.selectedSegmentIndex > 0 {
-            vc.headerView.preAmount = preAmountTitleCell.textField.text
-        }
-
-        if showPreAmountTitleCell.segmentedControl.selectedSegmentIndex == 2 {
-            vc.headerView.preAmountHasSecondaryColor = true
-        }
-
-        if showAmountCell.segmentedControl.selectedSegmentIndex > 0 {
-            vc.headerView.amount = amountCell.textField.text
-        }
-
-        if showAmountCell.segmentedControl.selectedSegmentIndex == 2 {
-            vc.headerView.amountHasDangerColor = true
-        }
-
-        if showPrimaryButtonCell.segmentedControl.selectedSegmentIndex > 0 {
-            vc.headerView.primaryActionTitle = primaryButtonCell.textField.text
-        }
-
-        if showSecondaryButtonCell.segmentedControl.selectedSegmentIndex > 0 {
-            vc.headerView.secondaryActionTitle = secondaryButtonCell.textField.text
-        }
-
-        if showSubtitleCell.segmentedControl.selectedSegmentIndex == 2 {
-            vc.headerView.subtitleHasSecondaryColor = true
-        }
-
-        if showSubtitleCell.segmentedControl.selectedSegmentIndex > 0 {
-            vc.headerView.subtitle = subtitleCell.textField.text
-        }
+        vc.headerView.pretitle = HeaderText(text: pretitleText?.text ?? "")
+        vc.headerView.title = HeaderText(text: titleText?.text ?? "")
+        vc.headerView.descriptionValue = HeaderText(text: descriptionText?.text ?? "")
+        vc.headerView.style = style
 
         show(vc, sender: self)
+    }
+}
+
+private extension UICatalogHeaderViewController {
+    func createSegmentedControl(reuseIdentifier: String, firstSegmentedTitle: String, secondSegmentedTitle: String) -> UISegmentedControlTableViewCell {
+        let segmented = UISegmentedControlTableViewCell(reuseIdentifier: reuseIdentifier)
+
+        segmented.segmentedControl.insertSegment(withTitle: firstSegmentedTitle, at: 0, animated: false)
+        segmented.segmentedControl.insertSegment(withTitle: secondSegmentedTitle, at: 1, animated: false)
+
+        segmented.segmentedControl.selectedSegmentIndex = 0
+
+        return segmented
     }
 }
 
@@ -318,26 +223,16 @@ private class HeaderViewSampleViewController: UIViewController {
 private extension Section {
     var headerTitle: String? {
         switch self {
-        case .inverseColorPalette:
-            return "Use inverse color palette"
-        case .title:
-            return "Title"
-        case .subtitle:
-            return "Has Subtitle"
         case .pretitle:
             return "Has Pretitle"
-        case .preAmountTitle:
-            return "Has Preamount Title"
-        case .amount:
-            return "Has Amount"
+        case .title:
+            return "Has Title"
+        case .description:
+            return "Has Description"
+        case .style:
+            return "Style"
         case .show:
             return nil
-        case .primaryAction:
-            return "Has Primary Action"
-        case .secondaryAction:
-            return "Has Secondary Action"
-        case .usingInLargeNavigationBar:
-            return "Embeded in Large Navigation Bar"
         }
     }
 }

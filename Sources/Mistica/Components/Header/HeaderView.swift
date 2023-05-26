@@ -8,32 +8,35 @@
 
 import UIKit
 
+public struct HeaderText {
+    public let text: String
+    public let lineLimit: Int
+    public let accessibilityLabel: String?
+    public let accessibilityIdentifier: String?
+
+    public init(
+        text: String,
+        lineLimit: Int = 0,
+        accessibilityLabel: String? = nil,
+        accessibilityIdentifier: String? = nil
+    ) {
+        self.text = text
+        self.lineLimit = lineLimit
+        self.accessibilityLabel = accessibilityLabel
+        self.accessibilityIdentifier = accessibilityIdentifier
+    }
+}
+
 public class HeaderView: UIView {
     private let stackView = UIStackView()
     private let topStackView = UIStackView()
-    private let bottomStackView = UIStackView()
 
     private let pretitleLabel = UILabel()
     private let titleLabel = UILabel()
-    private let preAmountLabel = UILabel()
-    private let amountLabel = UILabel()
-    // The buttons must be the same width of the bigger button
-    private let buttonsContainerView = IntrinsicMaxButtonWidthContainerView()
-    private let subtitleLabel = UILabel()
+    private let descriptionLabel = UILabel()
+    private var headerStyle: HeaderViewStyle = .normal
 
     // MARK: - Public
-
-    public var pretitle: String? {
-        get {
-            pretitleLabel.text
-        }
-        set {
-            pretitleLabel.text = newValue
-            updatePretitleLabelVisibilityState()
-
-            updateSpacing()
-        }
-    }
 
     public var pretitleAttributedText: NSAttributedString? {
         get {
@@ -47,170 +50,27 @@ public class HeaderView: UIView {
         }
     }
 
-    public var title: String? {
-        get {
-            titleLabel.text
-        }
-        set {
-            titleLabel.text = newValue
-
-            updateSpacing()
-        }
-    }
-
     public var titleAttributedText: NSAttributedString? {
         get {
             titleLabel.attributedText
         }
         set {
             titleLabel.attributedText = newValue
+            updateTitleLabelVisibilityState()
 
             updateSpacing()
         }
     }
 
-    public var preAmount: String? {
+    public var descriptionAttributedText: NSAttributedString? {
         get {
-            preAmountLabel.text
+            descriptionLabel.attributedText
         }
         set {
-            preAmountLabel.text = newValue
-            updatePreamountLabelVisibilityState()
-            updateSpacing()
-        }
-    }
-
-    public var preAmountAttributedText: NSAttributedString? {
-        get {
-            preAmountLabel.attributedText
-        }
-        set {
-            preAmountLabel.attributedText = newValue
-            updatePreamountLabelVisibilityState()
-            updateSpacing()
-        }
-    }
-
-    public var amount: String? {
-        get {
-            amountLabel.text
-        }
-        set {
-            amountLabel.text = newValue
-            updateAmountLabelVisibilityState()
+            descriptionLabel.attributedText = newValue
+            updateDescriptionLabelVisibilityState()
 
             updateSpacing()
-        }
-    }
-
-    public var amountAttributedText: NSAttributedString? {
-        get {
-            amountLabel.attributedText
-        }
-        set {
-            amountLabel.attributedText = newValue
-            updateAmountLabelVisibilityState()
-
-            updateSpacing()
-        }
-    }
-
-    public var primaryActionTitle: String? {
-        get {
-            buttonsContainerView.primaryButton.title
-        }
-        set {
-            buttonsContainerView.primaryButton.title = newValue
-            buttonsContainerView.primaryButton.isHidden = newValue == nil
-            hideButtonsContainerViewIfNeeded()
-            invalidateIntrinsicContentSize()
-            updateSpacing()
-        }
-    }
-
-    public var primaryActionCallback: (() -> Void)?
-
-    public var secondaryActionTitle: String? {
-        get {
-            buttonsContainerView.secondaryButton.title
-        }
-        set {
-            buttonsContainerView.secondaryButton.title = newValue
-            buttonsContainerView.secondaryButton.isHidden = newValue == nil
-            hideButtonsContainerViewIfNeeded()
-            invalidateIntrinsicContentSize()
-            updateSpacing()
-        }
-    }
-
-    public var secondaryActionCallback: (() -> Void)?
-
-    public var subtitle: String? {
-        get {
-            subtitleLabel.text
-        }
-        set {
-            subtitleLabel.text = newValue
-            updateSubtitleLabelVisibilityState()
-            updateSpacing()
-        }
-    }
-
-    public var subtitleAttributedText: NSAttributedString? {
-        get {
-            subtitleLabel.attributedText
-        }
-        set {
-            subtitleLabel.attributedText = newValue
-            updateAmountLabelVisibilityState()
-
-            updateSpacing()
-        }
-    }
-
-    public var usingInLargeNavigationBar = false {
-        didSet {
-            updateLayoutMarginsGuide()
-            _style = .inverse
-            updateColors()
-            setNeedsUpdateConstraints()
-        }
-    }
-
-    private var _style: HeaderViewStyle = .normal
-    public var style: HeaderViewStyle {
-        get {
-            _style
-        }
-        set {
-            guard !usingInLargeNavigationBar else { return }
-
-            _style = newValue
-            updateColors()
-        }
-    }
-
-    public var pretitleHasSecondaryColor = false {
-        didSet {
-            pretitleLabel.textColor = pretitleHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
-        }
-    }
-
-    public var preAmountHasSecondaryColor = false {
-        didSet {
-            preAmountLabel.textColor = preAmountHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
-        }
-    }
-
-    public var amountHasDangerColor = false {
-        didSet {
-            updateAmountLabelTextColor()
-        }
-    }
-
-    public var subtitleHasSecondaryColor = false {
-        didSet {
-            subtitleLabel.textColor = subtitleHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
         }
     }
 
@@ -222,14 +82,84 @@ public class HeaderView: UIView {
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
-
         setUpView()
     }
 
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-
         setUpView()
+    }
+
+    public func setUpView() {
+        layoutView()
+
+        stylePretitleLabel()
+        styleTitleLabel()
+        styleDescriptionLabel()
+    }
+
+    public var pretitle: HeaderText? {
+        get {
+            guard let text = pretitleLabel.text, !text.isEmpty else { return nil }
+            return HeaderText(
+                text: text,
+                lineLimit: pretitleLabel.numberOfLines,
+                accessibilityLabel: pretitleLabel.accessibilityLabel,
+                accessibilityIdentifier: pretitleLabel.accessibilityIdentifier
+            )
+        }
+        set {
+            stylePretitleLabel(newValue)
+            updatePretitleLabelVisibilityState()
+
+            updateSpacing()
+        }
+    }
+
+    public var title: HeaderText? {
+        get {
+            guard let text = titleLabel.text, !text.isEmpty else { return nil }
+            return HeaderText(
+                text: text,
+                lineLimit: titleLabel.numberOfLines,
+                accessibilityLabel: titleLabel.accessibilityLabel,
+                accessibilityIdentifier: titleLabel.accessibilityIdentifier
+            )
+        }
+        set {
+            styleTitleLabel(newValue)
+            updateTitleLabelVisibilityState()
+
+            updateSpacing()
+        }
+    }
+
+    public var descriptionValue: HeaderText? {
+        get {
+            guard let text = descriptionLabel.text, !text.isEmpty else { return nil }
+            return HeaderText(
+                text: text,
+                lineLimit: descriptionLabel.numberOfLines,
+                accessibilityLabel: descriptionLabel.accessibilityLabel,
+                accessibilityIdentifier: descriptionLabel.accessibilityIdentifier
+            )
+        }
+        set {
+            styleDescriptionLabel(newValue)
+            updateDescriptionLabelVisibilityState()
+
+            updateSpacing()
+        }
+    }
+
+    public var style: HeaderViewStyle {
+        get {
+            headerStyle
+        }
+        set {
+            headerStyle = newValue
+            updateColors()
+        }
     }
 }
 
@@ -272,93 +202,21 @@ public extension HeaderView {
         }
     }
 
-    var preAmountAccessibilityLabel: String? {
+    var descriptionAccessibilityLabel: String? {
         get {
-            preAmountLabel.accessibilityLabel
+            descriptionLabel.accessibilityLabel
         }
         set {
-            preAmountLabel.accessibilityLabel = newValue
+            descriptionLabel.accessibilityLabel = newValue
         }
     }
 
-    var preAmountAccessibilityIdentifier: String? {
+    var descriptionAccessibilityIdentifier: String? {
         get {
-            preAmountLabel.accessibilityIdentifier
+            descriptionLabel.accessibilityIdentifier
         }
         set {
-            preAmountLabel.accessibilityIdentifier = newValue
-        }
-    }
-
-    var amountAccessibilityLabel: String? {
-        get {
-            amountLabel.accessibilityLabel
-        }
-        set {
-            amountLabel.accessibilityLabel = newValue
-        }
-    }
-
-    var amountAccessibilityIdentifier: String? {
-        get {
-            amountLabel.accessibilityIdentifier
-        }
-        set {
-            amountLabel.accessibilityIdentifier = newValue
-        }
-    }
-
-    var primaryActionAccessibilityLabel: String? {
-        get {
-            buttonsContainerView.primaryButton.accessibilityLabel
-        }
-        set {
-            buttonsContainerView.primaryButton.accessibilityLabel = newValue
-        }
-    }
-
-    var primaryActionAccessibilityIdentifier: String? {
-        get {
-            buttonsContainerView.primaryButton.accessibilityIdentifier
-        }
-        set {
-            buttonsContainerView.primaryButton.accessibilityIdentifier = newValue
-        }
-    }
-
-    var secondaryActionAccessibilityLabel: String? {
-        get {
-            buttonsContainerView.secondaryButton.accessibilityLabel
-        }
-        set {
-            buttonsContainerView.secondaryButton.accessibilityLabel = newValue
-        }
-    }
-
-    var secondaryActionAccessibilityIdentifier: String? {
-        get {
-            buttonsContainerView.secondaryButton.accessibilityIdentifier
-        }
-        set {
-            buttonsContainerView.secondaryButton.accessibilityIdentifier = newValue
-        }
-    }
-
-    var subtitleAccessibilityLabel: String? {
-        get {
-            subtitleLabel.accessibilityLabel
-        }
-        set {
-            subtitleLabel.accessibilityLabel = newValue
-        }
-    }
-
-    var subtitleAccessibilityIdentifier: String? {
-        get {
-            subtitleLabel.accessibilityIdentifier
-        }
-        set {
-            subtitleLabel.accessibilityIdentifier = newValue
+            descriptionLabel.accessibilityIdentifier = newValue
         }
     }
 }
@@ -366,15 +224,13 @@ public extension HeaderView {
 // MARK: - Private
 
 private extension HeaderView {
-    func setUpView() {
-        layoutView()
-
-        stylePretitleLabel()
-        styleTitleLabel()
-        stylePreamountLabel()
-        styleAmountLabel()
-        styleSubtitleLabel()
-        styleButtons()
+    enum Constants {
+        static let marginLeft = 16.0
+        static let marginRight = 32.0
+        static let marginTop = 32.0
+        static let marginBottom = 24.0
+        static let spacing: CGFloat = 8
+        static let noSpacing: CGFloat = 0.0
     }
 
     func layoutView() {
@@ -386,114 +242,82 @@ private extension HeaderView {
 
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
-        stackView.spacing = 24
+        stackView.spacing = Constants.noSpacing
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(
+            top: Constants.marginTop,
+            left: Constants.marginLeft,
+            bottom: Constants.marginBottom,
+            right: Constants.marginRight
+        )
 
         topStackView.axis = .vertical
-        topStackView.spacing = 8
+        topStackView.spacing = Constants.spacing
 
-        bottomStackView.axis = .vertical
-        bottomStackView.spacing = 16
-        bottomStackView.alignment = .leading
-
-        addSubview(constrainedToLayoutMarginsGuideOf: stackView)
+        addSubview(stackView, constraints: [
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bottomAnchor.constraint(equalTo: stackView.bottomAnchor)
+        ])
 
         stackView.addArrangedSubview(topStackView)
-        stackView.addArrangedSubview(bottomStackView)
 
         topStackView.addArrangedSubview(pretitleLabel)
         topStackView.addArrangedSubview(titleLabel)
-
-        bottomStackView.addArrangedSubview(preAmountLabel)
-        bottomStackView.addArrangedSubview(amountLabel)
-        bottomStackView.addArrangedSubview(buttonsContainerView)
-        bottomStackView.addArrangedSubview(subtitleLabel)
+        topStackView.addArrangedSubview(descriptionLabel)
     }
 
-    func stylePretitleLabel() {
-        pretitleLabel.isHidden = true
+    func stylePretitleLabel(_ headerText: HeaderText? = nil) {
         pretitleLabel.font = .textPreset3(weight: .regular)
-        pretitleLabel.textColor = _style.textPrimaryColor
+        if let headerText = headerText {
+            pretitleLabel.text = headerText.text
+            pretitleLabel.numberOfLines = headerText.lineLimit
+            pretitleAccessibilityLabel = headerText.accessibilityLabel
+            pretitleAccessibilityIdentifier = headerText.accessibilityIdentifier
+        }
     }
 
-    func styleTitleLabel() {
+    func styleTitleLabel(_ headerText: HeaderText? = nil) {
         titleLabel.font = .textPreset6()
-        titleLabel.textColor = _style.textPrimaryColor
-        titleLabel.numberOfLines = 0
+        if let headerText = headerText {
+            titleLabel.text = headerText.text
+            titleLabel.numberOfLines = headerText.lineLimit
+            titleAccessibilityLabel = headerText.accessibilityLabel
+            titleAccessibilityIdentifier = headerText.accessibilityIdentifier
+        }
     }
 
-    func stylePreamountLabel() {
-        preAmountLabel.isHidden = true
-        preAmountLabel.font = .textPreset3(weight: .regular)
-        preAmountLabel.textColor = _style.textPrimaryColor
-    }
-
-    func styleAmountLabel() {
-        amountLabel.isHidden = true
-        amountLabel.font = .textPreset8()
-        amountLabel.textColor = _style.textPrimaryColor
-    }
-
-    func styleSubtitleLabel() {
-        subtitleLabel.isHidden = true
-        subtitleLabel.font = .textPreset3(weight: .regular)
-        subtitleLabel.textColor = _style.textPrimaryColor
-    }
-
-    func styleButtons() {
-        buttonsContainerView.isHidden = true
-
-        buttonsContainerView.primaryButton.isHidden = true
-        buttonsContainerView.primaryButton.addTarget(self, action: #selector(primaryButtonTapped), for: .touchUpInside)
-
-        buttonsContainerView.secondaryButton.isHidden = true
-        buttonsContainerView.secondaryButton.addTarget(self, action: #selector(secondaryButtonTapped), for: .touchUpInside)
+    func styleDescriptionLabel(_ headerText: HeaderText? = nil) {
+        descriptionLabel.font = .textPreset3(weight: .regular)
+        if let headerText = headerText {
+            descriptionLabel.text = headerText.text
+            descriptionLabel.numberOfLines = headerText.lineLimit
+            descriptionAccessibilityLabel = headerText.accessibilityLabel
+            descriptionAccessibilityIdentifier = headerText.accessibilityIdentifier
+        }
     }
 
     func updateLayoutMarginsGuide() {
-        let top: CGFloat = usingInLargeNavigationBar ? 0 : 32
-        directionalLayoutMargins = NSDirectionalEdgeInsets(top: top, leading: 16, bottom: 24, trailing: 32)
+        updateColors()
+        directionalLayoutMargins = NSDirectionalEdgeInsets(
+            top: Constants.marginTop,
+            leading: Constants.marginLeft,
+            bottom: Constants.marginBottom,
+            trailing: Constants.marginRight
+        )
     }
 
     func updateSpacing() {
-        if !pretitleLabel.isHidden {
-            stackView.setCustomSpacing(8, after: pretitleLabel)
-        } else {
-            stackView.setCustomSpacing(0, after: pretitleLabel)
+        switch (pretitle, title, descriptionValue) {
+        case (.some, .some, .none), (.some, .none, .some):
+            topStackView.setCustomSpacing(Constants.spacing, after: pretitleLabel)
+        case (_, .some, .some):
+            topStackView.setCustomSpacing(Constants.spacing, after: titleLabel)
+        default:
+            topStackView.setCustomSpacing(Constants.noSpacing, after: pretitleLabel)
+            topStackView.setCustomSpacing(Constants.noSpacing, after: titleLabel)
         }
-
-        if !preAmountLabel.isHidden {
-            bottomStackView.setCustomSpacing(8, after: preAmountLabel)
-        } else {
-            bottomStackView.setCustomSpacing(0, after: preAmountLabel)
-        }
-
-        if areViewsAfterTitleHidden() {
-            stackView.spacing = 0
-        } else {
-            stackView.spacing = 24
-        }
-    }
-
-    func areViewsAfterTitleHidden() -> Bool {
-        let viewsAfterTitle: [UIView] = [
-            preAmountLabel,
-            amountLabel,
-            buttonsContainerView.primaryButton,
-            buttonsContainerView.secondaryButton,
-            subtitleLabel
-        ]
-
-        return viewsAfterTitle.reduce(true) { (acc, view) -> Bool in
-            acc && view.isHidden
-        }
-    }
-
-    @objc func primaryButtonTapped() {
-        primaryActionCallback?()
-    }
-
-    @objc func secondaryButtonTapped() {
-        secondaryActionCallback?()
     }
 
     func updatePretitleLabelVisibilityState() {
@@ -504,43 +328,22 @@ private extension HeaderView {
         titleLabel.isHidden = titleLabel.text == nil && titleLabel.attributedText == nil
     }
 
-    func updatePreamountLabelVisibilityState() {
-        preAmountLabel.isHidden = preAmountLabel.text == nil && preAmountLabel.attributedText == nil
-    }
-
-    func updateAmountLabelVisibilityState() {
-        amountLabel.isHidden = amountLabel.text == nil && amountLabel.attributedText == nil
-    }
-
-    func updateSubtitleLabelVisibilityState() {
-        subtitleLabel.isHidden = subtitleLabel.text == nil && subtitleLabel.attributedText == nil
+    func updateDescriptionLabelVisibilityState() {
+        descriptionLabel.isHidden = descriptionLabel.text == nil && descriptionLabel.attributedText == nil
     }
 
     func updateColors() {
-        backgroundColor = usingInLargeNavigationBar ? .navigationBarBackground : _style.backgroundColor
-        buttonsContainerView.primaryButton.style = _style.primaryButton
-        buttonsContainerView.secondaryButton.style = _style.secondaryButton
-        titleLabel.textColor = _style.textPrimaryColor
-        pretitleLabel.textColor = pretitleHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
-        preAmountLabel.textColor = preAmountHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
-        subtitleLabel.textColor = subtitleHasSecondaryColor ? _style.textSecondaryColor : _style.textPrimaryColor
-        updateAmountLabelTextColor()
-    }
-
-    func updateAmountLabelTextColor() {
-        guard !amountHasDangerColor else {
-            amountLabel.textColor = .highlight
-            return
+        switch style {
+        case .normal:
+            stackView.backgroundColor = .background
+            pretitleLabel.textColor = .textPrimary
+            titleLabel.textColor = .textPrimary
+            descriptionLabel.textColor = .textSecondary
+        case .inverse:
+            stackView.backgroundColor = .backgroundBrand
+            pretitleLabel.textColor = .textPrimaryInverse
+            titleLabel.textColor = .textPrimaryInverse
+            descriptionLabel.textColor = .textSecondaryInverse
         }
-
-        amountLabel.textColor = _style.textPrimaryColor
-    }
-
-    /// When both buttons are hidden, we need to hide the container view also to avoid an extra space with the below subview.
-    func hideButtonsContainerViewIfNeeded() {
-        let primnaryButtonHidden = buttonsContainerView.primaryButton.isHidden
-        let secondaryButtonHidden = buttonsContainerView.secondaryButton.isHidden
-
-        buttonsContainerView.isHidden = primnaryButtonHidden && secondaryButtonHidden
     }
 }

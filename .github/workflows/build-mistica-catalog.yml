@@ -1,12 +1,12 @@
 name: Generate Mistica Tokens
 
 on:
-	workflow_dispatch:
-  	inputs:
-			ref:
-				description: 'mistica-design repo changeset or branch'
-				required: false
-				default: 'production'
+    workflow_dispatch:
+        inputs:
+            ref:
+                description: 'mistica-design repo changeset or branch'
+                required: false
+                default: 'production'
 
 jobs:
   get-design-tokens:

@@ -1,3 +1,57 @@
+# [24.0.0](https://github.com/Telefonica/mistica-ios/compare/v23.6.1...v24.0.0) (2023-05-26)
+
+
+* IOS-8008 header evolution (#269) ([1ca5a6e](https://github.com/Telefonica/mistica-ios/commit/1ca5a6e991c3eea132f1a2f7a9e487e68de5d465)), closes [#269](https://github.com/Telefonica/mistica-ios/issues/269)
+
+
+### BREAKING CHANGES
+
+* Header evolution, the design has been updated and the way of indicating the properties of each element has been simplified. 
+
+* IOS-8008 removed old Labels
+
+* IOS-8008 removed old label from Header in catalog app
+
+* IOS-8008 Updating the catalog viewcontroller according to the specs
+
+* IOS-8008 add a Header SwiftUI version
+
+* IOS-8008 add the Header SwiftUI version
+
+* IOS-8008 add marging to Header view
+
+* IOS-8008 add a HeaderStyle
+
+* IOS-8008 add Style to header
+
+* IOS-8008 configure view by setUpView method
+
+* IOS-8008 remove HeaderView.Style enum
+
+* IOS-8008 fix screenshot tests
+
+* IOS-8008 add more screenshots
+
+* IOS-8008 add SwiftUI Header screen-shot
+
+* IOS-8008 fix right margen
+
+* IOS-8008 changes from reviewers
+
+* IOS-8008 simplify properties in Header
+
+* IOS-8008 add lineLimit to Header SwiftUI control
+
+* IOS-8008 add lineLimit to Header UIKit
+
+* IOS-8008 Extract the HeaderText class
+
+* IOS-8008 Moved HeaderViewStyle to MisticaCommon to simplify enums
+
+* IOS-8008 To avoid a breaking change, I make the title and pretitle properties public
+
+* IOS-8008 removed setup method and fix
+
 ## [23.6.1](https://github.com/Telefonica/mistica-ios/compare/v23.6.0...v23.6.1) (2023-05-23)
 
 

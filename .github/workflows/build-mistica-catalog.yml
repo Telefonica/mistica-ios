@@ -1,65 +1,31 @@
-name: Deploy Mistica Catalog
+name: Generate Mistica Tokens
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
-        inputs:
-            app-center-project:
-              description: 'App Center app name'
-              type: choice
-              options:
-              - "Internal Enterprise (Mistica-iOS)"
-              - "Alpha (Mistica-SwiftUI-iOS)"
-              required: true
+    inputs:
+      ref:                 
+        description: 'mistica-design repo changeset or branch'                 
+        required: false                 
+        default: 'production'
 
 jobs:
-  deploy-mistica-catalog:
-    name: Build enterprise
-    runs-on: self-hosted-novum-mac
+  get-design-tokens:
+    name: Get Design Tokens   
+    runs-on: self-hosted-novum-mac         
     steps:
-      - name: Set configuration variables
-        shell: bash
-        run: |
-          echo "::group::Setting variables..."
-          if [ "${{ github.event.inputs.app-center-project }}" = "Internal Enterprise (Mistica-iOS)" ]; then
-              echo 'APP_CENTER_PROJECT=Mistica-iOS' >> $GITHUB_OUTPUT
-          elif [ "${{ github.event.inputs.app-center-project }}" = "Alpha (Mistica-SwiftUI-iOS)" ]; then
-              echo 'APP_CENTER_PROJECT=Mistica-SwiftUI-iOS' >> $GITHUB_OUTPUT
-          else
-              # Default value for automatic triggers like `release, `push`, ...
-              echo 'APP_CENTER_PROJECT=Mistica-iOS' >> $GITHUB_OUTPUT
-          fi
-          echo "::endgroup::"
-        id: variables
-
       - name: Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3             
 
-      - name: Checkout Telefonica/github-actions repo
-        uses: actions/checkout@v3.1.0
+      - name: Generate Skin
+        run: make skin
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
         with:
-          repository: Telefonica/github-actions
-          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
-          path: .github/actions
-
-      - name: Provision Novum Mac for MisticaApp
-        uses: ./.github/actions/novum/mac-provisioning
-        with:
-          setup-ruby: false
-          brand-variant: MisticaApp
-          provisioning-profiles: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
-          certificate-password: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
-          apple-system-certs: ${{ secrets.APPLE_CERTS }}
-
-      - name: Export
-        run: make export
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3.6.0
-        with:
-          node-version: 18.13.0
-
-      - name: Upload ipa to AppCenter
-        run: npx -p appcenter-cli appcenter distribute release -a Tuenti-Organization/${{ steps.variables.outputs.APP_CENTER_PROJECT }} -f ./build/ios.ipa -g Public --token ${{ secrets.APPCENTER_API_TOKEN }}
-
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+          add-paths: 'Sources/MisticaCommon/*'
+          commit-message: 'feat(skin): update design tokens'
+          title: 'feat(skin): update design tokens from mistica-design branch: ${{github.event.inputs.ref}}' 
+          branch: 'import-design-tokens'
+          team-reviewers: 'ios'
+          delete-branch: true

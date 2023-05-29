@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3             
 
       - name: Generate Skin
-        run: make skin ref=${ref}
+        run: make skin ref=${{github.event.inputs.ref}}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4

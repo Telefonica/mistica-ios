@@ -15,7 +15,7 @@ XCRESULT_FILE_PATH := $(TEST_OUTPUT_PATH)/$(SCHEMA).xcresult
 
 # Export config
 SCHEMA := MisticaCatalog
-TEST_SCHEMA := Mistica-Package
+TEST_SCHEMA := Mistica
 PROJECT_PATH := MisticaCatalog/MisticaCatalog.xcodeproj
 BUILD_PATH := $(ROOT_DIR)/build
 EXPORTED_OPTIONS_PATH := $(ROOT_DIR)/enterprise.plist

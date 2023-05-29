@@ -9,7 +9,7 @@
 import Foundation
 
 struct BlauFontWeights: MisticaFontWeights {
-    public var textCardtitle: MisticaFontWeightType = .regular
+    public var textCardtitle: MisticaFontWeightType = .light
     public var textPreset5: MisticaFontWeightType = .light
     public var textPreset6: MisticaFontWeightType = .light
     public var textPreset7: MisticaFontWeightType = .light

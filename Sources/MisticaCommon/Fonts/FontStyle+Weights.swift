@@ -52,7 +52,7 @@ public extension FontStyle {
             case .light: return .light
             case .regular: return .regular
             case .medium: return .medium
-            case .cardTitle: return MisticaConfig.currentFontWeights.textCardtitle
+            case .cardTitle: return MisticaConfig.currentFontWeights.cardTitle
             }
         }
     }

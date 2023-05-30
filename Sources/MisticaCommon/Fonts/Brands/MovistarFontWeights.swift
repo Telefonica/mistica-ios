@@ -9,11 +9,11 @@
 import Foundation
 
 struct MovistarFontWeights: MisticaFontWeights {
-    public var textCardtitle: MisticaFontWeightType = .bold
-    public var textPreset5: MisticaFontWeightType = .bold
-    public var textPreset6: MisticaFontWeightType = .bold
-    public var textPreset7: MisticaFontWeightType = .bold
-    public var textPreset8: MisticaFontWeightType = .bold
-    public var textPreset9: MisticaFontWeightType = .bold
-    public var textPreset10: MisticaFontWeightType = .bold
+    public var cardTitle: MisticaFontWeightType = .bold
+    public var text5: MisticaFontWeightType = .bold
+    public var text6: MisticaFontWeightType = .bold
+    public var text7: MisticaFontWeightType = .bold
+    public var text8: MisticaFontWeightType = .bold
+    public var text9: MisticaFontWeightType = .bold
+    public var text10: MisticaFontWeightType = .bold
 }

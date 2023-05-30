@@ -18,6 +18,6 @@ import Foundation
 struct <%= className %>FontWeights: MisticaFontWeights {
   <%_ Object.keys(jsonObject.jsonData.text.weight).forEach(function(key) { -%>
     <%_ let value = jsonObject.jsonData.text.weight[key].value -%>
-    public var text<%= h.inflection.capitalize(key.replace('-','')) %>: MisticaFontWeightType = .<%= value %>
+    public var <%= key %>: MisticaFontWeightType = .<%= value %>
   <%_ }); -%>
 }

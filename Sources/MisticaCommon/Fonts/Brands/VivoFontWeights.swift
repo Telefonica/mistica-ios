@@ -9,11 +9,11 @@
 import Foundation
 
 struct VivoFontWeights: MisticaFontWeights {
-    public var textCardtitle: MisticaFontWeightType = .regular
-    public var textPreset5: MisticaFontWeightType = .light
-    public var textPreset6: MisticaFontWeightType = .light
-    public var textPreset7: MisticaFontWeightType = .light
-    public var textPreset8: MisticaFontWeightType = .light
-    public var textPreset9: MisticaFontWeightType = .light
-    public var textPreset10: MisticaFontWeightType = .light
+    public var cardTitle: MisticaFontWeightType = .regular
+    public var text5: MisticaFontWeightType = .light
+    public var text6: MisticaFontWeightType = .light
+    public var text7: MisticaFontWeightType = .light
+    public var text8: MisticaFontWeightType = .light
+    public var text9: MisticaFontWeightType = .light
+    public var text10: MisticaFontWeightType = .light
 }

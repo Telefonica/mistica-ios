@@ -38,6 +38,17 @@ ifneq ($(origin GITHUB_ACTION),undefined)
 export DEVELOPER_DIR=/Applications/Xcode-14.2.app/Contents/Developer
 endif
 
+# TokenGenerator func to be used in all token generators.
+define tokenGenerator
+	@echo "Generating Mistica $(2) palettes"
+	hygen $(1) Mistica$(2) --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$(Movistar).json
+
+	# Generates N corner radius palettes for every brand passed in BRAND_FILES
+	for key in $(BRAND_FILES) ; do \
+		hygen $(1) Brand$(2) --name $$key --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$$key.json ; \
+	done
+endef
+
 # Targets
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -121,34 +132,15 @@ getMisticaDesignTokenFiles:
 	done
 
 colorPaletteGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
-	@echo "Generating Mistica Color Palettes"
-	hygen ColorTokenGenerator MisticaColors --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$(Movistar).json # Generates the MisticaColors protocol from the movistar json file.
-
-	# Generates N color palettes for every brand passed in BRAND_FILES
-	for key in $(BRAND_FILES) ; do \
-		hygen ColorTokenGenerator BrandColors --name $$key --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$$key.json ; \
-	done
+	$(call tokenGenerator,ColorTokenGenerator,Colors)
 
 cornerRadiusGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
-	@echo "Generating Mistica Corner Radius Palettes"
-	hygen CornerRadiusTokenGenerator MisticaCornerRadius --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$(Movistar).json # Generates the MisticaCornerRadius protocol from the movistar json file.
-
-	# Generates N corner radius palettes for every brand passed in BRAND_FILES
-	for key in $(BRAND_FILES) ; do \
-		hygen CornerRadiusTokenGenerator BrandCornerRadius --name $$key --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$$key.json ; \
-	done
+	$(call tokenGenerator,CornerRadiusTokenGenerator,CornerRadius)
 	
 fontWeightsGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
-	@echo "Generating Mistica Font Weight Palettes"
-	hygen FontWeightsTokenGenerator MisticaFontWeights --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$(Movistar).json # Generates the MisticaCornerRadius protocol from the movistar json file.
-
-	# Generates N corner radius palettes for every brand passed in BRAND_FILES
-	for key in $(BRAND_FILES) ; do \
-		hygen FontWeightsTokenGenerator BrandFontWeights --name $$key --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$$key.json ; \
-	done
+	$(call tokenGenerator,FontWeightsTokenGenerator,FontWeights)
 
 removeMisticaDesignTokenFolder:
 	rm -rf $(MISTICA_DESIGN_PATH)
 
 skin: colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration removeMisticaDesignTokenFolder format
-

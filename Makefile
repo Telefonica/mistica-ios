@@ -52,17 +52,17 @@ endef
 # Targets
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
-	@echo "  setup    			to set up dependencies"
-	@echo "  format    			to execute swiftformat in Sources directory"
-	@echo "  test     			to build and test the main target"
-	@echo "  simulator			to install the simulator for testing"
-	@echo "  export			to export the archived project as an .ipa"
-	@echo "  clean    			to remove all temporal files"
-	@echo "  skinGeneratorSetup    	to setup skin dependencies"
-	@echo "  colorPaletteGeneration  	to setup and regenerate MisticaColors with new palettes from mistica design"
-	@echo "  cornerRadiusGeneration  	to setup and regenerate MisticaCornerRadius with new palettes from mistica design"
-	@echo "  fontWeightsGeneration  	to setup and regenerate MisticaFontWeights with new palettes from mistica design"
-	@echo "  skin				to setup, regenerate and format tokens from mistica design"
+	@echo "  setup    				to set up dependencies"
+	@echo "  format    				to execute swiftformat in Sources directory"
+	@echo "  test     				to build and test the main target"
+	@echo "  simulator				to install the simulator for testing"
+	@echo "  export				to export the archived project as an .ipa"
+	@echo "  clean    				to remove all temporal files"
+	@echo "  skinGeneratorSetup    		to setup skin dependencies"
+	@echo "  colorPaletteGeneration ref=<ref>  	to setup and regenerate MisticaColors with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
+	@echo "  cornerRadiusGeneration ref=<ref> 	to setup and regenerate MisticaCornerRadius with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
+	@echo "  fontWeightsGeneration ref=<ref> 	to setup and regenerate MisticaFontWeights with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
+	@echo "  skin ref=<ref>			to setup, regenerate and format tokens from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
 
 trace:
 	@echo "Current xcodebuild configuration"

@@ -1,3 +1,15 @@
+# [25.0.0](https://github.com/Telefonica/mistica-ios/compare/v24.0.0...v25.0.0) (2023-05-30)
+
+
+### chore
+
+* **SPM:** IOS-9013 Combine mistica into a single package to prevent duplicated symbols when importing Mistica and MisticaSwiftUI ([#283](https://github.com/Telefonica/mistica-ios/issues/283)) ([10179e6](https://github.com/Telefonica/mistica-ios/commit/10179e628fc6094e535b51049f63ec1d6ac6174b))
+
+
+### BREAKING CHANGES
+
+* **SPM:** Mistica package now contains MisticaSwiftUI and Mistica for UIKit, imports of MisticaSwiftUI will need to be changed to import Mistica
+
 # [24.0.0](https://github.com/Telefonica/mistica-ios/compare/v23.6.1...v24.0.0) (2023-05-26)
 
 

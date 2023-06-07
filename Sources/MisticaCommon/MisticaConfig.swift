@@ -53,6 +53,11 @@ private extension MisticaConfig {
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = BlauFontWeights()
             currentCornerRadius = BlauCornerRadius()
+        case .vivoNew:
+            currentColors = VivoNewColors()
+            currentBrandAssets = DefaultMisticaBrandAssets()
+            currentFontWeights = VivoNewFontWeights()
+            currentCornerRadius = VivoNewCornerRadius()
         case .custom(let colors, let assets, let fontWeights, let cornerRadius):
             currentColors = colors
             currentBrandAssets = assets

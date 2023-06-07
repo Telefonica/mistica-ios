@@ -1,0 +1,31 @@
+name: Generate Mistica Tokens
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:                 
+        description: 'mistica-design repo changeset or branch'                 
+        required: false                 
+        default: 'production'
+
+jobs:
+  get-design-tokens:
+    name: Get Design Tokens   
+    runs-on: self-hosted-novum-mac         
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3             
+
+      - name: Generate Skin
+        run: make skin ref=${{github.event.inputs.ref}}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+          add-paths: 'Sources/MisticaCommon/*'
+          commit-message: 'feat(skin): update design tokens'
+          title: 'feat(skin): update design tokens from mistica-design branch: ${{github.event.inputs.ref}}' 
+          branch: 'import-design-tokens'
+          team-reviewers: 'ios'
+          delete-branch: true

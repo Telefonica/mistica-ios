@@ -28,27 +28,27 @@ public extension UIFont {
     }
 
     static func textPreset5(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
-        FontStyle.textPreset5.preferredFont(weight: MisticaConfig.currentFontWeights.textPreset5.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+        FontStyle.textPreset5.preferredFont(weight: MisticaConfig.currentFontWeights.text5.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
     static func textPreset6(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
-        FontStyle.textPreset6.preferredFont(weight: MisticaConfig.currentFontWeights.textPreset6.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+        FontStyle.textPreset6.preferredFont(weight: MisticaConfig.currentFontWeights.text6.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
     static func textPreset7(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
-        FontStyle.textPreset7.preferredFont(weight: MisticaConfig.currentFontWeights.textPreset7.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+        FontStyle.textPreset7.preferredFont(weight: MisticaConfig.currentFontWeights.text7.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
     static func textPreset8(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
-        FontStyle.textPreset8.preferredFont(weight: MisticaConfig.currentFontWeights.textPreset8.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+        FontStyle.textPreset8.preferredFont(weight: MisticaConfig.currentFontWeights.text8.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
     static func textPreset9(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
-        FontStyle.textPreset9.preferredFont(weight: MisticaConfig.currentFontWeights.textPreset9.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+        FontStyle.textPreset9.preferredFont(weight: MisticaConfig.currentFontWeights.text9.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
     static func textPreset10(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
-        FontStyle.textPreset10.preferredFont(weight: MisticaConfig.currentFontWeights.textPreset10.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
+        FontStyle.textPreset10.preferredFont(weight: MisticaConfig.currentFontWeights.text10.systemUIFontWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
     static func preferredFont(for fontStyle: FontStyle, weight: UIFont.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory) -> UIFont {

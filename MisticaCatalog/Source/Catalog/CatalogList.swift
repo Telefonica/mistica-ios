@@ -85,12 +85,13 @@ private extension CatalogRow {
             CarouselCatalogView()
         case .chips:
             ChipCatalogView()
+        case .header:
+            HeaderCatalogView()
         case .tooltip,
              .viewStates,
              .title,
              .filter,
              .scrollContentIndicator,
-             .header,
              .forms,
              .controls,
              .sheet:

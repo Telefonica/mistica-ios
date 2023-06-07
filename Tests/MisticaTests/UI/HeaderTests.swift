@@ -18,68 +18,92 @@ final class HeaderTests: XCTestCase {
         isRecording = false
         MisticaConfig.brandStyle = .movistar
     }
+}
 
-    func testMinimalHeader() {
+// MARK: - Minimal header
+
+extension HeaderTests {
+    func testMinimalPretitleHeader() {
         assertSnapshot(
-            matching: makeHeader(title: "Title"),
+            matching: makeHeader(pretitle: HeaderText(text: "Only a pretitle")),
             as: .image(on: .iPhoneSe)
         )
     }
 
-    func testMinimalHeaderInNavigationBar() {
+    func testMinimalPretitleHeaderInNavigationBar() {
         assertSnapshot(
             matching: makeHeader(
-                usingInLargeNavigationBar: true,
-                title: "Title"
+                style: .inverse,
+                pretitle: HeaderText(text: "Only a pretitle")
             ),
             as: .image(on: .iPhoneSe)
         )
     }
 
+    func testMinimalTitleHeader() {
+        assertSnapshot(
+            matching: makeHeader(title: HeaderText(text: "Only a title")),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
+    func testMinimalTitleHeaderInNavigationBar() {
+        assertSnapshot(
+            matching: makeHeader(
+                style: .inverse,
+                title: HeaderText(text: "Only a title")
+            ),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
+    func testMinimalDescriptionHeader() {
+        assertSnapshot(
+            matching: makeHeader(descriptionValue: HeaderText(text: "Only a description")),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+
+    func testMinimalDescriptionHeaderInNavigationBar() {
+        assertSnapshot(
+            matching: makeHeader(
+                style: .inverse,
+                descriptionValue: HeaderText(text: "Only a description")
+            ),
+            as: .image(on: .iPhoneSe)
+        )
+    }
+}
+
+extension HeaderTests {
     func testFullHeader() {
         assertSnapshot(
             matching: makeHeader(
-                pretitle: "Pretitle",
-                title: "Title",
-                preAmount: "Pre-amount",
-                amount: "0,00€",
-                primaryActionTitle: "Primary Action",
-                secondaryActionTitle: "Secondary Action",
-                subtitle: "Subtitle"
+                pretitle: HeaderText(text: "Pretitle"),
+                title: HeaderText(text: "Title"),
+                descriptionValue: HeaderText(text: "Description")
             ),
             as: .image(on: .iPhoneSe)
         )
     }
 
-    func testFullHeaderWithLongTitle() {
+    func testFullHeaderWithLongTexts() {
         assertSnapshot(
             matching: makeHeader(
-                pretitle: "Pretitle",
-                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                preAmount: "Pre-amount",
-                amount: "0,00€",
-                primaryActionTitle: "Primary Action",
-                secondaryActionTitle: "Secondary Action",
-                subtitle: "Subtitle"
+                pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
+                title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
+                descriptionValue: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit")
             ),
             as: .image(on: .iPhoneSe)
         )
     }
 
-    func testFullHeaderWithAlternateColors() {
+    func testFullHeaderWithLongTextsAndLineLimitToTwo() {
         assertSnapshot(
             matching: makeHeader(
-                pretitle: "Pretitle",
-                pretitleHasSecondaryColor: true,
-                title: "Title",
-                preAmount: "Pre-amount",
-                preAmountHasSecondaryColor: true,
-                amount: "0,00€",
-                amountHasDangerColor: true,
-                primaryActionTitle: "Primary Action",
-                secondaryActionTitle: "Secondary Action",
-                subtitle: "Subtitle",
-                subtitleHasSecondaryColor: true
+                pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
+                title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
+                descriptionValue: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2)
             ),
             as: .image(on: .iPhoneSe)
         )
@@ -89,53 +113,9 @@ final class HeaderTests: XCTestCase {
         assertSnapshot(
             matching: makeHeader(
                 style: .inverse,
-                pretitle: "Pretitle",
-                pretitleHasSecondaryColor: true,
-                title: "Title",
-                preAmount: "Pre-amount",
-                preAmountHasSecondaryColor: true,
-                amount: "0,00€",
-                amountHasDangerColor: true,
-                primaryActionTitle: "Primary Action",
-                secondaryActionTitle: "Secondary Action",
-                subtitle: "Subtitle",
-                subtitleHasSecondaryColor: true
-            ),
-            as: .image(on: .iPhoneSe)
-        )
-    }
-
-    func testFullHeaderInNavigationBar() {
-        assertSnapshot(
-            matching: makeHeader(
-                usingInLargeNavigationBar: true,
-                pretitle: "Pretitle",
-                title: "Title",
-                preAmount: "Pre-amount",
-                amount: "0,00€",
-                primaryActionTitle: "Primary Action",
-                secondaryActionTitle: "Secondary Action",
-                subtitle: "Subtitle"
-            ),
-            as: .image(on: .iPhoneSe)
-        )
-    }
-
-    func testFullHeaderWithAlternateColorsInNavigationBar() {
-        assertSnapshot(
-            matching: makeHeader(
-                usingInLargeNavigationBar: true,
-                pretitle: "Pretitle",
-                pretitleHasSecondaryColor: true,
-                title: "Title",
-                preAmount: "Pre-amount",
-                preAmountHasSecondaryColor: true,
-                amount: "0,00€",
-                amountHasDangerColor: true,
-                primaryActionTitle: "Primary Action",
-                secondaryActionTitle: "Secondary Action",
-                subtitle: "Subtitle",
-                subtitleHasSecondaryColor: true
+                pretitle: HeaderText(text: "Pretitle"),
+                title: HeaderText(text: "Title"),
+                descriptionValue: HeaderText(text: "Description")
             ),
             as: .image(on: .iPhoneSe)
         )
@@ -144,60 +124,42 @@ final class HeaderTests: XCTestCase {
 
 private extension HeaderTests {
     func makeHeader(
-        usingInLargeNavigationBar: Bool = false,
         style: HeaderViewStyle = .normal,
-        pretitle: String? = nil,
-        pretitleHasSecondaryColor: Bool = false,
-        title: String,
-        preAmount: String? = nil,
-        preAmountHasSecondaryColor: Bool = false,
-        amount: String? = nil,
-        amountHasDangerColor: Bool = false,
-        primaryActionTitle: String? = nil,
-        secondaryActionTitle: String? = nil,
-        subtitle: String? = nil,
-        subtitleHasSecondaryColor: Bool = false
+        pretitle: HeaderText? = nil,
+        title: HeaderText? = nil,
+        descriptionValue: HeaderText? = nil
     ) -> UIViewController {
         let viewController = HeaderViewController()
-        viewController.headerView.usingInLargeNavigationBar = usingInLargeNavigationBar
-        viewController.headerView.style = style
-
-        if let pretitle = pretitle {
-            viewController.headerView.pretitle = pretitle
-            viewController.headerView.pretitleHasSecondaryColor = pretitleHasSecondaryColor
-        }
-
-        viewController.headerView.title = title
-
-        if let preAmount = preAmount {
-            viewController.headerView.preAmount = preAmount
-            viewController.headerView.preAmountHasSecondaryColor = preAmountHasSecondaryColor
-        }
-
-        if let amount = amount {
-            viewController.headerView.amount = amount
-            viewController.headerView.amountHasDangerColor = amountHasDangerColor
-        }
-
-        if let primaryActionTitle = primaryActionTitle {
-            viewController.headerView.primaryActionTitle = primaryActionTitle
-        }
-
-        if let secondaryActionTitle = secondaryActionTitle {
-            viewController.headerView.secondaryActionTitle = secondaryActionTitle
-        }
-
-        if let subtitle = subtitle {
-            viewController.headerView.subtitle = subtitle
-            viewController.headerView.subtitleHasSecondaryColor = subtitleHasSecondaryColor
-        }
-
+        viewController.setUpView(
+            pretitle: pretitle,
+            title: title,
+            descriptionValue: descriptionValue,
+            style: style
+        )
         return UINavigationController(rootViewController: viewController)
     }
 }
 
 private class HeaderViewController: UIViewController {
     let headerView = HeaderView()
+
+    func setUpView(
+        pretitle: HeaderText? = nil,
+        title: HeaderText? = nil,
+        descriptionValue: HeaderText? = nil,
+        style: HeaderViewStyle = .normal
+    ) {
+        if let pretitle = pretitle {
+            headerView.pretitle = pretitle
+        }
+        if let title = title {
+            headerView.title = title
+        }
+        if let descriptionValue = descriptionValue {
+            headerView.descriptionValue = descriptionValue
+        }
+        headerView.style = style
+    }
 
     override func loadView() {
         let view = UIView()

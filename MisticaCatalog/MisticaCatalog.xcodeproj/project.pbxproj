@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1822CA1A29E821D400980D47 /* HeaderCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822CA1929E821D400980D47 /* HeaderCatalogView.swift */; };
 		1860058F28A136CE009C3778 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860058E28A136CE009C3778 /* ColorsView.swift */; };
-		1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1882EF40286EFF5F00F959FA /* MisticaSwiftUI */; };
 		18E17AED287FFFBF0051E505 /* CatalogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17AEC287FFFBF0051E505 /* CatalogRow.swift */; };
 		18E17AEF288007340051E505 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17AEE288007340051E505 /* Framework.swift */; };
 		18E3452C289D46C5005E6D81 /* FontsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3452B289D46C5005E6D81 /* FontsView.swift */; };
@@ -76,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1822CA1929E821D400980D47 /* HeaderCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCatalogView.swift; sourceTree = "<group>"; };
 		1860058E28A136CE009C3778 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
 		18E17AEC287FFFBF0051E505 /* CatalogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRow.swift; sourceTree = "<group>"; };
 		18E17AEE288007340051E505 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */,
-				1882EF41286EFF5F00F959FA /* MisticaSwiftUI in Frameworks */,
 				B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +195,7 @@
 				18E4855A287F19EB0052A6F2 /* BadgeCatalogView.swift */,
 				18E4855B287F19EB0052A6F2 /* TagCatalogView.swift */,
 				18E4855C287F19EB0052A6F2 /* ListCatalogView.swift */,
+				1822CA1929E821D400980D47 /* HeaderCatalogView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -366,7 +367,6 @@
 			packageProductDependencies = (
 				B8F990622546CAA500DFBFE9 /* Mistica */,
 				B8EE89F12614B57600F79386 /* AppCenterDistribute */,
-				1882EF40286EFF5F00F959FA /* MisticaSwiftUI */,
 			);
 			productName = MisticaCatalog;
 			productReference = B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */;
@@ -425,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3968C75E28C9E19600561194 /* UIStepperTableViewCell.swift in Sources */,
+				1822CA1A29E821D400980D47 /* HeaderCatalogView.swift in Sources */,
 				B8F9903B2546C98700DFBFE9 /* DefaultTableHeaderView.swift in Sources */,
 				B8F990382546C98700DFBFE9 /* UIImage+Utils.swift in Sources */,
 				18E4857E287F19EB0052A6F2 /* StepperCatalogVIew.swift in Sources */,
@@ -709,10 +710,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1882EF40286EFF5F00F959FA /* MisticaSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MisticaSwiftUI;
-		};
 		18E42D47287F181700BB7B39 /* Mistica */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Mistica;

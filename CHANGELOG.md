@@ -1,3 +1,76 @@
+# [25.0.0](https://github.com/Telefonica/mistica-ios/compare/v24.0.0...v25.0.0) (2023-05-30)
+
+
+### chore
+
+* **SPM:** IOS-9013 Combine mistica into a single package to prevent duplicated symbols when importing Mistica and MisticaSwiftUI ([#283](https://github.com/Telefonica/mistica-ios/issues/283)) ([10179e6](https://github.com/Telefonica/mistica-ios/commit/10179e628fc6094e535b51049f63ec1d6ac6174b))
+
+
+### BREAKING CHANGES
+
+* **SPM:** Mistica package now contains MisticaSwiftUI and Mistica for UIKit, imports of MisticaSwiftUI will need to be changed to import Mistica
+
+# [24.0.0](https://github.com/Telefonica/mistica-ios/compare/v23.6.1...v24.0.0) (2023-05-26)
+
+
+* IOS-8008 header evolution (#269) ([1ca5a6e](https://github.com/Telefonica/mistica-ios/commit/1ca5a6e991c3eea132f1a2f7a9e487e68de5d465)), closes [#269](https://github.com/Telefonica/mistica-ios/issues/269)
+
+
+### BREAKING CHANGES
+
+* Header evolution, the design has been updated and the way of indicating the properties of each element has been simplified. 
+
+* IOS-8008 removed old Labels
+
+* IOS-8008 removed old label from Header in catalog app
+
+* IOS-8008 Updating the catalog viewcontroller according to the specs
+
+* IOS-8008 add a Header SwiftUI version
+
+* IOS-8008 add the Header SwiftUI version
+
+* IOS-8008 add marging to Header view
+
+* IOS-8008 add a HeaderStyle
+
+* IOS-8008 add Style to header
+
+* IOS-8008 configure view by setUpView method
+
+* IOS-8008 remove HeaderView.Style enum
+
+* IOS-8008 fix screenshot tests
+
+* IOS-8008 add more screenshots
+
+* IOS-8008 add SwiftUI Header screen-shot
+
+* IOS-8008 fix right margen
+
+* IOS-8008 changes from reviewers
+
+* IOS-8008 simplify properties in Header
+
+* IOS-8008 add lineLimit to Header SwiftUI control
+
+* IOS-8008 add lineLimit to Header UIKit
+
+* IOS-8008 Extract the HeaderText class
+
+* IOS-8008 Moved HeaderViewStyle to MisticaCommon to simplify enums
+
+* IOS-8008 To avoid a breaking change, I make the title and pretitle properties public
+
+* IOS-8008 removed setup method and fix
+
+## [23.6.1](https://github.com/Telefonica/mistica-ios/compare/v23.6.0...v23.6.1) (2023-05-23)
+
+
+### Bug Fixes
+
+* **HighlightedCard:** actionButton duplicated for accessibility tool ([#276](https://github.com/Telefonica/mistica-ios/issues/276)) ([3e2794c](https://github.com/Telefonica/mistica-ios/commit/3e2794c8b539033c62c0759c33833b974d6035af))
+
 # [23.6.0](https://github.com/Telefonica/mistica-ios/compare/v23.5.0...v23.6.0) (2023-05-17)
 
 

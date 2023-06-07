@@ -13,6 +13,9 @@ module.exports = {
           return className + "Colors." + colorName
         }
     },
+    replaceDashes: (string) => {
+      return string.replace("-","_")
+    },
     params: (json) => {
       let jsonData = {}
       if (json) {

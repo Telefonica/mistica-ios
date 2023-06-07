@@ -1,5 +1,5 @@
 ---
-to: Sources/MisticaCommon/Radius/Brands/<%= h.inflection.capitalize(name) %>CornerRadius.swift
+to: Sources/MisticaCommon/Radius/Brands/<%= h.inflection.camelize(h.replaceDashes(name)) %>CornerRadius.swift
 force: true
 ---
 <%# 
@@ -9,7 +9,7 @@ force: If the file can be overwritten or not
 
 <%# We need to capitalize the brand name we receive. To do this we used the helper object provided by hygen. -%>
 <%_
-let className = h.inflection.capitalize(name)
+let className = h.inflection.camelize(h.replaceDashes(name))
 let jsonObject = h.params(json)
 -%>
 

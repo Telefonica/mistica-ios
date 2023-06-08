@@ -50,6 +50,8 @@ struct ColorsView: View {
             return O2ColorPalette()
         case .vivo:
             return VivoColorPalette()
+        case .vivoNew:
+            return VivoNewColorPalette()
         case .custom(let colors, _, _, _):
             return colors
         }

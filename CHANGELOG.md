@@ -1,3 +1,10 @@
+# [25.1.0](https://github.com/Telefonica/mistica-ios/compare/v25.0.0...v25.1.0) (2023-06-08)
+
+
+### Features
+
+* **VivoNewSkin:** Add VivoNew skin. Updated all palettes for all brands. ([c2d1b78](https://github.com/Telefonica/mistica-ios/commit/c2d1b784005f6fe636e2325d64fe8d89ae0b7554))
+
 # [25.0.0](https://github.com/Telefonica/mistica-ios/compare/v24.0.0...v25.0.0) (2023-05-30)
 
 

@@ -13,9 +13,9 @@ public extension Button.Style {
     private static let smallInsets: UIEdgeInsets = .init(top: 5, left: 12, bottom: 5, right: 12)
     private static let linkInsets: UIEdgeInsets = .init(top: 5, left: 12, bottom: 5, right: 12)
 
-    private static var regularFont: UIFont { .textPreset3(weight: .medium) }
-    private static var smallFont: UIFont { .textPreset2(weight: .medium) }
-    private static var linkFont: UIFont { .textPreset2(weight: .medium) }
+    private static var regularFont: UIFont { .textPreset3(weight: .button) }
+    private static var smallFont: UIFont { .textPreset2(weight: .button) }
+    private static var linkFont: UIFont { .textPreset2(weight: .button) }
 
     private static var regularMinimumWidth: CGFloat = 156
     private static var smallMinimumWidth: CGFloat = 104

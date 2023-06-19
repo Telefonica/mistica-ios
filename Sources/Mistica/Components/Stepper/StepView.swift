@@ -79,7 +79,7 @@ class StepView: UIView {
     }
 
     func commonInit() {
-        label.font = .textPreset1(weight: .medium)
+        label.font = .textPreset1(weight: .indicator)
         label.textAlignment = .center
         circularView.addSubview(withDefaultConstraints: label)
         updateAnimationKeypaths()

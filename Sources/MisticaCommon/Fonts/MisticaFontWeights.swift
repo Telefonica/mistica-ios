@@ -10,6 +10,10 @@ import UIKit
 
 public protocol MisticaFontWeights {
     var cardTitle: MisticaFontWeightType { get }
+    var button: MisticaFontWeightType { get }
+    var link: MisticaFontWeightType { get }
+    var title1: MisticaFontWeightType { get }
+    var indicator: MisticaFontWeightType { get }
     var text5: MisticaFontWeightType { get }
     var text6: MisticaFontWeightType { get }
     var text7: MisticaFontWeightType { get }

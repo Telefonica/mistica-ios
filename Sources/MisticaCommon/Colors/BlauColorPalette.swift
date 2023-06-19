@@ -85,7 +85,7 @@ struct BlauColors: MisticaColors {
     let neutralHigh = BlauColors.palette.grey6 | BlauColors.palette.grey2
     let neutralMedium = BlauColors.palette.grey5
     let neutralMediumInverse = BlauColors.palette.grey5
-    let neutralLow = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
+    let neutralLow = BlauColors.palette.grey1 | BlauColors.palette.darkModeGrey6
     let neutralLowAlternative = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
     let textPrimary = BlauColors.palette.grey6 | BlauColors.palette.grey2
     let textPrimaryInverse = BlauColors.palette.white | BlauColors.palette.grey2

@@ -96,7 +96,7 @@ private extension Chip {
                 .foregroundColor(iconColor(isSelected))
             Text(text.localizedCapitalized)
                 .lineLimit(Constants.lineLimit)
-                .font(.textPreset2(weight: .medium))
+                .font(.textPreset2(weight: .indicator))
                 .padding(.horizontal, Constants.horizontalTextPadding)
                 .foregroundColor(foregroundColor(isSelected))
             trailingView

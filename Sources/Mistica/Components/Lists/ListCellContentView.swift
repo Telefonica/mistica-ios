@@ -185,7 +185,7 @@ open class ListCellContentView: UIView {
         self.init(frame: .zero)
     }
 
-    public override init(frame _: CGRect) {
+    override public init(frame _: CGRect) {
         super.init(frame: .zero)
 
         commonInit()

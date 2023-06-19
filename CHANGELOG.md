@@ -1,3 +1,10 @@
+# [25.2.0](https://github.com/Telefonica/mistica-ios/compare/v25.1.0...v25.2.0) (2023-06-19)
+
+
+### Features
+
+* **ListCellContent:** Expose init ([#285](https://github.com/Telefonica/mistica-ios/issues/285)) ([15361ee](https://github.com/Telefonica/mistica-ios/commit/15361eea627395d14dab9f427b79dd82a516fe76))
+
 # [25.1.0](https://github.com/Telefonica/mistica-ios/compare/v25.0.0...v25.1.0) (2023-06-08)
 
 

@@ -100,7 +100,6 @@ public class InputField: UIView {
         let view = UIView()
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.border.cgColor
-        view.setMisticaRadius(.input)
         view.backgroundColor = .backgroundContainer
 
         horizontalTextInputStackView.alignment = .fill
@@ -400,6 +399,11 @@ public class InputField: UIView {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         borderColor = UIColor.border.cgColor
+    }
+    
+    public override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        borderedView.setMisticaRadius(.input)
     }
 }
 

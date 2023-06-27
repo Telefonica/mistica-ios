@@ -175,6 +175,11 @@ open class Button: UIControl {
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         applyStyleColors()
     }
+    
+    override open func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        setMisticaRadius(.button)
+    }
 }
 
 @objc public extension Button {
@@ -236,7 +241,6 @@ private extension Button {
     }
 
     func setUpView() {
-        setMisticaRadius(.button)
         layer.cornerCurve = .continuous
         layer.borderWidth = Constants.borderWidth
         isAccessibilityElement = true

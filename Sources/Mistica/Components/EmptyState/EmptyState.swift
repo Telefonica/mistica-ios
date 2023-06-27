@@ -51,6 +51,12 @@ public class EmptyState: UIView {
             addBorder(color: .border)
         }
     }
+    
+    override public func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        guard let configuration = contentConfiguration, configuration.isInCard() else { return }
+        setMisticaRadius(.container)
+    }
 }
 
 // MARK: Public
@@ -172,7 +178,6 @@ private extension EmptyState {
         if configuration.isInCard() {
             addSubview(constrainedToLayoutMarginsGuideOf: emptyStateContentBase)
             addBorder(color: .border)
-            setMisticaRadius(.container)
             clipsToBounds = true
             backgroundColor = .backgroundContainer
         } else {

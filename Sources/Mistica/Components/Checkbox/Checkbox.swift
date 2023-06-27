@@ -90,6 +90,11 @@ public class Checkbox: UIControl {
             updateViewStyle(checked: checked)
         }
     }
+    
+    override public func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        borderView.setMisticaRadius(.checkbox)
+    }
 }
 
 private extension Checkbox {
@@ -97,7 +102,6 @@ private extension Checkbox {
         layoutView()
 
         updateViewStyle(checked: isChecked)
-        borderView.setMisticaRadius(.checkbox)
         borderView.layer.masksToBounds = true
 
         setContentHuggingPriority(.defaultHigh, for: .horizontal)

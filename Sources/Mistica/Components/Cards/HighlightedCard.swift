@@ -182,7 +182,7 @@ public class HighlightedCard: UIView {
         closeButton.imageView?.backgroundColor = UIColor.white.withAlphaComponent(Constants.closeButtonAlpha)
         closeButton.imageView?.makeRounded()
     }
-    
+
     override public func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         setMisticaRadius(.container)

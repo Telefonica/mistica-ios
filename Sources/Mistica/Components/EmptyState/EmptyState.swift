@@ -51,7 +51,7 @@ public class EmptyState: UIView {
             addBorder(color: .border)
         }
     }
-    
+
     override public func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         guard let configuration = contentConfiguration, configuration.isInCard() else { return }

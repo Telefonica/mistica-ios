@@ -90,7 +90,7 @@ public class Checkbox: UIControl {
             updateViewStyle(checked: checked)
         }
     }
-    
+
     override public func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         borderView.setMisticaRadius(.checkbox)

@@ -400,8 +400,8 @@ public class InputField: UIView {
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         borderColor = UIColor.border.cgColor
     }
-    
-    public override func layoutSublayers(of layer: CALayer) {
+
+    override public func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         borderedView.setMisticaRadius(.input)
     }

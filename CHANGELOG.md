@@ -1,3 +1,15 @@
+# [25.3.0](https://github.com/Telefonica/mistica-ios/compare/v25.2.0...v25.3.0) (2023-06-29)
+
+
+### Bug Fixes
+
+* **cornerRadius:** Fix corner radius when the radius is calculated based on the view frame width/height ([d161eed](https://github.com/Telefonica/mistica-ios/commit/d161eed61ffc402880c1da7654c34a2518c30e43))
+
+
+### Features
+
+* **NewVivoTypographyTokenWeights:** IOS-8335 Added new typography token weights to support the new vivo typography. ([#286](https://github.com/Telefonica/mistica-ios/issues/286)) ([b5bf080](https://github.com/Telefonica/mistica-ios/commit/b5bf080189350fdba24beb963832a60c9f80aa24))
+
 # [25.2.0](https://github.com/Telefonica/mistica-ios/compare/v25.1.0...v25.2.0) (2023-06-19)
 
 

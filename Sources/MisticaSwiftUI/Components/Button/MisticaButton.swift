@@ -115,7 +115,7 @@ struct MisticaButton: View {
     }
 
     private var textFont: Font {
-        small ? .textPreset2(weight: .medium) : .textPreset3(weight: .medium)
+        small ? .textPreset2(weight: .button) : .textPreset3(weight: .button)
     }
 
     private var leadingInset: CGFloat {

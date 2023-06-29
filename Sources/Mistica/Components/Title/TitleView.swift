@@ -23,7 +23,7 @@ public class TitleView: UITableViewHeaderFooterView {
         var font: UIFont {
             switch self {
             case .title1:
-                return .textPreset1(weight: .medium)
+                return .textPreset1(weight: .title1)
             case .title2:
                 return .textPreset5()
             }
@@ -116,7 +116,7 @@ private extension TitleView {
         titleLabel.textColor = style.textColor
         titleLabel.numberOfLines = 0
 
-        linkLabel.font = .textPreset2(weight: .medium)
+        linkLabel.font = .textPreset2(weight: .link)
         linkLabel.textColor = .textLink
         linkLabel.isHidden = linkLabel.text?.isEmpty ?? true
     }

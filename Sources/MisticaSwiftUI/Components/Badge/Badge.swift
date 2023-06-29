@@ -63,7 +63,7 @@ public struct Badge: View {
     @ViewBuilder
     private func label(_ text: String) -> some View {
         Text(text)
-            .font(.textPreset1(weight: .medium, constrainedToPreferredSize: .accessibilityMedium))
+            .font(.textPreset1(weight: .indicator, constrainedToPreferredSize: .accessibilityMedium))
             .foregroundColor(.textPrimaryInverse)
     }
 }

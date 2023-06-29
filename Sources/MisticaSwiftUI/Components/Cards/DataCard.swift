@@ -76,7 +76,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
             Text(title)
                 .padding(.top, 8)
                 .lineLimit(titleLineLimit)
-                .font(.textPreset4(weight: .light))
+                .font(.textPreset4(weight: .cardTitle))
                 .foregroundColor(.textPrimary)
                 .accessibilityLabel(titleAccessibilityLabel)
                 .accessibilityIdentifier(titleAccessibilityIdentifier)

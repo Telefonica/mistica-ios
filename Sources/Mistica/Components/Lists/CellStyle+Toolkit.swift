@@ -16,7 +16,7 @@ extension ListCellContentView.CellStyle {
         case .fullWidth:
             return 0
         case .boxed, .boxedInverse:
-            return 8
+            return MisticaConfig.currentCornerRadius.container
         }
     }
 

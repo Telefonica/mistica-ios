@@ -183,6 +183,11 @@ public class HighlightedCard: UIView {
         closeButton.imageView?.makeRounded()
     }
 
+    override public func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        setMisticaRadius(.container)
+    }
+
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 
@@ -393,7 +398,6 @@ private extension HighlightedCard {
         closeButton.isHidden = true
 
         addBorder(color: .border)
-        setMisticaRadius(.container)
         clipsToBounds = true
     }
 

@@ -58,7 +58,7 @@ final class BottomSheetPresentationController: UIPresentationController {
 
         presentedView.addGestureRecognizer(panGestureRecognizer)
 
-        presentedView.setMisticaRadius(.popup)
+        presentedView.setMisticaRadius(.sheet)
         presentedView.layer.maskedCorners = [
             .layerMinXMinYCorner,
             .layerMaxXMinYCorner

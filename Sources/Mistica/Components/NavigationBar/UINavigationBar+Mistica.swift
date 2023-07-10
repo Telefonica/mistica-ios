@@ -14,7 +14,7 @@ public extension UINavigationBar {
     }
 
     class var misticaTitleTextAttributes: [NSAttributedString.Key: Any] {
-        textAttributes(for: .textPreset4(weight: .medium, constrainedToPreferredSize: .large), color: UIColor.textNavigationBarPrimary)
+        textAttributes(for: .textPreset4(weight: .navigationBar, constrainedToPreferredSize: .large), color: UIColor.textNavigationBarPrimary)
     }
 
     func applyMisticaStyle() {

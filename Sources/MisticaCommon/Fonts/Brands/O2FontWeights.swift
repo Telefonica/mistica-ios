@@ -11,9 +11,11 @@ import Foundation
 struct O2FontWeights: MisticaFontWeights {
     public var cardTitle: MisticaFontWeightType = .regular
     public var button: MisticaFontWeightType = .medium
+    public var tabsLabel: MisticaFontWeightType = .medium
     public var link: MisticaFontWeightType = .medium
     public var title1: MisticaFontWeightType = .medium
     public var indicator: MisticaFontWeightType = .medium
+    public var navigationBar: MisticaFontWeightType = .medium
     public var text5: MisticaFontWeightType = .light
     public var text6: MisticaFontWeightType = .light
     public var text7: MisticaFontWeightType = .light

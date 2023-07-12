@@ -72,6 +72,33 @@ final class InputFieldTests: XCTestCase {
             as: .image
         )
     }
+
+    func testLongText() {
+        let input = makeTemplate(style: .text, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper at justo eget porta. Pellentesque sit amet felis vel eros commodo euismod vel quis nisl.")
+
+        assertSnapshot(
+            matching: input,
+            as: .image
+        )
+    }
+
+    func testLongPlaceholder() {
+        let input = makeTemplate(style: .text, placeholder: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper at justo eget porta. Pellentesque sit amet felis vel eros commodo euismod vel quis nisl.")
+
+        assertSnapshot(
+            matching: input,
+            as: .image
+        )
+    }
+
+    func testLongAssistiveText() {
+        let input = makeTemplate(style: .text, assistiveText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper at justo eget porta. Pellentesque sit amet felis vel eros commodo euismod vel quis nisl.")
+
+        assertSnapshot(
+            matching: input,
+            as: .image
+        )
+    }
 }
 
 private extension InputFieldTests {

@@ -69,6 +69,7 @@ public struct InputField: View {
                         Text(placeholder)
                             .font(.textPreset1(weight: .regular))
                             .opacity(0)
+                            .lineLimit(1)
 
                         HStack {
                             leadingText
@@ -91,6 +92,7 @@ public struct InputField: View {
                         .offset(x: 0, y: placeholderOffset)
                         .animation(.misticaTimingCurve, value: placeholderTextColor)
                         .allowsHitTesting(false)
+                        .lineLimit(1)
                 }
 
                 trailingImage

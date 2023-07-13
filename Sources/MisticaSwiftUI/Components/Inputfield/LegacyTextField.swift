@@ -182,7 +182,7 @@ private class ActionsTextField: UITextField {
             return super.contentCompressionResistancePriority(for: axis)
         }
     }
-    
+
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         guard canPerformActions else { return false }
         return super.canPerformAction(action, withSender: sender)

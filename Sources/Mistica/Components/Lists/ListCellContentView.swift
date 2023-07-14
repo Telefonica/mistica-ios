@@ -44,7 +44,7 @@ open class ListCellContentView: UIView {
     private lazy var cellContentView = UIStackView()
     var tableViewDelegate: ListCellContentTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
-    lazy var centerSection = CellCenterSectionView()
+    public lazy var centerSection = CellCenterSectionView()
 
     // MARK: Public
 

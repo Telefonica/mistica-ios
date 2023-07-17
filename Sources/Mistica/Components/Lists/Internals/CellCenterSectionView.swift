@@ -21,7 +21,7 @@ public class CellCenterSectionView: UIStackView {
     }
 
     public lazy var titleLabel = IntrinsictHeightLabel()
-    lazy var subtitleLabel = IntrinsictHeightLabel()
+    public lazy var subtitleLabel = IntrinsictHeightLabel()
     lazy var detailLabel = IntrinsictHeightLabel()
 
     var titleTextColor: UIColor = .textPrimary {

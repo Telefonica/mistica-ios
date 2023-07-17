@@ -45,13 +45,13 @@ open class ListCellContentView: UIView {
     var tableViewDelegate: ListCellContentTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
     lazy var centerSection = CellCenterSectionView()
-    
+
     // MARK: Public
-    
+
     public var titleLabel: UILabel {
         centerSection.titleLabel
     }
-    
+
     public var subtitleLabel: UILabel {
         centerSection.subtitleLabel
     }

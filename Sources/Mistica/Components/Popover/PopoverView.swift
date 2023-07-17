@@ -90,30 +90,6 @@ public extension PopoverView {
         popoverView.show(configuration: configuration, pointingAtView: targetView, in: containerView, animated: animated)
     }
 
-    func show(configuration: PopoverConfiguration, pointingAtView targetView: UIView, horizontallyPinnedTo containerView: UIView, with padding: CGFloat? = nil, animated: Bool) {
-        precondition(targetView.hasSuperview(containerView), "The supplied containerView <\(containerView)> is not a direct nor an indirect superview of the supplied reference view <\(targetView)>. The containerView passed to this method should be a direct or an indirect superview of the target view.")
-
-        if containerView.isKind(of: UIScrollView.self) {
-            // When the container view is a ScrollView, the popover can't be sized based
-            // on the scroll view's width. Use the parent view instead.
-            guard let superView = containerView.superview else {
-                fatalError("Popover can't be added to a ScrollView that doesn't have a superview.")
-            }
-            self.containerView = superView
-        } else {
-            self.containerView = containerView
-        }
-
-        self.targetView = targetView
-        self.animated = animated
-        tipDirection = configuration.tipDirection
-
-        configure(with: configuration)
-        setUpConstraintsHorizontallyPinned(padding: padding)
-
-        show(animated: animated)
-    }
-
     func show(configuration: PopoverConfiguration, pointingAtView targetView: UIView, in containerView: UIView, animated: Bool) {
         precondition(targetView.hasSuperview(containerView), "The supplied containerView <\(containerView)> is not a direct nor an indirect superview of the supplied reference view <\(targetView)>. The containerView passed to this method should be a direct or an indirect superview of the target view.")
 
@@ -258,41 +234,6 @@ private extension PopoverView {
         contentView.canClose = configuration.canClose
     }
 
-    func setUpConstraintsHorizontallyPinned(padding: CGFloat?) {
-         translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(self)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-
-        // Set the center X of the popover equal to the center X of the targetted view, but this constraint
-        // has a lower priority for maintaninng the popover always visible in container view
-        let centerX = centerXAnchor.constraint(equalTo: targetView.centerXAnchor)
-        centerX.priority = .defaultLow
-        centerX.isActive = true
-
-        NSLayoutConstraint.activate([
-            // Maximum width is container width minus the margin
-        
-            leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding ?? 0),
-            trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -(padding ?? 0)),
-            heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: ViewStyles.tipSize.height),
-            
-
-            // Keep the popover respecting the margin with containerView
-            leadingAnchor.constraint(greaterThanOrEqualTo: containerView.leadingAnchor, constant: ViewStyles.leadingMarginToContainerView),
-            trailingAnchor.constraint(lessThanOrEqualTo: containerView.trailingAnchor, constant: -ViewStyles.trailingMarginToContainerView)
-        ])
-
-        switch tipDirection {
-        case .up:
-            topAnchor.constraint(equalTo: targetView.bottomAnchor, constant: ViewStyles.gapBetweenTipAndTargetView).isActive = true
-            contentView.topAnchor.constraint(equalTo: topAnchor, constant: ViewStyles.tipSize.height).isActive = true
-        case .down:
-            bottomAnchor.constraint(equalTo: targetView.topAnchor, constant: -ViewStyles.gapBetweenTipAndTargetView).isActive = true
-            contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        }
-
-    }
-
     func setUpConstraints() {
         translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(self)
@@ -303,16 +244,13 @@ private extension PopoverView {
         let centerX = centerXAnchor.constraint(equalTo: targetView.centerXAnchor)
         centerX.priority = .defaultLow
         centerX.isActive = true
-
+        
         NSLayoutConstraint.activate([
-            // Maximum width is container width minus the margin
-            widthAnchor.constraint(lessThanOrEqualTo: containerView.widthAnchor, constant: -(ViewStyles.leadingMarginToContainerView + ViewStyles.trailingMarginToContainerView)),
-            heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: ViewStyles.tipSize.height),
+            // Width is 100% minus 32pt (16pt horizontal padding)
+            leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: ViewStyles.leadingMarginToContainerView),
+            trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -ViewStyles.trailingMarginToContainerView),
             contentView.widthAnchor.constraint(equalTo: widthAnchor),
-
-            // Keep the popover respecting the margin with containerView
-            leadingAnchor.constraint(greaterThanOrEqualTo: containerView.leadingAnchor, constant: ViewStyles.leadingMarginToContainerView),
-            trailingAnchor.constraint(lessThanOrEqualTo: containerView.trailingAnchor, constant: -ViewStyles.trailingMarginToContainerView)
+            heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: ViewStyles.tipSize.height)
         ])
 
         switch tipDirection {

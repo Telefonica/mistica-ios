@@ -16,7 +16,7 @@ public class IntrinsictHeightLabel: UILabel {
         }
     }
 
-    public override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         let contentSize = super.intrinsicContentSize
 
         return CGSize(width: contentSize.width, height: max(contentSize.height, minHeight))

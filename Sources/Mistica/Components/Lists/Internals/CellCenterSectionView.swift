@@ -57,7 +57,7 @@ public class CellCenterSectionView: UIStackView {
         commonInit()
     }
 
-    public override var isUserInteractionEnabled: Bool {
+    override public var isUserInteractionEnabled: Bool {
         didSet {
             titleLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
             detailLabel.alpha = isUserInteractionEnabled ? 1 : 0.5

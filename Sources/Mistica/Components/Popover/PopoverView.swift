@@ -244,7 +244,7 @@ private extension PopoverView {
         let centerX = centerXAnchor.constraint(equalTo: targetView.centerXAnchor)
         centerX.priority = .defaultLow
         centerX.isActive = true
-        
+
         NSLayoutConstraint.activate([
             // Width is 100% minus 32pt (16pt horizontal padding)
             leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: ViewStyles.leadingMarginToContainerView),

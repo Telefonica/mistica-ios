@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CellCenterSectionView: UIStackView {
+class CellCenterSectionView: UIStackView {
     var headlineView: UIView? {
         didSet {
             oldValue?.removeFromSuperview()
@@ -20,8 +20,8 @@ public class CellCenterSectionView: UIStackView {
         }
     }
 
-    public lazy var titleLabel = IntrinsictHeightLabel()
-    public lazy var subtitleLabel = IntrinsictHeightLabel()
+    lazy var titleLabel = IntrinsictHeightLabel()
+    lazy var subtitleLabel = IntrinsictHeightLabel()
     lazy var detailLabel = IntrinsictHeightLabel()
 
     var titleTextColor: UIColor = .textPrimary {
@@ -57,7 +57,7 @@ public class CellCenterSectionView: UIStackView {
         commonInit()
     }
 
-    public override var isUserInteractionEnabled: Bool {
+    override var isUserInteractionEnabled: Bool {
         didSet {
             titleLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
             detailLabel.alpha = isUserInteractionEnabled ? 1 : 0.5

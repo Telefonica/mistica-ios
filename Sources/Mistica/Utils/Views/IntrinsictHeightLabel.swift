@@ -9,14 +9,14 @@
 import UIKit
 
 // A custom Label which defines a minimun frame height
-public class IntrinsictHeightLabel: UILabel {
+class IntrinsictHeightLabel: UILabel {
     var minHeight: CGFloat = 0 {
         didSet {
             invalidateIntrinsicContentSize()
         }
     }
 
-    override public var intrinsicContentSize: CGSize {
+    override var intrinsicContentSize: CGSize {
         let contentSize = super.intrinsicContentSize
 
         return CGSize(width: contentSize.width, height: max(contentSize.height, minHeight))

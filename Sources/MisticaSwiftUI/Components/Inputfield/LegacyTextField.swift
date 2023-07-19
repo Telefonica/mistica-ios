@@ -171,6 +171,18 @@ extension LegacyTextFieldCoordinator {
 
 private class ActionsTextField: UITextField {
     var canPerformActions = true
+
+    override func contentCompressionResistancePriority(for axis: NSLayoutConstraint.Axis) -> UILayoutPriority {
+        switch axis {
+        case .horizontal:
+            return .defaultLow
+        case .vertical:
+            fallthrough
+        @unknown default:
+            return super.contentCompressionResistancePriority(for: axis)
+        }
+    }
+
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         guard canPerformActions else { return false }
         return super.canPerformAction(action, withSender: sender)

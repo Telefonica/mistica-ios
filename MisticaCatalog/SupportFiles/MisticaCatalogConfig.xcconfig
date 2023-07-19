@@ -7,7 +7,7 @@
 //
 
 // Versioning
-VERSION_NUMBER = 25.3.1
+VERSION_NUMBER = 25.3.2
 CURRENT_PROJECT_VERSION = 1 //Build
 
 // Build options

@@ -1,3 +1,10 @@
+## [25.3.2](https://github.com/Telefonica/mistica-ios/compare/v25.3.1...v25.3.2) (2023-07-19)
+
+
+### Bug Fixes
+
+* **Popover:** Popover improvements (align with figma specs) ([#291](https://github.com/Telefonica/mistica-ios/issues/291)) refs SMARTWIFI-7203 ([db1dfb0](https://github.com/Telefonica/mistica-ios/commit/db1dfb070c6b9f7eceb30f64fd8e9326982a06ed))
+
 ## [25.3.1](https://github.com/Telefonica/mistica-ios/compare/v25.3.0...v25.3.1) (2023-07-19)
 
 

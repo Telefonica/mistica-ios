@@ -1,3 +1,11 @@
+## [25.3.1](https://github.com/Telefonica/mistica-ios/compare/v25.3.0...v25.3.1) (2023-07-19)
+
+
+### Bug Fixes
+
+* **Bottom Sheet:** Fix component to expand horizontally ([#290](https://github.com/Telefonica/mistica-ios/issues/290)) ([266c5d8](https://github.com/Telefonica/mistica-ios/commit/266c5d8d190b79addb4ce6d82165b6284904098c))
+* **InputField:** Avoid TextField auto expands horizontally ([#289](https://github.com/Telefonica/mistica-ios/issues/289)) ([c321d88](https://github.com/Telefonica/mistica-ios/commit/c321d8891b04c7e605033450710ec61a9ac1bbba))
+
 # [25.3.0](https://github.com/Telefonica/mistica-ios/compare/v25.2.0...v25.3.0) (2023-06-29)
 
 

@@ -48,6 +48,14 @@ open class ListCellContentView: UIView {
 
     // MARK: Public
 
+    public var titleLabel: UILabel {
+        centerSection.titleLabel
+    }
+
+    public var subtitleLabel: UILabel {
+        centerSection.subtitleLabel
+    }
+
     public var title: String? {
         get {
             centerSection.titleLabel.text

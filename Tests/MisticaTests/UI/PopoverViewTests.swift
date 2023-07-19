@@ -80,7 +80,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             matching: popover,
-            as: .image(size: .init(width: 200, height: 100))
+            as: .image(size: .init(width: 500, height: 100))
         )
     }
 

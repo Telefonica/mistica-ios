@@ -246,14 +246,11 @@ private extension PopoverView {
         centerX.isActive = true
 
         NSLayoutConstraint.activate([
-            // Maximum width is container width minus the margin
-            widthAnchor.constraint(lessThanOrEqualTo: containerView.widthAnchor, constant: -(ViewStyles.leadingMarginToContainerView + ViewStyles.trailingMarginToContainerView)),
-            heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: ViewStyles.tipSize.height),
+            // Width is 100% minus 32pt (16pt horizontal padding)
+            leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: ViewStyles.leadingMarginToContainerView),
+            trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -ViewStyles.trailingMarginToContainerView),
             contentView.widthAnchor.constraint(equalTo: widthAnchor),
-
-            // Keep the popover respecting the margin with containerView
-            leadingAnchor.constraint(greaterThanOrEqualTo: containerView.leadingAnchor, constant: ViewStyles.leadingMarginToContainerView),
-            trailingAnchor.constraint(lessThanOrEqualTo: containerView.trailingAnchor, constant: -ViewStyles.trailingMarginToContainerView)
+            heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: ViewStyles.tipSize.height)
         ])
 
         switch tipDirection {

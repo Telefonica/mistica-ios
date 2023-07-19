@@ -10,6 +10,10 @@ import UIKit
 
 // MARK: InformativeRow
 
+private enum Constants: CGFloat {
+    case extraLeftMargin = 8
+}
+
 class InformativeRow: UIView {
     struct Asset {
         let url: String
@@ -53,7 +57,7 @@ class InformativeRow: UIView {
 
     private let bottomContent: UIStackView = {
         let stackView = UIStackView()
-        stackView.spacing = 8
+        stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()
 
@@ -65,8 +69,6 @@ class InformativeRow: UIView {
         label.minHeight = 20
         return label
     }()
-
-    private lazy var dummyView = SpacerView(axis: .horizontal, amount: 1)
 }
 
 // MARK: Private
@@ -84,13 +86,12 @@ private extension InformativeRow {
             bottomContent.isHidden = true
         }
 
-        dummyView.amount = item.icon.size.width
+        bottomContent.layoutMargins.left = item.icon.size.width + Constants.extraLeftMargin.rawValue
     }
 
     func layoutViews() {
         addSubview(withDefaultConstraints: centerSection)
 
-        bottomContent.addArrangedSubview(dummyView)
         bottomContent.addArrangedSubview(detailLabel)
 
         centerSection.addArrangedSubview(topContent)
@@ -109,7 +110,7 @@ private class TopContentView: UIView {
     private var frontStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .center
-        stackView.spacing = 8
+        stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()
 
@@ -137,8 +138,6 @@ private class TopContentView: UIView {
         return label
     }()
 
-    private lazy var dummyView = SpacerView(axis: .horizontal, amount: 1)
-
     var title: String? {
         didSet {
             dummyTitleLabel.text = title
@@ -150,7 +149,7 @@ private class TopContentView: UIView {
         didSet {
             iconImageView.intrinsicHeight = icon.size.height
             iconImageView.intrinsicWidth = icon.size.width
-            dummyView.amount = icon.size.width
+            frontStackView.layoutMargins.left = icon.size.width + Constants.extraLeftMargin.rawValue
 
             load(icon: icon, in: iconImageView)
 
@@ -179,7 +178,6 @@ private class TopContentView: UIView {
         backStackView.addArrangedSubview(iconImageView)
         backStackView.addArrangedSubview(dummyTitleLabel)
 
-        frontStackView.addArrangedSubview(dummyView)
         frontStackView.addArrangedSubview(titleLabel)
     }
 

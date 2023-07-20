@@ -37,4 +37,4 @@ PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise
 
 // Swift
 
-SWIFT_VERSION = 5.5
+SWIFT_VERSION = 5.8

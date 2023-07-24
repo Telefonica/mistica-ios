@@ -74,7 +74,7 @@ private var hiddenTitleTextAttributes: [NSAttributedString.Key: Any] {
 
 private var misticaTitleTextAttributes: [NSAttributedString.Key: Any] {
     textAttributes(
-        for: .textPreset4(weight: .medium, constrainedToPreferredSize: .large),
+        for: .textPreset4(weight: .navigationBar, constrainedToPreferredSize: .large),
         color: .textNavigationBarPrimary
     )
 }

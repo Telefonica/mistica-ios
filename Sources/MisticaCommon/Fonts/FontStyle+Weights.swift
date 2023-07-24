@@ -25,7 +25,7 @@ public extension FontStyle {
     }
 
     enum TextPreset2Weight: CaseIterable {
-        case regular, medium, button, indicator, link
+        case regular, medium, button, indicator, link, tabsLabel
 
         var value: MisticaFontWeightType {
             switch self {
@@ -34,12 +34,13 @@ public extension FontStyle {
             case .button: return MisticaConfig.currentFontWeights.button
             case .indicator: return MisticaConfig.currentFontWeights.indicator
             case .link: return MisticaConfig.currentFontWeights.link
+            case .tabsLabel: return MisticaConfig.currentFontWeights.tabsLabel
             }
         }
     }
 
     enum TextPreset3Weight: CaseIterable {
-        case light, regular, medium, button
+        case light, regular, medium, button, link
 
         var value: MisticaFontWeightType {
             switch self {
@@ -47,12 +48,13 @@ public extension FontStyle {
             case .regular: return .regular
             case .medium: return .medium
             case .button: return MisticaConfig.currentFontWeights.button
+            case .link: return MisticaConfig.currentFontWeights.link
             }
         }
     }
 
     enum TextPreset4Weight: CaseIterable {
-        case light, regular, medium, cardTitle
+        case light, regular, medium, cardTitle, navigationBar
 
         var value: MisticaFontWeightType {
             switch self {
@@ -60,6 +62,7 @@ public extension FontStyle {
             case .regular: return .regular
             case .medium: return .medium
             case .cardTitle: return MisticaConfig.currentFontWeights.cardTitle
+            case .navigationBar: return MisticaConfig.currentFontWeights.navigationBar
             }
         }
     }

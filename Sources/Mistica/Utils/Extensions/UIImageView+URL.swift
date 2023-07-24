@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+import SDWebImageSVGNativeCoder
 
 extension UIImageView {
     /// Loads the urls asynchronously
@@ -15,9 +17,9 @@ extension UIImageView {
             downloadImage(
                 url: url,
                 urlForDarkMode: urlForDarkMode
-            ) { [weak self] lightImageData, darkImageData in
-                guard let lightImageData else { return }
-                self?.updateImage(imageData: lightImageData, darkImageData: darkImageData)
+            ) { [weak self] lightImage, darkImage in
+                guard let lightImage else { return }
+                self?.updateImage(image: lightImage, darkImage: darkImage)
             }
             return
         }
@@ -26,11 +28,11 @@ extension UIImageView {
             self?.downloadImage(
                 url: url,
                 urlForDarkMode: urlForDarkMode,
-                completion: { [weak self] lightImageData, darkImageData in
-                    guard let lightImageData else { return }
+                completion: { [weak self] lightImage, darkImage in
+                    guard let lightImage else { return }
 
                     DispatchQueue.main.async {
-                        self?.updateImage(imageData: lightImageData, darkImageData: darkImageData)
+                        self?.updateImage(image: lightImage, darkImage: darkImage)
                     }
                 }
             )
@@ -39,38 +41,28 @@ extension UIImageView {
 }
 
 private extension UIImageView {
-    func downloadImage(url: URL, urlForDarkMode: URL?, completion: (Data?, Data?) -> Void) {
-        guard let lightImageData = try? Data(contentsOf: url) else {
-            completion(nil, nil)
-            return
+    func downloadImage(url: URL, urlForDarkMode: URL?, completion: @escaping (UIImage?, UIImage?) -> Void) {
+        let SVGCoder = SDImageSVGNativeCoder.shared
+        if SDImageCodersManager.shared.coders?.contains(where: { $0.hash == SVGCoder.hash }) == false {
+            SDImageCodersManager.shared.addCoder(SVGCoder)
         }
 
-        var darkImageData: Data?
-
-        if let urlForDarkMode = urlForDarkMode {
-            darkImageData = try? Data(contentsOf: urlForDarkMode)
+        SDWebImageManager.shared.loadImage(with: url, progress: nil) { lightImage, _, _, _, _, _ in
+            SDWebImageManager.shared.loadImage(with: urlForDarkMode, progress: nil) { darkImage, _, _, _, _, _ in
+                completion(lightImage, darkImage)
+            }
         }
-
-        completion(lightImageData, darkImageData)
     }
 
-    func updateImage(imageData: Data, darkImageData: Data?, renderAsTemplate: Bool = false) {
-        var lightImage = UIImage(data: imageData)
-        var darkImage: UIImage?
+    func updateImage(image: UIImage, darkImage: UIImage?, renderAsTemplate: Bool = false) {
+        let renderMode = renderAsTemplate ? UIImage.RenderingMode.alwaysTemplate : .automatic
+        let lightImage = image.withRenderingMode(renderMode)
+        let darkImage = darkImage?.withRenderingMode(renderMode)
 
-        if let darkImageData {
-            darkImage = .init(data: darkImageData)
+        if let darkImage {
+            lightImage.imageAsset?.register(darkImage, with: .init(userInterfaceStyle: .dark))
         }
 
-        if renderAsTemplate {
-            lightImage = lightImage?.withRenderingMode(.alwaysTemplate)
-            darkImage = darkImage?.withRenderingMode(.alwaysTemplate)
-        }
-
-        image = lightImage
-
-        if let darkImage = darkImage {
-            image?.imageAsset?.register(darkImage, with: .init(userInterfaceStyle: .dark))
-        }
+        self.image = lightImage
     }
 }

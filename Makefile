@@ -1,7 +1,7 @@
 .PHONY: help setup format test simulator archive export clean skinGeneratorSetup colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration skin
 
 # Simulator
-OS_VERSION := 16.2
+OS_VERSION := 16.4
 DEVICE_NAME := iPhone 14
 SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)
@@ -36,7 +36,7 @@ BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) $(VivoNew) # List of all the bra
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode-14.2.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode-14.3.app/Contents/Developer
 endif
 
 # TokenGenerator func to be used in all token generators.
@@ -137,7 +137,7 @@ colorPaletteGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
 
 cornerRadiusGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
 	$(call tokenGenerator,CornerRadiusTokenGenerator,CornerRadius)
-	
+
 fontWeightsGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
 	$(call tokenGenerator,FontWeightsTokenGenerator,FontWeights)
 

@@ -1,3 +1,10 @@
+# [25.4.0](https://github.com/Telefonica/mistica-ios/compare/v25.3.2...v25.4.0) (2023-07-24)
+
+
+### Features
+
+* **Fonts:** IOS-9162 Update token weights for native components ([#288](https://github.com/Telefonica/mistica-ios/issues/288)) ([c926e4a](https://github.com/Telefonica/mistica-ios/commit/c926e4a0ad9edc10b02d0dabb1ae8f6beaedfbc2))
+
 ## [25.3.2](https://github.com/Telefonica/mistica-ios/compare/v25.3.1...v25.3.2) (2023-07-19)
 
 

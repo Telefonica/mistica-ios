@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import SDWebImageSVGNativeCoder
+import UIKit
 
 extension UIImageView {
     /// Loads the urls asynchronously

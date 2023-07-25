@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
 import SDWebImageSVGNativeCoder
 
 extension UIImageView {
@@ -42,15 +41,25 @@ extension UIImageView {
 
 private extension UIImageView {
     func downloadImage(url: URL, urlForDarkMode: URL?, completion: @escaping (UIImage?, UIImage?) -> Void) {
-        let SVGCoder = SDImageSVGNativeCoder.shared
-        if SDImageCodersManager.shared.coders?.contains(where: { $0.hash == SVGCoder.hash }) == false {
-            SDImageCodersManager.shared.addCoder(SVGCoder)
+        var light: UIImage?, dark: UIImage?
+        if let data = try? Data(contentsOf: url) {
+            light = decode(data: data)
         }
 
-        SDWebImageManager.shared.loadImage(with: url, progress: nil) { lightImage, _, _, _, _, _ in
-            SDWebImageManager.shared.loadImage(with: urlForDarkMode, progress: nil) { darkImage, _, _, _, _, _ in
-                completion(lightImage, darkImage)
-            }
+        if let url = urlForDarkMode, let data = try? Data(contentsOf: url) {
+            dark = decode(data: data)
+        }
+
+        completion(light, dark)
+    }
+
+    func decode(data: Data) -> UIImage? {
+        if let image = UIImage(data: data) {
+            return image
+        } else if let image = SDImageSVGNativeCoder.shared.decodedImage(with: data) {
+            return image
+        } else {
+            return nil
         }
     }
 

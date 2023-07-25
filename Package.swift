@@ -16,7 +16,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "3.1.8"),
         .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.8.2"),
-        .package(url: "https://github.com/SDWebImage/SDWebImageSVGNativeCoder.git", from: "0.1.1")
+        .package(url: "https://github.com/SDWebImage/SDWebImageSVGNativeCoder.git", exact: "0.1.1")
     ],
     targets: [
         .target(

@@ -6,9 +6,9 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import SDWebImage
 import SDWebImageSVGNativeCoder
+import UIKit
 
 extension UIImageView {
     /// Loads the urls asynchronously
@@ -17,8 +17,8 @@ extension UIImageView {
         SDImageCodersManager.shared.removeCoder(coder)
         SDImageCodersManager.shared.addCoder(coder)
 
-        sd_setImage(with: url) { [weak self] lightImage, _, _, _  in
-            self?.sd_setImage(with: urlForDarkMode) { darkImage, _, _, _  in
+        sd_setImage(with: url) { [weak self] lightImage, _, _, _ in
+            self?.sd_setImage(with: urlForDarkMode) { darkImage, _, _, _ in
                 if let lightImage, let darkImage {
                     lightImage.imageAsset?.register(darkImage, with: UITraitCollection(userInterfaceStyle: .dark))
                     self?.image = lightImage

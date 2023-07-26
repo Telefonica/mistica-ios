@@ -19,10 +19,13 @@ extension UIImageView {
 
         sd_setImage(with: url) { [weak self] lightImage, _, _, _ in
             self?.sd_setImage(with: urlForDarkMode) { darkImage, _, _, _ in
-                if let lightImage, let darkImage {
+                guard let lightImage else { return }
+
+                if let darkImage {
                     lightImage.imageAsset?.register(darkImage, with: UITraitCollection(userInterfaceStyle: .dark))
-                    self?.image = lightImage
                 }
+
+                self?.image = lightImage
             }
         }
     }

@@ -14,6 +14,10 @@ public extension UIImage {
         UIImage(named: "icn_arrow_right", type: .common)!
     }
 
+    static var chevron: UIImage {
+        UIImage(named: "icn_chevron", type: .common)!
+    }
+
     static var checkmarkIcon: UIImage {
         UIImage(named: "icn_checkbox_check", type: .common)!
     }

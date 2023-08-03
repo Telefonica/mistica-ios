@@ -21,6 +21,11 @@ public extension Button.Style {
     private static var smallMinimumWidth: CGFloat = 104
     private static var linkMinimumWidth: CGFloat = 0
 
+    private enum ImageHeight {
+        static let regular: CGFloat = 24
+        static let small: CGFloat = 20
+    }
+
     static var primary: Button.Style {
         Button.Style(
             allowsBleedingAlignment: false,
@@ -143,6 +148,14 @@ public extension Button.Style {
 
         return isSmall ? Button.Style.smallMinimumWidth : Button.Style.regularMinimumWidth
     }
+
+    func rightImageHeight(isSmall: Bool) -> CGFloat {
+        if let rightImageHeight = overriddenSizes?.rightImageHeight {
+            return rightImageHeight
+        }
+
+        return isSmall ? Button.Style.ImageHeight.small : Button.Style.ImageHeight.regular
+    }
 }
 
 private extension Button.Style {
@@ -150,7 +163,8 @@ private extension Button.Style {
         OverriddenSizes(
             insets: linkInsets,
             minimumWidth: linkMinimumWidth,
-            font: linkFont
+            font: linkFont,
+            rightImageHeight: Button.Style.ImageHeight.small
         )
     }
 }

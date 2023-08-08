@@ -79,7 +79,6 @@ final class ButtonTests: XCTestCase {
     }
 
     func testRegularSizeWithLinkWithChevronStyle() {
-        isRecording = true
         assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: false, rightImage: .chevron)
@@ -87,7 +86,6 @@ final class ButtonTests: XCTestCase {
     }
 
     func testRegularSizeWithLinkInverseWithChevronStyle() {
-        isRecording = true
         assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: false, rightImage: .chevron)
@@ -153,7 +151,6 @@ final class ButtonTests: XCTestCase {
     }
 
     func testSmallSizeWithLinkWithChevronStyle() {
-        isRecording = true
         assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: true, rightImage: .chevron)
@@ -161,7 +158,6 @@ final class ButtonTests: XCTestCase {
     }
 
     func testSmallSizeWithLinkInverseWithChevronStyle() {
-        isRecording = true
         assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: true, rightImage: .chevron)

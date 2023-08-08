@@ -28,7 +28,8 @@ struct ButtonsCatalogView: View {
                 Style(buttonStyle: .misticaPrimaryInverse(small: true), title: "Primary Inverse Small", inverse: true),
                 Style(buttonStyle: .misticaSecondaryInverse(small: true), title: "Secondary Inverse Small", inverse: true),
                 Style(buttonStyle: .misticaLink(small: true), title: "Link Small", inverse: false),
-                Style(buttonStyle: .misticaLinkInverse(small: true), title: "Link Inverse Small", inverse: true)
+                Style(buttonStyle: .misticaLinkInverse(small: true), title: "Link Inverse Small", inverse: true),
+                Style(buttonStyle: .misticaLink(withChevron: true), title: "Link Chevron", inverse: false)
             ]
         }
     }

@@ -67,6 +67,20 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testRegularSizeWithLinkWithChevron() {
+        assertSnapshot(
+            matching: makeTemplateWithAllButtonStates(style: .misticaLink(withChevron: true)),
+            as: .image
+        )
+    }
+
+    func testRegularSizeWithLinkInverseWithChevron() {
+        assertSnapshot(
+            matching: makeTemplateWithAllButtonStates(style: .misticaLinkInverse(withChevron: true), inverse: true),
+            as: .image
+        )
+    }
+
     // MARK: Small Buttons
 
     func testSmallSizeWithPrimaryStyle() {
@@ -114,6 +128,20 @@ final class ButtonTests: XCTestCase {
     func testSmallSizeWithLinkInverseStyle() {
         assertSnapshot(
             matching: makeTemplateWithAllButtonStates(style: .misticaLinkInverse(small: true), inverse: true),
+            as: .image
+        )
+    }
+
+    func testSmallSizeWithLinkWithChevron() {
+        assertSnapshot(
+            matching: makeTemplateWithAllButtonStates(style: .misticaLink(small: true, withChevron: true)),
+            as: .image
+        )
+    }
+
+    func testSmallSizeWithLinkInverseWithChevron() {
+        assertSnapshot(
+            matching: makeTemplateWithAllButtonStates(style: .misticaLinkInverse(small: true, withChevron: true), inverse: true),
             as: .image
         )
     }

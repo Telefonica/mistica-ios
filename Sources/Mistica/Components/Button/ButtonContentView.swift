@@ -19,17 +19,20 @@ class ButtonContentView: UIView {
         stackView.spacing = 2
         return stackView
     }()
+
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         return titleLabel
     }()
+
     private let rightImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
+
     private lazy var rightImageHeightConstraint: NSLayoutConstraint = rightImageView.heightAnchor.constraint(equalToConstant: 1)
 
     private lazy var loadingIndicator: UIActivityIndicatorView = {
@@ -87,6 +90,7 @@ class ButtonContentView: UIView {
             rightImageView.image = rightImage.image
         }
     }
+
     var rightImageHeight: CGFloat {
         get { rightImageHeightConstraint.constant }
         set { rightImageHeightConstraint.constant = newValue }

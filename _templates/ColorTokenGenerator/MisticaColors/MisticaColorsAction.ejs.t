@@ -7,9 +7,12 @@ to: The path where the file will be create
 force: If the file can be overwritten or not
 -%>
 
-<%_ 
-let jsonObject = h.params(json) 
+<%_
+let jsonObject = h.params(json)
 -%>
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 

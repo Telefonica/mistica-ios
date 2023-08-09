@@ -86,6 +86,10 @@ private extension FontToolkitTests {
             text: "textPreset10 \(MisticaConfig.currentFontWeights.text10)",
             font: .textPreset10()
         )
+        let textPresetTabsLabel = makeLabel(
+            text: "textPresetTabsLabel \(MisticaConfig.currentFontWeights.tabsLabel)",
+            font: .textPresetTabsLabel()
+        )
 
         labels.append(contentsOf: textPreset1)
         labels.append(contentsOf: textPreset2)
@@ -97,6 +101,7 @@ private extension FontToolkitTests {
         labels.append(textPreset8)
         labels.append(textPreset9)
         labels.append(textPreset10)
+        labels.append(textPresetTabsLabel)
 
         return labels
     }

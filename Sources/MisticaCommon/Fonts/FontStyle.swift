@@ -21,6 +21,7 @@ import UIKit
     case textPreset8
     case textPreset9
     case textPreset10
+    case textPresetTabsLabel
 
     func preferredFont(
         weight: Font.Weight,
@@ -75,6 +76,8 @@ import UIKit
             return "TextPreset9"
         case .textPreset10:
             return "TextPreset10"
+        case .textPresetTabsLabel:
+            return "TextPresetTabsLabel"
         }
     }
 }
@@ -125,6 +128,8 @@ private extension FontStyle {
             return 32
         case .textPreset10:
             return 32
+        case .textPresetTabsLabel:
+            return MisticaConfig.currentFontSizes.tabsLabel
         }
     }
 
@@ -134,7 +139,8 @@ private extension FontStyle {
             return .caption1
         case .textPreset2:
             return .subheadline
-        case .textPreset3:
+        case .textPreset3,
+             .textPresetTabsLabel:
             return .body
         case .textPreset4:
             return .headline
@@ -157,7 +163,8 @@ private extension FontStyle {
             return .caption
         case .textPreset2:
             return .subheadline
-        case .textPreset3:
+        case .textPreset3,
+             .textPresetTabsLabel:
             return .body
         case .textPreset4:
             return .headline

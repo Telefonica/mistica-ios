@@ -14,6 +14,7 @@ struct VivoNewFontWeights: MisticaFontWeights {
     public var tabsLabel: MisticaFontWeightType = .regular
     public var link: MisticaFontWeightType = .regular
     public var title1: MisticaFontWeightType = .regular
+    public var title2: MisticaFontWeightType = .regular
     public var indicator: MisticaFontWeightType = .regular
     public var navigationBar: MisticaFontWeightType = .regular
     public var text5: MisticaFontWeightType = .regular

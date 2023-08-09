@@ -11,6 +11,9 @@ force: If the file can be overwritten or not
 let jsonObject = h.params(json)
 -%>
 
+// Generated using Make
+// DO NOT EDIT
+
 import Foundation
 
 public enum MisticaRadiusConstants {

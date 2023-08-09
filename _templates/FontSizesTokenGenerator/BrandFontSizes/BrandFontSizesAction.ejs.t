@@ -1,8 +1,8 @@
 ---
-to: Sources/MisticaCommon/Fonts/Brands/<%= h.inflection.camelize(h.replaceDashes(name)) %>FontWeights.swift
+to: Sources/MisticaCommon/Fonts/Brands/<%= h.inflection.camelize(h.replaceDashes(name)) %>FontSizes.swift
 force: true
 ---
-<%# 
+<%#
 to: The path where the file will be create
 force: If the file can be overwritten or not
 -%>
@@ -18,9 +18,9 @@ let jsonObject = h.params(json)
 
 import Foundation
 
-struct <%= className %>FontWeights: MisticaFontWeights {
-  <%_ Object.keys(jsonObject.jsonData.text.weight).forEach(function(key) { -%>
-    <%_ let value = jsonObject.jsonData.text.weight[key].value -%>
-    public var <%= key %>: MisticaFontWeightType = .<%= value %>
+struct <%= className %>FontSizes: MisticaFontSizes {
+  <%_ Object.keys(jsonObject.jsonData.text.size).forEach(function(key) { -%>
+    <%_ let value = jsonObject.jsonData.text.size[key].value.mobile -%>
+    public var <%= key %>: CGFloat = <%= value %>
   <%_ }); -%>
 }

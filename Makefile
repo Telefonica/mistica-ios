@@ -1,4 +1,4 @@
-.PHONY: help setup format test simulator archive export clean skinGeneratorSetup colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration skin
+.PHONY: help setup format test simulator archive export clean skinGeneratorSetup colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration fontSizesGeneration skin
 
 # Simulator
 OS_VERSION := 16.4
@@ -63,6 +63,7 @@ help:
 	@echo "  colorPaletteGeneration ref=<ref>  	to setup and regenerate MisticaColors with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
 	@echo "  cornerRadiusGeneration ref=<ref> 	to setup and regenerate MisticaCornerRadius with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
 	@echo "  fontWeightsGeneration ref=<ref> 	to setup and regenerate MisticaFontWeights with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
+	@echo "  fontSizesGeneration ref=<ref> 	to setup and regenerate MisticaFontSizes with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
 	@echo "  skin ref=<ref>			to setup, regenerate and format tokens from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
 
 trace:
@@ -141,7 +142,10 @@ cornerRadiusGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
 fontWeightsGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
 	$(call tokenGenerator,FontWeightsTokenGenerator,FontWeights)
 
+fontSizesGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
+	$(call tokenGenerator,FontSizesTokenGenerator,FontSizes)
+
 removeMisticaDesignTokenFolder:
 	rm -rf $(MISTICA_DESIGN_PATH)
 
-skin: colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration removeMisticaDesignTokenFolder format
+skin: colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration fontSizesGeneration removeMisticaDesignTokenFolder format

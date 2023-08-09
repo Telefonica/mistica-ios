@@ -274,11 +274,11 @@ private extension SheetTests {
         url: String? = nil,
         urlDark: String? = nil
     ) -> [SheetList] {
-        var rows: [ActionItem] = []
+        var rows: [ActionListItem] = []
         for index in 1 ... 10 {
-            let style = index == 5 ? ActionItem.Style.destructive : ActionItem.Style.normal
+            let style = index == 5 ? ActionListItem.Style.destructive : ActionListItem.Style.normal
 
-            let item = ActionItem(
+            let item = ActionListItem(
                 id: "\(index)",
                 title: "Title \(index)",
                 style: style,

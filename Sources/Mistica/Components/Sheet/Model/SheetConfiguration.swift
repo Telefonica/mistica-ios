@@ -59,7 +59,7 @@ public struct SheetList {
 
 public enum SheetListType {
     case singleSelection(items: [SingleSelectionItem])
-    case actions(items: [ActionItem])
+    case actionList(items: [ActionListItem])
     case informative(items: [InformativeItem])
 
     var isInformative: Bool {
@@ -68,7 +68,7 @@ public enum SheetListType {
             return true
         case .singleSelection:
             return false
-        case .actions:
+        case .actionList:
             return false
         }
     }
@@ -159,7 +159,7 @@ public enum InformativeItemIcon: Equatable {
     }
 }
 
-public struct ActionItem {
+public struct ActionListItem {
     public enum Style {
         case normal
         case destructive
@@ -174,7 +174,7 @@ public struct ActionItem {
     public init(
         id: String,
         title: String,
-        style: ActionItem.Style,
+        style: ActionListItem.Style,
         url: String?,
         urlDark: String?
     ) {

@@ -19,7 +19,7 @@ class ListFragmentView: UIView {
     enum ItemTappedType {
         case singleSelection(item: SingleSelectionItem)
         case informative(item: InformativeItem)
-        case action(item: ActionItem)
+        case action(item: ActionListItem)
     }
 
     private var stackView: UIStackView = {
@@ -61,7 +61,7 @@ private extension ListFragmentView {
         switch sheetList.listType {
         case .singleSelection(let items):
             fillListWithSingleSelectionItems(items)
-        case .actions(let items):
+        case .actionList(let items):
             fillListWithActionItems(items)
         case .informative(let items):
             fillListWithInformativeItems(items)
@@ -99,7 +99,7 @@ private extension ListFragmentView {
         }
     }
 
-    func fillListWithActionItems(_ items: [ActionItem]) {
+    func fillListWithActionItems(_ items: [ActionListItem]) {
         for item in items {
             let rowView = ActionRow(item: item)
 

@@ -87,7 +87,7 @@ class UICatalogSheetViewController: UIViewController {
 
         cell.segmentedControl.insertSegment(withTitle: "Single Selection", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Informative", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Action", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Action List", at: 2, animated: false)
 
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
@@ -210,7 +210,7 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
         case 1:
             configuration = informativeSheet
         case 2:
-            configuration = actionSheet
+            configuration = actionListSheet
         default:
             fatalError("Unhandled sheet type")
         }
@@ -350,11 +350,11 @@ private extension UICatalogSheetViewController {
         return configuration
     }
 
-    var actionSheet: SheetConfiguration {
-        var rows: [ActionItem] = []
+    var actionListSheet: SheetConfiguration {
+        var rows: [ActionListItem] = []
 
         for index in 1 ... sheetNumElements {
-            let item = ActionItem(
+            let item = ActionListItem(
                 id: index.description,
                 title: "List Item \(index)",
                 style: actionStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .destructive,
@@ -366,7 +366,7 @@ private extension UICatalogSheetViewController {
         }
         let content = SheetList(
             id: UUID().uuidString,
-            listType: .actions(items: rows),
+            listType: .actionList(items: rows),
             autoSubmit: true,
             selectedId: []
         )

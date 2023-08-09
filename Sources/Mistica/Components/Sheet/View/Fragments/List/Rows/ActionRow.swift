@@ -9,9 +9,9 @@
 import UIKit
 
 class ActionRow: UIStackView {
-    let item: ActionItem
+    let item: ActionListItem
 
-    init(item: ActionItem) {
+    init(item: ActionListItem) {
         self.item = item
 
         super.init(frame: .zero)

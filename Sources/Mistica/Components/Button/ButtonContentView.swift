@@ -16,7 +16,6 @@ class ButtonContentView: UIView {
             rightImageView
         ])
         stackView.alignment = .center
-        stackView.spacing = 2
         return stackView
     }()
 
@@ -30,6 +29,7 @@ class ButtonContentView: UIView {
     private let rightImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
         return imageView
     }()
 

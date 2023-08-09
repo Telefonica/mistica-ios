@@ -12,6 +12,25 @@ public enum ButtonBleedingAlignment {
     case leading, trailing, none
 }
 
+enum MisticaButtonRightImage {
+    case chevron
+    case custom(Image)
+
+    var image: some View {
+        switch self {
+        case .chevron: return Image.chevron
+        case let .custom(image): return image
+        }
+    }
+
+    var space: CGFloat {
+        switch self {
+        case .chevron: return 2
+        case .custom: return 8
+        }
+    }
+}
+
 struct MisticaButton: View {
     enum Constants {
         static let minWidth: CGFloat = 76
@@ -61,29 +80,10 @@ struct MisticaButton: View {
         let borderColor: Color
     }
 
-    enum RightImage {
-        case chevron
-        case custom(Image)
-
-        var image: some View {
-            switch self {
-            case .chevron: return Image.chevron
-            case let .custom(image): return image
-            }
-        }
-
-        var space: CGFloat {
-            switch self {
-            case .chevron: return 2
-            case .custom: return 8
-            }
-        }
-    }
-
     let configuration: ButtonStyle.Configuration
     let style: Style
     let small: Bool
-    let rightImage: RightImage?
+    let rightImage: MisticaButtonRightImage?
 
     @Environment(\.misticaButtonLoadingInfo) private var loadingInfo
     @Environment(\.isEnabled) private var isEnabled

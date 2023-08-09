@@ -13,7 +13,7 @@ import SwiftUI
 public struct MisticaButtonStyle: ButtonStyle {
     let style: MisticaButton.Style
     let small: Bool
-    let rightImage: MisticaButton.RightImage?
+    let rightImage: MisticaButtonRightImage?
 
     public func makeBody(configuration: Configuration) -> some View {
         MisticaButton(configuration: configuration, style: style, small: small, rightImage: rightImage)

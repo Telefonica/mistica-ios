@@ -88,6 +88,7 @@ class UICatalogSheetViewController: UIViewController {
         cell.segmentedControl.insertSegment(withTitle: "Single Selection", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Informative", at: 1, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Action List", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Action", at: 3, animated: false)
 
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
@@ -211,6 +212,8 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
             configuration = informativeSheet
         case 2:
             configuration = actionListSheet
+        case 3:
+            configuration = actionSheet
         default:
             fatalError("Unhandled sheet type")
         }
@@ -378,6 +381,30 @@ private extension UICatalogSheetViewController {
                 description: sheetDescription
             ),
             content: [content]
+        )
+
+        return configuration
+    }
+
+    var actionSheet: SheetConfiguration {
+        let configuration = SheetConfiguration(
+            header: SheetHeader(
+                title: sheetTitle,
+                subtitle: sheetSubtitle,
+                description: sheetDescription
+            ),
+            content: [SheetList(
+                id: UUID().uuidString,
+                listType: .actions(items: [
+                    ActionItem(
+                        id: UUID().uuidString,
+                        style: .primary,
+                        title: "Primary Button"
+                    )
+                ]),
+                autoSubmit: true,
+                selectedId: []
+            )]
         )
 
         return configuration

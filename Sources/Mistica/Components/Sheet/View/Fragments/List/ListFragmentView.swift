@@ -19,7 +19,8 @@ class ListFragmentView: UIView {
     enum ItemTappedType {
         case singleSelection(item: SingleSelectionItem)
         case informative(item: InformativeItem)
-        case action(item: ActionListItem)
+        case actionList(item: ActionListItem)
+        case action(item: ActionItem)
     }
 
     private var stackView: UIStackView = {
@@ -65,6 +66,8 @@ private extension ListFragmentView {
             fillListWithActionItems(items)
         case .informative(let items):
             fillListWithInformativeItems(items)
+        case .actions(items: let items):
+            fillList(with: items)
         }
 
         backgroundColor = .backgroundContainer
@@ -114,6 +117,29 @@ private extension ListFragmentView {
         }
     }
 
+    func fillList(with items: [ActionItem]) {
+        let buttons = items.enumerated().map(button(at:for:))
+
+        let stackView = UIStackView(arrangedSubviews: buttons)
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
+        stackView.isLayoutMarginsRelativeArrangement = true
+
+        self.stackView.addArrangedSubview(stackView)
+    }
+
+    func button(at index: Int, for action: ActionItem) -> Button {
+        let button = Button(
+            style: action.style,
+            title: action.title,
+            rightImage: action.rightImage
+        )
+        button.tag = index
+        button.addTarget(self, action: #selector(didTap(action:)), for: .touchUpInside)
+        return button
+    }
+
     @objc private func didTouchItem(_ sender: UILongPressGestureRecognizer) {
         guard let touchable = sender.view as? Touchable else { return }
 
@@ -146,7 +172,7 @@ private extension ListFragmentView {
             if let tappedView = sender.view as? SingleSelectionRowView {
                 handleSingleSelectionRowTap(tappedView)
             } else if let tappedView = sender.view as? ActionRow {
-                handleActionsRowTap(tappedView)
+                handleActionListRowTap(tappedView)
             }
         @unknown default:
             // ignores this states
@@ -164,8 +190,15 @@ private extension ListFragmentView {
         delegate(.singleSelection(item: tappedView.item))
     }
 
-    func handleActionsRowTap(_ tappedView: ActionRow) {
-        delegate(.action(item: tappedView.item))
+    func handleActionListRowTap(_ tappedView: ActionRow) {
+        delegate(.actionList(item: tappedView.item))
+    }
+
+    @objc
+    func didTap(action button: Button) {
+        guard case .actions(let items) = sheetList.listType else { return }
+        let item = items[button.tag]
+        delegate(.action(item: item))
     }
 }
 

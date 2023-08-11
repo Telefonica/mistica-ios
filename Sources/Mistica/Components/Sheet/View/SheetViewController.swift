@@ -229,11 +229,13 @@ private extension SheetViewController {
     func handleListRowTapped(_ sheetList: SheetList, rowTapped: ListFragmentView.ItemTappedType) {
         if sheetList.autoSubmit {
             switch rowTapped {
-            case .action(let item):
+            case .actionList(let item):
                 sheetSelectionResponse = .init(action: .submit, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
             case .informative:
                 sheetSelectionResponse = .init(action: .submit, selectedIds: [])
             case .singleSelection(let item):
+                sheetSelectionResponse = .init(action: .submit, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
+            case .action(item: let item):
                 sheetSelectionResponse = .init(action: .submit, selectedIds: [.init(id: sheetList.id, selected: [item.id])])
             }
 

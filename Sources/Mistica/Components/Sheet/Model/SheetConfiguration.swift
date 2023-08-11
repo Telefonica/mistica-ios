@@ -61,6 +61,7 @@ public enum SheetListType {
     case singleSelection(items: [SingleSelectionItem])
     case actionList(items: [ActionListItem])
     case informative(items: [InformativeItem])
+    case actions(items: [ActionItem])
 
     var isInformative: Bool {
         switch self {
@@ -69,6 +70,8 @@ public enum SheetListType {
         case .singleSelection:
             return false
         case .actionList:
+            return false
+        case .actions:
             return false
         }
     }
@@ -183,5 +186,24 @@ public struct ActionListItem {
         self.style = style
         self.url = url
         self.urlDark = urlDark
+    }
+}
+
+public struct ActionItem {
+    let id: String
+    let style: Button.Style
+    let title: String
+    let rightImage: Button.RightImage?
+
+    public init(
+        id: String,
+        style: Button.Style,
+        title: String,
+        rightImage: Button.RightImage? = nil
+    ) {
+        self.id = id
+        self.style = style
+        self.title = title
+        self.rightImage = rightImage
     }
 }

@@ -7,13 +7,13 @@
 //
 
 import SDWebImage
-import SDWebImageSVGNativeCoder
+import SDWebImageSVGCoder
 import UIKit
 
 extension UIImageView {
     /// Loads the urls asynchronously
     func load(url: URL, urlForDarkMode: URL? = nil, renderAsTemplate: Bool = false) {
-        let coder = SDImageSVGNativeCoder.shared
+        let coder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.removeCoder(coder)
         SDImageCodersManager.shared.addCoder(coder)
 

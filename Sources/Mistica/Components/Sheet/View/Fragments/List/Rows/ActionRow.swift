@@ -26,7 +26,7 @@ class ActionRow: UIStackView {
 
     private let titleLabel: IntrinsictHeightLabel = {
         let label = IntrinsictHeightLabel()
-        label.minHeight = 64
+        label.minHeight = 72
         label.numberOfLines = 0
         label.textColor = .textPrimary
         return label

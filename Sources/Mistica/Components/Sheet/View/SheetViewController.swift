@@ -34,7 +34,7 @@ public class SheetViewController: UIViewController {
             label.numberOfLines = 0
             label.textAlignment = .left
             label.textColor = .textPrimary
-            label.font = .textPreset4(weight: .regular)
+            label.font = .textPreset5()
             return label
         }
         return nil
@@ -55,7 +55,7 @@ public class SheetViewController: UIViewController {
             label.text = subtitle
             label.numberOfLines = 0
             label.textColor = .textPrimary
-            label.font = .textPreset2(weight: .regular)
+            label.font = .textPreset3(weight: .regular)
             return label
         }
         return nil
@@ -164,7 +164,7 @@ public extension SheetViewController {
 
         handleView.translatesAutoresizingMaskIntoConstraints = false
         handleView.heightAnchor.constraint(equalToConstant: 4.0).isActive = true
-        handleView.widthAnchor.constraint(equalToConstant: 24.0).isActive = true
+        handleView.widthAnchor.constraint(equalToConstant: 32.0).isActive = true
         topStackView.addArrangedSubview(CenterView(arrangedSubview: handleView, axis: .horizontal))
         containerView.addArrangedSubview(topStackView)
 
@@ -190,7 +190,7 @@ public extension SheetViewController {
         headerStackView.translatesAutoresizingMaskIntoConstraints = false
         contentStackView.addArrangedSubview(headerStackView)
 
-        contentStackView.stackView.setCustomSpacing(4, after: headerStackView)
+        contentStackView.stackView.setCustomSpacing(8, after: headerStackView)
 
         if let subtitleLabel = subtitleLabel {
             headerStackView.addArrangedSubview(subtitleLabel)

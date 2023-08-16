@@ -127,7 +127,11 @@ class ButtonContentView: UIView {
 
         setContentCompressionResistancePriority(.required, for: .vertical)
 
-        addSubview(constrainedToLayoutMarginsGuideOf: titleStackView)
+        addSubview(withCenterConstraints: titleStackView)
+        NSLayoutConstraint.activate([
+            titleStackView.widthAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.widthAnchor),
+            titleStackView.heightAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.heightAnchor)
+        ])
         addSubview(constrainedToLayoutMarginsGuideOf: loadingStackView)
 
         rightImageHeightConstraint.isActive = true

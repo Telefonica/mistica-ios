@@ -191,6 +191,20 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testChevronOnLargeView() {
+        MisticaConfig.brandStyle = .movistar
+
+        let button = Button()
+        button.title = "Title"
+        button.style = .link
+        button.rightImage = .chevron
+
+        assertSnapshot(
+            matching: button,
+            as: .image(size: CGSize(width: 500, height: 48))
+        )
+    }
+
     func testMinimumWidth() {
         MisticaConfig.brandStyle = .vivo
 

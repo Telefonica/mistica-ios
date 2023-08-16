@@ -10,6 +10,13 @@ import UIKit
 
 /// Internal class used by Button
 class ButtonContentView: UIView {
+    private lazy var titleContentStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleStackView])
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        return stackView
+    }()
+
     private lazy var titleStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             titleLabel,
@@ -127,18 +134,14 @@ class ButtonContentView: UIView {
 
         setContentCompressionResistancePriority(.required, for: .vertical)
 
-        addSubview(withCenterConstraints: titleStackView)
-        NSLayoutConstraint.activate([
-            titleStackView.widthAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.widthAnchor),
-            titleStackView.heightAnchor.constraint(lessThanOrEqualTo: layoutMarginsGuide.heightAnchor)
-        ])
+        addSubview(constrainedToLayoutMarginsGuideOf: titleContentStackView)
         addSubview(constrainedToLayoutMarginsGuideOf: loadingStackView)
 
         rightImageHeightConstraint.isActive = true
     }
 
     override var intrinsicContentSize: CGSize {
-        let titleSize = titleStackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        let titleSize = titleContentStackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         let loadingStackViewSize = loadingStackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         let width = max(titleSize.width, loadingStackViewSize.width)
         let height = max(titleSize.height, loadingStackViewSize.height)
@@ -152,16 +155,16 @@ class ButtonContentView: UIView {
     }
 
     func transitionToLoading() {
-        titleStackView.alpha = 0
-        titleStackView.transform = CGAffineTransform(translationX: 0, y: -bounds.maxY)
+        titleContentStackView.alpha = 0
+        titleContentStackView.transform = CGAffineTransform(translationX: 0, y: -bounds.maxY)
         loadingStackView.alpha = 1
         loadingStackView.transform = CGAffineTransform(translationX: 0, y: 0)
         loadingStackView.layoutIfNeeded()
     }
 
     func transitionToNormal() {
-        titleStackView.alpha = 1
-        titleStackView.transform = CGAffineTransform(translationX: 0, y: 0)
+        titleContentStackView.alpha = 1
+        titleContentStackView.transform = CGAffineTransform(translationX: 0, y: 0)
         loadingStackView.alpha = 0
         loadingStackView.transform = CGAffineTransform(translationX: 0, y: bounds.maxY)
         loadingStackView.layoutIfNeeded()

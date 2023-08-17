@@ -189,7 +189,33 @@ final class SheetTests: XCTestCase {
 
     // MARK: Action list type
 
-    func testActionWithoutUrls() {
+    func testActionListWithoutUrls() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image(on: .iPhoneSe),
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: makeActionListContent()
+            )
+        )
+    }
+
+    func testActionListWithUrls() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image(on: .iPhoneSe),
+            viewBuilder: sheetView(
+                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                content: makeActionListContent(url: iconPath, urlDark: iconPath)
+            )
+        )
+    }
+
+    // MARK: Actions
+
+    func testAction() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
@@ -197,18 +223,6 @@ final class SheetTests: XCTestCase {
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 content: makeActionContent()
-            )
-        )
-    }
-
-    func testActionWithUrls() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
-            viewBuilder: sheetView(
-                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: makeActionContent(url: iconPath, urlDark: iconPath)
             )
         )
     }
@@ -270,7 +284,7 @@ private extension SheetTests {
         return [content]
     }
 
-    func makeActionContent(
+    func makeActionListContent(
         url: String? = nil,
         urlDark: String? = nil
     ) -> [SheetList] {
@@ -284,6 +298,30 @@ private extension SheetTests {
                 style: style,
                 url: url,
                 urlDark: urlDark
+            )
+            rows.append(item)
+        }
+        let content = SheetList(
+            id: UUID().uuidString,
+            listType: .actionList(items: rows),
+            autoSubmit: true,
+            selectedId: []
+        )
+
+        return [content]
+    }
+
+    func makeActionContent() -> [SheetList] {
+        var rows: [ActionItem] = []
+        for index in 1 ... 10 {
+            let style = index <= 5 ? Button.Style.primary : .link
+            let rightImage = index <= 5 ? nil : Button.RightImage.chevron
+
+            let item = ActionItem(
+                id: "\(index)",
+                style: style,
+                title: "Title \(index)",
+                rightImage: rightImage
             )
             rows.append(item)
         }

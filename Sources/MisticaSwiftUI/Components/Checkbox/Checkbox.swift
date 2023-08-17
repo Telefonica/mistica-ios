@@ -19,7 +19,8 @@ public struct Checkbox: View {
 
     public var body: some View {
         Rectangle()
-            .border(radiusStyle: .checkbox, borderColor: controlColor, lineWidth: lineWidth)
+            .fill(fillColor)
+            .border(radiusStyle: .checkbox, borderColor: borderColor, lineWidth: 1)
             .frame(width: 24, height: 24)
             .overlay(checkImage)
             .animation(.misticaTimingCurve, value: isSelected)
@@ -28,12 +29,12 @@ public struct Checkbox: View {
             }
     }
 
-    var controlColor: Color {
-        isSelected ? .controlActivated : .control
+    var fillColor: Color {
+        isSelected ? .controlActivated : .background
     }
 
-    var lineWidth: CGFloat {
-        isSelected ? 24 : 1
+    var borderColor: Color {
+        isSelected ? .controlActivated : .control
     }
 
     var imageScale: CGFloat {

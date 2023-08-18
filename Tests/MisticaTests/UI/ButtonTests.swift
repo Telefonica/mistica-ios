@@ -78,6 +78,20 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testRegularSizeWithLinkWithChevronStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: false, rightImage: .chevron)
+        )
+    }
+
+    func testRegularSizeWithLinkInverseWithChevronStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: false, rightImage: .chevron)
+        )
+    }
+
     // MARK: Small Buttons
 
     func testSmallSizeWithPrimaryStyle() {
@@ -136,6 +150,20 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testSmallSizeWithLinkWithChevronStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: true, rightImage: .chevron)
+        )
+    }
+
+    func testSmallSizeWithLinkInverseWithChevronStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: true, rightImage: .chevron)
+        )
+    }
+
     // MARK: - Layout
 
     func testTextIsAlwaysSingleLine() {
@@ -160,6 +188,20 @@ final class ButtonTests: XCTestCase {
         assertSnapshot(
             matching: buttonNormalState,
             as: .image(size: CGSize(width: 156, height: 48))
+        )
+    }
+
+    func testChevronOnLargeView() {
+        MisticaConfig.brandStyle = .movistar
+
+        let button = Button()
+        button.title = "Title"
+        button.style = .link
+        button.rightImage = .chevron
+
+        assertSnapshot(
+            matching: button,
+            as: .image(size: CGSize(width: 500, height: 48))
         )
     }
 
@@ -305,29 +347,33 @@ final class ButtonTests: XCTestCase {
 
 // MARK: - Helpers
 
-private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool) -> UIView {
+private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool, rightImage: Button.RightImage? = nil) -> UIView {
     let buttonNormalState = Button()
     buttonNormalState.title = "Normal"
     buttonNormalState.style = style
     buttonNormalState.isSmall = isSmall
+    buttonNormalState.rightImage = rightImage
 
     let buttonDisabledState = Button()
     buttonDisabledState.title = "Disabled"
     buttonDisabledState.style = style
     buttonDisabledState.isEnabled = false
     buttonDisabledState.isSmall = isSmall
+    buttonDisabledState.rightImage = rightImage
 
     let buttonSelectedState = Button()
     buttonSelectedState.title = "Selected"
     buttonSelectedState.style = style
     buttonSelectedState.isSelected = true
     buttonSelectedState.isSmall = isSmall
+    buttonSelectedState.rightImage = rightImage
 
     let buttonLoadingState = Button()
     buttonLoadingState.loadingTitle = "Loading"
     buttonLoadingState.style = style
     buttonLoadingState.isLoading = true
     buttonLoadingState.isSmall = isSmall
+    buttonLoadingState.rightImage = rightImage
 
     let vStack = UIStackView(arrangedSubviews: [
         buttonNormalState,

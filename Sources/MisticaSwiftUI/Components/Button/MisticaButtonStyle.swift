@@ -13,9 +13,10 @@ import SwiftUI
 public struct MisticaButtonStyle: ButtonStyle {
     let style: MisticaButton.Style
     let small: Bool
+    let rightImage: MisticaButtonRightImage?
 
     public func makeBody(configuration: Configuration) -> some View {
-        MisticaButton(configuration: configuration, style: style, small: small)
+        MisticaButton(configuration: configuration, style: style, small: small, rightImage: rightImage)
     }
 }
 
@@ -52,7 +53,8 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                     )
                 ]
             ),
-            small: small
+            small: small,
+            rightImage: nil
         )
     }
 
@@ -86,7 +88,8 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                     )
                 ]
             ),
-            small: small
+            small: small,
+            rightImage: nil
         )
     }
 
@@ -120,7 +123,8 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                     )
                 ]
             ),
-            small: small
+            small: small,
+            rightImage: nil
         )
     }
 
@@ -154,7 +158,8 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                     )
                 ]
             ),
-            small: small
+            small: small,
+            rightImage: nil
         )
     }
 
@@ -188,13 +193,15 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                     )
                 ]
             ),
-            small: small
+            small: small,
+            rightImage: nil
         )
     }
 
     static func misticaLink(
         small: Bool = false,
-        bleedingAlignment: ButtonBleedingAlignment = .none
+        bleedingAlignment: ButtonBleedingAlignment = .none,
+        withChevron: Bool = false
     ) -> Self {
         Self(
             style: MisticaButton.Style(
@@ -223,13 +230,15 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                     )
                 ]
             ),
-            small: small
+            small: small,
+            rightImage: withChevron ? .chevron : nil
         )
     }
 
     static func misticaLinkInverse(
         small: Bool = false,
-        bleedingAlignment: ButtonBleedingAlignment = .none
+        bleedingAlignment: ButtonBleedingAlignment = .none,
+        withChevron: Bool = false
     ) -> Self {
         Self(
             style: MisticaButton.Style(
@@ -258,7 +267,8 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                     )
                 ]
             ),
-            small: small
+            small: small,
+            rightImage: withChevron ? .chevron : nil
         )
     }
 }

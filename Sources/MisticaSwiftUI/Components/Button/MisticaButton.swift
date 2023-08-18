@@ -12,6 +12,25 @@ public enum ButtonBleedingAlignment {
     case leading, trailing, none
 }
 
+enum MisticaButtonRightImage {
+    case chevron
+    case custom(Image)
+
+    var image: some View {
+        switch self {
+        case .chevron: return Image.chevron
+        case let .custom(image): return image
+        }
+    }
+
+    var space: CGFloat {
+        switch self {
+        case .chevron: return 2
+        case .custom: return 8
+        }
+    }
+}
+
 struct MisticaButton: View {
     enum Constants {
         static let minWidth: CGFloat = 76
@@ -64,6 +83,7 @@ struct MisticaButton: View {
     let configuration: ButtonStyle.Configuration
     let style: Style
     let small: Bool
+    let rightImage: MisticaButtonRightImage?
 
     @Environment(\.misticaButtonLoadingInfo) private var loadingInfo
     @Environment(\.isEnabled) private var isEnabled
@@ -77,11 +97,18 @@ struct MisticaButton: View {
                 .accessibilityLabel(loadingInfo.loadingTitle)
                 .misticaBackport.accesibilityHidden(!loadingInfo.isLoading)
 
-            configuration.label
-                .font(textFont)
-                .offset(x: 0, y: loadingInfo.isLoading ? -Constants.transitionOffset : 0)
-                .animation(.misticaTimingCurve, value: loadingInfo.isLoading)
-                .misticaBackport.accesibilityHidden(loadingInfo.isLoading)
+            HStack {
+                configuration.label
+                    .font(textFont)
+
+                if let rightImage {
+                    Spacer().frame(width: rightImage.space)
+                    rightImage.image
+                }
+            }
+            .offset(x: 0, y: loadingInfo.isLoading ? -Constants.transitionOffset : 0)
+            .animation(.misticaTimingCurve, value: loadingInfo.isLoading)
+            .misticaBackport.accesibilityHidden(loadingInfo.isLoading)
         }
         .frame(height: height)
         .if(!small) { $0.expandHorizontally() }

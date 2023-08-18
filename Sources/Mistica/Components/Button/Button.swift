@@ -27,11 +27,18 @@ open class Button: UIControl {
             public let insets: UIEdgeInsets
             public let minimumWidth: CGFloat
             public let font: UIFont
+            public let rightImageHeight: CGFloat?
 
-            public init(insets: UIEdgeInsets, minimumWidth: CGFloat, font: UIFont) {
+            public init(
+                insets: UIEdgeInsets,
+                minimumWidth: CGFloat,
+                font: UIFont,
+                rightImageHeight: CGFloat? = nil
+            ) {
                 self.insets = insets
                 self.minimumWidth = minimumWidth
                 self.font = font
+                self.rightImageHeight = rightImageHeight
             }
         }
 
@@ -53,6 +60,29 @@ open class Button: UIControl {
             self.textColor = textColor
             self.backgroundColor = backgroundColor
             self.borderColor = borderColor
+        }
+    }
+
+    public enum RightImage {
+        case chevron
+        case custom(image: UIImage)
+
+        private var _image: UIImage {
+            switch self {
+            case .chevron: return .chevron
+            case let .custom(image: image): return image
+            }
+        }
+
+        var image: UIImage {
+            _image.withRenderingMode(.alwaysTemplate)
+        }
+
+        var space: CGFloat {
+            switch self {
+            case .chevron: return 2
+            case .custom: return 8
+            }
         }
     }
 
@@ -78,6 +108,11 @@ open class Button: UIControl {
         set { container.loadingTitle = newValue }
     }
 
+    public var rightImage: RightImage? {
+        get { container.rightImage }
+        set { container.rightImage = newValue }
+    }
+
     private var overridenAccessibilityLabel: String?
     private var isShowingLoadingAnimation = false
 
@@ -93,13 +128,14 @@ open class Button: UIControl {
         self.init(title: "")
     }
 
-    public init(style: Style = .primary, title: String, loadingTitle: String? = nil, isSmall: Bool = false) {
+    public init(style: Style = .primary, title: String, rightImage: RightImage? = nil, loadingTitle: String? = nil, isSmall: Bool = false) {
         self.style = style
         self.isSmall = isSmall
 
         super.init(frame: .zero)
 
         self.title = title
+        self.rightImage = rightImage
         self.loadingTitle = loadingTitle
         commonInit()
     }
@@ -232,6 +268,7 @@ private extension Button {
         updateInsets()
         container.minimumWidth = style.minimumWidth(isSmall: isSmall)
         container.font = style.font(isSmall: isSmall)
+        container.rightImageHeight = style.rightImageHeight(isSmall: isSmall)
     }
 
     func commonInit() {

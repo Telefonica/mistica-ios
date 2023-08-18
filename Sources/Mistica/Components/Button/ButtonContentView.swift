@@ -10,12 +10,37 @@ import UIKit
 
 /// Internal class used by Button
 class ButtonContentView: UIView {
+    private lazy var titleContentStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleStackView])
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        return stackView
+    }()
+
+    private lazy var titleStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            titleLabel,
+            rightImageView
+        ])
+        stackView.alignment = .center
+        return stackView
+    }()
+
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
         titleLabel.setContentHuggingPriority(.required, for: .vertical)
         return titleLabel
     }()
+
+    private let rightImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+
+    private lazy var rightImageHeightConstraint: NSLayoutConstraint = rightImageView.heightAnchor.constraint(equalToConstant: 1)
 
     private lazy var loadingIndicator: UIActivityIndicatorView = {
         let loadingIndicator = UIActivityIndicatorView(style: .medium)
@@ -59,8 +84,23 @@ class ButtonContentView: UIView {
         set {
             loadingIndicator.color = newValue
             titleLabel.textColor = newValue
+            rightImageView.tintColor = newValue
             loadingTitleLabel.textColor = newValue
         }
+    }
+
+    var rightImage: Button.RightImage? {
+        didSet {
+            rightImageView.isHidden = rightImage == nil
+            guard let rightImage else { return }
+            titleStackView.setCustomSpacing(rightImage.space, after: titleLabel)
+            rightImageView.image = rightImage.image
+        }
+    }
+
+    var rightImageHeight: CGFloat {
+        get { rightImageHeightConstraint.constant }
+        set { rightImageHeightConstraint.constant = newValue }
     }
 
     var minimumWidth: CGFloat = 0 {
@@ -94,15 +134,17 @@ class ButtonContentView: UIView {
 
         setContentCompressionResistancePriority(.required, for: .vertical)
 
-        addSubview(constrainedToLayoutMarginsGuideOf: titleLabel)
+        addSubview(constrainedToLayoutMarginsGuideOf: titleContentStackView)
         addSubview(constrainedToLayoutMarginsGuideOf: loadingStackView)
+
+        rightImageHeightConstraint.isActive = true
     }
 
     override var intrinsicContentSize: CGSize {
-        let titleLabelSize = titleLabel.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        let titleSize = titleContentStackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         let loadingStackViewSize = loadingStackView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        let width = max(titleLabelSize.width, loadingStackViewSize.width)
-        let height = max(titleLabelSize.height, loadingStackViewSize.height)
+        let width = max(titleSize.width, loadingStackViewSize.width)
+        let height = max(titleSize.height, loadingStackViewSize.height)
         var size = CGSize(width: width, height: height).inset(by: layoutMargins)
         size.width = max(size.width, minimumWidth)
         return size
@@ -113,16 +155,16 @@ class ButtonContentView: UIView {
     }
 
     func transitionToLoading() {
-        titleLabel.alpha = 0
-        titleLabel.transform = CGAffineTransform(translationX: 0, y: -bounds.maxY)
+        titleContentStackView.alpha = 0
+        titleContentStackView.transform = CGAffineTransform(translationX: 0, y: -bounds.maxY)
         loadingStackView.alpha = 1
         loadingStackView.transform = CGAffineTransform(translationX: 0, y: 0)
         loadingStackView.layoutIfNeeded()
     }
 
     func transitionToNormal() {
-        titleLabel.alpha = 1
-        titleLabel.transform = CGAffineTransform(translationX: 0, y: 0)
+        titleContentStackView.alpha = 1
+        titleContentStackView.transform = CGAffineTransform(translationX: 0, y: 0)
         loadingStackView.alpha = 0
         loadingStackView.transform = CGAffineTransform(translationX: 0, y: bounds.maxY)
         loadingStackView.layoutIfNeeded()

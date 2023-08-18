@@ -14,6 +14,10 @@ public extension Image {
         Image(uiImage: .arrowRight)
     }
 
+    static var chevron: Image {
+        Image(uiImage: .chevron)
+    }
+
     static var checkmarkIcon: Image {
         Image(uiImage: .checkmarkIcon)
     }

@@ -52,7 +52,10 @@ class UICatalogButtonsViewController: UITableViewController {
                 Button(style: .primary, title: "OK"),
                 Button(style: .primary, title: "OK", isSmall: true),
                 Button(style: .link, title: "OK")
-            ], .right)
+            ], .right),
+            ("Chevron", [
+                Button(style: .link, title: "Button Link", rightImage: .chevron)
+            ], .center)
         ]
     }
 
@@ -153,8 +156,8 @@ private extension UITableViewCell {
 }
 
 private class LoadSimulationButton: Button {
-    override init(style: Button.Style = .primary, title: String, loadingTitle: String? = nil, isSmall: Bool = false) {
-        super.init(style: style, title: title, loadingTitle: loadingTitle, isSmall: isSmall)
+    override init(style: Button.Style = .primary, title: String, rightImage: RightImage? = nil, loadingTitle: String? = nil, isSmall: Bool = false) {
+        super.init(style: style, title: title, rightImage: rightImage, loadingTitle: loadingTitle, isSmall: isSmall)
         addTarget(self, action: #selector(simulateLoad), for: .touchUpInside)
     }
 

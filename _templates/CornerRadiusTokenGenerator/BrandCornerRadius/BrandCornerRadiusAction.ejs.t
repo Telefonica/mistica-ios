@@ -13,6 +13,9 @@ let className = h.inflection.camelize(h.replaceDashes(name))
 let jsonObject = h.params(json)
 -%>
 
+// Generated using Make
+// DO NOT EDIT
+
 import Foundation
 
 struct <%= className %>CornerRadius: MisticaCornerRadius {

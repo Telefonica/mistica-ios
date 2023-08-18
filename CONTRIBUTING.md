@@ -14,6 +14,7 @@ Don't hesitate to ask any questions and share your ideas
 * [Documentation and help requests](#documentation-and-help-requests)
 * [New component proposals or UI/UX changes](#new-component-proposals-or-ui-ux-changes)
 * [How to work with mistica-ios](#how-to-work-with-mistica-ios)
+* [Skins](#skins)
 * [Testing](#testing)
 
 ## Pull Requests
@@ -104,6 +105,16 @@ When implementing the component, try to have in mind the following guidelines:
 * Pay attention to user interaction (Gestures, Haptics, 3D Touch...)
 * Although this should be transparent to you, take into account multiple brands.
 * To help other developers, add documentation about the new component.
+
+## Skins
+
+Mistica brands are based on tokens. Those tokens define the brand customization like [font weights](Sources/MisticaCommon/Fonts/MisticaFontWeights.swift), [sizes](Sources/MisticaCommon/Fonts/MisticaFontSizes.swift), [colors](Sources/MisticaCommon/Colors/MisticaColors.swift), etc.
+In order to automatise this, we can execute this [GitHub action](.github/.workflows/generate-mistica-tokens.yml) to generate those tokens based on the [mistica-design](https://github.com/Telefonica/mistica-design) specification.
+You can also execute it manually using the actions defined in the [Makefile](Makefile).
+Example:
+```bash
+make skin ref=production
+```
 
 ## Testing
 

@@ -52,7 +52,7 @@ struct ColorsView: View {
             return VivoColorPalette()
         case .vivoNew:
             return VivoNewColorPalette()
-        case .custom(let colors, _, _, _):
+        case .custom(let colors, _, _, _, _):
             return colors
         }
     }

@@ -14,6 +14,7 @@ public enum MisticaConfig {
     public private(set) static var currentStyledControls = [MisticaControlStyle]()
     public private(set) static var currentFontWeights: MisticaFontWeights = MovistarFontWeights()
     public private(set) static var currentCornerRadius: MisticaCornerRadius = MovistarCornerRadius()
+    public private(set) static var currentFontSizes: MisticaFontSizes = MovistarFontSizes()
 
     // MARK: Public Setup
 
@@ -38,31 +39,37 @@ private extension MisticaConfig {
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = MovistarFontWeights()
             currentCornerRadius = MovistarCornerRadius()
+            currentFontSizes = MovistarFontSizes()
         case .vivo:
             currentColors = VivoColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = VivoFontWeights()
             currentCornerRadius = VivoCornerRadius()
+            currentFontSizes = VivoFontSizes()
         case .o2:
             currentColors = O2Colors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = O2FontWeights()
             currentCornerRadius = O2CornerRadius()
+            currentFontSizes = O2FontSizes()
         case .blau:
             currentColors = BlauColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = BlauFontWeights()
             currentCornerRadius = BlauCornerRadius()
+            currentFontSizes = BlauFontSizes()
         case .vivoNew:
             currentColors = VivoNewColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = VivoNewFontWeights()
             currentCornerRadius = VivoNewCornerRadius()
-        case .custom(let colors, let assets, let fontWeights, let cornerRadius):
+            currentFontSizes = VivoNewFontSizes()
+        case .custom(let colors, let assets, let fontWeights, let cornerRadius, let fontSizes):
             currentColors = colors
             currentBrandAssets = assets
             currentFontWeights = fontWeights
             currentCornerRadius = cornerRadius
+            currentFontSizes = fontSizes
         }
     }
 }

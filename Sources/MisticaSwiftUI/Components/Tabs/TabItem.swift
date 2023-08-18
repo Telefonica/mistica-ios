@@ -57,7 +57,7 @@ public struct TabItemView: Equatable, View {
 
             Text(tabItem.text)
                 .lineLimit(1)
-                .font(.textPreset2(weight: .regular))
+                .font(.textPresetTabsLabel())
                 .foregroundColor(textForegroundColor())
                 .accessibilityIdentifier(textAccessibilityIdentifier)
                 .accessibilityLabel(textAccessibilityLabel)

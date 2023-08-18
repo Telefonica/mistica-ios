@@ -52,6 +52,13 @@ public extension Font {
         FontStyle.textPreset10.preferredFont(weight: MisticaConfig.currentFontWeights.text10.systemWeight, constrainedToPreferredSize: constrainedToPreferredSize)
     }
 
+    static func textPresetTabsLabel(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> Font {
+        FontStyle.textPresetTabsLabel.preferredFont(
+            weight: MisticaConfig.currentFontWeights.tabsLabel.systemWeight,
+            constrainedToPreferredSize: constrainedToPreferredSize
+        )
+    }
+
     static func preferredFont(for fontStyle: FontStyle, weight: Font.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory) -> Font {
         fontStyle.preferredFont(weight: weight, constrainedToPreferredSize: constrainedPreferredSize)
     }

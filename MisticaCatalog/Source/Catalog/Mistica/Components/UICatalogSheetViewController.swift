@@ -400,6 +400,17 @@ private extension UICatalogSheetViewController {
                         id: UUID().uuidString,
                         style: .primary,
                         title: "Primary Button"
+                    ),
+                    ActionItem(
+                        id: UUID().uuidString,
+                        style: .secondary,
+                        title: "Secondary Button"
+                    ),
+                    ActionItem(
+                        id: UUID().uuidString,
+                        style: .link,
+                        title: "Link Button",
+                        rightImage: .chevron
                     )
                 ]),
                 autoSubmit: true,

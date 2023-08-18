@@ -67,11 +67,7 @@ public enum SheetListType {
         switch self {
         case .informative:
             return true
-        case .singleSelection:
-            return false
-        case .actionList:
-            return false
-        case .actions:
+        case .singleSelection, .actionList, .actions:
             return false
         }
     }

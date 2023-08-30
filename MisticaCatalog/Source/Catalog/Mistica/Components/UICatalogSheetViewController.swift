@@ -132,11 +132,13 @@ class UICatalogSheetViewController: UIViewController {
         cell.textLabel?.text = "Primary Action"
         return cell
     }()
+
     private lazy var secondaryActionEnabledCell: UISwitchTableViewCell = {
         let cell = UISwitchTableViewCell(reuseIdentifier: "primaryActionEnabled")
         cell.textLabel?.text = "Secondary Action"
         return cell
     }()
+
     private lazy var linkActionEnabledCell: UISwitchTableViewCell = {
         let cell = UISwitchTableViewCell(reuseIdentifier: "primaryActionEnabled")
         cell.textLabel?.text = "Link Action"

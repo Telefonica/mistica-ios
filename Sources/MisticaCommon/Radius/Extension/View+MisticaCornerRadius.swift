@@ -35,33 +35,33 @@ private struct CornerRadiusModifier: ViewModifier {
                 .overlay(Capsule().stroke(borderColor, lineWidth: lineWidth))
         case .button:
             content
-                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.button, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.button, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.button))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.button).stroke(borderColor, lineWidth: lineWidth))
 
         case .checkbox:
             content
-                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.checkbox, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.checkbox, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.checkbox))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.checkbox).stroke(borderColor, lineWidth: lineWidth))
         case .container:
             content
-                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.container, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.container, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.container))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.container).stroke(borderColor, lineWidth: lineWidth))
         case .input:
             content
-                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.input, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.input, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.input))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.input).stroke(borderColor, lineWidth: lineWidth))
         case .legacyDisplay:
             content
-                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.legacyDisplay, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.legacyDisplay, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.legacyDisplay))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.legacyDisplay).stroke(borderColor, lineWidth: lineWidth))
         case .popup:
             content
-                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.popup, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.popup, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.popup))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.popup).stroke(borderColor, lineWidth: lineWidth))
         case .sheet:
             content
-                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.sheet, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.sheet, style: .continuous).stroke(borderColor, lineWidth: lineWidth))
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.sheet))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.sheet).stroke(borderColor, lineWidth: lineWidth))
         }
     }
 }

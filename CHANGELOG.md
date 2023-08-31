@@ -1,3 +1,25 @@
+# [26.0.0](https://github.com/Telefonica/mistica-ios/compare/v25.4.0...v26.0.0) (2023-08-31)
+
+
+### Bug Fixes
+
+* **BottomSheet:** Changed SVG coder ([#296](https://github.com/Telefonica/mistica-ios/issues/296)) ([4480d47](https://github.com/Telefonica/mistica-ios/commit/4480d47bf8ae47b4b90988813d49fd8946e7d8fc))
+* **Checkbox:** set color for filling and rounded border ([#297](https://github.com/Telefonica/mistica-ios/issues/297)) ([076343d](https://github.com/Telefonica/mistica-ios/commit/076343d1d3dcd131d9ac6928766a6aba11d2e7f7))
+
+
+* IOS-9146: BottomSheet actions (#299) ([e380ecc](https://github.com/Telefonica/mistica-ios/commit/e380ecc99bf5ad83e9f4765a9c3c562e8ea2249b)), closes [#299](https://github.com/Telefonica/mistica-ios/issues/299)
+
+
+### Features
+
+* **BottomSheet:** Added SVG image format support. ([#293](https://github.com/Telefonica/mistica-ios/issues/293)) ([fe71624](https://github.com/Telefonica/mistica-ios/commit/fe71624f5d32eeeee8ffb72828d9c25718f46226))
+* **Button:** iOS-9080 button chevron ([977b1d9](https://github.com/Telefonica/mistica-ios/commit/977b1d993fb8bd34285731e6e9322e7d8d9e4331))
+
+
+### BREAKING CHANGES
+
+* Action type has been renamed as ActionList. To use the previous actions(items: [ActionItem]) rename the case in your project as actionList(items: [ActionListItem]). Also ActionItem has been renamed as ActionListItem.
+
 # [25.4.0](https://github.com/Telefonica/mistica-ios/compare/v25.3.2...v25.4.0) (2023-07-24)
 
 

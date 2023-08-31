@@ -59,16 +59,15 @@ public struct SheetList {
 
 public enum SheetListType {
     case singleSelection(items: [SingleSelectionItem])
-    case actions(items: [ActionItem])
+    case actionList(items: [ActionListItem])
     case informative(items: [InformativeItem])
+    case actions(items: [ActionItem])
 
     var isInformative: Bool {
         switch self {
         case .informative:
             return true
-        case .singleSelection:
-            return false
-        case .actions:
+        case .singleSelection, .actionList, .actions:
             return false
         }
     }
@@ -159,7 +158,7 @@ public enum InformativeItemIcon: Equatable {
     }
 }
 
-public struct ActionItem {
+public struct ActionListItem {
     public enum Style {
         case normal
         case destructive
@@ -174,7 +173,7 @@ public struct ActionItem {
     public init(
         id: String,
         title: String,
-        style: ActionItem.Style,
+        style: ActionListItem.Style,
         url: String?,
         urlDark: String?
     ) {
@@ -183,5 +182,24 @@ public struct ActionItem {
         self.style = style
         self.url = url
         self.urlDark = urlDark
+    }
+}
+
+public struct ActionItem {
+    let id: String
+    let style: Button.Style
+    let title: String
+    let rightImage: Button.RightImage?
+
+    public init(
+        id: String,
+        style: Button.Style,
+        title: String,
+        rightImage: Button.RightImage? = nil
+    ) {
+        self.id = id
+        self.style = style
+        self.title = title
+        self.rightImage = rightImage
     }
 }

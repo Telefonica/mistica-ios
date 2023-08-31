@@ -9,9 +9,9 @@
 import UIKit
 
 class ActionRow: UIStackView {
-    let item: ActionItem
+    let item: ActionListItem
 
-    init(item: ActionItem) {
+    init(item: ActionListItem) {
         self.item = item
 
         super.init(frame: .zero)
@@ -26,7 +26,7 @@ class ActionRow: UIStackView {
 
     private let titleLabel: IntrinsictHeightLabel = {
         let label = IntrinsictHeightLabel()
-        label.minHeight = 64
+        label.minHeight = 72
         label.numberOfLines = 0
         label.textColor = .textPrimary
         return label

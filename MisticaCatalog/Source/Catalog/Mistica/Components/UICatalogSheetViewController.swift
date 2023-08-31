@@ -20,6 +20,7 @@ private enum Section: Int, CaseIterable {
     case informativeIconType
     case imageType
     case actionStyle
+    case actions
     case showSheet
 }
 
@@ -87,7 +88,8 @@ class UICatalogSheetViewController: UIViewController {
 
         cell.segmentedControl.insertSegment(withTitle: "Single Selection", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Informative", at: 1, animated: false)
-        cell.segmentedControl.insertSegment(withTitle: "Action", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Action List", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Action", at: 3, animated: false)
 
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
@@ -125,6 +127,24 @@ class UICatalogSheetViewController: UIViewController {
         return cell
     }()
 
+    private lazy var primaryActionEnabledCell: UISwitchTableViewCell = {
+        let cell = UISwitchTableViewCell(reuseIdentifier: "primaryActionEnabled")
+        cell.textLabel?.text = "Primary Action"
+        return cell
+    }()
+
+    private lazy var secondaryActionEnabledCell: UISwitchTableViewCell = {
+        let cell = UISwitchTableViewCell(reuseIdentifier: "primaryActionEnabled")
+        cell.textLabel?.text = "Secondary Action"
+        return cell
+    }()
+
+    private lazy var linkActionEnabledCell: UISwitchTableViewCell = {
+        let cell = UISwitchTableViewCell(reuseIdentifier: "primaryActionEnabled")
+        cell.textLabel?.text = "Link Action"
+        return cell
+    }()
+
     private lazy var showSheetCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "showSheet")
         cell.textLabel?.textColor = .textLink
@@ -143,6 +163,11 @@ class UICatalogSheetViewController: UIViewController {
         [informativeIconTypeCell],
         [iconURLTypeCell],
         [actionStyleCell],
+        [
+            primaryActionEnabledCell,
+            secondaryActionEnabledCell,
+            linkActionEnabledCell
+        ],
         [showSheetCell]
     ]
 
@@ -210,6 +235,8 @@ extension UICatalogSheetViewController: UITableViewDataSource, UITableViewDelega
         case 1:
             configuration = informativeSheet
         case 2:
+            configuration = actionListSheet
+        case 3:
             configuration = actionSheet
         default:
             fatalError("Unhandled sheet type")
@@ -350,11 +377,11 @@ private extension UICatalogSheetViewController {
         return configuration
     }
 
-    var actionSheet: SheetConfiguration {
-        var rows: [ActionItem] = []
+    var actionListSheet: SheetConfiguration {
+        var rows: [ActionListItem] = []
 
         for index in 1 ... sheetNumElements {
-            let item = ActionItem(
+            let item = ActionListItem(
                 id: index.description,
                 title: "List Item \(index)",
                 style: actionStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .destructive,
@@ -366,7 +393,7 @@ private extension UICatalogSheetViewController {
         }
         let content = SheetList(
             id: UUID().uuidString,
-            listType: .actions(items: rows),
+            listType: .actionList(items: rows),
             autoSubmit: true,
             selectedId: []
         )
@@ -378,6 +405,48 @@ private extension UICatalogSheetViewController {
                 description: sheetDescription
             ),
             content: [content]
+        )
+
+        return configuration
+    }
+
+    var actionSheet: SheetConfiguration {
+        var actions = [ActionItem]()
+        if primaryActionEnabledCell.isOn {
+            actions.append(ActionItem(
+                id: UUID().uuidString,
+                style: .primary,
+                title: "Primary Button"
+            ))
+        }
+        if secondaryActionEnabledCell.isOn {
+            actions.append(ActionItem(
+                id: UUID().uuidString,
+                style: .secondary,
+                title: "Secondary Button"
+            ))
+        }
+        if linkActionEnabledCell.isOn {
+            actions.append(ActionItem(
+                id: UUID().uuidString,
+                style: .link,
+                title: "Link Button",
+                rightImage: .chevron
+            ))
+        }
+
+        let configuration = SheetConfiguration(
+            header: SheetHeader(
+                title: sheetTitle,
+                subtitle: sheetSubtitle,
+                description: sheetDescription
+            ),
+            content: [SheetList(
+                id: UUID().uuidString,
+                listType: .actions(items: actions),
+                autoSubmit: true,
+                selectedId: []
+            )]
         )
 
         return configuration
@@ -397,6 +466,7 @@ private extension Section {
         case .informativeIconType: return "Informative icon type"
         case .imageType: return "Image format"
         case .actionStyle: return "Action style"
+        case .actions: return "Actions"
         case .showSheet: return nil
         }
     }

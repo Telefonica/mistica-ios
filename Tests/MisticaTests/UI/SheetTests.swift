@@ -189,28 +189,48 @@ final class SheetTests: XCTestCase {
 
     // MARK: Action list type
 
-    func testActionWithoutUrls() {
+    func testActionListWithoutUrls() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: makeActionContent()
+                content: makeActionListContent()
             )
         )
     }
 
-    func testActionWithUrls() {
+    func testActionListWithUrls() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(on: .iPhoneSe),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                content: makeActionContent(url: iconPath, urlDark: iconPath)
+                content: makeActionListContent(url: iconPath, urlDark: iconPath)
             )
         )
+    }
+
+    // MARK: Actions
+
+    func testSingleAction() {
+        assertSnapshot(matching: sheetView(
+            title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            content: makeSingleAction()
+        ), as: .image)
+    }
+
+    func testActions() {
+        assertSnapshot(matching: sheetView(
+            title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            content: makeActionContent()
+        ), as: .image)
     }
 }
 
@@ -270,15 +290,15 @@ private extension SheetTests {
         return [content]
     }
 
-    func makeActionContent(
+    func makeActionListContent(
         url: String? = nil,
         urlDark: String? = nil
     ) -> [SheetList] {
-        var rows: [ActionItem] = []
+        var rows: [ActionListItem] = []
         for index in 1 ... 10 {
-            let style = index == 5 ? ActionItem.Style.destructive : ActionItem.Style.normal
+            let style = index == 5 ? ActionListItem.Style.destructive : ActionListItem.Style.normal
 
-            let item = ActionItem(
+            let item = ActionListItem(
                 id: "\(index)",
                 title: "Title \(index)",
                 style: style,
@@ -287,6 +307,53 @@ private extension SheetTests {
             )
             rows.append(item)
         }
+        let content = SheetList(
+            id: UUID().uuidString,
+            listType: .actionList(items: rows),
+            autoSubmit: true,
+            selectedId: []
+        )
+
+        return [content]
+    }
+
+    func makeSingleAction() -> [SheetList] {
+        var rows: [ActionItem] = [
+            ActionItem(
+                id: UUID().uuidString,
+                style: .primary,
+                title: "Primary action"
+            )
+        ]
+        let content = SheetList(
+            id: UUID().uuidString,
+            listType: .actions(items: rows),
+            autoSubmit: true,
+            selectedId: []
+        )
+
+        return [content]
+    }
+
+    func makeActionContent() -> [SheetList] {
+        var rows: [ActionItem] = [
+            ActionItem(
+                id: UUID().uuidString,
+                style: .primary,
+                title: "Primary action"
+            ),
+            ActionItem(
+                id: UUID().uuidString,
+                style: .secondary,
+                title: "Secondary action"
+            ),
+            ActionItem(
+                id: UUID().uuidString,
+                style: .link,
+                title: "Link action",
+                rightImage: .chevron
+            )
+        ]
         let content = SheetList(
             id: UUID().uuidString,
             listType: .actions(items: rows),

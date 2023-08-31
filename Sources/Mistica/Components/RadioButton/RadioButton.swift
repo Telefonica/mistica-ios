@@ -151,7 +151,7 @@ private extension RadioButton {
             layer.borderWidth = intrinsicContentSize.width / 4.0
         } else {
             layer.backgroundColor = UIColor.background.cgColor
-            layer.borderColor = UIColor.border.cgColor
+            layer.borderColor = UIColor.control.cgColor
             layer.borderWidth = 1
         }
     }

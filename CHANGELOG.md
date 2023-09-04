@@ -1,3 +1,10 @@
+## [26.0.1](https://github.com/Telefonica/mistica-ios/compare/v26.0.0...v26.0.1) (2023-09-04)
+
+
+### Bug Fixes
+
+* **RadioButton:** IOS-9285 Fix radio button / check box colors ([#301](https://github.com/Telefonica/mistica-ios/issues/301)) ([ac18920](https://github.com/Telefonica/mistica-ios/commit/ac1892042e3fbd8290c7b84c6f63bada3e6ca78d))
+
 # [26.0.0](https://github.com/Telefonica/mistica-ios/compare/v25.4.0...v26.0.0) (2023-08-31)
 
 

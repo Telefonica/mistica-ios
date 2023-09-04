@@ -192,7 +192,7 @@ private extension Checkbox {
         } else {
             imageView.layer.opacity = 0
             imageView.layer.transform = CATransform3DScale(imageView.layer.transform, 0.01, 0.01, 0.01)
-            borderView.layer.borderColor = UIColor.border.cgColor
+            borderView.layer.borderColor = UIColor.control.cgColor
             borderView.layer.borderWidth = 1
         }
     }

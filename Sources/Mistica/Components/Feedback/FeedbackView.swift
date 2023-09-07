@@ -12,6 +12,7 @@ import UIKit
 
 public class FeedbackView: UIView {
     private enum Constants {
+        static let iconSize: CGFloat = 48
         static let animationDelay: TimeInterval = 0.2
         static let animationDuration: TimeInterval = 0.8
         static let animationCurveControlPoint1 = CGPoint(x: 0.215, y: 0.61)
@@ -36,6 +37,10 @@ public class FeedbackView: UIView {
         let icon = UIImageView()
         icon.contentMode = .scaleAspectFit
         icon.tintColor = .brand
+        NSLayoutConstraint.activate([
+            icon.widthAnchor.constraint(equalToConstant: Constants.iconSize),
+            icon.heightAnchor.constraint(equalToConstant: Constants.iconSize)
+        ])
         icon.isAccessibilityElement = true
         icon.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return icon
@@ -47,6 +52,10 @@ public class FeedbackView: UIView {
         animation.contentMode = .scaleAspectFit
         animation.loopMode = .playOnce
         animation.isUserInteractionEnabled = false
+        NSLayoutConstraint.activate([
+            animation.widthAnchor.constraint(equalToConstant: Constants.iconSize),
+            animation.heightAnchor.constraint(equalToConstant: Constants.iconSize)
+        ])
         animation.isAccessibilityElement = true
         animation.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return animation
@@ -195,6 +204,7 @@ public class FeedbackView: UIView {
         scrollStackView.stackView.spacing = 24
         scrollStackView.stackView.alignment = .leading
         scrollStackView.stackView.layoutMargins = UIEdgeInsets(top: 64, left: 16, bottom: 16, right: 16)
+        scrollStackView.stackView.preservesSuperviewLayoutMargins = false
         return scrollStackView
     }()
 
@@ -290,15 +300,6 @@ private extension FeedbackView {
             scrollStackView.stackView.insertArrangedSubview(icon, at: 0)
         case .animation(let animation):
             animatedIcon.animation = animation
-            let width = animation.bounds.width
-            let height = animation.bounds.height
-            NSLayoutConstraint.activate([
-                animatedIcon.widthAnchor.constraint(equalToConstant: width),
-                animatedIcon.heightAnchor.constraint(equalToConstant: height)
-            ])
-            // To center animations that are not 1:1 squares
-            let leftMargin = (width - height) / 2
-            animatedIcon.transform = CGAffineTransform(translationX: -leftMargin, y: 0)
             scrollStackView.stackView.insertArrangedSubview(animatedIcon, at: 0)
         }
     }

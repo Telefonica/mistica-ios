@@ -9,8 +9,9 @@
 import SwiftUI
 
 private enum Constants {
+    static let sideMargin: CGFloat = 16
     static let spacing: CGFloat = 16
-    static let iconHeight: CGFloat = 64
+    static let iconHeight: CGFloat = 48
     static let topPadding: CGFloat = 64
     static let shadowRadius: CGFloat = 4
 }
@@ -58,37 +59,39 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
                 .zIndex(0)
 
             VStack(spacing: 0) {
-                VStack(alignment: .leading, spacing: 0) {
-                    icon
-                        .frame(width: Constants.iconHeight, height: Constants.iconHeight, alignment: .bottomLeading)
-                        .accessibilityIdentifier(imageAccessibilityIdentifier)
-                        .accessibilityLabel(imageAccessibilityLabel)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 0) {
+                        icon
+                            .frame(width: Constants.iconHeight, height: Constants.iconHeight, alignment: .bottomLeading)
+                            .accessibilityIdentifier(imageAccessibilityIdentifier)
+                            .accessibilityLabel(imageAccessibilityLabel)
 
-                    Spacer()
-                        .frame(height: 24)
+                        Spacer()
+                            .frame(height: 24)
 
-                    Text(title)
-                        .font(.textPreset6())
-                        .foregroundColor(titleForegroundColor)
-                        .accessibilityIdentifier(titleAccessibilityIdentifier)
-                        .accessibilityLabel(titleAccessibilityLabel)
+                        Text(title)
+                            .font(.textPreset6())
+                            .foregroundColor(titleForegroundColor)
+                            .accessibilityIdentifier(titleAccessibilityIdentifier)
+                            .accessibilityLabel(titleAccessibilityLabel)
 
-                    Spacer()
-                        .frame(height: Constants.spacing)
+                        Spacer()
+                            .frame(height: Constants.spacing)
 
-                    Text(message)
-                        .font(.textPreset4(weight: .light))
-                        .foregroundColor(messageForegroundColor)
-                        .accessibilityIdentifier(messageAccessibilityIdentifier)
-                        .accessibilityLabel(messageAccessibilityLabel)
+                        Text(message)
+                            .font(.textPreset4(weight: .light))
+                            .foregroundColor(messageForegroundColor)
+                            .accessibilityIdentifier(messageAccessibilityIdentifier)
+                            .accessibilityLabel(messageAccessibilityLabel)
 
-                    reference
+                        reference
+                    }
+                    .expandHorizontally(alignment: .leading)
+                    .padding(.horizontal, Constants.sideMargin)
+                    .padding(.top, Constants.topPadding)
+
+                    extraContent
                 }
-                .expandHorizontally(alignment: .leading)
-                .padding(.horizontal, 24)
-                .padding(.top, Constants.topPadding)
-
-                extraContent
 
                 VStack {
                     primaryButton.buttonStyle(style.primaryButtonStyle)

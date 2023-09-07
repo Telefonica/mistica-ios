@@ -194,7 +194,7 @@ public class FeedbackView: UIView {
         scrollStackView.translatesAutoresizingMaskIntoConstraints = false
         scrollStackView.stackView.spacing = 24
         scrollStackView.stackView.alignment = .leading
-        scrollStackView.stackView.layoutMargins = UIEdgeInsets(top: 64, left: 24, bottom: 16, right: 24)
+        scrollStackView.stackView.layoutMargins = UIEdgeInsets(top: 64, left: 16, bottom: 16, right: 16)
         return scrollStackView
     }()
 

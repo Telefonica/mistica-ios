@@ -13,17 +13,28 @@ import UIKit
 public class FeedbackView: UIView {
     private enum Constants {
         static let iconSize: CGFloat = 48
-        static let animationDelay: TimeInterval = 0.2
-        static let animationDuration: TimeInterval = 0.8
-        static let animationCurveControlPoint1 = CGPoint(x: 0.215, y: 0.61)
-        static let animationCurveControlPoint2 = CGPoint(x: 0.355, y: 1)
+        enum Animation {
+            enum Animator {
+                static let duration: TimeInterval = 0.8
+                static let curveControlPoint1 = CGPoint(x: 0.215, y: 0.61)
+                static let curveControlPoint2 = CGPoint(x: 0.355, y: 1)
+            }
+            enum Delay {
+                static let initial: TimeInterval = 0.2
+                static let large: TimeInterval = 0.6
+                static let small: TimeInterval = 0.3
+            }
+        }
     }
 
-    private lazy var animator = UIViewPropertyAnimator(
-        duration: Constants.animationDuration,
-        controlPoint1: Constants.animationCurveControlPoint1,
-        controlPoint2: Constants.animationCurveControlPoint2
-    )
+    private var animators = [UIViewPropertyAnimator]()
+    private var animator: UIViewPropertyAnimator {
+        UIViewPropertyAnimator(
+            duration: Constants.Animation.Animator.duration,
+            controlPoint1: Constants.Animation.Animator.curveControlPoint1,
+            controlPoint2: Constants.Animation.Animator.curveControlPoint2
+        )
+    }
 
     // Setup properties
     private let style: FeedbackStyle
@@ -249,7 +260,7 @@ public extension FeedbackView {
     func startAnimation() {
         guard style.shouldAnimate, !animationFired else { return }
         animationFired = true
-        animator.startAnimation(afterDelay: Constants.animationDelay)
+        animators.first?.startAnimation(afterDelay: Constants.Animation.Delay.initial)
         triggerHapticFeedback()
 
         if UIView.areAnimationsEnabled {
@@ -267,6 +278,7 @@ private extension FeedbackView {
         setupContent()
         setupBackground()
         prepareAnimation()
+        prepareHapticFeedback()
     }
 
     func setupContent() {
@@ -291,6 +303,14 @@ private extension FeedbackView {
         }
     }
 
+    var activeIcon: UIView? {
+        switch style.iconStyle {
+        case .none: return nil
+        case .asset: return icon
+        case .animation: return animatedIcon
+        }
+    }
+
     func setupIcon() {
         switch style.iconStyle {
         case .none:
@@ -307,13 +327,45 @@ private extension FeedbackView {
     func prepareAnimation() {
         guard style.shouldAnimate else { return }
         animationFired = false
-        contentContainerStackView.alpha = 0
-        contentContainerStackView.transform = CGAffineTransform(translationX: 0, y: 20)
-        animator.addAnimations {
-            self.contentContainerStackView.alpha = 1
-            self.contentContainerStackView.transform = CGAffineTransform(translationX: 0, y: 0)
+
+        //First animation (icon)
+        if let icon = activeIcon {
+            addAnimation(view: icon)
         }
-        prepareHapticFeedback()
+
+        // Second animation (title)
+        addAnimation(view: titleLabel, delay: Constants.Animation.Delay.large)
+
+        // Third animation (subtitle + reference)
+        if subtitle != nil {
+            addAnimation(view: subtitleLabel, delay: Constants.Animation.Delay.small)
+        }
+        if errorReference != nil {
+            addAnimation(view: errorReferenceLabel, delay: Constants.Animation.Delay.small)
+        }
+
+        // Last animation (extra)
+        if let extraContent {
+            addAnimation(view: extraContent, delay: Constants.Animation.Delay.small)
+        }
+    }
+
+    func addAnimation(view: UIView, delay: CGFloat = .zero) {
+        // Prepare
+        view.alpha = 0
+        view.transform = CGAffineTransform(translationX: 0, y: 20)
+
+        // Animate
+        let animator = self.animator
+        animator.addAnimations {
+            view.alpha = 1
+            view.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
+
+        animators.last?.addCompletion({ _ in
+            animator.startAnimation(afterDelay: delay)
+        })
+        animators.append(animator)
     }
 
     func prepareHapticFeedback() {

@@ -93,16 +93,12 @@ public extension FeedbackViewController {
         view.addSubview(withDefaultConstraints: feedbackView)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        feedbackView.startAnimation()
-    }
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if configuration.backButton == .none {
             navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         }
+        feedbackView.startAnimation()
     }
 
     override func viewWillDisappear(_ animated: Bool) {

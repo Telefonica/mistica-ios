@@ -24,6 +24,14 @@ public class FeedbackView: UIView {
                 static let large: TimeInterval = 0.6
                 static let small: TimeInterval = 0.3
             }
+            enum Opacity {
+                static let initial = CGFloat.zero
+                static let final = CGFloat(1)
+            }
+            enum Offset {
+                static let initial = CGFloat(20)
+                static let final = CGFloat.zero
+            }
         }
     }
 
@@ -260,11 +268,10 @@ public extension FeedbackView {
     func startAnimation() {
         guard style.shouldAnimate, !animationFired else { return }
         animationFired = true
-        animators.first?.startAnimation(afterDelay: Constants.Animation.Delay.initial)
         triggerHapticFeedback()
 
         if UIView.areAnimationsEnabled {
-            animatedIcon.play()
+            startAnimations()
         } else {
             animatedIcon.stop()
             animatedIcon.currentProgress = 1
@@ -325,47 +332,77 @@ private extension FeedbackView {
     }
 
     func prepareAnimation() {
-        guard style.shouldAnimate else { return }
+        // Initial state
+        func prepare(view: UIView) {
+            view.alpha = Constants.Animation.Opacity.initial
+            view.transform = CGAffineTransform(
+                translationX: 0,
+                y: Constants.Animation.Offset.initial
+            )
+        }
+        // Final state
+        func animation(for view: UIView) -> () -> Void {
+            {
+                view.alpha = Constants.Animation.Opacity.final
+                view.transform = CGAffineTransform(
+                    translationX: 0,
+                    y: Constants.Animation.Offset.final
+                )
+            }
+        }
+
+        guard UIView.areAnimationsEnabled, style.shouldAnimate else { return }
         animationFired = false
 
-        //First animation (icon)
-        if let icon = activeIcon {
-            addAnimation(view: icon)
+        // Views that should animate
+        var views = [UIView]()
+        if title.isEmpty == false {
+            views.append(titleLabel)
         }
-
-        // Second animation (title)
-        addAnimation(view: titleLabel, delay: Constants.Animation.Delay.large)
-
-        // Third animation (subtitle + reference)
-        if subtitle != nil {
-            addAnimation(view: subtitleLabel, delay: Constants.Animation.Delay.small)
+        if let subtitle, subtitle.isEmpty == false {
+            views.append(subtitleLabel)
         }
-        if errorReference != nil {
-            addAnimation(view: errorReferenceLabel, delay: Constants.Animation.Delay.small)
+        if let errorReference, errorReference.isEmpty == false {
+            views.append(errorReferenceLabel)
         }
-
-        // Last animation (extra)
         if let extraContent {
-            addAnimation(view: extraContent, delay: Constants.Animation.Delay.small)
+            views.append(extraContent)
+        }
+
+        // Prepare
+        views.forEach(prepare(view:))
+        // Generate animators
+        self.animators = views.map(animation).map { animation in
+            let animator = animator
+            animator.addAnimations(animation)
+            return animator
         }
     }
 
-    func addAnimation(view: UIView, delay: CGFloat = .zero) {
-        // Prepare
-        view.alpha = 0
-        view.transform = CGAffineTransform(translationX: 0, y: 20)
+    func startAnimations() {
+        // Start the initial
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Animation.Delay.initial) { [weak self] in
+            self?.animatedIcon.play()
 
-        // Animate
-        let animator = self.animator
-        animator.addAnimations {
-            view.alpha = 1
-            view.transform = CGAffineTransform(translationX: 0, y: 0)
+            // Animate views
+            guard let animators = self?.animators, animators.isEmpty == false else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Animation.Delay.large) {
+                self?.animate(remaining: animators)
+            }
         }
+    }
 
-        animators.last?.addCompletion({ _ in
-            animator.startAnimation(afterDelay: delay)
-        })
-        animators.append(animator)
+    func animate(remaining animators: [UIViewPropertyAnimator]) {
+        var animators = animators
+
+        let animator = animators.removeFirst()
+        animator.startAnimation()
+
+        // Animate other views
+        guard animators.isEmpty == false else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Animation.Delay.small) { [weak self] in
+            self?.animate(remaining: animators)
+        }
     }
 
     func prepareHapticFeedback() {

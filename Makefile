@@ -36,7 +36,7 @@ BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) $(VivoNew) # List of all the bra
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode-14.3.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode-14.3.1.app/Contents/Developer
 endif
 
 # TokenGenerator func to be used in all token generators.

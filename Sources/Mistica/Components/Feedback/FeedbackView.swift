@@ -406,6 +406,7 @@ private extension FeedbackView {
     }
 
     func prepareHapticFeedback() {
+        guard UIView.areAnimationsEnabled else { return }
         feedbackGenerator?.prepare()
     }
 

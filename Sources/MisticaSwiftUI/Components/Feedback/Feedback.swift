@@ -406,8 +406,13 @@ fileprivate struct Animation: ViewModifier {
 }
 
 fileprivate extension View {
+    @ViewBuilder
     func animate(delay: Double) -> some View {
-        modifier(Animation(delay: delay))
+        if UIView.areAnimationsEnabled {
+            modifier(Animation(delay: delay))
+        } else {
+            self
+        }
     }
 }
 

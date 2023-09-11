@@ -103,4 +103,13 @@ public enum FeedbackStyle {
             return nil
         }
     }
+
+    var shouldAnimate: Bool {
+        switch self {
+        case .success, .error:
+            return true
+        case .informative, .feedback:
+            return false
+        }
+    }
 }

@@ -18,6 +18,12 @@ struct LottieView: UIViewRepresentable {
     var color: UIColor?
     var borderWidth: CGFloat?
     var scaleToFit = false
+    var delay: Double = .zero
+
+    mutating func setDelay(_ delay: Double) -> Self {
+        self.delay = delay
+        return self
+    }
 
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> AnimationView {
         let animationView = AnimationView()
@@ -47,7 +53,9 @@ struct LottieView: UIViewRepresentable {
         }
 
         if UIView.areAnimationsEnabled {
-            animationView.play()
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak animationView] in
+                animationView?.play()
+            }
         } else {
             animationView.currentProgress = 1
             animationView.forceDisplayUpdate()

@@ -133,6 +133,8 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
                 }
         case .image(let image):
             image
+                .resizable()
+                .scaledToFit()
                 .foregroundColor(.brand)
         case .none:
             EmptyView()

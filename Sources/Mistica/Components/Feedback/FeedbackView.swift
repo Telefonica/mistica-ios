@@ -313,14 +313,6 @@ private extension FeedbackView {
         }
     }
 
-    var activeIcon: UIView? {
-        switch style.iconStyle {
-        case .none: return nil
-        case .asset: return icon
-        case .animation: return animatedIcon
-        }
-    }
-
     func setupIcon() {
         switch style.iconStyle {
         case .none:

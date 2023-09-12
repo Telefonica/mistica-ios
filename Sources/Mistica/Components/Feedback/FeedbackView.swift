@@ -19,15 +19,18 @@ public class FeedbackView: UIView {
                 static let curveControlPoint1 = CGPoint(x: 0.215, y: 0.61)
                 static let curveControlPoint2 = CGPoint(x: 0.355, y: 1)
             }
+
             enum Delay {
                 static let initial: TimeInterval = 0.2
                 static let large: TimeInterval = 0.6
                 static let small: TimeInterval = 0.3
             }
+
             enum Opacity {
                 static let initial = CGFloat.zero
                 static let final = CGFloat(1)
             }
+
             enum Offset {
                 static let initial = CGFloat(20)
                 static let final = CGFloat.zero
@@ -372,7 +375,7 @@ private extension FeedbackView {
         // Prepare
         views.forEach(prepare(view:))
         // Generate animators
-        self.animators = views.map(animation).map { animation in
+        animators = views.map(animation).map { animation in
             let animator = animator
             animator.addAnimations(animation)
             return animator

@@ -364,22 +364,26 @@ public extension Feedback {
 }
 
 // MARK: Animation
-fileprivate struct Animation: ViewModifier {
+
+private struct Animation: ViewModifier {
     enum Constant {
         enum Opacity {
             static let initial = CGFloat.zero
             static let final = CGFloat(1)
         }
+
         enum Offset {
             static let initial = CGFloat(20)
             static let final = CGFloat.zero
         }
+
         enum Animation {
             static let duration: Double = 0.8
             static let controlPoint1 = CGPoint(x: 0.215, y: 0.61)
             static let controlPoint2 = CGPoint(x: 0.355, y: 1)
         }
     }
+
     @State var opacity = Constant.Opacity.initial
     @State var offset = Constant.Offset.initial
 
@@ -405,7 +409,7 @@ fileprivate struct Animation: ViewModifier {
     }
 }
 
-fileprivate extension View {
+private extension View {
     @ViewBuilder
     func animate(delay: Double) -> some View {
         if UIView.areAnimationsEnabled {

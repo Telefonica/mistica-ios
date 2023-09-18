@@ -32,7 +32,8 @@ Blau:= blau
 O2:= o2
 Vivo:= vivo
 VivoNew:= vivo-new
-BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) $(VivoNew) # List of all the brand names that will be procesed.
+Telefonica:= telefonica
+BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) $(VivoNew) $(Telefonica) # List of all the brand names that will be procesed.
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)

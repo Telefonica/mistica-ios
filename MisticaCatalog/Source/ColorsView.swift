@@ -52,6 +52,8 @@ struct ColorsView: View {
             return VivoColorPalette()
         case .vivoNew:
             return VivoNewColorPalette()
+        case .telefonica:
+            return TelefonicaColorPalette()
         case .custom(let colors, _, _, _, _):
             return colors
         }

@@ -25,7 +25,7 @@ enum MisticaButtonRightImage {
                 .frame(idealWidth: 8, idealHeight: 20)
                 .eraseToAnyView()
         case let .custom(image): return image
-                .eraseToAnyView()
+            .eraseToAnyView()
         }
     }
 
@@ -95,6 +95,26 @@ struct MisticaButton: View {
     @Environment(\.isEnabled) private var isEnabled
 
     public var body: some View {
+        if #available(iOS 14, *) {
+            ScaledMisticaButton(
+                height: height,
+                minWidth: minWidth
+            ) {
+                content
+            }
+        } else {
+            content
+                .frame(height: height)
+                .frame(minWidth: minWidth)
+                .accessibilityElement()
+        }
+    }
+}
+
+// MARK: Private extension
+
+private extension MisticaButton {
+    @ViewBuilder private var content: some View {
         ZStack {
             loadingView
                 .offset(x: 0, y: loadingInfo.isLoading ? 0 : Constants.transitionOffset)
@@ -116,9 +136,7 @@ struct MisticaButton: View {
             .animation(.misticaTimingCurve, value: loadingInfo.isLoading)
             .misticaBackport.accesibilityHidden(loadingInfo.isLoading)
         }
-        .frame(height: height)
         .if(!small) { $0.expandHorizontally() }
-        .frame(minWidth: minWidth)
         .padding(.vertical, verticalPadding)
         .padding(.horizontal, Constants.horizontalPadding)
         .background(backgroundColor)

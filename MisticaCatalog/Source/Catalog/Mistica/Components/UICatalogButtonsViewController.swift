@@ -71,8 +71,7 @@ class UICatalogButtonsViewController: UITableViewController {
              title: String,
              isInverse: Bool,
              isSmall: Bool,
-             rightImage: Button.RightImage? = nil
-        ) {
+             rightImage: Button.RightImage? = nil) {
             self.buttonStyle = buttonStyle
             self.title = title
             self.isInverse = isInverse

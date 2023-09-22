@@ -12,17 +12,40 @@ import UIKit
 
 public class FeedbackView: UIView {
     private enum Constants {
-        static let animationDelay: TimeInterval = 0.2
-        static let animationDuration: TimeInterval = 0.8
-        static let animationCurveControlPoint1 = CGPoint(x: 0.215, y: 0.61)
-        static let animationCurveControlPoint2 = CGPoint(x: 0.355, y: 1)
+        static let iconSize: CGFloat = 48
+        enum Animation {
+            enum Animator {
+                static let duration: TimeInterval = 0.8
+                static let curveControlPoint1 = CGPoint(x: 0.215, y: 0.61)
+                static let curveControlPoint2 = CGPoint(x: 0.355, y: 1)
+            }
+
+            enum Delay {
+                static let initial: TimeInterval = 0.2
+                static let large: TimeInterval = 0.6
+                static let small: TimeInterval = 0.3
+            }
+
+            enum Opacity {
+                static let initial = CGFloat.zero
+                static let final = CGFloat(1)
+            }
+
+            enum Offset {
+                static let initial = CGFloat(20)
+                static let final = CGFloat.zero
+            }
+        }
     }
 
-    private lazy var animator = UIViewPropertyAnimator(
-        duration: Constants.animationDuration,
-        controlPoint1: Constants.animationCurveControlPoint1,
-        controlPoint2: Constants.animationCurveControlPoint2
-    )
+    private var animators = [UIViewPropertyAnimator]()
+    private var animator: UIViewPropertyAnimator {
+        UIViewPropertyAnimator(
+            duration: Constants.Animation.Animator.duration,
+            controlPoint1: Constants.Animation.Animator.curveControlPoint1,
+            controlPoint2: Constants.Animation.Animator.curveControlPoint2
+        )
+    }
 
     // Setup properties
     private let style: FeedbackStyle
@@ -36,6 +59,10 @@ public class FeedbackView: UIView {
         let icon = UIImageView()
         icon.contentMode = .scaleAspectFit
         icon.tintColor = .brand
+        NSLayoutConstraint.activate([
+            icon.widthAnchor.constraint(equalToConstant: Constants.iconSize),
+            icon.heightAnchor.constraint(equalToConstant: Constants.iconSize)
+        ])
         icon.isAccessibilityElement = true
         icon.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return icon
@@ -47,6 +74,10 @@ public class FeedbackView: UIView {
         animation.contentMode = .scaleAspectFit
         animation.loopMode = .playOnce
         animation.isUserInteractionEnabled = false
+        NSLayoutConstraint.activate([
+            animation.widthAnchor.constraint(equalToConstant: Constants.iconSize),
+            animation.heightAnchor.constraint(equalToConstant: Constants.iconSize)
+        ])
         animation.isAccessibilityElement = true
         animation.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return animation
@@ -194,7 +225,8 @@ public class FeedbackView: UIView {
         scrollStackView.translatesAutoresizingMaskIntoConstraints = false
         scrollStackView.stackView.spacing = 24
         scrollStackView.stackView.alignment = .leading
-        scrollStackView.stackView.layoutMargins = UIEdgeInsets(top: 64, left: 24, bottom: 16, right: 24)
+        scrollStackView.stackView.layoutMargins = UIEdgeInsets(top: 64, left: 16, bottom: 16, right: 16)
+        scrollStackView.stackView.preservesSuperviewLayoutMargins = false
         return scrollStackView
     }()
 
@@ -239,11 +271,10 @@ public extension FeedbackView {
     func startAnimation() {
         guard style.shouldAnimate, !animationFired else { return }
         animationFired = true
-        animator.startAnimation(afterDelay: Constants.animationDelay)
         triggerHapticFeedback()
 
         if UIView.areAnimationsEnabled {
-            animatedIcon.play()
+            startAnimations()
         } else {
             animatedIcon.stop()
             animatedIcon.currentProgress = 1
@@ -257,6 +288,7 @@ private extension FeedbackView {
         setupContent()
         setupBackground()
         prepareAnimation()
+        prepareHapticFeedback()
     }
 
     func setupContent() {
@@ -290,32 +322,86 @@ private extension FeedbackView {
             scrollStackView.stackView.insertArrangedSubview(icon, at: 0)
         case .animation(let animation):
             animatedIcon.animation = animation
-            let width = animation.bounds.width
-            let height = animation.bounds.height
-            NSLayoutConstraint.activate([
-                animatedIcon.widthAnchor.constraint(equalToConstant: width),
-                animatedIcon.heightAnchor.constraint(equalToConstant: height)
-            ])
-            // To center animations that are not 1:1 squares
-            let leftMargin = (width - height) / 2
-            animatedIcon.transform = CGAffineTransform(translationX: -leftMargin, y: 0)
             scrollStackView.stackView.insertArrangedSubview(animatedIcon, at: 0)
         }
     }
 
     func prepareAnimation() {
-        guard style.shouldAnimate else { return }
-        animationFired = false
-        contentContainerStackView.alpha = 0
-        contentContainerStackView.transform = CGAffineTransform(translationX: 0, y: 20)
-        animator.addAnimations {
-            self.contentContainerStackView.alpha = 1
-            self.contentContainerStackView.transform = CGAffineTransform(translationX: 0, y: 0)
+        // Initial state
+        func prepare(view: UIView) {
+            view.alpha = Constants.Animation.Opacity.initial
+            view.transform = CGAffineTransform(
+                translationX: 0,
+                y: Constants.Animation.Offset.initial
+            )
         }
-        prepareHapticFeedback()
+        // Final state
+        func animation(for view: UIView) -> () -> Void {
+            {
+                view.alpha = Constants.Animation.Opacity.final
+                view.transform = CGAffineTransform(
+                    translationX: 0,
+                    y: Constants.Animation.Offset.final
+                )
+            }
+        }
+
+        guard UIView.areAnimationsEnabled, style.shouldAnimate else { return }
+        animationFired = false
+
+        // Views that should animate
+        var views = [UIView]()
+        if title.isEmpty == false {
+            views.append(titleLabel)
+        }
+        if let subtitle, subtitle.isEmpty == false {
+            views.append(subtitleLabel)
+        }
+        if let errorReference, errorReference.isEmpty == false {
+            views.append(errorReferenceLabel)
+        }
+        if let extraContent {
+            views.append(extraContent)
+        }
+
+        // Prepare
+        views.forEach(prepare(view:))
+        // Generate animators
+        animators = views.map(animation).map { animation in
+            let animator = animator
+            animator.addAnimations(animation)
+            return animator
+        }
+    }
+
+    func startAnimations() {
+        // Start the initial
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Animation.Delay.initial) { [weak self] in
+            self?.animatedIcon.play()
+
+            // Animate views
+            guard let animators = self?.animators, animators.isEmpty == false else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Animation.Delay.large) {
+                self?.animate(remaining: animators)
+            }
+        }
+    }
+
+    func animate(remaining animators: [UIViewPropertyAnimator]) {
+        var animators = animators
+
+        let animator = animators.removeFirst()
+        animator.startAnimation()
+
+        // Animate other views
+        guard animators.isEmpty == false else { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Animation.Delay.small) { [weak self] in
+            self?.animate(remaining: animators)
+        }
     }
 
     func prepareHapticFeedback() {
+        guard UIView.areAnimationsEnabled else { return }
         feedbackGenerator?.prepare()
     }
 

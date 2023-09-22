@@ -47,7 +47,7 @@ public enum FeedbackStyle {
         switch self {
         case .success, .error:
             guard let dataAsset = dataAsset else { return .none }
-            return .animation(LottieView(loopMode: .playOnce, asset: dataAsset))
+            return .animation(LottieView(loopMode: .playOnce, asset: dataAsset, scaleToFit: true))
         case .informative:
             guard let image = image else { return .none }
             return .image(image)
@@ -101,6 +101,15 @@ public enum FeedbackStyle {
             return 0.5
         case .feedback:
             return nil
+        }
+    }
+
+    var shouldAnimate: Bool {
+        switch self {
+        case .success, .error:
+            return true
+        case .informative, .feedback:
+            return false
         }
     }
 }

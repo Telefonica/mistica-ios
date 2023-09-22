@@ -113,7 +113,7 @@ private extension Snackbar {
 
     var misticaButtonStyle: MisticaButtonStyle {
         style == .normal
-            ? .misticaLink(small: true, bleedingAlignment: .trailing)
+            ? .misticaSnackbar(small: true, bleedingAlignment: .trailing)
             : .misticaLinkInverse(small: true, bleedingAlignment: .trailing)
     }
 

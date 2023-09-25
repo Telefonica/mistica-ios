@@ -21,9 +21,9 @@ enum MisticaButtonRightImage {
         case .chevron: return
             Image.chevron
                 .resizable()
-                                .scaledToFit()
-                                .frame(idealWidth: 8, idealHeight: 20)
-                                .eraseToAnyView()
+                .scaledToFit()
+                .frame(idealWidth: 8, idealHeight: 20)
+                .eraseToAnyView()
         case let .custom(image):
             return image
                 .eraseToAnyView()

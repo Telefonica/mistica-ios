@@ -14,13 +14,13 @@ struct ScaledMisticaButton<Content: View>: View {
     let height: CGFloat
     let small: Bool
     let minWidth: CGFloat
-let verticalPadding: CGFloat
-let horizontalPadding: CGFloat
-let backgroundColor: Color
-let foregroundColor: Color
-let borderColor: Color
-let leadingInset: CGFloat
-let trailingInset: CGFloat
+    let verticalPadding: CGFloat
+    let horizontalPadding: CGFloat
+    let backgroundColor: Color
+    let foregroundColor: Color
+    let borderColor: Color
+    let leadingInset: CGFloat
+    let trailingInset: CGFloat
 
     @ScaledMetric var scale: CGFloat = 1
 

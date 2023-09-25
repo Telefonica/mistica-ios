@@ -35,6 +35,7 @@ class ButtonContentView: UIView {
 
     private let rightImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.adjustsImageSizeForAccessibilityContentSizeCategory = true
         imageView.contentMode = .scaleAspectFit
         imageView.isHidden = true
         return imageView
@@ -138,6 +139,7 @@ class ButtonContentView: UIView {
         addSubview(constrainedToLayoutMarginsGuideOf: loadingStackView)
 
         rightImageHeightConstraint.isActive = true
+        rightImageHeightConstraint.priority = .defaultLow
     }
 
     override var intrinsicContentSize: CGSize {

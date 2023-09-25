@@ -28,7 +28,11 @@ class UICatalogButtonsViewController: UITableViewController {
                 Style(buttonStyle: .secondary, title: "Secondary S", isInverse: false, isSmall: true),
                 Style(buttonStyle: .danger, title: "Danger S", isInverse: false, isSmall: true),
                 Style(buttonStyle: .primaryInverse, title: "Primary Inverse S", isInverse: true, isSmall: true),
-                Style(buttonStyle: .secondaryInverse, title: "Secondary Inverse S", isInverse: true, isSmall: true)
+                Style(buttonStyle: .secondaryInverse, title: "Secondary Inverse S", isInverse: true, isSmall: true),
+
+                // Chevron
+
+                Style(buttonStyle: .link, title: "Chevron", isInverse: false, isSmall: false, rightImage: .chevron)
             ]
         }
 
@@ -52,10 +56,7 @@ class UICatalogButtonsViewController: UITableViewController {
                 Button(style: .primary, title: "OK"),
                 Button(style: .primary, title: "OK", isSmall: true),
                 Button(style: .link, title: "OK")
-            ], .right),
-            ("Chevron", [
-                Button(style: .link, title: "Button Link", rightImage: .chevron)
-            ], .center)
+            ], .right)
         ]
     }
 
@@ -64,6 +65,19 @@ class UICatalogButtonsViewController: UITableViewController {
         let title: String
         let isInverse: Bool
         let isSmall: Bool
+        let rightImage: Button.RightImage?
+
+        init(buttonStyle: Button.Style,
+             title: String,
+             isInverse: Bool,
+             isSmall: Bool,
+             rightImage: Button.RightImage? = nil) {
+            self.buttonStyle = buttonStyle
+            self.title = title
+            self.isInverse = isInverse
+            self.isSmall = isSmall
+            self.rightImage = rightImage
+        }
     }
 
     init() {
@@ -112,7 +126,7 @@ class UICatalogButtonsViewController: UITableViewController {
 
         let cell = UITableViewCell()
 
-        let button = state.makeButton(style: style.buttonStyle, title: "Title", loadingTitle: "Loading Title", isSmall: style.isSmall)
+        let button = state.makeButton(style: style.buttonStyle, title: "Title", loadingTitle: "Loading Title", isSmall: style.isSmall, rightImage: style.rightImage)
         cell.configure(with: button)
         cell.contentView.backgroundColor = style.isInverse ? .navigationBarBackground : .backgroundContainer
 
@@ -175,23 +189,23 @@ private class LoadSimulationButton: Button {
 }
 
 private extension Button.State {
-    func makeButton(style: Button.Style, title _: String, loadingTitle _: String, isSmall: Bool) -> Button {
+    func makeButton(style: Button.Style, title _: String, loadingTitle _: String, isSmall: Bool, rightImage: Button.RightImage?) -> Button {
         let button: Button
 
         switch self {
         case .selected:
-            button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
+            button = Button(style: style, title: "Title", rightImage: rightImage, loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Selected"
             button.isSelected = true
             button.isUserInteractionEnabled = false
         case .disabled:
-            button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
+            button = Button(style: style, title: "Title", rightImage: rightImage, loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Disabled"
             button.isEnabled = false
         case .loading:
-            button = LoadSimulationButton(style: style, title: "Loading", loadingTitle: "Loading Title", isSmall: isSmall)
+            button = LoadSimulationButton(style: style, title: "Loading", rightImage: rightImage, loadingTitle: "Loading Title", isSmall: isSmall)
         case .normal:
-            button = Button(style: style, title: "Title", loadingTitle: "Loading Title", isSmall: isSmall)
+            button = Button(style: style, title: "Title", rightImage: rightImage, loadingTitle: "Loading Title", isSmall: isSmall)
             button.title = "Normal"
         default:
             fatalError("Unknown state")

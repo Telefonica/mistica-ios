@@ -1,3 +1,10 @@
+# [26.1.0](https://github.com/Telefonica/mistica-ios/compare/v26.0.1...v26.1.0) (2023-09-25)
+
+
+### Features
+
+* **Feedback:** Update component ([9bfe335](https://github.com/Telefonica/mistica-ios/commit/9bfe33555a7b47c0bf27b636c32cdcdf242ae06a))
+
 ## [26.0.1](https://github.com/Telefonica/mistica-ios/compare/v26.0.0...v26.0.1) (2023-09-04)
 
 

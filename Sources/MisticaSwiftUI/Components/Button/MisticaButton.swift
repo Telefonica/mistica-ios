@@ -21,11 +21,12 @@ enum MisticaButtonRightImage {
         case .chevron: return
             Image.chevron
                 .resizable()
-                .scaledToFit()
-                .frame(idealWidth: 8, idealHeight: 20)
+                                .scaledToFit()
+                                .frame(idealWidth: 8, idealHeight: 20)
+                                .eraseToAnyView()
+        case let .custom(image):
+            return image
                 .eraseToAnyView()
-        case let .custom(image): return image
-            .eraseToAnyView()
         }
     }
 
@@ -98,14 +99,31 @@ struct MisticaButton: View {
         if #available(iOS 14, *) {
             ScaledMisticaButton(
                 height: height,
-                minWidth: minWidth
+                small: small,
+                minWidth: minWidth,
+                verticalPadding: verticalPadding,
+                horizontalPadding: horizontalPadding,
+                backgroundColor: backgroundColor,
+                foregroundColor: foregroundColor,
+                borderColor: borderColor,
+                leadingInset: leadingInset,
+                trailingInset: trailingInset
             ) {
                 content
             }
+            .allowsHitTesting(!loadingInfo.isLoading)
         } else {
             content
                 .frame(height: height)
+                .if(!small) { $0.expandHorizontally() }
                 .frame(minWidth: minWidth)
+                .padding(.vertical, verticalPadding)
+                .padding(.horizontal, Constants.horizontalPadding)
+                .background(backgroundColor)
+                .foregroundColor(foregroundColor)
+                .border(radiusStyle: .button, borderColor: borderColor)
+                .padding(EdgeInsets(top: 0, leading: leadingInset, bottom: 0, trailing: trailingInset))
+                .allowsHitTesting(!loadingInfo.isLoading)
                 .accessibilityElement()
         }
     }
@@ -136,14 +154,6 @@ private extension MisticaButton {
             .animation(.misticaTimingCurve, value: loadingInfo.isLoading)
             .misticaBackport.accesibilityHidden(loadingInfo.isLoading)
         }
-        .if(!small) { $0.expandHorizontally() }
-        .padding(.vertical, verticalPadding)
-        .padding(.horizontal, Constants.horizontalPadding)
-        .background(backgroundColor)
-        .foregroundColor(foregroundColor)
-        .border(radiusStyle: .button, borderColor: borderColor)
-        .padding(EdgeInsets(top: 0, leading: leadingInset, bottom: 0, trailing: trailingInset))
-        .allowsHitTesting(!loadingInfo.isLoading)
     }
 
     @ViewBuilder private var loadingView: some View {

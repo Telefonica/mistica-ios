@@ -43,8 +43,8 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                     ),
                     .disabled: MisticaButton.StateStyle(
                         textColor: .textButtonPrimary,
-                        backgroundColor: .buttonPrimaryBackground,
-                        borderColor: .buttonPrimaryBackground
+                        backgroundColor: .buttonPrimaryBackground.opacity(0.5),
+                        borderColor: .buttonPrimaryBackground.opacity(0.1)
                     ),
                     .loading: MisticaButton.StateStyle(
                         textColor: .textButtonPrimary,

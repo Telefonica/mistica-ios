@@ -85,7 +85,7 @@ public struct Tag: View {
         case .active:
             return .brandLow
         case .inactive:
-            return .neutralLow
+            return .divider
         case .warning:
             return .warningLow
         case .error:
@@ -96,17 +96,17 @@ public struct Tag: View {
     private var foregroundColor: Color {
         switch style {
         case .promo:
-            return .promo
+            return .promoHigh
         case .success:
-            return .success
+            return .successHigh
         case .active:
             return .brand
         case .inactive:
             return .neutralMedium
         case .warning:
-            return .warning
+            return .warningHigh
         case .error:
-            return .error
+            return .errorHigh
         }
     }
 }

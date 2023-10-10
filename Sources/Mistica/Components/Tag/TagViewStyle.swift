@@ -29,7 +29,7 @@ extension TagViewStyle {
         case .active:
             return .brandLow
         case .inactive:
-            return .neutralLow
+            return .divider
         case .success:
             return .successLow
         case .warning:

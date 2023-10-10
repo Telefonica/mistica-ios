@@ -431,7 +431,7 @@ public extension UIColor {
 public extension BrandStyle {
     var preferredStatusBarStyle: UIStatusBarStyle {
         switch self {
-        case .movistar, .vivo, .o2, .blau, .custom, .vivoNew:
+        case .movistar, .vivo, .o2, .blau, .custom, .vivoNew, .telefonica:
             return .lightContent
         }
     }

@@ -64,6 +64,12 @@ private extension MisticaConfig {
             currentFontWeights = VivoNewFontWeights()
             currentCornerRadius = VivoNewCornerRadius()
             currentFontSizes = VivoNewFontSizes()
+        case .telefonica:
+            currentColors = TelefonicaColors()
+            currentBrandAssets = DefaultMisticaBrandAssets()
+            currentFontWeights = TelefonicaFontWeights()
+            currentCornerRadius = TelefonicaCornerRadius()
+            currentFontSizes = TelefonicaFontSizes()
         case .custom(let colors, let assets, let fontWeights, let cornerRadius, let fontSizes):
             currentColors = colors
             currentBrandAssets = assets

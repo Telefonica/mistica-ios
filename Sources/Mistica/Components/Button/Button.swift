@@ -278,7 +278,6 @@ private extension Button {
     }
 
     func setUpView() {
-        layer.cornerCurve = .continuous
         layer.borderWidth = Constants.borderWidth
         isAccessibilityElement = true
         updateTraits()

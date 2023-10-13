@@ -83,6 +83,15 @@ open class ListCellContentView: UIView {
             centerSection.titleLabel.attributedText = newValue
         }
     }
+    
+    public var titleTintColor: UIColor {
+        get {
+            centerSection.titleTextColor
+        }
+        set {
+            centerSection.titleTextColor = newValue
+        }
+    }
 
     public var subtitle: String? {
         get {

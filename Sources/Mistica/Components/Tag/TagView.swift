@@ -16,7 +16,7 @@ public class TagView: UIView {
         public static let verticalMargin: CGFloat = 4
         public static let minWidth: CGFloat = 56
         public static let minHeight: CGFloat = 28
-        public static var font: UIFont { .textPreset2(weight: .indicator) }
+        public static var font: UIFont { .textPreset2(weight: .medium) }
         public static let iconSize: CGFloat = 16
         public static let emptyContent = " "
         public static let stackViewSpacing: CGFloat = 4

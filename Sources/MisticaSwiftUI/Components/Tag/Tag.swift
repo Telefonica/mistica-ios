@@ -62,7 +62,7 @@ public struct Tag: View {
                 .accessibilityIdentifier(iconAccessibilityIdentifier)
             Text(text)
                 .foregroundColor(foregroundColor)
-                .font(.textPreset2(weight: .indicator))
+                .font(.textPreset2(weight: .medium))
         }
         .padding(.horizontal, Constants.horizontalInset)
         .padding(.vertical, Constants.verticalInset)

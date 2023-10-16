@@ -1,3 +1,19 @@
+# [26.2.0](https://github.com/Telefonica/mistica-ios/compare/v26.1.0...v26.2.0) (2023-10-16)
+
+
+### Bug Fixes
+
+* **Button:** change colors for disabled style ([#308](https://github.com/Telefonica/mistica-ios/issues/308)) ([e829160](https://github.com/Telefonica/mistica-ios/commit/e8291606fb6bdf4dd6cba0c7e4596185ee4b564f))
+* **Button:** change colors for disabled style ([#310](https://github.com/Telefonica/mistica-ios/issues/310)) ([fb108a1](https://github.com/Telefonica/mistica-ios/commit/fb108a1b893ec9f963284f073317424cbf0bff18))
+* **Button:** Change cornerCurve from continuous to circular ([#307](https://github.com/Telefonica/mistica-ios/issues/307)) ([26a73b3](https://github.com/Telefonica/mistica-ios/commit/26a73b376a04969f8a673e40d3acebbfcf6c190f))
+* **Snackbar:** change color for action button ([#304](https://github.com/Telefonica/mistica-ios/issues/304)) ([7054e3d](https://github.com/Telefonica/mistica-ios/commit/7054e3d688d415568e19d58d27576cc58b4ab789))
+* **Tag:** change foreground and background colors according to specs ([#309](https://github.com/Telefonica/mistica-ios/issues/309)) ([6a9f441](https://github.com/Telefonica/mistica-ios/commit/6a9f44122460dd7cccea1b3f79a7bc79e51acad9))
+
+
+### Features
+
+* **Button:** Added accesibility to right image (chevron) ([05d77d9](https://github.com/Telefonica/mistica-ios/commit/05d77d9409ccb94d2def0ec32a9d2132537a5f5b))
+
 # [26.1.0](https://github.com/Telefonica/mistica-ios/compare/v26.0.1...v26.1.0) (2023-09-25)
 
 

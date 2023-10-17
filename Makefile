@@ -2,7 +2,7 @@
 
 # Simulator
 OS_VERSION := 17.0
-DEVICE_NAME := iPhone 14
+DEVICE_NAME := iPhone 15
 SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)
 

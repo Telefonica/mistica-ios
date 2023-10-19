@@ -80,7 +80,7 @@ class UICatalogHeaderViewController: UIViewController {
             segments: "normal", "inverse"
         )
     }()
-    
+
     private lazy var headerSizeStyleCell: UISegmentedControlTableViewCell = {
         createSegmentedControl(
             reuseIdentifier: "headerSmallStyleCell",
@@ -182,8 +182,10 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
         }
 
         let style: HeaderViewStyle
-        switch (headerStyleCell.segmentedControl.selectedSegmentIndex,
-                headerSizeStyleCell.segmentedControl.selectedSegmentIndex) {
+        switch (
+            headerStyleCell.segmentedControl.selectedSegmentIndex,
+            headerSizeStyleCell.segmentedControl.selectedSegmentIndex
+        ) {
         case (Constants.normalStyleIndex, Constants.smallSizeStyleIndex):
             style = HeaderViewStyle.normalSmall
         case (Constants.inverseStyleIndex, Constants.defaultSizeStyleIndex):

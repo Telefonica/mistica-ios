@@ -110,7 +110,7 @@ extension HeaderTests {
             as: .image(on: .iPhone8)
         )
     }
-    
+
     func testFullHeaderAndSmallStyle() {
         let header = Header(
             pretitle: HeaderText(text: "The pretitle"),
@@ -138,7 +138,7 @@ extension HeaderTests {
             as: .image(on: .iPhone8)
         )
     }
-    
+
     func testFullHeaderWithInverseAndSmallStyle() {
         let header = Header(
             pretitle: HeaderText(text: "The pretitle"),

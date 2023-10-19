@@ -20,7 +20,7 @@ struct HeaderCatalogView: View {
     @State var pretitleLineLimit = 0
     @State var titleLineLimit = 0
     @State var descriptionLineLimit = 0
-    
+
     enum Style: Int {
         case normal
         case inverse

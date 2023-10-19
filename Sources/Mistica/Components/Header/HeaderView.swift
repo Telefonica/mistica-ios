@@ -279,7 +279,7 @@ private extension HeaderView {
     }
 
     func styleTitleLabel(_ headerText: HeaderText? = nil) {
-        titleLabel.font = .textPreset6()
+        titleLabel.font = titleFont
         if let headerText = headerText {
             titleLabel.text = headerText.text
             titleLabel.numberOfLines = headerText.lineLimit
@@ -289,12 +289,30 @@ private extension HeaderView {
     }
 
     func styleDescriptionLabel(_ headerText: HeaderText? = nil) {
-        descriptionLabel.font = .textPreset3(weight: .regular)
+        descriptionLabel.font = descriptionFont
         if let headerText = headerText {
             descriptionLabel.text = headerText.text
             descriptionLabel.numberOfLines = headerText.lineLimit
             descriptionAccessibilityLabel = headerText.accessibilityLabel
             descriptionAccessibilityIdentifier = headerText.accessibilityIdentifier
+        }
+    }
+    
+    var titleFont: UIFont {
+        switch style {
+        case .normal, .inverse:
+            return .textPreset6()
+        case .normalSmall, .inverseSmall:
+            return .textPreset4(weight: .regular)
+        }
+    }
+
+    var descriptionFont: UIFont {
+        switch style {
+        case .normal, .inverse:
+            return .textPreset3(weight: .regular)
+        case .normalSmall, .inverseSmall:
+            return .textPreset2(weight: .regular)
         }
     }
 
@@ -334,12 +352,12 @@ private extension HeaderView {
 
     func updateColors() {
         switch style {
-        case .normal:
+        case .normal, .normalSmall:
             stackView.backgroundColor = .background
             pretitleLabel.textColor = .textPrimary
             titleLabel.textColor = .textPrimary
             descriptionLabel.textColor = .textSecondary
-        case .inverse:
+        case .inverse, .inverseSmall:
             stackView.backgroundColor = .backgroundBrand
             pretitleLabel.textColor = .textPrimaryInverse
             titleLabel.textColor = .textPrimaryInverse

@@ -116,7 +116,7 @@ public struct Header: View {
             return .textPrimaryInverse
         }
     }
-    
+
     var titleColor: Color {
         switch style {
         case .normal, .normalSmall:
@@ -143,7 +143,7 @@ public struct Header: View {
             return .textSecondaryInverse
         }
     }
-    
+
     var descriptionFont: Font {
         switch style {
         case .normal, .inverse:

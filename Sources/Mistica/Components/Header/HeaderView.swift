@@ -297,7 +297,7 @@ private extension HeaderView {
             descriptionAccessibilityIdentifier = headerText.accessibilityIdentifier
         }
     }
-    
+
     var titleFont: UIFont {
         switch style {
         case .normal, .inverse:

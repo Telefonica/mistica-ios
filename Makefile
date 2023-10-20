@@ -1,9 +1,9 @@
 .PHONY: help setup format test simulator archive export clean skinGeneratorSetup colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration fontSizesGeneration skin
 
 # Simulator
-OS_VERSION := 16.4
-DEVICE_NAME := iPhone 14
-SIMULATOR_NAME := $(DEVICE_NAME)
+OS_VERSION := 17.0
+DEVICE_NAME := iPhone 15
+SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)
 
 # Paths
@@ -37,7 +37,7 @@ BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) $(VivoNew) $(Telefonica) # List 
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode-14.3.1.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode-15.0.app/Contents/Developer
 endif
 
 # TokenGenerator func to be used in all token generators.
@@ -91,8 +91,8 @@ format:
 
 test: clean setup simulator
 	@echo "Testing with simulator $(SIMULATOR_NAME)"
-	$(XCODEBUILD) build-for-testing -scheme $(TEST_SCHEMA) -destination "platform=iOS Simulator,name=$(SIMULATOR_NAME),OS=$(OS_VERSION)" | xcbeautify
-	$(XCODEBUILD) test-without-building -scheme $(TEST_SCHEMA) -resultBundlePath $(XCRESULT_FILE_PATH) -destination "platform=iOS Simulator,name=$(SIMULATOR_NAME),OS=$(OS_VERSION)" | xcbeautify
+	$(XCODEBUILD) build-for-testing -scheme $(TEST_SCHEMA) -destination "platform=iOS Simulator,name=$(SIMULATOR_NAME)" | xcbeautify
+	$(XCODEBUILD) test-without-building -scheme $(TEST_SCHEMA) -resultBundlePath $(XCRESULT_FILE_PATH) -destination "platform=iOS Simulator,name=$(SIMULATOR_NAME)" | xcbeautify
 
 extract_tests_attachments:
 	@xcparse attachments $(XCRESULT_FILE_PATH) $(SCREENSHOT_DIFFS_OUTPUT_PATH) --uti public.plain-text public.image --test

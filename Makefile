@@ -3,7 +3,7 @@
 # Simulator
 OS_VERSION := 16.4
 DEVICE_NAME := iPhone 14
-SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
+SIMULATOR_NAME := $(DEVICE_NAME)
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)
 
 # Paths
@@ -91,8 +91,8 @@ format:
 
 test: clean setup simulator
 	@echo "Testing with simulator $(SIMULATOR_NAME)"
-	$(XCODEBUILD) build-for-testing -scheme $(TEST_SCHEMA) -destination "platform=iOS Simulator,name=$(SIMULATOR_NAME)" | xcbeautify
-	$(XCODEBUILD) test-without-building -scheme $(TEST_SCHEMA) -resultBundlePath $(XCRESULT_FILE_PATH) -destination "platform=iOS Simulator,name=$(SIMULATOR_NAME)" | xcbeautify
+	$(XCODEBUILD) build-for-testing -scheme $(TEST_SCHEMA) -destination "platform=iOS Simulator,name=$(SIMULATOR_NAME),OS=$(OS_VERSION)" | xcbeautify
+	$(XCODEBUILD) test-without-building -scheme $(TEST_SCHEMA) -resultBundlePath $(XCRESULT_FILE_PATH) -destination "platform=iOS Simulator,name=$(SIMULATOR_NAME),OS=$(OS_VERSION)" | xcbeautify
 
 extract_tests_attachments:
 	@xcparse attachments $(XCRESULT_FILE_PATH) $(SCREENSHOT_DIFFS_OUTPUT_PATH) --uti public.plain-text public.image --test

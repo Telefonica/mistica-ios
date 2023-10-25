@@ -21,11 +21,11 @@ open class ListCellContentView: UIView {
         static let horizontalPadding: CGFloat = 16.0
         static let cellWidth: CGFloat = 324.0
     }
-    
+
     public enum TitleTextColorType {
         case normal
         case danger
-        
+
         var value: UIColor {
             switch self {
             case .normal:

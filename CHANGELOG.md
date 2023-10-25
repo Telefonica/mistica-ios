@@ -1,3 +1,12 @@
+# [26.3.0](https://github.com/Telefonica/mistica-ios/compare/v26.2.0...v26.3.0) (2023-10-25)
+
+
+### Features
+
+* **FontStyle:** Wrong base sizes for presets 5, 9 and 10 [#311](https://github.com/Telefonica/mistica-ios/issues/311) ([1a6c183](https://github.com/Telefonica/mistica-ios/commit/1a6c183d7b0cb89143025c104f8a6be0de768a55))
+* **Header:** added the Small style ([281be43](https://github.com/Telefonica/mistica-ios/commit/281be43e1d3ec2ef893d84ef609d5c686ba8a828))
+* **skin:** update design tokens from mistica-design branch: production ([#313](https://github.com/Telefonica/mistica-ios/issues/313)) ([9bf2885](https://github.com/Telefonica/mistica-ios/commit/9bf28855ce65a9905c86b3fbc16758344af14bbe))
+
 # [26.2.0](https://github.com/Telefonica/mistica-ios/compare/v26.1.0...v26.2.0) (2023-10-16)
 
 

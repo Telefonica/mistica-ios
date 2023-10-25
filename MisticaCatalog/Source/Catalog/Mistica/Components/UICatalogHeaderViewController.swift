@@ -20,6 +20,10 @@ private enum Section: Int, CaseIterable {
 class UICatalogHeaderViewController: UIViewController {
     private enum Constants {
         static let selectedSegmentEnabled = 0
+        static let normalStyleIndex = 0
+        static let inverseStyleIndex = 1
+        static let defaultSizeStyleIndex = 0
+        static let smallSizeStyleIndex = 1
     }
 
     private lazy var tableView: UITableView = {
@@ -33,8 +37,7 @@ class UICatalogHeaderViewController: UIViewController {
     private lazy var showPretitleCell: UISegmentedControlTableViewCell = {
         createSegmentedControl(
             reuseIdentifier: "showPretitleCell",
-            firstSegmentedTitle: "Yes",
-            secondSegmentedTitle: "No"
+            segments: "Yes", "No"
         )
     }()
 
@@ -48,8 +51,7 @@ class UICatalogHeaderViewController: UIViewController {
     private lazy var showTitleCell: UISegmentedControlTableViewCell = {
         createSegmentedControl(
             reuseIdentifier: "showTitleCell",
-            firstSegmentedTitle: "Yes",
-            secondSegmentedTitle: "No"
+            segments: "Yes", "No"
         )
     }()
 
@@ -62,8 +64,7 @@ class UICatalogHeaderViewController: UIViewController {
     private lazy var showDescriptionCell: UISegmentedControlTableViewCell = {
         createSegmentedControl(
             reuseIdentifier: "showDescriptionCell",
-            firstSegmentedTitle: "Yes",
-            secondSegmentedTitle: "No"
+            segments: "Yes", "No"
         )
     }()
 
@@ -76,8 +77,14 @@ class UICatalogHeaderViewController: UIViewController {
     private lazy var headerStyleCell: UISegmentedControlTableViewCell = {
         createSegmentedControl(
             reuseIdentifier: "headerStyleCell",
-            firstSegmentedTitle: "normal",
-            secondSegmentedTitle: "inverse"
+            segments: "normal", "inverse"
+        )
+    }()
+
+    private lazy var headerSizeStyleCell: UISegmentedControlTableViewCell = {
+        createSegmentedControl(
+            reuseIdentifier: "headerSmallStyleCell",
+            segments: "default size", "small size"
         )
     }()
 
@@ -92,7 +99,7 @@ class UICatalogHeaderViewController: UIViewController {
         [showPretitleCell, pretitleCell],
         [showTitleCell, titleCell],
         [showDescriptionCell, descriptionCell],
-        [headerStyleCell],
+        [headerStyleCell, headerSizeStyleCell],
         [showHeaderCell]
     ]
 
@@ -174,23 +181,37 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
             )
         }
 
-        let style: HeaderViewStyle = headerStyleCell.segmentedControl.selectedSegmentIndex == 0 ? .normal : .inverse
+        let style: HeaderViewStyle
+        switch (
+            headerStyleCell.segmentedControl.selectedSegmentIndex,
+            headerSizeStyleCell.segmentedControl.selectedSegmentIndex
+        ) {
+        case (Constants.normalStyleIndex, Constants.smallSizeStyleIndex):
+            style = HeaderViewStyle.normalSmall
+        case (Constants.inverseStyleIndex, Constants.defaultSizeStyleIndex):
+            style = HeaderViewStyle.inverse
+        case (Constants.inverseStyleIndex, Constants.smallSizeStyleIndex):
+            style = HeaderViewStyle.inverseSmall
+        default:
+            style = HeaderViewStyle.normal
+        }
 
+        vc.headerView.style = style
         vc.headerView.pretitle = HeaderText(text: pretitleText?.text ?? "")
         vc.headerView.title = HeaderText(text: titleText?.text ?? "")
         vc.headerView.descriptionValue = HeaderText(text: descriptionText?.text ?? "")
-        vc.headerView.style = style
 
         show(vc, sender: self)
     }
 }
 
 private extension UICatalogHeaderViewController {
-    func createSegmentedControl(reuseIdentifier: String, firstSegmentedTitle: String, secondSegmentedTitle: String) -> UISegmentedControlTableViewCell {
+    func createSegmentedControl(reuseIdentifier: String, segments: String...) -> UISegmentedControlTableViewCell {
         let segmented = UISegmentedControlTableViewCell(reuseIdentifier: reuseIdentifier)
 
-        segmented.segmentedControl.insertSegment(withTitle: firstSegmentedTitle, at: 0, animated: false)
-        segmented.segmentedControl.insertSegment(withTitle: secondSegmentedTitle, at: 1, animated: false)
+        segments.indices.forEach { index in
+            segmented.segmentedControl.insertSegment(withTitle: segments[index], at: index, animated: false)
+        }
 
         segmented.segmentedControl.selectedSegmentIndex = 0
 

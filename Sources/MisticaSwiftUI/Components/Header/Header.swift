@@ -52,7 +52,7 @@ public struct Header: View {
                 if let titleText = title?.text, let lineLimit = title?.lineLimit {
                     text(
                         titleText,
-                        font: .textPreset6(),
+                        font: titleFont,
                         foregroundColor: titleColor,
                         lineLimit: lineLimit,
                         accessibilityLabel: title?.accessibilityLabel,
@@ -62,7 +62,7 @@ public struct Header: View {
                 if let descriptionText = description?.text, let lineLimit = description?.lineLimit {
                     text(
                         descriptionText,
-                        font: .textPreset3(weight: .regular),
+                        font: descriptionFont,
                         foregroundColor: descriptionColor,
                         lineLimit: lineLimit,
                         accessibilityLabel: description?.accessibilityLabel,
@@ -101,37 +101,55 @@ public struct Header: View {
 
     var backgroundColor: Color {
         switch style {
-        case .normal:
+        case .normal, .normalSmall:
             return .background
-        case .inverse:
+        case .inverse, .inverseSmall:
             return .backgroundBrand
         }
     }
 
     var pretitleColor: Color {
         switch style {
-        case .normal:
+        case .normal, .normalSmall:
             return .textPrimary
-        case .inverse:
+        case .inverse, .inverseSmall:
             return .textPrimaryInverse
         }
     }
 
     var titleColor: Color {
         switch style {
-        case .normal:
+        case .normal, .normalSmall:
             return .textPrimary
-        case .inverse:
+        case .inverse, .inverseSmall:
             return .textPrimaryInverse
+        }
+    }
+
+    var titleFont: Font {
+        switch style {
+        case .normal, .inverse:
+            return .textPreset6()
+        case .normalSmall, .inverseSmall:
+            return .textPreset4(weight: .regular)
         }
     }
 
     var descriptionColor: Color {
         switch style {
-        case .normal:
+        case .normal, .normalSmall:
             return .textSecondary
-        case .inverse:
+        case .inverse, .inverseSmall:
             return .textSecondaryInverse
+        }
+    }
+
+    var descriptionFont: Font {
+        switch style {
+        case .normal, .inverse:
+            return .textPreset3(weight: .regular)
+        case .normalSmall, .inverseSmall:
+            return .textPreset2(weight: .regular)
         }
     }
 }

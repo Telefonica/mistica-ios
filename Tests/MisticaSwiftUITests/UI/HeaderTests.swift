@@ -111,12 +111,40 @@ extension HeaderTests {
         )
     }
 
+    func testFullHeaderAndSmallStyle() {
+        let header = Header(
+            pretitle: HeaderText(text: "The pretitle"),
+            title: HeaderText(text: "The title"),
+            description: HeaderText(text: "The description"),
+            style: .normalSmall
+        )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: header),
+            as: .image(on: .iPhone8)
+        )
+    }
+
     func testFullHeaderWithInverseStyle() {
         let header = Header(
             pretitle: HeaderText(text: "The pretitle"),
             title: HeaderText(text: "The title"),
             description: HeaderText(text: "The description"),
             style: .inverse
+        )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: header),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testFullHeaderWithInverseAndSmallStyle() {
+        let header = Header(
+            pretitle: HeaderText(text: "The pretitle"),
+            title: HeaderText(text: "The title"),
+            description: HeaderText(text: "The description"),
+            style: .inverseSmall
         )
 
         assertSnapshot(

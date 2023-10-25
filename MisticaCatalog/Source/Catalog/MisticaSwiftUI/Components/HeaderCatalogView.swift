@@ -16,10 +16,17 @@ struct HeaderCatalogView: View {
     @State var title = "The title"
     @State var hasDescription = true
     @State var description = "The description"
-    @State var isNormalStyle = true
+    @State var styleSelection: Style = .normal
     @State var pretitleLineLimit = 0
     @State var titleLineLimit = 0
     @State var descriptionLineLimit = 0
+
+    enum Style: Int {
+        case normal
+        case inverse
+        case normalSmall
+        case invereSmall
+    }
 
     var body: some View {
         List {
@@ -48,7 +55,12 @@ struct HeaderCatalogView: View {
                 )
             }
             section("Style") {
-                Toggle("is normal style", isOn: $isNormalStyle)
+                Picker("Select the style type", selection: $styleSelection) {
+                    Text("normal").tag(Style.normal)
+                    Text("inverse").tag(Style.inverse)
+                    Text("normal small").tag(Style.normalSmall)
+                    Text("inverse small").tag(Style.invereSmall)
+                }
             }
 
             NavigationLink("Show Header") {
@@ -56,7 +68,7 @@ struct HeaderCatalogView: View {
                     pretitle: hasPretitle ? HeaderText(text: pretitle, lineLimit: pretitleLineLimit) : nil,
                     title: hasTitle ? HeaderText(text: title, lineLimit: titleLineLimit) : nil,
                     description: hasDescription ? HeaderText(text: description, lineLimit: descriptionLineLimit) : nil,
-                    style: isNormalStyle ? .normal : .inverse
+                    style: createHeaderViewStyle(from: styleSelection)
                 )
                 .navigationBarTitle("Header")
             }
@@ -81,6 +93,21 @@ struct HeaderCatalogView: View {
                     in: 0 ... 10
                 )
             }
+        }
+    }
+}
+
+private extension HeaderCatalogView {
+    func createHeaderViewStyle(from styleSelection: Style) -> HeaderViewStyle {
+        switch styleSelection {
+        case .normal:
+            .normal
+        case .inverse:
+            .inverse
+        case .normalSmall:
+            .normalSmall
+        case .invereSmall:
+            .inverseSmall
         }
     }
 }

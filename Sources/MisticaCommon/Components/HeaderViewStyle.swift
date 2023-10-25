@@ -9,5 +9,7 @@
 @frozen
 public enum HeaderViewStyle {
     case normal
+    case normalSmall
     case inverse
+    case inverseSmall
 }

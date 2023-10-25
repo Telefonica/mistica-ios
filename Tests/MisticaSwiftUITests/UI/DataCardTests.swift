@@ -141,6 +141,22 @@ final class DataCardTests: XCTestCase {
         )
     }
 
+    func testNoButtons() {
+        let dataCard = DataCard(
+            headline: { Tag(style: .promo, text: Constants.headline) },
+            title: Constants.singleLineTitle,
+            subtitle: Constants.singleLineMessage,
+            description: Constants.singleLineMessage
+        )
+        .frame(width: 300)
+        .padding(16)
+
+        assertSnapshot(
+            matching: dataCard,
+            as: .image
+        )
+    }
+
     func testButtonAndFragment() {
         let dataCard = DataCard(
             headline: { Tag(style: .promo, text: Constants.headline) },
@@ -210,6 +226,38 @@ final class DataCardTests: XCTestCase {
             linkButton: { Button("Link") {} }
         )
         .fixedVerticalContentSize(false)
+        .frame(width: 300)
+        .padding(16)
+
+        assertSnapshot(
+            matching: dataCard,
+            as: .image
+        )
+    }
+
+    func testTitleOnly() {
+        let dataCard = DataCard(
+            headline: { Tag(style: .promo, text: Constants.headline) },
+            title: Constants.singleLineTitle,
+            subtitle: Constants.singleLineMessage,
+            linkButton: { Button("Link") {} }
+        )
+        .frame(width: 300)
+        .padding(16)
+
+        assertSnapshot(
+            matching: dataCard,
+            as: .image
+        )
+    }
+
+    func testDescriptionOnly() {
+        let dataCard = DataCard(
+            headline: { Tag(style: .promo, text: Constants.headline) },
+            subtitle: Constants.singleLineMessage,
+            description: Constants.singleLineMessage,
+            linkButton: { Button("Link") {} }
+        )
         .frame(width: 300)
         .padding(16)
 

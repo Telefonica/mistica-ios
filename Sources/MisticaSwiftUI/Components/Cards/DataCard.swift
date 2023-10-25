@@ -17,12 +17,12 @@ public enum DataCardAssetType {
 public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, LinkButton: View>: View {
     private let assetType: DataCardAssetType
     private let headline: Headline?
-    private let title: String
+    private let title: String?
     private let subtitle: String?
-    private let description: String
+    private let description: String?
     private let dismissAction: (() -> Void)?
-    private let fragmentView: Fragment?
-    private let primaryButton: PrimaryButton?
+    private let fragmentView: Fragment
+    private let primaryButton: PrimaryButton
     private let linkButton: LinkButton
 
     private var titleLineLimit: Int? = 1
@@ -43,9 +43,9 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
     fileprivate init(
         assetType: DataCardAssetType,
         headline: Headline,
-        title: String,
+        title: String?,
         subtitle: String?,
-        description: String,
+        description: String?,
         dismissAction: (() -> Void)?,
         primaryButton: PrimaryButton,
         linkButton: LinkButton,
@@ -73,14 +73,16 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
                     .padding(.top, 8)
             }
 
-            Text(title)
-                .padding(.top, 8)
-                .lineLimit(titleLineLimit)
-                .font(.textPreset4(weight: .cardTitle))
-                .foregroundColor(.textPrimary)
-                .accessibilityLabel(titleAccessibilityLabel)
-                .accessibilityIdentifier(titleAccessibilityIdentifier)
-                .fixedSize(horizontal: false, vertical: true)
+            if let title = title {
+                Text(title)
+                    .padding(.top, 8)
+                    .lineLimit(titleLineLimit)
+                    .font(.textPreset4(weight: .cardTitle))
+                    .foregroundColor(.textPrimary)
+                    .accessibilityLabel(titleAccessibilityLabel)
+                    .accessibilityIdentifier(titleAccessibilityIdentifier)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
 
             if let subtitle = subtitle {
                 Text(subtitle)
@@ -93,16 +95,18 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
                     .fixedSize(horizontal: false, vertical: true)
             }
 
-            Text(description)
-                .padding(.top, 8)
-                .lineLimit(descriptionLineLimit)
-                .font(.textPreset2(weight: .regular))
-                .foregroundColor(.textSecondary)
-                .accessibilityLabel(descriptionAccessibilityLabel)
-                .accessibilityIdentifier(descriptionAccessibilityIdentifier)
-                .fixedSize(horizontal: false, vertical: true)
+            if let description = description {
+                Text(description)
+                    .padding(.top, 8)
+                    .lineLimit(descriptionLineLimit)
+                    .font(.textPreset2(weight: .regular))
+                    .foregroundColor(.textSecondary)
+                    .accessibilityLabel(descriptionAccessibilityLabel)
+                    .accessibilityIdentifier(descriptionAccessibilityIdentifier)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
 
-            if let fragmentView = fragmentView {
+            if hasFragmentView {
                 fragmentView
                     .padding(.top, 16)
             }
@@ -110,24 +114,24 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
             // This spacer along with `fixedVerticalContentSize = true` makes the content of the card to expand.
             Spacer()
 
-            HStack(spacing: 24) {
-                if let primaryButton = primaryButton {
+            if hasPrimaryButton || hasLinkButton {
+                HStack(spacing: 24) {
                     primaryButton
                         .buttonStyle(.misticaPrimary(small: true))
-                }
 
-                linkButton
-                    .buttonStyle(
-                        .misticaLink(
-                            small: true,
-                            bleedingAlignment: hasPrimaryButton ? .none : .leading
+                    linkButton
+                        .buttonStyle(
+                            .misticaLink(
+                                small: true,
+                                bleedingAlignment: hasPrimaryButton ? .none : .leading
+                            )
                         )
-                    )
+                }
+                .padding(.top, 16)
             }
-            .padding(.top, 16)
         }
-        .padding(.horizontal, 16)
-        .padding(.top, 16)
+        .padding(.horizontal, 24)
+        .padding(.top, 24)
         .padding(.bottom, 24)
         .expandHorizontally(alignment: .leading)
         .background(Color.backgroundContainer)
@@ -182,8 +186,16 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
         }
     }
 
+    private var hasFragmentView: Bool {
+        Fragment.self != EmptyView.self
+    }
+
     private var hasPrimaryButton: Bool {
         PrimaryButton.self != EmptyView.self
+    }
+
+    private var hasLinkButton: Bool {
+        LinkButton.self != EmptyView.self
     }
 }
 
@@ -283,9 +295,9 @@ public extension DataCard {
     init(
         assetType: DataCardAssetType = .none,
         @ViewBuilder headline: () -> Headline,
-        title: String,
+        title: String? = nil,
         subtitle: String? = nil,
-        description: String,
+        description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder primaryButton: () -> PrimaryButton,
         @ViewBuilder linkButton: () -> LinkButton,
@@ -307,9 +319,9 @@ public extension DataCard {
     init(
         assetType: DataCardAssetType = .none,
         @ViewBuilder headline: () -> Headline,
-        title: String,
+        title: String? = nil,
         subtitle: String? = nil,
-        description: String,
+        description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder primaryButton: () -> PrimaryButton,
         @ViewBuilder linkButton: () -> LinkButton
@@ -330,9 +342,9 @@ public extension DataCard {
     init(
         assetType: DataCardAssetType = .none,
         @ViewBuilder headline: () -> Headline,
-        title: String,
+        title: String? = nil,
         subtitle: String? = nil,
-        description: String,
+        description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder linkButton: () -> LinkButton
     ) where PrimaryButton == EmptyView, Fragment == EmptyView {
@@ -352,9 +364,9 @@ public extension DataCard {
     init(
         assetType: DataCardAssetType = .none,
         @ViewBuilder headline: () -> Headline,
-        title: String,
+        title: String? = nil,
         subtitle: String? = nil,
-        description: String,
+        description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder fragmentView: () -> Fragment,
         @ViewBuilder linkButton: () -> LinkButton
@@ -372,13 +384,34 @@ public extension DataCard {
         )
     }
 
+    init(
+        assetType: DataCardAssetType = .none,
+        @ViewBuilder headline: () -> Headline,
+        title: String? = nil,
+        subtitle: String? = nil,
+        description: String? = nil,
+        dismissAction: (() -> Void)? = nil
+    ) where LinkButton == EmptyView, PrimaryButton == EmptyView, Fragment == EmptyView {
+        self.init(
+            assetType: assetType,
+            headline: headline(),
+            title: title,
+            subtitle: subtitle,
+            description: description,
+            dismissAction: dismissAction,
+            primaryButton: EmptyView(),
+            linkButton: EmptyView(),
+            fragmentView: EmptyView()
+        )
+    }
+
     // MARK: No Headline & Buttons
 
     init(
         assetType: DataCardAssetType = .none,
-        title: String,
+        title: String? = nil,
         subtitle: String? = nil,
-        description: String,
+        description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder primaryButton: () -> PrimaryButton,
         @ViewBuilder linkButton: () -> LinkButton
@@ -398,9 +431,9 @@ public extension DataCard {
 
     init(
         assetType: DataCardAssetType = .none,
-        title: String,
+        title: String? = nil,
         subtitle: String? = nil,
-        description: String,
+        description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder linkButton: () -> LinkButton
     ) where PrimaryButton == EmptyView, Fragment == EmptyView, Headline == EmptyView {
@@ -419,9 +452,9 @@ public extension DataCard {
 
     init(
         assetType: DataCardAssetType = .none,
-        title: String,
+        title: String? = nil,
         subtitle: String? = nil,
-        description: String,
+        description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder fragmentView: () -> Fragment,
         @ViewBuilder linkButton: () -> LinkButton
@@ -436,6 +469,26 @@ public extension DataCard {
             primaryButton: EmptyView(),
             linkButton: linkButton(),
             fragmentView: fragmentView()
+        )
+    }
+
+    init(
+        assetType: DataCardAssetType = .none,
+        title: String? = nil,
+        subtitle: String? = nil,
+        description: String? = nil,
+        dismissAction: (() -> Void)? = nil
+    ) where PrimaryButton == EmptyView, LinkButton == EmptyView, Fragment == EmptyView, Headline == EmptyView {
+        self.init(
+            assetType: assetType,
+            headline: EmptyView(),
+            title: title,
+            subtitle: subtitle,
+            description: description,
+            dismissAction: dismissAction,
+            primaryButton: EmptyView(),
+            linkButton: EmptyView(),
+            fragmentView: EmptyView()
         )
     }
 }

@@ -29,19 +29,19 @@ public struct DataCardConfiguration {
 
     let asset: AssetType
     let headline: String?
-    let title: String
+    let title: String?
     let subtitle: String?
-    let descriptionTitle: String
-    let buttons: Buttons
+    let descriptionTitle: String?
+    let buttons: Buttons?
 
     public init(
         asset: AssetType = .none,
         backgroundIcon: UIImage? = nil,
         headline: String? = nil,
-        title: String,
+        title: String? = nil,
         subtitle: String? = nil,
-        descriptionTitle: String,
-        buttons: Buttons
+        descriptionTitle: String? = nil,
+        buttons: Buttons? = nil
     ) {
         self.asset = asset
         self.headline = headline
@@ -228,6 +228,8 @@ private extension DataCard {
             cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: nil)
         case .primaryAndLink(let primaryButton, let linkButton):
             cardBaseView.configureButtons(primaryButton: primaryButton, linkButton: linkButton)
+        case .none:
+            cardBaseView.configureButtons(primaryButton: nil, linkButton: nil)
         }
 
         cardAccessibilityElement.accessibilityLabel = [

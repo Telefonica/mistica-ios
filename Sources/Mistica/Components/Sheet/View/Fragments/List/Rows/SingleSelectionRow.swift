@@ -111,9 +111,9 @@ private extension SingleSelectionRowView {
     }
 
     func load(icon: SingleSelectionItemIcon, in imageView: UIImageView) {
-        guard let url = URL(string: icon.url) else { return }
+        guard let url = URL(urlString: icon.url) else { return }
         if let urlDark = icon.urlDark,
-           let urlForDarkMode = URL(string: urlDark) {
+           let urlForDarkMode = URL(urlString: urlDark) {
             imageView.load(url: url, urlForDarkMode: urlForDarkMode)
         } else {
             imageView.load(url: url)

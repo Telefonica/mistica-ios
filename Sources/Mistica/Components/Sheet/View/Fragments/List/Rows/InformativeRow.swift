@@ -187,9 +187,9 @@ private class TopContentView: UIView {
             imageView.image = .bullet.withRenderingMode(.alwaysTemplate)
         case .small(let url, let urlDark),
              .regular(let url, let urlDark):
-            guard let url = URL(string: url) else { return }
+            guard let url = URL(urlString: url) else { return }
             if let urlDark = urlDark,
-               let urlForDarkMode = URL(string: urlDark) {
+               let urlForDarkMode = URL(urlString: urlDark) {
                 imageView.load(url: url, urlForDarkMode: urlForDarkMode, renderAsTemplate: true)
             } else {
                 imageView.load(url: url, renderAsTemplate: true)

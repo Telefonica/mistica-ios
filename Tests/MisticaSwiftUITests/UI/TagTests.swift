@@ -18,21 +18,21 @@ final class TagTests: XCTestCase {
 
     func testLargeTagContent() {
         assertSnapshot(
-            matching: makeTemplateWithAllTags(content: "LARGE TAG CONTENT"),
+            matching: makeTemplateWithAllTags(content: "Large tag content"),
             as: .image
         )
     }
 
     func testSmallTagContent() {
         assertSnapshot(
-            matching: makeTemplateWithAllTags(content: "TAG"),
+            matching: makeTemplateWithAllTags(content: "Tag"),
             as: .image
         )
     }
 
     func testSmallTagContentWitchIcon() {
         assertSnapshot(
-            matching: makeTemplateWithAllTags(content: "TAG", icon: true),
+            matching: makeTemplateWithAllTags(content: "Tag", icon: true),
             as: .image
         )
     }

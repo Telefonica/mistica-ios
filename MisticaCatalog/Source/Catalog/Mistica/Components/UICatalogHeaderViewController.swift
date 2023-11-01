@@ -197,9 +197,9 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
         }
 
         vc.headerView.style = style
-        vc.headerView.pretitle = HeaderText(text: pretitleText?.text ?? "")
-        vc.headerView.title = HeaderText(text: titleText?.text ?? "")
-        vc.headerView.descriptionValue = HeaderText(text: descriptionText?.text ?? "")
+        vc.headerView.pretitle = pretitleText
+        vc.headerView.title = titleText
+        vc.headerView.descriptionValue = descriptionText
 
         show(vc, sender: self)
     }

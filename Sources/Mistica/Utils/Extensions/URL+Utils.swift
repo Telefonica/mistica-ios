@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension URL {
+internal extension URL {
     /**
      Apple’s URL parsing implemented RFC1738/1808 standard and was changed to RFC3986 starting from iOS 17.
 

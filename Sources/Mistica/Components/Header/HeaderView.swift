@@ -30,7 +30,7 @@ public struct HeaderText {
 public class HeaderView: UIView {
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
-        
+
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = Constants.noSpacing
@@ -41,19 +41,19 @@ public class HeaderView: UIView {
             bottom: Constants.marginBottom,
             right: Constants.marginRight
         )
-        
+
         return stackView
     }()
 
     private lazy var topStackView: UIStackView = {
         let stackView = UIStackView()
-        
+
         stackView.axis = .vertical
         stackView.spacing = Constants.spacing
 
         return stackView
     }()
-    
+
     private lazy var pretitleLabel = UILabel()
     private lazy var titleLabel = UILabel()
     private lazy var descriptionLabel = UILabel()
@@ -217,7 +217,7 @@ private extension HeaderView {
         setContentCompressionResistancePriority(.required, for: .vertical)
 
         updateLayoutMarginsGuide()
-        
+
         addSubview(stackView, constraints: [
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.topAnchor.constraint(equalTo: topAnchor),
@@ -227,7 +227,7 @@ private extension HeaderView {
 
         stackView.addArrangedSubview(topStackView)
     }
-    
+
     func updateTopStackView() {
         topStackView.removeArrangedSubviews()
 
@@ -248,7 +248,7 @@ private extension HeaderView {
         if let descriptionValue = descriptionValue {
             styleDescriptionLabel(descriptionValue)
             topStackView.addArrangedSubview(descriptionLabel)
-            
+
             let heightLayoutConstraint = descriptionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.heightLabel)
             topStackView.addConstraint(heightLayoutConstraint)
         }

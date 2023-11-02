@@ -70,6 +70,7 @@ class UICatalogDataCardViewController: UIViewController {
         cell.segmentedControl.insertSegment(withTitle: "Link", at: 0, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Primary", at: 1, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Both", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "None", at: 3, animated: false)
         cell.segmentedControl.selectedSegmentIndex = 0
 
         return cell
@@ -158,7 +159,7 @@ extension UICatalogDataCardViewController: UITableViewDataSource, UITableViewDel
             fatalError("Case not implemented")
         }
 
-        let buttons: DataCardConfiguration.Buttons
+        let buttons: DataCardConfiguration.Buttons?
 
         switch buttonsCell.segmentedControl.selectedSegmentIndex {
         case 0:
@@ -170,6 +171,8 @@ extension UICatalogDataCardViewController: UITableViewDataSource, UITableViewDel
                 primary: CardButton(title: "Button", loadingTitle: "Loading", tapHandler: nil),
                 link: CardLinkButton(title: "Link", tapHandler: nil)
             )
+        case 3:
+            buttons = nil
         default:
             fatalError("Case not implemented")
         }
@@ -177,9 +180,9 @@ extension UICatalogDataCardViewController: UITableViewDataSource, UITableViewDel
         let configuration = DataCardConfiguration(
             asset: assetType,
             headline: headlineCell.textField.text.valueOrNil,
-            title: titleCell.textField.text.valueOrNil ?? "Title is mandatory",
+            title: titleCell.textField.text.valueOrNil,
             subtitle: subtitleCell.textField.text.valueOrNil,
-            descriptionTitle: descriptionCell.textField.text.valueOrNil ?? "Description is mandatory",
+            descriptionTitle: descriptionCell.textField.text.valueOrNil,
             buttons: buttons
         )
 

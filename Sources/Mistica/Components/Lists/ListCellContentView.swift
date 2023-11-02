@@ -22,6 +22,20 @@ open class ListCellContentView: UIView {
         static let cellWidth: CGFloat = 324.0
     }
 
+    public enum TitleTextColorType {
+        case normal
+        case danger
+
+        var value: UIColor {
+            switch self {
+            case .normal:
+                return .textPrimary
+            case .danger:
+                return .textLinkDanger
+            }
+        }
+    }
+
     @frozen
     public enum CellStyle {
         case fullWidth
@@ -81,6 +95,12 @@ open class ListCellContentView: UIView {
         }
         set {
             centerSection.titleLabel.attributedText = newValue
+        }
+    }
+
+    public var titleTextColorType: TitleTextColorType = .normal {
+        didSet {
+            centerSection.titleTextColor = titleTextColorType.value
         }
     }
 

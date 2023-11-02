@@ -17,6 +17,8 @@ import UIKit
 public enum CroutonDismissInterval: Int, CaseIterable {
     case fiveSeconds = 5
     case tenSeconds = 10
+    // The infinite rawValue will/should not be used to dispatch a timer.
+    case infinite = 999
 }
 
 public extension CroutonDismissInterval {
@@ -29,9 +31,9 @@ public struct CroutonConfig {
     let backgroundColor: UIColor
     let textColor: UIColor
     let actionStyle: Button.Style
-    let overrideDismissInterval: TimeInterval?
+    let overrideDismissInterval: CroutonDismissInterval
 
-    public init(style: CroutonStyle, croutonDismissInterval: CroutonDismissInterval? = nil) {
+    public init(style: CroutonStyle, croutonDismissInterval: CroutonDismissInterval) {
         switch style {
         case .info:
             backgroundColor = .feedbackInfoBackground
@@ -42,7 +44,7 @@ public struct CroutonConfig {
             textColor = .textPrimaryInverse
             actionStyle = .croutonCriticalLink
         }
-        overrideDismissInterval = croutonDismissInterval?.timeInterval
+        overrideDismissInterval = croutonDismissInterval
     }
 }
 

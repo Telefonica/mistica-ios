@@ -27,6 +27,8 @@ class CroutonView: UIView {
         static let buttonWidthThresholdForVerticalLayout: CGFloat = 104
         static let horizontalSpacing: CGFloat = 16
         static let verticalSpacing: CGFloat = 18
+        
+        static let closeButtonWidthAndHeight: CGFloat = 20
     }
 
     public typealias DismissHandlerBlock = () -> Void
@@ -61,10 +63,38 @@ class CroutonView: UIView {
         return stackView
     }()
 
-    private lazy var stackView: UIStackView = {
+    private lazy var verticalStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [horizontalStackView])
+        stackView.axis = .vertical
+        stackView.spacing = Constants.verticalSpacing
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        return stackView
+    }()
+    
+    private lazy var horizontalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [label])
         stackView.axis = .horizontal
+        stackView.spacing = Constants.horizontalSpacing
+        stackView.alignment = .center
+        stackView.distribution = .fill
         return stackView
+    }()
+    
+    private lazy var closeImageView: IntrinsictImageView? = {
+        guard shouldShowCloseButton else { return nil }
+        let closeImageView = IntrinsictImageView()
+        closeImageView.intrinsicHeight = Constants.closeButtonWidthAndHeight
+        closeImageView.intrinsicWidth = Constants.closeButtonWidthAndHeight
+        closeImageView.image = UIImage.closeButtonBlackSmallIcon.withRenderingMode(.alwaysTemplate)
+        closeImageView.tintColor = .inverse
+
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.addTarget(self, action: #selector(closeButtonTapped))
+
+        closeImageView.isUserInteractionEnabled = true
+        closeImageView.addGestureRecognizer(tapGesture)
+        return closeImageView
     }()
 
     // A dummy view used for skipping the bottom safe area inset
@@ -76,15 +106,18 @@ class CroutonView: UIView {
     private let config: CroutonConfig
     private let dismissHandler: DismissHandlerBlock?
     private let action: (text: String, handler: DidTapActionBlock)?
+    private let forceDismiss: Bool
 
     init(text: String,
          action: (text: String, handler: DidTapActionBlock)? = nil,
          config: CroutonConfig,
-         dismissHandler: DismissHandlerBlock? = nil) {
+         dismissHandler: DismissHandlerBlock? = nil,
+         forceDismiss: Bool) {
         self.text = text
         self.action = action
         self.config = config
         self.dismissHandler = dismissHandler
+        self.forceDismiss = forceDismiss
 
         super.init(frame: .zero)
 
@@ -200,18 +233,26 @@ extension CroutonView {
 // MARK: Private methods
 
 private extension CroutonView {
+    
+    var shouldShowCloseButton: Bool {
+        guard config.overrideDismissInterval == .infinite else {
+            return false
+        }
+        
+        return action == nil || (action != nil && forceDismiss)
+    }
     func layoutViews() {
-        addSubview(stackView)
+        addSubview(verticalStackView)
         addSubview(dummyView)
 
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         dummyView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: dummyView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            verticalStackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
+            verticalStackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            verticalStackView.bottomAnchor.constraint(equalTo: dummyView.topAnchor),
+            verticalStackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
 
             dummyView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             dummyView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
@@ -252,16 +293,12 @@ private extension CroutonView {
     }
 
     func addCountdownToDismiss() {
-        let dismissInterval: TimeInterval
-        if let overrideDismissInterval = config.overrideDismissInterval {
-            dismissInterval = overrideDismissInterval
-        } else {
-            dismissInterval = (action == nil) ? Constants.actionlessDismissInterval
-                : Constants.withActionDismissInterval
+        guard config.overrideDismissInterval != .infinite else {
+            return
         }
 
         timer = Timer.scheduledTimer(
-            timeInterval: dismissInterval,
+            timeInterval: config.overrideDismissInterval.timeInterval,
             target: self,
             selector: #selector(invokeDismissHandler),
             userInfo: nil,
@@ -290,55 +327,61 @@ private extension CroutonView {
 
     /// Default layout where the button appears aligned to the text horizontally
     func useHorizontalLayout() {
+        addHorizontalActionButtonIfNeeded()
+        
+        guard let closeImageView = closeImageView else { return }
+        horizontalStackView.removeArrangedSubview(closeImageView)
+        horizontalStackView.addArrangedSubview(closeImageView)
+    }
+    
+    func addHorizontalActionButtonIfNeeded() {
         guard let actionButton = actionButton else { return }
         guard let actionButtonStackView = actionButtonStackView else { return }
 
-        stackView.axis = .horizontal
-        stackView.spacing = Constants.horizontalSpacing
-        stackView.alignment = .center
-        stackView.distribution = .fill
-
-        stackView.removeArrangedSubview(actionButtonStackView)
+        verticalStackView.removeArrangedSubview(actionButtonStackView)
         actionButton.removeFromSuperview()
-        stackView.addArrangedSubview(actionButton)
+        horizontalStackView.addArrangedSubview(actionButton)
     }
 
     /// Layout where the button appears below the text aligned to the right
     func useVerticalLayout() {
+        addVerticalActionButtonStackIfNeeded()
+        
+        guard let closeImageView = closeImageView else { return }
+        horizontalStackView.removeArrangedSubview(closeImageView)
+        horizontalStackView.addArrangedSubview(closeImageView)
+    }
+    
+    func addVerticalActionButtonStackIfNeeded() {
         guard let actionButton = actionButton else { return }
         guard let actionButtonStackView = actionButtonStackView else { return }
 
-        stackView.axis = .vertical
-        stackView.spacing = Constants.verticalSpacing
-        stackView.alignment = .fill
-        stackView.distribution = .fill
-
-        stackView.removeArrangedSubview(actionButton)
+        horizontalStackView.removeArrangedSubview(actionButton)
         actionButtonStackView.addArrangedSubview(actionButton)
-        stackView.addArrangedSubview(actionButtonStackView)
+        verticalStackView.addArrangedSubview(actionButtonStackView)
     }
 
     func fadeStackViewIn() {
-        stackView.alpha = 0
+        verticalStackView.alpha = 0
         UIView.animate(
             withDuration: Constants.contentAnimationDuration,
             delay: Constants.contentAnimationDelay,
             options: .curveEaseOut,
             animations: {
-                self.stackView.alpha = 1
+                self.verticalStackView.alpha = 1
             },
             completion: nil
         )
     }
 
     func fadeStackViewOut() {
-        stackView.alpha = 1
+        verticalStackView.alpha = 1
         UIView.animate(
             withDuration: Constants.contentAnimationDuration,
             delay: 0,
             options: .curveEaseIn,
             animations: {
-                self.stackView.alpha = 0
+                self.verticalStackView.alpha = 0
             },
             completion: nil
         )
@@ -350,5 +393,9 @@ private extension CroutonView {
 
     @objc func invokeDismissHandler() {
         dismissHandler?()
+    }
+
+    @objc func closeButtonTapped() {
+        invokeDismissHandler()
     }
 }

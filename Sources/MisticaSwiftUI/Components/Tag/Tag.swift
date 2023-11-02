@@ -85,7 +85,7 @@ public struct Tag: View {
         case .active:
             return .brandLow
         case .inactive:
-            return .divider
+            return .neutralLow
         case .warning:
             return .warningLow
         case .error:

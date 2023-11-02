@@ -1,3 +1,18 @@
+# [26.4.0](https://github.com/Telefonica/mistica-ios/compare/v26.3.0...v26.4.0) (2023-11-02)
+
+
+### Bug Fixes
+
+* **DataCard:** title, description or buttons could be empty ([#317](https://github.com/Telefonica/mistica-ios/issues/317)) ([de7a87a](https://github.com/Telefonica/mistica-ios/commit/de7a87ae3c2bcd523fd6a7946cbaf59fba623c31))
+* **Header:** Setting a minimum height of 24px for rows in a Header ([f6463a3](https://github.com/Telefonica/mistica-ios/commit/f6463a339ed4592695e88ec7fa6310dbb0141416))
+* **Tag:** update background color for inactive state ([#319](https://github.com/Telefonica/mistica-ios/issues/319)) ([d3b95b8](https://github.com/Telefonica/mistica-ios/commit/d3b95b85960c6615559fc336aef6edf9ea87b5e1))
+* **URL:** Fix URL(string:) behavior on iOS 17 ([63b7d0b](https://github.com/Telefonica/mistica-ios/commit/63b7d0b6436d193b6e747b642301518462f7334c))
+
+
+### Features
+
+* **ListCellContentView:** Add public titleTextColorType property to be able to change the center section title color. ([d6a2dd9](https://github.com/Telefonica/mistica-ios/commit/d6a2dd992e9bbf75e8c3726b90e0e57793ed346e))
+
 # [26.3.0](https://github.com/Telefonica/mistica-ios/compare/v26.2.0...v26.3.0) (2023-10-25)
 
 

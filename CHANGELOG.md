@@ -1,3 +1,10 @@
+## [26.4.1](https://github.com/Telefonica/mistica-ios/compare/v26.4.0...v26.4.1) (2023-11-02)
+
+
+### Bug Fixes
+
+* **URL:** Fix URL extension to be internal instead of public to avoid possible collisions with other implementations ([9b4e0cc](https://github.com/Telefonica/mistica-ios/commit/9b4e0cc23ae6038a9d9d5a20be1b2c7cda7fab37)), closes [#321](https://github.com/Telefonica/mistica-ios/issues/321)
+
 # [26.4.0](https://github.com/Telefonica/mistica-ios/compare/v26.3.0...v26.4.0) (2023-11-02)
 
 

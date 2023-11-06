@@ -28,12 +28,35 @@ public struct HeaderText {
 }
 
 public class HeaderView: UIView {
-    private let stackView = UIStackView()
-    private let topStackView = UIStackView()
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
 
-    private let pretitleLabel = UILabel()
-    private let titleLabel = UILabel()
-    private let descriptionLabel = UILabel()
+        stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        stackView.spacing = Constants.noSpacing
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(
+            top: Constants.marginTop,
+            left: Constants.marginLeft,
+            bottom: Constants.marginBottom,
+            right: Constants.marginRight
+        )
+
+        return stackView
+    }()
+
+    private lazy var topStackView: UIStackView = {
+        let stackView = UIStackView()
+
+        stackView.axis = .vertical
+        stackView.spacing = Constants.spacing
+
+        return stackView
+    }()
+
+    private lazy var pretitleLabel = UILabel()
+    private lazy var titleLabel = UILabel()
+    private lazy var descriptionLabel = UILabel()
     private var headerStyle: HeaderViewStyle = .normal
 
     // MARK: - Public
@@ -45,8 +68,6 @@ public class HeaderView: UIView {
         set {
             pretitleLabel.attributedText = newValue
             updatePretitleLabelVisibilityState()
-
-            updateSpacing()
         }
     }
 
@@ -57,8 +78,6 @@ public class HeaderView: UIView {
         set {
             titleLabel.attributedText = newValue
             updateTitleLabelVisibilityState()
-
-            updateSpacing()
         }
     }
 
@@ -69,8 +88,6 @@ public class HeaderView: UIView {
         set {
             descriptionLabel.attributedText = newValue
             updateDescriptionLabelVisibilityState()
-
-            updateSpacing()
         }
     }
 
@@ -92,63 +109,23 @@ public class HeaderView: UIView {
 
     public func setUpView() {
         layoutView()
-
-        stylePretitleLabel()
-        styleTitleLabel()
-        styleDescriptionLabel()
     }
 
     public var pretitle: HeaderText? {
-        get {
-            guard let text = pretitleLabel.text, !text.isEmpty else { return nil }
-            return HeaderText(
-                text: text,
-                lineLimit: pretitleLabel.numberOfLines,
-                accessibilityLabel: pretitleLabel.accessibilityLabel,
-                accessibilityIdentifier: pretitleLabel.accessibilityIdentifier
-            )
-        }
-        set {
-            stylePretitleLabel(newValue)
-            updatePretitleLabelVisibilityState()
-
-            updateSpacing()
+        didSet {
+            updateTopStackView()
         }
     }
 
     public var title: HeaderText? {
-        get {
-            guard let text = titleLabel.text, !text.isEmpty else { return nil }
-            return HeaderText(
-                text: text,
-                lineLimit: titleLabel.numberOfLines,
-                accessibilityLabel: titleLabel.accessibilityLabel,
-                accessibilityIdentifier: titleLabel.accessibilityIdentifier
-            )
-        }
-        set {
-            styleTitleLabel(newValue)
-            updateTitleLabelVisibilityState()
-
-            updateSpacing()
+        didSet {
+            updateTopStackView()
         }
     }
 
     public var descriptionValue: HeaderText? {
-        get {
-            guard let text = descriptionLabel.text, !text.isEmpty else { return nil }
-            return HeaderText(
-                text: text,
-                lineLimit: descriptionLabel.numberOfLines,
-                accessibilityLabel: descriptionLabel.accessibilityLabel,
-                accessibilityIdentifier: descriptionLabel.accessibilityIdentifier
-            )
-        }
-        set {
-            styleDescriptionLabel(newValue)
-            updateDescriptionLabelVisibilityState()
-
-            updateSpacing()
+        didSet {
+            updateTopStackView()
         }
     }
 
@@ -231,6 +208,7 @@ private extension HeaderView {
         static let marginBottom = 24.0
         static let spacing: CGFloat = 8
         static let noSpacing: CGFloat = 0.0
+        static let heightLabel: CGFloat = 24.0
     }
 
     func layoutView() {
@@ -240,20 +218,6 @@ private extension HeaderView {
 
         updateLayoutMarginsGuide()
 
-        stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
-        stackView.spacing = Constants.noSpacing
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(
-            top: Constants.marginTop,
-            left: Constants.marginLeft,
-            bottom: Constants.marginBottom,
-            right: Constants.marginRight
-        )
-
-        topStackView.axis = .vertical
-        topStackView.spacing = Constants.spacing
-
         addSubview(stackView, constraints: [
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.topAnchor.constraint(equalTo: topAnchor),
@@ -262,40 +226,56 @@ private extension HeaderView {
         ])
 
         stackView.addArrangedSubview(topStackView)
-
-        topStackView.addArrangedSubview(pretitleLabel)
-        topStackView.addArrangedSubview(titleLabel)
-        topStackView.addArrangedSubview(descriptionLabel)
     }
 
-    func stylePretitleLabel(_ headerText: HeaderText? = nil) {
+    func updateTopStackView() {
+        topStackView.removeArrangedSubviews()
+
+        if let pretitle = pretitle {
+            stylePretitleLabel(pretitle)
+            topStackView.addArrangedSubview(pretitleLabel)
+
+            let heightLayoutConstraint = pretitleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.heightLabel)
+            topStackView.addConstraint(heightLayoutConstraint)
+        }
+        if let title = title {
+            styleTitleLabel(title)
+            topStackView.addArrangedSubview(titleLabel)
+
+            let heightLayoutConstraint = titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.heightLabel)
+            topStackView.addConstraint(heightLayoutConstraint)
+        }
+        if let descriptionValue = descriptionValue {
+            styleDescriptionLabel(descriptionValue)
+            topStackView.addArrangedSubview(descriptionLabel)
+
+            let heightLayoutConstraint = descriptionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.heightLabel)
+            topStackView.addConstraint(heightLayoutConstraint)
+        }
+    }
+
+    func stylePretitleLabel(_ headerText: HeaderText) {
         pretitleLabel.font = .textPreset3(weight: .regular)
-        if let headerText = headerText {
-            pretitleLabel.text = headerText.text
-            pretitleLabel.numberOfLines = headerText.lineLimit
-            pretitleAccessibilityLabel = headerText.accessibilityLabel
-            pretitleAccessibilityIdentifier = headerText.accessibilityIdentifier
-        }
+        pretitleLabel.text = headerText.text
+        pretitleLabel.numberOfLines = headerText.lineLimit
+        pretitleAccessibilityLabel = headerText.accessibilityLabel
+        pretitleAccessibilityIdentifier = headerText.accessibilityIdentifier
     }
 
-    func styleTitleLabel(_ headerText: HeaderText? = nil) {
+    func styleTitleLabel(_ headerText: HeaderText) {
         titleLabel.font = titleFont
-        if let headerText = headerText {
-            titleLabel.text = headerText.text
-            titleLabel.numberOfLines = headerText.lineLimit
-            titleAccessibilityLabel = headerText.accessibilityLabel
-            titleAccessibilityIdentifier = headerText.accessibilityIdentifier
-        }
+        titleLabel.text = headerText.text
+        titleLabel.numberOfLines = headerText.lineLimit
+        titleAccessibilityLabel = headerText.accessibilityLabel
+        titleAccessibilityIdentifier = headerText.accessibilityIdentifier
     }
 
-    func styleDescriptionLabel(_ headerText: HeaderText? = nil) {
+    func styleDescriptionLabel(_ headerText: HeaderText) {
         descriptionLabel.font = descriptionFont
-        if let headerText = headerText {
-            descriptionLabel.text = headerText.text
-            descriptionLabel.numberOfLines = headerText.lineLimit
-            descriptionAccessibilityLabel = headerText.accessibilityLabel
-            descriptionAccessibilityIdentifier = headerText.accessibilityIdentifier
-        }
+        descriptionLabel.text = headerText.text
+        descriptionLabel.numberOfLines = headerText.lineLimit
+        descriptionAccessibilityLabel = headerText.accessibilityLabel
+        descriptionAccessibilityIdentifier = headerText.accessibilityIdentifier
     }
 
     var titleFont: UIFont {
@@ -324,18 +304,6 @@ private extension HeaderView {
             bottom: Constants.marginBottom,
             trailing: Constants.marginRight
         )
-    }
-
-    func updateSpacing() {
-        switch (pretitle, title, descriptionValue) {
-        case (.some, .some, .none), (.some, .none, .some):
-            topStackView.setCustomSpacing(Constants.spacing, after: pretitleLabel)
-        case (_, .some, .some):
-            topStackView.setCustomSpacing(Constants.spacing, after: titleLabel)
-        default:
-            topStackView.setCustomSpacing(Constants.noSpacing, after: pretitleLabel)
-            topStackView.setCustomSpacing(Constants.noSpacing, after: titleLabel)
-        }
     }
 
     func updatePretitleLabelVisibilityState() {

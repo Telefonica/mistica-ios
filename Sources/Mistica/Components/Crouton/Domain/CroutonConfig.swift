@@ -14,16 +14,22 @@ import UIKit
     case critical
 }
 
-public enum CroutonDismissInterval: Int, CaseIterable {
-    case fiveSeconds = 5
-    case tenSeconds = 10
-    // The infinite rawValue will/should not be used to dispatch a timer.
-    case infinite = 999
+public enum CroutonDismissInterval: CaseIterable {
+    case fiveSeconds
+    case tenSeconds
+    case infinite
 }
 
 public extension CroutonDismissInterval {
-    var timeInterval: TimeInterval {
-        TimeInterval(rawValue)
+    var timeInterval: TimeInterval? {
+        switch self {
+        case .fiveSeconds:
+            return 5
+        case .tenSeconds:
+            return 10
+        case .infinite:
+            return nil
+        }
     }
 }
 

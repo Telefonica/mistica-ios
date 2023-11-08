@@ -73,7 +73,7 @@ public extension CroutonController {
     ) -> Token {
         assertMainThread()
 
-        let dismissInterval = self.croutonDismissInterval(from: action, croutonDismissInterval: croutonDismissInterval)
+        let dismissInterval = self.normalizeDismissInterval(from: action, croutonDismissInterval: croutonDismissInterval)
         let config = CroutonConfig(style: style, croutonDismissInterval: dismissInterval)
 
         let dismissHandler = {
@@ -235,17 +235,22 @@ private extension CroutonController {
     ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
     ///   - croutonDismissInterval: The time interval that the crouton should be displayed.
     /// - Returns: This method will take into account the interval that the user wants and whether or not it has action to return a CroutonDisssmisInterval. In certain incompatible cases, the interval returned will be different from the one the user has selected.
-    func croutonDismissInterval(from action: ActionConfig?, croutonDismissInterval: CroutonDismissInterval?) -> CroutonDismissInterval {
-        guard let dismissInterval = croutonDismissInterval else {
-            return action == nil ? .fiveSeconds : .tenSeconds
-        }
-
-        if action == nil && croutonDismissInterval == .tenSeconds {
-            return .fiveSeconds
-        } else if action != nil && croutonDismissInterval == .fiveSeconds {
+    func normalizeDismissInterval(from action: ActionConfig?, croutonDismissInterval: CroutonDismissInterval?) -> CroutonDismissInterval {
+        switch croutonDismissInterval {
+        case .none where action != nil:
             return .tenSeconds
-        } else {
-            return dismissInterval
+        case .fiveSeconds where action != nil:
+            return .tenSeconds
+        case .tenSeconds where action == nil:
+            return .fiveSeconds
+        case .none:
+            return .fiveSeconds
+        case .fiveSeconds:
+            return .fiveSeconds
+        case .tenSeconds:
+            return .tenSeconds
+        case .infinite:
+            return .infinite
         }
     }
 }

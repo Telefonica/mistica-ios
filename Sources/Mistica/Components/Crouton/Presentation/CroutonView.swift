@@ -293,12 +293,12 @@ private extension CroutonView {
     }
 
     func addCountdownToDismiss() {
-        guard config.overrideDismissInterval != .infinite else {
+        guard let timeInterval = config.overrideDismissInterval.timeInterval else {
             return
         }
 
         timer = Timer.scheduledTimer(
-            timeInterval: config.overrideDismissInterval.timeInterval,
+            timeInterval: timeInterval,
             target: self,
             selector: #selector(invokeDismissHandler),
             userInfo: nil,

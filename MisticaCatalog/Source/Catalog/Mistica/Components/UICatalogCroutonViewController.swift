@@ -54,7 +54,7 @@ class UICatalogCroutonViewController: UITableViewController {
     private lazy var croutonDismissIntervalCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "crouton-dismiss-interval")
         for interval in CroutonDismissInterval.allCases {
-            cell.segmentedControl.insertSegment(withTitle: interval == .infinite ? "∞ seconds" : "\(interval.rawValue) seconds", at: 0, animated: false)
+            cell.segmentedControl.insertSegment(withTitle: "\(timeIntervalDescription(from: interval)) seconds", at: 0, animated: false)
         }
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
@@ -224,5 +224,18 @@ private class SampleTabBarViewController: UITabBarController {
             action: action,
             style: style
         )
+    }
+}
+
+private extension UICatalogCroutonViewController {
+    func timeIntervalDescription(from interval: CroutonDismissInterval) -> String {
+        switch interval {
+        case .fiveSeconds:
+            return "5"
+        case .tenSeconds:
+            return "10"
+        case .infinite:
+            return "∞"
+        }
     }
 }

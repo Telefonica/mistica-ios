@@ -73,7 +73,7 @@ public extension CroutonController {
     ) -> Token {
         assertMainThread()
 
-        let dismissInterval = self.normalizeDismissInterval(from: action, croutonDismissInterval: croutonDismissInterval)
+        let dismissInterval = normalizeDismissInterval(from: action, croutonDismissInterval: croutonDismissInterval)
         let config = CroutonConfig(style: style, croutonDismissInterval: dismissInterval)
 
         let dismissHandler = {

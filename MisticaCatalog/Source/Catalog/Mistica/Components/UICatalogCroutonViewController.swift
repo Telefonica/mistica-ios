@@ -44,7 +44,7 @@ class UICatalogCroutonViewController: UITableViewController {
         cell.textLabel?.text = "Show Crouton"
         return cell
     }()
-    
+
     private lazy var forceDismissEnabledCell: UISwitchTableViewCell = {
         let cell = UISwitchTableViewCell(reuseIdentifier: "forceDismissEnabled")
         cell.textLabel?.text = "Force Dismiss"
@@ -149,9 +149,9 @@ private extension UICatalogCroutonViewController {
         let selectedCroutonDismissIntervalIndex = croutonDismissIntervalCell.segmentedControl.selectedSegmentIndex
         return CroutonDismissInterval(rawValue: selectedCroutonDismissIntervalIndex)
     }
-    
+
     var forceDismiss: Bool {
-        return forceDismissEnabledCell.isOn
+        forceDismissEnabledCell.isOn
     }
 }
 

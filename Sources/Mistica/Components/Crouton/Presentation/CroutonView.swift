@@ -27,7 +27,7 @@ class CroutonView: UIView {
         static let buttonWidthThresholdForVerticalLayout: CGFloat = 104
         static let horizontalSpacing: CGFloat = 16
         static let verticalSpacing: CGFloat = 18
-        
+
         static let closeButtonWidthAndHeight: CGFloat = 20
     }
 
@@ -71,7 +71,7 @@ class CroutonView: UIView {
         stackView.distribution = .fill
         return stackView
     }()
-    
+
     private lazy var horizontalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [label])
         stackView.axis = .horizontal
@@ -80,7 +80,7 @@ class CroutonView: UIView {
         stackView.distribution = .fill
         return stackView
     }()
-    
+
     private lazy var closeImageView: IntrinsictImageView? = {
         guard shouldShowCloseButton else { return nil }
         let closeImageView = IntrinsictImageView()
@@ -233,14 +233,14 @@ extension CroutonView {
 // MARK: Private methods
 
 private extension CroutonView {
-    
     var shouldShowCloseButton: Bool {
         guard config.overrideDismissInterval == .infinite else {
             return false
         }
-        
+
         return action == nil || (action != nil && forceDismiss)
     }
+
     func layoutViews() {
         addSubview(verticalStackView)
         addSubview(dummyView)
@@ -328,12 +328,12 @@ private extension CroutonView {
     /// Default layout where the button appears aligned to the text horizontally
     func useHorizontalLayout() {
         addHorizontalActionButtonIfNeeded()
-        
+
         guard let closeImageView = closeImageView else { return }
         horizontalStackView.removeArrangedSubview(closeImageView)
         horizontalStackView.addArrangedSubview(closeImageView)
     }
-    
+
     func addHorizontalActionButtonIfNeeded() {
         guard let actionButton = actionButton else { return }
         guard let actionButtonStackView = actionButtonStackView else { return }
@@ -346,12 +346,12 @@ private extension CroutonView {
     /// Layout where the button appears below the text aligned to the right
     func useVerticalLayout() {
         addVerticalActionButtonStackIfNeeded()
-        
+
         guard let closeImageView = closeImageView else { return }
         horizontalStackView.removeArrangedSubview(closeImageView)
         horizontalStackView.addArrangedSubview(closeImageView)
     }
-    
+
     func addVerticalActionButtonStackIfNeeded() {
         guard let actionButton = actionButton else { return }
         guard let actionButtonStackView = actionButtonStackView else { return }

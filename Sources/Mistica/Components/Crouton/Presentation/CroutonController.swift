@@ -229,18 +229,17 @@ private extension CroutonController {
 
         return viewController
     }
-    
-    /// Calculate the CroutonDismissInterval depending on the action and croutonDismissInterval. 
+
+    /// Calculate the CroutonDismissInterval depending on the action and croutonDismissInterval.
     /// - Parameters:
     ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
     ///   - croutonDismissInterval: The time interval that the crouton should be displayed.
     /// - Returns: This method will take into account the interval that the user wants and whether or not it has action to return a CroutonDisssmisInterval. In certain incompatible cases, the interval returned will be different from the one the user has selected.
     func croutonDismissInterval(from action: ActionConfig?, croutonDismissInterval: CroutonDismissInterval?) -> CroutonDismissInterval {
-        
         guard let dismissInterval = croutonDismissInterval else {
             return action == nil ? .fiveSeconds : .tenSeconds
         }
-        
+
         if action == nil && croutonDismissInterval == .tenSeconds {
             return .fiveSeconds
         } else if action != nil && croutonDismissInterval == .fiveSeconds {

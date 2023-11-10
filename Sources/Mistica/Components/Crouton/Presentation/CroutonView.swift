@@ -31,7 +31,7 @@ class CroutonView: UIView {
         static let closeButtonWidthAndHeight: CGFloat = 20
     }
 
-    public typealias DismissHandlerBlock = () -> Void
+    public typealias DismissHandlerBlock = (CroutonControllerDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
 
     // MARK: Private properties
@@ -149,7 +149,7 @@ class CroutonView: UIView {
 
         timer?.invalidate()
 
-        invokeDismissHandler()
+        invokeDismissHandler(reason: .dismiss)
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -300,10 +300,14 @@ private extension CroutonView {
         timer = Timer.scheduledTimer(
             timeInterval: timeInterval,
             target: self,
-            selector: #selector(invokeDismissHandler),
+            selector: #selector(invokeCountdownDismissHandler),
             userInfo: nil,
             repeats: false
         )
+    }
+    
+    @objc func invokeCountdownDismissHandler() {
+        invokeDismissHandler(reason: .timeout)
     }
 
     func adjustStackViewLayout(traitCollection: UITraitCollection) {
@@ -391,11 +395,11 @@ private extension CroutonView {
         action?.handler()
     }
 
-    @objc func invokeDismissHandler() {
-        dismissHandler?()
+    @objc func invokeDismissHandler(reason: CroutonControllerDismissReason) {
+        dismissHandler?(reason)
     }
 
     @objc func closeButtonTapped() {
-        invokeDismissHandler()
+        invokeDismissHandler(reason: .dismiss)
     }
 }

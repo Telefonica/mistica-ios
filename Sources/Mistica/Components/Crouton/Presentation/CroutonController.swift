@@ -8,12 +8,49 @@
 
 import UIKit
 
+@objc public enum CroutonControllerDismissReason: Int, RawRepresentable {
+    case dismiss
+    case button
+    case timeout
+    case consecutive
+    
+    public typealias RawValue = String
+    
+    public var rawValue: RawValue {
+        switch self {
+        case .dismiss:
+            return "DISMISS"
+        case .button:
+            return "BUTTON"
+        case .timeout:
+            return "TIMEOUT"
+        case .consecutive:
+            return "CONSECUTIVE"
+        }
+    }
+    
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+        case "DISMISS":
+            self = .dismiss
+        case "BUTTON":
+            self = .button
+        case "TIMEOUT":
+            self = .timeout
+        case "CONSECUTIVE":
+            self = .consecutive
+        default:
+            return nil
+        }
+    }
+}
+
 public class CroutonController: NSObject {
     public typealias Token = UUID
     public typealias ActionConfig = (text: String, handler: DidTapActionBlock)
     fileprivate typealias OngoingCrouton = (token: Token, croutonView: CroutonView, rootViewController: () -> UIViewController?)
 
-    public typealias DismissHandlerBlock = () -> Void
+    public typealias DismissHandlerBlock = (CroutonControllerDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
 
     private var croutonViewList = [OngoingCrouton]()
@@ -76,15 +113,15 @@ public extension CroutonController {
         let dismissInterval = normalizeDismissInterval(from: action, croutonDismissInterval: croutonDismissInterval)
         let config = CroutonConfig(style: style, croutonDismissInterval: dismissInterval)
 
-        let dismissHandler = {
+        let dismissHandler: (CroutonControllerDismissReason) -> Void = { dismissReason in
             self.dismissCurrentCrouton()
 
-            dismissHandler?()
+            dismissHandler?(dismissReason)
         }
 
         let overwrittenAction = action.map { (actionText, handler) -> ActionConfig in
             (actionText, {
-                dismissHandler()
+                dismissHandler(.button)
                 handler()
             })
         }

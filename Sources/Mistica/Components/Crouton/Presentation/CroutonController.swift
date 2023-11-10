@@ -8,12 +8,44 @@
 
 import UIKit
 
+@objc public enum CroutonControllerDismissReason: Int, RawRepresentable {
+    case dismiss
+    case button
+    case timeout
+
+    public typealias RawValue = String
+
+    public var rawValue: RawValue {
+        switch self {
+        case .dismiss:
+            return "DISMISS"
+        case .button:
+            return "BUTTON"
+        case .timeout:
+            return "TIMEOUT"
+        }
+    }
+
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+        case "DISMISS":
+            self = .dismiss
+        case "BUTTON":
+            self = .button
+        case "TIMEOUT":
+            self = .timeout
+        default:
+            return nil
+        }
+    }
+}
+
 public class CroutonController: NSObject {
     public typealias Token = UUID
     public typealias ActionConfig = (text: String, handler: DidTapActionBlock)
     fileprivate typealias OngoingCrouton = (token: Token, croutonView: CroutonView, rootViewController: () -> UIViewController?)
 
-    public typealias DismissHandlerBlock = () -> Void
+    public typealias DismissHandlerBlock = (CroutonControllerDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
 
     private var croutonViewList = [OngoingCrouton]()
@@ -40,7 +72,8 @@ public extension CroutonController {
         action: ActionConfig? = nil,
         style: CroutonStyle = .info,
         dismissHandler: DismissHandlerBlock? = nil,
-        croutonDismissInterval: CroutonDismissInterval? = nil
+        croutonDismissInterval: CroutonDismissInterval? = nil,
+        forceDismiss: Bool = false
     ) -> Token {
         showCrouton(
             withText: text,
@@ -48,7 +81,8 @@ public extension CroutonController {
             style: style,
             dismissHandler: dismissHandler,
             rootViewController: UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController,
-            croutonDismissInterval: croutonDismissInterval
+            croutonDismissInterval: croutonDismissInterval,
+            forceDismiss: forceDismiss
         )
     }
 
@@ -66,21 +100,23 @@ public extension CroutonController {
         style: CroutonStyle = .info,
         dismissHandler: DismissHandlerBlock? = nil,
         rootViewController: @escaping @autoclosure () -> UIViewController?,
-        croutonDismissInterval: CroutonDismissInterval? = nil
+        croutonDismissInterval: CroutonDismissInterval? = nil,
+        forceDismiss: Bool = false
     ) -> Token {
         assertMainThread()
 
-        let config = CroutonConfig(style: style, croutonDismissInterval: croutonDismissInterval)
+        let dismissInterval = normalizeDismissInterval(from: action, croutonDismissInterval: croutonDismissInterval)
+        let config = CroutonConfig(style: style, croutonDismissInterval: dismissInterval)
 
-        let dismissHandler = {
+        let dismissHandler: (CroutonControllerDismissReason) -> Void = { dismissReason in
             self.dismissCurrentCrouton()
 
-            dismissHandler?()
+            dismissHandler?(dismissReason)
         }
 
         let overwrittenAction = action.map { (actionText, handler) -> ActionConfig in
             (actionText, {
-                dismissHandler()
+                dismissHandler(.button)
                 handler()
             })
         }
@@ -90,7 +126,8 @@ public extension CroutonController {
             text: text,
             action: overwrittenAction,
             config: config,
-            dismissHandler: dismissHandler
+            dismissHandler: dismissHandler,
+            forceDismiss: forceDismiss
         )
 
         show(crouton, token: token, rootViewController: rootViewController)
@@ -223,5 +260,29 @@ private extension CroutonController {
         }
 
         return viewController
+    }
+
+    /// Calculate the CroutonDismissInterval depending on the action and croutonDismissInterval.
+    /// - Parameters:
+    ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
+    ///   - croutonDismissInterval: The time interval that the crouton should be displayed.
+    /// - Returns: This method will take into account the interval that the user wants and whether or not it has action to return a CroutonDisssmisInterval. In certain incompatible cases, the interval returned will be different from the one the user has selected.
+    func normalizeDismissInterval(from action: ActionConfig?, croutonDismissInterval: CroutonDismissInterval?) -> CroutonDismissInterval {
+        switch croutonDismissInterval {
+        case .none where action != nil:
+            return .tenSeconds
+        case .fiveSeconds where action != nil:
+            return .tenSeconds
+        case .tenSeconds where action == nil:
+            return .fiveSeconds
+        case .none:
+            return .fiveSeconds
+        case .fiveSeconds:
+            return .fiveSeconds
+        case .tenSeconds:
+            return .tenSeconds
+        case .infinite:
+            return .infinite
+        }
     }
 }

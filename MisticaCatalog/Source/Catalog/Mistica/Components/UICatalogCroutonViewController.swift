@@ -45,10 +45,16 @@ class UICatalogCroutonViewController: UITableViewController {
         return cell
     }()
 
+    private lazy var forceDismissEnabledCell: UISwitchTableViewCell = {
+        let cell = UISwitchTableViewCell(reuseIdentifier: "forceDismissEnabled")
+        cell.textLabel?.text = "Force Dismiss"
+        return cell
+    }()
+
     private lazy var croutonDismissIntervalCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "crouton-dismiss-interval")
         for interval in CroutonDismissInterval.allCases {
-            cell.segmentedControl.insertSegment(withTitle: "\(interval.rawValue) seconds", at: 0, animated: false)
+            cell.segmentedControl.insertSegment(withTitle: "\(timeIntervalDescription(from: interval)) seconds", at: 0, animated: false)
         }
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
@@ -58,7 +64,11 @@ class UICatalogCroutonViewController: UITableViewController {
         [titleCell],
         [actionTitleCell],
         [croutonStyleCell],
-        [croutonDismissIntervalCell, showCroutonCell]
+        [
+            croutonDismissIntervalCell,
+            forceDismissEnabledCell,
+            showCroutonCell
+        ]
     ]
 
     init() {
@@ -101,16 +111,17 @@ extension UICatalogCroutonViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section == cells.indices.last!, indexPath.row != 0 else { return }
+        guard indexPath.section == cells.indices.last!, indexPath.row != 0 && indexPath.row != 1 else { return }
         tableView.deselectRow(animated: true)
         view.endEditing(true)
 
-        if indexPath.row == 1 {
+        if indexPath.row == 2 {
             CroutonController.shared.showCrouton(
                 withText: titleCell.textField.text ?? "",
                 action: croutonAction,
                 style: selectedCroutonStyle,
-                croutonDismissInterval: croutonDismissInterval
+                croutonDismissInterval: croutonDismissInterval,
+                forceDismiss: forceDismiss
             )
         } else {
             let sampleTabBarViewController = SampleTabBarViewController()
@@ -137,6 +148,10 @@ private extension UICatalogCroutonViewController {
     var croutonDismissInterval: CroutonDismissInterval? {
         let selectedCroutonDismissIntervalIndex = croutonDismissIntervalCell.segmentedControl.selectedSegmentIndex
         return CroutonDismissInterval(rawValue: selectedCroutonDismissIntervalIndex)
+    }
+
+    var forceDismiss: Bool {
+        forceDismissEnabledCell.isOn
     }
 }
 
@@ -165,8 +180,10 @@ public extension CroutonDismissInterval {
     init?(rawValue: Int) {
         switch rawValue {
         case 0:
-            self = .tenSeconds
+            self = .infinite
         case 1:
+            self = .tenSeconds
+        case 2:
             self = .fiveSeconds
         default:
             return nil
@@ -207,5 +224,18 @@ private class SampleTabBarViewController: UITabBarController {
             action: action,
             style: style
         )
+    }
+}
+
+private extension UICatalogCroutonViewController {
+    func timeIntervalDescription(from interval: CroutonDismissInterval) -> String {
+        switch interval {
+        case .fiveSeconds:
+            return "5"
+        case .tenSeconds:
+            return "10"
+        case .infinite:
+            return "∞"
+        }
     }
 }

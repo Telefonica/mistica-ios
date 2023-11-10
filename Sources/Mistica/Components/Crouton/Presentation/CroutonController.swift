@@ -12,7 +12,6 @@ import UIKit
     case dismiss
     case button
     case timeout
-    case consecutive
 
     public typealias RawValue = String
 
@@ -24,8 +23,6 @@ import UIKit
             return "BUTTON"
         case .timeout:
             return "TIMEOUT"
-        case .consecutive:
-            return "CONSECUTIVE"
         }
     }
 
@@ -37,8 +34,6 @@ import UIKit
             self = .button
         case "TIMEOUT":
             self = .timeout
-        case "CONSECUTIVE":
-            self = .consecutive
         default:
             return nil
         }

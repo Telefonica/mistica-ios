@@ -1,3 +1,29 @@
+# [27.0.0](https://github.com/Telefonica/mistica-ios/compare/v26.4.1...v27.0.0) (2023-11-10)
+
+
+### Features
+
+* **crouton:** Ios 9391 snackbar infinite actions ([#322](https://github.com/Telefonica/mistica-ios/issues/322)) ([888e0b4](https://github.com/Telefonica/mistica-ios/commit/888e0b41796455f323260c67805da6609e29a1b5))
+
+
+### BREAKING CHANGES
+
+* **crouton:** DismissHandlerBlock has changed and now has a CroutonControllerDismissReason as return parameter
+
+* IOS-9391 Add infinite time interval to Crouton.
+
+* Run swiftformat
+
+* IOS-9391 Fix PR comments.
+
+* Run swiftformat
+
+* IOS-9441 Add a reason parameter to know why the crouton was dismissed.
+
+* Run swiftformat
+
+* IOS-9441 Remove consecutive case for now.
+
 ## [26.4.1](https://github.com/Telefonica/mistica-ios/compare/v26.4.0...v26.4.1) (2023-11-02)
 
 

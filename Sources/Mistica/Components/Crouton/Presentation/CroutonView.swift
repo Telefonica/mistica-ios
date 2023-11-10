@@ -305,7 +305,7 @@ private extension CroutonView {
             repeats: false
         )
     }
-    
+
     @objc func invokeCountdownDismissHandler() {
         invokeDismissHandler(reason: .timeout)
     }

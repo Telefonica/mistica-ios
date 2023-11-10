@@ -13,9 +13,9 @@ import UIKit
     case button
     case timeout
     case consecutive
-    
+
     public typealias RawValue = String
-    
+
     public var rawValue: RawValue {
         switch self {
         case .dismiss:
@@ -28,7 +28,7 @@ import UIKit
             return "CONSECUTIVE"
         }
     }
-    
+
     public init?(rawValue: RawValue) {
         switch rawValue {
         case "DISMISS":

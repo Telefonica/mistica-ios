@@ -163,7 +163,7 @@ extension UICatalogListsViewController {
         case 2:
             sampleVC.assetType = .smallIcon(.imageIcon)
         case 3:
-            sampleVC.assetType = .image(.netflixLogo)
+            sampleVC.assetType = .image(.netflixLogo, size: CGSize(width: 140, height: 80))
         default:
             break
         }

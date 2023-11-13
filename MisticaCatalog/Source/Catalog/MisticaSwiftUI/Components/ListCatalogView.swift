@@ -38,7 +38,7 @@ struct ListCatalogView: View {
     @State var assetTypes: [CellAssetType] = [
         .none,
         .roundImage(.photo),
-        .squaredImage(.photo, size: CGSize(width: 40, height: 40)),
+        .squaredImage(.netflixLogo, size: CGSize(width: 40, height: 40)),
         .largeIcon(.photo, foregroundColor: .white, backgroundColor: .brand),
         .smallIcon(.photo, foregroundColor: .border)
     ]
@@ -126,6 +126,7 @@ struct ListCatalogView: View {
 
 extension Image {
     static let photo = Image(systemName: "photo")
+    static let netflixLogo = Image("netflix-logo")
 }
 
 extension CellAssetType: CustomStringConvertible {

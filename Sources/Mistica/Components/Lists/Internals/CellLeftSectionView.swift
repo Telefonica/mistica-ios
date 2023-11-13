@@ -87,7 +87,7 @@ private extension ListCellContentView.CellAssetType {
     var assetSize: CGSize {
         switch self {
         case .none:
-            return CGSize(width: 0, height: 0)
+            return CGSize.zero
         case let .image(_, size):
             if let size = size { return size }
             return CGSize(width: ImageSize.large, height: ImageSize.large)
@@ -99,7 +99,7 @@ private extension ListCellContentView.CellAssetType {
     var viewSize: CGSize {
         switch self {
         case .none:
-            return CGSize(width: 0, height: 0)
+            return CGSize.zero
         case let .image(_, size):
             if let size = size { return size }
             return CGSize(width: ImageSize.large, height: ImageSize.large)

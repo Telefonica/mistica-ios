@@ -30,6 +30,15 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
+    
+    func testCellDefaultConfigAndImageWithCustomSize() {
+        let listTestsViewController = makeListTestsViewController(assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40)))
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
 
     func testCellDefaultConfigAndSmallIcon() {
         let listTestsViewController = makeListTestsViewController(assetType: .smallIcon(AnyValues.image))
@@ -76,6 +85,18 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             assetType: .image(AnyValues.image)
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
+    
+    func testCellWithTitleAndImageWithCustomSize() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40))
         )
 
         assertSnapshot(
@@ -140,6 +161,19 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             assetType: .image(AnyValues.image)
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
+    
+    func testCellWithTitleAndSubtitleAndImageWithCustomSize() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitle,
+            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40))
         )
 
         assertSnapshot(
@@ -214,6 +248,18 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
+    
+    func testCellWithTitleAndDetailTextAndImageWithCustomSize() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            detailText: AnyValues.detailText,
+            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40)))
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
 
     func testCellWithTitleAndDetailTextAndSmallIcon() {
         let listTestsViewController = makeListTestsViewController(
@@ -276,6 +322,20 @@ final class ListsTests: XCTestCase {
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
             assetType: .image(AnyValues.image)
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
+    
+    func testCellWithAllLabelsAndImageWithCustomSize() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitle,
+            detailText: AnyValues.detailText,
+            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40))
         )
 
         assertSnapshot(
@@ -369,6 +429,21 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
+    
+    func testCellWithAllLabelsAndHeadlineAndImageWithCustomSize() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitle,
+            detailText: AnyValues.detailText,
+            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40)),
+            showHeadline: true
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
 
     func testCellWithAllLabelsAndHeadlineAndImageAndControlView() {
         let listTestsViewController = makeListTestsViewController(
@@ -376,6 +451,22 @@ final class ListsTests: XCTestCase {
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
             assetType: .image(AnyValues.image),
+            customControl: .custom(makeCustomControlView),
+            showHeadline: true
+        )
+
+        assertSnapshot(
+            matching: listTestsViewController,
+            as: .image(on: .iPhoneSe)
+        )
+    }
+    
+    func testCellWithAllLabelsAndHeadlineAndImageWithCustomSizeAndControlView() {
+        let listTestsViewController = makeListTestsViewController(
+            title: AnyValues.title,
+            subtitle: AnyValues.subtitle,
+            detailText: AnyValues.detailText,
+            assetType: .image(AnyValues.image, size: CGSize(width: 60, height: 20)),
             customControl: .custom(makeCustomControlView),
             showHeadline: true
         )

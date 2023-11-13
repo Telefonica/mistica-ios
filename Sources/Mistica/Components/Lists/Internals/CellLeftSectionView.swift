@@ -103,7 +103,7 @@ private extension ListCellContentView.CellAssetType {
         case let .image(_, size):
             if let size = size { return size }
             return CGSize(width: ImageSize.large, height: ImageSize.large)
-            
+
         case .largeIcon:
             return CGSize(width: ImageSize.large, height: ImageSize.large)
 

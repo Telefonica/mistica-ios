@@ -30,7 +30,7 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellDefaultConfigAndImageWithCustomSize() {
         let listTestsViewController = makeListTestsViewController(assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40)))
 
@@ -92,7 +92,7 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithTitleAndImageWithCustomSize() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -168,7 +168,7 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithTitleAndSubtitleAndImageWithCustomSize() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -248,12 +248,13 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithTitleAndDetailTextAndImageWithCustomSize() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40)))
+            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40))
+        )
 
         assertSnapshot(
             matching: listTestsViewController,
@@ -329,7 +330,7 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithAllLabelsAndImageWithCustomSize() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -429,7 +430,7 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithAllLabelsAndHeadlineAndImageWithCustomSize() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
@@ -460,7 +461,7 @@ final class ListsTests: XCTestCase {
             as: .image(on: .iPhoneSe)
         )
     }
-    
+
     func testCellWithAllLabelsAndHeadlineAndImageWithCustomSizeAndControlView() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,

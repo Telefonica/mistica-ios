@@ -14,8 +14,8 @@ private enum ImageSize {
 }
 
 class CellLeftSectionView: UIStackView {
-    private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize)
-    private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize)
+    private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize.height)
+    private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize.width)
 
     private lazy var containerView: UIView = {
         let view = UIView()
@@ -27,10 +27,10 @@ class CellLeftSectionView: UIStackView {
 
     var assetType: ListCellContentView.CellAssetType = .none {
         didSet {
-            heightConstraint.constant = assetType.viewSize
-            widthConstraint.constant = assetType.viewSize
-            imageView.intrinsicWidth = assetType.assetSize
-            imageView.intrinsicHeight = assetType.assetSize
+            heightConstraint.constant = assetType.viewSize.height
+            widthConstraint.constant = assetType.viewSize.width
+            imageView.intrinsicWidth = assetType.assetSize.width
+            imageView.intrinsicHeight = assetType.assetSize.height
             imageView.image = assetType.image
             imageView.contentMode = assetType.contentMode
             containerView.makeRounded(cornerRadius: assetType.cornerRadius)
@@ -84,25 +84,31 @@ private extension CellLeftSectionView {
 }
 
 private extension ListCellContentView.CellAssetType {
-    var assetSize: CGFloat {
+    var assetSize: CGSize {
         switch self {
         case .none:
-            return 0
-        case .image:
-            return ImageSize.large
+            return CGSize.zero
+        case let .image(_, size):
+            if let size = size { return size }
+            return CGSize(width: ImageSize.large, height: ImageSize.large)
         case .smallIcon, .largeIcon:
-            return ImageSize.small
+            return CGSize(width: ImageSize.small, height: ImageSize.small)
         }
     }
 
-    var viewSize: CGFloat {
+    var viewSize: CGSize {
         switch self {
         case .none:
-            return 0
-        case .image, .largeIcon:
-            return ImageSize.large
+            return CGSize.zero
+        case let .image(_, size):
+            if let size = size { return size }
+            return CGSize(width: ImageSize.large, height: ImageSize.large)
+
+        case .largeIcon:
+            return CGSize(width: ImageSize.large, height: ImageSize.large)
+
         case .smallIcon:
-            return ImageSize.small
+            return CGSize(width: ImageSize.small, height: ImageSize.small)
         }
     }
 
@@ -110,14 +116,16 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none, .smallIcon:
             return 0
-        case .largeIcon, .image:
-            return viewSize / 2
+        case .image(_, let size):
+            return (size != nil ? MisticaConfig.currentCornerRadius.container : viewSize.height / 2)
+        case .largeIcon:
+            return viewSize.height / 2
         }
     }
 
     var image: UIImage? {
         switch self {
-        case .smallIcon(let image), .largeIcon(let image, _), .image(let image):
+        case .smallIcon(let image), .largeIcon(let image, _), .image(let image, _):
             return image
         case .none:
             return nil

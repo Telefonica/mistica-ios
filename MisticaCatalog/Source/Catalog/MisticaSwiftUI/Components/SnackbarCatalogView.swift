@@ -72,7 +72,6 @@ struct SnackbarCatalogView: View {
             dismissHandlerBlock: { reason in
                 print(reason)
             }
-            
         )
         .crouton(
             isVisible: $presentingCrouton,
@@ -98,7 +97,7 @@ struct SnackbarCatalogView: View {
     var buttonStylePicker: some View {
         picker($selectedButtonStyleIndex, options: buttonStyles)
     }
-    
+
     @ViewBuilder
     var intervalPicker: some View {
         picker($selectedIntervalStyleIndex, options: intervalStyles)

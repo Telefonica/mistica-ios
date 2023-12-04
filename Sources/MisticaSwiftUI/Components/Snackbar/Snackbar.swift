@@ -29,7 +29,7 @@ public enum SnackbarDismissReason: Int, RawRepresentable {
     case dismiss
     case button
     case timeout
-    
+
     public typealias RawValue = String
 
     public var rawValue: RawValue {
@@ -59,7 +59,7 @@ public enum SnackbarDismissReason: Int, RawRepresentable {
 
 public struct Snackbar: View {
     @Environment(\.safeAreaInsets) private var safeAreaInsets
-    
+
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
 
@@ -91,7 +91,6 @@ public struct Snackbar: View {
         self.buttonAction = buttonAction
         self.forceDismiss = forceDismiss
         self.autoDismissDelay = autoDismissDelay
-
     }
 
     public var body: some View {
@@ -105,11 +104,11 @@ public struct Snackbar: View {
                         .accessibilityLabel(titleAccessibilityLabel)
                         .accessibilityIdentifier(titleAccessibilityIdentifier)
                         .expandHorizontally(alignment: .leading)
-                    if shouldShowCloseButton  {
+                    if shouldShowCloseButton {
                         dismissView
                     }
                 }
-                
+
                 alignedButton
             case .short:
                 horizontalStack {
@@ -120,7 +119,7 @@ public struct Snackbar: View {
                         .accessibilityIdentifier(titleAccessibilityIdentifier)
                         .expandHorizontally(alignment: .leading)
                     alignedButton
-                    if shouldShowCloseButton  {
+                    if shouldShowCloseButton {
                         dismissView
                     }
                 }
@@ -146,12 +145,11 @@ public struct Snackbar: View {
             guard let timeInterval = autoDismissDelay?.timeInterval else {
                 return
             }
-            
+
             timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false, block: { _ in
                 executeDismissHandlerBlock(with: .timeout)
             })
         })
-        
     }
 }
 
@@ -189,7 +187,7 @@ private extension Snackbar {
             }
         }
     }
-    
+
     @ViewBuilder
     private var dismissView: some View {
         Button(action: {
@@ -200,12 +198,12 @@ private extension Snackbar {
                 .foregroundColor(.inverse)
         })
     }
-    
+
     @ViewBuilder
     func horizontalStack<T: View>(@ViewBuilder content: () -> T) -> some View {
         HStack(spacing: 16, content: content)
     }
-    
+
     @ViewBuilder
     func verticalStack<T: View>(@ViewBuilder content: () -> T) -> some View {
         VStack(alignment: .trailing, spacing: 18, content: content)
@@ -220,7 +218,7 @@ private extension Snackbar {
     var backgroundColor: Color {
         style == .normal ? .feedbackInfoBackground : .feedbackErrorBackground
     }
-    
+
     var shouldShowCloseButton: Bool {
         guard autoDismissDelay == .infinite else {
             return false
@@ -228,7 +226,7 @@ private extension Snackbar {
 
         return buttonTitle == nil || (buttonTitle != nil && forceDismiss)
     }
-    
+
     func executeDismissHandlerBlock(with reason: SnackbarDismissReason) {
         timer?.invalidate()
         timer = nil
@@ -280,7 +278,7 @@ public extension Snackbar {
         snackbar.titleAccessibilityIdentifier = titleAccessibilityIdentifier
         return snackbar
     }
-    
+
     func onClose(perform action: DismissHandlerBlock? = nil) -> Snackbar {
         var snackbar = self
         snackbar.dismissHandlerBlock = action

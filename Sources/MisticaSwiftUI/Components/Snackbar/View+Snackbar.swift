@@ -13,7 +13,7 @@ public enum CroutonDismissInterval {
     case fiveSeconds
     case tenSeconds
     case infinite
-    
+
     var timeInterval: TimeInterval? {
         switch self {
         case .fiveSeconds:
@@ -152,11 +152,11 @@ private struct SnackbarModifier: ViewModifier {
         ZStack(alignment: .bottom) {
             content
                 .zIndex(0)
-            
+
             if isVisible {
                 VStack {
                     Spacer()
-                    
+
                     Snackbar(
                         title: title,
                         buttonTitle: buttonTitle?.isEmpty == true ? nil : buttonTitle,
@@ -216,7 +216,7 @@ private extension SnackbarModifier {
             return .infinite
         }
     }
-    
+
     func dismiss(with reason: SnackbarDismissReason) {
         DispatchQueue.main.async {
             withAnimation { isVisible = false }

@@ -109,7 +109,7 @@ final class CroutonTests: XCTestCase {
             as: .image(on: .iPhone8)
         )
     }
-    
+
     func testForceDismissWithTenSecondsTimeInterval() {
         let view = Rectangle()
             .foregroundColor(.white)
@@ -125,7 +125,7 @@ final class CroutonTests: XCTestCase {
             as: .image(on: .iPhone8)
         )
     }
-    
+
     func testForceDismissWithInfiniteTimeInterval() {
         let view = Rectangle()
             .foregroundColor(.white)
@@ -142,7 +142,7 @@ final class CroutonTests: XCTestCase {
             as: .image(on: .iPhone8)
         )
     }
-    
+
     func testLargeButtonAndForceDismissWithInfiniteTimeInterval() {
         let view = Rectangle()
             .foregroundColor(.white)

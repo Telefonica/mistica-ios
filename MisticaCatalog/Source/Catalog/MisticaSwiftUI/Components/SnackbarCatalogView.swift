@@ -18,7 +18,10 @@ struct SnackbarCatalogView: View {
     @State var buttonStyles: [SnackbarButtonStyle] = [.short, .large]
     @State var presentingSnackbar = false
     @State var presentingCrouton = false
-    @State var autoDismissDelay = 3
+    @State var autoDismissDelay: CroutonDismissInterval = .fiveSeconds
+    @State var intervalStyles: [CroutonDismissInterval] = [.fiveSeconds, .tenSeconds, .infinite]
+    @State var selectedIntervalStyleIndex = 0
+    @State var hasForceDismissAction: Bool = false
 
     var body: some View {
         List {
@@ -37,8 +40,9 @@ struct SnackbarCatalogView: View {
                 .endEditingOnTap()
             }
             section("Style") { stylePicker }
-            section("Auto Dismiss Delay") { Stepper("\(autoDismissDelay) seconds", value: $autoDismissDelay) }
+            section("Auto Dismiss Delay") { intervalPicker }
             section("Button Style") { buttonStylePicker }
+            section("Force Dismiss") { Toggle("Has force dismiss action", isOn: $hasForceDismissAction) }
             section("Snackbar") {
                 Button("Show snackbar") {
                     withAnimation {
@@ -60,19 +64,28 @@ struct SnackbarCatalogView: View {
             isVisible: $presentingSnackbar,
             style: styles[selectedStyleIndex],
             buttonStyle: buttonStyles[selectedButtonStyleIndex],
-            autoDismissDelay: TimeInterval(autoDismissDelay),
+            autoDismissDelay: intervalStyles[selectedIntervalStyleIndex],
             title: title,
             buttonTitle: buttonTitle,
-            buttonAction: {}
+            buttonAction: buttonTitle.isEmpty ? nil : {},
+            forceDismiss: hasForceDismissAction,
+            dismissHandlerBlock: { reason in
+                print(reason)
+            }
+            
         )
         .crouton(
             isVisible: $presentingCrouton,
             style: styles[selectedStyleIndex],
             buttonStyle: buttonStyles[selectedButtonStyleIndex],
-            autoDismissDelay: TimeInterval(autoDismissDelay),
+            autoDismissDelay: intervalStyles[selectedIntervalStyleIndex],
             title: title,
             buttonTitle: buttonTitle,
-            buttonAction: {}
+            buttonAction: {},
+            forceDismiss: hasForceDismissAction,
+            dismissHandlerBlock: { reason in
+                print(reason)
+            }
         )
     }
 
@@ -84,6 +97,24 @@ struct SnackbarCatalogView: View {
     @ViewBuilder
     var buttonStylePicker: some View {
         picker($selectedButtonStyleIndex, options: buttonStyles)
+    }
+    
+    @ViewBuilder
+    var intervalPicker: some View {
+        picker($selectedIntervalStyleIndex, options: intervalStyles)
+    }
+}
+
+extension SnackbarCatalogView {
+    func timeIntervalDescription(from interval: CroutonDismissInterval) -> String {
+        switch interval {
+        case .fiveSeconds:
+            return "5"
+        case .tenSeconds:
+            return "10"
+        case .infinite:
+            return "∞"
+        }
     }
 }
 
@@ -107,6 +138,19 @@ extension SnackbarButtonStyle: CustomStringConvertible {
             return "Large"
         case .short:
             return "Short"
+        }
+    }
+}
+
+extension CroutonDismissInterval: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .fiveSeconds:
+            return "Five Seconds"
+        case .tenSeconds:
+            return " Ten Seconds"
+        case .infinite:
+            return "Inifinite"
         }
     }
 }

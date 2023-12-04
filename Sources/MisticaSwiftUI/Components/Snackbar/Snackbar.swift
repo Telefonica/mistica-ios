@@ -25,38 +25,106 @@ public enum SnackbarButtonStyle {
     case short
 }
 
-public struct Snackbar<Button: View>: View {
+public enum SnackbarDismissReason: Int, RawRepresentable {
+    case dismiss
+    case button
+    case timeout
+    
+    public typealias RawValue = String
+
+    public var rawValue: RawValue {
+        switch self {
+        case .dismiss:
+            return "DISMISS"
+        case .button:
+            return "BUTTON"
+        case .timeout:
+            return "TIMEOUT"
+        }
+    }
+
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+        case "DISMISS":
+            self = .dismiss
+        case "BUTTON":
+            self = .button
+        case "TIMEOUT":
+            self = .timeout
+        default:
+            return nil
+        }
+    }
+}
+
+public struct Snackbar: View {
     @Environment(\.safeAreaInsets) private var safeAreaInsets
+    
+    public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
+    public typealias DidTapActionBlock = () -> Void
 
     private var style: SnackbarStyle = .normal
     private var presentationMode: SnackbarPresentationMode = .normal
     private var buttonStyle: SnackbarButtonStyle = .short
     private var title: String
-    private var button: Button?
+    private var buttonTitle: String?
+    private var buttonAction: (() -> Void)?
+    private var autoDismissDelay: CroutonDismissInterval?
 
     private var buttonAccessibilityLabel: String?
     private var buttonAccessibilityIdentifier: String?
     private var titleAccessibilityLabel: String?
     private var titleAccessibilityIdentifier: String?
+    private var forceDismiss: Bool
+    private var dismissHandlerBlock: DismissHandlerBlock?
+    @State private var timer: Timer?
 
     public init(
         title: String,
-        @ViewBuilder button: () -> Button
+        buttonTitle: String?,
+        buttonAction: (() -> Void)?,
+        forceDismiss: Bool = false,
+        autoDismissDelay: CroutonDismissInterval? = nil
     ) {
         self.title = title
-        self.button = button()
+        self.buttonTitle = buttonTitle
+        self.buttonAction = buttonAction
+        self.forceDismiss = forceDismiss
+        self.autoDismissDelay = autoDismissDelay
+
     }
 
     public var body: some View {
         stack {
-            Text(title)
-                .font(.textPreset2(weight: .regular))
-                .foregroundColor(.textPrimaryInverse)
-                .accessibilityLabel(titleAccessibilityLabel)
-                .accessibilityIdentifier(titleAccessibilityIdentifier)
-                .expandHorizontally(alignment: .leading)
-
-            alignedButton
+            switch buttonStyle {
+            case .large:
+                horizontalStack {
+                    Text(title)
+                        .font(.textPreset2(weight: .regular))
+                        .foregroundColor(.textPrimaryInverse)
+                        .accessibilityLabel(titleAccessibilityLabel)
+                        .accessibilityIdentifier(titleAccessibilityIdentifier)
+                        .expandHorizontally(alignment: .leading)
+                    if shouldShowCloseButton  {
+                        dismissView
+                    }
+                }
+                
+                alignedButton
+            case .short:
+                horizontalStack {
+                    Text(title)
+                        .font(.textPreset2(weight: .regular))
+                        .foregroundColor(.textPrimaryInverse)
+                        .accessibilityLabel(titleAccessibilityLabel)
+                        .accessibilityIdentifier(titleAccessibilityIdentifier)
+                        .expandHorizontally(alignment: .leading)
+                    alignedButton
+                    if shouldShowCloseButton  {
+                        dismissView
+                    }
+                }
+            }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 14)
@@ -74,6 +142,16 @@ public struct Snackbar<Button: View>: View {
                     .background(backgroundColor)
             }
         }
+        .onAppear(perform: {
+            guard let timeInterval = autoDismissDelay?.timeInterval else {
+                return
+            }
+            
+            timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false, block: { _ in
+                executeDismissHandlerBlock(with: .dismiss)
+            })
+        })
+        
     }
 }
 
@@ -82,33 +160,55 @@ public struct Snackbar<Button: View>: View {
 private extension Snackbar {
     @ViewBuilder
     func stack<T: View>(@ViewBuilder content: () -> T) -> some View {
-        switch buttonStyle {
-        case .large:
-            VStack(alignment: .trailing, spacing: 18, content: content)
-        case .short:
-            HStack(spacing: 16, content: content)
-        }
+        VStack(alignment: .trailing, spacing: 18, content: content)
     }
 
     @ViewBuilder
     var alignedButton: some View {
         switch buttonStyle {
         case .large:
-            if let button = button {
-                button
-                    .accessibilityLabel(buttonAccessibilityLabel)
-                    .accessibilityIdentifier(buttonAccessibilityIdentifier)
-                    .buttonStyle(misticaButtonStyle)
+            if let title = buttonTitle, let action = buttonAction {
+                Button(title) {
+                    action()
+                    executeDismissHandlerBlock(with: .button)
+                }
+                .accessibilityLabel(buttonAccessibilityLabel)
+                .accessibilityIdentifier(buttonAccessibilityIdentifier)
+                .buttonStyle(misticaButtonStyle)
             }
         case .short:
-            if let button = button {
+            if let title = buttonTitle, let action = buttonAction {
                 Spacer()
-                button
-                    .accessibilityLabel(buttonAccessibilityLabel)
-                    .accessibilityIdentifier(buttonAccessibilityIdentifier)
-                    .buttonStyle(misticaButtonStyle)
+                Button(title) {
+                    action()
+                    executeDismissHandlerBlock(with: .button)
+                }
+                .accessibilityLabel(buttonAccessibilityLabel)
+                .accessibilityIdentifier(buttonAccessibilityIdentifier)
+                .buttonStyle(misticaButtonStyle)
             }
         }
+    }
+    
+    @ViewBuilder
+    private var dismissView: some View {
+        Button(action: {
+            executeDismissHandlerBlock(with: .dismiss)
+        }, label: {
+            Image.closeButtonBlackSmallIcon.renderingMode(.template)
+                .frame(width: 22, height: 22, alignment: .center)
+                .foregroundColor(.inverse)
+        })
+    }
+    
+    @ViewBuilder
+    func horizontalStack<T: View>(@ViewBuilder content: () -> T) -> some View {
+        HStack(spacing: 16, content: content)
+    }
+    
+    @ViewBuilder
+    func verticalStack<T: View>(@ViewBuilder content: () -> T) -> some View {
+        VStack(alignment: .trailing, spacing: 18, content: content)
     }
 
     var misticaButtonStyle: MisticaButtonStyle {
@@ -119,6 +219,20 @@ private extension Snackbar {
 
     var backgroundColor: Color {
         style == .normal ? .feedbackInfoBackground : .feedbackErrorBackground
+    }
+    
+    var shouldShowCloseButton: Bool {
+        guard autoDismissDelay == .infinite else {
+            return false
+        }
+
+        return buttonTitle == nil || (buttonTitle != nil && forceDismiss)
+    }
+    
+    func executeDismissHandlerBlock(with reason: SnackbarDismissReason) {
+        timer?.invalidate()
+        timer = nil
+        dismissHandlerBlock?(reason)
     }
 }
 
@@ -164,6 +278,12 @@ public extension Snackbar {
     func titleAccessibilityIdentifier(_ titleAccessibilityIdentifier: String?) -> Snackbar {
         var snackbar = self
         snackbar.titleAccessibilityIdentifier = titleAccessibilityIdentifier
+        return snackbar
+    }
+    
+    func onClose(perform action: DismissHandlerBlock? = nil) -> Snackbar {
+        var snackbar = self
+        snackbar.dismissHandlerBlock = action
         return snackbar
     }
 }

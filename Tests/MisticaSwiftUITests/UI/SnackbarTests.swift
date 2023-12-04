@@ -109,4 +109,55 @@ final class SnackbarTests: XCTestCase {
             as: .image(on: .iPhone8)
         )
     }
+    
+    func testForceDismissWithTenSecondsTimeInterval() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .snackbar(
+                isVisible: .constant(true),
+                title: "Title",
+                buttonTitle: "Action",
+                buttonAction: {},
+                forceDismiss: true
+            )
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+    
+    func testForceDismissWithInfiniteTimeInterval() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .snackbar(
+                isVisible: .constant(true),
+                autoDismissDelay: .infinite,
+                title: "Title",
+                buttonTitle: "Action",
+                buttonAction: {},
+                forceDismiss: true
+            )
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+    
+    func testLargeButtonAndForceDismissWithInfiniteTimeInterval() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .snackbar(
+                isVisible: .constant(true),
+                buttonStyle: .large,
+                autoDismissDelay: .infinite,
+                title: "Title",
+                buttonTitle: "Large Action",
+                buttonAction: {},
+                forceDismiss: true
+            )
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
 }

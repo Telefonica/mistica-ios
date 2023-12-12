@@ -235,9 +235,9 @@ extension CroutonView {
 private extension CroutonView {
     var shouldShowCloseButton: Bool {
         switch config.overrideDismissInterval {
-        case .fiveSeconds, .tenSeconds(_), .infinity(_):
+        case .fiveSeconds, .tenSeconds(_), .infinity:
             return false
-        case .infinityWithClose(_):
+        case .infinityWithClose:
             return true
         }
     }

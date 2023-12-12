@@ -100,7 +100,7 @@ struct SnackbarCatalogView: View {
         case .fiveSeconds:
             return .fiveSeconds
         case .tenSeconds:
-            return .tenSeconds(SnackbarAction(title: buttonTitle.isEmpty ? "Action": buttonTitle, handler: {}))
+            return .tenSeconds(SnackbarAction(title: buttonTitle.isEmpty ? "Action" : buttonTitle, handler: {}))
         case .infinity:
             if !buttonTitle.isEmpty {
                 if hasForceDismissAction {
@@ -113,7 +113,7 @@ struct SnackbarCatalogView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var stylePicker: some View {
         picker($selectedStyleIndex, options: styles)
@@ -137,9 +137,9 @@ extension SnackbarCatalogView {
             return "5"
         case .tenSeconds:
             return "10"
-        case .infinity(_):
+        case .infinity:
             return "∞"
-        case .infinityWithClose(_):
+        case .infinityWithClose:
             return "∞ close"
         }
     }

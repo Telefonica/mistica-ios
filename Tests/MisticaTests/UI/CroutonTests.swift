@@ -123,7 +123,7 @@ private class CroutonTestViewController: UIViewController {
             title: text,
             dismissInterval: dismissInterval
         )
-        
+
         CroutonController().showCrouton(
             config: config,
             style: style,
@@ -137,7 +137,7 @@ private extension CroutonTestViewController {
         guard let action = action else {
             return .fiveSeconds
         }
-        
+
         return .tenSeconds(SnackbarAction(title: action.text, handler: action.handler))
     }
 }

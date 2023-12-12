@@ -153,8 +153,7 @@ private extension UICatalogCroutonViewController {
     var croutonDismissInterval: SnackbarDismissInterval {
         let selectedCroutonDismissIntervalIndex = croutonDismissIntervalCell.segmentedControl.selectedSegmentIndex
         let catalogDismissInterval = SnackbarCatalogDismissInterval(rawValue: selectedCroutonDismissIntervalIndex)
-        
-        
+
         switch catalogDismissInterval {
         case .fiveSeconds:
             return .fiveSeconds
@@ -162,18 +161,18 @@ private extension UICatalogCroutonViewController {
             guard let actionTitle = actionTitleCell.textField.text, !actionTitle.isEmpty else {
                 return .tenSeconds(SnackbarAction(title: "Action", handler: {}))
             }
-            
+
             return .tenSeconds(SnackbarAction(title: actionTitle, handler: {}))
-            
+
         case .infinity:
             guard let action = actionTitleCell.textField.text, !action.isEmpty else {
                 return .infinityWithClose(nil)
             }
-            
+
             guard forceDismiss else {
                 return .infinity(SnackbarAction(title: action, handler: {}))
             }
-            
+
             return .infinityWithClose(SnackbarAction(title: action, handler: {}))
         case .none:
             return .fiveSeconds

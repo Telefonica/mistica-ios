@@ -1,8 +1,9 @@
 //
 //  SnackbarDismissReason.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Jose Manuel Rodriguez Moreno on 5/12/23.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation

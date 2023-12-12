@@ -21,7 +21,7 @@ final class SnackbarTests: XCTestCase {
             .foregroundColor(.white)
             .snackbar(
                 isVisible: .constant(true),
-                title: "Title"
+                config: SnackbarConfig(title: "Title", dismissInterval: .fiveSeconds)
             )
 
         assertSnapshot(
@@ -35,7 +35,7 @@ final class SnackbarTests: XCTestCase {
             .foregroundColor(.white)
             .snackbar(
                 isVisible: .constant(true),
-                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                config: SnackbarConfig(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", dismissInterval: .fiveSeconds)
             )
 
         assertSnapshot(
@@ -49,9 +49,7 @@ final class SnackbarTests: XCTestCase {
             .foregroundColor(.white)
             .snackbar(
                 isVisible: .constant(true),
-                title: "Title",
-                buttonTitle: "Action",
-                buttonAction: {}
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Action", handler: {})))
             )
 
         assertSnapshot(
@@ -66,9 +64,7 @@ final class SnackbarTests: XCTestCase {
             .snackbar(
                 isVisible: .constant(true),
                 style: .error,
-                title: "Title",
-                buttonTitle: "Action",
-                buttonAction: {}
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Action", handler: {})))
             )
 
         assertSnapshot(
@@ -83,9 +79,7 @@ final class SnackbarTests: XCTestCase {
             .snackbar(
                 isVisible: .constant(true),
                 buttonStyle: .large,
-                title: "Title",
-                buttonTitle: "Some large action title",
-                buttonAction: {}
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Some large action title", handler: {})))
             )
 
         assertSnapshot(
@@ -99,9 +93,7 @@ final class SnackbarTests: XCTestCase {
             .foregroundColor(.white)
             .snackbar(
                 isVisible: .constant(false),
-                title: "Title",
-                buttonTitle: "Action",
-                buttonAction: {}
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Action", handler: {})))
             )
 
         assertSnapshot(
@@ -115,10 +107,7 @@ final class SnackbarTests: XCTestCase {
             .foregroundColor(.white)
             .snackbar(
                 isVisible: .constant(true),
-                title: "Title",
-                buttonTitle: "Action",
-                buttonAction: {},
-                forceDismiss: true
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Action", handler: {})))
             )
         assertSnapshot(
             matching: UIHostingController(rootView: view),
@@ -131,11 +120,7 @@ final class SnackbarTests: XCTestCase {
             .foregroundColor(.white)
             .snackbar(
                 isVisible: .constant(true),
-                autoDismissDelay: .infinite,
-                title: "Title",
-                buttonTitle: "Action",
-                buttonAction: {},
-                forceDismiss: true
+                config: SnackbarConfig(title: "Title", dismissInterval: .infinityWithClose(SnackbarAction(title: "Action", handler: {})))
             )
         assertSnapshot(
             matching: UIHostingController(rootView: view),
@@ -149,11 +134,7 @@ final class SnackbarTests: XCTestCase {
             .snackbar(
                 isVisible: .constant(true),
                 buttonStyle: .large,
-                autoDismissDelay: .infinite,
-                title: "Title",
-                buttonTitle: "Large Action",
-                buttonAction: {},
-                forceDismiss: true
+                config: SnackbarConfig(title: "Title", dismissInterval: .infinityWithClose(SnackbarAction(title: "Large Action", handler: {})))
             )
         assertSnapshot(
             matching: UIHostingController(rootView: view),

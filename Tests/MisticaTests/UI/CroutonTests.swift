@@ -119,11 +119,25 @@ private class CroutonTestViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        let config = SnackbarConfig(
+            title: text,
+            dismissInterval: dismissInterval
+        )
+        
         CroutonController().showCrouton(
-            withText: text,
-            action: action,
+            config: config,
             style: style,
             rootViewController: self
         )
+    }
+}
+
+private extension CroutonTestViewController {
+    var dismissInterval: SnackbarDismissInterval {
+        guard let action = action else {
+            return .fiveSeconds
+        }
+        
+        return .tenSeconds(SnackbarAction(title: action.text, handler: action.handler))
     }
 }

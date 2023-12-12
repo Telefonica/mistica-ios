@@ -9,19 +9,24 @@
 import MisticaSwiftUI
 import SwiftUI
 
+enum SnackbarCatalogDismissInterval: CaseIterable {
+    case fiveSeconds
+    case tenSeconds
+    case infinity
+}
+
 struct SnackbarCatalogView: View {
     @State var title: String = "Message"
     @State var buttonTitle: String = "Action"
     @State var selectedStyleIndex = 0
-    @State var styles: [SnackbarStyle] = [.normal, .error]
     @State var selectedButtonStyleIndex = 0
-    @State var buttonStyles: [SnackbarButtonStyle] = [.short, .large]
     @State var presentingSnackbar = false
     @State var presentingCrouton = false
-    @State var autoDismissDelay: CroutonDismissInterval = .fiveSeconds
-    @State var intervalStyles: [CroutonDismissInterval] = [.fiveSeconds, .tenSeconds, .infinite]
     @State var selectedIntervalStyleIndex = 0
     @State var hasForceDismissAction: Bool = false
+    private let styles: [SnackbarStyle] = [.normal, .error]
+    private let buttonStyles: [SnackbarButtonStyle] = [.short, .large]
+    private let intervalStyles: [SnackbarCatalogDismissInterval] = SnackbarCatalogDismissInterval.allCases
 
     var body: some View {
         List {
@@ -32,17 +37,21 @@ struct SnackbarCatalogView: View {
                 )
                 .endEditingOnTap()
             }
-            section("Button") {
-                TextField(
-                    "Button Title",
-                    text: $buttonTitle
-                )
-                .endEditingOnTap()
+            if intervalStyles[selectedIntervalStyleIndex] != .fiveSeconds {
+                section("Button") {
+                    TextField(
+                        "Button Title",
+                        text: $buttonTitle
+                    )
+                    .endEditingOnTap()
+                }
             }
             section("Style") { stylePicker }
             section("Auto Dismiss Delay") { intervalPicker }
             section("Button Style") { buttonStylePicker }
-            section("Force Dismiss") { Toggle("Has force dismiss action", isOn: $hasForceDismissAction) }
+            if intervalStyles[selectedIntervalStyleIndex] == .infinity && !buttonTitle.isEmpty {
+                section("Force Dismiss") { Toggle("Has force dismiss action", isOn: $hasForceDismissAction) }
+            }
             section("Snackbar") {
                 Button("Show snackbar") {
                     withAnimation {
@@ -64,30 +73,47 @@ struct SnackbarCatalogView: View {
             isVisible: $presentingSnackbar,
             style: styles[selectedStyleIndex],
             buttonStyle: buttonStyles[selectedButtonStyleIndex],
-            autoDismissDelay: intervalStyles[selectedIntervalStyleIndex],
-            title: title,
-            buttonTitle: buttonTitle,
-            buttonAction: buttonTitle.isEmpty ? nil : {},
-            forceDismiss: hasForceDismissAction,
+            config: SnackbarConfig(
+                title: title,
+                dismissInterval: dismissInterval
+            ),
             dismissHandlerBlock: { reason in
-                print(reason)
+                print(reason.rawValue)
             }
         )
         .crouton(
             isVisible: $presentingCrouton,
             style: styles[selectedStyleIndex],
             buttonStyle: buttonStyles[selectedButtonStyleIndex],
-            autoDismissDelay: intervalStyles[selectedIntervalStyleIndex],
-            title: title,
-            buttonTitle: buttonTitle,
-            buttonAction: {},
-            forceDismiss: hasForceDismissAction,
+            config: SnackbarConfig(
+                title: title,
+                dismissInterval: dismissInterval
+            ),
             dismissHandlerBlock: { reason in
-                print(reason)
+                print(reason.rawValue)
             }
         )
     }
 
+    var dismissInterval: SnackbarDismissInterval {
+        switch intervalStyles[selectedIntervalStyleIndex] {
+        case .fiveSeconds:
+            return .fiveSeconds
+        case .tenSeconds:
+            return .tenSeconds(SnackbarAction(title: buttonTitle.isEmpty ? "Action": buttonTitle, handler: {}))
+        case .infinity:
+            if !buttonTitle.isEmpty {
+                if hasForceDismissAction {
+                    return .infinityWithClose(SnackbarAction(title: buttonTitle, handler: {}))
+                } else {
+                    return .infinity(SnackbarAction(title: buttonTitle, handler: {}))
+                }
+            } else {
+                return .infinityWithClose(nil)
+            }
+        }
+    }
+    
     @ViewBuilder
     var stylePicker: some View {
         picker($selectedStyleIndex, options: styles)
@@ -105,14 +131,16 @@ struct SnackbarCatalogView: View {
 }
 
 extension SnackbarCatalogView {
-    func timeIntervalDescription(from interval: CroutonDismissInterval) -> String {
+    func timeIntervalDescription(from interval: SnackbarDismissInterval) -> String {
         switch interval {
         case .fiveSeconds:
             return "5"
         case .tenSeconds:
             return "10"
-        case .infinite:
+        case .infinity(_):
             return "∞"
+        case .infinityWithClose(_):
+            return "∞ close"
         }
     }
 }
@@ -141,15 +169,15 @@ extension SnackbarButtonStyle: CustomStringConvertible {
     }
 }
 
-extension CroutonDismissInterval: CustomStringConvertible {
+extension SnackbarCatalogDismissInterval: CustomStringConvertible {
     public var description: String {
         switch self {
         case .fiveSeconds:
             return "Five Seconds"
         case .tenSeconds:
-            return " Ten Seconds"
-        case .infinite:
-            return "Inifinite"
+            return "Ten Seconds"
+        case .infinity:
+            return "Infinite"
         }
     }
 }

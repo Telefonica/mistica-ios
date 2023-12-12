@@ -25,38 +25,6 @@ public enum SnackbarButtonStyle {
     case short
 }
 
-public enum SnackbarDismissReason: Int, RawRepresentable {
-    case dismiss
-    case button
-    case timeout
-
-    public typealias RawValue = String
-
-    public var rawValue: RawValue {
-        switch self {
-        case .dismiss:
-            return "DISMISS"
-        case .button:
-            return "BUTTON"
-        case .timeout:
-            return "TIMEOUT"
-        }
-    }
-
-    public init?(rawValue: RawValue) {
-        switch rawValue {
-        case "DISMISS":
-            self = .dismiss
-        case "BUTTON":
-            self = .button
-        case "TIMEOUT":
-            self = .timeout
-        default:
-            return nil
-        }
-    }
-}
-
 public struct Snackbar: View {
     @Environment(\.safeAreaInsets) private var safeAreaInsets
 
@@ -66,31 +34,19 @@ public struct Snackbar: View {
     private var style: SnackbarStyle = .normal
     private var presentationMode: SnackbarPresentationMode = .normal
     private var buttonStyle: SnackbarButtonStyle = .short
-    private var title: String
-    private var buttonTitle: String?
-    private var buttonAction: (() -> Void)?
-    private var autoDismissDelay: CroutonDismissInterval?
+    private var config: SnackbarConfig
 
     private var buttonAccessibilityLabel: String?
     private var buttonAccessibilityIdentifier: String?
     private var titleAccessibilityLabel: String?
     private var titleAccessibilityIdentifier: String?
-    private var forceDismiss: Bool
     private var dismissHandlerBlock: DismissHandlerBlock?
     @State private var timer: Timer?
 
     public init(
-        title: String,
-        buttonTitle: String?,
-        buttonAction: (() -> Void)?,
-        forceDismiss: Bool = false,
-        autoDismissDelay: CroutonDismissInterval? = nil
+        config: SnackbarConfig
     ) {
-        self.title = title
-        self.buttonTitle = buttonTitle
-        self.buttonAction = buttonAction
-        self.forceDismiss = forceDismiss
-        self.autoDismissDelay = autoDismissDelay
+        self.config = config
     }
 
     public var body: some View {
@@ -98,7 +54,7 @@ public struct Snackbar: View {
             switch buttonStyle {
             case .large:
                 horizontalStack {
-                    Text(title)
+                    Text(config.title)
                         .font(.textPreset2(weight: .regular))
                         .foregroundColor(.textPrimaryInverse)
                         .accessibilityLabel(titleAccessibilityLabel)
@@ -112,7 +68,7 @@ public struct Snackbar: View {
                 alignedButton
             case .short:
                 horizontalStack {
-                    Text(title)
+                    Text(config.title)
                         .font(.textPreset2(weight: .regular))
                         .foregroundColor(.textPrimaryInverse)
                         .accessibilityLabel(titleAccessibilityLabel)
@@ -142,7 +98,7 @@ public struct Snackbar: View {
             }
         }
         .onAppear(perform: {
-            guard let timeInterval = autoDismissDelay?.timeInterval else {
+            guard let timeInterval = config.dismissInterval.timeInterval else {
                 return
             }
 
@@ -165,9 +121,9 @@ private extension Snackbar {
     var alignedButton: some View {
         switch buttonStyle {
         case .large:
-            if let title = buttonTitle, let action = buttonAction {
-                Button(title) {
-                    action()
+            if let action = config.dismissInterval.action, !action.title.isEmpty {
+                Button(action.title) {
+                    action.handler()
                     executeDismissHandlerBlock(with: .button)
                 }
                 .accessibilityLabel(buttonAccessibilityLabel)
@@ -175,10 +131,10 @@ private extension Snackbar {
                 .buttonStyle(misticaButtonStyle)
             }
         case .short:
-            if let title = buttonTitle, let action = buttonAction {
+            if let action = config.dismissInterval.action, !action.title.isEmpty {
                 Spacer()
-                Button(title) {
-                    action()
+                Button(action.title) {
+                    action.handler()
                     executeDismissHandlerBlock(with: .button)
                 }
                 .accessibilityLabel(buttonAccessibilityLabel)
@@ -220,11 +176,12 @@ private extension Snackbar {
     }
 
     var shouldShowCloseButton: Bool {
-        guard autoDismissDelay == .infinite else {
+        switch config.dismissInterval {
+        case .fiveSeconds, .tenSeconds(_), .infinity(_):
             return false
+        case .infinityWithClose(_):
+            return true
         }
-
-        return buttonTitle == nil || (buttonTitle != nil && forceDismiss)
     }
 
     func executeDismissHandlerBlock(with reason: SnackbarDismissReason) {

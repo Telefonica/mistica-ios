@@ -31,7 +31,7 @@ class CroutonView: UIView {
         static let closeButtonWidthAndHeight: CGFloat = 20
     }
 
-    public typealias DismissHandlerBlock = (CroutonControllerDismissReason) -> Void
+    public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
 
     // MARK: Private properties
@@ -234,11 +234,12 @@ extension CroutonView {
 
 private extension CroutonView {
     var shouldShowCloseButton: Bool {
-        guard config.overrideDismissInterval == .infinite else {
+        switch config.overrideDismissInterval {
+        case .fiveSeconds, .tenSeconds(_), .infinity(_):
             return false
+        case .infinityWithClose(_):
+            return true
         }
-
-        return action == nil || (action != nil && forceDismiss)
     }
 
     func layoutViews() {
@@ -395,7 +396,7 @@ private extension CroutonView {
         action?.handler()
     }
 
-    @objc func invokeDismissHandler(reason: CroutonControllerDismissReason) {
+    @objc func invokeDismissHandler(reason: SnackbarDismissReason) {
         dismissHandler?(reason)
     }
 

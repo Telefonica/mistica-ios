@@ -8,7 +8,7 @@
 
 ### BREAKING CHANGES
 
-* **crouton:** DismissHandlerBlock has changed and now has a CroutonControllerDismissReason as return parameter
+* **crouton:** DismissHandlerBlock has changed and now has a SnackbarDismissReason as return parameter
 
 * IOS-9391 Add infinite time interval to Crouton.
 

@@ -200,7 +200,7 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
 
         let actions: EmptyStateConfiguration.EmptyStateActions
         let handler: () -> Void = {
-            CroutonController.shared.showCrouton(withText: "The user has tapped any button")
+            CroutonController.shared.showCrouton(config: SnackbarConfig(title: "The user has tapped any button", dismissInterval: .fiveSeconds))
         }
         switch buttonsCell.segmentedControl.selectedSegmentIndex {
         case 0:

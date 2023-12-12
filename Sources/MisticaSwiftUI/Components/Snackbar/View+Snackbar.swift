@@ -9,23 +9,6 @@
 import Foundation
 import SwiftUI
 
-public enum CroutonDismissInterval {
-    case fiveSeconds
-    case tenSeconds
-    case infinite
-
-    var timeInterval: TimeInterval? {
-        switch self {
-        case .fiveSeconds:
-            return 5
-        case .tenSeconds:
-            return 10
-        case .infinite:
-            return nil
-        }
-    }
-}
-
 // MARK: Crouton
 
 public extension View {
@@ -33,9 +16,7 @@ public extension View {
     func crouton(
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
-        autoDismissDelay: CroutonDismissInterval? = .fiveSeconds,
-        title: String,
-        forceDismiss: Bool = false,
+        config: SnackbarConfig,
         dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
     ) -> some View {
         modifier(
@@ -43,9 +24,7 @@ public extension View {
                 isVisible: isVisible,
                 style: style,
                 presentationMode: .crouton,
-                autoDismissDelay: autoDismissDelay,
-                title: title,
-                forceDismiss: forceDismiss,
+                config: config,
                 dismissHandlerBlock: dismissHandlerBlock
             )
         )
@@ -56,11 +35,7 @@ public extension View {
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
         buttonStyle: SnackbarButtonStyle = .short,
-        autoDismissDelay: CroutonDismissInterval? = .tenSeconds,
-        title: String,
-        buttonTitle: String,
-        buttonAction: (() -> Void)?,
-        forceDismiss: Bool = false,
+        config: SnackbarConfig,
         dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
     ) -> some View {
         modifier(
@@ -69,11 +44,7 @@ public extension View {
                 style: style,
                 buttonStyle: buttonStyle,
                 presentationMode: .crouton,
-                autoDismissDelay: autoDismissDelay,
-                title: title,
-                buttonTitle: buttonTitle,
-                buttonAction: buttonAction,
-                forceDismiss: forceDismiss,
+                config: config,
                 dismissHandlerBlock: dismissHandlerBlock
             )
         )
@@ -87,9 +58,7 @@ public extension View {
     func snackbar(
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
-        autoDismissDelay: CroutonDismissInterval? = .fiveSeconds,
-        title: String,
-        forceDismiss: Bool = false,
+        config: SnackbarConfig,
         dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
     ) -> some View {
         modifier(
@@ -97,9 +66,7 @@ public extension View {
                 isVisible: isVisible,
                 style: style,
                 presentationMode: .normal,
-                autoDismissDelay: autoDismissDelay,
-                title: title,
-                forceDismiss: forceDismiss,
+                config: config,
                 dismissHandlerBlock: dismissHandlerBlock
             )
         )
@@ -110,11 +77,7 @@ public extension View {
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
         buttonStyle: SnackbarButtonStyle = .short,
-        autoDismissDelay: CroutonDismissInterval? = .tenSeconds,
-        title: String,
-        buttonTitle: String,
-        buttonAction: (() -> Void)?,
-        forceDismiss: Bool = false,
+        config: SnackbarConfig,
         dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
     ) -> some View {
         modifier(
@@ -123,11 +86,7 @@ public extension View {
                 style: style,
                 buttonStyle: buttonStyle,
                 presentationMode: .normal,
-                autoDismissDelay: autoDismissDelay,
-                title: title,
-                buttonTitle: buttonTitle,
-                buttonAction: buttonAction,
-                forceDismiss: forceDismiss,
+                config: config,
                 dismissHandlerBlock: dismissHandlerBlock
             )
         )
@@ -141,11 +100,7 @@ private struct SnackbarModifier: ViewModifier {
     var style: SnackbarStyle = .normal
     var buttonStyle: SnackbarButtonStyle = .short
     var presentationMode: SnackbarPresentationMode = .normal
-    var autoDismissDelay: CroutonDismissInterval? = nil
-    var title: String
-    var buttonTitle: String? = nil
-    var buttonAction: (() -> Void)? = nil
-    var forceDismiss: Bool = false
+    var config: SnackbarConfig
     var dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
 
     func body(content: Content) -> some View {
@@ -158,11 +113,7 @@ private struct SnackbarModifier: ViewModifier {
                     Spacer()
 
                     Snackbar(
-                        title: title,
-                        buttonTitle: buttonTitle?.isEmpty == true ? nil : buttonTitle,
-                        buttonAction: buttonAction,
-                        forceDismiss: forceDismiss,
-                        autoDismissDelay: normalizeDismissInterval(from: buttonAction, croutonDismissInterval: autoDismissDelay)
+                        config: config
                     )
                     .presentationMode(presentationMode)
                     .style(style)
@@ -198,29 +149,8 @@ private struct SnackbarModifier: ViewModifier {
 }
 
 private extension SnackbarModifier {
-    func normalizeDismissInterval(from action: (() -> Void)?, croutonDismissInterval: CroutonDismissInterval?) -> CroutonDismissInterval {
-        switch croutonDismissInterval {
-        case .none where action != nil:
-            return .tenSeconds
-        case .fiveSeconds where action != nil:
-            return .tenSeconds
-        case .tenSeconds where action == nil:
-            return .fiveSeconds
-        case .none:
-            return .fiveSeconds
-        case .fiveSeconds:
-            return .fiveSeconds
-        case .tenSeconds:
-            return .tenSeconds
-        case .infinite:
-            return .infinite
-        }
-    }
-
     func dismiss(with reason: SnackbarDismissReason) {
-        DispatchQueue.main.async {
-            withAnimation { isVisible = false }
-            dismissHandlerBlock?(reason)
-        }
+        withAnimation { isVisible = false }
+        dismissHandlerBlock?(reason)
     }
 }

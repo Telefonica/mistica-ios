@@ -53,7 +53,7 @@ class UICatalogCroutonViewController: UITableViewController {
 
     private lazy var croutonDismissIntervalCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "crouton-dismiss-interval")
-        for interval in CroutonDismissInterval.allCases {
+        for interval in SnackbarCatalogDismissInterval.allCases {
             cell.segmentedControl.insertSegment(withTitle: "\(timeIntervalDescription(from: interval)) seconds", at: 0, animated: false)
         }
         cell.segmentedControl.selectedSegmentIndex = 0
@@ -116,11 +116,16 @@ extension UICatalogCroutonViewController {
         view.endEditing(true)
 
         if indexPath.row == 2 {
+            let config = SnackbarConfig(
+                title: titleCell.textField.text ?? "",
+                dismissInterval: croutonDismissInterval
+            )
             CroutonController.shared.showCrouton(
-                withText: titleCell.textField.text ?? "",
-                action: croutonAction,
+                config: config,
                 style: selectedCroutonStyle,
-                croutonDismissInterval: croutonDismissInterval,
+                dismissHandler: { reason in
+                    print("\(reason.rawValue)")
+                },
                 forceDismiss: forceDismiss
             )
         } else {
@@ -145,9 +150,34 @@ private extension UICatalogCroutonViewController {
         return CroutonController.ActionConfig(text: title, handler: { print("Crouton Action Tapped") })
     }
 
-    var croutonDismissInterval: CroutonDismissInterval? {
+    var croutonDismissInterval: SnackbarDismissInterval {
         let selectedCroutonDismissIntervalIndex = croutonDismissIntervalCell.segmentedControl.selectedSegmentIndex
-        return CroutonDismissInterval(rawValue: selectedCroutonDismissIntervalIndex)
+        let catalogDismissInterval = SnackbarCatalogDismissInterval(rawValue: selectedCroutonDismissIntervalIndex)
+        
+        
+        switch catalogDismissInterval {
+        case .fiveSeconds:
+            return .fiveSeconds
+        case .tenSeconds:
+            guard let actionTitle = actionTitleCell.textField.text, !actionTitle.isEmpty else {
+                return .tenSeconds(SnackbarAction(title: "Action", handler: {}))
+            }
+            
+            return .tenSeconds(SnackbarAction(title: actionTitle, handler: {}))
+            
+        case .infinity:
+            guard let action = actionTitleCell.textField.text, !action.isEmpty else {
+                return .infinityWithClose(nil)
+            }
+            
+            guard forceDismiss else {
+                return .infinity(SnackbarAction(title: action, handler: {}))
+            }
+            
+            return .infinityWithClose(SnackbarAction(title: action, handler: {}))
+        case .none:
+            return .fiveSeconds
+        }
     }
 
     var forceDismiss: Bool {
@@ -176,11 +206,11 @@ private extension Section {
     }
 }
 
-public extension CroutonDismissInterval {
+extension SnackbarCatalogDismissInterval {
     init?(rawValue: Int) {
         switch rawValue {
         case 0:
-            self = .infinite
+            self = .infinity
         case 1:
             self = .tenSeconds
         case 2:
@@ -218,23 +248,27 @@ private class SampleTabBarViewController: UITabBarController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        var config: SnackbarConfig
+        if let action = action {
+            config = SnackbarConfig(title: text, dismissInterval: .tenSeconds(SnackbarAction(title: action.text, handler: action.handler)))
+        } else {
+            config = SnackbarConfig(title: text, dismissInterval: .fiveSeconds)
+        }
         CroutonController.shared.showCrouton(
-            withText: text,
-            action: action,
+            config: config,
             style: style
         )
     }
 }
 
 private extension UICatalogCroutonViewController {
-    func timeIntervalDescription(from interval: CroutonDismissInterval) -> String {
+    func timeIntervalDescription(from interval: SnackbarCatalogDismissInterval) -> String {
         switch interval {
         case .fiveSeconds:
             return "5"
         case .tenSeconds:
             return "10"
-        case .infinite:
+        case .infinity:
             return "∞"
         }
     }

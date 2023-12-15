@@ -13,6 +13,10 @@ private enum ImageSize {
     static let small: CGFloat = 24
 }
 
+public protocol ListCellContentAssetDelegate: AnyObject {
+    func didTapAsset()
+}
+
 class CellLeftSectionView: UIStackView {
     private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize.height)
     private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize.width)
@@ -24,6 +28,8 @@ class CellLeftSectionView: UIStackView {
     }()
 
     private let imageView = IntrinsictImageView()
+
+    weak var delegate: ListCellContentAssetDelegate?
 
     var assetType: ListCellContentView.CellAssetType = .none {
         didSet {
@@ -92,6 +98,14 @@ private extension CellLeftSectionView {
     func commonInit() {
         addArrangedSubview(containerView)
         NSLayoutConstraint.activate([heightConstraint, widthConstraint])
+
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapAsset))
+        imageView.addGestureRecognizer(gesture)
+    }
+
+    @objc
+    func didTapAsset() {
+        delegate?.didTapAsset()
     }
 }
 

@@ -10,6 +10,12 @@ import UIKit
 
 protocol ListCellContentTableViewDelegate {
     func cellStyleChanged()
+    func didTapAsset()
+}
+
+extension ListCellContentTableViewDelegate {
+    func cellStyleChanged() {}
+    func didTapAsset() {}
 }
 
 // MARK: ListCellContentView
@@ -58,7 +64,12 @@ open class ListCellContentView: UIView {
     lazy var cellBorderView = UIView()
     private lazy var cellContentView = UIStackView()
     var tableViewDelegate: ListCellContentTableViewDelegate?
-    private lazy var leftSection = CellLeftSectionView()
+    private lazy var leftSection = {
+        let view = CellLeftSectionView()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapAsset))
+        view.addGestureRecognizer(gesture)
+        return view
+    }()
     lazy var centerSection = CellCenterSectionView()
 
     // MARK: Public
@@ -335,6 +346,11 @@ private extension ListCellContentView {
         }
 
         tableViewDelegate?.cellStyleChanged()
+    }
+
+    @objc
+    func didTapAsset() {
+        tableViewDelegate?.didTapAsset()
     }
 
     func updateAssetView() {

@@ -31,10 +31,11 @@ class CellLeftSectionView: UIStackView {
             widthConstraint.constant = assetType.viewSize.width
             imageView.intrinsicWidth = assetType.assetSize.width
             imageView.intrinsicHeight = assetType.assetSize.height
-            imageView.image = assetType.image
             imageView.contentMode = assetType.contentMode
             containerView.makeRounded(cornerRadius: assetType.cornerRadius)
             containerView.backgroundColor = assetType.backgroundColor
+
+            load()
         }
     }
 
@@ -56,6 +57,17 @@ class CellLeftSectionView: UIStackView {
     @available(*, unavailable)
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func load() {
+        switch assetType {
+        case .none:
+            imageView.image = nil
+        case .url(let url, _):
+            imageView.load(url: url)
+        case .image(let image, _), .smallIcon(let image), .largeIcon(let image, _):
+            imageView.image = image
+        }
     }
 
     func centerAlignment() {
@@ -88,7 +100,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none:
             return CGSize.zero
-        case let .image(_, size):
+        case let .image(_, size), let .url(_, size):
             if let size = size { return size }
             return CGSize(width: ImageSize.large, height: ImageSize.large)
         case .smallIcon, .largeIcon:
@@ -100,7 +112,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none:
             return CGSize.zero
-        case let .image(_, size):
+        case let .image(_, size), let .url(_, size: size):
             if let size = size { return size }
             return CGSize(width: ImageSize.large, height: ImageSize.large)
 
@@ -116,7 +128,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none, .smallIcon:
             return 0
-        case .image(_, let size):
+        case .image(_, let size), .url(_, size: let size):
             return (size != nil ? MisticaConfig.currentCornerRadius.container : viewSize.height / 2)
         case .largeIcon:
             return viewSize.height / 2
@@ -127,14 +139,14 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .smallIcon(let image), .largeIcon(let image, _), .image(let image, _):
             return image
-        case .none:
+        case .none, .url:
             return nil
         }
     }
 
     var contentMode: UIView.ContentMode {
         switch self {
-        case .image:
+        case .image, .url:
             return .scaleAspectFill
         case .none, .smallIcon, .largeIcon:
             return .scaleAspectFit
@@ -145,7 +157,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .largeIcon(_, let backgroundColor):
             return backgroundColor
-        case .none, .smallIcon, .image:
+        case .none, .smallIcon, .image, .url:
             return .clear
         }
     }

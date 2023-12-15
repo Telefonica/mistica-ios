@@ -46,6 +46,7 @@ open class ListCellContentView: UIView {
     @frozen
     public enum CellAssetType: Equatable {
         case none
+        case url(URL, size: CGSize? = nil)
         case image(UIImage, size: CGSize? = nil)
         case smallIcon(UIImage)
         case largeIcon(UIImage, backgroundColor: UIColor)

@@ -101,6 +101,7 @@ private extension CellLeftSectionView {
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapAsset))
         imageView.addGestureRecognizer(gesture)
+        imageView.isUserInteractionEnabled = true
     }
 
     @objc

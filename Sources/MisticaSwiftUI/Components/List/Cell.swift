@@ -54,6 +54,7 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
     private var backgroundColor = Color.backgroundContainer
     private var pressedBackgroundColor = Color.neutralLow.opacity(0.8)
     private var allowsPressing = true
+    private var shouldShowDivider = true
 
     @State var isPressed = false
 
@@ -90,7 +91,9 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
 
         case .fullwidth:
             coreView
-                .overlay(divider, alignment: .bottom)
+                .if(shouldShowDivider) {
+                    $0.overlay(divider, alignment: .bottom)
+                }
                 .if(allowsPressing) {
                     $0.overlay(cellLink)
                 }
@@ -192,27 +195,6 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
     @ViewBuilder
     private var cellLink: some View {
         CellLink(isPressed: $isPressed, destination: { destination })
-    }
-}
-
-// MARK: Utils
-
-public extension Cell {
-    /// Sets a NavigationLink as a background with no opacity. This behaves as a workaround to avoid
-    /// NavigationLinks to add extra views to the Cell inside List. Otherwise, the system will add the default chevron.
-    func navigationLink<T: View>(to destination: () -> T) -> Cell<PresetView, HeadlineView, T> {
-        var cell = Cell<PresetView, HeadlineView, T>(
-            style: style,
-            title: title,
-            subtitle: subtitle,
-            description: description,
-            assetType: assetType,
-            presetView: { presetView },
-            headlineView: { headlineView },
-            destinationView: destination
-        )
-        cell.allowsPressing = true
-        return cell
     }
 }
 
@@ -394,11 +376,17 @@ public extension Cell {
         cell.allowsPressing = allowsPressing
         return cell
     }
+    
+    func shouldShowDivider(_ shouldShowDivider: Bool) -> Cell {
+        var cell = self
+        cell.shouldShowDivider = shouldShowDivider
+        return cell
+    }
 }
 
 // MARK: Helpers
 
-struct ListSeparatorHiddenModifieriOS15: ViewModifier {
+struct ListSeparatorHiddenModifier: ViewModifier {
     public func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
             content
@@ -418,27 +406,9 @@ struct ListSeparatorHiddenModifieriOS15: ViewModifier {
     }
 }
 
-struct ListSeparatorHiddenModifier: ViewModifier {
-    public func body(content: Content) -> some View {
-        content
-            .listRowInsets(EdgeInsets())
-            .overlay(
-                VStack {
-                    Divider(color: .background)
-                    Spacer()
-                    Divider(color: .background)
-                }
-            )
-    }
-}
-
 public extension View {
     func listSeparatorHidden() -> some View {
-        conditionalModifier(
-            .iOS15,
-            then: { $0.modifier(ListSeparatorHiddenModifieriOS15()) },
-            else: { $0.modifier(ListSeparatorHiddenModifier()) }
-        )
+        modifier(ListSeparatorHiddenModifier())
     }
 }
 

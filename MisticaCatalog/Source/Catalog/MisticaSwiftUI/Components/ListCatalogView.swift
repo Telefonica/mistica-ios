@@ -65,7 +65,8 @@ struct ListCatalogView: View {
 
             NavigationLink("Show List") {
                 List {
-                    ForEach(0 ..< 50) { _ in
+                    let range = 0 ..< 20
+                    ForEach(range, id: \.self) { count in
                         Cell(
                             style: styles[selectedStyleIndex],
                             title: title,
@@ -73,9 +74,10 @@ struct ListCatalogView: View {
                             description: description.isEmpty ? nil : description,
                             assetType: assetTypes[selectedAssetTypeIndex],
                             presetView: { presetView },
-                            headlineView: { headlineView }
+                            headlineView: { headlineView },
+                            destinationView: { Text("Detail view \(count)") }
                         )
-                        .navigationLink(to: { Text("Detail view") })
+                        .shouldShowDivider(count != range.last)
                     }
                 }
                 .misticaListStyle()

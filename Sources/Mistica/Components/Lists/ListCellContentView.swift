@@ -49,6 +49,7 @@ open class ListCellContentView: UIView {
             case image(UIImage)
             case url(URL)
         }
+
         case none
         case image(Asset, size: CGSize? = nil)
         case smallIcon(UIImage)

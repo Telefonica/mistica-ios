@@ -23,7 +23,7 @@ final class ListsTests: XCTestCase {
     // MARK: - Default config
 
     func testCellDefaultConfigAndImage() {
-        let listTestsViewController = makeListTestsViewController(assetType: .image(AnyValues.image))
+        let listTestsViewController = makeListTestsViewController(assetType: .image(.image(AnyValues.image)))
 
         assertSnapshot(
             matching: listTestsViewController,
@@ -32,7 +32,7 @@ final class ListsTests: XCTestCase {
     }
 
     func testCellDefaultConfigAndImageWithCustomSize() {
-        let listTestsViewController = makeListTestsViewController(assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40)))
+        let listTestsViewController = makeListTestsViewController(assetType: .image(.image(AnyValues.image), size: CGSize(width: 100, height: 40)))
 
         assertSnapshot(
             matching: listTestsViewController,
@@ -84,7 +84,7 @@ final class ListsTests: XCTestCase {
     func testCellWithTitleAndImage() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
-            assetType: .image(AnyValues.image)
+            assetType: .image(.image(AnyValues.image))
         )
 
         assertSnapshot(
@@ -96,7 +96,7 @@ final class ListsTests: XCTestCase {
     func testCellWithTitleAndImageWithCustomSize() {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
-            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40))
+            assetType: .image(.image(AnyValues.image), size: CGSize(width: 100, height: 40))
         )
 
         assertSnapshot(
@@ -160,7 +160,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
-            assetType: .image(AnyValues.image)
+            assetType: .image(.image(AnyValues.image))
         )
 
         assertSnapshot(
@@ -173,7 +173,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
-            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40))
+            assetType: .image(.image(AnyValues.image), size: CGSize(width: 100, height: 40))
         )
 
         assertSnapshot(
@@ -240,7 +240,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image)
+            assetType: .image(.image(AnyValues.image))
         )
 
         assertSnapshot(
@@ -253,7 +253,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(
             title: AnyValues.title,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40))
+            assetType: .image(.image(AnyValues.image), size: CGSize(width: 100, height: 40))
         )
 
         assertSnapshot(
@@ -322,7 +322,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image)
+            assetType: .image(.image(AnyValues.image))
         )
 
         assertSnapshot(
@@ -336,7 +336,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40))
+            assetType: .image(.image(AnyValues.image), size: CGSize(width: 100, height: 40))
         )
 
         assertSnapshot(
@@ -421,7 +421,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image),
+            assetType: .image(.image(AnyValues.image)),
             showHeadline: true
         )
 
@@ -436,7 +436,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image, size: CGSize(width: 100, height: 40)),
+            assetType: .image(.image(AnyValues.image), size: CGSize(width: 100, height: 40)),
             showHeadline: true
         )
 
@@ -451,7 +451,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image),
+            assetType: .image(.image(AnyValues.image)),
             customControl: .custom(makeCustomControlView),
             showHeadline: true
         )
@@ -467,7 +467,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image, size: CGSize(width: 60, height: 20)),
+            assetType: .image(.image(AnyValues.image), size: CGSize(width: 60, height: 20)),
             customControl: .custom(makeCustomControlView),
             showHeadline: true
         )
@@ -625,7 +625,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.titleMultiline,
             subtitle: AnyValues.subtitleMultiline,
             detailText: AnyValues.detailTextMultiline,
-            assetType: .image(AnyValues.image),
+            assetType: .image(.image(AnyValues.image)),
             customControl: .navigation(makeNavigationPresetViewWithoutBagde),
             showHeadline: true
         )
@@ -641,7 +641,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitleMultiline,
             detailText: AnyValues.detailTextMultiline,
-            assetType: .image(AnyValues.image),
+            assetType: .image(.image(AnyValues.image)),
             customControl: .navigation(makeNavigationPresetViewWithoutBagde),
             showHeadline: true,
             numberOfRows: 3
@@ -703,7 +703,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitleMultiline,
             detailText: AnyValues.detailTextMultiline,
-            assetType: .image(AnyValues.image),
+            assetType: .image(.image(AnyValues.image)),
             customControl: .navigation(makeNavigationPresetViewWithoutBagde),
             showHeadline: true,
             cellLayoutStyle: .boxed,
@@ -766,7 +766,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitleMultiline,
             detailText: AnyValues.detailTextMultiline,
-            assetType: .image(AnyValues.image),
+            assetType: .image(.image(AnyValues.image)),
             customControl: .navigation(makeNavigationPresetViewWithoutBagde),
             showHeadline: true,
             cellLayoutStyle: .boxedInverse,
@@ -789,7 +789,7 @@ final class ListsTests: XCTestCase {
             title: AnyValues.title,
             subtitle: AnyValues.subtitle,
             detailText: AnyValues.detailText,
-            assetType: .image(AnyValues.image),
+            assetType: .image(.image(AnyValues.image)),
             customControl: .custom(makeCustomControlView),
             showHeadline: true,
             cellLayoutStyle: .fullWidth

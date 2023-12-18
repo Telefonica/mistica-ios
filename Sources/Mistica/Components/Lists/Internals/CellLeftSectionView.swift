@@ -14,7 +14,7 @@ private enum ImageSize {
 }
 
 public protocol ListCellContentAssetDelegate: AnyObject {
-    func didTapAsset()
+    func listCellContentDidTapOnAsset()
 }
 
 class CellLeftSectionView: UIStackView {
@@ -115,7 +115,7 @@ private extension CellLeftSectionView {
 
     @objc
     func didTapAsset() {
-        delegate?.didTapAsset()
+        delegate?.listCellContentDidTapOnAsset()
     }
 }
 

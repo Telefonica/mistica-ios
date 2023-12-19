@@ -12,7 +12,7 @@ import SwiftUI
 enum SnackbarCatalogDismissInterval: CaseIterable {
     case fiveSeconds
     case tenSeconds
-    case infinity
+    case infinite
 }
 
 struct SnackbarCatalogView: View {
@@ -49,7 +49,7 @@ struct SnackbarCatalogView: View {
             section("Style") { stylePicker }
             section("Auto Dismiss Delay") { intervalPicker }
             section("Button Style") { buttonStylePicker }
-            if intervalStyles[selectedIntervalStyleIndex] == .infinity && !buttonTitle.isEmpty {
+            if intervalStyles[selectedIntervalStyleIndex] == .infinite && !buttonTitle.isEmpty {
                 section("Force Dismiss") { Toggle("Has force dismiss action", isOn: $hasForceDismissAction) }
             }
             section("Snackbar") {
@@ -101,15 +101,15 @@ struct SnackbarCatalogView: View {
             return .fiveSeconds
         case .tenSeconds:
             return .tenSeconds(SnackbarAction(title: buttonTitle.isEmpty ? "Action" : buttonTitle, handler: {}))
-        case .infinity:
+        case .infinite:
             if !buttonTitle.isEmpty {
                 if hasForceDismissAction {
-                    return .infinityWithClose(SnackbarAction(title: buttonTitle, handler: {}))
+                    return .infiniteWithClose(SnackbarAction(title: buttonTitle, handler: {}))
                 } else {
-                    return .infinity(SnackbarAction(title: buttonTitle, handler: {}))
+                    return .infinite(SnackbarAction(title: buttonTitle, handler: {}))
                 }
             } else {
-                return .infinityWithClose(nil)
+                return .infiniteWithClose(nil)
             }
         }
     }
@@ -137,9 +137,9 @@ extension SnackbarCatalogView {
             return "5"
         case .tenSeconds:
             return "10"
-        case .infinity:
+        case .infinite:
             return "∞"
-        case .infinityWithClose:
+        case .infiniteWithClose:
             return "∞ close"
         }
     }
@@ -176,7 +176,7 @@ extension SnackbarCatalogDismissInterval: CustomStringConvertible {
             return "Five Seconds"
         case .tenSeconds:
             return "Ten Seconds"
-        case .infinity:
+        case .infinite:
             return "Infinite"
         }
     }

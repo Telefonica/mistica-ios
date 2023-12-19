@@ -120,7 +120,7 @@ final class SnackbarTests: XCTestCase {
             .foregroundColor(.white)
             .snackbar(
                 isVisible: .constant(true),
-                config: SnackbarConfig(title: "Title", dismissInterval: .infinityWithClose(SnackbarAction(title: "Action", handler: {})))
+                config: SnackbarConfig(title: "Title", dismissInterval: .infiniteWithClose(SnackbarAction(title: "Action", handler: {})))
             )
         assertSnapshot(
             matching: UIHostingController(rootView: view),
@@ -134,7 +134,7 @@ final class SnackbarTests: XCTestCase {
             .snackbar(
                 isVisible: .constant(true),
                 buttonStyle: .large,
-                config: SnackbarConfig(title: "Title", dismissInterval: .infinityWithClose(SnackbarAction(title: "Large Action", handler: {})))
+                config: SnackbarConfig(title: "Title", dismissInterval: .infiniteWithClose(SnackbarAction(title: "Large Action", handler: {})))
             )
         assertSnapshot(
             matching: UIHostingController(rootView: view),

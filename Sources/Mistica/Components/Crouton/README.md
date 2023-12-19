@@ -26,3 +26,14 @@ Croutons come in two flavors. `Info` and `Critical`.
 When presenting a crouton via the `showCrouton` method, you are given a `CroutonController.Token` type you can use to later `dismiss` the crouton if needed.
 
 ![Demo](./docs/images/crouton-demo.gif)
+
+## Config
+
+When configuring the Crouton you can select different intervals with some features:
+
+| `Interval` |   `Close`  |  `Action`  |
+|------------|------------|------------|
+|     5"     |     NO     |     NO     |
+|     10"    |     NO     |  Mandatory |
+|  Infinite  |  Mandatory |     NO     |
+|  Infinite  |  Optional  |    YES     |

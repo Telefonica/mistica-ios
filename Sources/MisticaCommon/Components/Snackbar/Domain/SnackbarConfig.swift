@@ -21,8 +21,8 @@ public struct SnackbarAction {
 public enum SnackbarDismissInterval {
     case fiveSeconds
     case tenSeconds(SnackbarAction)
-    case infinity(SnackbarAction)
-    case infinityWithClose(SnackbarAction?)
+    case infinite(SnackbarAction)
+    case infiniteWithClose(SnackbarAction?)
 
     public var timeInterval: TimeInterval? {
         switch self {
@@ -30,7 +30,7 @@ public enum SnackbarDismissInterval {
             return 5
         case .tenSeconds:
             return 10
-        case .infinity(_), .infinityWithClose:
+        case .infinite(_), .infiniteWithClose:
             return nil
         }
     }
@@ -41,9 +41,9 @@ public enum SnackbarDismissInterval {
             return nil
         case .tenSeconds(let action):
             return action
-        case .infinity(let action):
+        case .infinite(let action):
             return action
-        case .infinityWithClose(let action):
+        case .infiniteWithClose(let action):
             return action
         }
     }
@@ -52,7 +52,7 @@ public enum SnackbarDismissInterval {
         switch self {
         case .fiveSeconds, .tenSeconds:
             return false
-        case .infinity(_), .infinityWithClose:
+        case .infinite(_), .infiniteWithClose:
             return true
         }
     }

@@ -164,16 +164,16 @@ private extension UICatalogCroutonViewController {
 
             return .tenSeconds(SnackbarAction(title: actionTitle, handler: {}))
 
-        case .infinity:
+        case .infinite:
             guard let action = actionTitleCell.textField.text, !action.isEmpty else {
-                return .infinityWithClose(nil)
+                return .infiniteWithClose(nil)
             }
 
             guard forceDismiss else {
-                return .infinity(SnackbarAction(title: action, handler: {}))
+                return .infinite(SnackbarAction(title: action, handler: {}))
             }
 
-            return .infinityWithClose(SnackbarAction(title: action, handler: {}))
+            return .infiniteWithClose(SnackbarAction(title: action, handler: {}))
         case .none:
             return .fiveSeconds
         }
@@ -209,7 +209,7 @@ extension SnackbarCatalogDismissInterval {
     init?(rawValue: Int) {
         switch rawValue {
         case 0:
-            self = .infinity
+            self = .infinite
         case 1:
             self = .tenSeconds
         case 2:
@@ -267,7 +267,7 @@ private extension UICatalogCroutonViewController {
             return "5"
         case .tenSeconds:
             return "10"
-        case .infinity:
+        case .infinite:
             return "∞"
         }
     }

@@ -318,7 +318,7 @@ private extension SheetTests {
     }
 
     func makeSingleAction() -> [SheetList] {
-        var rows: [ActionItem] = [
+        let rows: [ActionItem] = [
             ActionItem(
                 id: UUID().uuidString,
                 style: .primary,
@@ -336,7 +336,7 @@ private extension SheetTests {
     }
 
     func makeActionContent() -> [SheetList] {
-        var rows: [ActionItem] = [
+        let rows: [ActionItem] = [
             ActionItem(
                 id: UUID().uuidString,
                 style: .primary,

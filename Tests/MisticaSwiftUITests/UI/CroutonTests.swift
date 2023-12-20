@@ -21,7 +21,7 @@ final class CroutonTests: XCTestCase {
             .foregroundColor(.white)
             .crouton(
                 isVisible: .constant(true),
-                title: "Title"
+                config: SnackbarConfig(title: "Title", dismissInterval: .fiveSeconds)
             )
 
         assertSnapshot(
@@ -35,7 +35,7 @@ final class CroutonTests: XCTestCase {
             .foregroundColor(.white)
             .crouton(
                 isVisible: .constant(true),
-                title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                config: SnackbarConfig(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", dismissInterval: .fiveSeconds)
             )
 
         assertSnapshot(
@@ -49,9 +49,7 @@ final class CroutonTests: XCTestCase {
             .foregroundColor(.white)
             .crouton(
                 isVisible: .constant(true),
-                title: "Title",
-                buttonTitle: "Action",
-                buttonAction: {}
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Action", handler: {})))
             )
 
         assertSnapshot(
@@ -66,9 +64,7 @@ final class CroutonTests: XCTestCase {
             .crouton(
                 isVisible: .constant(true),
                 style: .error,
-                title: "Title",
-                buttonTitle: "Action",
-                buttonAction: {}
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Action", handler: {})))
             )
 
         assertSnapshot(
@@ -83,9 +79,7 @@ final class CroutonTests: XCTestCase {
             .crouton(
                 isVisible: .constant(true),
                 buttonStyle: .large,
-                title: "Title",
-                buttonTitle: "Some large action title",
-                buttonAction: {}
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Some large action title", handler: {})))
             )
 
         assertSnapshot(
@@ -99,11 +93,49 @@ final class CroutonTests: XCTestCase {
             .foregroundColor(.white)
             .crouton(
                 isVisible: .constant(false),
-                title: "Title",
-                buttonTitle: "Action",
-                buttonAction: {}
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Action", handler: {})))
             )
 
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testForceDismissWithTenSecondsTimeInterval() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .crouton(
+                isVisible: .constant(true),
+                config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Action", handler: {})))
+            )
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testForceDismissWithInfiniteTimeInterval() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .crouton(
+                isVisible: .constant(true),
+                config: SnackbarConfig(title: "Title", dismissInterval: .infiniteWithClose(SnackbarAction(title: "Action", handler: {})))
+            )
+        assertSnapshot(
+            matching: UIHostingController(rootView: view),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testLargeButtonAndForceDismissWithInfiniteTimeInterval() {
+        let view = Rectangle()
+            .foregroundColor(.white)
+            .crouton(
+                isVisible: .constant(true),
+                buttonStyle: .large,
+                config: SnackbarConfig(title: "Title", dismissInterval: .infiniteWithClose(SnackbarAction(title: "Large Action", handler: {})))
+            )
         assertSnapshot(
             matching: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)

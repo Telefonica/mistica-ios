@@ -16,16 +16,16 @@ public extension View {
     func crouton(
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
-        autoDismissDelay: TimeInterval? = 5,
-        title: String
+        config: SnackbarConfig,
+        dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
     ) -> some View {
         modifier(
             SnackbarModifier(
                 isVisible: isVisible,
                 style: style,
                 presentationMode: .crouton,
-                autoDismissDelay: autoDismissDelay,
-                title: title
+                config: config,
+                dismissHandlerBlock: dismissHandlerBlock
             )
         )
     }
@@ -35,10 +35,8 @@ public extension View {
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
         buttonStyle: SnackbarButtonStyle = .short,
-        autoDismissDelay: TimeInterval? = 10,
-        title: String,
-        buttonTitle: String,
-        buttonAction: @escaping () -> Void
+        config: SnackbarConfig,
+        dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
     ) -> some View {
         modifier(
             SnackbarModifier(
@@ -46,10 +44,8 @@ public extension View {
                 style: style,
                 buttonStyle: buttonStyle,
                 presentationMode: .crouton,
-                autoDismissDelay: autoDismissDelay,
-                title: title,
-                buttonTitle: buttonTitle,
-                buttonAction: buttonAction
+                config: config,
+                dismissHandlerBlock: dismissHandlerBlock
             )
         )
     }
@@ -62,16 +58,16 @@ public extension View {
     func snackbar(
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
-        autoDismissDelay: TimeInterval? = 5,
-        title: String
+        config: SnackbarConfig,
+        dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
     ) -> some View {
         modifier(
             SnackbarModifier(
                 isVisible: isVisible,
                 style: style,
                 presentationMode: .normal,
-                autoDismissDelay: autoDismissDelay,
-                title: title
+                config: config,
+                dismissHandlerBlock: dismissHandlerBlock
             )
         )
     }
@@ -81,10 +77,8 @@ public extension View {
         isVisible: Binding<Bool>,
         style: SnackbarStyle = .normal,
         buttonStyle: SnackbarButtonStyle = .short,
-        autoDismissDelay: TimeInterval? = 10,
-        title: String,
-        buttonTitle: String,
-        buttonAction: @escaping () -> Void
+        config: SnackbarConfig,
+        dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
     ) -> some View {
         modifier(
             SnackbarModifier(
@@ -92,10 +86,8 @@ public extension View {
                 style: style,
                 buttonStyle: buttonStyle,
                 presentationMode: .normal,
-                autoDismissDelay: autoDismissDelay,
-                title: title,
-                buttonTitle: buttonTitle,
-                buttonAction: buttonAction
+                config: config,
+                dismissHandlerBlock: dismissHandlerBlock
             )
         )
     }
@@ -108,10 +100,8 @@ private struct SnackbarModifier: ViewModifier {
     var style: SnackbarStyle = .normal
     var buttonStyle: SnackbarButtonStyle = .short
     var presentationMode: SnackbarPresentationMode = .normal
-    var autoDismissDelay: TimeInterval? = nil
-    var title: String
-    var buttonTitle: String? = nil
-    var buttonAction: (() -> Void)? = nil
+    var config: SnackbarConfig
+    var dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
 
     func body(content: Content) -> some View {
         ZStack(alignment: .bottom) {
@@ -123,22 +113,13 @@ private struct SnackbarModifier: ViewModifier {
                     Spacer()
 
                     Snackbar(
-                        title: title,
-                        button: {
-                            if let buttonTitle = buttonTitle, let buttonAction = buttonAction {
-                                Button(buttonTitle, action: buttonAction)
-                            }
-                        }
+                        config: config
                     )
                     .presentationMode(presentationMode)
                     .style(style)
                     .buttonStyle(buttonStyle)
-                    .onAppear {
-                        if let autoDismissDelay = autoDismissDelay {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + autoDismissDelay) {
-                                withAnimation { isVisible = false }
-                            }
-                        }
+                    .onClose { reason in
+                        dismiss(with: reason)
                     }
                 }
                 .zIndex(1)
@@ -164,5 +145,12 @@ private struct SnackbarModifier: ViewModifier {
         case .crouton:
             return .move(edge: .bottom)
         }
+    }
+}
+
+private extension SnackbarModifier {
+    func dismiss(with reason: SnackbarDismissReason) {
+        withAnimation { isVisible = false }
+        dismissHandlerBlock?(reason)
     }
 }

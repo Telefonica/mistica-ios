@@ -376,7 +376,7 @@ public extension Cell {
         cell.allowsPressing = allowsPressing
         return cell
     }
-    
+
     func shouldShowDivider(_ shouldShowDivider: Bool) -> Cell {
         var cell = self
         cell.shouldShowDivider = shouldShowDivider

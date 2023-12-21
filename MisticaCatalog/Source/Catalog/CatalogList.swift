@@ -26,7 +26,7 @@ struct CatalogList: View {
                         foregroundColor: nil
                     ),
                     presetView: { CellNavigationPreset() },
-                    headlineView: { },
+                    headlineView: {},
                     destinationView: {
                         componentView(for: row)
                             .navigationTitle(row.title)

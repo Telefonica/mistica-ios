@@ -32,7 +32,8 @@ struct CatalogList: View {
                             .navigationTitle(row.title)
                             .navigationBarTitleDisplayMode(.inline)
                     }
-                ).shouldShowDivider(row != rows.last)
+                )
+                .shouldShowDivider(row != rows.last)
             }
         }
         .misticaListStyle()

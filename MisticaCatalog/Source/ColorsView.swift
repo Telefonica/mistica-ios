@@ -24,6 +24,7 @@ struct ColorsView: View {
                     description: item.color.hexString.uppercased(),
                     assetType: .roundImage(circle(with: item.color))
                 )
+                .shouldShowDivider(item.name != colors.last?.name)
             }
         }
         .misticaListStyle()

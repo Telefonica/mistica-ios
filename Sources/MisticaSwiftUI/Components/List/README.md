@@ -43,6 +43,17 @@ NavigationView {
 }
 ```
 
+The last cell on a Mistica List should not have a divider. Use the modifier (`shouldShowDivider(<condition to match last item>)`) to hide it. E.g.:
+
+```swift
+    ForEach(rows) { row in
+        Cell(
+            ...
+        )
+        .shouldShowDivider(row != rows.last)
+    }
+```
+
 #### Control Customization
 
 `Cell` can be configured with a custom control like a `Toggle`.

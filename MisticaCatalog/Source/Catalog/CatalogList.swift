@@ -19,17 +19,21 @@ struct CatalogList: View {
                 Cell(
                     style: .fullwidth,
                     title: row.title,
+                    subtitle: nil,
+                    description: nil,
                     assetType: .smallIcon(
                         Image(uiImage: row.icon),
                         foregroundColor: nil
                     ),
-                    presetView: { CellNavigationPreset() }
+                    presetView: { CellNavigationPreset() },
+                    headlineView: {},
+                    destinationView: {
+                        componentView(for: row)
+                            .navigationTitle(row.title)
+                            .navigationBarTitleDisplayMode(.inline)
+                    }
                 )
-                .navigationLink {
-                    componentView(for: row)
-                        .navigationTitle(row.title)
-                        .navigationBarTitleDisplayMode(.inline)
-                }
+                .shouldShowDivider(row != rows.last)
             }
         }
         .misticaListStyle()

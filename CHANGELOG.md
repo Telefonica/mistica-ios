@@ -1,3 +1,32 @@
+# [28.0.0](https://github.com/Telefonica/mistica-ios/compare/v27.0.0...v28.0.0) (2024-01-09)
+
+
+### Features
+
+* **Image:** added parameter to custom size image row in UIKit ([269a8f2](https://github.com/Telefonica/mistica-ios/commit/269a8f2a4f4e1244fda4ad1c1f9a2d3a7fc2cf18))
+* **List:** Add mising functionality to List ([5a81b74](https://github.com/Telefonica/mistica-ios/commit/5a81b74aba2dd54d388c809ce3eae4a107090184))
+* **Snackbar:** Add Snackbar changes to the SwiftUI version ([74fce28](https://github.com/Telefonica/mistica-ios/commit/74fce28e939dbfa4895a6870a3a2b3af48da93a3))
+
+
+### BREAKING CHANGES
+
+* **List:** List asset .image has been renamed to .custom. This custom case has as parameter .image(UIImage) or .url(URL)
+
+* https://jira.tid.es/browse/IOS-9421: Add support for url and image gesture
+* **Snackbar:** Added changes to the public methods in CroutonController to make it easier to configure.
+
+* IOS-9604 Added infinite interval to crouton and snackbar for the SwiftUI versions.
+
+* IOS-9604 Fixed an error returning dismiss reason when should be timeout.
+
+* Run swiftformat
+
+* IOS-9604 Added a config to be deterministic when selecting a time interval with/without an action. Added the same config to the crouton version in UIKit.
+
+* Run swiftformat
+
+* IOS-9604 Fixed PR comments
+
 # [27.0.0](https://github.com/Telefonica/mistica-ios/compare/v26.4.1...v27.0.0) (2023-11-10)
 
 

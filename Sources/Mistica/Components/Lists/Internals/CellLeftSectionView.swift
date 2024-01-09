@@ -29,7 +29,11 @@ class CellLeftSectionView: UIStackView {
 
     private let imageView = IntrinsictImageView()
 
-    weak var delegate: ListCellContentAssetDelegate?
+    weak var delegate: ListCellContentAssetDelegate? {
+        didSet {
+            imageView.isUserInteractionEnabled = delegate != nil
+        }
+    }
 
     var assetType: ListCellContentView.CellAssetType = .none {
         didSet {
@@ -110,7 +114,7 @@ private extension CellLeftSectionView {
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapAsset))
         imageView.addGestureRecognizer(gesture)
-        imageView.isUserInteractionEnabled = true
+        imageView.isUserInteractionEnabled = delegate != nil
     }
 
     @objc

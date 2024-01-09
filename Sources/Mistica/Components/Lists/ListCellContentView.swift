@@ -45,8 +45,13 @@ open class ListCellContentView: UIView {
 
     @frozen
     public enum CellAssetType: Equatable {
+        public enum Asset: Equatable {
+            case image(UIImage)
+            case url(URL)
+        }
+
         case none
-        case image(UIImage, size: CGSize? = nil)
+        case custom(Asset, size: CGSize? = nil)
         case smallIcon(UIImage)
         case largeIcon(UIImage, backgroundColor: UIColor)
     }
@@ -192,6 +197,15 @@ open class ListCellContentView: UIView {
         }
         set {
             leftSection.assetTintColor = newValue
+        }
+    }
+
+    public var assetDelegate: ListCellContentAssetDelegate? {
+        get {
+            leftSection.delegate
+        }
+        set {
+            leftSection.delegate = newValue
         }
     }
 

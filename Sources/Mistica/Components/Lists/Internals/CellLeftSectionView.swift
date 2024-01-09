@@ -13,6 +13,10 @@ private enum ImageSize {
     static let small: CGFloat = 24
 }
 
+public protocol ListCellContentAssetDelegate: AnyObject {
+    func listCellContentDidTapOnAsset()
+}
+
 class CellLeftSectionView: UIStackView {
     private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize.height)
     private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize.width)
@@ -25,16 +29,23 @@ class CellLeftSectionView: UIStackView {
 
     private let imageView = IntrinsictImageView()
 
+    weak var delegate: ListCellContentAssetDelegate? {
+        didSet {
+            imageView.isUserInteractionEnabled = delegate != nil
+        }
+    }
+
     var assetType: ListCellContentView.CellAssetType = .none {
         didSet {
             heightConstraint.constant = assetType.viewSize.height
             widthConstraint.constant = assetType.viewSize.width
             imageView.intrinsicWidth = assetType.assetSize.width
             imageView.intrinsicHeight = assetType.assetSize.height
-            imageView.image = assetType.image
             imageView.contentMode = assetType.contentMode
             containerView.makeRounded(cornerRadius: assetType.cornerRadius)
             containerView.backgroundColor = assetType.backgroundColor
+
+            load()
         }
     }
 
@@ -56,6 +67,26 @@ class CellLeftSectionView: UIStackView {
     @available(*, unavailable)
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func load() {
+        switch assetType {
+        case .none:
+            imageView.image = nil
+        case .custom(let asset, _):
+            load(asset: asset)
+        case .smallIcon(let image), .largeIcon(let image, _):
+            imageView.image = image
+        }
+    }
+
+    func load(asset: ListCellContentView.CellAssetType.Asset) {
+        switch asset {
+        case .image(let image):
+            imageView.image = image
+        case .url(let url):
+            imageView.load(url: url)
+        }
     }
 
     func centerAlignment() {
@@ -80,6 +111,15 @@ private extension CellLeftSectionView {
     func commonInit() {
         addArrangedSubview(containerView)
         NSLayoutConstraint.activate([heightConstraint, widthConstraint])
+
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapAsset))
+        imageView.addGestureRecognizer(gesture)
+        imageView.isUserInteractionEnabled = delegate != nil
+    }
+
+    @objc
+    func didTapAsset() {
+        delegate?.listCellContentDidTapOnAsset()
     }
 }
 
@@ -88,7 +128,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none:
             return CGSize.zero
-        case let .image(_, size):
+        case let .custom(_, size):
             if let size = size { return size }
             return CGSize(width: ImageSize.large, height: ImageSize.large)
         case .smallIcon, .largeIcon:
@@ -100,7 +140,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none:
             return CGSize.zero
-        case let .image(_, size):
+        case let .custom(_, size):
             if let size = size { return size }
             return CGSize(width: ImageSize.large, height: ImageSize.large)
 
@@ -116,7 +156,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none, .smallIcon:
             return 0
-        case .image(_, let size):
+        case .custom(_, let size):
             return (size != nil ? MisticaConfig.currentCornerRadius.container : viewSize.height / 2)
         case .largeIcon:
             return viewSize.height / 2
@@ -125,7 +165,10 @@ private extension ListCellContentView.CellAssetType {
 
     var image: UIImage? {
         switch self {
-        case .smallIcon(let image), .largeIcon(let image, _), .image(let image, _):
+        case .custom(let asset, _):
+            guard case let .image(image) = asset else { return nil }
+            return image
+        case .smallIcon(let image), .largeIcon(let image, _):
             return image
         case .none:
             return nil
@@ -134,7 +177,7 @@ private extension ListCellContentView.CellAssetType {
 
     var contentMode: UIView.ContentMode {
         switch self {
-        case .image:
+        case .custom:
             return .scaleAspectFill
         case .none, .smallIcon, .largeIcon:
             return .scaleAspectFit
@@ -145,7 +188,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .largeIcon(_, let backgroundColor):
             return backgroundColor
-        case .none, .smallIcon, .image:
+        case .none, .smallIcon, .custom:
             return .clear
         }
     }

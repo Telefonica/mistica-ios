@@ -63,6 +63,7 @@ class UICatalogListsViewController: UITableViewController {
         cell.segmentedControl.insertSegment(withTitle: "Large Icon", at: 1, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Small Icon", at: 2, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Image", at: 3, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "URL", at: 4, animated: false)
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
@@ -163,7 +164,9 @@ extension UICatalogListsViewController {
         case 2:
             sampleVC.assetType = .smallIcon(.imageIcon)
         case 3:
-            sampleVC.assetType = .image(.netflixLogo, size: CGSize(width: 140, height: 80))
+            sampleVC.assetType = .custom(.image(.netflixLogo), size: CGSize(width: 140, height: 80))
+        case 4:
+            sampleVC.assetType = .custom(.url(URL(string: "https://www.svgrepo.com/show/19461/url-link.svg")!), size: CGSize(width: 64, height: 64))
         default:
             break
         }

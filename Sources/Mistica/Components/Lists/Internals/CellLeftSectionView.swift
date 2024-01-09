@@ -69,7 +69,7 @@ class CellLeftSectionView: UIStackView {
         switch assetType {
         case .none:
             imageView.image = nil
-        case .image(let asset, _):
+        case .custom(let asset, _):
             load(asset: asset)
         case .smallIcon(let image), .largeIcon(let image, _):
             imageView.image = image
@@ -124,7 +124,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none:
             return CGSize.zero
-        case let .image(_, size):
+        case let .custom(_, size):
             if let size = size { return size }
             return CGSize(width: ImageSize.large, height: ImageSize.large)
         case .smallIcon, .largeIcon:
@@ -136,7 +136,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none:
             return CGSize.zero
-        case let .image(_, size):
+        case let .custom(_, size):
             if let size = size { return size }
             return CGSize(width: ImageSize.large, height: ImageSize.large)
 
@@ -152,7 +152,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .none, .smallIcon:
             return 0
-        case .image(_, let size):
+        case .custom(_, let size):
             return (size != nil ? MisticaConfig.currentCornerRadius.container : viewSize.height / 2)
         case .largeIcon:
             return viewSize.height / 2
@@ -161,7 +161,7 @@ private extension ListCellContentView.CellAssetType {
 
     var image: UIImage? {
         switch self {
-        case .image(let asset, _):
+        case .custom(let asset, _):
             guard case let .image(image) = asset else { return nil }
             return image
         case .smallIcon(let image), .largeIcon(let image, _):
@@ -173,7 +173,7 @@ private extension ListCellContentView.CellAssetType {
 
     var contentMode: UIView.ContentMode {
         switch self {
-        case .image:
+        case .custom:
             return .scaleAspectFill
         case .none, .smallIcon, .largeIcon:
             return .scaleAspectFit
@@ -184,7 +184,7 @@ private extension ListCellContentView.CellAssetType {
         switch self {
         case .largeIcon(_, let backgroundColor):
             return backgroundColor
-        case .none, .smallIcon, .image:
+        case .none, .smallIcon, .custom:
             return .clear
         }
     }

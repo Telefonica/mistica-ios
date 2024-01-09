@@ -164,9 +164,9 @@ extension UICatalogListsViewController {
         case 2:
             sampleVC.assetType = .smallIcon(.imageIcon)
         case 3:
-            sampleVC.assetType = .image(.image(.netflixLogo), size: CGSize(width: 140, height: 80))
+            sampleVC.assetType = .custom(.image(.netflixLogo), size: CGSize(width: 140, height: 80))
         case 4:
-            sampleVC.assetType = .image(.url(URL(string: "https://www.svgrepo.com/show/19461/url-link.svg")!), size: CGSize(width: 64, height: 64))
+            sampleVC.assetType = .custom(.url(URL(string: "https://www.svgrepo.com/show/19461/url-link.svg")!), size: CGSize(width: 64, height: 64))
         default:
             break
         }

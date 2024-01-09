@@ -51,7 +51,7 @@ open class ListCellContentView: UIView {
         }
 
         case none
-        case image(Asset, size: CGSize? = nil)
+        case custom(Asset, size: CGSize? = nil)
         case smallIcon(UIImage)
         case largeIcon(UIImage, backgroundColor: UIColor)
     }

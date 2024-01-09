@@ -36,7 +36,7 @@ final class CarouselTests: XCTestCase {
     func testCellWithTitleAndImage() {
         let carouselTestsViewController = makeCarouselTestsViewController(
             title: AnyValues.title,
-            assetType: .image(.image(AnyValues.image))
+            assetType: .custom(.image(AnyValues.image))
         )
 
         assertSnapshot(

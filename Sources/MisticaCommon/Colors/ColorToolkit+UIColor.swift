@@ -251,12 +251,12 @@ public extension UIColor {
     static var controlError: UIColor {
         MisticaConfig.currentColors.controlError
     }
-    
+
     @objc(barTrackColor)
     static var barTrack: UIColor {
         MisticaConfig.currentColors.barTrack
     }
-    
+
     @objc(loadingBarColor)
     static var loadingBar: UIColor {
         MisticaConfig.currentColors.loadingBar

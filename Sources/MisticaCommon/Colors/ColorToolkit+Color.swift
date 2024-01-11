@@ -206,11 +206,11 @@ public extension Color {
     static var controlError: Color {
         MisticaConfig.currentColors.controlError.color
     }
-    
+
     static var barTrack: Color {
         MisticaConfig.currentColors.barTrack.color
     }
-    
+
     static var loadingBar: Color {
         MisticaConfig.currentColors.loadingBar.color
     }

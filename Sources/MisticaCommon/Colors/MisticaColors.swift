@@ -37,6 +37,9 @@ public protocol MisticaColors {
     var buttonDangerBackground: UIColor { get }
     var buttonDangerBackgroundSelected: UIColor { get }
     var buttonDangerBackgroundHover: UIColor { get }
+    var buttonLinkDangerBackgroundSelected: UIColor { get }
+    var buttonLinkDangerBackgroundInverse: UIColor { get }
+    var buttonLinkDangerBackgroundInverseSelected: UIColor { get }
     var buttonLinkBackgroundSelected: UIColor { get }
     var buttonLinkBackgroundInverseSelected: UIColor { get }
     var buttonPrimaryBackground: UIColor { get }
@@ -65,7 +68,10 @@ public protocol MisticaColors {
     var textLinkSnackbar: UIColor { get }
     var control: UIColor { get }
     var controlActivated: UIColor { get }
+    var controlInverse: UIColor { get }
+    var controlActivatedInverse: UIColor { get }
     var controlError: UIColor { get }
+    var barTrack: UIColor { get }
     var loadingBar: UIColor { get }
     var loadingBarBackground: UIColor { get }
     var toggleAndroidInactive: UIColor { get }

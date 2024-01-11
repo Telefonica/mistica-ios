@@ -39,6 +39,9 @@ struct BlauColors: MisticaColors {
     let buttonDangerBackground = BlauColors.palette.blauRed
     let buttonDangerBackgroundSelected = BlauColors.palette.blauRed70
     let buttonDangerBackgroundHover = BlauColors.palette.blauRed70
+    let buttonLinkDangerBackgroundSelected = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
+    let buttonLinkDangerBackgroundInverse = BlauColors.palette.white | BlauColors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverseSelected = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
     let buttonLinkBackgroundSelected = BlauColors.palette.blauPurple10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
     let buttonLinkBackgroundInverseSelected = BlauColors.palette.white.withAlphaComponent(0.15) | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
     let buttonPrimaryBackground = BlauColors.palette.blauBlueSecondary
@@ -67,7 +70,10 @@ struct BlauColors: MisticaColors {
     let textLinkSnackbar = BlauColors.palette.blauPurple30
     let control = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
     let controlActivated = BlauColors.palette.blauBlueSecondary
+    let controlInverse = BlauColors.palette.white | BlauColors.palette.darkModeGrey6
+    let controlActivatedInverse = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
     let controlError = BlauColors.palette.blauRed
+    let barTrack = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
     let loadingBar = BlauColors.palette.blauBlueSecondary | BlauColors.palette.blauBluePrimary
     let loadingBarBackground = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.darkModeGrey
     let toggleAndroidInactive = BlauColors.palette.grey2 | BlauColors.palette.grey5

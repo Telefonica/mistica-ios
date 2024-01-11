@@ -39,6 +39,9 @@ struct VivoColors: MisticaColors {
     let buttonDangerBackground = VivoColors.palette.pepper
     let buttonDangerBackgroundSelected = VivoColors.palette.pepperDark
     let buttonDangerBackgroundHover = VivoColors.palette.pepperDark
+    let buttonLinkDangerBackgroundSelected = VivoColors.palette.pepperLight10 | VivoColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundInverse = VivoColors.palette.white | VivoColors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverseSelected = VivoColors.palette.pepperLight10 | VivoColors.palette.white.withAlphaComponent(0.08)
     let buttonLinkBackgroundSelected = VivoColors.palette.vivoPurpleLight10 | VivoColors.palette.white.withAlphaComponent(0.08)
     let buttonLinkBackgroundInverseSelected = VivoColors.palette.white.withAlphaComponent(0.1) | VivoColors.palette.white.withAlphaComponent(0.08)
     let buttonPrimaryBackground = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
@@ -67,7 +70,10 @@ struct VivoColors: MisticaColors {
     let textLinkSnackbar = VivoColors.palette.vivoPurpleLight50
     let control = VivoColors.palette.grey3 | VivoColors.palette.darkModeGrey6
     let controlActivated = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
+    let controlInverse = VivoColors.palette.white | VivoColors.palette.darkModeGrey6
+    let controlActivatedInverse = VivoColors.palette.white | VivoColors.palette.vivoPurpleLight80
     let controlError = VivoColors.palette.pepper
+    let barTrack = VivoColors.palette.grey3 | VivoColors.palette.darkModeGrey6
     let loadingBar = VivoColors.palette.pink | VivoColors.palette.vivoPurpleLight80
     let loadingBarBackground = VivoColors.palette.pepperLight30 | VivoColors.palette.darkModeGrey6
     let toggleAndroidInactive = VivoColors.palette.grey2 | VivoColors.palette.grey4

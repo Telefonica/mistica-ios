@@ -39,6 +39,9 @@ struct O2Colors: MisticaColors {
     let buttonDangerBackground = O2Colors.palette.pepper
     let buttonDangerBackgroundSelected = O2Colors.palette.pepper60
     let buttonDangerBackgroundHover = O2Colors.palette.pepper60
+    let buttonLinkDangerBackgroundSelected = O2Colors.palette.pepper10 | O2Colors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundInverse = O2Colors.palette.white | O2Colors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverseSelected = O2Colors.palette.pepper10 | O2Colors.palette.white.withAlphaComponent(0.08)
     let buttonLinkBackgroundSelected = O2Colors.palette.o2BluePrimary10 | O2Colors.palette.white.withAlphaComponent(0.08)
     let buttonLinkBackgroundInverseSelected = O2Colors.palette.white.withAlphaComponent(0.08)
     let buttonPrimaryBackground = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeO2BluePrimary
@@ -67,7 +70,10 @@ struct O2Colors: MisticaColors {
     let textLinkSnackbar = O2Colors.palette.o2BluePrimary30
     let control = O2Colors.palette.grey3 | O2Colors.palette.darkModeGrey6
     let controlActivated = O2Colors.palette.o2BluePrimary | O2Colors.palette.o2BluePrimary30
+    let controlInverse = O2Colors.palette.white | O2Colors.palette.darkModeGrey6
+    let controlActivatedInverse = O2Colors.palette.white | O2Colors.palette.o2BluePrimary30
     let controlError = O2Colors.palette.pepper
+    let barTrack = O2Colors.palette.grey3 | O2Colors.palette.darkModeGrey6
     let loadingBar = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeO2BluePrimary
     let loadingBarBackground = O2Colors.palette.grey1 | O2Colors.palette.darkModeGrey6
     let toggleAndroidInactive = O2Colors.palette.grey2 | O2Colors.palette.grey4

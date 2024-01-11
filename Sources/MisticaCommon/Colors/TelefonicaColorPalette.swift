@@ -39,6 +39,9 @@ struct TelefonicaColors: MisticaColors {
     let buttonDangerBackground = TelefonicaColors.palette.coral
     let buttonDangerBackgroundSelected = TelefonicaColors.palette.coral80
     let buttonDangerBackgroundHover = TelefonicaColors.palette.coral80
+    let buttonLinkDangerBackgroundSelected = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverseSelected = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
     let buttonLinkBackgroundSelected = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
     let buttonLinkBackgroundInverseSelected = TelefonicaColors.palette.white.withAlphaComponent(0.08)
     let buttonPrimaryBackground = TelefonicaColors.palette.telefonicaBlue
@@ -67,7 +70,10 @@ struct TelefonicaColors: MisticaColors {
     let textLinkSnackbar = TelefonicaColors.palette.telefonicaBlue30
     let control = TelefonicaColors.palette.grey3 | TelefonicaColors.palette.darkModeGrey6
     let controlActivated = TelefonicaColors.palette.telefonicaBlue
+    let controlInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey6
+    let controlActivatedInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.telefonicaBlue
     let controlError = TelefonicaColors.palette.coral
+    let barTrack = TelefonicaColors.palette.grey3 | TelefonicaColors.palette.darkModeGrey6
     let loadingBar = TelefonicaColors.palette.telefonicaBlue30 | TelefonicaColors.palette.telefonicaBlue
     let loadingBarBackground = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey6
     let toggleAndroidInactive = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.grey4

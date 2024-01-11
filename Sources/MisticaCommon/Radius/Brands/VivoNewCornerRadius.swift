@@ -19,4 +19,5 @@ struct VivoNewCornerRadius: MisticaCornerRadius {
     var legacyDisplay: CGFloat = 16
     var popup: CGFloat = 8
     var sheet: CGFloat = 16
+    var mediaSmall: CGFloat = 8
 }

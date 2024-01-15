@@ -107,6 +107,7 @@ public extension TabsView {
     }
 
     func selectTabItem(at row: Int) {
+        deselect()
         let indexPath = IndexPath(item: row, section: 0)
         firstIndexPathForSelectedItem = indexPath
 
@@ -118,12 +119,6 @@ public extension TabsView {
 
         let tabItem = tabsItems[row]
         delegate?.tabsView(self, didSelectTab: tabItem)
-    }
-
-    func deselectAll() {
-        for indexPath in collectionView.indexPathsForSelectedItems ?? [] {
-            deselectTabItem(at: indexPath.row)
-        }
     }
 }
 
@@ -160,7 +155,13 @@ private extension TabsView {
             heightAnchor.constraint(equalToConstant: Constants.componentHeight)
         ])
     }
-
+    
+    func deselect() {
+        for indexPath in collectionView.indexPathsForSelectedItems ?? [] {
+            deselectTabItem(at: indexPath.row)
+        }
+    }
+    
     func deselectTabItem(at row: Int) {
         let indexPath = IndexPath(item: row, section: 0)
         if let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell {

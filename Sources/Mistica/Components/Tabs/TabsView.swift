@@ -105,7 +105,7 @@ public extension TabsView {
             self.selectTabItem(at: max(0, index - 1))
         }
     }
-    
+
     func selectTabItem(at row: Int) {
         let indexPath = IndexPath(item: row, section: 0)
         firstIndexPathForSelectedItem = indexPath
@@ -119,9 +119,9 @@ public extension TabsView {
         let tabItem = tabsItems[row]
         delegate?.tabsView(self, didSelectTab: tabItem)
     }
-    
+
     func deselectAll() {
-        for indexPath in (collectionView.indexPathsForSelectedItems ?? []) {
+        for indexPath in collectionView.indexPathsForSelectedItems ?? [] {
             deselectTabItem(at: indexPath.row)
         }
     }

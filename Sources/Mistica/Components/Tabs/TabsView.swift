@@ -105,6 +105,26 @@ public extension TabsView {
             self.selectTabItem(at: max(0, index - 1))
         }
     }
+    
+    func selectTabItem(at row: Int) {
+        let indexPath = IndexPath(item: row, section: 0)
+        firstIndexPathForSelectedItem = indexPath
+
+        if let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell {
+            tabItemView.showSelected()
+        }
+
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+
+        let tabItem = tabsItems[row]
+        delegate?.tabsView(self, didSelectTab: tabItem)
+    }
+    
+    func deselectAll() {
+        for indexPath in (collectionView.indexPathsForSelectedItems ?? []) {
+            deselectTabItem(at: indexPath.row)
+        }
+    }
 }
 
 // MARK: - Private
@@ -139,20 +159,6 @@ private extension TabsView {
             collectionView.heightAnchor.constraint(equalToConstant: Constants.componentHeight),
             heightAnchor.constraint(equalToConstant: Constants.componentHeight)
         ])
-    }
-
-    func selectTabItem(at row: Int) {
-        let indexPath = IndexPath(item: row, section: 0)
-        firstIndexPathForSelectedItem = indexPath
-
-        if let tabItemView = collectionView.cellForItem(at: indexPath) as? TabItemViewCell {
-            tabItemView.showSelected()
-        }
-
-        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
-
-        let tabItem = tabsItems[row]
-        delegate?.tabsView(self, didSelectTab: tabItem)
     }
 
     func deselectTabItem(at row: Int) {

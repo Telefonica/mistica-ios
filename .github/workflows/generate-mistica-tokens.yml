@@ -18,7 +18,7 @@ jobs:
       - name: Launch tests
         run: make test
         
-      - name: Enable screenshots recording
+      - name: Disable screenshots recording
         run: |
           sed -i '' 's/isRecording = true/isRecording = false/' Tests/MisticaSwiftUITests/UI/BadgeTests.swift
 

@@ -1,3 +1,10 @@
+## [28.0.1](https://github.com/Telefonica/mistica-ios/compare/v28.0.0...v28.0.1) (2024-01-16)
+
+
+### Bug Fixes
+
+* **TabsView:** Allows consumers to select an item and deselect all ([#328](https://github.com/Telefonica/mistica-ios/issues/328)) ([1191096](https://github.com/Telefonica/mistica-ios/commit/1191096b56a919e33980e4b7cf0f2ade8d323674))
+
 # [28.0.0](https://github.com/Telefonica/mistica-ios/compare/v27.0.0...v28.0.0) (2024-01-09)
 
 

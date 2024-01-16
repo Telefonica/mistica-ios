@@ -13,15 +13,15 @@ jobs:
 
       - name: Enable screenshots recording
         run: |
-          sed -i '' "/isRecording = false/c\isRecording = true" BadgeTests.swift
+          sed -i '' 's/isRecording = false/isRecording = true/' BadgeTests.swift
           
       - name: Launch tests
         run: make test
         
       - name: Enable screenshots recording
         run: |
-          sed -i '' "/isRecording = true/c\isRecording = false" BadgeTests.swift
-        
+          sed -i '' 's/isRecording = true/isRecording = false/' BadgeTests.swift
+
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

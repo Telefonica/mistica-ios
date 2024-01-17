@@ -15,7 +15,7 @@ final class FontToolkitTests: XCTestCase {
     override class func setUp() {
         super.setUp()
 
-        isRecording = false
+        isRecording = true
     }
 
     func testFonts() {

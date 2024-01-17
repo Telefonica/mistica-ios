@@ -13,20 +13,20 @@ jobs:
 
       - name: Enable screenshots recording
         run: |
-          sed -i '' 's/isRecording = false/isRecording = true/' Tests/MisticaSwiftUITests/UI/BadgeTests.swift
+          find Tests/MisticaSwiftUITests -name "*.swift" -exec sed -i '' 's/isRecording = false/isRecording = true/' {} +
           
-      - name: Launch tests
+      - name: Launch tests and regenerate screenshots
         run: make test
         continue-on-error: true
         
       - name: Disable screenshots recording
         run: |
-          sed -i '' 's/isRecording = true/isRecording = false/' Tests/MisticaSwiftUITests/UI/BadgeTests.swift
+          find Tests/MisticaSwiftUITests -name "*.swift" -exec sed -i '' 's/isRecording = true/isRecording = false/' {} +
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Regenerate screenshots
+          commit_message: Regenerate screenshots automatically from GH
         env:
           GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}
 

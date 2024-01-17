@@ -10,7 +10,7 @@ import SwiftUI
 
 private enum Constants {
     static let maximumValue = 9
-    static let flagBadgeSize: CGFloat = 80
+    static let flagBadgeSize: CGFloat = 8
     static let numericBadgeSize: CGFloat = 20
     static let numericBadgeLargeSize: CGFloat = 28
     static let horizontalInset: CGFloat = 2

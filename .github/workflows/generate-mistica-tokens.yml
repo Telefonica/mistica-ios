@@ -1,11 +1,11 @@
-name: Regenerate screenshots
+name: Generate Mistica Tokens
 
 on:
   workflow_dispatch:
 
 jobs:
-  regenerate-screenshots:
-    name: Regenerate screenshots
+  record-screenshots:
+    name: Record screenshots
     runs-on: self-hosted-novum-mac
     steps:
       - name: Checkout
@@ -17,7 +17,7 @@ jobs:
           find Tests/MisticaSwiftUITests -name "*.swift" -exec sed -i '' 's/isRecording = false/isRecording = true/' {} +
           find Tests/MisticaTests -name "*.swift" -exec sed -i '' 's/isRecording = false/isRecording = true/' {} +
           
-      - name: Launch tests and regenerate screenshots
+      - name: Launch tests and record screenshots
         run: make test
         continue-on-error: true
         
@@ -30,7 +30,7 @@ jobs:
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Regenerate screenshots automatically from GH
+          commit_message: Record screenshots automatically launched from GH action
         env:
           GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}
 

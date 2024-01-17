@@ -42,11 +42,11 @@ endif
 
 # TokenGenerator func to be used in all token generators.
 define tokenGenerator
-	@echo "Generating Mistica $(2) palettes"
+	@echo "Generating Mistica $(2) interfaces"
 	hygen $(1) Mistica$(2) --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$(Movistar).json
 
-	# Generates N corner radius palettes for every brand passed in BRAND_FILES
 	for key in $(BRAND_FILES) ; do \
+		echo "Generating $$key $(2) palette"; \
 		hygen $(1) Brand$(2) --name $$key --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$$key.json ; \
 	done
 endef

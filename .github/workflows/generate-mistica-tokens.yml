@@ -9,13 +9,19 @@ jobs:
     runs-on: self-hosted-novum-mac
     steps:
       - name: Checkout
-        uses: actions/checkout@v3             
+        uses: actions/checkout@v3
+        
+      - name: Check branch is not main
+        run: |
+          BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})
+          if [ "$BRANCH_NAME" == "main" ]; then
+            echo '::error:: Record screenshots aborted since it's on the main branch.'
+            exit 0
+          fi
 
       - name: Enable screenshots recording
         run: |
-          find Tests/MisticaCommonTests -name "*.swift" -exec sed -i '' 's/isRecording = false/isRecording = true/' {} +
-          find Tests/MisticaSwiftUITests -name "*.swift" -exec sed -i '' 's/isRecording = false/isRecording = true/' {} +
-          find Tests/MisticaTests -name "*.swift" -exec sed -i '' 's/isRecording = false/isRecording = true/' {} +
+          find . -type f -name "*.swift" -exec sed -i '' 's/isRecording = false/isRecording = true/' {} +
           
       - name: Launch tests and record screenshots
         run: make test
@@ -23,9 +29,7 @@ jobs:
         
       - name: Disable screenshots recording
         run: |
-          find Tests/MisticaCommonTests -name "*.swift" -exec sed -i '' 's/isRecording = true/isRecording = false/' {} +
-          find Tests/MisticaSwiftUITests -name "*.swift" -exec sed -i '' 's/isRecording = true/isRecording = false/' {} +
-          find Tests/MisticaTests -name "*.swift" -exec sed -i '' 's/isRecording = true/isRecording = false/' {} +
+          find . -type f -name "*.swift" -exec sed -i '' 's/isRecording = true/isRecording = false/' {} +
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4

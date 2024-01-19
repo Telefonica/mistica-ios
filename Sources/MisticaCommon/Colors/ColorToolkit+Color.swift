@@ -9,7 +9,105 @@
 import SwiftUI
 
 public extension Color {
-    // MARK: Buttons
+    static var background: Color {
+        MisticaConfig.currentColors.background.color
+    }
+
+    static var backgroundAlternative: Color {
+        MisticaConfig.currentColors.backgroundAlternative.color
+    }
+
+    static var backgroundBrand: Color {
+        MisticaConfig.currentColors.backgroundBrand.color
+    }
+
+    static var backgroundBrandSecondary: Color {
+        MisticaConfig.currentColors.backgroundBrandSecondary.color
+    }
+
+    static var backgroundContainer: Color {
+        MisticaConfig.currentColors.backgroundContainer.color
+    }
+
+    static var backgroundContainerHover: Color {
+        MisticaConfig.currentColors.backgroundContainerHover.color
+    }
+
+    static var backgroundContainerPressed: Color {
+        MisticaConfig.currentColors.backgroundContainerPressed.color
+    }
+
+    static var backgroundContainerBrand: Color {
+        MisticaConfig.currentColors.backgroundContainerBrand.color
+    }
+
+    static var backgroundContainerBrandHover: Color {
+        MisticaConfig.currentColors.backgroundContainerBrandHover.color
+    }
+
+    static var backgroundContainerBrandPressed: Color {
+        MisticaConfig.currentColors.backgroundContainerBrandPressed.color
+    }
+
+    static var backgroundContainerBrandOverInverse: Color {
+        MisticaConfig.currentColors.backgroundContainerBrandOverInverse.color
+    }
+
+    static var backgroundContainerAlternative: Color {
+        MisticaConfig.currentColors.backgroundContainerAlternative.color
+    }
+
+    static var backgroundOverlay: Color {
+        MisticaConfig.currentColors.backgroundOverlay.color
+    }
+
+    static var backgroundSkeleton: Color {
+        MisticaConfig.currentColors.backgroundSkeleton.color
+    }
+
+    static var backgroundSkeletonInverse: Color {
+        MisticaConfig.currentColors.backgroundSkeletonInverse.color
+    }
+
+    static var backgroundFeedbackBottom: Color {
+        MisticaConfig.currentColors.backgroundFeedbackBottom.color
+    }
+
+    static var appBarBackground: Color {
+        MisticaConfig.currentColors.appBarBackground.color
+    }
+
+    static var navigationBarBackground: Color {
+        MisticaConfig.currentColors.navigationBarBackground.color
+    }
+
+    static var skeletonWave: Color {
+        MisticaConfig.currentColors.skeletonWave.color
+    }
+
+    static var borderLow: Color {
+        MisticaConfig.currentColors.borderLow.color
+    }
+
+    static var border: Color {
+        MisticaConfig.currentColors.border.color
+    }
+
+    static var borderHigh: Color {
+        MisticaConfig.currentColors.borderHigh.color
+    }
+
+    static var borderSelected: Color {
+        MisticaConfig.currentColors.borderSelected.color
+    }
+
+    static var coverBackgroundHover: Color {
+        MisticaConfig.currentColors.coverBackgroundHover.color
+    }
+
+    static var coverBackgroundPressed: Color {
+        MisticaConfig.currentColors.coverBackgroundPressed.color
+    }
 
     static var buttonDangerBackground: Color {
         MisticaConfig.currentColors.buttonDangerBackground.color
@@ -17,6 +115,22 @@ public extension Color {
 
     static var buttonDangerBackgroundSelected: Color {
         MisticaConfig.currentColors.buttonDangerBackgroundSelected.color
+    }
+
+    static var buttonDangerBackgroundHover: Color {
+        MisticaConfig.currentColors.buttonDangerBackgroundHover.color
+    }
+
+    static var buttonLinkDangerBackgroundSelected: Color {
+        MisticaConfig.currentColors.buttonLinkDangerBackgroundSelected.color
+    }
+
+    static var buttonLinkDangerBackgroundInverse: Color {
+        MisticaConfig.currentColors.buttonLinkDangerBackgroundInverse.color
+    }
+
+    static var buttonLinkDangerBackgroundInverseSelected: Color {
+        MisticaConfig.currentColors.buttonLinkDangerBackgroundInverseSelected.color
     }
 
     static var buttonLinkBackgroundSelected: Color {
@@ -39,12 +153,24 @@ public extension Color {
         MisticaConfig.currentColors.buttonPrimaryBackgroundSelected.color
     }
 
+    static var buttonPrimaryBackgroundHover: Color {
+        MisticaConfig.currentColors.buttonPrimaryBackgroundHover.color
+    }
+
     static var buttonPrimaryBackgroundInverseSelected: Color {
         MisticaConfig.currentColors.buttonPrimaryBackgroundInverseSelected.color
     }
 
     static var buttonSecondaryBorder: Color {
         MisticaConfig.currentColors.buttonSecondaryBorder.color
+    }
+
+    static var buttonSecondaryBorderSelected: Color {
+        MisticaConfig.currentColors.buttonSecondaryBorderSelected.color
+    }
+
+    static var buttonSecondaryBackgroundHover: Color {
+        MisticaConfig.currentColors.buttonSecondaryBackgroundHover.color
     }
 
     static var buttonSecondaryBackgroundSelected: Color {
@@ -57,6 +183,14 @@ public extension Color {
 
     static var buttonSecondaryBorderInverseSelected: Color {
         MisticaConfig.currentColors.buttonSecondaryBorderInverseSelected.color
+    }
+
+    static var buttonSecondaryBackgroundInverseHover: Color {
+        MisticaConfig.currentColors.buttonSecondaryBackgroundInverseHover.color
+    }
+
+    static var buttonSecondaryBackgroundInverseSelected: Color {
+        MisticaConfig.currentColors.buttonSecondaryBackgroundInverseSelected.color
     }
 
     static var textButtonPrimary: Color {
@@ -103,98 +237,6 @@ public extension Color {
         MisticaConfig.currentColors.textLinkSnackbar.color
     }
 
-    // MARK: Backgrounds
-
-    static var appBarBackground: Color {
-        MisticaConfig.currentColors.appBarBackground.color
-    }
-
-    static var background: Color {
-        MisticaConfig.currentColors.background.color
-    }
-
-    static var backgroundContainer: Color {
-        MisticaConfig.currentColors.backgroundContainer.color
-    }
-
-    static var backgroundBrand: Color {
-        MisticaConfig.currentColors.backgroundBrand.color
-    }
-
-    static var backgroundOverlay: Color {
-        MisticaConfig.currentColors.backgroundOverlay.color
-    }
-
-    static var backgroundSkeleton: Color {
-        MisticaConfig.currentColors.backgroundSkeleton.color
-    }
-
-    static var backgroundSkeletonInverse: Color {
-        MisticaConfig.currentColors.backgroundSkeletonInverse.color
-    }
-
-    static var navigationBarBackground: Color {
-        MisticaConfig.currentColors.navigationBarBackground.color
-    }
-
-    static var backgroundAlternative: Color {
-        MisticaConfig.currentColors.backgroundAlternative.color
-    }
-
-    static var backgroundFeedbackBottom: Color {
-        MisticaConfig.currentColors.backgroundFeedbackBottom.color
-    }
-
-    static var skeletonWave: Color {
-        MisticaConfig.currentColors.skeletonWave.color
-    }
-
-    // MARK: BadgeView
-
-    static var badge: Color {
-        MisticaConfig.currentColors.badge.color
-    }
-
-    // MARK: Tab bar
-
-    static var textAppBarSelected: Color {
-        MisticaConfig.currentColors.textAppBarSelected.color
-    }
-
-    static var textAppBar: Color {
-        MisticaConfig.currentColors.textAppBar.color
-    }
-
-    // MARK: Borders
-
-    static var borderLow: Color {
-        MisticaConfig.currentColors.borderLow.color
-    }
-
-    static var border: Color {
-        MisticaConfig.currentColors.border.color
-    }
-
-    static var borderHigh: Color {
-        MisticaConfig.currentColors.borderHigh.color
-    }
-
-    static var borderSelected: Color {
-        MisticaConfig.currentColors.borderSelected.color
-    }
-
-    // MARK: Feedback
-
-    static var feedbackInfoBackground: Color {
-        MisticaConfig.currentColors.feedbackInfoBackground.color
-    }
-
-    static var feedbackErrorBackground: Color {
-        MisticaConfig.currentColors.feedbackErrorBackground.color
-    }
-
-    // MARK: Controls
-
     static var control: Color {
         MisticaConfig.currentColors.control.color
     }
@@ -203,8 +245,20 @@ public extension Color {
         MisticaConfig.currentColors.controlActivated.color
     }
 
+    static var controlInverse: Color {
+        MisticaConfig.currentColors.controlInverse.color
+    }
+
+    static var controlActivatedInverse: Color {
+        MisticaConfig.currentColors.controlActivatedInverse.color
+    }
+
     static var controlError: Color {
         MisticaConfig.currentColors.controlError.color
+    }
+
+    static var barTrack: Color {
+        MisticaConfig.currentColors.barTrack.color
     }
 
     static var loadingBar: Color {
@@ -215,7 +269,17 @@ public extension Color {
         MisticaConfig.currentColors.loadingBarBackground.color
     }
 
-    // MARK: Dividers
+    static var toggleAndroidInactive: Color {
+        MisticaConfig.currentColors.toggleAndroidInactive.color
+    }
+
+    static var toggleAndroidBackgroundActive: Color {
+        MisticaConfig.currentColors.toggleAndroidBackgroundActive.color
+    }
+
+    static var iosControlKnob: Color {
+        MisticaConfig.currentColors.iosControlKnob.color
+    }
 
     static var divider: Color {
         MisticaConfig.currentColors.divider.color
@@ -229,7 +293,17 @@ public extension Color {
         MisticaConfig.currentColors.navigationBarDivider.color
     }
 
-    // MARK: Global
+    static var badge: Color {
+        MisticaConfig.currentColors.badge.color
+    }
+
+    static var feedbackErrorBackground: Color {
+        MisticaConfig.currentColors.feedbackErrorBackground.color
+    }
+
+    static var feedbackInfoBackground: Color {
+        MisticaConfig.currentColors.feedbackInfoBackground.color
+    }
 
     static var brand: Color {
         MisticaConfig.currentColors.brand.color
@@ -247,20 +321,20 @@ public extension Color {
         MisticaConfig.currentColors.neutralHigh.color
     }
 
-    static var neutralLow: Color {
-        MisticaConfig.currentColors.neutralLow.color
-    }
-
     static var neutralMedium: Color {
         MisticaConfig.currentColors.neutralMedium.color
     }
 
-    static var promo: Color {
-        MisticaConfig.currentColors.promo.color
+    static var neutralMediumInverse: Color {
+        MisticaConfig.currentColors.neutralMediumInverse.color
     }
 
-    static var highlight: Color {
-        MisticaConfig.currentColors.highlight.color
+    static var neutralLow: Color {
+        MisticaConfig.currentColors.neutralLow.color
+    }
+
+    static var neutralLowAlternative: Color {
+        MisticaConfig.currentColors.neutralLowAlternative.color
     }
 
     static var textPrimary: Color {
@@ -279,12 +353,6 @@ public extension Color {
         MisticaConfig.currentColors.textSecondaryInverse.color
     }
 
-    // MARK: States
-
-    static var error: Color {
-        MisticaConfig.currentColors.error.color
-    }
-
     static var success: Color {
         MisticaConfig.currentColors.success.color
     }
@@ -293,7 +361,69 @@ public extension Color {
         MisticaConfig.currentColors.warning.color
     }
 
-    // MARK: Bars Texts
+    static var error: Color {
+        MisticaConfig.currentColors.error.color
+    }
+
+    static var promo: Color {
+        MisticaConfig.currentColors.promo.color
+    }
+
+    static var highlight: Color {
+        MisticaConfig.currentColors.highlight.color
+    }
+
+    static var successLow: Color {
+        MisticaConfig.currentColors.successLow.color
+    }
+
+    static var warningLow: Color {
+        MisticaConfig.currentColors.warningLow.color
+    }
+
+    static var errorLow: Color {
+        MisticaConfig.currentColors.errorLow.color
+    }
+
+    static var promoLow: Color {
+        MisticaConfig.currentColors.promoLow.color
+    }
+
+    static var brandLow: Color {
+        MisticaConfig.currentColors.brandLow.color
+    }
+
+    static var successHigh: Color {
+        MisticaConfig.currentColors.successHigh.color
+    }
+
+    static var warningHigh: Color {
+        MisticaConfig.currentColors.warningHigh.color
+    }
+
+    static var errorHigh: Color {
+        MisticaConfig.currentColors.errorHigh.color
+    }
+
+    static var promoHigh: Color {
+        MisticaConfig.currentColors.promoHigh.color
+    }
+
+    static var successHighInverse: Color {
+        MisticaConfig.currentColors.successHighInverse.color
+    }
+
+    static var warningHighInverse: Color {
+        MisticaConfig.currentColors.warningHighInverse.color
+    }
+
+    static var errorHighInverse: Color {
+        MisticaConfig.currentColors.errorHighInverse.color
+    }
+
+    static var promoHighInverse: Color {
+        MisticaConfig.currentColors.promoHighInverse.color
+    }
 
     static var textNavigationBarPrimary: Color {
         MisticaConfig.currentColors.textNavigationBarPrimary.color
@@ -311,46 +441,20 @@ public extension Color {
         MisticaConfig.currentColors.textNavigationSearchBarText.color
     }
 
-    // MARK: Tag
-
-    static var promoLow: Color {
-        MisticaConfig.currentColors.promoLow.color
+    static var textAppBar: Color {
+        MisticaConfig.currentColors.textAppBar.color
     }
 
-    static var brandLow: Color {
-        MisticaConfig.currentColors.brandLow.color
+    static var textAppBarSelected: Color {
+        MisticaConfig.currentColors.textAppBarSelected.color
     }
 
-    static var successLow: Color {
-        MisticaConfig.currentColors.successLow.color
-    }
-
-    static var warningLow: Color {
-        MisticaConfig.currentColors.warningLow.color
-    }
-
-    static var errorLow: Color {
-        MisticaConfig.currentColors.errorLow.color
-    }
-
-    static var promoHigh: Color {
-        MisticaConfig.currentColors.promoHigh.color
-    }
-
-    static var successHigh: Color {
-        MisticaConfig.currentColors.successHigh.color
-    }
-
-    static var warningHigh: Color {
-        MisticaConfig.currentColors.warningHigh.color
-    }
-
-    static var errorHigh: Color {
-        MisticaConfig.currentColors.errorHigh.color
+    static var customTabsBackground: Color {
+        MisticaConfig.currentColors.customTabsBackground.color
     }
 }
 
-extension UIColor {
+private extension UIColor {
     var color: Color {
         Color(self)
     }

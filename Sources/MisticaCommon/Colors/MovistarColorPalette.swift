@@ -39,6 +39,9 @@ struct MovistarColors: MisticaColors {
     let buttonDangerBackground = MovistarColors.palette.pepper
     let buttonDangerBackgroundSelected = MovistarColors.palette.pepper55
     let buttonDangerBackgroundHover = MovistarColors.palette.pepper55
+    let buttonLinkDangerBackgroundSelected = MovistarColors.palette.pepper10 | MovistarColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundInverse = MovistarColors.palette.white | MovistarColors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverseSelected = MovistarColors.palette.pepper10 | MovistarColors.palette.white.withAlphaComponent(0.08)
     let buttonLinkBackgroundSelected = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.white.withAlphaComponent(0.08)
     let buttonLinkBackgroundInverseSelected = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.08)
     let buttonPrimaryBackground = MovistarColors.palette.movistarBlue
@@ -67,7 +70,10 @@ struct MovistarColors: MisticaColors {
     let textLinkSnackbar = MovistarColors.palette.movistarBlue30
     let control = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey6
     let controlActivated = MovistarColors.palette.movistarBlue
+    let controlInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey6
+    let controlActivatedInverse = MovistarColors.palette.white | MovistarColors.palette.movistarBlue
     let controlError = MovistarColors.palette.pepper
+    let barTrack = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey6
     let loadingBar = MovistarColors.palette.movistarBlue30 | MovistarColors.palette.movistarBlue
     let loadingBarBackground = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.darkModeGrey6
     let toggleAndroidInactive = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey4

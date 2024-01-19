@@ -2,41 +2,30 @@ name: Generate Mistica Tokens
 
 on:
   workflow_dispatch:
+    inputs:
+      ref:
+        description: 'mistica-design repo changeset or branch'
+        required: false
+        default: 'production'
 
 jobs:
-  record-screenshots:
-    name: Record screenshots
+  get-design-tokens:
+    name: Get Design Tokens
     runs-on: self-hosted-novum-mac
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
-      - name: Check branch is not main
-        run: |
-          BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})
-          if [ "$BRANCH_NAME" == "main" ]; then
-            echo "::error:: Record screenshots aborted since it's on the main branch."
-            exit 0
-          fi
 
-      - name: Enable screenshots recording
-        run: |
-          find . -type f -name "*.swift" -exec sed -i '' 's/isRecording = false/isRecording = true/' {} +
-          
-      - name: Launch tests and record screenshots
-        run: make test
-        continue-on-error: true
-        
-      - name: Disable screenshots recording
-        run: |
-          find . -type f -name "*.swift" -exec sed -i '' 's/isRecording = true/isRecording = false/' {} +
+      - name: Generate Skin
+        run: make skin ref=${{github.event.inputs.ref}}
 
-      - name: Commit Changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
         with:
-          file_pattern: '*.png'
-          commit_message: Record screenshots automatically launched from GH action
-        env:
-          GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}
-
-
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+          add-paths: 'Sources/MisticaCommon/*'
+          commit-message: 'feat(skin): update design tokens'
+          title: 'feat(skin): update design tokens from mistica-design branch: ${{github.event.inputs.ref}}'
+          branch: 'import-design-tokens'
+          team-reviewers: 'ios'
+          delete-branch: true

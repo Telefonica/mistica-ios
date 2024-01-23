@@ -74,7 +74,7 @@ extension SegmentView {
 private extension SegmentView {
     func commonInit() {
         backgroundColor = .clear
-        backgroundView.backgroundColor = .control
+        backgroundView.backgroundColor = .barTrack
         trackView.backgroundColor = .controlActivated
 
         addSubview(backgroundView, constraints: [

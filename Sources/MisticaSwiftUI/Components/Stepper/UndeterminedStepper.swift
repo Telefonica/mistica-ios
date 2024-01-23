@@ -24,7 +24,7 @@ public struct UndeterminedStepper: View {
     public var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .leading) {
-                Color.control
+                Color.barTrack
                 Color.controlActivated
                     .frame(width: proxy.size.width * interpolatedStep)
                     .animation(.misticaTimingCurve, value: interpolatedStep)

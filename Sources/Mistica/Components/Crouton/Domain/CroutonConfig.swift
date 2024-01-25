@@ -40,7 +40,7 @@ public struct CroutonConfig {
 private extension Button.Style {
     private enum Constants {
         static let insets: UIEdgeInsets = .init(top: 5, left: 8, bottom: 5, right: 8)
-        static let minimumWidth: CGFloat = 44 
+        static let minimumWidth: CGFloat = 44
     }
 
     static var croutonInfoLink: Button.Style {

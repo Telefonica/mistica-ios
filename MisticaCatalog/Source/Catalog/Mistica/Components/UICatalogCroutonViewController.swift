@@ -168,7 +168,7 @@ private extension UICatalogCroutonViewController {
             guard let action = actionTitleCell.textField.text, !action.isEmpty else {
                 return .infinite(nil)
             }
-            
+
             return .infinite(SnackbarAction(title: action, handler: {}))
         case .none:
             return .fiveSeconds

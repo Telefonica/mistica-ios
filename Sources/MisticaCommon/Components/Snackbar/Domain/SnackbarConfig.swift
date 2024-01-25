@@ -29,7 +29,7 @@ public enum SnackbarDismissInterval: Equatable {
             return 5
         case .tenSeconds:
             return 10
-        case .infinite(_):
+        case .infinite:
             return nil
         }
     }
@@ -49,16 +49,16 @@ public enum SnackbarDismissInterval: Equatable {
         switch self {
         case .fiveSeconds, .tenSeconds:
             return false
-        case .infinite(_):
+        case .infinite:
             return true
         }
     }
-    
-    public static func ==(lhs: SnackbarDismissInterval, rhs: SnackbarDismissInterval) -> Bool {
+
+    public static func == (lhs: SnackbarDismissInterval, rhs: SnackbarDismissInterval) -> Bool {
         switch (lhs, rhs) {
         case (.fiveSeconds, .fiveSeconds):
             return true
-        case (.tenSeconds(_),.tenSeconds(_)):
+        case (.tenSeconds(_), .tenSeconds(_)):
             return true
         case (.infinite(_), .infinite(_)):
             return true

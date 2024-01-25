@@ -105,7 +105,7 @@ struct SnackbarCatalogView: View {
             guard !buttonTitle.isEmpty else {
                 return .infinite(nil)
             }
-            
+
             return .infinite(SnackbarAction(title: buttonTitle, handler: {}))
         }
     }

@@ -1,3 +1,10 @@
+# [29.1.0](https://github.com/Telefonica/mistica-ios/compare/v29.0.0...v29.1.0) (2024-01-25)
+
+
+### Features
+
+* **skin:** IOS-9684 update design tokens from mistica-design branch: production ([#331](https://github.com/Telefonica/mistica-ios/issues/331)) ([7ba2e09](https://github.com/Telefonica/mistica-ios/commit/7ba2e097d1efc7b713077c305dba5b4470d71f4e))
+
 # [29.0.0](https://github.com/Telefonica/mistica-ios/compare/v28.0.1...v29.0.0) (2024-01-25)
 
 

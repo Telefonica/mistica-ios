@@ -102,6 +102,7 @@ private struct SnackbarModifier: ViewModifier {
     var presentationMode: SnackbarPresentationMode = .normal
     var config: SnackbarConfig
     var dismissHandlerBlock: ((SnackbarDismissReason) -> Void)? = nil
+    var forceDismiss: Bool? = false
 
     func body(content: Content) -> some View {
         ZStack(alignment: .bottom) {

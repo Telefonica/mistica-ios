@@ -49,9 +49,7 @@ struct SnackbarCatalogView: View {
             section("Style") { stylePicker }
             section("Auto Dismiss Delay") { intervalPicker }
             section("Button Style") { buttonStylePicker }
-            if intervalStyles[selectedIntervalStyleIndex] == .infinite && !buttonTitle.isEmpty {
-                section("Force Dismiss") { Toggle("Has force dismiss action", isOn: $hasForceDismissAction) }
-            }
+            section("Force Dismiss") { Toggle("Has force dismiss action", isOn: $hasForceDismissAction) }
             section("Snackbar") {
                 Button("Show snackbar") {
                     withAnimation {
@@ -75,7 +73,8 @@ struct SnackbarCatalogView: View {
             buttonStyle: buttonStyles[selectedButtonStyleIndex],
             config: SnackbarConfig(
                 title: title,
-                dismissInterval: dismissInterval
+                dismissInterval: dismissInterval,
+                forceDismiss: hasForceDismissAction
             ),
             dismissHandlerBlock: { reason in
                 print(reason.rawValue)
@@ -87,7 +86,8 @@ struct SnackbarCatalogView: View {
             buttonStyle: buttonStyles[selectedButtonStyleIndex],
             config: SnackbarConfig(
                 title: title,
-                dismissInterval: dismissInterval
+                dismissInterval: dismissInterval,
+                forceDismiss: hasForceDismissAction
             ),
             dismissHandlerBlock: { reason in
                 print(reason.rawValue)
@@ -102,15 +102,11 @@ struct SnackbarCatalogView: View {
         case .tenSeconds:
             return .tenSeconds(SnackbarAction(title: buttonTitle.isEmpty ? "Action" : buttonTitle, handler: {}))
         case .infinite:
-            if !buttonTitle.isEmpty {
-                if hasForceDismissAction {
-                    return .infiniteWithClose(SnackbarAction(title: buttonTitle, handler: {}))
-                } else {
-                    return .infinite(SnackbarAction(title: buttonTitle, handler: {}))
-                }
-            } else {
-                return .infiniteWithClose(nil)
+            guard !buttonTitle.isEmpty else {
+                return .infinite(nil)
             }
+
+            return .infinite(SnackbarAction(title: buttonTitle, handler: {}))
         }
     }
 
@@ -139,8 +135,6 @@ extension SnackbarCatalogView {
             return "10"
         case .infinite:
             return "∞"
-        case .infiniteWithClose:
-            return "∞ close"
         }
     }
 }

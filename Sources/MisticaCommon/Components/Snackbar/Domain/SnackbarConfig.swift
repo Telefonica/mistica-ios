@@ -18,11 +18,10 @@ public struct SnackbarAction {
     }
 }
 
-public enum SnackbarDismissInterval {
+public enum SnackbarDismissInterval: Equatable {
     case fiveSeconds
     case tenSeconds(SnackbarAction)
-    case infinite(SnackbarAction)
-    case infiniteWithClose(SnackbarAction?)
+    case infinite(SnackbarAction?)
 
     public var timeInterval: TimeInterval? {
         switch self {
@@ -30,7 +29,7 @@ public enum SnackbarDismissInterval {
             return 5
         case .tenSeconds:
             return 10
-        case .infinite(_), .infiniteWithClose:
+        case .infinite:
             return nil
         }
     }
@@ -43,8 +42,6 @@ public enum SnackbarDismissInterval {
             return action
         case .infinite(let action):
             return action
-        case .infiniteWithClose(let action):
-            return action
         }
     }
 
@@ -52,8 +49,21 @@ public enum SnackbarDismissInterval {
         switch self {
         case .fiveSeconds, .tenSeconds:
             return false
-        case .infinite(_), .infiniteWithClose:
+        case .infinite:
             return true
+        }
+    }
+
+    public static func == (lhs: SnackbarDismissInterval, rhs: SnackbarDismissInterval) -> Bool {
+        switch (lhs, rhs) {
+        case (.fiveSeconds, .fiveSeconds):
+            return true
+        case (.tenSeconds(_), .tenSeconds(_)):
+            return true
+        case (.infinite(_), .infinite(_)):
+            return true
+        default:
+            return false
         }
     }
 }
@@ -61,9 +71,11 @@ public enum SnackbarDismissInterval {
 public struct SnackbarConfig {
     public let title: String
     public let dismissInterval: SnackbarDismissInterval
+    public let forceDismiss: Bool
 
-    public init(title: String, dismissInterval: SnackbarDismissInterval) {
+    public init(title: String, dismissInterval: SnackbarDismissInterval, forceDismiss: Bool = false) {
         self.title = title
         self.dismissInterval = dismissInterval
+        self.forceDismiss = forceDismiss
     }
 }

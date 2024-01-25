@@ -24,7 +24,7 @@ class CroutonView: UIView {
         static let margins = NSDirectionalEdgeInsets(top: 14, leading: 16, bottom: 14, trailing: 16)
         static let marginsWhenUsingSafeArea = NSDirectionalEdgeInsets(top: 14, leading: 16, bottom: 0, trailing: 16)
 
-        static let buttonWidthThresholdForVerticalLayout: CGFloat = 104
+        static let buttonWidthThresholdForVerticalLayout: CGFloat = 128
         static let horizontalSpacing: CGFloat = 16
         static let verticalSpacing: CGFloat = 18
 
@@ -234,12 +234,7 @@ extension CroutonView {
 
 private extension CroutonView {
     var shouldShowCloseButton: Bool {
-        switch config.overrideDismissInterval {
-        case .fiveSeconds, .tenSeconds(_), .infinite:
-            return false
-        case .infiniteWithClose:
-            return true
-        }
+        forceDismiss || (action == nil && config.overrideDismissInterval == .infinite(nil))
     }
 
     func layoutViews() {

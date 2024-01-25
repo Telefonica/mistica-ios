@@ -118,15 +118,15 @@ extension UICatalogCroutonViewController {
         if indexPath.row == 2 {
             let config = SnackbarConfig(
                 title: titleCell.textField.text ?? "",
-                dismissInterval: croutonDismissInterval
+                dismissInterval: croutonDismissInterval,
+                forceDismiss: forceDismiss
             )
             CroutonController.shared.showCrouton(
                 config: config,
                 style: selectedCroutonStyle,
                 dismissHandler: { reason in
                     print("\(reason.rawValue)")
-                },
-                forceDismiss: forceDismiss
+                }
             )
         } else {
             let sampleTabBarViewController = SampleTabBarViewController()
@@ -166,14 +166,10 @@ private extension UICatalogCroutonViewController {
 
         case .infinite:
             guard let action = actionTitleCell.textField.text, !action.isEmpty else {
-                return .infiniteWithClose(nil)
+                return .infinite(nil)
             }
 
-            guard forceDismiss else {
-                return .infinite(SnackbarAction(title: action, handler: {}))
-            }
-
-            return .infiniteWithClose(SnackbarAction(title: action, handler: {}))
+            return .infinite(SnackbarAction(title: action, handler: {}))
         case .none:
             return .fiveSeconds
         }

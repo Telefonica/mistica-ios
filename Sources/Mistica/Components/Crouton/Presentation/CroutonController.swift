@@ -38,15 +38,13 @@ public extension CroutonController {
     func showCrouton(
         config: SnackbarConfig,
         style: CroutonStyle = .info,
-        dismissHandler: DismissHandlerBlock? = nil,
-        forceDismiss: Bool = false
+        dismissHandler: DismissHandlerBlock? = nil
     ) -> Token {
         showCrouton(
             config: config,
             style: style,
             dismissHandler: dismissHandler,
-            rootViewController: UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController,
-            forceDismiss: forceDismiss
+            rootViewController: UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController
         )
     }
 
@@ -62,8 +60,7 @@ public extension CroutonController {
         config: SnackbarConfig,
         style: CroutonStyle = .info,
         dismissHandler: DismissHandlerBlock? = nil,
-        rootViewController: @escaping @autoclosure () -> UIViewController?,
-        forceDismiss: Bool = false
+        rootViewController: @escaping @autoclosure () -> UIViewController?
     ) -> Token {
         assertMainThread()
 
@@ -88,7 +85,7 @@ public extension CroutonController {
             action: overwrittenAction,
             config: styleConfig,
             dismissHandler: dismissHandler,
-            forceDismiss: forceDismiss
+            forceDismiss: config.forceDismiss
         )
 
         show(crouton, token: token, rootViewController: rootViewController)

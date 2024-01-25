@@ -176,12 +176,7 @@ private extension Snackbar {
     }
 
     var shouldShowCloseButton: Bool {
-        switch config.dismissInterval {
-        case .fiveSeconds, .tenSeconds(_), .infinite:
-            return false
-        case .infiniteWithClose:
-            return true
-        }
+        config.forceDismiss || (config.dismissInterval.action == nil && config.dismissInterval == .infinite(nil))
     }
 
     func executeDismissHandlerBlock(with reason: SnackbarDismissReason) {

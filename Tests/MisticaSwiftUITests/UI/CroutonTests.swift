@@ -120,7 +120,7 @@ final class CroutonTests: XCTestCase {
             .foregroundColor(.white)
             .crouton(
                 isVisible: .constant(true),
-                config: SnackbarConfig(title: "Title", dismissInterval: .infiniteWithClose(SnackbarAction(title: "Action", handler: {})))
+                config: SnackbarConfig(title: "Title", dismissInterval: .infinite(SnackbarAction(title: "Action", handler: {})), forceDismiss: true)
             )
         assertSnapshot(
             matching: UIHostingController(rootView: view),
@@ -134,7 +134,7 @@ final class CroutonTests: XCTestCase {
             .crouton(
                 isVisible: .constant(true),
                 buttonStyle: .large,
-                config: SnackbarConfig(title: "Title", dismissInterval: .infiniteWithClose(SnackbarAction(title: "Large Action", handler: {})))
+                config: SnackbarConfig(title: "Title", dismissInterval: .infinite(SnackbarAction(title: "Large Action", handler: {})), forceDismiss: true)
             )
         assertSnapshot(
             matching: UIHostingController(rootView: view),

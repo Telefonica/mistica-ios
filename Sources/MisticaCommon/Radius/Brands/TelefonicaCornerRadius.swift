@@ -19,4 +19,5 @@ struct TelefonicaCornerRadius: MisticaCornerRadius {
     var legacyDisplay: CGFloat = 0
     var popup: CGFloat = 0
     var sheet: CGFloat = 0
+    var mediaSmall: CGFloat = 0
 }

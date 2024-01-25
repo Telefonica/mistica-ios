@@ -23,4 +23,5 @@ public protocol MisticaCornerRadius {
     var legacyDisplay: CGFloat { get }
     var popup: CGFloat { get }
     var sheet: CGFloat { get }
+    var mediaSmall: CGFloat { get }
 }

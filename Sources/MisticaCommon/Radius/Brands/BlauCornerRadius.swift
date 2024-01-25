@@ -19,4 +19,5 @@ struct BlauCornerRadius: MisticaCornerRadius {
     var legacyDisplay: CGFloat = 16
     var popup: CGFloat = 8
     var sheet: CGFloat = 8
+    var mediaSmall: CGFloat = 8
 }

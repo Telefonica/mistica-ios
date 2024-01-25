@@ -1,3 +1,19 @@
+# [29.0.0](https://github.com/Telefonica/mistica-ios/compare/v28.0.1...v29.0.0) (2024-01-25)
+
+
+### Features
+
+* **Crouton:** Fixed an error while the close button could not be presented with all the intervals supported ([94f42d2](https://github.com/Telefonica/mistica-ios/commit/94f42d2afec61c34116a7c54e183b438bf82d718))
+
+
+### BREAKING CHANGES
+
+* **Crouton:** Removed infiniteWithClose duration from SnackbarDismissInterval.
+
+* IOS-9726 Fix close button with any duration
+
+* Run swiftformat
+
 ## [28.0.1](https://github.com/Telefonica/mistica-ios/compare/v28.0.0...v28.0.1) (2024-01-16)
 
 

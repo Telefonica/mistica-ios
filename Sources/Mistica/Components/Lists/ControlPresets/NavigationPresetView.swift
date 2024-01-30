@@ -33,6 +33,15 @@ public class NavigationPresetView: UIStackView {
         }
     }
 
+    public var setAccessibilityIdentifier: String? {
+        get {
+            accessibilityIdentifier
+        }
+        set {
+            accessibilityIdentifier = newValue
+        }
+    }
+
     override public var tintColor: UIColor! {
         get {
             super.tintColor
@@ -67,6 +76,7 @@ private extension NavigationPresetView {
         spacing = 16
 
         imageView.tintColor = .textSecondary
+        isAccessibilityElement = true
 
         addArrangedSubview(imageView)
     }

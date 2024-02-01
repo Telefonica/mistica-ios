@@ -31,6 +31,7 @@ public struct CellNavigationPreset: View {
                 .renderingMode(.template)
                 .foregroundColor(.neutralMedium)
                 .frame(width: Constants.smallImageSize, height: Constants.smallImageSize, alignment: .center)
+                .accessibilityIdentifier(ListAccessibilityIdentifiers.chevron.rawValue)
         }
     }
 }

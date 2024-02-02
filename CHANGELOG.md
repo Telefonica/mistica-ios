@@ -1,3 +1,11 @@
+## [29.1.1](https://github.com/Telefonica/mistica-ios/compare/v29.1.0...v29.1.1) (2024-02-02)
+
+
+### Bug Fixes
+
+* **AccessibilityIdentifiers:** IOS-9694 - New struct for common Ids ([#334](https://github.com/Telefonica/mistica-ios/issues/334)) ([838aa6b](https://github.com/Telefonica/mistica-ios/commit/838aa6bd09ecd1f23a790f657d5872a2346ea0b0))
+* **List:** Make list chevron accesibility identifier visible and configurable ([#333](https://github.com/Telefonica/mistica-ios/issues/333)) ([28967aa](https://github.com/Telefonica/mistica-ios/commit/28967aabccf1d01168c331eaf1912db9eb2df62a))
+
 # [29.1.0](https://github.com/Telefonica/mistica-ios/compare/v29.0.0...v29.1.0) (2024-01-25)
 
 

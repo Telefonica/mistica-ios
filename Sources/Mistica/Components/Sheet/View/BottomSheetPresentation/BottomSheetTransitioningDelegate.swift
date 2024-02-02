@@ -12,6 +12,11 @@ import UIKit
 
 final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
     private weak var bottomSheetPresentationController: BottomSheetPresentationController?
+    private let backgroundViewAccessibilityLabel: String?
+
+    init(backgroundViewAccessibilityLabel: String?) {
+        self.backgroundViewAccessibilityLabel = backgroundViewAccessibilityLabel
+    }
 
     func presentationController(
         forPresented presented: UIViewController,
@@ -20,7 +25,8 @@ final class BottomSheetTransitioningDelegate: NSObject, UIViewControllerTransiti
     ) -> UIPresentationController? {
         let bottomSheetPresentationController = BottomSheetPresentationController(
             presentedViewController: presented,
-            presenting: presenting ?? source
+            presenting: presenting ?? source,
+            backgroundViewAccessibilityLabel: backgroundViewAccessibilityLabel
         )
 
         self.bottomSheetPresentationController = bottomSheetPresentationController

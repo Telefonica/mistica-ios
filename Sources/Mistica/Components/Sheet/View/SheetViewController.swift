@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public class SheetViewController: UIViewController {
-    private lazy var bottomSheetTransitioningDelegate = BottomSheetTransitioningDelegate()
+    private lazy var bottomSheetTransitioningDelegate = BottomSheetTransitioningDelegate(backgroundViewAccessibilityLabel: config.backgroundViewAccessibilityLabel)
 
     override public var modalPresentationStyle: UIModalPresentationStyle {
         get {

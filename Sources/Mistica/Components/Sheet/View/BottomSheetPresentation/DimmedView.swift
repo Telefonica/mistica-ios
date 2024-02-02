@@ -27,6 +27,8 @@ class DimmedView: UIView {
 
     /// The closure to be executed when a tap occurs
     var didTap: ((_ recognizer: UIGestureRecognizer) -> Void)?
+    /// The closure to be executed when a VoiceOver user performs a dismiss action
+    var accessibilityEscape: (() -> Void)?
 
     private lazy var tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView))
 
@@ -48,5 +50,12 @@ class DimmedView: UIView {
 
     @objc private func didTapView() {
         didTap?(tapGesture)
+    }
+
+    override func accessibilityPerformEscape() -> Bool {
+        guard let accessibilityEscape else { return super.accessibilityPerformEscape() }
+
+        accessibilityEscape()
+        return true
     }
 }

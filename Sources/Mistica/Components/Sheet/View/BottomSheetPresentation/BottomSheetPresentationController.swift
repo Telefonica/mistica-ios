@@ -9,9 +9,24 @@
 import UIKit
 
 final class BottomSheetPresentationController: UIPresentationController {
+    private let backgroundViewAccessibilityLabel: String?
+
+    init(presentedViewController: UIViewController,
+         presenting presentingViewController: UIViewController?,
+         backgroundViewAccessibilityLabel: String?) {
+        self.backgroundViewAccessibilityLabel = backgroundViewAccessibilityLabel
+        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+    }
+
     private lazy var backgroundDimmingView: DimmedView = {
         let view = DimmedView()
         view.didTap = { [weak self] _ in
+            self?.presentedViewController.dismiss(animated: true)
+        }
+
+        view.isAccessibilityElement = true
+        view.accessibilityLabel = backgroundViewAccessibilityLabel
+        view.accessibilityEscape = { [weak self] in
             self?.presentedViewController.dismiss(animated: true)
         }
         return view
@@ -91,6 +106,9 @@ final class BottomSheetPresentationController: UIPresentationController {
             ),
             bottomConstraint
         ])
+
+        // Sorting elements for VoiceOver
+        containerView.accessibilityElements = [presentedView, backgroundDimmingView]
 
         bottomSheetInteractiveDismissalTransition.bottomConstraint = bottomConstraint
         bottomSheetInteractiveDismissalTransition.heightConstraint = heightConstraint

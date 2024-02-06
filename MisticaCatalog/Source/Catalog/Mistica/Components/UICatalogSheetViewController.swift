@@ -321,7 +321,8 @@ private extension UICatalogSheetViewController {
                 subtitle: sheetSubtitle,
                 description: sheetDescription
             ),
-            content: [content]
+            content: [content],
+            backgroundViewAccessibilityLabel: "Close"
         )
 
         return configuration
@@ -371,7 +372,8 @@ private extension UICatalogSheetViewController {
                 subtitle: sheetSubtitle,
                 description: sheetDescription
             ),
-            content: [content]
+            content: [content],
+            backgroundViewAccessibilityLabel: "Close"
         )
 
         return configuration
@@ -404,7 +406,8 @@ private extension UICatalogSheetViewController {
                 subtitle: sheetSubtitle,
                 description: sheetDescription
             ),
-            content: [content]
+            content: [content],
+            backgroundViewAccessibilityLabel: "Close"
         )
 
         return configuration
@@ -446,7 +449,8 @@ private extension UICatalogSheetViewController {
                 listType: .actions(items: actions),
                 autoSubmit: true,
                 selectedId: []
-            )]
+            )],
+            backgroundViewAccessibilityLabel: "Close"
         )
 
         return configuration

@@ -12,13 +12,16 @@ import UIKit
 public struct SheetConfiguration {
     public let header: SheetHeader
     public let content: [SheetList]
+    public let backgroundViewAccessibilityLabel: String?
 
     public init(
         header: SheetHeader,
-        content: [SheetList]
+        content: [SheetList],
+        backgroundViewAccessibilityLabel: String? = nil
     ) {
         self.header = header
         self.content = content
+        self.backgroundViewAccessibilityLabel = backgroundViewAccessibilityLabel
     }
 }
 

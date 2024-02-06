@@ -1,3 +1,10 @@
+# [29.2.0](https://github.com/Telefonica/mistica-ios/compare/v29.1.1...v29.2.0) (2024-02-06)
+
+
+### Features
+
+* **Sheet:** IOS-9663 Add accessibility to the background view ([#335](https://github.com/Telefonica/mistica-ios/issues/335)) ([7335c6d](https://github.com/Telefonica/mistica-ios/commit/7335c6db60954002d1a928045b86f6fd6707facf))
+
 ## [29.1.1](https://github.com/Telefonica/mistica-ios/compare/v29.1.0...v29.1.1) (2024-02-02)
 
 

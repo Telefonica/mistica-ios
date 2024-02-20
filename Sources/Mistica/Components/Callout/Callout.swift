@@ -150,7 +150,7 @@ private extension Callout {
         if !configuration.canClose {
             closeImageView.removeFromSuperview()
         }
-        
+
         if configuration.inverse {
             backgroundColor = .backgroundContainer
         } else {

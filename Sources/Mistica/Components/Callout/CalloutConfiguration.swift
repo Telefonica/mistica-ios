@@ -49,7 +49,7 @@ public struct CalloutConfiguration {
         description: String,
         actions: CalloutActions? = nil,
         canClose: Bool = false,
-        inverse: Bool = true
+        inverse: Bool = false
     ) {
         self.asset = asset
         self.title = title

@@ -44,7 +44,7 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
         leadingButtonStyle: MisticaButtonStyle,
         trailingButton: TrailingButton,
         trailingButtonStyle: MisticaButtonStyle,
-        inverse: Bool = true
+        inverse: Bool = false
     ) {
         self.assetType = assetType
         self.title = title
@@ -335,36 +335,30 @@ public extension Callout {
 
     struct Callout_Previews: PreviewProvider {
         static var previews: some View {
-            ZStack {
-                Color.backgroundAlternative.edgesIgnoringSafeArea(.all)
-                VStack {
-                    Callout(
-                        title: "Hola",
-                        description: "Description",
-                        linkButton: { Button("Link") {} }
-                    )
-
-                    Callout(
-                        assetType: .image(image: .closeButtonBlackSmallIcon),
-                        title: "Hola",
-                        description: "Description",
-                        primaryButton: { Button("Primary") {} }
-                    )
-
-                    Callout(
-                        assetType: .none,
-                        title: "Hola",
-                        description: "Description",
-                        primaryButton: { Button("Primary") {} },
-                        linkButton: { Button("Link") {} }
-                    )
-
-                    Callout(description: "Description")
-
-                    Callout(description: "Not inverse background")
-                        .inverseBackground(false)
-                }.padding()
-            }
+            VStack {
+                Callout(
+                    title: "Hola",
+                    description: "Description",
+                    linkButton: { Button("Link") {} }
+                )
+                
+                Callout(
+                    assetType: .image(image: .closeButtonBlackSmallIcon),
+                    title: "Hola",
+                    description: "Description",
+                    primaryButton: { Button("Primary") {} }
+                )
+                
+                Callout(
+                    assetType: .none,
+                    title: "Hola",
+                    description: "Description",
+                    primaryButton: { Button("Primary") {} },
+                    linkButton: { Button("Link") {} }
+                )
+                
+                Callout(description: "Description")
+            }.padding()
         }
     }
 #endif

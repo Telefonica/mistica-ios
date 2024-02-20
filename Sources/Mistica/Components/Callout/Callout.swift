@@ -130,7 +130,6 @@ public extension Callout {
 private extension Callout {
     func commomInit() {
         layoutViews()
-        styleViews()
         configureCloseImageView()
     }
 
@@ -145,15 +144,17 @@ private extension Callout {
         ])
     }
 
-    func styleViews() {
-        backgroundColor = .backgroundAlternative
-    }
-
     func configure(withConfiguration configuration: CalloutConfiguration) {
         calloutContentBase.configure(withConfiguration: configuration)
 
         if !configuration.canClose {
             closeImageView.removeFromSuperview()
+        }
+        
+        if configuration.inverse {
+            backgroundColor = .backgroundContainer
+        } else {
+            backgroundColor = .backgroundAlternative
         }
 
         calloutAccessibilityElement.accessibilityLabel = [

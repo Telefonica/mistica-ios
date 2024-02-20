@@ -361,7 +361,7 @@ public extension Callout {
 
                     Callout(description: "Description")
 
-                    Callout(description: "Inverse background")
+                    Callout(description: "Not inverse background")
                         .inverseBackground(false)
                 }.padding()
             }

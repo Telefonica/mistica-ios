@@ -341,14 +341,14 @@ public extension Callout {
                     description: "Description",
                     linkButton: { Button("Link") {} }
                 )
-                
+
                 Callout(
                     assetType: .image(image: .closeButtonBlackSmallIcon),
                     title: "Hola",
                     description: "Description",
                     primaryButton: { Button("Primary") {} }
                 )
-                
+
                 Callout(
                     assetType: .none,
                     title: "Hola",
@@ -356,7 +356,7 @@ public extension Callout {
                     primaryButton: { Button("Primary") {} },
                     linkButton: { Button("Link") {} }
                 )
-                
+
                 Callout(description: "Description")
             }.padding()
         }

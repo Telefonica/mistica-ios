@@ -33,6 +33,7 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
     private var titleAccessibilityIdentifier: String?
     private var descriptionAccessibilityLabel: String?
     private var descriptionAccessibilityIdentifier: String?
+    private var inverse: Bool
 
     fileprivate init(
         assetType: CalloutAssetType = .none,
@@ -42,7 +43,8 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
         leadingButton: LeadingButton,
         leadingButtonStyle: MisticaButtonStyle,
         trailingButton: TrailingButton,
-        trailingButtonStyle: MisticaButtonStyle
+        trailingButtonStyle: MisticaButtonStyle,
+        inverse: Bool = true
     ) {
         self.assetType = assetType
         self.title = title
@@ -52,6 +54,7 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
         self.leadingButtonStyle = leadingButtonStyle
         self.trailingButton = trailingButton
         self.trailingButtonStyle = trailingButtonStyle
+        self.inverse = inverse
     }
 
     public var body: some View {
@@ -101,10 +104,14 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
             }
         }
         .padding(16)
-        .background(Color.backgroundAlternative)
+        .background(backgroundColor)
         .round(radiusStyle: .container)
     }
 
+    private var backgroundColor: Color {
+        inverse ? .backgroundContainer : .backgroundAlternative
+    }
+    
     private var hasButton: Bool {
         LeadingButton.self != EmptyView.self || TrailingButton.self != EmptyView.self
     }
@@ -314,6 +321,12 @@ public extension Callout {
         callout.descriptionAccessibilityIdentifier = descriptionAccessibilityIdentifier
         return callout
     }
+    
+    func inverseBackground(_ inverse: Bool) -> Callout {
+        var callout = self
+        callout.inverse = inverse
+        return callout
+    }
 }
 
 // MARK: Previews
@@ -322,30 +335,36 @@ public extension Callout {
 
     struct Callout_Previews: PreviewProvider {
         static var previews: some View {
-            VStack {
-                Callout(
-                    title: "Hola",
-                    description: "Description",
-                    linkButton: { Button("Link") {} }
-                )
-
-                Callout(
-                    assetType: .image(image: .closeButtonBlackSmallIcon),
-                    title: "Hola",
-                    description: "Description",
-                    primaryButton: { Button("Primary") {} }
-                )
-
-                Callout(
-                    assetType: .none,
-                    title: "Hola",
-                    description: "Description",
-                    primaryButton: { Button("Primary") {} },
-                    linkButton: { Button("Link") {} }
-                )
-
-                Callout(description: "Description")
-            }.padding()
+            ZStack {
+                Color.backgroundAlternative.edgesIgnoringSafeArea(.all)
+                VStack {
+                    Callout(
+                        title: "Hola",
+                        description: "Description",
+                        linkButton: { Button("Link") {} }
+                    )
+                    
+                    Callout(
+                        assetType: .image(image: .closeButtonBlackSmallIcon),
+                        title: "Hola",
+                        description: "Description",
+                        primaryButton: { Button("Primary") {} }
+                    )
+                    
+                    Callout(
+                        assetType: .none,
+                        title: "Hola",
+                        description: "Description",
+                        primaryButton: { Button("Primary") {} },
+                        linkButton: { Button("Link") {} }
+                    )
+                    
+                    Callout(description: "Description")
+                    
+                    Callout(description: "Inverse background")
+                        .inverseBackground(false)
+                }.padding()
+            }
         }
     }
 #endif

@@ -111,7 +111,7 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
     private var backgroundColor: Color {
         inverse ? .backgroundContainer : .backgroundAlternative
     }
-    
+
     private var hasButton: Bool {
         LeadingButton.self != EmptyView.self || TrailingButton.self != EmptyView.self
     }
@@ -321,7 +321,7 @@ public extension Callout {
         callout.descriptionAccessibilityIdentifier = descriptionAccessibilityIdentifier
         return callout
     }
-    
+
     func inverseBackground(_ inverse: Bool) -> Callout {
         var callout = self
         callout.inverse = inverse
@@ -343,14 +343,14 @@ public extension Callout {
                         description: "Description",
                         linkButton: { Button("Link") {} }
                     )
-                    
+
                     Callout(
                         assetType: .image(image: .closeButtonBlackSmallIcon),
                         title: "Hola",
                         description: "Description",
                         primaryButton: { Button("Primary") {} }
                     )
-                    
+
                     Callout(
                         assetType: .none,
                         title: "Hola",
@@ -358,9 +358,9 @@ public extension Callout {
                         primaryButton: { Button("Primary") {} },
                         linkButton: { Button("Link") {} }
                     )
-                    
+
                     Callout(description: "Description")
-                    
+
                     Callout(description: "Inverse background")
                         .inverseBackground(false)
                 }.padding()

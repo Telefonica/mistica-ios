@@ -33,6 +33,7 @@ public struct CalloutConfiguration {
     let description: String
     let actions: CalloutActions?
     let canClose: Bool
+    let inverse: Bool
 
     /// Callout Configuration to setup the component.
     /// - Parameters:
@@ -41,11 +42,20 @@ public struct CalloutConfiguration {
     ///   - description: This value is mandatory and will be printed as the description title of the callout
     ///   - actions: To know which buttons we must have inside the callout
     ///   - canClose: If true we will have a close button in the top-right to close the callout with an animation
-    public init(asset: CalloutAssetType = .none, title: String? = nil, description: String, actions: CalloutActions? = nil, canClose: Bool = false) {
+    ///   - inverse: If true we will have an inverse variant for background color
+    public init(
+        asset: CalloutAssetType = .none,
+        title: String? = nil,
+        description: String,
+        actions: CalloutActions? = nil,
+        canClose: Bool = false,
+        inverse: Bool = false
+    ) {
         self.asset = asset
         self.title = title
         self.description = description
         self.actions = actions
         self.canClose = canClose
+        self.inverse = inverse
     }
 }

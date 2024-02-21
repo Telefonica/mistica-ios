@@ -117,7 +117,7 @@ export: clean setup
 	@rm -rf "$(BUILD_PATH)"
 
 	@echo "Archiving..."
-	$(XCODEBUILD) -project "$(PROJECT_PATH)" -scheme $(SCHEMA) clean archive -configuration release -sdk iphoneos -archivePath "$(ARCHIVE_PATH)" | xcbeautify
+	$(XCODEBUILD) -project "$(PROJECT_PATH)" -scheme $(SCHEMA) clean archive -configuration release -sdk iphoneos -archivePath "$(ARCHIVE_PATH)" -destination generic/platform=iOS | xcbeautify
 
 	@echo "Exporting..."
 	$(XCODEBUILD) -exportArchive -archivePath "$(ARCHIVE_PATH)" -exportPath "$(TMP_ROOT_PATH)" -exportOptionsPlist "$(EXPORTED_OPTIONS_PATH)" | xcbeautify

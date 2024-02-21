@@ -1,3 +1,10 @@
+# [29.3.0](https://github.com/Telefonica/mistica-ios/compare/v29.2.0...v29.3.0) (2024-02-21)
+
+
+### Features
+
+* **Callout:** IOS-9818 Adding inverse variant ([#337](https://github.com/Telefonica/mistica-ios/issues/337)) ([29dfe62](https://github.com/Telefonica/mistica-ios/commit/29dfe62f9504b07c0e7f3012e736e807904d178e))
+
 # [29.2.0](https://github.com/Telefonica/mistica-ios/compare/v29.1.1...v29.2.0) (2024-02-06)
 
 

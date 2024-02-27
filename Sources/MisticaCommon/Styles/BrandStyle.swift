@@ -16,6 +16,7 @@ public enum BrandStyle {
     case blau
     case vivoNew
     case telefonica
+    case tu
     case custom(MisticaColors, MisticaBrandAssets, MisticaFontWeights, MisticaCornerRadius, MisticaFontSizes)
 
     public var id: String {
@@ -32,6 +33,8 @@ public enum BrandStyle {
             return "vivoNew"
         case .telefonica:
             return "telefonica"
+        case .tu:
+            return "tu"
         case .custom:
             return "custom"
         }
@@ -51,12 +54,14 @@ public enum BrandStyle {
             return "VivoNew"
         case .telefonica:
             return "Telefonica"
+        case .tu:
+            return "TU"
         case .custom:
             return "Custom"
         }
     }
 
     public static var allCases: [BrandStyle] {
-        [.movistar, .vivo, .o2, .blau, .vivoNew, .telefonica]
+        [.movistar, .vivo, .o2, .blau, .vivoNew, .telefonica, .tu]
     }
 }

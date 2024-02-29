@@ -1,3 +1,10 @@
+# [29.4.0](https://github.com/Telefonica/mistica-ios/compare/v29.3.0...v29.4.0) (2024-02-29)
+
+
+### Features
+
+* **NewBrand:** add new Tu brand ([5ed7c7c](https://github.com/Telefonica/mistica-ios/commit/5ed7c7c73a47770f1c0efe3703a55deec9c16ad9))
+
 # [29.3.0](https://github.com/Telefonica/mistica-ios/compare/v29.2.0...v29.3.0) (2024-02-21)
 
 

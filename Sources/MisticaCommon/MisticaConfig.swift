@@ -70,6 +70,12 @@ private extension MisticaConfig {
             currentFontWeights = TelefonicaFontWeights()
             currentCornerRadius = TelefonicaCornerRadius()
             currentFontSizes = TelefonicaFontSizes()
+        case .tu:
+            currentColors = TuColors()
+            currentBrandAssets = DefaultMisticaBrandAssets()
+            currentFontWeights = TuFontWeights()
+            currentCornerRadius = TuCornerRadius()
+            currentFontSizes = TuFontSizes()
         case .custom(let colors, let assets, let fontWeights, let cornerRadius, let fontSizes):
             currentColors = colors
             currentBrandAssets = assets

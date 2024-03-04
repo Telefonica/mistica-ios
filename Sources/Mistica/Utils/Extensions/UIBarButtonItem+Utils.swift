@@ -64,7 +64,7 @@ public extension UIButton {
             if let darkURL = urlForDarkMode {
                 self.sd_setImage(with: darkURL, for: .normal) { darkResult, _, _, _ in
                     if let darkImage = darkResult {
-                        lightImage.imageAsset?.register(darkImage, with: .init(userInterfaceStyle: .dark))
+                        lightImage.imageAsset?.register(darkImage, with: UITraitCollection(traitsFrom: [.current, .init(userInterfaceStyle: .dark)]))
                         self.setImage(lightImage, for: .normal)
                     }
                 }

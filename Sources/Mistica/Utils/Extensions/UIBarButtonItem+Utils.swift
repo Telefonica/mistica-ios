@@ -54,7 +54,6 @@ public extension UIButton {
     func setImageFromURL(url: URL, urlForDarkMode: URL? = nil) {
         print("TEST - setImageFromURL: \(url)")
         let coder = SDImageSVGCoder.shared
-        SDImageCodersManager.shared.removeCoder(coder)
         SDImageCodersManager.shared.addCoder(coder)
 
         let imageAsset = UIImageAsset()
@@ -70,12 +69,12 @@ public extension UIButton {
                         imageAsset.register(darkImage, with: .init(userInterfaceStyle: .dark))
                         print("TEST - setImage WITH DARK")
 
-                        self.setImage(imageAsset.image(with: self.traitCollection), for: .normal)
+                        self.setImage(imageAsset.image(with: .current), for: .normal)
                     }
                 }
             } else {
                 print("TEST - setImage")
-                self.setImage(imageAsset.image(with: self.traitCollection), for: .normal)
+                self.setImage(imageAsset.image(with: .current), for: .normal)
             }
         }
     }

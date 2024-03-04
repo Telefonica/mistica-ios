@@ -6,9 +6,9 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import SDWebImage
 import SDWebImageSVGCoder
+import UIKit
 
 extension UIBarButtonItem {
     convenience init(icon _: UIImage,
@@ -51,14 +51,14 @@ extension UIButton {
 }
 
 public extension UIButton {
-    /* 
+    /*
      Support SVG Images from URL for UIButton settings
      */
     func setImageFromURL(url: URL, urlForDarkMode: URL? = nil) {
         let coder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(coder)
 
-        sd_setImage(with: url, for: .normal) { lightImage, error, _, _ in
+        sd_setImage(with: url, for: .normal) { lightImage, _, _, _ in
             guard let lightImage else { return }
 
             if let darkURL = urlForDarkMode {

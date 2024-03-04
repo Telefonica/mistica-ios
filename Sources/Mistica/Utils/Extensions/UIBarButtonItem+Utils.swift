@@ -48,7 +48,9 @@ extension UIButton {
         sizeToFit()
         frameHeight = 36.0
     }
+}
 
+public extension UIButton {
     func setImageFromURL(url: URL, urlForDarkMode: URL? = nil) {
         let coder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.removeCoder(coder)

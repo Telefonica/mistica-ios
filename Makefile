@@ -1,7 +1,7 @@
 .PHONY: help setup format test simulator archive export clean skinGeneratorSetup colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration fontSizesGeneration skin
 
 # Simulator
-OS_VERSION := 17.0
+OS_VERSION := 17.2
 DEVICE_NAME := iPhone 15
 SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)
@@ -39,7 +39,7 @@ BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) $(VivoNew) $(Telefonica) $(TU) #
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode-15.0.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode-15.2.app/Contents/Developer
 endif
 
 # TokenGenerator func to be used in all token generators.

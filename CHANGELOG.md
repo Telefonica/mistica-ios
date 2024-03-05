@@ -1,3 +1,10 @@
+# [29.5.0](https://github.com/Telefonica/mistica-ios/compare/v29.4.0...v29.5.0) (2024-03-05)
+
+
+### Features
+
+* **UIButton:** added extension for SVG images in URLs ([7942feb](https://github.com/Telefonica/mistica-ios/commit/7942feb15b8c57a100a12637f1cc333424ce0d8c))
+
 # [29.4.0](https://github.com/Telefonica/mistica-ios/compare/v29.3.0...v29.4.0) (2024-02-29)
 
 

@@ -58,7 +58,7 @@ public extension UIButton {
         let coder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(coder)
 
-        sd_setImage(with: url, for: .normal) { lightImage, error, _, _ in
+        sd_setImage(with: url, for: .normal) { lightImage, _, _, _ in
             guard let lightImage else {
                 self.setImage(defaultImage, for: .normal)
                 return

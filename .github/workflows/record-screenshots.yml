@@ -47,7 +47,7 @@ jobs:
   execute-tests:
     name: Execute tests
     needs: record-screenshots
-    uses: ./.github/workflows/unit-tests.yml
+    uses: ./.github/workflows/ci.yml
     secrets: inherit
     with:
       ref: ${{ needs.record-screenshots.outputs.commit_hash }}

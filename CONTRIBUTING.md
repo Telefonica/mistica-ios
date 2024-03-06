@@ -138,3 +138,7 @@ In order to avoid using `perceptualPrecision` where we could have false tests pa
 <img alt="Rosetta simulator in XCode" src="./doc/images/xcode-rosetta.png">
 
 To check if everything is configured properly, try to execute the tests in `main` where all of them should pass.
+
+### Record new Snapshot testing reference screenshots for a PR
+You can directly generate new reference screenshots using a Github Action in a pull request. That way you can avoid having to generate them in your development Mac and the possible problems.
+To do it, you just need to add a comment to the PR with the text `/record-screenshots` and the Github Action will generate new screenshots, commit them to the PR branch, execute the tests again and update the commit status with the test results.

@@ -1,23 +1,24 @@
-name: Record screenshots
+name: Record screenshots on PR comment
 
 on:
-  workflow_dispatch:
+  issue_comment:
+    types: [created]
 
 jobs:
   record-screenshots:
     name: Record screenshots
+    # Only if it is a PR and the comment contains /record-screenshots
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/record-screenshots')
     runs-on: self-hosted-novum-mac
     steps:
+      - name: Get branch of PR
+        uses: xt0rted/pull-request-comment-branch@v2
+        id: comment-branch
+
       - name: Checkout
-        uses: actions/checkout@v3
-        
-      - name: Check branch is not main
-        run: |
-          BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})
-          if [ "$BRANCH_NAME" == "main" ]; then
-            echo "::error:: Record screenshots aborted since it's on the main branch."
-            exit 0
-          fi
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_sha }}
 
       - name: Enable screenshots recording
         run: |
@@ -32,11 +33,33 @@ jobs:
           find . -type f -name "*.swift" -exec sed -i '' 's/isRecording = true/isRecording = false/' {} +
 
       - name: Commit Changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
+        id: commit-changes
         with:
+          branch: ${{ steps.comment-branch.outputs.head_ref }}
           file_pattern: '*.png'
           commit_message: Record screenshots automatically launched from GH action
         env:
           GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+    outputs:
+      commit_hash: ${{ steps.commit-changes.outputs.commit_hash }}
 
+  execute-tests:
+    name: Execute tests
+    needs: record-screenshots
+    uses: ./.github/workflows/ci.yml
+    secrets: inherit
+    with:
+      ref: ${{ needs.record-screenshots.outputs.commit_hash }}
 
+  set-commit-status:
+    name: Set last commit status
+    if: always() && needs.record-screenshots.result != 'skipped'
+    needs: [record-screenshots, execute-tests]
+    runs-on: self-hosted-novum-mac
+    steps:
+      - uses: myrotvorets/set-commit-status-action@master
+        with:
+          sha: ${{ needs.record-screenshots.outputs.commit_hash }}
+          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+          status: ${{ needs.execute-tests.result }}

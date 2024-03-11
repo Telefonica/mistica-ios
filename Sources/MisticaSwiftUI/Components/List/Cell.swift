@@ -124,7 +124,7 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
                     if let subtitle = subtitle {
                         Text(subtitle)
                             .font(.textPreset2(weight: .regular))
-                            .foregroundColor(.textSecondary)
+                            .foregroundColor(.textPrimary)
                             .lineLimit(subtitleLineLimit)
                             .accessibilityLabel(subtitleAccessibilityLabel)
                             .accessibilityIdentifier(subtitleAccessibilityIdentifier)

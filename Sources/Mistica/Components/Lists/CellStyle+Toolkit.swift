@@ -102,9 +102,9 @@ extension ListCellContentView.CellStyle {
     var subtitleTextColor: UIColor {
         switch self {
         case .fullWidth, .boxed:
-            return .textSecondary
+            return .textPrimary
         case .boxedInverse:
-            return .textSecondaryInverse
+            return .textPrimaryInverse
         }
     }
 }

@@ -72,7 +72,7 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
                             .foregroundColor(.textPrimary)
                             .accessibilityLabel(titleAccessibilityLabel)
                             .accessibilityIdentifier(titleAccessibilityIdentifier)
-                        
+
                         Text(description)
                             .font(.textPreset2(weight: .regular))
                             .padding(.top, descriptionTopPadding)

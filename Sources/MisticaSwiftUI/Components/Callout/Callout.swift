@@ -348,7 +348,6 @@ public extension Callout {
                     description: "Description",
                     linkButton: { Button("Link") {} }
                 )
-
                 Callout(
                     assetType: .image(image: Image(systemName: "plus.app")),
                     title: "Hola",
@@ -357,14 +356,12 @@ public extension Callout {
                     secondaryButton: { Button("Primary button") {} },
                     linkButton: { Button("Link button") {} }
                 )
-
                 Callout(
                     assetType: .image(image: .closeButtonBlackSmallIcon),
                     title: "Hola",
                     description: "Description",
                     primaryButton: { Button("Primary") {} }
                 )
-
                 Callout(
                     assetType: .none,
                     title: "Hola",

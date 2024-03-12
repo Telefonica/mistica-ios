@@ -64,18 +64,34 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
                 .accessibilityIdentifier(assetAccessibilityIdentifier)
 
             VStack(alignment: .leading, spacing: 0) {
-                title
-                    .map(Text.init)?
-                    .font(.textPreset3(weight: .regular))
-                    .foregroundColor(.textPrimary)
-                    .accessibilityLabel(titleAccessibilityLabel)
-                    .accessibilityIdentifier(titleAccessibilityIdentifier)
-
-                Text(description)
-                    .font(.textPreset2(weight: .regular))
-                    .foregroundColor(.textSecondary)
-                    .accessibilityLabel(descriptionAccessibilityLabel)
-                    .accessibilityIdentifier(descriptionAccessibilityIdentifier)
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 0) {
+                        title
+                            .map(Text.init)?
+                            .font(.textPreset3(weight: .regular))
+                            .foregroundColor(.textPrimary)
+                            .accessibilityLabel(titleAccessibilityLabel)
+                            .accessibilityIdentifier(titleAccessibilityIdentifier)
+                        
+                        Text(description)
+                            .font(.textPreset2(weight: .regular))
+                            .padding(.top, descriptionTopPadding)
+                            .foregroundColor(.textSecondary)
+                            .accessibilityLabel(descriptionAccessibilityLabel)
+                            .accessibilityIdentifier(descriptionAccessibilityIdentifier)
+                    }
+                    Spacer()
+                    if let dismissAction = dismissAction {
+                        Button {
+                            dismissAction()
+                        } label: {
+                            dismissView
+                                .foregroundColor(Color.neutralHigh)
+                        }
+                        .accessibilityLabel(dismissButtonAccessibilityLabel)
+                        .accessibilityIdentifier(dismissButtonAccessibilityIdentifier)
+                    }
+                }
 
                 if hasButton {
                     Spacer().frame(height: 16)
@@ -89,19 +105,6 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
                         .buttonStyle(trailingButtonStyle)
                 }
             }
-
-            Spacer()
-
-            if let dismissAction = dismissAction {
-                Button {
-                    dismissAction()
-                } label: {
-                    dismissView
-                        .foregroundColor(Color.neutralHigh)
-                }
-                .accessibilityLabel(dismissButtonAccessibilityLabel)
-                .accessibilityIdentifier(dismissButtonAccessibilityIdentifier)
-            }
         }
         .padding(16)
         .background(backgroundColor)
@@ -114,6 +117,10 @@ public struct Callout<LeadingButton: View, TrailingButton: View>: View {
 
     private var hasButton: Bool {
         LeadingButton.self != EmptyView.self || TrailingButton.self != EmptyView.self
+    }
+
+    private var descriptionTopPadding: CGFloat {
+        title != nil ? 4 : 0
     }
 
     @ViewBuilder
@@ -340,6 +347,15 @@ public extension Callout {
                     title: "Hola",
                     description: "Description",
                     linkButton: { Button("Link") {} }
+                )
+
+                Callout(
+                    assetType: .image(image: Image(systemName: "plus.app")),
+                    title: "Hola",
+                    description: "Description",
+                    dismissAction: {},
+                    secondaryButton: { Button("Primary button") {} },
+                    linkButton: { Button("Link button") {} }
                 )
 
                 Callout(

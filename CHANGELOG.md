@@ -1,3 +1,10 @@
+## [29.5.1](https://github.com/Telefonica/mistica-ios/compare/v29.5.0...v29.5.1) (2024-03-13)
+
+
+### Bug Fixes
+
+* **Callout:** LATCH-1294 Improving Callout layout to give more room to … ([#344](https://github.com/Telefonica/mistica-ios/issues/344)) ([630c9c5](https://github.com/Telefonica/mistica-ios/commit/630c9c55594eff8810031ff042f763e819b3ed46))
+
 # [29.5.0](https://github.com/Telefonica/mistica-ios/compare/v29.4.0...v29.5.0) (2024-03-05)
 
 

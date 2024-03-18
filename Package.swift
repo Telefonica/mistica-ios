@@ -15,7 +15,9 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "3.1.8"),
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.8.2")
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.8.2"),
+        .package(url: "https://github.com/SDWebImage/SDWebImage.git", exact: "5.19.0"),
+        .package(url: "https://github.com/SDWebImage/SDWebImageSVGCoder.git", exact: "1.7.0")
     ],
     targets: [
         .target(
@@ -100,6 +102,8 @@ let package = Package(
             name: "Mistica",
             dependencies: [
                 .product(name: "Lottie", package: "lottie-ios"),
+                .product(name: "SDWebImage", package: "SDWebImage"),
+                .product(name: "SDWebImageSVGCoder", package: "SDWebImageSVGCoder"),
                 "MisticaCommon"
             ],
             exclude: [

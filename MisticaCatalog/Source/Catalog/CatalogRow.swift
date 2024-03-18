@@ -56,7 +56,7 @@ extension CatalogRow {
         case .viewStates:
             return "View States"
         case .badge:
-            return "Badge"
+            return "Gradient test"
         case .inputFields:
             return "InputFields"
         case .forms:

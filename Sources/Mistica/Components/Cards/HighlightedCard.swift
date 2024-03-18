@@ -391,11 +391,12 @@ private extension HighlightedCard {
         backgroundImageView.clipsToBounds = true
         updateBackgroundImageViewVisibility()
 
-        closeButton.setImage(.closeButtonBlackSmallIcon, for: .normal)
+        closeButton.setImageFromURL(url: URL(string: "https://www.svgrepo.com/show/75701/lock.svg")!, urlForDarkMode: URL(string: "https://www.svgrepo.com/show/532061/moon-stars.svg")!)
+        //closeButton.setImage(.closeButtonBlackSmallIcon, for: .normal)
         closeButton.imageEdgeInsets.left = 8
         closeButton.imageEdgeInsets.bottom = 8
         closeButton.clipsToBounds = true
-        closeButton.isHidden = true
+        closeButton.isHidden = false
 
         addBorder(color: .border)
         clipsToBounds = true
@@ -433,7 +434,7 @@ private extension HighlightedCard {
     }
 
     func updateColors() {
-        backgroundColor = style.backgroundColor
+        backgroundColor = .gray
         titleLabel.textColor = style.titleColor
         subtitleLabel.textColor = style.subtitleColor
         updateActionButtonStyle()

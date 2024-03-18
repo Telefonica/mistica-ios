@@ -119,7 +119,7 @@ private extension CatalogRow {
         case .viewStates:
             ComponentViewController(UICatalogViewStatesViewController())
         case .badge:
-            ComponentViewController(UICatalogBadgeViewController())
+            ComponentViewController(GradientViewController())
         case .inputFields:
             ComponentViewController(UICatalogInputFieldsViewController())
         case .forms:

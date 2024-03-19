@@ -26,6 +26,34 @@ final class DataCardTests: XCTestCase {
         isRecording = false
     }
 
+    func testAlternativeColors() {
+        let dataCard = DataCard(
+            assetType: .icon(
+                image: Image(systemName: "plus"),
+                foregroundColor: .neutralMedium,
+                backgroundColor: .neutralLow
+            ),
+            title: "title",
+            subtitle: "subtitle",
+            description: nil,
+            dismissAction: {},
+            colorsConfiguration: .init(
+                primaryTextColor: .textPrimaryInverse,
+                secondaryTextColor: .textSecondaryInverse,
+                backgroundColor: .backgroundBrand,
+                borderColor: .border,
+                dismissColor: .neutralLow
+            )
+        )
+        .frame(width: 300)
+        .padding(16)
+
+        assertSnapshot(
+            matching: dataCard,
+            as: .image
+        )
+    }
+    
     func testSingleline() {
         let dataCard = DataCard(
             headline: { Tag(style: .promo, text: Constants.headline) },

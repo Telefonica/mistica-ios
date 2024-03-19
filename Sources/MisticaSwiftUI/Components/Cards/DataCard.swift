@@ -14,6 +14,28 @@ public enum DataCardAssetType {
     case image(image: Image)
 }
 
+public struct DataCardColorsConfiguration {
+    var primaryTextColor: Color
+    var secondaryTextColor: Color
+    var backgroundColor: Color
+    var borderColor: Color
+    var dismissColor: Color
+
+    public init(
+        primaryTextColor: Color = .textPrimary,
+        secondaryTextColor: Color = .textSecondary,
+        backgroundColor: Color = .backgroundContainer,
+        borderColor: Color = .border,
+        dismissColor: Color = .neutralHigh
+    ) {
+        self.primaryTextColor = primaryTextColor
+        self.secondaryTextColor = secondaryTextColor
+        self.backgroundColor = backgroundColor
+        self.borderColor = borderColor
+        self.dismissColor = dismissColor
+    }
+}
+
 public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, LinkButton: View>: View {
     private let assetType: DataCardAssetType
     private let headline: Headline?
@@ -25,6 +47,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
     private let primaryButton: PrimaryButton
     private let linkButton: LinkButton
 
+    private var colorsConfiguration: DataCardColorsConfiguration
     private var titleLineLimit: Int? = 1
     private var subtitleLineLimit: Int? = 2
     private var descriptionLineLimit: Int? = 3
@@ -49,7 +72,8 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
         dismissAction: (() -> Void)?,
         primaryButton: PrimaryButton,
         linkButton: LinkButton,
-        fragmentView: Fragment
+        fragmentView: Fragment,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) {
         self.assetType = assetType
         self.headline = headline
@@ -60,6 +84,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
         self.primaryButton = primaryButton
         self.linkButton = linkButton
         self.fragmentView = fragmentView
+        self.colorsConfiguration = colorsConfiguration
     }
 
     public var body: some View {
@@ -78,7 +103,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
                     .padding(.top, 8)
                     .lineLimit(titleLineLimit)
                     .font(.textPreset4(weight: .cardTitle))
-                    .foregroundColor(.textPrimary)
+                    .foregroundColor(colorsConfiguration.primaryTextColor)
                     .accessibilityLabel(titleAccessibilityLabel)
                     .accessibilityIdentifier(titleAccessibilityIdentifier)
                     .fixedSize(horizontal: false, vertical: true)
@@ -89,7 +114,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
                     .padding(.top, 4)
                     .lineLimit(subtitleLineLimit)
                     .font(.textPreset2(weight: .regular))
-                    .foregroundColor(.textPrimary)
+                    .foregroundColor(colorsConfiguration.primaryTextColor)
                     .accessibilityLabel(subtitleAccessibilityLabel)
                     .accessibilityIdentifier(subtitleAccessibilityIdentifier)
                     .fixedSize(horizontal: false, vertical: true)
@@ -100,7 +125,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
                     .padding(.top, 8)
                     .lineLimit(descriptionLineLimit)
                     .font(.textPreset2(weight: .regular))
-                    .foregroundColor(.textSecondary)
+                    .foregroundColor(colorsConfiguration.secondaryTextColor)
                     .accessibilityLabel(descriptionAccessibilityLabel)
                     .accessibilityIdentifier(descriptionAccessibilityIdentifier)
                     .fixedSize(horizontal: false, vertical: true)
@@ -134,8 +159,8 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
         .padding(.top, 24)
         .padding(.bottom, 24)
         .expandHorizontally(alignment: .leading)
-        .background(Color.backgroundContainer)
-        .border(radiusStyle: .container, borderColor: Color.border, lineWidth: 1)
+        .background(colorsConfiguration.backgroundColor)
+        .border(radiusStyle: .container, borderColor: colorsConfiguration.borderColor, lineWidth: 1)
         .fixedSize(horizontal: false, vertical: fixedVerticalContentSize)
         .overlay(dismissView)
     }
@@ -150,8 +175,9 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
                         dismissAction()
                     } label: {
                         Image.closeButtonBlackSmallIcon
+                            .renderingMode(.template)
                             .frame(width: 40, height: 40)
-                            .foregroundColor(.neutralHigh)
+                            .foregroundColor(colorsConfiguration.dismissColor)
                     }
                 }
                 Spacer()
@@ -301,7 +327,8 @@ public extension DataCard {
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder primaryButton: () -> PrimaryButton,
         @ViewBuilder linkButton: () -> LinkButton,
-        @ViewBuilder fragmentView: () -> Fragment
+        @ViewBuilder fragmentView: () -> Fragment,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) {
         self.init(
             assetType: assetType,
@@ -312,7 +339,8 @@ public extension DataCard {
             dismissAction: dismissAction,
             primaryButton: primaryButton(),
             linkButton: linkButton(),
-            fragmentView: fragmentView()
+            fragmentView: fragmentView(),
+            colorsConfiguration: colorsConfiguration
         )
     }
 
@@ -324,7 +352,8 @@ public extension DataCard {
         description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder primaryButton: () -> PrimaryButton,
-        @ViewBuilder linkButton: () -> LinkButton
+        @ViewBuilder linkButton: () -> LinkButton,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) where Fragment == EmptyView {
         self.init(
             assetType: assetType,
@@ -335,7 +364,8 @@ public extension DataCard {
             dismissAction: dismissAction,
             primaryButton: primaryButton(),
             linkButton: linkButton(),
-            fragmentView: EmptyView()
+            fragmentView: EmptyView(),
+            colorsConfiguration: colorsConfiguration
         )
     }
 
@@ -346,7 +376,8 @@ public extension DataCard {
         subtitle: String? = nil,
         description: String? = nil,
         dismissAction: (() -> Void)? = nil,
-        @ViewBuilder linkButton: () -> LinkButton
+        @ViewBuilder linkButton: () -> LinkButton,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) where PrimaryButton == EmptyView, Fragment == EmptyView {
         self.init(
             assetType: assetType,
@@ -357,7 +388,8 @@ public extension DataCard {
             dismissAction: dismissAction,
             primaryButton: EmptyView(),
             linkButton: linkButton(),
-            fragmentView: EmptyView()
+            fragmentView: EmptyView(),
+            colorsConfiguration: colorsConfiguration
         )
     }
 
@@ -369,7 +401,8 @@ public extension DataCard {
         description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder fragmentView: () -> Fragment,
-        @ViewBuilder linkButton: () -> LinkButton
+        @ViewBuilder linkButton: () -> LinkButton,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) where PrimaryButton == EmptyView, LinkButton == EmptyView {
         self.init(
             assetType: assetType,
@@ -380,7 +413,8 @@ public extension DataCard {
             dismissAction: dismissAction,
             primaryButton: EmptyView(),
             linkButton: linkButton(),
-            fragmentView: fragmentView()
+            fragmentView: fragmentView(),
+            colorsConfiguration: colorsConfiguration
         )
     }
 
@@ -390,7 +424,8 @@ public extension DataCard {
         title: String? = nil,
         subtitle: String? = nil,
         description: String? = nil,
-        dismissAction: (() -> Void)? = nil
+        dismissAction: (() -> Void)? = nil,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) where LinkButton == EmptyView, PrimaryButton == EmptyView, Fragment == EmptyView {
         self.init(
             assetType: assetType,
@@ -401,7 +436,8 @@ public extension DataCard {
             dismissAction: dismissAction,
             primaryButton: EmptyView(),
             linkButton: EmptyView(),
-            fragmentView: EmptyView()
+            fragmentView: EmptyView(),
+            colorsConfiguration: colorsConfiguration
         )
     }
 
@@ -414,7 +450,8 @@ public extension DataCard {
         description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder primaryButton: () -> PrimaryButton,
-        @ViewBuilder linkButton: () -> LinkButton
+        @ViewBuilder linkButton: () -> LinkButton,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) where Fragment == EmptyView, Headline == EmptyView {
         self.init(
             assetType: assetType,
@@ -425,7 +462,8 @@ public extension DataCard {
             dismissAction: dismissAction,
             primaryButton: primaryButton(),
             linkButton: linkButton(),
-            fragmentView: EmptyView()
+            fragmentView: EmptyView(),
+            colorsConfiguration: colorsConfiguration
         )
     }
 
@@ -435,7 +473,8 @@ public extension DataCard {
         subtitle: String? = nil,
         description: String? = nil,
         dismissAction: (() -> Void)? = nil,
-        @ViewBuilder linkButton: () -> LinkButton
+        @ViewBuilder linkButton: () -> LinkButton,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) where PrimaryButton == EmptyView, Fragment == EmptyView, Headline == EmptyView {
         self.init(
             assetType: assetType,
@@ -446,7 +485,8 @@ public extension DataCard {
             dismissAction: dismissAction,
             primaryButton: EmptyView(),
             linkButton: linkButton(),
-            fragmentView: EmptyView()
+            fragmentView: EmptyView(),
+            colorsConfiguration: colorsConfiguration
         )
     }
 
@@ -457,7 +497,8 @@ public extension DataCard {
         description: String? = nil,
         dismissAction: (() -> Void)? = nil,
         @ViewBuilder fragmentView: () -> Fragment,
-        @ViewBuilder linkButton: () -> LinkButton
+        @ViewBuilder linkButton: () -> LinkButton,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) where PrimaryButton == EmptyView, LinkButton == EmptyView, Headline == EmptyView {
         self.init(
             assetType: assetType,
@@ -468,7 +509,8 @@ public extension DataCard {
             dismissAction: dismissAction,
             primaryButton: EmptyView(),
             linkButton: linkButton(),
-            fragmentView: fragmentView()
+            fragmentView: fragmentView(),
+            colorsConfiguration: colorsConfiguration
         )
     }
 
@@ -477,7 +519,8 @@ public extension DataCard {
         title: String? = nil,
         subtitle: String? = nil,
         description: String? = nil,
-        dismissAction: (() -> Void)? = nil
+        dismissAction: (() -> Void)? = nil,
+        colorsConfiguration: DataCardColorsConfiguration = .init()
     ) where PrimaryButton == EmptyView, LinkButton == EmptyView, Fragment == EmptyView, Headline == EmptyView {
         self.init(
             assetType: assetType,
@@ -488,7 +531,8 @@ public extension DataCard {
             dismissAction: dismissAction,
             primaryButton: EmptyView(),
             linkButton: EmptyView(),
-            fragmentView: EmptyView()
+            fragmentView: EmptyView(),
+            colorsConfiguration: colorsConfiguration
         )
     }
 }
@@ -500,6 +544,27 @@ public extension DataCard {
     struct DataCard_Previews: PreviewProvider {
         static var previews: some View {
             Preview {
+                DataCard(
+                    assetType: .icon(
+                        image: Image(systemName: "plus"),
+                        foregroundColor: .neutralMedium,
+                        backgroundColor: .neutralLow
+                    ),
+                    title: "title",
+                    subtitle: "subtitle",
+                    description: nil,
+                    dismissAction: {},
+                    colorsConfiguration: .init(
+                        primaryTextColor: .textPrimaryInverse,
+                        secondaryTextColor: .textSecondaryInverse,
+                        backgroundColor: .backgroundBrand,
+                        borderColor: .border,
+                        dismissColor: .neutralLow
+                    )
+                )
+                .frame(width: 350)
+                .previewDisplayName("Colors")
+
                 DataCard(
                     assetType: .image(image: Image(systemName: "photo")),
                     headline: { Tag(style: .promo, text: "headline") },

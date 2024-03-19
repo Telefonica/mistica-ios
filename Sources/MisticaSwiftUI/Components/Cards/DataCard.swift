@@ -20,7 +20,7 @@ public struct DataCardColorsConfiguration {
     var backgroundColor: Color
     var borderColor: Color
     var dismissColor: Color
-    
+
     public init(
         primaryTextColor: Color = .textPrimary,
         secondaryTextColor: Color = .textSecondary,

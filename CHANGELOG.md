@@ -1,3 +1,10 @@
+# [29.6.0](https://github.com/Telefonica/mistica-ios/compare/v29.5.1...v29.6.0) (2024-03-19)
+
+
+### Features
+
+* **DataCard:** LATCH-1334 Now DataCard allows color customization ([#345](https://github.com/Telefonica/mistica-ios/issues/345)) ([49bdb8e](https://github.com/Telefonica/mistica-ios/commit/49bdb8e00c8797891fa9aa5012a86ea0fba79fa4))
+
 ## [29.5.1](https://github.com/Telefonica/mistica-ios/compare/v29.5.0...v29.5.1) (2024-03-13)
 
 

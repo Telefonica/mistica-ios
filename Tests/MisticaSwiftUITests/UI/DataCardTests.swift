@@ -53,7 +53,7 @@ final class DataCardTests: XCTestCase {
             as: .image
         )
     }
-    
+
     func testSingleline() {
         let dataCard = DataCard(
             headline: { Tag(style: .promo, text: Constants.headline) },

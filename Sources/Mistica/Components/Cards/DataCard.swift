@@ -152,6 +152,18 @@ public extension DataCard {
         }
     }
     
+    var headlineIdentifier: String? {
+        get {
+            cardBaseView.contentView.headlineTagView.accessibilityIdentifier
+        }
+        set {
+            cardBaseView.contentView.headlineTagView.accessibilityIdentifier = newValue
+            if newValue == nil {
+                cardBaseView.contentView.headlineTagView.accessibilityIdentifier = DataCardAccessibilityIdentifiers.headline.rawValue
+            }
+        }
+    }
+    
     var titleIdentifier: String? {
         get {
             cardBaseView.contentView.titleLabel.accessibilityIdentifier
@@ -218,6 +230,7 @@ private extension DataCard {
         cardBaseView.contentView.backgroundColor = .backgroundContainer
 
         cardBaseView.contentView.headlineTopSpacing = 8
+        cardBaseView.contentView.headlineTagView.accessibilityIdentifier = DataCardAccessibilityIdentifiers.headline.rawValue
 
         cardBaseView.contentView.titleLabel.font = .textPreset4(weight: .cardTitle)
         cardBaseView.contentView.titleLabel.textColor = .textPrimary

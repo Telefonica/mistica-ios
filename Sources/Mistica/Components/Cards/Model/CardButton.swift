@@ -16,7 +16,7 @@ public struct CardButton {
 
     public init(title: String,
                 loadingTitle: String?,
-                accessibilityIdentifier: String?,
+                accessibilityIdentifier: String? = nil,
                 tapHandler: (() -> Void)?) {
         self.title = title
         self.loadingTitle = loadingTitle
@@ -31,7 +31,7 @@ public struct CardLinkButton {
     public let tapHandler: (() -> Void)?
 
     public init(title: String,
-                accessibilityIdentifier: String?,
+                accessibilityIdentifier: String? = nil,
                 tapHandler: (() -> Void)?) {
         self.title = title
         self.accessibilityIdentifier = accessibilityIdentifier

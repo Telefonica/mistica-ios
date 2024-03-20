@@ -66,7 +66,7 @@ extension CalloutContentBase {
         }
         set {}
     }
-    
+
     var titleIdentifier: String? {
         get {
             calloutBaseView.messagesView.titleIdentifier

@@ -107,7 +107,7 @@ public extension Callout {
             calloutAccessibilityElement.accessibilityTraits = newValue
         }
     }
-    
+
     var titleIdentifier: String? {
         get {
             calloutContentBase.titleIdentifier

@@ -1,8 +1,9 @@
 //
 //  DataCardAccessibilityIdentifiers.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Celia Maria Barrera Comendador on 20/3/24.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation

@@ -74,7 +74,7 @@ extension CalloutMessagesContent {
             descriptionLabel.topSpacing = newValue
         }
     }
-    
+
     var titleIdentifier: String? {
         get {
             titleLabel.accessibilityIdentifier

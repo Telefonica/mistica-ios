@@ -151,7 +151,7 @@ public extension DataCard {
             cardAccessibilityElement.accessibilityTraits = newValue
         }
     }
-    
+
     var headlineIdentifier: String? {
         get {
             cardBaseView.contentView.headlineTagView.accessibilityIdentifier
@@ -163,7 +163,7 @@ public extension DataCard {
             }
         }
     }
-    
+
     var titleIdentifier: String? {
         get {
             cardBaseView.contentView.titleLabel.accessibilityIdentifier
@@ -175,7 +175,7 @@ public extension DataCard {
             }
         }
     }
-    
+
     var subtitleIdentifier: String? {
         get {
             cardBaseView.contentView.subtitleLabel.accessibilityIdentifier
@@ -252,7 +252,6 @@ private extension DataCard {
         cardBaseView.contentView.descriptionLabel.numberOfLines = 3
         cardBaseView.contentView.descriptionLabel.topSpacing = 8
         cardBaseView.contentView.descriptionLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.description.rawValue
-
 
         addBorder(color: .border)
     }

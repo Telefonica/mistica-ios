@@ -74,6 +74,30 @@ extension CalloutMessagesContent {
             descriptionLabel.topSpacing = newValue
         }
     }
+    
+    var titleIdentifier: String? {
+        get {
+            titleLabel.accessibilityIdentifier
+        }
+        set {
+            titleLabel.accessibilityIdentifier = newValue
+            if titleLabel.accessibilityIdentifier == nil {
+                titleLabel.accessibilityIdentifier = CalloutAccessibilityIdentifiers.title.rawValue
+            }
+        }
+    }
+
+    var descriptionIdentifier: String? {
+        get {
+            descriptionLabel.accessibilityIdentifier
+        }
+        set {
+            descriptionLabel.accessibilityIdentifier = newValue
+            if descriptionLabel.accessibilityIdentifier == nil {
+                descriptionLabel.accessibilityIdentifier = CalloutAccessibilityIdentifiers.description.rawValue
+            }
+        }
+    }
 }
 
 // MARK: Private
@@ -100,11 +124,13 @@ private extension CalloutMessagesContent {
         titleLabel.minHeight = 24
         titleLabel.numberOfLines = 0
         titleLabel.topSpacing = 0
+        titleLabel.accessibilityIdentifier = CalloutAccessibilityIdentifiers.title.rawValue
 
         descriptionLabel.font = .textPreset2(weight: .regular)
         descriptionLabel.textColor = .textSecondary
         descriptionLabel.minHeight = 20
         descriptionLabel.numberOfLines = 0
         descriptionLabel.topSpacing = 0
+        descriptionLabel.accessibilityIdentifier = CalloutAccessibilityIdentifiers.description.rawValue
     }
 }

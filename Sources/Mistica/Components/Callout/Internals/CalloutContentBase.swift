@@ -66,6 +66,24 @@ extension CalloutContentBase {
         }
         set {}
     }
+    
+    var titleIdentifier: String? {
+        get {
+            calloutBaseView.messagesView.titleIdentifier
+        }
+        set {
+            calloutBaseView.messagesView.titleIdentifier = newValue
+        }
+    }
+
+    var descriptionIdentifier: String? {
+        get {
+            calloutBaseView.messagesView.descriptionIdentifier
+        }
+        set {
+            calloutBaseView.messagesView.descriptionIdentifier = newValue
+        }
+    }
 
     var iconContentMode: UIView.ContentMode {
         get {

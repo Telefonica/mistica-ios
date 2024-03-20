@@ -107,6 +107,24 @@ public extension Callout {
             calloutAccessibilityElement.accessibilityTraits = newValue
         }
     }
+    
+    var titleIdentifier: String? {
+        get {
+            calloutContentBase.titleIdentifier
+        }
+        set {
+            calloutContentBase.titleIdentifier = newValue
+        }
+    }
+
+    var descriptionIdentifier: String? {
+        get {
+            calloutContentBase.descriptionIdentifier
+        }
+        set {
+            calloutContentBase.descriptionIdentifier = newValue
+        }
+    }
 
     func dismiss(animated: Bool) {
         let completion: (Bool) -> Void = { finished in

@@ -12,6 +12,8 @@ private extension DefaultAccessibilityIdentifier.Feature {
 }
 
 public enum CalloutAccessibilityIdentifiers {
+    public static var title = DefaultAccessibilityIdentifier(feature: .callout, section: .item, elementType: .title)
+    public static var description = DefaultAccessibilityIdentifier(feature: .callout, section: .item, elementType: .description)
     public static var primaryButton = DefaultAccessibilityIdentifier(feature: .callout, section: .item, elementType: .primaryButton)
     public static var secondaryButton = DefaultAccessibilityIdentifier(feature: .callout, section: .item, elementType: .secondaryButton)
     public static var linkButton = DefaultAccessibilityIdentifier(feature: .callout, section: .item, elementType: .linkButton)

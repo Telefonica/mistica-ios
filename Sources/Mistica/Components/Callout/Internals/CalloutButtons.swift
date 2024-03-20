@@ -48,6 +48,11 @@ extension CalloutButtons {
         if let primaryButton = primaryButton {
             self.primaryButton.title = primaryButton.title
             self.primaryButton.loadingTitle = primaryButton.loadingTitle
+            if let buttonAccessibilityIdentifier = primaryButton.accessibilityIdentifier {
+                self.primaryButton.accessibilityIdentifier = buttonAccessibilityIdentifier
+            } else {
+                self.primaryButton.accessibilityIdentifier = CalloutAccessibilityIdentifiers.primaryButton.rawValue
+            }
             primaryActionHandler = primaryButton.tapHandler
 
             if self.primaryButton.superview == nil {
@@ -60,6 +65,11 @@ extension CalloutButtons {
         if let secondaryButton = secondaryButton {
             self.secondaryButton.title = secondaryButton.title
             self.secondaryButton.loadingTitle = secondaryButton.loadingTitle
+            if let buttonAccessibilityIdentifier = secondaryButton.accessibilityIdentifier {
+                self.secondaryButton.accessibilityIdentifier = buttonAccessibilityIdentifier
+            } else {
+                self.secondaryButton.accessibilityIdentifier = CalloutAccessibilityIdentifiers.secondaryButton.rawValue
+            }
             secondaryActionHandler = secondaryButton.tapHandler
 
             if self.secondaryButton.superview == nil {
@@ -71,6 +81,11 @@ extension CalloutButtons {
 
         if let linkButton = linkButton {
             self.linkButton.title = linkButton.title
+            if let buttonAccessibilityIdentifier = linkButton.accessibilityIdentifier {
+                self.linkButton.accessibilityIdentifier = buttonAccessibilityIdentifier
+            } else {
+                self.linkButton.accessibilityIdentifier = CalloutAccessibilityIdentifiers.linkButton.rawValue
+            }
             self.linkButton.contentMode = .left
             linkActionHandler = linkButton.tapHandler
 

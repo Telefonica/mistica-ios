@@ -151,6 +151,54 @@ public extension DataCard {
             cardAccessibilityElement.accessibilityTraits = newValue
         }
     }
+
+    var headlineIdentifier: String? {
+        get {
+            cardBaseView.contentView.headlineTagView.accessibilityIdentifier
+        }
+        set {
+            cardBaseView.contentView.headlineTagView.accessibilityIdentifier = newValue
+            if newValue == nil {
+                cardBaseView.contentView.headlineTagView.accessibilityIdentifier = DataCardAccessibilityIdentifiers.headline.rawValue
+            }
+        }
+    }
+
+    var titleIdentifier: String? {
+        get {
+            cardBaseView.contentView.titleLabel.accessibilityIdentifier
+        }
+        set {
+            cardBaseView.contentView.titleLabel.accessibilityIdentifier = newValue
+            if newValue == nil {
+                cardBaseView.contentView.titleLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.title.rawValue
+            }
+        }
+    }
+
+    var subtitleIdentifier: String? {
+        get {
+            cardBaseView.contentView.subtitleLabel.accessibilityIdentifier
+        }
+        set {
+            cardBaseView.contentView.subtitleLabel.accessibilityIdentifier = newValue
+            if newValue == nil {
+                cardBaseView.contentView.subtitleLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.subtitle.rawValue
+            }
+        }
+    }
+
+    var descriptionIdentifier: String? {
+        get {
+            cardBaseView.contentView.descriptionLabel.accessibilityIdentifier
+        }
+        set {
+            cardBaseView.contentView.descriptionLabel.accessibilityIdentifier = newValue
+            if newValue == nil {
+                cardBaseView.contentView.descriptionLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.description.rawValue
+            }
+        }
+    }
 }
 
 // MARK: Private
@@ -182,24 +230,28 @@ private extension DataCard {
         cardBaseView.contentView.backgroundColor = .backgroundContainer
 
         cardBaseView.contentView.headlineTopSpacing = 8
+        cardBaseView.contentView.headlineTagView.accessibilityIdentifier = DataCardAccessibilityIdentifiers.headline.rawValue
 
         cardBaseView.contentView.titleLabel.font = .textPreset4(weight: .cardTitle)
         cardBaseView.contentView.titleLabel.textColor = .textPrimary
         cardBaseView.contentView.titleLabel.minHeight = 24
         cardBaseView.contentView.titleLabel.numberOfLines = 2
         cardBaseView.contentView.titleLabel.topSpacing = 4
+        cardBaseView.contentView.titleLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.title.rawValue
 
         cardBaseView.contentView.subtitleLabel.font = .textPreset2(weight: .regular)
         cardBaseView.contentView.subtitleLabel.textColor = .textPrimary
         cardBaseView.contentView.subtitleLabel.minHeight = 20
         cardBaseView.contentView.subtitleLabel.numberOfLines = 0
         cardBaseView.contentView.subtitleLabel.topSpacing = 4
+        cardBaseView.contentView.subtitleLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.subtitle.rawValue
 
         cardBaseView.contentView.descriptionLabel.font = .textPreset2(weight: .regular)
         cardBaseView.contentView.descriptionLabel.textColor = .textSecondary
         cardBaseView.contentView.descriptionLabel.minHeight = 20
         cardBaseView.contentView.descriptionLabel.numberOfLines = 3
         cardBaseView.contentView.descriptionLabel.topSpacing = 8
+        cardBaseView.contentView.descriptionLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.description.rawValue
 
         addBorder(color: .border)
     }
@@ -246,7 +298,7 @@ private extension DataCardConfiguration {
         title: "",
         descriptionTitle: "",
         buttons: .link(
-            CardLinkButton(title: "", tapHandler: nil)
+            CardLinkButton(title: "", accessibilityIdentifier: nil, tapHandler: nil)
         )
     )
 }

@@ -32,7 +32,7 @@ class SingleSelectionRowView: UIView {
         titleElementLabel.numberOfLines = 0
         titleElementLabel.textColor = .textPrimary
         titleElementLabel.font = .textPreset3(weight: .regular)
-        titleElementLabel.accessibilityIdentifier = item.itemAccessibilityLabel
+        titleElementLabel.accessibilityLabel = item.itemAccessibilityLabel
         return titleElementLabel
     }()
 

@@ -81,17 +81,20 @@ public struct SingleSelectionItem {
     public let title: String?
     public let description: String?
     public let icon: SingleSelectionItemIcon?
+    public let itemAccessibilityLabel: String?
 
     public init(
         id: String,
         title: String? = nil,
         description: String? = nil,
-        icon: SingleSelectionItemIcon? = nil
+        icon: SingleSelectionItemIcon? = nil,
+        itemAccessibilityLabel: String? = nil
     ) {
         self.id = id
         self.title = title
         self.description = description
         self.icon = icon
+        self.itemAccessibilityLabel = itemAccessibilityLabel
     }
 }
 
@@ -130,17 +133,20 @@ public struct InformativeItem {
     public let title: String
     public let description: String?
     public let icon: InformativeItemIcon
+    public let itemAccessibilityLabel: String?
 
     public init(
         id: String,
         title: String,
         description: String?,
-        icon: InformativeItemIcon
+        icon: InformativeItemIcon,
+        itemAccessibilityLabel: String? = nil
     ) {
         self.id = id
         self.title = title
         self.description = description
         self.icon = icon
+        self.itemAccessibilityLabel = itemAccessibilityLabel
     }
 }
 
@@ -172,19 +178,22 @@ public struct ActionListItem {
     public let style: Style
     public let url: String?
     public let urlDark: String?
+    public let itemAccessibilityLabel: String?
 
     public init(
         id: String,
         title: String,
         style: ActionListItem.Style,
         url: String?,
-        urlDark: String?
+        urlDark: String?,
+        itemAccessibilityLabel: String? = nil
     ) {
         self.id = id
         self.title = title
         self.style = style
         self.url = url
         self.urlDark = urlDark
+        self.itemAccessibilityLabel = itemAccessibilityLabel
     }
 }
 
@@ -193,16 +202,19 @@ public struct ActionItem {
     let style: Button.Style
     let title: String
     let rightImage: Button.RightImage?
+    let itemAccessibilityLabel: String?
 
     public init(
         id: String,
         style: Button.Style,
         title: String,
-        rightImage: Button.RightImage? = nil
+        rightImage: Button.RightImage? = nil,
+        itemAccessibilityLabel: String? = nil
     ) {
         self.id = id
         self.style = style
         self.title = title
         self.rightImage = rightImage
+        self.itemAccessibilityLabel = itemAccessibilityLabel
     }
 }

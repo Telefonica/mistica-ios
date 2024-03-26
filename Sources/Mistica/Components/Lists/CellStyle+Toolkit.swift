@@ -107,4 +107,13 @@ extension ListCellContentView.CellStyle {
             return .textPrimaryInverse
         }
     }
+
+    var detailTextColor: UIColor {
+        switch self {
+        case .fullWidth, .boxed:
+            return .textSecondary
+        case .boxedInverse:
+            return .textSecondaryInverse
+        }
+    }
 }

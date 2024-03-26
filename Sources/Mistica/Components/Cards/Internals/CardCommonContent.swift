@@ -135,7 +135,7 @@ extension CardCommonContent {
             headlineTagView.accessibilityIdentifier
         }
         set {
-            headlineTagView.accessibilityIdentifier = newValue == nil ? DataCardAccessibilityIdentifiers.headline.rawValue : newValue
+            headlineTagView.accessibilityIdentifier = newValue
         }
     }
 
@@ -144,7 +144,7 @@ extension CardCommonContent {
             titleLabel.accessibilityIdentifier
         }
         set {
-            titleLabel.accessibilityIdentifier = newValue == nil ? DataCardAccessibilityIdentifiers.title.rawValue : newValue
+            titleLabel.accessibilityIdentifier = newValue
         }
     }
 
@@ -153,7 +153,7 @@ extension CardCommonContent {
             subtitleLabel.accessibilityIdentifier
         }
         set {
-            subtitleLabel.accessibilityIdentifier = newValue == nil ? DataCardAccessibilityIdentifiers.subtitle.rawValue : newValue
+            subtitleLabel.accessibilityIdentifier = newValue
         }
     }
 
@@ -162,7 +162,7 @@ extension CardCommonContent {
             descriptionLabel.accessibilityIdentifier
         }
         set {
-            descriptionLabel.accessibilityIdentifier = newValue == nil ? DataCardAccessibilityIdentifiers.description.rawValue : newValue
+            descriptionLabel.accessibilityIdentifier = newValue
         }
     }
 }

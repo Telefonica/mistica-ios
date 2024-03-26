@@ -162,10 +162,7 @@ extension CardCommonContent {
             descriptionLabel.accessibilityIdentifier
         }
         set {
-            descriptionLabel.accessibilityIdentifier = newValue
-            if newValue == nil {
-                descriptionLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.description.rawValue
-            }
+            descriptionLabel.accessibilityIdentifier = newValue == nil ? DataCardAccessibilityIdentifiers.description.rawValue : newValue
         }
     }
 }

@@ -125,7 +125,7 @@ public extension Callout {
             calloutContentBase.descriptionIdentifier = newValue
         }
     }
-    
+
     var closeIdentifier: String? {
         get {
             closeImageView.accessibilityIdentifier
@@ -201,7 +201,7 @@ private extension Callout {
 
         closeImageView.isUserInteractionEnabled = true
         closeImageView.addGestureRecognizer(tapGesture)
-        
+
         closeImageView.accessibilityIdentifier = CalloutAccessibilityIdentifiers.closeButton.rawValue
     }
 

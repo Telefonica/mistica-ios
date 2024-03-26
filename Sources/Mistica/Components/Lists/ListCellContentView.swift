@@ -302,7 +302,6 @@ public extension ListCellContentView {
             if newValue == nil {
                 centerSection.detailLabel.accessibilityIdentifier = ListAccessibilityIdentifiers.description.rawValue
             }
-
         }
     }
 
@@ -324,7 +323,6 @@ public extension ListCellContentView {
             if newValue == nil {
                 leftSection.accessibilityIdentifier = ListAccessibilityIdentifiers.icon.rawValue
             }
-
         }
     }
 }

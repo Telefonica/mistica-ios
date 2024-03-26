@@ -52,7 +52,7 @@ class StackViewContentItem<Element: UIView>: UIStackView {
             item[keyPath: keyPath] = newValue
         }
     }
-    
+
     override var accessibilityIdentifier: String? {
         get {
             item.accessibilityIdentifier

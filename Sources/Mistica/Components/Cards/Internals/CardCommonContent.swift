@@ -129,7 +129,7 @@ extension CardCommonContent {
             descriptionLabel.topSpacing = newValue
         }
     }
-    
+
     var headlineIdentifier: String? {
         get {
             headlineTagView.accessibilityIdentifier
@@ -177,7 +177,6 @@ extension CardCommonContent {
             }
         }
     }
-
 }
 
 // MARK: Private

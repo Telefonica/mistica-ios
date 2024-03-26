@@ -334,6 +334,7 @@ private extension ListCellContentView {
     func updateCellStyle() {
         centerSection.titleTextColor = cellStyle.titleTextColor
         centerSection.subtitleTextColor = cellStyle.subtitleTextColor
+        centerSection.detailTextColor = cellStyle.detailTextColor
 
         cellContentView.isLayoutMarginsRelativeArrangement = true
         cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins

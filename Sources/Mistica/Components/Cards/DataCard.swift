@@ -154,48 +154,48 @@ public extension DataCard {
 
     var headlineIdentifier: String? {
         get {
-            cardBaseView.contentView.headlineTagView.accessibilityIdentifier
+            cardBaseView.contentView.headlineIdentifier
         }
         set {
-            cardBaseView.contentView.headlineTagView.accessibilityIdentifier = newValue
+            cardBaseView.contentView.headlineIdentifier = newValue
             if newValue == nil {
-                cardBaseView.contentView.headlineTagView.accessibilityIdentifier = DataCardAccessibilityIdentifiers.headline.rawValue
+                cardBaseView.contentView.headlineIdentifier = DataCardAccessibilityIdentifiers.headline.rawValue
             }
         }
     }
 
     var titleIdentifier: String? {
         get {
-            cardBaseView.contentView.titleLabel.accessibilityIdentifier
+            cardBaseView.contentView.titleIdentifier
         }
         set {
-            cardBaseView.contentView.titleLabel.accessibilityIdentifier = newValue
+            cardBaseView.contentView.titleIdentifier = newValue
             if newValue == nil {
-                cardBaseView.contentView.titleLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.title.rawValue
+                cardBaseView.contentView.titleIdentifier = DataCardAccessibilityIdentifiers.title.rawValue
             }
         }
     }
 
     var subtitleIdentifier: String? {
         get {
-            cardBaseView.contentView.subtitleLabel.accessibilityIdentifier
+            cardBaseView.contentView.subtitleIdentifier
         }
         set {
-            cardBaseView.contentView.subtitleLabel.accessibilityIdentifier = newValue
+            cardBaseView.contentView.subtitleIdentifier = newValue
             if newValue == nil {
-                cardBaseView.contentView.subtitleLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.subtitle.rawValue
+                cardBaseView.contentView.subtitleIdentifier = DataCardAccessibilityIdentifiers.subtitle.rawValue
             }
         }
     }
 
     var descriptionIdentifier: String? {
         get {
-            cardBaseView.contentView.descriptionLabel.accessibilityIdentifier
+            cardBaseView.contentView.descriptionIdentifier
         }
         set {
-            cardBaseView.contentView.descriptionLabel.accessibilityIdentifier = newValue
+            cardBaseView.contentView.descriptionIdentifier = newValue
             if newValue == nil {
-                cardBaseView.contentView.descriptionLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.description.rawValue
+                cardBaseView.contentView.descriptionIdentifier = DataCardAccessibilityIdentifiers.description.rawValue
             }
         }
     }

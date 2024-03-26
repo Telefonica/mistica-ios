@@ -129,6 +129,55 @@ extension CardCommonContent {
             descriptionLabel.topSpacing = newValue
         }
     }
+    
+    var headlineIdentifier: String? {
+        get {
+            headlineTagView.accessibilityIdentifier
+        }
+        set {
+            headlineTagView.accessibilityIdentifier = newValue
+            if newValue == nil {
+                headlineTagView.accessibilityIdentifier = DataCardAccessibilityIdentifiers.headline.rawValue
+            }
+        }
+    }
+
+    var titleIdentifier: String? {
+        get {
+            titleLabel.accessibilityIdentifier
+        }
+        set {
+            titleLabel.accessibilityIdentifier = newValue
+            if newValue == nil {
+                titleLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.title.rawValue
+            }
+        }
+    }
+
+    var subtitleIdentifier: String? {
+        get {
+            subtitleLabel.accessibilityIdentifier
+        }
+        set {
+            subtitleLabel.accessibilityIdentifier = newValue
+            if newValue == nil {
+                subtitleLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.subtitle.rawValue
+            }
+        }
+    }
+
+    var descriptionIdentifier: String? {
+        get {
+            descriptionLabel.accessibilityIdentifier
+        }
+        set {
+            descriptionLabel.accessibilityIdentifier = newValue
+            if newValue == nil {
+                descriptionLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.description.rawValue
+            }
+        }
+    }
+
 }
 
 // MARK: Private

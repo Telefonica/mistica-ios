@@ -125,6 +125,15 @@ public extension Callout {
             calloutContentBase.descriptionIdentifier = newValue
         }
     }
+    
+    var closeIdentifier: String? {
+        get {
+            closeImageView.accessibilityIdentifier
+        }
+        set {
+            closeImageView.accessibilityIdentifier = newValue == nil ? CalloutAccessibilityIdentifiers.closeButton.rawValue : newValue
+        }
+    }
 
     func dismiss(animated: Bool) {
         let completion: (Bool) -> Void = { finished in
@@ -192,6 +201,8 @@ private extension Callout {
 
         closeImageView.isUserInteractionEnabled = true
         closeImageView.addGestureRecognizer(tapGesture)
+        
+        closeImageView.accessibilityIdentifier = CalloutAccessibilityIdentifiers.closeButton.rawValue
     }
 
     @objc func closeButtonTapped() {

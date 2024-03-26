@@ -157,7 +157,7 @@ public extension DataCard {
             cardBaseView.contentView.headlineIdentifier
         }
         set {
-            cardBaseView.contentView.headlineIdentifier = newValue
+            cardBaseView.contentView.headlineIdentifier = newValue == nil ? DataCardAccessibilityIdentifiers.headline.rawValue : newValue
             if newValue == nil {
                 cardBaseView.contentView.headlineIdentifier = DataCardAccessibilityIdentifiers.headline.rawValue
             }

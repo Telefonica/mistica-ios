@@ -193,7 +193,7 @@ public extension DataCard {
             cardBaseView.contentView.descriptionIdentifier
         }
         set {
-            cardBaseView.contentView.descriptionIdentifier = newValue
+            cardBaseView.contentView.descriptionIdentifier = newValue == nil ? DataCardAccessibilityIdentifiers.description.rawValue : newValue
             if newValue == nil {
                 cardBaseView.contentView.descriptionIdentifier = DataCardAccessibilityIdentifiers.description.rawValue
             }

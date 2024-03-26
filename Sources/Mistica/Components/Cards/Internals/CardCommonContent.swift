@@ -135,10 +135,7 @@ extension CardCommonContent {
             headlineTagView.accessibilityIdentifier
         }
         set {
-            headlineTagView.accessibilityIdentifier = newValue
-            if newValue == nil {
-                headlineTagView.accessibilityIdentifier = DataCardAccessibilityIdentifiers.headline.rawValue
-            }
+            headlineTagView.accessibilityIdentifier = newValue == nil ? DataCardAccessibilityIdentifiers.headline.rawValue : newValue
         }
     }
 

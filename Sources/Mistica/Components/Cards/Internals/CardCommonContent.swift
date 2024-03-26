@@ -129,6 +129,42 @@ extension CardCommonContent {
             descriptionLabel.topSpacing = newValue
         }
     }
+
+    var headlineIdentifier: String? {
+        get {
+            headlineTagView.accessibilityIdentifier
+        }
+        set {
+            headlineTagView.accessibilityIdentifier = newValue
+        }
+    }
+
+    var titleIdentifier: String? {
+        get {
+            titleLabel.accessibilityIdentifier
+        }
+        set {
+            titleLabel.accessibilityIdentifier = newValue
+        }
+    }
+
+    var subtitleIdentifier: String? {
+        get {
+            subtitleLabel.accessibilityIdentifier
+        }
+        set {
+            subtitleLabel.accessibilityIdentifier = newValue
+        }
+    }
+
+    var descriptionIdentifier: String? {
+        get {
+            descriptionLabel.accessibilityIdentifier
+        }
+        set {
+            descriptionLabel.accessibilityIdentifier = newValue
+        }
+    }
 }
 
 // MARK: Private

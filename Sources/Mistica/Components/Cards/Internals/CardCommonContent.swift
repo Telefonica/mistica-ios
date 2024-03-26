@@ -153,10 +153,7 @@ extension CardCommonContent {
             subtitleLabel.accessibilityIdentifier
         }
         set {
-            subtitleLabel.accessibilityIdentifier = newValue
-            if newValue == nil {
-                subtitleLabel.accessibilityIdentifier = DataCardAccessibilityIdentifiers.subtitle.rawValue
-            }
+            subtitleLabel.accessibilityIdentifier = newValue == nil ? DataCardAccessibilityIdentifiers.subtitle.rawValue : newValue
         }
     }
 

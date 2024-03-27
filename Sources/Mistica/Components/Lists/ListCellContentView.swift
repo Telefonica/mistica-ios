@@ -257,6 +257,9 @@ public extension ListCellContentView {
         }
         set {
             centerSection.titleLabel.accessibilityIdentifier = newValue
+            if newValue == nil {
+                centerSection.titleLabel.accessibilityIdentifier = ListAccessibilityIdentifiers.title.rawValue
+            }
         }
     }
 
@@ -275,6 +278,9 @@ public extension ListCellContentView {
         }
         set {
             centerSection.subtitleLabel.accessibilityIdentifier = newValue
+            if newValue == nil {
+                centerSection.subtitleLabel.accessibilityIdentifier = ListAccessibilityIdentifiers.subtitle.rawValue
+            }
         }
     }
 
@@ -293,6 +299,9 @@ public extension ListCellContentView {
         }
         set {
             centerSection.detailLabel.accessibilityIdentifier = newValue
+            if newValue == nil {
+                centerSection.detailLabel.accessibilityIdentifier = ListAccessibilityIdentifiers.description.rawValue
+            }
         }
     }
 
@@ -311,6 +320,9 @@ public extension ListCellContentView {
         }
         set {
             leftSection.accessibilityIdentifier = newValue
+            if newValue == nil {
+                leftSection.accessibilityIdentifier = ListAccessibilityIdentifiers.icon.rawValue
+            }
         }
     }
 }

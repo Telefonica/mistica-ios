@@ -31,16 +31,16 @@ public struct DefaultAccessibilityIdentifier {
     }
 
     let feature: String
-    let section: String
+    let section: String?
     let elementType: String
 
     public init(
         feature: DefaultAccessibilityIdentifier.Feature,
-        section: DefaultAccessibilityIdentifier.Section,
+        section: DefaultAccessibilityIdentifier.Section?,
         elementType: DefaultAccessibilityIdentifier.ElementType
     ) {
         self.feature = feature.description
-        self.section = section.description
+        self.section = section?.description
         self.elementType = elementType.description
     }
 
@@ -64,6 +64,7 @@ public extension DefaultAccessibilityIdentifier.ElementType {
     static let primaryButton = DefaultAccessibilityIdentifier.ElementType("primary_button")
     static let secondaryButton = DefaultAccessibilityIdentifier.ElementType("secondary_button")
     static let linkButton = DefaultAccessibilityIdentifier.ElementType("link_button")
+    static let closeButton = DefaultAccessibilityIdentifier.ElementType("close_button")
     static let slot = DefaultAccessibilityIdentifier.ElementType("slot")
     static let description = DefaultAccessibilityIdentifier.ElementType("description")
     static let tag = DefaultAccessibilityIdentifier.ElementType("tag")

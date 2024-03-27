@@ -131,7 +131,7 @@ public extension Callout {
             closeImageView.accessibilityIdentifier
         }
         set {
-            closeImageView.accessibilityIdentifier = newValue == nil ? CalloutAccessibilityIdentifiers.closeButton.rawValue : newValue
+            closeImageView.accessibilityIdentifier = newValue ?? CalloutAccessibilityIdentifiers.closeButton.rawValue
         }
     }
 

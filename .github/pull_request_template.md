@@ -1,3 +1,7 @@
+<!-- This warning is to remind you to check if a designer needs to review this PR. Delete it when you consider it -->
+> [!WARNING]
+> Should a designer need to review/verify this PR?
+
 ## 🎟️ **Jira ticket**
 <!-- Add here the ticket number: [IOS-XXXX](https://jira.tid.es/browse/IOS-XXX) Blah Blah -->
 

@@ -22,7 +22,7 @@ public enum FeedbackStyle: Equatable {
 enum FeedbackIconStyle {
     case none
     case asset(UIImage)
-    case animation(Lottie.Animation)
+    case animation(Lottie.LottieAnimation)
 }
 
 extension FeedbackStyle {
@@ -72,7 +72,7 @@ extension FeedbackStyle {
         }
     }
 
-    private var animation: Lottie.Animation? {
+    private var animation: Lottie.LottieAnimation? {
         switch self {
         case .success:
             return NSDataAsset.successAnimation.lottieAnimation

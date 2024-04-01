@@ -68,8 +68,8 @@ public class FeedbackView: UIView {
         return icon
     }()
 
-    private lazy var animatedIcon: AnimationView = {
-        let animation = AnimationView()
+    private lazy var animatedIcon: LottieAnimationView = {
+        let animation = LottieAnimationView()
         animation.translatesAutoresizingMaskIntoConstraints = false
         animation.contentMode = .scaleAspectFit
         animation.loopMode = .playOnce

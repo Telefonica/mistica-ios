@@ -56,7 +56,7 @@ class StepView: UIView {
     private lazy var label = UILabel()
     private lazy var circularView = UIView()
     private lazy var animatedView: LottieAnimationView = {
-        let animation = LottieAnimationView()
+        let animation = LottieAnimationView(configuration: .current)
         animation.loopMode = .playOnce
         animation.isUserInteractionEnabled = false
         animation.animation = NSDataAsset.checkAnimation.lottieAnimation

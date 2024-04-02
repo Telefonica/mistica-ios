@@ -26,7 +26,7 @@ struct LottieView: UIViewRepresentable {
     }
 
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> LottieAnimationView {
-        let animationView = LottieAnimationView()
+        let animationView = LottieAnimationView(configuration: .current)
         animationView.animation = asset.lottieAnimation
         updateUIView(animationView, context: context)
         return animationView

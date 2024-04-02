@@ -9,7 +9,7 @@
 import Foundation
 
 #if DEBUG
-    public var isRunningUnitTests: Bool {
+    var isRunningUnitTests: Bool {
         if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil {
             return false
         }

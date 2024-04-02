@@ -1,3 +1,10 @@
+# [29.7.0](https://github.com/Telefonica/mistica-ios/compare/v29.6.3...v29.7.0) (2024-04-02)
+
+
+### Features
+
+* **Accessibility:** Add default ids for listCellContentView and fix callout component ids ([#348](https://github.com/Telefonica/mistica-ios/issues/348)) ([5aab0f2](https://github.com/Telefonica/mistica-ios/commit/5aab0f22b112ef3801f729f5687ff339447e32a9)), closes [#349](https://github.com/Telefonica/mistica-ios/issues/349) [#351](https://github.com/Telefonica/mistica-ios/issues/351) [#347](https://github.com/Telefonica/mistica-ios/issues/347) [#346](https://github.com/Telefonica/mistica-ios/issues/346)
+
 # [29.6.0](https://github.com/Telefonica/mistica-ios/compare/v29.5.1...v29.6.0) (2024-03-19)
 
 

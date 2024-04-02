@@ -130,7 +130,7 @@ private extension CalloutMessagesContent {
         descriptionLabel.textColor = .textSecondary
         descriptionLabel.minHeight = 20
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.topSpacing = 0
+        descriptionLabel.topSpacing = 4
         descriptionLabel.accessibilityIdentifier = CalloutAccessibilityIdentifiers.description.rawValue
     }
 }

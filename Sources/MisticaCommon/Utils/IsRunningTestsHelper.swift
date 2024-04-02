@@ -1,8 +1,9 @@
 //
-//  IsRunningUnitTests.swift
+//  IsRunningTestsHelper.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Alejandro Ruiz on 2/4/24.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation

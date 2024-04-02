@@ -1,20 +1,21 @@
 //
 //  Lottie+Utils.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Alejandro Ruiz on 2/4/24.
+//  Copyright © Telefonica. All rights reserved.
 //
 
-import Lottie
 import Foundation
+import Lottie
 
 public extension Lottie.LottieConfiguration {
     static var current: LottieConfiguration = {
         var configuration: LottieConfiguration = .init(renderingEngine: .automatic)
         #if DEBUG
-        if isRunningUnitTests {
-            configuration = .init(renderingEngine: .mainThread)
-        }
+            if isRunningUnitTests {
+                configuration = .init(renderingEngine: .mainThread)
+            }
         #endif
         return configuration
     }()

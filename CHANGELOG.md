@@ -1,3 +1,10 @@
+## [29.7.1](https://github.com/Telefonica/mistica-ios/compare/v29.7.0...v29.7.1) (2024-04-03)
+
+
+### Bug Fixes
+
+* **Package:** Update Lottie SDK to 4.4.1 and SDWebImage to 5.19.1. Both with PrivacyManifest included. ([c6b80a2](https://github.com/Telefonica/mistica-ios/commit/c6b80a2fb4d7a5306d2a7585d7886deb517d0b17))
+
 # [29.7.0](https://github.com/Telefonica/mistica-ios/compare/v29.6.3...v29.7.0) (2024-04-02)
 
 

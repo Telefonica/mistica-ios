@@ -48,6 +48,11 @@ public enum CarouselControlStyle: CaseIterable {
     case bullets
 }
 
+public enum CarouselBulletsStyle: CaseIterable {
+    case normal
+    case inverse
+}
+
 public enum CarouselScrollDirection: CaseIterable {
     case forward
     case none

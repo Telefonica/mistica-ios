@@ -25,6 +25,7 @@ public struct Carousel<Data: RandomAccessCollection, ID: Hashable, Content: View
     private var autoplay = CarouselAutoplay.inactive
     private var scrollStyle = CarouselScrollStyle.paginated
     private var controlStyle = CarouselControlStyle.bullets
+    private var bulletsStyle = CarouselBulletsStyle.normal
     private var controlLeadingItem: AnyView?
     private var controlTrailingItem: AnyView?
     private var controlSpacing: CGFloat = 0
@@ -101,6 +102,7 @@ public struct Carousel<Data: RandomAccessCollection, ID: Hashable, Content: View
             HStack(alignment: .center, spacing: controlSpacing) {
                 controlLeadingItem.map { TupleView(($0, Spacer())) }
                 PageControl(items: elements.count, selectedItem: $index)
+                    .bulletsStyleInverse(bulletsStyle == .inverse)
                 controlTrailingItem.map { TupleView((Spacer(), $0)) }
             }
         }
@@ -173,6 +175,12 @@ public extension Carousel {
         if let alignment = alignment {
             carousel.controlAlignment = alignment
         }
+        return carousel
+    }
+    
+    func bulletsStyle(_ bulletsStyle: CarouselBulletsStyle) -> Carousel {
+        var carousel = self
+        carousel.bulletsStyle = bulletsStyle
         return carousel
     }
 
@@ -252,33 +260,38 @@ public extension Carousel where ID == Data.Element.ID, Data.Element: Identifiabl
     @available(iOS 14.0, *)
     struct DataCardCarousel: View {
         @State var index = 0
+        var bulletsStyleInverse = false
 
         var body: some View {
-            Carousel(
-                0 ... 5,
-                id: \.self, index: $index,
-                spacing: 8,
-                headspace: 40,
-                leadingSpacing: 8,
-                trailingSpacing: 8
-            ) { index in
-                DataCard(
-                    assetType: .image(image: Image(systemName: "photo")),
-                    headline: { Tag(style: .promo, text: "headline") },
-                    title: index == 0 ? "title" : "large large large large large large large large title",
-                    subtitle: "subtitle",
-                    description: "description",
-                    primaryButton: {
-                        Button(action: {}, label: { Text("Primary") })
-                    }, linkButton: {
-                        Button(action: {}, label: { Text("Link") })
-                    }, fragmentView: {
-                        Spacer()
-                    }
-                )
-                .fixedVerticalContentSize(false)
-            }
+            ZStack {
+                Color(.secondarySystemBackground)
+                Carousel(
+                    0 ... 5,
+                    id: \.self, index: $index,
+                    spacing: 8,
+                    headspace: 40,
+                    leadingSpacing: 8,
+                    trailingSpacing: 8
+                ) { index in
+                    DataCard(
+                        assetType: .image(image: Image(systemName: "photo")),
+                        headline: { Tag(style: .promo, text: "headline") },
+                        title: index == 0 ? "title" : "large large large large large large large large title",
+                        subtitle: "subtitle",
+                        description: "description",
+                        primaryButton: {
+                            Button(action: {}, label: { Text("Primary") })
+                        }, linkButton: {
+                            Button(action: {}, label: { Text("Link") })
+                        }, fragmentView: {
+                            Spacer()
+                        }
+                    )
+                    .fixedVerticalContentSize(false)
+                }
+                .bulletsStyle(bulletsStyleInverse ? .inverse : .normal)
             .frame(maxHeight: 350)
+            }
         }
     }
 
@@ -286,6 +299,11 @@ public extension Carousel where ID == Data.Element.ID, Data.Element: Identifiabl
     struct Carousel_Previews: PreviewProvider {
         static var previews: some View {
             DataCardCarousel()
+                .previewDisplayName("Normal bullets")
+            
+            DataCardCarousel(bulletsStyleInverse: true)
+                .previewDisplayName("Inverse bullets")
+
         }
     }
 

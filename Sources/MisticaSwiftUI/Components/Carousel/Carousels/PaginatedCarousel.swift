@@ -41,7 +41,7 @@ struct PaginatedCarousel<Element, Content: View>: View {
                 content
             }
             .content
-            .offset(x: xOffset())
+            .offset(x: xOffset(at: index))
             .frame(width: geometry.size.width, alignment: .leading)
             .gesture(dragGesture(geometry: geometry))
             .animation(.misticaTimingCurve, value: contentOffset)

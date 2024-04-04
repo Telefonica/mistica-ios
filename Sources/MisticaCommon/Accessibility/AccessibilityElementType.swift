@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AccessibilityElementType {
+public enum AccessibilityElementType {
     case button
     case link
 }

@@ -167,7 +167,7 @@ private extension PageControl {
         static var previews: some View {
             PageControlWrapper()
                 .previewDisplayName("Style normal")
-            
+
             PageControlWrapper(inverse: true)
                 .previewDisplayName("Style inverse")
         }

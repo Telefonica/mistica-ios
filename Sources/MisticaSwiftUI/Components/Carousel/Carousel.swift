@@ -177,7 +177,7 @@ public extension Carousel {
         }
         return carousel
     }
-    
+
     func bulletsStyle(_ bulletsStyle: CarouselBulletsStyle) -> Carousel {
         var carousel = self
         carousel.bulletsStyle = bulletsStyle
@@ -290,7 +290,7 @@ public extension Carousel where ID == Data.Element.ID, Data.Element: Identifiabl
                     .fixedVerticalContentSize(false)
                 }
                 .bulletsStyle(bulletsStyleInverse ? .inverse : .normal)
-            .frame(maxHeight: 350)
+                .frame(maxHeight: 350)
             }
         }
     }
@@ -300,10 +300,9 @@ public extension Carousel where ID == Data.Element.ID, Data.Element: Identifiabl
         static var previews: some View {
             DataCardCarousel()
                 .previewDisplayName("Normal bullets")
-            
+
             DataCardCarousel(bulletsStyleInverse: true)
                 .previewDisplayName("Inverse bullets")
-
         }
     }
 

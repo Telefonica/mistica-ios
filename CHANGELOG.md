@@ -1,3 +1,10 @@
+## [29.7.3](https://github.com/Telefonica/mistica-ios/compare/v29.7.2...v29.7.3) (2024-04-04)
+
+
+### Bug Fixes
+
+* **StepView:** Fix stepper lottie animation in 4.4.1 version ([55d406c](https://github.com/Telefonica/mistica-ios/commit/55d406cd4ab903c8e737c0d42485dbb4bbe0a726))
+
 ## [29.7.2](https://github.com/Telefonica/mistica-ios/compare/v29.7.1...v29.7.2) (2024-04-04)
 
 

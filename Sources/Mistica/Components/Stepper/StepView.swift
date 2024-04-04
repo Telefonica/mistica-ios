@@ -61,6 +61,7 @@ class StepView: UIView {
         animation.isUserInteractionEnabled = false
         animation.animation = NSDataAsset.checkAnimation.lottieAnimation
         animation.contentMode = .scaleAspectFit
+        animation.maskAnimationToBounds = false
         animation.clipsToBounds = false
         animation.heightAnchor.constraint(equalTo: animation.widthAnchor).isActive = true
         animation.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)

@@ -259,22 +259,22 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                 hasMinWidth: false,
                 styleByState: [
                     .normal: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInverse,
+                        textColor: .textLinkInverse,
                         backgroundColor: .clear,
                         borderColor: .clear
                     ),
                     .selected: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInverseSelected,
+                        textColor: .textLinkInverse,
                         backgroundColor: .buttonLinkBackgroundInverseSelected,
                         borderColor: .clear
                     ),
                     .disabled: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInverse.opacity(opacity),
+                        textColor: .textLinkInverse.opacity(opacity),
                         backgroundColor: .clear,
                         borderColor: .clear
                     ),
                     .loading: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInverse,
+                        textColor: .textLinkInverse,
                         backgroundColor: .clear,
                         borderColor: .clear
                     )

@@ -1,3 +1,10 @@
+## [29.7.2](https://github.com/Telefonica/mistica-ios/compare/v29.7.1...v29.7.2) (2024-04-04)
+
+
+### Bug Fixes
+
+* **Button:** wrong text color token in misticaLinkInverse button style ([#352](https://github.com/Telefonica/mistica-ios/issues/352)) ([a84a380](https://github.com/Telefonica/mistica-ios/commit/a84a380fa94b2fc0781e570c6f44a2da03992278))
+
 ## [29.7.1](https://github.com/Telefonica/mistica-ios/compare/v29.7.0...v29.7.1) (2024-04-03)
 
 

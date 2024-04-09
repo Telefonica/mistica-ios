@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
 
   s.dependency "lottie-ios", "4.4.1"
-  s.dependency "SnapshotTesting", "1.8.2"
+  # s.dependency "SnapshotTesting", "1.8.2"
   s.dependency "SDWebImage", "5.19.1"
   s.dependency "SDWebImageSVGCoder", "1.7.0"
 end

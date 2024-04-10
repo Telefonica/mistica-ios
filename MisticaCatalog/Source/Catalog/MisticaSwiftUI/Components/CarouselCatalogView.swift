@@ -17,6 +17,7 @@ struct CarouselCatalogView: View {
     @State var autoplayTimeIntervalOptions = [1, 3, 5]
     @State var hasPagination = true
     @State var hasControls = true
+    @State var bulletsInverseStyle = false
     @State var isEnabled = true
     @State var numberOfItems = 5
     @State var index = 0
@@ -31,6 +32,9 @@ struct CarouselCatalogView: View {
                 Toggle("Fullwidth Style", isOn: $hasFullWidthStyle)
                 Toggle("Has Pagination", isOn: $hasPagination)
                 Toggle("Has Controls", isOn: $hasControls)
+                if hasControls {
+                    Toggle("Bullets Inverse Style", isOn: $bulletsInverseStyle)
+                }
                 Toggle("Enabled", isOn: $isEnabled)
             }
             section("Items") {
@@ -64,6 +68,7 @@ struct CarouselCatalogView: View {
                 .autoplay(hasAutoplay ? .active(TimeInterval(autoplayTimeIntervalOptions[autoplayTimeIntervalSelectedIndex])) : .inactive)
                 .scrollStyle(hasPagination ? .paginated : .free)
                 .controlsStyle(hasControls ? .bullets : .disabled)
+                .bulletsStyle(bulletsInverseStyle ? .inverse : .normal)
                 .controlLeadingItem {
                     Button("Anterior", action: previous)
                         .buttonStyle(.misticaLink(small: true))
@@ -76,6 +81,7 @@ struct CarouselCatalogView: View {
                 }
                 .disabled(!isEnabled)
                 .navigationTitle("Carousel")
+                .background(Color.backgroundAlternative)
             }
         }
     }

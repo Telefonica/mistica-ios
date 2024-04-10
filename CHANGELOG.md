@@ -1,3 +1,24 @@
+## [29.7.4](https://github.com/Telefonica/mistica-ios/compare/v29.7.3...v29.7.4) (2024-04-10)
+
+
+### Bug Fixes
+
+* **Carousel:** Add missing inverse style option for the page bullets ([b6086f0](https://github.com/Telefonica/mistica-ios/commit/b6086f0d86db7a3bdf3fbd1ecfc85ca1b6b11f11))
+
+## [29.7.3](https://github.com/Telefonica/mistica-ios/compare/v29.7.2...v29.7.3) (2024-04-04)
+
+
+### Bug Fixes
+
+* **StepView:** Fix stepper lottie animation in 4.4.1 version ([55d406c](https://github.com/Telefonica/mistica-ios/commit/55d406cd4ab903c8e737c0d42485dbb4bbe0a726))
+
+## [29.7.2](https://github.com/Telefonica/mistica-ios/compare/v29.7.1...v29.7.2) (2024-04-04)
+
+
+### Bug Fixes
+
+* **Button:** wrong text color token in misticaLinkInverse button style ([#352](https://github.com/Telefonica/mistica-ios/issues/352)) ([a84a380](https://github.com/Telefonica/mistica-ios/commit/a84a380fa94b2fc0781e570c6f44a2da03992278))
+
 ## [29.7.1](https://github.com/Telefonica/mistica-ios/compare/v29.7.0...v29.7.1) (2024-04-03)
 
 

@@ -26,6 +26,7 @@ final class BottomSheetPresentationController: UIPresentationController {
 
         view.isAccessibilityElement = true
         view.accessibilityLabel = backgroundViewAccessibilityLabel
+        view.accessibilityTraits = .button
         view.accessibilityEscape = { [weak self] in
             self?.presentedViewController.dismiss(animated: true)
         }

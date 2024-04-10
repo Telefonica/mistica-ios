@@ -23,6 +23,7 @@ private enum Constants {
 struct PageControl: View {
     @Binding var selectedItem: Int
     private let items: Int
+    private var inverseStyle = false
 
     // Contains how much the view has been move based on bullets distance.
     // For example, a value of 1 means that the view containing the bullets
@@ -59,6 +60,15 @@ struct PageControl: View {
 }
 
 @available(iOS 14.0, *)
+extension PageControl {
+    func bulletsStyleInverse(_ inverse: Bool) -> PageControl {
+        var control = self
+        control.inverseStyle = inverse
+        return control
+    }
+}
+
+@available(iOS 14.0, *)
 private extension PageControl {
     func updateContentOffset(with index: Int) {
         let relativeItem = selectedItem - frameOffsetItem
@@ -73,7 +83,11 @@ private extension PageControl {
     }
 
     func foregroundColor(at index: Int) -> Color {
-        index == selectedItem ? .controlActivated : .control
+        if inverseStyle {
+            index == selectedItem ? .controlInverse : .controlInverse.opacity(0.5)
+        } else {
+            index == selectedItem ? .controlActivated : .control
+        }
     }
 
     func scaleEffect(at index: Int) -> CGFloat {
@@ -126,17 +140,22 @@ private extension PageControl {
     struct PageControlWrapper: View {
         @State var index = 0
         @State var items = 3
+        var inverse = false
         var body: some View {
-            VStack {
-                HStack(alignment: .center) {
-                    Button("<") {
-                        guard index > 0 else { return }
-                        index -= 1
-                    }
-                    PageControl(items: items, selectedItem: $index)
-                    Button(">") {
-                        guard index < items - 1 else { return }
-                        index += 1
+            ZStack {
+                Color(.secondarySystemBackground)
+                VStack {
+                    HStack(alignment: .center) {
+                        Button("<") {
+                            guard index > 0 else { return }
+                            index -= 1
+                        }
+                        PageControl(items: items, selectedItem: $index)
+                            .bulletsStyleInverse(inverse)
+                        Button(">") {
+                            guard index < items - 1 else { return }
+                            index += 1
+                        }
                     }
                 }
             }
@@ -147,6 +166,10 @@ private extension PageControl {
     struct PageControl_Previews: PreviewProvider {
         static var previews: some View {
             PageControlWrapper()
+                .previewDisplayName("Style normal")
+
+            PageControlWrapper(inverse: true)
+                .previewDisplayName("Style inverse")
         }
     }
 #endif

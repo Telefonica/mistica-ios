@@ -1,3 +1,10 @@
+## [29.7.4](https://github.com/Telefonica/mistica-ios/compare/v29.7.3...v29.7.4) (2024-04-10)
+
+
+### Bug Fixes
+
+* **Carousel:** Add missing inverse style option for the page bullets ([b6086f0](https://github.com/Telefonica/mistica-ios/commit/b6086f0d86db7a3bdf3fbd1ecfc85ca1b6b11f11))
+
 ## [29.7.3](https://github.com/Telefonica/mistica-ios/compare/v29.7.2...v29.7.3) (2024-04-04)
 
 

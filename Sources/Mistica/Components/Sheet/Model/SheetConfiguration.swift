@@ -172,22 +172,19 @@ public struct ActionListItem {
     public let style: Style
     public let url: String?
     public let urlDark: String?
-    public let accessibilityLabel: String?
 
     public init(
         id: String,
         title: String,
         style: ActionListItem.Style,
         url: String?,
-        urlDark: String?,
-        accessibilityLabel: String? = nil
+        urlDark: String?
     ) {
         self.id = id
         self.title = title
         self.style = style
         self.url = url
         self.urlDark = urlDark
-        self.accessibilityLabel = accessibilityLabel
     }
 }
 

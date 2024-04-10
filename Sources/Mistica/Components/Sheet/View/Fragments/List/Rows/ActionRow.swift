@@ -46,7 +46,6 @@ private extension ActionRow {
         layoutViews()
 
         titleLabel.text = item.title
-        titleLabel.accessibilityLabel = item.accessibilityLabel
         titleLabel.accessibilityTraits = .link
 
         let imageTintColor: UIColor

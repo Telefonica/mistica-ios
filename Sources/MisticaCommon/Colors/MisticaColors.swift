@@ -24,7 +24,8 @@ public protocol MisticaColors {
     var backgroundOverlay: UIColor { get }
     var backgroundSkeleton: UIColor { get }
     var backgroundSkeletonInverse: UIColor { get }
-    var backgroundFeedbackBottom: UIColor { get }
+    var backgroundBrandTop: UIColor { get }
+    var backgroundBrandBottom: UIColor { get }
     var appBarBackground: UIColor { get }
     var navigationBarBackground: UIColor { get }
     var skeletonWave: UIColor { get }
@@ -120,4 +121,16 @@ public protocol MisticaColors {
     var textAppBar: UIColor { get }
     var textAppBarSelected: UIColor { get }
     var customTabsBackground: UIColor { get }
+    var tagTextPromo: UIColor { get }
+    var tagTextActive: UIColor { get }
+    var tagTextInactive: UIColor { get }
+    var tagTextSuccess: UIColor { get }
+    var tagTextWarning: UIColor { get }
+    var tagTextError: UIColor { get }
+    var tagBackgroundPromo: UIColor { get }
+    var tagBackgroundActive: UIColor { get }
+    var tagBackgroundInactive: UIColor { get }
+    var tagBackgroundSuccess: UIColor { get }
+    var tagBackgroundWarning: UIColor { get }
+    var tagBackgroundError: UIColor { get }
 }

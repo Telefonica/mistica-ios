@@ -13,6 +13,7 @@ public enum BrandStyle {
     case movistar
     case vivo
     case o2
+    case o2New
     case blau
     case vivoNew
     case telefonica
@@ -27,6 +28,8 @@ public enum BrandStyle {
             return "vivo"
         case .o2:
             return "o2"
+        case .o2New:
+            return "o2New"
         case .blau:
             return "blau"
         case .vivoNew:
@@ -48,6 +51,8 @@ public enum BrandStyle {
             return "Vivo"
         case .o2:
             return "O2"
+        case .o2New:
+            return "O2New"
         case .blau:
             return "Blau"
         case .vivoNew:
@@ -62,6 +67,6 @@ public enum BrandStyle {
     }
 
     public static var allCases: [BrandStyle] {
-        [.movistar, .vivo, .o2, .blau, .vivoNew, .telefonica, .tu]
+        [.movistar, .vivo, .o2, .o2New, .blau, .vivoNew, .telefonica, .tu]
     }
 }

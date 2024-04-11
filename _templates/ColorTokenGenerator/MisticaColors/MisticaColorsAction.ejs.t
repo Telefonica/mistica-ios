@@ -18,6 +18,8 @@ import UIKit
 
 public protocol MisticaColors {
 <% Object.keys(jsonObject.jsonData.light).forEach(function(key) { -%>
-  var <%= key %>: UIColor { get }
+        <%_ if (jsonObject.jsonData.global.palette[key].type === "color") { -%>
+            var <%= key %>: UIColor { get }
+        <%_ } -%>
 <% }); -%>
 }

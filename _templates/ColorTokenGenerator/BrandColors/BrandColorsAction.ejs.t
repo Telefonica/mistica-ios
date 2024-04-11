@@ -37,8 +37,10 @@ struct <%= className %>Colors: MisticaColors {
 }
 
 public struct <%= className %>ColorPalette {
-	public init() {}
-	<%_ Object.keys(jsonObject.jsonData.global.palette).forEach(function(key) { -%>
-	public let <%= key %> = UIColor(hex:"<%= jsonObject.jsonData.global.palette[key].value %>")!
-	<%_ }); -%>
+    public init() {}
+    <%_ Object.keys(jsonObject.jsonData.global.palette).forEach(function(key) { -%>
+        <%_ if (jsonObject.jsonData.global.palette[key].type === "color") { -%>
+    public let <%= key %> = UIColor(hex:"<%= jsonObject.jsonData.global.palette[key].value %>")!
+        <%_ } -%>
+    <%_ }); -%>
 }

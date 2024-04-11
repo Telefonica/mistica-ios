@@ -9,7 +9,6 @@
 import UIKit
 
 struct O2NewColors: MisticaColors {
-    
     static let palette = O2NewColorPalette()
 
     let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
@@ -255,7 +254,7 @@ struct O2NewColors: MisticaColors {
     let tagBackgroundWarning = O2NewColors.palette.o2Orange10 | O2NewColors.palette.darkModeGrey6
 
     let tagBackgroundError = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey6
-    
+
     #warning("Gradients tokens not formatted to UIColor. Set old O2 color values by default.")
     let backgroundBrand: UIColor = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
     let backgroundContainerBrand: UIColor = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeGrey

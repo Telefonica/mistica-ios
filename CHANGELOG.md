@@ -1,3 +1,10 @@
+# [29.8.0](https://github.com/Telefonica/mistica-ios/compare/v29.7.4...v29.8.0) (2024-04-11)
+
+
+### Features
+
+* **Accessibility:** IOS-9794 VIVO Novo app accessibility: Bottom sheet formats ([#356](https://github.com/Telefonica/mistica-ios/issues/356)) ([1043989](https://github.com/Telefonica/mistica-ios/commit/104398990bbd1574b96e1559305e35c760592370))
+
 ## [29.7.4](https://github.com/Telefonica/mistica-ios/compare/v29.7.3...v29.7.4) (2024-04-10)
 
 

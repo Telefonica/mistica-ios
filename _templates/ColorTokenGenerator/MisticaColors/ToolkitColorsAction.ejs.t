@@ -18,10 +18,11 @@ import SwiftUI
 
 public extension Color {
 <% Object.keys(jsonObject.jsonData.light).forEach(function(key) { -%>
-
-    static var <%= key %>: Color {
-        MisticaConfig.currentColors.<%= key %>.color
-    }
+    <%_ if (jsonObject.jsonData.light[key].type === "color") { -%>
+        static var <%= key %>: Color {
+            MisticaConfig.currentColors.<%= key %>.color
+        }
+    <%_ } -%>
 <% }); -%>
 }
 

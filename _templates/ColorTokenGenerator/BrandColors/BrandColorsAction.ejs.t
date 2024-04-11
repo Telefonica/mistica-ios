@@ -22,23 +22,27 @@ struct <%= className %>Colors: MisticaColors {
 	static let palette = <%= className %>ColorPalette()
 
 	<%_ Object.keys(jsonObject.jsonData.light).forEach(function(key) { -%>
-		<%_ let lightColorString = jsonObject.jsonData.light[key].value -%>
-		<%_ let darkColorString = jsonObject.jsonData.dark[key].value -%>
-		<%_ var lightColor = h.colorFromString(lightColorString, className) -%>
-		<%_ var darkColor = h.colorFromString(darkColorString, className) -%>
-		<%_ if (!!lightColor & !!darkColor) { -%>
-			<%_ if (lightColor == darkColor) { -%>
-	let <%= key %> = <%= lightColor %>
-			<%_ } else { -%>
-	let <%= key %> = <%= lightColor %> | <%= darkColor %>
+	    <%_ if (jsonObject.jsonData.light[key].type === "color") { -%>
+			<%_ let lightColorString = jsonObject.jsonData.light[key].value -%>
+			<%_ let darkColorString = jsonObject.jsonData.dark[key].value -%>
+			<%_ var lightColor = h.colorFromString(lightColorString, className) -%>
+			<%_ var darkColor = h.colorFromString(darkColorString, className) -%>
+			<%_ if (!!lightColor & !!darkColor) { -%>
+				<%_ if (lightColor == darkColor) { -%>
+		let <%= key %> = <%= lightColor %>
+				<%_ } else { -%>
+		let <%= key %> = <%= lightColor %> | <%= darkColor %>
+				<%_ } -%>
 			<%_ } -%>
-		<%_ } -%>
+		<%_ } -%>	
 	<%_ }); -%>
 }
 
 public struct <%= className %>ColorPalette {
-	public init() {}
-	<%_ Object.keys(jsonObject.jsonData.global.palette).forEach(function(key) { -%>
-	public let <%= key %> = UIColor(hex:"<%= jsonObject.jsonData.global.palette[key].value %>")!
-	<%_ }); -%>
+    public init() {}
+    <%_ Object.keys(jsonObject.jsonData.global.palette).forEach(function(key) { -%>
+        <%_ if (jsonObject.jsonData.global.palette[key].type === "color") { -%>
+    public let <%= key %> = UIColor(hex:"<%= jsonObject.jsonData.global.palette[key].value %>")!
+        <%_ } -%>
+    <%_ }); -%>
 }

@@ -18,11 +18,12 @@ import UIKit
 
 public extension UIColor {
 <% Object.keys(jsonObject.jsonData.light).forEach(function(key) { -%>
-
-    @objc(<%= key %>Color)
-    static var <%= key %>: UIColor {
-        MisticaConfig.currentColors.<%= key %>
-    }
+    <%_ if (jsonObject.jsonData.light[key].type === "color") { -%>
+        @objc(<%= key %>Color)
+        static var <%= key %>: UIColor {
+            MisticaConfig.currentColors.<%= key %>
+        }
+    <%_ } -%>
 <% }); -%>
 }
 

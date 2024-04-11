@@ -434,7 +434,14 @@ private extension HighlightedCard {
     }
 
     func updateColors() {
-        backgroundColor = .gray
+        let colors: [UIColor] = [MisticaConfig.currentColors.backgroundSkeletonInverse,
+                                 MisticaConfig.currentColors.backgroundSkeletonInverse,
+                                 MisticaConfig.currentColors.borderHigh]
+        let stops: [NSNumber] = [0, 0.3, 1]
+        let angle: CGFloat = 180
+        
+        applyLinearGradient(colors: colors, locations: stops, angle: angle)
+        //backgroundColor = .red
         titleLabel.textColor = style.titleColor
         subtitleLabel.textColor = style.subtitleColor
         updateActionButtonStyle()

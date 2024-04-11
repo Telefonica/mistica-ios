@@ -10,7 +10,13 @@ import UIKit
 
 extension UIView {
     static let defaultAnimationDuration: TimeInterval = 0.25
-
+    
+    //MARK: Linear gradient
+    
+    public func applyLinearGradient(colors: [UIColor], locations: [NSNumber], angle: CGFloat) {
+        addSubview(GradientView(frame: frame, colors: colors, locations: locations, angle: angle))
+    }
+    
     // MARK: Blur effect
 
     func addBlurEffect() {

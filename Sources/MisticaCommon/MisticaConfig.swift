@@ -52,6 +52,12 @@ private extension MisticaConfig {
             currentFontWeights = O2FontWeights()
             currentCornerRadius = O2CornerRadius()
             currentFontSizes = O2FontSizes()
+        case .o2New:
+            currentColors = O2NewColors()
+            currentBrandAssets = DefaultMisticaBrandAssets()
+            currentFontWeights = O2NewFontWeights()
+            currentCornerRadius = O2NewCornerRadius()
+            currentFontSizes = O2NewFontSizes()
         case .blau:
             currentColors = BlauColors()
             currentBrandAssets = DefaultMisticaBrandAssets()

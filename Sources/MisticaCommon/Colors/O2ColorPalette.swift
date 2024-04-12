@@ -131,7 +131,7 @@ struct O2Colors: MisticaColors {
 
     let controlActivated = O2Colors.palette.o2BluePrimary | O2Colors.palette.o2BluePrimary30
 
-    let controlInverse = O2Colors.palette.o2BluePrimary30 | O2Colors.palette.darkModeGrey6
+    let controlInverse = O2Colors.palette.white | O2Colors.palette.darkModeGrey6
 
     let controlActivatedInverse = O2Colors.palette.white | O2Colors.palette.o2BluePrimary30
 

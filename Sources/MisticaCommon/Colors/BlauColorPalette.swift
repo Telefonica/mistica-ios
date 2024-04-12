@@ -131,7 +131,7 @@ struct BlauColors: MisticaColors {
 
     let controlActivated = BlauColors.palette.blauBlueSecondary
 
-    let controlInverse = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.darkModeGrey6
+    let controlInverse = BlauColors.palette.white | BlauColors.palette.darkModeGrey6
 
     let controlActivatedInverse = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
 

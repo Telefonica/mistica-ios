@@ -131,7 +131,7 @@ struct VivoNewColors: MisticaColors {
 
     let controlActivated = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let controlInverse = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.darkModeGrey6
+    let controlInverse = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey6
 
     let controlActivatedInverse = VivoNewColors.palette.white | VivoNewColors.palette.vivoPurpleLight80
 

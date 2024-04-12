@@ -131,7 +131,7 @@ struct MovistarColors: MisticaColors {
 
     let controlActivated = MovistarColors.palette.movistarBlue
 
-    let controlInverse = MovistarColors.palette.movistarBlue20 | MovistarColors.palette.darkModeGrey6
+    let controlInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey6
 
     let controlActivatedInverse = MovistarColors.palette.white | MovistarColors.palette.movistarBlue
 

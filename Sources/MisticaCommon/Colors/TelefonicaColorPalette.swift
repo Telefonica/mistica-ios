@@ -131,7 +131,7 @@ struct TelefonicaColors: MisticaColors {
 
     let controlActivated = TelefonicaColors.palette.telefonicaBlue
 
-    let controlInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey6
+    let controlInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey6
 
     let controlActivatedInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.telefonicaBlue
 

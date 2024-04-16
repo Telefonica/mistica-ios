@@ -60,6 +60,13 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testRegularSizeWithLinkDangerStyle() {
+        assertSnapshot(
+            matching: makeTemplateWithAllButtonStates(style: .misticaLinkDanger(small: false)),
+            as: .image
+        )
+    }
+
     func testRegularSizeWithLinkInverseStyle() {
         assertSnapshot(
             matching: makeTemplateWithAllButtonStates(style: .misticaLinkInverse(small: false), inverse: true),

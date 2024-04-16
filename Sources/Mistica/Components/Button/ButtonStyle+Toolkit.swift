@@ -84,6 +84,24 @@ public extension Button.Style {
         return style
     }
 
+    static var linkDanger: Button.Style {
+        let backgroundColor: UIColor = .clear
+
+        var style = Button.Style(
+            allowsBleedingAlignment: true,
+            stateStyleByState: [
+                .normal: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundSelected, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .loading: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: backgroundColor, borderColor: backgroundColor)
+            ]
+        )
+
+        style.overriddenSizes = linkOverriddenSizes
+
+        return style
+    }
+
     static var primaryInverse: Button.Style {
         Button.Style(
             allowsBleedingAlignment: false,

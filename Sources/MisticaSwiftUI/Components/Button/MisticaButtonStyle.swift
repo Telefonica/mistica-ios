@@ -248,6 +248,43 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
         )
     }
 
+    static func misticaLinkDanger(
+        small: Bool = false,
+        bleedingAlignment: ButtonBleedingAlignment = .none,
+        withChevron: Bool = false
+    ) -> Self {
+        Self(
+            style: MisticaButton.Style(
+                bleedingAlignment: bleedingAlignment,
+                hasMinWidth: false,
+                styleByState: [
+                    .normal: MisticaButton.StateStyle(
+                        textColor: .textLinkDanger,
+                        backgroundColor: .clear,
+                        borderColor: .clear
+                    ),
+                    .selected: MisticaButton.StateStyle(
+                        textColor: .textLinkDanger,
+                        backgroundColor: .buttonLinkBackgroundSelected,
+                        borderColor: .clear
+                    ),
+                    .disabled: MisticaButton.StateStyle(
+                        textColor: .textLinkDanger.opacity(opacity),
+                        backgroundColor: .clear,
+                        borderColor: .clear
+                    ),
+                    .loading: MisticaButton.StateStyle(
+                        textColor: .textLinkDanger,
+                        backgroundColor: .clear,
+                        borderColor: .clear
+                    )
+                ]
+            ),
+            small: small,
+            rightImage: withChevron ? .chevron : nil
+        )
+    }
+
     static func misticaLinkInverse(
         small: Bool = false,
         bleedingAlignment: ButtonBleedingAlignment = .none,

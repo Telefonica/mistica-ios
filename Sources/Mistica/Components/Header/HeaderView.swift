@@ -179,6 +179,15 @@ public extension HeaderView {
         }
     }
 
+    var titleAccessibilityTraits: UIAccessibilityTraits {
+        get {
+            titleLabel.accessibilityTraits
+        }
+        set {
+            titleLabel.accessibilityTraits = newValue
+        }
+    }
+
     var descriptionAccessibilityLabel: String? {
         get {
             descriptionLabel.accessibilityLabel

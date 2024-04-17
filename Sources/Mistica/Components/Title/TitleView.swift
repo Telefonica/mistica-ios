@@ -102,6 +102,21 @@ public class TitleView: UITableViewHeaderFooterView {
     }
 }
 
+// MARK: - Accessibility
+
+public extension TitleView {
+    var titleAccessibilityTraits: UIAccessibilityTraits {
+        get {
+            titleLabel.accessibilityTraits
+        }
+        set {
+            titleLabel.accessibilityTraits = newValue
+        }
+    }
+}
+
+// MARK: - Private methods
+
 private extension TitleView {
     func commonInit() {
         layoutViews()

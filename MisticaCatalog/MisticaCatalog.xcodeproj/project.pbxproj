@@ -53,6 +53,7 @@
 		18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */; };
 		18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */; };
 		18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */; };
+		249996C72BCFDC7000BCB226 /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249996C62BCFDC6F00BCB226 /* GradientViewController.swift */; };
 		392E03DC28C6153C0081780B /* UICatalogSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392E03DB28C6153C0081780B /* UICatalogSheetViewController.swift */; };
 		3968C75E28C9E19600561194 /* UIStepperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3968C75D28C9E19600561194 /* UIStepperTableViewCell.swift */; };
 		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
@@ -122,6 +123,7 @@
 		18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCroutonViewController.swift; sourceTree = "<group>"; };
 		18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogBadgeViewController.swift; sourceTree = "<group>"; };
 		18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHeaderViewController.swift; sourceTree = "<group>"; };
+		249996C62BCFDC6F00BCB226 /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		392E03DB28C6153C0081780B /* UICatalogSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogSheetViewController.swift; sourceTree = "<group>"; };
 		3968C75D28C9E19600561194 /* UIStepperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStepperTableViewCell.swift; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				B8F9902A2546C98600DFBFE9 /* AppDelegate.swift */,
 				B8F990152546C98600DFBFE9 /* MisticaCatalogApp.swift */,
 				B8F9902B2546C98600DFBFE9 /* ComponentsView.swift */,
+				249996C62BCFDC6F00BCB226 /* GradientViewController.swift */,
 				18E3452B289D46C5005E6D81 /* FontsView.swift */,
 				1860058E28A136CE009C3778 /* ColorsView.swift */,
 				B8F98FFF2546C98600DFBFE9 /* Catalog */,
@@ -483,6 +486,7 @@
 				B8F9903A2546C98700DFBFE9 /* UISwitchTableViewCell.swift in Sources */,
 				18E4859B287F19EB0052A6F2 /* UICatalogViewStatesViewController.swift in Sources */,
 				18E485A0287F19EB0052A6F2 /* UICatalogListsViewController.swift in Sources */,
+				249996C72BCFDC7000BCB226 /* GradientViewController.swift in Sources */,
 				18E4858C287F19EB0052A6F2 /* ListCatalogView.swift in Sources */,
 				B8F990352546C98700DFBFE9 /* UITableView+Utils.swift in Sources */,
 				18E48594287F19EB0052A6F2 /* UICatalogMediaCardViewController.swift in Sources */,

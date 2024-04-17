@@ -1,3 +1,15 @@
+# [29.9.0](https://github.com/Telefonica/mistica-ios/compare/v29.8.0...v29.9.0) (2024-04-17)
+
+
+### Bug Fixes
+
+* **ColorTokenImporters:** Add type filter for color token importers ([af44945](https://github.com/Telefonica/mistica-ios/commit/af44945b6e5f441efcb2b12dcb0749c276bfe020))
+
+
+### Features
+
+* **Accessibility:** IOS-9797 VIVO Novo app accessibility: Titles in native content ([7fb989e](https://github.com/Telefonica/mistica-ios/commit/7fb989e0b9335f894092f3da2d4dbbff59611d95))
+
 # [29.8.0](https://github.com/Telefonica/mistica-ios/compare/v29.7.4...v29.8.0) (2024-04-11)
 
 

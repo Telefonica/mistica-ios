@@ -85,15 +85,29 @@ public extension Button.Style {
     }
 
     static var linkDanger: Button.Style {
-        let backgroundColor: UIColor = .clear
-
         var style = Button.Style(
             allowsBleedingAlignment: true,
             stateStyleByState: [
-                .normal: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundSelected, borderColor: backgroundColor),
-                .disabled: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .loading: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: backgroundColor, borderColor: backgroundColor)
+                .normal: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear),
+                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundSelected, borderColor: .clear),
+                .disabled: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear),
+                .loading: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear)
+            ]
+        )
+
+        style.overriddenSizes = linkOverriddenSizes
+
+        return style
+    }
+
+    static var linkDangerInverse: Button.Style {
+        var style = Button.Style(
+            allowsBleedingAlignment: true,
+            stateStyleByState: [
+                .normal: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundInverse, borderColor: .clear),
+                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundInverseSelected, borderColor: .clear),
+                .disabled: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear),
+                .loading: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear)
             ]
         )
 

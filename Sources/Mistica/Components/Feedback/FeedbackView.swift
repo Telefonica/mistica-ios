@@ -285,8 +285,8 @@ public extension FeedbackView {
 private extension FeedbackView {
     func setupView() {
         setupIcon()
-        setupContent()
         setupBackground()
+        setupContent()
         prepareAnimation()
         prepareHapticFeedback()
     }
@@ -307,7 +307,7 @@ private extension FeedbackView {
 
     func setupBackground() {
         if style.shouldUseInverseFeedbacks {
-            backgroundColor = .backgroundBrand
+            setMisticaColorStyle(.backgroundBrand, ignoreSafeArea: true)
         } else {
             backgroundColor = .background
         }

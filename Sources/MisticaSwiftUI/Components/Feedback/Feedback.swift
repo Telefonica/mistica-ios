@@ -60,7 +60,7 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
 
     public var body: some View {
         ZStack {
-            backgroundColor
+            misticaColorStyle(backgroundColor)
                 .edgesIgnoringSafeArea(.all)
                 .zIndex(0)
 
@@ -108,7 +108,6 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
                     secondaryButton.buttonStyle(secondaryButtonStyle)
                 }
                 .padding(Constants.spacing)
-                .background(backgroundColor)
                 .clipped()
                 .shadow(color: hasContent ? .black : .clear, radius: Constants.shadowRadius, x: 0, y: 0).mask(Rectangle().padding(.top, -Constants.shadowRadius))
             }
@@ -171,8 +170,8 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
         }
     }
 
-    private var backgroundColor: Color {
-        style.shouldUseInverseFeedbacks ? .backgroundBrand : .background
+    private var backgroundColor: MisticaColorStyle {
+        style.shouldUseInverseFeedbacks ? .backgroundBrand : .color(.background)
     }
 
     private var titleForegroundColor: Color {
@@ -183,8 +182,8 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
         style.shouldUseInverseFeedbacks ? .textPrimaryInverse : .textSecondary
     }
 
-    private var imageForegroundColor: Color {
-        style.shouldUseInverseFeedbacks ? .backgroundBrand : .textSecondary
+    private var imageForegroundColor: MisticaColorStyle {
+        style.shouldUseInverseFeedbacks ? .backgroundBrand : .color(.textSecondary)
     }
 
     private var hasContent: Bool {

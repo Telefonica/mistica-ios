@@ -19,11 +19,6 @@ public extension UIColor {
         MisticaConfig.currentColors.backgroundAlternative
     }
 
-    @objc(backgroundBrandColor)
-    static var backgroundBrand: UIColor {
-        MisticaConfig.currentColors.backgroundBrand
-    }
-
     @objc(backgroundBrandSecondaryColor)
     static var backgroundBrandSecondary: UIColor {
         MisticaConfig.currentColors.backgroundBrandSecondary
@@ -42,11 +37,6 @@ public extension UIColor {
     @objc(backgroundContainerPressedColor)
     static var backgroundContainerPressed: UIColor {
         MisticaConfig.currentColors.backgroundContainerPressed
-    }
-
-    @objc(backgroundContainerBrandColor)
-    static var backgroundContainerBrand: UIColor {
-        MisticaConfig.currentColors.backgroundContainerBrand
     }
 
     @objc(backgroundContainerBrandHoverColor)

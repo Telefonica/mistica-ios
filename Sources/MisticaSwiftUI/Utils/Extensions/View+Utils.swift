@@ -8,6 +8,7 @@
 
 import Combine
 import SwiftUI
+import MisticaCommon
 
 public extension View {
     /// Hide or show the view based on a boolean value.
@@ -132,5 +133,14 @@ public extension View {
         simultaneousGesture(TapGesture().onEnded {
             action()
         })
+    }
+    
+    func misticaColorStyle(_ colorStyle: MisticaColorStyle) -> some View {
+        switch colorStyle {
+        case .color(let color):
+            return AnyView(Color(color))
+        case .gradient(let gradient):
+            return AnyView(GradientView(colors: gradient.colors, stops: gradient.stops, angle: gradient.angle))
+        }
     }
 }

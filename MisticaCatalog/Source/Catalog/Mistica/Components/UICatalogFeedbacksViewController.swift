@@ -191,7 +191,8 @@ extension UICatalogFeedbacksViewController {
         switch indexPath.row {
         case 0:
             let navigationController = UINavigationController(rootViewController: feedbackViewController)
-            navigationController.navigationBar.applyMisticaStyle()
+            //navigationController.navigationBar.applyMisticaStyle()
+            navigationController.navigationBar.isHidden = true
             present(navigationController, animated: true, completion: nil)
         case 1:
             navigationController?.pushViewController(feedbackViewController, animated: true)

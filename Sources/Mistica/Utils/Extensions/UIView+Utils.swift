@@ -7,14 +7,30 @@
 //
 
 import UIKit
+import MisticaCommon
 
 extension UIView {
     static let defaultAnimationDuration: TimeInterval = 0.25
     
+    //MARK: Set MisticaColorStyle
+    
+    public func setMisticaColorStyle(_ colorStyle: MisticaColorStyle, ignoreSafeArea: Bool = false) {
+        switch colorStyle {
+        case .color(let color):
+            backgroundColor = color
+        case .gradient(let gradient):
+            applyLinearGradient(colors: gradient.colors, locations: gradient.stops, angle: gradient.angle, ignoreSafeArea: ignoreSafeArea)
+        }
+    }
+    
     //MARK: Linear gradient
     
-    public func applyLinearGradient(colors: [UIColor], locations: [NSNumber], angle: CGFloat) {
-        addSubview(GradientView(frame: frame, colors: colors, locations: locations, angle: angle))
+    public func applyLinearGradient(colors: [UIColor], locations: [CGFloat], angle: CGFloat, ignoreSafeArea: Bool) {
+        let gradientView = GradientSwiftUIViewController(colors: colors, stops: locations, angle: angle, ignoreSafeArea: ignoreSafeArea)
+        gradientView.view.frame = bounds
+        gradientView.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        layer.masksToBounds = true
+        addSubview(withDefaultConstraints: gradientView.view)
     }
     
     // MARK: Blur effect

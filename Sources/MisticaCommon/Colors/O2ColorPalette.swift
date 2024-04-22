@@ -15,7 +15,7 @@ struct O2Colors: MisticaColors {
 
     let backgroundAlternative = O2Colors.palette.grey1 | O2Colors.palette.darkModeBlack
 
-    let backgroundBrand = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
+    let backgroundBrand = MisticaColorStyle.color(O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
 
@@ -25,7 +25,7 @@ struct O2Colors: MisticaColors {
 
     let backgroundContainerPressed = O2Colors.palette.darkModeBlack.withAlphaComponent(0.05) | O2Colors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeGrey
+    let backgroundContainerBrand = MisticaColorStyle.color(O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeGrey)
 
     let backgroundContainerBrandHover = O2Colors.palette.darkModeBlack.withAlphaComponent(0.2) | O2Colors.palette.white.withAlphaComponent(0.03)
 

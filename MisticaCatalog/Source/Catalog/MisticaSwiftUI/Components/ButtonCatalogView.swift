@@ -67,7 +67,7 @@ struct ButtonsCatalogView: View {
 
                         Spacer()
                     }
-                    .listRowBackground(style.inverse ? Color.backgroundBrand : Color.background)
+                    .listRowBackground(style.inverse ? Color.brand : Color.background)
                 } header: {
                     Text(style.title)
                 }

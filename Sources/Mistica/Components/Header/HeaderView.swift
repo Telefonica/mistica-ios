@@ -229,6 +229,7 @@ private extension HeaderView {
     }
 
     func updateTopStackView() {
+        bringSubviewToFront(stackView)
         topStackView.removeArrangedSubviews()
 
         if let pretitle = pretitle {
@@ -326,7 +327,8 @@ private extension HeaderView {
             titleLabel.textColor = .textPrimary
             descriptionLabel.textColor = .textSecondary
         case .inverse, .inverseSmall:
-            stackView.backgroundColor = .backgroundBrand
+            setMisticaColorStyle(.backgroundBrand)
+            stackView.backgroundColor = .clear
             pretitleLabel.textColor = .textPrimaryInverse
             titleLabel.textColor = .textPrimaryInverse
             descriptionLabel.textColor = .textSecondaryInverse

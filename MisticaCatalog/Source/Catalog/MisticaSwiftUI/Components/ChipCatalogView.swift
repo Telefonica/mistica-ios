@@ -53,7 +53,7 @@ struct ChipCatalogView: View {
             Spacer()
         }
         .padding()
-        .background(inverseStyle ? Color.backgroundBrand : Color.background)
+        .background(inverseStyle ? Color.brand : Color.background)
     }
 }
 

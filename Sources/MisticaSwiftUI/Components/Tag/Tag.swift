@@ -151,7 +151,7 @@ public extension Tag {
                 }
             }
             .padding()
-            .background(Color.backgroundBrand)
+            .background(Color.brand)
         }
     }
 #endif

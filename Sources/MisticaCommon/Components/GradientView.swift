@@ -1,46 +1,36 @@
 //
 //  GradientView.swift
-//  
 //
-//  Created by Alejandro Ruiz on 10/4/24.
+//
+//  Created by Alejandro Ruiz on 17/4/24.
 //
 
-import UIKit
+import SwiftUI
 
-class GradientView: UIView {
-    private var colors: [UIColor] = []
-    private var locations: [NSNumber] = []
-    private var angle: CGFloat = 0.0
-    private var gradientLayer: CAGradientLayer!
+public struct GradientView: View {
+    let stops: [Gradient.Stop]
+    let angle: CGFloat
     
-    init(frame: CGRect, colors: [UIColor], locations: [NSNumber], angle: CGFloat) {
-        super.init(frame: frame)
-        self.colors = colors
-        self.locations = locations
+    public init(colors: [UIColor], stops: [CGFloat], angle: CGFloat) {
+        self.stops = zip(colors, stops).map { Gradient.Stop(color: Color($0), location: $1) }
         self.angle = angle
     }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
-    override class var layerClass: AnyClass {
-        return CAGradientLayer.self
+    public var body: some View {
+        GeometryReader { geo in
+            LinearGradient(
+                gradient: Gradient(stops: stops),
+                startPoint: gradientPoints(size: geo.size, cssAngle: angle).start,
+                endPoint: gradientPoints(size: geo.size, cssAngle: angle).end
+            )
+        }
     }
+}
 
-    override func layoutSubviews() {
-        self.gradientLayer = self.layer as? CAGradientLayer
-        self.gradientLayer.colors = colors.map { $0.cgColor }
-        self.gradientLayer.locations = locations
-        let points = gradientPoints(size: bounds.size, cssAngle: angle)
-        self.gradientLayer.startPoint = points.start
-        self.gradientLayer.endPoint = points.end
-    }
-    
-    private func gradientPoints(size: CGSize, cssAngle: CGFloat) -> (start: CGPoint, end: CGPoint) {
-        var start = CGPoint(x: 0.0, y: 1.0)
-        var end = CGPoint(x: 0.0, y: 0.0)
+private extension GradientView {
+    func gradientPoints(size: CGSize, cssAngle: CGFloat) -> (start: UnitPoint, end: UnitPoint) {
+        var start = UnitPoint(x: 0.0, y: 1.0)
+        var end = UnitPoint(x: 0.0, y: 0.0)
 
         let normalizedAngle = cssAngle.truncatingRemainder(dividingBy: 360)
         var directionAngle: (angle: CGFloat, topSide: Bool)
@@ -59,15 +49,15 @@ class GradientView: UIView {
 
         switch directionAngle.angle {
         case 90, -90.0:
-            start = CGPoint(x: (90 - directionAngle.angle) / 180, y: 0.5)
-            end = CGPoint(x: (90 + directionAngle.angle) / 180, y: 0.5)
+            start = UnitPoint(x: (90 - directionAngle.angle) / 180, y: 0.5)
+            end = UnitPoint(x: (90 + directionAngle.angle) / 180, y: 0.5)
         case -90..<90:
             var angle = radian(degree: directionAngle.angle)
             var tAngle = tan(angle)
             
             guard !tAngle.isNaN else {
-                start = CGPoint(x: 1, y: 0.5)
-                end = CGPoint(x: 0, y: 0.5)
+                start = UnitPoint(x: 1, y: 0.5)
+                end = UnitPoint(x: 0, y: 0.5)
                 break
             }
 
@@ -92,7 +82,8 @@ class GradientView: UIView {
         return directionAngle.topSide ? (start, end) : (end, start)
     }
 
-    private func radian(degree: CGFloat) -> CGFloat {
+    func radian(degree: CGFloat) -> CGFloat {
         return degree * .pi / 180
     }
 }
+

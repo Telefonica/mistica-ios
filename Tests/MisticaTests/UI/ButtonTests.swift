@@ -78,6 +78,20 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testRegularSizeWithLinkDangerStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .linkDanger, isSmall: false)
+        )
+    }
+
+    func testRegularSizeWithLinkDangerInverseStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .linkDangerInverse, isSmall: false)
+        )
+    }
+
     func testRegularSizeWithLinkWithChevronStyle() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image,

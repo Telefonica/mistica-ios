@@ -84,6 +84,38 @@ public extension Button.Style {
         return style
     }
 
+    static var linkDanger: Button.Style {
+        var style = Button.Style(
+            allowsBleedingAlignment: true,
+            stateStyleByState: [
+                .normal: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear),
+                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundSelected, borderColor: .clear),
+                .disabled: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear),
+                .loading: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear)
+            ]
+        )
+
+        style.overriddenSizes = linkOverriddenSizes
+
+        return style
+    }
+
+    static var linkDangerInverse: Button.Style {
+        var style = Button.Style(
+            allowsBleedingAlignment: true,
+            stateStyleByState: [
+                .normal: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundInverse, borderColor: .clear),
+                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundInverseSelected, borderColor: .clear),
+                .disabled: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear),
+                .loading: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear)
+            ]
+        )
+
+        style.overriddenSizes = linkOverriddenSizes
+
+        return style
+    }
+
     static var primaryInverse: Button.Style {
         Button.Style(
             allowsBleedingAlignment: false,

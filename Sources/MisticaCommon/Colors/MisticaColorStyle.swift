@@ -1,5 +1,5 @@
 //
-//  MisticaColor.swift
+//  MisticaColorStyle.swift
 //
 //  Made with ❤️ by Novum
 //

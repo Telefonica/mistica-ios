@@ -10,7 +10,7 @@ import SwiftUI
 
 /**
  GradientView is intended to serve as a gradient view for both SwiftUI and UIKit. The reason is that the UIKit gradient through CAGradient differs from the SwiftUI rendering through LinearGradient, less progressive and therefore less similar to the one we want to achieve, which is a gradient similar to the web one. For these reasons it's considered more optimal for the results to use only the SwiftUI rendering for both. Therefore it is necessary to use a UIViewController that contains the UIHostController with the SwiftUI GradientView and use it from UIKit.
- 
+
  Another important reason to use the SwiftUI view is that it allows us to update colors between UserInterfaces (light and dark) without the need to reload the views manually.
  */
 
@@ -66,10 +66,9 @@ public class GradientSwiftUIViewController: UIViewController {
     }
 }
 
-
 /**
  Why is this necessary? Unfortunately there is not any way to handle with the safe areas when adding GradientView in a UKit full screen view. If we don't indicate to avoid the safe areas we are left with a blank space on the edges. It cannot be put by default since for cases like the UIStackView cases or the own cells of List we would break the UI if we also ignore the safe areas there.
-*/
+ */
 extension UIHostingController {
     public convenience init(rootView: Content, ignoreSafeArea: Bool) {
         self.init(rootView: rootView)

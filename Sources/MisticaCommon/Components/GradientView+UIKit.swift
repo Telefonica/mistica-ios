@@ -45,12 +45,6 @@ public class GradientSwiftUIViewController: UIViewController {
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             hostingController.view
-                .centerXAnchor
-                .constraint(equalTo: view.centerXAnchor),
-            hostingController.view
-                .centerYAnchor
-                .constraint(equalTo: view.centerYAnchor),
-            hostingController.view
                 .topAnchor
                 .constraint(equalTo: view.topAnchor),
             hostingController.view

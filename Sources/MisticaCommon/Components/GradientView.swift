@@ -1,8 +1,9 @@
 //
 //  GradientView.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Alejandro Ruiz on 17/4/24.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import SwiftUI
@@ -10,12 +11,12 @@ import SwiftUI
 public struct GradientView: View {
     let stops: [Gradient.Stop]
     let angle: CGFloat
-    
+
     public init(colors: [UIColor], stops: [CGFloat], angle: CGFloat) {
         self.stops = zip(colors, stops).map { Gradient.Stop(color: Color($0), location: $1) }
         self.angle = angle
     }
-    
+
     public var body: some View {
         GeometryReader { geo in
             LinearGradient(
@@ -35,7 +36,7 @@ private extension GradientView {
         let normalizedAngle = cssAngle.truncatingRemainder(dividingBy: 360)
         var directionAngle: (angle: CGFloat, topSide: Bool)
 
-        if (90.0...270.0).contains(normalizedAngle) {
+        if (90.0 ... 270.0).contains(normalizedAngle) {
             directionAngle = (normalizedAngle - 180, false)
         } else if normalizedAngle > 270 {
             directionAngle = (normalizedAngle - 180, true)
@@ -51,10 +52,10 @@ private extension GradientView {
         case 90, -90.0:
             start = UnitPoint(x: (90 - directionAngle.angle) / 180, y: 0.5)
             end = UnitPoint(x: (90 + directionAngle.angle) / 180, y: 0.5)
-        case -90..<90:
+        case -90 ..< 90:
             var angle = radian(degree: directionAngle.angle)
             var tAngle = tan(angle)
-            
+
             guard !tAngle.isNaN else {
                 start = UnitPoint(x: 1, y: 0.5)
                 end = UnitPoint(x: 0, y: 0.5)
@@ -83,7 +84,6 @@ private extension GradientView {
     }
 
     func radian(degree: CGFloat) -> CGFloat {
-        return degree * .pi / 180
+        degree * .pi / 180
     }
 }
-

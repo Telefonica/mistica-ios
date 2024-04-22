@@ -1,8 +1,9 @@
 //
 //  MisticaGradient.swift
-//  
 //
-//  Created by Alejandro Ruiz on 17/4/24.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import UIKit

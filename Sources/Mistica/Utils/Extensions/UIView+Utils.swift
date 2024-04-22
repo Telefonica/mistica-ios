@@ -6,14 +6,14 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import MisticaCommon
+import UIKit
 
 extension UIView {
     static let defaultAnimationDuration: TimeInterval = 0.25
-    
-    //MARK: Set MisticaColorStyle
-    
+
+    // MARK: Set MisticaColorStyle
+
     public func setMisticaColorStyle(_ colorStyle: MisticaColorStyle, ignoreSafeArea: Bool = false) {
         switch colorStyle {
         case .color(let color):
@@ -22,9 +22,9 @@ extension UIView {
             applyLinearGradient(colors: gradient.colors, locations: gradient.stops, angle: gradient.angle, ignoreSafeArea: ignoreSafeArea)
         }
     }
-    
-    //MARK: Linear gradient
-    
+
+    // MARK: Linear gradient
+
     public func applyLinearGradient(colors: [UIColor], locations: [CGFloat], angle: CGFloat, ignoreSafeArea: Bool) {
         let gradientView = GradientSwiftUIViewController(colors: colors, stops: locations, angle: angle, ignoreSafeArea: ignoreSafeArea)
         gradientView.view.frame = bounds
@@ -32,7 +32,7 @@ extension UIView {
         layer.masksToBounds = true
         addSubview(withDefaultConstraints: gradientView.view)
     }
-    
+
     // MARK: Blur effect
 
     func addBlurEffect() {

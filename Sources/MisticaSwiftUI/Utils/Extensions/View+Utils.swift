@@ -7,8 +7,8 @@
 //
 
 import Combine
-import SwiftUI
 import MisticaCommon
+import SwiftUI
 
 public extension View {
     /// Hide or show the view based on a boolean value.
@@ -134,7 +134,7 @@ public extension View {
             action()
         })
     }
-    
+
     func misticaColorStyle(_ colorStyle: MisticaColorStyle) -> some View {
         switch colorStyle {
         case .color(let color):

@@ -1,8 +1,9 @@
 //
 //  MisticaColorStyle.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Alejandro Ruiz on 17/4/24.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +17,7 @@ public extension MisticaColorStyle {
     static var backgroundBrand: MisticaColorStyle {
         MisticaConfig.currentColors.backgroundBrand
     }
-    
+
     static var backgroundContainerBrand: MisticaColorStyle {
         MisticaConfig.currentColors.backgroundContainerBrand
     }

@@ -14,15 +14,17 @@ struct O2NewColors: MisticaColors {
     let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
     
     let backgroundBrand = MisticaColorStyle.gradient(MisticaGradient(colors:
-                                                                        [O2NewColors.palette.o2Green | O2NewColors.palette.darkModeBlack,
-                                                                         O2NewColors.palette.o2Red | O2NewColors.palette.darkModeGrey],
-                                                                     stops: [0, 1],
+                                                                        [O2NewColors.palette.darkBlue,
+                                                                         O2NewColors.palette.beyondBlue,
+                                                                         O2NewColors.palette.beyondBlue45],
+                                                                     stops: [0, 0.64, 1],
                                                                      angle: 180))
     
     let backgroundContainerBrand = MisticaColorStyle.gradient(MisticaGradient(colors:
-                                                                                [O2NewColors.palette.o2Green | O2NewColors.palette.darkModeBlack,
-                                                                                 O2NewColors.palette.o2Red | O2NewColors.palette.darkModeGrey],
-                                                                             stops: [0, 1],
+                                                                                [O2NewColors.palette.darkBlue,
+                                                                                 O2NewColors.palette.beyondBlue,
+                                                                                 O2NewColors.palette.beyondBlue45],
+                                                                             stops: [0, 0.64, 1],
                                                                              angle: 180))
 
     let backgroundAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack

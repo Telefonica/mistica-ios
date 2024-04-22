@@ -29,6 +29,9 @@ public struct GradientView: View {
 }
 
 private extension GradientView {
+    /**
+     This function is intended to receive the same points that would be received on the Web using CSS from a given angle.
+     */
     func gradientPoints(size: CGSize, cssAngle: CGFloat) -> (start: UnitPoint, end: UnitPoint) {
         var start = UnitPoint(x: 0.0, y: 1.0)
         var end = UnitPoint(x: 0.0, y: 0.0)

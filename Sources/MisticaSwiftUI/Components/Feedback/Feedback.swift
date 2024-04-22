@@ -60,7 +60,7 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
 
     public var body: some View {
         ZStack {
-            misticaColorStyle(backgroundColor)
+            misticaColorView(backgroundColor)
                 .edgesIgnoringSafeArea(.all)
                 .zIndex(0)
 
@@ -170,8 +170,8 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
         }
     }
 
-    private var backgroundColor: MisticaColorStyle {
-        style.shouldUseInverseFeedbacks ? .backgroundBrand : .color(.background)
+    private var backgroundColor: MisticaColor {
+        style.shouldUseInverseFeedbacks ? .backgroundBrand : MisticaColor.solid(.background)
     }
 
     private var titleForegroundColor: Color {
@@ -182,8 +182,8 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
         style.shouldUseInverseFeedbacks ? .textPrimaryInverse : .textSecondary
     }
 
-    private var imageForegroundColor: MisticaColorStyle {
-        style.shouldUseInverseFeedbacks ? .backgroundBrand : .color(.textSecondary)
+    private var imageForegroundColor: MisticaColor {
+        style.shouldUseInverseFeedbacks ? .backgroundBrand : MisticaColor.solid(.textSecondary)
     }
 
     private var hasContent: Bool {

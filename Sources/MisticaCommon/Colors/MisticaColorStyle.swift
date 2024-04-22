@@ -1,5 +1,5 @@
 //
-//  MisticaColorStyle.swift
+//  MisticaColor.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,17 +8,17 @@
 
 import UIKit
 
-public enum MisticaColorStyle {
-    case color(UIColor)
+public enum MisticaColor {
+    case solid(UIColor)
     case gradient(MisticaGradient)
 }
 
-public extension MisticaColorStyle {
-    static var backgroundBrand: MisticaColorStyle {
+public extension MisticaColor {
+    static var backgroundBrand: MisticaColor {
         MisticaConfig.currentColors.backgroundBrand
     }
 
-    static var backgroundContainerBrand: MisticaColorStyle {
+    static var backgroundContainerBrand: MisticaColor {
         MisticaConfig.currentColors.backgroundContainerBrand
     }
 }

@@ -11,12 +11,12 @@ import UIKit
 public protocol MisticaColors {
     var background: UIColor { get }
     var backgroundAlternative: UIColor { get }
-    var backgroundBrand: MisticaColorStyle { get }
+    var backgroundBrand: MisticaColor { get }
     var backgroundBrandSecondary: UIColor { get }
     var backgroundContainer: UIColor { get }
     var backgroundContainerHover: UIColor { get }
     var backgroundContainerPressed: UIColor { get }
-    var backgroundContainerBrand: MisticaColorStyle { get }
+    var backgroundContainerBrand: MisticaColor { get }
     var backgroundContainerBrandHover: UIColor { get }
     var backgroundContainerBrandPressed: UIColor { get }
     var backgroundContainerBrandOverInverse: UIColor { get }

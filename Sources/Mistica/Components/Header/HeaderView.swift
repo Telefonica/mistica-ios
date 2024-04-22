@@ -327,7 +327,7 @@ private extension HeaderView {
             titleLabel.textColor = .textPrimary
             descriptionLabel.textColor = .textSecondary
         case .inverse, .inverseSmall:
-            setMisticaColorStyle(.backgroundBrand)
+            setMisticaColorBackground(.backgroundBrand)
             stackView.backgroundColor = .clear
             pretitleLabel.textColor = .textPrimaryInverse
             titleLabel.textColor = .textPrimaryInverse

@@ -1,3 +1,10 @@
+# [29.10.0](https://github.com/Telefonica/mistica-ios/compare/v29.9.0...v29.10.0) (2024-04-22)
+
+
+### Features
+
+* **Button:** Add link danger button ([#359](https://github.com/Telefonica/mistica-ios/issues/359)) ([4d63cac](https://github.com/Telefonica/mistica-ios/commit/4d63cace952d6b621473b182343b174b6708dced))
+
 # [29.9.0](https://github.com/Telefonica/mistica-ios/compare/v29.8.0...v29.9.0) (2024-04-17)
 
 

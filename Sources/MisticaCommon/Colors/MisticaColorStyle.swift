@@ -17,8 +17,4 @@ public extension MisticaColor {
     static var backgroundBrand: MisticaColor {
         MisticaConfig.currentColors.backgroundBrand
     }
-
-    static var backgroundContainerBrand: MisticaColor {
-        MisticaConfig.currentColors.backgroundContainerBrand
-    }
 }

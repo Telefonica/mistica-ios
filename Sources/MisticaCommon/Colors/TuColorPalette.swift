@@ -21,7 +21,7 @@ struct TuColors: MisticaColors {
 
     let backgroundContainerPressed = TuColors.palette.grey9.withAlphaComponent(0.05) | TuColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeGrey)
+    let backgroundContainerBrand = TuColors.palette.primary | TuColors.palette.darkModeGrey
 
     let backgroundContainerBrandHover = TuColors.palette.grey9.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.03)
 

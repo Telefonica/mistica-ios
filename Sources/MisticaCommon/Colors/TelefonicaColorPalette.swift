@@ -21,7 +21,7 @@ struct TelefonicaColors: MisticaColors {
 
     let backgroundContainerPressed = TelefonicaColors.palette.telefonicaBlue.withAlphaComponent(0.05) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeGrey)
+    let backgroundContainerBrand = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeGrey
 
     let backgroundContainerBrandHover = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.03)
 

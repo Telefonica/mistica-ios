@@ -16,7 +16,7 @@ public protocol MisticaColors {
     var backgroundContainer: UIColor { get }
     var backgroundContainerHover: UIColor { get }
     var backgroundContainerPressed: UIColor { get }
-    var backgroundContainerBrand: MisticaColor { get }
+    var backgroundContainerBrand: UIColor { get }
     var backgroundContainerBrandHover: UIColor { get }
     var backgroundContainerBrandPressed: UIColor { get }
     var backgroundContainerBrandOverInverse: UIColor { get }

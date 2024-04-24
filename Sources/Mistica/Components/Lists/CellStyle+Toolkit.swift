@@ -86,7 +86,7 @@ extension ListCellContentView.CellStyle {
         case .boxed:
             return .solid(.backgroundContainer)
         case .boxedInverse:
-            return .backgroundBrand
+            return .solid(.red)
         }
     }
 

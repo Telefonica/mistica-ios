@@ -307,7 +307,7 @@ private extension FeedbackView {
 
     func setupBackground() {
         if style.shouldUseInverseFeedbacks {
-            setMisticaColorBackground(.backgroundBrand, ignoreSafeArea: true)
+            //setMisticaColorBackground(.backgroundBrand, ignoreSafeArea: true)
         } else {
             backgroundColor = .background
         }

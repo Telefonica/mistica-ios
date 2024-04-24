@@ -32,7 +32,7 @@ public extension Color {
     static var backgroundContainerPressed: Color {
         MisticaConfig.currentColors.backgroundContainerPressed.color
     }
-    
+
     static var backgroundContainerBrand: Color {
         MisticaConfig.currentColors.backgroundContainerBrand.color
     }

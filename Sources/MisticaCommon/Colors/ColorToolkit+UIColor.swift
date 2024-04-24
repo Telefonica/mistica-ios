@@ -38,7 +38,7 @@ public extension UIColor {
     static var backgroundContainerPressed: UIColor {
         MisticaConfig.currentColors.backgroundContainerPressed
     }
-    
+
     @objc(backgroundContainerBrandColor)
     static var backgroundContainerBrand: UIColor {
         MisticaConfig.currentColors.backgroundContainerBrand

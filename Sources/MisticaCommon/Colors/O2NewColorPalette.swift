@@ -13,6 +13,19 @@ struct O2NewColors: MisticaColors {
 
     let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
 
+    let backgroundBrand = MisticaColor.gradient(MisticaGradient(
+        colors:
+        [
+            O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack,
+            O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack,
+            O2NewColors.palette.beyondBlue45 | O2NewColors.palette.darkModeBlack
+        ],
+        stops: [0, 0.64, 1],
+        angle: 180
+    ))
+
+    let backgroundContainerBrand = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeGrey
+
     let backgroundAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
 
     let backgroundBrandSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack
@@ -254,10 +267,6 @@ struct O2NewColors: MisticaColors {
     let tagBackgroundWarning = O2NewColors.palette.o2Orange10 | O2NewColors.palette.darkModeGrey6
 
     let tagBackgroundError = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey6
-
-    #warning("Gradients tokens not formatted to UIColor. Set old O2 color values by default.")
-    let backgroundBrand: UIColor = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
-    let backgroundContainerBrand: UIColor = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeGrey
 }
 
 public struct O2NewColorPalette {

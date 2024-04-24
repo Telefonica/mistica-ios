@@ -557,7 +557,7 @@ public extension DataCard {
                     colorsConfiguration: .init(
                         primaryTextColor: .textPrimaryInverse,
                         secondaryTextColor: .textSecondaryInverse,
-                        backgroundColor: .backgroundBrand,
+                        backgroundColor: .brand,
                         borderColor: .border,
                         dismissColor: .neutralLow
                     )

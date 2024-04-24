@@ -175,6 +175,6 @@ private extension ButtonTests {
             Spacer()
         }
         .frame(minWidth: style.small ? 200 : 300)
-        .background(inverse ? Color.backgroundBrand : Color.background)
+        .background(inverse ? Color.brand : Color.background)
     }
 }

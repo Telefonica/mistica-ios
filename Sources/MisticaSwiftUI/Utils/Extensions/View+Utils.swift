@@ -7,6 +7,7 @@
 //
 
 import Combine
+import MisticaCommon
 import SwiftUI
 
 public extension View {
@@ -132,5 +133,14 @@ public extension View {
         simultaneousGesture(TapGesture().onEnded {
             action()
         })
+    }
+
+    func misticaColorView(_ misticaColor: MisticaColor) -> some View {
+        switch misticaColor {
+        case .solid(let color):
+            return AnyView(Color(color))
+        case .gradient(let gradient):
+            return AnyView(GradientView(colors: gradient.colors, stops: gradient.stops, angle: gradient.angle))
+        }
     }
 }

@@ -19,11 +19,6 @@ public extension UIColor {
         MisticaConfig.currentColors.backgroundAlternative
     }
 
-    @objc(backgroundBrandColor)
-    static var backgroundBrand: UIColor {
-        MisticaConfig.currentColors.backgroundBrand
-    }
-
     @objc(backgroundBrandSecondaryColor)
     static var backgroundBrandSecondary: UIColor {
         MisticaConfig.currentColors.backgroundBrandSecondary

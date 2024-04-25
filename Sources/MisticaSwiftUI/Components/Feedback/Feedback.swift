@@ -35,7 +35,6 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
     private var titleAccessibilityIdentifier: String?
     private var messageAccessibilityLabel: String?
     private var messageAccessibilityIdentifier: String?
-    private var imageAccessibilityLabel: String?
     private var imageAccessibilityIdentifier: String?
 
     private var feedbackGenerator = UINotificationFeedbackGenerator()
@@ -70,8 +69,7 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
                         icon
                             .frame(width: Constants.iconHeight, height: Constants.iconHeight, alignment: .bottomLeading)
                             .accessibilityIdentifier(imageAccessibilityIdentifier)
-                            .accessibilityLabel(imageAccessibilityLabel)
-
+                            .misticaBackport.accesibilityHidden(true)
                         Spacer()
                             .frame(height: 24)
 
@@ -352,12 +350,6 @@ public extension Feedback {
         return feedback
     }
 
-    func imageAccessibilityLabel(_ imageAccessibilityLabel: String?) -> Feedback {
-        var feedback = self
-        feedback.imageAccessibilityLabel = imageAccessibilityLabel
-        return feedback
-    }
-
     func imageAccessibilityIdentifier(_ imageAccessibilityIdentifier: String?) -> Feedback {
         var feedback = self
         feedback.imageAccessibilityIdentifier = imageAccessibilityIdentifier
@@ -455,7 +447,6 @@ private extension View {
             .titleAccessibilityIdentifier("Title identifier")
             .messageAccessibilityLabel("Message identifier")
             .messageAccessibilityIdentifier("Message identifier")
-            .imageAccessibilityLabel("Image Label")
             .imageAccessibilityIdentifier("Image identifier")
         }
     }

@@ -173,7 +173,7 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
     private var backgroundColor: MisticaColor {
         style.shouldUseInverseFeedbacks ? .backgroundBrand : MisticaColor.solid(.background)
     }
-    
+
     private var footerBackgroundColor: MisticaColor {
         style.shouldUseInverseFeedbacks ? MisticaColor.solid(.backgroundBrandBottom) : MisticaColor.solid(.background)
     }

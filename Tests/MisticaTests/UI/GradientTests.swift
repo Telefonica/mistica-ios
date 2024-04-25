@@ -1,8 +1,9 @@
 //
 //  GradientTests.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Alejandro Ruiz on 25/4/24.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 @testable import Mistica
@@ -19,7 +20,7 @@ final class GradientTests: XCTestCase {
     func testGradientInView() {
         let gradientView = UIView()
         gradientView.frame = .init(x: 0, y: 0, width: 300, height: 450)
-        
+
         let misticaGradient: MisticaGradient = .init(colors: [.backgroundBrandBottom, .blue, .backgroundBrandSecondary], stops: [0, 0.5, 1], angle: 180)
         let misticaColor: MisticaColor = .gradient(misticaGradient)
         gradientView.setMisticaColorBackground(misticaColor)

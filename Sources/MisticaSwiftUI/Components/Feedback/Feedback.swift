@@ -106,8 +106,10 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
                     secondaryButton.buttonStyle(secondaryButtonStyle)
                 }
                 .padding(Constants.spacing)
+                .background(misticaColorView(footerBackgroundColor))
                 .clipped()
-                .shadow(color: hasContent ? .black : .clear, radius: Constants.shadowRadius, x: 0, y: 0).mask(Rectangle().padding(.top, -Constants.shadowRadius))
+                .shadow(color: hasContent ? .black : .clear, radius: Constants.shadowRadius, x: 0, y: 0)
+                .mask(Rectangle().padding(.top, -Constants.shadowRadius))
             }
             .zIndex(1)
         }
@@ -170,6 +172,10 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
 
     private var backgroundColor: MisticaColor {
         style.shouldUseInverseFeedbacks ? .backgroundBrand : MisticaColor.solid(.background)
+    }
+    
+    private var footerBackgroundColor: MisticaColor {
+        style.shouldUseInverseFeedbacks ? MisticaColor.solid(.backgroundBrandBottom) : MisticaColor.solid(.background)
     }
 
     private var titleForegroundColor: Color {

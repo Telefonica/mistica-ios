@@ -298,7 +298,7 @@ private extension FeedbackView {
             scrollStackView.topAnchor.constraint(equalTo: topAnchor),
             scrollStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scrollStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            scrollStackView.bottomAnchor.constraint(equalTo: buttonsView.topAnchor),
+            scrollStackView.bottomAnchor.constraint(equalTo: buttonsView.subviews.isEmpty ? bottomAnchor : buttonsView.topAnchor),
             buttonsView.trailingAnchor.constraint(equalTo: trailingAnchor),
             buttonsView.leadingAnchor.constraint(equalTo: leadingAnchor),
             buttonsView.bottomAnchor.constraint(equalTo: bottomAnchor)

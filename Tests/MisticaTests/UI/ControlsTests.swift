@@ -45,9 +45,18 @@ final class ControlsTests: XCTestCase {
     // MARK: - UITabBar Style
 
     func testTabBarControl() {
-        assertSnapshotForAllBrandsAndStyles(
+        let tabView = makeTabBarTemplate()
+        assertSnapshot(
+            matching: tabView,
+            as: .image(size: CGSize(width: 420, height: 60))
+        )
+        
+        tabView.overrideUserInterfaceStyle = .dark
+
+        assertSnapshot(
+            matching: tabView,
             as: .image(size: CGSize(width: 420, height: 60)),
-            viewBuilder: makeTabBarTemplate()
+            named: "with-dark-style"
         )
     }
 

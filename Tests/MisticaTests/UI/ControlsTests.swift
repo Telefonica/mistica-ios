@@ -50,7 +50,7 @@ final class ControlsTests: XCTestCase {
             matching: tabView,
             as: .image(size: CGSize(width: 420, height: 60))
         )
-        
+
         tabView.overrideUserInterfaceStyle = .dark
 
         assertSnapshot(

@@ -1,3 +1,10 @@
+# [29.11.0](https://github.com/Telefonica/mistica-ios/compare/v29.10.0...v29.11.0) (2024-04-29)
+
+
+### Features
+
+* **Accessibility:** IOS-9786 VIVO Novo app accessibility Assinaturas: decorative images/animation to ignore ([#362](https://github.com/Telefonica/mistica-ios/issues/362)) ([5325295](https://github.com/Telefonica/mistica-ios/commit/5325295ff18493824b95a1a6ec3723794ee1c638))
+
 # [29.10.0](https://github.com/Telefonica/mistica-ios/compare/v29.9.0...v29.10.0) (2024-04-22)
 
 

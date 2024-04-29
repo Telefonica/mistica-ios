@@ -63,7 +63,7 @@ public class FeedbackView: UIView {
             icon.widthAnchor.constraint(equalToConstant: Constants.iconSize),
             icon.heightAnchor.constraint(equalToConstant: Constants.iconSize)
         ])
-        icon.isAccessibilityElement = true
+        icon.isAccessibilityElement = false
         icon.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return icon
     }()
@@ -78,7 +78,7 @@ public class FeedbackView: UIView {
             animation.widthAnchor.constraint(equalToConstant: Constants.iconSize),
             animation.heightAnchor.constraint(equalToConstant: Constants.iconSize)
         ])
-        animation.isAccessibilityElement = true
+        animation.isAccessibilityElement = false
         animation.accessibilityIdentifier = DefaultIdentifiers.Feedback.asset
         return animation
     }()

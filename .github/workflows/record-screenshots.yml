@@ -89,7 +89,7 @@ jobs:
           script: |
             const name = '${{ github.workflow	}}';
             const url = '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}';
-            const success = '${{ needs.build-app.result }}' === 'success';
+            const success = '${{ needs.record-screenshots.result }}' === 'success';
             const body = `${name}: ${success ? 'succeeded ✅' : 'failed ❌'}\n${url}`;
             await github.rest.issues.updateComment({
               comment_id: context.payload.comment.id,

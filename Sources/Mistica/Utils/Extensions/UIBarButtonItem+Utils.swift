@@ -49,3 +49,31 @@ extension UIButton {
         frameHeight = 36.0
     }
 }
+
+public extension UIButton {
+    /*
+     Support SVG Images from URL for UIButton settings
+     */
+    func setImageFromURL(url: URL, urlForDarkMode: URL? = nil, defaultImage: UIImage? = nil) {
+        let coder = SDImageSVGCoder.shared
+        SDImageCodersManager.shared.addCoder(coder)
+
+        sd_setImage(with: url, for: .normal) { lightImage, _, _, _ in
+            guard let lightImage else {
+                self.setImage(defaultImage, for: .normal)
+                return
+            }
+
+            if let darkURL = urlForDarkMode {
+                self.sd_setImage(with: darkURL, for: .normal) { darkResult, _, _, _ in
+                    if let darkImage = darkResult {
+                        lightImage.imageAsset?.register(darkImage, with: UITraitCollection(traitsFrom: [.current, .init(userInterfaceStyle: .dark)]))
+                        self.setImage(lightImage, for: .normal)
+                    }
+                }
+            } else {
+                self.setImage(lightImage, for: .normal)
+            }
+        }
+    }
+}

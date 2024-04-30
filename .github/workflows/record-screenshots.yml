@@ -11,6 +11,20 @@ jobs:
     if: github.event.issue.pull_request && contains(github.event.comment.body, '/record-screenshots')
     runs-on: self-hosted-novum-mac
     steps:
+      - name: Update the comment on PR with link to the job
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const name = '${{ github.workflow	}}';
+            const url = '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}';
+            const body = `${name} launched: ${url}`;
+            await github.rest.issues.updateComment({
+              comment_id: context.payload.comment.id,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            })
+            
       - name: Get branch of PR
         uses: xt0rted/pull-request-comment-branch@v2
         id: comment-branch
@@ -63,3 +77,23 @@ jobs:
           sha: ${{ needs.record-screenshots.outputs.commit_hash }}
           token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
           status: ${{ needs.execute-tests.result }}
+
+  comment-result-on-pr:
+    name: Add workflow result on PR by updating the comment that triggered the workflow
+    needs: record-screenshots
+    if: always() && needs.record-screenshots.result != 'skipped'
+    runs-on: self-hosted-novum-mac
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const name = '${{ github.workflow	}}';
+            const url = '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}';
+            const success = '${{ needs.record-screenshots.result }}' === 'success';
+            const body = `${name}: ${success ? 'succeeded ✅' : 'failed ❌'}\n${url}`;
+            await github.rest.issues.updateComment({
+              comment_id: context.payload.comment.id,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            })

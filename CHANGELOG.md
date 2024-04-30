@@ -1,3 +1,10 @@
+## [29.11.1](https://github.com/Telefonica/mistica-ios/compare/v29.11.0...v29.11.1) (2024-04-30)
+
+
+### Bug Fixes
+
+* **SVGImagesDownload:** Minor change to generate commit to fix previous commit ([#364](https://github.com/Telefonica/mistica-ios/issues/364)) semantic release typo ([#365](https://github.com/Telefonica/mistica-ios/issues/365)) ([b484da2](https://github.com/Telefonica/mistica-ios/commit/b484da22be429c9cdd6d62238ef4e0eaede82250))
+
 # [29.11.0](https://github.com/Telefonica/mistica-ios/compare/v29.10.0...v29.11.0) (2024-04-29)
 
 

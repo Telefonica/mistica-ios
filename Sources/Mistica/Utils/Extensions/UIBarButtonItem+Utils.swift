@@ -52,7 +52,7 @@ extension UIButton {
 
 public extension UIButton {
     /*
-     Support SVG Images from URL for UIButton settings
+     Support SVG images from URL for UIButton settings
      */
     func setImageFromURL(url: URL, urlForDarkMode: URL? = nil, defaultImage: UIImage? = nil) {
         let coder = SDImageSVGCoder.shared

@@ -24,7 +24,7 @@
 
 ### Bug Fixes
 
-* **ColorTokenImporters:** Add type filter for color token importers ([af44945](https://github.com/Telefonica/mistica-ios/commit/af44945b6e5f441efcb2b12dcb0749c276bfe020))
+* **ColorTokenImporters:** Add type filter for color token importer ([af44945](https://github.com/Telefonica/mistica-ios/commit/af44945b6e5f441efcb2b12dcb0749c276bfe020))
 
 
 ### Features

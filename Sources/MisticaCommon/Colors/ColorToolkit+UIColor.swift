@@ -19,11 +19,6 @@ public extension UIColor {
         MisticaConfig.currentColors.backgroundAlternative
     }
 
-    @objc(backgroundBrandColor)
-    static var backgroundBrand: UIColor {
-        MisticaConfig.currentColors.backgroundBrand
-    }
-
     @objc(backgroundBrandSecondaryColor)
     static var backgroundBrandSecondary: UIColor {
         MisticaConfig.currentColors.backgroundBrandSecondary
@@ -84,9 +79,14 @@ public extension UIColor {
         MisticaConfig.currentColors.backgroundSkeletonInverse
     }
 
-    @objc(backgroundFeedbackBottomColor)
-    static var backgroundFeedbackBottom: UIColor {
-        MisticaConfig.currentColors.backgroundFeedbackBottom
+    @objc(backgroundBrandTopColor)
+    static var backgroundBrandTop: UIColor {
+        MisticaConfig.currentColors.backgroundBrandTop
+    }
+
+    @objc(backgroundBrandBottomColor)
+    static var backgroundBrandBottom: UIColor {
+        MisticaConfig.currentColors.backgroundBrandBottom
     }
 
     @objc(appBarBackgroundColor)
@@ -563,12 +563,72 @@ public extension UIColor {
     static var customTabsBackground: UIColor {
         MisticaConfig.currentColors.customTabsBackground
     }
+
+    @objc(tagTextPromoColor)
+    static var tagTextPromo: UIColor {
+        MisticaConfig.currentColors.tagTextPromo
+    }
+
+    @objc(tagTextActiveColor)
+    static var tagTextActive: UIColor {
+        MisticaConfig.currentColors.tagTextActive
+    }
+
+    @objc(tagTextInactiveColor)
+    static var tagTextInactive: UIColor {
+        MisticaConfig.currentColors.tagTextInactive
+    }
+
+    @objc(tagTextSuccessColor)
+    static var tagTextSuccess: UIColor {
+        MisticaConfig.currentColors.tagTextSuccess
+    }
+
+    @objc(tagTextWarningColor)
+    static var tagTextWarning: UIColor {
+        MisticaConfig.currentColors.tagTextWarning
+    }
+
+    @objc(tagTextErrorColor)
+    static var tagTextError: UIColor {
+        MisticaConfig.currentColors.tagTextError
+    }
+
+    @objc(tagBackgroundPromoColor)
+    static var tagBackgroundPromo: UIColor {
+        MisticaConfig.currentColors.tagBackgroundPromo
+    }
+
+    @objc(tagBackgroundActiveColor)
+    static var tagBackgroundActive: UIColor {
+        MisticaConfig.currentColors.tagBackgroundActive
+    }
+
+    @objc(tagBackgroundInactiveColor)
+    static var tagBackgroundInactive: UIColor {
+        MisticaConfig.currentColors.tagBackgroundInactive
+    }
+
+    @objc(tagBackgroundSuccessColor)
+    static var tagBackgroundSuccess: UIColor {
+        MisticaConfig.currentColors.tagBackgroundSuccess
+    }
+
+    @objc(tagBackgroundWarningColor)
+    static var tagBackgroundWarning: UIColor {
+        MisticaConfig.currentColors.tagBackgroundWarning
+    }
+
+    @objc(tagBackgroundErrorColor)
+    static var tagBackgroundError: UIColor {
+        MisticaConfig.currentColors.tagBackgroundError
+    }
 }
 
 public extension BrandStyle {
     var preferredStatusBarStyle: UIStatusBarStyle {
         switch self {
-        case .movistar, .vivo, .o2, .blau, .custom, .vivoNew, .telefonica, .tu:
+        case .movistar, .vivo, .o2, .o2New, .blau, .custom, .vivoNew, .telefonica, .tu:
             return .lightContent
         }
     }

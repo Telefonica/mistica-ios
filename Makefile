@@ -31,11 +31,12 @@ MISTICA_DESIGN_URL := https://raw.githubusercontent.com/Telefonica/mistica-desig
 Movistar:= movistar
 Blau:= blau
 O2:= o2
+O2New:= o2-new
 Vivo:= vivo
 VivoNew:= vivo-new
 Telefonica:= telefonica
 TU:= tu
-BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(Vivo) $(VivoNew) $(Telefonica) $(TU) # List of all the brand names that will be procesed.
+BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(O2New) $(Vivo) $(VivoNew) $(Telefonica) $(TU) # List of all the brand names that will be procesed.
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)

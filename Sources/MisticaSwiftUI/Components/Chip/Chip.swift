@@ -189,7 +189,7 @@ private extension Chip {
                 styledPreviews(.normal)
                 styledPreviews(.inverse)
                     .expandHorizontally()
-                    .background(Color.backgroundBrand)
+                    .background(Color.brand)
             }
         }
 

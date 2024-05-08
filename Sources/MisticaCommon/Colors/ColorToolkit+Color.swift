@@ -17,10 +17,6 @@ public extension Color {
         MisticaConfig.currentColors.backgroundAlternative.color
     }
 
-    static var backgroundBrand: Color {
-        MisticaConfig.currentColors.backgroundBrand.color
-    }
-
     static var backgroundBrandSecondary: Color {
         MisticaConfig.currentColors.backgroundBrandSecondary.color
     }
@@ -69,8 +65,12 @@ public extension Color {
         MisticaConfig.currentColors.backgroundSkeletonInverse.color
     }
 
-    static var backgroundFeedbackBottom: Color {
-        MisticaConfig.currentColors.backgroundFeedbackBottom.color
+    static var backgroundBrandTop: Color {
+        MisticaConfig.currentColors.backgroundBrandTop.color
+    }
+
+    static var backgroundBrandBottom: Color {
+        MisticaConfig.currentColors.backgroundBrandBottom.color
     }
 
     static var appBarBackground: Color {
@@ -451,6 +451,54 @@ public extension Color {
 
     static var customTabsBackground: Color {
         MisticaConfig.currentColors.customTabsBackground.color
+    }
+
+    static var tagTextPromo: Color {
+        MisticaConfig.currentColors.tagTextPromo.color
+    }
+
+    static var tagTextActive: Color {
+        MisticaConfig.currentColors.tagTextActive.color
+    }
+
+    static var tagTextInactive: Color {
+        MisticaConfig.currentColors.tagTextInactive.color
+    }
+
+    static var tagTextSuccess: Color {
+        MisticaConfig.currentColors.tagTextSuccess.color
+    }
+
+    static var tagTextWarning: Color {
+        MisticaConfig.currentColors.tagTextWarning.color
+    }
+
+    static var tagTextError: Color {
+        MisticaConfig.currentColors.tagTextError.color
+    }
+
+    static var tagBackgroundPromo: Color {
+        MisticaConfig.currentColors.tagBackgroundPromo.color
+    }
+
+    static var tagBackgroundActive: Color {
+        MisticaConfig.currentColors.tagBackgroundActive.color
+    }
+
+    static var tagBackgroundInactive: Color {
+        MisticaConfig.currentColors.tagBackgroundInactive.color
+    }
+
+    static var tagBackgroundSuccess: Color {
+        MisticaConfig.currentColors.tagBackgroundSuccess.color
+    }
+
+    static var tagBackgroundWarning: Color {
+        MisticaConfig.currentColors.tagBackgroundWarning.color
+    }
+
+    static var tagBackgroundError: Color {
+        MisticaConfig.currentColors.tagBackgroundError.color
     }
 }
 

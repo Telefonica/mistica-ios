@@ -79,7 +79,7 @@ public struct Header: View {
             )
         }
         .frame(maxWidth: .infinity, alignment: .top)
-        .background(backgroundColor)
+        .background(misticaColorView(backgroundColor))
         Spacer()
     }
 
@@ -99,10 +99,10 @@ public struct Header: View {
             .accessibilityIdentifier(accessibilityIdentifier)
     }
 
-    var backgroundColor: Color {
+    var backgroundColor: MisticaColor {
         switch style {
         case .normal, .normalSmall:
-            return .background
+            return .solid(.background)
         case .inverse, .inverseSmall:
             return .backgroundBrand
         }

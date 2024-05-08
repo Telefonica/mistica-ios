@@ -80,7 +80,7 @@ struct O2NewColors: MisticaColors {
 
     let buttonLinkDangerBackgroundSelected = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkDangerBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.white.withAlphaComponent(0)
 
     let buttonLinkDangerBackgroundInverseSelected = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
 
@@ -254,7 +254,7 @@ struct O2NewColors: MisticaColors {
 
     let tagTextWarning = O2NewColors.palette.o2Orange75 | O2NewColors.palette.o2Orange
 
-    let tagTextError = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red
+    let tagTextError = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
 
     let tagBackgroundPromo = O2NewColors.palette.o2Pink15 | O2NewColors.palette.darkModeGrey6
 
@@ -303,7 +303,7 @@ public struct O2NewColorPalette {
     public let o2Red40 = UIColor(hex: "#FF8B8B")!
     public let o2Red45 = UIColor(hex: "#FF7B7B")!
     public let o2Red60 = UIColor(hex: "#CC4848")!
-    public let o2Red65 = UIColor(hex: "#BF4343")!
+    public let o2Red65 = UIColor(hex: "#BF4444")!
     public let grey20 = UIColor(hex: "#F3F3F5")!
     public let grey30 = UIColor(hex: "#D9D9DD")!
     public let grey40 = UIColor(hex: "#B4B4BE")!
@@ -312,9 +312,8 @@ public struct O2NewColorPalette {
     public let grey80 = UIColor(hex: "#3C3C46")!
     public let black = UIColor(hex: "#00001E")!
     public let white = UIColor(hex: "#FFFFFF")!
-    public let darkModeBlack = UIColor(hex: "#121212")!
-    public let darkModeGrey = UIColor(hex: "#1E1E1E")!
-    public let darkModeGrey6 = UIColor(hex: "#2B2C2E")!
+    public let darkModeBlack = UIColor(hex: "#00001C")!
+    public let darkModeGrey = UIColor(hex: "#08132B")!
+    public let darkModeGrey6 = UIColor(hex: "#14213D")!
     public let darkModeBeyondBlue = UIColor(hex: "#1A62FF")!
-    public let darkModeBeyondBlueDark = UIColor(hex: "#0048E5")!
 }

@@ -1,3 +1,15 @@
+# [30.0.0](https://github.com/Telefonica/mistica-ios/compare/v29.11.1...v30.0.0) (2024-05-09)
+
+
+### Features
+
+* **O2New:** Add new O2New brand ([6c8c194](https://github.com/Telefonica/mistica-ios/commit/6c8c194af8f1349781c277d83eda193307eb2325))
+
+
+### BREAKING CHANGES
+
+* **O2New:** Refactor backgroundBrand color token as MisticaColor new type
+
 ## [29.11.1](https://github.com/Telefonica/mistica-ios/compare/v29.11.0...v29.11.1) (2024-04-30)
 
 

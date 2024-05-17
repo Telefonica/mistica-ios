@@ -31,6 +31,7 @@ extension UIView {
         gradientView.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         layer.masksToBounds = true
         addSubview(withDefaultConstraints: gradientView.view)
+        sendSubviewToBack(gradientView.view)
     }
 
     // MARK: Blur effect

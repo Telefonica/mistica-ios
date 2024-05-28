@@ -40,7 +40,7 @@ private extension MisticaAppearance {
 
         tabBarAppearance.tintColor = .textAppBarSelected
         tabBarAppearance.barTintColor = .appBarBackground
-        tabBarAppearance.unselectedItemTintColor = .textAppBar
+        tabBarAppearance.unselectedItemTintColor = .red
         tabBarAppearance.isTranslucent = false
         tabBarAppearance.backgroundImage = UIImage()
         tabBarAppearance.shadowImage = UIImage(color: .divider)

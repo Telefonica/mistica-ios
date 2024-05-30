@@ -19,6 +19,11 @@ public extension UIColor {
         MisticaConfig.currentColors.backgroundAlternative
     }
 
+    @objc(backgroundBrandColor)
+    static var backgroundBrand: UIColor {
+        MisticaConfig.currentColors.backgroundBrand
+    }
+
     @objc(backgroundBrandSecondaryColor)
     static var backgroundBrandSecondary: UIColor {
         MisticaConfig.currentColors.backgroundBrandSecondary
@@ -27,6 +32,11 @@ public extension UIColor {
     @objc(backgroundContainerColor)
     static var backgroundContainer: UIColor {
         MisticaConfig.currentColors.backgroundContainer
+    }
+
+    @objc(backgroundContainerErrorColor)
+    static var backgroundContainerError: UIColor {
+        MisticaConfig.currentColors.backgroundContainerError
     }
 
     @objc(backgroundContainerHoverColor)
@@ -294,6 +304,16 @@ public extension UIColor {
         MisticaConfig.currentColors.textLinkSnackbar
     }
 
+    @objc(textActivatedColor)
+    static var textActivated: UIColor {
+        MisticaConfig.currentColors.textActivated
+    }
+
+    @objc(textBrandColor)
+    static var textBrand: UIColor {
+        MisticaConfig.currentColors.textBrand
+    }
+
     @objc(controlColor)
     static var control: UIColor {
         MisticaConfig.currentColors.control
@@ -452,6 +472,16 @@ public extension UIColor {
     @objc(errorColor)
     static var error: UIColor {
         MisticaConfig.currentColors.error
+    }
+
+    @objc(textErrorColor)
+    static var textError: UIColor {
+        MisticaConfig.currentColors.textError
+    }
+
+    @objc(textErrorInverseColor)
+    static var textErrorInverse: UIColor {
+        MisticaConfig.currentColors.textErrorInverse
     }
 
     @objc(promoColor)
@@ -628,7 +658,7 @@ public extension UIColor {
 public extension BrandStyle {
     var preferredStatusBarStyle: UIStatusBarStyle {
         switch self {
-        case .movistar, .vivo, .o2, .o2New, .blau, .custom, .vivoNew, .telefonica, .tu:
+        case .movistar, .vivo, .o2, .o2New, .blau, .custom, .vivoNew, .telefonica:
             return .lightContent
         }
     }

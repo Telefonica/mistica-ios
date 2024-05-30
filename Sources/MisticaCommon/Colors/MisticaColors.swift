@@ -11,9 +11,10 @@ import UIKit
 public protocol MisticaColors {
     var background: UIColor { get }
     var backgroundAlternative: UIColor { get }
-    var backgroundBrand: MisticaColor { get }
+    var backgroundBrand: UIColor { get }
     var backgroundBrandSecondary: UIColor { get }
     var backgroundContainer: UIColor { get }
+    var backgroundContainerError: UIColor { get }
     var backgroundContainerHover: UIColor { get }
     var backgroundContainerPressed: UIColor { get }
     var backgroundContainerBrand: UIColor { get }
@@ -67,6 +68,8 @@ public protocol MisticaColors {
     var textLinkInverse: UIColor { get }
     var textLinkDanger: UIColor { get }
     var textLinkSnackbar: UIColor { get }
+    var textActivated: UIColor { get }
+    var textBrand: UIColor { get }
     var control: UIColor { get }
     var controlActivated: UIColor { get }
     var controlInverse: UIColor { get }
@@ -99,6 +102,8 @@ public protocol MisticaColors {
     var success: UIColor { get }
     var warning: UIColor { get }
     var error: UIColor { get }
+    var textError: UIColor { get }
+    var textErrorInverse: UIColor { get }
     var promo: UIColor { get }
     var highlight: UIColor { get }
     var successLow: UIColor { get }

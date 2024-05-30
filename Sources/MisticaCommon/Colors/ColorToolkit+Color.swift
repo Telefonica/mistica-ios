@@ -17,12 +17,20 @@ public extension Color {
         MisticaConfig.currentColors.backgroundAlternative.color
     }
 
+    static var backgroundBrand: Color {
+        MisticaConfig.currentColors.backgroundBrand.color
+    }
+
     static var backgroundBrandSecondary: Color {
         MisticaConfig.currentColors.backgroundBrandSecondary.color
     }
 
     static var backgroundContainer: Color {
         MisticaConfig.currentColors.backgroundContainer.color
+    }
+
+    static var backgroundContainerError: Color {
+        MisticaConfig.currentColors.backgroundContainerError.color
     }
 
     static var backgroundContainerHover: Color {
@@ -237,6 +245,14 @@ public extension Color {
         MisticaConfig.currentColors.textLinkSnackbar.color
     }
 
+    static var textActivated: Color {
+        MisticaConfig.currentColors.textActivated.color
+    }
+
+    static var textBrand: Color {
+        MisticaConfig.currentColors.textBrand.color
+    }
+
     static var control: Color {
         MisticaConfig.currentColors.control.color
     }
@@ -363,6 +379,14 @@ public extension Color {
 
     static var error: Color {
         MisticaConfig.currentColors.error.color
+    }
+
+    static var textError: Color {
+        MisticaConfig.currentColors.textError.color
+    }
+
+    static var textErrorInverse: Color {
+        MisticaConfig.currentColors.textErrorInverse.color
     }
 
     static var promo: Color {

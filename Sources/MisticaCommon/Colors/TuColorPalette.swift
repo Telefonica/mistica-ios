@@ -17,6 +17,8 @@ struct TuColors: MisticaColors {
 
     let backgroundContainer = TuColors.palette.white | TuColors.palette.darkModeGrey
 
+    let backgroundContainerError = TuColors.palette.red10 | TuColors.palette.darkModeGrey
+
     let backgroundContainerHover = TuColors.palette.grey9.withAlphaComponent(0.03) | TuColors.palette.white.withAlphaComponent(0.03)
 
     let backgroundContainerPressed = TuColors.palette.grey9.withAlphaComponent(0.05) | TuColors.palette.white.withAlphaComponent(0.05)
@@ -31,7 +33,7 @@ struct TuColors: MisticaColors {
 
     let backgroundContainerAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeGrey
 
-    let backgroundBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeBlack)
+    let backgroundBrand = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
     let backgroundBrandSecondary = TuColors.palette.blue | TuColors.palette.darkModeBlack
 
@@ -71,7 +73,7 @@ struct TuColors: MisticaColors {
 
     let buttonLinkDangerBackgroundSelected = TuColors.palette.red10
 
-    let buttonLinkDangerBackgroundInverse = TuColors.palette.white
+    let buttonLinkDangerBackgroundInverse = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
 
     let buttonLinkDangerBackgroundInverseSelected = TuColors.palette.red10
 
@@ -127,6 +129,10 @@ struct TuColors: MisticaColors {
 
     let textLinkSnackbar = TuColors.palette.white | TuColors.palette.blue30
 
+    let textActivated = TuColors.palette.primary | TuColors.palette.blue30
+
+    let textBrand = TuColors.palette.blue | TuColors.palette.blue30
+
     let control = TuColors.palette.grey5 | TuColors.palette.darkModeGrey6
 
     let controlActivated = TuColors.palette.primary | TuColors.palette.blue30
@@ -155,7 +161,7 @@ struct TuColors: MisticaColors {
 
     let navigationBarDivider = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
-    let badge = TuColors.palette.blue | TuColors.palette.red70
+    let badge = TuColors.palette.blue | TuColors.palette.blue30
 
     let feedbackErrorBackground = TuColors.palette.red
 
@@ -186,6 +192,10 @@ struct TuColors: MisticaColors {
     let textSecondaryInverse = TuColors.palette.grey3 | TuColors.palette.grey4
 
     let error = TuColors.palette.red
+
+    let textError = TuColors.palette.red
+
+    let textErrorInverse = TuColors.palette.white | TuColors.palette.red
 
     let success = TuColors.palette.green
 

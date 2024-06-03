@@ -30,10 +30,15 @@ class CellCenterSectionView: UIStackView {
         }
     }
 
-    var subtitleTextColor: UIColor = .textSecondary {
+    var subtitleTextColor: UIColor = .textPrimary {
         didSet {
             subtitleLabel.textColor = subtitleTextColor
-            detailLabel.textColor = subtitleTextColor
+        }
+    }
+
+    var detailTextColor: UIColor = .textSecondary {
+        didSet {
+            detailLabel.textColor = detailTextColor
         }
     }
 

@@ -1,3 +1,10 @@
+# [30.1.0](https://github.com/Telefonica/mistica-ios/compare/v30.0.0...v30.1.0) (2024-06-04)
+
+
+### Features
+
+* **Row:** IOS-9929 Do not use the subtitle color for description label ([#371](https://github.com/Telefonica/mistica-ios/issues/371)) ([1cc1689](https://github.com/Telefonica/mistica-ios/commit/1cc16891b0ce5906e8f49dd9f0e7331fe55c4704))
+
 # [30.0.0](https://github.com/Telefonica/mistica-ios/compare/v29.11.1...v30.0.0) (2024-05-09)
 
 

@@ -32,23 +32,6 @@ public class HeaderView: UIView {
         let stackView = UIStackView()
 
         stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
-        stackView.spacing = Constants.noSpacing
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(
-            top: Constants.marginTop,
-            left: Constants.marginLeft,
-            bottom: Constants.marginBottom,
-            right: Constants.marginRight
-        )
-
-        return stackView
-    }()
-
-    private lazy var topStackView: UIStackView = {
-        let stackView = UIStackView()
-
-        stackView.axis = .vertical
         stackView.spacing = Constants.spacing
 
         return stackView
@@ -225,42 +208,40 @@ private extension HeaderView {
         setContentHuggingPriority(.required, for: .vertical)
         setContentCompressionResistancePriority(.required, for: .vertical)
 
-        updateLayoutMarginsGuide()
+        updateColors()
 
         addSubview(stackView, constraints: [
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bottomAnchor.constraint(equalTo: stackView.bottomAnchor)
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.marginLeft),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.marginTop),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.marginRight),
+            bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: Constants.marginBottom)
         ])
-
-        stackView.addArrangedSubview(topStackView)
     }
 
     func updateTopStackView() {
         bringSubviewToFront(stackView)
-        topStackView.removeArrangedSubviews()
+        stackView.removeArrangedSubviews()
 
         if let pretitle = pretitle {
             stylePretitleLabel(pretitle)
-            topStackView.addArrangedSubview(pretitleLabel)
+            stackView.addArrangedSubview(pretitleLabel)
 
             let heightLayoutConstraint = pretitleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.heightLabel)
-            topStackView.addConstraint(heightLayoutConstraint)
+            stackView.addConstraint(heightLayoutConstraint)
         }
         if let title = title {
             styleTitleLabel(title)
-            topStackView.addArrangedSubview(titleLabel)
+            stackView.addArrangedSubview(titleLabel)
 
             let heightLayoutConstraint = titleLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.heightLabel)
-            topStackView.addConstraint(heightLayoutConstraint)
+            stackView.addConstraint(heightLayoutConstraint)
         }
         if let descriptionValue = descriptionValue {
             styleDescriptionLabel(descriptionValue)
-            topStackView.addArrangedSubview(descriptionLabel)
+            stackView.addArrangedSubview(descriptionLabel)
 
             let heightLayoutConstraint = descriptionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.heightLabel)
-            topStackView.addConstraint(heightLayoutConstraint)
+            stackView.addConstraint(heightLayoutConstraint)
         }
     }
 
@@ -304,16 +285,6 @@ private extension HeaderView {
         case .normalSmall, .inverseSmall:
             return .textPreset2(weight: .regular)
         }
-    }
-
-    func updateLayoutMarginsGuide() {
-        updateColors()
-        directionalLayoutMargins = NSDirectionalEdgeInsets(
-            top: Constants.marginTop,
-            leading: Constants.marginLeft,
-            bottom: Constants.marginBottom,
-            trailing: Constants.marginRight
-        )
     }
 
     func updatePretitleLabelVisibilityState() {

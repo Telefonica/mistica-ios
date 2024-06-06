@@ -213,7 +213,7 @@ private extension HeaderView {
         addSubview(stackView, constraints: [
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.marginLeft),
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.marginTop),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.marginRight),
+            trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: Constants.marginRight),
             bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: Constants.marginBottom)
         ])
     }

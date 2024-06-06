@@ -1,3 +1,10 @@
+## [30.1.1](https://github.com/Telefonica/mistica-ios/compare/v30.1.0...v30.1.1) (2024-06-06)
+
+
+### Bug Fixes
+
+* **Header:** Header does not display correctly in iOS 14 ([c0edf11](https://github.com/Telefonica/mistica-ios/commit/c0edf11968d4560cb12e8cccf913c0d9b44335fc))
+
 # [30.1.0](https://github.com/Telefonica/mistica-ios/compare/v30.0.0...v30.1.0) (2024-06-04)
 
 

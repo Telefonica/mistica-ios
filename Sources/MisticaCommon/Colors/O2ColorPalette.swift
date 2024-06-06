@@ -21,6 +21,8 @@ struct O2Colors: MisticaColors {
 
     let backgroundContainer = O2Colors.palette.white | O2Colors.palette.darkModeGrey
 
+    let backgroundContainerError = O2Colors.palette.pepper10 | O2Colors.palette.darkModeGrey
+
     let backgroundContainerHover = O2Colors.palette.darkModeBlack.withAlphaComponent(0.03) | O2Colors.palette.white.withAlphaComponent(0.03)
 
     let backgroundContainerPressed = O2Colors.palette.darkModeBlack.withAlphaComponent(0.05) | O2Colors.palette.white.withAlphaComponent(0.05)
@@ -71,7 +73,7 @@ struct O2Colors: MisticaColors {
 
     let buttonLinkDangerBackgroundSelected = O2Colors.palette.pepper10 | O2Colors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkDangerBackgroundInverse = O2Colors.palette.white | O2Colors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverse = O2Colors.palette.white | O2Colors.palette.white.withAlphaComponent(0)
 
     let buttonLinkDangerBackgroundInverseSelected = O2Colors.palette.pepper10 | O2Colors.palette.white.withAlphaComponent(0.08)
 
@@ -127,11 +129,15 @@ struct O2Colors: MisticaColors {
 
     let textLinkSnackbar = O2Colors.palette.o2BluePrimary30
 
+    let textActivated = O2Colors.palette.o2BluePrimary | O2Colors.palette.o2BluePrimary30
+
+    let textBrand = O2Colors.palette.o2BluePrimary | O2Colors.palette.o2BluePrimary30
+
     let control = O2Colors.palette.grey3 | O2Colors.palette.darkModeGrey6
 
     let controlActivated = O2Colors.palette.o2BluePrimary | O2Colors.palette.o2BluePrimary30
 
-    let controlInverse = O2Colors.palette.white | O2Colors.palette.darkModeGrey6
+    let controlInverse = O2Colors.palette.o2BluePrimary30 | O2Colors.palette.darkModeGrey6
 
     let controlActivatedInverse = O2Colors.palette.white | O2Colors.palette.o2BluePrimary30
 
@@ -190,6 +196,10 @@ struct O2Colors: MisticaColors {
     let warning = O2Colors.palette.o2Orange
 
     let error = O2Colors.palette.pepper
+
+    let textError = O2Colors.palette.pepper
+
+    let textErrorInverse = O2Colors.palette.white | O2Colors.palette.pepper
 
     let promo = O2Colors.palette.o2Purple
 

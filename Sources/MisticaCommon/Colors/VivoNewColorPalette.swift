@@ -21,6 +21,8 @@ struct VivoNewColors: MisticaColors {
 
     let backgroundContainer = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
 
+    let backgroundContainerError = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey
+
     let backgroundContainerHover = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.03) | VivoNewColors.palette.white.withAlphaComponent(0.03)
 
     let backgroundContainerPressed = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.05) | VivoNewColors.palette.white.withAlphaComponent(0.05)
@@ -71,7 +73,7 @@ struct VivoNewColors: MisticaColors {
 
     let buttonLinkDangerBackgroundSelected = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkDangerBackgroundInverse = VivoNewColors.palette.white | VivoNewColors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverse = VivoNewColors.palette.white | VivoNewColors.palette.white.withAlphaComponent(0)
 
     let buttonLinkDangerBackgroundInverseSelected = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.white.withAlphaComponent(0.08)
 
@@ -127,11 +129,15 @@ struct VivoNewColors: MisticaColors {
 
     let textLinkSnackbar = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.vivoPurpleLight50
 
+    let textActivated = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+
+    let textBrand = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+
     let control = VivoNewColors.palette.grey4 | VivoNewColors.palette.darkModeGrey6
 
     let controlActivated = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let controlInverse = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey6
+    let controlInverse = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.darkModeGrey6
 
     let controlActivatedInverse = VivoNewColors.palette.white | VivoNewColors.palette.vivoPurpleLight80
 
@@ -190,6 +196,10 @@ struct VivoNewColors: MisticaColors {
     let warning = VivoNewColors.palette.orange
 
     let error = VivoNewColors.palette.pepper
+
+    let textError = VivoNewColors.palette.pepper
+
+    let textErrorInverse = VivoNewColors.palette.white | VivoNewColors.palette.pepper
 
     let promo = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 

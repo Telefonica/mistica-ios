@@ -21,6 +21,8 @@ struct BlauColors: MisticaColors {
 
     let backgroundContainer = BlauColors.palette.white | BlauColors.palette.darkModeGrey
 
+    let backgroundContainerError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey
+
     let backgroundContainerHover = BlauColors.palette.blauBluePrimary.withAlphaComponent(0.03) | BlauColors.palette.white.withAlphaComponent(0.03)
 
     let backgroundContainerPressed = BlauColors.palette.blauBluePrimary.withAlphaComponent(0.05) | BlauColors.palette.white.withAlphaComponent(0.05)
@@ -71,7 +73,7 @@ struct BlauColors: MisticaColors {
 
     let buttonLinkDangerBackgroundSelected = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
 
-    let buttonLinkDangerBackgroundInverse = BlauColors.palette.white | BlauColors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverse = BlauColors.palette.white | BlauColors.palette.white.withAlphaComponent(0)
 
     let buttonLinkDangerBackgroundInverseSelected = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
 
@@ -127,11 +129,15 @@ struct BlauColors: MisticaColors {
 
     let textLinkSnackbar = BlauColors.palette.blauPurple30
 
+    let textActivated = BlauColors.palette.blauBlueSecondary
+
+    let textBrand = BlauColors.palette.blauBluePrimary
+
     let control = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
 
     let controlActivated = BlauColors.palette.blauBlueSecondary
 
-    let controlInverse = BlauColors.palette.white | BlauColors.palette.darkModeGrey6
+    let controlInverse = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.darkModeGrey6
 
     let controlActivatedInverse = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
 
@@ -186,6 +192,10 @@ struct BlauColors: MisticaColors {
     let textSecondaryInverse = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.grey4
 
     let error = BlauColors.palette.blauRed
+
+    let textError = BlauColors.palette.blauRed
+
+    let textErrorInverse = BlauColors.palette.white | BlauColors.palette.blauRed
 
     let success = BlauColors.palette.blauGreen
 

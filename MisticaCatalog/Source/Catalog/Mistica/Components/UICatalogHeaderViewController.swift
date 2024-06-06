@@ -201,7 +201,7 @@ extension UICatalogHeaderViewController: UITableViewDataSource, UITableViewDeleg
         vc.headerView.title = titleText
         vc.headerView.descriptionValue = descriptionText
 
-        show(vc, sender: self)
+        present(vc, animated: true)
     }
 }
 

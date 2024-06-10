@@ -914,7 +914,7 @@ private extension InputField {
             textInputView.autocorrectionType = autocorrectionType
             textInputView.keyboardType = keyboardType
             textInputView.autocapitalizationType = autocapitalizationType
-            textInputView.tintColor = .controlActivated
+            textInputView.tintColor = .textActivated
         }
     }
 

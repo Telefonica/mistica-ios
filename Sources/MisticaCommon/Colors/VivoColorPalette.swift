@@ -21,6 +21,8 @@ struct VivoColors: MisticaColors {
 
     let backgroundContainer = VivoColors.palette.white | VivoColors.palette.darkModeGrey
 
+    let backgroundContainerError = VivoColors.palette.pepperLight10 | VivoColors.palette.darkModeGrey
+
     let backgroundContainerHover = VivoColors.palette.darkModeBlack.withAlphaComponent(0.03) | VivoColors.palette.white.withAlphaComponent(0.03)
 
     let backgroundContainerPressed = VivoColors.palette.darkModeBlack.withAlphaComponent(0.05) | VivoColors.palette.white.withAlphaComponent(0.05)
@@ -71,7 +73,7 @@ struct VivoColors: MisticaColors {
 
     let buttonLinkDangerBackgroundSelected = VivoColors.palette.pepperLight10 | VivoColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkDangerBackgroundInverse = VivoColors.palette.white | VivoColors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverse = VivoColors.palette.white | VivoColors.palette.white.withAlphaComponent(0)
 
     let buttonLinkDangerBackgroundInverseSelected = VivoColors.palette.pepperLight10 | VivoColors.palette.white.withAlphaComponent(0.08)
 
@@ -127,11 +129,15 @@ struct VivoColors: MisticaColors {
 
     let textLinkSnackbar = VivoColors.palette.vivoPurpleLight50
 
+    let textActivated = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
+
+    let textBrand = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
+
     let control = VivoColors.palette.grey3 | VivoColors.palette.darkModeGrey6
 
     let controlActivated = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
 
-    let controlInverse = VivoColors.palette.white | VivoColors.palette.darkModeGrey6
+    let controlInverse = VivoColors.palette.vivoPurpleLight50 | VivoColors.palette.darkModeGrey6
 
     let controlActivatedInverse = VivoColors.palette.white | VivoColors.palette.vivoPurpleLight80
 
@@ -190,6 +196,10 @@ struct VivoColors: MisticaColors {
     let warning = VivoColors.palette.orange
 
     let error = VivoColors.palette.pepper
+
+    let textError = VivoColors.palette.pepper
+
+    let textErrorInverse = VivoColors.palette.white | VivoColors.palette.pepper
 
     let promo = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
 

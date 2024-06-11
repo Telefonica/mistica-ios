@@ -1,3 +1,10 @@
+# [30.2.0](https://github.com/Telefonica/mistica-ios/compare/v30.1.1...v30.2.0) (2024-06-11)
+
+
+### Features
+
+* **Accesibility:** Update color tokens for accessibility ([c305146](https://github.com/Telefonica/mistica-ios/commit/c3051468b978a276d6c72e73c17a9b755f67e1f8))
+
 ## [30.1.1](https://github.com/Telefonica/mistica-ios/compare/v30.1.0...v30.1.1) (2024-06-06)
 
 

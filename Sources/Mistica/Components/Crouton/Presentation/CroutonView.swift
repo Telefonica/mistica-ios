@@ -186,7 +186,7 @@ extension CroutonView {
             },
             completion: { _ in
 //                AccessibilityHelper.post(self.text)
-                UIAccessibility.post(notification: .screenChanged, argument: self)
+                UIAccessibility.post(notification: .layoutChanged, argument: self)
 
                 container.clipsToBounds = previousClipsToBounds
 

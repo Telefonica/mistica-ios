@@ -185,6 +185,8 @@ extension CroutonView {
                 self.transform = .identity
             },
             completion: { _ in
+                AccessibilityHelper.post(self.text)
+
                 container.clipsToBounds = previousClipsToBounds
 
                 self.addCountdownToDismiss()

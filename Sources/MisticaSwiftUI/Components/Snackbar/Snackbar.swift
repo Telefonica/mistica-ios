@@ -98,6 +98,8 @@ public struct Snackbar: View {
             }
         }
         .onAppear(perform: {
+            AccessibilityHelper.post(config.title)
+
             guard let timeInterval = config.dismissInterval.timeInterval else {
                 return
             }

@@ -13,7 +13,7 @@ public struct AccessibilityHelper {
         let attributedMessage: NSAttributedString = NSAttributedString(
             string: announcement,
             attributes: [
-                .accessibilitySpeechQueueAnnouncement: false
+                .accessibilitySpeechQueueAnnouncement: true
             ]
         )
 

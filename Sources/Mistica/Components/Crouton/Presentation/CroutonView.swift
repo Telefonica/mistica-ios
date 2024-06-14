@@ -187,7 +187,7 @@ extension CroutonView {
             completion: { _ in
                 if #available(iOS 17.0, *) {
                     var highPriorityAnnouncement = AttributedString(self.text)
-                    highPriorityAnnouncement.accessibilitySpeechAnnouncementPriority = .high
+                    highPriorityAnnouncement.accessibilitySpeechAnnouncementPriority = .low
                     AccessibilityNotification.Announcement(highPriorityAnnouncement).post()
                 }
 

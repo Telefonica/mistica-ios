@@ -185,11 +185,7 @@ extension CroutonView {
                 self.transform = .identity
             },
             completion: { _ in
-                if #available(iOS 17.0, *) {
-                    var highPriorityAnnouncement = AttributedString(self.text)
-                    highPriorityAnnouncement.accessibilitySpeechAnnouncementPriority = .low
-                    AccessibilityNotification.Announcement(highPriorityAnnouncement).post()
-                }
+                AccessibilityHelper.post(self.text)
 
                 container.clipsToBounds = previousClipsToBounds
 

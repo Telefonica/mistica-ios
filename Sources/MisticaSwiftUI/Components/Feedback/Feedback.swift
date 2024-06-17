@@ -426,7 +426,6 @@ public extension Feedback {
     }
 }
 
-
 // MARK: Modifiers
 
 public extension Feedback {

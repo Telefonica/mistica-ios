@@ -1,3 +1,10 @@
+# [30.3.0](https://github.com/Telefonica/mistica-ios/compare/v30.2.0...v30.3.0) (2024-06-18)
+
+
+### Features
+
+* **Feedback:** LATCH-1676 Allowing 3 buttons at the same time: primary, secondary and link ([7a260f5](https://github.com/Telefonica/mistica-ios/commit/7a260f57d8e8f8e329f504f47155284e4d829dd4))
+
 # [30.2.0](https://github.com/Telefonica/mistica-ios/compare/v30.1.1...v30.2.0) (2024-06-11)
 
 

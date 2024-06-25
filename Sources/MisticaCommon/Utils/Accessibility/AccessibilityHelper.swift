@@ -14,7 +14,7 @@ public enum AccessibilityHelper {
 
         if #available(iOS 17.0, *) {
             var highPriorityAnnouncement = AttributedString(announcement)
-            highPriorityAnnouncement.accessibilitySpeechAnnouncementPriority = .low
+            highPriorityAnnouncement.accessibilitySpeechAnnouncementPriority = .high
             AccessibilityNotification.Announcement(highPriorityAnnouncement).post()
         } else {
             let attributedMessage = NSAttributedString(

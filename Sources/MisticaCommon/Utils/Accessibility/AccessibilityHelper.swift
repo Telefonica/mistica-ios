@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct AccessibilityHelper {
+public enum AccessibilityHelper {
     public static func post(_ announcement: String) {
         guard UIAccessibility.isVoiceOverRunning else { return }
 
@@ -17,7 +17,7 @@ public struct AccessibilityHelper {
             highPriorityAnnouncement.accessibilitySpeechAnnouncementPriority = .high
             AccessibilityNotification.Announcement(highPriorityAnnouncement).post()
         } else {
-            let attributedMessage: NSAttributedString = NSAttributedString(
+            let attributedMessage = NSAttributedString(
                 string: announcement,
                 attributes: [
                     .accessibilitySpeechQueueAnnouncement: true

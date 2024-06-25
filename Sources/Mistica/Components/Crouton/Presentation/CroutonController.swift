@@ -73,11 +73,14 @@ public extension CroutonController {
         }
 
         let overwrittenAction = config.dismissInterval.action.map { action -> ActionConfig in
-            (action.title,
-             action.accessibilityTitleLabel, {
-                dismissHandler(.button)
-                action.handler()
-            })
+            (
+                action.title,
+                action.accessibilityTitleLabel,
+                {
+                    dismissHandler(.button)
+                    action.handler()
+                }
+            )
         }
 
         let token = Token()

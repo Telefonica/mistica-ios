@@ -128,7 +128,7 @@ private extension Snackbar {
                     action.handler()
                     executeDismissHandlerBlock(with: .button)
                 }
-                .accessibilityLabel(buttonAccessibilityLabel)
+                .accessibilityLabel(action.accessibilityTitleLabel ?? buttonAccessibilityLabel)
                 .accessibilityIdentifier(buttonAccessibilityIdentifier)
                 .buttonStyle(misticaButtonStyle)
             }
@@ -139,7 +139,7 @@ private extension Snackbar {
                     action.handler()
                     executeDismissHandlerBlock(with: .button)
                 }
-                .accessibilityLabel(buttonAccessibilityLabel)
+                .accessibilityLabel(action.accessibilityTitleLabel ?? buttonAccessibilityLabel)
                 .accessibilityIdentifier(buttonAccessibilityIdentifier)
                 .buttonStyle(misticaButtonStyle)
             }

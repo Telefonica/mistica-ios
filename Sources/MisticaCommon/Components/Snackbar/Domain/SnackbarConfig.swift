@@ -10,11 +10,13 @@ import Foundation
 
 public struct SnackbarAction {
     public let title: String
+    public let accessibilityTitleLabel: String?
     public let handler: () -> Void
 
-    public init(title: String, handler: @escaping () -> Void) {
+    public init(title: String, accessibilityTitleLabel: String? = nil, handler: @escaping () -> Void) {
         self.title = title
         self.handler = handler
+        self.accessibilityTitleLabel = accessibilityTitleLabel
     }
 }
 

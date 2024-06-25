@@ -52,6 +52,7 @@ class CroutonView: UIView {
         button.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
         button.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         button.setContentHuggingPriority(.required, for: .horizontal)
+        button.accessibilityLabel = action.accessibilityLabel
         return button
     }()
 
@@ -105,11 +106,11 @@ class CroutonView: UIView {
     private let text: String
     private let config: CroutonConfig
     private let dismissHandler: DismissHandlerBlock?
-    private let action: (text: String, handler: DidTapActionBlock)?
+    private let action: (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)?
     private let forceDismiss: Bool
 
     init(text: String,
-         action: (text: String, handler: DidTapActionBlock)? = nil,
+         action: (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)? = nil,
          config: CroutonConfig,
          dismissHandler: DismissHandlerBlock? = nil,
          forceDismiss: Bool) {

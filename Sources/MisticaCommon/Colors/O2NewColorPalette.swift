@@ -32,6 +32,8 @@ struct O2NewColors: MisticaColors {
 
     let backgroundContainer = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
 
+    let backgroundContainerError = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey
+
     let backgroundContainerHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.03) | O2NewColors.palette.white.withAlphaComponent(0.03)
 
     let backgroundContainerPressed = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.05) | O2NewColors.palette.white.withAlphaComponent(0.05)
@@ -136,13 +138,17 @@ struct O2NewColors: MisticaColors {
 
     let textLinkSnackbar = O2NewColors.palette.beyondBlue30
 
+    let textActivated = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+
+    let textBrand = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+
     let control = O2NewColors.palette.grey45
 
-    let controlActivated = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+    let controlActivated = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
 
     let controlInverse = O2NewColors.palette.white | O2NewColors.palette.grey45
 
-    let controlActivatedInverse = O2NewColors.palette.white | O2NewColors.palette.beyondBlue30
+    let controlActivatedInverse = O2NewColors.palette.white | O2NewColors.palette.darkModeBeyondBlue
 
     let controlError = O2NewColors.palette.o2Red60 | O2NewColors.palette.o2Red45
 
@@ -200,9 +206,13 @@ struct O2NewColors: MisticaColors {
 
     let error = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
 
+    let textError = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
+
+    let textErrorInverse = O2NewColors.palette.white | O2NewColors.palette.o2Red45
+
     let promo = O2NewColors.palette.o2Pink
 
-    let highlight = O2NewColors.palette.o2Pink
+    let highlight = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink
 
     let successLow = O2NewColors.palette.o2Green10 | O2NewColors.palette.darkModeGrey6
 

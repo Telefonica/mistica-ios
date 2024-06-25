@@ -29,6 +29,11 @@ public extension UIColor {
         MisticaConfig.currentColors.backgroundContainer
     }
 
+    @objc(backgroundContainerErrorColor)
+    static var backgroundContainerError: UIColor {
+        MisticaConfig.currentColors.backgroundContainerError
+    }
+
     @objc(backgroundContainerHoverColor)
     static var backgroundContainerHover: UIColor {
         MisticaConfig.currentColors.backgroundContainerHover
@@ -294,6 +299,16 @@ public extension UIColor {
         MisticaConfig.currentColors.textLinkSnackbar
     }
 
+    @objc(textActivatedColor)
+    static var textActivated: UIColor {
+        MisticaConfig.currentColors.textActivated
+    }
+
+    @objc(textBrandColor)
+    static var textBrand: UIColor {
+        MisticaConfig.currentColors.textBrand
+    }
+
     @objc(controlColor)
     static var control: UIColor {
         MisticaConfig.currentColors.control
@@ -452,6 +467,16 @@ public extension UIColor {
     @objc(errorColor)
     static var error: UIColor {
         MisticaConfig.currentColors.error
+    }
+
+    @objc(textErrorColor)
+    static var textError: UIColor {
+        MisticaConfig.currentColors.textError
+    }
+
+    @objc(textErrorInverseColor)
+    static var textErrorInverse: UIColor {
+        MisticaConfig.currentColors.textErrorInverse
     }
 
     @objc(promoColor)

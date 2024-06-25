@@ -17,6 +17,8 @@ struct TelefonicaColors: MisticaColors {
 
     let backgroundContainer = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
 
+    let backgroundContainerError = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey
+
     let backgroundContainerHover = TelefonicaColors.palette.telefonicaBlue.withAlphaComponent(0.03) | TelefonicaColors.palette.white.withAlphaComponent(0.03)
 
     let backgroundContainerPressed = TelefonicaColors.palette.telefonicaBlue.withAlphaComponent(0.05) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
@@ -71,7 +73,7 @@ struct TelefonicaColors: MisticaColors {
 
     let buttonLinkDangerBackgroundSelected = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkDangerBackgroundInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.white.withAlphaComponent(0.01)
+    let buttonLinkDangerBackgroundInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.white.withAlphaComponent(0)
 
     let buttonLinkDangerBackgroundInverseSelected = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
 
@@ -127,11 +129,15 @@ struct TelefonicaColors: MisticaColors {
 
     let textLinkSnackbar = TelefonicaColors.palette.telefonicaBlue30
 
+    let textActivated = TelefonicaColors.palette.telefonicaBlue
+
+    let textBrand = TelefonicaColors.palette.telefonicaBlue
+
     let control = TelefonicaColors.palette.grey3 | TelefonicaColors.palette.darkModeGrey6
 
     let controlActivated = TelefonicaColors.palette.telefonicaBlue
 
-    let controlInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey6
+    let controlInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey6
 
     let controlActivatedInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.telefonicaBlue
 
@@ -186,6 +192,10 @@ struct TelefonicaColors: MisticaColors {
     let textSecondaryInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.grey4
 
     let error = TelefonicaColors.palette.coral
+
+    let textError = TelefonicaColors.palette.coral
+
+    let textErrorInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.coral
 
     let success = TelefonicaColors.palette.turquoise
 

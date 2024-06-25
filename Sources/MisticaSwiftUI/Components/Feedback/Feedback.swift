@@ -22,13 +22,18 @@ private enum Constants {
     }
 }
 
-public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: View>: View {
+public struct Feedback<
+    ContentView: View,
+    PrimaryButton: View,
+    SecondaryButton: View,
+    LinkButton: View
+>: View {
     private let style: FeedbackStyle
     private let title: String
     private let message: String
     private let primaryButton: PrimaryButton
     private let secondaryButton: SecondaryButton
-    private let secondaryButtonStyle: MisticaButtonStyle
+    private let linkButton: LinkButton
     private let contentView: ContentView
 
     private var titleAccessibilityLabel: String?
@@ -46,7 +51,7 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
         contentView: ContentView,
         primaryButton: PrimaryButton,
         secondaryButton: SecondaryButton,
-        secondaryButtonStyle: MisticaButtonStyle
+        linkButton: LinkButton
     ) {
         self.style = style
         self.title = title
@@ -54,7 +59,7 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
         self.contentView = contentView
         self.primaryButton = primaryButton
         self.secondaryButton = secondaryButton
-        self.secondaryButtonStyle = secondaryButtonStyle
+        self.linkButton = linkButton
     }
 
     public var body: some View {
@@ -103,7 +108,8 @@ public struct Feedback<ContentView: View, PrimaryButton: View, SecondaryButton: 
 
                 VStack {
                     primaryButton.buttonStyle(style.primaryButtonStyle)
-                    secondaryButton.buttonStyle(secondaryButtonStyle)
+                    secondaryButton.buttonStyle(style.secondaryButtonStyle)
+                    linkButton.buttonStyle(style.linkButtonStyle)
                 }
                 .padding(Constants.spacing)
                 .background(misticaColorView(footerBackgroundColor))
@@ -224,7 +230,8 @@ public extension Feedback {
         message: String,
         @ViewBuilder contentView: () -> ContentView,
         @ViewBuilder primaryButton: () -> PrimaryButton,
-        @ViewBuilder secondaryButton: () -> SecondaryButton
+        @ViewBuilder secondaryButton: () -> SecondaryButton,
+        @ViewBuilder linkButton: () -> LinkButton
     ) {
         self.init(
             style: style,
@@ -233,7 +240,7 @@ public extension Feedback {
             contentView: contentView(),
             primaryButton: primaryButton(),
             secondaryButton: secondaryButton(),
-            secondaryButtonStyle: style.secondaryButtonStyle
+            linkButton: linkButton()
         )
     }
 
@@ -243,52 +250,16 @@ public extension Feedback {
         message: String,
         @ViewBuilder contentView: () -> ContentView,
         @ViewBuilder primaryButton: () -> PrimaryButton,
-        @ViewBuilder linkButton: () -> SecondaryButton
-    ) {
+        @ViewBuilder secondaryButton: () -> SecondaryButton
+    ) where LinkButton == EmptyView {
         self.init(
             style: style,
             title: title,
             message: message,
             contentView: contentView(),
             primaryButton: primaryButton(),
-            secondaryButton: linkButton(),
-            secondaryButtonStyle: style.linkButtonStyle
-        )
-    }
-
-    init(
-        style: FeedbackStyle,
-        title: String,
-        message: String,
-        @ViewBuilder primaryButton: () -> PrimaryButton,
-        @ViewBuilder secondaryButton: () -> SecondaryButton
-    ) where ContentView == EmptyView {
-        self.init(
-            style: style,
-            title: title,
-            message: message,
-            contentView: EmptyView(),
-            primaryButton: primaryButton(),
             secondaryButton: secondaryButton(),
-            secondaryButtonStyle: style.secondaryButtonStyle
-        )
-    }
-
-    init(
-        style: FeedbackStyle,
-        title: String,
-        message: String,
-        @ViewBuilder primaryButton: () -> PrimaryButton,
-        @ViewBuilder linkButton: () -> SecondaryButton
-    ) where ContentView == EmptyView {
-        self.init(
-            style: style,
-            title: title,
-            message: message,
-            contentView: EmptyView(),
-            primaryButton: primaryButton(),
-            secondaryButton: linkButton(),
-            secondaryButtonStyle: style.linkButtonStyle
+            linkButton: EmptyView()
         )
     }
 
@@ -297,7 +268,8 @@ public extension Feedback {
         title: String,
         message: String,
         @ViewBuilder contentView: () -> ContentView,
-        @ViewBuilder primaryButton: () -> PrimaryButton
+        @ViewBuilder primaryButton: () -> PrimaryButton,
+        @ViewBuilder linkButton: () -> LinkButton
     ) where SecondaryButton == EmptyView {
         self.init(
             style: style,
@@ -306,7 +278,99 @@ public extension Feedback {
             contentView: contentView(),
             primaryButton: primaryButton(),
             secondaryButton: EmptyView(),
-            secondaryButtonStyle: style.secondaryButtonStyle
+            linkButton: linkButton()
+        )
+    }
+
+    init(
+        style: FeedbackStyle,
+        title: String,
+        message: String,
+        @ViewBuilder contentView: () -> ContentView,
+        @ViewBuilder secondaryButton: () -> SecondaryButton,
+        @ViewBuilder linkButton: () -> LinkButton
+    ) where PrimaryButton == EmptyView {
+        self.init(
+            style: style,
+            title: title,
+            message: message,
+            contentView: contentView(),
+            primaryButton: EmptyView(),
+            secondaryButton: secondaryButton(),
+            linkButton: linkButton()
+        )
+    }
+
+    init(
+        style: FeedbackStyle,
+        title: String,
+        message: String,
+        @ViewBuilder primaryButton: () -> PrimaryButton,
+        @ViewBuilder secondaryButton: () -> SecondaryButton,
+        @ViewBuilder linkButton: () -> LinkButton
+    ) where ContentView == EmptyView {
+        self.init(
+            style: style,
+            title: title,
+            message: message,
+            contentView: EmptyView(),
+            primaryButton: primaryButton(),
+            secondaryButton: secondaryButton(),
+            linkButton: linkButton()
+        )
+    }
+
+    init(
+        style: FeedbackStyle,
+        title: String,
+        message: String,
+        @ViewBuilder primaryButton: () -> PrimaryButton,
+        @ViewBuilder secondaryButton: () -> SecondaryButton
+    ) where ContentView == EmptyView, LinkButton == EmptyView {
+        self.init(
+            style: style,
+            title: title,
+            message: message,
+            contentView: EmptyView(),
+            primaryButton: primaryButton(),
+            secondaryButton: secondaryButton(),
+            linkButton: EmptyView()
+        )
+    }
+
+    init(
+        style: FeedbackStyle,
+        title: String,
+        message: String,
+        @ViewBuilder primaryButton: () -> PrimaryButton,
+        @ViewBuilder linkButton: () -> LinkButton
+    ) where ContentView == EmptyView, SecondaryButton == EmptyView {
+        self.init(
+            style: style,
+            title: title,
+            message: message,
+            contentView: EmptyView(),
+            primaryButton: primaryButton(),
+            secondaryButton: EmptyView(),
+            linkButton: linkButton()
+        )
+    }
+
+    init(
+        style: FeedbackStyle,
+        title: String,
+        message: String,
+        @ViewBuilder secondaryButton: () -> SecondaryButton,
+        @ViewBuilder linkButton: () -> LinkButton
+    ) where ContentView == EmptyView, PrimaryButton == EmptyView {
+        self.init(
+            style: style,
+            title: title,
+            message: message,
+            contentView: EmptyView(),
+            primaryButton: EmptyView(),
+            secondaryButton: secondaryButton(),
+            linkButton: linkButton()
         )
     }
 
@@ -315,7 +379,7 @@ public extension Feedback {
         title: String,
         message: String,
         @ViewBuilder primaryButton: () -> PrimaryButton
-    ) where SecondaryButton == EmptyView, ContentView == EmptyView {
+    ) where ContentView == EmptyView, SecondaryButton == EmptyView, LinkButton == EmptyView {
         self.init(
             style: style,
             title: title,
@@ -323,7 +387,41 @@ public extension Feedback {
             contentView: EmptyView(),
             primaryButton: primaryButton(),
             secondaryButton: EmptyView(),
-            secondaryButtonStyle: style.secondaryButtonStyle
+            linkButton: EmptyView()
+        )
+    }
+
+    init(
+        style: FeedbackStyle,
+        title: String,
+        message: String,
+        @ViewBuilder secondaryButton: () -> SecondaryButton
+    ) where ContentView == EmptyView, PrimaryButton == EmptyView, LinkButton == EmptyView {
+        self.init(
+            style: style,
+            title: title,
+            message: message,
+            contentView: EmptyView(),
+            primaryButton: EmptyView(),
+            secondaryButton: secondaryButton(),
+            linkButton: EmptyView()
+        )
+    }
+
+    init(
+        style: FeedbackStyle,
+        title: String,
+        message: String,
+        @ViewBuilder linkButton: () -> LinkButton
+    ) where ContentView == EmptyView, PrimaryButton == EmptyView, SecondaryButton == EmptyView {
+        self.init(
+            style: style,
+            title: title,
+            message: message,
+            contentView: EmptyView(),
+            primaryButton: EmptyView(),
+            secondaryButton: EmptyView(),
+            linkButton: linkButton()
         )
     }
 }
@@ -447,6 +545,8 @@ private extension View {
                 Button("Primary") {}
             } secondaryButton: {
                 Button("Secondary") {}
+            } linkButton: {
+                Button("Link") {}
             }
             .titleAccessibilityLabel("Title Label")
             .titleAccessibilityIdentifier("Title identifier")

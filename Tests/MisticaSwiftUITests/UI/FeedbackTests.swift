@@ -84,12 +84,14 @@ final class FeedbackTests: XCTestCase {
         let feedback = Feedback(
             style: .informative,
             title: Constants.singleLineTitle,
-            message: Constants.singleLineMessage
-        ) {
-            Button("Primary", action: {})
-        } linkButton: {
-            Button("Link", action: {})
-        }
+            message: Constants.singleLineMessage,
+            primaryButton: {
+                Button("Primary", action: {})
+            },
+            linkButton: {
+                Button("Link", action: {})
+            }
+        )
 
         assertSnapshot(
             matching: UIHostingController(rootView: feedback),
@@ -101,12 +103,55 @@ final class FeedbackTests: XCTestCase {
         let feedback = Feedback(
             style: .informative,
             title: Constants.singleLineTitle,
-            message: Constants.singleLineMessage
-        ) {
-            Button("Primary", action: {})
-        } secondaryButton: {
-            Button("Secondary", action: {})
-        }
+            message: Constants.singleLineMessage,
+            primaryButton: {
+                Button("Primary", action: {})
+            },
+            secondaryButton: {
+                Button("Secondary", action: {})
+            }
+        )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: feedback),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testPrimarySecondaryAndLinkButtons() {
+        let feedback = Feedback(
+            style: .informative,
+            title: Constants.singleLineTitle,
+            message: Constants.singleLineMessage,
+            primaryButton: {
+                Button("Primary", action: {})
+            },
+            secondaryButton: {
+                Button("Secondary", action: {})
+            },
+            linkButton: {
+                Button("Link", action: {})
+            }
+        )
+
+        assertSnapshot(
+            matching: UIHostingController(rootView: feedback),
+            as: .image(on: .iPhone8)
+        )
+    }
+
+    func testSecondaryAndLinkButtons() {
+        let feedback = Feedback(
+            style: .informative,
+            title: Constants.singleLineTitle,
+            message: Constants.singleLineMessage,
+            secondaryButton: {
+                Button("Secondary", action: {})
+            },
+            linkButton: {
+                Button("Link", action: {})
+            }
+        )
 
         assertSnapshot(
             matching: UIHostingController(rootView: feedback),
@@ -162,10 +207,11 @@ private extension FeedbackTests {
         Feedback(
             style: style,
             title: title,
-            message: message
-        ) {
-            Button("Primary", action: {})
-        }
+            message: message,
+            primaryButton: {
+                Button("Primary", action: {})
+            }
+        )
     }
 
     @ViewBuilder

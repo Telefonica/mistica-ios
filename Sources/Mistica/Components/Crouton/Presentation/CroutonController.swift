@@ -10,7 +10,7 @@ import UIKit
 
 public class CroutonController: NSObject {
     public typealias Token = UUID
-    public typealias ActionConfig = (text: String, handler: DidTapActionBlock)
+    public typealias ActionConfig = (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)
     fileprivate typealias OngoingCrouton = (token: Token, croutonView: CroutonView, rootViewController: () -> UIViewController?)
 
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
@@ -73,10 +73,14 @@ public extension CroutonController {
         }
 
         let overwrittenAction = config.dismissInterval.action.map { action -> ActionConfig in
-            (action.title, {
-                dismissHandler(.button)
-                action.handler()
-            })
+            (
+                action.title,
+                action.accessibilityTitleLabel,
+                {
+                    dismissHandler(.button)
+                    action.handler()
+                }
+            )
         }
 
         let token = Token()

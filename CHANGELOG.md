@@ -1,3 +1,11 @@
+# [30.4.0](https://github.com/Telefonica/mistica-ios/compare/v30.3.0...v30.4.0) (2024-06-27)
+
+
+### Features
+
+* **Accesibility:** Accesibility of Snackbars and croutons ([#375](https://github.com/Telefonica/mistica-ios/issues/375)) ([21bf939](https://github.com/Telefonica/mistica-ios/commit/21bf939a74f42bd57230359179a85fda86a1cc34))
+* **Feedback:** Feedback icons for O2 new ([#374](https://github.com/Telefonica/mistica-ios/issues/374)) ([76ce0ce](https://github.com/Telefonica/mistica-ios/commit/76ce0cec281d8e39870e8db64ea9a611af28113f))
+
 # [30.3.0](https://github.com/Telefonica/mistica-ios/compare/v30.2.0...v30.3.0) (2024-06-18)
 
 

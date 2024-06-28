@@ -50,6 +50,8 @@ struct MisticaCatalogApp: App {
             }
             .onChange(of: selectedBrandIndex, perform: { selectedBrandIndex in
                 MisticaConfig.brandStyle = brands[selectedBrandIndex]
+                 setUpFont(brandStyle: brands[selectedBrandIndex])
+                 setUpUIFont(brandStyle: brands[selectedBrandIndex])
                 withAnimation { reloadId = UUID() }
             })
             .id(reloadId)
@@ -100,6 +102,68 @@ struct MisticaCatalogApp: App {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = .misticaCatalogTint | .white
+    }
+    
+    func setUpFont(brandStyle: BrandStyle) {
+        switch brandStyle {
+        case .vivoNew:
+            FontStyle.fontNameForWeight = { weight in
+                switch weight {
+                case .light, .ultraLight, .thin:
+                    return "VivoType-Light"
+                case .medium, .bold, .semibold, .black, .heavy:
+                    return "VivoType-Bold"
+                default:
+                    return "VivoType-Regular"
+                }
+            }
+        case .o2, .movistar:
+            FontStyle.fontNameForWeight = { weight in
+                switch weight {
+                case .light, .ultraLight, .thin:
+                    return "OnAir-Light"
+                case .medium:
+                    return "OnAir"
+                case .bold, .semibold, .black, .heavy:
+                    return "OnAir-Bold"
+                default:
+                    return "OnAir-Regular"
+                }
+            }
+        default:
+            FontStyle.fontNameForWeight = nil
+        }
+    }
+    
+    func setUpUIFont(brandStyle: BrandStyle) {
+        switch brandStyle {
+        case .vivoNew:
+            FontStyle.uiFontNameForWeight = { weight in
+                switch weight {
+                case .light, .ultraLight, .thin:
+                    return "VivoType-Light"
+                case .medium, .bold, .semibold, .black, .heavy:
+                    return "VivoType-Bold"
+                default:
+                    return "VivoType-Regular"
+                }
+            }
+        case .o2, .movistar:
+            FontStyle.uiFontNameForWeight = { weight in
+                switch weight {
+                case .light, .ultraLight, .thin:
+                    return "OnAir-Light"
+                case .medium:
+                    return "OnAir"
+                case .bold, .semibold, .black, .heavy:
+                    return "OnAir-Bold"
+                default:
+                    return "OnAir-Regular"
+                }
+            }
+        default:
+            FontStyle.uiFontNameForWeight = nil
+        }
     }
 }
 

@@ -117,7 +117,7 @@ struct MisticaCatalogApp: App {
                     return "VivoType-Regular"
                 }
             }
-        case .o2, .movistar:
+        case .o2, .o2New, .movistar:
             FontStyle.fontNameForWeight = { weight in
                 switch weight {
                 case .light, .ultraLight, .thin:
@@ -130,7 +130,7 @@ struct MisticaCatalogApp: App {
                     return "OnAir-Regular"
                 }
             }
-        default:
+        case .vivo, .blau, .telefonica, .tu, .custom(_, _, _, _, _):
             FontStyle.fontNameForWeight = nil
         }
     }
@@ -148,7 +148,7 @@ struct MisticaCatalogApp: App {
                     return "VivoType-Regular"
                 }
             }
-        case .o2, .movistar:
+        case .o2, .o2New, .movistar:
             FontStyle.uiFontNameForWeight = { weight in
                 switch weight {
                 case .light, .ultraLight, .thin:
@@ -161,7 +161,7 @@ struct MisticaCatalogApp: App {
                     return "OnAir-Regular"
                 }
             }
-        default:
+        case .vivo, .blau, .telefonica, .tu, .custom(_, _, _, _, _):
             FontStyle.uiFontNameForWeight = nil
         }
     }

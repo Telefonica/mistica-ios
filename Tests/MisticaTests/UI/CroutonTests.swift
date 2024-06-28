@@ -87,7 +87,7 @@ private extension CroutonTests {
     func makeCrouton(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
         let viewController = CroutonTestViewController(
             text: text,
-            action: actionTitle.map { ($0, {}) },
+            action: actionTitle.map { ($0, $0, {}) },
             style: style
         )
         return viewController

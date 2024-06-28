@@ -281,7 +281,7 @@ public extension Callout {
 // MARK: Modifiers
 
 public extension Callout {
-    func assetAccessibilityLabel(_ assetAccessibilityLaber: String?) -> Callout {
+    func assetAccessibilityLabel(_ assetAccessibilityLabel: String?) -> Callout {
         var callout = self
         callout.assetAccessibilityLabel = assetAccessibilityLabel
         return callout
@@ -293,7 +293,7 @@ public extension Callout {
         return callout
     }
 
-    func dismissButtonAccessibilityLabel(_ dismissButtonAccessibilityLaber: String?) -> Callout {
+    func dismissButtonAccessibilityLabel(_ dismissButtonAccessibilityLabel: String?) -> Callout {
         var callout = self
         callout.dismissButtonAccessibilityLabel = dismissButtonAccessibilityLabel
         return callout
@@ -305,7 +305,7 @@ public extension Callout {
         return callout
     }
 
-    func titleAccessibilityLabel(_ titleAccessibilityLaber: String?) -> Callout {
+    func titleAccessibilityLabel(_ titleAccessibilityLabel: String?) -> Callout {
         var callout = self
         callout.titleAccessibilityLabel = titleAccessibilityLabel
         return callout
@@ -317,7 +317,7 @@ public extension Callout {
         return callout
     }
 
-    func descriptionAccessibilityLabel(_ descriptionAccessibilityLaber: String?) -> Callout {
+    func descriptionAccessibilityLabel(_ descriptionAccessibilityLabel: String?) -> Callout {
         var callout = self
         callout.descriptionAccessibilityLabel = descriptionAccessibilityLabel
         return callout

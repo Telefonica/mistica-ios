@@ -147,7 +147,7 @@ private extension UICatalogCroutonViewController {
 
     private var croutonAction: CroutonController.ActionConfig? {
         guard let title = actionTitleCell.textField.text, !title.isEmpty else { return nil }
-        return CroutonController.ActionConfig(text: title, handler: { print("Crouton Action Tapped") })
+        return CroutonController.ActionConfig(text: title, accessibilityLabel: "Crouton action", handler: { print("Crouton Action Tapped") })
     }
 
     var croutonDismissInterval: SnackbarDismissInterval {

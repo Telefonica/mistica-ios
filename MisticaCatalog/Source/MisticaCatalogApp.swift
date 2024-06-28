@@ -130,7 +130,7 @@ struct MisticaCatalogApp: App {
                     return "OnAir-Regular"
                 }
             }
-        case .vivo, .blau, .telefonica, .tu, .custom(_, _, _, _, _):
+        case .vivo, .blau, .telefonica, .tu, .custom:
             FontStyle.fontNameForWeight = nil
         }
     }
@@ -161,7 +161,7 @@ struct MisticaCatalogApp: App {
                     return "OnAir-Regular"
                 }
             }
-        case .vivo, .blau, .telefonica, .tu, .custom(_, _, _, _, _):
+        case .vivo, .blau, .telefonica, .tu, .custom:
             FontStyle.uiFontNameForWeight = nil
         }
     }

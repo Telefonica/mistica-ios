@@ -50,8 +50,8 @@ struct MisticaCatalogApp: App {
             }
             .onChange(of: selectedBrandIndex, perform: { selectedBrandIndex in
                 MisticaConfig.brandStyle = brands[selectedBrandIndex]
-                 setUpFont(brandStyle: brands[selectedBrandIndex])
-                 setUpUIFont(brandStyle: brands[selectedBrandIndex])
+                setUpFont(brandStyle: brands[selectedBrandIndex])
+                setUpUIFont(brandStyle: brands[selectedBrandIndex])
                 withAnimation { reloadId = UUID() }
             })
             .id(reloadId)
@@ -103,7 +103,7 @@ struct MisticaCatalogApp: App {
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = .misticaCatalogTint | .white
     }
-    
+
     func setUpFont(brandStyle: BrandStyle) {
         switch brandStyle {
         case .vivoNew:
@@ -134,7 +134,7 @@ struct MisticaCatalogApp: App {
             FontStyle.fontNameForWeight = nil
         }
     }
-    
+
     func setUpUIFont(brandStyle: BrandStyle) {
         switch brandStyle {
         case .vivoNew:

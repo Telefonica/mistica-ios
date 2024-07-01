@@ -26,7 +26,9 @@ FontStyle.fontNameForWeight = { weight in
         return "Telefonica-Regular"
     }
 }
+```
 
+```swift
 // For UIKit
 FontStyle.UIfontNameForWeight = { weight in
     switch weight {

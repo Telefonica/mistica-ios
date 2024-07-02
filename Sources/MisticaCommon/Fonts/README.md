@@ -2,8 +2,8 @@
 
 By default mistica uses the system font, but it can be overriden with the Telefónica ones:
 
-- [OnAir](https://brandfactory.telefonica.com/document/2372#/nuestra-identidad/tipografia)
-- [Telefonica](https://brandfactory.telefonica.com/document/483#/nuestra-identidad-new/tipografia)
+- [OnAir](https://brandfactory.telefonica.com/document/2372#/nuestra-identidad-visual-c1183/tipografia-2)
+- [Telefonica](https://brandfactory.telefonica.com/document/483#/nuestra-identidad-visual/tipografia)
 
 ## How to override the default font
 

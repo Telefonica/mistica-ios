@@ -120,7 +120,7 @@ make skin ref=production
 
 ### Running Tests
 
-Open `Mistica.xcodeproj` after following the [How to work with mistica-ios](#how-to-work-with-mistica-ios) guide and click any Test button.
+To run tests, ensure you have the appropriate simulator defined in the `MakeFile`. Open `Mistica.xcodeproj` after following the [How to work with mistica-ios](#how-to-work-with-mistica-ios) guide and click any Test button.
 
 ### Creating a Test
 

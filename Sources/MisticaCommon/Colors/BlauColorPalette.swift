@@ -11,7 +11,7 @@ import UIKit
 struct BlauColors: MisticaColors {
     static let palette = BlauColorPalette()
 
-    let backgroundBrand = MisticaColor.solid(BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack)
+    let backgroundBrand = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
 
     let backgroundBrandSecondary = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
 

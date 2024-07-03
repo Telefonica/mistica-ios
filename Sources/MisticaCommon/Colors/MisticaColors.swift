@@ -11,7 +11,7 @@ import UIKit
 public protocol MisticaColors {
     var background: UIColor { get }
     var backgroundAlternative: UIColor { get }
-    var backgroundBrand: MisticaColor { get }
+    var backgroundBrand: UIColor { get }
     var backgroundBrandSecondary: UIColor { get }
     var backgroundContainer: UIColor { get }
     var backgroundContainerError: UIColor { get }

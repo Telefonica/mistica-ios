@@ -15,7 +15,7 @@ struct VivoNewColors: MisticaColors {
 
     let backgroundAlternative = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeBlack
 
-    let backgroundBrand = MisticaColor.solid(VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack)
+    let backgroundBrand = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
 
     let backgroundBrandSecondary = VivoNewColors.palette.vivoPurpleLight80 | VivoNewColors.palette.darkModeBlack
 
@@ -239,7 +239,7 @@ struct VivoNewColors: MisticaColors {
 
     let textNavigationSearchBarText = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let textAppBar = VivoNewColors.palette.grey4 | VivoNewColors.palette.grey5
+    let textAppBar = VivoNewColors.palette.grey5
 
     let textAppBarSelected = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
 

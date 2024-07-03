@@ -13,19 +13,6 @@ struct O2NewColors: MisticaColors {
 
     let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
 
-    let backgroundBrand = MisticaColor.gradient(MisticaGradient(
-        colors:
-        [
-            O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack,
-            O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack,
-            O2NewColors.palette.beyondBlue45 | O2NewColors.palette.darkModeBlack
-        ],
-        stops: [0, 0.64, 1],
-        angle: 180
-    ))
-
-    let backgroundContainerBrand = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeGrey
-
     let backgroundAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
 
     let backgroundBrandSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack

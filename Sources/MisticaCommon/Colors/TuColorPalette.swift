@@ -33,7 +33,7 @@ struct TuColors: MisticaColors {
 
     let backgroundContainerAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeGrey
 
-    let backgroundBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeBlack)
+    let backgroundBrand = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
     let backgroundBrandSecondary = TuColors.palette.blue | TuColors.palette.darkModeBlack
 

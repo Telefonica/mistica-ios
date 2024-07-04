@@ -9,9 +9,9 @@
 import UIKit
 
 public class CroutonController: NSObject {
+    public typealias RootViewControllerClosure = () -> UIViewController?
     public typealias Token = UUID
     public typealias ActionConfig = (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)
-    fileprivate typealias OngoingCrouton = (token: Token, croutonView: CroutonView, rootViewController: () -> UIViewController?)
 
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
@@ -60,7 +60,8 @@ public extension CroutonController {
         config: SnackbarConfig,
         style: CroutonStyle = .info,
         dismissHandler: DismissHandlerBlock? = nil,
-        rootViewController: @escaping @autoclosure () -> UIViewController?
+        exactViewController: UIViewController? = nil,
+        rootViewController: @escaping @autoclosure RootViewControllerClosure = nil
     ) -> Token {
         assertMainThread()
 
@@ -84,7 +85,7 @@ public extension CroutonController {
         }
 
         let token = Token()
-        let crouton = CroutonView(
+        let croutonView = CroutonView(
             text: config.title,
             action: overwrittenAction,
             config: styleConfig,
@@ -92,7 +93,13 @@ public extension CroutonController {
             forceDismiss: config.forceDismiss
         )
 
-        show(crouton, token: token, rootViewController: rootViewController)
+        let ongoingCrouton = OngoingCrouton(
+            token: token,
+            croutonView: croutonView,
+            exactViewController: exactViewController,
+            rootViewController: rootViewController
+        )
+        show(ongoingCrouton)
 
         return token
     }
@@ -125,9 +132,8 @@ public extension CroutonController {
 // MARK: Private methods
 
 private extension CroutonController {
-    func show(_ crouton: CroutonView, token: Token, rootViewController: @escaping () -> UIViewController?) {
-        enqueue(OngoingCrouton(token: token, croutonView: crouton, rootViewController: rootViewController))
-
+    func show(_ crouton: OngoingCrouton) {
+        enqueue(crouton)
         showEnqueuedCrouton()
     }
 
@@ -165,62 +171,12 @@ private extension CroutonController {
     func showEnqueuedCrouton() {
         guard showingToken == nil else { return }
         guard let ongoingCrouton = croutonViewList.first else { return }
-        guard let containerView = visibleContainerView(ongoingCrouton.rootViewController) else { return }
+        guard let containerView = ongoingCrouton.view() else { return }
 
         showingToken = ongoingCrouton.token
 
         ongoingCrouton.croutonView.show(in: containerView)
     }
 
-    func visibleContainerView(_ rootViewController: () -> UIViewController?) -> UIView? {
-        guard let viewController = visibleViewController(rootViewController) else { return nil }
-
-        if let viewController = viewController as? CustomCroutonContainer {
-            return viewController.customCroutonContainerView
-        } else {
-            return viewController.view
-        }
-    }
-
-    func visibleViewController(_ rootViewController: () -> UIViewController?) -> UIViewController? {
-        guard let rootViewController = rootViewController() else {
-            assertionFailure("Root view controller not found!")
-            return nil
-        }
-
-        let visibleVC = visibleViewController(from: rootViewController)
-
-        if let rootVC = visibleVC as? UINavigationController {
-            return visibleViewController(from: rootVC.topViewController!)
-        } else if let homeVC = visibleVC.parent?.tabBarController,
-                  let selectedNavigationController = homeVC.selectedViewController as? UINavigationController {
-            return visibleViewController(from: selectedNavigationController.topViewController!)
-        } else {
-            return visibleVC
-        }
-    }
-
-    func visibleViewController(from viewController: UIViewController) -> UIViewController {
-        if let presentedViewController = viewController.presentedViewController {
-            if presentedViewController is UIAlertController {
-                return viewController
-            } else {
-                return visibleViewController(from: presentedViewController)
-            }
-        } else if let viewController = viewController as? UINavigationController {
-            if let topViewController = viewController.topViewController {
-                return visibleViewController(from: topViewController)
-            } else {
-                return viewController
-            }
-        } else if let tabViewController = viewController as? UITabBarController {
-            if let selectedTab = tabViewController.selectedViewController {
-                return selectedTab
-            } else {
-                return viewController
-            }
-        }
-
-        return viewController
-    }
+    
 }

@@ -12,18 +12,18 @@ extension CroutonController {
         let token: Token
         let croutonView: CroutonView
         private weak var exactViewController: UIViewController?
-        private let rootViewController: RootViewControllerClosure?
+        private let rootViewController: RootViewController.Closure
 
         init(
             token: Token,
             croutonView: CroutonView,
             exactViewController: UIViewController? = nil,
-            rootViewController: RootViewControllerClosure? = nil
+            rootViewController: RootViewController.Closure? = nil
         ) {
             self.token = token
             self.croutonView = croutonView
             self.exactViewController = exactViewController
-            self.rootViewController = rootViewController
+            self.rootViewController = rootViewController ?? RootViewController.default
         }
 
         func view() -> UIView? {
@@ -39,7 +39,7 @@ extension CroutonController {
         private func viewController() -> UIViewController? {
             if let exactViewController {
                 return exactViewController
-            } else if let rootViewController = rootViewController?() {
+            } else if let rootViewController = rootViewController() {
                 return visibleViewController(from: rootViewController)
             } else {
                 return nil

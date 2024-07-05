@@ -88,9 +88,7 @@ private extension SegmentCell {
     func setUpAccessibility() {
         // This component don't grow with Dynamic Type, but presents a HUD instead, since it is intended to be always
         // presented below the navigation bar.
-        if #available(iOS 13, *) {
-            showsLargeContentViewer = true
-        }
+        showsLargeContentViewer = true
 
         // For Voice Over, consider the whole cell as the accessibility element, since the cell is much bigger then the
         // title label, and it is more difficult to find it. The accesibility label is overridden to just dynamically

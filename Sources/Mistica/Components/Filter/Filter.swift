@@ -248,12 +248,10 @@ private extension Filter {
         ])
 
         // Add the appropriate interaction to allow showing large content on HUD when the user long presses the
-        // component. This accesibility solution is only offered in iOS 13.
-        if #available(iOS 13, *) {
-            let largeContentInteraction = UILargeContentViewerInteraction(delegate: self)
-            collectionView.addInteraction(largeContentInteraction)
-        }
-
+        // component.
+        let largeContentInteraction = UILargeContentViewerInteraction(delegate: self)
+        collectionView.addInteraction(largeContentInteraction)
+        
         collectionView.dataSource = self
         collectionView.delegate = self
 

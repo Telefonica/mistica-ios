@@ -96,36 +96,21 @@ struct MisticaButton: View {
     @Environment(\.isEnabled) private var isEnabled
 
     public var body: some View {
-        if #available(iOS 14, *) {
-            ScaledMisticaButton(
-                height: height,
-                small: small,
-                minWidth: minWidth,
-                verticalPadding: verticalPadding,
-                horizontalPadding: horizontalPadding,
-                backgroundColor: backgroundColor,
-                foregroundColor: foregroundColor,
-                borderColor: borderColor,
-                leadingInset: leadingInset,
-                trailingInset: trailingInset
-            ) {
-                content
-            }
-            .allowsHitTesting(!loadingInfo.isLoading)
-        } else {
+        ScaledMisticaButton(
+            height: height,
+            small: small,
+            minWidth: minWidth,
+            verticalPadding: verticalPadding,
+            horizontalPadding: horizontalPadding,
+            backgroundColor: backgroundColor,
+            foregroundColor: foregroundColor,
+            borderColor: borderColor,
+            leadingInset: leadingInset,
+            trailingInset: trailingInset
+        ) {
             content
-                .frame(height: height)
-                .if(!small) { $0.expandHorizontally() }
-                .frame(minWidth: minWidth)
-                .padding(.vertical, verticalPadding)
-                .padding(.horizontal, Constants.horizontalPadding)
-                .background(backgroundColor)
-                .foregroundColor(foregroundColor)
-                .border(radiusStyle: .button, borderColor: borderColor)
-                .padding(EdgeInsets(top: 0, leading: leadingInset, bottom: 0, trailing: trailingInset))
-                .allowsHitTesting(!loadingInfo.isLoading)
-                .accessibilityElement()
         }
+        .allowsHitTesting(!loadingInfo.isLoading)
     }
 }
 
@@ -158,17 +143,8 @@ private extension MisticaButton {
 
     @ViewBuilder private var loadingView: some View {
         HStack(spacing: 5) {
-            if #available(iOS 14.0, *) {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: foregroundColor))
-            } else {
-                // Fallback on earlier versions
-                ActivityIndicator(
-                    isAnimating: .constant(true),
-                    style: .medium,
-                    color: foregroundColor
-                )
-            }
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: foregroundColor))
 
             Text(loadingInfo.loadingTitle)
                 .font(textFont)
@@ -259,24 +235,6 @@ public extension EnvironmentValues {
 public extension Button {
     func loading(_ loading: Bool, title: String = "") -> some View {
         environment(\.misticaButtonLoadingInfo, MisticaButtonLoadingInfo(isLoading: loading, loadingTitle: title))
-    }
-}
-
-// This is only to support iOS 13 and replace ProgressView()
-@available(iOS, introduced: 13.0, deprecated: 14.0, message: "This is only to support iOS 13 and replace ProgressView()")
-private struct ActivityIndicator: UIViewRepresentable {
-    @Binding var isAnimating: Bool
-    let style: UIActivityIndicatorView.Style
-    let color: Color
-
-    func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
-        let activity = UIActivityIndicatorView(style: style)
-        activity.tintColor = color.uiColor
-        return activity
-    }
-
-    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
-        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
     }
 }
 

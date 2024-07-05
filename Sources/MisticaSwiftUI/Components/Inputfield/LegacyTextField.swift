@@ -46,9 +46,7 @@ struct LegacyTextField: UIViewRepresentable {
             pickerView.addTarget(context.coordinator, action: #selector(LegacyTextFieldCoordinator.datePickerValueChanged), for: .allEvents)
             pickerView.datePickerMode = .date
             pickerView.date = initial
-            if #available(iOS 13.4, *) {
-                pickerView.preferredDatePickerStyle = .wheels
-            }
+            pickerView.preferredDatePickerStyle = .wheels
             textField.inputView = pickerView
             textField.canPerformActions = false
             addToolbar(textField, context: context)

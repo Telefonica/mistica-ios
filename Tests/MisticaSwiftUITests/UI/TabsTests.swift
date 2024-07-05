@@ -11,7 +11,6 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
-@available(iOS 14.0, *)
 final class TabsTests: XCTestCase {
     override class func setUp() {
         isRecording = false
@@ -118,7 +117,6 @@ final class TabsTests: XCTestCase {
     }
 }
 
-@available(iOS 14.0, *)
 extension TabsTests {
     func givenLongTabsItem(count: Int) -> [TabItem] {
         givenTabsItem(count: count, text: "Large item text", image: Image(systemName: "photo"))

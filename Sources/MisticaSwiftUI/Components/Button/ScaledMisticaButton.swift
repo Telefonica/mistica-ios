@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 14.0, *)
 struct ScaledMisticaButton<Content: View>: View {
     let content: () -> Content
     let height: CGFloat

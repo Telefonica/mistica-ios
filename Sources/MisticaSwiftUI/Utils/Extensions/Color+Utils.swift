@@ -11,12 +11,7 @@ import SwiftUI
 
 public extension Color {
     var uiColor: UIColor {
-        if #available(iOS 14.0, *) {
-            return UIColor(self)
-        } else {
-            let components = components()
-            return UIColor(red: components.r, green: components.g, blue: components.b, alpha: components.a)
-        }
+        UIColor(self)
     }
 
     init?(hex: String) {

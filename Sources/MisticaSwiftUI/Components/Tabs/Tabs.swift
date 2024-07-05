@@ -10,7 +10,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 14.0, *)
 public struct Tabs: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @State private var itemWidth: [Int: CGFloat] = [:]
@@ -141,7 +140,6 @@ struct CGFloatPreferenceKey: PreferenceKey {
 // MARK: Previews
 
 #if DEBUG
-    @available(iOS 14.0, *)
     struct TabsContainer: View {
         @State private var selection = 0
 
@@ -150,7 +148,6 @@ struct CGFloatPreferenceKey: PreferenceKey {
         }
     }
 
-    @available(iOS 14.0, *)
     struct Tabs_Previews: PreviewProvider {
         static var previews: some View {
             TabsContainer()

@@ -11,7 +11,6 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
-@available(iOS 14.0, *)
 final class CarouselTests: XCTestCase {
     override class func setUp() {
         super.setUp()
@@ -68,7 +67,6 @@ final class CarouselTests: XCTestCase {
     }
 }
 
-@available(iOS 14.0, *)
 private extension CarouselTests {
     func givenCarousel(
         bullets: Int = 5,

@@ -251,7 +251,7 @@ private extension Filter {
         // component.
         let largeContentInteraction = UILargeContentViewerInteraction(delegate: self)
         collectionView.addInteraction(largeContentInteraction)
-        
+
         collectionView.dataSource = self
         collectionView.delegate = self
 

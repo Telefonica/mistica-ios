@@ -31,10 +31,10 @@ extension BrandStyle {
 
         case .telefonica, .tu:
             return FontMapping(
-                lightFont: "Telefonica Sans Light",
-                mediumFont: "Telefonica Sans DemiBold",
-                boldFont: "Telefonica Sans DemiBold",
-                defaultFont: "Telefonica Sans Regular"
+                lightFont: "TeleSans-Light",
+                mediumFont: "TeleSans-DemiBold",
+                boldFont: "TeleSans-DemiBold",
+                defaultFont: "TeleSans-Regular"
             )
         case .vivo, .blau, .custom:
             return nil

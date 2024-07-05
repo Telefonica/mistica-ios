@@ -47,6 +47,7 @@ struct MisticaCatalogApp: App {
             .misticaTabViewStyle()
             .onAppear {
                 setUpAppearance()
+                configureFontStyle(for: brands[selectedBrandIndex])
             }
             .onChange(of: selectedBrandIndex, perform: { selectedBrandIndex in
                 MisticaConfig.brandStyle = brands[selectedBrandIndex]

@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>OnAir-Light.ttf</string>
-		<string>OnAir-Medium.ttf</string>
-		<string>OnAir-Regular.ttf</string>
-		<string>VivoTypeBold.ttf</string>
-		<string>VivoTypeLight.ttf</string>
-		<string>VivoTypeRegular.ttf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -44,6 +35,18 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OnAir-Light.ttf</string>
+		<string>OnAir-Medium.ttf</string>
+		<string>OnAir-Regular.ttf</string>
+		<string>VivoTypeBold.ttf</string>
+		<string>VivoTypeLight.ttf</string>
+		<string>VivoTypeRegular.ttf</string>
+		<string>Telefonica Sans Light.otf</string>
+		<string>Telefonica Sans Bold.otf</string>
+		<string>Telefonica Sans Regular.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

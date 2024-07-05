@@ -61,6 +61,10 @@
 		84126F7A2C2C00C500ECA607 /* OnAir-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84126F742C2C00C500ECA607 /* OnAir-Regular.ttf */; };
 		84126F7B2C2C00C500ECA607 /* VivoTypeBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84126F752C2C00C500ECA607 /* VivoTypeBold.ttf */; };
 		84126F7C2C2C00C500ECA607 /* OnAir-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84126F762C2C00C500ECA607 /* OnAir-Light.ttf */; };
+		843681FE2C36E48B007B30C4 /* FontMapping+BrandStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843681FD2C36E48B007B30C4 /* FontMapping+BrandStyle.swift */; };
+		8462A7A42C34176400BE8E96 /* Telefonica Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8462A7A12C34176400BE8E96 /* Telefonica Sans Regular.otf */; };
+		8462A7A52C34176400BE8E96 /* Telefonica Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8462A7A22C34176400BE8E96 /* Telefonica Sans Bold.otf */; };
+		8462A7A62C34176400BE8E96 /* Telefonica Sans Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8462A7A32C34176400BE8E96 /* Telefonica Sans Light.otf */; };
 		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F990032546C98600DFBFE9 /* Assets.xcassets */; };
@@ -136,6 +140,10 @@
 		84126F742C2C00C500ECA607 /* OnAir-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OnAir-Regular.ttf"; sourceTree = "<group>"; };
 		84126F752C2C00C500ECA607 /* VivoTypeBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VivoTypeBold.ttf; sourceTree = "<group>"; };
 		84126F762C2C00C500ECA607 /* OnAir-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OnAir-Light.ttf"; sourceTree = "<group>"; };
+		843681FD2C36E48B007B30C4 /* FontMapping+BrandStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FontMapping+BrandStyle.swift"; sourceTree = "<group>"; wrapsLines = 0; };
+		8462A7A12C34176400BE8E96 /* Telefonica Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica Sans Regular.otf"; sourceTree = "<group>"; };
+		8462A7A22C34176400BE8E96 /* Telefonica Sans Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica Sans Bold.otf"; sourceTree = "<group>"; };
+		8462A7A32C34176400BE8E96 /* Telefonica Sans Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica Sans Light.otf"; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -260,6 +268,9 @@
 				84126F752C2C00C500ECA607 /* VivoTypeBold.ttf */,
 				84126F712C2C00C500ECA607 /* VivoTypeLight.ttf */,
 				84126F722C2C00C500ECA607 /* VivoTypeRegular.ttf */,
+				8462A7A22C34176400BE8E96 /* Telefonica Sans Bold.otf */,
+				8462A7A32C34176400BE8E96 /* Telefonica Sans Light.otf */,
+				8462A7A12C34176400BE8E96 /* Telefonica Sans Regular.otf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -339,6 +350,7 @@
 				B8F9900D2546C98600DFBFE9 /* Optional+Utils.swift */,
 				B8F9900E2546C98600DFBFE9 /* UIImage+Utils.swift */,
 				B8F9900F2546C98600DFBFE9 /* Bundle+MisticaCatalog.swift */,
+				843681FD2C36E48B007B30C4 /* FontMapping+BrandStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,9 +453,12 @@
 				84126F7B2C2C00C500ECA607 /* VivoTypeBold.ttf in Resources */,
 				84126F7C2C2C00C500ECA607 /* OnAir-Light.ttf in Resources */,
 				B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */,
+				8462A7A42C34176400BE8E96 /* Telefonica Sans Regular.otf in Resources */,
 				B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */,
 				84126F772C2C00C500ECA607 /* VivoTypeLight.ttf in Resources */,
+				8462A7A62C34176400BE8E96 /* Telefonica Sans Light.otf in Resources */,
 				84126F792C2C00C500ECA607 /* OnAir-Medium.ttf in Resources */,
+				8462A7A52C34176400BE8E96 /* Telefonica Sans Bold.otf in Resources */,
 				84126F782C2C00C500ECA607 /* VivoTypeRegular.ttf in Resources */,
 				84126F7A2C2C00C500ECA607 /* OnAir-Regular.ttf in Resources */,
 			);
@@ -504,6 +519,7 @@
 				18E4858B287F19EB0052A6F2 /* TagCatalogView.swift in Sources */,
 				18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */,
 				B8F990362546C98700DFBFE9 /* UITableViewCell+Utils.swift in Sources */,
+				843681FE2C36E48B007B30C4 /* FontMapping+BrandStyle.swift in Sources */,
 				18E48593287F19EB0052A6F2 /* UICatalogEmptyStateViewController.swift in Sources */,
 				B8F990332546C98700DFBFE9 /* UIView+Utils.swift in Sources */,
 				18E4858A287F19EB0052A6F2 /* BadgeCatalogView.swift in Sources */,

@@ -1,13 +1,14 @@
 //
 //  FontMapping+BrandStyle.swift
-//  MisticaCatalog
 //
-//  Created by lat-ios  on 4/7/24.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import Mistica
 import SwiftUI
+import UIKit
 
 // A struct representing a mapping of font names to different font weights.
 struct FontMapping {
@@ -18,7 +19,7 @@ struct FontMapping {
 
     /**
      Returns the font name for the specified weight.
-     
+
      - Parameter weight: The `Font.Weight` for which to get the font name.
      - Returns: The font name corresponding to the given weight.
      */
@@ -34,10 +35,10 @@ struct FontMapping {
             return defaultFont
         }
     }
-    
+
     /**
      Returns the font name for the specified weight.
-     
+
      - Parameter weight: The `UIFont.Weight` for which to get the font name.
      - Returns: The font name corresponding to the given weight.
      */
@@ -55,29 +56,33 @@ struct FontMapping {
     }
 }
 
-
 extension BrandStyle {
-
     // A computed property that returns the corresponding FontMapping for the brand style.
     var fontMapping: FontMapping? {
         switch self {
         case .vivoNew:
-            return FontMapping(lightFont: "VivoType-Light",
-                               mediumFont: "VivoType-Bold",
-                               boldFont: "VivoType-Bold",
-                               defaultFont: "VivoType-Regular")
+            return FontMapping(
+                lightFont: "VivoType-Light",
+                mediumFont: "VivoType-Bold",
+                boldFont: "VivoType-Bold",
+                defaultFont: "VivoType-Regular"
+            )
         case .o2, .o2New, .movistar:
-            return FontMapping(lightFont: "OnAir-Light",
-                               mediumFont: "OnAir",
-                               boldFont: "OnAir-Bold",
-                               defaultFont: "OnAir-Regular")
-            
+            return FontMapping(
+                lightFont: "OnAir-Light",
+                mediumFont: "OnAir",
+                boldFont: "OnAir-Bold",
+                defaultFont: "OnAir-Regular"
+            )
+
         case .telefonica, .tu:
-            return FontMapping(lightFont: "Telefonica Sans Light",
-                               mediumFont: "Telefonica Sans Bold",
-                               boldFont: "Telefonica Sans Bold",
-                               defaultFont: "Telefonica Sans Regular")
-            
+            return FontMapping(
+                lightFont: "Telefonica Sans Light",
+                mediumFont: "Telefonica Sans Bold",
+                boldFont: "Telefonica Sans Bold",
+                defaultFont: "Telefonica Sans Regular"
+            )
+
         case .vivo, .blau, .custom:
             return nil
         }

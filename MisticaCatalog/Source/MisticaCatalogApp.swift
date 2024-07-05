@@ -102,21 +102,20 @@ struct MisticaCatalogApp: App {
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = .misticaCatalogTint | .white
     }
-    
+
     func configureFontStyle(for brandStyle: BrandStyle) {
         if let mapping = brandStyle.fontMapping {
             FontStyle.fontNameForWeight = { weight in
-                return mapping.fontName(for: weight)
+                mapping.fontName(for: weight)
             }
             FontStyle.uiFontNameForWeight = { weight in
-                return mapping.UIfontName(for: weight)
+                mapping.UIfontName(for: weight)
             }
         } else {
             FontStyle.fontNameForWeight = nil
             FontStyle.uiFontNameForWeight = nil
         }
     }
-
 }
 
 extension UIColor {

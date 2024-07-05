@@ -50,7 +50,7 @@ struct MisticaCatalogApp: App {
             }
             .onChange(of: selectedBrandIndex, perform: { selectedBrandIndex in
                 MisticaConfig.brandStyle = brands[selectedBrandIndex]
-                setupFont(for: brands[selectedBrandIndex])
+                configureFontStyle(for: brands[selectedBrandIndex])
                 withAnimation { reloadId = UUID() }
             })
             .id(reloadId)
@@ -103,7 +103,7 @@ struct MisticaCatalogApp: App {
         UINavigationBar.appearance().tintColor = .misticaCatalogTint | .white
     }
     
-    func setupFont(for brandStyle: BrandStyle) {
+    func configureFontStyle(for brandStyle: BrandStyle) {
         if let mapping = brandStyle.fontMapping {
             FontStyle.fontNameForWeight = { weight in
                 return mapping.fontName(for: weight)

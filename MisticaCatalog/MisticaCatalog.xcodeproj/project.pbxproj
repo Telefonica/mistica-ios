@@ -61,7 +61,7 @@
 		84126F7A2C2C00C500ECA607 /* OnAir-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84126F742C2C00C500ECA607 /* OnAir-Regular.ttf */; };
 		84126F7B2C2C00C500ECA607 /* VivoTypeBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84126F752C2C00C500ECA607 /* VivoTypeBold.ttf */; };
 		84126F7C2C2C00C500ECA607 /* OnAir-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84126F762C2C00C500ECA607 /* OnAir-Light.ttf */; };
-		843681FE2C36E48B007B30C4 /* FontMapping+BrandStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843681FD2C36E48B007B30C4 /* FontMapping+BrandStyle.swift */; };
+		843681FE2C36E48B007B30C4 /* BrandStyle+FontMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843681FD2C36E48B007B30C4 /* BrandStyle+FontMapping.swift */; };
 		8462A7A42C34176400BE8E96 /* Telefonica Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8462A7A12C34176400BE8E96 /* Telefonica Sans Regular.otf */; };
 		8462A7A52C34176400BE8E96 /* Telefonica Sans Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8462A7A22C34176400BE8E96 /* Telefonica Sans Bold.otf */; };
 		8462A7A62C34176400BE8E96 /* Telefonica Sans Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8462A7A32C34176400BE8E96 /* Telefonica Sans Light.otf */; };
@@ -140,7 +140,7 @@
 		84126F742C2C00C500ECA607 /* OnAir-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OnAir-Regular.ttf"; sourceTree = "<group>"; };
 		84126F752C2C00C500ECA607 /* VivoTypeBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VivoTypeBold.ttf; sourceTree = "<group>"; };
 		84126F762C2C00C500ECA607 /* OnAir-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OnAir-Light.ttf"; sourceTree = "<group>"; };
-		843681FD2C36E48B007B30C4 /* FontMapping+BrandStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FontMapping+BrandStyle.swift"; sourceTree = "<group>"; wrapsLines = 0; };
+		843681FD2C36E48B007B30C4 /* BrandStyle+FontMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrandStyle+FontMapping.swift"; sourceTree = "<group>"; wrapsLines = 0; };
 		8462A7A12C34176400BE8E96 /* Telefonica Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica Sans Regular.otf"; sourceTree = "<group>"; };
 		8462A7A22C34176400BE8E96 /* Telefonica Sans Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica Sans Bold.otf"; sourceTree = "<group>"; };
 		8462A7A32C34176400BE8E96 /* Telefonica Sans Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica Sans Light.otf"; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 				B8F9900D2546C98600DFBFE9 /* Optional+Utils.swift */,
 				B8F9900E2546C98600DFBFE9 /* UIImage+Utils.swift */,
 				B8F9900F2546C98600DFBFE9 /* Bundle+MisticaCatalog.swift */,
-				843681FD2C36E48B007B30C4 /* FontMapping+BrandStyle.swift */,
+				843681FD2C36E48B007B30C4 /* BrandStyle+FontMapping.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -519,7 +519,7 @@
 				18E4858B287F19EB0052A6F2 /* TagCatalogView.swift in Sources */,
 				18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */,
 				B8F990362546C98700DFBFE9 /* UITableViewCell+Utils.swift in Sources */,
-				843681FE2C36E48B007B30C4 /* FontMapping+BrandStyle.swift in Sources */,
+				843681FE2C36E48B007B30C4 /* BrandStyle+FontMapping.swift in Sources */,
 				18E48593287F19EB0052A6F2 /* UICatalogEmptyStateViewController.swift in Sources */,
 				B8F990332546C98700DFBFE9 /* UIView+Utils.swift in Sources */,
 				18E4858A287F19EB0052A6F2 /* BadgeCatalogView.swift in Sources */,

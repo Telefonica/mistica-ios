@@ -169,17 +169,9 @@ private extension FontStyle {
         case .textPreset4:
             return .headline
         case .textPreset5:
-            if #available(iOS 14.0, *) {
-                return .title3
-            } else {
-                return .title
-            }
+            return .title3
         case .textPreset6:
-            if #available(iOS 14.0, *) {
-                return .title2
-            } else {
-                return .title
-            }
+            return .title2
         case .textPreset7:
             return .title
         case .textPreset8,

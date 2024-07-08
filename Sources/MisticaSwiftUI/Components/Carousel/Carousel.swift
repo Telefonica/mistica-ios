@@ -10,7 +10,6 @@ import Combine
 
 import SwiftUI
 
-@available(iOS 14.0, *)
 public struct Carousel<Data: RandomAccessCollection, ID: Hashable, Content: View>: View {
     @Binding private var index: Int
     private let content: (Data.Element) -> Content
@@ -111,7 +110,6 @@ public struct Carousel<Data: RandomAccessCollection, ID: Hashable, Content: View
 
 // MARK: Items
 
-@available(iOS 14.0, *)
 private extension Carousel {
     var defaultPadding: CGFloat {
         headspace + spacing * 2
@@ -124,7 +122,6 @@ private extension Carousel {
 
 // MARK: Autoplay
 
-@available(iOS 14.0, *)
 private extension Carousel {
     var timer: TimePublisher? {
         guard autoplay.isActive else { return nil }
@@ -142,7 +139,6 @@ private extension Carousel {
 
 // MARK: Modifiers
 
-@available(iOS 14.0, *)
 public extension Carousel {
     func carouselStyle(_ style: CarouselStyle) -> Carousel {
         var carousel = self
@@ -203,7 +199,6 @@ public extension Carousel {
 
 // MARK: Initializers
 
-@available(iOS 14.0, *)
 public extension Carousel {
     init(
         _ data: Data,
@@ -230,7 +225,6 @@ public extension Carousel {
     }
 }
 
-@available(iOS 14.0, *)
 public extension Carousel where ID == Data.Element.ID, Data.Element: Identifiable {
     init(
         _ data: Data,
@@ -257,7 +251,6 @@ public extension Carousel where ID == Data.Element.ID, Data.Element: Identifiabl
 // MARK: Previews
 
 #if DEBUG
-    @available(iOS 14.0, *)
     struct DataCardCarousel: View {
         @State var index = 0
         var bulletsStyleInverse = false
@@ -295,7 +288,6 @@ public extension Carousel where ID == Data.Element.ID, Data.Element: Identifiabl
         }
     }
 
-    @available(iOS 14.0, *)
     struct Carousel_Previews: PreviewProvider {
         static var previews: some View {
             DataCardCarousel()

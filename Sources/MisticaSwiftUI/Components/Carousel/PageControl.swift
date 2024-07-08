@@ -19,7 +19,6 @@ private enum Constants {
     static let visibleItems: Int = 5
 }
 
-@available(iOS 14.0, *)
 struct PageControl: View {
     @Binding var selectedItem: Int
     private let items: Int
@@ -59,7 +58,6 @@ struct PageControl: View {
     }
 }
 
-@available(iOS 14.0, *)
 extension PageControl {
     func bulletsStyleInverse(_ inverse: Bool) -> PageControl {
         var control = self
@@ -68,7 +66,6 @@ extension PageControl {
     }
 }
 
-@available(iOS 14.0, *)
 private extension PageControl {
     func updateContentOffset(with index: Int) {
         let relativeItem = selectedItem - frameOffsetItem
@@ -136,7 +133,6 @@ private extension PageControl {
 }
 
 #if DEBUG
-    @available(iOS 14.0, *)
     struct PageControlWrapper: View {
         @State var index = 0
         @State var items = 3
@@ -162,7 +158,6 @@ private extension PageControl {
         }
     }
 
-    @available(iOS 14.0, *)
     struct PageControl_Previews: PreviewProvider {
         static var previews: some View {
             PageControlWrapper()

@@ -11,7 +11,6 @@ import Foundation
 
 import SwiftUI
 
-@available(iOS 14.0, *)
 struct FreeCarousel<Element: Hashable, Content: View>: View {
     @Binding var index: Int
     private var elements: [Element]
@@ -71,7 +70,6 @@ struct FreeCarousel<Element: Hashable, Content: View>: View {
     }
 }
 
-@available(iOS 14.0, *)
 private extension FreeCarousel {
     func index(forIndex index: CGFloat) -> Int {
         let activeIndex = Int(Darwin.round(index))

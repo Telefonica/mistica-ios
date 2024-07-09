@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  OngoingCrouton.swift
 //
-//  Created by Carlos Martinez on 3/7/24.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import UIKit

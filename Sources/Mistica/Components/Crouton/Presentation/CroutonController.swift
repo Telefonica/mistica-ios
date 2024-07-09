@@ -9,10 +9,11 @@
 import UIKit
 
 public class CroutonController: NSObject {
-    public struct RootViewController {
+    public enum RootViewController {
         public typealias Closure = () -> UIViewController?
         public static let `default`: Closure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
     }
+
 //    public typealias RootViewControllerClosure = () -> UIViewController?
 //    public static let defaultRootViewControllerClosure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
 
@@ -183,6 +184,4 @@ private extension CroutonController {
 
         ongoingCrouton.croutonView.show(in: containerView)
     }
-
-    
 }

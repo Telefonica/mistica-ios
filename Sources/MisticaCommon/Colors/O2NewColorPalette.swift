@@ -12,7 +12,7 @@ struct O2NewColors: MisticaColors {
     static let palette = O2NewColorPalette()
 
     let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
-    
+
     let backgroundBrand = MisticaColor.gradient(MisticaGradient(
         colors:
         [

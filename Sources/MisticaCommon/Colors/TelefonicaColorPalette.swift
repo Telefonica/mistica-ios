@@ -23,7 +23,7 @@ struct TelefonicaColors: MisticaColors {
 
     let backgroundContainerPressed = TelefonicaColors.palette.telefonicaBlue.withAlphaComponent(0.05) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeGrey
+    let backgroundContainerBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeGrey)
 
     let backgroundContainerBrandHover = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.03)
 
@@ -33,7 +33,7 @@ struct TelefonicaColors: MisticaColors {
 
     let backgroundContainerAlternative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey
 
-    let backgroundBrand = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
+    let backgroundBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 

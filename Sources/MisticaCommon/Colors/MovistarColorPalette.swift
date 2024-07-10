@@ -15,7 +15,7 @@ struct MovistarColors: MisticaColors {
 
     let backgroundAlternative = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeBlack
 
-    let backgroundBrand = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
+    let backgroundBrand = MisticaColor.solid(MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeBlack
 
@@ -27,7 +27,7 @@ struct MovistarColors: MisticaColors {
 
     let backgroundContainerPressed = MovistarColors.palette.black.withAlphaComponent(0.05) | MovistarColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeGrey
+    let backgroundContainerBrand = MisticaColor.solid(MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeGrey)
 
     let backgroundContainerBrandHover = MovistarColors.palette.black.withAlphaComponent(0.1) | MovistarColors.palette.white.withAlphaComponent(0.03)
 

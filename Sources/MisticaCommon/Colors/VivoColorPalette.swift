@@ -15,7 +15,7 @@ struct VivoColors: MisticaColors {
 
     let backgroundAlternative = VivoColors.palette.grey1 | VivoColors.palette.darkModeBlack
 
-    let backgroundBrand = VivoColors.palette.vivoPurple | VivoColors.palette.darkModeBlack
+    let backgroundBrand = MisticaColor.solid(VivoColors.palette.vivoPurple | VivoColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = VivoColors.palette.vivoPurple | VivoColors.palette.darkModeBlack
 
@@ -27,7 +27,7 @@ struct VivoColors: MisticaColors {
 
     let backgroundContainerPressed = VivoColors.palette.darkModeBlack.withAlphaComponent(0.05) | VivoColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = VivoColors.palette.vivoPurple | VivoColors.palette.darkModeGrey
+    let backgroundContainerBrand = MisticaColor.solid(VivoColors.palette.vivoPurple | VivoColors.palette.darkModeGrey)
 
     let backgroundContainerBrandHover = VivoColors.palette.darkModeBlack.withAlphaComponent(0.2) | VivoColors.palette.white.withAlphaComponent(0.03)
 

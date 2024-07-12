@@ -1,3 +1,15 @@
+# [31.0.0](https://github.com/Telefonica/mistica-ios/compare/v30.5.0...v31.0.0) (2024-07-12)
+
+
+### Features
+
+* **MisticaColors:** Update MisticaColors and VivoNew palette ([24a0a7c](https://github.com/Telefonica/mistica-ios/commit/24a0a7c217d3d0c8e11508235d5d5e8feb7ef708))
+
+
+### BREAKING CHANGES
+
+* **MisticaColors:** Refactor backgroundContainerBrand color token as MisticaColor
+
 # [30.5.0](https://github.com/Telefonica/mistica-ios/compare/v30.4.0...v30.5.0) (2024-07-12)
 
 

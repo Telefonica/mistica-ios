@@ -1,3 +1,15 @@
+# [30.5.0](https://github.com/Telefonica/mistica-ios/compare/v30.4.0...v30.5.0) (2024-07-12)
+
+
+### Bug Fixes
+
+* **iOS14:** Upgrade package to iOS 14 and remove iOS 13 dependencies ([f8e6578](https://github.com/Telefonica/mistica-ios/commit/f8e6578f85ddfea1022653a0dc7c32a62e82588c))
+
+
+### Features
+
+* **Accesibility:** Set sheet title label accessibility trait to header ([#384](https://github.com/Telefonica/mistica-ios/issues/384)) ([72ade6d](https://github.com/Telefonica/mistica-ios/commit/72ade6d1219fd546673041b1af9486e51ecfe9d6))
+
 # [30.4.0](https://github.com/Telefonica/mistica-ios/compare/v30.3.0...v30.4.0) (2024-06-27)
 
 

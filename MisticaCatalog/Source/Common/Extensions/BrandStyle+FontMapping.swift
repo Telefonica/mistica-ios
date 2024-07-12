@@ -49,7 +49,6 @@ struct FontMapping {
     let boldFont: String
     let defaultFont: String
 
-    
     /// Returns the font name for the specified weight.
     ///
     /// Parameter weight: The `Font.Weight` for which to get the font name.
@@ -67,7 +66,6 @@ struct FontMapping {
         }
     }
 
-    
     /// Returns the font name for the specified weight.
     ///
     /// Parameter weight: The `UIFont.Weight` for which to get the font name.

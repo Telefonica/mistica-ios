@@ -49,12 +49,11 @@ struct FontMapping {
     let boldFont: String
     let defaultFont: String
 
-    /**
-     Returns the font name for the specified weight.
-
-     - Parameter weight: The `Font.Weight` for which to get the font name.
-     - Returns: The font name corresponding to the given weight.
-     */
+    
+    /// Returns the font name for the specified weight.
+    ///
+    /// Parameter weight: The `Font.Weight` for which to get the font name.
+    /// Returns: The font name corresponding to the given weight.
     func fontName(for weight: Font.Weight) -> String {
         switch weight {
         case .light, .ultraLight, .thin:
@@ -68,12 +67,11 @@ struct FontMapping {
         }
     }
 
-    /**
-     Returns the font name for the specified weight.
-
-     - Parameter weight: The `UIFont.Weight` for which to get the font name.
-     - Returns: The font name corresponding to the given weight.
-     */
+    
+    /// Returns the font name for the specified weight.
+    ///
+    /// Parameter weight: The `UIFont.Weight` for which to get the font name.
+    /// Returns: The font name corresponding to the given weight.
     func UIfontName(for weight: UIFont.Weight) -> String {
         switch weight {
         case .light, .ultraLight, .thin:

@@ -27,7 +27,7 @@ struct BlauColors: MisticaColors {
 
     let backgroundContainerPressed = BlauColors.palette.blauBluePrimary.withAlphaComponent(0.05) | BlauColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeGrey
+    let backgroundContainerBrand = MisticaColor.solid(BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeGrey)
 
     let backgroundContainerBrandHover = BlauColors.palette.darkModeBlack.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.03)
 

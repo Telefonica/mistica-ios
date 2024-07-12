@@ -44,11 +44,6 @@ public extension UIColor {
         MisticaConfig.currentColors.backgroundContainerPressed
     }
 
-    @objc(backgroundContainerBrandColor)
-    static var backgroundContainerBrand: UIColor {
-        MisticaConfig.currentColors.backgroundContainerBrand
-    }
-
     @objc(backgroundContainerBrandHoverColor)
     static var backgroundContainerBrandHover: UIColor {
         MisticaConfig.currentColors.backgroundContainerBrandHover
@@ -653,7 +648,7 @@ public extension UIColor {
 public extension BrandStyle {
     var preferredStatusBarStyle: UIStatusBarStyle {
         switch self {
-        case .movistar, .vivo, .o2, .o2New, .blau, .custom, .vivoNew, .telefonica, .tu:
+        case .movistar, .vivo, .o2, .o2New, .blau, .custom, .vivoNew, .tu, .telefonica:
             return .lightContent
         }
     }

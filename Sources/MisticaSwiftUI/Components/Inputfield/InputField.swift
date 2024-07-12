@@ -26,6 +26,7 @@ public struct InputField: View {
 
     public enum Style: Equatable {
         case text
+        case numeric
         case email
         case secure
         case phone(code: String)
@@ -175,7 +176,8 @@ private extension InputField {
             isResponder: $editing,
             isSecured: secure,
             keyboard: keyboard,
-            inputStyle: inputStyle
+            inputStyle: inputStyle, 
+            textContentType: textContentType
         )
     }
 
@@ -185,6 +187,7 @@ private extension InputField {
             return secureActivated
         case .phone,
              .text,
+             .numeric,
              .email,
              .dropdown,
              .date,
@@ -202,6 +205,7 @@ private extension InputField {
         case .phone,
              .secure,
              .text,
+             .numeric,
              .email,
              .search:
             return .text
@@ -218,6 +222,24 @@ private extension InputField {
             return .default
         case .phone:
             return .phonePad
+        case .email:
+            return .emailAddress
+        case .numeric:
+            return .numberPad
+        }
+    }
+    
+    var textContentType: UITextContentType? {
+        switch style {
+        case .secure,
+             .text,
+             .dropdown,
+             .search,
+             .numeric,
+             .date:
+            return nil
+        case .phone:
+            return .telephoneNumber
         case .email:
             return .emailAddress
         }
@@ -261,6 +283,12 @@ public extension InputField {
         view.style = style
         return view
     }
+    
+    func textContentType(_ textContentType: UITextContentType?) -> InputField {
+        var view = self
+        view.textField.textContentType(textContentType)
+        return view
+    }
 }
 
 // MARK: Previews
@@ -274,6 +302,10 @@ struct InputField_Previews: PreviewProvider {
         VStack(alignment: .trailing) {
             InputField(placeholder: "Email", text: $text1)
                 .style(.email)
+                .padding()
+            
+            InputField(placeholder: "Numeric", text: $text1)
+                .style(.numeric)
                 .padding()
 
             InputField(placeholder: "Normal", text: $text1, assistiveText: $assistiveText)

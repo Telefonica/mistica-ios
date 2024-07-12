@@ -35,6 +35,7 @@ public class SheetViewController: UIViewController {
             label.textAlignment = .left
             label.textColor = .textPrimary
             label.font = .textPreset5()
+            label.accessibilityTraits = .header
             return label
         }
         return nil

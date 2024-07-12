@@ -47,9 +47,11 @@ struct MisticaCatalogApp: App {
             .misticaTabViewStyle()
             .onAppear {
                 setUpAppearance()
+                configureFontStyle(for: brands[selectedBrandIndex])
             }
             .onChange(of: selectedBrandIndex, perform: { selectedBrandIndex in
                 MisticaConfig.brandStyle = brands[selectedBrandIndex]
+                configureFontStyle(for: brands[selectedBrandIndex])
                 withAnimation { reloadId = UUID() }
             })
             .id(reloadId)
@@ -100,6 +102,20 @@ struct MisticaCatalogApp: App {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = .misticaCatalogTint | .white
+    }
+
+    func configureFontStyle(for brandStyle: BrandStyle) {
+        if let mapping = brandStyle.fontMapping {
+            FontStyle.fontNameForWeight = { weight in
+                mapping.fontName(for: weight)
+            }
+            FontStyle.uiFontNameForWeight = { weight in
+                mapping.UIfontName(for: weight)
+            }
+        } else {
+            FontStyle.fontNameForWeight = nil
+            FontStyle.uiFontNameForWeight = nil
+        }
     }
 }
 

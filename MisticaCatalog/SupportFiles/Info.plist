@@ -35,6 +35,19 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OnAir-Light.ttf</string>
+		<string>OnAir-Medium.ttf</string>
+		<string>OnAir-Regular.ttf</string>
+		<string>OnAir-Bold.ttf</string>
+		<string>VivoTypeBold.ttf</string>
+		<string>VivoTypeLight.ttf</string>
+		<string>VivoTypeRegular.ttf</string>
+		<string>Telefonica Sans Light.otf</string>
+		<string>Telefonica Sans Regular.otf</string>
+		<string>Telefonica Sans DemiBold.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

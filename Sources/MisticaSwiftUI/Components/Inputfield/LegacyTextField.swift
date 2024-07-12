@@ -91,10 +91,10 @@ struct LegacyTextField: UIViewRepresentable {
         toolbar.sizeToFit()
         textField.inputAccessoryView = toolbar
     }
-    
+
     mutating func textContentType(_ contentType: UITextContentType?) {
         textContentType = contentType
-    } 
+    }
 }
 
 // MARK: Coordinator

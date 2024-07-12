@@ -176,7 +176,7 @@ private extension InputField {
             isResponder: $editing,
             isSecured: secure,
             keyboard: keyboard,
-            inputStyle: inputStyle, 
+            inputStyle: inputStyle,
             textContentType: textContentType
         )
     }
@@ -228,7 +228,7 @@ private extension InputField {
             return .numberPad
         }
     }
-    
+
     var textContentType: UITextContentType? {
         switch style {
         case .secure,
@@ -283,7 +283,7 @@ public extension InputField {
         view.style = style
         return view
     }
-    
+
     func textContentType(_ textContentType: UITextContentType?) -> InputField {
         var view = self
         view.textField.textContentType(textContentType)
@@ -303,7 +303,7 @@ struct InputField_Previews: PreviewProvider {
             InputField(placeholder: "Email", text: $text1)
                 .style(.email)
                 .padding()
-            
+
             InputField(placeholder: "Numeric", text: $text1)
                 .style(.numeric)
                 .padding()

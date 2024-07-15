@@ -1,3 +1,10 @@
+# [31.1.0](https://github.com/Telefonica/mistica-ios/compare/v31.0.0...v31.1.0) (2024-07-15)
+
+
+### Features
+
+* **InputField:** add numeric style and option to set textContentType ([#385](https://github.com/Telefonica/mistica-ios/issues/385)) ([1db8499](https://github.com/Telefonica/mistica-ios/commit/1db84993111c9042f4c958521d69637edee72180))
+
 # [31.0.0](https://github.com/Telefonica/mistica-ios/compare/v30.5.0...v31.0.0) (2024-07-12)
 
 

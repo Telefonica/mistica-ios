@@ -25,6 +25,7 @@ struct LegacyTextField: UIViewRepresentable {
     var isSecured: Bool
     var keyboard: UIKeyboardType
     var inputStyle: LegacyTextFieldInputStyle
+    var textContentType: UITextContentType?
 
     func makeUIView(context: UIViewRepresentableContext<LegacyTextField>) -> UITextField {
         let textField = ActionsTextField(frame: .zero)
@@ -70,6 +71,7 @@ struct LegacyTextField: UIViewRepresentable {
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.keyboardType = keyboard
+        textField.textContentType = textContentType
         textField.delegate = context.coordinator
         textField.textColor = Color.textPrimary.uiColor
 
@@ -88,6 +90,10 @@ struct LegacyTextField: UIViewRepresentable {
         ]
         toolbar.sizeToFit()
         textField.inputAccessoryView = toolbar
+    }
+
+    mutating func textContentType(_ contentType: UITextContentType?) {
+        textContentType = contentType
     }
 }
 

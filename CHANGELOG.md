@@ -1,3 +1,10 @@
+# [31.2.0](https://github.com/Telefonica/mistica-ios/compare/v31.1.0...v31.2.0) (2024-07-18)
+
+
+### Features
+
+* **Snackbar:** allow setting the accesibility identifier via SnackbarConfig ([#386](https://github.com/Telefonica/mistica-ios/issues/386)) ([4f1e08c](https://github.com/Telefonica/mistica-ios/commit/4f1e08c8cd4a401fb93e450c53cf2676ec83aa01))
+
 # [31.1.0](https://github.com/Telefonica/mistica-ios/compare/v31.0.0...v31.1.0) (2024-07-15)
 
 

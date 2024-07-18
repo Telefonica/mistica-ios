@@ -57,8 +57,8 @@ public struct Snackbar: View {
                     Text(config.title)
                         .font(.textPreset2(weight: .regular))
                         .foregroundColor(.textPrimaryInverse)
-                        .accessibilityLabel(titleAccessibilityLabel)
-                        .accessibilityIdentifier(titleAccessibilityIdentifier)
+                        .accessibilityLabel(config.titleAccessibilityLabel ?? titleAccessibilityLabel)
+                        .accessibilityIdentifier(config.titleAccessibilityIdentifier ?? titleAccessibilityIdentifier)
                         .expandHorizontally(alignment: .leading)
                     if shouldShowCloseButton {
                         dismissView
@@ -71,8 +71,8 @@ public struct Snackbar: View {
                     Text(config.title)
                         .font(.textPreset2(weight: .regular))
                         .foregroundColor(.textPrimaryInverse)
-                        .accessibilityLabel(titleAccessibilityLabel)
-                        .accessibilityIdentifier(titleAccessibilityIdentifier)
+                        .accessibilityLabel(config.titleAccessibilityLabel ?? titleAccessibilityLabel)
+                        .accessibilityIdentifier(config.titleAccessibilityIdentifier ?? titleAccessibilityIdentifier)
                         .expandHorizontally(alignment: .leading)
                     alignedButton
                     if shouldShowCloseButton {

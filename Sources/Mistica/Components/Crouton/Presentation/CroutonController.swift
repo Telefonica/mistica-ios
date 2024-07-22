@@ -14,9 +14,6 @@ public class CroutonController: NSObject {
         public static let `default`: Closure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
     }
 
-//    public typealias RootViewControllerClosure = () -> UIViewController?
-//    public static let defaultRootViewControllerClosure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
-
     public typealias Token = UUID
     public typealias ActionConfig = (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)
 
@@ -34,27 +31,6 @@ public class CroutonController: NSObject {
 // MARK: Public functions
 
 public extension CroutonController {
-    /// Show a crouton (or enqueue one if there is already a crouton shown)
-    /// - Parameters:
-    ///   - text: The text to display in the crouton
-    ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
-    ///   - style: The style of the crouton, `.info` by default
-    ///   - dismissHandler: A handler which is called when the handler is removed from the screen
-//    @available(iOSApplicationExtension, unavailable)
-//    @discardableResult
-//    func showCrouton(
-//        config: SnackbarConfig,
-//        style: CroutonStyle = .info,
-//        dismissHandler: DismissHandlerBlock? = nil
-//    ) -> Token {
-//        showCrouton(
-//            config: config,
-//            style: style,
-//            dismissHandler: dismissHandler,
-//            rootViewController: UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController
-//        )
-//    }
-
     /// Show a crouton (or enqueue one if there is already a crouton shown)
     /// - Parameters:
     ///   - text: The text to display in the crouton

@@ -43,27 +43,10 @@ extension CroutonController {
             } else if let rootViewController = rootViewController() {
                 return visibleViewController(from: rootViewController)
             } else {
+                assertionFailure("Root view controller not found!")
                 return nil
             }
         }
-
-//        private func visibleViewController(_ rootViewController: () -> UIViewController?) -> UIViewController? {
-//            guard let rootViewController = rootViewController() else {
-//                assertionFailure("Root view controller not found!")
-//                return nil
-//            }
-//
-//            let visibleVC = visibleViewController(from: rootViewController)
-//
-//            if let rootVC = visibleVC as? UINavigationController {
-//                return visibleViewController(from: rootVC.topViewController!)
-//            } else if let homeVC = visibleVC.parent?.tabBarController,
-//                      let selectedNavigationController = homeVC.selectedViewController as? UINavigationController {
-//                return visibleViewController(from: selectedNavigationController.topViewController!)
-//            } else {
-//                return visibleVC
-//            }
-//        }
 
         private func visibleViewController(from viewController: UIViewController) -> UIViewController {
             if let presentedViewController = viewController.presentedViewController {

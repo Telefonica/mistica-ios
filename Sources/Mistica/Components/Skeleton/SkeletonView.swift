@@ -21,7 +21,7 @@ public class Skeleton: UIView {
         static let lineHeight: CGFloat = 8.0
         static let lineRadius: CGFloat = 4.0
         static let rectangleRadius: CGFloat = 8.0
-        static let spacing: CGFloat = 16.0
+        static let spacing: CGFloat = 18.0
         static let circleSize: CGFloat = 40.0
         static let rowSkeletonHeight: CGFloat = 50.0
         
@@ -123,7 +123,7 @@ public class Skeleton: UIView {
             stack.addArrangedSubview(line)
             
             if isLastLine {
-                line.widthAnchor.constraint(equalTo: stack.widthAnchor, multiplier: 0.7).isActive = true
+                line.widthAnchor.constraint(equalTo: stack.widthAnchor, multiplier: 0.8).isActive = true
             } else {
                 line.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
             }

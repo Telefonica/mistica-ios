@@ -35,10 +35,12 @@ public struct Skeleton: View {
             return AnyView(
                 VStack(alignment: .leading, spacing: Constants.spacing) {
                     ForEach(0..<numberOfLines, id: \.self) { index in
-                        if index == numberOfLines - 1 {
-                            skeletonRectangle().padding(.trailing, Constants.trailingLinePadding)
-                        } else {
-                            skeletonRectangle()
+                        GeometryReader { geometry in
+                            if index == numberOfLines - 1 {
+                                skeletonRectangle(width: geometry.size.width * 0.8)
+                            } else {
+                                skeletonRectangle()
+                            }
                         }
                     }
                 }

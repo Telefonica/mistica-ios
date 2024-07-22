@@ -1,8 +1,9 @@
 //
-//  Skeleton.swift
+//  SkeletonView.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Alejandro Ruiz on 18/7/24.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +17,6 @@ public enum SkeletonType {
 }
 
 public class Skeleton: UIView {
-    
     enum Constants {
         static let lineHeight: CGFloat = 8.0
         static let lineRadius: CGFloat = 4.0
@@ -24,10 +24,10 @@ public class Skeleton: UIView {
         static let spacing: CGFloat = 18.0
         static let circleSize: CGFloat = 40.0
         static let rowSkeletonHeight: CGFloat = 50.0
-        
-        static var circleRadius: CGFloat { return circleSize / 2 }
+
+        static var circleRadius: CGFloat { circleSize / 2 }
     }
-    
+
     public var type: SkeletonType
 
     public init(type: SkeletonType) {
@@ -35,7 +35,8 @@ public class Skeleton: UIView {
         super.init(frame: .zero)
         setupView()
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -90,16 +91,16 @@ public class Skeleton: UIView {
         view.layer.cornerRadius = cornerRadius
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             view.widthAnchor.constraint(equalToConstant: size.width),
             view.heightAnchor.constraint(equalToConstant: size.height)
         ])
-        
+
         addPulseAnimation(to: view)
         return view
     }
-    
+
     private func setupTextSkeleton(numberOfLines: Int) {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -107,7 +108,7 @@ public class Skeleton: UIView {
         stack.distribution = .fillEqually
         stack.spacing = Constants.spacing
         stack.translatesAutoresizingMaskIntoConstraints = false
-        
+
         addSubview(stack)
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: topAnchor),
@@ -115,13 +116,13 @@ public class Skeleton: UIView {
             stack.trailingAnchor.constraint(equalTo: trailingAnchor),
             stack.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-        
-        for i in 0..<numberOfLines {
+
+        for i in 0 ..< numberOfLines {
             let isLastLine = i == numberOfLines - 1
             let line = createSkeletonView(size: CGSize(width: bounds.width, height: Constants.lineHeight), cornerRadius: Constants.lineRadius)
             line.translatesAutoresizingMaskIntoConstraints = false
             stack.addArrangedSubview(line)
-            
+
             if isLastLine {
                 line.widthAnchor.constraint(equalTo: stack.widthAnchor, multiplier: 0.8).isActive = true
             } else {
@@ -136,7 +137,7 @@ public class Skeleton: UIView {
         stack.alignment = .center
         stack.spacing = Constants.spacing
         stack.translatesAutoresizingMaskIntoConstraints = false
-        
+
         addSubview(stack)
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: topAnchor),
@@ -145,23 +146,23 @@ public class Skeleton: UIView {
             stack.bottomAnchor.constraint(equalTo: bottomAnchor),
             heightAnchor.constraint(equalToConstant: Constants.rowSkeletonHeight)
         ])
-        
+
         let circle = createSkeletonView(size: CGSize(width: Constants.circleSize, height: Constants.circleSize), cornerRadius: Constants.circleRadius)
         let rectangle = createSkeletonView(size: CGSize(width: bounds.width - Constants.circleSize - Constants.spacing, height: Constants.lineHeight), cornerRadius: Constants.lineRadius)
-        
+
         stack.addArrangedSubview(circle)
         stack.addArrangedSubview(rectangle)
-        
+
         circle.translatesAutoresizingMaskIntoConstraints = false
         rectangle.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             circle.widthAnchor.constraint(equalToConstant: Constants.circleSize),
             circle.heightAnchor.constraint(equalToConstant: Constants.circleSize),
             rectangle.heightAnchor.constraint(equalToConstant: Constants.lineHeight)
         ])
     }
-    
+
     private func addPulseAnimation(to view: UIView) {
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.fromValue = 1
@@ -172,5 +173,3 @@ public class Skeleton: UIView {
         view.layer.add(animation, forKey: "pulseAnimation")
     }
 }
-
-

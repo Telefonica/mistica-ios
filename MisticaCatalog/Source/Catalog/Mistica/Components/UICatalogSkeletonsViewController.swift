@@ -1,15 +1,15 @@
 //
 //  UICatalogSkeletonsViewController.swift
-//  MisticaCatalog
 //
-//  Created by Alejandro Ruiz on 18/7/24.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
 import Mistica
+import UIKit
 
 class UICatalogSkeletonsViewController: UIViewController {
-
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +101,3 @@ class UICatalogSkeletonsViewController: UIViewController {
         }
     }
 }
-
-
-
-

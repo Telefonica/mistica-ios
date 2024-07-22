@@ -1,8 +1,9 @@
 //
 //  SkeletonsCatalogView.swift
-//  MisticaCatalog
 //
-//  Created by Alejandro Ruiz on 18/7/24.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import Foundation
@@ -16,22 +17,22 @@ struct SkeletonsCatalogView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 40.0) {
                 skeletonSection(title: "Line", skeleton: Skeleton(type: .line(width: 360)))
-                
+
                 skeletonSection(title: "Text", skeleton: Skeleton(type: .text()))
-                
+
                 skeletonSection(title: "Circle", skeleton: Skeleton(type: .circle(size: .init(width: 40, height: 40))))
-                
+
                 skeletonSection(title: "Row", skeleton: Skeleton(type: .row))
-                
+
                 skeletonSection(title: "Rectangle", skeleton: Skeleton(type: .rectangle(width: 360, height: 180, isRounded: true)))
-                
+
                 Spacer()
             }
             .padding()
             .background(inverseStyle ? Color.brand : Color.background)
         }
     }
-    
+
     private func skeletonSection(title: String, skeleton: Skeleton) -> some View {
         VStack(alignment: .leading, spacing: 16) {
             Text(title)

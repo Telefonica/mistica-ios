@@ -1,14 +1,15 @@
 //
 //  SkeletonTests.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Alejandro Ruiz on 22/7/24.
+//  Copyright © Telefonica. All rights reserved.
 //
 
-import XCTest
-import SwiftUI
-import SnapshotTesting
 @testable import MisticaSwiftUI
+import SnapshotTesting
+import SwiftUI
+import XCTest
 
 final class SkeletonTests: XCTestCase {
     override class func setUp() {
@@ -17,7 +18,7 @@ final class SkeletonTests: XCTestCase {
 
     func testLineSkeleton() {
         let skeleton = Skeleton(type: .line(width: 300))
-        
+
         assertSnapshot(
             matching: skeleton,
             as: .image
@@ -27,7 +28,7 @@ final class SkeletonTests: XCTestCase {
     func testTextSkeleton() {
         let skeleton = Skeleton(type: .text())
             .frame(width: 300)
-        
+
         assertSnapshot(
             matching: skeleton,
             as: .image
@@ -37,7 +38,7 @@ final class SkeletonTests: XCTestCase {
     func testTextSkeletonWithCustomLines() {
         let skeleton = Skeleton(type: .text(numberOfLines: 5))
             .frame(width: 300)
-        
+
         assertSnapshot(
             matching: skeleton,
             as: .image
@@ -46,7 +47,7 @@ final class SkeletonTests: XCTestCase {
 
     func testCircleSkeleton() {
         let skeleton = Skeleton(type: .circle(size: CGSize(width: 40, height: 40)))
-        
+
         assertSnapshot(
             matching: skeleton,
             as: .image
@@ -56,7 +57,7 @@ final class SkeletonTests: XCTestCase {
     func testRowSkeleton() {
         let skeleton = Skeleton(type: .row)
             .frame(width: 300)
-        
+
         assertSnapshot(
             matching: skeleton,
             as: .image
@@ -65,7 +66,7 @@ final class SkeletonTests: XCTestCase {
 
     func testRectangleSkeleton() {
         let skeleton = Skeleton(type: .rectangle(width: 360, height: 180, isRounded: true))
-        
+
         assertSnapshot(
             matching: skeleton,
             as: .image

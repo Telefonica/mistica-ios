@@ -1,8 +1,9 @@
 //
 //  SkeletonTests.swift
 //
+//  Made with ❤️ by Novum
 //
-//  Created by Alejandro Ruiz on 22/7/24.
+//  Copyright © Telefonica. All rights reserved.
 //
 
 @testable import Mistica
@@ -63,10 +64,10 @@ private extension SkeletonTests {
     func makeSkeletonTemplate(type: SkeletonType, containerWidth: CGFloat = 300) -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = .white
-        
+
         let skeleton = Skeleton(type: type)
         containerView.addSubview(skeleton)
-        
+
         skeleton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             skeleton.topAnchor.constraint(equalTo: containerView.topAnchor),
@@ -75,12 +76,12 @@ private extension SkeletonTests {
             skeleton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             skeleton.widthAnchor.constraint(equalToConstant: containerWidth)
         ])
-        
+
         containerView.layoutIfNeeded()
-        
+
         let size = skeleton.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         containerView.frame.size = CGSize(width: size.width, height: size.height)
-        
+
         return containerView
     }
 }

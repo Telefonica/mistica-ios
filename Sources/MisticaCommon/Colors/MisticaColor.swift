@@ -1,10 +1,6 @@
-//
-//  MisticaColor.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
@@ -17,8 +13,10 @@ public extension MisticaColor {
     static var backgroundBrand: MisticaColor {
         MisticaConfig.currentColors.backgroundBrand
     }
-
     static var backgroundContainerBrand: MisticaColor {
         MisticaConfig.currentColors.backgroundContainerBrand
+    }
+    static var cardContentOverlay: MisticaColor {
+        MisticaConfig.currentColors.cardContentOverlay
     }
 }

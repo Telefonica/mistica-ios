@@ -6,7 +6,7 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public protocol MisticaFontSizes {
     var tabsLabel: CGFloat { get }

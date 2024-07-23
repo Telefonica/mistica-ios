@@ -21,4 +21,8 @@ public extension MisticaColor {
     static var backgroundContainerBrand: MisticaColor {
         MisticaConfig.currentColors.backgroundContainerBrand
     }
+
+    static var cardContentOverlay: MisticaColor {
+        MisticaConfig.currentColors.cardContentOverlay
+    }
 }

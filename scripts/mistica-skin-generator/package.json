@@ -1,0 +1,14 @@
+{
+  "name": "mistica-skin-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate": "node index.js"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.3"
+  }
+}

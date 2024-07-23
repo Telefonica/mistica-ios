@@ -65,6 +65,8 @@ private extension CatalogRow {
             BadgeCatalogView()
         case .buttons:
             ButtonsCatalogView()
+        case .skeletons:
+            SkeletonsCatalogView()
         case .cards:
             DataCardCatalogView()
         case .crouton:
@@ -148,6 +150,8 @@ private extension CatalogRow {
             ComponentViewController(UICatalogEmptyStateViewController())
         case .sheet:
             ComponentViewController(UICatalogSheetViewController())
+        case .skeletons:
+            ComponentViewController(UICatalogSkeletonsViewController())
         case .chips,
              .carousel:
             notImplementedView

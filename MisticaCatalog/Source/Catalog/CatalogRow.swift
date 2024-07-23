@@ -14,6 +14,7 @@ enum CatalogRow: Int, CaseIterable, Identifiable {
     case badge
     case sheet
     case buttons
+    case skeletons
     case cards
     case controls
     case crouton
@@ -89,6 +90,8 @@ extension CatalogRow {
             return "Carousel"
         case .sheet:
             return "Sheet"
+        case .skeletons:
+            return "Skeletons"
         }
     }
 
@@ -140,6 +143,8 @@ extension CatalogRow {
             return .listIcon
         case .sheet:
             return .sheetIcon
+        case .skeletons:
+            return .skeletonIcon
         }
     }
 }

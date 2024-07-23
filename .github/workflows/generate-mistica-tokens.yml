@@ -27,13 +27,16 @@ jobs:
       working-directory: scripts/mistica-skin-generator
 
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4
+      id: create_pr
+      uses: peter-evans/create-pull-request@v6
       with:
         token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
         add-paths: 'Sources/MisticaCommon/*'
         commit-message: 'feat(skin): update design tokens'
         title: 'feat(skin): update design tokens from mistica-design'
         branch: 'import-design-tokens'
-        team-reviewers: 'ios'
+        # team-reviewers: 'ios'
         delete-branch: true
         draft: true
+    - name: Show URL in summary annotation
+      run: echo '::notice::Pull Request generated ${{ steps.create_pr.outputs.pull-request-url }}'

@@ -1,3 +1,10 @@
+# [31.3.0](https://github.com/Telefonica/mistica-ios/compare/v31.2.0...v31.3.0) (2024-07-23)
+
+
+### Features
+
+* **Skeletons:** added Mistica Skeletons components for SwiftUI and UIKit ([e99d295](https://github.com/Telefonica/mistica-ios/commit/e99d29539843b3aacada462645ef6a51b53badc0))
+
 # [31.2.0](https://github.com/Telefonica/mistica-ios/compare/v31.1.0...v31.2.0) (2024-07-18)
 
 

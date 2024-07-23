@@ -27,7 +27,7 @@ final class SkeletonTests: XCTestCase {
 
     func testTextSkeleton() {
         let skeleton = Skeleton(type: .text())
-            .frame(width: 300)
+            .frame(width: 300, height: 60)
 
         assertSnapshot(
             matching: skeleton,
@@ -37,7 +37,7 @@ final class SkeletonTests: XCTestCase {
 
     func testTextSkeletonWithCustomLines() {
         let skeleton = Skeleton(type: .text(numberOfLines: 5))
-            .frame(width: 300)
+            .frame(width: 300, height: 110)
 
         assertSnapshot(
             matching: skeleton,

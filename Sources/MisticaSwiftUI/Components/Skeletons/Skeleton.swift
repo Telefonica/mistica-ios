@@ -22,7 +22,6 @@ public struct Skeleton: View {
         static var radius = MisticaConfig.currentCornerRadius.container
         static var spacing = 16.0
         static var circleSize = 40.0
-        static var trailingLinePadding = 75.0
     }
 
     let type: SkeletonType

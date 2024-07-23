@@ -1,27 +1,30 @@
-name: Generate Mistica Tokens
+name: Mistica skin generator tests
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/mistica-skin-generator/**'
+
+concurrency:
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
-  get-design-tokens:
-    name: Get Design Tokens
-    runs-on: self-hosted-novum-mac
+  build:
+    name: Build & execute tests
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Generate Skin
-        run: make skin
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
-          add-paths: 'Sources/MisticaCommon/*'
-          commit-message: 'feat(skin): update design tokens'
-          title: 'feat(skin): update design tokens from mistica-design'
-          branch: 'import-design-tokens'
-          team-reviewers: 'ios'
-          delete-branch: true
-          draft: true
+    - name: Install dependencies
+      run: npm install
+      working-directory: scripts/mistica-skin-generator
+
+    - name: Run tests
+      run: npm run test
+      working-directory: scripts/mistica-skin-generator

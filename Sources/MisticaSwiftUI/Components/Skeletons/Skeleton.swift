@@ -19,7 +19,7 @@ public enum SkeletonType {
 public struct Skeleton: View {
     enum Constants {
         static var lineHeight = 8.0
-        static var radius = 8.0
+        static var radius = MisticaConfig.currentCornerRadius.container
         static var spacing = 16.0
         static var circleSize = 40.0
         static var trailingLinePadding = 75.0

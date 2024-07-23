@@ -19,8 +19,7 @@ public enum SkeletonType {
 public class Skeleton: UIView {
     enum Constants {
         static let lineHeight: CGFloat = 8.0
-        static let lineRadius: CGFloat = 4.0
-        static let rectangleRadius: CGFloat = 8.0
+        static let rectangleRadius: CGFloat = MisticaConfig.currentCornerRadius.container
         static let spacing: CGFloat = 18.0
         static let circleSize: CGFloat = 40.0
         static let rowSkeletonHeight: CGFloat = 50.0
@@ -44,7 +43,7 @@ public class Skeleton: UIView {
     private func setupView() {
         switch type {
         case .line(let width):
-            let skeletonView = createSkeletonView(size: CGSize(width: width, height: Constants.lineHeight), cornerRadius: Constants.lineRadius)
+            let skeletonView = createSkeletonView(size: CGSize(width: width, height: Constants.lineHeight), cornerRadius: Constants.lineHeight/2)
             addSubview(skeletonView)
             skeletonView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -119,7 +118,7 @@ public class Skeleton: UIView {
 
         for i in 0 ..< numberOfLines {
             let isLastLine = i == numberOfLines - 1
-            let line = createSkeletonView(size: CGSize(width: bounds.width, height: Constants.lineHeight), cornerRadius: Constants.lineRadius)
+            let line = createSkeletonView(size: CGSize(width: bounds.width, height: Constants.lineHeight), cornerRadius: Constants.lineHeight/2)
             line.translatesAutoresizingMaskIntoConstraints = false
             stack.addArrangedSubview(line)
 
@@ -148,8 +147,8 @@ public class Skeleton: UIView {
         ])
 
         let circle = createSkeletonView(size: CGSize(width: Constants.circleSize, height: Constants.circleSize), cornerRadius: Constants.circleRadius)
-        let rectangle = createSkeletonView(size: CGSize(width: bounds.width - Constants.circleSize - Constants.spacing, height: Constants.lineHeight), cornerRadius: Constants.lineRadius)
-
+        let rectangle = createSkeletonView(size: CGSize(width: bounds.width - Constants.circleSize - Constants.spacing, height: Constants.lineHeight), cornerRadius: Constants.lineHeight/2)
+        
         stack.addArrangedSubview(circle)
         stack.addArrangedSubview(rectangle)
 

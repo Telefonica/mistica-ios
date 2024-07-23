@@ -1,10 +1,7 @@
-name: Mistica skin generator tests
+name: Generate Mistica Tokens
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'scripts/mistica-skin-generator/**'
 
 concurrency:
     group: ci-${{ github.ref }}
@@ -25,6 +22,18 @@ jobs:
       run: npm install
       working-directory: scripts/mistica-skin-generator
 
-    - name: Run tests
-      run: npm run test
+    - name: Generate tokens
+      run: npm run generate
       working-directory: scripts/mistica-skin-generator
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+        add-paths: 'Sources/MisticaCommon/*'
+        commit-message: 'feat(skin): update design tokens'
+        title: 'feat(skin): update design tokens from mistica-design'
+        branch: 'import-design-tokens'
+        team-reviewers: 'ios'
+        delete-branch: true
+        draft: true

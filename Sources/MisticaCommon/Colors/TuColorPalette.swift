@@ -11,10 +11,6 @@ import UIKit
 struct TuColors: MisticaColors {
     static let palette = TuColorPalette()
 
-    let backgroundBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeBlack)
-
-    let backgroundBrandSecondary = TuColors.palette.blue | TuColors.palette.darkModeBlack
-
     let appBarBackground = TuColors.palette.white | TuColors.palette.darkModeGrey
 
     let background = TuColors.palette.white | TuColors.palette.darkModeBlack
@@ -36,6 +32,10 @@ struct TuColors: MisticaColors {
     let backgroundContainerBrandOverInverse = TuColors.palette.primary80 | TuColors.palette.darkModeGrey
 
     let backgroundContainerAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeGrey
+
+    let backgroundBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeBlack)
+
+    let backgroundBrandSecondary = TuColors.palette.blue | TuColors.palette.darkModeBlack
 
     let backgroundOverlay = TuColors.palette.primary.withAlphaComponent(0.8) | TuColors.palette.darkModeGrey.withAlphaComponent(0.8)
 
@@ -95,11 +95,11 @@ struct TuColors: MisticaColors {
 
     let buttonSecondaryBorderSelected = TuColors.palette.blue70 | TuColors.palette.grey2
 
-    let buttonSecondaryBorderInverse = TuColors.palette.white | TuColors.palette.grey2
-
     let buttonSecondaryBackgroundHover = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
 
     let buttonSecondaryBackgroundSelected = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
+
+    let buttonSecondaryBorderInverse = TuColors.palette.white | TuColors.palette.grey2
 
     let buttonSecondaryBorderInverseSelected = TuColors.palette.white | TuColors.palette.grey2
 
@@ -268,17 +268,6 @@ struct TuColors: MisticaColors {
     let tagBackgroundWarning = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundError = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
-
-    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
-        colors:
-        [
-            TuColors.palette.black.withAlphaComponent(0),
-            TuColors.palette.black.withAlphaComponent(0.4),
-            TuColors.palette.black.withAlphaComponent(0.7)
-        ],
-        stops: [0, 0.3, 1],
-        angle: 180
-    ))
 }
 
 public struct TuColorPalette {

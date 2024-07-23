@@ -268,17 +268,6 @@ struct BlauColors: MisticaColors {
     let tagBackgroundWarning = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
 
     let tagBackgroundError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
-
-    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
-        colors:
-        [
-            BlauColors.palette.grey6.withAlphaComponent(0),
-            BlauColors.palette.grey6.withAlphaComponent(0.4),
-            BlauColors.palette.grey6.withAlphaComponent(0.7)
-        ],
-        stops: [0, 0.3, 1],
-        angle: 180
-    ))
 }
 
 public struct BlauColorPalette {

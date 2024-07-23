@@ -11,10 +11,6 @@ import UIKit
 struct TelefonicaColors: MisticaColors {
     static let palette = TelefonicaColorPalette()
 
-    let backgroundBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack)
-
-    let backgroundBrandSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
-
     let appBarBackground = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
 
     let background = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeBlack
@@ -36,6 +32,10 @@ struct TelefonicaColors: MisticaColors {
     let backgroundContainerBrandOverInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.darkModeGrey
 
     let backgroundContainerAlternative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey
+
+    let backgroundBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack)
+
+    let backgroundBrandSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 
     let backgroundOverlay = TelefonicaColors.palette.grey6.withAlphaComponent(0.8) | TelefonicaColors.palette.darkModeGrey.withAlphaComponent(0.8)
 
@@ -95,11 +95,11 @@ struct TelefonicaColors: MisticaColors {
 
     let buttonSecondaryBorderSelected = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderInverse = TelefonicaColors.palette.white
-
     let buttonSecondaryBackgroundHover = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
     let buttonSecondaryBackgroundSelected = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+
+    let buttonSecondaryBorderInverse = TelefonicaColors.palette.white
 
     let buttonSecondaryBorderInverseSelected = TelefonicaColors.palette.white
 
@@ -268,17 +268,6 @@ struct TelefonicaColors: MisticaColors {
     let tagBackgroundWarning = TelefonicaColors.palette.ambar10 | TelefonicaColors.palette.darkModeGrey6
 
     let tagBackgroundError = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey6
-
-    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
-        colors:
-        [
-            TelefonicaColors.palette.black.withAlphaComponent(0),
-            TelefonicaColors.palette.black.withAlphaComponent(0.4),
-            TelefonicaColors.palette.black.withAlphaComponent(0.7)
-        ],
-        stops: [0, 0.3, 1],
-        angle: 180
-    ))
 }
 
 public struct TelefonicaColorPalette {

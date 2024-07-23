@@ -9,16 +9,16 @@
 import SwiftUI
 
 public extension Color {
-    static var backgroundBrandSecondary: Color {
-        MisticaConfig.currentColors.backgroundBrandSecondary.color
-    }
-
-    static var appBarBackground: Color {
-        MisticaConfig.currentColors.appBarBackground.color
-    }
-
     static var background: Color {
         MisticaConfig.currentColors.background.color
+    }
+
+    static var backgroundAlternative: Color {
+        MisticaConfig.currentColors.backgroundAlternative.color
+    }
+
+    static var backgroundBrandSecondary: Color {
+        MisticaConfig.currentColors.backgroundBrandSecondary.color
     }
 
     static var backgroundContainer: Color {
@@ -65,20 +65,20 @@ public extension Color {
         MisticaConfig.currentColors.backgroundSkeletonInverse.color
     }
 
-    static var navigationBarBackground: Color {
-        MisticaConfig.currentColors.navigationBarBackground.color
-    }
-
-    static var backgroundAlternative: Color {
-        MisticaConfig.currentColors.backgroundAlternative.color
-    }
-
     static var backgroundBrandTop: Color {
         MisticaConfig.currentColors.backgroundBrandTop.color
     }
 
     static var backgroundBrandBottom: Color {
         MisticaConfig.currentColors.backgroundBrandBottom.color
+    }
+
+    static var appBarBackground: Color {
+        MisticaConfig.currentColors.appBarBackground.color
+    }
+
+    static var navigationBarBackground: Color {
+        MisticaConfig.currentColors.navigationBarBackground.color
     }
 
     static var skeletonWave: Color {
@@ -169,16 +169,16 @@ public extension Color {
         MisticaConfig.currentColors.buttonSecondaryBorderSelected.color
     }
 
-    static var buttonSecondaryBorderInverse: Color {
-        MisticaConfig.currentColors.buttonSecondaryBorderInverse.color
-    }
-
     static var buttonSecondaryBackgroundHover: Color {
         MisticaConfig.currentColors.buttonSecondaryBackgroundHover.color
     }
 
     static var buttonSecondaryBackgroundSelected: Color {
         MisticaConfig.currentColors.buttonSecondaryBackgroundSelected.color
+    }
+
+    static var buttonSecondaryBorderInverse: Color {
+        MisticaConfig.currentColors.buttonSecondaryBorderInverse.color
     }
 
     static var buttonSecondaryBorderInverseSelected: Color {
@@ -361,6 +361,14 @@ public extension Color {
         MisticaConfig.currentColors.textSecondaryInverse.color
     }
 
+    static var success: Color {
+        MisticaConfig.currentColors.success.color
+    }
+
+    static var warning: Color {
+        MisticaConfig.currentColors.warning.color
+    }
+
     static var error: Color {
         MisticaConfig.currentColors.error.color
     }
@@ -371,14 +379,6 @@ public extension Color {
 
     static var textErrorInverse: Color {
         MisticaConfig.currentColors.textErrorInverse.color
-    }
-
-    static var success: Color {
-        MisticaConfig.currentColors.success.color
-    }
-
-    static var warning: Color {
-        MisticaConfig.currentColors.warning.color
     }
 
     static var promo: Color {

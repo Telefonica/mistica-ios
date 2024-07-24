@@ -83,7 +83,7 @@ public struct EmptyState<PrimaryButton: View, SecondaryButton: View>: View {
             }
             .expandHorizontally(alignment: .leading)
         }
-        .padding(24)
+        .padding(16)
     }
 }
 

@@ -62,7 +62,7 @@ struct CarouselCatalogView: View {
                                 .foregroundColor(.textSecondary)
                                 .lineLimit(4)
                         }
-                        .padding(24)
+                        .padding(16)
                     }
                 }
                 .autoplay(hasAutoplay ? .active(TimeInterval(autoplayTimeIntervalOptions[autoplayTimeIntervalSelectedIndex])) : .inactive)

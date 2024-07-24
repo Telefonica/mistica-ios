@@ -169,7 +169,7 @@ public struct Feedback<
                 .frame(height: Constants.spacing)
 
             contentView
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 16)
                 .expandVertically()
         } else {
             Spacer()

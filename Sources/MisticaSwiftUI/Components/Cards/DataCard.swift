@@ -155,7 +155,7 @@ public struct DataCard<Headline: View, Fragment: View, PrimaryButton: View, Link
                 .padding(.top, 16)
             }
         }
-        .padding(.horizontal, 24)
+        .padding(.horizontal, 16)
         .padding(.top, 24)
         .padding(.bottom, 24)
         .expandHorizontally(alignment: .leading)

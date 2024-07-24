@@ -127,7 +127,7 @@ private class CroutonTestViewController: UIViewController {
         CroutonController().showCrouton(
             config: config,
             style: style,
-            rootViewController: self
+            rootViewController: { self }
         )
     }
 }

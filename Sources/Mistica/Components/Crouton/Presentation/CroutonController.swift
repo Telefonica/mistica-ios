@@ -37,6 +37,7 @@ public extension CroutonController {
     ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
     ///   - style: The style of the crouton, `.info` by default
     ///   - dismissHandler: A handler which is called when the handler is removed from the screen
+    ///   - exactViewController: The exacti viewCotroller where the croutono will be show. Has priority over rootViewController
     ///   - rootViewController: The root view controller that will show the crouton.
     @discardableResult
     func showCrouton(

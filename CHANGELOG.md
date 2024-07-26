@@ -1,3 +1,10 @@
+# [31.4.0](https://github.com/Telefonica/mistica-ios/compare/v31.3.0...v31.4.0) (2024-07-26)
+
+
+### Features
+
+* **Crouton:** Allow to show crouton on a exact viewController ([e30d0bc](https://github.com/Telefonica/mistica-ios/commit/e30d0bc8643b5a8d95de6cc436bd7f0b854a0698))
+
 # [31.3.0](https://github.com/Telefonica/mistica-ios/compare/v31.2.0...v31.3.0) (2024-07-23)
 
 

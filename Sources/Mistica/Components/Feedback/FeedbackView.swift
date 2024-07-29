@@ -223,7 +223,7 @@ public class FeedbackView: UIView {
     private lazy var scrollStackView: ScrollStackView = {
         let scrollStackView = ScrollStackView(arrangedSubviews: [contentContainerStackView])
         scrollStackView.translatesAutoresizingMaskIntoConstraints = false
-        scrollStackView.stackView.spacing = 16
+        scrollStackView.stackView.spacing = 24
         scrollStackView.stackView.alignment = .leading
         scrollStackView.stackView.layoutMargins = UIEdgeInsets(top: 64, left: 16, bottom: 16, right: 16)
         scrollStackView.stackView.preservesSuperviewLayoutMargins = false

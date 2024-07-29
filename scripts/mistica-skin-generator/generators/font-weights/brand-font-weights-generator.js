@@ -1,5 +1,5 @@
 export const generateBrandFontWeights = (brand, tokens) => {
-  const weights = Object.entries(tokens["text"]["weight"]);
+  const weights = Object.entries(tokens.text.weight);
   return template(brand.prefix, weights);
 };
 
@@ -12,8 +12,8 @@ import Foundation
 struct ${prefix}FontWeights: MisticaFontWeights {
 ${weights
   .map(
-    (weight) =>
-      `    public var ${weight[0]}: MisticaFontWeightType = .${weight[1].value}`
+    ([name, weight]) =>
+      `    public var ${name}: MisticaFontWeightType = .${weight.value}`
   )
   .join("\n")}
 }

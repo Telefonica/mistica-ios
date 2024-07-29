@@ -6,11 +6,10 @@ export const reduceColors = (brandsWithTokens) =>
   brandsWithTokens.reduce((acc, brandWithTokens) => {
     const brandId = brandWithTokens.brand.id;
     const light = brandWithTokens.tokens.light;
-    Object.entries(light).forEach((entry) => {
-      const colorToken = entry[0];
-      const type = mapType(entry[1]["type"]);
+    Object.entries(light).forEach(([colorToken, color]) => {
+      const type = mapType(color.type);
       if (type !== undefined) {
-        const value = entry[1]["value"];
+        const value = color.value;
         acc[colorToken] = {
           ...acc[colorToken],
           commonType: getCommonType(acc[colorToken]?.commonType, type),
@@ -18,16 +17,15 @@ export const reduceColors = (brandsWithTokens) =>
           lightType: { ...acc[colorToken]?.lightType, [brandId]: type },
         };
       } else {
-        console.error(`Unknown type for ${entry[0]} ${entry[1]}`);
+        throw `Unknown type for ${colorToken} ${color}`;
       }
     });
 
     const dark = brandWithTokens.tokens.dark;
-    Object.entries(dark).forEach((entry) => {
-      const colorToken = entry[0];
-      const type = mapType(entry[1]["type"]);
+    Object.entries(dark).forEach(([colorToken, color]) => {
+      const type = mapType(color.type);
       if (type !== undefined) {
-        const value = entry[1]["value"];
+        const value = color.value;
         acc[colorToken] = {
           ...acc[colorToken],
           commonType: getCommonType(acc[colorToken]?.commonType, type),
@@ -47,8 +45,7 @@ const mapType = (type) => {
     case "linear-gradient":
       return GRADIENT_COLOR;
     default:
-      console.warn(`Unknown token type ${type}`);
-      return undefined;
+      throw `Unknown token type ${type}`;
   }
 };
 

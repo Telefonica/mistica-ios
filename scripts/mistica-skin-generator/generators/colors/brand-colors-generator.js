@@ -2,16 +2,16 @@ import { MISTICA_COLOR, UI_COLOR } from "./reduce-colors.js";
 
 export const generateBrandColors = (brand, colors, palette) => {
   const paletteProps = Object.entries(palette)
-    .filter((entry) => {
-      if (entry[1].type === "color") {
+    .filter(([name, color]) => {
+      if (color.type === "color") {
         return true;
       } else {
-        console.warn(`Unknown color type ${entry[0]} in ${brand.id} palette`);
+        throw `Unknown color type ${name} in ${brand.id} palette`;
       }
     })
-    .map((entry) => ({
-      name: entry[0],
-      hex: entry[1].value,
+    .map(([name, hex]) => ({
+      name,
+      hex: hex.value,
     }));
 
   const tokenProps = Object.entries(colors).map(([colorId, color]) => ({
@@ -73,8 +73,7 @@ const mapColor = (prefix, tokenProp) => {
     case UI_COLOR:
       return mapSolidColors(prefix, tokenProp.lightValue, tokenProp.darkValue);
     default:
-      console.error(`Unexpected type: ${tokenProp.commonType}`);
-      return "/* ERROR */";
+      throw `Unexpected type: ${tokenProp.commonType}`;
   }
 };
 

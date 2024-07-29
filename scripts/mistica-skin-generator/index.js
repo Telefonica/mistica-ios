@@ -59,133 +59,127 @@ const BRANDS = [
 const BRANCH = "production";
 
 const run = async () => {
-  try {
-    const brandsWithTokens = await Promise.all(
-      BRANDS.map((brand) => {
-        console.log(
-          `Getting ${brand.misticaDesignFileName} tokens from mistica-design/${BRANCH}...`
-        );
-        return downloadTokens(BRANCH, brand.misticaDesignFileName).then(
-          (tokens) => ({
-            brand,
-            tokens,
-          })
-        );
-      })
-    );
-    const anyBrandTokens = brandsWithTokens[0].tokens;
+  const brandsWithTokens = await Promise.all(
+    BRANDS.map((brand) => {
+      console.log(
+        `Getting ${brand.misticaDesignFileName} tokens from mistica-design/${BRANCH}...`
+      );
+      return downloadTokens(BRANCH, brand.misticaDesignFileName).then(
+        (tokens) => ({
+          brand,
+          tokens,
+        })
+      );
+    })
+  );
+  const anyBrandTokens = brandsWithTokens[0].tokens;
 
+  // Font weights
+  console.log(`Generating MisticaFontWeights.swift...`);
+  const misticaFontWeights = generateMisticaFontWeights(anyBrandTokens);
+  fs.writeFileSync(
+    "../../Sources/MisticaCommon/Fonts/MisticaFontWeights.swift",
+    misticaFontWeights
+  );
+
+  // Font sizes
+  console.log(`Generating MisticaFontSizes.swift...`);
+  const misticaFontSizes = generateMisticaFontSizes(anyBrandTokens);
+  fs.writeFileSync(
+    "../../Sources/MisticaCommon/Fonts/MisticaFontSizes.swift",
+    misticaFontSizes
+  );
+
+  // Corner radius
+  console.log(`Generating MisticaCornerRadius.swift...`);
+  const misticaCornerRadius = generateMisticaCornerRadius(anyBrandTokens);
+  fs.writeFileSync(
+    "../../Sources/MisticaCommon/Radius/MisticaCornerRadius.swift",
+    misticaCornerRadius
+  );
+
+  // Colors
+  console.log(`Generating MisticaColors.swift...`);
+  const colors = reduceColors(brandsWithTokens);
+  const misticaColors = generateMisticaColors(colors);
+  fs.writeFileSync(
+    "../../Sources/MisticaCommon/Colors/MisticaColors.swift",
+    misticaColors
+  );
+
+  console.log(`Generating MisticaColor.swift...`);
+  const misticaColor = generateMisticaColor(colors);
+  fs.writeFileSync(
+    "../../Sources/MisticaCommon/Colors/MisticaColor.swift",
+    misticaColor
+  );
+
+  console.log(`Generating ColorToolkit+Color.swift...`);
+  const colorToolkit = generateColorToolkit(colors);
+  fs.writeFileSync(
+    "../../Sources/MisticaCommon/Colors/ColorToolkit+Color.swift",
+    colorToolkit
+  );
+
+  console.log(`Generating ColorToolkit+UIColor.swift...`);
+  const uicolorToolkit = generateUIColorToolkit(colors);
+  fs.writeFileSync(
+    "../../Sources/MisticaCommon/Colors/ColorToolkit+UIColor.swift",
+    uicolorToolkit
+  );
+
+  brandsWithTokens.forEach((brandWithTokens) => {
     // Font weights
-    console.log(`Generating MisticaFontWeights.swift...`);
-    const misticaFontWeights = generateMisticaFontWeights(anyBrandTokens);
+    console.log(
+      `Generating ${brandWithTokens.brand.prefix}FontWeights.swift...`
+    );
+    const brandFontWeights = generateBrandFontWeights(
+      brandWithTokens.brand,
+      brandWithTokens.tokens
+    );
     fs.writeFileSync(
-      "../../Sources/MisticaCommon/Fonts/MisticaFontWeights.swift",
-      misticaFontWeights
+      `../../Sources/MisticaCommon/Fonts/Brands/${brandWithTokens.brand.prefix}FontWeights.swift`,
+      brandFontWeights
     );
 
     // Font sizes
-    console.log(`Generating MisticaFontSizes.swift...`);
-    const misticaFontSizes = generateMisticaFontSizes(anyBrandTokens);
+    console.log(`Generating ${brandWithTokens.brand.prefix}FontSizes.swift...`);
+    const brandFontSizes = generateBrandFontSizes(
+      brandWithTokens.brand,
+      brandWithTokens.tokens
+    );
     fs.writeFileSync(
-      "../../Sources/MisticaCommon/Fonts/MisticaFontSizes.swift",
-      misticaFontSizes
+      `../../Sources/MisticaCommon/Fonts/Brands/${brandWithTokens.brand.prefix}FontSizes.swift`,
+      brandFontSizes
     );
 
     // Corner radius
-    console.log(`Generating MisticaCornerRadius.swift...`);
-    const misticaCornerRadius = generateMisticaCornerRadius(anyBrandTokens);
+    console.log(
+      `Generating ${brandWithTokens.brand.prefix}CornerRadius.swift...`
+    );
+    const brandCornerRadius = generateBrandCornerRadius(
+      brandWithTokens.brand,
+      brandWithTokens.tokens
+    );
     fs.writeFileSync(
-      "../../Sources/MisticaCommon/Radius/MisticaCornerRadius.swift",
-      misticaCornerRadius
+      `../../Sources/MisticaCommon/Radius/Brands/${brandWithTokens.brand.prefix}CornerRadius.swift`,
+      brandCornerRadius
     );
 
     // Colors
-    console.log(`Generating MisticaColors.swift...`);
-    const colors = reduceColors(brandsWithTokens);
-    const misticaColors = generateMisticaColors(colors);
-    fs.writeFileSync(
-      "../../Sources/MisticaCommon/Colors/MisticaColors.swift",
-      misticaColors
+    console.log(
+      `Generating ${brandWithTokens.brand.prefix}ColorPalette.swift...`
     );
-
-    console.log(`Generating MisticaColor.swift...`);
-    const misticaColor = generateMisticaColor(colors);
-    fs.writeFileSync(
-      "../../Sources/MisticaCommon/Colors/MisticaColor.swift",
-      misticaColor
+    const brandColors = generateBrandColors(
+      brandWithTokens.brand,
+      colors,
+      brandWithTokens.tokens.global.palette
     );
-
-    console.log(`Generating ColorToolkit+Color.swift...`);
-    const colorToolkit = generateColorToolkit(colors);
     fs.writeFileSync(
-      "../../Sources/MisticaCommon/Colors/ColorToolkit+Color.swift",
-      colorToolkit
+      `../../Sources/MisticaCommon/Colors/${brandWithTokens.brand.prefix}ColorPalette.swift`,
+      brandColors
     );
-
-    console.log(`Generating ColorToolkit+UIColor.swift...`);
-    const uicolorToolkit = generateUIColorToolkit(colors);
-    fs.writeFileSync(
-      "../../Sources/MisticaCommon/Colors/ColorToolkit+UIColor.swift",
-      uicolorToolkit
-    );
-
-    brandsWithTokens.forEach((brandWithTokens) => {
-      // Font weights
-      console.log(
-        `Generating ${brandWithTokens.brand.prefix}FontWeights.swift...`
-      );
-      const brandFontWeights = generateBrandFontWeights(
-        brandWithTokens.brand,
-        brandWithTokens.tokens
-      );
-      fs.writeFileSync(
-        `../../Sources/MisticaCommon/Fonts/Brands/${brandWithTokens.brand.prefix}FontWeights.swift`,
-        brandFontWeights
-      );
-
-      // Font sizes
-      console.log(
-        `Generating ${brandWithTokens.brand.prefix}FontSizes.swift...`
-      );
-      const brandFontSizes = generateBrandFontSizes(
-        brandWithTokens.brand,
-        brandWithTokens.tokens
-      );
-      fs.writeFileSync(
-        `../../Sources/MisticaCommon/Fonts/Brands/${brandWithTokens.brand.prefix}FontSizes.swift`,
-        brandFontSizes
-      );
-
-      // Corner radius
-      console.log(
-        `Generating ${brandWithTokens.brand.prefix}CornerRadius.swift...`
-      );
-      const brandCornerRadius = generateBrandCornerRadius(
-        brandWithTokens.brand,
-        brandWithTokens.tokens
-      );
-      fs.writeFileSync(
-        `../../Sources/MisticaCommon/Radius/Brands/${brandWithTokens.brand.prefix}CornerRadius.swift`,
-        brandCornerRadius
-      );
-
-      // Colors
-      console.log(
-        `Generating ${brandWithTokens.brand.prefix}ColorPalette.swift...`
-      );
-      const brandColors = generateBrandColors(
-        brandWithTokens.brand,
-        colors,
-        brandWithTokens.tokens.global.palette
-      );
-      fs.writeFileSync(
-        `../../Sources/MisticaCommon/Colors/${brandWithTokens.brand.prefix}ColorPalette.swift`,
-        brandColors
-      );
-    });
-  } catch (error) {
-    console.error("Download error", error);
-  }
+  });
 };
 
 run();

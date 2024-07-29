@@ -1,5 +1,5 @@
 export const generateBrandCornerRadius = (brand, tokens) => {
-  const cornerRadius = Object.entries(tokens["radius"]);
+  const cornerRadius = Object.entries(tokens.radius);
   return template(brand.prefix, cornerRadius);
 };
 
@@ -17,7 +17,7 @@ import Foundation
 struct ${prefix}CornerRadius: MisticaCornerRadius {
 ${cornerRadius
   .map(
-    (radius) => `    var ${radius[0]}: CGFloat = ${mapValue(radius[1].value)}`
+    ([name, radius]) => `    var ${name}: CGFloat = ${mapValue(radius.value)}`
   )
   .join("\n")}
 }

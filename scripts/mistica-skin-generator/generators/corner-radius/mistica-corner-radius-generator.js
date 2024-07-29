@@ -1,5 +1,5 @@
 export const generateMisticaCornerRadius = (anyBrandTokens) => {
-  const cornerRadius = Object.keys(anyBrandTokens["radius"]);
+  const cornerRadius = Object.keys(anyBrandTokens.radius);
   return template(cornerRadius);
 };
 

@@ -2,7 +2,7 @@ import { UI_COLOR } from "./reduce-colors.js";
 
 export const generateColorToolkit = (colors) => {
   const misticaColors = Object.entries(colors).filter(
-    (color) => color[1].commonType === UI_COLOR
+    ([_, color]) => color.commonType === UI_COLOR
   );
 
   return template(misticaColors);
@@ -17,8 +17,8 @@ import SwiftUI
 public extension Color {
 ${props
   .map(
-    (prop) => `    static var ${prop[0]}: Color {
-        MisticaConfig.currentColors.${prop[0]}.color
+    ([color]) => `    static var ${color}: Color {
+        MisticaConfig.currentColors.${color}.color
     }`
   )
   .join("\n")}

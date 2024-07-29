@@ -1,5 +1,5 @@
 export const generateMisticaFontWeights = (anyBrandTokens) => {
-  const weights = Object.keys(anyBrandTokens["text"]["weight"]);
+  const weights = Object.keys(anyBrandTokens.text.weight);
   return template(weights);
 };
 

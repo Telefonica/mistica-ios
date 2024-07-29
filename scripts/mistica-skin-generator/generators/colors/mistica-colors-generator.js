@@ -9,7 +9,7 @@ import UIKit
 
 public protocol MisticaColors {
 ${props
-  .map((prop) => `    var ${prop[0]}: ${prop[1].commonType} { get }`)
+  .map(([name, color]) => `    var ${name}: ${color.commonType} { get }`)
   .join("\n")}
 }
 `;

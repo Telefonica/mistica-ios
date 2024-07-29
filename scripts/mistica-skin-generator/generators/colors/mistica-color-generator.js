@@ -2,7 +2,7 @@ import { MISTICA_COLOR } from "./reduce-colors.js";
 
 export const generateMisticaColor = (colors) => {
   const misticaColors = Object.entries(colors).filter(
-    (color) => color[1].commonType === MISTICA_COLOR
+    ([_, color]) => color.commonType === MISTICA_COLOR
   );
 
   return template(misticaColors);
@@ -22,8 +22,8 @@ public enum MisticaColor {
 public extension MisticaColor {
 ${props
   .map(
-    (prop) => `    static var ${prop[0]}: ${prop[1].commonType} {
-        MisticaConfig.currentColors.${prop[0]}
+    ([name, color]) => `    static var ${name}: ${color.commonType} {
+        MisticaConfig.currentColors.${name}
     }`
   )
   .join("\n")}

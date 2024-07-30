@@ -2,6 +2,12 @@ export const MISTICA_COLOR = "MisticaColor";
 export const UI_COLOR = "UIColor";
 export const GRADIENT_COLOR = "MisticaGradient";
 
+/**
+ *
+ * @param {[{brand: {id: string}; tokens: {light: {[id: string]: {type: string; value: any}}; dark: {[id: string]: {type: string; value: any}}}]} brandsWithTokens
+ * @returns {{[id: string]: {commonType: string; darkType: {[brandId: string]: string}; darkValue: {[brandId: string]: any}; lightType: {[brandId: string]: string}; lightValue: {[brandId: string]: any}}}}
+ */
+
 export const reduceColors = (brandsWithTokens) =>
   brandsWithTokens.reduce((acc, brandWithTokens) => {
     const brandId = brandWithTokens.brand.id;

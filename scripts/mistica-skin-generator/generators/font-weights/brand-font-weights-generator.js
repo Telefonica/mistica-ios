@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {{prefix: string}} brand
+ * @param {{text: {weight: {[id: string]: {value: string}}}}} tokens
+ * @returns string
+ */
 export const generateBrandFontWeights = (brand, tokens) => {
   const weights = Object.entries(tokens.text.weight);
   return template(brand.prefix, weights);

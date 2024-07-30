@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {{prefix: string}} brand
+ * @param {{text: {radius: {[id: string]: {value: any}}}}} tokens
+ * @returns string
+ */
 export const generateBrandCornerRadius = (brand, tokens) => {
   const cornerRadius = Object.entries(tokens.radius);
   return template(brand.prefix, cornerRadius);

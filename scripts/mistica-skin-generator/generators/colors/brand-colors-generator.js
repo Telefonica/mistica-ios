@@ -1,5 +1,12 @@
 import { MISTICA_COLOR, UI_COLOR } from "./reduce-colors.js";
 
+/**
+ *
+ * @param {{id: string; prefix: string}} brand
+ * @param {{[id: string]: {commonType: string; darkType: {[brandId: string]: string}; darkValue: {[brandId: string]: any}; lightType: {[brandId: string]: string}; lightValue: {[brandId: string]: any}}}} colors
+ * @param {{[id: string]: {value: string; type: string}}} palette
+ * @returns string
+ */
 export const generateBrandColors = (brand, colors, palette) => {
   const paletteProps = Object.entries(palette)
     .filter(([name, color]) => {

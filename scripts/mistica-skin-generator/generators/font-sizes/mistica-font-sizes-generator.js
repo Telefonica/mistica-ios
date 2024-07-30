@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {{text: {size: {[id: string]: any}}}} anyBrandTokens
+ * @returns string
+ */
 export const generateMisticaFontSizes = (anyBrandTokens) => {
   const weights = Object.keys(anyBrandTokens.text.size);
   return template(weights);

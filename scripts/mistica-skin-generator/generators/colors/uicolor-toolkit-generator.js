@@ -1,5 +1,10 @@
 import { UI_COLOR } from "./reduce-colors.js";
 
+/**
+ *
+ * @param {{[id: string]: {commonType: string; darkType: {[brandId: string]: string}; darkValue: {[brandId: string]: any}; lightType: {[brandId: string]: string}; lightValue: {[brandId: string]: any}}}} colors
+ * @returns string
+ */
 export const generateUIColorToolkit = (colors) => {
   const misticaColors = Object.entries(colors).filter(
     ([_, color]) => color.commonType === UI_COLOR

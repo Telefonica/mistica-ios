@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {{[id: string]: {commonType: string; darkType: {[brandId: string]: string}; darkValue: {[brandId: string]: any}; lightType: {[brandId: string]: string}; lightValue: {[brandId: string]: any}}}} colors
+ * @returns string
+ */
 export const generateMisticaColors = (colors) =>
   template(Object.entries(colors));
 

@@ -1,4 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generateBrandCornerRadius 1`] = `
+"
 // Generated using Make
 // DO NOT EDIT
 
@@ -17,3 +20,5 @@ struct O2NewCornerRadius: MisticaCornerRadius {
     var sheet: CGFloat = 16
     var mediaSmall: CGFloat = 8
 }
+"
+`;

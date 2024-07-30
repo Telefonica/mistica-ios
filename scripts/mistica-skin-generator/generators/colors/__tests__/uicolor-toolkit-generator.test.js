@@ -28,9 +28,5 @@ test("generateUIColorToolkit", () => {
   const colors = reduceColors(brandsWithTokens);
   const result = generateUIColorToolkit(colors);
 
-  const expectedContent = fs.readFileSync(
-    resolve(__dirname, "expected-ColorUIToolkit+Color.swift"),
-    "utf-8"
-  );
-  expect(result).toBe(expectedContent);
+  expect(result).toMatchSnapshot();
 });

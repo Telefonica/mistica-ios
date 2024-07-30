@@ -1,4 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generateBrandFontWeights 1`] = `
+"
 // Generated using Make
 // DO NOT EDIT
 
@@ -20,3 +23,5 @@ struct O2NewFontWeights: MisticaFontWeights {
     public var text9: MisticaFontWeightType = .bold
     public var text10: MisticaFontWeightType = .bold
 }
+"
+`;

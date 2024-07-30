@@ -1,4 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generateMisticaCornerRadius 1`] = `
+"
 // Generated using Make
 // DO NOT EDIT
 
@@ -21,3 +24,5 @@ public protocol MisticaCornerRadius {
     var sheet: CGFloat { get }
     var mediaSmall: CGFloat { get }
 }
+"
+`;

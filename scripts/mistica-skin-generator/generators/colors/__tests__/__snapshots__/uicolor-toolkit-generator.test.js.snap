@@ -1,4 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generateUIColorToolkit 1`] = `
+"
 // Generated using Make
 // DO NOT EDIT
 
@@ -386,4 +389,5 @@ public extension UIColor {
     static var tagBackgroundError: UIColor {
         MisticaConfig.currentColors.tagBackgroundError
     }
-}
+}"
+`;

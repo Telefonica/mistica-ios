@@ -1,4 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generateBrandColors 1`] = `
+"
 // Generated using Make
 // DO NOT EDIT
 
@@ -342,4 +345,5 @@ public struct Brand1ColorPalette {
     public let darkModeGrey = UIColor(hex: "#08132B")!
     public let darkModeGrey6 = UIColor(hex: "#14213D")!
     public let darkModeBeyondBlue = UIColor(hex: "#1A62FF")!
-}
+}"
+`;

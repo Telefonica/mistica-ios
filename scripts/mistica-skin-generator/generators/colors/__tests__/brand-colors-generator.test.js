@@ -32,9 +32,5 @@ test("generateBrandColors", () => {
     brandsWithTokens[0].tokens.global.palette
   );
 
-  const expectedContent = fs.readFileSync(
-    resolve(__dirname, "expected-Brand1Colors.swift"),
-    "utf-8"
-  );
-  expect(result).toBe(expectedContent);
+  expect(result).toMatchSnapshot();
 });

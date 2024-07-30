@@ -1,4 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generateMisticaColor 1`] = `
+"
 // Generated using Make
 // DO NOT EDIT
 
@@ -20,3 +23,5 @@ public extension MisticaColor {
         MisticaConfig.currentColors.cardContentOverlay
     }
 }
+"
+`;

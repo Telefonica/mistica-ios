@@ -9,10 +9,5 @@ test("generateMisticaFontSizes", () => {
   );
   const result = generateMisticaFontSizes(anyBrandTokens);
 
-  const expectedContentPath = resolve(
-    __dirname,
-    "expected-mistica-font-sizes.swift"
-  );
-  const expectedContent = fs.readFileSync(expectedContentPath, "utf-8");
-  expect(result).toBe(expectedContent);
+  expect(result).toMatchSnapshot();
 });

@@ -10,10 +10,5 @@ test("generateBrandCornerRadius", () => {
   const brand = { prefix: "O2New" };
   const result = generateBrandCornerRadius(brand, anyBrandTokens);
 
-  const expectedContentPath = resolve(
-    __dirname,
-    "expected-o2-new-corner-radius.swift"
-  );
-  const expectedContent = fs.readFileSync(expectedContentPath, "utf-8");
-  expect(result).toBe(expectedContent);
+  expect(result).toMatchSnapshot();
 });

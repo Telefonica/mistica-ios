@@ -1,4 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generateColorToolkit 1`] = `
+"
 // Generated using Make
 // DO NOT EDIT
 
@@ -392,4 +395,5 @@ private extension UIColor {
     var color: Color {
         Color(self)
     }
-}
+}"
+`;

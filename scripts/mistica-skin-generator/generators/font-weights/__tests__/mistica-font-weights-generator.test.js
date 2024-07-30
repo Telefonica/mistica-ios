@@ -9,10 +9,5 @@ test("generateMisticaFontWeights", () => {
   );
   const result = generateMisticaFontWeights(anyBrandTokens);
 
-  const expectedContentPath = resolve(
-    __dirname,
-    "expected-mistica-font-weights.swift"
-  );
-  const expectedContent = fs.readFileSync(expectedContentPath, "utf-8");
-  expect(result).toBe(expectedContent);
+  expect(result).toMatchSnapshot();
 });

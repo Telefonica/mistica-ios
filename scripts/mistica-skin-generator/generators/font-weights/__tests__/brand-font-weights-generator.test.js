@@ -10,10 +10,5 @@ test("generateBrandFontWeights", () => {
   const brand = { prefix: "O2New" };
   const result = generateBrandFontWeights(brand, anyBrandTokens);
 
-  const expectedContentPath = resolve(
-    __dirname,
-    "expected-o2-new-font-weights.swift"
-  );
-  const expectedContent = fs.readFileSync(expectedContentPath, "utf-8");
-  expect(result).toBe(expectedContent);
+  expect(result).toMatchSnapshot();
 });

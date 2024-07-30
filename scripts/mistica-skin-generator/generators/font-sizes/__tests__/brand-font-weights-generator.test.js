@@ -10,10 +10,5 @@ test("generateBrandFontSizes", () => {
   const brand = { prefix: "O2New" };
   const result = generateBrandFontSizes(brand, anyBrandTokens);
 
-  const expectedContentPath = resolve(
-    __dirname,
-    "expected-o2-new-font-sizes.swift"
-  );
-  const expectedContent = fs.readFileSync(expectedContentPath, "utf-8");
-  expect(result).toBe(expectedContent);
+  expect(result).toMatchSnapshot();
 });

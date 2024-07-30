@@ -1,4 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generateMisticaFontWeights 1`] = `
+"
 // Generated using Make
 // DO NOT EDIT
 
@@ -20,3 +23,5 @@ public protocol MisticaFontWeights {
     var text9: MisticaFontWeightType { get }
     var text10: MisticaFontWeightType { get }
 }
+"
+`;

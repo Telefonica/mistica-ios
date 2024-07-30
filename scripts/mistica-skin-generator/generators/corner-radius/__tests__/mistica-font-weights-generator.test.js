@@ -9,10 +9,5 @@ test("generateMisticaCornerRadius", () => {
   );
   const result = generateMisticaCornerRadius(anyBrandTokens);
 
-  const expectedContentPath = resolve(
-    __dirname,
-    "expected-mistica-corner-radius.swift"
-  );
-  const expectedContent = fs.readFileSync(expectedContentPath, "utf-8");
-  expect(result).toBe(expectedContent);
+  expect(result).toMatchSnapshot();
 });

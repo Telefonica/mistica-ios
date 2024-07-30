@@ -1,4 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`generateMisticaColors 1`] = `
+"
 // Generated using Make
 // DO NOT EDIT
 
@@ -136,3 +139,5 @@ public protocol MisticaColors {
     var tagBackgroundError: UIColor { get }
     var cardContentOverlay: MisticaColor { get }
 }
+"
+`;

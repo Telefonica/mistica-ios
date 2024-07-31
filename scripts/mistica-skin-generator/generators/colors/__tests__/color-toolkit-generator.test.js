@@ -1,7 +1,7 @@
 import fs from 'fs';
 import {resolve} from 'path';
-import {reduceColors} from '../reduce-colors';
-import {generateColorToolkit} from '../color-toolkit-generator';
+import {reduceColors} from '../reduce-colors.js';
+import {generateColorToolkit} from '../color-toolkit-generator.js';
 
 test('generateColorToolkit', () => {
     const getTokensFromFile = (file) => JSON.parse(fs.readFileSync(resolve(__dirname, file), 'utf-8'));

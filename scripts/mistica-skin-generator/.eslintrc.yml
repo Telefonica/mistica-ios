@@ -7,3 +7,7 @@ extends:
 settings:
     react:
         version: '18.0.0' # although this project doesn't use react, we need to set this to avoid warnings
+rules:
+    import/extensions:
+        - error
+        - js: always

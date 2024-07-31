@@ -1,4 +1,4 @@
-import {MISTICA_COLOR, UI_COLOR} from './reduce-colors';
+import {MISTICA_COLOR, UI_COLOR} from './reduce-colors.js';
 
 const mapSolidColor = (prefix, value) => {
     if (value.includes('rgb')) {

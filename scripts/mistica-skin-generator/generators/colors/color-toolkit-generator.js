@@ -1,4 +1,4 @@
-import {UI_COLOR} from './reduce-colors';
+import {UI_COLOR} from './reduce-colors.js';
 
 const template = (props) => `
 // Generated using Make

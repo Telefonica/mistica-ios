@@ -1,4 +1,4 @@
-import {MISTICA_COLOR} from './reduce-colors';
+import {MISTICA_COLOR} from './reduce-colors.js';
 
 const template = (props) => `
 // Generated using Make

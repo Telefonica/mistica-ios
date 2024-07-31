@@ -1,6 +1,6 @@
 import fs from 'fs';
 import {resolve} from 'path';
-import {generateBrandFontSizes} from '../brand-font-sizes-generator';
+import {generateBrandFontSizes} from '../brand-font-sizes-generator.js';
 
 test('generateBrandFontSizes', () => {
     const anyBrandTokensPath = resolve(__dirname, 'any-brand-tokens.json');

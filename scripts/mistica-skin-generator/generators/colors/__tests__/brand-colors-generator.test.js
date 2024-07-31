@@ -1,7 +1,7 @@
 import fs from 'fs';
 import {resolve} from 'path';
-import {reduceColors} from '../reduce-colors';
-import {generateBrandColors} from '../brand-colors-generator';
+import {reduceColors} from '../reduce-colors.js';
+import {generateBrandColors} from '../brand-colors-generator.js';
 
 test('generateBrandColors', () => {
     const getTokensFromFile = (file) => JSON.parse(fs.readFileSync(resolve(__dirname, file), 'utf-8'));

@@ -1,6 +1,6 @@
 import fs from 'fs';
 import {resolve} from 'path';
-import {generateBrandCornerRadius} from '../brand-corner-radius-generator';
+import {generateBrandCornerRadius} from '../brand-corner-radius-generator.js';
 
 test('generateBrandCornerRadius', () => {
     const anyBrandTokensPath = resolve(__dirname, 'any-brand-tokens.json');

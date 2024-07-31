@@ -1,6 +1,6 @@
 import fs from 'fs';
 import {resolve} from 'path';
-import {generateMisticaCornerRadius} from '../mistica-corner-radius-generator';
+import {generateMisticaCornerRadius} from '../mistica-corner-radius-generator.js';
 
 test('generateMisticaCornerRadius', () => {
     const anyBrandTokensPath = resolve(__dirname, 'any-brand-tokens.json');

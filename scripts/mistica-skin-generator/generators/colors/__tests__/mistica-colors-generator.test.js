@@ -1,7 +1,7 @@
 import fs from 'fs';
 import {resolve} from 'path';
-import {reduceColors} from '../reduce-colors';
-import {generateMisticaColors} from '../mistica-colors-generator';
+import {reduceColors} from '../reduce-colors.js';
+import {generateMisticaColors} from '../mistica-colors-generator.js';
 
 test('generateMisticaColors', () => {
     const getTokensFromFile = (file) => JSON.parse(fs.readFileSync(resolve(__dirname, file), 'utf-8'));

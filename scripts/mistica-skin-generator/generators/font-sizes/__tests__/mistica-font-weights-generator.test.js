@@ -1,6 +1,6 @@
 import fs from 'fs';
 import {resolve} from 'path';
-import {generateMisticaFontSizes} from '../mistica-font-sizes-generator';
+import {generateMisticaFontSizes} from '../mistica-font-sizes-generator.js';
 
 test('generateMisticaFontSizes', () => {
     const anyBrandTokensPath = resolve(__dirname, 'any-brand-tokens.json');

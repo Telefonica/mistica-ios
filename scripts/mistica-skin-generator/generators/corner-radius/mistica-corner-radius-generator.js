@@ -1,14 +1,3 @@
-/**
- *
- * @param {{text: {radius: {[id: string]: any}}}} anyBrandTokens
- * @returns string
- */
-
-export const generateMisticaCornerRadius = (anyBrandTokens) => {
-  const cornerRadius = Object.keys(anyBrandTokens.radius);
-  return template(cornerRadius);
-};
-
 const template = (props) => `
 // Generated using Make
 // DO NOT EDIT
@@ -23,3 +12,15 @@ public protocol MisticaCornerRadius {
 ${props.map((prop) => `    var ${prop}: CGFloat { get }`).join("\n")}
 }
 `;
+
+/**
+ *
+ * @param {{text: {radius: {[id: string]: any}}}} anyBrandTokens
+ * @returns string
+ */
+
+export const generateMisticaCornerRadius = (anyBrandTokens) => {
+  const cornerRadius = Object.keys(anyBrandTokens.radius);
+  return template(cornerRadius);
+};
+

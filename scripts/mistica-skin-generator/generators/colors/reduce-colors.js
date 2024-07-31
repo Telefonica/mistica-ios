@@ -2,6 +2,23 @@ export const MISTICA_COLOR = "MisticaColor";
 export const UI_COLOR = "UIColor";
 export const GRADIENT_COLOR = "MisticaGradient";
 
+const mapType = (type) => {
+  switch (type) {
+    case "color":
+      return UI_COLOR;
+    case "linear-gradient":
+      return GRADIENT_COLOR;
+    default:
+      throw `Unknown token type ${type}`;
+  }
+};
+
+const getCommonType = (previous, current) => {
+  if (previous !== undefined && previous !== current) return MISTICA_COLOR;
+  if (current === GRADIENT_COLOR) return MISTICA_COLOR;
+  else return current;
+};
+
 /**
  *
  * @param {[{brand: {id: string}; tokens: {light: {[id: string]: {type: string; value: any}}; dark: {[id: string]: {type: string; value: any}}}]} brandsWithTokens
@@ -44,19 +61,3 @@ export const reduceColors = (brandsWithTokens) =>
     return acc;
   }, {});
 
-const mapType = (type) => {
-  switch (type) {
-    case "color":
-      return UI_COLOR;
-    case "linear-gradient":
-      return GRADIENT_COLOR;
-    default:
-      throw `Unknown token type ${type}`;
-  }
-};
-
-const getCommonType = (previous, current) => {
-  if (previous !== undefined && previous !== current) return MISTICA_COLOR;
-  if (current === GRADIENT_COLOR) return MISTICA_COLOR;
-  else return current;
-};

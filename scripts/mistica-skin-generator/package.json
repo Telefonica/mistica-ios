@@ -5,10 +5,13 @@
   "type": "module",
   "scripts": {
     "test": "vitest run",
+    "lint": "eslint --report-unused-disable-directives .",
     "test:watch": "vitest",
     "generate": "node index.js"
   },
   "devDependencies": {
+    "@telefonica/eslint-config": "^2.1.1",
+    "eslint": "^8.57.0",
     "vitest": "^2.0.3"
   }
 }

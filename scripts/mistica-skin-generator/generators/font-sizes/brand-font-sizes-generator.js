@@ -1,14 +1,3 @@
-/**
- *
- * @param {{prefix: string}} brand
- * @param {{text: {size: {[id: string]: {value: {mobile: number}}}}}} tokens
- * @returns string
- */
-export const generateBrandFontSizes = (brand, tokens) => {
-  const sizes = Object.entries(tokens.text.size);
-  return template(brand.prefix, sizes);
-};
-
 const template = (prefix, sizes) => `
 // Generated using Make
 // DO NOT EDIT
@@ -23,3 +12,15 @@ ${sizes
   .join("\n")}
 }
 `;
+
+/**
+ *
+ * @param {{prefix: string}} brand
+ * @param {{text: {size: {[id: string]: {value: {mobile: number}}}}}} tokens
+ * @returns string
+ */
+export const generateBrandFontSizes = (brand, tokens) => {
+  const sizes = Object.entries(tokens.text.size);
+  return template(brand.prefix, sizes);
+};
+

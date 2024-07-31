@@ -1,14 +1,3 @@
-/**
- *
- * @param {{prefix: string}} brand
- * @param {{text: {radius: {[id: string]: {value: any}}}}} tokens
- * @returns string
- */
-export const generateBrandCornerRadius = (brand, tokens) => {
-  const cornerRadius = Object.entries(tokens.radius);
-  return template(brand.prefix, cornerRadius);
-};
-
 const mapValue = (value) =>
   value === "circle" || value === "999"
     ? "MisticaRadiusConstants.roundedRadius"
@@ -28,3 +17,15 @@ ${cornerRadius
   .join("\n")}
 }
 `;
+
+/**
+ *
+ * @param {{prefix: string}} brand
+ * @param {{text: {radius: {[id: string]: {value: any}}}}} tokens
+ * @returns string
+ */
+export const generateBrandCornerRadius = (brand, tokens) => {
+  const cornerRadius = Object.entries(tokens.radius);
+  return template(brand.prefix, cornerRadius);
+};
+

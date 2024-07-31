@@ -1,17 +1,4 @@
-import { UI_COLOR } from "./reduce-colors.js";
-
-/**
- *
- * @param {{[id: string]: {commonType: string; darkType: {[brandId: string]: string}; darkValue: {[brandId: string]: any}; lightType: {[brandId: string]: string}; lightValue: {[brandId: string]: any}}}} colors
- * @returns string
- */
-export const generateUIColorToolkit = (colors) => {
-  const misticaColors = Object.entries(colors).filter(
-    ([_, color]) => color.commonType === UI_COLOR
-  );
-
-  return template(misticaColors);
-};
+import { UI_COLOR } from "./reduce-colors";
 
 const template = (props) => `
 // Generated using Make
@@ -28,3 +15,17 @@ ${props
   )
   .join("\n")}
 }`;
+
+/**
+ *
+ * @param {{[id: string]: {commonType: string; darkType: {[brandId: string]: string}; darkValue: {[brandId: string]: any}; lightType: {[brandId: string]: string}; lightValue: {[brandId: string]: any}}}} colors
+ * @returns string
+ */
+export const generateUIColorToolkit = (colors) => {
+  const misticaColors = Object.entries(colors).filter(
+    ([, color]) => color.commonType === UI_COLOR
+  );
+
+  return template(misticaColors);
+};
+

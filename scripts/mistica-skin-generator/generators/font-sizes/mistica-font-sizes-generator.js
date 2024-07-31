@@ -5,7 +5,7 @@ const template = (props) => `
 import Foundation
 
 public protocol MisticaFontSizes {
-${props.map((prop) => `    var ${prop}: CGFloat { get }`).join("\n")}
+${props.map((prop) => `    var ${prop}: CGFloat { get }`).join('\n')}
 }
 `;
 
@@ -15,6 +15,6 @@ ${props.map((prop) => `    var ${prop}: CGFloat { get }`).join("\n")}
  * @returns string
  */
 export const generateMisticaFontSizes = (anyBrandTokens) => {
-  const weights = Object.keys(anyBrandTokens.text.size);
-  return template(weights);
+    const weights = Object.keys(anyBrandTokens.text.size);
+    return template(weights);
 };

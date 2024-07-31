@@ -9,7 +9,7 @@ public enum MisticaRadiusConstants {
 }
 
 public protocol MisticaCornerRadius {
-${props.map((prop) => `    var ${prop}: CGFloat { get }`).join("\n")}
+${props.map((prop) => `    var ${prop}: CGFloat { get }`).join('\n')}
 }
 `;
 
@@ -20,7 +20,6 @@ ${props.map((prop) => `    var ${prop}: CGFloat { get }`).join("\n")}
  */
 
 export const generateMisticaCornerRadius = (anyBrandTokens) => {
-  const cornerRadius = Object.keys(anyBrandTokens.radius);
-  return template(cornerRadius);
+    const cornerRadius = Object.keys(anyBrandTokens.radius);
+    return template(cornerRadius);
 };
-

@@ -1,7 +1,5 @@
 const mapValue = (value) =>
-  value === "circle" || value === "999"
-    ? "MisticaRadiusConstants.roundedRadius"
-    : value;
+    value === 'circle' || value === '999' ? 'MisticaRadiusConstants.roundedRadius' : value;
 
 const template = (prefix, cornerRadius) => `
 // Generated using Make
@@ -10,11 +8,7 @@ const template = (prefix, cornerRadius) => `
 import Foundation
 
 struct ${prefix}CornerRadius: MisticaCornerRadius {
-${cornerRadius
-  .map(
-    ([name, radius]) => `    var ${name}: CGFloat = ${mapValue(radius.value)}`
-  )
-  .join("\n")}
+${cornerRadius.map(([name, radius]) => `    var ${name}: CGFloat = ${mapValue(radius.value)}`).join('\n')}
 }
 `;
 
@@ -25,7 +19,6 @@ ${cornerRadius
  * @returns string
  */
 export const generateBrandCornerRadius = (brand, tokens) => {
-  const cornerRadius = Object.entries(tokens.radius);
-  return template(brand.prefix, cornerRadius);
+    const cornerRadius = Object.entries(tokens.radius);
+    return template(brand.prefix, cornerRadius);
 };
-

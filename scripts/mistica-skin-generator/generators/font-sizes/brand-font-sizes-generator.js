@@ -5,11 +5,7 @@ const template = (prefix, sizes) => `
 import Foundation
 
 struct ${prefix}FontSizes: MisticaFontSizes {
-${sizes
-  .map(
-    ([name, size]) => `    public var ${name}: CGFloat = ${size.value.mobile}`
-  )
-  .join("\n")}
+${sizes.map(([name, size]) => `    public var ${name}: CGFloat = ${size.value.mobile}`).join('\n')}
 }
 `;
 
@@ -20,7 +16,6 @@ ${sizes
  * @returns string
  */
 export const generateBrandFontSizes = (brand, tokens) => {
-  const sizes = Object.entries(tokens.text.size);
-  return template(brand.prefix, sizes);
+    const sizes = Object.entries(tokens.text.size);
+    return template(brand.prefix, sizes);
 };
-

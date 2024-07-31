@@ -1,4 +1,4 @@
-import { UI_COLOR } from "./reduce-colors";
+import {UI_COLOR} from './reduce-colors';
 
 const template = (props) => `
 // Generated using Make
@@ -8,12 +8,12 @@ import SwiftUI
 
 public extension Color {
 ${props
-  .map(
-    ([color]) => `    static var ${color}: Color {
+    .map(
+        ([color]) => `    static var ${color}: Color {
         MisticaConfig.currentColors.${color}.color
     }`
-  )
-  .join("\n")}
+    )
+    .join('\n')}
 }
 
 private extension UIColor {
@@ -28,9 +28,7 @@ private extension UIColor {
  * @returns string
  */
 export const generateColorToolkit = (colors) => {
-  const misticaColors = Object.entries(colors).filter(
-    ([, color]) => color.commonType === UI_COLOR
-  );
+    const misticaColors = Object.entries(colors).filter(([, color]) => color.commonType === UI_COLOR);
 
-  return template(misticaColors);
+    return template(misticaColors);
 };

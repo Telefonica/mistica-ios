@@ -1,4 +1,4 @@
-import { UI_COLOR } from "./reduce-colors";
+import {UI_COLOR} from './reduce-colors';
 
 const template = (props) => `
 // Generated using Make
@@ -8,12 +8,12 @@ import UIKit
 
 public extension UIColor {
 ${props
-  .map(
-    ([name]) => `    static var ${name}: UIColor {
+    .map(
+        ([name]) => `    static var ${name}: UIColor {
         MisticaConfig.currentColors.${name}
     }`
-  )
-  .join("\n")}
+    )
+    .join('\n')}
 }`;
 
 /**
@@ -22,10 +22,7 @@ ${props
  * @returns string
  */
 export const generateUIColorToolkit = (colors) => {
-  const misticaColors = Object.entries(colors).filter(
-    ([, color]) => color.commonType === UI_COLOR
-  );
+    const misticaColors = Object.entries(colors).filter(([, color]) => color.commonType === UI_COLOR);
 
-  return template(misticaColors);
+    return template(misticaColors);
 };
-

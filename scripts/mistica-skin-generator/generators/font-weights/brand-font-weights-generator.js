@@ -6,11 +6,8 @@ import Foundation
 
 struct ${prefix}FontWeights: MisticaFontWeights {
 ${weights
-  .map(
-    ([name, weight]) =>
-      `    public var ${name}: MisticaFontWeightType = .${weight.value}`
-  )
-  .join("\n")}
+    .map(([name, weight]) => `    public var ${name}: MisticaFontWeightType = .${weight.value}`)
+    .join('\n')}
 }
 `;
 
@@ -21,7 +18,6 @@ ${weights
  * @returns string
  */
 export const generateBrandFontWeights = (brand, tokens) => {
-  const weights = Object.entries(tokens.text.weight);
-  return template(brand.prefix, weights);
+    const weights = Object.entries(tokens.text.weight);
+    return template(brand.prefix, weights);
 };
-

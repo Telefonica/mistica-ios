@@ -5,9 +5,7 @@ const template = (props) => `
 import UIKit
 
 public protocol MisticaFontWeights {
-${props
-  .map((prop) => `    var ${prop}: MisticaFontWeightType { get }`)
-  .join("\n")}
+${props.map((prop) => `    var ${prop}: MisticaFontWeightType { get }`).join('\n')}
 }
 `;
 
@@ -17,7 +15,6 @@ ${props
  * @returns string
  */
 export const generateMisticaFontWeights = (anyBrandTokens) => {
-  const weights = Object.keys(anyBrandTokens.text.weight);
-  return template(weights);
+    const weights = Object.keys(anyBrandTokens.text.weight);
+    return template(weights);
 };
-

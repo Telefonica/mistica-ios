@@ -1,4 +1,4 @@
-import { MISTICA_COLOR } from "./reduce-colors";
+import {MISTICA_COLOR} from './reduce-colors';
 
 const template = (props) => `
 // Generated using Make
@@ -13,12 +13,12 @@ public enum MisticaColor {
 
 public extension MisticaColor {
 ${props
-  .map(
-    ([name, color]) => `    static var ${name}: ${color.commonType} {
+    .map(
+        ([name, color]) => `    static var ${name}: ${color.commonType} {
         MisticaConfig.currentColors.${name}
     }`
-  )
-  .join("\n")}
+    )
+    .join('\n')}
 }
 `;
 
@@ -28,9 +28,7 @@ ${props
  * @returns string
  */
 export const generateMisticaColor = (colors) => {
-  const misticaColors = Object.entries(colors).filter(
-    ([, color]) => color.commonType === MISTICA_COLOR
-  );
+    const misticaColors = Object.entries(colors).filter(([, color]) => color.commonType === MISTICA_COLOR);
 
-  return template(misticaColors);
+    return template(misticaColors);
 };

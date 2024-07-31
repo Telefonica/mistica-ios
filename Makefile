@@ -1,4 +1,4 @@
-.PHONY: help setup format test simulator archive export clean skinGeneratorSetup colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration fontSizesGeneration skin
+.PHONY: help setup format test simulator archive export clean  skin
 
 # Simulator
 OS_VERSION := 17.2
@@ -22,37 +22,13 @@ BUILD_PATH := $(ROOT_DIR)/build
 EXPORTED_OPTIONS_PATH := $(ROOT_DIR)/enterprise.plist
 ARCHIVE_PATH := $(TMP_ROOT_PATH)/ios.xcarchive
 XCODEBUILD := set -o pipefail && xcodebuild
-MISTICA_DESIGN_PATH := $(ROOT_DIR)/tmp/mistica-design
 MISTICA_DESIGN_TOKENS_PATH := /tokens
 MISTICA_DESIGN_URL := https://raw.githubusercontent.com/Telefonica/mistica-design/$(ref)/tokens
-
-#Skin tokens config
-#These variables will be used to get the json file from mistica design repository and later to create the appropiate file and class/struct names. If a new brand/skin needs to be added, it should be added here. All of the brand names should be in lowercase.
-Movistar:= movistar
-Blau:= blau
-O2:= o2
-O2New:= o2-new
-Vivo:= vivo
-VivoNew:= vivo-new
-Telefonica:= telefonica
-TU:= tu
-BRAND_FILES:= $(Movistar) $(Blau) $(O2) $(O2New) $(Vivo) $(VivoNew) $(Telefonica) $(TU) # List of all the brand names that will be procesed.
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
 export DEVELOPER_DIR=/Applications/Xcode-15.2.app/Contents/Developer
 endif
-
-# TokenGenerator func to be used in all token generators.
-define tokenGenerator
-	@echo "Generating Mistica $(2) interfaces"
-	hygen $(1) Mistica$(2) --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$(Movistar).json
-
-	for key in $(BRAND_FILES) ; do \
-		echo "Generating $$key $(2) palette"; \
-		hygen $(1) Brand$(2) --name $$key --json $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$$key.json ; \
-	done
-endef
 
 # Targets
 help:
@@ -61,14 +37,9 @@ help:
 	@echo "  format    				to execute swiftformat in Sources directory"
 	@echo "  test     				to build and test the main target"
 	@echo "  simulator				to install the simulator for testing"
-	@echo "  export				to export the archived project as an .ipa"
+	@echo "  export					to export the archived project as an .ipa"
 	@echo "  clean    				to remove all temporal files"
-	@echo "  skinGeneratorSetup    		to setup skin dependencies"
-	@echo "  colorPaletteGeneration ref=<ref>  	to setup and regenerate MisticaColors with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
-	@echo "  cornerRadiusGeneration ref=<ref> 	to setup and regenerate MisticaCornerRadius with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
-	@echo "  fontWeightsGeneration ref=<ref> 	to setup and regenerate MisticaFontWeights with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
-	@echo "  fontSizesGeneration ref=<ref> 	to setup and regenerate MisticaFontSizes with new palettes from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
-	@echo "  skin ref=<ref>			to setup, regenerate and format tokens from mistica design where <ref> is the branch from mistica-design repository from where we want to generate the tokens"
+	@echo "  skin					to regenerate and format tokens from mistica design"
 
 trace:
 	@echo "Current xcodebuild configuration"
@@ -85,9 +56,9 @@ setup: trace
 	@brew ls xcbeautify --versions || brew install xcbeautify
 
 skinGeneratorSetup:
-	@echo "Installing tokens generators dependencies"
+	@echo "Installing tokens generator dependencies"
 	@brew ls node --versions || brew install node
-	@brew ls hygen --versions || (brew tap jondot/tap && brew install hygen)
+	cd scripts/mistica-skin-generator && npm install
 
 format:
 	Scripts/swiftformat .
@@ -131,25 +102,8 @@ export: clean setup
 
 	@rm -rf "$(TMP_ROOT_PATH)"
 
-getMisticaDesignTokenFiles:
-	@echo "Obtaining mistica token files"
-	for key in $(BRAND_FILES) ; do \
-		curl -o $(MISTICA_DESIGN_PATH)$(MISTICA_DESIGN_TOKENS_PATH)/$$key.json --create-dirs $(MISTICA_DESIGN_URL)/$$key.json ; \
-	done
+tokensGeneration:
+	@echo "Executing tokens generation tool..."
+	cd scripts/mistica-skin-generator && npm run generate
 
-colorPaletteGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
-	$(call tokenGenerator,ColorTokenGenerator,Colors)
-
-cornerRadiusGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
-	$(call tokenGenerator,CornerRadiusTokenGenerator,CornerRadius)
-
-fontWeightsGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
-	$(call tokenGenerator,FontWeightsTokenGenerator,FontWeights)
-
-fontSizesGeneration: skinGeneratorSetup getMisticaDesignTokenFiles
-	$(call tokenGenerator,FontSizesTokenGenerator,FontSizes)
-
-removeMisticaDesignTokenFolder:
-	rm -rf $(MISTICA_DESIGN_PATH)
-
-skin: colorPaletteGeneration cornerRadiusGeneration fontWeightsGeneration fontSizesGeneration removeMisticaDesignTokenFolder format
+skin:  tokensGeneration format

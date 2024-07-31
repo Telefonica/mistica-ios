@@ -2,30 +2,40 @@ name: Generate Mistica Tokens
 
 on:
   workflow_dispatch:
-    inputs:
-      ref:
-        description: 'mistica-design repo changeset or branch'
-        required: false
-        default: 'production'
+
+concurrency:
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
-  get-design-tokens:
-    name: Get Design Tokens
-    runs-on: self-hosted-novum-mac
+  build:
+    name: Build & generate tokens
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Generate Skin
-        run: make skin ref=${{github.event.inputs.ref}}
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
-          add-paths: 'Sources/MisticaCommon/*'
-          commit-message: 'feat(skin): update design tokens'
-          title: 'feat(skin): update design tokens from mistica-design branch: ${{github.event.inputs.ref}}'
-          branch: 'import-design-tokens'
-          team-reviewers: 'ios'
-          delete-branch: true
+    - name: Install dependencies
+      run: npm install
+      working-directory: scripts/mistica-skin-generator
+
+    - name: Generate tokens
+      run: npm run generate
+      working-directory: scripts/mistica-skin-generator
+
+    - name: Create Pull Request
+      id: create_pr
+      uses: peter-evans/create-pull-request@v6
+      with:
+        token: ${{ secrets.NOVUM_PRIVATE_REPOS }}
+        add-paths: 'Sources/MisticaCommon/*'
+        commit-message: 'feat(skin): update design tokens'
+        title: 'feat(skin): update design tokens from mistica-design'
+        branch: 'import-design-tokens'
+        team-reviewers: 'ios'
+        delete-branch: true
+    - name: Show URL in summary annotation
+      run: echo '::notice::Pull Request generated ${{ steps.create_pr.outputs.pull-request-url }}'

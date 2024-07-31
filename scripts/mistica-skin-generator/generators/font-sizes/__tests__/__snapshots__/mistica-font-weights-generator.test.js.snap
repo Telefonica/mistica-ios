@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`generateMisticaFontSizes 1`] = `
+"
+// Generated using Make
+// DO NOT EDIT
+
+import Foundation
+
+public protocol MisticaFontSizes {
+    var tabsLabel: CGFloat { get }
+    var title2: CGFloat { get }
+}
+"
+`;

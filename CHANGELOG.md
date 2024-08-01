@@ -1,3 +1,10 @@
+## [31.4.1](https://github.com/Telefonica/mistica-ios/compare/v31.4.0...v31.4.1) (2024-08-01)
+
+
+### Bug Fixes
+
+* **Padding:** IOS-10430 fix component padding  ([#393](https://github.com/Telefonica/mistica-ios/issues/393)) ([8ddd7eb](https://github.com/Telefonica/mistica-ios/commit/8ddd7eb8550e976df25447b707f2d56fcec90adc))
+
 # [31.4.0](https://github.com/Telefonica/mistica-ios/compare/v31.3.0...v31.4.0) (2024-07-26)
 
 

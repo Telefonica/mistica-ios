@@ -139,6 +139,7 @@ private extension TitleView {
     func layoutViews() {
         linkLabel.setContentHuggingPriority(.required, for: .horizontal)
         linkLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        linkLabel.isUserInteractionEnabled = true
         linkLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(linkLabelTapped)))
 
         let stackView = UIStackView(arrangedSubviews: [

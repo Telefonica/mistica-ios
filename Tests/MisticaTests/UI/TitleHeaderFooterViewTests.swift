@@ -1,5 +1,5 @@
 //
-//  TitleViewTests.swift
+//  TitleHeaderFooterViewTests.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -10,7 +10,7 @@
 import SnapshotTesting
 import XCTest
 
-final class TitleViewTests: XCTestCase {
+final class TitleHeaderFooterViewTests: XCTestCase {
     override func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
@@ -75,18 +75,18 @@ final class TitleViewTests: XCTestCase {
     }
 }
 
-private extension TitleViewTests {
-    func makeSectionTitle(title: String, linkTitle: String? = nil, style: TitleView.Style) -> UIViewController {
-        SectionTitleViewController(titleText: title, linkTitleText: linkTitle, style: style)
+private extension TitleHeaderFooterViewTests {
+    func makeSectionTitle(title: String, linkTitle: String? = nil, style: TitleHeaderFooterView.Style) -> UIViewController {
+        SectionTitleHeaderFooterViewController(titleText: title, linkTitleText: linkTitle, style: style)
     }
 }
 
-private class SectionTitleViewController: UITableViewController {
+private class SectionTitleHeaderFooterViewController: UITableViewController {
     private let titleText: String
     private let linkTitleText: String?
-    private let style: TitleView.Style
+    private let style: TitleHeaderFooterView.Style
 
-    init(titleText: String, linkTitleText: String?, style: TitleView.Style) {
+    init(titleText: String, linkTitleText: String?, style: TitleHeaderFooterView.Style) {
         self.titleText = titleText
         self.linkTitleText = linkTitleText
         self.style = style
@@ -106,7 +106,7 @@ private class SectionTitleViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         tableView.sectionFooterHeight = 0.0
 
-        tableView.register(TitleView.self, forHeaderFooterViewReuseIdentifier: "Header")
+        tableView.register(TitleHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "Header")
     }
 
     override func numberOfSections(in _: UITableView) -> Int {
@@ -122,7 +122,7 @@ private class SectionTitleViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as! TitleView
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as! TitleHeaderFooterView
         headerView.title = titleText
         headerView.style = style
         headerView.linkTitle = linkTitleText

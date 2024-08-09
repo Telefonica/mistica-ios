@@ -9,7 +9,7 @@
 import UIKit
 
 class CellCenterSectionView: UIStackView {
-    var headlineView: UIView? {
+    var headlineView: AccessibleTextualView? {
         didSet {
             oldValue?.removeFromSuperview()
 

@@ -9,7 +9,14 @@
 import Foundation
 import UIKit
 
+public enum ListCellAccessibilityType {
+    case navigation
+    case action
+    case informative(accessibilityLabel: String?)
+}
+
 open class ListTableViewCell: UITableViewCell {
+    public var listCellAccessibilityType: ListCellAccessibilityType = .navigation
     public var listCellContentView = ListCellContentView()
     private lazy var cellSeparatorView = SeparatorView(axis: .horizontal)
 
@@ -19,6 +26,24 @@ open class ListTableViewCell: UITableViewCell {
 
             cellSeparatorView.isHidden = isCellSeparatorHidden
         }
+    }
+
+    // MARK: Accessibility properties
+
+    public var fullCellAccessibilityConfig: FullCellAccessibilityConfig? = nil {
+        didSet {
+            if let fullCellAccessibilityConfig {
+                isAccessibilityElement = true
+                accessibilityLabel = fullCellAccessibilityConfig.accessibilityLabel
+            } else {
+                isAccessibilityElement = false
+                accessibilityLabel = nil
+            }
+        }
+    }
+
+    public var defaultAccessibilityLabel: String {
+        listCellContentView.defaultAccessibilityLabel
     }
 
     // MARK: Initializers
@@ -77,6 +102,7 @@ open class ListTableViewCell: UITableViewCell {
         listCellContentView.tableViewDelegate = self
         layoutViews()
         updateCellStyle()
+        fullCellAccessibilityConfig = FullCellAccessibilityConfig(accessibilityLabel: listCellContentView.defaultAccessibilityLabel)
     }
 
     func layoutViews() {
@@ -95,14 +121,37 @@ open class ListTableViewCell: UITableViewCell {
     func updateCellStyle() {
         backgroundColor = .background
     }
+
+    override public func accessibilityActivate() -> Bool {
+        guard let activationAction = fullCellAccessibilityConfig?.activationAction else { return false }
+
+        activationAction()
+        return true
+    }
 }
+
+// MARK: Accessibility
+
+extension ListTableViewCell {
+    public func setDefaultFullCellAccessibilityConfig(activationAction: (() -> Void)? = nil) {
+        fullCellAccessibilityConfig = FullCellAccessibilityConfig(accessibilityLabel: defaultAccessibilityLabel, activationAction: activationAction)
+    }
+}
+
+// MARK: ListCellContentTableViewDelegate
 
 extension ListTableViewCell: ListCellContentTableViewDelegate {
     public func cellStyleChanged() {
         listCellContentView.directionalLayoutMargins = listCellContentView.cellStyle.contentViewLayoutMargins
         cellSeparatorView.isHidden = listCellContentView.cellStyle.cellSeparatorIsHidden
     }
+
+    func accessibilityChanged() {
+        fullCellAccessibilityConfig?.accessibilityLabel = listCellContentView.defaultAccessibilityLabel
+    }
 }
+
+// MARK: Private methods
 
 private extension ListTableViewCell {
     var highlightedView: UIView {

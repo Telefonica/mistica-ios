@@ -10,11 +10,30 @@ import UIKit
 
 protocol ListCellContentTableViewDelegate {
     func cellStyleChanged()
+    func accessibilityChanged()
 }
 
 // MARK: ListCellContentView
 
 open class ListCellContentView: UIView {
+    // MARK: Accessibility properties
+
+    var defaultAccessibilityLabel: String {
+        let titleText = titleAccessibilityLabel ?? titleAttributedText?.string ?? title
+        let subtitleText = subtitleAccessibilityLabel ?? subtitleAttributedText?.string ?? subtitle
+        let detailText = detailAccessibilityLabel ?? detailTextAttributedText?.string ?? detailText
+        let headlineText = headlineView?.accessibleText
+
+        var accessibilityComponents: [String?] = [
+            titleText,
+            headlineText,
+            subtitleText,
+            detailText
+        ]
+
+        return accessibilityComponents.compactMap { $0 }.joined(separator: ", ")
+    }
+
     // MARK: View Styles
 
     public enum ViewStyles {
@@ -82,6 +101,7 @@ open class ListCellContentView: UIView {
         set {
             centerSection.titleLabel.text = newValue
             updateAssetAligment()
+            updateAccessibility()
         }
     }
 
@@ -100,6 +120,7 @@ open class ListCellContentView: UIView {
         }
         set {
             centerSection.titleLabel.attributedText = newValue
+            updateAccessibility()
         }
     }
 
@@ -117,6 +138,7 @@ open class ListCellContentView: UIView {
             centerSection.subtitleLabel.text = newValue
             centerSection.didSetTextToSubtitleLabel()
             updateAssetView()
+            updateAccessibility()
         }
     }
 
@@ -136,6 +158,7 @@ open class ListCellContentView: UIView {
         set {
             centerSection.subtitleLabel.attributedText = newValue
             centerSection.didSetTextToSubtitleLabel()
+            updateAccessibility()
         }
     }
 
@@ -147,6 +170,7 @@ open class ListCellContentView: UIView {
             centerSection.detailLabel.text = newValue
             centerSection.didSetTexToDetailText()
             updateAssetView()
+            updateAccessibility()
         }
     }
 
@@ -166,16 +190,18 @@ open class ListCellContentView: UIView {
         set {
             centerSection.detailLabel.attributedText = newValue
             centerSection.didSetTexToDetailText()
+            updateAccessibility()
         }
     }
 
-    public var headlineView: UIView? {
+    public var headlineView: AccessibleTextualView? {
         get {
             centerSection.headlineView
         }
         set {
             centerSection.headlineView = newValue
             updateAssetView()
+            updateAccessibility()
         }
     }
 
@@ -333,6 +359,7 @@ private extension ListCellContentView {
     func commonInit() {
         layoutViews()
         updateCellStyle()
+        accessibilityElements = [headlineView, centerSection.titleLabel, centerSection.subtitleLabel, centerSection.detailLabel].compactMap { $0 }
     }
 
     func layoutViews() {
@@ -384,5 +411,9 @@ private extension ListCellContentView {
         } else {
             leftSection.topAlignment()
         }
+    }
+
+    func updateAccessibility() {
+        tableViewDelegate?.accessibilityChanged()
     }
 }

@@ -9,16 +9,10 @@
 import Foundation
 import UIKit
 
-public enum ListCellAccessibilityType {
-    case navigation
-    case action
-    case informative(accessibilityLabel: String?)
-}
-
 open class ListTableViewCell: UITableViewCell {
-    public var listCellAccessibilityType: ListCellAccessibilityType = .navigation
     public var listCellContentView = ListCellContentView()
     private lazy var cellSeparatorView = SeparatorView(axis: .horizontal)
+    private var accessibilityActivationAction: (() -> Void)?
 
     public var isCellSeparatorHidden: Bool = true {
         didSet {
@@ -30,20 +24,29 @@ open class ListTableViewCell: UITableViewCell {
 
     // MARK: Accessibility properties
 
-    public var fullCellAccessibilityConfig: FullCellAccessibilityConfig? = nil {
+    public var defaultAccessibilityLabel: String {
+        listCellContentView.defaultAccessibilityLabel
+    }
+
+    public var accessibilityType: AccessibilityListCellType = .default {
         didSet {
-            if let fullCellAccessibilityConfig {
-                isAccessibilityElement = true
-                accessibilityLabel = fullCellAccessibilityConfig.accessibilityLabel
-            } else {
-                isAccessibilityElement = false
-                accessibilityLabel = nil
-            }
+            accessibilityTypeUpdated()
         }
     }
 
-    public var defaultAccessibilityLabel: String {
-        listCellContentView.defaultAccessibilityLabel
+    func accessibilityTypeUpdated() {
+        switch accessibilityType {
+        case .interactive(let accessibilityInteractiveData):
+            isAccessibilityElement = true
+            accessibilityLabel = accessibilityInteractiveData.label ?? defaultAccessibilityLabel
+            accessibilityActivationAction = accessibilityInteractiveData.action
+        case .informative:
+            isAccessibilityElement = false
+            accessibilityLabel = nil
+        case .customInformative(let accessibilityText):
+            isAccessibilityElement = true
+            accessibilityLabel = accessibilityText
+        }
     }
 
     // MARK: Initializers
@@ -102,7 +105,6 @@ open class ListTableViewCell: UITableViewCell {
         listCellContentView.tableViewDelegate = self
         layoutViews()
         updateCellStyle()
-        fullCellAccessibilityConfig = FullCellAccessibilityConfig(accessibilityLabel: listCellContentView.defaultAccessibilityLabel)
     }
 
     func layoutViews() {
@@ -123,18 +125,13 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     override public func accessibilityActivate() -> Bool {
-        guard let activationAction = fullCellAccessibilityConfig?.activationAction else { return false }
+        guard case let .interactive(accessibilityInteractiveData) = accessibilityType,
+                let action = accessibilityInteractiveData.action else {
+            return false
+        }
 
-        activationAction()
+        action()
         return true
-    }
-}
-
-// MARK: Accessibility
-
-extension ListTableViewCell {
-    public func setDefaultFullCellAccessibilityConfig(activationAction: (() -> Void)? = nil) {
-        fullCellAccessibilityConfig = FullCellAccessibilityConfig(accessibilityLabel: defaultAccessibilityLabel, activationAction: activationAction)
     }
 }
 
@@ -147,7 +144,7 @@ extension ListTableViewCell: ListCellContentTableViewDelegate {
     }
 
     func accessibilityChanged() {
-        fullCellAccessibilityConfig?.accessibilityLabel = listCellContentView.defaultAccessibilityLabel
+        accessibilityTypeUpdated()
     }
 }
 

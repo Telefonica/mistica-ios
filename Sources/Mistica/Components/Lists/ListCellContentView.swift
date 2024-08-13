@@ -24,7 +24,7 @@ open class ListCellContentView: UIView {
         let detailText = detailAccessibilityLabel ?? detailTextAttributedText?.string ?? detailText
         let headlineText = headlineView?.accessibleText
 
-        var accessibilityComponents: [String?] = [
+        let accessibilityComponents: [String?] = [
             titleText,
             headlineText,
             subtitleText,
@@ -77,7 +77,7 @@ open class ListCellContentView: UIView {
 
     // MARK: SubViews
 
-    /// View used in `ListCellStyle.boxed` style for show a rounded border arround the content
+    /// View used in `ListCellStyle.boxed` style for show a rounded border around the content
     lazy var cellBorderView = UIView()
     private lazy var cellContentView = UIStackView()
     var tableViewDelegate: ListCellContentTableViewDelegate?
@@ -100,7 +100,7 @@ open class ListCellContentView: UIView {
         }
         set {
             centerSection.titleLabel.text = newValue
-            updateAssetAligment()
+            updateAssetAlignment()
             updateAccessibility()
         }
     }
@@ -353,13 +353,22 @@ public extension ListCellContentView {
     }
 }
 
+// MARK: ListCellContentViewDelegate
+
+extension ListCellContentView: ListCellContentViewDelegate {
+    func accessibilityChanged() {
+        updateAccessibilityElements()
+    }
+}
+
 // MARK: Private
 
 private extension ListCellContentView {
     func commonInit() {
+        centerSection.listCellContentViewDelegate = self
         layoutViews()
         updateCellStyle()
-        accessibilityElements = [headlineView, centerSection.titleLabel, centerSection.subtitleLabel, centerSection.detailLabel].compactMap { $0 }
+        updateAccessibilityElements()
     }
 
     func layoutViews() {
@@ -396,7 +405,7 @@ private extension ListCellContentView {
             return
         }
 
-        updateAssetAligment()
+        updateAssetAlignment()
 
         leftSection.assetType = assetType
 
@@ -405,7 +414,7 @@ private extension ListCellContentView {
         }
     }
 
-    func updateAssetAligment() {
+    func updateAssetAlignment() {
         if centerSection.headlineView == nil, !centerSection.hasSubtitleText, !centerSection.hasDetailText {
             leftSection.centerAlignment()
         } else {
@@ -415,5 +424,9 @@ private extension ListCellContentView {
 
     func updateAccessibility() {
         tableViewDelegate?.accessibilityChanged()
+    }
+
+    func updateAccessibilityElements() {
+        accessibilityElements = [centerSection.titleLabel, headlineView as Any, centerSection.subtitleLabel, centerSection.detailLabel].compactMap { $0 }
     }
 }

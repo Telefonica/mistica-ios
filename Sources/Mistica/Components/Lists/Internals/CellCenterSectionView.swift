@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ListCellContentViewDelegate {
+    func accessibilityChanged()
+}
+
 class CellCenterSectionView: UIStackView {
     var headlineView: AccessibleTextualView? {
         didSet {
@@ -17,12 +21,16 @@ class CellCenterSectionView: UIStackView {
                 insertArrangedSubview(view, at: 0)
                 updateSpacing()
             }
+
+            listCellContentViewDelegate?.accessibilityChanged()
         }
     }
 
     lazy var titleLabel = IntrinsictHeightLabel()
     lazy var subtitleLabel = IntrinsictHeightLabel()
     lazy var detailLabel = IntrinsictHeightLabel()
+
+    var listCellContentViewDelegate: ListCellContentViewDelegate?
 
     var titleTextColor: UIColor = .textPrimary {
         didSet {

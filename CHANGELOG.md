@@ -1,3 +1,25 @@
+# [32.0.0](https://github.com/Telefonica/mistica-ios/compare/v31.4.1...v32.0.0) (2024-08-19)
+
+
+### Features
+
+* **Title:** Split Title component and UIKit ([#395](https://github.com/Telefonica/mistica-ios/issues/395)) ([161ac6d](https://github.com/Telefonica/mistica-ios/commit/161ac6d6b50a2a0f98e9c4d068418aee445c4b00))
+
+
+### BREAKING CHANGES
+
+* **Title:** Rename TitleView with TitleHeaderFooterView. TitleHeaderFooterView will wrap the TitleView (Title component)
+
+* Enable link interactions
+
+* Extract Title component from TitleView (UITableViewHeaderFooterView)
+
+* Rename and some fixes
+
+* Rename tests path
+
+* CR changes
+
 ## [31.4.1](https://github.com/Telefonica/mistica-ios/compare/v31.4.0...v31.4.1) (2024-08-01)
 
 

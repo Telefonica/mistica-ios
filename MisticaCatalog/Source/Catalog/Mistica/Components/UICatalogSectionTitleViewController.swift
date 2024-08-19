@@ -53,7 +53,7 @@ class UICatalogSectionTitleViewController: UITableViewController {
         tableView.sectionFooterHeight = 0.0
 
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: Constants.listCellReusableIdentifier)
-        tableView.register(TitleView.self, forHeaderFooterViewReuseIdentifier: Constants.sectionTitleReusableIdentifier)
+        tableView.register(TitleHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: Constants.sectionTitleReusableIdentifier)
     }
 
     override func numberOfSections(in _: UITableView) -> Int {
@@ -74,11 +74,14 @@ class UICatalogSectionTitleViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.sectionTitleReusableIdentifier) as! TitleView
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.sectionTitleReusableIdentifier) as! TitleHeaderFooterView
         let style = Constants.styles[section]
         headerView.title = style.title
         headerView.style = style.titleStyle
         headerView.linkTitle = style.linkTitle
+        headerView.onLinkLabelTapped = {
+            print("onLinkLabelTapped")
+        }
         return headerView
     }
 }

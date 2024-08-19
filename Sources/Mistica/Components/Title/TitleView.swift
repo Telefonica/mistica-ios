@@ -15,7 +15,7 @@ private enum ViewStyles {
     static let minimumHeight: CGFloat = 40
 }
 
-public class TitleView: UITableViewHeaderFooterView {
+public class TitleView: UIView {
     public enum Style {
         case title1
         case title2
@@ -82,21 +82,14 @@ public class TitleView: UITableViewHeaderFooterView {
         }
     }
 
-    override public init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
 
         commonInit()
     }
 
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-
-        commonInit()
-    }
-
-    public init(style: Style, reuseIdentifier: String? = nil) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        self.style = style
 
         commonInit()
     }
@@ -124,7 +117,7 @@ private extension TitleView {
     }
 
     func updateStyle() {
-        contentView.backgroundColor = .background
+        backgroundColor = .background
 
         titleLabel.text = style.format(text: unformattedTitle)
         titleLabel.font = style.font
@@ -139,6 +132,7 @@ private extension TitleView {
     func layoutViews() {
         linkLabel.setContentHuggingPriority(.required, for: .horizontal)
         linkLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        linkLabel.isUserInteractionEnabled = true
         linkLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(linkLabelTapped)))
 
         let stackView = UIStackView(arrangedSubviews: [
@@ -149,9 +143,8 @@ private extension TitleView {
         stackView.alignment = .firstBaseline
 
         preservesSuperviewLayoutMargins = false
-        contentView.preservesSuperviewLayoutMargins = false
-        contentView.addSubview(constrainedToLayoutMarginsGuideOf: stackView)
-        contentView.directionalLayoutMargins = NSDirectionalEdgeInsets(
+        addSubview(constrainedToLayoutMarginsGuideOf: stackView)
+        directionalLayoutMargins = NSDirectionalEdgeInsets(
             top: ViewStyles.topMargin,
             leading: ViewStyles.horizontalMargin,
             bottom: ViewStyles.bottomMargin,

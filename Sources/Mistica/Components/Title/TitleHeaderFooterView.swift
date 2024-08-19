@@ -14,11 +14,11 @@ public class TitleHeaderFooterView: UITableViewHeaderFooterView {
     private lazy var titleView = TitleView()
 
     public var onLinkLabelTapped: (() -> Void)? {
-        set {
-            titleView.onLinkLabelTapped = newValue
-        }
         get {
             titleView.onLinkLabelTapped
+        }
+        set {
+            titleView.onLinkLabelTapped = newValue
         }
     }
 

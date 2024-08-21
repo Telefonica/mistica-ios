@@ -15,6 +15,7 @@ struct TuFontWeights: MisticaFontWeights {
     public var link: MisticaFontWeightType = .medium
     public var title1: MisticaFontWeightType = .medium
     public var title2: MisticaFontWeightType = .medium
+    public var title3: MisticaFontWeightType = .medium
     public var indicator: MisticaFontWeightType = .medium
     public var navigationBar: MisticaFontWeightType = .medium
     public var text5: MisticaFontWeightType = .medium

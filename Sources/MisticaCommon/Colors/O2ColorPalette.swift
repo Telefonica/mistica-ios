@@ -11,13 +11,13 @@ import UIKit
 struct O2Colors: MisticaColors {
     static let palette = O2ColorPalette()
 
-    let background = O2Colors.palette.white | O2Colors.palette.darkModeBlack
-
-    let backgroundAlternative = O2Colors.palette.grey1 | O2Colors.palette.darkModeBlack
-
     let backgroundBrand = MisticaColor.solid(O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
+
+    let appBarBackground = O2Colors.palette.white | O2Colors.palette.darkModeGrey
+
+    let background = O2Colors.palette.white | O2Colors.palette.darkModeBlack
 
     let backgroundContainer = O2Colors.palette.white | O2Colors.palette.darkModeGrey
 
@@ -43,13 +43,13 @@ struct O2Colors: MisticaColors {
 
     let backgroundSkeletonInverse = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.darkModeGrey6
 
+    let navigationBarBackground = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
+
+    let backgroundAlternative = O2Colors.palette.grey1 | O2Colors.palette.darkModeBlack
+
     let backgroundBrandTop = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
 
     let backgroundBrandBottom = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
-
-    let appBarBackground = O2Colors.palette.white | O2Colors.palette.darkModeGrey
-
-    let navigationBarBackground = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
 
     let skeletonWave = O2Colors.palette.grey2 | O2Colors.palette.grey5
 
@@ -95,11 +95,11 @@ struct O2Colors: MisticaColors {
 
     let buttonSecondaryBorderSelected = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.white
 
+    let buttonSecondaryBorderInverse = O2Colors.palette.white
+
     let buttonSecondaryBackgroundHover = O2Colors.palette.o2BluePrimary10 | O2Colors.palette.white.withAlphaComponent(0.15)
 
     let buttonSecondaryBackgroundSelected = O2Colors.palette.o2BluePrimary10 | O2Colors.palette.white.withAlphaComponent(0.15)
-
-    let buttonSecondaryBorderInverse = O2Colors.palette.white
 
     let buttonSecondaryBorderInverseSelected = O2Colors.palette.o2BluePrimary30 | O2Colors.palette.white
 
@@ -191,15 +191,15 @@ struct O2Colors: MisticaColors {
 
     let textSecondaryInverse = O2Colors.palette.o2BluePrimary15 | O2Colors.palette.grey4
 
-    let success = O2Colors.palette.o2Green
-
-    let warning = O2Colors.palette.o2Orange
-
     let error = O2Colors.palette.pepper
 
     let textError = O2Colors.palette.pepper
 
     let textErrorInverse = O2Colors.palette.white | O2Colors.palette.pepper
+
+    let success = O2Colors.palette.o2Green
+
+    let warning = O2Colors.palette.o2Orange
 
     let promo = O2Colors.palette.o2Purple
 
@@ -268,6 +268,17 @@ struct O2Colors: MisticaColors {
     let tagBackgroundWarning = O2Colors.palette.o2Orange10 | O2Colors.palette.darkModeGrey6
 
     let tagBackgroundError = O2Colors.palette.pepper10 | O2Colors.palette.darkModeGrey6
+
+    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+        colors:
+        [
+            O2Colors.palette.black.withAlphaComponent(0),
+            O2Colors.palette.black.withAlphaComponent(0.4),
+            O2Colors.palette.black.withAlphaComponent(0.7)
+        ],
+        stops: [0, 0.3, 1],
+        angle: 180
+    ))
 }
 
 public struct O2ColorPalette {

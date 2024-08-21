@@ -19,13 +19,19 @@ public class TitleView: UIView {
     public enum Style {
         case title1
         case title2
+        case title3
+        case title4
 
         var font: UIFont {
             switch self {
             case .title1:
                 return .textPreset1(weight: .title1)
             case .title2:
-                return .textPreset5()
+                return .textPreset3(weight: .title2)
+            case .title3:
+                return .textTitle3()
+            case .title4:
+                return .textPreset6()
             }
         }
 
@@ -33,7 +39,9 @@ public class TitleView: UIView {
             switch self {
             case .title1:
                 return .textSecondary
-            case .title2:
+            case .title2,
+                 .title3,
+                 .title4:
                 return .textPrimary
             }
         }
@@ -42,7 +50,9 @@ public class TitleView: UIView {
             switch self {
             case .title1:
                 return text?.uppercased()
-            case .title2:
+            case .title2,
+                 .title3,
+                 .title4:
                 return text
             }
         }

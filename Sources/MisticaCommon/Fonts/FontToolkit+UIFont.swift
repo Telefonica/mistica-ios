@@ -58,6 +58,13 @@ public extension UIFont {
         )
     }
 
+    static func textTitle3(constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {
+        FontStyle.textTitle3.preferredFont(
+            weight: MisticaConfig.currentFontWeights.title3.systemUIFontWeight,
+            constrainedToPreferredSize: constrainedToPreferredSize
+        )
+    }
+
     static func preferredFont(for fontStyle: FontStyle, weight: UIFont.Weight, constrainedToPreferredSize constrainedPreferredSize: UIContentSizeCategory) -> UIFont {
         fontStyle.preferredFont(weight: weight, constrainedToPreferredSize: constrainedPreferredSize)
     }

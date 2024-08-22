@@ -85,59 +85,59 @@ struct O2NewColors: MisticaColors {
 
     let buttonDangerBackground = O2NewColors.palette.o2Red60
 
-    let buttonDangerBackgroundSelected = O2NewColors.palette.o2Red65
+    let buttonDangerBackgroundPressed = O2NewColors.palette.o2Red65
 
     let buttonDangerBackgroundHover = O2NewColors.palette.o2Red65
 
-    let buttonLinkDangerBackgroundSelected = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundPressed = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
 
     let buttonLinkDangerBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.white.withAlphaComponent(0)
 
-    let buttonLinkDangerBackgroundInverseSelected = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundInversePressed = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundSelected = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkBackgroundPressed = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundInverseSelected = O2NewColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkBackgroundInversePressed = O2NewColors.palette.white.withAlphaComponent(0.08)
 
     let buttonPrimaryBackground = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
 
     let buttonPrimaryBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.darkModeBeyondBlue
 
-    let buttonPrimaryBackgroundSelected = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
+    let buttonPrimaryBackgroundPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
 
     let buttonPrimaryBackgroundHover = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
 
-    let buttonPrimaryBackgroundInverseSelected = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.beyondBlue55
+    let buttonPrimaryBackgroundInversePressed = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.beyondBlue55
 
     let buttonSecondaryBorder = O2NewColors.palette.beyondBlue | O2NewColors.palette.white
 
-    let buttonSecondaryBorderSelected = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
+    let buttonSecondaryBorderPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
 
     let buttonSecondaryBorderInverse = O2NewColors.palette.white
 
     let buttonSecondaryBackgroundHover = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundSelected = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundPressed = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBorderInverseSelected = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.white
+    let buttonSecondaryBorderInversePressed = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.white
 
     let buttonSecondaryBackgroundInverseHover = O2NewColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInverseSelected = O2NewColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundInversePressed = O2NewColors.palette.white.withAlphaComponent(0.15)
 
     let textButtonPrimary = O2NewColors.palette.white
 
     let textButtonPrimaryInverse = O2NewColors.palette.beyondBlue | O2NewColors.palette.white
 
-    let textButtonPrimaryInverseSelected = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
+    let textButtonPrimaryInversePressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
 
     let textButtonSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.grey30
 
-    let textButtonSecondarySelected = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.grey30
+    let textButtonSecondaryPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.grey30
 
     let textButtonSecondaryInverse = O2NewColors.palette.white | O2NewColors.palette.grey30
 
-    let textButtonSecondaryInverseSelected = O2NewColors.palette.white | O2NewColors.palette.grey30
+    let textButtonSecondaryInversePressed = O2NewColors.palette.white | O2NewColors.palette.grey30
 
     let textLink = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue40
 

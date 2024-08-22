@@ -37,33 +37,33 @@ public protocol MisticaColors {
     var coverBackgroundHover: UIColor { get }
     var coverBackgroundPressed: UIColor { get }
     var buttonDangerBackground: UIColor { get }
-    var buttonDangerBackgroundSelected: UIColor { get }
+    var buttonDangerBackgroundPressed: UIColor { get }
     var buttonDangerBackgroundHover: UIColor { get }
-    var buttonLinkDangerBackgroundSelected: UIColor { get }
+    var buttonLinkDangerBackgroundPressed: UIColor { get }
     var buttonLinkDangerBackgroundInverse: UIColor { get }
-    var buttonLinkDangerBackgroundInverseSelected: UIColor { get }
-    var buttonLinkBackgroundSelected: UIColor { get }
-    var buttonLinkBackgroundInverseSelected: UIColor { get }
+    var buttonLinkDangerBackgroundInversePressed: UIColor { get }
+    var buttonLinkBackgroundPressed: UIColor { get }
+    var buttonLinkBackgroundInversePressed: UIColor { get }
     var buttonPrimaryBackground: UIColor { get }
     var buttonPrimaryBackgroundInverse: UIColor { get }
-    var buttonPrimaryBackgroundSelected: UIColor { get }
+    var buttonPrimaryBackgroundPressed: UIColor { get }
     var buttonPrimaryBackgroundHover: UIColor { get }
-    var buttonPrimaryBackgroundInverseSelected: UIColor { get }
+    var buttonPrimaryBackgroundInversePressed: UIColor { get }
     var buttonSecondaryBorder: UIColor { get }
-    var buttonSecondaryBorderSelected: UIColor { get }
+    var buttonSecondaryBorderPressed: UIColor { get }
     var buttonSecondaryBorderInverse: UIColor { get }
     var buttonSecondaryBackgroundHover: UIColor { get }
-    var buttonSecondaryBackgroundSelected: UIColor { get }
-    var buttonSecondaryBorderInverseSelected: UIColor { get }
+    var buttonSecondaryBackgroundPressed: UIColor { get }
+    var buttonSecondaryBorderInversePressed: UIColor { get }
     var buttonSecondaryBackgroundInverseHover: UIColor { get }
-    var buttonSecondaryBackgroundInverseSelected: UIColor { get }
+    var buttonSecondaryBackgroundInversePressed: UIColor { get }
     var textButtonPrimary: UIColor { get }
     var textButtonPrimaryInverse: UIColor { get }
-    var textButtonPrimaryInverseSelected: UIColor { get }
+    var textButtonPrimaryInversePressed: UIColor { get }
     var textButtonSecondary: UIColor { get }
-    var textButtonSecondarySelected: UIColor { get }
+    var textButtonSecondaryPressed: UIColor { get }
     var textButtonSecondaryInverse: UIColor { get }
-    var textButtonSecondaryInverseSelected: UIColor { get }
+    var textButtonSecondaryInversePressed: UIColor { get }
     var textLink: UIColor { get }
     var textLinkInverse: UIColor { get }
     var textLinkDanger: UIColor { get }

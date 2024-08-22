@@ -67,59 +67,59 @@ struct TuColors: MisticaColors {
 
     let buttonDangerBackground = TuColors.palette.red
 
-    let buttonDangerBackgroundSelected = TuColors.palette.red55 | TuColors.palette.red80
+    let buttonDangerBackgroundPressed = TuColors.palette.red55 | TuColors.palette.red80
 
     let buttonDangerBackgroundHover = TuColors.palette.red55 | TuColors.palette.red80
 
-    let buttonLinkDangerBackgroundSelected = TuColors.palette.red10
+    let buttonLinkDangerBackgroundPressed = TuColors.palette.red10
 
     let buttonLinkDangerBackgroundInverse = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
 
-    let buttonLinkDangerBackgroundInverseSelected = TuColors.palette.red10
+    let buttonLinkDangerBackgroundInversePressed = TuColors.palette.red10
 
-    let buttonLinkBackgroundSelected = TuColors.palette.blue10 | TuColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkBackgroundPressed = TuColors.palette.blue10 | TuColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundInverseSelected = TuColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.08)
 
     let buttonPrimaryBackground = TuColors.palette.primary | TuColors.palette.grey2
 
     let buttonPrimaryBackgroundInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let buttonPrimaryBackgroundSelected = TuColors.palette.primary45 | TuColors.palette.grey3
+    let buttonPrimaryBackgroundPressed = TuColors.palette.primary45 | TuColors.palette.grey3
 
     let buttonPrimaryBackgroundHover = TuColors.palette.primary45 | TuColors.palette.grey3
 
-    let buttonPrimaryBackgroundInverseSelected = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
+    let buttonPrimaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
 
     let buttonSecondaryBorder = TuColors.palette.blue | TuColors.palette.grey2
 
-    let buttonSecondaryBorderSelected = TuColors.palette.blue70 | TuColors.palette.grey2
+    let buttonSecondaryBorderPressed = TuColors.palette.blue70 | TuColors.palette.grey2
 
     let buttonSecondaryBorderInverse = TuColors.palette.white | TuColors.palette.grey2
 
     let buttonSecondaryBackgroundHover = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundSelected = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundPressed = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let buttonSecondaryBorderInverseSelected = TuColors.palette.white | TuColors.palette.grey2
+    let buttonSecondaryBorderInversePressed = TuColors.palette.white | TuColors.palette.grey2
 
     let buttonSecondaryBackgroundInverseHover = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInverseSelected = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
     let textButtonPrimary = TuColors.palette.white | TuColors.palette.primary
 
     let textButtonPrimaryInverse = TuColors.palette.primary
 
-    let textButtonPrimaryInverseSelected = TuColors.palette.primary
+    let textButtonPrimaryInversePressed = TuColors.palette.primary
 
     let textButtonSecondary = TuColors.palette.blue | TuColors.palette.grey2
 
-    let textButtonSecondarySelected = TuColors.palette.blue70 | TuColors.palette.grey2
+    let textButtonSecondaryPressed = TuColors.palette.blue70 | TuColors.palette.grey2
 
     let textButtonSecondaryInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let textButtonSecondaryInverseSelected = TuColors.palette.white | TuColors.palette.grey2
+    let textButtonSecondaryInversePressed = TuColors.palette.white | TuColors.palette.grey2
 
     let textLink = TuColors.palette.blue | TuColors.palette.blue30
 

@@ -67,59 +67,59 @@ struct O2Colors: MisticaColors {
 
     let buttonDangerBackground = O2Colors.palette.pepper
 
-    let buttonDangerBackgroundSelected = O2Colors.palette.pepper60
+    let buttonDangerBackgroundPressed = O2Colors.palette.pepper60
 
     let buttonDangerBackgroundHover = O2Colors.palette.pepper60
 
-    let buttonLinkDangerBackgroundSelected = O2Colors.palette.pepper10 | O2Colors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundPressed = O2Colors.palette.pepper10 | O2Colors.palette.white.withAlphaComponent(0.08)
 
     let buttonLinkDangerBackgroundInverse = O2Colors.palette.white | O2Colors.palette.white.withAlphaComponent(0)
 
-    let buttonLinkDangerBackgroundInverseSelected = O2Colors.palette.pepper10 | O2Colors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundInversePressed = O2Colors.palette.pepper10 | O2Colors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundSelected = O2Colors.palette.o2BluePrimary10 | O2Colors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkBackgroundPressed = O2Colors.palette.o2BluePrimary10 | O2Colors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundInverseSelected = O2Colors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkBackgroundInversePressed = O2Colors.palette.white.withAlphaComponent(0.08)
 
     let buttonPrimaryBackground = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeO2BluePrimary
 
     let buttonPrimaryBackgroundInverse = O2Colors.palette.white | O2Colors.palette.darkModeO2BluePrimary
 
-    let buttonPrimaryBackgroundSelected = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.darkModeO2BluePrimaryDark
+    let buttonPrimaryBackgroundPressed = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.darkModeO2BluePrimaryDark
 
     let buttonPrimaryBackgroundHover = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.darkModeO2BluePrimaryDark
 
-    let buttonPrimaryBackgroundInverseSelected = O2Colors.palette.o2BluePrimary30 | O2Colors.palette.darkModeO2BluePrimaryDark
+    let buttonPrimaryBackgroundInversePressed = O2Colors.palette.o2BluePrimary30 | O2Colors.palette.darkModeO2BluePrimaryDark
 
     let buttonSecondaryBorder = O2Colors.palette.o2BluePrimary | O2Colors.palette.white
 
-    let buttonSecondaryBorderSelected = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.white
+    let buttonSecondaryBorderPressed = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.white
 
     let buttonSecondaryBorderInverse = O2Colors.palette.white
 
     let buttonSecondaryBackgroundHover = O2Colors.palette.o2BluePrimary10 | O2Colors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundSelected = O2Colors.palette.o2BluePrimary10 | O2Colors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundPressed = O2Colors.palette.o2BluePrimary10 | O2Colors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBorderInverseSelected = O2Colors.palette.o2BluePrimary30 | O2Colors.palette.white
+    let buttonSecondaryBorderInversePressed = O2Colors.palette.o2BluePrimary30 | O2Colors.palette.white
 
     let buttonSecondaryBackgroundInverseHover = O2Colors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInverseSelected = O2Colors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundInversePressed = O2Colors.palette.white.withAlphaComponent(0.15)
 
     let textButtonPrimary = O2Colors.palette.white | O2Colors.palette.grey2
 
     let textButtonPrimaryInverse = O2Colors.palette.o2BluePrimary | O2Colors.palette.grey2
 
-    let textButtonPrimaryInverseSelected = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.grey2
+    let textButtonPrimaryInversePressed = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.grey2
 
     let textButtonSecondary = O2Colors.palette.o2BluePrimary | O2Colors.palette.grey2
 
-    let textButtonSecondarySelected = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.grey2
+    let textButtonSecondaryPressed = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.grey2
 
     let textButtonSecondaryInverse = O2Colors.palette.white | O2Colors.palette.grey2
 
-    let textButtonSecondaryInverseSelected = O2Colors.palette.white | O2Colors.palette.grey2
+    let textButtonSecondaryInversePressed = O2Colors.palette.white | O2Colors.palette.grey2
 
     let textLink = O2Colors.palette.o2BluePrimary | O2Colors.palette.o2BluePrimary30
 

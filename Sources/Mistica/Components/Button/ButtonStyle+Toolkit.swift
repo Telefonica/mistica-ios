@@ -31,7 +31,7 @@ public extension Button.Style {
             allowsBleedingAlignment: false,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground),
-                .selected: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackgroundSelected, borderColor: .buttonPrimaryBackgroundSelected),
+                .selected: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackgroundPressed, borderColor: .buttonPrimaryBackgroundPressed),
                 .disabled: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground),
                 .loading: Button.StateStyle(textColor: .textButtonPrimary, backgroundColor: .buttonPrimaryBackground, borderColor: .buttonPrimaryBackground)
             ]
@@ -45,7 +45,7 @@ public extension Button.Style {
             allowsBleedingAlignment: false,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBorder),
-                .selected: Button.StateStyle(textColor: .textButtonSecondarySelected, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackgroundSelected),
+                .selected: Button.StateStyle(textColor: .textButtonSecondaryPressed, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBackgroundPressed),
                 .disabled: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBorder),
                 .loading: Button.StateStyle(textColor: .textButtonSecondary, backgroundColor: backgroundColor, borderColor: .buttonSecondaryBorder)
             ]
@@ -59,7 +59,7 @@ public extension Button.Style {
             allowsBleedingAlignment: false,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackground, borderColor: .buttonDangerBackground),
-                .selected: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackgroundSelected, borderColor: .buttonDangerBackgroundSelected),
+                .selected: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackgroundPressed, borderColor: .buttonDangerBackgroundPressed),
                 .disabled: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackground, borderColor: .buttonDangerBackground),
                 .loading: Button.StateStyle(textColor: textColor, backgroundColor: .buttonDangerBackground, borderColor: .buttonDangerBackground)
             ]
@@ -73,7 +73,7 @@ public extension Button.Style {
             allowsBleedingAlignment: true,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLink, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textLink, backgroundColor: .buttonLinkBackgroundSelected, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLink, backgroundColor: .buttonLinkBackgroundPressed, borderColor: backgroundColor),
                 .disabled: Button.StateStyle(textColor: .textLink, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .loading: Button.StateStyle(textColor: .textLink, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]
@@ -89,7 +89,7 @@ public extension Button.Style {
             allowsBleedingAlignment: true,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear),
-                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundSelected, borderColor: .clear),
+                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundPressed, borderColor: .clear),
                 .disabled: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear),
                 .loading: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear)
             ]
@@ -105,7 +105,7 @@ public extension Button.Style {
             allowsBleedingAlignment: true,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundInverse, borderColor: .clear),
-                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundInverseSelected, borderColor: .clear),
+                .selected: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .buttonLinkDangerBackgroundInversePressed, borderColor: .clear),
                 .disabled: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear),
                 .loading: Button.StateStyle(textColor: .textLinkDanger, backgroundColor: .clear, borderColor: .clear)
             ]
@@ -121,7 +121,7 @@ public extension Button.Style {
             allowsBleedingAlignment: false,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse),
-                .selected: Button.StateStyle(textColor: .textButtonPrimaryInverseSelected, backgroundColor: .buttonPrimaryBackgroundInverseSelected, borderColor: .buttonPrimaryBackgroundInverseSelected),
+                .selected: Button.StateStyle(textColor: .textButtonPrimaryInversePressed, backgroundColor: .buttonPrimaryBackgroundInversePressed, borderColor: .buttonPrimaryBackgroundInversePressed),
                 .disabled: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse),
                 .loading: Button.StateStyle(textColor: .textButtonPrimaryInverse, backgroundColor: .buttonPrimaryBackgroundInverse, borderColor: .buttonPrimaryBackgroundInverse)
             ]
@@ -133,7 +133,7 @@ public extension Button.Style {
             allowsBleedingAlignment: false,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse),
-                .selected: Button.StateStyle(textColor: .textButtonSecondaryInverseSelected, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverseSelected),
+                .selected: Button.StateStyle(textColor: .textButtonSecondaryInversePressed, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInversePressed),
                 .disabled: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse),
                 .loading: Button.StateStyle(textColor: .textButtonSecondaryInverse, backgroundColor: .clear, borderColor: .buttonSecondaryBorderInverse)
             ]
@@ -146,7 +146,7 @@ public extension Button.Style {
             allowsBleedingAlignment: true,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: .buttonLinkBackgroundInverseSelected, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: .buttonLinkBackgroundInversePressed, borderColor: backgroundColor),
                 .disabled: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .loading: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]

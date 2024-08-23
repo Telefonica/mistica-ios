@@ -28,7 +28,15 @@ private enum Constants {
             Style(titleStyle: .title2, title: "Title2 with link", linkTitle: "Text link"),
             Style(titleStyle: .title2, title: "Title2 with no link", linkTitle: nil),
             Style(titleStyle: .title2, title: "Title2 with link and some large title using 2 lines", linkTitle: "Text link"),
-            Style(titleStyle: .title2, title: "Title2 with no link and some large title using 2 lines", linkTitle: nil)
+            Style(titleStyle: .title2, title: "Title2 with no link and some large title using 2 lines", linkTitle: nil),
+            Style(titleStyle: .title3, title: "Title3 with link", linkTitle: "Text link"),
+            Style(titleStyle: .title3, title: "Title3 with no link", linkTitle: nil),
+            Style(titleStyle: .title3, title: "Title3 with link and some large title using 2 lines", linkTitle: "Text link"),
+            Style(titleStyle: .title3, title: "Title3 with no link and some large title using 2 lines", linkTitle: nil),
+            Style(titleStyle: .title4, title: "Title4 with link", linkTitle: "Text link"),
+            Style(titleStyle: .title4, title: "Title4 with no link", linkTitle: nil),
+            Style(titleStyle: .title4, title: "Title4 with link and some large title using 2 lines", linkTitle: "Text link"),
+            Style(titleStyle: .title4, title: "Title4 with no link and some large title using 2 lines", linkTitle: nil)
         ]
     }
 }

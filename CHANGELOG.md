@@ -1,3 +1,21 @@
+# [33.0.0](https://github.com/Telefonica/mistica-ios/compare/v32.0.0...v33.0.0) (2024-08-26)
+
+
+### Feat
+
+* **Title:** Update title component and Mistica tokens ([#396](https://github.com/Telefonica/mistica-ios/issues/396)) ([d3df994](https://github.com/Telefonica/mistica-ios/commit/d3df994e732ac11151022c8aa7c8a4c74c6785eb)), closes [#397](https://github.com/Telefonica/mistica-ios/issues/397)
+
+
+### BREAKING CHANGES
+
+* **Title:** Add some title styles and modify the existing ones. Rename the color tokens from mistica-design.
+
+* Update tokens
+
+* Update tokens again
+
+* Fix breaking change
+
 # [32.0.0](https://github.com/Telefonica/mistica-ios/compare/v31.4.1...v32.0.0) (2024-08-19)
 
 

@@ -73,6 +73,78 @@ final class TitleHeaderFooterViewTests: XCTestCase {
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", linkTitle: "Link text", style: .title2)
         )
     }
+
+    func testTitle3() {
+        assertSnapshot(
+            for: [.vivoNew, .movistar],
+            and: [.light],
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "Title text", style: .title3)
+        )
+    }
+
+    func testTitle3WithLink() {
+        assertSnapshot(
+            for: [.vivoNew, .movistar],
+            and: [.light],
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "Title text", linkTitle: "Link text", style: .title3)
+        )
+    }
+
+    func testTitle3Multiline() {
+        assertSnapshot(
+            for: [.vivoNew, .movistar],
+            and: [.light],
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", style: .title3)
+        )
+    }
+
+    func testTitle3MultilineAndLink() {
+        assertSnapshot(
+            for: [.vivoNew, .movistar],
+            and: [.light],
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", linkTitle: "Link text", style: .title3)
+        )
+    }
+
+    func testTitle4() {
+        assertSnapshot(
+            for: [.vivoNew],
+            and: [.light],
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "Title text", style: .title4)
+        )
+    }
+
+    func testTitle4WithLink() {
+        assertSnapshot(
+            for: [.vivoNew],
+            and: [.light],
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "Title text", linkTitle: "Link text", style: .title4)
+        )
+    }
+
+    func testTitle4Multiline() {
+        assertSnapshot(
+            for: [.vivoNew],
+            and: [.light],
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", style: .title4)
+        )
+    }
+
+    func testTitle4MultilineAndLink() {
+        assertSnapshot(
+            for: [.vivoNew],
+            and: [.light],
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", linkTitle: "Link text", style: .title4)
+        )
+    }
 }
 
 private extension TitleHeaderFooterViewTests {

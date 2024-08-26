@@ -15,6 +15,7 @@ public protocol MisticaFontWeights {
     var link: MisticaFontWeightType { get }
     var title1: MisticaFontWeightType { get }
     var title2: MisticaFontWeightType { get }
+    var title3: MisticaFontWeightType { get }
     var indicator: MisticaFontWeightType { get }
     var navigationBar: MisticaFontWeightType { get }
     var text5: MisticaFontWeightType { get }

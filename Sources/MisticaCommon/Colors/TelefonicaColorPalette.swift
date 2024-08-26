@@ -11,6 +11,10 @@ import UIKit
 struct TelefonicaColors: MisticaColors {
     static let palette = TelefonicaColorPalette()
 
+    let backgroundBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack)
+
+    let backgroundBrandSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
+
     let appBarBackground = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
 
     let background = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeBlack
@@ -32,10 +36,6 @@ struct TelefonicaColors: MisticaColors {
     let backgroundContainerBrandOverInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.darkModeGrey
 
     let backgroundContainerAlternative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey
-
-    let backgroundBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack)
-
-    let backgroundBrandSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 
     let backgroundOverlay = TelefonicaColors.palette.grey6.withAlphaComponent(0.8) | TelefonicaColors.palette.darkModeGrey.withAlphaComponent(0.8)
 
@@ -67,59 +67,59 @@ struct TelefonicaColors: MisticaColors {
 
     let buttonDangerBackground = TelefonicaColors.palette.coral
 
-    let buttonDangerBackgroundSelected = TelefonicaColors.palette.coral80
+    let buttonDangerBackgroundPressed = TelefonicaColors.palette.coral80
 
     let buttonDangerBackgroundHover = TelefonicaColors.palette.coral80
 
-    let buttonLinkDangerBackgroundSelected = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundPressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
 
     let buttonLinkDangerBackgroundInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.white.withAlphaComponent(0)
 
-    let buttonLinkDangerBackgroundInverseSelected = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkDangerBackgroundInversePressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundSelected = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkBackgroundPressed = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundInverseSelected = TelefonicaColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkBackgroundInversePressed = TelefonicaColors.palette.white.withAlphaComponent(0.08)
 
     let buttonPrimaryBackground = TelefonicaColors.palette.telefonicaBlue
 
     let buttonPrimaryBackgroundInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.telefonicaBlue
 
-    let buttonPrimaryBackgroundSelected = TelefonicaColors.palette.telefonicaBlue70
+    let buttonPrimaryBackgroundPressed = TelefonicaColors.palette.telefonicaBlue70
 
     let buttonPrimaryBackgroundHover = TelefonicaColors.palette.telefonicaBlue70
 
-    let buttonPrimaryBackgroundInverseSelected = TelefonicaColors.palette.telefonicaBlue30 | TelefonicaColors.palette.telefonicaBlue70
+    let buttonPrimaryBackgroundInversePressed = TelefonicaColors.palette.telefonicaBlue30 | TelefonicaColors.palette.telefonicaBlue70
 
     let buttonSecondaryBorder = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderSelected = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
-
-    let buttonSecondaryBackgroundHover = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
-
-    let buttonSecondaryBackgroundSelected = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBorderPressed = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
 
     let buttonSecondaryBorderInverse = TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderInverseSelected = TelefonicaColors.palette.white
+    let buttonSecondaryBackgroundHover = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+
+    let buttonSecondaryBackgroundPressed = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+
+    let buttonSecondaryBorderInversePressed = TelefonicaColors.palette.white
 
     let buttonSecondaryBackgroundInverseHover = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInverseSelected = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundInversePressed = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
     let textButtonPrimary = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
 
     let textButtonPrimaryInverse = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey2
 
-    let textButtonPrimaryInverseSelected = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey2
+    let textButtonPrimaryInversePressed = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey2
 
     let textButtonSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey2
 
-    let textButtonSecondarySelected = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey2
+    let textButtonSecondaryPressed = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey2
 
     let textButtonSecondaryInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
 
-    let textButtonSecondaryInverseSelected = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
+    let textButtonSecondaryInversePressed = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
 
     let textLink = TelefonicaColors.palette.telefonicaBlue
 
@@ -268,6 +268,17 @@ struct TelefonicaColors: MisticaColors {
     let tagBackgroundWarning = TelefonicaColors.palette.ambar10 | TelefonicaColors.palette.darkModeGrey6
 
     let tagBackgroundError = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey6
+
+    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+        colors:
+        [
+            TelefonicaColors.palette.black.withAlphaComponent(0),
+            TelefonicaColors.palette.black.withAlphaComponent(0.4),
+            TelefonicaColors.palette.black.withAlphaComponent(0.7)
+        ],
+        stops: [0, 0.3, 1],
+        angle: 180
+    ))
 }
 
 public struct TelefonicaColorPalette {

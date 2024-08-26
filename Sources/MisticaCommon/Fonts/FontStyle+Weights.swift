@@ -40,7 +40,7 @@ public extension FontStyle {
     }
 
     enum TextPreset3Weight: CaseIterable {
-        case light, regular, medium, button, link
+        case light, regular, medium, button, link, title2, title3
 
         var value: MisticaFontWeightType {
             switch self {
@@ -49,6 +49,8 @@ public extension FontStyle {
             case .medium: return .medium
             case .button: return MisticaConfig.currentFontWeights.button
             case .link: return MisticaConfig.currentFontWeights.link
+            case .title2: return MisticaConfig.currentFontWeights.title2
+            case .title3: return MisticaConfig.currentFontWeights.title3
             }
         }
     }

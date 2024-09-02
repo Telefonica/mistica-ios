@@ -34,21 +34,6 @@ open class ListTableViewCell: UITableViewCell {
         }
     }
 
-    func accessibilityTypeUpdated() {
-        switch accessibilityType {
-        case .interactive(let accessibilityInteractiveData):
-            isAccessibilityElement = true
-            accessibilityLabel = accessibilityInteractiveData.label ?? defaultAccessibilityLabel
-            accessibilityActivationAction = accessibilityInteractiveData.action
-        case .informative:
-            isAccessibilityElement = false
-            accessibilityLabel = nil
-        case .customInformative(let accessibilityText):
-            isAccessibilityElement = true
-            accessibilityLabel = accessibilityText
-        }
-    }
-
     // MARK: Initializers
 
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -157,6 +142,21 @@ private extension ListTableViewCell {
             return contentView
         case .boxed:
             return listCellContentView.cellBorderView
+        }
+    }
+
+    func accessibilityTypeUpdated() {
+        switch accessibilityType {
+        case .interactive(let accessibilityInteractiveData):
+            isAccessibilityElement = true
+            accessibilityLabel = accessibilityInteractiveData.label ?? defaultAccessibilityLabel
+            accessibilityActivationAction = accessibilityInteractiveData.action
+        case .informative:
+            isAccessibilityElement = false
+            accessibilityLabel = nil
+        case .customInformative(let accessibilityText):
+            isAccessibilityElement = true
+            accessibilityLabel = accessibilityText
         }
     }
 }

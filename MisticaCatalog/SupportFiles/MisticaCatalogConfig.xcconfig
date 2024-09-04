@@ -33,7 +33,7 @@ LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/
 
 DEFINES_MODULE = YES
 INFOPLIST_FILE = SupportFiles/Info.plist
-PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise
+PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.enterprise
 
 // Swift
 

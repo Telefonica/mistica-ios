@@ -694,7 +694,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = JA666WMX28;
+				DEVELOPMENT_TEAM = GFMF97LQSW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = MisticaCatalog;
@@ -703,9 +703,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(VERSION_NUMBER)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "mistica-app-development";
+				PROVISIONING_PROFILE_SPECIFIER = "development-mistica";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -719,7 +719,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DEVELOPMENT_TEAM = JA666WMX28;
+				DEVELOPMENT_TEAM = GFMF97LQSW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = MisticaCatalog;
@@ -728,9 +728,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(VERSION_NUMBER)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "mistica-app";
+				PROVISIONING_PROFILE_SPECIFIER = "distribution-mistica";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

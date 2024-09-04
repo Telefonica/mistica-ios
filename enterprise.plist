@@ -8,17 +8,17 @@
 	<string>enterprise</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.telefonica.mistica.enterprise</key>
-		<string>mistica-app</string>
+		<key>com.tid.mistica.enterprise</key>
+		<string>distribution-mistica</string>
 	</dict>
 	<key>signingCertificate</key>
-	<string>iPhone Distribution: Tuenti Technologies SL</string>
+	<string>iPhone Distribution: Telefonica Innovacion Digital, S.L.</string>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>
-	<string>JA666WMX28</string>
+	<string>GFMF97LQSW</string>
 	<key>thinning</key>
 	<string>&lt;none&gt;</string>
 </dict>

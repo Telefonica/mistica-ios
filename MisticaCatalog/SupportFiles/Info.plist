@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>None</string>
 			<key>CFBundleURLName</key>
-			<string>com.telefonica.mistica.enterprise</string>
+			<string>com.tid.mistica.enterprise</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>mistica</string>

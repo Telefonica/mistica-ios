@@ -165,7 +165,7 @@ public class TagView: UIView {
 
 extension TagView: AccessibleTextualView {
     public var accessibleText: String? {
-        return text
+        text
     }
 }
 

@@ -120,7 +120,7 @@ open class ListTableViewCell: UITableViewCell {
 
     override public func accessibilityActivate() -> Bool {
         guard case let .interactive(accessibilityInteractiveData) = accessibilityType,
-                let action = accessibilityInteractiveData.action else {
+              let action = accessibilityInteractiveData.action else {
             return false
         }
 

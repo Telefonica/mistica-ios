@@ -459,6 +459,5 @@ private extension ListCellContentView {
         case .interactive, .customInformative:
             accessibilityElements = []
         }
-
     }
 }

@@ -31,7 +31,7 @@ open class ListTableViewCell: UITableViewCell {
     /// - Possible values:
     ///   - .interactive: Interactive cell (e.g: navigates when tap). Whole cell will be focused. Parameter: AccessibilityListCellInteractiveData
     ///     - AccessibilityListCellInteractiveData.label: Optional label to be read instead of default one
-    ///     - AccessibilityListCellInteractiveData.action: Custom action associated to double tap
+    ///     - AccessibilityListCellInteractiveData.action: Custom action associated to double tap (e.g: toggle switch)
     ///   - .doubleInteraction: Double interaction: (e.g: navigates when tap on cell and a custom button in the controlView). Two elements focused: center view and control view. Parameter: AccessibilityListCellInteractiveData
     ///     - AccessibilityListCellInteractiveData.label: Optional label to be read instead of default one for main content (center view)
     ///     - AccessibilityListCellInteractiveData.action: Custom action associated to double tap on main content (center view)

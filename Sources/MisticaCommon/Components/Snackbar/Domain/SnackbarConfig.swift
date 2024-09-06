@@ -72,11 +72,19 @@ public enum SnackbarDismissInterval: Equatable {
 
 public struct SnackbarConfig {
     public let title: String
+    public let titleAccessibilityLabel: String?
+    public let titleAccessibilityIdentifier: String?
     public let dismissInterval: SnackbarDismissInterval
     public let forceDismiss: Bool
 
-    public init(title: String, dismissInterval: SnackbarDismissInterval, forceDismiss: Bool = false) {
+    public init(title: String,
+                titleAccessibilityLabel: String? = nil,
+                titleAccessibilityIdentifier: String? = nil,
+                dismissInterval: SnackbarDismissInterval,
+                forceDismiss: Bool = false) {
         self.title = title
+        self.titleAccessibilityLabel = titleAccessibilityLabel
+        self.titleAccessibilityIdentifier = titleAccessibilityIdentifier
         self.dismissInterval = dismissInterval
         self.forceDismiss = forceDismiss
     }

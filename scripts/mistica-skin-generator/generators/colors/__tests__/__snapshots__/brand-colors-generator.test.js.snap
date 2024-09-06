@@ -1,0 +1,349 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`generateBrandColors 1`] = `
+"
+// Generated using Make
+// DO NOT EDIT
+
+import UIKit
+
+struct Brand1Colors: MisticaColors {
+    static let palette = Brand1ColorPalette()
+
+     let background = Brand1Colors.palette.white | Brand1Colors.palette.darkModeBlack
+
+     let backgroundAlternative = Brand1Colors.palette.grey20 | Brand1Colors.palette.darkModeBlack
+
+     let backgroundBrand = MisticaColor.gradient(MisticaGradient(
+        colors:
+        [
+            Brand1Colors.palette.darkBlue | Brand1Colors.palette.darkModeBlack,
+            Brand1Colors.palette.beyondBlue | Brand1Colors.palette.darkModeBlack,
+            Brand1Colors.palette.beyondBlue45 | Brand1Colors.palette.darkModeBlack
+        ],
+        stops: [0,0.64,1],
+        angle: 180
+    ))
+
+     let backgroundBrandSecondary = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.darkModeBlack
+
+     let backgroundContainer = Brand1Colors.palette.white | Brand1Colors.palette.darkModeGrey
+
+     let backgroundContainerError = Brand1Colors.palette.o2Red10 | Brand1Colors.palette.darkModeGrey
+
+     let backgroundContainerHover = Brand1Colors.palette.darkModeBlack.withAlphaComponent(0.03) | Brand1Colors.palette.white.withAlphaComponent(0.03)
+
+     let backgroundContainerPressed = Brand1Colors.palette.darkModeBlack.withAlphaComponent(0.05) | Brand1Colors.palette.white.withAlphaComponent(0.05)
+
+     let backgroundContainerBrand = MisticaColor.gradient(MisticaGradient(
+        colors:
+        [
+            Brand1Colors.palette.darkBlue | Brand1Colors.palette.darkModeGrey,
+            Brand1Colors.palette.beyondBlue | Brand1Colors.palette.darkModeGrey,
+            Brand1Colors.palette.beyondBlue45 | Brand1Colors.palette.darkModeGrey
+        ],
+        stops: [0,0.64,1],
+        angle: 180
+    ))
+
+     let backgroundContainerBrandHover = Brand1Colors.palette.darkModeBlack.withAlphaComponent(0.2) | Brand1Colors.palette.white.withAlphaComponent(0.03)
+
+     let backgroundContainerBrandPressed = Brand1Colors.palette.darkModeBlack.withAlphaComponent(0.4) | Brand1Colors.palette.white.withAlphaComponent(0.05)
+
+     let backgroundContainerBrandOverInverse = Brand1Colors.palette.beyondBlue70 | Brand1Colors.palette.darkModeGrey
+
+     let backgroundContainerAlternative = Brand1Colors.palette.grey20 | Brand1Colors.palette.darkModeGrey
+
+     let backgroundOverlay = Brand1Colors.palette.black.withAlphaComponent(0.6) | Brand1Colors.palette.darkModeGrey.withAlphaComponent(0.8)
+
+     let backgroundSkeleton = Brand1Colors.palette.grey30 | Brand1Colors.palette.darkModeGrey6
+
+     let backgroundSkeletonInverse = Brand1Colors.palette.beyondBlue70 | Brand1Colors.palette.darkModeGrey6
+
+     let backgroundBrandTop = Brand1Colors.palette.darkBlue | Brand1Colors.palette.darkModeBlack
+
+     let backgroundBrandBottom = Brand1Colors.palette.beyondBlue45 | Brand1Colors.palette.darkModeBlack
+
+     let appBarBackground = Brand1Colors.palette.white | Brand1Colors.palette.darkModeGrey
+
+     let navigationBarBackground = Brand1Colors.palette.darkBlue | Brand1Colors.palette.darkModeBlack
+
+     let skeletonWave = Brand1Colors.palette.grey30 | Brand1Colors.palette.grey80
+
+     let borderLow = Brand1Colors.palette.grey20 | Brand1Colors.palette.darkModeBlack
+
+     let border = Brand1Colors.palette.grey30 | Brand1Colors.palette.darkModeGrey
+
+     let borderHigh = Brand1Colors.palette.grey80 | Brand1Colors.palette.grey45
+
+     let borderSelected = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.beyondBlue30
+
+     let coverBackgroundHover = Brand1Colors.palette.darkModeBlack.withAlphaComponent(0.25)
+
+     let coverBackgroundPressed = Brand1Colors.palette.darkModeBlack.withAlphaComponent(0.35)
+
+     let buttonDangerBackground = Brand1Colors.palette.o2Red60
+
+     let buttonDangerBackgroundSelected = Brand1Colors.palette.o2Red65
+
+     let buttonDangerBackgroundHover = Brand1Colors.palette.o2Red65
+
+     let buttonLinkDangerBackgroundSelected = Brand1Colors.palette.o2Red10 | Brand1Colors.palette.white.withAlphaComponent(0.08)
+
+     let buttonLinkDangerBackgroundInverse = Brand1Colors.palette.white | Brand1Colors.palette.white.withAlphaComponent(0)
+
+     let buttonLinkDangerBackgroundInverseSelected = Brand1Colors.palette.o2Red10 | Brand1Colors.palette.white.withAlphaComponent(0.08)
+
+     let buttonLinkBackgroundSelected = Brand1Colors.palette.beyondBlue10 | Brand1Colors.palette.white.withAlphaComponent(0.08)
+
+     let buttonLinkBackgroundInverseSelected = Brand1Colors.palette.white.withAlphaComponent(0.08)
+
+     let buttonPrimaryBackground = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.darkModeBeyondBlue
+
+     let buttonPrimaryBackgroundInverse = Brand1Colors.palette.white | Brand1Colors.palette.darkModeBeyondBlue
+
+     let buttonPrimaryBackgroundSelected = Brand1Colors.palette.beyondBlue70 | Brand1Colors.palette.beyondBlue55
+
+     let buttonPrimaryBackgroundHover = Brand1Colors.palette.beyondBlue70 | Brand1Colors.palette.beyondBlue55
+
+     let buttonPrimaryBackgroundInverseSelected = Brand1Colors.palette.beyondBlue30 | Brand1Colors.palette.beyondBlue55
+
+     let buttonSecondaryBorder = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.white
+
+     let buttonSecondaryBorderSelected = Brand1Colors.palette.beyondBlue70 | Brand1Colors.palette.white
+
+     let buttonSecondaryBackgroundHover = Brand1Colors.palette.beyondBlue10 | Brand1Colors.palette.white.withAlphaComponent(0.15)
+
+     let buttonSecondaryBackgroundSelected = Brand1Colors.palette.beyondBlue10 | Brand1Colors.palette.white.withAlphaComponent(0.15)
+
+     let buttonSecondaryBorderInverse = Brand1Colors.palette.white
+
+     let buttonSecondaryBorderInverseSelected = Brand1Colors.palette.beyondBlue30 | Brand1Colors.palette.white
+
+     let buttonSecondaryBackgroundInverseHover = Brand1Colors.palette.white.withAlphaComponent(0.15)
+
+     let buttonSecondaryBackgroundInverseSelected = Brand1Colors.palette.white.withAlphaComponent(0.15)
+
+     let textButtonPrimary = Brand1Colors.palette.white
+
+     let textButtonPrimaryInverse = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.white
+
+     let textButtonPrimaryInverseSelected = Brand1Colors.palette.beyondBlue70 | Brand1Colors.palette.white
+
+     let textButtonSecondary = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.grey30
+
+     let textButtonSecondarySelected = Brand1Colors.palette.beyondBlue70 | Brand1Colors.palette.grey30
+
+     let textButtonSecondaryInverse = Brand1Colors.palette.white | Brand1Colors.palette.grey30
+
+     let textButtonSecondaryInverseSelected = Brand1Colors.palette.white | Brand1Colors.palette.grey30
+
+     let textLink = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.beyondBlue40
+
+     let textLinkInverse = Brand1Colors.palette.white | Brand1Colors.palette.beyondBlue40
+
+     let textLinkDanger = Brand1Colors.palette.o2Red65 | Brand1Colors.palette.o2Red45
+
+     let textLinkSnackbar = Brand1Colors.palette.beyondBlue30
+
+     let textActivated = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.beyondBlue30
+
+     let textBrand = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.beyondBlue30
+
+     let control = Brand1Colors.palette.grey45
+
+     let controlActivated = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.darkModeBeyondBlue
+
+     let controlInverse = Brand1Colors.palette.white | Brand1Colors.palette.grey45
+
+     let controlActivatedInverse = Brand1Colors.palette.white | Brand1Colors.palette.darkModeBeyondBlue
+
+     let controlError = Brand1Colors.palette.o2Red60 | Brand1Colors.palette.o2Red45
+
+     let barTrack = Brand1Colors.palette.grey30 | Brand1Colors.palette.darkModeGrey6
+
+     let loadingBar = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.darkModeBeyondBlue
+
+     let loadingBarBackground = Brand1Colors.palette.grey20 | Brand1Colors.palette.darkModeGrey6
+
+     let toggleAndroidInactive = Brand1Colors.palette.grey30 | Brand1Colors.palette.grey20
+
+     let toggleAndroidBackgroundActive = Brand1Colors.palette.beyondBlue15
+
+     let iosControlKnob = Brand1Colors.palette.white | Brand1Colors.palette.grey30
+
+     let divider = Brand1Colors.palette.grey30 | Brand1Colors.palette.white.withAlphaComponent(0.1)
+
+     let dividerInverse = Brand1Colors.palette.white.withAlphaComponent(0.2) | Brand1Colors.palette.white.withAlphaComponent(0.1)
+
+     let navigationBarDivider = Brand1Colors.palette.darkBlue | Brand1Colors.palette.darkModeBlack
+
+     let badge = Brand1Colors.palette.o2Red65
+
+     let feedbackErrorBackground = Brand1Colors.palette.o2Red60
+
+     let feedbackInfoBackground = Brand1Colors.palette.black | Brand1Colors.palette.darkModeGrey6
+
+     let brand = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.beyondBlue30
+
+     let brandHigh = Brand1Colors.palette.beyondBlue70 | Brand1Colors.palette.white.withAlphaComponent(0.05)
+
+     let inverse = Brand1Colors.palette.white | Brand1Colors.palette.grey30
+
+     let neutralHigh = Brand1Colors.palette.black | Brand1Colors.palette.grey30
+
+     let neutralMedium = Brand1Colors.palette.grey60
+
+     let neutralMediumInverse = Brand1Colors.palette.grey60
+
+     let neutralLow = Brand1Colors.palette.grey20 | Brand1Colors.palette.grey80
+
+     let neutralLowAlternative = Brand1Colors.palette.grey30 | Brand1Colors.palette.grey80
+
+     let textPrimary = Brand1Colors.palette.black | Brand1Colors.palette.grey30
+
+     let textPrimaryInverse = Brand1Colors.palette.white | Brand1Colors.palette.grey30
+
+     let textSecondary = Brand1Colors.palette.grey60 | Brand1Colors.palette.grey45
+
+     let textSecondaryInverse = Brand1Colors.palette.beyondBlue10 | Brand1Colors.palette.grey45
+
+     let success = Brand1Colors.palette.o2Green
+
+     let warning = Brand1Colors.palette.o2Orange
+
+     let error = Brand1Colors.palette.o2Red65 | Brand1Colors.palette.o2Red45
+
+     let textError = Brand1Colors.palette.o2Red65 | Brand1Colors.palette.o2Red45
+
+     let textErrorInverse = Brand1Colors.palette.white | Brand1Colors.palette.o2Red45
+
+     let promo = Brand1Colors.palette.o2Pink
+
+     let highlight = Brand1Colors.palette.o2Pink80 | Brand1Colors.palette.o2Pink
+
+     let successLow = Brand1Colors.palette.o2Green10 | Brand1Colors.palette.darkModeGrey6
+
+     let warningLow = Brand1Colors.palette.o2Orange10 | Brand1Colors.palette.darkModeGrey6
+
+     let errorLow = Brand1Colors.palette.o2Red10 | Brand1Colors.palette.darkModeGrey6
+
+     let promoLow = Brand1Colors.palette.o2Pink15 | Brand1Colors.palette.darkModeGrey6
+
+     let brandLow = Brand1Colors.palette.beyondBlue10 | Brand1Colors.palette.darkModeGrey6
+
+     let successHigh = Brand1Colors.palette.o2Green80 | Brand1Colors.palette.o2Green40
+
+     let warningHigh = Brand1Colors.palette.o2Orange75 | Brand1Colors.palette.o2Orange40
+
+     let errorHigh = Brand1Colors.palette.o2Red65 | Brand1Colors.palette.o2Red40
+
+     let promoHigh = Brand1Colors.palette.o2Pink80 | Brand1Colors.palette.o2Pink30
+
+     let successHighInverse = Brand1Colors.palette.o2Green80
+
+     let warningHighInverse = Brand1Colors.palette.o2Orange75
+
+     let errorHighInverse = Brand1Colors.palette.o2Red65
+
+     let promoHighInverse = Brand1Colors.palette.o2Pink80 | Brand1Colors.palette.o2Pink
+
+     let textNavigationBarPrimary = Brand1Colors.palette.white | Brand1Colors.palette.grey30
+
+     let textNavigationBarSecondary = Brand1Colors.palette.beyondBlue30 | Brand1Colors.palette.grey45
+
+     let textNavigationSearchBarHint = Brand1Colors.palette.beyondBlue30 | Brand1Colors.palette.grey45
+
+     let textNavigationSearchBarText = Brand1Colors.palette.white | Brand1Colors.palette.grey30
+
+     let textAppBar = Brand1Colors.palette.grey60 | Brand1Colors.palette.grey45
+
+     let textAppBarSelected = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.beyondBlue40
+
+     let customTabsBackground = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.darkModeBlack
+
+     let tagTextPromo = Brand1Colors.palette.o2Pink80 | Brand1Colors.palette.o2Pink
+
+     let tagTextActive = Brand1Colors.palette.beyondBlue | Brand1Colors.palette.beyondBlue30
+
+     let tagTextInactive = Brand1Colors.palette.grey60 | Brand1Colors.palette.grey40
+
+     let tagTextSuccess = Brand1Colors.palette.o2Green80 | Brand1Colors.palette.o2Green
+
+     let tagTextWarning = Brand1Colors.palette.o2Orange75 | Brand1Colors.palette.o2Orange
+
+     let tagTextError = Brand1Colors.palette.o2Red65 | Brand1Colors.palette.o2Red45
+
+     let tagBackgroundPromo = Brand1Colors.palette.o2Pink15 | Brand1Colors.palette.darkModeGrey6
+
+     let tagBackgroundActive = Brand1Colors.palette.beyondBlue10 | Brand1Colors.palette.darkModeGrey6
+
+     let tagBackgroundInactive = Brand1Colors.palette.grey20 | Brand1Colors.palette.darkModeGrey6
+
+     let tagBackgroundSuccess = Brand1Colors.palette.o2Green10 | Brand1Colors.palette.darkModeGrey6
+
+     let tagBackgroundWarning = Brand1Colors.palette.o2Orange10 | Brand1Colors.palette.darkModeGrey6
+
+     let tagBackgroundError = Brand1Colors.palette.o2Red10 | Brand1Colors.palette.darkModeGrey6
+
+     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+        colors:
+        [
+            Brand1Colors.palette.beyondBlue.withAlphaComponent(0) | Brand1Colors.palette.black.withAlphaComponent(0),
+            Brand1Colors.palette.beyondBlue.withAlphaComponent(0.4) | Brand1Colors.palette.black.withAlphaComponent(0.4),
+            Brand1Colors.palette.beyondBlue.withAlphaComponent(1) | Brand1Colors.palette.black.withAlphaComponent(0.7)
+        ],
+        stops: [0,0.3,1],
+        angle: 180
+    ))
+}
+
+public struct Brand1ColorPalette {
+    public init() {}
+    public let beyondBlue = UIColor(hex: "#0050FF")!
+    public let beyondBlue10 = UIColor(hex: "#E5EDFF")!
+    public let beyondBlue15 = UIColor(hex: "#CCDCFF")!
+    public let beyondBlue30 = UIColor(hex: "#80A7FF")!
+    public let beyondBlue40 = UIColor(hex: "#4D84FF")!
+    public let beyondBlue45 = UIColor(hex: "#0A73EB")!
+    public let beyondBlue55 = UIColor(hex: "#0044D9")!
+    public let beyondBlue70 = UIColor(hex: "#0038B2")!
+    public let beyondBlue90 = UIColor(hex: "#001033")!
+    public let darkBlue = UIColor(hex: "#00008C")!
+    public let o2BlueLight = UIColor(hex: "#82DCFA")!
+    public let o2BlueLight30 = UIColor(hex: "#C0EEFD")!
+    public let o2BlueLight35 = UIColor(hex: "#B4EAFC")!
+    public let o2Green = UIColor(hex: "#00DC7D")!
+    public let o2Green10 = UIColor(hex: "#E5FBF2")!
+    public let o2Green40 = UIColor(hex: "#4CE7A4")!
+    public let o2Green80 = UIColor(hex: "#006338")!
+    public let o2Yellow = UIColor(hex: "#FADC00")!
+    public let o2Orange = UIColor(hex: "#FFA55A")!
+    public let o2Orange10 = UIColor(hex: "#FFF6EE")!
+    public let o2Orange40 = UIColor(hex: "#FFC08B")!
+    public let o2Orange75 = UIColor(hex: "#996336")!
+    public let o2Pink = UIColor(hex: "#FA96FF")!
+    public let o2Pink15 = UIColor(hex: "#FEEAFF")!
+    public let o2Pink30 = UIColor(hex: "#FDCAFF")!
+    public let o2Pink80 = UIColor(hex: "#704373")!
+    public let o2Red = UIColor(hex: "#FF5A5A")!
+    public let o2Red10 = UIColor(hex: "#FFEEEE")!
+    public let o2Red20 = UIColor(hex: "#FFCDCD")!
+    public let o2Red40 = UIColor(hex: "#FF8B8B")!
+    public let o2Red45 = UIColor(hex: "#FF7B7B")!
+    public let o2Red60 = UIColor(hex: "#CC4848")!
+    public let o2Red65 = UIColor(hex: "#BF4444")!
+    public let grey20 = UIColor(hex: "#F3F3F5")!
+    public let grey30 = UIColor(hex: "#D9D9DD")!
+    public let grey40 = UIColor(hex: "#B4B4BE")!
+    public let grey45 = UIColor(hex: "#8C8C9A")!
+    public let grey60 = UIColor(hex: "#6E6E77")!
+    public let grey80 = UIColor(hex: "#3C3C46")!
+    public let black = UIColor(hex: "#00001E")!
+    public let white = UIColor(hex: "#FFFFFF")!
+    public let darkModeBlack = UIColor(hex: "#00001C")!
+    public let darkModeGrey = UIColor(hex: "#08132B")!
+    public let darkModeGrey6 = UIColor(hex: "#14213D")!
+    public let darkModeBeyondBlue = UIColor(hex: "#1A62FF")!
+}"
+`;

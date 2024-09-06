@@ -302,7 +302,6 @@ private class EmptyStateViewSampleViewController: UIViewController {
         let view = UIView()
         view.backgroundColor = .background
         view.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 24, bottom: 16, trailing: 24)
-
         view.addSubview(emptyState, constraints: [
             emptyState.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             emptyState.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),

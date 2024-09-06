@@ -15,6 +15,7 @@ struct TelefonicaFontWeights: MisticaFontWeights {
     public var link: MisticaFontWeightType = .medium
     public var title1: MisticaFontWeightType = .medium
     public var title2: MisticaFontWeightType = .regular
+    public var title3: MisticaFontWeightType = .regular
     public var indicator: MisticaFontWeightType = .medium
     public var navigationBar: MisticaFontWeightType = .medium
     public var text5: MisticaFontWeightType = .regular

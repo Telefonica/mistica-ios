@@ -1,3 +1,102 @@
+# [33.0.0](https://github.com/Telefonica/mistica-ios/compare/v32.0.0...v33.0.0) (2024-08-26)
+
+
+### Feat
+
+* **Title:** Update title component and Mistica tokens ([#396](https://github.com/Telefonica/mistica-ios/issues/396)) ([d3df994](https://github.com/Telefonica/mistica-ios/commit/d3df994e732ac11151022c8aa7c8a4c74c6785eb)), closes [#397](https://github.com/Telefonica/mistica-ios/issues/397)
+
+
+### BREAKING CHANGES
+
+* **Title:** Add some title styles and modify the existing ones. Rename the color tokens from mistica-design.
+
+* Update tokens
+
+* Update tokens again
+
+* Fix breaking change
+
+# [32.0.0](https://github.com/Telefonica/mistica-ios/compare/v31.4.1...v32.0.0) (2024-08-19)
+
+
+### Features
+
+* **Title:** Split Title component and UIKit ([#395](https://github.com/Telefonica/mistica-ios/issues/395)) ([161ac6d](https://github.com/Telefonica/mistica-ios/commit/161ac6d6b50a2a0f98e9c4d068418aee445c4b00))
+
+
+### BREAKING CHANGES
+
+* **Title:** Rename TitleView with TitleHeaderFooterView. TitleHeaderFooterView will wrap the TitleView (Title component)
+
+* Enable link interactions
+
+* Extract Title component from TitleView (UITableViewHeaderFooterView)
+
+* Rename and some fixes
+
+* Rename tests path
+
+* CR changes
+
+## [31.4.1](https://github.com/Telefonica/mistica-ios/compare/v31.4.0...v31.4.1) (2024-08-01)
+
+
+### Bug Fixes
+
+* **Padding:** IOS-10430 fix component padding  ([#393](https://github.com/Telefonica/mistica-ios/issues/393)) ([8ddd7eb](https://github.com/Telefonica/mistica-ios/commit/8ddd7eb8550e976df25447b707f2d56fcec90adc))
+
+# [31.4.0](https://github.com/Telefonica/mistica-ios/compare/v31.3.0...v31.4.0) (2024-07-26)
+
+
+### Features
+
+* **Crouton:** Allow to show crouton on a exact viewController ([e30d0bc](https://github.com/Telefonica/mistica-ios/commit/e30d0bc8643b5a8d95de6cc436bd7f0b854a0698))
+
+# [31.3.0](https://github.com/Telefonica/mistica-ios/compare/v31.2.0...v31.3.0) (2024-07-23)
+
+
+### Features
+
+* **Skeletons:** added Mistica Skeletons components for SwiftUI and UIKit ([e99d295](https://github.com/Telefonica/mistica-ios/commit/e99d29539843b3aacada462645ef6a51b53badc0))
+
+# [31.2.0](https://github.com/Telefonica/mistica-ios/compare/v31.1.0...v31.2.0) (2024-07-18)
+
+
+### Features
+
+* **Snackbar:** allow setting the accesibility identifier via SnackbarConfig ([#386](https://github.com/Telefonica/mistica-ios/issues/386)) ([4f1e08c](https://github.com/Telefonica/mistica-ios/commit/4f1e08c8cd4a401fb93e450c53cf2676ec83aa01))
+
+# [31.1.0](https://github.com/Telefonica/mistica-ios/compare/v31.0.0...v31.1.0) (2024-07-15)
+
+
+### Features
+
+* **InputField:** add numeric style and option to set textContentType ([#385](https://github.com/Telefonica/mistica-ios/issues/385)) ([1db8499](https://github.com/Telefonica/mistica-ios/commit/1db84993111c9042f4c958521d69637edee72180))
+
+# [31.0.0](https://github.com/Telefonica/mistica-ios/compare/v30.5.0...v31.0.0) (2024-07-12)
+
+
+### Features
+
+* **MisticaColors:** Update MisticaColors and VivoNew palette ([24a0a7c](https://github.com/Telefonica/mistica-ios/commit/24a0a7c217d3d0c8e11508235d5d5e8feb7ef708))
+
+
+### BREAKING CHANGES
+
+* **MisticaColors:** Refactor backgroundContainerBrand color token as MisticaColor
+
+# [30.5.0](https://github.com/Telefonica/mistica-ios/compare/v30.4.0...v30.5.0) (2024-07-12)
+
+
+### Bug Fixes
+
+* **iOS14:** Upgrade package to iOS 14 and remove iOS 13 dependencies ([f8e6578](https://github.com/Telefonica/mistica-ios/commit/f8e6578f85ddfea1022653a0dc7c32a62e82588c))
+
+
+### Features
+
+* **Accesibility:** Set sheet title label accessibility trait to header ([#384](https://github.com/Telefonica/mistica-ios/issues/384)) ([72ade6d](https://github.com/Telefonica/mistica-ios/commit/72ade6d1219fd546673041b1af9486e51ecfe9d6))
+
 # [30.4.0](https://github.com/Telefonica/mistica-ios/compare/v30.3.0...v30.4.0) (2024-06-27)
 
 

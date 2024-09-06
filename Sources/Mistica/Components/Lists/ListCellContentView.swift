@@ -408,7 +408,7 @@ private extension ListCellContentView {
         cellContentView.isLayoutMarginsRelativeArrangement = true
         cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins
 
-        cellBorderView.backgroundColor = cellStyle.backgroundColor
+        cellBorderView.setMisticaColorBackground(cellStyle.backgroundColor)
         cellBorderView.layer.cornerRadius = cellStyle.cornerRadius
         cellBorderView.layer.borderColor = cellStyle.borderColor
         cellBorderView.layer.borderWidth = cellStyle.borderWidth

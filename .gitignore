@@ -50,3 +50,8 @@ fastlane/test_output
 # ci
 .ruby-version
 vendor/
+
+# Mistica skin generator
+scripts/mistica-skin-generator/.vscode
+scripts/mistica-skin-generator/node_modules
+scripts/mistica-skin-generator/package-lock.json

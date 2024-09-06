@@ -79,12 +79,12 @@ extension ListCellContentView.CellStyle {
         )
     }
 
-    var backgroundColor: UIColor {
+    var backgroundColor: MisticaColor {
         switch self {
         case .fullWidth:
-            return .background
+            return .solid(.background)
         case .boxed:
-            return .backgroundContainer
+            return .solid(.backgroundContainer)
         case .boxedInverse:
             return .backgroundContainerBrand
         }

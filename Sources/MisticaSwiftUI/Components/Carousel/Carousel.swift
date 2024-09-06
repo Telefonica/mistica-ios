@@ -52,7 +52,7 @@ public struct Carousel<Data: RandomAccessCollection, ID: Hashable, Content: View
     func stack<ContentView: View>(@ViewBuilder content: () -> ContentView) -> some View {
         switch style {
         case .default:
-            VStack(alignment: controlAlignment.horizontal, spacing: 24) {
+            VStack(alignment: controlAlignment.horizontal, spacing: 16) {
                 content()
             }
         case .fullWidth:

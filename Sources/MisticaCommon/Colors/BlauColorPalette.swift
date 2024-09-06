@@ -27,7 +27,7 @@ struct BlauColors: MisticaColors {
 
     let backgroundContainerPressed = BlauColors.palette.blauBluePrimary.withAlphaComponent(0.05) | BlauColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeGrey
+    let backgroundContainerBrand = MisticaColor.solid(BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeGrey)
 
     let backgroundContainerBrandHover = BlauColors.palette.darkModeBlack.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.03)
 
@@ -67,59 +67,59 @@ struct BlauColors: MisticaColors {
 
     let buttonDangerBackground = BlauColors.palette.blauRed
 
-    let buttonDangerBackgroundSelected = BlauColors.palette.blauRed70
+    let buttonDangerBackgroundPressed = BlauColors.palette.blauRed70
 
     let buttonDangerBackgroundHover = BlauColors.palette.blauRed70
 
-    let buttonLinkDangerBackgroundSelected = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
+    let buttonLinkDangerBackgroundPressed = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
 
     let buttonLinkDangerBackgroundInverse = BlauColors.palette.white | BlauColors.palette.white.withAlphaComponent(0)
 
-    let buttonLinkDangerBackgroundInverseSelected = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
+    let buttonLinkDangerBackgroundInversePressed = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
 
-    let buttonLinkBackgroundSelected = BlauColors.palette.blauPurple10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
+    let buttonLinkBackgroundPressed = BlauColors.palette.blauPurple10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
 
-    let buttonLinkBackgroundInverseSelected = BlauColors.palette.white.withAlphaComponent(0.15) | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
+    let buttonLinkBackgroundInversePressed = BlauColors.palette.white.withAlphaComponent(0.15) | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
 
     let buttonPrimaryBackground = BlauColors.palette.blauBlueSecondary
 
     let buttonPrimaryBackgroundInverse = BlauColors.palette.white | BlauColors.palette.blauBluePrimary
 
-    let buttonPrimaryBackgroundSelected = BlauColors.palette.blauBlueSecondary60
+    let buttonPrimaryBackgroundPressed = BlauColors.palette.blauBlueSecondary60
 
     let buttonPrimaryBackgroundHover = BlauColors.palette.blauBlueSecondary60
 
-    let buttonPrimaryBackgroundInverseSelected = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.blauBlueSecondary60
+    let buttonPrimaryBackgroundInversePressed = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.blauBlueSecondary60
 
     let buttonSecondaryBorder = BlauColors.palette.blauBlueSecondary | BlauColors.palette.white
 
-    let buttonSecondaryBorderSelected = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.white
+    let buttonSecondaryBorderPressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.white
 
     let buttonSecondaryBorderInverse = BlauColors.palette.white
 
     let buttonSecondaryBackgroundHover = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundSelected = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundPressed = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBorderInverseSelected = BlauColors.palette.white
+    let buttonSecondaryBorderInversePressed = BlauColors.palette.white
 
     let buttonSecondaryBackgroundInverseHover = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInverseSelected = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundInversePressed = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
 
     let textButtonPrimary = BlauColors.palette.white | BlauColors.palette.grey2
 
     let textButtonPrimaryInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
 
-    let textButtonPrimaryInverseSelected = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
+    let textButtonPrimaryInversePressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
 
     let textButtonSecondary = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
 
-    let textButtonSecondarySelected = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
+    let textButtonSecondaryPressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
 
     let textButtonSecondaryInverse = BlauColors.palette.white | BlauColors.palette.grey2
 
-    let textButtonSecondaryInverseSelected = BlauColors.palette.white | BlauColors.palette.grey2
+    let textButtonSecondaryInversePressed = BlauColors.palette.white | BlauColors.palette.grey2
 
     let textLink = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
 
@@ -268,6 +268,17 @@ struct BlauColors: MisticaColors {
     let tagBackgroundWarning = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
 
     let tagBackgroundError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
+
+    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+        colors:
+        [
+            BlauColors.palette.grey6.withAlphaComponent(0),
+            BlauColors.palette.grey6.withAlphaComponent(0.4),
+            BlauColors.palette.grey6.withAlphaComponent(0.7)
+        ],
+        stops: [0, 0.3, 1],
+        angle: 180
+    ))
 }
 
 public struct BlauColorPalette {

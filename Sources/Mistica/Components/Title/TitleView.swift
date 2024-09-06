@@ -15,17 +15,23 @@ private enum ViewStyles {
     static let minimumHeight: CGFloat = 40
 }
 
-public class TitleView: UITableViewHeaderFooterView {
+public class TitleView: UIView {
     public enum Style {
         case title1
         case title2
+        case title3
+        case title4
 
         var font: UIFont {
             switch self {
             case .title1:
                 return .textPreset1(weight: .title1)
             case .title2:
-                return .textPreset5()
+                return .textPreset3(weight: .title2)
+            case .title3:
+                return .textTitle3()
+            case .title4:
+                return .textPreset6()
             }
         }
 
@@ -33,7 +39,9 @@ public class TitleView: UITableViewHeaderFooterView {
             switch self {
             case .title1:
                 return .textSecondary
-            case .title2:
+            case .title2,
+                 .title3,
+                 .title4:
                 return .textPrimary
             }
         }
@@ -42,7 +50,9 @@ public class TitleView: UITableViewHeaderFooterView {
             switch self {
             case .title1:
                 return text?.uppercased()
-            case .title2:
+            case .title2,
+                 .title3,
+                 .title4:
                 return text
             }
         }
@@ -82,21 +92,14 @@ public class TitleView: UITableViewHeaderFooterView {
         }
     }
 
-    override public init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
 
         commonInit()
     }
 
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-
-        commonInit()
-    }
-
-    public init(style: Style, reuseIdentifier: String? = nil) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        self.style = style
 
         commonInit()
     }
@@ -124,7 +127,7 @@ private extension TitleView {
     }
 
     func updateStyle() {
-        contentView.backgroundColor = .background
+        backgroundColor = .background
 
         titleLabel.text = style.format(text: unformattedTitle)
         titleLabel.font = style.font
@@ -139,6 +142,7 @@ private extension TitleView {
     func layoutViews() {
         linkLabel.setContentHuggingPriority(.required, for: .horizontal)
         linkLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+        linkLabel.isUserInteractionEnabled = true
         linkLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(linkLabelTapped)))
 
         let stackView = UIStackView(arrangedSubviews: [
@@ -149,9 +153,8 @@ private extension TitleView {
         stackView.alignment = .firstBaseline
 
         preservesSuperviewLayoutMargins = false
-        contentView.preservesSuperviewLayoutMargins = false
-        contentView.addSubview(constrainedToLayoutMarginsGuideOf: stackView)
-        contentView.directionalLayoutMargins = NSDirectionalEdgeInsets(
+        addSubview(constrainedToLayoutMarginsGuideOf: stackView)
+        directionalLayoutMargins = NSDirectionalEdgeInsets(
             top: ViewStyles.topMargin,
             leading: ViewStyles.horizontalMargin,
             bottom: ViewStyles.bottomMargin,
@@ -168,7 +171,7 @@ private extension TitleView.Style {
     static var `default`: Self {
         switch MisticaConfig.brandStyle {
         case .movistar:
-            return .title2
+            return .title3
         case .blau, .o2, .o2New, .vivo, .custom, .vivoNew, .telefonica, .tu:
             return .title1
         }

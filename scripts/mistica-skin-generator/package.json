@@ -1,0 +1,22 @@
+{
+  "name": "mistica-skin-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint --report-unused-disable-directives .",
+    "prettier": "prettier --write .",
+    "prettier-check": "prettier --check .",
+    "test:watch": "vitest",
+    "generate": "node index.js"
+  },
+  "devDependencies": {
+    "@telefonica/eslint-config": "^2.1.1",
+    "@telefonica/prettier-config": "^2.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "3.3.3",
+    "vitest": "^2.0.3"
+  },
+  "prettier": "@telefonica/prettier-config"
+}

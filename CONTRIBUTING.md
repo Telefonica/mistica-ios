@@ -113,7 +113,7 @@ In order to automatise this, we can execute this [GitHub action](.github/.workfl
 You can also execute it manually using the actions defined in the [Makefile](Makefile).
 Example:
 ```bash
-make skin ref=production
+make skin
 ```
 
 ## Testing

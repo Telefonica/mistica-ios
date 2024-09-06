@@ -7,7 +7,7 @@
 //
 
 // Versioning
-VERSION_NUMBER = 30.4.0
+VERSION_NUMBER = 33.0.0
 CURRENT_PROJECT_VERSION = 1 //Build
 
 // Build options
@@ -33,7 +33,7 @@ LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/
 
 DEFINES_MODULE = YES
 INFOPLIST_FILE = SupportFiles/Info.plist
-PRODUCT_BUNDLE_IDENTIFIER = com.telefonica.mistica.enterprise
+PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.enterprise
 
 // Swift
 

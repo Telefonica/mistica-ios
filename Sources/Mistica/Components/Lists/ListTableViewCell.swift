@@ -12,7 +12,6 @@ import UIKit
 open class ListTableViewCell: UITableViewCell {
     public var listCellContentView = ListCellContentView()
     private lazy var cellSeparatorView = SeparatorView(axis: .horizontal)
-    private var accessibilityActivationAction: (() -> Void)?
 
     public var isCellSeparatorHidden: Bool = true {
         didSet {
@@ -28,6 +27,16 @@ open class ListTableViewCell: UITableViewCell {
         listCellContentView.defaultAccessibilityLabel
     }
 
+    /// Cell accessibility type.
+    /// - Possible values:
+    ///   - .interactive: Interactive cell (e.g: navigates when tap). Whole cell will be focused. Parameter: AccessibilityListCellInteractiveData
+    ///     - AccessibilityListCellInteractiveData.label: Optional label to be read instead of default one
+    ///     - AccessibilityListCellInteractiveData.action: Custom action associated to double tap
+    ///   - .doubleInteraction: Double interaction: (e.g: navigates when tap on cell and a custom button in the controlView). Two elements focused: center view and control view. Parameter: AccessibilityListCellInteractiveData
+    ///     - AccessibilityListCellInteractiveData.label: Optional label to be read instead of default one for main content (center view)
+    ///     - AccessibilityListCellInteractiveData.action: Custom action associated to double tap on main content (center view)
+    ///   - case informative: Informative cell. Each cell element will be focused/read individually
+    ///   - case customInformative(String): Whole cell will be focused/read using the string parameter as accessibility label
     public var accessibilityType: AccessibilityListCellType = .default {
         didSet {
             accessibilityTypeUpdated()
@@ -146,16 +155,27 @@ private extension ListTableViewCell {
     }
 
     func accessibilityTypeUpdated() {
+        listCellContentView.accessibilityType = accessibilityType
+
         switch accessibilityType {
         case .interactive(let accessibilityInteractiveData):
+            // Whole cell has to be focused as one block => isAccessibilityElement = true
             isAccessibilityElement = true
+            // Set accessibility label to the provided one or the default one if not provided
             accessibilityLabel = accessibilityInteractiveData.label ?? defaultAccessibilityLabel
-            accessibilityActivationAction = accessibilityInteractiveData.action
+        case .doubleInteraction:
+            // Cell has to have two focusable blocks: center section (main data) and right section (extra element like a button) => isAccessibilityElement = false
+            // and delegate focus management to subviews
+            isAccessibilityElement = false
+            accessibilityLabel = nil
         case .informative:
+            // All the cell elements should be focused individually => isAccessibilityElement = false
             isAccessibilityElement = false
             accessibilityLabel = nil
         case .customInformative(let accessibilityText):
+            // Whole cell has to be focused as one block => isAccessibilityElement = true
             isAccessibilityElement = true
+            // Set accessibility label to the provided custom one
             accessibilityLabel = accessibilityText
         }
     }

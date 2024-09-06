@@ -84,6 +84,7 @@ class UICatalogListsViewController: UITableViewController {
         cell.segmentedControl.insertSegment(withTitle: "Informative", at: 1, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Custom informative", at: 2, animated: false)
         cell.segmentedControl.insertSegment(withTitle: "Interactive", at: 3, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Double interaction", at: 4, animated: false)
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
@@ -214,6 +215,8 @@ extension UICatalogListsViewController {
                 self?.present(alertController, animated: true)
             }
             sampleVC.accessibilityType = .interactive(accessibilityInteractiveData)
+        case 4:
+            sampleVC.accessibilityType = .doubleInteraction(.default)
         default:
             break
         }

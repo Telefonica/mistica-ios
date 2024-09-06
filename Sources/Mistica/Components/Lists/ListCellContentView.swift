@@ -18,6 +18,27 @@ protocol ListCellContentTableViewDelegate {
 open class ListCellContentView: UIView {
     // MARK: Accessibility properties
 
+    var accessibilityType: AccessibilityListCellType = .default {
+        didSet {
+            if case .doubleInteraction(let accessibilityInteractiveData) = accessibilityType {
+                // If double interaction accessibility, make centerSection accessible to be focusable (isAccessibilityElement = true)
+                centerSection.isAccessibilityElement = true
+                // Set center section label to the provided one (or the default one if not provided)
+                centerSection.accessibilityLabel = accessibilityInteractiveData.label ?? defaultAccessibilityLabel
+                // Set accessibility activation action to be executed on center section double tap
+                centerSection.accessibilityActivationAction = accessibilityInteractiveData.action
+            } else {
+                // If any other accessibility type, it's managed in the superview (ListTableViewCell)
+                centerSection.isAccessibilityElement = false
+                centerSection.accessibilityLabel = nil
+                centerSection.accessibilityActivationAction = nil
+            }
+            updateAccessibilityElements()
+        }
+    }
+
+    // Default accessibilityLabel using the order specified in the Figma spec:
+    // https://www.figma.com/design/Be8QB9onmHunKCCAkIBAVr/%F0%9F%94%B8-Lists-Specs?node-id=0-1&node-type=CANVAS&t=jgG9X5qKokaMwJjm-0
     var defaultAccessibilityLabel: String {
         let titleText = titleAccessibilityLabel ?? titleAttributedText?.string ?? title
         let subtitleText = subtitleAccessibilityLabel ?? subtitleAttributedText?.string ?? subtitle
@@ -427,6 +448,17 @@ private extension ListCellContentView {
     }
 
     func updateAccessibilityElements() {
-        accessibilityElements = [centerSection.titleLabel, headlineView as Any, centerSection.subtitleLabel, centerSection.detailLabel].compactMap { $0 }
+        switch accessibilityType {
+        case .informative:
+            // Set accessibility order following Figma spec:
+            // https://www.figma.com/design/Be8QB9onmHunKCCAkIBAVr/%F0%9F%94%B8-Lists-Specs?node-id=0-1&node-type=CANVAS&t=jgG9X5qKokaMwJjm-0
+            accessibilityElements = [centerSection.titleLabel, headlineView as Any, centerSection.subtitleLabel, centerSection.detailLabel, controlView as Any].compactMap { $0 }
+        case .doubleInteraction:
+            // If double interaction, just two elements: center section and right section
+            accessibilityElements = [centerSection, controlView as Any].compactMap { $0 }
+        case .interactive, .customInformative:
+            accessibilityElements = []
+        }
+
     }
 }

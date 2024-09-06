@@ -10,6 +10,7 @@ import Foundation
 
 public enum AccessibilityListCellType {
     case interactive(AccessibilityListCellInteractiveData)
+    case doubleInteraction(AccessibilityListCellInteractiveData)
     case informative
     case customInformative(String)
 

@@ -13,6 +13,8 @@ protocol ListCellContentViewDelegate {
 }
 
 class CellCenterSectionView: UIStackView {
+    var accessibilityActivationAction: (() -> Void)?
+
     var headlineView: AccessibleTextualView? {
         didSet {
             oldValue?.removeFromSuperview()
@@ -76,6 +78,15 @@ class CellCenterSectionView: UIStackView {
             detailLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
             subtitleLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
         }
+    }
+
+    override public func accessibilityActivate() -> Bool {
+        guard let accessibilityActivationAction else {
+            return false
+        }
+
+        accessibilityActivationAction()
+        return true
     }
 
     func didSetTextToSubtitleLabel() {

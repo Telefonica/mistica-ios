@@ -212,7 +212,7 @@ extension UICatalogListsViewController {
                 let alertAction = UIAlertAction(title: "Accept", style: .cancel)
                 alertController.addAction(alertAction)
 
-                self?.present(alertController, animated: true)
+                self?.tabBarController?.present(alertController, animated: true)
             }
             sampleVC.accessibilityType = .interactive(accessibilityInteractiveData)
         case 4:

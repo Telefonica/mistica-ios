@@ -12,10 +12,10 @@ public struct AccessibilityListCellInteractiveData {
     public let label: String?
     public let action: (() -> Void)?
 
-    public init(label: String? = nil, action: (() -> Void)?) {
+    public init(label: String? = nil, action: (() -> Void)? = nil) {
         self.label = label
         self.action = action
     }
 
-    public static var `default`: AccessibilityListCellInteractiveData = .init(action: nil)
+    public static var `default`: AccessibilityListCellInteractiveData = .init()
 }

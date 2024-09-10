@@ -157,9 +157,11 @@ private extension ListTableViewCell {
     func accessibilityTypeUpdated() {
         listCellContentView.accessibilityType = accessibilityType
 
+        // When `isAccessibilityElement = true` then the whole cell is focused as one block
+        // and when `isAccessibilityElement = false` then all the cell elements would be focused individually
+        // or just the elements specified in the accessibilityElements property if defined
         switch accessibilityType {
         case .interactive(let accessibilityInteractiveData):
-            // Whole cell has to be focused as one block => isAccessibilityElement = true
             isAccessibilityElement = true
             // Set accessibility label to the provided one or the default one if not provided
             accessibilityLabel = accessibilityInteractiveData.label ?? defaultAccessibilityLabel
@@ -169,11 +171,9 @@ private extension ListTableViewCell {
             isAccessibilityElement = false
             accessibilityLabel = nil
         case .informative:
-            // All the cell elements should be focused individually => isAccessibilityElement = false
             isAccessibilityElement = false
             accessibilityLabel = nil
         case .customInformative(let accessibilityText):
-            // Whole cell has to be focused as one block => isAccessibilityElement = true
             isAccessibilityElement = true
             // Set accessibility label to the provided custom one
             accessibilityLabel = accessibilityText

@@ -207,7 +207,7 @@ extension UICatalogListsViewController {
         case 2:
             sampleVC.accessibilityType = .customInformative("Custom informative label")
         case 3:
-            let accessibilityInteractiveData = AccessibilityListCellInteractiveData { [weak self] in
+            let accessibilityInteractiveData = AccessibilityListCellInteractiveData(label: "Custom action cell. Tap to execute custom action") { [weak self] in
                 let alertController = UIAlertController(title: nil, message: "Custom action", preferredStyle: .alert)
                 let alertAction = UIAlertAction(title: "Accept", style: .cancel)
                 alertController.addAction(alertAction)

@@ -1,3 +1,10 @@
+# [33.1.0](https://github.com/Telefonica/mistica-ios/compare/v33.0.0...v33.1.0) (2024-09-12)
+
+
+### Features
+
+* **Accessibility:** IOS-10448 [Mistica] RowList A11y update ([#399](https://github.com/Telefonica/mistica-ios/issues/399)) ([023b62c](https://github.com/Telefonica/mistica-ios/commit/023b62c4097a70c9388267264addd796dad88624))
+
 # [33.0.0](https://github.com/Telefonica/mistica-ios/compare/v32.0.0...v33.0.0) (2024-08-26)
 
 

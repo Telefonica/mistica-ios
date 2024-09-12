@@ -21,6 +21,28 @@ open class ListTableViewCell: UITableViewCell {
         }
     }
 
+    // MARK: Accessibility properties
+
+    public var defaultAccessibilityLabel: String {
+        listCellContentView.defaultAccessibilityLabel
+    }
+
+    /// Cell accessibility type.
+    /// - Possible values:
+    ///   - .interactive: Interactive cell (e.g: navigates when tap). Whole cell will be focused. Parameter: AccessibilityListCellInteractiveData
+    ///     - AccessibilityListCellInteractiveData.label: Optional label to be read instead of default one
+    ///     - AccessibilityListCellInteractiveData.action: Custom action associated to double tap (e.g: toggle switch)
+    ///   - .doubleInteraction: Double interaction: (e.g: navigates when tap on cell and a custom button in the controlView). Two elements focused: center view and control view. Parameter: AccessibilityListCellInteractiveData
+    ///     - AccessibilityListCellInteractiveData.label: Optional label to be read instead of default one for main content (center view)
+    ///     - AccessibilityListCellInteractiveData.action: Custom action associated to double tap on main content (center view)
+    ///   - case informative: Informative cell. Each cell element will be focused/read individually
+    ///   - case customInformative(String): Whole cell will be focused/read using the string parameter as accessibility label
+    public var accessibilityType: AccessibilityListCellType = .default {
+        didSet {
+            accessibilityTypeUpdated()
+        }
+    }
+
     // MARK: Initializers
 
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -95,14 +117,32 @@ open class ListTableViewCell: UITableViewCell {
     func updateCellStyle() {
         backgroundColor = .background
     }
+
+    override public func accessibilityActivate() -> Bool {
+        guard case let .interactive(accessibilityInteractiveData) = accessibilityType,
+              let action = accessibilityInteractiveData.action else {
+            return false
+        }
+
+        action()
+        return true
+    }
 }
+
+// MARK: ListCellContentTableViewDelegate
 
 extension ListTableViewCell: ListCellContentTableViewDelegate {
     public func cellStyleChanged() {
         listCellContentView.directionalLayoutMargins = listCellContentView.cellStyle.contentViewLayoutMargins
         cellSeparatorView.isHidden = listCellContentView.cellStyle.cellSeparatorIsHidden
     }
+
+    func accessibilityChanged() {
+        accessibilityTypeUpdated()
+    }
 }
+
+// MARK: Private methods
 
 private extension ListTableViewCell {
     var highlightedView: UIView {
@@ -111,6 +151,32 @@ private extension ListTableViewCell {
             return contentView
         case .boxed:
             return listCellContentView.cellBorderView
+        }
+    }
+
+    func accessibilityTypeUpdated() {
+        listCellContentView.accessibilityType = accessibilityType
+
+        // When `isAccessibilityElement = true` then the whole cell is focused as one block
+        // and when `isAccessibilityElement = false` then all the cell elements would be focused individually
+        // or just the elements specified in the accessibilityElements property if defined
+        switch accessibilityType {
+        case .interactive(let accessibilityInteractiveData):
+            isAccessibilityElement = true
+            // Set accessibility label to the provided one or the default one if not provided
+            accessibilityLabel = accessibilityInteractiveData.label ?? defaultAccessibilityLabel
+        case .doubleInteraction:
+            // Cell has to have two focusable blocks: center section (main data) and right section (extra element like a button) => isAccessibilityElement = false
+            // and delegate focus management to subviews
+            isAccessibilityElement = false
+            accessibilityLabel = nil
+        case .informative:
+            isAccessibilityElement = false
+            accessibilityLabel = nil
+        case .customInformative(let accessibilityText):
+            isAccessibilityElement = true
+            // Set accessibility label to the provided custom one
+            accessibilityLabel = accessibilityText
         }
     }
 }

@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol ListCellContentViewDelegate: AnyObject {
+    func accessibilityChanged()
+}
+
 class CellCenterSectionView: UIStackView {
-    var headlineView: UIView? {
+    var accessibilityActivationAction: (() -> Void)?
+
+    var headlineView: AccessibleTextualView? {
         didSet {
             oldValue?.removeFromSuperview()
 
@@ -17,12 +23,16 @@ class CellCenterSectionView: UIStackView {
                 insertArrangedSubview(view, at: 0)
                 updateSpacing()
             }
+
+            listCellContentViewDelegate?.accessibilityChanged()
         }
     }
 
     lazy var titleLabel = IntrinsictHeightLabel()
     lazy var subtitleLabel = IntrinsictHeightLabel()
     lazy var detailLabel = IntrinsictHeightLabel()
+
+    weak var listCellContentViewDelegate: ListCellContentViewDelegate?
 
     var titleTextColor: UIColor = .textPrimary {
         didSet {
@@ -68,6 +78,15 @@ class CellCenterSectionView: UIStackView {
             detailLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
             subtitleLabel.alpha = isUserInteractionEnabled ? 1 : 0.5
         }
+    }
+
+    override public func accessibilityActivate() -> Bool {
+        guard let accessibilityActivationAction else {
+            return false
+        }
+
+        accessibilityActivationAction()
+        return true
     }
 
     func didSetTextToSubtitleLabel() {

@@ -18,6 +18,7 @@ private enum Section: Int, CaseIterable {
     case headline
     case assetStyle
     case controlType
+    case accessibilityType
     case show
 }
 
@@ -77,6 +78,17 @@ class UICatalogListsViewController: UITableViewController {
         return cell
     }()
 
+    private lazy var accessibilityTypeCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "accessibilityTypeCell")
+        cell.segmentedControl.insertSegment(withTitle: "Default", at: 0, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Informative", at: 1, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Custom informative", at: 2, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Interactive", at: 3, animated: false)
+        cell.segmentedControl.insertSegment(withTitle: "Double interaction", at: 4, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = 0
+        return cell
+    }()
+
     private lazy var showListCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "showListCell")
         cell.textLabel?.textColor = .textLink
@@ -92,6 +104,7 @@ class UICatalogListsViewController: UITableViewController {
         [headlineCell],
         [assetStyleCell],
         [controlCell],
+        [accessibilityTypeCell],
         [showListCell]
     ]
 
@@ -186,6 +199,28 @@ extension UICatalogListsViewController {
             break
         }
 
+        switch accessibilityTypeCell.segmentedControl.selectedSegmentIndex {
+        case 0:
+            sampleVC.accessibilityType = .default
+        case 1:
+            sampleVC.accessibilityType = .informative
+        case 2:
+            sampleVC.accessibilityType = .customInformative("Custom informative label")
+        case 3:
+            let accessibilityInteractiveData = AccessibilityListCellInteractiveData(label: "Custom action cell. Tap to execute custom action") { [weak self] in
+                let alertController = UIAlertController(title: nil, message: "Custom action", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Accept", style: .cancel)
+                alertController.addAction(alertAction)
+
+                self?.tabBarController?.present(alertController, animated: true)
+            }
+            sampleVC.accessibilityType = .interactive(accessibilityInteractiveData)
+        case 4:
+            sampleVC.accessibilityType = .doubleInteraction(.default)
+        default:
+            break
+        }
+
         show(sampleVC, sender: self)
         tableView.deselectRow(animated: true)
         view.endEditing(true)
@@ -209,6 +244,8 @@ private extension Section {
             return "Asset Style"
         case .controlType:
             return "Control Type"
+        case .accessibilityType:
+            return "Accessibility Type"
         case .show:
             return nil
         }
@@ -231,6 +268,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
     var assetType: ListCellContentView.CellAssetType!
     var customControl = CustomControl.none
     var cellLayoutStyle: ListCellContentView.CellStyle!
+    var accessibilityType: AccessibilityListCellType!
 
     let numberOfRows = 30
 
@@ -283,6 +321,7 @@ private class UICatalogListSampleViewController: UIViewController, UITableViewDa
         }
 
         cell.isCellSeparatorHidden = indexPath.row == (numberOfRows - 1)
+        cell.accessibilityType = accessibilityType
 
         return cell
     }

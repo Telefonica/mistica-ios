@@ -161,6 +161,14 @@ public class TagView: UIView {
     }
 }
 
+// MARK:
+
+extension TagView: AccessibleTextualView {
+    public var accessibleText: String? {
+        text
+    }
+}
+
 // MARK: Private methods
 
 private extension TagView {

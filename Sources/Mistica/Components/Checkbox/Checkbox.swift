@@ -113,7 +113,6 @@ private extension Checkbox {
         addGestureRecognizer(tapGesture)
 
         isAccessibilityElement = true
-        setupAccessibilityTraits()
     }
 
     func layoutView() {
@@ -134,11 +133,6 @@ private extension Checkbox {
 
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
-    }
-
-    @available(iOS, introduced: 11.0, deprecated: 14.0, message: "We're using an undocumented traits of UISwitch. Please verify that this works before increment the deprecated version number")
-    func setupAccessibilityTraits() {
-        accessibilityTraits = UISwitch().accessibilityTraits
     }
 
     func updateViewStyleAnimated(checked: Bool) {

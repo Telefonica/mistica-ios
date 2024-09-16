@@ -378,4 +378,4 @@ public extension Button.State {
     static let loading = UIControl.State(rawValue: 1 << 50) // Arbitrary value
 }
 
-extension Button.State: Hashable {}
+extension Button.State: Swift.Hashable {}

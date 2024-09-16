@@ -49,7 +49,7 @@ struct EmptyStateCatalogView: View {
 
 // MARK: Helpers
 
-extension EmptyStateAssetType: CustomStringConvertible {
+extension EmptyStateAssetType: Swift.CustomStringConvertible {
     public var description: String {
         switch self {
         case .fullWidth:

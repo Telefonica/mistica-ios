@@ -14,7 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/airbnb/lottie-spm.git", exact: "4.4.0"),
+        .package(url: "https://github.com/airbnb/lottie-spm.git", exact: "4.5.0"),
         .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.8.2"),
         .package(url: "https://github.com/SDWebImage/SDWebImage.git", exact: "5.19.1"),
         .package(url: "https://github.com/SDWebImage/SDWebImageSVGCoder.git", exact: "1.7.0")

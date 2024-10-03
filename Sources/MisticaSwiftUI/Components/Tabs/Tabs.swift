@@ -130,7 +130,7 @@ public struct Tabs: View {
 
 struct CGFloatPreferenceKey: PreferenceKey {
     typealias Value = CGFloat
-    static var defaultValue: Value = 0
+    static let defaultValue: Value = 0
 
     static func reduce(value _: inout Value, nextValue: () -> Value) {
         _ = nextValue()

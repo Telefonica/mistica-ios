@@ -23,7 +23,7 @@ public class EmptyState: UIView {
             if let contentConfiguration = contentConfiguration {
                 configure(withConfiguration: contentConfiguration)
             } else {
-                configure(withConfiguration: .empty)
+                configure(withConfiguration: .emptyConfiguration())
             }
         }
     }

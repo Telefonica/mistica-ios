@@ -106,15 +106,15 @@ struct MisticaCatalogApp: App {
 
     func configureFontStyle(for brandStyle: BrandStyle) {
         if let mapping = brandStyle.fontMapping {
-            FontStyle.fontNameForWeight = { weight in
+            FontManager.shared.fontNameForWeight = { weight in
                 mapping.fontName(for: weight)
             }
-            FontStyle.uiFontNameForWeight = { weight in
+            FontManager.shared.uiFontNameForWeight = { weight in
                 mapping.UIfontName(for: weight)
             }
         } else {
-            FontStyle.fontNameForWeight = nil
-            FontStyle.uiFontNameForWeight = nil
+            FontManager.shared.fontNameForWeight = nil
+            FontManager.shared.uiFontNameForWeight = nil
         }
     }
 }

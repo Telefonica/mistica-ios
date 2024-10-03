@@ -14,7 +14,7 @@ public class Checkbox: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(18)
         static let animationDuration = Double(0.4)
-        static let timingFunction = CAMediaTimingFunction(controlPoints: 0.77, 0, 0.175, 1)
+        nonisolated(unsafe) static let timingFunction = CAMediaTimingFunction(controlPoints: 0.77, 0, 0.175, 1)
     }
 
     private let imageView = UIImageView(image: .checkmarkIcon)

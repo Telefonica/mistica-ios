@@ -9,6 +9,7 @@
 import UIKit
 
 extension CroutonController {
+    @MainActor
     struct OngoingCrouton {
         let token: Token
         let croutonView: CroutonView

@@ -8,10 +8,12 @@
 
 import UIKit
 
+@MainActor
 public class CroutonController: NSObject {
     public enum RootViewController {
         public typealias Closure = () -> UIViewController?
-        public static let `default`: Closure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
+        @MainActor public static let `default`: Closure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController
+        }
     }
 
     public typealias Token = UUID

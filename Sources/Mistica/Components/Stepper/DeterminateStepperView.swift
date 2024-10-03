@@ -164,7 +164,9 @@ private extension DeterminateStepperView {
             arrangedSubviews.append(createStep(step: step))
         }
 
-        arrangedSubviews.forEach(stackView.addArrangedSubview)
+        Task { @MainActor in
+            try? arrangedSubviews.forEach(stackView.addArrangedSubview)
+        }
 
         activateSegmentsWidthConstraints()
 

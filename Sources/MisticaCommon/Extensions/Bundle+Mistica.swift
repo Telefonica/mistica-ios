@@ -23,7 +23,7 @@ extension Bundle {
 // To fix the problem, we manually search for the bundle assets. https://developer.apple.com/forums/thread/664295
 private class CurrentBundleFinder {}
 private extension Bundle {
-    static var misticaCommon: Bundle = {
+    static let misticaCommon: Bundle = {
         let bundleName = "Mistica_MisticaCommon"
 
         let candidates = [

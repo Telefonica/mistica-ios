@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@MainActor
 public protocol InputFieldDelegate: AnyObject {
     func inputFieldTextDidChange(_ field: InputField)
     func inputFieldShouldBeginEditing(_ field: InputField) -> Bool

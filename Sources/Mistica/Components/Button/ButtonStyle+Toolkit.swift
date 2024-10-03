@@ -17,9 +17,9 @@ public extension Button.Style {
     private static var smallFont: UIFont { .textPreset2(weight: .button) }
     private static var linkFont: UIFont { .textPreset2(weight: .button) }
 
-    private static var regularMinimumWidth: CGFloat = 156
-    private static var smallMinimumWidth: CGFloat = 104
-    private static var linkMinimumWidth: CGFloat = 0
+    private static let regularMinimumWidth: CGFloat = 156
+    private static let smallMinimumWidth: CGFloat = 104
+    private static let linkMinimumWidth: CGFloat = 0
 
     private enum ImageHeight {
         static let regular: CGFloat = 24

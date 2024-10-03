@@ -16,6 +16,7 @@ enum FeedbackIconStyle {
     case animation(LottieView)
 }
 
+@MainActor
 public enum FeedbackStyle {
     case success
     case error(reference: String?)

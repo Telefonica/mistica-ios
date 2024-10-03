@@ -8,22 +8,22 @@
 
 import Foundation
 
-public struct DefaultAccessibilityIdentifier {
-    public struct Feature {
+public struct DefaultAccessibilityIdentifier: Sendable {
+    public struct Feature: Sendable {
         let description: String
         public init(_ description: String) {
             self.description = description
         }
     }
 
-    public struct Section {
+    public struct Section: Sendable {
         let description: String
         public init(_ description: String) {
             self.description = description
         }
     }
 
-    public struct ElementType {
+    public struct ElementType: Sendable {
         let description: String
         public init(_ description: String) {
             self.description = description

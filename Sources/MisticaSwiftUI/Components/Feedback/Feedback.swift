@@ -133,7 +133,9 @@ public struct Feedback<
                     feedbackGenerator.prepare()
 
                     Timer.scheduledTimer(withTimeInterval: hapticFeedbackDelay, repeats: false) { _ in
-                        feedbackGenerator.notificationOccurred(hapticFeedbackStyle)
+                        Task { @MainActor in
+                            feedbackGenerator.notificationOccurred(hapticFeedbackStyle)
+                        }
                     }
                 }
         case .image(let image):

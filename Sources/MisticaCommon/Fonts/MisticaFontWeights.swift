@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol MisticaFontWeights {
+public protocol MisticaFontWeights: Sendable {
     var cardTitle: MisticaFontWeightType { get }
     var button: MisticaFontWeightType { get }
     var tabsLabel: MisticaFontWeightType { get }

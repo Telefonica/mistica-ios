@@ -22,8 +22,8 @@ public struct MisticaButtonStyle: ButtonStyle {
 
 // MARK: Styles
 
-private var _opacity = 0.5
-private var _opacityWithBackground = 0.1
+nonisolated(unsafe) private var _opacity = 0.5
+nonisolated(unsafe) private var _opacityWithBackground = 0.1
 
 public extension ButtonStyle where Self == MisticaButtonStyle {
     static var opacity: CGFloat {

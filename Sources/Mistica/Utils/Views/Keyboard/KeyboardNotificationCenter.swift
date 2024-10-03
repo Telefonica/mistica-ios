@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 public extension KeyboardInfo {
+    @MainActor
     func animateAlongsideKeyboard(animations: @escaping () -> Void) {
         UIView.animate(
             withDuration: duration,
@@ -21,7 +22,7 @@ public extension KeyboardInfo {
     }
 }
 
-public struct KeyboardEvent: Hashable {
+public struct KeyboardEvent: Hashable, Sendable {
     let notificationName: Notification.Name
 
     public static let willShow = KeyboardEvent(notificationName: UIResponder.keyboardWillShowNotification)

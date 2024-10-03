@@ -8,26 +8,86 @@
 
 import Foundation
 
-public enum MisticaConfig {
-    public private(set) static var currentColors: MisticaColors = MovistarColors()
-    public private(set) static var currentBrandAssets: MisticaBrandAssets = DefaultMisticaBrandAssets()
-    public private(set) static var currentStyledControls = [MisticaControlStyle]()
-    public private(set) static var currentFontWeights: MisticaFontWeights = MovistarFontWeights()
-    public private(set) static var currentCornerRadius: MisticaCornerRadius = MovistarCornerRadius()
-    public private(set) static var currentFontSizes: MisticaFontSizes = MovistarFontSizes()
+public enum MisticaConfig: @unchecked Sendable {
+    private static let concurrentQueue = DispatchQueue(label: "com.misticaConfig.queue", attributes: .concurrent)
+
+    nonisolated(unsafe) private static var _currentColors: MisticaColors = MovistarColors()
+    nonisolated(unsafe) private static var _currentBrandAssets: MisticaBrandAssets = DefaultMisticaBrandAssets()
+    nonisolated(unsafe) private static var _currentStyledControls = [MisticaControlStyle]()
+    nonisolated(unsafe) private static var _currentFontWeights: MisticaFontWeights = MovistarFontWeights()
+    nonisolated(unsafe) private static var _currentCornerRadius: MisticaCornerRadius = MovistarCornerRadius()
+    nonisolated(unsafe) private static var _currentFontSizes: MisticaFontSizes = MovistarFontSizes()
+
+    public static var currentColors: MisticaColors {
+        get {
+            return concurrentQueue.sync { _currentColors }
+        }
+        set {
+            concurrentQueue.async { _currentColors = newValue }
+        }
+    }
+
+    public static var currentBrandAssets: MisticaBrandAssets {
+        get {
+            return concurrentQueue.sync { _currentBrandAssets }
+        }
+        set {
+            concurrentQueue.async { _currentBrandAssets = newValue }
+        }
+    }
+
+    public static var currentStyledControls: [MisticaControlStyle] {
+        get {
+            return concurrentQueue.sync { _currentStyledControls }
+        }
+        set {
+            concurrentQueue.async { _currentStyledControls = newValue }
+        }
+    }
+
+    public static var currentFontWeights: MisticaFontWeights {
+        get {
+            return concurrentQueue.sync { _currentFontWeights }
+        }
+        set {
+            concurrentQueue.async { _currentFontWeights = newValue }
+        }
+    }
+
+    public static var currentCornerRadius: MisticaCornerRadius {
+        get {
+            return concurrentQueue.sync { _currentCornerRadius }
+        }
+        set {
+            concurrentQueue.async { _currentCornerRadius = newValue }
+        }
+    }
+
+    public static var currentFontSizes: MisticaFontSizes {
+        get {
+            return concurrentQueue.sync { _currentFontSizes }
+        }
+        set {
+            concurrentQueue.async { _currentFontSizes = newValue }
+        }
+    }
 
     // MARK: Public Setup
 
-    public static var brandStyle: BrandStyle = .movistar {
+    nonisolated(unsafe) public static var brandStyle: BrandStyle = .movistar {
         didSet {
             configure(for: brandStyle)
-            MisticaAppearance.setUp(controls: currentStyledControls)
+            Task { @MainActor in
+                MisticaAppearance.setUp(controls: currentStyledControls)
+            }
         }
     }
 
     public static func styleControls(_ controls: [MisticaControlStyle]) {
         currentStyledControls = controls
-        MisticaAppearance.setUp(controls: controls)
+        Task { @MainActor in
+            MisticaAppearance.setUp(controls: controls)
+        }
     }
 }
 

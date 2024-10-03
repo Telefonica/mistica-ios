@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 public protocol Validatable: AnyObject {
     func isValid() -> Bool
     func validate()

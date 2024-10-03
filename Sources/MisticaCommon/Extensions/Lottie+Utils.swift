@@ -15,7 +15,7 @@ import Lottie
  **/
 
 public extension Lottie.LottieConfiguration {
-    static var current: LottieConfiguration = {
+    nonisolated(unsafe) static var current: LottieConfiguration = {
         var configuration: LottieConfiguration = .init(renderingEngine: .automatic)
         #if DEBUG
             if isRunningUnitTests {

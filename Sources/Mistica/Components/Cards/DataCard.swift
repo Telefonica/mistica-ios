@@ -79,7 +79,7 @@ public class DataCard: UIView {
             if let contentConfiguration = contentConfiguration {
                 configure(with: contentConfiguration)
             } else {
-                configure(with: .emptyConfiguration)
+                configure(with: .emptyConfiguration())
             }
         }
     }
@@ -294,11 +294,13 @@ private extension DataCard {
 }
 
 private extension DataCardConfiguration {
-    static let emptyConfiguration = DataCardConfiguration(
-        title: "",
-        descriptionTitle: "",
-        buttons: .link(
-            CardLinkButton(title: "", accessibilityIdentifier: nil, tapHandler: nil)
+    static func emptyConfiguration() -> DataCardConfiguration {
+        return DataCardConfiguration(
+            title: "",
+            descriptionTitle: "",
+            buttons: .link(
+                CardLinkButton(title: "", accessibilityIdentifier: nil, tapHandler: nil)
+            )
         )
-    )
+    }
 }

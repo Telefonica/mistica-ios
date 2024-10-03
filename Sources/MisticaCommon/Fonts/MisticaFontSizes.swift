@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol MisticaFontSizes {
+public protocol MisticaFontSizes: Sendable {
     var tabsLabel: CGFloat { get }
     var title3: CGFloat { get }
     var text1: CGFloat { get }

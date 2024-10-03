@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 protocol ListCellContentTableViewDelegate {
     func cellStyleChanged()
     func accessibilityChanged()

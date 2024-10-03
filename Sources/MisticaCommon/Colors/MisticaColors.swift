@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol MisticaColors {
+public protocol MisticaColors: Sendable {
     var backgroundBrand: MisticaColor { get }
     var backgroundBrandSecondary: UIColor { get }
     var appBarBackground: UIColor { get }

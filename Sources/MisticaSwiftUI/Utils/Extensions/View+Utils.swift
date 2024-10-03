@@ -71,7 +71,7 @@ public extension View {
         frame(maxHeight: .infinity, alignment: alignment)
     }
 
-    func eraseToAnyView() -> AnyView {
+    nonisolated func eraseToAnyView() -> AnyView {
         AnyView(self)
     }
 

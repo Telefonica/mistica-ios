@@ -86,7 +86,7 @@ struct FeedbackCatalogView: View {
     }
 }
 
-extension FeedbackStyle: CustomStringConvertible {
+extension FeedbackStyle: Swift.CustomStringConvertible {
     public var description: String {
         switch self {
         case .success:

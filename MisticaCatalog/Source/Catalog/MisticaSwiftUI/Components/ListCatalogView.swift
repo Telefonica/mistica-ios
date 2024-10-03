@@ -131,7 +131,7 @@ extension Image {
     static let netflixLogo = Image("netflix-logo")
 }
 
-extension CellAssetType: CustomStringConvertible {
+extension CellAssetType: Swift.CustomStringConvertible {
     public var description: String {
         switch self {
         case .none:
@@ -148,7 +148,7 @@ extension CellAssetType: CustomStringConvertible {
     }
 }
 
-extension CellStyle: CustomStringConvertible {
+extension CellStyle: Swift.CustomStringConvertible {
     public var description: String {
         switch self {
         case .fullwidth:

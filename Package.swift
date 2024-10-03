@@ -14,7 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "4.4.1"),
+        .package(url: "https://github.com/airbnb/lottie-spm.git", exact: "4.5.0"),
         .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.8.2"),
         .package(url: "https://github.com/SDWebImage/SDWebImage.git", exact: "5.19.1"),
         .package(url: "https://github.com/SDWebImage/SDWebImageSVGCoder.git", exact: "1.7.0")
@@ -23,7 +23,7 @@ let package = Package(
         .target(
             name: "MisticaCommon",
             dependencies: [
-                .product(name: "Lottie", package: "lottie-ios")
+                .product(name: "Lottie", package: "lottie-spm")
             ],
             exclude: [
                 "Fonts/README.md",
@@ -57,7 +57,7 @@ let package = Package(
             name: "MisticaSwiftUI",
             dependencies: [
                 "MisticaCommon",
-                .product(name: "Lottie", package: "lottie-ios")
+                .product(name: "Lottie", package: "lottie-spm")
             ],
             exclude: [
                 "Components/Button/README.md",
@@ -101,7 +101,7 @@ let package = Package(
         .target(
             name: "Mistica",
             dependencies: [
-                .product(name: "Lottie", package: "lottie-ios"),
+                .product(name: "Lottie", package: "lottie-spm"),
                 .product(name: "SDWebImage", package: "SDWebImage"),
                 .product(name: "SDWebImageSVGCoder", package: "SDWebImageSVGCoder"),
                 "MisticaCommon"

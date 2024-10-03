@@ -285,8 +285,8 @@ public extension InputField {
     }
 
     func textContentType(_ textContentType: UITextContentType?) -> InputField {
-        var view = self
-        view.textField.textContentType(textContentType)
+        let view = self
+        _ = view.textField.textContentType(textContentType)
         return view
     }
 }

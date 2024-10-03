@@ -39,7 +39,7 @@ struct TagCatalogView: View {
     }
 }
 
-extension Tag.Style: CustomStringConvertible {
+extension Tag.Style: Swift.CustomStringConvertible {
     public var description: String {
         switch self {
         case .promo:

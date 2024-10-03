@@ -141,7 +141,7 @@ extension SnackbarCatalogView {
 
 // MARK: CustomStringConvertible
 
-extension SnackbarStyle: CustomStringConvertible {
+extension SnackbarStyle: Swift.CustomStringConvertible {
     public var description: String {
         switch self {
         case .normal:
@@ -152,7 +152,7 @@ extension SnackbarStyle: CustomStringConvertible {
     }
 }
 
-extension SnackbarButtonStyle: CustomStringConvertible {
+extension SnackbarButtonStyle: Swift.CustomStringConvertible {
     public var description: String {
         switch self {
         case .large:

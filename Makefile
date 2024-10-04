@@ -69,7 +69,7 @@ test: clean setup simulator
 	$(XCODEBUILD) test-without-building -scheme $(TEST_SCHEMA) -resultBundlePath $(XCRESULT_FILE_PATH) -destination "$(DESTINATION)" | xcbeautify
 
 extract_tests_attachments:
-	@xcparse attachments --legacy $(XCRESULT_FILE_PATH) $(SCREENSHOT_DIFFS_OUTPUT_PATH) --uti public.plain-text public.image --test
+	@xcparse attachments $(XCRESULT_FILE_PATH) $(SCREENSHOT_DIFFS_OUTPUT_PATH) --uti public.plain-text public.image --test
 
 simulator:
 	@echo "Installing simulator $(SIMULATOR_NAME)"

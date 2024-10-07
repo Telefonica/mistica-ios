@@ -279,6 +279,7 @@ private extension Button {
 
     func setUpView() {
         layer.borderWidth = Constants.borderWidth
+        layer.masksToBounds = true
         isAccessibilityElement = true
         updateTraits()
     }

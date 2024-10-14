@@ -52,6 +52,7 @@ public class RadioButton: UIControl {
     override public func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.width / 2.0
+        layer.masksToBounds = true
     }
 
     override public var accessibilityTraits: UIAccessibilityTraits {

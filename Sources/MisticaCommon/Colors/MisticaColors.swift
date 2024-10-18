@@ -1,10 +1,6 @@
-//
-//  MisticaColors.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
@@ -76,11 +72,13 @@ public protocol MisticaColors {
     var controlActivatedInverse: UIColor { get }
     var controlError: UIColor { get }
     var barTrack: UIColor { get }
+    var barTrackInverse: UIColor { get }
     var loadingBar: UIColor { get }
     var loadingBarBackground: UIColor { get }
     var toggleAndroidInactive: UIColor { get }
     var toggleAndroidBackgroundActive: UIColor { get }
     var iosControlKnob: UIColor { get }
+    var controlKnobInverse: UIColor { get }
     var divider: UIColor { get }
     var dividerInverse: UIColor { get }
     var navigationBarDivider: UIColor { get }

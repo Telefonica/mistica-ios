@@ -1,300 +1,300 @@
-//
-//  O2NewColorPalette.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
 struct O2NewColors: MisticaColors {
     static let palette = O2NewColorPalette()
 
-    let backgroundBrand = MisticaColor.gradient(MisticaGradient(
+     let backgroundBrand = MisticaColor.gradient(MisticaGradient(
         colors:
         [
             O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack,
             O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack,
             O2NewColors.palette.beyondBlue45 | O2NewColors.palette.darkModeBlack
         ],
-        stops: [0, 0.64, 1],
+        stops: [0,0.64,1],
         angle: 180
     ))
 
-    let backgroundBrandSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack
+     let backgroundBrandSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack
 
-    let appBarBackground = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
+     let appBarBackground = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
 
-    let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
+     let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
 
-    let backgroundContainer = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
+     let backgroundContainer = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
 
-    let backgroundContainerError = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey
+     let backgroundContainerError = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey
 
-    let backgroundContainerHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.03) | O2NewColors.palette.white.withAlphaComponent(0.03)
+     let backgroundContainerHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.03) | O2NewColors.palette.white.withAlphaComponent(0.03)
 
-    let backgroundContainerPressed = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.05) | O2NewColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerPressed = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.05) | O2NewColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = MisticaColor.gradient(MisticaGradient(
+     let backgroundContainerBrand = MisticaColor.gradient(MisticaGradient(
         colors:
         [
             O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeGrey,
             O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeGrey,
             O2NewColors.palette.beyondBlue45 | O2NewColors.palette.darkModeGrey
         ],
-        stops: [0, 0.64, 1],
+        stops: [0,0.64,1],
         angle: 180
     ))
 
-    let backgroundContainerBrandHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.2) | O2NewColors.palette.white.withAlphaComponent(0.03)
+     let backgroundContainerBrandHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.2) | O2NewColors.palette.white.withAlphaComponent(0.03)
 
-    let backgroundContainerBrandPressed = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.4) | O2NewColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerBrandPressed = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.4) | O2NewColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrandOverInverse = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.darkModeGrey
+     let backgroundContainerBrandOverInverse = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.darkModeGrey
 
-    let backgroundContainerAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey
+     let backgroundContainerAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey
 
-    let backgroundOverlay = O2NewColors.palette.black.withAlphaComponent(0.6) | O2NewColors.palette.darkModeGrey.withAlphaComponent(0.8)
+     let backgroundOverlay = O2NewColors.palette.black.withAlphaComponent(0.6) | O2NewColors.palette.darkModeGrey.withAlphaComponent(0.8)
 
-    let backgroundSkeleton = O2NewColors.palette.grey30 | O2NewColors.palette.darkModeGrey6
+     let backgroundSkeleton = O2NewColors.palette.grey30 | O2NewColors.palette.darkModeGrey6
 
-    let backgroundSkeletonInverse = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.darkModeGrey6
+     let backgroundSkeletonInverse = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.darkModeGrey6
 
-    let navigationBarBackground = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
+     let navigationBarBackground = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
 
-    let backgroundAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
+     let backgroundAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
 
-    let backgroundBrandTop = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
+     let backgroundBrandTop = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
 
-    let backgroundBrandBottom = O2NewColors.palette.beyondBlue45 | O2NewColors.palette.darkModeBlack
+     let backgroundBrandBottom = O2NewColors.palette.beyondBlue45 | O2NewColors.palette.darkModeBlack
 
-    let skeletonWave = O2NewColors.palette.grey30 | O2NewColors.palette.grey80
+     let skeletonWave = O2NewColors.palette.grey30 | O2NewColors.palette.grey80
 
-    let borderLow = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
+     let borderLow = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
 
-    let border = O2NewColors.palette.grey30 | O2NewColors.palette.darkModeGrey
+     let border = O2NewColors.palette.grey30 | O2NewColors.palette.darkModeGrey
 
-    let borderHigh = O2NewColors.palette.grey80 | O2NewColors.palette.grey45
+     let borderHigh = O2NewColors.palette.grey80 | O2NewColors.palette.grey45
 
-    let borderSelected = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+     let borderSelected = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
 
-    let coverBackgroundHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.25)
+     let coverBackgroundHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
-    let coverBackgroundPressed = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.35)
+     let coverBackgroundPressed = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.35)
 
-    let buttonDangerBackground = O2NewColors.palette.o2Red60
+     let buttonDangerBackground = O2NewColors.palette.o2Red60
 
-    let buttonDangerBackgroundPressed = O2NewColors.palette.o2Red65
+     let buttonDangerBackgroundPressed = O2NewColors.palette.o2Red65
 
-    let buttonDangerBackgroundHover = O2NewColors.palette.o2Red65
+     let buttonDangerBackgroundHover = O2NewColors.palette.o2Red65
 
-    let buttonLinkDangerBackgroundPressed = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundPressed = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkDangerBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.white.withAlphaComponent(0)
+     let buttonLinkDangerBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.white.withAlphaComponent(0)
 
-    let buttonLinkDangerBackgroundInversePressed = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundInversePressed = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundPressed = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkBackgroundPressed = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundInversePressed = O2NewColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkBackgroundInversePressed = O2NewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonPrimaryBackground = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
+     let buttonPrimaryBackground = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
 
-    let buttonPrimaryBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.darkModeBeyondBlue
+     let buttonPrimaryBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.darkModeBeyondBlue
 
-    let buttonPrimaryBackgroundPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
+     let buttonPrimaryBackgroundPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
 
-    let buttonPrimaryBackgroundHover = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
+     let buttonPrimaryBackgroundHover = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
 
-    let buttonPrimaryBackgroundInversePressed = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.beyondBlue55
+     let buttonPrimaryBackgroundInversePressed = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.beyondBlue55
 
-    let buttonSecondaryBorder = O2NewColors.palette.beyondBlue | O2NewColors.palette.white
+     let buttonSecondaryBorder = O2NewColors.palette.beyondBlue | O2NewColors.palette.white
 
-    let buttonSecondaryBorderPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
+     let buttonSecondaryBorderPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
 
-    let buttonSecondaryBorderInverse = O2NewColors.palette.white
+     let buttonSecondaryBorderInverse = O2NewColors.palette.white
 
-    let buttonSecondaryBackgroundHover = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundHover = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundPressed = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundPressed = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBorderInversePressed = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.white
+     let buttonSecondaryBorderInversePressed = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.white
 
-    let buttonSecondaryBackgroundInverseHover = O2NewColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundInverseHover = O2NewColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInversePressed = O2NewColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundInversePressed = O2NewColors.palette.white.withAlphaComponent(0.15)
 
-    let textButtonPrimary = O2NewColors.palette.white
+     let textButtonPrimary = O2NewColors.palette.white
 
-    let textButtonPrimaryInverse = O2NewColors.palette.beyondBlue | O2NewColors.palette.white
+     let textButtonPrimaryInverse = O2NewColors.palette.beyondBlue | O2NewColors.palette.white
 
-    let textButtonPrimaryInversePressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
+     let textButtonPrimaryInversePressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
 
-    let textButtonSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.grey30
+     let textButtonSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.grey30
 
-    let textButtonSecondaryPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.grey30
+     let textButtonSecondaryPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.grey30
 
-    let textButtonSecondaryInverse = O2NewColors.palette.white | O2NewColors.palette.grey30
+     let textButtonSecondaryInverse = O2NewColors.palette.white | O2NewColors.palette.grey30
 
-    let textButtonSecondaryInversePressed = O2NewColors.palette.white | O2NewColors.palette.grey30
+     let textButtonSecondaryInversePressed = O2NewColors.palette.white | O2NewColors.palette.grey30
 
-    let textLink = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue40
+     let textLink = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue40
 
-    let textLinkInverse = O2NewColors.palette.white | O2NewColors.palette.beyondBlue40
+     let textLinkInverse = O2NewColors.palette.white | O2NewColors.palette.beyondBlue40
 
-    let textLinkDanger = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
+     let textLinkDanger = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
 
-    let textLinkSnackbar = O2NewColors.palette.beyondBlue30
+     let textLinkSnackbar = O2NewColors.palette.beyondBlue30
 
-    let textActivated = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+     let textActivated = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
 
-    let textBrand = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+     let textBrand = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
 
-    let control = O2NewColors.palette.grey45
+     let control = O2NewColors.palette.grey45
 
-    let controlActivated = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
+     let controlActivated = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
 
-    let controlInverse = O2NewColors.palette.white | O2NewColors.palette.grey45
+     let controlInverse = O2NewColors.palette.white | O2NewColors.palette.grey45
 
-    let controlActivatedInverse = O2NewColors.palette.white | O2NewColors.palette.darkModeBeyondBlue
+     let controlActivatedInverse = O2NewColors.palette.white | O2NewColors.palette.darkModeBeyondBlue
 
-    let controlError = O2NewColors.palette.o2Red60 | O2NewColors.palette.o2Red45
+     let controlError = O2NewColors.palette.o2Red60 | O2NewColors.palette.o2Red45
 
-    let barTrack = O2NewColors.palette.grey30 | O2NewColors.palette.darkModeGrey6
+     let barTrack = O2NewColors.palette.grey30 | O2NewColors.palette.darkModeGrey6
 
-    let loadingBar = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
+     let barTrackInverse = O2NewColors.palette.white.withAlphaComponent(0.3) | O2NewColors.palette.darkModeGrey6
 
-    let loadingBarBackground = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
+     let loadingBar = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
 
-    let toggleAndroidInactive = O2NewColors.palette.grey30 | O2NewColors.palette.grey20
+     let loadingBarBackground = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
 
-    let toggleAndroidBackgroundActive = O2NewColors.palette.beyondBlue15
+     let toggleAndroidInactive = O2NewColors.palette.grey30 | O2NewColors.palette.grey20
 
-    let iosControlKnob = O2NewColors.palette.white | O2NewColors.palette.grey30
+     let toggleAndroidBackgroundActive = O2NewColors.palette.beyondBlue15
 
-    let divider = O2NewColors.palette.grey30 | O2NewColors.palette.white.withAlphaComponent(0.1)
+     let iosControlKnob = O2NewColors.palette.white | O2NewColors.palette.grey30
 
-    let dividerInverse = O2NewColors.palette.white.withAlphaComponent(0.2) | O2NewColors.palette.white.withAlphaComponent(0.1)
+     let controlKnobInverse = O2NewColors.palette.beyondBlue | O2NewColors.palette.grey30
 
-    let navigationBarDivider = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
+     let divider = O2NewColors.palette.grey30 | O2NewColors.palette.white.withAlphaComponent(0.1)
 
-    let badge = O2NewColors.palette.o2Red65
+     let dividerInverse = O2NewColors.palette.white.withAlphaComponent(0.2) | O2NewColors.palette.white.withAlphaComponent(0.1)
 
-    let feedbackErrorBackground = O2NewColors.palette.o2Red60
+     let navigationBarDivider = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
 
-    let feedbackInfoBackground = O2NewColors.palette.black | O2NewColors.palette.darkModeGrey6
+     let badge = O2NewColors.palette.o2Red65
 
-    let brand = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+     let feedbackErrorBackground = O2NewColors.palette.o2Red60
 
-    let brandHigh = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white.withAlphaComponent(0.05)
+     let feedbackInfoBackground = O2NewColors.palette.black | O2NewColors.palette.darkModeGrey6
 
-    let inverse = O2NewColors.palette.white | O2NewColors.palette.grey30
+     let brand = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
 
-    let neutralHigh = O2NewColors.palette.black | O2NewColors.palette.grey30
+     let brandHigh = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white.withAlphaComponent(0.05)
 
-    let neutralMedium = O2NewColors.palette.grey60
+     let inverse = O2NewColors.palette.white | O2NewColors.palette.grey30
 
-    let neutralMediumInverse = O2NewColors.palette.grey60
+     let neutralHigh = O2NewColors.palette.black | O2NewColors.palette.grey30
 
-    let neutralLow = O2NewColors.palette.grey20 | O2NewColors.palette.grey80
+     let neutralMedium = O2NewColors.palette.grey60
 
-    let neutralLowAlternative = O2NewColors.palette.grey30 | O2NewColors.palette.grey80
+     let neutralMediumInverse = O2NewColors.palette.grey60
 
-    let textPrimary = O2NewColors.palette.black | O2NewColors.palette.grey30
+     let neutralLow = O2NewColors.palette.grey20 | O2NewColors.palette.grey80
 
-    let textPrimaryInverse = O2NewColors.palette.white | O2NewColors.palette.grey30
+     let neutralLowAlternative = O2NewColors.palette.grey30 | O2NewColors.palette.grey80
 
-    let textSecondary = O2NewColors.palette.grey60 | O2NewColors.palette.grey45
+     let textPrimary = O2NewColors.palette.black | O2NewColors.palette.grey30
 
-    let textSecondaryInverse = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.grey45
+     let textPrimaryInverse = O2NewColors.palette.white | O2NewColors.palette.grey30
 
-    let error = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
+     let textSecondary = O2NewColors.palette.grey60 | O2NewColors.palette.grey45
 
-    let textError = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
+     let textSecondaryInverse = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.grey45
 
-    let textErrorInverse = O2NewColors.palette.white | O2NewColors.palette.o2Red45
+     let error = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
 
-    let success = O2NewColors.palette.o2Green
+     let textError = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
 
-    let warning = O2NewColors.palette.o2Orange
+     let textErrorInverse = O2NewColors.palette.white | O2NewColors.palette.o2Red45
 
-    let promo = O2NewColors.palette.o2Pink
+     let success = O2NewColors.palette.o2Green
 
-    let highlight = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink
+     let warning = O2NewColors.palette.o2Orange
 
-    let successLow = O2NewColors.palette.o2Green10 | O2NewColors.palette.darkModeGrey6
+     let promo = O2NewColors.palette.o2Pink
 
-    let warningLow = O2NewColors.palette.o2Orange10 | O2NewColors.palette.darkModeGrey6
+     let highlight = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink
 
-    let errorLow = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey6
+     let successLow = O2NewColors.palette.o2Green10 | O2NewColors.palette.darkModeGrey6
 
-    let promoLow = O2NewColors.palette.o2Pink15 | O2NewColors.palette.darkModeGrey6
+     let warningLow = O2NewColors.palette.o2Orange10 | O2NewColors.palette.darkModeGrey6
 
-    let brandLow = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
+     let errorLow = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey6
 
-    let successHigh = O2NewColors.palette.o2Green80 | O2NewColors.palette.o2Green40
+     let promoLow = O2NewColors.palette.o2Pink15 | O2NewColors.palette.darkModeGrey6
 
-    let warningHigh = O2NewColors.palette.o2Orange75 | O2NewColors.palette.o2Orange40
+     let brandLow = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
 
-    let errorHigh = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red40
+     let successHigh = O2NewColors.palette.o2Green80 | O2NewColors.palette.o2Green40
 
-    let promoHigh = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink30
+     let warningHigh = O2NewColors.palette.o2Orange75 | O2NewColors.palette.o2Orange40
 
-    let successHighInverse = O2NewColors.palette.o2Green80
+     let errorHigh = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red40
 
-    let warningHighInverse = O2NewColors.palette.o2Orange75
+     let promoHigh = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink30
 
-    let errorHighInverse = O2NewColors.palette.o2Red65
+     let successHighInverse = O2NewColors.palette.o2Green80
 
-    let promoHighInverse = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink
+     let warningHighInverse = O2NewColors.palette.o2Orange75
 
-    let textNavigationBarPrimary = O2NewColors.palette.white | O2NewColors.palette.grey30
+     let errorHighInverse = O2NewColors.palette.o2Red65
 
-    let textNavigationBarSecondary = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.grey45
+     let promoHighInverse = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink
 
-    let textNavigationSearchBarHint = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.grey45
+     let textNavigationBarPrimary = O2NewColors.palette.white | O2NewColors.palette.grey30
 
-    let textNavigationSearchBarText = O2NewColors.palette.white | O2NewColors.palette.grey30
+     let textNavigationBarSecondary = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.grey45
 
-    let textAppBar = O2NewColors.palette.grey60 | O2NewColors.palette.grey45
+     let textNavigationSearchBarHint = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.grey45
 
-    let textAppBarSelected = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue40
+     let textNavigationSearchBarText = O2NewColors.palette.white | O2NewColors.palette.grey30
 
-    let customTabsBackground = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack
+     let textAppBar = O2NewColors.palette.grey60 | O2NewColors.palette.grey45
 
-    let tagTextPromo = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink
+     let textAppBarSelected = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue40
 
-    let tagTextActive = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+     let customTabsBackground = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack
 
-    let tagTextInactive = O2NewColors.palette.grey60 | O2NewColors.palette.grey40
+     let tagTextPromo = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink
 
-    let tagTextSuccess = O2NewColors.palette.o2Green80 | O2NewColors.palette.o2Green
+     let tagTextActive = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
 
-    let tagTextWarning = O2NewColors.palette.o2Orange75 | O2NewColors.palette.o2Orange
+     let tagTextInactive = O2NewColors.palette.grey60 | O2NewColors.palette.grey40
 
-    let tagTextError = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
+     let tagTextSuccess = O2NewColors.palette.o2Green80 | O2NewColors.palette.o2Green
 
-    let tagBackgroundPromo = O2NewColors.palette.o2Pink15 | O2NewColors.palette.darkModeGrey6
+     let tagTextWarning = O2NewColors.palette.o2Orange75 | O2NewColors.palette.o2Orange
 
-    let tagBackgroundActive = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
+     let tagTextError = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
 
-    let tagBackgroundInactive = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
+     let tagBackgroundPromo = O2NewColors.palette.o2Pink15 | O2NewColors.palette.darkModeGrey6
 
-    let tagBackgroundSuccess = O2NewColors.palette.o2Green10 | O2NewColors.palette.darkModeGrey6
+     let tagBackgroundActive = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
 
-    let tagBackgroundWarning = O2NewColors.palette.o2Orange10 | O2NewColors.palette.darkModeGrey6
+     let tagBackgroundInactive = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
 
-    let tagBackgroundError = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey6
+     let tagBackgroundSuccess = O2NewColors.palette.o2Green10 | O2NewColors.palette.darkModeGrey6
 
-    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+     let tagBackgroundWarning = O2NewColors.palette.o2Orange10 | O2NewColors.palette.darkModeGrey6
+
+     let tagBackgroundError = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey6
+
+     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [
             O2NewColors.palette.beyondBlue.withAlphaComponent(0) | O2NewColors.palette.black.withAlphaComponent(0),
             O2NewColors.palette.beyondBlue.withAlphaComponent(0.4) | O2NewColors.palette.black.withAlphaComponent(0.4),
             O2NewColors.palette.beyondBlue.withAlphaComponent(1) | O2NewColors.palette.black.withAlphaComponent(0.7)
         ],
-        stops: [0, 0.3, 1],
+        stops: [0,0.3,1],
         angle: 180
     ))
 }

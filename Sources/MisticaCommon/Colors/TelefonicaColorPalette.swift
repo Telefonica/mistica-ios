@@ -143,7 +143,9 @@ struct TelefonicaColors: MisticaColors {
 
     let controlError = TelefonicaColors.palette.coral
 
-    let barTrack = TelefonicaColors.palette.grey3 | TelefonicaColors.palette.darkModeGrey6
+    let barTrack = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.darkModeGrey6
+
+    let barTrackInverse = TelefonicaColors.palette.white.withAlphaComponent(0.3) | TelefonicaColors.palette.darkModeGrey6
 
     let loadingBar = TelefonicaColors.palette.telefonicaBlue30 | TelefonicaColors.palette.telefonicaBlue
 
@@ -154,6 +156,8 @@ struct TelefonicaColors: MisticaColors {
     let toggleAndroidBackgroundActive = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.telefonicaBlue20
 
     let iosControlKnob = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
+
+    let controlKnobInverse = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey2
 
     let divider = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.white.withAlphaComponent(0.05)
 

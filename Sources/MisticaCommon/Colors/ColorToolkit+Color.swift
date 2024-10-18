@@ -269,6 +269,10 @@ public extension Color {
         MisticaConfig.currentColors.barTrack.color
     }
 
+    static var barTrackInverse: Color {
+        MisticaConfig.currentColors.barTrackInverse.color
+    }
+
     static var loadingBar: Color {
         MisticaConfig.currentColors.loadingBar.color
     }
@@ -287,6 +291,10 @@ public extension Color {
 
     static var iosControlKnob: Color {
         MisticaConfig.currentColors.iosControlKnob.color
+    }
+
+    static var controlKnobInverse: Color {
+        MisticaConfig.currentColors.controlKnobInverse.color
     }
 
     static var divider: Color {

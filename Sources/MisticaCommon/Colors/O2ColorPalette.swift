@@ -145,6 +145,8 @@ struct O2Colors: MisticaColors {
 
     let barTrack = O2Colors.palette.grey3 | O2Colors.palette.darkModeGrey6
 
+    let barTrackInverse = O2Colors.palette.white.withAlphaComponent(0.3) | O2Colors.palette.darkModeGrey6
+
     let loadingBar = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeO2BluePrimary
 
     let loadingBarBackground = O2Colors.palette.grey1 | O2Colors.palette.darkModeGrey6
@@ -154,6 +156,8 @@ struct O2Colors: MisticaColors {
     let toggleAndroidBackgroundActive = O2Colors.palette.o2BluePrimary15 | O2Colors.palette.o2BlueLight30
 
     let iosControlKnob = O2Colors.palette.white | O2Colors.palette.grey2
+
+    let controlKnobInverse = O2Colors.palette.o2BluePrimary | O2Colors.palette.grey2
 
     let divider = O2Colors.palette.grey2 | O2Colors.palette.white.withAlphaComponent(0.05)
 

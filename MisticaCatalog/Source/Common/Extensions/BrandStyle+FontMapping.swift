@@ -17,7 +17,7 @@ extension BrandStyle {
         case .vivoNew:
             return FontMapping(
                 lightFont: "VivoType-Light",
-                mediumFont: "VivoType-Bold",
+                mediumFont: "VivoTypeMedium",
                 boldFont: "VivoType-Bold",
                 defaultFont: "VivoType-Regular"
             )

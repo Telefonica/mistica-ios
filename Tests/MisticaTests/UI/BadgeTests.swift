@@ -10,11 +10,12 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class BadgeTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testFlagBadge() {
@@ -35,7 +36,7 @@ final class BadgeTests: XCTestCase {
         view.secondNumericBadge.style = .numeric
         view.secondNumericBadge.value = 1_000
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 }
 

@@ -10,11 +10,19 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class TagTests: XCTestCase {
     override func setUp() {
         super.setUp()
-        UIView.setAnimationsEnabled(false)
-        isRecording = false
+        Task { @MainActor in
+            UIView.setAnimationsEnabled(false)
+        }
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testPromoTagView() {
@@ -73,7 +81,7 @@ final class TagTests: XCTestCase {
         view.tagView.text = "Xib integration"
 
         assertSnapshot(
-            matching: view,
+            of: view,
             as: .image
         )
     }

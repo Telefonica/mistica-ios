@@ -10,11 +10,12 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class CheckboxTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles
@@ -42,7 +43,7 @@ final class CheckboxTests: XCTestCase {
         checkbox.isChecked = false
 
         assertSnapshot(
-            matching: checkbox,
+            of: checkbox,
             as: .image(size: checkbox.intrinsicContentSize),
             named: "assertInitialState"
         )
@@ -50,7 +51,7 @@ final class CheckboxTests: XCTestCase {
         checkbox.isChecked = true
 
         assertSnapshot(
-            matching: checkbox,
+            of: checkbox,
             as: .image(size: checkbox.intrinsicContentSize),
             named: "finalState"
         )
@@ -64,21 +65,22 @@ final class CheckboxTests: XCTestCase {
         let view = CheckboxXIBIntegration.viewFromNib()
 
         assertSnapshot(
-            matching: view,
+            of: view,
             as: .image
         )
     }
 }
 
 // MARK: - Helpers
-
-private func makeTemplateWithCheckboxState(isChecked: Bool) -> UIView {
-    let checkbox = Checkbox(frame: CGRect(origin: .zero, size: CGSize(width: 18, height: 18)))
-    checkbox.isChecked = isChecked
-
-    let containerView = UIView(frame: CGRect(origin: .zero, size: checkbox.intrinsicContentSize))
-    containerView.backgroundColor = .white
-    containerView.addSubview(checkbox)
-
-    return containerView
+private extension CheckboxTests {
+    func makeTemplateWithCheckboxState(isChecked: Bool) -> UIView {
+        let checkbox = Checkbox(frame: CGRect(origin: .zero, size: CGSize(width: 18, height: 18)))
+        checkbox.isChecked = isChecked
+        
+        let containerView = UIView(frame: CGRect(origin: .zero, size: checkbox.intrinsicContentSize))
+        containerView.backgroundColor = .white
+        containerView.addSubview(checkbox)
+        
+        return containerView
+    }
 }

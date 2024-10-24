@@ -10,6 +10,7 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class FormsTests: XCTestCase {
     private enum Constants {
         static let headerTitle = "Header view"
@@ -17,10 +18,10 @@ final class FormsTests: XCTestCase {
         static let footerTitle = "Footer view"
     }
 
-    override func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Simple view
@@ -78,7 +79,7 @@ final class FormsTests: XCTestCase {
 
         let formTestsViewController = FormTestsViewController(formView: formView)
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -97,7 +98,7 @@ final class FormsTests: XCTestCase {
         let formTestsViewController = FormTestsViewController(formView: formView)
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "assertInitialState"
         )
@@ -105,7 +106,7 @@ final class FormsTests: XCTestCase {
         formView.addInputFields([makeInputFieldWithEmailStyle()])
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "finalState"
         )
@@ -126,7 +127,7 @@ final class FormsTests: XCTestCase {
         let formTestsViewController = FormTestsViewController(formView: formView)
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "assertInitialState"
         )
@@ -134,7 +135,7 @@ final class FormsTests: XCTestCase {
         formView.removeInputFields([firstInputField])
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "finalState"
         )
@@ -159,7 +160,7 @@ final class FormsTests: XCTestCase {
         let formTestsViewController = FormTestsViewController(formView: formView)
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "assertInitialState"
         )
@@ -167,7 +168,7 @@ final class FormsTests: XCTestCase {
         formView.validate()
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "finalState"
         )
@@ -191,7 +192,7 @@ final class FormsTests: XCTestCase {
         let formTestsViewController = FormTestsViewController(formView: formView)
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "assertInitialState"
         )
@@ -199,7 +200,7 @@ final class FormsTests: XCTestCase {
         formView.validate()
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "finalState"
         )
@@ -222,7 +223,7 @@ final class FormsTests: XCTestCase {
         let formTestsViewController = FormTestsViewController(formView: formView)
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "assertInitialState"
         )
@@ -230,7 +231,7 @@ final class FormsTests: XCTestCase {
         formView.validate()
 
         assertSnapshot(
-            matching: formTestsViewController,
+            of: formTestsViewController,
             as: .image(on: .iPhoneSe),
             named: "finalState"
         )
@@ -256,7 +257,7 @@ final class FormsTests: XCTestCase {
         formView.button.title = Constants.buttonTitle
         formView.addFooterView(makeLabel(withText: Constants.footerTitle))
 
-        assertSnapshot(matching: view.asRootOfViewController(), as: .image(on: .iPhoneSe))
+        assertSnapshot(of: view.asRootOfViewController(), as: .image(on: .iPhoneSe))
     }
 }
 

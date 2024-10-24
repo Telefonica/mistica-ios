@@ -10,11 +10,12 @@ import Mistica
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class ControlsTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Switch Style
@@ -47,14 +48,14 @@ final class ControlsTests: XCTestCase {
     func testTabBarControl() {
         let tabView = makeTabBarTemplate()
         assertSnapshot(
-            matching: tabView,
+            of: tabView,
             as: .image(size: CGSize(width: 420, height: 60))
         )
 
         tabView.overrideUserInterfaceStyle = .dark
 
         assertSnapshot(
-            matching: tabView,
+            of: tabView,
             as: .image(size: CGSize(width: 420, height: 60)),
             named: "with-dark-style"
         )
@@ -79,7 +80,7 @@ final class ControlsTests: XCTestCase {
         segmentedControl.selectedSegmentIndex = 1
 
         assertSnapshot(
-            matching: segmentedControl,
+            of: segmentedControl,
             as: .image(size: segmentedControl.intrinsicContentSize),
             named: "assertInitialState"
         )
@@ -87,7 +88,7 @@ final class ControlsTests: XCTestCase {
         segmentedControl.selectedSegmentIndex = 3
 
         assertSnapshot(
-            matching: segmentedControl,
+            of: segmentedControl,
             as: .image(size: segmentedControl.intrinsicContentSize),
             named: "finalState"
         )
@@ -103,7 +104,7 @@ final class ControlsTests: XCTestCase {
         tabBarController.selectedIndex = 1
 
         assertSnapshot(
-            matching: tabBarController,
+            of: tabBarController,
             as: .image(size: CGSize(width: 420, height: 60)),
             named: "assertInitialState"
         )
@@ -111,7 +112,7 @@ final class ControlsTests: XCTestCase {
         tabBarController.selectedIndex = 2
 
         assertSnapshot(
-            matching: tabBarController,
+            of: tabBarController,
             as: .image(size: CGSize(width: 420, height: 60)),
             named: "finalState"
         )
@@ -128,7 +129,7 @@ final class ControlsTests: XCTestCase {
         pageControl.currentPage = 3
 
         assertSnapshot(
-            matching: pageControl,
+            of: pageControl,
             as: .image(size: pageControl.intrinsicContentSize),
             named: "assertInitialState"
         )
@@ -136,7 +137,7 @@ final class ControlsTests: XCTestCase {
         pageControl.currentPage = 1
 
         assertSnapshot(
-            matching: pageControl,
+            of: pageControl,
             as: .image(size: pageControl.intrinsicContentSize),
             named: "finalState"
         )

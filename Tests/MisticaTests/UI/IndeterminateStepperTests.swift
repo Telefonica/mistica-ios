@@ -10,11 +10,12 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class IndeterminateStepperTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles
@@ -34,7 +35,7 @@ final class IndeterminateStepperTests: XCTestCase {
         let stepper = makeTemplateWithStepperState(value: 0)
 
         assertSnapshot(
-            matching: stepper,
+            of: stepper,
             as: .image,
             named: "assertInitialState"
         )
@@ -42,7 +43,7 @@ final class IndeterminateStepperTests: XCTestCase {
         stepper.value = 50
 
         assertSnapshot(
-            matching: stepper,
+            of: stepper,
             as: .image,
             named: "finalState"
         )
@@ -56,16 +57,17 @@ final class IndeterminateStepperTests: XCTestCase {
         let view = IndeterminateStepperXIBIntegration.viewFromNib()
 
         assertSnapshot(
-            matching: view,
+            of: view,
             as: .image
         )
     }
 }
 
 // MARK: - Helpers
-
-private func makeTemplateWithStepperState(value: Int = 0) -> IndeterminateStepperView {
-    let stepperView = IndeterminateStepperView(frame: CGRect(origin: .zero, size: CGSize(width: 600, height: 24)))
-    stepperView.value = value
-    return stepperView
+private extension IndeterminateStepperTests {
+    func makeTemplateWithStepperState(value: Int = 0) -> IndeterminateStepperView {
+        let stepperView = IndeterminateStepperView(frame: CGRect(origin: .zero, size: CGSize(width: 600, height: 24)))
+        stepperView.value = value
+        return stepperView
+    }
 }

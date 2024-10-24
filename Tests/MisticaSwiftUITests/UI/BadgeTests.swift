@@ -11,21 +11,24 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class BadgeTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testNumericBadgeContent() {
         assertSnapshot(
-            matching: makeTemplateWithNumericBadge(),
+            of: makeTemplateWithNumericBadge(),
             as: .image
         )
     }
 
     func testFlagBadgeContent() {
         assertSnapshot(
-            matching: makeTemplateWithFlagBadge(),
+            of: makeTemplateWithFlagBadge(),
             as: .image
         )
     }

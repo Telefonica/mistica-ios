@@ -11,16 +11,19 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class ChipTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testTooShortChip() {
         let chip = Chip(style: .normal, text: "", isSelected: .constant(false))
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -29,7 +32,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .normal, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", icon: .search, onDismiss: {})
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -38,7 +41,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .normal, text: "Lorem ipsum", icon: .search, onDismiss: {})
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -47,7 +50,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .normal, text: "Lorem ipsum", onDismiss: {})
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -56,7 +59,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .normal, text: "Lorem ipsum", icon: .search, isSelected: .constant(false))
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -65,7 +68,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .normal, text: "Lorem ipsum", icon: .search, isSelected: .constant(true))
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -74,7 +77,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .inverse, text: "", isSelected: .constant(false))
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -83,7 +86,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .inverse, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", icon: .search, isSelected: .constant(false))
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -92,7 +95,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .inverse, text: "Lorem ipsum", icon: .search, onDismiss: {})
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -101,7 +104,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .inverse, text: "Lorem ipsum", icon: nil, onDismiss: {})
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -110,7 +113,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .inverse, text: "Lorem ipsum", icon: .search, isSelected: .constant(false))
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }
@@ -119,7 +122,7 @@ final class ChipTests: XCTestCase {
         let chip = Chip(style: .inverse, text: "Lorem ipsum", icon: .search, isSelected: .constant(true))
 
         assertSnapshot(
-            matching: fixedContainer { chip },
+            of: fixedContainer { chip },
             as: .image
         )
     }

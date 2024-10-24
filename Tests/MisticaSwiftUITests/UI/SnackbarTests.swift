@@ -11,9 +11,12 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class SnackbarTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testTitle() {
@@ -25,7 +28,7 @@ final class SnackbarTests: XCTestCase {
             )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: view),
+            of: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)
         )
     }
@@ -39,7 +42,7 @@ final class SnackbarTests: XCTestCase {
             )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: view),
+            of: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)
         )
     }
@@ -53,7 +56,7 @@ final class SnackbarTests: XCTestCase {
             )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: view),
+            of: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)
         )
     }
@@ -68,7 +71,7 @@ final class SnackbarTests: XCTestCase {
             )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: view),
+            of: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)
         )
     }
@@ -83,7 +86,7 @@ final class SnackbarTests: XCTestCase {
             )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: view),
+            of: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)
         )
     }
@@ -97,7 +100,7 @@ final class SnackbarTests: XCTestCase {
             )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: view),
+            of: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)
         )
     }
@@ -110,7 +113,7 @@ final class SnackbarTests: XCTestCase {
                 config: SnackbarConfig(title: "Title", dismissInterval: .tenSeconds(SnackbarAction(title: "Action", handler: {})))
             )
         assertSnapshot(
-            matching: UIHostingController(rootView: view),
+            of: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)
         )
     }
@@ -123,7 +126,7 @@ final class SnackbarTests: XCTestCase {
                 config: SnackbarConfig(title: "Title", dismissInterval: .infinite(SnackbarAction(title: "Action", handler: {})), forceDismiss: true)
             )
         assertSnapshot(
-            matching: UIHostingController(rootView: view),
+            of: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)
         )
     }
@@ -137,7 +140,7 @@ final class SnackbarTests: XCTestCase {
                 config: SnackbarConfig(title: "Title", dismissInterval: .infinite(SnackbarAction(title: "Large Action", handler: {})), forceDismiss: true)
             )
         assertSnapshot(
-            matching: UIHostingController(rootView: view),
+            of: UIHostingController(rootView: view),
             as: .image(on: .iPhone8)
         )
     }

@@ -10,51 +10,52 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class SkeletonTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testLineSkeleton() {
         assertSnapshot(
-            matching: makeSkeletonTemplate(type: .line(width: 300)),
+            of: makeSkeletonTemplate(type: .line(width: 300)),
             as: .image
         )
     }
 
     func testTextSkeleton() {
         assertSnapshot(
-            matching: makeSkeletonTemplate(type: .text()),
+            of: makeSkeletonTemplate(type: .text()),
             as: .image
         )
     }
 
     func testTextSkeletonWithCustomLines() {
         assertSnapshot(
-            matching: makeSkeletonTemplate(type: .text(numberOfLines: 5)),
+            of: makeSkeletonTemplate(type: .text(numberOfLines: 5)),
             as: .image
         )
     }
 
     func testCircleSkeleton() {
         assertSnapshot(
-            matching: makeSkeletonTemplate(type: .circle(size: 40), containerWidth: 40),
+            of: makeSkeletonTemplate(type: .circle(size: 40), containerWidth: 40),
             as: .image
         )
     }
 
     func testRowSkeleton() {
         assertSnapshot(
-            matching: makeSkeletonTemplate(type: .row),
+            of: makeSkeletonTemplate(type: .row),
             as: .image
         )
     }
 
     func testRectangleSkeleton() {
         assertSnapshot(
-            matching: makeSkeletonTemplate(type: .rectangle(size: CGSize(width: 360, height: 180), isRounded: true), containerWidth: 360),
+            of: makeSkeletonTemplate(type: .rectangle(size: CGSize(width: 360, height: 180), isRounded: true), containerWidth: 360),
             as: .image
         )
     }

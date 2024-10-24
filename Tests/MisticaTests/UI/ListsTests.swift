@@ -10,12 +10,18 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class ListsTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        isRecording = false
         MisticaConfig.brandStyle = .movistar
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Layout
@@ -26,7 +32,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(assetType: .custom(.image(AnyValues.image)))
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -35,7 +41,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(assetType: .custom(.image(AnyValues.image), size: CGSize(width: 100, height: 40)))
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -44,7 +50,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(assetType: .smallIcon(AnyValues.image))
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -53,7 +59,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(assetType: .largeIcon(AnyValues.image, backgroundColor: .blue))
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -65,7 +71,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -76,7 +82,7 @@ final class ListsTests: XCTestCase {
         let listTestsViewController = makeListTestsViewController(title: AnyValues.title)
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -88,7 +94,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -100,7 +106,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -112,7 +118,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -124,7 +130,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -137,7 +143,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -151,7 +157,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -164,7 +170,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -177,7 +183,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -190,7 +196,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -203,7 +209,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -217,7 +223,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -231,7 +237,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -244,7 +250,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -257,7 +263,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -270,7 +276,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -283,7 +289,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -297,7 +303,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -312,7 +318,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -326,7 +332,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -340,7 +346,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -354,7 +360,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -368,7 +374,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -383,7 +389,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -397,7 +403,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -411,7 +417,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -426,7 +432,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -441,7 +447,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -457,7 +463,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -473,7 +479,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -487,7 +493,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -501,7 +507,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -515,7 +521,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -529,7 +535,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -543,7 +549,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -557,7 +563,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -571,7 +577,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -585,7 +591,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -600,7 +606,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -615,7 +621,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -631,7 +637,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -648,7 +654,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -662,7 +668,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -677,7 +683,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -693,7 +699,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -711,7 +717,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -725,7 +731,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -740,7 +746,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -756,7 +762,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -774,7 +780,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -796,7 +802,7 @@ final class ListsTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: listTestsViewController,
+            of: listTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -838,7 +844,7 @@ extension ListsTests {
         Detail text line 1
         Detail text line 2
         """
-        static var image = UIImage(color: .green)
+        static let image = UIImage(color: .green)
     }
 
     private func makeListTestsViewController(

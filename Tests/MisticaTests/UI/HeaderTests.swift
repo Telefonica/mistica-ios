@@ -10,13 +10,21 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class HeaderTests: XCTestCase {
     override func setUp() {
         super.setUp()
-        UIView.setAnimationsEnabled(false)
+        Task { @MainActor in
+            UIView.setAnimationsEnabled(false)
+        }
 
-        isRecording = false
         MisticaConfig.brandStyle = .movistar
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 }
 
@@ -25,14 +33,14 @@ final class HeaderTests: XCTestCase {
 extension HeaderTests {
     func testMinimalPretitleHeader() {
         assertSnapshot(
-            matching: makeHeader(pretitle: HeaderText(text: "Only a pretitle")),
+            of: makeHeader(pretitle: HeaderText(text: "Only a pretitle")),
             as: .image(on: .iPhoneSe)
         )
     }
 
     func testMinimalPretitleHeaderInNavigationBar() {
         assertSnapshot(
-            matching: makeHeader(
+            of: makeHeader(
                 style: .inverse,
                 pretitle: HeaderText(text: "Only a pretitle")
             ),
@@ -42,14 +50,14 @@ extension HeaderTests {
 
     func testMinimalTitleHeader() {
         assertSnapshot(
-            matching: makeHeader(title: HeaderText(text: "Only a title")),
+            of: makeHeader(title: HeaderText(text: "Only a title")),
             as: .image(on: .iPhoneSe)
         )
     }
 
     func testMinimalTitleHeaderInNavigationBar() {
         assertSnapshot(
-            matching: makeHeader(
+            of: makeHeader(
                 style: .inverse,
                 title: HeaderText(text: "Only a title")
             ),
@@ -59,14 +67,14 @@ extension HeaderTests {
 
     func testMinimalDescriptionHeader() {
         assertSnapshot(
-            matching: makeHeader(descriptionValue: HeaderText(text: "Only a description")),
+            of: makeHeader(descriptionValue: HeaderText(text: "Only a description")),
             as: .image(on: .iPhoneSe)
         )
     }
 
     func testMinimalDescriptionHeaderInNavigationBar() {
         assertSnapshot(
-            matching: makeHeader(
+            of: makeHeader(
                 style: .inverse,
                 descriptionValue: HeaderText(text: "Only a description")
             ),
@@ -78,7 +86,7 @@ extension HeaderTests {
 extension HeaderTests {
     func testFullHeader() {
         assertSnapshot(
-            matching: makeHeader(
+            of: makeHeader(
                 pretitle: HeaderText(text: "Pretitle"),
                 title: HeaderText(text: "Title"),
                 descriptionValue: HeaderText(text: "Description")
@@ -89,7 +97,7 @@ extension HeaderTests {
 
     func testFullHeaderWithLongTexts() {
         assertSnapshot(
-            matching: makeHeader(
+            of: makeHeader(
                 pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
                 title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
                 descriptionValue: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit")
@@ -100,7 +108,7 @@ extension HeaderTests {
 
     func testFullHeaderWithLongTextsAndLineLimitToTwo() {
         assertSnapshot(
-            matching: makeHeader(
+            of: makeHeader(
                 pretitle: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
                 title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
                 descriptionValue: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2)
@@ -111,7 +119,7 @@ extension HeaderTests {
 
     func testFullHeaderWithAlternateColorsInverse() {
         assertSnapshot(
-            matching: makeHeader(
+            of: makeHeader(
                 style: .inverse,
                 pretitle: HeaderText(text: "Pretitle"),
                 title: HeaderText(text: "Title"),

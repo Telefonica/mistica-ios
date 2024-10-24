@@ -11,16 +11,19 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class RadioButtonTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testSelectedRadioButton() {
         let radioButton = RadioButton(isSelected: .constant(true))
 
         assertSnapshot(
-            matching: radioButton,
+            of: radioButton,
             as: .image
         )
     }
@@ -29,7 +32,7 @@ final class RadioButtonTests: XCTestCase {
         let radioButton = RadioButton(isSelected: .constant(false))
 
         assertSnapshot(
-            matching: radioButton,
+            of: radioButton,
             as: .image
         )
     }

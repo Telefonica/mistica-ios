@@ -10,11 +10,16 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class EmptyStatesTests: XCTestCase {
     override class func setUp() {
         super.setUp()
-
-        isRecording = false
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles
@@ -32,7 +37,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeBasicEmptyState()
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testShowActions() {
@@ -45,7 +50,7 @@ final class EmptyStatesTests: XCTestCase {
             actions: .primary(AnyValues.primary)
         )
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentAsACard() {
@@ -58,7 +63,7 @@ final class EmptyStatesTests: XCTestCase {
             actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link)
         )
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutDescription() {
@@ -66,7 +71,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(description: nil)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryButtonOnly() {
@@ -74,7 +79,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .primary(AnyValues.primary))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryAndLinkButtonsOnly() {
@@ -82,7 +87,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryAndLinkButtonsOnlyAsACard() {
@@ -90,7 +95,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testSecondaryAndLinkButtonsOnly() {
@@ -98,7 +103,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testSecondaryButtonOnly() {
@@ -106,7 +111,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .secondary(AnyValues.secondary))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testSecondaryButtonOnlyAsACard() {
@@ -114,7 +119,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .secondary(AnyValues.secondary))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testSecondaryAndLinkButtonsOnlyAsACard() {
@@ -122,7 +127,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testEmptyButtonOnly() {
@@ -130,7 +135,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .empty)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testEmptyButtonOnlyAsACard() {
@@ -138,7 +143,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .empty)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testLinkButtonOnlyAsACard() {
@@ -146,7 +151,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .link(AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     // MARK: Behaviour
@@ -157,7 +162,7 @@ final class EmptyStatesTests: XCTestCase {
         let view = makeEmptyStateWithContentAndButtons(actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
         view.primaryButton.isLoading = true
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     // MARK: XIB integration
@@ -176,7 +181,7 @@ final class EmptyStatesTests: XCTestCase {
         view.emptyState.contentConfiguration = configurationWithActions
 
         assertSnapshot(
-            matching: view.asRootOfViewController(),
+            of: view.asRootOfViewController(),
             as: .image(on: .iPhoneX)
         )
     }

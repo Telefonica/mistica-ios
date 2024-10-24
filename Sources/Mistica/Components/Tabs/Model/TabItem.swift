@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct TabItem: Equatable {
+public struct TabItem: Equatable, Sendable {
     public let title: String
     public let icon: UIImage?
     public let accessibilityIdentifier: String?

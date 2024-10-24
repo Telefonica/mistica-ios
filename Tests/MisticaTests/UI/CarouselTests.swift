@@ -10,12 +10,17 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class CarouselTests: XCTestCase {
     override func setUp() {
         super.setUp()
-
-        isRecording = false
         MisticaConfig.brandStyle = .movistar
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Layout
@@ -28,7 +33,7 @@ final class CarouselTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: carouselTestsViewController,
+            of: carouselTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -40,7 +45,7 @@ final class CarouselTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: carouselTestsViewController,
+            of: carouselTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -52,7 +57,7 @@ final class CarouselTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: carouselTestsViewController,
+            of: carouselTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -65,7 +70,7 @@ final class CarouselTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: carouselTestsViewController,
+            of: carouselTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -79,7 +84,7 @@ final class CarouselTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: carouselTestsViewController,
+            of: carouselTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -94,7 +99,7 @@ final class CarouselTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: carouselTestsViewController,
+            of: carouselTestsViewController,
             as: .image(on: .iPhoneSe)
         )
     }
@@ -216,6 +221,6 @@ extension CarouselTests {
     enum AnyValues {
         static let title = "Any title"
         static let subtitle = "Any subtitle"
-        static var image = UIImage(color: .green)
+        static let image = UIImage(color: .green)
     }
 }

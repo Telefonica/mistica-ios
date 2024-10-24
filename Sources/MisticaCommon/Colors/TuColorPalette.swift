@@ -145,6 +145,8 @@ struct TuColors: MisticaColors {
 
     let barTrack = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
 
+    let barTrackInverse = TuColors.palette.white.withAlphaComponent(0.36) | TuColors.palette.darkModeGrey6
+
     let loadingBar = TuColors.palette.green40
 
     let loadingBarBackground = TuColors.palette.green
@@ -154,6 +156,8 @@ struct TuColors: MisticaColors {
     let toggleAndroidBackgroundActive = TuColors.palette.primary15 | TuColors.palette.blue20
 
     let iosControlKnob = TuColors.palette.white | TuColors.palette.grey2
+
+    let controlKnobInverse = TuColors.palette.primary | TuColors.palette.grey2
 
     let divider = TuColors.palette.grey2 | TuColors.palette.white.withAlphaComponent(0.05)
 

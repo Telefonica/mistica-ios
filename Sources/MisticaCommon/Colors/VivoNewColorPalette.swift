@@ -145,6 +145,8 @@ struct VivoNewColors: MisticaColors {
 
     let barTrack = VivoNewColors.palette.grey3 | VivoNewColors.palette.darkModeGrey6
 
+    let barTrackInverse = VivoNewColors.palette.white.withAlphaComponent(0.5) | VivoNewColors.palette.darkModeGrey6
+
     let loadingBar = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
     let loadingBarBackground = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
@@ -154,6 +156,8 @@ struct VivoNewColors: MisticaColors {
     let toggleAndroidBackgroundActive = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.vivoPurpleLight50
 
     let iosControlKnob = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+
+    let controlKnobInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
 
     let divider = VivoNewColors.palette.grey3 | VivoNewColors.palette.white.withAlphaComponent(0.05)
 

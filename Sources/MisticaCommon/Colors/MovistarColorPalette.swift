@@ -145,6 +145,8 @@ struct MovistarColors: MisticaColors {
 
     let barTrack = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey6
 
+    let barTrackInverse = MovistarColors.palette.black.withAlphaComponent(0.14) | MovistarColors.palette.darkModeGrey6
+
     let loadingBar = MovistarColors.palette.movistarBlue
 
     let loadingBarBackground = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
@@ -154,6 +156,8 @@ struct MovistarColors: MisticaColors {
     let toggleAndroidBackgroundActive = MovistarColors.palette.movistarBlue20
 
     let iosControlKnob = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+
+    let controlKnobInverse = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeGrey2
 
     let divider = MovistarColors.palette.grey3 | MovistarColors.palette.white.withAlphaComponent(0.1)
 

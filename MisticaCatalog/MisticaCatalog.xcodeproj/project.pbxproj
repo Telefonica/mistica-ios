@@ -68,6 +68,7 @@
 		84388C212C380B78007606B3 /* OnAir-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84388C202C380B78007606B3 /* OnAir-Bold.ttf */; };
 		84388C232C380E0D007606B3 /* Telefonica Sans DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84388C222C380E0D007606B3 /* Telefonica Sans DemiBold.otf */; };
 		8462A7A62C34176400BE8E96 /* Telefonica Sans Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8462A7A32C34176400BE8E96 /* Telefonica Sans Light.otf */; };
+		84A4D95B2CC9153D00993950 /* VivoTypeMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A4D95A2CC9153700993950 /* VivoTypeMedium.otf */; };
 		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
 		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
 		B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F990032546C98600DFBFE9 /* Assets.xcassets */; };
@@ -150,6 +151,7 @@
 		84388C202C380B78007606B3 /* OnAir-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OnAir-Bold.ttf"; sourceTree = "<group>"; };
 		84388C222C380E0D007606B3 /* Telefonica Sans DemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica Sans DemiBold.otf"; sourceTree = "<group>"; };
 		8462A7A32C34176400BE8E96 /* Telefonica Sans Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Telefonica Sans Light.otf"; sourceTree = "<group>"; };
+		84A4D95A2CC9153700993950 /* VivoTypeMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VivoTypeMedium.otf; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				84388C202C380B78007606B3 /* OnAir-Bold.ttf */,
 				84126F712C2C00C500ECA607 /* VivoTypeLight.ttf */,
 				84126F722C2C00C500ECA607 /* VivoTypeRegular.ttf */,
+				84A4D95A2CC9153700993950 /* VivoTypeMedium.otf */,
 				84126F752C2C00C500ECA607 /* VivoTypeBold.ttf */,
 				8462A7A32C34176400BE8E96 /* Telefonica Sans Light.otf */,
 				84038E092C38382E003E90F6 /* Telefonica Sans Regular.otf */,
@@ -469,6 +472,7 @@
 				84126F772C2C00C500ECA607 /* VivoTypeLight.ttf in Resources */,
 				8462A7A62C34176400BE8E96 /* Telefonica Sans Light.otf in Resources */,
 				84126F792C2C00C500ECA607 /* OnAir-Medium.ttf in Resources */,
+				84A4D95B2CC9153D00993950 /* VivoTypeMedium.otf in Resources */,
 				84126F782C2C00C500ECA607 /* VivoTypeRegular.ttf in Resources */,
 				84126F7A2C2C00C500ECA607 /* OnAir-Regular.ttf in Resources */,
 			);

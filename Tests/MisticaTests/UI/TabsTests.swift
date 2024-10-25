@@ -57,7 +57,7 @@ final class TabsTests: XCTestCase {
             TabItem(title: "Offers", icon: .flame, accessibilityIdentifier: nil)
         ]
     }
-    
+
     override func invokeTest() {
         withSnapshotTesting(record: .never) {
             super.invokeTest()

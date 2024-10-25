@@ -203,6 +203,6 @@ private extension MediaCard {
 private extension MediaCardConfiguration {
     @MainActor
     static func emptyConfiguration() -> MediaCardConfiguration {
-        return MediaCardConfiguration(richMedia: UIView(), descriptionTitle: "")
+        MediaCardConfiguration(richMedia: UIView(), descriptionTitle: "")
     }
 }

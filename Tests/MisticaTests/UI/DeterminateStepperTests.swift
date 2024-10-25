@@ -84,6 +84,7 @@ final class DeterminateStepperTests: XCTestCase {
 }
 
 // MARK: - Helpers
+
 private extension DeterminateStepperTests {
     func makeTemplateWithStepperState(currentStep: Int = 0, numberOfSteps: Int = 3) -> DeterminateStepperView {
         let stepperView = DeterminateStepperView(frame: CGRect(origin: .zero, size: CGSize(width: 600, height: 24)))

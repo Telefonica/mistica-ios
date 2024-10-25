@@ -21,6 +21,7 @@ extension UIView {
 }
 
 // MARK: - Helpers
+
 @MainActor
 func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     as snapshotting: Snapshotting<View, Format>,
@@ -31,7 +32,7 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     animationsEnabled: Bool = false
 ) {
     UIView.setAnimationsEnabled(animationsEnabled)
-    
+
     for brand in BrandStyle.allCases {
         MisticaConfig.brandStyle = brand
 

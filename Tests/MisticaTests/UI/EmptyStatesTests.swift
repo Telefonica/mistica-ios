@@ -15,7 +15,7 @@ final class EmptyStatesTests: XCTestCase {
     override class func setUp() {
         super.setUp()
     }
-    
+
     override func invokeTest() {
         withSnapshotTesting(record: .never) {
             super.invokeTest()

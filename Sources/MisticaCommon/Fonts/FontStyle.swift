@@ -14,10 +14,10 @@ public class FontManager: @unchecked Sendable {
 
     private let queue = DispatchQueue(label: "com.telefonica.fontManager", attributes: .concurrent)
 
-    private var _fontNameForWeight: (@Sendable (Font.Weight) -> String)? = nil
-    private var _uiFontNameForWeight: (@Sendable (UIFont.Weight) -> String)? = nil
+    private var _fontNameForWeight: (@Sendable(Font.Weight) -> String)? = nil
+    private var _uiFontNameForWeight: (@Sendable(UIFont.Weight) -> String)? = nil
 
-    public var fontNameForWeight: (@Sendable (Font.Weight) -> String)? {
+    public var fontNameForWeight: (@Sendable(Font.Weight) -> String)? {
         get {
             queue.sync { _fontNameForWeight }
         }
@@ -28,7 +28,7 @@ public class FontManager: @unchecked Sendable {
         }
     }
 
-    public var uiFontNameForWeight: (@Sendable (UIFont.Weight) -> String)? {
+    public var uiFontNameForWeight: (@Sendable(UIFont.Weight) -> String)? {
         get {
             queue.sync { _uiFontNameForWeight }
         }

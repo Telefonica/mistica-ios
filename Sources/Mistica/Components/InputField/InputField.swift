@@ -379,7 +379,7 @@ public class InputField: UIView {
 
         subscribeToPlaceholdeLabelBoundsChanges()
     }
-    
+
     deinit {
         DispatchQueue.main.async { [weak self] in
             self?.unsubscribeToPlaceholdeLabelBoundsChanges()

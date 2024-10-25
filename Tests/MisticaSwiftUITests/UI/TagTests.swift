@@ -42,6 +42,7 @@ final class TagTests: XCTestCase {
 }
 
 // MARK: - Helpers
+
 private extension TagTests {
     func makeTemplateWithAllTags(content: String, icon: Bool = false) -> some View {
         VStack {

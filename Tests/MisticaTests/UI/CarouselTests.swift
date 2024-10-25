@@ -16,7 +16,7 @@ final class CarouselTests: XCTestCase {
         super.setUp()
         MisticaConfig.brandStyle = .movistar
     }
-    
+
     override func invokeTest() {
         withSnapshotTesting(record: .never) {
             super.invokeTest()

@@ -11,11 +11,11 @@ import Foundation
 public struct EmptyStateButton: Sendable {
     public let title: String
     public let loadingTitle: String?
-    public let tapHandler: (@Sendable () -> Void)?
+    public let tapHandler: (@Sendable() -> Void)?
 
     public init(title: String,
                 loadingTitle: String?,
-                tapHandler: (@Sendable () -> Void)?) {
+                tapHandler: (@Sendable() -> Void)?) {
         self.title = title
         self.loadingTitle = loadingTitle
         self.tapHandler = tapHandler
@@ -24,10 +24,10 @@ public struct EmptyStateButton: Sendable {
 
 public struct EmptyStateLinkButton: Sendable {
     public let title: String
-    public let tapHandler: (@Sendable () -> Void)?
+    public let tapHandler: (@Sendable() -> Void)?
 
     public init(title: String,
-                tapHandler: (@Sendable () -> Void)?) {
+                tapHandler: (@Sendable() -> Void)?) {
         self.title = title
         self.tapHandler = tapHandler
     }

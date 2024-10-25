@@ -21,16 +21,17 @@ extension UIView {
 }
 
 // MARK: - Helpers
+
 @MainActor
 public func assertSnapshotWithoutAnimations<Value, Format>(
-  of value: @autoclosure () throws -> Value,
-  as snapshotting: Snapshotting<Value, Format>,
-  file: StaticString = #filePath,
-  testName: String = #function,
-  line: UInt = #line
+    of value: @autoclosure () throws -> Value,
+    as snapshotting: Snapshotting<Value, Format>,
+    file: StaticString = #filePath,
+    testName: String = #function,
+    line: UInt = #line
 ) {
     UIView.setAnimationsEnabled(false)
-    
+
     assertSnapshot(
         of: try value(),
         as: snapshotting,

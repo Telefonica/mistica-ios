@@ -106,8 +106,8 @@ public struct Snackbar: View {
 
             timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false, block: { _ in
                 Task { @MainActor in
-                       executeDismissHandlerBlock(with: .timeout)
-                   }
+                    executeDismissHandlerBlock(with: .timeout)
+                }
             })
         })
     }

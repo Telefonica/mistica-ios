@@ -11,7 +11,7 @@ import UIKit
 
 public struct CalloutConfiguration {
     public static func emptyConfiguration() -> CalloutConfiguration {
-        return CalloutConfiguration(asset: .none, title: nil, description: "Empty configuration", actions: nil, canClose: true)
+        CalloutConfiguration(asset: .none, title: nil, description: "Empty configuration", actions: nil, canClose: true)
     }
 
     public enum CalloutActions {

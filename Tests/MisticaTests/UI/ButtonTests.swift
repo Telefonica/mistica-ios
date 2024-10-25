@@ -417,6 +417,7 @@ final class ButtonTests: XCTestCase {
 }
 
 // MARK: - Helpers
+
 private extension ButtonTests {
     func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool, leftImage: Bool = false, rightImage: Button.RightImage? = nil) -> UIView {
         let leftImage = leftImage ? Button.LeftImage.custom(image: ButtonTests.Constants.leftImage) : nil
@@ -427,7 +428,7 @@ private extension ButtonTests {
         buttonNormalState.isSmall = isSmall
         buttonNormalState.leftImage = leftImage
         buttonNormalState.rightImage = rightImage
-        
+
         let buttonDisabledState = Button()
         buttonDisabledState.title = "Disabled"
         buttonDisabledState.style = style
@@ -435,7 +436,7 @@ private extension ButtonTests {
         buttonDisabledState.isSmall = isSmall
         buttonDisabledState.leftImage = leftImage
         buttonDisabledState.rightImage = rightImage
-        
+
         let buttonSelectedState = Button()
         buttonSelectedState.title = "Selected"
         buttonSelectedState.style = style
@@ -443,7 +444,7 @@ private extension ButtonTests {
         buttonSelectedState.isSmall = isSmall
         buttonSelectedState.leftImage = leftImage
         buttonSelectedState.rightImage = rightImage
-        
+
         let buttonLoadingState = Button()
         buttonLoadingState.loadingTitle = "Loading"
         buttonLoadingState.style = style
@@ -451,14 +452,14 @@ private extension ButtonTests {
         buttonLoadingState.isSmall = isSmall
         buttonLoadingState.leftImage = leftImage
         buttonLoadingState.rightImage = rightImage
-        
+
         let vStack = UIStackView(arrangedSubviews: [
             buttonNormalState,
             buttonSelectedState,
             buttonDisabledState,
             buttonLoadingState
         ])
-        
+
         vStack.axis = .vertical
         vStack.alignment = .center
         vStack.spacing = 0
@@ -468,29 +469,29 @@ private extension ButtonTests {
             width: buttonLoadingState.intrinsicContentSize.width,
             height: buttonLoadingState.intrinsicContentSize.height * 4
         )
-        
+
         return vStack
     }
-    
+
     func makeTemplateWithRegularAndSmallButtonsAndLinkButton() -> UIStackView {
         let smallButton = Button()
         smallButton.title = "O"
         smallButton.isSmall = true
-        
+
         let regularButton = Button()
         regularButton.title = "O"
-        
+
         let linkButton = Button()
         linkButton.title = "O"
         linkButton.isSelected = true
         linkButton.style = .link
-        
+
         let vStack = UIStackView(arrangedSubviews: [
             smallButton,
             regularButton,
             linkButton
         ])
-        
+
         let expectedWidth = vStack.arrangedSubviews
             .map(\.intrinsicContentSize)
             .map(\.width)
@@ -499,7 +500,7 @@ private extension ButtonTests {
             .map(\.intrinsicContentSize)
             .map(\.height)
             .reduce(CGFloat(0), +)
-        
+
         vStack.axis = .vertical
         vStack.alignment = .center
         vStack.spacing = 0
@@ -509,34 +510,34 @@ private extension ButtonTests {
             width: expectedWidth,
             height: expectedHeight
         )
-        
+
         return vStack
     }
-    
+
     func makeTemplateAlignment(contentMode: UIView.ContentMode) -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = .white
-        
+
         let title = UILabel()
         title.text = "Lorem ipsum dolor sit amet"
         title.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let linkButton = Button()
         linkButton.title = "Link"
         linkButton.style = .link
         linkButton.contentMode = contentMode
         linkButton.translatesAutoresizingMaskIntoConstraints = false
-        
+
         containerView.addSubview(title)
         containerView.addSubview(linkButton)
-        
+
         NSLayoutConstraint.activate([
             title.topAnchor.constraint(equalTo: containerView.topAnchor),
             title.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -5),
             title.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 5),
             linkButton.topAnchor.constraint(equalTo: title.bottomAnchor)
         ])
-        
+
         switch contentMode {
         case .left:
             linkButton.leadingAnchor.constraint(equalTo: title.leadingAnchor).isActive = true
@@ -545,7 +546,7 @@ private extension ButtonTests {
         default:
             fatalError("Sorry but at the moment of implementing this, I only took into account left and right contentMode")
         }
-        
+
         let expectedHeight = containerView.subviews
             .map(\.intrinsicContentSize)
             .map(\.height)

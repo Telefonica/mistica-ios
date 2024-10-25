@@ -17,7 +17,7 @@ final class ListsTests: XCTestCase {
 
         MisticaConfig.brandStyle = .movistar
     }
-    
+
     override func invokeTest() {
         withSnapshotTesting(record: .never) {
             super.invokeTest()

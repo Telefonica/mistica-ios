@@ -295,7 +295,7 @@ private extension DataCard {
 
 private extension DataCardConfiguration {
     static func emptyConfiguration() -> DataCardConfiguration {
-        return DataCardConfiguration(
+        DataCardConfiguration(
             title: "",
             descriptionTitle: "",
             buttons: .link(

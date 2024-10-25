@@ -11,7 +11,7 @@ import UIKit
 
 public struct EmptyStateConfiguration {
     static func emptyConfiguration() -> EmptyStateConfiguration {
-        return EmptyStateConfiguration(
+        EmptyStateConfiguration(
             type: .default(.icon(UIImage())),
             title: "Basic configuration",
             description: "This is a basic configuration for the empty state",

@@ -72,15 +72,16 @@ final class CheckboxTests: XCTestCase {
 }
 
 // MARK: - Helpers
+
 private extension CheckboxTests {
     func makeTemplateWithCheckboxState(isChecked: Bool) -> UIView {
         let checkbox = Checkbox(frame: CGRect(origin: .zero, size: CGSize(width: 18, height: 18)))
         checkbox.isChecked = isChecked
-        
+
         let containerView = UIView(frame: CGRect(origin: .zero, size: checkbox.intrinsicContentSize))
         containerView.backgroundColor = .white
         containerView.addSubview(checkbox)
-        
+
         return containerView
     }
 }

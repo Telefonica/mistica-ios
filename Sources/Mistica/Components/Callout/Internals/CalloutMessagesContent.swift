@@ -41,7 +41,7 @@ extension CalloutMessagesContent {
             }
         }
     }
-    
+
     var calloutDescription: String {
         get {
             descriptionLabel.text!

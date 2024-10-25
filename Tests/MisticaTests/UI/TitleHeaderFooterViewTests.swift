@@ -18,7 +18,7 @@ final class TitleHeaderFooterViewTests: XCTestCase {
             UIView.setAnimationsEnabled(false)
         }
     }
-    
+
     override func invokeTest() {
         withSnapshotTesting(record: .never) {
             super.invokeTest()

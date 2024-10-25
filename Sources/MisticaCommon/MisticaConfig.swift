@@ -20,7 +20,7 @@ public enum MisticaConfig: @unchecked Sendable {
 
     public static var currentColors: MisticaColors {
         get {
-            return concurrentQueue.sync { _currentColors }
+            concurrentQueue.sync { _currentColors }
         }
         set {
             concurrentQueue.async { _currentColors = newValue }
@@ -29,7 +29,7 @@ public enum MisticaConfig: @unchecked Sendable {
 
     public static var currentBrandAssets: MisticaBrandAssets {
         get {
-            return concurrentQueue.sync { _currentBrandAssets }
+            concurrentQueue.sync { _currentBrandAssets }
         }
         set {
             concurrentQueue.async { _currentBrandAssets = newValue }
@@ -38,7 +38,7 @@ public enum MisticaConfig: @unchecked Sendable {
 
     public static var currentStyledControls: [MisticaControlStyle] {
         get {
-            return concurrentQueue.sync { _currentStyledControls }
+            concurrentQueue.sync { _currentStyledControls }
         }
         set {
             concurrentQueue.async { _currentStyledControls = newValue }
@@ -47,7 +47,7 @@ public enum MisticaConfig: @unchecked Sendable {
 
     public static var currentFontWeights: MisticaFontWeights {
         get {
-            return concurrentQueue.sync { _currentFontWeights }
+            concurrentQueue.sync { _currentFontWeights }
         }
         set {
             concurrentQueue.async { _currentFontWeights = newValue }
@@ -56,7 +56,7 @@ public enum MisticaConfig: @unchecked Sendable {
 
     public static var currentCornerRadius: MisticaCornerRadius {
         get {
-            return concurrentQueue.sync { _currentCornerRadius }
+            concurrentQueue.sync { _currentCornerRadius }
         }
         set {
             concurrentQueue.async { _currentCornerRadius = newValue }
@@ -65,7 +65,7 @@ public enum MisticaConfig: @unchecked Sendable {
 
     public static var currentFontSizes: MisticaFontSizes {
         get {
-            return concurrentQueue.sync { _currentFontSizes }
+            concurrentQueue.sync { _currentFontSizes }
         }
         set {
             concurrentQueue.async { _currentFontSizes = newValue }

@@ -145,6 +145,8 @@ struct BlauColors: MisticaColors {
 
     let barTrack = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
 
+    let barTrackInverse = BlauColors.palette.grey6.withAlphaComponent(0.2) | BlauColors.palette.darkModeGrey6
+
     let loadingBar = BlauColors.palette.blauBlueSecondary | BlauColors.palette.blauBluePrimary
 
     let loadingBarBackground = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.darkModeGrey
@@ -154,6 +156,8 @@ struct BlauColors: MisticaColors {
     let toggleAndroidBackgroundActive = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.blauBlueSecondary30
 
     let iosControlKnob = BlauColors.palette.white | BlauColors.palette.grey2
+
+    let controlKnobInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
 
     let divider = BlauColors.palette.grey2 | BlauColors.palette.white.withAlphaComponent(0.05)
 

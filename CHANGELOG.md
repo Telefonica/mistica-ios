@@ -1,3 +1,17 @@
+# [33.2.0](https://github.com/Telefonica/mistica-ios/compare/v33.1.0...v33.2.0) (2024-10-29)
+
+
+### Bug Fixes
+
+* **XCode16:** fix warnings in XCode 16 ([27adcbd](https://github.com/Telefonica/mistica-ios/commit/27adcbd6d2e6283b22b362ffcce04f7ecad9ac6c))
+
+
+### Features
+
+* **skin:** update design tokens from mistica-design ([#403](https://github.com/Telefonica/mistica-ios/issues/403)) ([e1ff58d](https://github.com/Telefonica/mistica-ios/commit/e1ff58dd60c3084236614216ae82c9dde1b3b709))
+* **skin:** update design tokens from mistica-design ([#406](https://github.com/Telefonica/mistica-ios/issues/406)) ([2db45fb](https://github.com/Telefonica/mistica-ios/commit/2db45fb04c77ed3043397c36b529c66ab24da2ed))
+* **skin:** update design tokens from mistica-design ([#407](https://github.com/Telefonica/mistica-ios/issues/407)) ([9db65b5](https://github.com/Telefonica/mistica-ios/commit/9db65b5ba79a64b8b2a647b3c26c1189690fa91f))
+
 # [33.1.0](https://github.com/Telefonica/mistica-ios/compare/v33.0.0...v33.1.0) (2024-09-12)
 
 

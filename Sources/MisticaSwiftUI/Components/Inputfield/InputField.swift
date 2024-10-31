@@ -17,7 +17,7 @@ private enum Constants {
 }
 
 public struct InputField: View {
-    public enum ValidationState: Int, Identifiable, Equatable {
+    public enum ValidationState: Int, Identifiable, Equatable, Sendable {
         case normal
         case invalid
 

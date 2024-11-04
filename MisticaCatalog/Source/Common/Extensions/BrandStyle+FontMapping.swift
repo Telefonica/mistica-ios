@@ -16,10 +16,10 @@ extension BrandStyle {
         switch self {
         case .vivoNew:
             return FontMapping(
-                lightFont: "VivoType-Light",
+                lightFont: "VivoTypeLight",
                 mediumFont: "VivoTypeMedium",
-                boldFont: "VivoType-Bold",
-                defaultFont: "VivoType-Regular"
+                boldFont: "VivoTypeBold",
+                defaultFont: "VivoTypeRegular"
             )
         case .o2, .o2New, .movistar:
             return FontMapping(

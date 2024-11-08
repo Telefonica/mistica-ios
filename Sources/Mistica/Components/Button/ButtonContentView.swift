@@ -19,6 +19,7 @@ class ButtonContentView: UIView {
 
     private lazy var titleStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
+            leftImageView,
             titleLabel,
             rightImageView
         ])
@@ -33,6 +34,14 @@ class ButtonContentView: UIView {
         return titleLabel
     }()
 
+    private let leftImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.adjustsImageSizeForAccessibilityContentSizeCategory = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.isHidden = true
+        return imageView
+    }()
+
     private let rightImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.adjustsImageSizeForAccessibilityContentSizeCategory = true
@@ -41,6 +50,7 @@ class ButtonContentView: UIView {
         return imageView
     }()
 
+    private lazy var leftImageHeightConstraint: NSLayoutConstraint = leftImageView.heightAnchor.constraint(equalToConstant: 1)
     private lazy var rightImageHeightConstraint: NSLayoutConstraint = rightImageView.heightAnchor.constraint(equalToConstant: 1)
 
     private lazy var loadingIndicator: UIActivityIndicatorView = {
@@ -85,8 +95,18 @@ class ButtonContentView: UIView {
         set {
             loadingIndicator.color = newValue
             titleLabel.textColor = newValue
+            leftImageView.tintColor = newValue
             rightImageView.tintColor = newValue
             loadingTitleLabel.textColor = newValue
+        }
+    }
+
+    var leftImage: Button.LeftImage? {
+        didSet {
+            leftImageView.isHidden = leftImage == nil
+            guard let leftImage else { return }
+            titleStackView.setCustomSpacing(leftImage.space, after: leftImageView)
+            leftImageView.image = leftImage.image
         }
     }
 
@@ -97,6 +117,11 @@ class ButtonContentView: UIView {
             titleStackView.setCustomSpacing(rightImage.space, after: titleLabel)
             rightImageView.image = rightImage.image
         }
+    }
+
+    var leftImageHeight: CGFloat {
+        get { leftImageHeightConstraint.constant }
+        set { leftImageHeightConstraint.constant = newValue }
     }
 
     var rightImageHeight: CGFloat {
@@ -137,6 +162,9 @@ class ButtonContentView: UIView {
 
         addSubview(constrainedToLayoutMarginsGuideOf: titleContentStackView)
         addSubview(constrainedToLayoutMarginsGuideOf: loadingStackView)
+
+        leftImageHeightConstraint.isActive = true
+        leftImageHeightConstraint.priority = .defaultLow
 
         rightImageHeightConstraint.isActive = true
         rightImageHeightConstraint.priority = .defaultLow

@@ -11,6 +11,11 @@ import SnapshotTesting
 import XCTest
 
 final class ButtonTests: XCTestCase {
+    enum Constants {
+        static let leftImage = UIImage(systemName: "plus")!
+        static let rightImage = UIImage(systemName: "minus")!
+    }
+
     override class func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
@@ -106,6 +111,20 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testRegularSizeWithLinkWithLeftImageStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: false, leftImage: true)
+        )
+    }
+
+    func testRegularSizeWithLinkInverseWithLeftImageStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: false, leftImage: true)
+        )
+    }
+
     // MARK: Small Buttons
 
     func testSmallSizeWithPrimaryStyle() {
@@ -175,6 +194,20 @@ final class ButtonTests: XCTestCase {
         assertSnapshotForAllBrandsAndStyles(
             as: .image,
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: true, rightImage: .chevron)
+        )
+    }
+
+    func testSmallSizeWithLinkWithLeftImageStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: true, leftImage: true)
+        )
+    }
+
+    func testSmallSizeWithLinkInverseWithLeftImageStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: true, leftImage: true)
         )
     }
 
@@ -357,15 +390,34 @@ final class ButtonTests: XCTestCase {
             as: .image(on: .iPhoneX) // We need a device with Safe Area
         )
     }
+
+    // MARK: Images
+
+    func testLeftAndRightImages() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: false, leftImage: true, rightImage: .custom(image: Constants.rightImage))
+        )
+    }
+
+    func testLeftImageAndChevron() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: false, leftImage: true, rightImage: .chevron)
+        )
+    }
 }
 
 // MARK: - Helpers
 
-private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool, rightImage: Button.RightImage? = nil) -> UIView {
+private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool, leftImage: Bool = false, rightImage: Button.RightImage? = nil) -> UIView {
+    let leftImage = leftImage ? Button.LeftImage.custom(image: ButtonTests.Constants.leftImage) : nil
+
     let buttonNormalState = Button()
     buttonNormalState.title = "Normal"
     buttonNormalState.style = style
     buttonNormalState.isSmall = isSmall
+    buttonNormalState.leftImage = leftImage
     buttonNormalState.rightImage = rightImage
 
     let buttonDisabledState = Button()
@@ -373,6 +425,7 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool,
     buttonDisabledState.style = style
     buttonDisabledState.isEnabled = false
     buttonDisabledState.isSmall = isSmall
+    buttonDisabledState.leftImage = leftImage
     buttonDisabledState.rightImage = rightImage
 
     let buttonSelectedState = Button()
@@ -380,6 +433,7 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool,
     buttonSelectedState.style = style
     buttonSelectedState.isSelected = true
     buttonSelectedState.isSmall = isSmall
+    buttonSelectedState.leftImage = leftImage
     buttonSelectedState.rightImage = rightImage
 
     let buttonLoadingState = Button()
@@ -387,6 +441,7 @@ private func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool,
     buttonLoadingState.style = style
     buttonLoadingState.isLoading = true
     buttonLoadingState.isSmall = isSmall
+    buttonLoadingState.leftImage = leftImage
     buttonLoadingState.rightImage = rightImage
 
     let vStack = UIStackView(arrangedSubviews: [

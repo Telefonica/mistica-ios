@@ -49,7 +49,7 @@ public class TitleHeaderFooterView: UITableViewHeaderFooterView {
         }
     }
     
-    public var titleBackgroundColor: UIColor {
+    public var titleBackgroundColor: UIColor? {
         get {
             titleView.backgroundColor
         }

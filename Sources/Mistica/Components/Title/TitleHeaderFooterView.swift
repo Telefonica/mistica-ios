@@ -48,7 +48,7 @@ public class TitleHeaderFooterView: UITableViewHeaderFooterView {
             titleView.linkTitle = newValue
         }
     }
-    
+
     public var titleBackgroundColor: UIColor? {
         get {
             titleView.backgroundColor

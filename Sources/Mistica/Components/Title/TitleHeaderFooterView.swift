@@ -49,6 +49,15 @@ public class TitleHeaderFooterView: UITableViewHeaderFooterView {
         }
     }
 
+    public var titleBackgroundColor: UIColor? {
+        get {
+            titleView.backgroundColor
+        }
+        set {
+            titleView.backgroundColor = newValue
+        }
+    }
+
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
 

@@ -41,8 +41,7 @@ class UICatalogButtonsViewController: UITableViewController {
 
                 Style(buttonStyle: .primary, title: "Left image", isInverse: false, isSmall: false, leftImage: .custom(image: exampleImage), rightImage: nil),
                 Style(buttonStyle: .primary, title: "Right image", isInverse: false, isSmall: false, leftImage: nil, rightImage: .custom(image: exampleImage)),
-                Style(buttonStyle: .primary, title: "Both images", isInverse: false, isSmall: false, leftImage: .custom(image: exampleImage), rightImage: .custom(image: exampleImage)),
-                Style(buttonStyle: .primary, title: "Left image and chevron", isInverse: false, isSmall: false, leftImage: .custom(image: exampleImage), rightImage: .chevron)
+                Style(buttonStyle: .primary, title: "Both images", isInverse: false, isSmall: false, leftImage: .custom(image: exampleImage), rightImage: .custom(image: exampleImage))
             ]
         }
 

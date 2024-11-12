@@ -427,11 +427,13 @@ private extension FeedbackView {
             primaryButton?.isLoading = true
             prepareHapticFeedback()
             completion { [weak self] in
-                self?.prepareAnimation()
-                self?.startAnimation()
-
-                self?.primaryButton?.title = title
-                self?.primaryButton?.isLoading = false
+                Task { @MainActor in
+                    self?.prepareAnimation()
+                    self?.startAnimation()
+                    
+                    self?.primaryButton?.title = title
+                    self?.primaryButton?.isLoading = false
+                }
             }
         case .none:
             break

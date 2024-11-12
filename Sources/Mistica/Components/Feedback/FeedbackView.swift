@@ -430,7 +430,7 @@ private extension FeedbackView {
                 Task { @MainActor in
                     self?.prepareAnimation()
                     self?.startAnimation()
-                    
+
                     self?.primaryButton?.title = title
                     self?.primaryButton?.isLoading = false
                 }

@@ -1,3 +1,10 @@
+## [33.2.1](https://github.com/Telefonica/mistica-ios/compare/v33.2.0...v33.2.1) (2024-11-12)
+
+
+### Bug Fixes
+
+* **Button:** Remove non necessary catalog example ([#411](https://github.com/Telefonica/mistica-ios/issues/411)) ([68092f7](https://github.com/Telefonica/mistica-ios/commit/68092f7f6813dccbdb47882e5b7605f49a7e14f7))
+
 # [33.2.0](https://github.com/Telefonica/mistica-ios/compare/v33.1.0...v33.2.0) (2024-10-29)
 
 

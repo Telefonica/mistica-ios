@@ -181,6 +181,14 @@ public extension Button.Style {
         return isSmall ? Button.Style.smallMinimumWidth : Button.Style.regularMinimumWidth
     }
 
+    func leftImageHeight(isSmall: Bool) -> CGFloat {
+        if let leftImageHeight = overriddenSizes?.leftImageHeight {
+            return leftImageHeight
+        }
+
+        return isSmall ? Button.Style.ImageHeight.small : Button.Style.ImageHeight.regular
+    }
+
     func rightImageHeight(isSmall: Bool) -> CGFloat {
         if let rightImageHeight = overriddenSizes?.rightImageHeight {
             return rightImageHeight

@@ -27,17 +27,20 @@ open class Button: UIControl {
             public let insets: UIEdgeInsets
             public let minimumWidth: CGFloat
             public let font: UIFont
+            public let leftImageHeight: CGFloat?
             public let rightImageHeight: CGFloat?
 
             public init(
                 insets: UIEdgeInsets,
                 minimumWidth: CGFloat,
                 font: UIFont,
+                leftImageHeight: CGFloat? = nil,
                 rightImageHeight: CGFloat? = nil
             ) {
                 self.insets = insets
                 self.minimumWidth = minimumWidth
                 self.font = font
+                self.leftImageHeight = leftImageHeight
                 self.rightImageHeight = rightImageHeight
             }
         }
@@ -60,6 +63,22 @@ open class Button: UIControl {
             self.textColor = textColor
             self.backgroundColor = backgroundColor
             self.borderColor = borderColor
+        }
+    }
+
+    public enum LeftImage {
+        case custom(image: UIImage)
+
+        var image: UIImage {
+            switch self {
+            case .custom(let image): return image.withRenderingMode(.alwaysTemplate)
+            }
+        }
+
+        var space: CGFloat {
+            switch self {
+            case .custom: return 8
+            }
         }
     }
 
@@ -108,6 +127,11 @@ open class Button: UIControl {
         set { container.loadingTitle = newValue }
     }
 
+    public var leftImage: LeftImage? {
+        get { container.leftImage }
+        set { container.leftImage = newValue }
+    }
+
     public var rightImage: RightImage? {
         get { container.rightImage }
         set { container.rightImage = newValue }
@@ -128,13 +152,21 @@ open class Button: UIControl {
         self.init(title: "")
     }
 
-    public init(style: Style = .primary, title: String, rightImage: RightImage? = nil, loadingTitle: String? = nil, isSmall: Bool = false) {
+    public init(
+        style: Style = .primary,
+        title: String,
+        leftImage: LeftImage? = nil,
+        rightImage: RightImage? = nil,
+        loadingTitle: String? = nil,
+        isSmall: Bool = false
+    ) {
         self.style = style
         self.isSmall = isSmall
 
         super.init(frame: .zero)
 
         self.title = title
+        self.leftImage = leftImage
         self.rightImage = rightImage
         self.loadingTitle = loadingTitle
         commonInit()
@@ -268,6 +300,7 @@ private extension Button {
         updateInsets()
         container.minimumWidth = style.minimumWidth(isSmall: isSmall)
         container.font = style.font(isSmall: isSmall)
+        container.leftImageHeight = style.leftImageHeight(isSmall: isSmall)
         container.rightImageHeight = style.rightImageHeight(isSmall: isSmall)
     }
 

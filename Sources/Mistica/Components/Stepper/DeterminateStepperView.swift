@@ -10,7 +10,6 @@ import Foundation
 
 import UIKit
 
-@MainActor
 open class DeterminateStepperView: UIControl {
     enum Constants {
         static let spacing: CGFloat = 8
@@ -165,9 +164,7 @@ private extension DeterminateStepperView {
             arrangedSubviews.append(createStep(step: step))
         }
 
-        Task { @MainActor in
-            try? arrangedSubviews.forEach(stackView.addArrangedSubview)
-        }
+        try? arrangedSubviews.forEach(stackView.addArrangedSubview)
 
         activateSegmentsWidthConstraints()
 

@@ -87,6 +87,10 @@
 		B8F990522546C98700DFBFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9902A2546C98600DFBFE9 /* AppDelegate.swift */; };
 		B8F990532546C98700DFBFE9 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9902B2546C98600DFBFE9 /* ComponentsView.swift */; };
 		B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */ = {isa = PBXBuildFile; productRef = B8F990622546CAA500DFBFE9 /* Mistica */; };
+		BB9A70262CDFFBA900B2767F /* CardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A70252CDFFB9800B2767F /* CardRow.swift */; };
+		BB9A70292CE0D94900B2767F /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A70282CE0D93D00B2767F /* CardList.swift */; };
+		BB9A702B2CE0E34600B2767F /* PosterCardCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A702A2CE0E34300B2767F /* PosterCardCatalogView.swift */; };
+		BB9A702E2CE3B3BE00B2767F /* airpods.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BB9A702D2CE3B3BE00B2767F /* airpods.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +176,10 @@
 		B8F9902B2546C98600DFBFE9 /* ComponentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 		B8F990562546C99300DFBFE9 /* MisticaCatalogConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MisticaCatalogConfig.xcconfig; sourceTree = "<group>"; };
 		B8F990572546C99300DFBFE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB9A70252CDFFB9800B2767F /* CardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRow.swift; sourceTree = "<group>"; };
+		BB9A70282CE0D93D00B2767F /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
+		BB9A702A2CE0E34300B2767F /* PosterCardCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCardCatalogView.swift; sourceTree = "<group>"; };
+		BB9A702D2CE3B3BE00B2767F /* airpods.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = airpods.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,24 +215,25 @@
 		18E4854C287F19EB0052A6F2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				18E4854D287F19EB0052A6F2 /* InputFieldCatalogView.swift */,
-				18E4854E287F19EB0052A6F2 /* StepperCatalogVIew.swift */,
-				18E4854F287F19EB0052A6F2 /* EmptyStateCatalogView.swift */,
-				18E48550287F19EB0052A6F2 /* SnackbarCatalogView.swift */,
-				18E48551287F19EB0052A6F2 /* CalloutCatalogView.swift */,
-				18E48552287F19EB0052A6F2 /* FeedbackCatalogView.swift */,
-				18E48553287F19EB0052A6F2 /* RadioButtonCatalogView.swift */,
-				18E48554287F19EB0052A6F2 /* CarouselCatalogView.swift */,
-				18E48555287F19EB0052A6F2 /* ChipCatalogView.swift */,
-				18E48556287F19EB0052A6F2 /* ButtonCatalogView.swift */,
-				18E48557287F19EB0052A6F2 /* DataCardCatalogView.swift */,
-				18E48558287F19EB0052A6F2 /* CheckboxCatalogView.swift */,
-				18E48559287F19EB0052A6F2 /* TabsCatalogView.swift */,
 				18E4855A287F19EB0052A6F2 /* BadgeCatalogView.swift */,
-				18E4855B287F19EB0052A6F2 /* TagCatalogView.swift */,
-				18E4855C287F19EB0052A6F2 /* ListCatalogView.swift */,
+				18E48556287F19EB0052A6F2 /* ButtonCatalogView.swift */,
+				18E48551287F19EB0052A6F2 /* CalloutCatalogView.swift */,
+				18E48554287F19EB0052A6F2 /* CarouselCatalogView.swift */,
+				18E48558287F19EB0052A6F2 /* CheckboxCatalogView.swift */,
+				18E48555287F19EB0052A6F2 /* ChipCatalogView.swift */,
+				18E48557287F19EB0052A6F2 /* DataCardCatalogView.swift */,
+				18E4854F287F19EB0052A6F2 /* EmptyStateCatalogView.swift */,
+				18E48552287F19EB0052A6F2 /* FeedbackCatalogView.swift */,
 				1822CA1929E821D400980D47 /* HeaderCatalogView.swift */,
+				18E4854D287F19EB0052A6F2 /* InputFieldCatalogView.swift */,
+				18E4855C287F19EB0052A6F2 /* ListCatalogView.swift */,
+				BB9A702A2CE0E34300B2767F /* PosterCardCatalogView.swift */,
+				18E48553287F19EB0052A6F2 /* RadioButtonCatalogView.swift */,
 				244D00C52C491D4600424AA5 /* SkeletonsCatalogView.swift */,
+				18E48550287F19EB0052A6F2 /* SnackbarCatalogView.swift */,
+				18E4854E287F19EB0052A6F2 /* StepperCatalogVIew.swift */,
+				18E48559287F19EB0052A6F2 /* TabsCatalogView.swift */,
+				18E4855B287F19EB0052A6F2 /* TagCatalogView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 		B8F98FFF2546C98600DFBFE9 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				BB9A70272CE0D92A00B2767F /* Cards */,
 				18E48549287F19EB0052A6F2 /* CatalogList.swift */,
 				18E17AEE288007340051E505 /* Framework.swift */,
 				18E17AEC287FFFBF0051E505 /* CatalogRow.swift */,
@@ -382,6 +392,7 @@
 		B8F990552546C99300DFBFE9 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				BB9A702C2CE3B3AB00B2767F /* Samples */,
 				B8F990562546C99300DFBFE9 /* MisticaCatalogConfig.xcconfig */,
 				B8F990572546C99300DFBFE9 /* Info.plist */,
 			);
@@ -393,6 +404,23 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB9A70272CE0D92A00B2767F /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				BB9A70282CE0D93D00B2767F /* CardList.swift */,
+				BB9A70252CDFFB9800B2767F /* CardRow.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		BB9A702C2CE3B3AB00B2767F /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				BB9A702D2CE3B3BE00B2767F /* airpods.mp4 */,
+			);
+			path = Samples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +498,7 @@
 				B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */,
 				B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */,
 				84126F772C2C00C500ECA607 /* VivoTypeLight.ttf in Resources */,
+				BB9A702E2CE3B3BE00B2767F /* airpods.mp4 in Resources */,
 				8462A7A62C34176400BE8E96 /* Telefonica Sans Light.otf in Resources */,
 				84126F792C2C00C500ECA607 /* OnAir-Medium.ttf in Resources */,
 				842854EA2CD911E500F007AB /* VivoTypeMedium.ttf in Resources */,
@@ -540,15 +569,18 @@
 				B8F990332546C98700DFBFE9 /* UIView+Utils.swift in Sources */,
 				18E4858A287F19EB0052A6F2 /* BadgeCatalogView.swift in Sources */,
 				18E48583287F19EB0052A6F2 /* RadioButtonCatalogView.swift in Sources */,
+				BB9A702B2CE0E34600B2767F /* PosterCardCatalogView.swift in Sources */,
 				18E4858F287F19EB0052A6F2 /* UICatalogScrollContentIndicatorViewController.swift in Sources */,
 				18E4857B287F19EB0052A6F2 /* CatalogList.swift in Sources */,
 				18E48586287F19EB0052A6F2 /* ButtonCatalogView.swift in Sources */,
 				B8F990372546C98700DFBFE9 /* Optional+Utils.swift in Sources */,
 				B8F9903A2546C98700DFBFE9 /* UISwitchTableViewCell.swift in Sources */,
+				BB9A70292CE0D94900B2767F /* CardList.swift in Sources */,
 				18E4859B287F19EB0052A6F2 /* UICatalogViewStatesViewController.swift in Sources */,
 				18E485A0287F19EB0052A6F2 /* UICatalogListsViewController.swift in Sources */,
 				18E4858C287F19EB0052A6F2 /* ListCatalogView.swift in Sources */,
 				B8F990352546C98700DFBFE9 /* UITableView+Utils.swift in Sources */,
+				BB9A70262CDFFBA900B2767F /* CardRow.swift in Sources */,
 				18E48594287F19EB0052A6F2 /* UICatalogMediaCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

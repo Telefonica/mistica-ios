@@ -83,11 +83,9 @@ public enum MisticaConfig: @unchecked Sendable {
         }
     }
 
-    public static func styleControls(_ controls: [MisticaControlStyle]) {
+    @MainActor public static func styleControls(_ controls: [MisticaControlStyle]) {
         currentStyledControls = controls
-        Task { @MainActor in
-            MisticaAppearance.setUp(controls: controls)
-        }
+        MisticaAppearance.setUp(controls: controls)
     }
 }
 

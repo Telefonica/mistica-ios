@@ -208,11 +208,14 @@ public class FeedbackView: UIView {
     private lazy var buttonsView: UIView = {
         let buttonsView = UIStackView(arrangedSubviews: [])
 
-        Task { @MainActor in
-            try [primaryButton, secondaryButton].compactMap { $0 }
-                .forEach(buttonsView.addArrangedSubview(_:))
+        if let primaryButton = primaryButton {
+            buttonsView.addArrangedSubview(primaryButton)
         }
 
+        if let secondaryButton = secondaryButton {
+            buttonsView.addArrangedSubview(secondaryButton)
+        }
+        
         buttonsView.alignment = .fill
         buttonsView.axis = .vertical
         buttonsView.spacing = 16

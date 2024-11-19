@@ -8,8 +8,8 @@
 
 import Foundation
 
-import UIKit
 import Combine
+import UIKit
 
 public class InputField: UIView {
     private typealias TextInputView = UIView & TextInput
@@ -391,7 +391,7 @@ public class InputField: UIView {
 
     private func subscribeToPlaceholderChanges() {
         backingPlaceholderLabel.publisher(for: \.bounds)
-            .sink { newBounds in
+            .sink { _ in
                 self.updatePlaceholderLayerPosition()
                 self.updatePlaceholderLayerSize()
             }

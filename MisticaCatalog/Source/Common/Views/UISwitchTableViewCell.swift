@@ -16,7 +16,7 @@ public class UISwitchTableViewCell: UITableViewCell {
         set { `switch`.isOn = newValue }
     }
 
-    public var didValueChange: (@MainActor @Sendable (UISwitch) -> Void)?
+    public var didValueChange: (@MainActor @Sendable(UISwitch) -> Void)?
 
     public init(reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)

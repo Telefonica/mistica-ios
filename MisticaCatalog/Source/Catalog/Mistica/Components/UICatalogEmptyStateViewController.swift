@@ -199,7 +199,7 @@ extension UICatalogEmptyStateViewController: UITableViewDataSource, UITableViewD
         view.endEditing(true)
 
         let actions: EmptyStateConfiguration.EmptyStateActions
-        let handler: @Sendable () -> Void = {
+        let handler: @Sendable() -> Void = {
             Task { @MainActor in
                 SnackbarController.shared.showSnackbar(config: SnackbarConfig(title: "The user has tapped any button", dismissInterval: .fiveSeconds))
             }

@@ -215,7 +215,6 @@ private class LoadSimulationButton: Button {
 }
 
 private extension Button.State {
-
     @MainActor func makeButton(
         style: Button.Style,
         title _: String,

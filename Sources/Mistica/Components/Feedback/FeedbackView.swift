@@ -215,7 +215,7 @@ public class FeedbackView: UIView {
         if let secondaryButton = secondaryButton {
             buttonsView.addArrangedSubview(secondaryButton)
         }
-        
+
         buttonsView.alignment = .fill
         buttonsView.axis = .vertical
         buttonsView.spacing = 16

@@ -11,9 +11,12 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class GradientTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testGradientInView() {
@@ -21,7 +24,7 @@ final class GradientTests: XCTestCase {
         let misticaColor: MisticaColor = .gradient(misticaGradient)
 
         assertSnapshot(
-            matching: makeTemplate(misticaColor: misticaColor),
+            of: makeTemplate(misticaColor: misticaColor),
             as: .image
         )
     }

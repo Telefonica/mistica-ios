@@ -11,12 +11,19 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class HeaderTests: XCTestCase {
     override class func setUp() {
         super.setUp()
-        UIView.setAnimationsEnabled(false)
-
-        isRecording = false
+        Task { @MainActor in
+            UIView.setAnimationsEnabled(false)
+        }
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 }
 
@@ -30,7 +37,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -42,7 +49,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -54,7 +61,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -66,7 +73,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -78,7 +85,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -90,7 +97,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -106,7 +113,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -120,7 +127,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -134,7 +141,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -148,7 +155,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -166,7 +173,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -180,7 +187,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }
@@ -194,7 +201,7 @@ extension HeaderTests {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: header),
+            of: UIHostingController(rootView: header),
             as: .image(on: .iPhone8)
         )
     }

@@ -10,6 +10,7 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class TabsTests: XCTestCase {
     enum Constants {
         static let defaultWidth: CGFloat = 390
@@ -59,9 +60,16 @@ final class TabsTests: XCTestCase {
 
     override class func setUp() {
         super.setUp()
-        UIView.setAnimationsEnabled(false)
-
-        isRecording = false
+        
+        Task { @MainActor in
+            UIView.setAnimationsEnabled(false)
+        }
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Mobile Width Styles
@@ -77,7 +85,7 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: TabsTestsViewController(
+            of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItem)
             ),
             as: .image(on: .iPhoneSe)
@@ -88,7 +96,7 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: TabsTestsViewController(
+            of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithoutIcon)
             ),
             as: .image(on: .iPhoneSe)
@@ -99,7 +107,7 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: TabsTestsViewController(
+            of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongText)
             ),
             as: .image(on: .iPhoneSe)
@@ -110,7 +118,7 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: TabsTestsViewController(
+            of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongTextAndNoIcon)
             ),
             as: .image(on: .iPhoneSe)
@@ -121,7 +129,7 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: TabsTestsViewController(
+            of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.eightItem)
             ),
             as: .image(on: .iPhoneSe)
@@ -134,7 +142,7 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: TabsTestsViewController(
+            of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItem)
             ),
             as: .image(on: .iPadMini)
@@ -145,7 +153,7 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: TabsTestsViewController(
+            of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.twoItem)
             ),
             as: .image(on: .iPadMini)
@@ -156,7 +164,7 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: TabsTestsViewController(
+            of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongText)
             ),
             as: .image(on: .iPadMini)
@@ -167,7 +175,7 @@ final class TabsTests: XCTestCase {
         MisticaConfig.brandStyle = .movistar
 
         assertSnapshot(
-            matching: TabsTestsViewController(
+            of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.eightItem)
             ),
             as: .image(on: .iPadMini)
@@ -183,7 +191,7 @@ final class TabsTests: XCTestCase {
         view.tabs.reload(with: Constants.twoItem)
 
         assertSnapshot(
-            matching: view.asRootOfViewController(),
+            of: view.asRootOfViewController(),
             as: .image(on: .iPhoneSe)
         )
     }

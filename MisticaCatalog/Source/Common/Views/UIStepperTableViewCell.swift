@@ -15,7 +15,7 @@ public class UIStepperTableViewCell: UITableViewCell {
     private let numberOfStepsLabel = UILabel()
     private lazy var textStackView = UIStackView(arrangedSubviews: [titleLabel, numberOfStepsLabel])
     private lazy var numberOfStepsStackView = UIStackView(arrangedSubviews: [textStackView, numberOfStepsStepper])
-    var didValueChange: (@MainActor @Sendable (UIStepper) -> Void)?
+    var didValueChange: (@MainActor @Sendable(UIStepper) -> Void)?
 
     var minValue: Double {
         get { numberOfStepsStepper.minimumValue }

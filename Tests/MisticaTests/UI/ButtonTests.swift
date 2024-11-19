@@ -19,7 +19,7 @@ final class ButtonTests: XCTestCase {
 
     override class func setUp() {
         super.setUp()
-        
+
         Task { @MainActor in
             UIView.setAnimationsEnabled(false)
         }
@@ -421,7 +421,7 @@ final class ButtonTests: XCTestCase {
 private extension ButtonTests {
     func makeTemplateWithAllButtonStates(style: Button.Style, isSmall: Bool, leftImage: Bool = false, rightImage: Button.RightImage? = nil) -> UIView {
         let leftImage = leftImage ? Button.LeftImage.custom(image: ButtonTests.Constants.leftImage) : nil
-        
+
         let buttonNormalState = Button()
         buttonNormalState.title = "Normal"
         buttonNormalState.style = style

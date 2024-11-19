@@ -11,7 +11,7 @@ import UIKit
 final class BottomSheetInteractiveDismissalTransition: NSObject {
     private enum Constants {
         static let maxBouncingHeight: CGFloat = 250
-        static let animationDuration: CGFloat = 0.25
+        @MainActor static let animationDuration: CGFloat = UIView.defaultAnimationDuration
         static let animationCurve: UIView.AnimationCurve = .easeOut
     }
 

@@ -10,7 +10,7 @@ import Foundation
 
 import SwiftUI
 
-public enum SnackbarStyle {
+public enum SnackbarStyle: Sendable {
     case normal
     case error
 }

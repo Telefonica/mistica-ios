@@ -12,14 +12,6 @@ import XCTest
 
 @MainActor
 final class CroutonTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-        
-        Task { @MainActor in
-            UIView.setAnimationsEnabled(false)
-        }
-    }
-    
     override func invokeTest() {
         withSnapshotTesting(record: .never) {
             super.invokeTest()

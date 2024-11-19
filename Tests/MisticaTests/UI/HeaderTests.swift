@@ -14,10 +14,6 @@ import XCTest
 final class HeaderTests: XCTestCase {
     override func setUp() {
         super.setUp()
-        Task { @MainActor in
-            UIView.setAnimationsEnabled(false)
-        }
-
         MisticaConfig.brandStyle = .movistar
     }
     

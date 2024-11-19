@@ -23,14 +23,6 @@ final class FeedbackTests: XCTestCase {
         static let secondaryActionTitle = "Secondary Action"
         static let retryLoadingTitle = "Loading Title"
     }
-
-    override class func setUp() {
-        super.setUp()
-        
-        Task { @MainActor in
-            UIView.setAnimationsEnabled(false)
-        }
-    }
     
     override func invokeTest() {
         withSnapshotTesting(record: .never) {

@@ -27,8 +27,11 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     file: StaticString = #filePath,
     testName: String = #function,
     line: UInt = #line,
-    viewBuilder: @autoclosure () -> View
+    viewBuilder: @autoclosure () -> View,
+    animationsEnabled: Bool = false
 ) {
+    UIView.setAnimationsEnabled(animationsEnabled)
+    
     for brand in BrandStyle.allCases {
         MisticaConfig.brandStyle = brand
 

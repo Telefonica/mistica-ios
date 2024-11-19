@@ -120,5 +120,5 @@ struct MisticaCatalogApp: App {
 }
 
 extension UIColor {
-    static var misticaCatalogTint = UIColor(hex: "#0066FF")!
+    static let misticaCatalogTint = UIColor(hex: "#0066FF")!
 }

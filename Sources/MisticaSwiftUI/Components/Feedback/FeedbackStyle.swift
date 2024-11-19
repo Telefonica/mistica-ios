@@ -16,7 +16,6 @@ enum FeedbackIconStyle {
     case animation(LottieView)
 }
 
-@MainActor
 public enum FeedbackStyle {
     case success
     case error(reference: String?)
@@ -32,19 +31,19 @@ public enum FeedbackStyle {
         }
     }
 
-    var primaryButtonStyle: MisticaButtonStyle {
+    @MainActor var primaryButtonStyle: MisticaButtonStyle {
         shouldUseInverseFeedbacks ? .misticaPrimaryInverse() : .misticaPrimary()
     }
 
-    var secondaryButtonStyle: MisticaButtonStyle {
+    @MainActor var secondaryButtonStyle: MisticaButtonStyle {
         shouldUseInverseFeedbacks ? .misticaSecondaryInverse() : .misticaSecondary()
     }
 
-    var linkButtonStyle: MisticaButtonStyle {
+    @MainActor var linkButtonStyle: MisticaButtonStyle {
         shouldUseInverseFeedbacks ? .misticaLinkInverse() : .misticaLink()
     }
 
-    var iconStyle: FeedbackIconStyle {
+    @MainActor var iconStyle: FeedbackIconStyle {
         switch self {
         case .success, .error:
             guard let dataAsset = dataAsset else { return .none }

@@ -36,8 +36,11 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     for brand in BrandStyle.allCases {
         MisticaConfig.brandStyle = brand
 
+        var lightView = viewBuilder()
+        lightView.overrideUserInterfaceStyle = .light
+
         assertSnapshot(
-            of: viewBuilder(),
+            of: lightView,
             as: snapshotting,
             named: "with-\(brand)-style",
             file: file,

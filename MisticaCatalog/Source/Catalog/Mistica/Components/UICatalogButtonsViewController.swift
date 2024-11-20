@@ -147,7 +147,7 @@ class UICatalogButtonsViewController: UITableViewController {
             rightImage: style.rightImage
         )
         cell.configure(with: button)
-        cell.contentView.backgroundColor = style.isInverse ? .navigationBarBackground : .backgroundContainer
+        cell.contentView.setMisticaColorBackground(style.isInverse ? .backgroundBrand : .solid(.backgroundContainer))
 
         return cell
     }

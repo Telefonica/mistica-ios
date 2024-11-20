@@ -67,7 +67,12 @@ struct ButtonsCatalogView: View {
 
                         Spacer()
                     }
-                    .listRowBackground(style.inverse ? Color.navigationBarBackground : Color.backgroundContainer)
+                    .listRowBackground(
+                        EmptyView()
+                            .misticaColorView(style.inverse
+                                ? .backgroundBrand
+                                : .solid(.backgroundContainer))
+                    )
                 } header: {
                     Text(style.title)
                 }

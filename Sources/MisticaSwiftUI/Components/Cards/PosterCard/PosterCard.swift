@@ -1,5 +1,5 @@
 //
-//  DataCard.swift
+//  PosterCard.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -44,36 +44,36 @@ public struct PosterCard<Slot>: View where Slot: View {
 
     /// The media content type displayed on the card (e.g., image, video, or color).
     public let mediaType: PosterCardMediaType
-    
+
     /// The theme variant of the card
     private var themeVariant: PosterCardThemeVariant
 
     /// The aspect ratio of the card's media content.
     public let aspectRatio: PosterCardAspectRatio
-    
+
     /// An asset type (e.g., image or icon) displayed in the header.
     public let assetType: PosterCardAssetType
-    
+
     /// An optional Tag view
     public let tag: Tag?
-    
+
     /// Optional pre-title text displayed above the main title.
     public let preTitle: String?
-    
+
     /// The main title of the card.
     public let title: String
-    
+
     /// Optional subtitle text displayed below the title.
     public let subTitle: String?
-    
+
     /// Optional description text displayed below the subtitle.
     public let description: String?
-    
+
     /// A customizable slot view displayed at the bottom of the card.
     public let slot: Slot
-        
+
     private let action: PosterCardCallback
-    
+
     private var assetAccessibilityLabel: String?
     private var assetAccessibilityIdentifier: String?
     private var tagAccessibilityLabel: String?
@@ -86,17 +86,17 @@ public struct PosterCard<Slot>: View where Slot: View {
     private var subtitleAccessibilityIdentifier: String?
     private var descriptionAccessibilityLabel: String?
     private var descriptionAccessibilityIdentifier: String?
-    
+
     // MARK: - Private State
-    
+
     /// Tracks the current status of the video player.
     @State private var videoPlayerStatus: PosterCardVideoPlayer.Status = .unknown
-    
+
     /// Stores the total duration of the video being played.
     @State private var videoPlayerDuration: Float64 = .zero
 
     // MARK: - Initializer
-    
+
     /// Creates an instance of `PosterCard`.
     ///
     /// - Parameters:
@@ -136,18 +136,18 @@ public struct PosterCard<Slot>: View where Slot: View {
         self.slot = slot()
         self.action = action
     }
-    
+
     var textPrimaryColor: Color {
         switch themeVariant {
         case .none,
-            .overAlternative:
+             .overAlternative:
             return .textPrimary
         case .inverse,
-                .overInverse:
+             .overInverse:
             return .textPrimaryInverse
         }
     }
-    
+
     var assetColor: Color {
         switch themeVariant {
         case .none:
@@ -160,40 +160,41 @@ public struct PosterCard<Slot>: View where Slot: View {
             return .textPrimaryInverse
         }
     }
-    
+
     var borderColor: Color {
         switch themeVariant {
         case .none:
             return .border
         case .inverse,
-            .overInverse,
-            .overAlternative:
+             .overInverse,
+             .overAlternative:
             return .clear
         }
     }
-    
+
     var borderWidth: CGFloat {
         switch themeVariant {
         case .none:
             return 1.0
         case .inverse,
-            .overInverse,
-            .overAlternative:
+             .overInverse,
+             .overAlternative:
             return .zero
         }
     }
-    
+
     // MARK: - View Body
+
     public var body: some View {
         GeometryReader { proxy in
             VStack(alignment: .leading, spacing: .zero) {
                 assetView
                     .accessibilityLabel(assetAccessibilityLabel)
                     .accessibilityIdentifier(assetAccessibilityIdentifier)
-                
+
                 Spacer()
                     .frame(minHeight: Constants.spacing * 5)
-                
+
                 if let tag = tag {
                     tag
                         .inverse(true)
@@ -201,7 +202,7 @@ public struct PosterCard<Slot>: View where Slot: View {
                         .accessibilityLabel(tagAccessibilityLabel)
                         .accessibilityIdentifier(tagAccessibilityIdentifier)
                 }
-                
+
                 if let preTitle = preTitle {
                     Text(preTitle)
                         .font(.textPreset2(weight: .regular))
@@ -211,7 +212,7 @@ public struct PosterCard<Slot>: View where Slot: View {
                         .accessibilityLabel(preTitleAccessibilityLabel)
                         .accessibilityIdentifier(preTitleAccessibilityIdentifier)
                 }
-                
+
                 Text(title)
                     .font(.textPreset4(weight: .regular))
                     .foregroundColor(textPrimaryColor)
@@ -220,7 +221,7 @@ public struct PosterCard<Slot>: View where Slot: View {
                     .fixedSize(horizontal: true, vertical: false)
                     .accessibilityLabel(titleAccessibilityLabel)
                     .accessibilityIdentifier(titleAccessibilityIdentifier)
-                
+
                 if let subTitle = subTitle {
                     Text(subTitle)
                         .font(.textPreset2(weight: .regular))
@@ -341,7 +342,7 @@ public extension PosterCard {
         view.descriptionAccessibilityIdentifier = descriptionAccessibilityIdentifier
         return view
     }
-    
+
     func themeVariant(_ themeVariant: PosterCardThemeVariant) -> Self {
         var view = self
         view.themeVariant = themeVariant
@@ -358,26 +359,26 @@ private extension PosterCard {
     var shouldShowPosterImage: Bool {
         videoPlayerStatus == .unknown || videoPlayerStatus == .failed
     }
-    
+
     /// Determines whether video controls should be shown based on autoplay and video duration.
     func shouldShowVideoControls(with parameters: PosterCardVideoPlayer.Parameters) -> Bool {
         parameters.autoplay && videoPlayerDuration >= Constants.minVideoPlayerDurationToShowControls
     }
-    
+
     /// Provides the appropriate icon for the video player's top action.
     var videoPlayerTopActionIcon: String? {
         switch videoPlayerStatus {
         case .playing:
             return "pause"
         case .paused,
-            .readyToPlay:
+             .readyToPlay:
             return "play"
         case .unknown,
-            .failed:
+             .failed:
             return nil
         }
     }
-    
+
     @ViewBuilder
     var mediaContent: some View {
         switch mediaType {
@@ -426,22 +427,21 @@ private extension PosterCard {
             case .error:
                 Color.error
             }
-            
         }
     }
-        
+
     @ViewBuilder
     var mediaContentOverlay: some View {
         switch mediaType {
         case .image,
-            .video:
+             .video:
             gradientView
         case .customColor,
-            .skinColor:
+             .skinColor:
             EmptyView()
         }
     }
-    
+
     @ViewBuilder
     var topActionsView: some View {
         switch mediaType {
@@ -449,6 +449,7 @@ private extension PosterCard {
             EmptyView()
         case .video where videoPlayerStatus == .unknown:
             TopActionLoadingButton()
+                .padding(Constants.spacing * 2)
         case let .video(_, parameters):
             if shouldShowVideoControls(with: parameters), let videoPlayerTopActionIcon {
                 TopActionButton(.init(
@@ -461,6 +462,7 @@ private extension PosterCard {
                         }
                     }
                 ))
+                .padding(Constants.spacing * 2)
             } else {
                 EmptyView()
             }
@@ -490,7 +492,7 @@ private extension PosterCard {
             .padding(Constants.spacing * 2)
         }
     }
-    
+
     @ViewBuilder
     var assetView: some View {
         switch assetType {
@@ -517,13 +519,13 @@ private extension PosterCard {
             EmptyView()
         }
     }
-    
+
     var gradientView: some View {
         GeometryReader { proxy in
             VStack(spacing: .zero) {
                 Spacer()
                     .frame(height: proxy.size.height * (1 - Constants.gradientHeightPercentage))
-                
+
                 misticaColorView(.cardContentOverlay)
                     .frame(minHeight: Constants.gradientMinHeight)
                     .frame(height: proxy.size.height * Constants.gradientHeightPercentage)
@@ -541,13 +543,13 @@ public typealias PosterCardCallback = () -> Void
 public enum PosterCardMediaType {
     /// A static image with optional top actions.
     case image(Image, topActions: PosterCardTopActions = .none)
-    
+
     /// A video with parameters for playback customization.
     case video(URL, parameters: PosterCardVideoPlayer.Parameters)
-    
+
     /// A custom color block with optional top actions.
     case customColor(Color, topActions: PosterCardTopActions = .none)
-    
+
     /// A themed skin color with optional top actions.
     case skinColor(PosterCardSkinColors, topActions: PosterCardTopActions = .none)
 }
@@ -556,16 +558,16 @@ public enum PosterCardMediaType {
 public enum PosterCardTopActions {
     /// No actions.
     case none
-    
+
     /// A dismiss action.
     case dismiss(PosterCardCallback)
-    
+
     /// A dismiss action followed by another action.
     case dismissAndAction(PosterCardCallback, PosterCardAction)
-    
+
     /// A single custom action.
     case oneAction(PosterCardAction)
-    
+
     /// Two custom actions.
     case twoActions(PosterCardAction, PosterCardAction)
 }
@@ -574,10 +576,10 @@ public enum PosterCardTopActions {
 public struct PosterCardAction {
     /// The icon associated with the action.
     let icon: Image
-    
+
     /// The callback invoked when the action is triggered.
     let callback: PosterCardCallback
-    
+
     /// Initializes a `PosterCardAction` with an icon and a callback.
     ///
     /// - Parameters:
@@ -593,10 +595,10 @@ public struct PosterCardAction {
 public enum PosterCardAssetType {
     /// No asset.
     case none
-    
+
     /// An icon with optional foreground and background colors.
     case icon(image: Image, foregroundColor: Color? = nil, backgroundColor: Color? = nil)
-    
+
     /// A standalone image.
     case image(Image)
 }
@@ -605,19 +607,19 @@ public enum PosterCardAssetType {
 public enum PosterCardAspectRatio {
     /// A 1:1 aspect ratio.
     case ratio1to1
-    
+
     /// A 7:10 aspect ratio.
     case ratio7to10
-    
+
     /// A 9:10 aspect ratio.
     case ratio9to10
-    
+
     /// A 16:9 aspect ratio.
     case ratio16to9
-    
+
     /// A custom aspect ratio.
     case custom(CGFloat)
-    
+
     /// Returns the numerical value of the aspect ratio.
     public var value: CGFloat {
         switch self {
@@ -641,14 +643,14 @@ public enum PosterCardAspectRatio {
 private struct TopActionButton: View {
     /// The top action associated with this button.
     let topAction: PosterCardAction
-    
+
     /// Initializes the button with a specific action.
     ///
     /// - Parameter topAction: The action to associate with the button.
     init(_ topAction: PosterCardAction) {
         self.topAction = topAction
     }
-    
+
     /// Defines the body of the button.
     var body: some View {
         Button(action: topAction.callback) {
@@ -674,7 +676,7 @@ private struct TopActionLoadingButton: View {
 private struct TopActionDismissButton: View {
     /// The dismiss action callback.
     let dismissAction: PosterCardCallback?
-    
+
     /// Defines the body of the dismiss button.
     var body: some View {
         Button(action: { dismissAction?() }) {
@@ -709,13 +711,13 @@ private extension View {
                     posterImage: Image(.airpods)
                 )
             ),
-            aspectRatio: .custom(4.0/3.0),
+            aspectRatio: .custom(4.0 / 3.0),
             title: "Airpods"
         )
-        
+
         PosterCard(
-            mediaType: .image(Image(.airpods), topActions: .dismiss({})),
-            aspectRatio: .custom(4.0/3.0),
+            mediaType: .image(Image(.airpods), topActions: .dismiss {}),
+            aspectRatio: .custom(4.0 / 3.0),
             title: "Airpods"
         )
     }

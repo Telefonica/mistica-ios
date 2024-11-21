@@ -38,7 +38,7 @@ extension MisticaBackport where Content: View {
         content
             .navigationTitle(title)
     }
-    
+
     @ViewBuilder
     func onScrollVisibilityChange(threshold: Double = 0.5, _ action: @escaping (Bool) -> Void) -> some View {
         if #available(iOS 18, *) {

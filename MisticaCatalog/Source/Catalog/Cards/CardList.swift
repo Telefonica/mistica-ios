@@ -76,7 +76,7 @@ private extension CardRow {
         case .dataCard:
             ComponentViewController(UICatalogCardsViewController())
         case .posterCard,
-                .snapCard:
+             .snapCard:
             notImplementedView
         }
     }

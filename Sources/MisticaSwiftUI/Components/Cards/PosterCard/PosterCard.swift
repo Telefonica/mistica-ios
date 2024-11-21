@@ -462,7 +462,7 @@ private extension PosterCard {
                         }
                     }
                 ))
-                .padding(Constants.spacing * 2)
+                    .padding(Constants.spacing * 2)
             } else {
                 EmptyView()
             }

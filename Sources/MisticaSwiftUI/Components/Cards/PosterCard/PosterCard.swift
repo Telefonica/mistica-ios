@@ -20,6 +20,21 @@ private enum Constants {
     static let spacing: CGFloat = 8
 }
 
+public enum PosterCardThemeVariant {
+    case none
+    case inverse
+    case overInverse
+    case overAlternative
+}
+
+public enum PosterCardSkinColors {
+    case none
+    case promo
+    case success
+    case warning
+    case error
+}
+
 /// A versatile card view supporting media content like images or videos, additional fragments, and action buttons.
 ///
 /// - Note: This card automatically adapts its layout based on the provided parameters.
@@ -30,17 +45,17 @@ public struct PosterCard<Slot>: View where Slot: View {
     /// The media content type displayed on the card (e.g., image, video, or color).
     public let mediaType: PosterCardMediaType
     
-    /// An asset type (e.g., image or icon) displayed in the header.
-    public let assetType: PosterCardAssetType
-    
+    /// The theme variant of the card
+    private var themeVariant: PosterCardThemeVariant
+
     /// The aspect ratio of the card's media content.
     public let aspectRatio: PosterCardAspectRatio
     
-    /// An optional icon to accompany the tag title.
-    public let tagIcon: Image?
+    /// An asset type (e.g., image or icon) displayed in the header.
+    public let assetType: PosterCardAssetType
     
-    /// An optional promotional tag displayed at the top of the card.
-    public let tagTitle: String?
+    /// An optional Tag view
+    public let tag: Tag?
     
     /// Optional pre-title text displayed above the main title.
     public let preTitle: String?
@@ -56,6 +71,21 @@ public struct PosterCard<Slot>: View where Slot: View {
     
     /// A customizable slot view displayed at the bottom of the card.
     public let slot: Slot
+        
+    private let action: PosterCardCallback
+    
+    private var assetAccessibilityLabel: String?
+    private var assetAccessibilityIdentifier: String?
+    private var tagAccessibilityLabel: String?
+    private var tagAccessibilityIdentifier: String?
+    private var preTitleAccessibilityLabel: String?
+    private var preTitleAccessibilityIdentifier: String?
+    private var titleAccessibilityLabel: String?
+    private var titleAccessibilityIdentifier: String?
+    private var subtitleAccessibilityLabel: String?
+    private var subtitleAccessibilityIdentifier: String?
+    private var descriptionAccessibilityLabel: String?
+    private var descriptionAccessibilityIdentifier: String?
     
     // MARK: - Private State
     
@@ -71,103 +101,251 @@ public struct PosterCard<Slot>: View where Slot: View {
     ///
     /// - Parameters:
     ///   - mediaType: The media content type to display on the card.
-    ///   - assetType: An optional asset type for the header. Defaults to `.none`.
-    ///   - aspectRatio: The aspect ratio of the card. Defaults to `.ratio7to10`.
-    ///   - tagIcon: An optional icon for the tag. Defaults to `nil`.
-    ///   - tagTitle: An optional tag title. Defaults to `nil`.
-    ///   - preTitle: Optional pre-title text. Defaults to `nil`.
+    ///   - themeVariant: Theme variant
+    ///   - aspectRatio: The aspect ratio of the card.
+    ///   - assetType: An optional asset type for the header.
+    ///   - tag: An optional Tag view
+    ///   - preTitle: Optional pre-title text.
     ///   - title: The main title of the card.
-    ///   - subTitle: Optional subtitle text. Defaults to `nil`.
-    ///   - description: Optional description text. Defaults to `nil`.
+    ///   - subTitle: Optional subtitle text.
+    ///   - description: Optional description text.
     ///   - slot: A customizable slot view.
+    ///   - action: An action to handle tap action
     public init(
         mediaType: PosterCardMediaType,
-        assetType: PosterCardAssetType = .none,
+        themeVariant: PosterCardThemeVariant = .none,
         aspectRatio: PosterCardAspectRatio = .ratio7to10,
-        tagIcon: Image? = nil,
-        tagTitle: String? = nil,
+        assetType: PosterCardAssetType = .none,
+        tag: Tag? = nil,
         preTitle: String? = nil,
         title: String,
         subTitle: String? = nil,
         description: String? = nil,
-        @ViewBuilder slot: () -> Slot = { EmptyView() }
+        @ViewBuilder slot: () -> Slot = { EmptyView() },
+        action: @escaping PosterCardCallback = {}
     ) {
         self.mediaType = mediaType
-        self.assetType = assetType
+        self.themeVariant = themeVariant
         self.aspectRatio = aspectRatio
-        self.tagIcon = tagIcon
-        self.tagTitle = tagTitle
+        self.assetType = assetType
+        self.tag = tag
         self.preTitle = preTitle
         self.title = title
         self.subTitle = subTitle
         self.description = description
         self.slot = slot()
+        self.action = action
+    }
+    
+    var textPrimaryColor: Color {
+        switch themeVariant {
+        case .none,
+            .overAlternative:
+            return .textPrimary
+        case .inverse,
+                .overInverse:
+            return .textPrimaryInverse
+        }
+    }
+    
+    var assetColor: Color {
+        switch themeVariant {
+        case .none:
+            return .neutralMedium
+        case .inverse:
+            return .textPrimary
+        case .overAlternative:
+            return .textPrimary
+        case .overInverse:
+            return .textPrimaryInverse
+        }
+    }
+    
+    var borderColor: Color {
+        switch themeVariant {
+        case .none:
+            return .border
+        case .inverse,
+            .overInverse,
+            .overAlternative:
+            return .clear
+        }
+    }
+    
+    var borderWidth: CGFloat {
+        switch themeVariant {
+        case .none:
+            return 1.0
+        case .inverse,
+            .overInverse,
+            .overAlternative:
+            return .zero
+        }
     }
     
     // MARK: - View Body
     public var body: some View {
-        VStack(alignment: .leading, spacing: .zero) {
+        GeometryReader { proxy in
             VStack(alignment: .leading, spacing: .zero) {
-                HStack {
-                    assetView
-                    Spacer()
-                }
+                assetView
+                    .accessibilityLabel(assetAccessibilityLabel)
+                    .accessibilityIdentifier(assetAccessibilityIdentifier)
                 
                 Spacer()
                     .frame(minHeight: Constants.spacing * 5)
                 
-                if let tagTitle = tagTitle {
-                    Tag(style: .promo, text: tagTitle, icon: tagIcon)
+                if let tag = tag {
+                    tag
                         .inverse(true)
                         .padding(.bottom, Constants.spacing * 2)
+                        .accessibilityLabel(tagAccessibilityLabel)
+                        .accessibilityIdentifier(tagAccessibilityIdentifier)
                 }
                 
                 if let preTitle = preTitle {
                     Text(preTitle)
                         .font(.textPreset2(weight: .regular))
-                        .foregroundColor(.textPrimaryInverse)
+                        .foregroundColor(textPrimaryColor)
                         .padding(.bottom, Constants.spacing / 2)
+                        .fixedSize(horizontal: true, vertical: false)
+                        .accessibilityLabel(preTitleAccessibilityLabel)
+                        .accessibilityIdentifier(preTitleAccessibilityIdentifier)
                 }
                 
                 Text(title)
                     .font(.textPreset4(weight: .regular))
-                    .foregroundColor(.textPrimaryInverse)
+                    .foregroundColor(textPrimaryColor)
                     .lineLimit(Constants.lineLimit)
                     .padding(.bottom, Constants.spacing)
+                    .fixedSize(horizontal: true, vertical: false)
+                    .accessibilityLabel(titleAccessibilityLabel)
+                    .accessibilityIdentifier(titleAccessibilityIdentifier)
                 
                 if let subTitle = subTitle {
                     Text(subTitle)
                         .font(.textPreset2(weight: .regular))
-                        .foregroundColor(.textPrimaryInverse)
+                        .foregroundColor(textPrimaryColor)
+                        .fixedSize(horizontal: true, vertical: false)
+                        .accessibilityLabel(subtitleAccessibilityLabel)
+                        .accessibilityIdentifier(subtitleAccessibilityIdentifier)
                 }
                 if let description = description {
                     Text(description)
                         .font(.textPreset2(weight: .regular))
-                        .foregroundColor(.textPrimaryInverse)
+                        .foregroundColor(textPrimaryColor)
                         .lineLimit(Constants.lineLimit)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityLabel(descriptionAccessibilityLabel)
+                        .accessibilityIdentifier(descriptionAccessibilityIdentifier)
                 }
                 if hasSlotView {
                     slot
                         .padding(.top, Constants.spacing * 2)
                 }
             }
-            .padding(.top, Constants.spacing * 2)
-            .padding(.horizontal, Constants.spacing * 2)
-            .padding(.bottom, Constants.spacing * 3)
-            .background(mediaContentOverlay)
-            .overlay(
-                VStack {
-                    HStack(alignment: .top) {
-                        Spacer()
-                        topActionsView
-                    }
-                    Spacer()
-                }.padding(Constants.spacing * 2)
-            )
+            .frame(width: proxy.size.width, height: proxy.size.height, alignment: .leading)
         }
-        .background(mediaContent)
+        .padding(.horizontal, Constants.spacing * 2)
+        .padding(.bottom, Constants.spacing * 3)
         .aspectRatio(aspectRatio.value, contentMode: .fill)
+        .background(
+            ZStack(alignment: .center) {
+                mediaContent
+                mediaContentOverlay
+            }.onTapGesture(perform: action ?? {})
+        )
+        .fixedSize(horizontal: false, vertical: true)
+        .border(borderColor, width: borderWidth)
         .round(radiusStyle: .container)
+        .overlay(
+            VStack(alignment: .trailing, spacing: .zero) {
+                HStack(alignment: .top, spacing: .zero) {
+                    Spacer()
+                    topActionsView
+                }
+                Spacer()
+            }
+        )
+    }
+}
+
+public extension PosterCard {
+    func assetAccessibilityLabel(_ assetAccessibilityLabel: String?) -> Self {
+        var view = self
+        view.assetAccessibilityLabel = assetAccessibilityLabel
+        return view
+    }
+
+    func assetAccessibilityIdentifier(_ assetAccessibilityIdentifier: String?) -> Self {
+        var view = self
+        view.assetAccessibilityIdentifier = assetAccessibilityIdentifier
+        return view
+    }
+
+    func tagAccessibilityLabel(_ tagAccessibilityLabel: String?) -> Self {
+        var view = self
+        view.tagAccessibilityLabel = tagAccessibilityLabel
+        return view
+    }
+
+    func tagAccessibilityIdentifier(_ tagAccessibilityIdentifier: String?) -> Self {
+        var view = self
+        view.tagAccessibilityIdentifier = tagAccessibilityIdentifier
+        return view
+    }
+
+    func preTitleAccessibilityLabel(_ preTitleAccessibilityLabel: String?) -> Self {
+        var view = self
+        view.preTitleAccessibilityLabel = preTitleAccessibilityLabel
+        return view
+    }
+
+    func preTitleAccessibilityIdentifier(_ preTitleAccessibilityIdentifier: String?) -> Self {
+        var view = self
+        view.preTitleAccessibilityIdentifier = preTitleAccessibilityIdentifier
+        return view
+    }
+
+    func titleAccessibilityLabel(_ titleAccessibilityLabel: String?) -> Self {
+        var view = self
+        view.titleAccessibilityLabel = titleAccessibilityLabel
+        return view
+    }
+
+    func titleAccessibilityIdentifier(_ titleAccessibilityIdentifier: String?) -> Self {
+        var view = self
+        view.titleAccessibilityIdentifier = titleAccessibilityIdentifier
+        return view
+    }
+
+    func subtitleAccessibilityLabel(_ subtitleAccessibilityLabel: String?) -> Self {
+        var view = self
+        view.subtitleAccessibilityLabel = subtitleAccessibilityLabel
+        return view
+    }
+
+    func subtitleAccessibilityIdentifier(_ subtitleAccessibilityIdentifier: String?) -> Self {
+        var view = self
+        view.subtitleAccessibilityIdentifier = subtitleAccessibilityIdentifier
+        return view
+    }
+
+    func descriptionAccessibilityLabel(_ descriptionAccessibilityLabel: String?) -> Self {
+        var view = self
+        view.descriptionAccessibilityLabel = descriptionAccessibilityLabel
+        return view
+    }
+
+    func descriptionAccessibilityIdentifier(_ descriptionAccessibilityIdentifier: String?) -> Self {
+        var view = self
+        view.descriptionAccessibilityIdentifier = descriptionAccessibilityIdentifier
+        return view
+    }
+    
+    func themeVariant(_ themeVariant: PosterCardThemeVariant) -> Self {
+        var view = self
+        view.themeVariant = themeVariant
+        return view
     }
 }
 
@@ -205,6 +383,7 @@ private extension PosterCard {
         switch mediaType {
         case let .image(image, _):
             image
+                .resizable()
         case let .video(url, parameters):
             ZStack(alignment: .topLeading) {
                 if let posterImage = parameters.posterImage, shouldShowPosterImage {
@@ -226,12 +405,28 @@ private extension PosterCard {
                         videoPlayerStatus = .paused
                     }
                 }
-                .ignoresSafeArea()
                 .aspectRatio(parameters.aspectRatio, contentMode: parameters.contentMode)
             }
-        case let .customColor(color, _),
-             let .skinColor(color, _):
+        case let .customColor(color, _):
             color
+        case let .skinColor(skinColor, _):
+            switch skinColor {
+            case .none:
+                if themeVariant == .inverse {
+                    misticaColorView(.backgroundBrand)
+                } else {
+                    Color.backgroundContainer
+                }
+            case .promo:
+                Color.promo
+            case .success:
+                Color.success
+            case .warning:
+                Color.warning
+            case .error:
+                Color.error
+            }
+            
         }
     }
         
@@ -272,24 +467,27 @@ private extension PosterCard {
         case let .image(_, topActions),
              let .customColor(_, topActions),
              let .skinColor(_, topActions):
-            switch topActions {
-            case .none:
-                EmptyView()
-            case let .dismiss(onDismiss):
-                TopActionDismissButton(dismissAction: onDismiss)
-            case let .dismissAndAction(onDismiss, topAction):
-                HStack {
-                    TopActionButton(topAction)
+            Group {
+                switch topActions {
+                case .none:
+                    EmptyView()
+                case let .dismiss(onDismiss):
                     TopActionDismissButton(dismissAction: onDismiss)
-                }
-            case let .oneAction(topAction):
-                TopActionButton(topAction)
-            case let .twoActions(firstTopAction, secondTopAction):
-                HStack {
-                    TopActionButton(firstTopAction)
-                    TopActionButton(secondTopAction)
+                case let .dismissAndAction(onDismiss, topAction):
+                    HStack(spacing: Constants.spacing * 2) {
+                        TopActionButton(topAction)
+                        TopActionDismissButton(dismissAction: onDismiss)
+                    }
+                case let .oneAction(topAction):
+                    TopActionButton(topAction)
+                case let .twoActions(firstTopAction, secondTopAction):
+                    HStack(spacing: Constants.spacing * 2) {
+                        TopActionButton(firstTopAction)
+                        TopActionButton(secondTopAction)
+                    }
                 }
             }
+            .padding(Constants.spacing * 2)
         }
     }
     
@@ -351,7 +549,7 @@ public enum PosterCardMediaType {
     case customColor(Color, topActions: PosterCardTopActions = .none)
     
     /// A themed skin color with optional top actions.
-    case skinColor(Color, topActions: PosterCardTopActions = .none)
+    case skinColor(PosterCardSkinColors, topActions: PosterCardTopActions = .none)
 }
 
 /// Represents top-level actions available for a `PosterCard`.
@@ -512,14 +710,12 @@ private extension View {
                 )
             ),
             aspectRatio: .custom(4.0/3.0),
-            tagTitle: "New",
             title: "Airpods"
         )
         
         PosterCard(
             mediaType: .image(Image(.airpods), topActions: .dismiss({})),
             aspectRatio: .custom(4.0/3.0),
-            tagTitle: "New",
             title: "Airpods"
         )
     }

@@ -60,8 +60,7 @@ PosterCard(
     mediaType: .image,
     title: title,
     subtitle: subtitle,
-    description: description,
-    image: image
+    description: description
 )
 ```
 #### Top actions
@@ -88,7 +87,6 @@ PosterCard(
     title: title,
     subtitle: subtitle,
     description: description,
-    image: image,
     slot: { Text("Extra Content!") }
 )
 ```

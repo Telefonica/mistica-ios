@@ -37,8 +37,7 @@ struct PosterCardCatalogView: View {
                 return .image(.airpods, topActions: topActions)
             case .video:
                 return .video(
-                    // Bundle.main.url(forResource: "airpods", withExtension: "mp4")!,
-                    URL(string: "https://www.apple.com/105/media/us/ipad/2024/45762adb-901a-4726-8b0c-1f3ee092b09a/anim/welcome-hero/xlarge.mp4")!,
+                    Bundle.main.url(forResource: "airpods", withExtension: "mp4")!,
                     parameters: .init(
                         muted: true,
                         autoplay: true,

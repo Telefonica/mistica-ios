@@ -188,90 +188,89 @@ public struct PosterCard<Slot>: View where Slot: View {
     // MARK: - View Body
 
     public var body: some View {
-            Button(action: { action() }) {
-                VStack(alignment: .leading, spacing: .zero) {
-                    
-                    HStack(alignment: .top, spacing: .zero) {
-                        assetView
-                            .accessibilityLabel(assetAccessibilityLabel)
-                            .accessibilityIdentifier(assetAccessibilityIdentifier)
-                        Spacer()
-                        topActionsView
-                    }
-                    
+        Button(action: { action() }) {
+            VStack(alignment: .leading, spacing: .zero) {
+                HStack(alignment: .top, spacing: .zero) {
+                    assetView
+                        .accessibilityLabel(assetAccessibilityLabel)
+                        .accessibilityIdentifier(assetAccessibilityIdentifier)
                     Spacer()
-                        .frame(maxHeight: .infinity)
-                    
-                    VStack(alignment: .leading, spacing: Constants.spacing) {
-                        if let tag = tag {
-                            tag
-                                .inverse(true)
-                                .padding(.bottom, Constants.spacing)
-                                .accessibilityLabel(tagAccessibilityLabel)
-                                .accessibilityIdentifier(tagAccessibilityIdentifier)
-                        }
-                        
-                        if let preTitle = preTitle {
-                            Text(preTitle)
-                                .font(.textPreset2(weight: .regular))
-                                .foregroundColor(textPrimaryColor)
-                                .padding(.bottom, -Constants.spacing)
-                                .lineLimit(Constants.defaultLineLimit)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .accessibilityLabel(preTitleAccessibilityLabel)
-                                .accessibilityIdentifier(preTitleAccessibilityIdentifier)
-                        }
+                    topActionsView
+                }
 
-                        Text(title)
-                            .font(.textPreset4(weight: .regular))
+                Spacer()
+                    .frame(maxHeight: .infinity)
+
+                VStack(alignment: .leading, spacing: Constants.spacing) {
+                    if let tag = tag {
+                        tag
+                            .inverse(true)
+                            .padding(.bottom, Constants.spacing)
+                            .accessibilityLabel(tagAccessibilityLabel)
+                            .accessibilityIdentifier(tagAccessibilityIdentifier)
+                    }
+
+                    if let preTitle = preTitle {
+                        Text(preTitle)
+                            .font(.textPreset2(weight: .regular))
+                            .foregroundColor(textPrimaryColor)
+                            .padding(.bottom, -Constants.spacing)
+                            .lineLimit(Constants.defaultLineLimit)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .accessibilityLabel(preTitleAccessibilityLabel)
+                            .accessibilityIdentifier(preTitleAccessibilityIdentifier)
+                    }
+
+                    Text(title)
+                        .font(.textPreset4(weight: .regular))
+                        .foregroundColor(textPrimaryColor)
+                        .lineLimit(Constants.longerLineLimit)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityLabel(titleAccessibilityLabel)
+                        .accessibilityIdentifier(titleAccessibilityIdentifier)
+
+                    if let subTitle = subTitle {
+                        Text(subTitle)
+                            .font(.textPreset2(weight: .regular))
+                            .foregroundColor(textPrimaryColor)
+                            .lineLimit(Constants.defaultLineLimit)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .accessibilityLabel(subtitleAccessibilityLabel)
+                            .accessibilityIdentifier(subtitleAccessibilityIdentifier)
+                    }
+                    if let description = description {
+                        Text(description)
+                            .font(.textPreset2(weight: .regular))
                             .foregroundColor(textPrimaryColor)
                             .lineLimit(Constants.longerLineLimit)
                             .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: false, vertical: true)
-                            .accessibilityLabel(titleAccessibilityLabel)
-                            .accessibilityIdentifier(titleAccessibilityIdentifier)
-                        
-                        if let subTitle = subTitle {
-                            Text(subTitle)
-                                .font(.textPreset2(weight: .regular))
-                                .foregroundColor(textPrimaryColor)
-                                .lineLimit(Constants.defaultLineLimit)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .accessibilityLabel(subtitleAccessibilityLabel)
-                                .accessibilityIdentifier(subtitleAccessibilityIdentifier)
-                        }
-                        if let description = description {
-                            Text(description)
-                                .font(.textPreset2(weight: .regular))
-                                .foregroundColor(textPrimaryColor)
-                                .lineLimit(Constants.longerLineLimit)
-                                .multilineTextAlignment(.leading)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .accessibilityLabel(descriptionAccessibilityLabel)
-                                .accessibilityIdentifier(descriptionAccessibilityIdentifier)
-                        }
-                        if hasSlotView {
-                            slot
-                                .padding(.top, Constants.spacing * 2)
-                        }
+                            .accessibilityLabel(descriptionAccessibilityLabel)
+                            .accessibilityIdentifier(descriptionAccessibilityIdentifier)
                     }
-                    .padding(.top, Constants.spacing * 4)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    if hasSlotView {
+                        slot
+                            .padding(.top, Constants.spacing * 2)
+                    }
                 }
-                .padding(.top, Constants.spacing * 2)
-                .padding(.horizontal, Constants.spacing * 2)
-                .padding(.bottom, Constants.spacing * 3)
-                .aspectRatio(aspectRatio.value, contentMode: .fill)
-                .background(
-                    ZStack(alignment: .center) {
-                        mediaContent
-                        mediaContentOverlay
-                    }
-                )
-                .fixedSize(horizontal: false, vertical: true)
-                .border(borderColor, width: borderWidth)
-                .round(radiusStyle: .container)
+                .padding(.top, Constants.spacing * 4)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
+            .padding(.top, Constants.spacing * 2)
+            .padding(.horizontal, Constants.spacing * 2)
+            .padding(.bottom, Constants.spacing * 3)
+            .aspectRatio(aspectRatio.value, contentMode: .fill)
+            .background(
+                ZStack(alignment: .center) {
+                    mediaContent
+                    mediaContentOverlay
+                }
+            )
+            .fixedSize(horizontal: false, vertical: true)
+            .border(borderColor, width: borderWidth)
+            .round(radiusStyle: .container)
+        }
     }
 }
 
@@ -483,7 +482,7 @@ private extension PosterCard {
             }
         case let .image(_, topActions),
              let .customColor(_, topActions),
-            let .skinColor(_, topActions):
+             let .skinColor(_, topActions):
             switch topActions {
             case .none:
                 EmptyView()
@@ -513,21 +512,21 @@ private extension PosterCard {
                 .resizable()
                 .scaledToFit()
                 .frame(width: Constants.assetTypeImageSize, height: Constants.assetTypeImageSize)
-            
+
         case let .icon(image, foregroundColor, backgroundColor):
             ZStack {
                 if let backgroundColor = backgroundColor {
                     Circle().fill(backgroundColor)
                         .frame(width: Constants.assetTypeImageSize, height: Constants.assetTypeImageSize)
                 }
-                
+
                 image
                     .resizable()
                     .foregroundColor(foregroundColor)
                     .scaledToFit()
                     .frame(width: Constants.assetTypeIcontSize, height: Constants.assetTypeIcontSize)
             }
-            
+
         case .none:
             EmptyView()
         }
@@ -583,7 +582,7 @@ public enum PosterCardTopActions: Equatable {
 
     /// Two custom actions.
     case twoActions(PosterCardAction, PosterCardAction)
-    
+
     public static func == (lhs: PosterCardTopActions, rhs: PosterCardTopActions) -> Bool {
         switch (lhs, rhs) {
         case (.none, .none):
@@ -619,9 +618,9 @@ public struct PosterCardAction: Equatable {
         self.icon = icon
         self.callback = callback
     }
-    
+
     public static func == (lhs: PosterCardAction, rhs: PosterCardAction) -> Bool {
-        return lhs.icon == rhs.icon // Compare only the `icon` property
+        lhs.icon == rhs.icon // Compare only the `icon` property
     }
 }
 

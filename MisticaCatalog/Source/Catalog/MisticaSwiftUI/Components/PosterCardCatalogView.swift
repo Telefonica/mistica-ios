@@ -26,12 +26,12 @@ struct PosterCardCatalogView: View {
 
     enum AssetType: String, CaseIterable, Identifiable, Equatable {
         var id: Self { self }
-        
+
         case none
         case icon
         case circledIcon
         case image
-        
+
         func toPosterCardAssetType() -> PosterCardAssetType {
             switch self {
             case .none:
@@ -45,7 +45,7 @@ struct PosterCardCatalogView: View {
             }
         }
     }
-    
+
     enum MediaType: String, CaseIterable, Identifiable, Equatable {
         var id: Self { self }
 
@@ -158,7 +158,7 @@ struct PosterCardCatalogView: View {
                     }
                     .disabled(mediaType == .video)
                 }
-                
+
                 section("Top Actions") {
                     Picker("Top Actions", selection: $topAction) {
                         ForEach(TopAction.allCases) {
@@ -167,7 +167,7 @@ struct PosterCardCatalogView: View {
                     }
                     .disabled(mediaType == .video)
                 }
-                
+
                 section("Options") {
                     VStack {
                         Toggle("Has slot", isOn: $hasSlot)

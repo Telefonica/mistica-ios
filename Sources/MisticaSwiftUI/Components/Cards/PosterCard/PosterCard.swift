@@ -16,8 +16,10 @@ private enum Constants {
     static let topActionIconSize: CGFloat = 32
     static let assetTypeImageSize: CGFloat = 40
     static let assetTypeIcontSize: CGFloat = 24
-    static let lineLimit: Int = 2
+    static let defaultLineLimit: Int = 1
+    static let longerLineLimit: Int = 2
     static let spacing: CGFloat = 8
+    static let topSpacingToContent: CGFloat = 40
 }
 
 public enum PosterCardThemeVariant {
@@ -186,87 +188,90 @@ public struct PosterCard<Slot>: View where Slot: View {
     // MARK: - View Body
 
     public var body: some View {
-        GeometryReader { proxy in
-            VStack(alignment: .leading, spacing: .zero) {
-                assetView
-                    .accessibilityLabel(assetAccessibilityLabel)
-                    .accessibilityIdentifier(assetAccessibilityIdentifier)
-
-                Spacer()
-                    .frame(minHeight: Constants.spacing * 5)
-
-                if let tag = tag {
-                    tag
-                        .inverse(true)
-                        .padding(.bottom, Constants.spacing * 2)
-                        .accessibilityLabel(tagAccessibilityLabel)
-                        .accessibilityIdentifier(tagAccessibilityIdentifier)
-                }
-
-                if let preTitle = preTitle {
-                    Text(preTitle)
-                        .font(.textPreset2(weight: .regular))
-                        .foregroundColor(textPrimaryColor)
-                        .padding(.bottom, Constants.spacing / 2)
-                        .fixedSize(horizontal: true, vertical: false)
-                        .accessibilityLabel(preTitleAccessibilityLabel)
-                        .accessibilityIdentifier(preTitleAccessibilityIdentifier)
-                }
-
-                Text(title)
-                    .font(.textPreset4(weight: .regular))
-                    .foregroundColor(textPrimaryColor)
-                    .lineLimit(Constants.lineLimit)
-                    .padding(.bottom, Constants.spacing)
-                    .fixedSize(horizontal: true, vertical: false)
-                    .accessibilityLabel(titleAccessibilityLabel)
-                    .accessibilityIdentifier(titleAccessibilityIdentifier)
-
-                if let subTitle = subTitle {
-                    Text(subTitle)
-                        .font(.textPreset2(weight: .regular))
-                        .foregroundColor(textPrimaryColor)
-                        .fixedSize(horizontal: true, vertical: false)
-                        .accessibilityLabel(subtitleAccessibilityLabel)
-                        .accessibilityIdentifier(subtitleAccessibilityIdentifier)
-                }
-                if let description = description {
-                    Text(description)
-                        .font(.textPreset2(weight: .regular))
-                        .foregroundColor(textPrimaryColor)
-                        .lineLimit(Constants.lineLimit)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .accessibilityLabel(descriptionAccessibilityLabel)
-                        .accessibilityIdentifier(descriptionAccessibilityIdentifier)
-                }
-                if hasSlotView {
-                    slot
-                        .padding(.top, Constants.spacing * 2)
-                }
-            }
-            .frame(width: proxy.size.width, height: proxy.size.height, alignment: .leading)
-        }
-        .padding(.horizontal, Constants.spacing * 2)
-        .padding(.bottom, Constants.spacing * 3)
-        .aspectRatio(aspectRatio.value, contentMode: .fill)
-        .background(
-            ZStack(alignment: .center) {
-                mediaContent
-                mediaContentOverlay
-            }.onTapGesture(perform: action ?? {})
-        )
-        .fixedSize(horizontal: false, vertical: true)
-        .border(borderColor, width: borderWidth)
-        .round(radiusStyle: .container)
-        .overlay(
-            VStack(alignment: .trailing, spacing: .zero) {
-                HStack(alignment: .top, spacing: .zero) {
+            Button(action: { action() }) {
+                VStack(alignment: .leading, spacing: .zero) {
+                    
+                    HStack(alignment: .top, spacing: .zero) {
+                        assetView
+                            .accessibilityLabel(assetAccessibilityLabel)
+                            .accessibilityIdentifier(assetAccessibilityIdentifier)
+                        Spacer()
+                        topActionsView
+                    }
+                    
                     Spacer()
-                    topActionsView
+                        .frame(maxHeight: .infinity)
+                    
+                    VStack(alignment: .leading, spacing: Constants.spacing) {
+                        if let tag = tag {
+                            tag
+                                .inverse(true)
+                                .padding(.bottom, Constants.spacing)
+                                .accessibilityLabel(tagAccessibilityLabel)
+                                .accessibilityIdentifier(tagAccessibilityIdentifier)
+                        }
+                        
+                        if let preTitle = preTitle {
+                            Text(preTitle)
+                                .font(.textPreset2(weight: .regular))
+                                .foregroundColor(textPrimaryColor)
+                                .padding(.bottom, -Constants.spacing)
+                                .lineLimit(Constants.defaultLineLimit)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .accessibilityLabel(preTitleAccessibilityLabel)
+                                .accessibilityIdentifier(preTitleAccessibilityIdentifier)
+                        }
+
+                        Text(title)
+                            .font(.textPreset4(weight: .regular))
+                            .foregroundColor(textPrimaryColor)
+                            .lineLimit(Constants.longerLineLimit)
+                            .multilineTextAlignment(.leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .accessibilityLabel(titleAccessibilityLabel)
+                            .accessibilityIdentifier(titleAccessibilityIdentifier)
+                        
+                        if let subTitle = subTitle {
+                            Text(subTitle)
+                                .font(.textPreset2(weight: .regular))
+                                .foregroundColor(textPrimaryColor)
+                                .lineLimit(Constants.defaultLineLimit)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .accessibilityLabel(subtitleAccessibilityLabel)
+                                .accessibilityIdentifier(subtitleAccessibilityIdentifier)
+                        }
+                        if let description = description {
+                            Text(description)
+                                .font(.textPreset2(weight: .regular))
+                                .foregroundColor(textPrimaryColor)
+                                .lineLimit(Constants.longerLineLimit)
+                                .multilineTextAlignment(.leading)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .accessibilityLabel(descriptionAccessibilityLabel)
+                                .accessibilityIdentifier(descriptionAccessibilityIdentifier)
+                        }
+                        if hasSlotView {
+                            slot
+                                .padding(.top, Constants.spacing * 2)
+                        }
+                    }
+                    .padding(.top, Constants.spacing * 4)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 }
-                Spacer()
+                .padding(.top, Constants.spacing * 2)
+                .padding(.horizontal, Constants.spacing * 2)
+                .padding(.bottom, Constants.spacing * 3)
+                .aspectRatio(aspectRatio.value, contentMode: .fill)
+                .background(
+                    ZStack(alignment: .center) {
+                        mediaContent
+                        mediaContentOverlay
+                    }
+                )
+                .fixedSize(horizontal: false, vertical: true)
+                .border(borderColor, width: borderWidth)
+                .round(radiusStyle: .container)
             }
-        )
     }
 }
 
@@ -379,12 +384,24 @@ private extension PosterCard {
         }
     }
 
+//    var hasTopActions: Bool {
+//        switch mediaType {
+//        case .video:
+//            return false
+//        case let .image(_, topActions: topActions),
+//            let .customColor(_, topActions: topActions),
+//            let .skinColor(_, topActions: topActions):
+//            return topActions != .none
+//        }
+//    }
+
     @ViewBuilder
     var mediaContent: some View {
         switch mediaType {
         case let .image(image, _):
             image
                 .resizable()
+                .aspectRatio(contentMode: .fill)
         case let .video(url, parameters):
             ZStack(alignment: .topLeading) {
                 if let posterImage = parameters.posterImage, shouldShowPosterImage {
@@ -449,7 +466,6 @@ private extension PosterCard {
             EmptyView()
         case .video where videoPlayerStatus == .unknown:
             TopActionLoadingButton()
-                .padding(Constants.spacing * 2)
         case let .video(_, parameters):
             if shouldShowVideoControls(with: parameters), let videoPlayerTopActionIcon {
                 TopActionButton(.init(
@@ -462,34 +478,30 @@ private extension PosterCard {
                         }
                     }
                 ))
-                    .padding(Constants.spacing * 2)
             } else {
                 EmptyView()
             }
         case let .image(_, topActions),
              let .customColor(_, topActions),
-             let .skinColor(_, topActions):
-            Group {
-                switch topActions {
-                case .none:
-                    EmptyView()
-                case let .dismiss(onDismiss):
-                    TopActionDismissButton(dismissAction: onDismiss)
-                case let .dismissAndAction(onDismiss, topAction):
-                    HStack(spacing: Constants.spacing * 2) {
-                        TopActionButton(topAction)
-                        TopActionDismissButton(dismissAction: onDismiss)
-                    }
-                case let .oneAction(topAction):
+            let .skinColor(_, topActions):
+            switch topActions {
+            case .none:
+                EmptyView()
+            case let .dismiss(onDismiss):
+                TopActionDismissButton(dismissAction: onDismiss)
+            case let .dismissAndAction(onDismiss, topAction):
+                HStack(spacing: Constants.spacing * 2) {
                     TopActionButton(topAction)
-                case let .twoActions(firstTopAction, secondTopAction):
-                    HStack(spacing: Constants.spacing * 2) {
-                        TopActionButton(firstTopAction)
-                        TopActionButton(secondTopAction)
-                    }
+                    TopActionDismissButton(dismissAction: onDismiss)
+                }
+            case let .oneAction(topAction):
+                TopActionButton(topAction)
+            case let .twoActions(firstTopAction, secondTopAction):
+                HStack(spacing: Constants.spacing * 2) {
+                    TopActionButton(firstTopAction)
+                    TopActionButton(secondTopAction)
                 }
             }
-            .padding(Constants.spacing * 2)
         }
     }
 
@@ -501,20 +513,21 @@ private extension PosterCard {
                 .resizable()
                 .scaledToFit()
                 .frame(width: Constants.assetTypeImageSize, height: Constants.assetTypeImageSize)
+            
         case let .icon(image, foregroundColor, backgroundColor):
             ZStack {
                 if let backgroundColor = backgroundColor {
                     Circle().fill(backgroundColor)
                         .frame(width: Constants.assetTypeImageSize, height: Constants.assetTypeImageSize)
                 }
-
+                
                 image
                     .resizable()
                     .foregroundColor(foregroundColor)
                     .scaledToFit()
                     .frame(width: Constants.assetTypeIcontSize, height: Constants.assetTypeIcontSize)
             }
-            .padding(.vertical, Constants.spacing)
+            
         case .none:
             EmptyView()
         }
@@ -555,7 +568,7 @@ public enum PosterCardMediaType {
 }
 
 /// Represents top-level actions available for a `PosterCard`.
-public enum PosterCardTopActions {
+public enum PosterCardTopActions: Equatable {
     /// No actions.
     case none
 
@@ -570,10 +583,27 @@ public enum PosterCardTopActions {
 
     /// Two custom actions.
     case twoActions(PosterCardAction, PosterCardAction)
+    
+    public static func == (lhs: PosterCardTopActions, rhs: PosterCardTopActions) -> Bool {
+        switch (lhs, rhs) {
+        case (.none, .none):
+            return true
+        case (.dismiss, .dismiss):
+            return true // We cannot compare PosterCardCallback
+        case let (.dismissAndAction(_, action1), .dismissAndAction(_, action2)):
+            return action1 == action2 // Only compare PosterCardAction
+        case let (.oneAction(action1), .oneAction(action2)):
+            return action1 == action2
+        case let (.twoActions(action1a, action1b), .twoActions(action2a, action2b)):
+            return action1a == action2a && action1b == action2b
+        default:
+            return false
+        }
+    }
 }
 
 /// Represents an individual action on a `PosterCard`.
-public struct PosterCardAction {
+public struct PosterCardAction: Equatable {
     /// The icon associated with the action.
     let icon: Image
 
@@ -589,10 +619,14 @@ public struct PosterCardAction {
         self.icon = icon
         self.callback = callback
     }
+    
+    public static func == (lhs: PosterCardAction, rhs: PosterCardAction) -> Bool {
+        return lhs.icon == rhs.icon // Compare only the `icon` property
+    }
 }
 
 /// Represents the header asset type in a `PosterCard`.
-public enum PosterCardAssetType {
+public enum PosterCardAssetType: Equatable {
     /// No asset.
     case none
 

@@ -17,12 +17,35 @@ struct PosterCardCatalogView: View {
     @State var subTitle: String = "With Active Noise Cancellation"
     @State var description: String = "The next evolution of sound and comfort"
 
+    @State var assetType: AssetType = .none
     @State var mediaType: MediaType = .image
     @State var aspectRatio: AspectRatio = .ratio7to10
     @State var topAction: TopAction = .none
     @State var hasSlot: Bool = false
     @State var isInverse: Bool = true
 
+    enum AssetType: String, CaseIterable, Identifiable, Equatable {
+        var id: Self { self }
+        
+        case none
+        case icon
+        case circledIcon
+        case image
+        
+        func toPosterCardAssetType() -> PosterCardAssetType {
+            switch self {
+            case .none:
+                return .none
+            case .icon:
+                return .icon(image: Image(systemName: "apple.logo"), foregroundColor: nil, backgroundColor: nil)
+            case .circledIcon:
+                return .icon(image: Image(systemName: "apple.logo"), foregroundColor: .neutralHigh, backgroundColor: .backgroundContainer)
+            case .image:
+                return .image(Image("tabItem"))
+            }
+        }
+    }
+    
     enum MediaType: String, CaseIterable, Identifiable, Equatable {
         var id: Self { self }
 
@@ -127,15 +150,26 @@ struct PosterCardCatalogView: View {
                     }
                 }
 
+                section("Asset type") {
+                    Picker("Asset type", selection: $assetType) {
+                        ForEach(AssetType.allCases) {
+                            Text($0.rawValue.capitalized)
+                        }
+                    }
+                    .disabled(mediaType == .video)
+                }
+                
+                section("Top Actions") {
+                    Picker("Top Actions", selection: $topAction) {
+                        ForEach(TopAction.allCases) {
+                            Text($0.rawValue.capitalized)
+                        }
+                    }
+                    .disabled(mediaType == .video)
+                }
+                
                 section("Options") {
                     VStack {
-                        Picker("Top Actions", selection: $topAction) {
-                            ForEach(TopAction.allCases) {
-                                Text($0.rawValue.capitalized)
-                            }
-                        }
-                        .disabled(mediaType == .video)
-
                         Toggle("Has slot", isOn: $hasSlot)
                         Toggle("Inverse", isOn: $isInverse)
                     }
@@ -153,12 +187,13 @@ struct PosterCardCatalogView: View {
 
     @ViewBuilder
     func posterCard() -> some View {
-        ScrollView(showsIndicators: false) {
+        VStack {
             PosterCard(
                 mediaType: mediaType.toPosterCardMediaType(topActions: topAction.toPosterCardTopAction),
                 themeVariant: isInverse ? .inverse : .none,
                 aspectRatio: aspectRatio.toPosterCardAspectRatio,
-                tag: Tag(style: .promo, text: "New"),
+                assetType: assetType.toPosterCardAssetType(),
+                tag: Tag(style: .promo, text: tagTitle),
                 preTitle: preTitle,
                 title: title,
                 subTitle: subTitle,

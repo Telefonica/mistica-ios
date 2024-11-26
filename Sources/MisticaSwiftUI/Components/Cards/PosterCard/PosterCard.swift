@@ -727,7 +727,7 @@ private extension View {
     func topActionIconStyle() -> some View {
         frame(width: Constants.topActionIconSize, height: Constants.topActionIconSize, alignment: .center)
             .foregroundColor(.neutralHigh)
-            .background(Color.backgroundContainer)
+            .background(Color.inverse.opacity(0.7))
             .clipShape(Circle())
     }
 }

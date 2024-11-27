@@ -20,6 +20,12 @@ private enum Constants {
     static let longerLineLimit: Int = 2
     static let spacing: CGFloat = 8
     static let topSpacingToContent: CGFloat = 40
+    static let topActionDefaultBackgroundOpacity: CGFloat = 0.7
+    static let topActionPressedBackgroundOpacity: CGFloat = 1.0
+    static let topActionAnimationDuration: CGFloat = 0.2
+    static let posterCardPressedBackgroundOpacity: CGFloat = 0.35
+    static let posterCardDefaultBackgroundOpacity: CGFloat = 0
+    static let posterCardAnimationDuration: CGFloat = 0.15
 }
 
 public enum PosterCardThemeVariant {
@@ -271,6 +277,7 @@ public struct PosterCard<Slot>: View where Slot: View {
             .border(borderColor, width: borderWidth)
             .round(radiusStyle: .container)
         }
+        .buttonStyle(PosterCardButtonStyle())
     }
 }
 
@@ -464,10 +471,10 @@ private extension PosterCard {
         case .video where videoPlayerStatus == .failed:
             EmptyView()
         case .video where videoPlayerStatus == .unknown:
-            TopActionLoadingButton()
+            TopActionButton(type: .loading)
         case let .video(_, parameters):
             if shouldShowVideoControls(with: parameters), let videoPlayerTopActionIcon {
-                TopActionButton(.init(
+                TopActionButton(type: .action(.init(
                     icon: Image(systemName: videoPlayerTopActionIcon),
                     callback: {
                         if videoPlayerStatus != .playing {
@@ -476,7 +483,7 @@ private extension PosterCard {
                             videoPlayerStatus = .paused
                         }
                     }
-                ))
+                )))
             } else {
                 EmptyView()
             }
@@ -487,18 +494,18 @@ private extension PosterCard {
             case .none:
                 EmptyView()
             case let .dismiss(onDismiss):
-                TopActionDismissButton(dismissAction: onDismiss)
+                TopActionButton(type: .dismiss(onDismiss))
             case let .dismissAndAction(onDismiss, topAction):
                 HStack(spacing: Constants.spacing * 2) {
-                    TopActionButton(topAction)
-                    TopActionDismissButton(dismissAction: onDismiss)
+                    TopActionButton(type: .action(topAction))
+                    TopActionButton(type: .dismiss(onDismiss))
                 }
             case let .oneAction(topAction):
-                TopActionButton(topAction)
+                TopActionButton(type: .action(topAction))
             case let .twoActions(firstTopAction, secondTopAction):
                 HStack(spacing: Constants.spacing * 2) {
-                    TopActionButton(firstTopAction)
-                    TopActionButton(secondTopAction)
+                    TopActionButton(type: .action(firstTopAction))
+                    TopActionButton(type: .action(secondTopAction))
                 }
             }
         }
@@ -672,63 +679,86 @@ public enum PosterCardAspectRatio {
 
 // MARK: - Private Components
 
-/// A button used for top actions in the `PosterCard`.
-private struct TopActionButton: View {
-    /// The top action associated with this button.
-    let topAction: PosterCardAction
+/// Enum representing the type of top action button.
+private enum TopActionType {
+    case action(PosterCardAction)
+    case loading
+    case dismiss(PosterCardCallback?)
+}
 
-    /// Initializes the button with a specific action.
-    ///
-    /// - Parameter topAction: The action to associate with the button.
-    init(_ topAction: PosterCardAction) {
-        self.topAction = topAction
-    }
+/// A versatile button for top actions in the `PosterCard`.
+private struct TopActionButton: View {
+    /// The type of action this button represents.
+    let type: TopActionType
 
     /// Defines the body of the button.
     var body: some View {
-        Button(action: topAction.callback) {
-            topAction.icon
-                .renderingMode(.template)
-                .topActionIconStyle()
+        Button(action: actionCallback) {
+            content
         }
+        .buttonStyle(TopActionButtonStyle())
     }
-}
 
-/// A loading button for displaying progress in top actions.
-private struct TopActionLoadingButton: View {
-    var body: some View {
-        Button(action: {}) {
+    /// Determines the button's content based on its type.
+    @ViewBuilder
+    private var content: some View {
+        switch type {
+        case .action(let action):
+            action.icon.renderingMode(.template)
+        case .loading:
             ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: .neutralHigh))
-                .topActionIconStyle()
+                .progressViewStyle(CircularProgressViewStyle(tint: .black))
+        case .dismiss:
+            Image(systemName: "xmark").renderingMode(.template)
         }
     }
-}
 
-/// A dismiss button for top actions in the `PosterCard`.
-private struct TopActionDismissButton: View {
-    /// The dismiss action callback.
-    let dismissAction: PosterCardCallback?
-
-    /// Defines the body of the dismiss button.
-    var body: some View {
-        Button(action: { dismissAction?() }) {
-            Image(systemName: "xmark")
-                .renderingMode(.template)
-                .topActionIconStyle()
+    /// Determines the action callback based on the button type.
+    private var actionCallback: () -> Void {
+        switch type {
+        case .action(let action):
+            return action.callback
+        case .dismiss(let dismissAction):
+            return { dismissAction?() }
+        case .loading:
+            return {}
         }
     }
 }
 
 // MARK: - Private Extensions
 
+private struct TopActionButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .topActionButtonStyle(isPressed: configuration.isPressed)
+    }
+}
+
+private struct PosterCardButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .posterCardButtonStyle(isPressed: configuration.isPressed)
+    }
+}
+
 private extension View {
     /// Applies a standard style to top action icons.
-    func topActionIconStyle() -> some View {
+    func topActionButtonStyle(isPressed: Bool) -> some View {
         frame(width: Constants.topActionIconSize, height: Constants.topActionIconSize, alignment: .center)
             .foregroundColor(.neutralHigh)
-            .background(Color.inverse.opacity(0.7))
+            .background(Color.inverse.opacity(isPressed ? Constants.topActionPressedBackgroundOpacity : Constants.topActionDefaultBackgroundOpacity))
             .clipShape(Circle())
+            .animation(.easeInOut(duration: Constants.topActionAnimationDuration), value: isPressed)
+    }
+
+    func posterCardButtonStyle(isPressed: Bool) -> some View {
+        overlay(
+            Color.coverBackgroundPressed
+                .opacity(isPressed ? Constants.posterCardPressedBackgroundOpacity : Constants.posterCardDefaultBackgroundOpacity)
+                .round(radiusStyle: .container)
+        )
+        .animation(.easeInOut(duration: Constants.posterCardAnimationDuration), value: isPressed)
     }
 }
 

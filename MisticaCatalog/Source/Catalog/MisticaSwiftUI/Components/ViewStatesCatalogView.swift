@@ -1,13 +1,13 @@
 //
 //  ViewStatesCatalogView.swift
-//  MisticaCatalog
 //
-//  Created by Alejandro Ruiz on 27/11/24.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
-
-import SwiftUI
 import MisticaSwiftUI
+import SwiftUI
 
 struct ViewStatesCatalogView: View {
     private let viewStateTypes: [ViewStateType] = [.loadError]
@@ -25,20 +25,20 @@ struct ViewStatesCatalogView: View {
                     section("View State Type") {
                         viewStateTypePicker
                     }
-                    
+
                     section("Title (Optional)") {
                         TextField("Title (Optional)", text: $titleText)
                     }
-                    
+
                     section("Description") {
                         TextField("Description", text: $descriptionText)
                     }
-                    
+
                     section("Action Button") {
                         TextField("Action Button Title", text: $actionButtonTitle)
                         Toggle("Show Action Button", isOn: $showActionButton)
                     }
-                    
+
                     Button("Show State") {
                         showState = true
                     }
@@ -68,7 +68,7 @@ struct ViewStatesCatalogView: View {
         .navigationBarTitle("View States")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
+
     @ViewBuilder
     var viewStateTypePicker: some View {
         picker($selectedTypeIndex, options: viewStateTypes)
@@ -89,11 +89,11 @@ extension ViewStateType: Swift.CustomStringConvertible {
 }
 
 #if DEBUG
-struct UICatalogViewStatesView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ViewStatesCatalogView()
+    struct UICatalogViewStatesView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationView {
+                ViewStatesCatalogView()
+            }
         }
     }
-}
 #endif

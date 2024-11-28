@@ -13,22 +13,22 @@ public struct LoadErrorView: View {
         static let contentInset: CGFloat = 24
         static let verticalSpacing: CGFloat = 16
     }
-    
+
     @State var isRetryButtonLoading: Bool = false
-    
+
     let titleText: String?
     let descriptionText: String
     let showActionButton: Bool
     let actionButtonTitle: String
     let onRetry: () -> Void
     let onAppear: (() -> Void)?
-    
+
     public init(titleText: String?,
                 descriptionText: String,
                 showActionButton: Bool,
                 actionButtonTitle: String,
                 onRetry: @escaping () -> Void,
-                onAppear: ( () -> Void)?)
+                onAppear: (() -> Void)?)
     {
         self.titleText = titleText
         self.descriptionText = descriptionText
@@ -48,13 +48,13 @@ public struct LoadErrorView: View {
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
                 }
-                
+
                 Text(descriptionText)
                     .font(.textPreset3(weight: .regular))
                     .foregroundColor(.textSecondary)
                     .multilineTextAlignment(.center)
                     .lineLimit(nil)
-                
+
                 if showActionButton {
                     Button(action: {
                         isRetryButtonLoading = true

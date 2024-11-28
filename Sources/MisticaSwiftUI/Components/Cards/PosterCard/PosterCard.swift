@@ -198,11 +198,17 @@ public struct PosterCard<Slot>: View where Slot: View {
             VStack(alignment: .leading, spacing: .zero) {
                 HStack(alignment: .top, spacing: .zero) {
                     assetView
+                        .padding(.top, Constants.spacing)
                         .accessibilityLabel(assetAccessibilityLabel)
                         .accessibilityIdentifier(assetAccessibilityIdentifier)
+                    
                     Spacer()
+                    
                     topActionsView
                 }
+                .padding(.top, Constants.spacing)
+                .padding(.leading, Constants.spacing * 2)
+                .padding(.trailing, Constants.spacing)
 
                 Spacer()
                     .frame(maxHeight: .infinity)
@@ -261,11 +267,10 @@ public struct PosterCard<Slot>: View where Slot: View {
                     }
                 }
                 .padding(.top, Constants.spacing * 4)
+                .padding(.horizontal, Constants.spacing * 2)
+                .padding(.bottom, Constants.spacing * 3)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
-            .padding(.top, Constants.spacing * 2)
-            .padding(.horizontal, Constants.spacing * 2)
-            .padding(.bottom, Constants.spacing * 3)
             .aspectRatio(aspectRatio.value, contentMode: .fill)
             .background(
                 ZStack(alignment: .center) {
@@ -390,17 +395,6 @@ private extension PosterCard {
         }
     }
 
-//    var hasTopActions: Bool {
-//        switch mediaType {
-//        case .video:
-//            return false
-//        case let .image(_, topActions: topActions),
-//            let .customColor(_, topActions: topActions),
-//            let .skinColor(_, topActions: topActions):
-//            return topActions != .none
-//        }
-//    }
-
     @ViewBuilder
     var mediaContent: some View {
         switch mediaType {
@@ -496,14 +490,14 @@ private extension PosterCard {
             case let .dismiss(onDismiss):
                 TopActionButton(type: .dismiss(onDismiss))
             case let .dismissAndAction(onDismiss, topAction):
-                HStack(spacing: Constants.spacing * 2) {
+                HStack(spacing: .zero) {
                     TopActionButton(type: .action(topAction))
                     TopActionButton(type: .dismiss(onDismiss))
                 }
             case let .oneAction(topAction):
                 TopActionButton(type: .action(topAction))
             case let .twoActions(firstTopAction, secondTopAction):
-                HStack(spacing: Constants.spacing * 2) {
+                HStack(spacing: .zero) {
                     TopActionButton(type: .action(firstTopAction))
                     TopActionButton(type: .action(secondTopAction))
                 }
@@ -750,6 +744,7 @@ private extension View {
             .background(Color.inverse.opacity(isPressed ? Constants.topActionPressedBackgroundOpacity : Constants.topActionDefaultBackgroundOpacity))
             .clipShape(Circle())
             .animation(.easeInOut(duration: Constants.topActionAnimationDuration), value: isPressed)
+            .padding(Constants.spacing)
     }
 
     func posterCardButtonStyle(isPressed: Bool) -> some View {

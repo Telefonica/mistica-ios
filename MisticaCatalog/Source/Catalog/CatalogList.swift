@@ -93,8 +93,9 @@ private extension CatalogRow {
             ChipCatalogView()
         case .header:
             HeaderCatalogView()
+        case .viewStates:
+            ViewStatesCatalogView()
         case .tooltip,
-             .viewStates,
              .title,
              .filter,
              .scrollContentIndicator,

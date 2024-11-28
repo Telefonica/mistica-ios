@@ -25,6 +25,11 @@ XCODEBUILD := set -o pipefail && xcodebuild
 MISTICA_DESIGN_TOKENS_PATH := /tokens
 MISTICA_DESIGN_URL := https://raw.githubusercontent.com/Telefonica/mistica-design/$(ref)/tokens
 
+# Xcode
+ifneq ($(origin GITHUB_ACTION),undefined)
+export DEVELOPER_DIR=/Applications/Xcode-16.0.app/Contents/Developer
+endif
+
 # Targets
 help:
 	@echo "Please use \`make <target>' where <target> is one of"

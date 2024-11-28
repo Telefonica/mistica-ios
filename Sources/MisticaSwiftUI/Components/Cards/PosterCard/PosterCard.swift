@@ -201,9 +201,9 @@ public struct PosterCard<Slot>: View where Slot: View {
                         .padding(.top, Constants.spacing)
                         .accessibilityLabel(assetAccessibilityLabel)
                         .accessibilityIdentifier(assetAccessibilityIdentifier)
-                    
+
                     Spacer()
-                    
+
                     topActionsView
                 }
                 .padding(.top, Constants.spacing)

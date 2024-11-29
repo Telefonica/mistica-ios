@@ -96,9 +96,13 @@ private extension ListFragmentView {
     }
 
     func fillListWithInformativeItems(_ items: [InformativeItem]) {
-        for item in items {
+        for (index, item) in items.enumerated() {
             let rowView = InformativeRow(item: item)
             stackView.addArrangedSubview(rowView)
+            if index < items.count - 1 {
+                let separator = SeparatorView(axis: .horizontal)
+                stackView.addArrangedSubview(separator)
+            }
         }
     }
 

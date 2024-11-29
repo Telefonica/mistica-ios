@@ -49,7 +49,7 @@ class InformativeRow: UIView {
         stackView.alignment = .leading
         stackView.axis = .vertical
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = .init(top: 16, left: 0, bottom: 0, right: 0)
+        stackView.layoutMargins = .init(top: 16, left: 0, bottom: 16, right: 0)
         return stackView
     }()
 

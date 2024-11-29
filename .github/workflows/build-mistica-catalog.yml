@@ -1,4 +1,4 @@
-name: Deploy Mistica Catalog
+name: Deploy Mistica Catalog (AppCenter)
 
 on:
   release:
@@ -62,4 +62,3 @@ jobs:
 
       - name: Upload ipa to AppCenter
         run: npx -p appcenter-cli appcenter distribute release -a Tuenti-Organization/${{ steps.variables.outputs.APP_CENTER_PROJECT }} -f ./build/ios.ipa -g Public --token ${{ secrets.APPCENTER_API_TOKEN }}
-

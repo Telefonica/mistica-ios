@@ -41,4 +41,5 @@ extension UIImage {
     static let highlightedCardBackgroundImageSample = UIImage(named: "HighlightedCardBackgroundSample", in: .misticaCatalog, compatibleWith: nil)!
     static let netflixLogo = UIImage(named: "netflix-logo", in: .misticaCatalog, compatibleWith: nil)!
     static let avengersMovieLogo = UIImage(named: "avengers-movie-logo", in: .misticaCatalog, compatibleWith: nil)!
+    static let airpods = UIImage(named: "airpods", in: .misticaCatalog, compatibleWith: nil)!
 }

@@ -127,6 +127,7 @@ By default mistica uses the system font, but if you need to use a custom font (T
 * [Button](./Sources/Mistica/Components/Button/)
 * [Cards](./Sources/Mistica/Components/Cards/)
 	* [DataCard](./Sources/Mistica/Components/Cards/#datacard)
+    * [Not Implemented] PosterCard
 	* [MediaCard](./Sources/Mistica/Components/Cards/#mediacard)
 	* [HighlightedCard](./Sources/Mistica/Components/Cards/#highlightedcard)
 * [Checkbox](./Sources/Mistica/Components/Checkbox/)
@@ -153,10 +154,11 @@ By default mistica uses the system font, but if you need to use a custom font (T
 ### SwiftUI
 * [Badge](./Sources/MisticaSwiftUI/Components/Badge/)
 * [Button](./Sources/MisticaSwiftUI/Components/Button/)
-* [Cards](./Sources/MisticaSwiftUI/Components/Cards/)
+* Cards
     * [DataCard](./Sources/MisticaSwiftUI/Components/Cards/#datacard)
-    * [Not Implemented][MediaCard](./Sources/MisticaSwiftUI/Components/Cards/#mediacard)
-    * [Not Implemented][HighlightedCard](./Sources/MisticaSwiftUI/Components/Cards/#highlightedcard)
+    * [PosterCard](./Sources/MisticaSwiftUI/Components/Cards/#postercard)
+    * [Not Implemented] MediaCard
+    * [Not Implemented] HighlightedCard
 * [Checkbox](./Sources/MisticaSwiftUI/Components/Checkbox/)
 * [Crouton](./Sources/MisticaSwiftUI/Components/Snackbar/)
 * [EmptyState](./Sources/MisticaSwiftUI/Components/EmptyState/)

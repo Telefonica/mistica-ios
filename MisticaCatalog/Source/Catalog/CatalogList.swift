@@ -68,7 +68,7 @@ private extension CatalogRow {
         case .skeletons:
             SkeletonsCatalogView()
         case .cards:
-            DataCardCatalogView()
+            CardList(rows: CardRow.allCases)
         case .crouton:
             SnackbarCatalogView()
         case .feedbacks:

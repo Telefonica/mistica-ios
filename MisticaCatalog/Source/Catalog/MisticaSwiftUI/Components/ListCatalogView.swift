@@ -127,6 +127,7 @@ struct ListCatalogView: View {
 }
 
 extension Image {
+    static let airpods = Image("airpods")
     static let photo = Image(systemName: "photo")
     static let netflixLogo = Image("netflix-logo")
 }

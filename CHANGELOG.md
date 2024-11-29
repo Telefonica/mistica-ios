@@ -1,3 +1,10 @@
+# [33.3.0](https://github.com/Telefonica/mistica-ios/compare/v33.2.1...v33.3.0) (2024-11-29)
+
+
+### Features
+
+* **PosterCard:** LATCH-2313 Poster card component ([#413](https://github.com/Telefonica/mistica-ios/issues/413)) ([0d2548a](https://github.com/Telefonica/mistica-ios/commit/0d2548a289aec41b5daa89f2428e156f7e70fc37))
+
 ## [33.2.1](https://github.com/Telefonica/mistica-ios/compare/v33.2.0...v33.2.1) (2024-11-12)
 
 

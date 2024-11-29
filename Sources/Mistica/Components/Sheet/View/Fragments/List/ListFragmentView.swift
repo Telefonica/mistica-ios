@@ -97,10 +97,10 @@ private extension ListFragmentView {
 
     func fillListWithInformativeItems(_ items: [InformativeItem]) {
         for (index, item) in items.enumerated() {
-                let rowView = InformativeRow(item: item)
-                let isLastItem = index == items.count - 1
-                addRow(rowView, withSeparator: !isLastItem)
-            }
+            let rowView = InformativeRow(item: item)
+            let isLastItem = index == items.count - 1
+            addRow(rowView, withSeparator: !isLastItem)
+        }
     }
 
     func fillListWithActionItems(_ items: [ActionListItem]) {
@@ -129,9 +129,9 @@ private extension ListFragmentView {
 
         self.stackView.addArrangedSubview(stackView)
     }
-    
 
     // MARK: User Interaction
+
     @objc private func didTouchItem(_ sender: UILongPressGestureRecognizer) {
         guard let touchable = sender.view as? Touchable else { return }
 
@@ -201,6 +201,7 @@ extension ListFragmentView: UIGestureRecognizerDelegate {
 }
 
 // MARK: Utilities
+
 private extension ListFragmentView {
     func addRow(_ row: UIView, withSeparator: Bool = false) {
         stackView.addArrangedSubview(row)

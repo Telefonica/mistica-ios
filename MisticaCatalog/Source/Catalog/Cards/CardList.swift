@@ -66,7 +66,7 @@ private extension CardRow {
         case .posterCard:
             PosterCardCatalogView()
         case .snapCard:
-            notImplementedView
+            SnapCardCatalogView()
         }
     }
 

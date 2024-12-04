@@ -178,7 +178,7 @@ struct PosterCardCatalogView: View {
                 NavigationLink("Show Poster Card") {
                     posterCard()
                         .padding(.horizontal, 16)
-                        .navigationBarTitle("DataCard")
+                        .navigationBarTitle("PosterCard")
                         .navigationBarTitleDisplayMode(.inline)
                 }
             }

@@ -1,3 +1,10 @@
+# [33.4.0](https://github.com/Telefonica/mistica-ios/compare/v33.3.0...v33.4.0) (2024-12-04)
+
+
+### Features
+
+* **Sheet:** IOS-10691 add separators to the sheet informative list ([d093f1f](https://github.com/Telefonica/mistica-ios/commit/d093f1f617242a911d1fb96868b5d8b261bbe279))
+
 # [33.3.0](https://github.com/Telefonica/mistica-ios/compare/v33.2.1...v33.3.0) (2024-11-29)
 
 

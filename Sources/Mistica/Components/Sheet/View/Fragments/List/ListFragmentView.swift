@@ -96,9 +96,10 @@ private extension ListFragmentView {
     }
 
     func fillListWithInformativeItems(_ items: [InformativeItem]) {
-        for item in items {
+        for (index, item) in items.enumerated() {
             let rowView = InformativeRow(item: item)
-            stackView.addArrangedSubview(rowView)
+            let isLastItem = index == items.count - 1
+            addRow(rowView, withSeparator: !isLastItem)
         }
     }
 
@@ -129,16 +130,7 @@ private extension ListFragmentView {
         self.stackView.addArrangedSubview(stackView)
     }
 
-    func button(at index: Int, for action: ActionItem) -> Button {
-        let button = Button(
-            style: action.style,
-            title: action.title,
-            rightImage: action.rightImage
-        )
-        button.tag = index
-        button.addTarget(self, action: #selector(didTap(action:)), for: .touchUpInside)
-        return button
-    }
+    // MARK: User Interaction
 
     @objc private func didTouchItem(_ sender: UILongPressGestureRecognizer) {
         guard let touchable = sender.view as? Touchable else { return }
@@ -205,5 +197,29 @@ private extension ListFragmentView {
 extension ListFragmentView: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         true
+    }
+}
+
+// MARK: Utilities
+
+private extension ListFragmentView {
+    func addRow(_ row: UIView, withSeparator: Bool = false) {
+        stackView.addArrangedSubview(row)
+
+        if withSeparator {
+            let separator = SeparatorView(axis: .horizontal)
+            stackView.addArrangedSubview(separator)
+        }
+    }
+
+    func button(at index: Int, for action: ActionItem) -> Button {
+        let button = Button(
+            style: action.style,
+            title: action.title,
+            rightImage: action.rightImage
+        )
+        button.tag = index
+        button.addTarget(self, action: #selector(didTap(action:)), for: .touchUpInside)
+        return button
     }
 }

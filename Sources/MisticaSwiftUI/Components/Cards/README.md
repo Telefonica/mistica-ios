@@ -8,6 +8,9 @@
    * [How to use a PosterCard](#how-to-use-a-postercard)
    * [Adding extra content to a PosterCard](#adding-extra-content-to-a-postercard)
 
+* [SnapCard](#snapcard)
+   * [How to use a SnapCard](#how-to-use-a-snapcard)
+
 * [Accessibility](#accessibility)
 
 ## DataCard
@@ -57,7 +60,7 @@ You can use the default initializers depending on your needs. For example, a bas
 
 ```swift
 PosterCard(
-    mediaType: .image,
+    mediaType: .image(Image("airpods"), topActions: .dismiss {}),
     title: title,
     subtitle: subtitle,
     description: description
@@ -83,7 +86,7 @@ The extra View will be placed below the descriptionTitle property, keeping the s
 
 ```swift
 PosterCard(
-    mediaType: .image,
+    mediaType: .image(Image("airpods"), topActions: .dismiss {}),
     title: title,
     subtitle: subtitle,
     description: description,
@@ -133,3 +136,25 @@ PosterCard(
 ### Conclusion
 
 `PosterCard` is a highly flexible and customizable component for displaying various types of media in your SwiftUI apps. Whether you need a simple image card or a fully interactive video card, `PosterCard` provides the tools to make it happen.
+
+## SnapCard
+
+Snap Cards are quick content-minimal elements. Their aim is to be used to read content quickly, which acts as an entry point to more detailed information.
+
+If you're using multiple cards on the same screen, use the same type to keep the overall visual hierarchy.
+
+![SnapCard](./docs/images/snap-card.png)
+
+### How to use a SnapCard
+
+You can use the default initializers depending on your needs. For example, a basic configuration for an image-based PosterCard:
+
+```swift
+SnapCard(
+    assetType: .avatar(Image("avatar-icon")),
+    title: "title",
+    subTitle: "subtitle",
+    description: "description",
+    slot: { Text("Extra Content!") }
+)
+```

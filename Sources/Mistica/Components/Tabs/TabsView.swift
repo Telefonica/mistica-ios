@@ -10,6 +10,7 @@ import UIKit
 
 /// The TabsViewDelegate protocol defines methods that allow you to manage the selection and deselection of
 /// segments in a `TabsView`. The methods of this protocol are all optional.
+@MainActor
 public protocol TabsViewDelegate: AnyObject {
     func tabsView(_ tabsView: TabsView, didSelectTab tab: TabItem)
 }

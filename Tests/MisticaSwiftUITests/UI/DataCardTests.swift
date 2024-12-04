@@ -11,6 +11,7 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class DataCardTests: XCTestCase {
     private enum Constants {
         static let headline = "Headline"
@@ -20,10 +21,10 @@ final class DataCardTests: XCTestCase {
         static let multiLineMessage = "Nam non ipsum id metus cursus dictum. Praesent efficitur erat libero, vitae tempus orci iaculis id. Proin ipsum ante, auctor mattis rutrum sit amet, elementum vitae quam. Praesent velit lectus, lacinia ut accumsan sit amet, convallis non leo. Ut quis facilisis sapien. "
     }
 
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testAlternativeColors() {
@@ -49,7 +50,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -66,7 +67,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -83,7 +84,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -98,7 +99,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: UIHostingController(rootView: dataCard),
+            of: UIHostingController(rootView: dataCard),
             as: .image(on: .iPhone8)
         )
     }
@@ -114,7 +115,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -130,7 +131,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -146,7 +147,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -164,7 +165,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -180,7 +181,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -199,7 +200,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -219,7 +220,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -239,7 +240,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -258,7 +259,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -274,7 +275,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }
@@ -290,7 +291,7 @@ final class DataCardTests: XCTestCase {
         .padding(16)
 
         assertSnapshot(
-            matching: dataCard,
+            of: dataCard,
             as: .image
         )
     }

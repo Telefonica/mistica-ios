@@ -10,11 +10,12 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class DataCardTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles
@@ -32,7 +33,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(asset: .image(.init(color: .cyan)))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testShowAssetOfTypeIcon() {
@@ -40,7 +41,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(asset: .icon(.init(color: .cyan), backgroundColor: .black))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testMinimumContent() {
@@ -48,7 +49,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeBasicCard()
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContent() {
@@ -56,7 +57,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons()
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutIcon() {
@@ -64,7 +65,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(asset: .none)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutHeadline() {
@@ -72,7 +73,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(headline: nil)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutSubtitle() {
@@ -80,7 +81,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(subtitle: nil)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutFragment() {
@@ -88,7 +89,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(hasFragment: false)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testTextsWithMultiLine() {
@@ -100,7 +101,7 @@ final class DataCardTests: XCTestCase {
             descriptionTitle: "Mauris vel nisi efficitur, fringilla urna at, gravida nunc. Sed eu dui sit amet est fringilla eleifend. Ut aliquam, tortor ac varius sodales"
         )
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryButtonsOnly() {
@@ -108,7 +109,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeBasicCard(buttons: .primary(AnyValues.button))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryAndLinkButtons() {
@@ -116,7 +117,7 @@ final class DataCardTests: XCTestCase {
 
         let view = makeBasicCard(buttons: .primaryAndLink(primary: AnyValues.button, link: AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     // MARK: Behaviour
@@ -127,7 +128,7 @@ final class DataCardTests: XCTestCase {
         let view = makeCardWithFullContentAndButtons(buttons: .primaryAndLink(primary: AnyValues.button, link: AnyValues.link))
         view.primaryButton.isLoading = true
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     // MARK: XIB integration
@@ -145,7 +146,7 @@ final class DataCardTests: XCTestCase {
         view.card.contentConfiguration = configurationWithActions
 
         assertSnapshot(
-            matching: view.asRootOfViewController(),
+            of: view.asRootOfViewController(),
             as: .image(on: .iPhoneX)
         )
     }

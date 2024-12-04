@@ -42,7 +42,7 @@ extension CalloutMessagesContent {
         }
     }
 
-    override var description: String {
+    var calloutDescription: String {
         get {
             descriptionLabel.text!
         }

@@ -10,12 +10,19 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class TitleHeaderFooterViewTests: XCTestCase {
     override func setUp() {
         super.setUp()
-        UIView.setAnimationsEnabled(false)
+        Task { @MainActor in
+            UIView.setAnimationsEnabled(false)
+        }
+    }
 
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testTitle1() {

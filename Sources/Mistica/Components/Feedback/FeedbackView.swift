@@ -208,8 +208,13 @@ public class FeedbackView: UIView {
     private lazy var buttonsView: UIView = {
         let buttonsView = UIStackView(arrangedSubviews: [])
 
-        [primaryButton, secondaryButton].compactMap { $0 }
-            .forEach(buttonsView.addArrangedSubview(_:))
+        if let primaryButton = primaryButton {
+            buttonsView.addArrangedSubview(primaryButton)
+        }
+
+        if let secondaryButton = secondaryButton {
+            buttonsView.addArrangedSubview(secondaryButton)
+        }
 
         buttonsView.alignment = .fill
         buttonsView.axis = .vertical
@@ -365,7 +370,7 @@ private extension FeedbackView {
         }
 
         // Prepare
-        views.forEach(prepare(view:))
+        try? views.forEach(prepare(view:))
         // Generate animators
         animators = views.map(animation).map { animation in
             let animator = animator
@@ -410,8 +415,10 @@ private extension FeedbackView {
               let hapticFeedbackDelay = style.hapticFeedbackDelay else { return }
         Timer.scheduledTimer(withTimeInterval: hapticFeedbackDelay, repeats: false) { [weak self] _ in
             guard let self = self else { return }
-            self.feedbackGenerator?.notificationOccurred(hapticFeedbackStyle)
-            self.feedbackGenerator = nil
+            Task { @MainActor in
+                self.feedbackGenerator?.notificationOccurred(hapticFeedbackStyle)
+                self.feedbackGenerator = nil
+            }
         }
     }
 
@@ -423,11 +430,13 @@ private extension FeedbackView {
             primaryButton?.isLoading = true
             prepareHapticFeedback()
             completion { [weak self] in
-                self?.prepareAnimation()
-                self?.startAnimation()
+                Task { @MainActor in
+                    self?.prepareAnimation()
+                    self?.startAnimation()
 
-                self?.primaryButton?.title = title
-                self?.primaryButton?.isLoading = false
+                    self?.primaryButton?.title = title
+                    self?.primaryButton?.isLoading = false
+                }
             }
         case .none:
             break

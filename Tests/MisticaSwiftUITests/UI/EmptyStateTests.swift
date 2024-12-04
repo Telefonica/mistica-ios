@@ -11,9 +11,12 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class EmptyStateTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testIconAsset() {
@@ -26,7 +29,7 @@ final class EmptyStateTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: emptyState,
+            of: emptyState,
             as: .image
         )
     }
@@ -42,7 +45,7 @@ final class EmptyStateTests: XCTestCase {
         .frame(width: 300, height: 300)
 
         assertSnapshot(
-            matching: emptyState,
+            of: emptyState,
             as: .image
         )
     }
@@ -57,7 +60,7 @@ final class EmptyStateTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: emptyState,
+            of: emptyState,
             as: .image
         )
     }
@@ -73,7 +76,7 @@ final class EmptyStateTests: XCTestCase {
         .frame(height: 300)
 
         assertSnapshot(
-            matching: emptyState,
+            of: emptyState,
             as: .image
         )
     }
@@ -87,7 +90,7 @@ final class EmptyStateTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: emptyState,
+            of: emptyState,
             as: .image
         )
     }
@@ -101,7 +104,7 @@ final class EmptyStateTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: emptyState,
+            of: emptyState,
             as: .image
         )
     }
@@ -115,7 +118,7 @@ final class EmptyStateTests: XCTestCase {
         .frame(width: 150)
 
         assertSnapshot(
-            matching: emptyState,
+            of: emptyState,
             as: .image
         )
     }
@@ -129,7 +132,7 @@ final class EmptyStateTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: emptyState,
+            of: emptyState,
             as: .image
         )
     }
@@ -146,7 +149,7 @@ final class EmptyStateTests: XCTestCase {
         .padding(24)
 
         assertSnapshot(
-            matching: emptyState,
+            of: emptyState,
             as: .image
         )
     }

@@ -8,26 +8,26 @@
 
 import Foundation
 
-public struct EmptyStateButton {
+public struct EmptyStateButton: Sendable {
     public let title: String
     public let loadingTitle: String?
-    public let tapHandler: (() -> Void)?
+    public let tapHandler: (@Sendable() -> Void)?
 
     public init(title: String,
                 loadingTitle: String?,
-                tapHandler: (() -> Void)?) {
+                tapHandler: (@Sendable() -> Void)?) {
         self.title = title
         self.loadingTitle = loadingTitle
         self.tapHandler = tapHandler
     }
 }
 
-public struct EmptyStateLinkButton {
+public struct EmptyStateLinkButton: Sendable {
     public let title: String
-    public let tapHandler: (() -> Void)?
+    public let tapHandler: (@Sendable() -> Void)?
 
     public init(title: String,
-                tapHandler: (() -> Void)?) {
+                tapHandler: (@Sendable() -> Void)?) {
         self.title = title
         self.tapHandler = tapHandler
     }

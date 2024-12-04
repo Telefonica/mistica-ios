@@ -12,7 +12,7 @@ public enum MisticaRadiusConstants {
     static let roundedRadius: CGFloat = 999.0
 }
 
-public protocol MisticaCornerRadius {
+public protocol MisticaCornerRadius: Sendable {
     var avatar: CGFloat { get }
     var bar: CGFloat { get }
     var button: CGFloat { get }

@@ -8,14 +8,14 @@
 
 import Foundation
 
-public struct AccessibilityListCellInteractiveData {
+public struct AccessibilityListCellInteractiveData: Sendable {
     public let label: String?
-    public let action: (() -> Void)?
+    public let action: (@MainActor @Sendable() -> Void)?
 
-    public init(label: String? = nil, action: (() -> Void)? = nil) {
+    public init(label: String? = nil, action: (@MainActor @Sendable() -> Void)? = nil) {
         self.label = label
         self.action = action
     }
 
-    public static var `default`: AccessibilityListCellInteractiveData = .init()
+    public static let `default`: AccessibilityListCellInteractiveData = .init()
 }

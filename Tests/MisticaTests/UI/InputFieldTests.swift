@@ -10,16 +10,16 @@ import Mistica
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class InputFieldTests: XCTestCase {
     private enum Constants {
         static let defaultTextValue = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
 
-    override func setUp() {
-        super.setUp()
-        UIView.setAnimationsEnabled(false)
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles

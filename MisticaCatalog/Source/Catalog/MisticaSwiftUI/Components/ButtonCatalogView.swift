@@ -11,6 +11,7 @@ import MisticaSwiftUI
 import SwiftUI
 
 struct ButtonsCatalogView: View {
+    @MainActor
     private enum Constants {
         static var styles: [Style] {
             [

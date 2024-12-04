@@ -51,10 +51,10 @@ extension CalloutContentBase {
 
     var descriptionTitle: String {
         get {
-            calloutBaseView.messagesView.description
+            calloutBaseView.messagesView.calloutDescription
         }
         set {
-            calloutBaseView.messagesView.description = newValue
+            calloutBaseView.messagesView.calloutDescription = newValue
         }
     }
 
@@ -107,7 +107,7 @@ extension CalloutContentBase {
         }
 
         calloutBaseView.title = configuration.title
-        calloutBaseView.description = configuration.description
+        calloutBaseView.calloutTitleDescription = configuration.description
 
         switch configuration.actions {
         case let .primary(primaryButton):

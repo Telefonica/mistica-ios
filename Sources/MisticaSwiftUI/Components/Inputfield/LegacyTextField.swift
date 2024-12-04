@@ -160,10 +160,12 @@ extension LegacyTextFieldCoordinator: UIPickerViewDelegate, UIPickerViewDataSour
 // MARK: Date picker
 
 extension LegacyTextFieldCoordinator {
+    @MainActor
     @objc func doneButtonTapped(sender: UIBarButtonItem) {
         textField?.endEditing(true)
     }
 
+    @MainActor
     @objc func datePickerValueChanged(picker: UIDatePicker) {
         guard case .date(let format, _) = inputStyle else { return }
         formatter.dateFormat = format

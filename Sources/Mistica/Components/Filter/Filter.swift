@@ -18,6 +18,7 @@ private enum SegmentsContentMode {
 
 /// The FilterDelegate protocol defines methods that allow you to manage the selection and deselection of
 /// segments in a `Filter`. The methods of this protocol are all optional.
+@MainActor
 public protocol FilterDelegate: AnyObject {
     func filter(_ filter: Filter, didProgramaticallySelectSegment segment: Segment)
     func filter(_ filter: Filter, didManuallySelectSegment segment: Segment)

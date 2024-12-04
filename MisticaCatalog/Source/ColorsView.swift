@@ -101,7 +101,7 @@ struct Searchable: ViewModifier {
 }
 
 extension UIImage {
-    func bordered(borderWidth: CGFloat = 1, color: UIColor) -> UIImage {
+    @MainActor func bordered(borderWidth: CGFloat = 1, color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         let imageRect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         draw(in: imageRect)

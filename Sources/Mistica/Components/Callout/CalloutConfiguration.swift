@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 public struct CalloutConfiguration {
-    static let emptyConfiguration = CalloutConfiguration(asset: .none, title: nil, description: "Empty configuration", actions: nil, canClose: true)
+    public static func emptyConfiguration() -> CalloutConfiguration {
+        CalloutConfiguration(asset: .none, title: nil, description: "Empty configuration", actions: nil, canClose: true)
+    }
 
     public enum CalloutActions {
         case primary(CalloutButton)

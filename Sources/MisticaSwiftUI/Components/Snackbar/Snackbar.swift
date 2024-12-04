@@ -10,7 +10,7 @@ import Foundation
 
 import SwiftUI
 
-public enum SnackbarStyle {
+public enum SnackbarStyle: Sendable {
     case normal
     case error
 }
@@ -105,7 +105,9 @@ public struct Snackbar: View {
             }
 
             timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false, block: { _ in
-                executeDismissHandlerBlock(with: .timeout)
+                Task { @MainActor in
+                    executeDismissHandlerBlock(with: .timeout)
+                }
             })
         })
     }

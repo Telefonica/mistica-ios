@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct MisticaGradient {
+public struct MisticaGradient: Sendable {
     public let colors: [UIColor]
     public let stops: [CGFloat]
     public let angle: CGFloat

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Segment: Equatable {
+public struct Segment: Equatable, Sendable {
     public let id: String
     public let title: String
     public let accessibilityIdentifier: String?

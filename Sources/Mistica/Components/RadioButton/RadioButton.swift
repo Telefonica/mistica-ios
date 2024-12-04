@@ -14,7 +14,7 @@ public class RadioButton: UIControl {
     private enum Constants {
         static let viewWidth = CGFloat(20)
         static let animationDuration = Double(0.4)
-        static let timingFunction = CAMediaTimingFunction(controlPoints: 0.77, 0, 0.175, 1)
+        nonisolated(unsafe) static let timingFunction = CAMediaTimingFunction(controlPoints: 0.77, 0, 0.175, 1)
     }
 
     private var _isActivated = false

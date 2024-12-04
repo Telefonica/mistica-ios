@@ -18,10 +18,10 @@ public enum SkeletonType {
 
 public struct Skeleton: View {
     enum Constants {
-        static var lineHeight = 8.0
-        static var radius = MisticaConfig.currentCornerRadius.container
-        static var spacing = 16.0
-        static var circleSize = 40.0
+        static let lineHeight = 8.0
+        static let radius = MisticaConfig.currentCornerRadius.container
+        static let spacing = 16.0
+        static let circleSize = 40.0
     }
 
     let type: SkeletonType

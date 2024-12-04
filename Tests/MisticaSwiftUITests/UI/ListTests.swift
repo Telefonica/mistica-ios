@@ -11,21 +11,24 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class ListTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testFullwidthRowContent() {
         assertSnapshot(
-            matching: makeTemplateWithStyle(style: .fullwidth),
+            of: makeTemplateWithStyle(style: .fullwidth),
             as: .image
         )
     }
 
     func testBoxedRowContent() {
         assertSnapshot(
-            matching: makeTemplateWithStyle(style: .boxed),
+            of: makeTemplateWithStyle(style: .boxed),
             as: .image
         )
     }
@@ -39,7 +42,7 @@ final class ListTests: XCTestCase {
         ).frame(width: 400, height: 200)
 
         assertSnapshot(
-            matching: row,
+            of: row,
             as: .image
         )
     }
@@ -53,7 +56,7 @@ final class ListTests: XCTestCase {
         ).frame(width: 400, height: 200)
 
         assertSnapshot(
-            matching: row,
+            of: row,
             as: .image
         )
     }
@@ -90,7 +93,7 @@ final class ListTests: XCTestCase {
         .frame(width: 250, height: 400)
 
         assertSnapshot(
-            matching: rows,
+            of: rows,
             as: .image
         )
     }

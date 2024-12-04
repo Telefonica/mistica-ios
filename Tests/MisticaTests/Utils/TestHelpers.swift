@@ -22,18 +22,25 @@ extension UIView {
 
 // MARK: - Helpers
 
+@MainActor
 func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     as snapshotting: Snapshotting<View, Format>,
-    file: StaticString = #file,
+    file: StaticString = #filePath,
     testName: String = #function,
     line: UInt = #line,
-    viewBuilder: @autoclosure () -> View
+    viewBuilder: @autoclosure () -> View,
+    animationsEnabled: Bool = false
 ) {
+    UIView.setAnimationsEnabled(animationsEnabled)
+
     for brand in BrandStyle.allCases {
         MisticaConfig.brandStyle = brand
 
+        var lightView = viewBuilder()
+        lightView.overrideUserInterfaceStyle = .light
+
         assertSnapshot(
-            matching: viewBuilder(),
+            of: lightView,
             as: snapshotting,
             named: "with-\(brand)-style",
             file: file,
@@ -45,7 +52,7 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
         darkView.overrideUserInterfaceStyle = .dark
 
         assertSnapshot(
-            matching: darkView,
+            of: darkView,
             as: snapshotting,
             named: "with-\(brand)-dark-style",
             file: file,
@@ -55,11 +62,12 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     }
 }
 
+@MainActor
 func assertSnapshot<View: UserInterfaceStyling, Format>(
     for brands: [BrandStyle] = BrandStyle.allCases,
     and styles: [UIUserInterfaceStyle] = [.light, .dark],
     as snapshotting: Snapshotting<View, Format>,
-    file: StaticString = #file,
+    file: StaticString = #filePath,
     testName: String = #function,
     line: UInt = #line,
     viewBuilder: @autoclosure () -> View
@@ -71,7 +79,7 @@ func assertSnapshot<View: UserInterfaceStyling, Format>(
             var view = viewBuilder()
             view.overrideUserInterfaceStyle = style
             assertSnapshot(
-                matching: view,
+                of: view,
                 as: snapshotting,
                 named: "with-\(brand)-\(style.testSuffix)-style",
                 file: file,
@@ -82,6 +90,7 @@ func assertSnapshot<View: UserInterfaceStyling, Format>(
     }
 }
 
+@MainActor
 protocol UserInterfaceStyling {
     var overrideUserInterfaceStyle: UIUserInterfaceStyle { get set }
 }

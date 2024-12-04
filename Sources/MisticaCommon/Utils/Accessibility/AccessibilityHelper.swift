@@ -6,9 +6,10 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import UIKit
+@preconcurrency import UIKit
 
 public enum AccessibilityHelper {
+    @MainActor
     public static func post(_ announcement: String) {
         guard UIAccessibility.isVoiceOverRunning else { return }
 

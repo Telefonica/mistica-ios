@@ -8,6 +8,7 @@
 
 import Foundation
 
+import Combine
 import UIKit
 
 public class InputField: UIView {
@@ -377,16 +378,24 @@ public class InputField: UIView {
         updateAssistiveLabelAlpha()
         updateStyle()
 
-        subscribeToPlaceholdeLabelBoundsChanges()
+        subscribeToPlaceholderChanges()
     }
 
     deinit {
-        unsubscribeToPlaceholdeLabelBoundsChanges()
+        DispatchQueue.main.async { [weak self] in
+            self?.cancellables.forEach { $0.cancel() }
+        }
     }
 
-    override public func observeValue(forKeyPath _: String?, of _: Any?, change _: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) {
-        updatePlaceholderLayerPosition()
-        updatePlaceholderLayerSize()
+    private var cancellables = Set<AnyCancellable>()
+
+    private func subscribeToPlaceholderChanges() {
+        backingPlaceholderLabel.publisher(for: \.bounds)
+            .sink { _ in
+                self.updatePlaceholderLayerPosition()
+                self.updatePlaceholderLayerSize()
+            }
+            .store(in: &cancellables)
     }
 
     override public var intrinsicContentSize: CGSize {
@@ -705,14 +714,6 @@ private extension InputField {
         } else {
             return validationStrategy?.validate(text: text) ?? .success
         }
-    }
-
-    func subscribeToPlaceholdeLabelBoundsChanges() {
-        backingPlaceholderLabel.addObserver(self, forKeyPath: #keyPath(UIView.bounds), options: .new, context: nil)
-    }
-
-    func unsubscribeToPlaceholdeLabelBoundsChanges() {
-        backingPlaceholderLabel.removeObserver(self, forKeyPath: #keyPath(UIView.bounds))
     }
 }
 

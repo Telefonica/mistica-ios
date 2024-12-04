@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 protocol ListCellContentViewDelegate: AnyObject {
     func accessibilityChanged()
 }

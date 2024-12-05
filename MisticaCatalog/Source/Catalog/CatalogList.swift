@@ -93,12 +93,13 @@ private extension CatalogRow {
             ChipCatalogView()
         case .header:
             HeaderCatalogView()
+        case .forms:
+            FormViewCatalog()
         case .tooltip,
              .viewStates,
              .title,
              .filter,
              .scrollContentIndicator,
-             .forms,
              .controls,
              .sheet:
             notImplementedView

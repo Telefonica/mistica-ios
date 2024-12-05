@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MisticaCommon
 
 private enum Constants {
     static let horizontalPadding: CGFloat = 8
@@ -16,7 +17,7 @@ private enum Constants {
     static let textfieldHeight: CGFloat = 24
 }
 
-public struct InputField: View {
+public struct InputField: View, Identifiable {
     public enum ValidationState: Int, Identifiable, Equatable {
         case normal
         case invalid
@@ -41,7 +42,11 @@ public struct InputField: View {
 
     @State private var editing = false
     @State private var secureActivated = true
+    public var isOptional = false
+    public var nonOptionalFieldFailureMessage: String?
+    public var validationStrategy: InputFieldValidationStrategy?
 
+    public let id = UUID()
     var style: Style = .text
     var placeholder: String
 
@@ -49,12 +54,14 @@ public struct InputField: View {
         placeholder: String = "",
         text: Binding<String>,
         assistiveText: Binding<String> = .constant(""),
-        state: Binding<ValidationState> = .constant(.normal)
+        state: Binding<ValidationState> = .constant(.normal),
+        nonOptionalFieldFailureMessage: String = ""
     ) {
         self.placeholder = placeholder
         _text = text
         _assistiveText = assistiveText
         _state = state
+        self.nonOptionalFieldFailureMessage = nonOptionalFieldFailureMessage
     }
 
     public var body: some View {
@@ -113,6 +120,10 @@ public struct InputField: View {
             }
         }
         .animation(.misticaTimingCurve, value: assistiveText.isEmpty)
+        .onChange(of: text) { _ in
+            assistiveText = ""
+            state = .normal
+        }
     }
 }
 
@@ -288,6 +299,28 @@ public extension InputField {
         let view = self
         _ = view.textField.textContentType(textContentType)
         return view
+    }
+    
+    func validate() {
+        switch validationResult() {
+        case .success:
+            state = .normal
+        case .failure(let message):
+            show(errorText: message)
+        }
+    }
+    
+    func validationResult() -> InputFieldValidationResult {
+        if !isOptional && text.isEmpty {
+            return InputFieldValidationResult.failure(message: nonOptionalFieldFailureMessage ?? "")
+        } else {
+            return validationStrategy?.validate(text: text) ?? .success
+        }
+    }
+    
+    func show(errorText: String) {
+        state = .invalid
+        assistiveText = errorText
     }
 }
 

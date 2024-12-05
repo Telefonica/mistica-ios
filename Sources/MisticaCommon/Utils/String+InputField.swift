@@ -1,9 +1,8 @@
 //
-//  String+Utils.swift
+//  String+InputField.swift
+//  Mistica
 //
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
+//  Created by Alejandro Ruiz on 5/12/24.
 //
 
 import Foundation
@@ -20,6 +19,7 @@ private let weirdCharactersForPhoneRegex = (try? NSRegularExpression(
     pattern: "[a-z:]+",
     options: .caseInsensitive
 ))!
+
 
 extension String {
     var trimmingWhiteSpace: String {

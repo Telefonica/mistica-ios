@@ -63,9 +63,7 @@ public struct FormView: View {
             }
             .padding(16)
         }
-
     }
-
 
     private func validateAndSubmit() {
         onButtonTap?(isValid)

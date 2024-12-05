@@ -2,8 +2,9 @@
 //  FormViewCatalog.swift
 //  MisticaCatalog
 //
-//  Created by Alejandro Ruiz on 5/12/24.
+//  Made with ❤️ by Novum
 //
+//  Copyright © Telefonica. All rights reserved.
 
 import SwiftUI
 import MisticaSwiftUI

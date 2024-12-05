@@ -2,8 +2,9 @@
 //  FormView.swift
 //  Mistica
 //
-//  Created by Alejandro Ruiz on 4/12/24.
+//  Made with ❤️ by Novum
 //
+//  Copyright © Telefonica. All rights reserved.
 
 import SwiftUI
 

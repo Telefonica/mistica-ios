@@ -6,8 +6,8 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-import SwiftUI
 import MisticaCommon
+import SwiftUI
 
 private enum Constants {
     static let horizontalPadding: CGFloat = 8
@@ -300,7 +300,7 @@ public extension InputField {
         _ = view.textField.textContentType(textContentType)
         return view
     }
-    
+
     func validate() {
         switch validationResult() {
         case .success:
@@ -309,7 +309,7 @@ public extension InputField {
             show(errorText: message)
         }
     }
-    
+
     func validationResult() -> InputFieldValidationResult {
         if !isOptional && text.isEmpty {
             return InputFieldValidationResult.failure(message: nonOptionalFieldFailureMessage ?? "")
@@ -317,7 +317,7 @@ public extension InputField {
             return validationStrategy?.validate(text: text) ?? .success
         }
     }
-    
+
     func show(errorText: String) {
         state = .invalid
         assistiveText = errorText

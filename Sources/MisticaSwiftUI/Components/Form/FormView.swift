@@ -1,10 +1,10 @@
 //
 //  FormView.swift
-//  Mistica
 //
 //  Made with ❤️ by Novum
 //
 //  Copyright © Telefonica. All rights reserved.
+//
 
 import SwiftUI
 
@@ -18,15 +18,15 @@ public struct FormView: View {
     var footerView: AnyView?
     var buttonTitle: String
     var onButtonTap: ((Bool) -> Void)?
-    
+
     public init(
         inputFields: [InputField],
         headerView: AnyView? = nil,
         detailView: AnyView? = nil,
         footerView: AnyView? = nil,
         buttonTitle: String,
-        onButtonTap: ((Bool) -> Void)? = nil)
-    {
+        onButtonTap: ((Bool) -> Void)? = nil
+    ) {
         self.inputFields = inputFields
         self.headerView = headerView
         self.detailView = detailView
@@ -75,7 +75,7 @@ struct FormView_Previews: PreviewProvider {
     @State static var text2 = ""
     @State static var text3 = ""
     @State static var text4 = ""
-    
+
     @State static var assistiveText1 = "This field is required"
 
     static var previews: some View {
@@ -89,7 +89,7 @@ struct FormView_Previews: PreviewProvider {
                     .style(.email),
                 InputField(placeholder: "Phone", text: $text4)
                     .style(.phone(code: "+34"))
-                ],
+            ],
             headerView: AnyView(Text("Header view")
                 .font(.headline)),
             detailView: AnyView(Text("Detail view")
@@ -103,4 +103,3 @@ struct FormView_Previews: PreviewProvider {
         )
     }
 }
-

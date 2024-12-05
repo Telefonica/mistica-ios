@@ -1,13 +1,13 @@
 //
 //  FormViewCatalog.swift
-//  MisticaCatalog
 //
 //  Made with ❤️ by Novum
 //
 //  Copyright © Telefonica. All rights reserved.
+//
 
-import SwiftUI
 import MisticaSwiftUI
+import SwiftUI
 
 public struct FormViewCatalog: View {
     struct FormFieldState: Identifiable {
@@ -17,7 +17,7 @@ public struct FormViewCatalog: View {
         var assistiveText: String = ""
         var state: InputField.ValidationState = .normal
         let style: InputField.Style
-        
+
         func createInputField(binding: Binding<FormFieldState>) -> InputField {
             InputField(
                 placeholder: placeholder,
@@ -29,7 +29,7 @@ public struct FormViewCatalog: View {
             .style(style)
         }
     }
-    
+
     @State private var fields: [FormFieldState] = [
         FormFieldState(placeholder: "Name", style: .text),
         FormFieldState(placeholder: "Surname (Optional)", style: .text),
@@ -37,7 +37,7 @@ public struct FormViewCatalog: View {
         FormFieldState(placeholder: "Password", style: .secure),
         FormFieldState(placeholder: "Phone", style: .phone(code: "+34"))
     ]
-    
+
     public var body: some View {
         FormView(
             inputFields: fields.indices.map { index in
@@ -56,12 +56,12 @@ public struct FormViewCatalog: View {
                     .font(.footnote)
             ),
             buttonTitle: "Save",
-            onButtonTap: { isValid in
+            onButtonTap: { _ in
                 validateForm()
             }
         )
     }
-    
+
     private func validateForm() {
         for index in fields.indices {
             fields[index].createInputField(binding: $fields[index]).validate()

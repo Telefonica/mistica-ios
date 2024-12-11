@@ -1,3 +1,10 @@
+## [33.4.1](https://github.com/Telefonica/mistica-ios/compare/v33.4.0...v33.4.1) (2024-12-11)
+
+
+### Bug Fixes
+
+* **Feedback:** add safe concurrency in Feedback completion ([a6eea07](https://github.com/Telefonica/mistica-ios/commit/a6eea0775f63ff9884712b7836255f83fc30b764))
+
 # [33.4.0](https://github.com/Telefonica/mistica-ios/compare/v33.3.0...v33.4.0) (2024-12-04)
 
 

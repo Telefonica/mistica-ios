@@ -53,6 +53,7 @@
 		18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */; };
 		18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */; };
 		18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */; };
+		243730502CF74F95008DECFB /* ViewStatesCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437304F2CF74F95008DECFB /* ViewStatesCatalogView.swift */; };
 		244D00C62C491D4600424AA5 /* SkeletonsCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D00C52C491D4600424AA5 /* SkeletonsCatalogView.swift */; };
 		244D00C82C49392700424AA5 /* UICatalogSkeletonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244D00C72C49392700424AA5 /* UICatalogSkeletonsViewController.swift */; };
 		24D94F0D2D01D70900CCBEB2 /* FormViewCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D94F0C2D01D70900CCBEB2 /* FormViewCatalog.swift */; };
@@ -142,6 +143,7 @@
 		18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCroutonViewController.swift; sourceTree = "<group>"; };
 		18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogBadgeViewController.swift; sourceTree = "<group>"; };
 		18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHeaderViewController.swift; sourceTree = "<group>"; };
+		2437304F2CF74F95008DECFB /* ViewStatesCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatesCatalogView.swift; sourceTree = "<group>"; };
 		244D00C52C491D4600424AA5 /* SkeletonsCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonsCatalogView.swift; sourceTree = "<group>"; };
 		244D00C72C49392700424AA5 /* UICatalogSkeletonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICatalogSkeletonsViewController.swift; sourceTree = "<group>"; };
 		24D94F0C2D01D70900CCBEB2 /* FormViewCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewCatalog.swift; sourceTree = "<group>"; };
@@ -220,6 +222,20 @@
 			isa = PBXGroup;
 			children = (
 				24D94F0C2D01D70900CCBEB2 /* FormViewCatalog.swift */,
+				2437304F2CF74F95008DECFB /* ViewStatesCatalogView.swift */,
+				18E4854D287F19EB0052A6F2 /* InputFieldCatalogView.swift */,
+				18E4854E287F19EB0052A6F2 /* StepperCatalogVIew.swift */,
+				18E4854F287F19EB0052A6F2 /* EmptyStateCatalogView.swift */,
+				18E48550287F19EB0052A6F2 /* SnackbarCatalogView.swift */,
+				18E48551287F19EB0052A6F2 /* CalloutCatalogView.swift */,
+				18E48552287F19EB0052A6F2 /* FeedbackCatalogView.swift */,
+				18E48553287F19EB0052A6F2 /* RadioButtonCatalogView.swift */,
+				18E48554287F19EB0052A6F2 /* CarouselCatalogView.swift */,
+				18E48555287F19EB0052A6F2 /* ChipCatalogView.swift */,
+				18E48556287F19EB0052A6F2 /* ButtonCatalogView.swift */,
+				18E48557287F19EB0052A6F2 /* DataCardCatalogView.swift */,
+				18E48558287F19EB0052A6F2 /* CheckboxCatalogView.swift */,
+				18E48559287F19EB0052A6F2 /* TabsCatalogView.swift */,
 				18E4855A287F19EB0052A6F2 /* BadgeCatalogView.swift */,
 				18E48556287F19EB0052A6F2 /* ButtonCatalogView.swift */,
 				18E48551287F19EB0052A6F2 /* CalloutCatalogView.swift */,
@@ -531,6 +547,7 @@
 				18E4859C287F19EB0052A6F2 /* UICatalogControlsViewController.swift in Sources */,
 				18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */,
 				18E48581287F19EB0052A6F2 /* CalloutCatalogView.swift in Sources */,
+				243730502CF74F95008DECFB /* ViewStatesCatalogView.swift in Sources */,
 				392E03DC28C6153C0081780B /* UICatalogSheetViewController.swift in Sources */,
 				18E48584287F19EB0052A6F2 /* CarouselCatalogView.swift in Sources */,
 				18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */,

@@ -95,8 +95,9 @@ private extension CatalogRow {
             HeaderCatalogView()
         case .forms:
             FormViewCatalog()
+        case .viewStates:
+            ViewStatesCatalogView()
         case .tooltip,
-             .viewStates,
              .title,
              .filter,
              .scrollContentIndicator,

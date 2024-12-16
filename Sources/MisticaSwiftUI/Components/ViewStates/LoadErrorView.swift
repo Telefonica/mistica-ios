@@ -63,7 +63,7 @@ public struct LoadErrorView: View {
                         Text(actionButtonTitle)
                     }
                     .loading(isRetryButtonLoading)
-                    .buttonStyle(.misticaSecondary(small: true))
+                    .buttonStyle(.misticaSecondary(small: false))
                 }
             }
             .padding(.horizontal, Constants.contentInset)

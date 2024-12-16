@@ -1,3 +1,10 @@
+# [33.5.0](https://github.com/Telefonica/mistica-ios/compare/v33.4.1...v33.5.0) (2024-12-16)
+
+
+### Features
+
+* **SnapCard:** LATCH-2380 Added SnapCard component ([#417](https://github.com/Telefonica/mistica-ios/issues/417)) ([25d22e9](https://github.com/Telefonica/mistica-ios/commit/25d22e97b3213c30a6634060469b34ef979ce174))
+
 ## [33.4.1](https://github.com/Telefonica/mistica-ios/compare/v33.4.0...v33.4.1) (2024-12-11)
 
 

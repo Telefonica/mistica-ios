@@ -1,5 +1,5 @@
 //
-//  String+Utils.swift
+//  String+InputField.swift
 //
 //  Made with ❤️ by Novum
 //

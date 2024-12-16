@@ -1,3 +1,10 @@
+# [33.6.0](https://github.com/Telefonica/mistica-ios/compare/v33.5.0...v33.6.0) (2024-12-16)
+
+
+### Features
+
+* **Forms:** added Forms component in SwiftUI ([3769e2c](https://github.com/Telefonica/mistica-ios/commit/3769e2c549e640f6824b01955dea9b568bf261e9))
+
 # [33.5.0](https://github.com/Telefonica/mistica-ios/compare/v33.4.1...v33.5.0) (2024-12-16)
 
 

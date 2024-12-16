@@ -91,6 +91,7 @@
 		BB9A70292CE0D94900B2767F /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A70282CE0D93D00B2767F /* CardList.swift */; };
 		BB9A702B2CE0E34600B2767F /* PosterCardCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A702A2CE0E34300B2767F /* PosterCardCatalogView.swift */; };
 		BB9A702E2CE3B3BE00B2767F /* airpods.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BB9A702D2CE3B3BE00B2767F /* airpods.mp4 */; };
+		BBEAB72E2CFF5A0C00AE8D8F /* SnapCardCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEAB72D2CFF5A0600AE8D8F /* SnapCardCatalogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +181,7 @@
 		BB9A70282CE0D93D00B2767F /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		BB9A702A2CE0E34300B2767F /* PosterCardCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCardCatalogView.swift; sourceTree = "<group>"; };
 		BB9A702D2CE3B3BE00B2767F /* airpods.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = airpods.mp4; sourceTree = "<group>"; };
+		BBEAB72D2CFF5A0600AE8D8F /* SnapCardCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCardCatalogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 				18E48553287F19EB0052A6F2 /* RadioButtonCatalogView.swift */,
 				244D00C52C491D4600424AA5 /* SkeletonsCatalogView.swift */,
 				18E48550287F19EB0052A6F2 /* SnackbarCatalogView.swift */,
+				BBEAB72D2CFF5A0600AE8D8F /* SnapCardCatalogView.swift */,
 				18E4854E287F19EB0052A6F2 /* StepperCatalogVIew.swift */,
 				18E48559287F19EB0052A6F2 /* TabsCatalogView.swift */,
 				18E4855B287F19EB0052A6F2 /* TagCatalogView.swift */,
@@ -570,6 +573,7 @@
 				18E4858A287F19EB0052A6F2 /* BadgeCatalogView.swift in Sources */,
 				18E48583287F19EB0052A6F2 /* RadioButtonCatalogView.swift in Sources */,
 				BB9A702B2CE0E34600B2767F /* PosterCardCatalogView.swift in Sources */,
+				BBEAB72E2CFF5A0C00AE8D8F /* SnapCardCatalogView.swift in Sources */,
 				18E4858F287F19EB0052A6F2 /* UICatalogScrollContentIndicatorViewController.swift in Sources */,
 				18E4857B287F19EB0052A6F2 /* CatalogList.swift in Sources */,
 				18E48586287F19EB0052A6F2 /* ButtonCatalogView.swift in Sources */,

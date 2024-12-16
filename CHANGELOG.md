@@ -1,3 +1,10 @@
+# [33.7.0](https://github.com/Telefonica/mistica-ios/compare/v33.6.0...v33.7.0) (2024-12-16)
+
+
+### Features
+
+* **ViewStates:** added ViewStates component in SwiftUI ([c6da83a](https://github.com/Telefonica/mistica-ios/commit/c6da83a799a20d32dab06f66d112eae44fecb1e2))
+
 # [33.6.0](https://github.com/Telefonica/mistica-ios/compare/v33.5.0...v33.6.0) (2024-12-16)
 
 

@@ -50,7 +50,7 @@ jobs:
           release-notes: "Mistica Catalog"
           tester-groups: ""
           app-id: "1:566193653712:ios:07224eb13f3e735f515bd5"
-          google-application-credentials: ${{ secrets.MISTICA_GOOGLE_APPLICATION_CREDENTIALS }}
+          google-application-credentials: ${{ secrets.MISTICA_ENTERPRISE_FIREBASE_KEY }}
       
       - name: Clean up keychain and provisioning profile
         if: ${{ always() }}

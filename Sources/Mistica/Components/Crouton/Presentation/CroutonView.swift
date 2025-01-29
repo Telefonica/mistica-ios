@@ -22,7 +22,6 @@ class CroutonView: UIView {
         static let contentAnimationDuration = presentationAnimationDuration - contentAnimationDelay
 
         static let margins = NSDirectionalEdgeInsets(top: 14, leading: 16, bottom: 14, trailing: 16)
-        static let marginsWhenUsingSafeArea = NSDirectionalEdgeInsets(top: 14, leading: 16, bottom: 0, trailing: 16)
 
         static let buttonWidthThresholdForVerticalLayout: CGFloat = 128
         static let horizontalSpacing: CGFloat = 16
@@ -98,9 +97,6 @@ class CroutonView: UIView {
         return closeImageView
     }()
 
-    // A dummy view used for skipping the bottom safe area inset
-    private lazy var dummyView = UIView()
-
     private var timer: Timer?
 
     private let text: String
@@ -125,6 +121,8 @@ class CroutonView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = config.backgroundColor
         accessibilityLabel = text
+        layer.cornerRadius = 4
+        layer.masksToBounds = true
 
         layoutViews()
     }
@@ -242,35 +240,34 @@ private extension CroutonView {
 
     func layoutViews() {
         addSubview(verticalStackView)
-        addSubview(dummyView)
 
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
-        dummyView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             verticalStackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             verticalStackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            verticalStackView.bottomAnchor.constraint(equalTo: dummyView.topAnchor),
             verticalStackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-
-            dummyView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            dummyView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-            dummyView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor)
+            verticalStackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
         ])
     }
 
     func addContainerConstraints(to container: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
-
-        if container.safeAreaInsets.bottom > 0 {
+        directionalLayoutMargins = Constants.margins
+        if let tabBar = findTabBar(in: container), !tabBar.isHidden {
             NSLayoutConstraint.activate([
-                trailingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.trailingAnchor),
-                leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor),
-                bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: container.safeAreaInsets.bottom),
-                dummyView.heightAnchor.constraint(equalToConstant: container.safeAreaInsets.bottom)
+                trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8 ),
+                leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8 ),
+                bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -(tabBar.bounds.height + 8))
             ])
 
-            directionalLayoutMargins = Constants.marginsWhenUsingSafeArea
+        } else if container.safeAreaInsets.bottom > 0 {
+            NSLayoutConstraint.activate([
+                trailingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+                leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+                bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+            ])
+
         } else {
             let bottomConstraint: NSLayoutConstraint
 
@@ -278,17 +275,27 @@ private extension CroutonView {
                 // The bottomAnchor does not work in scrollViews, as workarround we take the topAnchor as reference
                 bottomConstraint = bottomAnchor.constraint(equalTo: container.topAnchor, constant: scrollViewContainer.frameHeight)
             } else {
-                bottomConstraint = bottomAnchor.constraint(equalTo: container.bottomAnchor)
+                bottomConstraint = bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: -8)
             }
 
             NSLayoutConstraint.activate([
-                trailingAnchor.constraint(equalTo: container.trailingAnchor),
-                leadingAnchor.constraint(equalTo: container.leadingAnchor),
+                trailingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+                leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor, constant: 8),
                 bottomConstraint
             ])
-
-            directionalLayoutMargins = Constants.margins
         }
+    }
+
+    
+    private func findTabBar(in view: UIView) -> UITabBar? {
+        for subview in view.subviews {
+            if let tabBar = subview as? UITabBar {
+                return tabBar
+            } else if let foundTabBar = findTabBar(in: subview) {
+                return foundTabBar
+            }
+        }
+        return nil
     }
 
     func addCountdownToDismiss() {

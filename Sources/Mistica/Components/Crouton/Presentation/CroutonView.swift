@@ -27,7 +27,7 @@ class CroutonView: UIView {
         static let horizontalSpacing: CGFloat = 16
         static let verticalSpacing: CGFloat = 18
 
-        static let closeButtonWidthAndHeight: CGFloat = 20
+        static let closeButtonWidthAndHeight: CGFloat = 22
     }
 
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
@@ -84,8 +84,8 @@ class CroutonView: UIView {
     private lazy var closeImageView: IntrinsictImageView? = {
         guard shouldShowCloseButton else { return nil }
         let closeImageView = IntrinsictImageView()
-        closeImageView.intrinsicHeight = Constants.closeButtonWidthAndHeight
-        closeImageView.intrinsicWidth = Constants.closeButtonWidthAndHeight
+        closeImageView.frame = CGRect(x: 0, y: 0, width: Constants.closeButtonWidthAndHeight, height: Constants.closeButtonWidthAndHeight)
+        closeImageView.contentMode = .center
         closeImageView.image = UIImage.closeButtonBlackSmallIcon.withRenderingMode(.alwaysTemplate)
         closeImageView.tintColor = .inverse
 
@@ -121,8 +121,6 @@ class CroutonView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = config.backgroundColor
         accessibilityLabel = text
-        layer.cornerRadius = 4
-        layer.masksToBounds = true
 
         layoutViews()
     }
@@ -155,6 +153,11 @@ class CroutonView: UIView {
         super.traitCollectionDidChange(previousTraitCollection)
 
         adjustStackViewLayout(traitCollection: traitCollection)
+    }
+
+    override public func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        setMisticaRadius(.popup)
     }
 }
 

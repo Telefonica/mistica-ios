@@ -250,7 +250,7 @@ private extension CroutonView {
             verticalStackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             verticalStackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             verticalStackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
-            verticalStackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
+            verticalStackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor)
         ])
     }
 
@@ -259,8 +259,8 @@ private extension CroutonView {
         directionalLayoutMargins = Constants.margins
         if let tabBar = findTabBar(in: container), !tabBar.isHidden {
             NSLayoutConstraint.activate([
-                trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8 ),
-                leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8 ),
+                trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -8),
+                leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 8),
                 bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -(tabBar.bounds.height + 8))
             ])
 
@@ -289,7 +289,6 @@ private extension CroutonView {
         }
     }
 
-    
     private func findTabBar(in view: UIView) -> UITabBar? {
         for subview in view.subviews {
             if let tabBar = subview as? UITabBar {

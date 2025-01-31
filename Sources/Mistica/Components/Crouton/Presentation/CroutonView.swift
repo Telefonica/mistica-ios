@@ -260,7 +260,7 @@ private extension CroutonView {
 
         let hasSafeArea = container.safeAreaInsets.bottom > 0
         let tabBar = findTabBar(in: container)
-        
+
         let bottomConstraint: NSLayoutConstraint
 
         if let tabBar = tabBar, !tabBar.isHidden {
@@ -279,7 +279,7 @@ private extension CroutonView {
             leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor, constant: 8),
             bottomConstraint
         ]
-        
+
         NSLayoutConstraint.activate(constraints)
     }
 

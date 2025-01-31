@@ -53,7 +53,7 @@ public extension UIImage {
     static var bullet: UIImage {
         UIImage(named: "icn_bullet", type: .common)!
     }
-    
+
     static var regularCloseButtonIcon: UIImage {
         UIImage(named: "icn_close_regular", type: .common)!
     }

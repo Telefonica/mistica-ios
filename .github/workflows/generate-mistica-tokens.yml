@@ -2,6 +2,11 @@ name: Generate Mistica Tokens
 
 on:
   workflow_dispatch:
+    inputs:
+      ref:
+        description: 'mistica-design repo changeset or branch'
+        required: false
+        default: 'production'
 
 concurrency:
     group: ci-${{ github.ref }}
@@ -23,7 +28,7 @@ jobs:
       working-directory: scripts/mistica-skin-generator
 
     - name: Generate tokens
-      run: npm run generate
+      run: npm run generate -- ${{github.event.inputs.ref}}
       working-directory: scripts/mistica-skin-generator
 
     - name: Create Pull Request

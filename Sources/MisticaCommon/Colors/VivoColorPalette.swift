@@ -23,9 +23,9 @@ struct VivoColors: MisticaColors {
 
     let backgroundContainerError = VivoColors.palette.pepperLight10 | VivoColors.palette.darkModeGrey
 
-    let backgroundContainerHover = VivoColors.palette.darkModeBlack.withAlphaComponent(0.03) | VivoColors.palette.white.withAlphaComponent(0.03)
+    let backgroundContainerHover = VivoColors.palette.darkModeBlack.withAlphaComponent(0.05) | VivoColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerPressed = VivoColors.palette.darkModeBlack.withAlphaComponent(0.05) | VivoColors.palette.white.withAlphaComponent(0.05)
+    let backgroundContainerPressed = VivoColors.palette.darkModeBlack.withAlphaComponent(0.08) | VivoColors.palette.white.withAlphaComponent(0.08)
 
     let backgroundContainerBrand = MisticaColor.solid(VivoColors.palette.vivoPurple | VivoColors.palette.darkModeGrey)
 

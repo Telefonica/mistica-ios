@@ -23,9 +23,9 @@ struct BlauColors: MisticaColors {
 
     let backgroundContainerError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey
 
-    let backgroundContainerHover = BlauColors.palette.blauBluePrimary.withAlphaComponent(0.03) | BlauColors.palette.white.withAlphaComponent(0.03)
+    let backgroundContainerHover = BlauColors.palette.blauBlueSecondary.withAlphaComponent(0.05) | BlauColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerPressed = BlauColors.palette.blauBluePrimary.withAlphaComponent(0.05) | BlauColors.palette.white.withAlphaComponent(0.05)
+    let backgroundContainerPressed = BlauColors.palette.blauBlueSecondary.withAlphaComponent(0.08) | BlauColors.palette.white.withAlphaComponent(0.08)
 
     let backgroundContainerBrand = MisticaColor.solid(BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeGrey)
 
@@ -133,7 +133,7 @@ struct BlauColors: MisticaColors {
 
     let textBrand = BlauColors.palette.blauBluePrimary
 
-    let control = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
+    let control = BlauColors.palette.grey5 | BlauColors.palette.darkModeGrey6
 
     let controlActivated = BlauColors.palette.blauBlueSecondary
 

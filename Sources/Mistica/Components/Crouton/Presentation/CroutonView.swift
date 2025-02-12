@@ -268,7 +268,6 @@ private extension CroutonView {
         } else if hasSafeArea {
             bottomConstraint = bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: -8)
         } else if let scrollView = container as? UIScrollView {
-
             // The bottomAnchor does not work in scrollViews, as workarround we take the topAnchor as reference
             bottomConstraint = bottomAnchor.constraint(equalTo: container.topAnchor, constant: scrollView.frameHeight - 8)
         } else {

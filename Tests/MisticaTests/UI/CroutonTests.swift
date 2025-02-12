@@ -6,7 +6,6 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
-
 @testable import Mistica
 import SnapshotTesting
 import XCTest
@@ -82,7 +81,7 @@ final class CroutonTests: XCTestCase {
             )
         )
     }
-    
+
     func testInfoCroutonWithTabbar() {
         assertSnapshot(
             for: [BrandStyle.movistar],
@@ -104,8 +103,8 @@ final class CroutonTests: XCTestCase {
             viewBuilder: makeCroutonWithScrollView(
                 withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 style: .info
-                )
             )
+        )
     }
 }
 
@@ -150,6 +149,7 @@ private extension CroutonTests {
         return croutonViewController
     }
 }
+
 private class CroutonTestViewController: UIViewController {
     private let text: String
     private let action: CroutonController.ActionConfig?
@@ -193,13 +193,13 @@ private extension CroutonTestViewController {
         guard let action = action else {
             return .fiveSeconds
         }
-            return .tenSeconds(SnackbarAction(title: action.text, handler: action.handler))
+        return .tenSeconds(SnackbarAction(title: action.text, handler: action.handler))
     }
 }
 
 private class ScrollViewCroutonViewController: UIViewController, CustomCroutonContainer {
     var customCroutonContainerView: UIView {
-        return scrollView
+        scrollView
     }
 
     private let scrollView: UIScrollView = {
@@ -211,7 +211,7 @@ private class ScrollViewCroutonViewController: UIViewController, CustomCroutonCo
     private let text: String
     private let style: CroutonStyle
     private let action: CroutonController.ActionConfig?
-    
+
     init(text: String, style: CroutonStyle, action: CroutonController.ActionConfig?) {
         self.text = text
         self.style = style
@@ -225,28 +225,27 @@ private class ScrollViewCroutonViewController: UIViewController, CustomCroutonCo
     }
 
     override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            view.addSubview(scrollView)
+        super.viewDidLoad()
+
+        view.addSubview(scrollView)
         scrollView.backgroundColor = .lightGray
         NSLayoutConstraint.activate([
-
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: 250),
+            scrollView.heightAnchor.constraint(equalToConstant: 250)
         ])
-            
-            let config = SnackbarConfig(
-                title: text,
-                dismissInterval: dismissInterval
-            )
-            CroutonController.shared.showCrouton(
-                config: config,
-                style: style,
-                rootViewController: { self }
-            )
-        }
+
+        let config = SnackbarConfig(
+            title: text,
+            dismissInterval: dismissInterval
+        )
+        CroutonController.shared.showCrouton(
+            config: config,
+            style: style,
+            rootViewController: { self }
+        )
+    }
 }
 
 private extension ScrollViewCroutonViewController {

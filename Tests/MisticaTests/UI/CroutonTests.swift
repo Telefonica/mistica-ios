@@ -83,7 +83,6 @@ final class CroutonTests: XCTestCase {
     }
 
     func testInfoCroutonWithTabbar() {
-        isRecording = true
         MisticaConfig.styleControls([.tabBar])
         assertSnapshot(
             for: [BrandStyle.movistar],
@@ -118,39 +117,38 @@ private extension CroutonTests {
             style: style
         )
 
-        if withTabBar {
-            let tabBarController = UITabBarController()
-            let tabIcon = UIImage(systemName: "house.fill")
-            croutonViewController.tabBarItem = UITabBarItem(title: "Tab_1", image: tabIcon, selectedImage: tabIcon)
-            let dummyViewController = UIViewController()
-            dummyViewController.tabBarItem = UITabBarItem(title: "Tab_2", image: tabIcon, selectedImage: tabIcon)
-            tabBarController.viewControllers = [croutonViewController, dummyViewController]
-            let topBorder = UIView()
-            topBorder.frame = CGRect(x: 0, y: 0, width: tabBarController.tabBar.frame.size.width, height: 1)
-            topBorder.backgroundColor = .darkGray // Puedes cambiar el color a lo que prefieras
-
-            tabBarController.tabBar.addSubview(topBorder)
-            return tabBarController
-        }
-
-        return croutonViewController
+        guard withTabBar else { return croutonViewController }
+        return createTabBarController(with: croutonViewController)
     }
 
     func makeCroutonWithScrollView(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
-        let croutonViewController = ScrollViewCroutonViewController(
+        return ScrollViewCroutonViewController(
             text: text,
-            style: style,
-            action: actionTitle.map { ($0, $0, {}) }
+            action: actionTitle.map { ($0, $0, {}) }, style: style
         )
+    }
 
-        return croutonViewController
+    private func createTabBarController(with viewController: UIViewController) -> UITabBarController {
+        let tabBarController = UITabBarController()
+        let tabIcon = UIImage(systemName: "house.fill")
+
+        viewController.tabBarItem = UITabBarItem(title: "Tab_1", image: tabIcon, selectedImage: tabIcon)
+        let dummyViewController = UIViewController()
+        dummyViewController.tabBarItem = UITabBarItem(title: "Tab_2", image: tabIcon, selectedImage: tabIcon)
+
+        tabBarController.viewControllers = [viewController, dummyViewController]
+        let topBorder = UIView(frame: CGRect(x: 0, y: 0, width: tabBarController.tabBar.frame.size.width, height: 1))
+        topBorder.backgroundColor = .darkGray
+        tabBarController.tabBar.addSubview(topBorder)
+        
+        return tabBarController
     }
 }
 
-private class CroutonTestViewController: UIViewController {
-    private let text: String
-    private let action: CroutonController.ActionConfig?
-    private let style: CroutonStyle
+private class BaseCroutonViewController: UIViewController {
+    let text: String
+    let action: CroutonController.ActionConfig?
+    let style: CroutonStyle
 
     init(text: String, action: CroutonController.ActionConfig?, style: CroutonStyle) {
         self.text = text
@@ -164,6 +162,12 @@ private class CroutonTestViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    var dismissInterval: SnackbarDismissInterval {
+        return action.map { .tenSeconds(SnackbarAction(title: $0.text, handler: $0.handler)) } ?? .fiveSeconds
+    }
+}
+
+private class CroutonTestViewController: BaseCroutonViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
@@ -171,85 +175,40 @@ private class CroutonTestViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        let config = SnackbarConfig(
-            title: text,
-            dismissInterval: dismissInterval
-        )
-
+        
         CroutonController().showCrouton(
-            config: config,
+            config: SnackbarConfig(title: text, dismissInterval: dismissInterval),
             style: style,
             rootViewController: { self }
         )
     }
 }
 
-private extension CroutonTestViewController {
-    var dismissInterval: SnackbarDismissInterval {
-        guard let action = action else {
-            return .fiveSeconds
-        }
-        return .tenSeconds(SnackbarAction(title: action.text, handler: action.handler))
-    }
-}
-
-private class ScrollViewCroutonViewController: UIViewController, CustomCroutonContainer {
-    var customCroutonContainerView: UIView {
-        scrollView
-    }
-
-    private let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        return scrollView
-    }()
-
-    private let text: String
-    private let style: CroutonStyle
-    private let action: CroutonController.ActionConfig?
-
-    init(text: String, style: CroutonStyle, action: CroutonController.ActionConfig?) {
-        self.text = text
-        self.style = style
-        self.action = action
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+private class ScrollViewCroutonViewController: BaseCroutonViewController, CustomCroutonContainer {
+    var customCroutonContainerView: UIView { scrollView }
+    private let scrollView = UIScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupScrollView()
+        
+        CroutonController.shared.showCrouton(
+            config: SnackbarConfig(title: text, dismissInterval: dismissInterval),
+            style: style,
+            rootViewController: { self }
+        )
+    }
 
-        view.addSubview(scrollView)
+    private func setupScrollView() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .lightGray
+        view.addSubview(scrollView)
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.heightAnchor.constraint(equalToConstant: 250)
         ])
-
-        let config = SnackbarConfig(
-            title: text,
-            dismissInterval: dismissInterval
-        )
-        CroutonController.shared.showCrouton(
-            config: config,
-            style: style,
-            rootViewController: { self }
-        )
-    }
-}
-
-private extension ScrollViewCroutonViewController {
-    var dismissInterval: SnackbarDismissInterval {
-        guard let action = action else {
-            return .fiveSeconds
-        }
-        return .tenSeconds(SnackbarAction(title: action.text, handler: action.handler))
     }
 }

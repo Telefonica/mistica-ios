@@ -83,6 +83,8 @@ final class CroutonTests: XCTestCase {
     }
 
     func testInfoCroutonWithTabbar() {
+        isRecording = true
+        MisticaConfig.styleControls([.tabBar])
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
@@ -118,21 +120,16 @@ private extension CroutonTests {
 
         if withTabBar {
             let tabBarController = UITabBarController()
-            croutonViewController.tabBarItem = UITabBarItem(title: "Tab_1", image: nil, selectedImage: nil)
+            let tabIcon = UIImage(systemName: "house.fill")
+            croutonViewController.tabBarItem = UITabBarItem(title: "Tab_1", image: tabIcon, selectedImage: tabIcon)
             let dummyViewController = UIViewController()
-            dummyViewController.tabBarItem = UITabBarItem(title: "Tab_2", image: nil, selectedImage: nil)
+            dummyViewController.tabBarItem = UITabBarItem(title: "Tab_2", image: tabIcon, selectedImage: tabIcon)
             tabBarController.viewControllers = [croutonViewController, dummyViewController]
-
-            if #available(iOS 15.0, *) {
-                let appearance = UITabBarAppearance()
-                appearance.configureWithOpaqueBackground()
-                appearance.backgroundColor = .lightGray
-                tabBarController.tabBar.standardAppearance = appearance
-                tabBarController.tabBar.scrollEdgeAppearance = appearance
-            } else {
-                tabBarController.tabBar.barTintColor = .lightGray
-            }
-
+            let topBorder = UIView()
+            topBorder.frame = CGRect(x: 0, y: 0, width: tabBarController.tabBar.frame.size.width, height: 1)
+            topBorder.backgroundColor = .darkGray // Puedes cambiar el color a lo que prefieras
+            
+            tabBarController.tabBar.addSubview(topBorder)
             return tabBarController
         }
 

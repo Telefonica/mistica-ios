@@ -128,7 +128,7 @@ private extension CroutonTests {
             let topBorder = UIView()
             topBorder.frame = CGRect(x: 0, y: 0, width: tabBarController.tabBar.frame.size.width, height: 1)
             topBorder.backgroundColor = .darkGray // Puedes cambiar el color a lo que prefieras
-            
+
             tabBarController.tabBar.addSubview(topBorder)
             return tabBarController
         }

@@ -122,7 +122,7 @@ private extension CroutonTests {
     }
 
     func makeCroutonWithScrollView(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
-        return ScrollViewCroutonViewController(
+        ScrollViewCroutonViewController(
             text: text,
             action: actionTitle.map { ($0, $0, {}) }, style: style
         )
@@ -140,7 +140,7 @@ private extension CroutonTests {
         let topBorder = UIView(frame: CGRect(x: 0, y: 0, width: tabBarController.tabBar.frame.size.width, height: 1))
         topBorder.backgroundColor = .darkGray
         tabBarController.tabBar.addSubview(topBorder)
-        
+
         return tabBarController
     }
 }
@@ -163,7 +163,7 @@ private class BaseCroutonViewController: UIViewController {
     }
 
     var dismissInterval: SnackbarDismissInterval {
-        return action.map { .tenSeconds(SnackbarAction(title: $0.text, handler: $0.handler)) } ?? .fiveSeconds
+        action.map { .tenSeconds(SnackbarAction(title: $0.text, handler: $0.handler)) } ?? .fiveSeconds
     }
 }
 
@@ -175,7 +175,7 @@ private class CroutonTestViewController: BaseCroutonViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         CroutonController().showCrouton(
             config: SnackbarConfig(title: text, dismissInterval: dismissInterval),
             style: style,
@@ -191,7 +191,7 @@ private class ScrollViewCroutonViewController: BaseCroutonViewController, Custom
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
-        
+
         CroutonController.shared.showCrouton(
             config: SnackbarConfig(title: text, dismissInterval: dismissInterval),
             style: style,
@@ -203,7 +203,7 @@ private class ScrollViewCroutonViewController: BaseCroutonViewController, Custom
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .lightGray
         view.addSubview(scrollView)
-        
+
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

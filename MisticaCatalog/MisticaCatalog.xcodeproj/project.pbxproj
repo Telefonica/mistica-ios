@@ -7,33 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1860058F28A136CE009C3778 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860058E28A136CE009C3778 /* ColorsView.swift */; };
-		18E17AED287FFFBF0051E505 /* CatalogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17AEC287FFFBF0051E505 /* CatalogRow.swift */; };
-		18E17AEF288007340051E505 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17AEE288007340051E505 /* Framework.swift */; };
-		18E3452C289D46C5005E6D81 /* FontsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3452B289D46C5005E6D81 /* FontsView.swift */; };
-		18E4857B287F19EB0052A6F2 /* CatalogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48549287F19EB0052A6F2 /* CatalogList.swift */; };
 		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
-		B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */; };
-		B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F990032546C98600DFBFE9 /* Assets.xcassets */; };
-		B8F9903E2546C98700DFBFE9 /* MisticaCatalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F990152546C98600DFBFE9 /* MisticaCatalogApp.swift */; };
-		B8F990522546C98700DFBFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9902A2546C98600DFBFE9 /* AppDelegate.swift */; };
-		B8F990532546C98700DFBFE9 /* ComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9902B2546C98600DFBFE9 /* ComponentsView.swift */; };
 		B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */ = {isa = PBXBuildFile; productRef = B8F990622546CAA500DFBFE9 /* Mistica */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1860058E28A136CE009C3778 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
-		18E17AEC287FFFBF0051E505 /* CatalogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRow.swift; sourceTree = "<group>"; };
-		18E17AEE288007340051E505 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
-		18E3452B289D46C5005E6D81 /* FontsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsView.swift; sourceTree = "<group>"; };
-		18E48549287F19EB0052A6F2 /* CatalogList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogList.swift; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B8F990032546C98600DFBFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B8F990152546C98600DFBFE9 /* MisticaCatalogApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MisticaCatalogApp.swift; sourceTree = "<group>"; };
-		B8F9902A2546C98600DFBFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B8F9902B2546C98600DFBFE9 /* ComponentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -47,12 +27,9 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		84AF0FB42D5F956200630E1B /* Source */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Source; sourceTree = "<group>"; };
 		84B6C4022D5E4341000BC0C9 /* SupportFiles */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84B6C4042D5E4342000BC0C9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = SupportFiles; sourceTree = "<group>"; };
 		84B6C4102D5E4349000BC0C9 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
-		84B6C41F2D5E43AF000BC0C9 /* Cards */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Cards; sourceTree = "<group>"; };
-		84B6C43C2D5E43B3000BC0C9 /* Mistica */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Mistica; sourceTree = "<group>"; };
-		84B6C46F2D5E43B7000BC0C9 /* MisticaSwiftUI */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MisticaSwiftUI; sourceTree = "<group>"; };
-		84B6C4962D5E43C3000BC0C9 /* Common */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Common; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +56,7 @@
 		B8F98FE12546C95600DFBFE9 = {
 			isa = PBXGroup;
 			children = (
-				B8F98FFD2546C98600DFBFE9 /* Source */,
+				84AF0FB42D5F956200630E1B /* Source */,
 				84B6C4022D5E4341000BC0C9 /* SupportFiles */,
 				84B6C4102D5E4349000BC0C9 /* Resources */,
 				B8E161F82546EF8300DA3743 /* Packages */,
@@ -94,35 +71,6 @@
 				B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B8F98FFD2546C98600DFBFE9 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				B8F990032546C98600DFBFE9 /* Assets.xcassets */,
-				B8F98FFE2546C98600DFBFE9 /* LaunchScreen.storyboard */,
-				B8F9902A2546C98600DFBFE9 /* AppDelegate.swift */,
-				B8F990152546C98600DFBFE9 /* MisticaCatalogApp.swift */,
-				B8F9902B2546C98600DFBFE9 /* ComponentsView.swift */,
-				1860058E28A136CE009C3778 /* ColorsView.swift */,
-				18E3452B289D46C5005E6D81 /* FontsView.swift */,
-				B8F98FFF2546C98600DFBFE9 /* Catalog */,
-				84B6C4962D5E43C3000BC0C9 /* Common */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		B8F98FFF2546C98600DFBFE9 /* Catalog */ = {
-			isa = PBXGroup;
-			children = (
-				84B6C41F2D5E43AF000BC0C9 /* Cards */,
-				18E48549287F19EB0052A6F2 /* CatalogList.swift */,
-				18E17AEE288007340051E505 /* Framework.swift */,
-				18E17AEC287FFFBF0051E505 /* CatalogRow.swift */,
-				84B6C43C2D5E43B3000BC0C9 /* Mistica */,
-				84B6C46F2D5E43B7000BC0C9 /* MisticaSwiftUI */,
-			);
-			path = Catalog;
 			sourceTree = "<group>";
 		};
 		B8F990612546CAA500DFBFE9 /* Frameworks */ = {
@@ -151,11 +99,8 @@
 				18E42D4A287F181700BB7B39 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				84AF0FB42D5F956200630E1B /* Source */,
 				84B6C4102D5E4349000BC0C9 /* Resources */,
-				84B6C41F2D5E43AF000BC0C9 /* Cards */,
-				84B6C43C2D5E43B3000BC0C9 /* Mistica */,
-				84B6C46F2D5E43B7000BC0C9 /* MisticaSwiftUI */,
-				84B6C4962D5E43C3000BC0C9 /* Common */,
 			);
 			name = MisticaCatalog;
 			packageProductDependencies = (
@@ -206,8 +151,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8F990302546C98700DFBFE9 /* Assets.xcassets in Resources */,
-				B8F9902C2546C98600DFBFE9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,14 +161,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1860058F28A136CE009C3778 /* ColorsView.swift in Sources */,
-				B8F9903E2546C98700DFBFE9 /* MisticaCatalogApp.swift in Sources */,
-				B8F990532546C98700DFBFE9 /* ComponentsView.swift in Sources */,
-				B8F990522546C98700DFBFE9 /* AppDelegate.swift in Sources */,
-				18E17AEF288007340051E505 /* Framework.swift in Sources */,
-				18E17AED287FFFBF0051E505 /* CatalogRow.swift in Sources */,
-				18E3452C289D46C5005E6D81 /* FontsView.swift in Sources */,
-				18E4857B287F19EB0052A6F2 /* CatalogList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

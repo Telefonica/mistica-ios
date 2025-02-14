@@ -258,11 +258,11 @@ private extension CroutonView {
     func addContainerConstraints(to container: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         directionalLayoutMargins = Constants.margins
-    
+
         let tabBar = findTabBar(in: container)
 
         var bottomConstraint = bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.containerMargin)
-        
+
         if let tabBar = tabBar, !tabBar.isHidden {
             bottomConstraint = bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -(tabBar.bounds.height + Constants.containerMargin))
         } else if let scrollView = container as? UIScrollView {
@@ -283,7 +283,7 @@ private extension CroutonView {
             if let tabBar = subview as? UITabBar {
                 // Checks if the tabBar is in the bottom
                 if let superview = tabBar.superview,
-                tabBar.frame.origin.y >= superview.bounds.height - tabBar.frame.height {
+                   tabBar.frame.origin.y >= superview.bounds.height - tabBar.frame.height {
                     return tabBar
                 }
             } else if let foundTabBar = findTabBar(in: subview) {

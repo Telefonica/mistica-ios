@@ -94,7 +94,7 @@ final class CroutonTests: XCTestCase {
             )
         )
     }
-    
+
     func testInfoCroutonWithTopTabbar() {
         MisticaConfig.styleControls([.tabBar])
         assertSnapshot(
@@ -107,7 +107,6 @@ final class CroutonTests: XCTestCase {
             )
         )
     }
-
 
     func testInfoCroutonWithScrollView() {
         assertSnapshot(
@@ -131,17 +130,18 @@ private extension CroutonTests {
         )
         return croutonViewController
     }
-    func makeCroutonWithTopTabBar(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
-         let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
-         addTabBar(to: viewController, isTop: true)
-         return viewController
-     }
 
-     func makeCroutonWithBottomTabBar(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
-         let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
-         addTabBar(to: viewController, isTop: false)
-         return viewController
-     }
+    func makeCroutonWithTopTabBar(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
+        let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
+        addTabBar(to: viewController, isTop: true)
+        return viewController
+    }
+
+    func makeCroutonWithBottomTabBar(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
+        let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
+        addTabBar(to: viewController, isTop: false)
+        return viewController
+    }
 
     func makeCroutonWithScrollView(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
         ScrollViewCroutonViewController(text: text, action: actionTitle.map { ($0, $0, {}) }, style: style)
@@ -151,7 +151,7 @@ private extension CroutonTests {
         let tabBar = UITabBar()
         tabBar.translatesAutoresizingMaskIntoConstraints = false
         viewController.view.addSubview(tabBar)
-        
+
         let topConstraint: NSLayoutConstraint
         if isTop {
             topConstraint = tabBar.topAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.topAnchor)

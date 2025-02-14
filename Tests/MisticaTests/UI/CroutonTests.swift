@@ -82,19 +82,32 @@ final class CroutonTests: XCTestCase {
         )
     }
 
-    func testInfoCroutonWithTabbar() {
+    func testInfoCroutonWithBottomTabbar() {
         MisticaConfig.styleControls([.tabBar])
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCrouton(
+            viewBuilder: makeCroutonWithBottomTabBar(
                 withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                style: .info,
-                withTabBar: true
+                style: .info
             )
         )
     }
+    
+    func testInfoCroutonWithTopTabbar() {
+        MisticaConfig.styleControls([.tabBar])
+        assertSnapshot(
+            for: [BrandStyle.movistar],
+            and: [.light],
+            as: .image(on: .iPhoneSe),
+            viewBuilder: makeCroutonWithTopTabBar(
+                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                style: .info
+            )
+        )
+    }
+
 
     func testInfoCroutonWithScrollView() {
         assertSnapshot(
@@ -110,38 +123,52 @@ final class CroutonTests: XCTestCase {
 }
 
 private extension CroutonTests {
-    func makeCrouton(withText text: String, actionTitle: String? = nil, style: CroutonStyle, withTabBar: Bool = false) -> UIViewController {
+    func makeCrouton(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
         let croutonViewController = CroutonTestViewController(
             text: text,
             action: actionTitle.map { ($0, $0, {}) },
             style: style
         )
-
-        guard withTabBar else { return croutonViewController }
-        return createTabBarController(with: croutonViewController)
+        return croutonViewController
     }
+    func makeCroutonWithTopTabBar(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
+         let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
+         addTabBar(to: viewController, isTop: true)
+         return viewController
+     }
+
+     func makeCroutonWithBottomTabBar(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
+         let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
+         addTabBar(to: viewController, isTop: false)
+         return viewController
+     }
 
     func makeCroutonWithScrollView(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
-        ScrollViewCroutonViewController(
-            text: text,
-            action: actionTitle.map { ($0, $0, {}) }, style: style
-        )
+        ScrollViewCroutonViewController(text: text, action: actionTitle.map { ($0, $0, {}) }, style: style)
     }
 
-    private func createTabBarController(with viewController: UIViewController) -> UITabBarController {
-        let tabBarController = UITabBarController()
+    private func addTabBar(to viewController: UIViewController, isTop: Bool) {
+        let tabBar = UITabBar()
+        tabBar.translatesAutoresizingMaskIntoConstraints = false
+        viewController.view.addSubview(tabBar)
+        
+        let topConstraint: NSLayoutConstraint
+        if isTop {
+            topConstraint = tabBar.topAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.topAnchor)
+        } else {
+            topConstraint = tabBar.bottomAnchor.constraint(equalTo: viewController.view.safeAreaLayoutGuide.bottomAnchor)
+        }
+
+        NSLayoutConstraint.activate([
+            topConstraint,
+            tabBar.leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor),
+            tabBar.trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor),
+            tabBar.heightAnchor.constraint(equalToConstant: 50)
+        ])
         let tabIcon = UIImage(systemName: "house.fill")
-
-        viewController.tabBarItem = UITabBarItem(title: "Tab_1", image: tabIcon, selectedImage: tabIcon)
-        let dummyViewController = UIViewController()
-        dummyViewController.tabBarItem = UITabBarItem(title: "Tab_2", image: tabIcon, selectedImage: tabIcon)
-
-        tabBarController.viewControllers = [viewController, dummyViewController]
-        let topBorder = UIView(frame: CGRect(x: 0, y: 0, width: tabBarController.tabBar.frame.size.width, height: 1))
-        topBorder.backgroundColor = .darkGray
-        tabBarController.tabBar.addSubview(topBorder)
-
-        return tabBarController
+        let tabItem1 = UITabBarItem(title: isTop ? "TopTab_1" : "BottomTab_1", image: tabIcon, selectedImage: tabIcon)
+        let tabItem2 = UITabBarItem(title: isTop ? "TopTab_2" : "BottomTab_2", image: tabIcon, selectedImage: tabIcon)
+        tabBar.items = [tabItem1, tabItem2]
     }
 }
 

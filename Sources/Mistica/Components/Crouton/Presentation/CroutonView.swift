@@ -28,6 +28,7 @@ class CroutonView: UIView {
         static let verticalSpacing: CGFloat = 18
 
         static let closeButtonWidthAndHeight: CGFloat = 20
+        static let containerMargin: CGFloat = 8
     }
 
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
@@ -257,36 +258,34 @@ private extension CroutonView {
     func addContainerConstraints(to container: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         directionalLayoutMargins = Constants.margins
-
-        let hasSafeArea = container.safeAreaInsets.bottom > 0
+    
         let tabBar = findTabBar(in: container)
 
-        let bottomConstraint: NSLayoutConstraint
-
+        var bottomConstraint = bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: -Constants.containerMargin)
+        
         if let tabBar = tabBar, !tabBar.isHidden {
-            bottomConstraint = bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -(tabBar.bounds.height + 8))
-        } else if hasSafeArea {
-            bottomConstraint = bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+            bottomConstraint = bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -(tabBar.bounds.height + Constants.containerMargin))
         } else if let scrollView = container as? UIScrollView {
             // The bottomAnchor does not work in scrollViews, as workarround we take the topAnchor as reference
-            bottomConstraint = bottomAnchor.constraint(equalTo: container.topAnchor, constant: scrollView.frameHeight - 8)
-        } else {
-            bottomConstraint = bottomAnchor.constraint(equalTo: container.safeAreaLayoutGuide.bottomAnchor, constant: -8)
+            bottomConstraint = bottomAnchor.constraint(equalTo: container.topAnchor, constant: scrollView.frameHeight - Constants.containerMargin)
         }
 
         let constraints = [
-            trailingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-            leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            trailingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.trailingAnchor, constant: -Constants.containerMargin),
+            leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor, constant: Constants.containerMargin),
             bottomConstraint
         ]
-
         NSLayoutConstraint.activate(constraints)
     }
 
     private func findTabBar(in view: UIView) -> UITabBar? {
         for subview in view.subviews {
             if let tabBar = subview as? UITabBar {
-                return tabBar
+                // Checks if the tabBar is in the bottom
+                if let superview = tabBar.superview,
+                tabBar.frame.origin.y >= superview.bounds.height - tabBar.frame.height {
+                    return tabBar
+                }
             } else if let foundTabBar = findTabBar(in: subview) {
                 return foundTabBar
             }

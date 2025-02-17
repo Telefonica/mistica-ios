@@ -178,14 +178,13 @@ extension CroutonView {
 
         addContainerConstraints(to: container)
 
-        transform = CGAffineTransform(translationX: 0, y: frameHeight)
-
+        alpha = 0
         UIView.animate(
             withDuration: Constants.presentationAnimationDuration,
-            delay: 0,
+            delay: Constants.contentAnimationDelay,
             options: .curveEaseOut,
             animations: {
-                self.transform = .identity
+                self.alpha = 1
             },
             completion: { _ in
                 AccessibilityHelper.post(self.text)
@@ -213,14 +212,12 @@ extension CroutonView {
         let previousClipsToBounds = superview.clipsToBounds
         superview.clipsToBounds = true
 
-        transform = .identity
-
         UIView.animate(
             withDuration: Constants.presentationAnimationDuration,
-            delay: 0,
+            delay: Constants.contentAnimationDelay,
             options: .curveEaseIn,
             animations: {
-                self.transform = CGAffineTransform(translationX: 0, y: self.frameHeight)
+                self.alpha = 0
             },
             completion: { _ in
                 superview.clipsToBounds = previousClipsToBounds

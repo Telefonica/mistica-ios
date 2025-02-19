@@ -1,5 +1,5 @@
 //
-//  CroutonController.swift
+//  SnackbarController.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CroutonController: NSObject {
+public class SnackbarController: NSObject {
     public enum RootViewController {
         public typealias Closure = () -> UIViewController?
         public static let `default`: Closure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
@@ -20,29 +20,29 @@ public class CroutonController: NSObject {
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
 
-    private var croutonViewList = [OngoingCrouton]()
+    private var SnackbarViewList = [OngoingSnackbar]()
     private var showingToken: Token?
 
-    public static let shared = CroutonController()
+    public static let shared = SnackbarController()
 
     override init() {}
 }
 
 // MARK: Public functions
 
-public extension CroutonController {
-    /// Show a crouton (or enqueue one if there is already a crouton shown)
+public extension SnackbarController {
+    /// Show a snackbar (or enqueue one if there is already a snackbar shown)
     /// - Parameters:
-    ///   - text: The text to display in the crouton
+    ///   - text: The text to display in the snackbar
     ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
-    ///   - style: The style of the crouton, `.info` by default
+    ///   - style: The style of the snackbar, `.info` by default
     ///   - dismissHandler: A handler which is called when the handler is removed from the screen
-    ///   - exactViewController: The exacti viewCotroller where the croutono will be show. Has priority over rootViewController
-    ///   - rootViewController: The root view controller that will show the crouton.
+    ///   - exactViewController: The exacti viewCotroller where the snackbar will be show. Has priority over rootViewController
+    ///   - rootViewController: The root view controller that will show the snackbar.
     @discardableResult
-    func showCrouton(
+    func showSnackbar(
         config: SnackbarConfig,
-        style: CroutonStyle = .info,
+        style: SnackbarStyle = .info,
         dismissHandler: DismissHandlerBlock? = nil,
         exactViewController: UIViewController? = nil,
         rootViewController: RootViewController.Closure? = nil
@@ -52,7 +52,7 @@ public extension CroutonController {
         let styleConfig = CroutonConfig(style: style, croutonDismissInterval: config.dismissInterval)
 
         let dismissHandler: (SnackbarDismissReason) -> Void = { dismissReason in
-            self.dismissCurrentCrouton()
+            self.dismissCurrentSnackbar()
 
             dismissHandler?(dismissReason)
         }
@@ -69,7 +69,7 @@ public extension CroutonController {
         }
 
         let token = Token()
-        let croutonView = CroutonView(
+        let snackbarView = SnackbarView(
             text: config.title,
             action: overwrittenAction,
             config: styleConfig,
@@ -77,88 +77,84 @@ public extension CroutonController {
             forceDismiss: config.forceDismiss
         )
 
-        let ongoingCrouton = OngoingCrouton(
+        let ongoingSnackbar = OngoingSnackbar(
             token: token,
-            croutonView: croutonView,
+            snackbarView: snackbarView,
             exactViewController: exactViewController,
             rootViewController: rootViewController
         )
-        show(ongoingCrouton)
+        show(ongoingSnackbar)
 
         return token
     }
 
-    var isShowingACrouton: Bool {
-        showingToken != nil
-    }
-
-    /// Dismisses (or removes from enqueued croutons) the crouton identified by `token`
-    /// - Parameter token: a unique token that identifies a crouton
+    /// Dismisses (or removes from enqueued snackbar) the snackbar identified by `token`
+    /// - Parameter token: a unique token that identifies a snackbar
     func dismiss(token: Token) {
         assertMainThread()
 
-        // There has to be a shown crouton (even if it's not the one we are interested in)
+        // There has to be a shown snackbar (even if it's not the one we are interested in)
         guard let showingToken = showingToken else { return }
 
         if showingToken == token {
-            dismissCurrentCrouton()
-        } else if let index = croutonViewList.firstIndex(where: { token == $0.token }) {
-            croutonViewList.remove(at: index)
+            dismissCurrentSnackbar()
+        } else if let index = SnackbarViewList.firstIndex(where: { token == $0.token }) {
+            SnackbarViewList.remove(at: index)
         }
     }
 
     func dismissAll() {
         assertMainThread()
-        dismissAllFromCurrentCrouton()
+        dismissAllFromCurrentSnackbar()
     }
 }
 
 // MARK: Private methods
 
-private extension CroutonController {
-    func show(_ crouton: OngoingCrouton) {
-        enqueue(crouton)
-        showEnqueuedCrouton()
+private extension SnackbarController {
+    func show(_ snackbar: OngoingSnackbar) {
+        enqueue(snackbar)
+        showEnqueuedSnackbar()
     }
 
-    func dismissCurrentCrouton() {
-        guard let crouton = dequeue() else { return }
+    func dismissCurrentSnackbar() {
+        guard let snackbar = dequeue() else { return }
 
-        crouton.croutonView.dismiss {
+        snackbar.snackbarView.dismiss {
             self.showingToken = nil
-            self.showEnqueuedCrouton()
+            self.showEnqueuedSnackbar()
         }
     }
 
-    func dismissAllFromCurrentCrouton() {
-        guard let ongoingCrouton = dequeue() else { return }
+    func dismissAllFromCurrentSnackbar() {
+        guard let ongoingSnackbarView = dequeue() else { return }
 
-        ongoingCrouton.croutonView.dismiss {
+        ongoingSnackbarView.snackbarView.dismiss {
             self.showingToken = nil
 
-            while let ongoingCrouton = self.dequeue() {
-                ongoingCrouton.croutonView.dismiss()
+            while let ongoingSnackbar = self.dequeue() {
+                ongoingSnackbar.snackbarView.dismiss()
             }
         }
     }
 
-    func enqueue(_ ongoingCrouton: OngoingCrouton) {
-        croutonViewList.append(ongoingCrouton)
+    func enqueue(_ ongoingSnackbar: OngoingSnackbar) {
+        SnackbarViewList.append(ongoingSnackbar)
     }
 
-    func dequeue() -> OngoingCrouton? {
-        guard !croutonViewList.isEmpty else { return nil }
+    func dequeue() -> OngoingSnackbar? {
+        guard !SnackbarViewList.isEmpty else { return nil }
 
-        return croutonViewList.remove(at: 0)
+        return SnackbarViewList.remove(at: 0)
     }
 
-    func showEnqueuedCrouton() {
+    func showEnqueuedSnackbar() {
         guard showingToken == nil else { return }
-        guard let ongoingCrouton = croutonViewList.first else { return }
-        guard let containerView = ongoingCrouton.view() else { return }
+        guard let ongoingSnackbar = SnackbarViewList.first else { return }
+        guard let containerView = ongoingSnackbar.view() else { return }
 
-        showingToken = ongoingCrouton.token
+        showingToken = ongoingSnackbar.token
 
-        ongoingCrouton.croutonView.show(in: containerView)
+        ongoingSnackbar.snackbarView.show(in: containerView)
     }
 }

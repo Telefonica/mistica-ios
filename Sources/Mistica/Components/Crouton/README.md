@@ -1,35 +1,35 @@
-#  Crouton
+#  Snackbar
 
-Croutons provide lightweight feedback about an operation. They are the iOS equivalent of Android Snackbars. They show a brief message at the bottom of the screen. Croutons appear above all other elements on screen and only one can be displayed at a time.
-Croutons can also contain an action.
+Snackbar provide lightweight feedback about an operation. They show a brief message at the bottom of the screen. It is positioned floating at the bottom of the screen respecting the safe area and, if there is a tab bar, it appears above it. Snackbar appear above all other elements on screen and only one can be displayed at a time.
+Snackbar can also contain an action.
 
 <p align="center">
-<img width="400" alt="portfolio_view" src="./docs/images/crouton-info.png">
+<img width="400" alt="portfolio_view" src="./docs/images/snackbar-action.png">
 </p>
 
 ## Usage
 
-To display a crouton, use the `CroutonController` class, this class orchestrates Crouton presentation and allows dimissing already presented or enqueued croutons.
+To display a snackbar, use the `SnackbarController` class, this class orchestrates Snackbar presentation and allows dimissing already presented or enqueued snackbar.
 
-The `showCrouton` method will show (or enqueue if a crouton is already being shown) the crouton.
+The `showSnackbar` method will show (or enqueue if a snackbar is already being shown) the snackbar.
 
 ## Styles
 
-Croutons come in two flavors. `Info` and `Critical`.
+Snackbar come in two flavors. `Info` and `Critical`.
 
 | `Info`                                        | `Critical`                                        |
 |-----------------------------------------------|---------------------------------------------------|
-| ![Info](./docs/images/crouton-style-info.png) | ![Info](./docs/images/crouton-style-critical.png) |
+| ![Info](./docs/images/snackbar-style-info.png) | ![Info](./docs/images/snackbar-style-critical.png) |
 
 ## Dismissal / Cancellation
 
-When presenting a crouton via the `showCrouton` method, you are given a `CroutonController.Token` type you can use to later `dismiss` the crouton if needed.
+When presenting a snackbar via the `showSnackbar` method, you are given a `SnackbarController.Token` type you can use to later `dismiss` the snackbar if needed.
 
 ![Demo](./docs/images/crouton-demo.gif)
 
 ## Config
 
-When configuring the Crouton you can select different intervals with some features:
+When configuring the Snackbar you can select different intervals with some features:
 
 | `Interval` |   `Close`  |  `Action`  |
 |------------|------------|------------|

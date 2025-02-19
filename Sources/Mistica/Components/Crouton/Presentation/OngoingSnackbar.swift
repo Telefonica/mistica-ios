@@ -1,5 +1,5 @@
 //
-//  OngoingCrouton.swift
+//  OngoingSnackbar.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,21 +8,21 @@
 
 import UIKit
 
-extension CroutonController {
-    struct OngoingCrouton {
+extension SnackbarController {
+    struct OngoingSnackbar {
         let token: Token
-        let croutonView: CroutonView
+        let snackbarView: SnackbarView
         private weak var exactViewController: UIViewController?
         private let rootViewController: RootViewController.Closure
 
         init(
             token: Token,
-            croutonView: CroutonView,
+            snackbarView: SnackbarView,
             exactViewController: UIViewController? = nil,
             rootViewController: RootViewController.Closure? = nil
         ) {
             self.token = token
-            self.croutonView = croutonView
+            self.snackbarView = snackbarView
             self.exactViewController = exactViewController
             self.rootViewController = rootViewController ?? RootViewController.default
         }
@@ -30,8 +30,8 @@ extension CroutonController {
         func view() -> UIView? {
             guard let viewController = viewController() else { return nil }
 
-            if let viewController = viewController as? CustomCroutonContainer {
-                return viewController.customCroutonContainerView
+            if let viewController = viewController as? CustomSnackbarContainer {
+                return viewController.customSnackbarContainerView
             } else {
                 return viewController.view
             }

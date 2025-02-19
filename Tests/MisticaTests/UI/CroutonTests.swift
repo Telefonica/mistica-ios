@@ -122,7 +122,7 @@ final class CroutonTests: XCTestCase {
 }
 
 private extension CroutonTests {
-    func makeCrouton(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
+    func makeCrouton(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
         let croutonViewController = CroutonTestViewController(
             text: text,
             action: actionTitle.map { ($0, $0, {}) },
@@ -131,19 +131,19 @@ private extension CroutonTests {
         return croutonViewController
     }
 
-    func makeCroutonWithTopTabBar(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
+    func makeCroutonWithTopTabBar(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
         let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
         addTabBar(to: viewController, isTop: true)
         return viewController
     }
 
-    func makeCroutonWithBottomTabBar(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
+    func makeCroutonWithBottomTabBar(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
         let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
         addTabBar(to: viewController, isTop: false)
         return viewController
     }
 
-    func makeCroutonWithScrollView(withText text: String, actionTitle: String? = nil, style: CroutonStyle) -> UIViewController {
+    func makeCroutonWithScrollView(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
         ScrollViewCroutonViewController(text: text, action: actionTitle.map { ($0, $0, {}) }, style: style)
     }
 
@@ -174,10 +174,10 @@ private extension CroutonTests {
 
 private class BaseCroutonViewController: UIViewController {
     let text: String
-    let action: CroutonController.ActionConfig?
-    let style: CroutonStyle
+    let action: SnackbarController.ActionConfig?
+    let style: SnackbarStyle
 
-    init(text: String, action: CroutonController.ActionConfig?, style: CroutonStyle) {
+    init(text: String, action: SnackbarController.ActionConfig?, style: SnackbarStyle) {
         self.text = text
         self.action = action
         self.style = style
@@ -203,7 +203,7 @@ private class CroutonTestViewController: BaseCroutonViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        CroutonController().showCrouton(
+        SnackbarController().showSnackbar(
             config: SnackbarConfig(title: text, dismissInterval: dismissInterval),
             style: style,
             rootViewController: { self }
@@ -211,15 +211,15 @@ private class CroutonTestViewController: BaseCroutonViewController {
     }
 }
 
-private class ScrollViewCroutonViewController: BaseCroutonViewController, CustomCroutonContainer {
-    var customCroutonContainerView: UIView { scrollView }
+private class ScrollViewCroutonViewController: BaseCroutonViewController, CustomSnackbarContainer {
+    var customSnackbarContainerView: UIView { scrollView }
     private let scrollView = UIScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
 
-        CroutonController.shared.showCrouton(
+        SnackbarController.shared.showSnackbar(
             config: SnackbarConfig(title: text, dismissInterval: dismissInterval),
             style: style,
             rootViewController: { self }

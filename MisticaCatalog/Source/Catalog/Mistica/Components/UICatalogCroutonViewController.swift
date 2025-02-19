@@ -31,17 +31,17 @@ class UICatalogCroutonViewController: UITableViewController {
 
     private lazy var croutonStyleCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "crouton-style")
-        for style in CroutonStyle.allCases {
+        for style in SnackbarStyle.allCases {
             cell.segmentedControl.insertSegment(withTitle: style.title, at: style.rawValue, animated: false)
         }
         cell.segmentedControl.selectedSegmentIndex = 0
         return cell
     }()
 
-    private lazy var showCroutonCell: UITableViewCell = {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "showCrouton")
+    private lazy var showSnackbarCell: UITableViewCell = {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "showSnackbar")
         cell.textLabel?.textColor = .textLink
-        cell.textLabel?.text = "Show Crouton"
+        cell.textLabel?.text = "Show Snackbar"
         return cell
     }()
 
@@ -67,7 +67,7 @@ class UICatalogCroutonViewController: UITableViewController {
         [
             croutonDismissIntervalCell,
             forceDismissEnabledCell,
-            showCroutonCell
+            showSnackbarCell
         ]
     ]
 
@@ -121,7 +121,7 @@ extension UICatalogCroutonViewController {
                 dismissInterval: croutonDismissInterval,
                 forceDismiss: forceDismiss
             )
-            CroutonController.shared.showCrouton(
+            SnackbarController.shared.showSnackbar(
                 config: config,
                 style: selectedCroutonStyle,
                 dismissHandler: { reason in
@@ -131,7 +131,7 @@ extension UICatalogCroutonViewController {
         } else {
             let sampleTabBarViewController = SampleTabBarViewController()
             sampleTabBarViewController.text = titleCell.textField.text ?? ""
-            sampleTabBarViewController.action = croutonAction
+            sampleTabBarViewController.action = snackbarAction
             sampleTabBarViewController.style = selectedCroutonStyle
 
             show(sampleTabBarViewController, sender: self)
@@ -140,14 +140,14 @@ extension UICatalogCroutonViewController {
 }
 
 private extension UICatalogCroutonViewController {
-    var selectedCroutonStyle: CroutonStyle {
+    var selectedCroutonStyle: SnackbarStyle {
         let selectedStyleIndex = croutonStyleCell.segmentedControl.selectedSegmentIndex
-        return CroutonStyle(rawValue: selectedStyleIndex)!
+        return SnackbarStyle(rawValue: selectedStyleIndex)!
     }
 
-    private var croutonAction: CroutonController.ActionConfig? {
+    private var snackbarAction: SnackbarController.ActionConfig? {
         guard let title = actionTitleCell.textField.text, !title.isEmpty else { return nil }
-        return CroutonController.ActionConfig(text: title, accessibilityLabel: "Crouton action", handler: { print("Crouton Action Tapped") })
+        return SnackbarController.ActionConfig(text: title, accessibilityLabel: "Crouton action", handler: { print("Snacbar Action Tapped") })
     }
 
     var croutonDismissInterval: SnackbarDismissInterval {
@@ -180,7 +180,7 @@ private extension UICatalogCroutonViewController {
     }
 }
 
-private extension CroutonStyle {
+private extension SnackbarStyle {
     var title: String {
         switch self {
         case .critical:
@@ -226,8 +226,8 @@ private class SampleTabViewController: UIViewController {
 
 private class SampleTabBarViewController: UITabBarController {
     var text: String!
-    var action: CroutonController.ActionConfig?
-    var style: CroutonStyle!
+    var action: SnackbarController.ActionConfig?
+    var style: SnackbarStyle!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -249,7 +249,7 @@ private class SampleTabBarViewController: UITabBarController {
         } else {
             config = SnackbarConfig(title: text, dismissInterval: .fiveSeconds)
         }
-        CroutonController.shared.showCrouton(
+        SnackbarController.shared.showSnackbar(
             config: config,
             style: style
         )

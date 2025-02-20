@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Crouton.pdf",
+      "filename" : "snackbar 1.pdf",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Crouton_Dark.pdf",
+      "filename" : "snackbar_Dark 1.pdf",
       "idiom" : "universal"
     }
   ],

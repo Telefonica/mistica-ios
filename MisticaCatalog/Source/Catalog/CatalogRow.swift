@@ -49,7 +49,7 @@ extension CatalogRow {
         case .feedbacks:
             return "Feedbacks"
         case .snackbar:
-            return "snackbar"
+            return "Snackbar"
         case .filter:
             return "Scrollable Segmented Control"
         case .tooltip:

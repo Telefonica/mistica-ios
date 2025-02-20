@@ -1,10 +1,6 @@
 //
 //  CroutonConfig.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
 
 import UIKit
 

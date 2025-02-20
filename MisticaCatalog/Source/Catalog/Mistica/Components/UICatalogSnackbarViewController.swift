@@ -1,5 +1,5 @@
 //
-//  UICatalogCroutonViewController.swift
+//  UICatalogSnackbarViewController.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -16,7 +16,7 @@ private enum Section: Int, CaseIterable {
     case showInTab
 }
 
-class UICatalogCroutonViewController: UITableViewController {
+class UICatalogSnackbarViewController: UITableViewController {
     private lazy var titleCell: UITextFieldTableViewCell = {
         let cell = UITextFieldTableViewCell(reuseIdentifier: "title")
         cell.textField.text = "You have no Internet connection. Please insert your SIM card to fix it."
@@ -29,8 +29,8 @@ class UICatalogCroutonViewController: UITableViewController {
         return cell
     }()
 
-    private lazy var croutonStyleCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "crouton-style")
+    private lazy var snackbarStyleCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "Snackbar-style")
         for style in SnackbarStyle.allCases {
             cell.segmentedControl.insertSegment(withTitle: style.title, at: style.rawValue, animated: false)
         }
@@ -51,8 +51,8 @@ class UICatalogCroutonViewController: UITableViewController {
         return cell
     }()
 
-    private lazy var croutonDismissIntervalCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "crouton-dismiss-interval")
+    private lazy var snackbarDismissIntervalCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "Snackbar-dismiss-interval")
         for interval in SnackbarCatalogDismissInterval.allCases {
             cell.segmentedControl.insertSegment(withTitle: "\(timeIntervalDescription(from: interval)) seconds", at: 0, animated: false)
         }
@@ -63,9 +63,9 @@ class UICatalogCroutonViewController: UITableViewController {
     private lazy var cells = [
         [titleCell],
         [actionTitleCell],
-        [croutonStyleCell],
+        [snackbarStyleCell],
         [
-            croutonDismissIntervalCell,
+            snackbarDismissIntervalCell,
             forceDismissEnabledCell,
             showSnackbarCell
         ]
@@ -93,7 +93,7 @@ class UICatalogCroutonViewController: UITableViewController {
     }
 }
 
-extension UICatalogCroutonViewController {
+extension UICatalogSnackbarViewController {
     override func numberOfSections(in _: UITableView) -> Int {
         cells.count
     }
@@ -118,12 +118,12 @@ extension UICatalogCroutonViewController {
         if indexPath.row == 2 {
             let config = SnackbarConfig(
                 title: titleCell.textField.text ?? "",
-                dismissInterval: croutonDismissInterval,
+                dismissInterval: snackbarDismissInterval,
                 forceDismiss: forceDismiss
             )
             SnackbarController.shared.showSnackbar(
                 config: config,
-                style: selectedCroutonStyle,
+                style: selectedSnackbarStyle,
                 dismissHandler: { reason in
                     print("\(reason.rawValue)")
                 }
@@ -132,27 +132,27 @@ extension UICatalogCroutonViewController {
             let sampleTabBarViewController = SampleTabBarViewController()
             sampleTabBarViewController.text = titleCell.textField.text ?? ""
             sampleTabBarViewController.action = snackbarAction
-            sampleTabBarViewController.style = selectedCroutonStyle
+            sampleTabBarViewController.style = selectedSnackbarStyle
 
             show(sampleTabBarViewController, sender: self)
         }
     }
 }
 
-private extension UICatalogCroutonViewController {
-    var selectedCroutonStyle: SnackbarStyle {
-        let selectedStyleIndex = croutonStyleCell.segmentedControl.selectedSegmentIndex
+private extension UICatalogSnackbarViewController {
+    var selectedSnackbarStyle: SnackbarStyle {
+        let selectedStyleIndex = snackbarStyleCell.segmentedControl.selectedSegmentIndex
         return SnackbarStyle(rawValue: selectedStyleIndex)!
     }
 
     private var snackbarAction: SnackbarController.ActionConfig? {
         guard let title = actionTitleCell.textField.text, !title.isEmpty else { return nil }
-        return SnackbarController.ActionConfig(text: title, accessibilityLabel: "Crouton action", handler: { print("Snacbar Action Tapped") })
+        return SnackbarController.ActionConfig(text: title, accessibilityLabel: "Snackbar action", handler: { print("Snacbar Action Tapped") })
     }
 
-    var croutonDismissInterval: SnackbarDismissInterval {
-        let selectedCroutonDismissIntervalIndex = croutonDismissIntervalCell.segmentedControl.selectedSegmentIndex
-        let catalogDismissInterval = SnackbarCatalogDismissInterval(rawValue: selectedCroutonDismissIntervalIndex)
+    var snackbarDismissInterval: SnackbarDismissInterval {
+        let selectedSnackbarDismissIntervalIndex = snackbarDismissIntervalCell.segmentedControl.selectedSegmentIndex
+        let catalogDismissInterval = SnackbarCatalogDismissInterval(rawValue: selectedSnackbarDismissIntervalIndex)
 
         switch catalogDismissInterval {
         case .fiveSeconds:
@@ -256,7 +256,7 @@ private class SampleTabBarViewController: UITabBarController {
     }
 }
 
-private extension UICatalogCroutonViewController {
+private extension UICatalogSnackbarViewController {
     func timeIntervalDescription(from interval: SnackbarCatalogDismissInterval) -> String {
         switch interval {
         case .fiveSeconds:

@@ -25,7 +25,7 @@ Snackbar come in two flavors. `Info` and `Critical`.
 
 When presenting a snackbar via the `showSnackbar` method, you are given a `SnackbarController.Token` type you can use to later `dismiss` the snackbar if needed.
 
-![Demo](./docs/images/crouton-demo.gif)
+![Demo](./docs/images/snackbar-demo.gif)
 
 ## Config
 

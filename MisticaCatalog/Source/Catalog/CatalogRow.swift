@@ -17,7 +17,7 @@ enum CatalogRow: Int, CaseIterable, Identifiable {
     case skeletons
     case cards
     case controls
-    case crouton
+    case Snackbar
     case chips
     case carousel
     case feedbacks
@@ -48,8 +48,8 @@ extension CatalogRow {
             return "Buttons"
         case .feedbacks:
             return "Feedbacks"
-        case .crouton:
-            return "Crouton"
+        case .Snackbar:
+            return "Snackbar"
         case .filter:
             return "Scrollable Segmented Control"
         case .tooltip:
@@ -101,8 +101,8 @@ extension CatalogRow {
             return .buttonsIcon
         case .feedbacks:
             return .feedbacksIcon
-        case .crouton:
-            return .croutonIcon
+        case .Snackbar:
+            return .SnackbarIcon
         case .filter:
             return .filterIcon
         case .tooltip:

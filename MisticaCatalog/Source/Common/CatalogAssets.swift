@@ -13,7 +13,7 @@ extension UIImage {
     static let misticaLogo = UIImage(named: "mistica-logo", in: .misticaCatalog, compatibleWith: nil)!
 
     static let buttonsIcon = UIImage(named: "Buttons", in: .misticaCatalog, compatibleWith: nil)!
-    static let croutonIcon = UIImage(named: "Crouton", in: .misticaCatalog, compatibleWith: nil)!
+    static let SnackbarIcon = UIImage(named: "Snackbar", in: .misticaCatalog, compatibleWith: nil)!
     static let feedbacksIcon = UIImage(named: "Feedbacks", in: .misticaCatalog, compatibleWith: nil)!
     static let fontsIcon = UIImage(named: "Texts", in: .misticaCatalog, compatibleWith: nil)!
     static let headerIcon = UIImage(named: "Headers", in: .misticaCatalog, compatibleWith: nil)!

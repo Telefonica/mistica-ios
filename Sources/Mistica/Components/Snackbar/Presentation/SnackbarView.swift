@@ -264,7 +264,7 @@ private extension SnackbarView {
             bottomConstraint = bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -(tabBar.bounds.height + Constants.containerMargin))
         } else if let scrollView = container as? UIScrollView {
             // The bottomAnchor does not work in scrollViews, as workarround we take the topAnchor as reference
-            bottomConstraint = bottomAnchor.constraint(equalTo: container.topAnchor, constant: scrollView.frameHeight - Constants.containerMargin)
+            bottomConstraint = bottomAnchor.constraint(equalTo: container.topAnchor, constant: scrollView.frameHeight - Constants.containerMargin - scrollView.adjustedContentInset.bottom)
         }
 
         let constraints = [

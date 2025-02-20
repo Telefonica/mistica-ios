@@ -30,7 +30,7 @@ class UICatalogSnackbarViewController: UITableViewController {
     }()
 
     private lazy var snackbarStyleCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "Snackbar-style")
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "snackbar-style")
         for style in SnackbarStyle.allCases {
             cell.segmentedControl.insertSegment(withTitle: style.title, at: style.rawValue, animated: false)
         }
@@ -52,7 +52,7 @@ class UICatalogSnackbarViewController: UITableViewController {
     }()
 
     private lazy var snackbarDismissIntervalCell: UISegmentedControlTableViewCell = {
-        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "Snackbar-dismiss-interval")
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "snackbar-dismiss-interval")
         for interval in SnackbarCatalogDismissInterval.allCases {
             cell.segmentedControl.insertSegment(withTitle: "\(timeIntervalDescription(from: interval)) seconds", at: 0, animated: false)
         }

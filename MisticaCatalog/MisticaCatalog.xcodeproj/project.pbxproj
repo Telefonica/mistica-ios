@@ -50,7 +50,7 @@
 		18E485A1287F19EB0052A6F2 /* UICatalogTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48572287F19EB0052A6F2 /* UICatalogTabsViewController.swift */; };
 		18E485A2287F19EB0052A6F2 /* UICatalogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48573287F19EB0052A6F2 /* UICatalogFilterViewController.swift */; };
 		18E485A3287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48574287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift */; };
-		18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */; };
+		18E485A4287F19EB0052A6F2 /* UICatalogSnackbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48575287F19EB0052A6F2 /* UICatalogSnackbarViewController.swift */; };
 		18E485A5287F19EB0052A6F2 /* UICatalogBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */; };
 		18E485A6287F19EB0052A6F2 /* UICatalogHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */; };
 		243730502CF74F95008DECFB /* ViewStatesCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437304F2CF74F95008DECFB /* ViewStatesCatalogView.swift */; };
@@ -140,7 +140,7 @@
 		18E48572287F19EB0052A6F2 /* UICatalogTabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogTabsViewController.swift; sourceTree = "<group>"; };
 		18E48573287F19EB0052A6F2 /* UICatalogFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogFilterViewController.swift; sourceTree = "<group>"; };
 		18E48574287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogSectionTitleViewController.swift; sourceTree = "<group>"; };
-		18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogCroutonViewController.swift; sourceTree = "<group>"; };
+		18E48575287F19EB0052A6F2 /* UICatalogSnackbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogSnackbarViewController.swift; sourceTree = "<group>"; };
 		18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogBadgeViewController.swift; sourceTree = "<group>"; };
 		18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICatalogHeaderViewController.swift; sourceTree = "<group>"; };
 		2437304F2CF74F95008DECFB /* ViewStatesCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatesCatalogView.swift; sourceTree = "<group>"; };
@@ -223,19 +223,6 @@
 			children = (
 				24D94F0C2D01D70900CCBEB2 /* FormViewCatalog.swift */,
 				2437304F2CF74F95008DECFB /* ViewStatesCatalogView.swift */,
-				18E4854D287F19EB0052A6F2 /* InputFieldCatalogView.swift */,
-				18E4854E287F19EB0052A6F2 /* StepperCatalogVIew.swift */,
-				18E4854F287F19EB0052A6F2 /* EmptyStateCatalogView.swift */,
-				18E48550287F19EB0052A6F2 /* SnackbarCatalogView.swift */,
-				18E48551287F19EB0052A6F2 /* CalloutCatalogView.swift */,
-				18E48552287F19EB0052A6F2 /* FeedbackCatalogView.swift */,
-				18E48553287F19EB0052A6F2 /* RadioButtonCatalogView.swift */,
-				18E48554287F19EB0052A6F2 /* CarouselCatalogView.swift */,
-				18E48555287F19EB0052A6F2 /* ChipCatalogView.swift */,
-				18E48556287F19EB0052A6F2 /* ButtonCatalogView.swift */,
-				18E48557287F19EB0052A6F2 /* DataCardCatalogView.swift */,
-				18E48558287F19EB0052A6F2 /* CheckboxCatalogView.swift */,
-				18E48559287F19EB0052A6F2 /* TabsCatalogView.swift */,
 				18E4855A287F19EB0052A6F2 /* BadgeCatalogView.swift */,
 				18E48556287F19EB0052A6F2 /* ButtonCatalogView.swift */,
 				18E48551287F19EB0052A6F2 /* CalloutCatalogView.swift */,
@@ -291,7 +278,7 @@
 				18E48572287F19EB0052A6F2 /* UICatalogTabsViewController.swift */,
 				18E48573287F19EB0052A6F2 /* UICatalogFilterViewController.swift */,
 				18E48574287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift */,
-				18E48575287F19EB0052A6F2 /* UICatalogCroutonViewController.swift */,
+				18E48575287F19EB0052A6F2 /* UICatalogSnackbarViewController.swift */,
 				18E48576287F19EB0052A6F2 /* UICatalogBadgeViewController.swift */,
 				18E48577287F19EB0052A6F2 /* UICatalogHeaderViewController.swift */,
 				392E03DB28C6153C0081780B /* UICatalogSheetViewController.swift */,
@@ -550,7 +537,7 @@
 				243730502CF74F95008DECFB /* ViewStatesCatalogView.swift in Sources */,
 				392E03DC28C6153C0081780B /* UICatalogSheetViewController.swift in Sources */,
 				18E48584287F19EB0052A6F2 /* CarouselCatalogView.swift in Sources */,
-				18E485A4287F19EB0052A6F2 /* UICatalogCroutonViewController.swift in Sources */,
+				18E485A4287F19EB0052A6F2 /* UICatalogSnackbarViewController.swift in Sources */,
 				18E485A3287F19EB0052A6F2 /* UICatalogSectionTitleViewController.swift in Sources */,
 				244D00C62C491D4600424AA5 /* SkeletonsCatalogView.swift in Sources */,
 				1860058F28A136CE009C3778 /* ColorsView.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  CroutonView.swift
+//  SnackbarView.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -8,9 +8,9 @@
 
 import UIKit
 
-// MARK: CroutonViewDelegate definition
+// MARK: SnackbarViewDelegate definition
 
-class CroutonView: UIView {
+class SnackbarView: UIView {
     // MARK: Constants
 
     private enum Constants {
@@ -164,7 +164,7 @@ class CroutonView: UIView {
 
 // MARK: Internal methods
 
-extension CroutonView {
+extension SnackbarView {
     func show(in container: UIView) {
         let previousClipsToBounds = container.clipsToBounds
         container.clipsToBounds = true
@@ -234,7 +234,7 @@ extension CroutonView {
 
 // MARK: Private methods
 
-private extension CroutonView {
+private extension SnackbarView {
     var shouldShowCloseButton: Bool {
         forceDismiss || (action == nil && config.overrideDismissInterval == .infinite(nil))
     }

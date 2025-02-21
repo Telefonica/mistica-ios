@@ -69,7 +69,7 @@ private extension CatalogRow {
             SkeletonsCatalogView()
         case .cards:
             CardList(rows: CardRow.allCases)
-        case .crouton:
+        case .snackbar:
             SnackbarCatalogView()
         case .feedbacks:
             FeedbackCatalogView()
@@ -114,8 +114,8 @@ private extension CatalogRow {
             ComponentViewController(UICatalogButtonsViewController())
         case .feedbacks:
             ComponentViewController(UICatalogFeedbacksViewController())
-        case .crouton:
-            ComponentViewController(UICatalogCroutonViewController())
+        case .snackbar:
+            ComponentViewController(UICatalogSnackbarViewController())
         case .filter:
             ComponentViewController(UICatalogFilterViewController())
         case .tooltip:

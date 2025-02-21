@@ -9,7 +9,7 @@
 import UIKit
 
 @frozen
-@objc public enum CroutonStyle: Int, CaseIterable {
+@objc public enum SnackbarStyle: Int, CaseIterable {
     case info
     case critical
 }
@@ -20,7 +20,7 @@ public struct CroutonConfig {
     let actionStyle: Button.Style
     let overrideDismissInterval: SnackbarDismissInterval
 
-    public init(style: CroutonStyle, croutonDismissInterval: SnackbarDismissInterval) {
+    public init(style: SnackbarStyle, croutonDismissInterval: SnackbarDismissInterval) {
         switch style {
         case .info:
             backgroundColor = .feedbackInfoBackground

@@ -132,7 +132,7 @@ By default mistica uses the system font, but if you need to use a custom font (T
 	* [HighlightedCard](./Sources/Mistica/Components/Cards/#highlightedcard)
 * [Checkbox](./Sources/Mistica/Components/Checkbox/)
 * [Controls](./Sources/Mistica/Components/Controls/)
-* [Crouton](./Sources/Mistica/Components/Crouton/)
+* [Snackbar](./Sources/Mistica/Components/Snackbar/)
 * [EmptyState](./Sources/Mistica/Components/EmptyState/)
 * [Feedbacks](./Sources/Mistica/Components/Feedback/)
 * [Filter](./Sources/Mistica/Components/Filter/)
@@ -160,7 +160,7 @@ By default mistica uses the system font, but if you need to use a custom font (T
     * [Not Implemented] MediaCard
     * [Not Implemented] HighlightedCard
 * [Checkbox](./Sources/MisticaSwiftUI/Components/Checkbox/)
-* [Crouton](./Sources/MisticaSwiftUI/Components/Snackbar/)
+* [Snackbar](./Sources/MisticaSwiftUI/Components/Snackbar/)
 * [EmptyState](./Sources/MisticaSwiftUI/Components/EmptyState/)
 * [Feedbacks](./Sources/MisticaSwiftUI/Components/Feedback/)
 * [Not Implemented][Filter](./Sources/MisticaSwiftUI/Components/Filter/)

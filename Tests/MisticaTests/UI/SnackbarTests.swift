@@ -11,7 +11,7 @@ import SnapshotTesting
 import XCTest
 
 final class SnackbarTests: XCTestCase {
-    private let snackbarText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    private let sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
     override func setUp() {
         super.setUp()
@@ -26,7 +26,7 @@ final class SnackbarTests: XCTestCase {
             and: [.light],
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSnackbar(
-                withText: snackbarText,
+                withText: sampleText,
                 style: .info
             )
         )
@@ -38,7 +38,7 @@ final class SnackbarTests: XCTestCase {
             and: [.light],
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSnackbar(
-                withText: snackbarText,
+                withText: sampleText,
                 actionTitle: "Nostrud",
                 style: .info
             )
@@ -51,7 +51,7 @@ final class SnackbarTests: XCTestCase {
             and: [.light],
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSnackbar(
-                withText: snackbarText,
+                withText: sampleText,
                 actionTitle: "Excepteur sint occaecat cupidatat",
                 style: .info
             )
@@ -64,7 +64,7 @@ final class SnackbarTests: XCTestCase {
             and: [.light],
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSnackbar(
-                withText: snackbarText,
+                withText: sampleText,
                 style: .critical
             )
         )
@@ -76,7 +76,7 @@ final class SnackbarTests: XCTestCase {
             and: [.light],
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSnackbar(
-                withText: snackbarText,
+                withText: sampleText,
                 actionTitle: "Nostrud",
                 style: .critical
             )
@@ -89,7 +89,7 @@ final class SnackbarTests: XCTestCase {
             and: [.light],
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSnackbar(
-                withText: snackbarText,
+                withText: sampleText,
                 actionTitle: "Excepteur sint occaecat cupidatat",
                 style: .critical
             )
@@ -103,7 +103,7 @@ final class SnackbarTests: XCTestCase {
             and: [.light],
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSnackbarWithBottomTabBar(
-                withText: snackbarText,
+                withText: sampleText,
                 style: .info
             )
         )
@@ -116,7 +116,7 @@ final class SnackbarTests: XCTestCase {
             and: [.light],
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSnackbarWithTopTabBar(
-                withText: snackbarText,
+                withText: sampleText,
                 style: .info
             )
         )
@@ -128,7 +128,7 @@ final class SnackbarTests: XCTestCase {
             and: [.light],
             as: .image(on: .iPhoneSe),
             viewBuilder: makeSnackbarWithScrollView(
-                withText: snackbarText,
+                withText: sampleText,
                 style: .info
             )
         )

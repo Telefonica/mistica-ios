@@ -12,7 +12,7 @@ import XCTest
 
 final class SnackbarTests: XCTestCase {
     private let snackbarText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    
+
     override func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
@@ -134,7 +134,6 @@ final class SnackbarTests: XCTestCase {
         )
     }
 }
-
 
 private extension SnackbarTests {
     func makeSnackbar(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {

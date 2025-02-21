@@ -16,7 +16,7 @@ final class SnackbarTests: XCTestCase {
     override func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
-        
+
         isRecording = false
     }
 

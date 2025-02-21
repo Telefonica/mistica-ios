@@ -20,7 +20,7 @@ public class SnackbarController: NSObject {
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
 
-    private var SnackbarViewList = [OngoingSnackbar]()
+    private var snackbarViewList = [OngoingSnackbar]()
     private var showingToken: Token?
 
     public static let shared = SnackbarController()
@@ -98,8 +98,8 @@ public extension SnackbarController {
 
         if showingToken == token {
             dismissCurrentSnackbar()
-        } else if let index = SnackbarViewList.firstIndex(where: { token == $0.token }) {
-            SnackbarViewList.remove(at: index)
+        } else if let index = snackbarViewList.firstIndex(where: { token == $0.token }) {
+            snackbarViewList.remove(at: index)
         }
     }
 
@@ -139,18 +139,18 @@ private extension SnackbarController {
     }
 
     func enqueue(_ ongoingSnackbar: OngoingSnackbar) {
-        SnackbarViewList.append(ongoingSnackbar)
+        snackbarViewList.append(ongoingSnackbar)
     }
 
     func dequeue() -> OngoingSnackbar? {
-        guard !SnackbarViewList.isEmpty else { return nil }
+        guard !snackbarViewList.isEmpty else { return nil }
 
-        return SnackbarViewList.remove(at: 0)
+        return snackbarViewList.remove(at: 0)
     }
 
     func showEnqueuedSnackbar() {
         guard showingToken == nil else { return }
-        guard let ongoingSnackbar = SnackbarViewList.first else { return }
+        guard let ongoingSnackbar = snackbarViewList.first else { return }
         guard let containerView = ongoingSnackbar.view() else { return }
 
         showingToken = ongoingSnackbar.token

@@ -14,7 +14,7 @@ on:
 jobs:
   test:
     name: Run Tests
-    runs-on: self-hosted-novum-mac
+    runs-on: ['self-hosted', 'cdorunner-life-novum-external', 'MacOS', 'cdorunner-life-big-mac']
 
     steps:
       - name: Checkout

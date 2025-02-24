@@ -9,7 +9,7 @@ jobs:
     name: Record screenshots
     # Only if it is a PR and the comment contains /record-screenshots
     if: github.event.issue.pull_request && contains(github.event.comment.body, '/record-screenshots')
-    runs-on: self-hosted-novum-mac
+    runs-on: ['self-hosted', 'cdorunner-life-novum-external', 'MacOS']
     steps:
       - name: Update the comment on PR with link to the job
         uses: actions/github-script@v7
@@ -70,7 +70,7 @@ jobs:
     name: Set last commit status
     if: always() && needs.record-screenshots.result != 'skipped'
     needs: [record-screenshots, execute-tests]
-    runs-on: self-hosted-novum-mac
+    runs-on: [ self-hosted, cdorunner-life-novum, Linux ]
     steps:
       - uses: myrotvorets/set-commit-status-action@master
         with:
@@ -82,7 +82,7 @@ jobs:
     name: Add workflow result on PR by updating the comment that triggered the workflow
     needs: record-screenshots
     if: always() && needs.record-screenshots.result != 'skipped'
-    runs-on: self-hosted-novum-mac
+    runs-on: [ self-hosted, cdorunner-life-novum, Linux ]
     steps:
       - uses: actions/github-script@v7
         with:

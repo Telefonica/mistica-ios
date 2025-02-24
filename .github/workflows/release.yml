@@ -7,11 +7,16 @@ on:
         description: "CLI args"
         required: false
         default: "--debug"
+      runs_on:
+        required: false
+        type: string
+        description: 'Self-hosted runner flavor to use as JSON array string'
+        default: '["self-hosted", "cdorunner-life-novum-external", "MacOS"]'
 
 jobs:
   release:
     name: Release
-    runs-on: self-hosted-novum-mac
+    runs-on: ${{ fromJson(inputs.runs_on) }}
 
     steps:
       - uses: actions/checkout@v3.1.0

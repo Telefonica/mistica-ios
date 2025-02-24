@@ -14,7 +14,7 @@ on:
 jobs:
   test:
     name: Run Tests
-    runs-on: self-hosted-novum-mac
+    runs-on: macos-15
 
     steps:
       - name: Checkout

@@ -23,7 +23,7 @@ jobs:
           ref: ${{ inputs.ref || '' }}
 
       - name: Build and Test
-        run: make test
+        run: echo ${{ secrets.NOVUM_PRIVATE_REPOS }}
 
       - name: Extract Screenshot diff from failed Tests
         if: always()

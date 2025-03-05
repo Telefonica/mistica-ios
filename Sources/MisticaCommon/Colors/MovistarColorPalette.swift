@@ -205,7 +205,7 @@ struct MovistarColors: MisticaColors {
 
     let warning = MovistarColors.palette.egg55 | MovistarColors.palette.egg
 
-    let promo = MovistarColors.palette.purple | MovistarColors.palette.purple40
+    let promo = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
     let highlight = MovistarColors.palette.pink55 | MovistarColors.palette.pink45
 
@@ -215,7 +215,7 @@ struct MovistarColors: MisticaColors {
 
     let errorLow = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey7
 
-    let promoLow = MovistarColors.palette.purple10 | MovistarColors.palette.darkModeGrey7
+    let promoLow = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey7
 
     let brandLow = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey7
 
@@ -225,7 +225,7 @@ struct MovistarColors: MisticaColors {
 
     let errorHigh = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
-    let promoHigh = MovistarColors.palette.purple70 | MovistarColors.palette.purple35
+    let promoHigh = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
     let successHighInverse = MovistarColors.palette.movistarGreen70
 
@@ -233,7 +233,7 @@ struct MovistarColors: MisticaColors {
 
     let errorHighInverse = MovistarColors.palette.pepper70
 
-    let promoHighInverse = MovistarColors.palette.purple70
+    let promoHighInverse = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
     let textNavigationBarPrimary = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
@@ -249,7 +249,7 @@ struct MovistarColors: MisticaColors {
 
     let customTabsBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
 
-    let tagTextPromo = MovistarColors.palette.purple70 | MovistarColors.palette.purple35
+    let tagTextPromo = MovistarColors.palette.white
 
     let tagTextActive = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
 
@@ -261,7 +261,7 @@ struct MovistarColors: MisticaColors {
 
     let tagTextError = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
-    let tagBackgroundPromo = MovistarColors.palette.purple10 | MovistarColors.palette.darkModeGrey7
+    let tagBackgroundPromo = MovistarColors.palette.pepper70
 
     let tagBackgroundActive = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey7
 
@@ -272,6 +272,30 @@ struct MovistarColors: MisticaColors {
     let tagBackgroundWarning = MovistarColors.palette.egg10 | MovistarColors.palette.darkModeGrey7
 
     let tagBackgroundError = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey7
+
+    let tagTextPromoInverse = MovistarColors.palette.pepper70 | MovistarColors.palette.white
+
+    let tagTextActiveInverse = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
+
+    let tagTextInactiveInverse = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey3
+
+    let tagTextSuccessInverse = MovistarColors.palette.movistarGreen70 | MovistarColors.palette.movistarGreen40
+
+    let tagTextWarningInverse = MovistarColors.palette.egg80 | MovistarColors.palette.egg40
+
+    let tagTextErrorInverse = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
+
+    let tagBackgroundPromoInverse = MovistarColors.palette.white | MovistarColors.palette.pepper70
+
+    let tagBackgroundActiveInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+    let tagBackgroundInactiveInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+    let tagBackgroundSuccessInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+    let tagBackgroundWarningInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+    let tagBackgroundErrorInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
 
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:

@@ -17,9 +17,7 @@ class SnackbarView: UIView {
         static let actionlessDismissInterval: TimeInterval = 5
         static let withActionDismissInterval: TimeInterval = 10
 
-        static let presentationAnimationDuration: TimeInterval = 0.25
-        static let contentAnimationDelay: TimeInterval = 0.07
-        static let contentAnimationDuration = presentationAnimationDuration - contentAnimationDelay
+        static let presentationAnimationDuration: TimeInterval = 0.30
 
         static let margins = NSDirectionalEdgeInsets(top: 14, leading: 16, bottom: 14, trailing: 16)
 
@@ -105,6 +103,7 @@ class SnackbarView: UIView {
     private let dismissHandler: DismissHandlerBlock?
     private let action: (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)?
     private let forceDismiss: Bool
+    private var bottomConstraint: NSLayoutConstraint?
 
     init(text: String,
          action: (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)? = nil,
@@ -177,14 +176,20 @@ extension SnackbarView {
         layoutIfNeeded()
 
         addContainerConstraints(to: container)
-
+        let originalBottomConstant = bottomConstraint?.constant
+        
         alpha = 0
+        bottomConstraint?.constant = self.frameHeight
+        container.layoutIfNeeded()
+        
         UIView.animate(
             withDuration: Constants.presentationAnimationDuration,
-            delay: Constants.contentAnimationDelay,
-            options: .curveEaseOut,
+            delay: 0,
+            options: .curveEaseInOut,
             animations: {
                 self.alpha = 1
+                self.bottomConstraint?.constant = originalBottomConstant ?? 0
+                container.layoutIfNeeded()
             },
             completion: { _ in
                 AccessibilityHelper.post(self.text)
@@ -212,12 +217,15 @@ extension SnackbarView {
         let previousClipsToBounds = superview.clipsToBounds
         superview.clipsToBounds = true
 
+        let originalBottomConstant = bottomConstraint?.constant ?? 0
         UIView.animate(
             withDuration: Constants.presentationAnimationDuration,
-            delay: Constants.contentAnimationDelay,
-            options: .curveEaseIn,
+            delay: 0,
+            options: .curveEaseInOut,
             animations: {
                 self.alpha = 0
+                self.bottomConstraint?.constant = self.frameHeight + abs(originalBottomConstant)
+                superview.layoutIfNeeded()
             },
             completion: { _ in
                 superview.clipsToBounds = previousClipsToBounds
@@ -262,9 +270,6 @@ private extension SnackbarView {
 
         if let tabBar = tabBar, !tabBar.isHidden {
             bottomConstraint = bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -(tabBar.bounds.height + Constants.containerMargin))
-        } else if let scrollView = container as? UIScrollView {
-            // The bottomAnchor does not work in scrollViews, as workarround we take the topAnchor as reference
-            bottomConstraint = bottomAnchor.constraint(equalTo: container.topAnchor, constant: scrollView.frameHeight - Constants.containerMargin - scrollView.adjustedContentInset.bottom)
         }
 
         let constraints = [
@@ -272,6 +277,7 @@ private extension SnackbarView {
             leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor, constant: Constants.containerMargin),
             bottomConstraint
         ]
+       self.bottomConstraint = bottomConstraint
         NSLayoutConstraint.activate(constraints)
     }
 
@@ -366,9 +372,9 @@ private extension SnackbarView {
     func fadeStackViewIn() {
         verticalStackView.alpha = 0
         UIView.animate(
-            withDuration: Constants.contentAnimationDuration,
-            delay: Constants.contentAnimationDelay,
-            options: .curveEaseOut,
+            withDuration: Constants.presentationAnimationDuration,
+            delay: 0,
+            options: .curveEaseInOut,
             animations: {
                 self.verticalStackView.alpha = 1
             },
@@ -379,9 +385,9 @@ private extension SnackbarView {
     func fadeStackViewOut() {
         verticalStackView.alpha = 1
         UIView.animate(
-            withDuration: Constants.contentAnimationDuration,
+            withDuration: Constants.presentationAnimationDuration,
             delay: 0,
-            options: .curveEaseIn,
+            options: .curveEaseInOut,
             animations: {
                 self.verticalStackView.alpha = 0
             },

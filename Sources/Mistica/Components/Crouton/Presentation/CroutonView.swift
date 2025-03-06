@@ -177,11 +177,11 @@ extension CroutonView {
 
         addContainerConstraints(to: container)
         let originalBottomConstant = bottomConstraint?.constant
-        
+
         alpha = 0
-        bottomConstraint?.constant = self.frameHeight
+        bottomConstraint?.constant = frameHeight
         container.layoutIfNeeded()
-        
+
         UIView.animate(
             withDuration: Constants.presentationAnimationDuration,
             delay: 0,
@@ -277,7 +277,7 @@ private extension CroutonView {
             leadingAnchor.constraint(equalTo: container.safeAreaLayoutGuide.leadingAnchor, constant: Constants.containerMargin),
             bottomConstraint
         ]
-       self.bottomConstraint = bottomConstraint
+        self.bottomConstraint = bottomConstraint
         NSLayoutConstraint.activate(constraints)
     }
 

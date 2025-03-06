@@ -36,17 +36,25 @@ final class TagTests: XCTestCase {
             as: .image
         )
     }
+
+    func testInverseTagContentWitchIcon() {
+        assertSnapshot(
+            matching: makeTemplateWithAllTags(content: "Tag", icon: true, isInverse: true),
+            as: .image
+        )
+    }
 }
 
 // MARK: - Helpers
 
 private extension TagTests {
-    func makeTemplateWithAllTags(content: String, icon: Bool = false) -> some View {
+    func makeTemplateWithAllTags(content: String, icon: Bool = false, isInverse: Bool = false) -> some View {
         VStack {
-            ForEach(0 ..< Tag.Style.allCases.count, id: \.self) { index in
-                Tag(style: Tag.Style.allCases[index], text: content, icon: icon ? Image(systemName: "star.fill") : nil)
+            ForEach(0 ..< TagStyle.allCases.count, id: \.self) { index in
+                Tag(style: TagStyle.allCases[index], text: content, icon: icon ? Image(systemName: "star.fill") : nil).inverse(isInverse)
             }
         }
         .frame(minWidth: 100)
+        .background(isInverse ? Color.navigationBarBackground : nil)
     }
 }

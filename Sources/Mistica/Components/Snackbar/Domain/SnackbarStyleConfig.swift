@@ -1,5 +1,5 @@
 //
-//  CroutonConfig.swift
+//  SnackbarStyleConfig.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -14,28 +14,28 @@ import UIKit
     case critical
 }
 
-public struct CroutonConfig {
+public struct SnackbarStyleConfig {
     let backgroundColor: UIColor
     let textColor: UIColor
     let actionStyle: Button.Style
     let overrideDismissInterval: SnackbarDismissInterval
 
-    public init(style: SnackbarStyle, croutonDismissInterval: SnackbarDismissInterval) {
+    public init(style: SnackbarStyle, snackbarDismissInterval: SnackbarDismissInterval) {
         switch style {
         case .info:
             backgroundColor = .feedbackInfoBackground
             textColor = .textPrimaryInverse
-            actionStyle = .croutonInfoLink
+            actionStyle = .snackbarInfoLink
         case .critical:
             backgroundColor = .feedbackErrorBackground
             textColor = .textPrimaryInverse
-            actionStyle = .croutonCriticalLink
+            actionStyle = .snackbarCriticalLink
         }
-        overrideDismissInterval = croutonDismissInterval
+        overrideDismissInterval = snackbarDismissInterval
     }
 }
 
-// MARK: - Button.Style + Crouton
+// MARK: - Button.Style + Snackbar
 
 private extension Button.Style {
     private enum Constants {
@@ -43,7 +43,7 @@ private extension Button.Style {
         static let minimumWidth: CGFloat = 44
     }
 
-    static var croutonInfoLink: Button.Style {
+    static var snackbarInfoLink: Button.Style {
         let backgroundColor: UIColor = .clear
 
         var style = Button.Style(
@@ -56,12 +56,12 @@ private extension Button.Style {
             ]
         )
 
-        style.overriddenSizes = croutonOverriddenSizes
+        style.overriddenSizes = snackbarOverriddenSizes
 
         return style
     }
 
-    static var croutonCriticalLink: Button.Style {
+    static var snackbarCriticalLink: Button.Style {
         let backgroundColor: UIColor = .clear
 
         var style = Button.Style(
@@ -74,12 +74,12 @@ private extension Button.Style {
             ]
         )
 
-        style.overriddenSizes = croutonOverriddenSizes
+        style.overriddenSizes = snackbarOverriddenSizes
 
         return style
     }
 
-    static var croutonOverriddenSizes: OverriddenSizes {
+    static var snackbarOverriddenSizes: OverriddenSizes {
         OverriddenSizes(
             insets: Constants.insets,
             minimumWidth: Constants.minimumWidth,

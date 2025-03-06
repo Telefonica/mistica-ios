@@ -49,7 +49,7 @@ public extension SnackbarController {
     ) -> Token {
         assertMainThread()
 
-        let styleConfig = CroutonConfig(style: style, croutonDismissInterval: config.dismissInterval)
+        let styleConfig = SnackbarStyleConfig(style: style, snackbarDismissInterval: config.dismissInterval)
 
         let dismissHandler: (SnackbarDismissReason) -> Void = { dismissReason in
             self.dismissCurrentSnackbar()

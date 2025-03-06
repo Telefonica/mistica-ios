@@ -101,14 +101,14 @@ class SnackbarView: UIView {
     private var timer: Timer?
 
     private let text: String
-    private let config: CroutonConfig
+    private let config: SnackbarStyleConfig
     private let dismissHandler: DismissHandlerBlock?
     private let action: (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)?
     private let forceDismiss: Bool
 
     init(text: String,
          action: (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)? = nil,
-         config: CroutonConfig,
+         config: SnackbarStyleConfig,
          dismissHandler: DismissHandlerBlock? = nil,
          forceDismiss: Bool) {
         self.text = text

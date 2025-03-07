@@ -105,7 +105,7 @@ class CroutonView: UIView {
     private let forceDismiss: Bool
     private var bottomConstraint: NSLayoutConstraint?
     private var dismissalOffset: CGFloat = 0
-    
+
     init(text: String,
          action: (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)? = nil,
          config: CroutonConfig,
@@ -176,14 +176,14 @@ extension CroutonView {
         container.layoutIfNeeded()
         layoutIfNeeded()
 
-        let snackbarHeight = self.frame.height
-        let temporaryHeightConstraint = self.heightAnchor.constraint(equalToConstant: snackbarHeight)
+        let snackbarHeight = frame.height
+        let temporaryHeightConstraint = heightAnchor.constraint(equalToConstant: snackbarHeight)
         temporaryHeightConstraint.isActive = true
-        
+
         let originalBottomConstant = bottomConstraint?.constant ?? Constants.containerMargin
 
         var safeAreaBottomInset = container.safeAreaInsets.bottom
-        
+
         // If the snackbar is above the tab bar, do not add the safe area inset.
         if originalBottomConstant < -Constants.containerMargin {
             safeAreaBottomInset = 0
@@ -194,9 +194,9 @@ extension CroutonView {
         dismissalOffset = snackbarHeight + abs(originalBottomConstant) + safeAreaBottomInset + abs(Constants.containerMargin)
 
         bottomConstraint?.constant = dismissalOffset
-        
+
         container.layoutIfNeeded()
-        
+
         alpha = 0
 
         UIView.animate(
@@ -236,8 +236,8 @@ extension CroutonView {
         superview.layoutIfNeeded()
         layoutIfNeeded()
 
-        let fixedHeight = self.frame.height
-        let heightConstraint = self.heightAnchor.constraint(equalToConstant: fixedHeight)
+        let fixedHeight = frame.height
+        let heightConstraint = heightAnchor.constraint(equalToConstant: fixedHeight)
         heightConstraint.isActive = true
 
         UIView.animate(
@@ -253,7 +253,7 @@ extension CroutonView {
                 superview.clipsToBounds = previousClipsToBounds
 
                 self.removeFromSuperview()
-                
+
                 heightConstraint.isActive = false
 
                 completion?()

@@ -104,7 +104,8 @@ class CroutonView: UIView {
     private let action: (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)?
     private let forceDismiss: Bool
     private var bottomConstraint: NSLayoutConstraint?
-
+    private var dismissalOffset: CGFloat = 0
+    
     init(text: String,
          action: (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)? = nil,
          config: CroutonConfig,
@@ -169,18 +170,34 @@ extension CroutonView {
         container.clipsToBounds = true
 
         adjustStackViewLayout(traitCollection: container.traitCollection)
-
         container.addSubview(self)
+        addContainerConstraints(to: container)
 
         container.layoutIfNeeded()
         layoutIfNeeded()
 
-        addContainerConstraints(to: container)
-        let originalBottomConstant = bottomConstraint?.constant
+        let snackbarHeight = self.frame.height
+        let temporaryHeightConstraint = self.heightAnchor.constraint(equalToConstant: snackbarHeight)
+        temporaryHeightConstraint.isActive = true
+        
+        let originalBottomConstant = bottomConstraint?.constant ?? Constants.containerMargin
 
-        alpha = 0
-        bottomConstraint?.constant = frameHeight
+        var safeAreaBottomInset = container.safeAreaInsets.bottom
+        
+        // If the snackbar is above the tab bar, do not add the safe area inset.
+        if originalBottomConstant < -Constants.containerMargin {
+            safeAreaBottomInset = 0
+        }
+
+        // Calculate the offset to position the Snackbar off-screen before the animation,
+        // adding its height, initial margin, safe area inset, and an extra margin.
+        dismissalOffset = snackbarHeight + abs(originalBottomConstant) + safeAreaBottomInset + abs(Constants.containerMargin)
+
+        bottomConstraint?.constant = dismissalOffset
+        
         container.layoutIfNeeded()
+        
+        alpha = 0
 
         UIView.animate(
             withDuration: Constants.presentationAnimationDuration,
@@ -188,7 +205,7 @@ extension CroutonView {
             options: .curveEaseInOut,
             animations: {
                 self.alpha = 1
-                self.bottomConstraint?.constant = originalBottomConstant ?? 0
+                self.bottomConstraint?.constant = originalBottomConstant
                 container.layoutIfNeeded()
             },
             completion: { _ in
@@ -196,10 +213,10 @@ extension CroutonView {
 
                 container.clipsToBounds = previousClipsToBounds
 
+                temporaryHeightConstraint.isActive = false
                 self.addCountdownToDismiss()
             }
         )
-
         fadeStackViewIn()
     }
 
@@ -210,32 +227,38 @@ extension CroutonView {
             DispatchQueue.main.async {
                 completion?()
             }
-
             return
         }
 
         let previousClipsToBounds = superview.clipsToBounds
         superview.clipsToBounds = true
 
-        let originalBottomConstant = bottomConstraint?.constant ?? 0
+        superview.layoutIfNeeded()
+        layoutIfNeeded()
+
+        let fixedHeight = self.frame.height
+        let heightConstraint = self.heightAnchor.constraint(equalToConstant: fixedHeight)
+        heightConstraint.isActive = true
+
         UIView.animate(
             withDuration: Constants.presentationAnimationDuration,
             delay: 0,
             options: .curveEaseInOut,
             animations: {
                 self.alpha = 0
-                self.bottomConstraint?.constant = self.frameHeight + abs(originalBottomConstant)
+                self.bottomConstraint?.constant = self.dismissalOffset
                 superview.layoutIfNeeded()
             },
             completion: { _ in
                 superview.clipsToBounds = previousClipsToBounds
 
                 self.removeFromSuperview()
+                
+                heightConstraint.isActive = false
 
                 completion?()
             }
         )
-
         fadeStackViewOut()
     }
 }

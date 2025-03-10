@@ -18,7 +18,6 @@ public struct CroutonConfig {
     let backgroundColor: UIColor
     let textColor: UIColor
     let actionStyle: Button.Style
-    let closeStyle: CroutonStyle
     let overrideDismissInterval: SnackbarDismissInterval
 
     public init(style: CroutonStyle, croutonDismissInterval: SnackbarDismissInterval) {
@@ -27,12 +26,10 @@ public struct CroutonConfig {
             backgroundColor = .feedbackInfoBackground
             textColor = .textPrimaryInverse
             actionStyle = .croutonInfoLink
-            closeStyle = style
         case .critical:
             backgroundColor = .feedbackErrorBackground
             textColor = .textPrimaryInverse
             actionStyle = .croutonCriticalLink
-            closeStyle = style
         }
         overrideDismissInterval = croutonDismissInterval
     }

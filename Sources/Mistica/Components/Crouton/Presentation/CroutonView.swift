@@ -79,41 +79,26 @@ class CroutonView: UIView {
         stackView.distribution = .fill
         return stackView
     }()
-
-    private lazy var closeImageView: IntrinsictImageView? = {
-        guard shouldShowCloseButton else { return nil }
-        let closeImageView = IntrinsictImageView()
-        closeImageView.intrinsicHeight = Constants.closeButtonWidthAndHeight
-        closeImageView.intrinsicWidth = Constants.closeButtonWidthAndHeight
-        closeImageView.image = UIImage.regularCloseButtonIcon.withRenderingMode(.alwaysTemplate)
-        closeImageView.tintColor = .inverse
-
-        let tapGesture = UITapGestureRecognizer()
-        tapGesture.addTarget(self, action: #selector(closeButtonTapped))
-
-        closeImageView.isUserInteractionEnabled = true
-        closeImageView.addGestureRecognizer(tapGesture)
-        return closeImageView
-    }()
     
     private lazy var closeButton: UIButton? = {
         guard shouldShowCloseButton else { return nil }
-        let button  = UIButton(type: .custom)
+        
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalToConstant: 33).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 33).isActive = true
         button.layer.cornerRadius = 16.5
         button.clipsToBounds = true
+        button.backgroundColor = .clear
         
         let icon = UIImage.regularCloseButtonIcon.withRenderingMode(.alwaysTemplate)
-        button.tintColor = .inverse
         button.setImage(icon, for: .normal)
-        button.setImage(icon, for: .highlighted)
-        button.setImage(icon, for: .selected)
+        button.tintColor = .inverse
         
         button.adjustsImageWhenHighlighted = false
         
-        button.backgroundColor = .clear
+        NSLayoutConstraint.activate([
+            button.widthAnchor.constraint(equalToConstant: 33),
+            button.heightAnchor.constraint(equalToConstant: 33)
+        ])
         
         if let imageView = button.imageView {
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -124,13 +109,13 @@ class CroutonView: UIView {
                 imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor)
             ])
         }
+        
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-
-        button.addTarget(self, action: #selector(updateButtonState), for: .touchDown)
-        button.addTarget(self, action: #selector(updateButtonState), for: .touchUpInside)
-        button.addTarget(self, action: #selector(updateButtonState), for: .touchUpOutside)
+        button.addTarget(self, action: #selector(updateButtonState), for: [.touchDown, .touchUpInside, .touchUpOutside])
+        
         return button
     }()
+
 
     private var timer: Timer?
 
@@ -473,5 +458,4 @@ private extension CroutonView {
             sender.backgroundColor = .clear
         }
     }
-    
 }

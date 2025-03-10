@@ -23,9 +23,9 @@ struct O2Colors: MisticaColors {
 
     let backgroundContainerError = O2Colors.palette.pepper10 | O2Colors.palette.darkModeGrey
 
-    let backgroundContainerHover = O2Colors.palette.darkModeBlack.withAlphaComponent(0.03) | O2Colors.palette.white.withAlphaComponent(0.03)
+    let backgroundContainerHover = O2Colors.palette.darkModeBlack.withAlphaComponent(0.05) | O2Colors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerPressed = O2Colors.palette.darkModeBlack.withAlphaComponent(0.05) | O2Colors.palette.white.withAlphaComponent(0.05)
+    let backgroundContainerPressed = O2Colors.palette.darkModeBlack.withAlphaComponent(0.08) | O2Colors.palette.white.withAlphaComponent(0.08)
 
     let backgroundContainerBrand = MisticaColor.solid(O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeGrey)
 

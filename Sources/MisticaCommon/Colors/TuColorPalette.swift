@@ -23,9 +23,9 @@ struct TuColors: MisticaColors {
 
     let backgroundContainerError = TuColors.palette.red10 | TuColors.palette.darkModeGrey
 
-    let backgroundContainerHover = TuColors.palette.grey9.withAlphaComponent(0.03) | TuColors.palette.white.withAlphaComponent(0.03)
+    let backgroundContainerHover = TuColors.palette.grey9.withAlphaComponent(0.05) | TuColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerPressed = TuColors.palette.grey9.withAlphaComponent(0.05) | TuColors.palette.white.withAlphaComponent(0.05)
+    let backgroundContainerPressed = TuColors.palette.grey9.withAlphaComponent(0.08) | TuColors.palette.white.withAlphaComponent(0.08)
 
     let backgroundContainerBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeGrey)
 

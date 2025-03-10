@@ -16,7 +16,7 @@ on:
 jobs:
   deploy-mistica-catalog:
     name: Build enterprise
-    runs-on: self-hosted-novum-mac
+    runs-on: macos-15
     steps:
       - name: Set configuration variables
         shell: bash
@@ -36,21 +36,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.1.0
 
-      - name: Checkout Telefonica/github-actions repo
-        uses: actions/checkout@v3.1.0
+      - name: Checkout Telefonica/ios-github-workflows repo
+        uses: actions/checkout@v4
         with:
-          repository: Telefonica/github-actions
+          repository: Telefonica/ios-github-workflows
           token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
-          path: .github/actions
+          path: .ios-github-workflows
 
-      - name: Provision Novum Mac for MisticaApp
-        uses: ./.github/actions/novum/mac-provisioning
-        with:
-          setup-ruby: false
-          brand-variant: MisticaApp
-          provisioning-profiles: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_PROV_PROFILES }}
-          certificate-password: ${{ secrets.MISTICA_CATALOG_ENTERPRISE_CERT_PWD }}
-          apple-system-certs: ${{ secrets.APPLE_CERTS }}
+      - name: Setup
+        id: setup
+        uses: ./.ios-github-workflows/.github/actions/setup-mac-dependencies
+      - run: xcodebuild -version
+  
+      - name: Install certificate and provisioning profiles
+        id: install-cert-and-prov
+        uses: ./.ios-github-workflows/.github/actions/install-signing-certificates-and-provisionings
+        with:    
+          certificate-base64: ${{ secrets.MISTICA_ENTERPRISE_CERTIFICATE }}
+          certificate-password: ${{ secrets.MISTICA_ENTERPRISE_P12_PWD }}
+          apple-enterprise-api-key-id: ${{ secrets.APPLE_ENTERPRISE_API_KEY_ID }}
+          apple-enterprise-api-private-key-base64: ${{ secrets.APPLE_ENTERPRISE_API_PRIVATE_KEY }}
+          apple-enterprise-api-issuer-id: ${{ secrets.APPLE_ENTERPRISE_API_ISSUER_ID }}
 
       - name: Export
         run: make export

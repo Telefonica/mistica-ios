@@ -27,7 +27,7 @@ MISTICA_DESIGN_URL := https://raw.githubusercontent.com/Telefonica/mistica-desig
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode-16.0.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode_16.0.app/Contents/Developer
 endif
 
 # Targets
@@ -48,12 +48,16 @@ trace:
 	@xcodebuild -list -json
 	@echo "Available devices"
 	@xcrun xctrace list devices
+	@echo "Available runtimes"
+	@xcrun simctl list runtimes
+	@echo "Available SDKs"
+	@xcodebuild -showsdks
 	@xcrun --sdk iphonesimulator --show-sdk-path
 
 setup: trace
 	@echo "Installing dependencies..."
-	@brew ls chargepoint/xcparse/xcparse --versions || brew install chargepoint/xcparse/xcparse
-	@brew ls xcbeautify --versions || brew install xcbeautify
+	@command -v xcparse >/dev/null 2>&1 || brew install chargepoint/xcparse/xcparse
+	@command -v xcbeautify >/dev/null 2>&1 || brew install xcbeautify
 
 skinGeneratorSetup:
 	@echo "Installing tokens generator dependencies"

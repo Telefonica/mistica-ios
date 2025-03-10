@@ -1,3 +1,10 @@
+# [33.8.0](https://github.com/Telefonica/mistica-ios/compare/v33.7.0...v33.8.0) (2025-02-04)
+
+
+### Features
+
+* **skin:** update design tokens from mistica-design ([#425](https://github.com/Telefonica/mistica-ios/issues/425)) ([7a76235](https://github.com/Telefonica/mistica-ios/commit/7a76235b530fa664f4a6db31a7173625ad81bcb5))
+
 # [33.7.0](https://github.com/Telefonica/mistica-ios/compare/v33.6.0...v33.7.0) (2024-12-16)
 
 

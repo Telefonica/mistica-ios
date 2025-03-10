@@ -32,9 +32,9 @@ struct O2NewColors: MisticaColors {
 
     let backgroundContainerError = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey
 
-    let backgroundContainerHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.03) | O2NewColors.palette.white.withAlphaComponent(0.03)
+    let backgroundContainerHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.05) | O2NewColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerPressed = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.05) | O2NewColors.palette.white.withAlphaComponent(0.05)
+    let backgroundContainerPressed = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.08) | O2NewColors.palette.white.withAlphaComponent(0.08)
 
     let backgroundContainerBrand = MisticaColor.gradient(MisticaGradient(
         colors:
@@ -221,7 +221,7 @@ struct O2NewColors: MisticaColors {
 
     let success = O2NewColors.palette.o2Green
 
-    let warning = O2NewColors.palette.o2Orange
+    let warning = O2NewColors.palette.o2Orange60 | O2NewColors.palette.o2Orange
 
     let promo = O2NewColors.palette.o2Pink
 
@@ -326,6 +326,7 @@ public struct O2NewColorPalette {
     public let o2Orange = UIColor(hex: "#FFA55A")!
     public let o2Orange10 = UIColor(hex: "#FFF6EE")!
     public let o2Orange40 = UIColor(hex: "#FFC08B")!
+    public let o2Orange60 = UIColor(hex: "#F06C00")!
     public let o2Orange75 = UIColor(hex: "#996336")!
     public let o2Pink = UIColor(hex: "#FA96FF")!
     public let o2Pink15 = UIColor(hex: "#FEEAFF")!

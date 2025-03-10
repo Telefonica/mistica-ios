@@ -95,6 +95,42 @@ class CroutonView: UIView {
         closeImageView.addGestureRecognizer(tapGesture)
         return closeImageView
     }()
+    
+    private lazy var closeButton: UIButton? = {
+        guard shouldShowCloseButton else { return nil }
+        let button  = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 33).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 33).isActive = true
+        button.layer.cornerRadius = 16.5
+        button.clipsToBounds = true
+        
+        let icon = UIImage.regularCloseButtonIcon.withRenderingMode(.alwaysTemplate)
+        button.tintColor = .inverse
+        button.setImage(icon, for: .normal)
+        button.setImage(icon, for: .highlighted)
+        button.setImage(icon, for: .selected)
+        
+        button.adjustsImageWhenHighlighted = false
+        
+        button.backgroundColor = .clear
+        
+        if let imageView = button.imageView {
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                imageView.widthAnchor.constraint(equalToConstant: 20),
+                imageView.heightAnchor.constraint(equalToConstant: 20),
+                imageView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+                imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor)
+            ])
+        }
+        button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+
+        button.addTarget(self, action: #selector(updateButtonState), for: .touchDown)
+        button.addTarget(self, action: #selector(updateButtonState), for: .touchUpInside)
+        button.addTarget(self, action: #selector(updateButtonState), for: .touchUpOutside)
+        return button
+    }()
 
     private var timer: Timer?
 
@@ -360,9 +396,9 @@ private extension CroutonView {
     func useHorizontalLayout() {
         addHorizontalActionButtonIfNeeded()
 
-        guard let closeImageView = closeImageView else { return }
-        horizontalStackView.removeArrangedSubview(closeImageView)
-        horizontalStackView.addArrangedSubview(closeImageView)
+        guard let closeButton = closeButton else { return }
+        horizontalStackView.removeArrangedSubview(closeButton)
+        horizontalStackView.addArrangedSubview(closeButton)
     }
 
     func addHorizontalActionButtonIfNeeded() {
@@ -378,9 +414,9 @@ private extension CroutonView {
     func useVerticalLayout() {
         addVerticalActionButtonStackIfNeeded()
 
-        guard let closeImageView = closeImageView else { return }
-        horizontalStackView.removeArrangedSubview(closeImageView)
-        horizontalStackView.addArrangedSubview(closeImageView)
+        guard let closeButton = closeButton else { return }
+        horizontalStackView.removeArrangedSubview(closeButton)
+        horizontalStackView.addArrangedSubview(closeButton)
     }
 
     func addVerticalActionButtonStackIfNeeded() {
@@ -429,4 +465,13 @@ private extension CroutonView {
     @objc func closeButtonTapped() {
         invokeDismissHandler(reason: .dismiss)
     }
+    
+    @objc private func updateButtonState(_ sender: UIButton) {
+        if sender.isHighlighted {
+            sender.backgroundColor = .inverse.withAlphaComponent(0.2)
+        } else {
+            sender.backgroundColor = .clear
+        }
+    }
+    
 }

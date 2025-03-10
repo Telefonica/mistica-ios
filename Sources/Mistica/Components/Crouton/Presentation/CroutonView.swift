@@ -22,10 +22,8 @@ class CroutonView: UIView {
         static let margins = NSDirectionalEdgeInsets(top: 14, leading: 16, bottom: 14, trailing: 16)
 
         static let buttonWidthThresholdForVerticalLayout: CGFloat = 128
-        static let horizontalSpacing: CGFloat = 16
+        static let horizontalSpacing: CGFloat = 8
         static let verticalSpacing: CGFloat = 18
-
-        static let closeButtonWidthAndHeight: CGFloat = 20
         static let containerMargin: CGFloat = 8
     }
 

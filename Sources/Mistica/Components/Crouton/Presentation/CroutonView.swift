@@ -79,27 +79,27 @@ class CroutonView: UIView {
         stackView.distribution = .fill
         return stackView
     }()
-    
+
     private lazy var closeButton: UIButton? = {
         guard shouldShowCloseButton else { return nil }
-        
+
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 16.5
         button.clipsToBounds = true
         button.backgroundColor = .clear
-        
+
         let icon = UIImage.regularCloseButtonIcon.withRenderingMode(.alwaysTemplate)
         button.setImage(icon, for: .normal)
         button.tintColor = .inverse
-        
+
         button.adjustsImageWhenHighlighted = false
-        
+
         NSLayoutConstraint.activate([
             button.widthAnchor.constraint(equalToConstant: 33),
             button.heightAnchor.constraint(equalToConstant: 33)
         ])
-        
+
         if let imageView = button.imageView {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -109,13 +109,12 @@ class CroutonView: UIView {
                 imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor)
             ])
         }
-        
+
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         button.addTarget(self, action: #selector(updateButtonState), for: [.touchDown, .touchUpInside, .touchUpOutside])
-        
+
         return button
     }()
-
 
     private var timer: Timer?
 
@@ -450,7 +449,7 @@ private extension CroutonView {
     @objc func closeButtonTapped() {
         invokeDismissHandler(reason: .dismiss)
     }
-    
+
     @objc private func updateButtonState(_ sender: UIButton) {
         if sender.isHighlighted {
             sender.backgroundColor = .inverse.withAlphaComponent(0.2)

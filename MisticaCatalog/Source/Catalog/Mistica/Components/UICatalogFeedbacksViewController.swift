@@ -121,14 +121,14 @@ class UICatalogFeedbacksViewController: UITableViewController {
     }()
 
     private lazy var pushFeedbackCell: UITableViewCell = {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "showCrouton")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "showSnackbar")
         cell.textLabel?.textColor = .textLink
         cell.textLabel?.text = "Push feedback"
         return cell
     }()
 
     private lazy var presentFeedbackCell: UITableViewCell = {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "showCrouton")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "showSnackbar")
         cell.textLabel?.textColor = .textLink
         cell.textLabel?.text = "Present feedback"
         return cell

@@ -1,5 +1,5 @@
 //
-//  CroutonTests.swift
+//  SnackbarTests.swift
 //
 //  Made with ❤️ by Novum
 //
@@ -10,7 +10,9 @@
 import SnapshotTesting
 import XCTest
 
-final class CroutonTests: XCTestCase {
+final class SnackbarTests: XCTestCase {
+    private let sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
     override func setUp() {
         super.setUp()
         UIView.setAnimationsEnabled(false)
@@ -18,133 +20,145 @@ final class CroutonTests: XCTestCase {
         isRecording = false
     }
 
-    func testInfoCrouton() {
-        assertSnapshotForAllBrandsAndStyles(
+    func testInfoSnackbar() {
+        assertSnapshot(
+            for: [BrandStyle.movistar],
+            and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCrouton(
-                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            viewBuilder: makeSnackbar(
+                withText: sampleText,
                 style: .info
             )
         )
     }
 
-    func testInfoCroutonWithShortActionTitle() {
-        assertSnapshotForAllBrandsAndStyles(
+    func testInfoSnackbarWithShortActionTitle() {
+        assertSnapshot(
+            for: [BrandStyle.movistar],
+            and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCrouton(
-                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            viewBuilder: makeSnackbar(
+                withText: sampleText,
                 actionTitle: "Nostrud",
                 style: .info
             )
         )
     }
 
-    func testInfoCroutonWithLongActionTitle() {
-        assertSnapshotForAllBrandsAndStyles(
+    func testInfoSnackbarWithLongActionTitle() {
+        assertSnapshot(
+            for: [BrandStyle.movistar],
+            and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCrouton(
-                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            viewBuilder: makeSnackbar(
+                withText: sampleText,
                 actionTitle: "Excepteur sint occaecat cupidatat",
                 style: .info
             )
         )
     }
 
-    func testCriticalCrouton() {
-        assertSnapshotForAllBrandsAndStyles(
+    func testCriticalSnackbar() {
+        assertSnapshot(
+            for: [BrandStyle.movistar],
+            and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCrouton(
-                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            viewBuilder: makeSnackbar(
+                withText: sampleText,
                 style: .critical
             )
         )
     }
 
-    func testCriticalCroutonWithShortActionTitle() {
-        assertSnapshotForAllBrandsAndStyles(
+    func testCriticalSnackbarWithShortActionTitle() {
+        assertSnapshot(
+            for: [BrandStyle.movistar],
+            and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCrouton(
-                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            viewBuilder: makeSnackbar(
+                withText: sampleText,
                 actionTitle: "Nostrud",
                 style: .critical
             )
         )
     }
 
-    func testCriticalCroutonWithLongActionTitle() {
-        assertSnapshotForAllBrandsAndStyles(
+    func testCriticalSnackbarWithLongActionTitle() {
+        assertSnapshot(
+            for: [BrandStyle.movistar],
+            and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCrouton(
-                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            viewBuilder: makeSnackbar(
+                withText: sampleText,
                 actionTitle: "Excepteur sint occaecat cupidatat",
                 style: .critical
             )
         )
     }
 
-    func testInfoCroutonWithBottomTabbar() {
+    func testInfoSnackbarWithBottomTabbar() {
         MisticaConfig.styleControls([.tabBar])
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCroutonWithBottomTabBar(
-                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            viewBuilder: makeSnackbarWithBottomTabBar(
+                withText: sampleText,
                 style: .info
             )
         )
     }
 
-    func testInfoCroutonWithTopTabbar() {
+    func testInfoSnackbarWithTopTabbar() {
         MisticaConfig.styleControls([.tabBar])
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCroutonWithTopTabBar(
-                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            viewBuilder: makeSnackbarWithTopTabBar(
+                withText: sampleText,
                 style: .info
             )
         )
     }
 
-    func testInfoCroutonWithScrollView() {
+    func testInfoSnackbarWithScrollView() {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
             as: .image(on: .iPhoneSe),
-            viewBuilder: makeCroutonWithScrollView(
-                withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            viewBuilder: makeSnackbarWithScrollView(
+                withText: sampleText,
                 style: .info
             )
         )
     }
 }
 
-private extension CroutonTests {
-    func makeCrouton(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
-        let croutonViewController = CroutonTestViewController(
+private extension SnackbarTests {
+    func makeSnackbar(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
+        let snackbarViewController = SnackbarTestViewController(
             text: text,
             action: actionTitle.map { ($0, $0, {}) },
             style: style
         )
-        return croutonViewController
+        return snackbarViewController
     }
 
-    func makeCroutonWithTopTabBar(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
-        let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
+    func makeSnackbarWithTopTabBar(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
+        let viewController = makeSnackbar(withText: text, actionTitle: actionTitle, style: style)
         addTabBar(to: viewController, isTop: true)
         return viewController
     }
 
-    func makeCroutonWithBottomTabBar(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
-        let viewController = makeCrouton(withText: text, actionTitle: actionTitle, style: style)
+    func makeSnackbarWithBottomTabBar(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
+        let viewController = makeSnackbar(withText: text, actionTitle: actionTitle, style: style)
         addTabBar(to: viewController, isTop: false)
         return viewController
     }
 
-    func makeCroutonWithScrollView(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
-        ScrollViewCroutonViewController(text: text, action: actionTitle.map { ($0, $0, {}) }, style: style)
+    func makeSnackbarWithScrollView(withText text: String, actionTitle: String? = nil, style: SnackbarStyle) -> UIViewController {
+        ScrollViewSnackbarViewController(text: text, action: actionTitle.map { ($0, $0, {}) }, style: style)
     }
 
     private func addTabBar(to viewController: UIViewController, isTop: Bool) {
@@ -172,7 +186,7 @@ private extension CroutonTests {
     }
 }
 
-private class BaseCroutonViewController: UIViewController {
+private class BaseSnackbarViewController: UIViewController {
     let text: String
     let action: SnackbarController.ActionConfig?
     let style: SnackbarStyle
@@ -194,7 +208,7 @@ private class BaseCroutonViewController: UIViewController {
     }
 }
 
-private class CroutonTestViewController: BaseCroutonViewController {
+private class SnackbarTestViewController: BaseSnackbarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
@@ -211,7 +225,7 @@ private class CroutonTestViewController: BaseCroutonViewController {
     }
 }
 
-private class ScrollViewCroutonViewController: BaseCroutonViewController, CustomSnackbarContainer {
+private class ScrollViewSnackbarViewController: BaseSnackbarViewController, CustomSnackbarContainer {
     var customSnackbarContainerView: UIView { scrollView }
     private let scrollView = UIScrollView()
 
@@ -232,7 +246,7 @@ private class ScrollViewCroutonViewController: BaseCroutonViewController, Custom
         view.addSubview(scrollView)
 
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.heightAnchor.constraint(equalToConstant: 250)

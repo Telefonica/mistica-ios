@@ -22,11 +22,12 @@ class SnackbarView: UIView {
         static let margins = NSDirectionalEdgeInsets(top: 14, leading: 16, bottom: 14, trailing: 16)
 
         static let buttonWidthThresholdForVerticalLayout: CGFloat = 128
-        static let horizontalSpacing: CGFloat = 16
+        static let horizontalSpacing: CGFloat = 8
         static let verticalSpacing: CGFloat = 18
-
-        static let closeButtonWidthAndHeight: CGFloat = 20
         static let containerMargin: CGFloat = 8
+        static let closeButtonSize: CGFloat = 33
+        static let iconCloseButtonSize: CGFloat = 20
+        static let closeButtonCornerRadius: CGFloat = closeButtonSize / 2
     }
 
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
@@ -80,20 +81,36 @@ class SnackbarView: UIView {
         return stackView
     }()
 
-    private lazy var closeImageView: IntrinsictImageView? = {
+    private lazy var closeButton: UIButton? = {
         guard shouldShowCloseButton else { return nil }
-        let closeImageView = IntrinsictImageView()
-        closeImageView.intrinsicHeight = Constants.closeButtonWidthAndHeight
-        closeImageView.intrinsicWidth = Constants.closeButtonWidthAndHeight
-        closeImageView.image = UIImage.regularCloseButtonIcon.withRenderingMode(.alwaysTemplate)
-        closeImageView.tintColor = .inverse
 
-        let tapGesture = UITapGestureRecognizer()
-        tapGesture.addTarget(self, action: #selector(closeButtonTapped))
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = Constants.closeButtonCornerRadius
+        button.clipsToBounds = true
+        button.backgroundColor = .clear
 
-        closeImageView.isUserInteractionEnabled = true
-        closeImageView.addGestureRecognizer(tapGesture)
-        return closeImageView
+        NSLayoutConstraint.activate([
+            button.widthAnchor.constraint(equalToConstant: Constants.closeButtonSize),
+            button.heightAnchor.constraint(equalToConstant: Constants.closeButtonSize)
+        ])
+
+        let imageView = UIImageView(image: UIImage.regularCloseButtonIcon.withRenderingMode(.alwaysTemplate))
+        imageView.tintColor = .inverse
+        button.addSubview(imageView)
+
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor),
+            imageView.widthAnchor.constraint(equalToConstant: Constants.iconCloseButtonSize),
+            imageView.heightAnchor.constraint(equalToConstant: Constants.iconCloseButtonSize)
+        ])
+
+        button.setBackgroundColor(config.closePressedBackgroundColor, for: .highlighted)
+        button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+
+        return button
     }()
 
     private var timer: Timer?
@@ -360,9 +377,9 @@ private extension SnackbarView {
     func useHorizontalLayout() {
         addHorizontalActionButtonIfNeeded()
 
-        guard let closeImageView = closeImageView else { return }
-        horizontalStackView.removeArrangedSubview(closeImageView)
-        horizontalStackView.addArrangedSubview(closeImageView)
+        guard let closeButton = closeButton else { return }
+        horizontalStackView.removeArrangedSubview(closeButton)
+        horizontalStackView.addArrangedSubview(closeButton)
     }
 
     func addHorizontalActionButtonIfNeeded() {
@@ -378,9 +395,9 @@ private extension SnackbarView {
     func useVerticalLayout() {
         addVerticalActionButtonStackIfNeeded()
 
-        guard let closeImageView = closeImageView else { return }
-        horizontalStackView.removeArrangedSubview(closeImageView)
-        horizontalStackView.addArrangedSubview(closeImageView)
+        guard let closeButton = closeButton else { return }
+        horizontalStackView.removeArrangedSubview(closeButton)
+        horizontalStackView.addArrangedSubview(closeButton)
     }
 
     func addVerticalActionButtonStackIfNeeded() {

@@ -89,7 +89,7 @@ class CroutonView: UIView {
         button.layer.cornerRadius = Constants.closeButtonCornerRadius
         button.clipsToBounds = true
         button.backgroundColor = .clear
-    
+
         NSLayoutConstraint.activate([
             button.widthAnchor.constraint(equalToConstant: Constants.closeButtonSize),
             button.heightAnchor.constraint(equalToConstant: Constants.closeButtonSize)
@@ -103,13 +103,13 @@ class CroutonView: UIView {
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor),
-            imageView.widthAnchor.constraint(equalToConstant:  Constants.iconCloseButtonSize),
-            imageView.heightAnchor.constraint(equalToConstant:  Constants.iconCloseButtonSize)
+            imageView.widthAnchor.constraint(equalToConstant: Constants.iconCloseButtonSize),
+            imageView.heightAnchor.constraint(equalToConstant: Constants.iconCloseButtonSize)
         ])
 
         button.setBackgroundColor(config.closePressedBackgroundColor, for: .highlighted)
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        
+
         return button
     }()
 

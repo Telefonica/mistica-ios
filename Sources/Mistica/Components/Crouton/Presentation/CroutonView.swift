@@ -25,6 +25,9 @@ class CroutonView: UIView {
         static let horizontalSpacing: CGFloat = 8
         static let verticalSpacing: CGFloat = 18
         static let containerMargin: CGFloat = 8
+        static let closeButtonSize: CGFloat = 33
+        static let iconCloseButtonSize: CGFloat = 20
+        static let closeButtonCornerRadius: CGFloat = closeButtonSize / 2
     }
 
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
@@ -83,34 +86,30 @@ class CroutonView: UIView {
 
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 16.5
+        button.layer.cornerRadius = Constants.closeButtonCornerRadius
         button.clipsToBounds = true
         button.backgroundColor = .clear
-
-        let icon = UIImage.regularCloseButtonIcon.withRenderingMode(.alwaysTemplate)
-        button.setImage(icon, for: .normal)
-        button.tintColor = .inverse
-
-        button.adjustsImageWhenHighlighted = false
-
+    
         NSLayoutConstraint.activate([
-            button.widthAnchor.constraint(equalToConstant: 33),
-            button.heightAnchor.constraint(equalToConstant: 33)
+            button.widthAnchor.constraint(equalToConstant: Constants.closeButtonSize),
+            button.heightAnchor.constraint(equalToConstant: Constants.closeButtonSize)
         ])
 
-        if let imageView = button.imageView {
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                imageView.widthAnchor.constraint(equalToConstant: 20),
-                imageView.heightAnchor.constraint(equalToConstant: 20),
-                imageView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
-                imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor)
-            ])
-        }
+        let imageView = UIImageView(image: UIImage.regularCloseButtonIcon.withRenderingMode(.alwaysTemplate))
+        imageView.tintColor = .inverse
+        button.addSubview(imageView)
 
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor),
+            imageView.widthAnchor.constraint(equalToConstant:  Constants.iconCloseButtonSize),
+            imageView.heightAnchor.constraint(equalToConstant:  Constants.iconCloseButtonSize)
+        ])
+
+        button.setBackgroundColor(config.closePressedBackgroundColor, for: .highlighted)
         button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        button.addTarget(self, action: #selector(updateButtonState), for: [.touchDown, .touchUpInside, .touchUpOutside])
-
+        
         return button
     }()
 
@@ -446,13 +445,5 @@ private extension CroutonView {
 
     @objc func closeButtonTapped() {
         invokeDismissHandler(reason: .dismiss)
-    }
-
-    @objc private func updateButtonState(_ sender: UIButton) {
-        if sender.isHighlighted {
-            sender.backgroundColor = .inverse.withAlphaComponent(0.2)
-        } else {
-            sender.backgroundColor = .clear
-        }
     }
 }

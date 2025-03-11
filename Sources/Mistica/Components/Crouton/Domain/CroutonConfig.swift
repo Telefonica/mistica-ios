@@ -18,6 +18,7 @@ public struct CroutonConfig {
     let backgroundColor: UIColor
     let textColor: UIColor
     let actionStyle: Button.Style
+    let closePressedBackgroundColor: UIColor
     let overrideDismissInterval: SnackbarDismissInterval
 
     public init(style: CroutonStyle, croutonDismissInterval: SnackbarDismissInterval) {
@@ -26,10 +27,12 @@ public struct CroutonConfig {
             backgroundColor = .feedbackInfoBackground
             textColor = .textPrimaryInverse
             actionStyle = .croutonInfoLink
+            closePressedBackgroundColor = .buttonLinkBackgroundInversePressed
         case .critical:
             backgroundColor = .feedbackErrorBackground
             textColor = .textPrimaryInverse
             actionStyle = .croutonCriticalLink
+            closePressedBackgroundColor = .backgroundContainerBrandPressed
         }
         overrideDismissInterval = croutonDismissInterval
     }
@@ -50,7 +53,7 @@ private extension Button.Style {
             allowsBleedingAlignment: true,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: .background.withAlphaComponent(0.2), borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: .buttonLinkBackgroundInversePressed, borderColor: backgroundColor),
                 .disabled: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .loading: Button.StateStyle(textColor: .textLinkSnackbar, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]
@@ -68,7 +71,7 @@ private extension Button.Style {
             allowsBleedingAlignment: true,
             stateStyleByState: [
                 .normal: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor.withAlphaComponent(0.2), borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: .backgroundContainerBrandPressed, borderColor: backgroundColor),
                 .disabled: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
                 .loading: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]

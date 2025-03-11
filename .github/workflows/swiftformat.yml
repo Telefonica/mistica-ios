@@ -6,7 +6,7 @@ on:
 jobs:
   format:
     name: SwiftFormat
-    runs-on: self-hosted-novum-mac
+    runs-on: macos-15
 
     steps:
       - name: Checkout

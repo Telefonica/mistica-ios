@@ -59,10 +59,16 @@ const BRANDS = [
 const BRANCH = 'production';
 
 const run = async () => {
+    let branch = BRANCH;
+    if (process.argv.length > 2) {
+        const args = process.argv.slice(2);
+        branch = args[0];
+    }
+
     const brandsWithTokens = await Promise.all(
         BRANDS.map((brand) => {
-            console.log(`Getting ${brand.misticaDesignFileName} tokens from mistica-design/${BRANCH}...`);
-            return downloadTokens(BRANCH, brand.misticaDesignFileName).then((tokens) => ({
+            console.log(`Getting ${brand.misticaDesignFileName} tokens from mistica-design/${branch}...`);
+            return downloadTokens(branch, brand.misticaDesignFileName).then((tokens) => ({
                 brand,
                 tokens,
             }));

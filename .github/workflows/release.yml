@@ -11,7 +11,7 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: self-hosted-novum-mac
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3.1.0

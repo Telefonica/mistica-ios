@@ -190,7 +190,7 @@ extension SnackbarView {
         container.addSubview(self)
         container.layoutIfNeeded()
         layoutIfNeeded()
-        
+
         addContainerConstraints(to: container)
 
         let originalBottomConstant = bottomConstraint?.constant ?? Constants.containerMargin
@@ -237,7 +237,7 @@ extension SnackbarView {
         let snackbarHeight = frame.height
         let temporaryHeightConstraint = heightAnchor.constraint(equalToConstant: snackbarHeight)
         temporaryHeightConstraint.isActive = true
-        let dismissalOffset  = calculateDismissalOffset(in: superview)
+        let dismissalOffset = calculateDismissalOffset(in: superview)
 
         UIView.animate(
             withDuration: Constants.presentationAnimationDuration,
@@ -317,25 +317,24 @@ private extension SnackbarView {
         }
         return nil
     }
-    
+
     func calculateDismissalOffset(in container: UIView) -> CGFloat {
-        let snackbarHeight = self.frame.height
+        let snackbarHeight = frame.height
         let originalBottomConstant = bottomConstraint?.constant ?? Constants.containerMargin
 
         var safeAreaBottomInset = container.safeAreaInsets.bottom
-        
+
         // If the snackbar is above the tab bar, do not add the safe area inset.
         if originalBottomConstant < -Constants.containerMargin {
             safeAreaBottomInset = 0
         }
-        
+
         // Calculate the dismissal offset by summing the height of the snackbar, the value of the bottom constant,
         // the safe area bottom inset, and add aditional space with container margin
         let dismissalOffset = snackbarHeight + abs(originalBottomConstant) + safeAreaBottomInset + abs(Constants.containerMargin)
-        
+
         return dismissalOffset
     }
-
 
     func addCountdownToDismiss() {
         guard let timeInterval = config.overrideDismissInterval.timeInterval else {

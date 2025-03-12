@@ -88,6 +88,10 @@ public extension SnackbarController {
         return token
     }
 
+    var isShowingASnackbar: Bool {
+        showingToken != nil
+    }
+
     /// Dismisses (or removes from enqueued snackbar) the snackbar identified by `token`
     /// - Parameter token: a unique token that identifies a snackbar
     func dismiss(token: Token) {

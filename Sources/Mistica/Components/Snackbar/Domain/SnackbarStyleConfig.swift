@@ -31,7 +31,7 @@ public struct SnackbarStyleConfig {
         case .critical:
             backgroundColor = .feedbackErrorBackground
             textColor = .textPrimaryInverse
-            actionStyle = .snackbarInfoLink
+            actionStyle = .snackbarCriticalLink
             closePressedBackgroundColor = .backgroundContainerBrandPressed
         }
         overrideDismissInterval = snackbarDismissInterval

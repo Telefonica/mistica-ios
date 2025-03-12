@@ -70,10 +70,10 @@ private extension Button.Style {
         var style = Button.Style(
             allowsBleedingAlignment: true,
             stateStyleByState: [
-                .normal: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .selected: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: .backgroundContainerBrandPressed, borderColor: backgroundColor),
-                .disabled: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
-                .loading: Button.StateStyle(textColor: .textPrimaryInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
+                .normal: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: .backgroundContainerBrandPressed, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .loading: Button.StateStyle(textColor: .textLinkInverse, backgroundColor: backgroundColor, borderColor: backgroundColor)
             ]
         )
 

@@ -22,19 +22,11 @@ public enum TagStyle: String, CaseIterable {
 
 public extension TagStyle {
     func backgroundColor(_ isInverse: Bool) -> UIColor {
-        if isInverse {
-            return inverseBackgroundColor
-        } else {
-            return defaultBackgroundColor
-        }
+        isInverse ? inverseBackgroundColor : defaultBackgroundColor
     }
 
     func textColor(_ isInverse: Bool) -> UIColor {
-        if isInverse {
-            return inverseTextColor
-        } else {
-            return defaultTextColor
-        }
+        isInverse ? inverseTextColor : defaultTextColor
     }
 }
 

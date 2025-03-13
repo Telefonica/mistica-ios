@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "appcenter-sdk-apple",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/microsoft/appcenter-sdk-apple",
+      "state" : {
+        "revision" : "ab54f758243f282d290b33027e8aac910d3d859a",
+        "version" : "5.0.5"
+      }
+    },
+    {
       "identity" : "lottie-spm",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-spm.git",
@@ -10,12 +19,21 @@
       }
     },
     {
+      "identity" : "plcrashreporter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/microsoft/PLCrashReporter.git",
+      "state" : {
+        "revision" : "6752f71de206f6a53fa6a758c3660fd9a7fe7527",
+        "version" : "1.11.2"
+      }
+    },
+    {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage.git",
       "state" : {
-        "revision" : "f6afa0132961d593f07970d84e2d8b588c29ea04",
-        "version" : "5.19.1"
+        "revision" : "cac9a55a3ae92478a2c95042dcc8d9695d2129ca",
+        "version" : "5.21.0"
       }
     },
     {

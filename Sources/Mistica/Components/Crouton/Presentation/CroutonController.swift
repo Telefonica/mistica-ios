@@ -13,7 +13,7 @@ public class CroutonController: NSObject {
         public typealias Closure = () -> UIViewController?
         public static let `default`: Closure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
     }
-    
+
     public typealias ActionConfig = (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
@@ -49,7 +49,7 @@ public extension CroutonController {
 
         let dismissHandler: (SnackbarDismissReason) -> Void = { dismissReason in
             self.dismissCurrentCrouton()
-            
+
             dismissHandler?(dismissReason)
         }
 
@@ -77,7 +77,7 @@ public extension CroutonController {
             exactViewController: exactViewController,
             rootViewController: rootViewController
         )
-        
+
         show(ongoingCrouton)
     }
 
@@ -99,9 +99,9 @@ private extension CroutonController {
         dismissCurrentCrouton()
         guard let view = crouton.view() else { return }
         crouton.croutonView.show(in: view)
-        self.currentCroutonView = crouton.croutonView
+        currentCroutonView = crouton.croutonView
     }
-    
+
     func dismissCurrentCrouton() {
         currentCroutonView?.dismiss()
         currentCroutonView = nil

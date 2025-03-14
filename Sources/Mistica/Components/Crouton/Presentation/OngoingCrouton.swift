@@ -10,18 +10,15 @@ import UIKit
 
 extension CroutonController {
     struct OngoingCrouton {
-        let token: Token
         let croutonView: CroutonView
         private weak var exactViewController: UIViewController?
         private let rootViewController: RootViewController.Closure
 
         init(
-            token: Token,
             croutonView: CroutonView,
             exactViewController: UIViewController? = nil,
             rootViewController: RootViewController.Closure? = nil
         ) {
-            self.token = token
             self.croutonView = croutonView
             self.exactViewController = exactViewController
             self.rootViewController = rootViewController ?? RootViewController.default

@@ -4,7 +4,7 @@
         "@semantic-release/release-notes-generator",
         "@semantic-release/changelog",
         ["@semantic-release/exec", {
-            "prepareCmd": "./scripts/update-version.sh ${nextRelease.version}"
+            "prepareCmd": "bash ./scripts/update-version.sh ${nextRelease.version}"
         }],
         ["@semantic-release/git", {
             "assets": ["CHANGELOG.md", "Sources/SupportFiles/Mistica.xcconfig", "MisticaCatalog/SupportFiles/MisticaCatalogConfig.xcconfig"]

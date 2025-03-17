@@ -26,7 +26,7 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}
-        run: npx -p @semantic-release/changelog -p @semantic-release/git -p @semantic-release/exec -p semantic-release@20.0.2 semantic-release ${{ github.event.inputs.cliArgs }}
+        run: npx -p @semantic-release/changelog -p @semantic-release/git -p @semantic-release/exec -p semantic-release@24.2.3 semantic-release ${{ github.event.inputs.cliArgs }}
 
       - name: Checkout Telefonica/github-actions repo
         uses: actions/checkout@v3.1.0

@@ -10,15 +10,18 @@ import UIKit
 
 extension SnackbarController {
     struct OngoingSnackbar {
+        let token: Token
         let snackbarView: SnackbarView
         private weak var exactViewController: UIViewController?
         private let rootViewController: RootViewController.Closure
 
         init(
+            token: Token,
             snackbarView: SnackbarView,
             exactViewController: UIViewController? = nil,
             rootViewController: RootViewController.Closure? = nil
         ) {
+            self.token = token
             self.snackbarView = snackbarView
             self.exactViewController = exactViewController
             self.rootViewController = rootViewController ?? RootViewController.default

@@ -14,12 +14,13 @@ public class SnackbarController: NSObject {
         public static let `default`: Closure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
     }
 
+    public typealias Token = UUID
     public typealias ActionConfig = (text: String, accessibilityLabel: String?, handler: DidTapActionBlock)
 
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
 
-    private var currentSnackbarView: SnackbarView?
+    private var currentSnackbar: OngoingSnackbar?
 
     public static let shared = SnackbarController()
 
@@ -29,7 +30,7 @@ public class SnackbarController: NSObject {
 // MARK: Public functions
 
 public extension SnackbarController {
-    /// Show a snackbar (or enqueue one if there is already a snackbar shown)
+    /// Show a snackbar
     /// - Parameters:
     ///   - text: The text to display in the snackbar
     ///   - action: An optional action which will show a button with the given title and invoke the handler when the button is pressed
@@ -37,19 +38,21 @@ public extension SnackbarController {
     ///   - dismissHandler: A handler which is called when the handler is removed from the screen
     ///   - exactViewController: The exact viewController where the snackbar will be show. Has priority over rootViewController
     ///   - rootViewController: The root view controller that will show the snackbar.
+    @discardableResult
     func showSnackbar(
         config: SnackbarConfig,
         style: SnackbarStyle = .info,
         dismissHandler: DismissHandlerBlock? = nil,
         exactViewController: UIViewController? = nil,
         rootViewController: RootViewController.Closure? = nil
-    ) {
+    ) -> Token {
         assertMainThread()
 
         let styleConfig = SnackbarStyleConfig(style: style, snackbarDismissInterval: config.dismissInterval)
 
+        let token = Token()
         let dismissHandler: (SnackbarDismissReason) -> Void = { dismissReason in
-            self.dismissCurrentSnackbar()
+            self.dismiss(token: token)
 
             dismissHandler?(dismissReason)
         }
@@ -74,20 +77,26 @@ public extension SnackbarController {
         )
 
         let ongoingSnackbar = OngoingSnackbar(
+            token: token,
             snackbarView: snackbarView,
             exactViewController: exactViewController,
             rootViewController: rootViewController
         )
         show(ongoingSnackbar)
+        
+        return token
     }
 
     var isShowingASnackbar: Bool {
-        currentSnackbarView != nil
+        currentSnackbar != nil
     }
 
     /// Dismisses the current snackbar if it exists
-    func dismiss() {
+    func dismiss(token: Token) {
         assertMainThread()
+        
+        guard let currentToken = currentSnackbar?.token, currentToken == token else { return }
+        
         dismissCurrentSnackbar()
     }
 }
@@ -99,11 +108,11 @@ private extension SnackbarController {
         dismissCurrentSnackbar()
         guard let view = snackbar.view() else { return }
         snackbar.snackbarView.show(in: view)
-        currentSnackbarView = snackbar.snackbarView
+        currentSnackbar = snackbar
     }
 
     func dismissCurrentSnackbar() {
-        currentSnackbarView?.dismiss()
-        currentSnackbarView = nil
+        currentSnackbar?.snackbarView.dismiss()
+        currentSnackbar = nil
     }
 }

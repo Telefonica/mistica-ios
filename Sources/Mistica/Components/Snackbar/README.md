@@ -9,9 +9,9 @@ Snackbar can also contain an action.
 
 ## Usage
 
-To display a snackbar, use the `SnackbarController` class, this class orchestrates Snackbar presentation and allows dimissing already presented or enqueued snackbar.
+To display a snackbar, use the `SnackbarController` class. This class manages the presentation of snackbars and ensures that any currently displayed snackbar is dismissed before showing a new one.
 
-The `showSnackbar` method will show (or enqueue if a snackbar is already being shown) the snackbar.
+The `showSnackbar` method will show the snackbar. 
 
 ## Styles
 

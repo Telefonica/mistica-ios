@@ -83,7 +83,7 @@ public extension SnackbarController {
             rootViewController: rootViewController
         )
         show(ongoingSnackbar)
-        
+
         return token
     }
 
@@ -94,9 +94,9 @@ public extension SnackbarController {
     /// Dismisses the current snackbar if it exists
     func dismiss(token: Token) {
         assertMainThread()
-        
+
         guard let currentToken = currentSnackbar?.token, currentToken == token else { return }
-        
+
         dismissCurrentSnackbar()
     }
 }

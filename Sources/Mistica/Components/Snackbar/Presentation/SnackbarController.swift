@@ -19,7 +19,6 @@ public class SnackbarController: NSObject {
     public typealias DismissHandlerBlock = (SnackbarDismissReason) -> Void
     public typealias DidTapActionBlock = () -> Void
 
-
     private var currentSnackbarView: SnackbarView?
 
     public static let shared = SnackbarController()
@@ -81,6 +80,7 @@ public extension SnackbarController {
         )
         show(ongoingSnackbar)
     }
+
     var isShowingASnackbar: Bool {
         currentSnackbarView != nil
     }

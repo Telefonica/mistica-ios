@@ -8,8 +8,4 @@ fi
 VERSION_NUMBER=$1
 echo "Updating xcconfig and mistica catalog version number to $VERSION_NUMBER"
 
-# Execute from the root project folder
-cd Mistica &>/dev/null
-cd .. &>/dev/null
-
-find . -name "Mistica*.xcconfig" -exec sed -i '' -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" {} +
+find . -name "Mistica*.xcconfig" -exec sed -i -E "s/(VERSION_NUMBER = ).*/\1$VERSION_NUMBER/" {} +

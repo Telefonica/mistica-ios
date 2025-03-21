@@ -273,6 +273,30 @@ struct VivoColors: MisticaColors {
 
     let tagBackgroundError = VivoColors.palette.pepperLight10 | VivoColors.palette.darkModeGrey6
 
+    let tagTextPromoInverse = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight50
+
+    let tagTextActiveInverse = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
+
+    let tagTextInactiveInverse = VivoColors.palette.grey5
+
+    let tagTextSuccessInverse = VivoColors.palette.vivoGreenDark | VivoColors.palette.vivoGreenLight30
+
+    let tagTextWarningInverse = VivoColors.palette.orangeDark | VivoColors.palette.orangeLight40
+
+    let tagTextErrorInverse = VivoColors.palette.pepperDark80 | VivoColors.palette.pepperLight40
+
+    let tagBackgroundPromoInverse = VivoColors.palette.vivoPurpleLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = VivoColors.palette.vivoPurpleLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = VivoColors.palette.grey1 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = VivoColors.palette.vivoGreenLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = VivoColors.palette.orangeLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = VivoColors.palette.pepperLight10 | VivoColors.palette.darkModeGrey6
+
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [

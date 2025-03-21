@@ -17,53 +17,43 @@ final class TagTests: XCTestCase {
         isRecording = false
     }
 
-    func testPromoTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Promo tag", style: .promo)
-        )
-    }
-
-    func testActiveTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Active tag", style: .active)
-        )
-    }
-
-    func testInactiveTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Inactive tag", style: .inactive)
-        )
-    }
-
-    func testSuccessTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Success tag", style: .success)
-        )
-    }
-
-    func testWarningTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Warning tag", style: .warning)
-        )
-    }
-
-    func testErrorTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Error tag", style: .error)
-        )
+    func testTagView() {
+        let tags = TagStyle.allCases
+            .map { style in
+                TagView(
+                    text: style.rawValue,
+                    style: style,
+                    isInverse: false,
+                    icon: nil
+                )
+            }
+        assertTagsSnapshot(tags)
     }
 
     func testTagViewWithIcon() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 100.0, height: 33.0)),
-            viewBuilder: TagView(text: "Tag with icon", icon: .checkmarkIcon)
-        )
+        let tags = TagStyle.allCases
+            .map { style in
+                TagView(
+                    text: style.rawValue,
+                    style: style,
+                    isInverse: false,
+                    icon: .checkmarkIcon
+                )
+            }
+        assertTagsSnapshot(tags)
+    }
+
+    func testInverseTagViewWithIcon() {
+        let tags = TagStyle.allCases
+            .map { style in
+                TagView(
+                    text: style.rawValue,
+                    style: style,
+                    isInverse: true,
+                    icon: .checkmarkIcon
+                )
+            }
+        assertTagsSnapshot(tags)
     }
 
     func testTagXibIntegration() {
@@ -75,6 +65,29 @@ final class TagTests: XCTestCase {
         assertSnapshot(
             matching: view,
             as: .image
+        )
+    }
+}
+
+private extension TagTests {
+    func assertTagsSnapshot(
+        _ tags: [TagView],
+        file: StaticString = #file,
+        testName: String = #function,
+        line: UInt = #line
+    ) {
+        let stackView = UIStackView()
+        stackView.spacing = 8
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        tags.forEach { stackView.addArrangedSubview($0) }
+        assertSnapshot(
+            for: [.movistar],
+            as: .image(size: CGSize(width: 150.0, height: 33.0 * Double(TagStyle.allCases.count))),
+            file: file,
+            testName: testName,
+            line: line,
+            viewBuilder: stackView
         )
     }
 }

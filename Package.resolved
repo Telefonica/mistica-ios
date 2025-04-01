@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "appcenter-sdk-apple",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/microsoft/appcenter-sdk-apple",
-      "state" : {
-        "revision" : "ab54f758243f282d290b33027e8aac910d3d859a",
-        "version" : "5.0.5"
-      }
-    },
-    {
       "identity" : "lottie-spm",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-spm.git",

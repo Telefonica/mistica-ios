@@ -133,6 +133,8 @@ struct VivoColors: MisticaColors {
 
     let textBrand = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
 
+    let inputBorder = VivoColors.palette.grey3 | VivoColors.palette.darkModeGrey6
+
     let control = VivoColors.palette.grey3 | VivoColors.palette.darkModeGrey6
 
     let controlActivated = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
@@ -255,6 +257,8 @@ struct VivoColors: MisticaColors {
 
     let tagTextInactive = VivoColors.palette.grey5
 
+    let tagTextInfo = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
+
     let tagTextSuccess = VivoColors.palette.vivoGreenDark | VivoColors.palette.vivoGreenLight30
 
     let tagTextWarning = VivoColors.palette.orangeDark | VivoColors.palette.orangeLight40
@@ -267,11 +271,41 @@ struct VivoColors: MisticaColors {
 
     let tagBackgroundInactive = VivoColors.palette.grey1 | VivoColors.palette.darkModeGrey6
 
+    let tagBackgroundInfo = VivoColors.palette.vivoPurpleLight10 | VivoColors.palette.darkModeGrey6
+
     let tagBackgroundSuccess = VivoColors.palette.vivoGreenLight10 | VivoColors.palette.darkModeGrey6
 
     let tagBackgroundWarning = VivoColors.palette.orangeLight10 | VivoColors.palette.darkModeGrey6
 
     let tagBackgroundError = VivoColors.palette.pepperLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagTextPromoInverse = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight50
+
+    let tagTextActiveInverse = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
+
+    let tagTextInactiveInverse = VivoColors.palette.grey5
+
+    let tagTextInfoInverse = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
+
+    let tagTextSuccessInverse = VivoColors.palette.vivoGreenDark | VivoColors.palette.vivoGreenLight30
+
+    let tagTextWarningInverse = VivoColors.palette.orangeDark | VivoColors.palette.orangeLight40
+
+    let tagTextErrorInverse = VivoColors.palette.pepperDark80 | VivoColors.palette.pepperLight40
+
+    let tagBackgroundPromoInverse = VivoColors.palette.vivoPurpleLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = VivoColors.palette.vivoPurpleLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = VivoColors.palette.grey1 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundInfoInverse = VivoColors.palette.vivoPurpleLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = VivoColors.palette.vivoGreenLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = VivoColors.palette.orangeLight10 | VivoColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = VivoColors.palette.pepperLight10 | VivoColors.palette.darkModeGrey6
 
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:

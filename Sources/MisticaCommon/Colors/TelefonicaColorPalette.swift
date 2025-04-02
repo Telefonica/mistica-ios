@@ -133,6 +133,8 @@ struct TelefonicaColors: MisticaColors {
 
     let textBrand = TelefonicaColors.palette.telefonicaBlue
 
+    let inputBorder = TelefonicaColors.palette.grey4 | TelefonicaColors.palette.grey5
+
     let control = TelefonicaColors.palette.grey3 | TelefonicaColors.palette.darkModeGrey6
 
     let controlActivated = TelefonicaColors.palette.telefonicaBlue
@@ -191,9 +193,9 @@ struct TelefonicaColors: MisticaColors {
 
     let textPrimaryInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
 
-    let textSecondary = TelefonicaColors.palette.grey5 | TelefonicaColors.palette.grey4
+    let textSecondary = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
 
-    let textSecondaryInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.grey4
+    let textSecondaryInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.grey3
 
     let error = TelefonicaColors.palette.coral
 
@@ -255,6 +257,8 @@ struct TelefonicaColors: MisticaColors {
 
     let tagTextInactive = TelefonicaColors.palette.grey5
 
+    let tagTextInfo = TelefonicaColors.palette.telefonicaBlue
+
     let tagTextSuccess = TelefonicaColors.palette.turquoise70 | TelefonicaColors.palette.turquoise40
 
     let tagTextWarning = TelefonicaColors.palette.ambar70 | TelefonicaColors.palette.ambar40
@@ -267,11 +271,41 @@ struct TelefonicaColors: MisticaColors {
 
     let tagBackgroundInactive = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey6
 
+    let tagBackgroundInfo = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
+
     let tagBackgroundSuccess = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.darkModeGrey6
 
     let tagBackgroundWarning = TelefonicaColors.palette.ambar10 | TelefonicaColors.palette.darkModeGrey6
 
     let tagBackgroundError = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagTextPromoInverse = TelefonicaColors.palette.orchid70 | TelefonicaColors.palette.orchid40
+
+    let tagTextActiveInverse = TelefonicaColors.palette.telefonicaBlue
+
+    let tagTextInactiveInverse = TelefonicaColors.palette.grey5
+
+    let tagTextInfoInverse = TelefonicaColors.palette.telefonicaBlue
+
+    let tagTextSuccessInverse = TelefonicaColors.palette.turquoise70 | TelefonicaColors.palette.turquoise40
+
+    let tagTextWarningInverse = TelefonicaColors.palette.ambar70 | TelefonicaColors.palette.ambar40
+
+    let tagTextErrorInverse = TelefonicaColors.palette.coral70 | TelefonicaColors.palette.coral40
+
+    let tagBackgroundPromoInverse = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundInfoInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = TelefonicaColors.palette.ambar10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey6
 
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
@@ -312,7 +346,7 @@ public struct TelefonicaColorPalette {
     public let grey1 = UIColor(hex: "#F2F4FF")!
     public let grey2 = UIColor(hex: "#D1D5E4")!
     public let grey3 = UIColor(hex: "#B0B6CA")!
-    public let grey4 = UIColor(hex: "#8F97AF")!
+    public let grey4 = UIColor(hex: "#848CA4")!
     public let grey5 = UIColor(hex: "#6E7894")!
     public let grey6 = UIColor(hex: "#58617A")!
     public let grey7 = UIColor(hex: "#414B61")!

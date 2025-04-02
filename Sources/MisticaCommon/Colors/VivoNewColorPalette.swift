@@ -133,6 +133,8 @@ struct VivoNewColors: MisticaColors {
 
     let textBrand = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
+    let inputBorder = VivoNewColors.palette.grey4 | VivoNewColors.palette.darkModeGrey5
+
     let control = VivoNewColors.palette.grey4 | VivoNewColors.palette.darkModeGrey6
 
     let controlActivated = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
@@ -191,9 +193,9 @@ struct VivoNewColors: MisticaColors {
 
     let textPrimaryInverse = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let textSecondary = VivoNewColors.palette.grey5 | VivoNewColors.palette.grey4
+    let textSecondary = VivoNewColors.palette.grey5 | VivoNewColors.palette.grey3
 
-    let textSecondaryInverse = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.grey4
+    let textSecondaryInverse = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.grey3
 
     let error = VivoNewColors.palette.pepper
 
@@ -255,6 +257,8 @@ struct VivoNewColors: MisticaColors {
 
     let tagTextInactive = VivoNewColors.palette.grey5
 
+    let tagTextInfo = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+
     let tagTextSuccess = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
 
     let tagTextWarning = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
@@ -267,11 +271,41 @@ struct VivoNewColors: MisticaColors {
 
     let tagBackgroundInactive = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
 
+    let tagBackgroundInfo = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+
     let tagBackgroundSuccess = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
 
     let tagBackgroundWarning = VivoNewColors.palette.orangeLight10 | VivoNewColors.palette.darkModeGrey6
 
     let tagBackgroundError = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey6
+
+    let tagTextPromoInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight50
+
+    let tagTextActiveInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+
+    let tagTextInactiveInverse = VivoNewColors.palette.grey5
+
+    let tagTextInfoInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+
+    let tagTextSuccessInverse = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
+
+    let tagTextWarningInverse = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
+
+    let tagTextErrorInverse = VivoNewColors.palette.pepperDark80 | VivoNewColors.palette.pepperLight40
+
+    let tagBackgroundPromoInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
+
+    let tagBackgroundInfoInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = VivoNewColors.palette.orangeLight10 | VivoNewColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey6
 
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
@@ -315,11 +349,12 @@ public struct VivoNewColorPalette {
     public let grey1 = UIColor(hex: "#F6F6F6")!
     public let grey2 = UIColor(hex: "#EEEEEE")!
     public let grey3 = UIColor(hex: "#DDDDDD")!
-    public let grey4 = UIColor(hex: "#949494")!
+    public let grey4 = UIColor(hex: "#8A8C90")!
     public let grey5 = UIColor(hex: "#666666")!
     public let grey6 = UIColor(hex: "#000000")!
     public let white = UIColor(hex: "#FFFFFF")!
     public let darkModeBlack = UIColor(hex: "#191919")!
     public let darkModeGrey = UIColor(hex: "#242424")!
+    public let darkModeGrey5 = UIColor(hex: "#6D7D88")!
     public let darkModeGrey6 = UIColor(hex: "#313235")!
 }

@@ -1,10 +1,6 @@
-//
-//  MisticaColors.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
@@ -70,6 +66,7 @@ public protocol MisticaColors {
     var textLinkSnackbar: UIColor { get }
     var textActivated: UIColor { get }
     var textBrand: UIColor { get }
+    var inputBorder: UIColor { get }
     var control: UIColor { get }
     var controlActivated: UIColor { get }
     var controlInverse: UIColor { get }
@@ -131,14 +128,30 @@ public protocol MisticaColors {
     var tagTextPromo: UIColor { get }
     var tagTextActive: UIColor { get }
     var tagTextInactive: UIColor { get }
+    var tagTextInfo: UIColor { get }
     var tagTextSuccess: UIColor { get }
     var tagTextWarning: UIColor { get }
     var tagTextError: UIColor { get }
     var tagBackgroundPromo: UIColor { get }
     var tagBackgroundActive: UIColor { get }
     var tagBackgroundInactive: UIColor { get }
+    var tagBackgroundInfo: UIColor { get }
     var tagBackgroundSuccess: UIColor { get }
     var tagBackgroundWarning: UIColor { get }
     var tagBackgroundError: UIColor { get }
+    var tagTextPromoInverse: UIColor { get }
+    var tagTextActiveInverse: UIColor { get }
+    var tagTextInactiveInverse: UIColor { get }
+    var tagTextInfoInverse: UIColor { get }
+    var tagTextSuccessInverse: UIColor { get }
+    var tagTextWarningInverse: UIColor { get }
+    var tagTextErrorInverse: UIColor { get }
+    var tagBackgroundPromoInverse: UIColor { get }
+    var tagBackgroundActiveInverse: UIColor { get }
+    var tagBackgroundInactiveInverse: UIColor { get }
+    var tagBackgroundInfoInverse: UIColor { get }
+    var tagBackgroundSuccessInverse: UIColor { get }
+    var tagBackgroundWarningInverse: UIColor { get }
+    var tagBackgroundErrorInverse: UIColor { get }
     var cardContentOverlay: MisticaColor { get }
 }

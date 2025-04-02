@@ -99,7 +99,7 @@ public class InputField: UIView {
     private lazy var borderedView: UIView = {
         let view = UIView()
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.border.cgColor
+        view.layer.borderColor = UIColor.inputBorder.cgColor
         view.backgroundColor = .backgroundContainer
 
         horizontalTextInputStackView.alignment = .fill

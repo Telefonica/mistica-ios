@@ -13,7 +13,7 @@ struct TagCatalogView: View {
     @State var tagText: String = "PROMOCIÓN"
 
     @State var selectedStyleIndex = 0
-    @State var styles: [Tag.Style] = Tag.Style.allCases
+    @State var styles: [TagStyle] = TagStyle.allCases
 
     var body: some View {
         List {
@@ -29,7 +29,11 @@ struct TagCatalogView: View {
             section("Inverse") {
                 Tag(style: styles[selectedStyleIndex], text: tagText).inverse(true)
             }
-            .listRowBackground(Color(.navigationBarBackground))
+            .listRowBackground(Color.navigationBarBackground)
+            section("With icon inverse") {
+                Tag(style: styles[selectedStyleIndex], text: tagText, icon: Image(systemName: "star.fill")).inverse(true)
+            }
+            .listRowBackground(Color.navigationBarBackground)
         }
     }
 
@@ -39,7 +43,7 @@ struct TagCatalogView: View {
     }
 }
 
-extension Tag.Style: Swift.CustomStringConvertible {
+extension TagStyle: Swift.CustomStringConvertible {
     public var description: String {
         switch self {
         case .promo:

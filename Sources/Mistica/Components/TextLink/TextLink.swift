@@ -13,7 +13,6 @@ public protocol TextLinkDelegate: AnyObject {
 }
 
 public class TextLink: UITextView, UITextViewDelegate {
-
     public weak var linkDelegate: TextLinkDelegate?
     private var linkedWords: [String] = []
 
@@ -29,6 +28,7 @@ public class TextLink: UITextView, UITextViewDelegate {
         setupText(fullText: fullText, font: font, color: color, isInverse: isInverse)
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -52,7 +52,7 @@ public class TextLink: UITextView, UITextViewDelegate {
             }
         }
 
-        self.attributedText = attributed
+        attributedText = attributed
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
 
@@ -68,4 +68,3 @@ public class TextLink: UITextView, UITextViewDelegate {
         linkDelegate?.textLink(self, tappedText: tappedText)
     }
 }
-

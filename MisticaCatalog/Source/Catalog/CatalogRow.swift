@@ -35,6 +35,7 @@ enum CatalogRow: Int, CaseIterable, Identifiable {
     case viewStates
     case callout
     case emptyState
+    case textLink
 
     var id: Int {
         rawValue
@@ -92,6 +93,8 @@ extension CatalogRow {
             return "Sheet"
         case .skeletons:
             return "Skeletons"
+        case .textLink:
+            return "Text Link"
         }
     }
 
@@ -145,6 +148,8 @@ extension CatalogRow {
             return .sheetIcon
         case .skeletons:
             return .skeletonIcon
+        case .textLink:
+            return .listIcon
         }
     }
 }

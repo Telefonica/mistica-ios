@@ -102,7 +102,8 @@ private extension CatalogRow {
              .filter,
              .scrollContentIndicator,
              .controls,
-             .sheet:
+             .sheet,
+             .textLink:
             notImplementedView
         }
     }
@@ -154,6 +155,8 @@ private extension CatalogRow {
             ComponentViewController(UICatalogSheetViewController())
         case .skeletons:
             ComponentViewController(UICatalogSkeletonsViewController())
+        case .textLink:
+            ComponentViewController(UICatalogTextLinkViewController())
         case .chips,
              .carousel:
             notImplementedView

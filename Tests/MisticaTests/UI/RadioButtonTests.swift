@@ -10,13 +10,14 @@ import Mistica
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class RadioButtonTests: XCTestCase {
     private let buttonSize = CGSize(width: 30.0, height: 30.0)
 
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testRadioButtonEnabled() {

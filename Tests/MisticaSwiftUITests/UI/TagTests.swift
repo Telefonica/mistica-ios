@@ -11,35 +11,37 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class TagTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testLargeTagContent() {
         assertSnapshot(
-            matching: makeTemplateWithAllTags(content: "Large tag content"),
+            of: makeTemplateWithAllTags(content: "Large tag content"),
             as: .image
         )
     }
 
     func testSmallTagContent() {
         assertSnapshot(
-            matching: makeTemplateWithAllTags(content: "Tag"),
+            of: makeTemplateWithAllTags(content: "Tag"),
             as: .image
         )
     }
 
     func testSmallTagContentWitchIcon() {
         assertSnapshot(
-            matching: makeTemplateWithAllTags(content: "Tag", icon: true),
+            of: makeTemplateWithAllTags(content: "Tag", icon: true),
             as: .image
         )
     }
 }
 
 // MARK: - Helpers
-
 private extension TagTests {
     func makeTemplateWithAllTags(content: String, icon: Bool = false) -> some View {
         VStack {

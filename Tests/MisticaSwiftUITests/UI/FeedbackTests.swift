@@ -11,6 +11,7 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class FeedbackTests: XCTestCase {
     private enum Constants {
         static let singleLineTitle = "Title"
@@ -21,16 +22,22 @@ final class FeedbackTests: XCTestCase {
 
     override class func setUp() {
         super.setUp()
-        UIView.setAnimationsEnabled(false)
-
-        isRecording = false
+        Task { @MainActor in
+            UIView.setAnimationsEnabled(false)
+        }
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testInformative() {
         let feedback = makeTemplate(style: .informative)
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -39,7 +46,7 @@ final class FeedbackTests: XCTestCase {
         let feedback = makeTemplate(style: .error(reference: nil))
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -48,7 +55,7 @@ final class FeedbackTests: XCTestCase {
         let feedback = makeTemplate(style: .error(reference: "Error reference: #1992"))
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -57,7 +64,7 @@ final class FeedbackTests: XCTestCase {
         let feedback = makeTemplate(style: .success)
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -66,7 +73,7 @@ final class FeedbackTests: XCTestCase {
         let feedback = makeTemplate(style: .feedback(Image(systemName: "swift")))
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -75,7 +82,7 @@ final class FeedbackTests: XCTestCase {
         let feedback = makeTemplate(style: .informative, title: Constants.multiLineTitle, message: Constants.multiLineSubtitle)
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -94,7 +101,7 @@ final class FeedbackTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -113,7 +120,7 @@ final class FeedbackTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -135,7 +142,7 @@ final class FeedbackTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -154,7 +161,7 @@ final class FeedbackTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -173,7 +180,7 @@ final class FeedbackTests: XCTestCase {
         }
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -192,7 +199,7 @@ final class FeedbackTests: XCTestCase {
         }
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }

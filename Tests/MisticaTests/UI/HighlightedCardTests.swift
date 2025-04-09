@@ -11,11 +11,12 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class HighlightedCardTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles
@@ -83,7 +84,7 @@ final class HighlightedCardTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: card,
+            of: card,
             as: .image
         )
     }
@@ -101,7 +102,7 @@ final class HighlightedCardTests: XCTestCase {
         card.rightImageStyle = .fill
 
         assertSnapshot(
-            matching: card,
+            of: card,
             as: .image
         )
     }
@@ -119,7 +120,7 @@ final class HighlightedCardTests: XCTestCase {
         card.rightImageStyle = .fit
 
         assertSnapshot(
-            matching: card,
+            of: card,
             as: .image
         )
     }
@@ -136,7 +137,7 @@ final class HighlightedCardTests: XCTestCase {
         card.backgroundImage = UIImage.circle(diameter: 30, color: .yellow)
 
         assertSnapshot(
-            matching: card,
+            of: card,
             as: .image
         )
     }
@@ -153,7 +154,7 @@ final class HighlightedCardTests: XCTestCase {
         card.showActionButton = false
 
         assertSnapshot(
-            matching: card,
+            of: card,
             as: .image
         )
     }
@@ -170,7 +171,7 @@ final class HighlightedCardTests: XCTestCase {
         card.showCloseButton = true
 
         assertSnapshot(
-            matching: card,
+            of: card,
             as: .image
         )
     }
@@ -188,7 +189,7 @@ final class HighlightedCardTests: XCTestCase {
         card.showCloseButton = true
 
         assertSnapshot(
-            matching: card,
+            of: card,
             as: .image
         )
     }
@@ -206,7 +207,7 @@ final class HighlightedCardTests: XCTestCase {
         card.showCloseButton = true
 
         assertSnapshot(
-            matching: card,
+            of: card,
             as: .image
         )
     }
@@ -222,38 +223,39 @@ final class HighlightedCardTests: XCTestCase {
         view.card.actionButtonTitle = "Empezar pruebas"
 
         assertSnapshot(
-            matching: view.asRootOfViewController(),
+            of: view.asRootOfViewController(),
             as: .image(on: .iPhoneSe)
         )
     }
 }
 
 // MARK: - Helpers
-
-private func makeCard(
+private extension HighlightedCardTests {
+    func makeCard(
     style: HighlightedCardStyle = .normal,
     title: String = "Resolver problema técnico",
     subtitle: String = "Usa nuestra herramienta para resolver tus problemas técnicos",
     rightImage: UIImage? = nil,
     actionButtonTitle: String? = "Empezar pruebas",
     actionButtonStyle: HighlightedCard.ButtonStyle = .primary
-) -> HighlightedCard {
-    let view = HighlightedCard(
-        title: title,
-        subtitle: subtitle,
-        rightImage: rightImage,
-        actionButtonStyle: actionButtonStyle
-    )
-
-    view.style = style
-    view.actionButtonTitle = actionButtonTitle
-
-    let cardSize = view.systemLayoutSizeFitting(
-        CGSize(width: 300, height: 0),
-        withHorizontalFittingPriority: .required,
-        verticalFittingPriority: .defaultLow
-    )
-    view.frame = CGRect(x: 0, y: 0, width: cardSize.width, height: cardSize.height)
-
-    return view
+    ) -> HighlightedCard {
+        let view = HighlightedCard(
+            title: title,
+            subtitle: subtitle,
+            rightImage: rightImage,
+            actionButtonStyle: actionButtonStyle
+        )
+        
+        view.style = style
+        view.actionButtonTitle = actionButtonTitle
+        
+        let cardSize = view.systemLayoutSizeFitting(
+            CGSize(width: 300, height: 0),
+            withHorizontalFittingPriority: .required,
+            verticalFittingPriority: .defaultLow
+        )
+        view.frame = CGRect(x: 0, y: 0, width: cardSize.width, height: cardSize.height)
+        
+        return view
+    }
 }

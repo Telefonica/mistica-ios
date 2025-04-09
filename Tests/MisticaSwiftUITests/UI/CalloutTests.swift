@@ -11,11 +11,12 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class CalloutTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testPrimary() {
@@ -27,7 +28,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -42,7 +43,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -57,7 +58,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -71,7 +72,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -86,7 +87,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -100,7 +101,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -113,7 +114,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -125,7 +126,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -141,7 +142,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -156,7 +157,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }
@@ -172,7 +173,7 @@ final class CalloutTests: XCTestCase {
         .frame(width: 350)
 
         assertSnapshot(
-            matching: callout,
+            of: callout,
             as: .image
         )
     }

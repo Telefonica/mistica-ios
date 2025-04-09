@@ -10,11 +10,20 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class DeterminateStepperTests: XCTestCase {
     override class func setUp() {
         super.setUp()
-        UIView.setAnimationsEnabled(false)
-        isRecording = false
+        
+        Task { @MainActor in
+            UIView.setAnimationsEnabled(false)
+        }
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles
@@ -34,7 +43,7 @@ final class DeterminateStepperTests: XCTestCase {
         let stepper = makeTemplateWithStepperState(currentStep: 0)
 
         assertSnapshot(
-            matching: stepper,
+            of: stepper,
             as: .image,
             named: "assertInitialState"
         )
@@ -42,7 +51,7 @@ final class DeterminateStepperTests: XCTestCase {
         stepper.currentStep = 1
 
         assertSnapshot(
-            matching: stepper,
+            of: stepper,
             as: .image,
             named: "finalState"
         )
@@ -54,7 +63,7 @@ final class DeterminateStepperTests: XCTestCase {
         let stepper = makeTemplateWithStepperState(numberOfSteps: 3)
 
         assertSnapshot(
-            matching: stepper,
+            of: stepper,
             as: .image,
             named: "assertInitialState"
         )
@@ -62,7 +71,7 @@ final class DeterminateStepperTests: XCTestCase {
         stepper.numberOfSteps = 4
 
         assertSnapshot(
-            matching: stepper,
+            of: stepper,
             as: .image,
             named: "finalState"
         )
@@ -76,17 +85,18 @@ final class DeterminateStepperTests: XCTestCase {
         let view = DeterminateStepperXIBIntegration.viewFromNib()
 
         assertSnapshot(
-            matching: view,
+            of: view,
             as: .image
         )
     }
 }
 
 // MARK: - Helpers
-
-private func makeTemplateWithStepperState(currentStep: Int = 0, numberOfSteps: Int = 3) -> DeterminateStepperView {
-    let stepperView = DeterminateStepperView(frame: CGRect(origin: .zero, size: CGSize(width: 600, height: 24)))
-    stepperView.numberOfSteps = numberOfSteps
-    stepperView.currentStep = currentStep
-    return stepperView
+private extension DeterminateStepperTests {
+    func makeTemplateWithStepperState(currentStep: Int = 0, numberOfSteps: Int = 3) -> DeterminateStepperView {
+        let stepperView = DeterminateStepperView(frame: CGRect(origin: .zero, size: CGSize(width: 600, height: 24)))
+        stepperView.numberOfSteps = numberOfSteps
+        stepperView.currentStep = currentStep
+        return stepperView
+    }
 }

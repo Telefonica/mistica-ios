@@ -10,11 +10,12 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class GradientTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testGradientInView() {
@@ -26,7 +27,7 @@ final class GradientTests: XCTestCase {
         gradientView.setMisticaColorBackground(misticaColor)
 
         assertSnapshot(
-            matching: gradientView,
+            of: gradientView,
             as: .image
         )
     }

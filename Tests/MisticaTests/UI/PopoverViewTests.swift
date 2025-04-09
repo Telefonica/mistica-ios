@@ -10,11 +10,12 @@ import Mistica
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class PopoverViewTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles
@@ -32,14 +33,14 @@ final class PopoverViewTests: XCTestCase {
         let downPopover = makePopover(tipDirection: .down)
 
         assertSnapshot(
-            matching: downPopover,
+            of: downPopover,
             as: .image(size: .init(width: 200, height: 100))
         )
 
         let upPopover = makePopover(tipDirection: .up)
 
         assertSnapshot(
-            matching: upPopover,
+            of: upPopover,
             as: .image(size: .init(width: 200, height: 100))
         )
     }
@@ -50,7 +51,7 @@ final class PopoverViewTests: XCTestCase {
         let popover = makePopover(tipDirection: .down, title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
 
         assertSnapshot(
-            matching: popover,
+            of: popover,
             as: .image(size: .init(width: 400, height: 150))
         )
     }
@@ -59,7 +60,7 @@ final class PopoverViewTests: XCTestCase {
         let popover = makePopover(tipDirection: .down, title: nil)
 
         assertSnapshot(
-            matching: popover,
+            of: popover,
             as: .image(size: .init(width: 200, height: 100))
         )
     }
@@ -70,7 +71,7 @@ final class PopoverViewTests: XCTestCase {
         let popover = makePopover(tipDirection: .down, subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
 
         assertSnapshot(
-            matching: popover,
+            of: popover,
             as: .image(size: .init(width: 400, height: 150))
         )
     }
@@ -79,7 +80,7 @@ final class PopoverViewTests: XCTestCase {
         let popover = makePopover(tipDirection: .down, subtitle: nil)
 
         assertSnapshot(
-            matching: popover,
+            of: popover,
             as: .image(size: .init(width: 500, height: 100))
         )
     }
@@ -91,7 +92,7 @@ final class PopoverViewTests: XCTestCase {
         let popover = makePopover(tipDirection: .down, title: largeText, subtitle: largeText)
 
         assertSnapshot(
-            matching: popover,
+            of: popover,
             as: .image(size: .init(width: 400, height: 200))
         )
     }
@@ -102,7 +103,7 @@ final class PopoverViewTests: XCTestCase {
         let popover = makePopover(tipDirection: .down, image: nil)
 
         assertSnapshot(
-            matching: popover,
+            of: popover,
             as: .image(size: .init(width: 200, height: 100))
         )
     }
@@ -113,7 +114,7 @@ final class PopoverViewTests: XCTestCase {
         let popover = makePopover(tipDirection: .down, canClose: false)
 
         assertSnapshot(
-            matching: popover,
+            of: popover,
             as: .image(size: .init(width: 200, height: 100))
         )
     }

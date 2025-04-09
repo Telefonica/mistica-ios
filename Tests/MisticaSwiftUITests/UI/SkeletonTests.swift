@@ -11,16 +11,19 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class SkeletonTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testLineSkeleton() {
         let skeleton = Skeleton(type: .line(width: 300))
 
         assertSnapshot(
-            matching: skeleton,
+            of: skeleton,
             as: .image
         )
     }
@@ -30,7 +33,7 @@ final class SkeletonTests: XCTestCase {
             .frame(width: 300, height: 60)
 
         assertSnapshot(
-            matching: skeleton,
+            of: skeleton,
             as: .image
         )
     }
@@ -40,7 +43,7 @@ final class SkeletonTests: XCTestCase {
             .frame(width: 300, height: 110)
 
         assertSnapshot(
-            matching: skeleton,
+            of: skeleton,
             as: .image
         )
     }
@@ -49,7 +52,7 @@ final class SkeletonTests: XCTestCase {
         let skeleton = Skeleton(type: .circle(size: CGSize(width: 40, height: 40)))
 
         assertSnapshot(
-            matching: skeleton,
+            of: skeleton,
             as: .image
         )
     }
@@ -59,7 +62,7 @@ final class SkeletonTests: XCTestCase {
             .frame(width: 300)
 
         assertSnapshot(
-            matching: skeleton,
+            of: skeleton,
             as: .image
         )
     }
@@ -68,7 +71,7 @@ final class SkeletonTests: XCTestCase {
         let skeleton = Skeleton(type: .rectangle(width: 360, height: 180, isRounded: true))
 
         assertSnapshot(
-            matching: skeleton,
+            of: skeleton,
             as: .image
         )
     }

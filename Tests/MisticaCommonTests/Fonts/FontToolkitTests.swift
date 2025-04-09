@@ -11,11 +11,12 @@ import SnapshotTesting
 import UIKit
 import XCTest
 
+@MainActor
 final class FontToolkitTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testFonts() {

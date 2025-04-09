@@ -8,10 +8,10 @@
 
 import UIKit
 
-public class SnackbarController: NSObject {
+public class SnackbarController: NSObject, @unchecked Sendable {
     public enum RootViewController {
         public typealias Closure = () -> UIViewController?
-        public static let `default`: Closure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
+        @MainActor public static let `default`: Closure = { UIApplication.shared.windows.filter(\.isKeyWindow).first?.rootViewController }
     }
 
     public typealias Token = UUID
@@ -39,15 +39,13 @@ public extension SnackbarController {
     ///   - exactViewController: The exact viewController where the snackbar will be show. Has priority over rootViewController
     ///   - rootViewController: The root view controller that will show the snackbar.
     @discardableResult
-    func showSnackbar(
+    @MainActor func showSnackbar(
         config: SnackbarConfig,
         style: SnackbarStyle = .info,
         dismissHandler: DismissHandlerBlock? = nil,
         exactViewController: UIViewController? = nil,
         rootViewController: RootViewController.Closure? = nil
     ) -> Token {
-        assertMainThread()
-
         let styleConfig = SnackbarStyleConfig(style: style, snackbarDismissInterval: config.dismissInterval)
 
         let token = Token()
@@ -92,9 +90,7 @@ public extension SnackbarController {
     }
 
     /// Dismisses the current snackbar if it exists
-    func dismiss(token: Token) {
-        assertMainThread()
-
+    @MainActor func dismiss(token: Token) {
         guard let currentToken = currentSnackbar?.token, currentToken == token else { return }
 
         dismissCurrentSnackbar()
@@ -104,14 +100,14 @@ public extension SnackbarController {
 // MARK: Private methods
 
 private extension SnackbarController {
-    func show(_ snackbar: OngoingSnackbar) {
+    @MainActor func show(_ snackbar: OngoingSnackbar) {
         dismissCurrentSnackbar()
         guard let view = snackbar.view() else { return }
         snackbar.snackbarView.show(in: view)
         currentSnackbar = snackbar
     }
 
-    func dismissCurrentSnackbar() {
+    @MainActor func dismissCurrentSnackbar() {
         currentSnackbar?.snackbarView.dismiss()
         currentSnackbar = nil
     }

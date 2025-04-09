@@ -10,14 +10,21 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class SnackbarTests: XCTestCase {
     private let sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
     override func setUp() {
         super.setUp()
-        UIView.setAnimationsEnabled(false)
-
-        isRecording = false
+        Task { @MainActor in
+            UIView.setAnimationsEnabled(false)
+        }
+    }
+    
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testInfoSnackbar() {

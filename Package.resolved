@@ -1,4 +1,5 @@
 {
+  "originHash" : "fabf412b37876aec162d7a166eeac275950a28ec25bf2a551982d1be8d88c5c5",
   "pins" : [
     {
       "identity" : "lottie-spm",
@@ -7,15 +8,6 @@
       "state" : {
         "revision" : "b842598f1295f3ffa1475b1580672d1fe5b83580",
         "version" : "4.5.0"
-      }
-    },
-    {
-      "identity" : "plcrashreporter",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/microsoft/PLCrashReporter.git",
-      "state" : {
-        "revision" : "fec2ff791b27fd9b9ceab9072025dea56409cca1",
-        "version" : "1.11.3"
       }
     },
     {
@@ -41,10 +33,19 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
       "state" : {
-        "revision" : "c466812aa2e22898f27557e2e780d3aad7a27203",
-        "version" : "1.8.2"
+        "revision" : "42a086182681cf661f5c47c9b7dc3931de18c6d7",
+        "version" : "1.17.6"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax",
+      "state" : {
+        "revision" : "0687f71944021d616d34d922343dcef086855920",
+        "version" : "600.0.1"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

@@ -70,7 +70,7 @@ private extension CardRow {
         }
     }
 
-    @ViewBuilder
+    @MainActor @ViewBuilder
     var uiKitComponent: some View {
         switch self {
         case .dataCard:

@@ -9,7 +9,7 @@
 import SwiftUI
 
 /// Available font weights in Mistica
-public enum MisticaFontWeightType {
+public enum MisticaFontWeightType: Sendable {
     case light
     case regular
     case medium

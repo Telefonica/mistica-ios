@@ -8,6 +8,7 @@
 
 import Foundation
 
+@MainActor
 protocol Touchable {
     func touchBegan()
     func touchEnded()

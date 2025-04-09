@@ -38,12 +38,12 @@ extension CalloutTitleActions {
         }
     }
 
-    override var description: String {
+    var calloutTitleDescription: String {
         get {
-            messagesView.description
+            messagesView.calloutDescription
         }
         set {
-            messagesView.description = newValue
+            messagesView.calloutDescription = newValue
         }
     }
 

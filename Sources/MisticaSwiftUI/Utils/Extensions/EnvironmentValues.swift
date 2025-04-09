@@ -21,7 +21,7 @@ public extension EnvironmentValues {
 @available(iOSApplicationExtension, unavailable)
 private struct SafeAreaInsetsKey: EnvironmentKey {
     static var defaultValue: EdgeInsets {
-        UIApplication.shared.keyWindow?.safeAreaInsets.swiftUiInsets ?? EdgeInsets()
+        EdgeInsets()
     }
 }
 

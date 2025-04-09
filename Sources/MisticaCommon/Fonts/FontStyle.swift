@@ -9,6 +9,39 @@
 import SwiftUI
 import UIKit
 
+public class FontManager: @unchecked Sendable {
+    public static let shared = FontManager()
+
+    private let queue = DispatchQueue(label: "com.telefonica.fontManager", attributes: .concurrent)
+
+    private var _fontNameForWeight: (@Sendable (Font.Weight) -> String)? = nil
+    private var _uiFontNameForWeight: (@Sendable (UIFont.Weight) -> String)? = nil
+
+    public var fontNameForWeight: (@Sendable (Font.Weight) -> String)? {
+        get {
+            queue.sync { _fontNameForWeight }
+        }
+        set {
+            queue.async {
+                self._fontNameForWeight = newValue
+            }
+        }
+    }
+
+    public var uiFontNameForWeight: (@Sendable (UIFont.Weight) -> String)? {
+        get {
+            queue.sync { _uiFontNameForWeight }
+        }
+        set {
+            queue.async {
+                self._uiFontNameForWeight = newValue
+            }
+        }
+    }
+
+    private init() {}
+}
+
 @frozen
 @objc public enum FontStyle: Int, CaseIterable, CustomStringConvertible {
     case textPreset1
@@ -30,14 +63,12 @@ import UIKit
     ) -> Font {
         let pointSize = calculateFontSize(constrainedToPreferredSize: constrainedPreferredSize)
 
-        if let fontName = Self.fontNameForWeight?(weight) {
+        if let fontName = FontManager.shared.fontNameForWeight?(weight) {
             return Font.custom(fontName, size: pointSize)
         } else {
             return Font.system(size: pointSize, weight: weight, design: .default)
         }
     }
-
-    public static var fontNameForWeight: ((Font.Weight) -> String)? = nil
 
     func preferredFont(
         weight: UIFont.Weight,
@@ -45,15 +76,13 @@ import UIKit
     ) -> UIFont {
         let pointSize = calculateFontSize(constrainedToPreferredSize: constrainedPreferredSize)
 
-        if let fontName = Self.uiFontNameForWeight?(weight),
+        if let fontName = FontManager.shared.uiFontNameForWeight?(weight),
            let customFont = UIFont(name: fontName, size: pointSize) {
             return customFont
         } else {
             return UIFont.systemFont(ofSize: pointSize, weight: weight)
         }
     }
-
-    public static var uiFontNameForWeight: ((UIFont.Weight) -> String)? = nil
 
     public var description: String {
         switch self {
@@ -90,14 +119,14 @@ private extension FontStyle {
         let fontMetrics = UIFontMetrics(forTextStyle: uiFontPressetsCorrelations)
         var scaledBaseSize = round(fontMetrics.scaledValue(for: baseSize))
 
-        if let constrainedPreferredSize = maximumFonSize(constrainedPreferredSize: constrainedPreferredSize) {
+        if let constrainedPreferredSize = maximumFontSize(constrainedPreferredSize: constrainedPreferredSize) {
             scaledBaseSize = min(scaledBaseSize, constrainedPreferredSize)
         }
 
         return scaledBaseSize
     }
 
-    func maximumFonSize(constrainedPreferredSize: UIContentSizeCategory?) -> CGFloat? {
+    func maximumFontSize(constrainedPreferredSize: UIContentSizeCategory?) -> CGFloat? {
         guard let constrainedPreferredSize else { return nil }
 
         let traitCollection = UITraitCollection(preferredContentSizeCategory: constrainedPreferredSize)

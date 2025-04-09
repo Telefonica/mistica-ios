@@ -379,14 +379,18 @@ public class InputField: UIView {
 
         subscribeToPlaceholdeLabelBoundsChanges()
     }
-
+    
     deinit {
-        unsubscribeToPlaceholdeLabelBoundsChanges()
+        DispatchQueue.main.async { [weak self] in
+            self?.unsubscribeToPlaceholdeLabelBoundsChanges()
+        }
     }
 
     override public func observeValue(forKeyPath _: String?, of _: Any?, change _: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) {
-        updatePlaceholderLayerPosition()
-        updatePlaceholderLayerSize()
+        Task { @MainActor in
+            updatePlaceholderLayerPosition()
+            updatePlaceholderLayerSize()
+        }
     }
 
     override public var intrinsicContentSize: CGSize {

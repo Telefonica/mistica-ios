@@ -72,7 +72,7 @@ public class TextLink: UITextView, UITextViewDelegate {
             }
         }
 
-        self.attributedText = attributed
+        attributedText = attributed
     }
 
     @objc private func handleTap(sender: UITapGestureRecognizer) {

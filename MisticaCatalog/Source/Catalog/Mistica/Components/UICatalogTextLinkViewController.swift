@@ -12,6 +12,7 @@ import UIKit
 private enum Section: Int, CaseIterable {
     case text
     case links
+    case linkPositionCell
     case example
 }
 
@@ -33,8 +34,22 @@ class UICatalogTextLinkViewController: UIViewController {
     }()
 
     private lazy var linkCell: UITextFieldTableViewCell = {
-        let cell = UITextFieldTableViewCell(reuseIdentifier: "subtitle")
+        let cell = UITextFieldTableViewCell(reuseIdentifier: "linkCell")
         cell.textField.text = "here"
+        cell.textField.placeholder = "Empty"
+        cell.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        return cell
+    }()
+
+    var linkIndices: [Int]? {
+        guard let text = linkPositionCell.textField.text, !text.isEmpty else { return nil }
+        let parts = text.components(separatedBy: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+        return parts.compactMap { Int($0.trimmingCharacters(in: .whitespaces)) }
+    }
+
+    private lazy var linkPositionCell: UITextFieldTableViewCell = {
+        let cell = UITextFieldTableViewCell(reuseIdentifier: "linkPositionCell")
+        cell.textField.text = "0"
         cell.textField.placeholder = "Empty"
         cell.textField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return cell
@@ -42,7 +57,8 @@ class UICatalogTextLinkViewController: UIViewController {
 
     private lazy var cells = [
         [textCell],
-        [linkCell]
+        [linkCell],
+        [linkPositionCell]
     ]
 
     init() {
@@ -96,7 +112,11 @@ extension UICatalogTextLinkViewController: UITableViewDataSource, UITableViewDel
         let section = Section(rawValue: indexPath.section)!
         switch section {
         case .example:
-            let textLink = TextLink(fullText: text ?? "", linkedWords: links)
+            let linkedWords: [LinkedWord] = zip(links ?? [], linkIndices ?? []).map { link, index in
+                LinkedWord(word: link, matchIndex: index)
+            }
+
+            let textLink = TextLink(fullText: text ?? "", linkedWords: linkedWords)
             textLink.linkDelegate = self
             return CellView(textLink: textLink, reuseIdentifier: "TextLink")
         default:
@@ -136,7 +156,7 @@ private extension UICatalogTextLinkViewController {
 
     var links: [String]? {
         guard let links = linkCell.textField.text, !links.isEmpty else { return nil }
-        let separatedLinks = links.components(separatedBy: ",")
+        let separatedLinks = links.components(separatedBy: ",").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
         return separatedLinks
     }
 }
@@ -146,6 +166,7 @@ private extension Section {
         switch self {
         case .text: return "Text"
         case .links: return "Links"
+        case .linkPositionCell: return "Link position"
         case .example: return "Example"
         }
     }

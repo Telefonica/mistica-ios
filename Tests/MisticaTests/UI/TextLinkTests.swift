@@ -17,45 +17,31 @@ final class TextLinkTests: XCTestCase {
         isRecording = false
     }
 
-    func testFullTextLinkView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 200.0, height: 33.0)),
-            viewBuilder: TextLink(fullText: "All text is a link")
-        )
-    }
-
     func testSingleWordTextLinkView() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 200.0, height: 33.0)),
-            viewBuilder: TextLink(fullText: "Text 1 link word", linkedWords: ["link"])
+            viewBuilder: TextLink(fullText: "Text 1 link word", linkedWords: [LinkedWord(word: "link")])
         )
     }
 
     func testMultipleWordTextLinkView() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 200.0, height: 33.0)),
-            viewBuilder: TextLink(fullText: "Text multiple words as link", linkedWords: ["multiple", "link"])
-        )
-    }
-
-    func testInverseFullTextLinkView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 200.0, height: 33.0)),
-            viewBuilder: TextLink(fullText: "All text is a link", isInverse: true)
+            viewBuilder: TextLink(fullText: "Text multiple words as link", linkedWords: [LinkedWord(word: "multiple"), LinkedWord(word: "link")])
         )
     }
 
     func testInverseSingleWordTextLinkView() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 200.0, height: 33.0)),
-            viewBuilder: TextLink(fullText: "Text 1 link word", linkedWords: ["link"], isInverse: true)
+            viewBuilder: TextLink(fullText: "Text 1 link word", linkedWords: [LinkedWord(word: "link")], isInverse: true)
         )
     }
 
     func testInverseMultipleWordTextLinkView() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 200.0, height: 33.0)),
-            viewBuilder: TextLink(fullText: "Text multiple words as link", linkedWords: ["multiple", "link"], isInverse: true)
+            viewBuilder: TextLink(fullText: "Text multiple words as link", linkedWords: [LinkedWord(word: "multiple"), LinkedWord(word: "link")], isInverse: true)
         )
     }
 }

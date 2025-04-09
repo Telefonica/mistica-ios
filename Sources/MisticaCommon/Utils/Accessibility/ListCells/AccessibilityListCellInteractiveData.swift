@@ -10,9 +10,9 @@ import Foundation
 
 public struct AccessibilityListCellInteractiveData: Sendable {
     public let label: String?
-    public let action: (@Sendable() -> Void)?
+    public let action: (@MainActor @Sendable() -> Void)?
 
-    public init(label: String? = nil, action: (@Sendable() -> Void)? = nil) {
+    public init(label: String? = nil, action: (@MainActor @Sendable() -> Void)? = nil) {
         self.label = label
         self.action = action
     }

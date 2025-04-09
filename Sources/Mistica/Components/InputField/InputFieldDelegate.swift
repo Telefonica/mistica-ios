@@ -25,6 +25,7 @@ public protocol InputFieldDelegate: AnyObject {
     func inputFieldShouldLayout(_ field: InputField)
 }
 
+@MainActor
 @objc public protocol InputFieldDataSource: AnyObject {
     func inputFieldPickerElements(_ inputField: InputField) -> [String]
     func inputField(_ inputField: InputField, didSelectPickerElementAt index: Int)

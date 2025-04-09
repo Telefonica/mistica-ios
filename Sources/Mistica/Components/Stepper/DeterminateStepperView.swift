@@ -10,6 +10,7 @@ import Foundation
 
 import UIKit
 
+@MainActor
 open class DeterminateStepperView: UIControl {
     enum Constants {
         static let spacing: CGFloat = 8

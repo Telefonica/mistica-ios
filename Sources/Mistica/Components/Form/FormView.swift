@@ -10,6 +10,7 @@ import Foundation
 
 import UIKit
 
+@MainActor
 @objc public protocol FormViewDelegate: AnyObject {
     func formViewButtonShouldBeEnabled(_ formView: FormView) -> Bool
     func formViewDidTapButton(_ formView: FormView, isValid: Bool)

@@ -45,7 +45,7 @@ class UICatalogButtonsViewController: UITableViewController {
             ]
         }
 
-        static var additionalButtonSections: [(name: String, buttons: [Button], contentMode: UIView.ContentMode)] = [
+        @MainActor static let additionalButtonSections: [(name: String, buttons: [Button], contentMode: UIView.ContentMode)] = [
             ("Min width", [
                 Button(style: .primary, title: "OK"),
                 Button(style: .primary, title: "OK", isSmall: true),
@@ -215,7 +215,8 @@ private class LoadSimulationButton: Button {
 }
 
 private extension Button.State {
-    func makeButton(
+
+    @MainActor func makeButton(
         style: Button.Style,
         title _: String,
         loadingTitle _: String,

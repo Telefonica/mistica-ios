@@ -16,7 +16,7 @@ final class TextLinkTests: XCTestCase {
         UIView.setAnimationsEnabled(false)
         isRecording = false
     }
-    
+
     func testFullTextLinkView() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image(size: CGSize(width: 200.0, height: 33.0)),

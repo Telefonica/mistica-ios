@@ -23,7 +23,6 @@ public protocol TextLinkDelegate: AnyObject {
 }
 
 public class TextLink: UITextView, UITextViewDelegate {
-
     public weak var linkDelegate: TextLinkDelegate?
 
     private var linkedWords: [LinkedWord] = []
@@ -47,6 +46,7 @@ public class TextLink: UITextView, UITextViewDelegate {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

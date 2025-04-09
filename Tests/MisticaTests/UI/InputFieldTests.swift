@@ -16,13 +16,6 @@ final class InputFieldTests: XCTestCase {
         static let defaultTextValue = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
 
-    override func setUp() {
-        super.setUp()
-        Task { @MainActor in
-            UIView.setAnimationsEnabled(false)
-        }
-    }
-    
     override func invokeTest() {
         withSnapshotTesting(record: .never) {
             super.invokeTest()

@@ -13,13 +13,6 @@ import XCTest
 
 @MainActor
 final class InputFieldTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-        Task { @MainActor in
-            UIView.setAnimationsEnabled(false)
-        }
-    }
-    
     override func invokeTest() {
         withSnapshotTesting(record: .never) {
             super.invokeTest()

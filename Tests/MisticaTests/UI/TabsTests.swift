@@ -57,14 +57,6 @@ final class TabsTests: XCTestCase {
             TabItem(title: "Offers", icon: .flame, accessibilityIdentifier: nil)
         ]
     }
-
-    override class func setUp() {
-        super.setUp()
-        
-        Task { @MainActor in
-            UIView.setAnimationsEnabled(false)
-        }
-    }
     
     override func invokeTest() {
         withSnapshotTesting(record: .never) {

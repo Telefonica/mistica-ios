@@ -9,7 +9,7 @@
 import Foundation
 
 public enum MisticaConfig: @unchecked Sendable {
-    private static let concurrentQueue = DispatchQueue(label: "com.misticaConfig.queue", attributes: .concurrent)
+    private static let concurrentQueue = DispatchQueue(label: "com.misticaConfig.queue")
 
     nonisolated(unsafe) private static var _currentColors: MisticaColors = MovistarColors()
     nonisolated(unsafe) private static var _currentBrandAssets: MisticaBrandAssets = DefaultMisticaBrandAssets()

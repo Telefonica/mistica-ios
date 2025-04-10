@@ -12,7 +12,7 @@ public struct CalloutButton: Sendable {
     public let title: String
     public let loadingTitle: String?
     public let accessibilityIdentifier: String?
-    public let tapHandler: (@Sendable() -> Void)?
+    public let tapHandler: (@MainActor @Sendable() -> Void)?
 
     public init(title: String,
                 loadingTitle: String?,
@@ -28,7 +28,7 @@ public struct CalloutButton: Sendable {
 public struct CalloutLinkButton: Sendable {
     public let title: String
     public let accessibilityIdentifier: String?
-    public let tapHandler: (@Sendable() -> Void)?
+    public let tapHandler: (@MainActor @Sendable() -> Void)?
 
     public init(title: String,
                 accessibilityIdentifier: String? = nil,

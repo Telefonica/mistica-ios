@@ -17,7 +17,7 @@ public struct CalloutButton: Sendable {
     public init(title: String,
                 loadingTitle: String?,
                 accessibilityIdentifier: String? = nil,
-                tapHandler: (@Sendable() -> Void)?) {
+                tapHandler: (@MainActor @Sendable() -> Void)?) {
         self.title = title
         self.loadingTitle = loadingTitle
         self.accessibilityIdentifier = accessibilityIdentifier
@@ -32,7 +32,7 @@ public struct CalloutLinkButton: Sendable {
 
     public init(title: String,
                 accessibilityIdentifier: String? = nil,
-                tapHandler: (@Sendable() -> Void)?) {
+                tapHandler: (@MainActor @Sendable() -> Void)?) {
         self.title = title
         self.accessibilityIdentifier = accessibilityIdentifier
         self.tapHandler = tapHandler

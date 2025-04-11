@@ -1,3 +1,15 @@
+# [35.0.0](https://github.com/Telefonica/mistica-ios/compare/v34.0.0...v35.0.0) (2025-04-11)
+
+
+### Features
+
+* **Swift6:** Migration to Swift 6.0 with Strict Concurrency ([ad0e4da](https://github.com/Telefonica/mistica-ios/commit/ad0e4dadf9605eb0b7856d58c0d87f5d82426f52))
+
+
+### BREAKING CHANGES
+
+* **Swift6:** Package as well as the Mistica Catalog have been migrated to Swift 6 with the Strict concurrency check enabled. It is still compatible with projects still running on Swift 5.
+
 # [34.0.0](https://github.com/Telefonica/mistica-ios/compare/v33.8.0...v34.0.0) (2025-03-19)
 
 

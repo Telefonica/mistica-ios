@@ -22,9 +22,29 @@ extension UIView {
 
 // MARK: - Helpers
 
+@MainActor
+public func assertSnapshotWithoutAnimations<Value, Format>(
+    of value: @autoclosure () throws -> Value,
+    as snapshotting: Snapshotting<Value, Format>,
+    file: StaticString = #filePath,
+    testName: String = #function,
+    line: UInt = #line
+) {
+    UIView.setAnimationsEnabled(false)
+
+    assertSnapshot(
+        of: try value(),
+        as: snapshotting,
+        file: file,
+        testName: testName,
+        line: line
+    )
+}
+
+@MainActor
 func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     as snapshotting: Snapshotting<View, Format>,
-    file: StaticString = #file,
+    file: StaticString = #filePath,
     testName: String = #function,
     line: UInt = #line,
     viewBuilder: @autoclosure () -> View
@@ -33,7 +53,7 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
         MisticaConfig.brandStyle = brand
 
         assertSnapshot(
-            matching: viewBuilder(),
+            of: viewBuilder(),
             as: snapshotting,
             named: "with-\(brand)-style",
             file: file,
@@ -45,7 +65,7 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
         darkView.overrideUserInterfaceStyle = .dark
 
         assertSnapshot(
-            matching: darkView,
+            of: darkView,
             as: snapshotting,
             named: "with-\(brand)-dark-style",
             file: file,
@@ -55,6 +75,7 @@ func assertSnapshotForAllBrandsAndStyles<View: UserInterfaceStyling, Format>(
     }
 }
 
+@MainActor
 protocol UserInterfaceStyling {
     var overrideUserInterfaceStyle: UIUserInterfaceStyle { get set }
 }

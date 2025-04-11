@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public typealias FeedbackCompletion = () -> Void
+public typealias FeedbackCompletion = @MainActor @Sendable() -> Void
 public typealias FeedbackRetryCompletion = @MainActor(@escaping @Sendable() -> Void) -> Void
 
 @frozen

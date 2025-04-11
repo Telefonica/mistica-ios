@@ -10,6 +10,7 @@ import Foundation
 
 import UIKit
 
+@MainActor
 @objc public protocol FormViewDelegate: AnyObject {
     func formViewButtonShouldBeEnabled(_ formView: FormView) -> Bool
     func formViewDidTapButton(_ formView: FormView, isValid: Bool)
@@ -95,21 +96,21 @@ public extension FormView {
     }
 
     func addInputFields(_ inputFields: [InputField]) {
-        inputFields.forEach(addInputField)
+        try? inputFields.forEach(addInputField)
         arrangeViews()
     }
 
     func removeInputFields(_ inputFields: [InputField]) {
-        inputFields.forEach(removeInputField)
+        try? inputFields.forEach(removeInputField)
     }
 
     func addValidatableViews(_ views: [ValidatableView]) {
-        views.forEach(addValidatableView)
+        try? views.forEach(addValidatableView)
         arrangeViews()
     }
 
     func removeValidatableViews(_ views: [ValidatableView]) {
-        views.forEach(removeValidatableView)
+        try? views.forEach(removeValidatableView)
     }
 
     func addHeaderView(_ headerView: UIView) {

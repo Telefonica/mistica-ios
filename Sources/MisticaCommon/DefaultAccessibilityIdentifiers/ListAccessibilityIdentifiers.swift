@@ -13,12 +13,12 @@ private extension DefaultAccessibilityIdentifier.Feature {
 }
 
 public enum ListAccessibilityIdentifiers {
-    public static var icon = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .icon)
-    public static var tag = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .tag)
-    public static var title = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .title)
-    public static var subtitle = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .subtitle)
-    public static var description = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .description)
-    public static var slot = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .slot)
-    public static var action = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .action)
-    public static var chevron = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .chevron)
+    public static let icon = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .icon)
+    public static let tag = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .tag)
+    public static let title = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .title)
+    public static let subtitle = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .subtitle)
+    public static let description = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .description)
+    public static let slot = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .slot)
+    public static let action = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .action)
+    public static let chevron = DefaultAccessibilityIdentifier(feature: .list, section: .item, elementType: .chevron)
 }

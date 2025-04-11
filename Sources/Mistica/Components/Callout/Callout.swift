@@ -31,7 +31,7 @@ public class Callout: UIView {
             if let contentConfiguration = contentConfiguration {
                 configure(withConfiguration: contentConfiguration)
             } else {
-                configure(withConfiguration: .emptyConfiguration)
+                configure(withConfiguration: .emptyConfiguration())
             }
         }
     }

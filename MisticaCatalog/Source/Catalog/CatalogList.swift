@@ -58,7 +58,7 @@ struct CatalogList: View {
 }
 
 private extension CatalogRow {
-    @ViewBuilder
+    @MainActor @ViewBuilder
     var swiftUIComponent: some View {
         switch self {
         case .badge:
@@ -107,7 +107,7 @@ private extension CatalogRow {
         }
     }
 
-    @ViewBuilder
+    @MainActor @ViewBuilder
     var uiKitComponent: some View {
         switch self {
         case .buttons:

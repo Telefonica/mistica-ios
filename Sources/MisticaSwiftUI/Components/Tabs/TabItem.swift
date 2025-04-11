@@ -24,8 +24,8 @@ public struct TabItem: Equatable {
 }
 
 public struct TabItemView: Equatable, View {
-    private var tabItem: TabItem
-    private var indexRow: Int
+    nonisolated(unsafe) private var tabItem: TabItem
+    nonisolated private var indexRow: Int
     @Binding private var selectedIndexRow: Int
 
     private var textAccessibilityLabel: String?
@@ -43,7 +43,7 @@ public struct TabItemView: Equatable, View {
         _selectedIndexRow = selectedIndexRow
     }
 
-    public static func == (lhs: TabItemView, rhs: TabItemView) -> Bool {
+    nonisolated public static func == (lhs: TabItemView, rhs: TabItemView) -> Bool {
         lhs.tabItem == rhs.tabItem && lhs.indexRow == rhs.indexRow
     }
 

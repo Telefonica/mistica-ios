@@ -18,7 +18,7 @@ public struct FormViewCatalog: View {
         var state: InputField.ValidationState = .normal
         let style: InputField.Style
 
-        func createInputField(binding: Binding<FormFieldState>) -> InputField {
+        @MainActor func createInputField(binding: Binding<FormFieldState>) -> InputField {
             InputField(
                 placeholder: placeholder,
                 text: binding.text,

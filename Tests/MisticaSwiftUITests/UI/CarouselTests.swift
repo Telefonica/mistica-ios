@@ -11,57 +11,59 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class CarouselTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testFree() {
         assertSnapshot(
-            matching: givenCarousel(scrollStyle: .free),
+            of: givenCarousel(scrollStyle: .free),
             as: .image
         )
     }
 
     func testPaginated() {
         assertSnapshot(
-            matching: givenCarousel(scrollStyle: .paginated),
+            of: givenCarousel(scrollStyle: .paginated),
             as: .image
         )
     }
 
     func testIndex() {
         assertSnapshot(
-            matching: givenCarousel(index: .constant(1)),
+            of: givenCarousel(index: .constant(1)),
             as: .image
         )
     }
 
     func testNoBullets() {
         assertSnapshot(
-            matching: givenCarousel(controlStyle: .disabled),
+            of: givenCarousel(controlStyle: .disabled),
             as: .image
         )
     }
 
     func testLeadingBullets() {
         assertSnapshot(
-            matching: givenCarousel(controlStyle: .bullets, controlAlignment: .leading),
+            of: givenCarousel(controlStyle: .bullets, controlAlignment: .leading),
             as: .image
         )
     }
 
     func testTrailingBullets() {
         assertSnapshot(
-            matching: givenCarousel(controlStyle: .bullets, controlAlignment: .trailing),
+            of: givenCarousel(controlStyle: .bullets, controlAlignment: .trailing),
             as: .image
         )
     }
 
     func testFullWith() {
         assertSnapshot(
-            matching: givenCarousel(carouselStyle: .fullWidth),
+            of: givenCarousel(carouselStyle: .fullWidth),
             as: .image
         )
     }

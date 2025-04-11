@@ -11,9 +11,12 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class TabsTests: XCTestCase {
-    override class func setUp() {
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testTwoLongTabs() {
@@ -21,7 +24,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }
@@ -31,7 +34,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }
@@ -41,7 +44,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }
@@ -51,7 +54,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }
@@ -61,7 +64,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }
@@ -71,7 +74,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }
@@ -81,7 +84,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }
@@ -91,7 +94,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }
@@ -101,7 +104,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }
@@ -111,7 +114,7 @@ final class TabsTests: XCTestCase {
             .frame(width: 400)
 
         assertSnapshot(
-            matching: tabs,
+            of: tabs,
             as: .image
         )
     }

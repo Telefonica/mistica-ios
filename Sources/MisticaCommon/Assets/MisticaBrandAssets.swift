@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-public protocol MisticaBrandAssets {
+public protocol MisticaBrandAssets: Sendable {
     var iconNotificationInfo: UIImage? { get }
     var successAnimation: NSDataAsset? { get }
     var checkAnimation: NSDataAsset? { get }

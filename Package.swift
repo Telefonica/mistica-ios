@@ -1,4 +1,4 @@
-// swift-tools-version:5.9
+// swift-tools-version:6.0
 
 import PackageDescription
 
@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-spm.git", exact: "4.5.0"),
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.8.2"),
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.17.6"),
         .package(url: "https://github.com/SDWebImage/SDWebImage.git", exact: "5.19.1"),
         .package(url: "https://github.com/SDWebImage/SDWebImageSVGCoder.git", exact: "1.7.0")
     ],

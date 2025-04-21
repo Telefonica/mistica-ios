@@ -151,6 +151,8 @@ struct O2NewColors: MisticaColors {
 
     let textBrand = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
 
+    let inputBorder = O2NewColors.palette.grey45
+
     let control = O2NewColors.palette.grey45
 
     let controlActivated = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
@@ -201,9 +203,9 @@ struct O2NewColors: MisticaColors {
 
     let neutralMediumInverse = O2NewColors.palette.grey60
 
-    let neutralLow = O2NewColors.palette.grey20 | O2NewColors.palette.grey80
+    let neutralLow = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
 
-    let neutralLowAlternative = O2NewColors.palette.grey30 | O2NewColors.palette.grey80
+    let neutralLowAlternative = O2NewColors.palette.grey30 | O2NewColors.palette.darkModeGrey6
 
     let textPrimary = O2NewColors.palette.black | O2NewColors.palette.grey30
 
@@ -273,6 +275,8 @@ struct O2NewColors: MisticaColors {
 
     let tagTextInactive = O2NewColors.palette.grey60 | O2NewColors.palette.grey40
 
+    let tagTextInfo = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+
     let tagTextSuccess = O2NewColors.palette.o2Green80 | O2NewColors.palette.o2Green
 
     let tagTextWarning = O2NewColors.palette.o2Orange75 | O2NewColors.palette.o2Orange
@@ -285,11 +289,41 @@ struct O2NewColors: MisticaColors {
 
     let tagBackgroundInactive = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
 
+    let tagBackgroundInfo = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
+
     let tagBackgroundSuccess = O2NewColors.palette.o2Green10 | O2NewColors.palette.darkModeGrey6
 
     let tagBackgroundWarning = O2NewColors.palette.o2Orange10 | O2NewColors.palette.darkModeGrey6
 
     let tagBackgroundError = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey6
+
+    let tagTextPromoInverse = O2NewColors.palette.o2Pink80 | O2NewColors.palette.o2Pink
+
+    let tagTextActiveInverse = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+
+    let tagTextInactiveInverse = O2NewColors.palette.grey60 | O2NewColors.palette.grey40
+
+    let tagTextInfoInverse = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+
+    let tagTextSuccessInverse = O2NewColors.palette.o2Green80 | O2NewColors.palette.o2Green
+
+    let tagTextWarningInverse = O2NewColors.palette.o2Orange75 | O2NewColors.palette.o2Orange
+
+    let tagTextErrorInverse = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
+
+    let tagBackgroundPromoInverse = O2NewColors.palette.o2Pink15 | O2NewColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
+
+    let tagBackgroundInfoInverse = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = O2NewColors.palette.o2Green10 | O2NewColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = O2NewColors.palette.o2Orange10 | O2NewColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = O2NewColors.palette.o2Red10 | O2NewColors.palette.darkModeGrey6
 
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
@@ -342,7 +376,7 @@ public struct O2NewColorPalette: Sendable {
     public let grey20 = UIColor(hex: "#F3F3F5")!
     public let grey30 = UIColor(hex: "#D9D9DD")!
     public let grey40 = UIColor(hex: "#B4B4BE")!
-    public let grey45 = UIColor(hex: "#8C8C9A")!
+    public let grey45 = UIColor(hex: "#8A8A98")!
     public let grey60 = UIColor(hex: "#6E6E77")!
     public let grey80 = UIColor(hex: "#3C3C46")!
     public let black = UIColor(hex: "#00001E")!

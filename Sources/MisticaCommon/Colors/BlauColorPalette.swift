@@ -133,6 +133,8 @@ struct BlauColors: MisticaColors {
 
     let textBrand = BlauColors.palette.blauBluePrimary
 
+    let inputBorder = BlauColors.palette.grey5
+
     let control = BlauColors.palette.grey5 | BlauColors.palette.darkModeGrey6
 
     let controlActivated = BlauColors.palette.blauBlueSecondary
@@ -255,6 +257,8 @@ struct BlauColors: MisticaColors {
 
     let tagTextInactive = BlauColors.palette.grey5
 
+    let tagTextInfo = BlauColors.palette.blauBluePrimary
+
     let tagTextSuccess = BlauColors.palette.blauGreen70 | BlauColors.palette.blauGreen30
 
     let tagTextWarning = BlauColors.palette.blauYellow70 | BlauColors.palette.blauYellow40
@@ -267,11 +271,41 @@ struct BlauColors: MisticaColors {
 
     let tagBackgroundInactive = BlauColors.palette.grey1 | BlauColors.palette.darkModeGrey6
 
+    let tagBackgroundInfo = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.darkModeGrey6
+
     let tagBackgroundSuccess = BlauColors.palette.blauGreen10 | BlauColors.palette.darkModeGrey6
 
     let tagBackgroundWarning = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
 
     let tagBackgroundError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
+
+    let tagTextPromoInverse = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
+
+    let tagTextActiveInverse = BlauColors.palette.blauBluePrimary
+
+    let tagTextInactiveInverse = BlauColors.palette.grey5
+
+    let tagTextInfoInverse = BlauColors.palette.blauBluePrimary
+
+    let tagTextSuccessInverse = BlauColors.palette.blauGreen70 | BlauColors.palette.blauGreen30
+
+    let tagTextWarningInverse = BlauColors.palette.blauYellow70 | BlauColors.palette.blauYellow40
+
+    let tagTextErrorInverse = BlauColors.palette.blauRed70 | BlauColors.palette.blauRed40
+
+    let tagBackgroundPromoInverse = BlauColors.palette.blauPurple10 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = BlauColors.palette.grey1 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundInfoInverse = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = BlauColors.palette.blauGreen10 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
 
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:

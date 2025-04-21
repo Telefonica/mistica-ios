@@ -133,6 +133,8 @@ struct TuColors: MisticaColors {
 
     let textBrand = TuColors.palette.blue | TuColors.palette.blue30
 
+    let inputBorder = TuColors.palette.grey5
+
     let control = TuColors.palette.grey5 | TuColors.palette.darkModeGrey6
 
     let controlActivated = TuColors.palette.primary | TuColors.palette.blue30
@@ -191,9 +193,9 @@ struct TuColors: MisticaColors {
 
     let textPrimaryInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let textSecondary = TuColors.palette.grey6 | TuColors.palette.grey4
+    let textSecondary = TuColors.palette.grey6 | TuColors.palette.grey3
 
-    let textSecondaryInverse = TuColors.palette.grey3 | TuColors.palette.grey4
+    let textSecondaryInverse = TuColors.palette.grey3
 
     let error = TuColors.palette.red
 
@@ -255,6 +257,8 @@ struct TuColors: MisticaColors {
 
     let tagTextInactive = TuColors.palette.grey5
 
+    let tagTextInfo = TuColors.palette.blue | TuColors.palette.blue30
+
     let tagTextSuccess = TuColors.palette.green75 | TuColors.palette.green40
 
     let tagTextWarning = TuColors.palette.orange70 | TuColors.palette.orange55
@@ -267,11 +271,41 @@ struct TuColors: MisticaColors {
 
     let tagBackgroundInactive = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
 
+    let tagBackgroundInfo = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
     let tagBackgroundSuccess = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundWarning = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundError = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+
+    let tagTextPromoInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextActiveInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextInactiveInverse = TuColors.palette.grey5
+
+    let tagTextInfoInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextSuccessInverse = TuColors.palette.green75 | TuColors.palette.green40
+
+    let tagTextWarningInverse = TuColors.palette.orange70 | TuColors.palette.orange55
+
+    let tagTextErrorInverse = TuColors.palette.red70 | TuColors.palette.red40
+
+    let tagBackgroundPromoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundInfoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
 
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:

@@ -68,7 +68,7 @@ public struct Tabs: View {
                     )
                     // Store the new value whenever it changes.
                     .onPreferenceChange(CGFloatPreferenceKey.self) { width in
-                        Task { @MainActor in
+                        DispatchQueue.main.async {
                             self.itemWidth[index] = min(width, 208)
                         }
                     }

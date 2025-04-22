@@ -34,7 +34,9 @@ public struct TrackableScrollView<Content>: View where Content: View {
                 content.background(offsetOverlay(outsideProxy: outsideProxy))
             }
             .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
-                contentOffset = value[0]
+                Task { @MainActor in
+                    contentOffset = value[0]
+                }
             }
         }
     }

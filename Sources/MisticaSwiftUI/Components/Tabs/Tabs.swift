@@ -68,7 +68,9 @@ public struct Tabs: View {
                     )
                     // Store the new value whenever it changes.
                     .onPreferenceChange(CGFloatPreferenceKey.self) { width in
-                        self.itemWidth[index] = min(width, 208)
+                        Task { @MainActor in
+                            self.itemWidth[index] = min(width, 208)
+                        }
                     }
                     .onTapGesture {
                         self.selection = index

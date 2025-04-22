@@ -123,18 +123,12 @@ extension UICatalogTextLinkViewController: UITableViewDataSource, UITableViewDel
             return cells[indexPath.section][indexPath.row]
         }
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.section == cells.indices.last!, indexPath.row == cells[indexPath.section].indices.last! else { return }
-        tableView.deselectRow(animated: true)
-        view.endEditing(true)
-    }
 }
 
 extension UICatalogTextLinkViewController: TextLinkDelegate {
-    func textLink(_ view: TextLink, tappedText: String) {
+    func textLink(_ view: TextLink, tappedWord: String, matchIndex: String) {
         let config = SnackbarConfig(
-            title: tappedText,
+            title: tappedWord + matchIndex,
             dismissInterval: .fiveSeconds,
             forceDismiss: false
         )

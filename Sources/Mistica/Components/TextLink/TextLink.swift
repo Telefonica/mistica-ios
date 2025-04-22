@@ -19,7 +19,7 @@ public struct LinkedWord {
 }
 
 public protocol TextLinkDelegate: AnyObject {
-    func textLink(_ view: TextLink, tappedText: String)
+    func textLink(_ view: TextLink, tappedWord: String, matchIndex: String)
 }
 
 public class TextLink: UITextView, UITextViewDelegate {
@@ -27,6 +27,10 @@ public class TextLink: UITextView, UITextViewDelegate {
 
     private var linkedWords: [LinkedWord] = []
     private var linkRanges: [NSRange: String] = [:]
+    
+    // Flag to prevent voiceOver bug to call delegate twice
+    private var isHandlingTap = false
+    private let debounceInterval: TimeInterval = 1
 
     public init(fullText: String,
                 linkedWords: [LinkedWord],
@@ -37,25 +41,32 @@ public class TextLink: UITextView, UITextViewDelegate {
         super.init(frame: .zero, textContainer: nil)
 
         isEditable = false
+        isSelectable = true
         isScrollEnabled = false
         backgroundColor = .clear
         delegate = self
-        self.linkedWords = linkedWords
+        dataDetectorTypes = []
+        isAccessibilityElement = false
 
+        self.linkedWords = linkedWords
         setupText(fullText: fullText, font: font, textColor: textColor, linkColor: linkColor, isInverse: isInverse)
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
 
-    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupText(fullText: String, font: UIFont, textColor: UIColor, linkColor: UIColor, isInverse: Bool) {
+    public func setupText(fullText: String,
+                          font: UIFont,
+                          textColor: UIColor,
+                          linkColor: UIColor,
+                          isInverse: Bool) {
         let attributed = NSMutableAttributedString(string: fullText, attributes: [
             .font: font,
             .foregroundColor: textColor
         ])
+
+        linkRanges.removeAll()
 
         for linkedWord in linkedWords {
             let pattern = "\\b\(NSRegularExpression.escapedPattern(for: linkedWord.word))\\b"
@@ -66,29 +77,30 @@ public class TextLink: UITextView, UITextViewDelegate {
                 let match = matches[linkedWord.matchIndex]
                 attributed.addAttributes([
                     .foregroundColor: isInverse ? UIColor.textLinkInverse : linkColor,
-                    .underlineStyle: NSUnderlineStyle.single.rawValue
+                    .underlineStyle: NSUnderlineStyle.single.rawValue,
+                    .link: URL(string: "textLink://\(linkedWord.word)/\(linkedWord.matchIndex)")!
                 ], range: match.range)
-                linkRanges[match.range] = linkedWord.word
             }
         }
 
-        attributedText = attributed
+        self.attributedText = attributed
     }
 
-    @objc private func handleTap(sender: UITapGestureRecognizer) {
-        let location = sender.location(in: self)
+    public func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        guard URL.scheme == "textLink" else { return true }
 
-        guard let position = closestPosition(to: location),
-              let textRange = tokenizer.rangeEnclosingPosition(position, with: .word, inDirection: UITextDirection.layout(.left)) else {
-            return
+        guard !isHandlingTap else { return false }
+        isHandlingTap = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + debounceInterval) {
+            self.isHandlingTap = false
         }
 
-        let startOffset = offset(from: beginningOfDocument, to: textRange.start)
-        let length = offset(from: textRange.start, to: textRange.end)
-        let tappedNSRange = NSRange(location: startOffset, length: length)
-
-        if let linkedWord = linkRanges.first(where: { NSEqualRanges($0.key, tappedNSRange) }) {
-            linkDelegate?.textLink(self, tappedText: linkedWord.value)
+        let pathComponents = URL.pathComponents
+        if let word = URL.host,
+           let matchIndex = pathComponents.last {
+            linkDelegate?.textLink(self, tappedWord: word, matchIndex: matchIndex)
         }
+
+        return false
     }
 }

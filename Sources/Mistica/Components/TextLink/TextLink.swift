@@ -27,10 +27,8 @@ public class TextLink: UITextView, UITextViewDelegate {
 
     private var linkedWords: [LinkedWord] = []
     private var linkRanges: [NSRange: String] = [:]
-    
-    // Flag to prevent voiceOver bug to call delegate twice
+
     private var isHandlingTap = false
-    private let debounceInterval: TimeInterval = 1
 
     public init(fullText: String,
                 linkedWords: [LinkedWord],
@@ -88,12 +86,12 @@ public class TextLink: UITextView, UITextViewDelegate {
 
     public func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         guard URL.scheme == "textLink" else { return true }
-
-        guard !isHandlingTap else { return false }
-        isHandlingTap = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + debounceInterval) {
-            self.isHandlingTap = false
+        
+        if UIAccessibility.isVoiceOverRunning && isHandlingTap {
+            isHandlingTap = false
+            return false
         }
+        isHandlingTap = true
 
         let pathComponents = URL.pathComponents
         if let word = URL.host,

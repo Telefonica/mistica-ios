@@ -67,10 +67,8 @@ public struct Tabs: View {
                         }
                     )
                     // Store the new value whenever it changes.
-                    .onPreferenceChange(CGFloatPreferenceKey.self) { width in
-                        DispatchQueue.main.async {
-                            self.itemWidth[index] = min(width, 208)
-                        }
+                    .onPreferenceChange(CGFloatPreferenceKey.self) { [$itemWidth] width in
+                        $itemWidth[index].wrappedValue = min(width, 208)
                     }
                     .onTapGesture {
                         self.selection = index

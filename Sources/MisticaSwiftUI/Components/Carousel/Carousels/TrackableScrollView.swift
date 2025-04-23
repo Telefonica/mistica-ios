@@ -33,8 +33,8 @@ public struct TrackableScrollView<Content>: View where Content: View {
             ScrollView(axes, showsIndicators: showsIndicators) {
                 content.background(offsetOverlay(outsideProxy: outsideProxy))
             }
-            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
-                contentOffset = value[0]
+            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { [$contentOffset] value in
+                $contentOffset.wrappedValue = value[0]
             }
         }
     }

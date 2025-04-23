@@ -87,7 +87,7 @@ public class TextLink: UITextView, UITextViewDelegate {
 
     public func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         guard URL.scheme == "textLink" else { return true }
-        
+
         if UIAccessibility.isVoiceOverRunning && isHandlingTap {
             isHandlingTap = false
             return false

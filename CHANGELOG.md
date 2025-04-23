@@ -1,3 +1,10 @@
+## [35.0.1](https://github.com/Telefonica/mistica-ios/compare/v35.0.0...v35.0.1) (2025-04-23)
+
+
+### Bug Fixes
+
+* **Concurrency:** Fix Strict Concurrency in XCode 16.2 ([4d07d93](https://github.com/Telefonica/mistica-ios/commit/4d07d93fce0f520b731d4609c033e73a4dcfa3bd))
+
 # [35.0.0](https://github.com/Telefonica/mistica-ios/compare/v34.0.0...v35.0.0) (2025-04-11)
 
 

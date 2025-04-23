@@ -50,6 +50,7 @@ public class TextLink: UITextView, UITextViewDelegate {
         setupText(fullText: fullText, font: font, textColor: textColor, linkColor: linkColor, isInverse: isInverse)
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -81,7 +82,7 @@ public class TextLink: UITextView, UITextViewDelegate {
             }
         }
 
-        self.attributedText = attributed
+        attributedText = attributed
     }
 
     public func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {

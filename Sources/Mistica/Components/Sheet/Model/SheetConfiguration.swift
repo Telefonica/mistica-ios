@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct SheetConfiguration {
+public struct SheetConfiguration: Sendable {
     public let header: SheetHeader
     public let content: [SheetList]
     public let backgroundViewAccessibilityLabel: String?
@@ -25,7 +25,7 @@ public struct SheetConfiguration {
     }
 }
 
-public struct SheetHeader {
+public struct SheetHeader: Sendable {
     public let title: String?
     public let subtitle: String?
     public let description: String?
@@ -41,7 +41,7 @@ public struct SheetHeader {
     }
 }
 
-public struct SheetList {
+public struct SheetList: Sendable {
     public let id: String
     public let listType: SheetListType
     public let autoSubmit: Bool
@@ -60,7 +60,7 @@ public struct SheetList {
     }
 }
 
-public enum SheetListType {
+public enum SheetListType: Sendable {
     case singleSelection(items: [SingleSelectionItem])
     case actionList(items: [ActionListItem])
     case informative(items: [InformativeItem])
@@ -76,7 +76,7 @@ public enum SheetListType {
     }
 }
 
-public struct SingleSelectionItem {
+public struct SingleSelectionItem: Sendable {
     public let id: String
     public let title: String?
     public let description: String?
@@ -95,8 +95,8 @@ public struct SingleSelectionItem {
     }
 }
 
-public struct SingleSelectionItemIcon {
-    public enum Size {
+public struct SingleSelectionItemIcon: Sendable {
+    public enum Size: Sendable {
         case small
         case large
 
@@ -125,7 +125,7 @@ public struct SingleSelectionItemIcon {
     }
 }
 
-public struct InformativeItem {
+public struct InformativeItem: Sendable {
     public let id: String
     public let title: String
     public let description: String?
@@ -144,7 +144,7 @@ public struct InformativeItem {
     }
 }
 
-public enum InformativeItemIcon: Equatable {
+public enum InformativeItemIcon: Equatable, Sendable {
     case regular(url: String, urlDark: String?)
     case small(url: String, urlDark: String?)
     case bullet
@@ -161,8 +161,8 @@ public enum InformativeItemIcon: Equatable {
     }
 }
 
-public struct ActionListItem {
-    public enum Style {
+public struct ActionListItem: Sendable {
+    public enum Style: Sendable {
         case normal
         case destructive
     }
@@ -188,7 +188,7 @@ public struct ActionListItem {
     }
 }
 
-public struct ActionItem {
+public struct ActionItem: Sendable {
     let id: String
     let style: Button.Style
     let title: String

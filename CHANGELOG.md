@@ -1,3 +1,10 @@
+# [35.1.0](https://github.com/Telefonica/mistica-ios/compare/v35.0.1...v35.1.0) (2025-05-05)
+
+
+### Features
+
+* **Package:** Update lottie sdk to 4.5.1 ([#447](https://github.com/Telefonica/mistica-ios/issues/447)) ([1e5718c](https://github.com/Telefonica/mistica-ios/commit/1e5718c774a2d87d62153b5f3076c229c6c1d088))
+
 ## [35.0.1](https://github.com/Telefonica/mistica-ios/compare/v35.0.0...v35.0.1) (2025-04-23)
 
 

@@ -13,21 +13,21 @@ public typealias FeedbackCompletion = @MainActor @Sendable() -> Void
 public typealias FeedbackRetryCompletion = @MainActor(@escaping @Sendable() -> Void) -> Void
 
 @frozen
-public enum FeedbackPrimaryAction {
+public enum FeedbackPrimaryAction: Sendable {
     case none
     case button(title: String, completion: FeedbackCompletion)
     case retryButton(title: String, loadingTitle: String?, retryCompletion: FeedbackRetryCompletion)
 }
 
 @frozen
-public enum FeedbackSecondaryAction {
+public enum FeedbackSecondaryAction: Sendable {
     case none
     case button(title: String, completion: FeedbackCompletion)
     case link(title: String, completion: FeedbackCompletion)
 }
 
 @frozen
-public enum FeedbackNavigationButton: Equatable {
+public enum FeedbackNavigationButton: Equatable, Sendable {
     // Remove the button from the navigation bar
     case none
 
@@ -38,7 +38,7 @@ public enum FeedbackNavigationButton: Equatable {
     case custom(button: UIBarButtonItem)
 }
 
-public struct FeedbackConfiguration: Equatable {
+public struct FeedbackConfiguration: Equatable, Sendable {
     public let style: FeedbackStyle
     public let title: String
     public let subtitle: String?

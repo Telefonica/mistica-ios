@@ -18,12 +18,12 @@ open class Button: UIControl {
         static let disabledAlpha: CGFloat = 0.5
     }
 
-    public struct Style {
+    public struct Style: Sendable {
         public let allowsBleedingAlignment: Bool
         public let stateStyleByState: [State: StateStyle]
         public var overriddenSizes: OverriddenSizes?
 
-        public struct OverriddenSizes {
+        public struct OverriddenSizes: Sendable {
             public let insets: UIEdgeInsets
             public let minimumWidth: CGFloat
             public let font: UIFont
@@ -54,7 +54,7 @@ open class Button: UIControl {
         }
     }
 
-    public struct StateStyle {
+    public struct StateStyle: Sendable {
         public let textColor: UIColor
         public let backgroundColor: UIColor
         public let borderColor: UIColor
@@ -82,7 +82,7 @@ open class Button: UIControl {
         }
     }
 
-    public enum RightImage {
+    public enum RightImage: Sendable {
         case chevron
         case custom(image: UIImage)
 

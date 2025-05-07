@@ -1,3 +1,10 @@
+## [35.1.1](https://github.com/Telefonica/mistica-ios/compare/v35.1.0...v35.1.1) (2025-05-07)
+
+
+### Bug Fixes
+
+* **Concurrency:** make SheetConfiguration and FeedbackConfiguration Sendable ([1e1941e](https://github.com/Telefonica/mistica-ios/commit/1e1941ee7dc0b4ae452a2d37041937024b6b88e7))
+
 # [35.1.0](https://github.com/Telefonica/mistica-ios/compare/v35.0.1...v35.1.0) (2025-05-05)
 
 

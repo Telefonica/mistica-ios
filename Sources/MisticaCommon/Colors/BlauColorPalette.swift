@@ -273,6 +273,30 @@ struct BlauColors: MisticaColors {
 
     let tagBackgroundError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
 
+    let tagTextPromoInverse = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
+
+    let tagTextActiveInverse = BlauColors.palette.blauBluePrimary
+
+    let tagTextInactiveInverse = BlauColors.palette.grey5
+
+    let tagTextSuccessInverse = BlauColors.palette.blauGreen70 | BlauColors.palette.blauGreen30
+
+    let tagTextWarningInverse = BlauColors.palette.blauYellow70 | BlauColors.palette.blauYellow40
+
+    let tagTextErrorInverse = BlauColors.palette.blauRed70 | BlauColors.palette.blauRed40
+
+    let tagBackgroundPromoInverse = BlauColors.palette.blauPurple10 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = BlauColors.palette.grey1 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = BlauColors.palette.blauGreen10 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
+
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [

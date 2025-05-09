@@ -524,4 +524,52 @@ public extension UIColor {
     static var tagBackgroundError: UIColor {
         MisticaConfig.currentColors.tagBackgroundError
     }
+
+    static var tagTextPromoInverse: UIColor {
+        MisticaConfig.currentColors.tagTextPromoInverse
+    }
+
+    static var tagTextActiveInverse: UIColor {
+        MisticaConfig.currentColors.tagTextActiveInverse
+    }
+
+    static var tagTextInactiveInverse: UIColor {
+        MisticaConfig.currentColors.tagTextInactiveInverse
+    }
+
+    static var tagTextSuccessInverse: UIColor {
+        MisticaConfig.currentColors.tagTextSuccessInverse
+    }
+
+    static var tagTextWarningInverse: UIColor {
+        MisticaConfig.currentColors.tagTextWarningInverse
+    }
+
+    static var tagTextErrorInverse: UIColor {
+        MisticaConfig.currentColors.tagTextErrorInverse
+    }
+
+    static var tagBackgroundPromoInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundPromoInverse
+    }
+
+    static var tagBackgroundActiveInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundActiveInverse
+    }
+
+    static var tagBackgroundInactiveInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundInactiveInverse
+    }
+
+    static var tagBackgroundSuccessInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundSuccessInverse
+    }
+
+    static var tagBackgroundWarningInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundWarningInverse
+    }
+
+    static var tagBackgroundErrorInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundErrorInverse
+    }
 }

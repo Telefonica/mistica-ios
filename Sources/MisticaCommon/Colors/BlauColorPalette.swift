@@ -1,291 +1,325 @@
-//
-//  BlauColorPalette.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
 struct BlauColors: MisticaColors {
     static let palette = BlauColorPalette()
 
-    let backgroundBrand = MisticaColor.solid(BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack)
+     let background = BlauColors.palette.white | BlauColors.palette.darkModeBlack
 
-    let backgroundBrandSecondary = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
+     let backgroundAlternative = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.darkModeBlack
 
-    let appBarBackground = BlauColors.palette.white | BlauColors.palette.darkModeGrey
+     let backgroundBrand = MisticaColor.solid(BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack)
 
-    let background = BlauColors.palette.white | BlauColors.palette.darkModeBlack
+     let backgroundBrandSecondary = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
 
-    let backgroundContainer = BlauColors.palette.white | BlauColors.palette.darkModeGrey
+     let backgroundContainer = BlauColors.palette.white | BlauColors.palette.darkModeGrey
 
-    let backgroundContainerError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey
+     let backgroundContainerError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey
 
-    let backgroundContainerHover = BlauColors.palette.blauBlueSecondary.withAlphaComponent(0.05) | BlauColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerHover = BlauColors.palette.blauBlueSecondary.withAlphaComponent(0.05) | BlauColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerPressed = BlauColors.palette.blauBlueSecondary.withAlphaComponent(0.08) | BlauColors.palette.white.withAlphaComponent(0.08)
+     let backgroundContainerPressed = BlauColors.palette.blauBlueSecondary.withAlphaComponent(0.08) | BlauColors.palette.white.withAlphaComponent(0.08)
 
-    let backgroundContainerBrand = MisticaColor.solid(BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeGrey)
+     let backgroundContainerBrand = MisticaColor.solid(BlauColors.palette.blauBlueSecondary | BlauColors.palette.darkModeGrey)
 
-    let backgroundContainerBrandHover = BlauColors.palette.darkModeBlack.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.03)
+     let backgroundContainerBrandHover = BlauColors.palette.darkModeBlack.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.03)
 
-    let backgroundContainerBrandPressed = BlauColors.palette.darkModeBlack.withAlphaComponent(0.4) | BlauColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerBrandPressed = BlauColors.palette.darkModeBlack.withAlphaComponent(0.4) | BlauColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrandOverInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.darkModeGrey
+     let backgroundContainerBrandOverInverse = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.darkModeGrey
 
-    let backgroundContainerAlternative = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.darkModeGrey
+     let backgroundContainerAlternative = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.darkModeGrey
 
-    let backgroundOverlay = BlauColors.palette.blauBlueSecondary.withAlphaComponent(0.75) | BlauColors.palette.darkModeGrey.withAlphaComponent(0.8)
+     let backgroundOverlay = BlauColors.palette.blauBlueSecondary.withAlphaComponent(0.75) | BlauColors.palette.darkModeGrey.withAlphaComponent(0.8)
 
-    let backgroundSkeleton = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey
+     let backgroundSkeleton = BlauColors.palette.grey3 | BlauColors.palette.darkModeGrey
 
-    let backgroundSkeletonInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.darkModeGrey
+     let backgroundSkeletonInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.darkModeGrey
 
-    let navigationBarBackground = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
+     let backgroundBrandTop = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
 
-    let backgroundAlternative = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.darkModeBlack
+     let backgroundBrandBottom = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
 
-    let backgroundBrandTop = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
+     let appBarBackground = BlauColors.palette.white | BlauColors.palette.darkModeGrey
 
-    let backgroundBrandBottom = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
+     let navigationBarBackground = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
 
-    let skeletonWave = BlauColors.palette.grey2 | BlauColors.palette.grey5
+     let skeletonWave = BlauColors.palette.grey2 | BlauColors.palette.grey5
 
-    let borderLow = BlauColors.palette.grey1 | BlauColors.palette.darkModeBlack
+     let borderLow = BlauColors.palette.grey1 | BlauColors.palette.darkModeBlack
 
-    let border = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey
+     let border = BlauColors.palette.grey3 | BlauColors.palette.darkModeGrey
 
-    let borderHigh = BlauColors.palette.grey5
+     let borderHigh = BlauColors.palette.grey5
 
-    let borderSelected = BlauColors.palette.blauBlueSecondary60
+     let borderSelected = BlauColors.palette.blauBlueSecondary60
 
-    let coverBackgroundHover = BlauColors.palette.darkModeBlack.withAlphaComponent(0.25)
+     let completedStep = BlauColors.palette.blauBlueSecondary
 
-    let coverBackgroundPressed = BlauColors.palette.darkModeBlack.withAlphaComponent(0.35)
+     let completedStepInverse = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.blauBlueSecondary
 
-    let buttonDangerBackground = BlauColors.palette.blauRed
+     let coverBackgroundHover = BlauColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
-    let buttonDangerBackgroundPressed = BlauColors.palette.blauRed70
+     let coverBackgroundPressed = BlauColors.palette.darkModeBlack.withAlphaComponent(0.35)
 
-    let buttonDangerBackgroundHover = BlauColors.palette.blauRed70
+     let buttonDangerBackground = BlauColors.palette.blauRed
 
-    let buttonLinkDangerBackgroundPressed = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
+     let buttonDangerBackgroundPressed = BlauColors.palette.blauRed70
 
-    let buttonLinkDangerBackgroundInverse = BlauColors.palette.white | BlauColors.palette.white.withAlphaComponent(0)
+     let buttonDangerBackgroundHover = BlauColors.palette.blauRed70
 
-    let buttonLinkDangerBackgroundInversePressed = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
+     let buttonLinkDangerBackgroundPressed = BlauColors.palette.blauRed10 | BlauColors.palette.blauRed.withAlphaComponent(0.3)
 
-    let buttonLinkBackgroundPressed = BlauColors.palette.blauPurple10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
+     let buttonLinkDangerBackgroundInverse = BlauColors.palette.white | BlauColors.palette.white.withAlphaComponent(0)
 
-    let buttonLinkBackgroundInversePressed = BlauColors.palette.white.withAlphaComponent(0.15) | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
+     let buttonLinkDangerBackgroundInversePressed = BlauColors.palette.blauRed10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
 
-    let buttonPrimaryBackground = BlauColors.palette.blauBlueSecondary
+     let buttonLinkBackgroundPressed = BlauColors.palette.blauPurple10 | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
 
-    let buttonPrimaryBackgroundInverse = BlauColors.palette.white | BlauColors.palette.blauBluePrimary
+     let buttonLinkBackgroundInversePressed = BlauColors.palette.white.withAlphaComponent(0.15) | BlauColors.palette.blauPurple.withAlphaComponent(0.3)
 
-    let buttonPrimaryBackgroundPressed = BlauColors.palette.blauBlueSecondary60
+     let buttonPrimaryBackground = BlauColors.palette.blauBlueSecondary
 
-    let buttonPrimaryBackgroundHover = BlauColors.palette.blauBlueSecondary60
+     let buttonPrimaryBackgroundInverse = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
 
-    let buttonPrimaryBackgroundInversePressed = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.blauBlueSecondary60
+     let buttonPrimaryBackgroundPressed = BlauColors.palette.blauBlueSecondary60
 
-    let buttonSecondaryBorder = BlauColors.palette.blauBlueSecondary | BlauColors.palette.white
+     let buttonPrimaryBackgroundHover = BlauColors.palette.blauBlueSecondary60
 
-    let buttonSecondaryBorderPressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.white
+     let buttonPrimaryBackgroundInversePressed = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.blauBlueSecondary60
 
-    let buttonSecondaryBorderInverse = BlauColors.palette.white
+     let buttonSecondaryBorder = BlauColors.palette.blauBlueSecondary | BlauColors.palette.white
 
-    let buttonSecondaryBackgroundHover = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBorderPressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.white
 
-    let buttonSecondaryBackgroundPressed = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBorderInverse = BlauColors.palette.white
 
-    let buttonSecondaryBorderInversePressed = BlauColors.palette.white
+     let buttonSecondaryBackgroundHover = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInverseHover = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundPressed = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInversePressed = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBorderInversePressed = BlauColors.palette.white
 
-    let textButtonPrimary = BlauColors.palette.white | BlauColors.palette.grey2
+     let buttonSecondaryBackgroundInverseHover = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
 
-    let textButtonPrimaryInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
+     let buttonSecondaryBackgroundInversePressed = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
 
-    let textButtonPrimaryInversePressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
+     let textButtonPrimary = BlauColors.palette.white | BlauColors.palette.grey2
 
-    let textButtonSecondary = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
+     let textButtonPrimaryInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
 
-    let textButtonSecondaryPressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
+     let textButtonPrimaryInversePressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
 
-    let textButtonSecondaryInverse = BlauColors.palette.white | BlauColors.palette.grey2
+     let textButtonSecondary = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
 
-    let textButtonSecondaryInversePressed = BlauColors.palette.white | BlauColors.palette.grey2
+     let textButtonSecondaryPressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
 
-    let textLink = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
+     let textButtonSecondaryInverse = BlauColors.palette.white | BlauColors.palette.grey2
 
-    let textLinkInverse = BlauColors.palette.white | BlauColors.palette.blauPurple30
+     let textButtonSecondaryInversePressed = BlauColors.palette.white | BlauColors.palette.grey2
 
-    let textLinkDanger = BlauColors.palette.blauRed
+     let textLink = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
 
-    let textLinkSnackbar = BlauColors.palette.blauPurple30
+     let textLinkInverse = BlauColors.palette.white | BlauColors.palette.blauPurple30
 
-    let textActivated = BlauColors.palette.blauBlueSecondary
+     let textLinkDanger = BlauColors.palette.blauRed | BlauColors.palette.blauRed40
 
-    let textBrand = BlauColors.palette.blauBluePrimary
+     let textLinkSnackbar = BlauColors.palette.blauPurple30
 
-    let control = BlauColors.palette.grey5 | BlauColors.palette.darkModeGrey6
+     let textActivated = BlauColors.palette.blauBlueSecondary | BlauColors.palette.blauBluePrimary
 
-    let controlActivated = BlauColors.palette.blauBlueSecondary
+     let textBrand = BlauColors.palette.blauBluePrimary
 
-    let controlInverse = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.darkModeGrey6
+     let inputBorder = BlauColors.palette.grey4 | BlauColors.palette.darkModeGrey5
 
-    let controlActivatedInverse = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
+     let control = BlauColors.palette.grey4
 
-    let controlError = BlauColors.palette.blauRed
+     let controlActivated = BlauColors.palette.blauBlueSecondary
 
-    let barTrack = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
+     let controlInverse = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.grey4
 
-    let barTrackInverse = BlauColors.palette.grey6.withAlphaComponent(0.2) | BlauColors.palette.darkModeGrey6
+     let controlActivatedInverse = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
 
-    let loadingBar = BlauColors.palette.blauBlueSecondary | BlauColors.palette.blauBluePrimary
+     let controlError = BlauColors.palette.blauRed
 
-    let loadingBarBackground = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.darkModeGrey
+     let barTrack = BlauColors.palette.grey3 | BlauColors.palette.grey5
 
-    let toggleAndroidInactive = BlauColors.palette.grey2 | BlauColors.palette.grey5
+     let barTrackInverse = BlauColors.palette.grey6.withAlphaComponent(0.2) | BlauColors.palette.grey5
 
-    let toggleAndroidBackgroundActive = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.blauBlueSecondary30
+     let loadingBar = BlauColors.palette.blauBlueSecondary | BlauColors.palette.blauBluePrimary
 
-    let iosControlKnob = BlauColors.palette.white | BlauColors.palette.grey2
+     let loadingBarBackground = BlauColors.palette.blauBlueSecondary20 | BlauColors.palette.grey5
 
-    let controlKnobInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
+     let toggleAndroidInactive = BlauColors.palette.grey2 | BlauColors.palette.grey3
 
-    let divider = BlauColors.palette.grey2 | BlauColors.palette.white.withAlphaComponent(0.05)
+     let toggleAndroidBackgroundActive = BlauColors.palette.blauBlueSecondary30 | BlauColors.palette.blauBluePrimary30
 
-    let dividerInverse = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.05)
+     let iosControlKnob = BlauColors.palette.white | BlauColors.palette.grey2
 
-    let navigationBarDivider = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
+     let controlKnobInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
 
-    let badge = BlauColors.palette.blauRed
+     let divider = BlauColors.palette.grey3 | BlauColors.palette.white.withAlphaComponent(0.09)
 
-    let feedbackErrorBackground = BlauColors.palette.blauRed
+     let dividerInverse = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.05)
 
-    let feedbackInfoBackground = BlauColors.palette.grey6 | BlauColors.palette.darkModeGrey
+     let navigationBarDivider = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
 
-    let brand = BlauColors.palette.blauBluePrimary
+     let badge = BlauColors.palette.blauRed
 
-    let brandHigh = BlauColors.palette.blauBlueSecondary | BlauColors.palette.white.withAlphaComponent(0.05)
+     let feedbackErrorBackground = BlauColors.palette.blauRed
 
-    let inverse = BlauColors.palette.white | BlauColors.palette.grey2
+     let feedbackInfoBackground = BlauColors.palette.grey6 | BlauColors.palette.darkModeGrey
 
-    let neutralHigh = BlauColors.palette.grey6 | BlauColors.palette.grey2
+     let brand = BlauColors.palette.blauBluePrimary
 
-    let neutralMedium = BlauColors.palette.grey5
+     let brandHigh = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.white.withAlphaComponent(0.05)
 
-    let neutralMediumInverse = BlauColors.palette.grey5
+     let inverse = BlauColors.palette.white | BlauColors.palette.grey2
 
-    let neutralLow = BlauColors.palette.grey1 | BlauColors.palette.darkModeGrey6
+     let neutralHigh = BlauColors.palette.grey6 | BlauColors.palette.grey2
 
-    let neutralLowAlternative = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
+     let neutralMedium = BlauColors.palette.grey5 | BlauColors.palette.grey4
 
-    let textPrimary = BlauColors.palette.grey6 | BlauColors.palette.grey2
+     let neutralMediumInverse = BlauColors.palette.grey5 | BlauColors.palette.grey4
 
-    let textPrimaryInverse = BlauColors.palette.white | BlauColors.palette.grey2
+     let neutralLow = BlauColors.palette.grey1 | BlauColors.palette.darkModeGrey6
 
-    let textSecondary = BlauColors.palette.grey5 | BlauColors.palette.grey4
+     let neutralLowAlternative = BlauColors.palette.grey2 | BlauColors.palette.darkModeGrey6
 
-    let textSecondaryInverse = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.grey4
+     let textPrimary = BlauColors.palette.grey6 | BlauColors.palette.grey2
 
-    let error = BlauColors.palette.blauRed
+     let textPrimaryInverse = BlauColors.palette.white | BlauColors.palette.grey2
 
-    let textError = BlauColors.palette.blauRed
+     let textSecondary = BlauColors.palette.grey5 | BlauColors.palette.grey4
 
-    let textErrorInverse = BlauColors.palette.white | BlauColors.palette.blauRed
+     let textSecondaryInverse = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.grey4
 
-    let success = BlauColors.palette.blauGreen
+     let error = BlauColors.palette.blauRed
 
-    let warning = BlauColors.palette.blauYellow
+     let textError = BlauColors.palette.blauRed | BlauColors.palette.blauRed40
 
-    let promo = BlauColors.palette.blauPurple
+     let textErrorInverse = BlauColors.palette.white | BlauColors.palette.blauRed40
 
-    let highlight = BlauColors.palette.blauBluePrimary
+     let success = BlauColors.palette.blauGreen70 | BlauColors.palette.blauGreen
 
-    let successLow = BlauColors.palette.blauGreen10 | BlauColors.palette.darkModeGrey6
+     let warning = BlauColors.palette.blauYellow65 | BlauColors.palette.blauYellow
 
-    let warningLow = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
+     let promo = BlauColors.palette.blauPurple
 
-    let errorLow = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
+     let highlight = BlauColors.palette.blauBluePrimary
 
-    let promoLow = BlauColors.palette.blauPurple10 | BlauColors.palette.darkModeGrey6
+     let successLow = BlauColors.palette.blauGreen10 | BlauColors.palette.darkModeGrey6
 
-    let brandLow = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.darkModeGrey6
+     let warningLow = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
 
-    let successHigh = BlauColors.palette.blauGreen70 | BlauColors.palette.blauGreen30
+     let errorLow = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
 
-    let warningHigh = BlauColors.palette.blauYellow70 | BlauColors.palette.blauYellow40
+     let promoLow = BlauColors.palette.blauPurple10 | BlauColors.palette.darkModeGrey6
 
-    let errorHigh = BlauColors.palette.blauRed70 | BlauColors.palette.blauRed40
+     let brandLow = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.darkModeGrey6
 
-    let promoHigh = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
+     let successHigh = BlauColors.palette.blauGreen70 | BlauColors.palette.blauGreen30
 
-    let successHighInverse = BlauColors.palette.blauGreen70
+     let warningHigh = BlauColors.palette.blauYellow70 | BlauColors.palette.blauYellow40
 
-    let warningHighInverse = BlauColors.palette.blauYellow70
+     let errorHigh = BlauColors.palette.blauRed70 | BlauColors.palette.blauRed40
 
-    let errorHighInverse = BlauColors.palette.blauRed70
+     let promoHigh = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
 
-    let promoHighInverse = BlauColors.palette.blauPurple
+     let successHighInverse = BlauColors.palette.blauGreen70
 
-    let textNavigationBarPrimary = BlauColors.palette.white | BlauColors.palette.grey2
+     let warningHighInverse = BlauColors.palette.blauYellow70
 
-    let textNavigationBarSecondary = BlauColors.palette.blauBlueSecondary20 | BlauColors.palette.grey4
+     let errorHighInverse = BlauColors.palette.blauRed70
 
-    let textNavigationSearchBarHint = BlauColors.palette.blauBlueSecondary20 | BlauColors.palette.grey4
+     let promoHighInverse = BlauColors.palette.blauPurple
 
-    let textNavigationSearchBarText = BlauColors.palette.white | BlauColors.palette.grey2
+     let textNavigationBarPrimary = BlauColors.palette.grey6 | BlauColors.palette.grey2
 
-    let textAppBar = BlauColors.palette.grey5
+     let textNavigationBarSecondary = BlauColors.palette.grey6 | BlauColors.palette.grey4
 
-    let textAppBarSelected = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
+     let textNavigationSearchBarHint = BlauColors.palette.grey6 | BlauColors.palette.grey4
 
-    let customTabsBackground = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
+     let textNavigationSearchBarText = BlauColors.palette.grey6 | BlauColors.palette.grey2
 
-    let tagTextPromo = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
+     let textAppBar = BlauColors.palette.grey5
 
-    let tagTextActive = BlauColors.palette.blauBluePrimary
+     let textAppBarSelected = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
 
-    let tagTextInactive = BlauColors.palette.grey5
+     let customTabsBackground = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
 
-    let tagTextSuccess = BlauColors.palette.blauGreen70 | BlauColors.palette.blauGreen30
+     let tagTextPromo = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
 
-    let tagTextWarning = BlauColors.palette.blauYellow70 | BlauColors.palette.blauYellow40
+     let tagTextActive = BlauColors.palette.blauBlueSecondary | BlauColors.palette.blauBluePrimary
 
-    let tagTextError = BlauColors.palette.blauRed70 | BlauColors.palette.blauRed40
+     let tagTextInactive = BlauColors.palette.grey5 | BlauColors.palette.grey4
 
-    let tagBackgroundPromo = BlauColors.palette.blauPurple10 | BlauColors.palette.darkModeGrey6
+     let tagTextInfo = BlauColors.palette.blauBlueSecondary | BlauColors.palette.blauBluePrimary
 
-    let tagBackgroundActive = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.darkModeGrey6
+     let tagTextSuccess = BlauColors.palette.blauGreen70 | BlauColors.palette.blauGreen30
 
-    let tagBackgroundInactive = BlauColors.palette.grey1 | BlauColors.palette.darkModeGrey6
+     let tagTextWarning = BlauColors.palette.blauYellow70 | BlauColors.palette.blauYellow40
 
-    let tagBackgroundSuccess = BlauColors.palette.blauGreen10 | BlauColors.palette.darkModeGrey6
+     let tagTextError = BlauColors.palette.blauRed70 | BlauColors.palette.blauRed40
 
-    let tagBackgroundWarning = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
+     let tagBackgroundPromo = BlauColors.palette.blauPurple10 | BlauColors.palette.darkModeGrey6
 
-    let tagBackgroundError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
+     let tagBackgroundActive = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.darkModeGrey6
 
-    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+     let tagBackgroundInactive = BlauColors.palette.grey1 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundInfo = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundSuccess = BlauColors.palette.blauGreen10 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundWarning = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundError = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
+
+     let tagTextPromoInverse = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
+
+     let tagTextActiveInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.blauBluePrimary
+
+     let tagTextInactiveInverse = BlauColors.palette.grey5 | BlauColors.palette.grey4
+
+     let tagTextInfoInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.blauBluePrimary
+
+     let tagTextSuccessInverse = BlauColors.palette.blauGreen70 | BlauColors.palette.blauGreen30
+
+     let tagTextWarningInverse = BlauColors.palette.blauYellow70 | BlauColors.palette.blauYellow40
+
+     let tagTextErrorInverse = BlauColors.palette.blauRed70 | BlauColors.palette.blauRed40
+
+     let tagBackgroundPromoInverse = BlauColors.palette.blauPurple10 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundActiveInverse = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundInactiveInverse = BlauColors.palette.grey1 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundInfoInverse = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundSuccessInverse = BlauColors.palette.blauGreen10 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundWarningInverse = BlauColors.palette.blauYellow10 | BlauColors.palette.darkModeGrey6
+
+     let tagBackgroundErrorInverse = BlauColors.palette.blauRed10 | BlauColors.palette.darkModeGrey6
+
+     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [
             BlauColors.palette.grey6.withAlphaComponent(0),
             BlauColors.palette.grey6.withAlphaComponent(0.4),
             BlauColors.palette.grey6.withAlphaComponent(0.7)
         ],
-        stops: [0, 0.3, 1],
+        stops: [0,0.3,1],
         angle: 180
     ))
 }
 
-public struct BlauColorPalette: Sendable {
+public struct BlauColorPalette {
     public init() {}
     public let blauBluePrimary = UIColor(hex: "#00B6F1")!
     public let blauBluePrimary10 = UIColor(hex: "#F7FDFF")!
@@ -303,25 +337,27 @@ public struct BlauColorPalette: Sendable {
     public let blauYellow10 = UIColor(hex: "#FFF6E9")!
     public let blauYellow40 = UIColor(hex: "#FFC364")!
     public let blauYellow60 = UIColor(hex: "#F09500")!
+    public let blauYellow65 = UIColor(hex: "#D28200")!
     public let blauYellow70 = UIColor(hex: "#996614")!
     public let blauGreen = UIColor(hex: "#30D300")!
     public let blauGreen10 = UIColor(hex: "#EAFBE5")!
     public let blauGreen30 = UIColor(hex: "#97E980")!
     public let blauGreen70 = UIColor(hex: "#1D7F00")!
-    public let blauRed = UIColor(hex: "#F64417")!
+    public let blauRed = UIColor(hex: "#D12937")!
     public let blauRed10 = UIColor(hex: "#FEECE8")!
     public let blauRed20 = UIColor(hex: "#FCC7B9")!
     public let blauRed30 = UIColor(hex: "#FA9E87")!
     public let blauRed40 = UIColor(hex: "#F97C5D")!
-    public let blauRed70 = UIColor(hex: "#C93712")!
-    public let grey1 = UIColor(hex: "#F5F9FA")!
-    public let grey2 = UIColor(hex: "#E7E7E7")!
-    public let grey3 = UIColor(hex: "#B8B8B8")!
-    public let grey4 = UIColor(hex: "#A0A0A0")!
-    public let grey5 = UIColor(hex: "#808285")!
+    public let blauRed70 = UIColor(hex: "#BC3310")!
+    public let grey1 = UIColor(hex: "#F6F6F6")!
+    public let grey2 = UIColor(hex: "#F2F2F2")!
+    public let grey3 = UIColor(hex: "#DDDDDD")!
+    public let grey4 = UIColor(hex: "#8A8C90")!
+    public let grey5 = UIColor(hex: "#666666")!
     public let grey6 = UIColor(hex: "#000000")!
     public let white = UIColor(hex: "#FFFFFF")!
     public let darkModeBlack = UIColor(hex: "#191919")!
     public let darkModeGrey = UIColor(hex: "#242424")!
+    public let darkModeGrey5 = UIColor(hex: "#6D7D88")!
     public let darkModeGrey6 = UIColor(hex: "#313235")!
 }

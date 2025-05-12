@@ -1,14 +1,10 @@
-//
-//  MisticaFontWeights.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
-public protocol MisticaFontWeights: Sendable {
+public protocol MisticaFontWeights {
     var cardTitle: MisticaFontWeightType { get }
     var button: MisticaFontWeightType { get }
     var tabsLabel: MisticaFontWeightType { get }

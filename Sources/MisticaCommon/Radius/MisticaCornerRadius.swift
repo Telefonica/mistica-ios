@@ -1,10 +1,6 @@
-//
-//  MisticaCornerRadius.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import Foundation
 
@@ -12,7 +8,7 @@ public enum MisticaRadiusConstants {
     static let roundedRadius: CGFloat = 999.0
 }
 
-public protocol MisticaCornerRadius: Sendable {
+public protocol MisticaCornerRadius {
     var avatar: CGFloat { get }
     var bar: CGFloat { get }
     var button: CGFloat { get }

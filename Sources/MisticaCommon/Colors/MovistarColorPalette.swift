@@ -1,291 +1,325 @@
-//
-//  MovistarColorPalette.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
 struct MovistarColors: MisticaColors {
     static let palette = MovistarColorPalette()
 
-    let backgroundBrand = MisticaColor.solid(MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack)
+     let background = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
 
-    let backgroundBrandSecondary = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeBlack
+     let backgroundAlternative = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeBlack
 
-    let appBarBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
+     let backgroundBrand = MisticaColor.solid(MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack)
 
-    let background = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
+     let backgroundBrandSecondary = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeBlack
 
-    let backgroundContainer = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
+     let backgroundContainer = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
 
-    let backgroundContainerError = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey
+     let backgroundContainerError = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey
 
-    let backgroundContainerHover = MovistarColors.palette.black.withAlphaComponent(0.05) | MovistarColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerHover = MovistarColors.palette.black.withAlphaComponent(0.05) | MovistarColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerPressed = MovistarColors.palette.black.withAlphaComponent(0.08) | MovistarColors.palette.white.withAlphaComponent(0.08)
+     let backgroundContainerPressed = MovistarColors.palette.black.withAlphaComponent(0.08) | MovistarColors.palette.white.withAlphaComponent(0.08)
 
-    let backgroundContainerBrand = MisticaColor.solid(MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeGrey)
+     let backgroundContainerBrand = MisticaColor.solid(MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeGrey)
 
-    let backgroundContainerBrandHover = MovistarColors.palette.black.withAlphaComponent(0.1) | MovistarColors.palette.white.withAlphaComponent(0.03)
+     let backgroundContainerBrandHover = MovistarColors.palette.black.withAlphaComponent(0.1) | MovistarColors.palette.white.withAlphaComponent(0.03)
 
-    let backgroundContainerBrandPressed = MovistarColors.palette.black.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerBrandPressed = MovistarColors.palette.black.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrandOverInverse = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.darkModeGrey
+     let backgroundContainerBrandOverInverse = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.darkModeGrey
 
-    let backgroundContainerAlternative = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeGrey
+     let backgroundContainerAlternative = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeGrey
 
-    let backgroundOverlay = MovistarColors.palette.movistarBlueDark.withAlphaComponent(0.6) | MovistarColors.palette.darkModeGrey.withAlphaComponent(0.8)
+     let backgroundOverlay = MovistarColors.palette.movistarBlueDark.withAlphaComponent(0.6) | MovistarColors.palette.darkModeGrey.withAlphaComponent(0.8)
 
-    let backgroundSkeleton = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
+     let backgroundSkeleton = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
 
-    let backgroundSkeletonInverse = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.darkModeGrey6
+     let backgroundSkeletonInverse = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.darkModeGrey6
 
-    let navigationBarBackground = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
+     let backgroundBrandTop = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
 
-    let backgroundAlternative = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeBlack
+     let backgroundBrandBottom = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
 
-    let backgroundBrandTop = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
+     let appBarBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
 
-    let backgroundBrandBottom = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
+     let navigationBarBackground = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
 
-    let skeletonWave = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
+     let skeletonWave = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
 
-    let borderLow = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeBlack
+     let borderLow = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeBlack
 
-    let border = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey
+     let border = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey
 
-    let borderHigh = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey5
+     let borderHigh = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey5
 
-    let borderSelected = MovistarColors.palette.movistarBlue
+     let borderSelected = MovistarColors.palette.movistarBlue
 
-    let coverBackgroundHover = MovistarColors.palette.black.withAlphaComponent(0.25) | MovistarColors.palette.darkModeBlack.withAlphaComponent(0.25)
+     let completedStep = MovistarColors.palette.movistarBlueHC
 
-    let coverBackgroundPressed = MovistarColors.palette.black.withAlphaComponent(0.35) | MovistarColors.palette.darkModeBlack.withAlphaComponent(0.35)
+     let completedStepInverse = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.movistarBlueHC
 
-    let buttonDangerBackground = MovistarColors.palette.pepper55
+     let coverBackgroundHover = MovistarColors.palette.black.withAlphaComponent(0.25) | MovistarColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
-    let buttonDangerBackgroundPressed = MovistarColors.palette.pepper70
+     let coverBackgroundPressed = MovistarColors.palette.black.withAlphaComponent(0.35) | MovistarColors.palette.darkModeBlack.withAlphaComponent(0.35)
 
-    let buttonDangerBackgroundHover = MovistarColors.palette.pepper65
+     let buttonDangerBackground = MovistarColors.palette.pepper55
 
-    let buttonLinkDangerBackgroundPressed = MovistarColors.palette.pepper10 | MovistarColors.palette.white.withAlphaComponent(0.08)
+     let buttonDangerBackgroundPressed = MovistarColors.palette.pepper70
 
-    let buttonLinkDangerBackgroundInverse = MovistarColors.palette.white | MovistarColors.palette.white.withAlphaComponent(0)
+     let buttonDangerBackgroundHover = MovistarColors.palette.pepper65
 
-    let buttonLinkDangerBackgroundInversePressed = MovistarColors.palette.pepper10 | MovistarColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundPressed = MovistarColors.palette.pepper10 | MovistarColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundPressed = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundInverse = MovistarColors.palette.white | MovistarColors.palette.white.withAlphaComponent(0)
 
-    let buttonLinkBackgroundInversePressed = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundInversePressed = MovistarColors.palette.pepper10 | MovistarColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonPrimaryBackground = MovistarColors.palette.movistarBlueHC
+     let buttonLinkBackgroundPressed = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonPrimaryBackgroundInverse = MovistarColors.palette.white | MovistarColors.palette.movistarBlueHC
+     let buttonLinkBackgroundInversePressed = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonPrimaryBackgroundPressed = MovistarColors.palette.movistarBlueHC65
+     let buttonPrimaryBackground = MovistarColors.palette.movistarBlueHC
 
-    let buttonPrimaryBackgroundHover = MovistarColors.palette.movistarBlueHC55
+     let buttonPrimaryBackgroundInverse = MovistarColors.palette.white | MovistarColors.palette.movistarBlueHC
 
-    let buttonPrimaryBackgroundInversePressed = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.movistarBlueHC65
+     let buttonPrimaryBackgroundPressed = MovistarColors.palette.movistarBlueHC65
 
-    let buttonSecondaryBorder = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.white
+     let buttonPrimaryBackgroundHover = MovistarColors.palette.movistarBlueHC55
 
-    let buttonSecondaryBorderPressed = MovistarColors.palette.movistarBlueHC65 | MovistarColors.palette.white
+     let buttonPrimaryBackgroundInversePressed = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.movistarBlueHC65
 
-    let buttonSecondaryBorderInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+     let buttonSecondaryBorder = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.white
 
-    let buttonSecondaryBackgroundHover = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBorderPressed = MovistarColors.palette.movistarBlueHC65 | MovistarColors.palette.white
 
-    let buttonSecondaryBackgroundPressed = MovistarColors.palette.movistarBlue15 | MovistarColors.palette.white.withAlphaComponent(0.25)
+     let buttonSecondaryBorderInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
-    let buttonSecondaryBorderInversePressed = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+     let buttonSecondaryBackgroundHover = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInverseHover = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundPressed = MovistarColors.palette.movistarBlue15 | MovistarColors.palette.white.withAlphaComponent(0.25)
 
-    let buttonSecondaryBackgroundInversePressed = MovistarColors.palette.white.withAlphaComponent(0.3) | MovistarColors.palette.white.withAlphaComponent(0.25)
+     let buttonSecondaryBorderInversePressed = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
-    let textButtonPrimary = MovistarColors.palette.white
+     let buttonSecondaryBackgroundInverseHover = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.15)
 
-    let textButtonPrimaryInverse = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.white
+     let buttonSecondaryBackgroundInversePressed = MovistarColors.palette.white.withAlphaComponent(0.3) | MovistarColors.palette.white.withAlphaComponent(0.25)
 
-    let textButtonPrimaryInversePressed = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.white
+     let textButtonPrimary = MovistarColors.palette.white
 
-    let textButtonSecondary = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.darkModeGrey2
+     let textButtonPrimaryInverse = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.white
 
-    let textButtonSecondaryPressed = MovistarColors.palette.movistarBlueHC55 | MovistarColors.palette.darkModeGrey2
+     let textButtonPrimaryInversePressed = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.white
 
-    let textButtonSecondaryInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+     let textButtonSecondary = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.darkModeGrey2
 
-    let textButtonSecondaryInversePressed = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+     let textButtonSecondaryPressed = MovistarColors.palette.movistarBlueHC55 | MovistarColors.palette.darkModeGrey2
 
-    let textLink = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
+     let textButtonSecondaryInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
-    let textLinkInverse = MovistarColors.palette.white | MovistarColors.palette.movistarBlue
+     let textButtonSecondaryInversePressed = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
-    let textLinkDanger = MovistarColors.palette.pepper60 | MovistarColors.palette.pepper45
+     let textLink = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
 
-    let textLinkSnackbar = MovistarColors.palette.movistarBlue30 | MovistarColors.palette.movistarBlue
+     let textLinkInverse = MovistarColors.palette.white | MovistarColors.palette.movistarBlue
 
-    let textActivated = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
+     let textLinkDanger = MovistarColors.palette.pepper60 | MovistarColors.palette.pepper45
 
-    let textBrand = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
+     let textLinkSnackbar = MovistarColors.palette.movistarBlue30 | MovistarColors.palette.movistarBlue
 
-    let control = MovistarColors.palette.grey4 | MovistarColors.palette.darkModeGrey4
+     let textActivated = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
 
-    let controlActivated = MovistarColors.palette.movistarBlue
+     let textBrand = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
 
-    let controlInverse = MovistarColors.palette.movistarBlue20 | MovistarColors.palette.darkModeGrey4
+     let inputBorder = MovistarColors.palette.grey4 | MovistarColors.palette.darkModeGrey4
 
-    let controlActivatedInverse = MovistarColors.palette.white | MovistarColors.palette.movistarBlue
+     let control = MovistarColors.palette.grey4 | MovistarColors.palette.darkModeGrey4
 
-    let controlError = MovistarColors.palette.pepper55 | MovistarColors.palette.pepper45
+     let controlActivated = MovistarColors.palette.movistarBlue
 
-    let barTrack = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey6
+     let controlInverse = MovistarColors.palette.movistarBlue20 | MovistarColors.palette.darkModeGrey4
 
-    let barTrackInverse = MovistarColors.palette.black.withAlphaComponent(0.14) | MovistarColors.palette.darkModeGrey6
+     let controlActivatedInverse = MovistarColors.palette.white | MovistarColors.palette.movistarBlue
 
-    let loadingBar = MovistarColors.palette.movistarBlue
+     let controlError = MovistarColors.palette.pepper55 | MovistarColors.palette.pepper45
 
-    let loadingBarBackground = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
+     let barTrack = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey6
 
-    let toggleAndroidInactive = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey2
+     let barTrackInverse = MovistarColors.palette.black.withAlphaComponent(0.14) | MovistarColors.palette.darkModeGrey6
 
-    let toggleAndroidBackgroundActive = MovistarColors.palette.movistarBlue20
+     let loadingBar = MovistarColors.palette.movistarBlue
 
-    let iosControlKnob = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+     let loadingBarBackground = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
 
-    let controlKnobInverse = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeGrey2
+     let toggleAndroidInactive = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey2
 
-    let divider = MovistarColors.palette.grey3 | MovistarColors.palette.white.withAlphaComponent(0.1)
+     let toggleAndroidBackgroundActive = MovistarColors.palette.movistarBlue20
 
-    let dividerInverse = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.1)
+     let iosControlKnob = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
-    let navigationBarDivider = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
+     let controlKnobInverse = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeGrey2
 
-    let badge = MovistarColors.palette.pepper55
+     let divider = MovistarColors.palette.grey3 | MovistarColors.palette.white.withAlphaComponent(0.1)
 
-    let feedbackErrorBackground = MovistarColors.palette.pepper55
+     let dividerInverse = MovistarColors.palette.white.withAlphaComponent(0.2) | MovistarColors.palette.white.withAlphaComponent(0.1)
 
-    let feedbackInfoBackground = MovistarColors.palette.movistarBlueDark
+     let navigationBarDivider = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
 
-    let brand = MovistarColors.palette.movistarBlue
+     let badge = MovistarColors.palette.pepper55
 
-    let brandHigh = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.movistarBlue40
+     let feedbackErrorBackground = MovistarColors.palette.pepper55
 
-    let inverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+     let feedbackInfoBackground = MovistarColors.palette.movistarBlueDark
 
-    let neutralHigh = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeGrey2
+     let brand = MovistarColors.palette.movistarBlue
 
-    let neutralMedium = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey5
+     let brandHigh = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.movistarBlue40
 
-    let neutralMediumInverse = MovistarColors.palette.grey5
+     let inverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
-    let neutralLow = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeGrey6
+     let neutralHigh = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeGrey2
 
-    let neutralLowAlternative = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
+     let neutralMedium = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey5
 
-    let textPrimary = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeGrey2
+     let neutralMediumInverse = MovistarColors.palette.grey5
 
-    let textPrimaryInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+     let neutralLow = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeGrey7
 
-    let textSecondary = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey4
+     let neutralLowAlternative = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey7
 
-    let textSecondaryInverse = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey4
+     let textPrimary = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeGrey2
 
-    let error = MovistarColors.palette.pepper55 | MovistarColors.palette.pepper45
+     let textPrimaryInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
-    let textError = MovistarColors.palette.pepper55 | MovistarColors.palette.pepper45
+     let textSecondary = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey4
 
-    let textErrorInverse = MovistarColors.palette.white | MovistarColors.palette.pepper45
+     let textSecondaryInverse = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey4
 
-    let success = MovistarColors.palette.movistarGreen55 | MovistarColors.palette.movistarGreen
+     let error = MovistarColors.palette.pepper55 | MovistarColors.palette.pepper45
 
-    let warning = MovistarColors.palette.egg55 | MovistarColors.palette.egg
+     let textError = MovistarColors.palette.pepper55 | MovistarColors.palette.pepper45
 
-    let promo = MovistarColors.palette.purple | MovistarColors.palette.purple40
+     let textErrorInverse = MovistarColors.palette.white | MovistarColors.palette.pepper45
 
-    let highlight = MovistarColors.palette.pink55 | MovistarColors.palette.pink45
+     let success = MovistarColors.palette.movistarGreen55 | MovistarColors.palette.movistarGreen
 
-    let successLow = MovistarColors.palette.movistarGreen10 | MovistarColors.palette.darkModeGrey7
+     let warning = MovistarColors.palette.egg55 | MovistarColors.palette.egg
 
-    let warningLow = MovistarColors.palette.egg10 | MovistarColors.palette.darkModeGrey7
+     let promo = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
-    let errorLow = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey7
+     let highlight = MovistarColors.palette.pink55 | MovistarColors.palette.pink45
 
-    let promoLow = MovistarColors.palette.purple10 | MovistarColors.palette.darkModeGrey7
+     let successLow = MovistarColors.palette.movistarGreen10 | MovistarColors.palette.darkModeGrey7
 
-    let brandLow = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey7
+     let warningLow = MovistarColors.palette.egg10 | MovistarColors.palette.darkModeGrey7
 
-    let successHigh = MovistarColors.palette.movistarGreen70 | MovistarColors.palette.movistarGreen40
+     let errorLow = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey7
 
-    let warningHigh = MovistarColors.palette.egg80 | MovistarColors.palette.egg40
+     let promoLow = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey7
 
-    let errorHigh = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
+     let brandLow = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey7
 
-    let promoHigh = MovistarColors.palette.purple70 | MovistarColors.palette.purple35
+     let successHigh = MovistarColors.palette.movistarGreen70 | MovistarColors.palette.movistarGreen40
 
-    let successHighInverse = MovistarColors.palette.movistarGreen70
+     let warningHigh = MovistarColors.palette.egg80 | MovistarColors.palette.egg40
 
-    let warningHighInverse = MovistarColors.palette.egg80
+     let errorHigh = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
-    let errorHighInverse = MovistarColors.palette.pepper70
+     let promoHigh = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
-    let promoHighInverse = MovistarColors.palette.purple70
+     let successHighInverse = MovistarColors.palette.movistarGreen70
 
-    let textNavigationBarPrimary = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+     let warningHighInverse = MovistarColors.palette.egg80
 
-    let textNavigationBarSecondary = MovistarColors.palette.movistarBlue20 | MovistarColors.palette.darkModeGrey4
+     let errorHighInverse = MovistarColors.palette.pepper70
 
-    let textNavigationSearchBarHint = MovistarColors.palette.movistarBlue20 | MovistarColors.palette.darkModeGrey4
+     let promoHighInverse = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
-    let textNavigationSearchBarText = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
+     let textNavigationBarPrimary = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
-    let textAppBar = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey4
+     let textNavigationBarSecondary = MovistarColors.palette.movistarBlue20 | MovistarColors.palette.darkModeGrey4
 
-    let textAppBarSelected = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
+     let textNavigationSearchBarHint = MovistarColors.palette.movistarBlue20 | MovistarColors.palette.darkModeGrey4
 
-    let customTabsBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
+     let textNavigationSearchBarText = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey2
 
-    let tagTextPromo = MovistarColors.palette.purple70 | MovistarColors.palette.purple35
+     let textAppBar = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey4
 
-    let tagTextActive = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
+     let textAppBarSelected = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
 
-    let tagTextInactive = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey3
+     let customTabsBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
 
-    let tagTextSuccess = MovistarColors.palette.movistarGreen70 | MovistarColors.palette.movistarGreen40
+     let tagTextPromo = MovistarColors.palette.white
 
-    let tagTextWarning = MovistarColors.palette.egg80 | MovistarColors.palette.egg40
+     let tagTextActive = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
 
-    let tagTextError = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
+     let tagTextInactive = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey3
 
-    let tagBackgroundPromo = MovistarColors.palette.purple10 | MovistarColors.palette.darkModeGrey7
+     let tagTextInfo = MovistarColors.palette.white
 
-    let tagBackgroundActive = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey7
+     let tagTextSuccess = MovistarColors.palette.movistarGreen70 | MovistarColors.palette.movistarGreen40
 
-    let tagBackgroundInactive = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeGrey7
+     let tagTextWarning = MovistarColors.palette.egg80 | MovistarColors.palette.egg40
 
-    let tagBackgroundSuccess = MovistarColors.palette.movistarGreen10 | MovistarColors.palette.darkModeGrey7
+     let tagTextError = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
 
-    let tagBackgroundWarning = MovistarColors.palette.egg10 | MovistarColors.palette.darkModeGrey7
+     let tagBackgroundPromo = MovistarColors.palette.pepper70
 
-    let tagBackgroundError = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey7
+     let tagBackgroundActive = MovistarColors.palette.movistarBlue10 | MovistarColors.palette.darkModeGrey7
 
-    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+     let tagBackgroundInactive = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeGrey7
+
+     let tagBackgroundInfo = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeGrey7
+
+     let tagBackgroundSuccess = MovistarColors.palette.movistarGreen10 | MovistarColors.palette.darkModeGrey7
+
+     let tagBackgroundWarning = MovistarColors.palette.egg10 | MovistarColors.palette.darkModeGrey7
+
+     let tagBackgroundError = MovistarColors.palette.pepper10 | MovistarColors.palette.darkModeGrey7
+
+     let tagTextPromoInverse = MovistarColors.palette.pepper70 | MovistarColors.palette.white
+
+     let tagTextActiveInverse = MovistarColors.palette.movistarBlueHC | MovistarColors.palette.movistarBlue
+
+     let tagTextInactiveInverse = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey3
+
+     let tagTextInfoInverse = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.white
+
+     let tagTextSuccessInverse = MovistarColors.palette.movistarGreen70 | MovistarColors.palette.movistarGreen40
+
+     let tagTextWarningInverse = MovistarColors.palette.egg80 | MovistarColors.palette.egg40
+
+     let tagTextErrorInverse = MovistarColors.palette.pepper70 | MovistarColors.palette.pepper45
+
+     let tagBackgroundPromoInverse = MovistarColors.palette.white | MovistarColors.palette.pepper70
+
+     let tagBackgroundActiveInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+     let tagBackgroundInactiveInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+     let tagBackgroundInfoInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+     let tagBackgroundSuccessInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+     let tagBackgroundWarningInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+     let tagBackgroundErrorInverse = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey7
+
+     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [
             MovistarColors.palette.black.withAlphaComponent(0),
             MovistarColors.palette.black.withAlphaComponent(0.4),
             MovistarColors.palette.black.withAlphaComponent(0.7)
         ],
-        stops: [0, 0.3, 1],
+        stops: [0,0.3,1],
         angle: 180
     ))
 }
 
-public struct MovistarColorPalette: Sendable {
+public struct MovistarColorPalette {
     public init() {}
     public let movistarBlue = UIColor(hex: "#0B9CEA")!
     public let movistarBlue10 = UIColor(hex: "#E6F5FD")!
@@ -338,7 +372,7 @@ public struct MovistarColorPalette: Sendable {
     public let darkModeGrey = UIColor(hex: "#081F2E")!
     public let darkModeGrey2 = UIColor(hex: "#EAEBEE")!
     public let darkModeGrey3 = UIColor(hex: "#CED4D7")!
-    public let darkModeGrey4 = UIColor(hex: "#85939C")!
+    public let darkModeGrey4 = UIColor(hex: "#89969F")!
     public let darkModeGrey5 = UIColor(hex: "#6D7D88")!
     public let darkModeGrey6 = UIColor(hex: "#3C5261")!
     public let darkModeGrey7 = UIColor(hex: "#032F46")!

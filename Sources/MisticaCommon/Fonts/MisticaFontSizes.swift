@@ -1,14 +1,10 @@
-//
-//  MisticaFontSizes.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import Foundation
 
-public protocol MisticaFontSizes: Sendable {
+public protocol MisticaFontSizes {
     var tabsLabel: CGFloat { get }
     var title3: CGFloat { get }
     var text1: CGFloat { get }

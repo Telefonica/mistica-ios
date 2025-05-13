@@ -323,7 +323,7 @@ struct BlauColors: MisticaColors {
     ))
 }
 
-public struct BlauColorPalette {
+public struct BlauColorPalette: Sendable {
     public init() {}
     public let blauBluePrimary = UIColor(hex: "#00B6F1")!
     public let blauBluePrimary10 = UIColor(hex: "#F7FDFF")!

@@ -341,7 +341,7 @@ struct O2NewColors: MisticaColors {
     ))
 }
 
-public struct O2NewColorPalette {
+public struct O2NewColorPalette: Sendable {
     public init() {}
     public let beyondBlue = UIColor(hex: "#0050FF")!
     public let beyondBlue10 = UIColor(hex: "#E5EDFF")!

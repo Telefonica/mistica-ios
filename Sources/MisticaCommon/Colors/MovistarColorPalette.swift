@@ -323,7 +323,7 @@ struct MovistarColors: MisticaColors {
     ))
 }
 
-public struct MovistarColorPalette {
+public struct MovistarColorPalette: Sendable {
     public init() {}
     public let movistarBlue = UIColor(hex: "#0B9CEA")!
     public let movistarBlue10 = UIColor(hex: "#E6F5FD")!

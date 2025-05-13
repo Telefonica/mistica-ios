@@ -323,7 +323,7 @@ struct TuColors: MisticaColors {
     ))
 }
 
-public struct TuColorPalette {
+public struct TuColorPalette: Sendable {
     public init() {}
     public let primary = UIColor(hex: "#2B3447")!
     public let primary10 = UIColor(hex: "#EAEBED")!

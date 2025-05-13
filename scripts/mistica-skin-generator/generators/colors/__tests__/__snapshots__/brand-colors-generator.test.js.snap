@@ -298,7 +298,7 @@ struct Brand1Colors: MisticaColors {
     ))
 }
 
-public struct Brand1ColorPalette {
+public struct Brand1ColorPalette: Sendable {
     public init() {}
     public let beyondBlue = UIColor(hex: "#0050FF")!
     public let beyondBlue10 = UIColor(hex: "#E5EDFF")!

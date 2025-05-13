@@ -9,16 +9,16 @@
 import SwiftUI
 
 public extension Color {
-    static var backgroundBrandSecondary: Color {
-        MisticaConfig.currentColors.backgroundBrandSecondary.color
-    }
-
-    static var appBarBackground: Color {
-        MisticaConfig.currentColors.appBarBackground.color
-    }
-
     static var background: Color {
         MisticaConfig.currentColors.background.color
+    }
+
+    static var backgroundAlternative: Color {
+        MisticaConfig.currentColors.backgroundAlternative.color
+    }
+
+    static var backgroundBrandSecondary: Color {
+        MisticaConfig.currentColors.backgroundBrandSecondary.color
     }
 
     static var backgroundContainer: Color {
@@ -65,20 +65,20 @@ public extension Color {
         MisticaConfig.currentColors.backgroundSkeletonInverse.color
     }
 
-    static var navigationBarBackground: Color {
-        MisticaConfig.currentColors.navigationBarBackground.color
-    }
-
-    static var backgroundAlternative: Color {
-        MisticaConfig.currentColors.backgroundAlternative.color
-    }
-
     static var backgroundBrandTop: Color {
         MisticaConfig.currentColors.backgroundBrandTop.color
     }
 
     static var backgroundBrandBottom: Color {
         MisticaConfig.currentColors.backgroundBrandBottom.color
+    }
+
+    static var appBarBackground: Color {
+        MisticaConfig.currentColors.appBarBackground.color
+    }
+
+    static var navigationBarBackground: Color {
+        MisticaConfig.currentColors.navigationBarBackground.color
     }
 
     static var skeletonWave: Color {
@@ -99,6 +99,14 @@ public extension Color {
 
     static var borderSelected: Color {
         MisticaConfig.currentColors.borderSelected.color
+    }
+
+    static var completedStep: Color {
+        MisticaConfig.currentColors.completedStep.color
+    }
+
+    static var completedStepInverse: Color {
+        MisticaConfig.currentColors.completedStepInverse.color
     }
 
     static var coverBackgroundHover: Color {
@@ -243,6 +251,10 @@ public extension Color {
 
     static var textBrand: Color {
         MisticaConfig.currentColors.textBrand.color
+    }
+
+    static var inputBorder: Color {
+        MisticaConfig.currentColors.inputBorder.color
     }
 
     static var control: Color {
@@ -489,6 +501,10 @@ public extension Color {
         MisticaConfig.currentColors.tagTextInactive.color
     }
 
+    static var tagTextInfo: Color {
+        MisticaConfig.currentColors.tagTextInfo.color
+    }
+
     static var tagTextSuccess: Color {
         MisticaConfig.currentColors.tagTextSuccess.color
     }
@@ -513,6 +529,10 @@ public extension Color {
         MisticaConfig.currentColors.tagBackgroundInactive.color
     }
 
+    static var tagBackgroundInfo: Color {
+        MisticaConfig.currentColors.tagBackgroundInfo.color
+    }
+
     static var tagBackgroundSuccess: Color {
         MisticaConfig.currentColors.tagBackgroundSuccess.color
     }
@@ -523,6 +543,62 @@ public extension Color {
 
     static var tagBackgroundError: Color {
         MisticaConfig.currentColors.tagBackgroundError.color
+    }
+
+    static var tagTextPromoInverse: Color {
+        MisticaConfig.currentColors.tagTextPromoInverse.color
+    }
+
+    static var tagTextActiveInverse: Color {
+        MisticaConfig.currentColors.tagTextActiveInverse.color
+    }
+
+    static var tagTextInactiveInverse: Color {
+        MisticaConfig.currentColors.tagTextInactiveInverse.color
+    }
+
+    static var tagTextInfoInverse: Color {
+        MisticaConfig.currentColors.tagTextInfoInverse.color
+    }
+
+    static var tagTextSuccessInverse: Color {
+        MisticaConfig.currentColors.tagTextSuccessInverse.color
+    }
+
+    static var tagTextWarningInverse: Color {
+        MisticaConfig.currentColors.tagTextWarningInverse.color
+    }
+
+    static var tagTextErrorInverse: Color {
+        MisticaConfig.currentColors.tagTextErrorInverse.color
+    }
+
+    static var tagBackgroundPromoInverse: Color {
+        MisticaConfig.currentColors.tagBackgroundPromoInverse.color
+    }
+
+    static var tagBackgroundActiveInverse: Color {
+        MisticaConfig.currentColors.tagBackgroundActiveInverse.color
+    }
+
+    static var tagBackgroundInactiveInverse: Color {
+        MisticaConfig.currentColors.tagBackgroundInactiveInverse.color
+    }
+
+    static var tagBackgroundInfoInverse: Color {
+        MisticaConfig.currentColors.tagBackgroundInfoInverse.color
+    }
+
+    static var tagBackgroundSuccessInverse: Color {
+        MisticaConfig.currentColors.tagBackgroundSuccessInverse.color
+    }
+
+    static var tagBackgroundWarningInverse: Color {
+        MisticaConfig.currentColors.tagBackgroundWarningInverse.color
+    }
+
+    static var tagBackgroundErrorInverse: Color {
+        MisticaConfig.currentColors.tagBackgroundErrorInverse.color
     }
 }
 

@@ -80,7 +80,7 @@ struct ${prefix}Colors: MisticaColors {
 ${tokenProps.map((tokenProp) => `     let ${tokenProp.name} = ${mapColor(prefix, tokenProp)}`).join('\n\n')}
 }
 
-public struct ${prefix}ColorPalette {
+public struct ${prefix}ColorPalette: Sendable {
     public init() {}
 ${paletteProps
     .map((paletteProp) => `    public let ${paletteProp.name} = UIColor(hex: "${paletteProp.hex}")!`)

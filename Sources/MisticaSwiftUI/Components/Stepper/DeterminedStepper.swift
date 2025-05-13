@@ -59,7 +59,7 @@ private extension DeterminedStepper {
     }
 
     func stepBackgroundColor(for step: Int) -> Color {
-        self.step == step ? .controlActivated : .clear
+        self.step == step ? .completedStep : .clear
     }
 
     @ViewBuilder

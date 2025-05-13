@@ -4,7 +4,7 @@ const template = (props) => `
 
 import UIKit
 
-public protocol MisticaFontWeights {
+public protocol MisticaFontWeights: Sendable {
 ${props.map((prop) => `    var ${prop}: MisticaFontWeightType { get }`).join('\n')}
 }
 `;

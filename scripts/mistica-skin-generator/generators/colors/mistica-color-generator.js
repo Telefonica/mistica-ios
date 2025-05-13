@@ -6,7 +6,7 @@ const template = (props) => `
 
 import UIKit
 
-public enum MisticaColor {
+public enum MisticaColor: Sendable {
     case solid(UIColor)
     case gradient(MisticaGradient)
 }

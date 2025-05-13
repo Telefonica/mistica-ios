@@ -9,16 +9,16 @@
 import UIKit
 
 public extension UIColor {
-    static var backgroundBrandSecondary: UIColor {
-        MisticaConfig.currentColors.backgroundBrandSecondary
-    }
-
-    static var appBarBackground: UIColor {
-        MisticaConfig.currentColors.appBarBackground
-    }
-
     static var background: UIColor {
         MisticaConfig.currentColors.background
+    }
+
+    static var backgroundAlternative: UIColor {
+        MisticaConfig.currentColors.backgroundAlternative
+    }
+
+    static var backgroundBrandSecondary: UIColor {
+        MisticaConfig.currentColors.backgroundBrandSecondary
     }
 
     static var backgroundContainer: UIColor {
@@ -65,20 +65,20 @@ public extension UIColor {
         MisticaConfig.currentColors.backgroundSkeletonInverse
     }
 
-    static var navigationBarBackground: UIColor {
-        MisticaConfig.currentColors.navigationBarBackground
-    }
-
-    static var backgroundAlternative: UIColor {
-        MisticaConfig.currentColors.backgroundAlternative
-    }
-
     static var backgroundBrandTop: UIColor {
         MisticaConfig.currentColors.backgroundBrandTop
     }
 
     static var backgroundBrandBottom: UIColor {
         MisticaConfig.currentColors.backgroundBrandBottom
+    }
+
+    static var appBarBackground: UIColor {
+        MisticaConfig.currentColors.appBarBackground
+    }
+
+    static var navigationBarBackground: UIColor {
+        MisticaConfig.currentColors.navigationBarBackground
     }
 
     static var skeletonWave: UIColor {
@@ -99,6 +99,14 @@ public extension UIColor {
 
     static var borderSelected: UIColor {
         MisticaConfig.currentColors.borderSelected
+    }
+
+    static var completedStep: UIColor {
+        MisticaConfig.currentColors.completedStep
+    }
+
+    static var completedStepInverse: UIColor {
+        MisticaConfig.currentColors.completedStepInverse
     }
 
     static var coverBackgroundHover: UIColor {
@@ -243,6 +251,10 @@ public extension UIColor {
 
     static var textBrand: UIColor {
         MisticaConfig.currentColors.textBrand
+    }
+
+    static var inputBorder: UIColor {
+        MisticaConfig.currentColors.inputBorder
     }
 
     static var control: UIColor {
@@ -489,6 +501,10 @@ public extension UIColor {
         MisticaConfig.currentColors.tagTextInactive
     }
 
+    static var tagTextInfo: UIColor {
+        MisticaConfig.currentColors.tagTextInfo
+    }
+
     static var tagTextSuccess: UIColor {
         MisticaConfig.currentColors.tagTextSuccess
     }
@@ -513,6 +529,10 @@ public extension UIColor {
         MisticaConfig.currentColors.tagBackgroundInactive
     }
 
+    static var tagBackgroundInfo: UIColor {
+        MisticaConfig.currentColors.tagBackgroundInfo
+    }
+
     static var tagBackgroundSuccess: UIColor {
         MisticaConfig.currentColors.tagBackgroundSuccess
     }
@@ -523,5 +543,61 @@ public extension UIColor {
 
     static var tagBackgroundError: UIColor {
         MisticaConfig.currentColors.tagBackgroundError
+    }
+
+    static var tagTextPromoInverse: UIColor {
+        MisticaConfig.currentColors.tagTextPromoInverse
+    }
+
+    static var tagTextActiveInverse: UIColor {
+        MisticaConfig.currentColors.tagTextActiveInverse
+    }
+
+    static var tagTextInactiveInverse: UIColor {
+        MisticaConfig.currentColors.tagTextInactiveInverse
+    }
+
+    static var tagTextInfoInverse: UIColor {
+        MisticaConfig.currentColors.tagTextInfoInverse
+    }
+
+    static var tagTextSuccessInverse: UIColor {
+        MisticaConfig.currentColors.tagTextSuccessInverse
+    }
+
+    static var tagTextWarningInverse: UIColor {
+        MisticaConfig.currentColors.tagTextWarningInverse
+    }
+
+    static var tagTextErrorInverse: UIColor {
+        MisticaConfig.currentColors.tagTextErrorInverse
+    }
+
+    static var tagBackgroundPromoInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundPromoInverse
+    }
+
+    static var tagBackgroundActiveInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundActiveInverse
+    }
+
+    static var tagBackgroundInactiveInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundInactiveInverse
+    }
+
+    static var tagBackgroundInfoInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundInfoInverse
+    }
+
+    static var tagBackgroundSuccessInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundSuccessInverse
+    }
+
+    static var tagBackgroundWarningInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundWarningInverse
+    }
+
+    static var tagBackgroundErrorInverse: UIColor {
+        MisticaConfig.currentColors.tagBackgroundErrorInverse
     }
 }

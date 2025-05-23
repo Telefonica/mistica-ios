@@ -309,7 +309,7 @@ struct O2Colors: MisticaColors {
     ))
 }
 
-public struct O2ColorPalette {
+public struct O2ColorPalette: Sendable {
     public init() {}
     public let o2BluePrimary = UIColor(hex: "#0019A5")!
     public let o2BluePrimary70 = UIColor(hex: "#000066")!

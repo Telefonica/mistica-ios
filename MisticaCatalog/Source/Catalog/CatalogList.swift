@@ -58,7 +58,7 @@ struct CatalogList: View {
 }
 
 private extension CatalogRow {
-    @ViewBuilder
+    @MainActor @ViewBuilder
     var swiftUIComponent: some View {
         switch self {
         case .badge:
@@ -69,7 +69,7 @@ private extension CatalogRow {
             SkeletonsCatalogView()
         case .cards:
             CardList(rows: CardRow.allCases)
-        case .crouton:
+        case .snackbar:
             SnackbarCatalogView()
         case .feedbacks:
             FeedbackCatalogView()
@@ -107,15 +107,15 @@ private extension CatalogRow {
         }
     }
 
-    @ViewBuilder
+    @MainActor @ViewBuilder
     var uiKitComponent: some View {
         switch self {
         case .buttons:
             ComponentViewController(UICatalogButtonsViewController())
         case .feedbacks:
             ComponentViewController(UICatalogFeedbacksViewController())
-        case .crouton:
-            ComponentViewController(UICatalogCroutonViewController())
+        case .snackbar:
+            ComponentViewController(UICatalogSnackbarViewController())
         case .filter:
             ComponentViewController(UICatalogFilterViewController())
         case .tooltip:

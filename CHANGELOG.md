@@ -1,3 +1,68 @@
+## [35.1.1](https://github.com/Telefonica/mistica-ios/compare/v35.1.0...v35.1.1) (2025-05-07)
+
+
+### Bug Fixes
+
+* **Concurrency:** make SheetConfiguration and FeedbackConfiguration Sendable ([1e1941e](https://github.com/Telefonica/mistica-ios/commit/1e1941ee7dc0b4ae452a2d37041937024b6b88e7))
+
+# [35.1.0](https://github.com/Telefonica/mistica-ios/compare/v35.0.1...v35.1.0) (2025-05-05)
+
+
+### Features
+
+* **Package:** Update lottie sdk to 4.5.1 ([#447](https://github.com/Telefonica/mistica-ios/issues/447)) ([1e5718c](https://github.com/Telefonica/mistica-ios/commit/1e5718c774a2d87d62153b5f3076c229c6c1d088))
+
+## [35.0.1](https://github.com/Telefonica/mistica-ios/compare/v35.0.0...v35.0.1) (2025-04-23)
+
+
+### Bug Fixes
+
+* **Concurrency:** Fix Strict Concurrency in XCode 16.2 ([4d07d93](https://github.com/Telefonica/mistica-ios/commit/4d07d93fce0f520b731d4609c033e73a4dcfa3bd))
+
+# [35.0.0](https://github.com/Telefonica/mistica-ios/compare/v34.0.0...v35.0.0) (2025-04-11)
+
+
+### Features
+
+* **Swift6:** Migration to Swift 6.0 with Strict Concurrency ([ad0e4da](https://github.com/Telefonica/mistica-ios/commit/ad0e4dadf9605eb0b7856d58c0d87f5d82426f52))
+
+
+### BREAKING CHANGES
+
+* **Swift6:** Package as well as the Mistica Catalog have been migrated to Swift 6 with the Strict concurrency check enabled. It is still compatible with projects still running on Swift 5.
+
+# [34.0.0](https://github.com/Telefonica/mistica-ios/compare/v33.8.0...v34.0.0) (2025-03-19)
+
+
+### Bug Fixes
+
+* **semantic-release:** IOS-11147 Update node version as a dependency of the latest semantic-release version. ([#440](https://github.com/Telefonica/mistica-ios/issues/440)) ([17e4001](https://github.com/Telefonica/mistica-ios/commit/17e4001f6209fa1a6c42396eed42493cf1064843))
+* **semantic-release:** IOS-11147 Update semantic release to v24.2.3 ([#438](https://github.com/Telefonica/mistica-ios/issues/438)) ([c632beb](https://github.com/Telefonica/mistica-ios/commit/c632beb62830f12e7876b3a5acedaac44343b1f2))
+* **updateVersionScript:** IOS-11147 Fix the update version script to be compatible with Ubuntu sed version (GNU sed) instead of macOS sed (BSD sed). ([#442](https://github.com/Telefonica/mistica-ios/issues/442)) ([4609b69](https://github.com/Telefonica/mistica-ios/commit/4609b6960ee1768683089b50b8267b1396e0ee5c))
+* **updateVersionScript:** IOS-11147 Update releasrc and update_version script to be executed in… ([#441](https://github.com/Telefonica/mistica-ios/issues/441)) ([414bc7e](https://github.com/Telefonica/mistica-ios/commit/414bc7e3f94eee6b38a855f93a8bf8c035a030a4))
+
+
+### Features
+
+* **Crouton:** IOS-11139 Remove crouton queue to avoid enqueuing messages. From now … ([#437](https://github.com/Telefonica/mistica-ios/issues/437)) ([827964b](https://github.com/Telefonica/mistica-ios/commit/827964b3f4b4114dd75d3c40c01899472e3bae95))
+* **Snackbar:** Deprecate Crouton, introduce new Snackbar UI ([#422](https://github.com/Telefonica/mistica-ios/issues/422)) ([da64cea](https://github.com/Telefonica/mistica-ios/commit/da64cea1f037a999bd56e6ca1c143c0c360e66c9)), closes [#420](https://github.com/Telefonica/mistica-ios/issues/420) [#427](https://github.com/Telefonica/mistica-ios/issues/427) [#429](https://github.com/Telefonica/mistica-ios/issues/429)
+
+
+### BREAKING CHANGES
+
+* **Snackbar:** Renamed "Crouton" to "Snackbar". Updated UI for Snackbar component.
+
+* IOS-9356 Adjust crouton constraints above the tabbar or the safe area
+
+* IOS-9356 adjust crouton border radius and update close button size
+
+* Run swiftformat
+* **Crouton:** UIKit Crouton no longer allows message queuing. If a new crouton is presented, the previous one will be discarded. showCrouton and dismiss CroutonController methods have been modified to remove the token we used to dismiss a specific crouton.
+
+* IOS-11139 Remove crouton queue to avoid enqueuing messages. From now if a new crouton is launched, the previous one will be removed.
+
+* Run swiftformat
+
 # [33.8.0](https://github.com/Telefonica/mistica-ios/compare/v33.7.0...v33.8.0) (2025-02-04)
 
 

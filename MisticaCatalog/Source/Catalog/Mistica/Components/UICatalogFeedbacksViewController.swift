@@ -121,14 +121,14 @@ class UICatalogFeedbacksViewController: UITableViewController {
     }()
 
     private lazy var pushFeedbackCell: UITableViewCell = {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "showCrouton")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "showSnackbar")
         cell.textLabel?.textColor = .textLink
         cell.textLabel?.text = "Push feedback"
         return cell
     }()
 
     private lazy var presentFeedbackCell: UITableViewCell = {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "showCrouton")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "showSnackbar")
         cell.textLabel?.textColor = .textLink
         cell.textLabel?.text = "Present feedback"
         return cell
@@ -264,7 +264,9 @@ private extension UICatalogFeedbacksViewController {
             return .none
         case 1:
             let primaryActionCompletion: FeedbackCompletion = { [weak self] in
-                self?.showAlert(withTitle: "Primary Action", message: nil, cancelActionTitle: "OK")
+                Task { @MainActor in
+                    self?.showAlert(withTitle: "Primary Action", message: nil, cancelActionTitle: "OK")
+                }
             }
             return .button(title: title, completion: primaryActionCompletion)
         case 2:
@@ -284,7 +286,9 @@ private extension UICatalogFeedbacksViewController {
 
     func buildSecondaryAction(for selectedIndex: Int, title: String) -> FeedbackSecondaryAction {
         let secondaryActionCompletion: FeedbackCompletion = { [weak self] in
-            self?.showAlert(withTitle: "Secondary Action", message: nil, cancelActionTitle: "OK")
+            Task { @MainActor in
+                self?.showAlert(withTitle: "Secondary Action", message: nil, cancelActionTitle: "OK")
+            }
         }
 
         switch selectedIndex {

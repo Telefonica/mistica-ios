@@ -8,7 +8,7 @@
 
 import UIKit
 
-var _isDynamicTypeEnabled = true
+nonisolated(unsafe) var _isDynamicTypeEnabled = true
 
 public extension UIFont {
     static func textPreset1(weight: FontStyle.TextPreset1Weight, constrainedToPreferredSize: UIContentSizeCategory? = nil) -> UIFont {

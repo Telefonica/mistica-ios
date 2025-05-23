@@ -216,7 +216,7 @@ private extension MisticaButton {
 
 // MARK: EnvironmentValues
 
-public struct MisticaButtonLoadingInfo {
+public struct MisticaButtonLoadingInfo: Sendable {
     public let isLoading: Bool
     public let loadingTitle: String
 }

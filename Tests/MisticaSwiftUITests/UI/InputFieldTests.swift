@@ -11,19 +11,19 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class InputFieldTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-        UIView.setAnimationsEnabled(false)
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testText() {
         let input = makeTemplate(style: .text)
 
         assertSnapshot(
-            matching: input,
+            of: input,
             as: .image
         )
     }
@@ -32,7 +32,7 @@ final class InputFieldTests: XCTestCase {
         let input = makeTemplate(style: .secure)
 
         assertSnapshot(
-            matching: input,
+            of: input,
             as: .image
         )
     }
@@ -41,7 +41,7 @@ final class InputFieldTests: XCTestCase {
         let input = makeTemplate(style: .phone(code: "+34"))
 
         assertSnapshot(
-            matching: input,
+            of: input,
             as: .image
         )
     }
@@ -50,7 +50,7 @@ final class InputFieldTests: XCTestCase {
         let input = makeTemplate(style: .search)
 
         assertSnapshot(
-            matching: input,
+            of: input,
             as: .image
         )
     }
@@ -59,7 +59,7 @@ final class InputFieldTests: XCTestCase {
         let input = makeTemplate(style: .date())
 
         assertSnapshot(
-            matching: input,
+            of: input,
             as: .image
         )
     }
@@ -68,7 +68,7 @@ final class InputFieldTests: XCTestCase {
         let input = makeTemplate(style: .dropdown(options: ["1", "2"]))
 
         assertSnapshot(
-            matching: input,
+            of: input,
             as: .image
         )
     }
@@ -77,7 +77,7 @@ final class InputFieldTests: XCTestCase {
         let input = makeTemplate(style: .text, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper at justo eget porta. Pellentesque sit amet felis vel eros commodo euismod vel quis nisl.")
 
         assertSnapshot(
-            matching: input,
+            of: input,
             as: .image
         )
     }
@@ -86,7 +86,7 @@ final class InputFieldTests: XCTestCase {
         let input = makeTemplate(style: .text, placeholder: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper at justo eget porta. Pellentesque sit amet felis vel eros commodo euismod vel quis nisl.")
 
         assertSnapshot(
-            matching: input,
+            of: input,
             as: .image
         )
     }
@@ -95,7 +95,7 @@ final class InputFieldTests: XCTestCase {
         let input = makeTemplate(style: .text, assistiveText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ullamcorper at justo eget porta. Pellentesque sit amet felis vel eros commodo euismod vel quis nisl.")
 
         assertSnapshot(
-            matching: input,
+            of: input,
             as: .image
         )
     }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */ = {isa = PBXBuildFile; productRef = B8EE89F12614B57600F79386 /* AppCenterDistribute */; };
 		B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */ = {isa = PBXBuildFile; productRef = B8F990622546CAA500DFBFE9 /* Mistica */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8EE89F22614B57600F79386 /* AppCenterDistribute in Frameworks */,
 				B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,7 +103,6 @@
 			name = MisticaCatalog;
 			packageProductDependencies = (
 				B8F990622546CAA500DFBFE9 /* Mistica */,
-				B8EE89F12614B57600F79386 /* AppCenterDistribute */,
 			);
 			productName = MisticaCatalog;
 			productReference = B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */;
@@ -135,7 +132,6 @@
 			);
 			mainGroup = B8F98FE12546C95600DFBFE9;
 			packageReferences = (
-				B8EE89F02614B57600F79386 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */,
 			);
 			productRefGroup = B8F98FEB2546C95600DFBFE9 /* Products */;
 			projectDirPath = "";
@@ -242,6 +238,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -298,6 +295,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -324,7 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "development-mistica";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -350,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.enterprise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "distribution-mistica";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -377,17 +375,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		B8EE89F02614B57600F79386 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/microsoft/appcenter-sdk-apple";
-			requirement = {
-				kind = exactVersion;
-				version = 5.0.5;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		18E42D47287F181700BB7B39 /* Mistica */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -400,11 +387,6 @@
 		18FB8A9C288067980043CA80 /* MisticaCommon */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MisticaCommon;
-		};
-		B8EE89F12614B57600F79386 /* AppCenterDistribute */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8EE89F02614B57600F79386 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
-			productName = AppCenterDistribute;
 		};
 		B8F990622546CAA500DFBFE9 /* Mistica */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -21,12 +21,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3.6.0
         with:
-          node-version: 18.13.0
+          node-version: 20.8.1
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}
-        run: npx -p @semantic-release/changelog -p @semantic-release/git -p @semantic-release/exec -p semantic-release@20.0.2 semantic-release ${{ github.event.inputs.cliArgs }}
+        run: npx -p @semantic-release/changelog -p @semantic-release/git -p @semantic-release/exec -p semantic-release@24.2.3 semantic-release ${{ github.event.inputs.cliArgs }}
 
       - name: Checkout Telefonica/github-actions repo
         uses: actions/checkout@v3.1.0

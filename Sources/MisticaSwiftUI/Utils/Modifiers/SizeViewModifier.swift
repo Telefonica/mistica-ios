@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct SizePreferenceKey: PreferenceKey {
-    static var defaultValue: CGSize = .zero
+    static let defaultValue: CGSize = .zero
 
     static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
         value = nextValue()
@@ -30,16 +30,16 @@ struct SizeModifier: ViewModifier {
 }
 
 public extension View {
-    func onSizeChange(_ callback: @escaping (CGSize) -> Void) -> some View {
+    func onSizeChange(_ callback: @Sendable @escaping (CGSize) -> Void) -> some View {
         modifier(SizeModifier())
             .onPreferenceChange(SizePreferenceKey.self, perform: callback)
     }
 
-    func onWidthChange(_ callback: @escaping (CGFloat) -> Void) -> some View {
+    func onWidthChange(_ callback: @Sendable @escaping (CGFloat) -> Void) -> some View {
         onSizeChange { callback($0.width) }
     }
 
-    func onHeightChange(_ callback: @escaping (CGFloat) -> Void) -> some View {
+    func onHeightChange(_ callback: @Sendable @escaping (CGFloat) -> Void) -> some View {
         onSizeChange { callback($0.height) }
     }
 }

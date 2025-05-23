@@ -309,7 +309,7 @@ struct VivoColors: MisticaColors {
     ))
 }
 
-public struct VivoColorPalette {
+public struct VivoColorPalette: Sendable {
     public init() {}
     public let vivoPurple = UIColor(hex: "#660099")!
     public let vivoPurpleDark = UIColor(hex: "#461E5F")!

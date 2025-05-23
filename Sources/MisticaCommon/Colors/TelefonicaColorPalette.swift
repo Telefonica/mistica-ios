@@ -309,7 +309,7 @@ struct TelefonicaColors: MisticaColors {
     ))
 }
 
-public struct TelefonicaColorPalette {
+public struct TelefonicaColorPalette: Sendable {
     public init() {}
     public let telefonicaBlue = UIColor(hex: "#0066FF")!
     public let telefonicaBlue10 = UIColor(hex: "#E5F0FF")!

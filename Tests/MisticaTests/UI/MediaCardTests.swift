@@ -10,11 +10,12 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class MediaCardTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles
@@ -32,7 +33,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeBasicCard()
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContent() {
@@ -40,7 +41,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons()
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutFragment() {
@@ -48,7 +49,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(hasFragment: false)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutHeadline() {
@@ -56,7 +57,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(headline: nil)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutTitle() {
@@ -64,7 +65,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(title: nil)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutPretitle() {
@@ -72,7 +73,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(pretitle: nil)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testTextsWithMultiLine() {
@@ -84,7 +85,7 @@ final class MediaCardTests: XCTestCase {
             descriptionTitle: "Mauris vel nisi efficitur, fringilla urna at, gravida nunc. Sed eu dui sit amet est fringilla eleifend. Ut aliquam, tortor ac varius sodales"
         )
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryButtonsOnly() {
@@ -92,7 +93,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeBasicCard()
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryAndLinkButtons() {
@@ -102,7 +103,7 @@ final class MediaCardTests: XCTestCase {
             primaryButton: AnyValues.button, linkButton: AnyValues.link
         )
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     // MARK: Behaviour
@@ -115,7 +116,7 @@ final class MediaCardTests: XCTestCase {
         )
         view.primaryButton.isLoading = true
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     // MARK: XIB integration
@@ -137,7 +138,7 @@ final class MediaCardTests: XCTestCase {
         view.card.contentConfiguration = configurationWithActions
 
         assertSnapshot(
-            matching: view.asRootOfViewController(),
+            of: view.asRootOfViewController(),
             as: .image(on: .iPhoneX)
         )
     }
@@ -149,6 +150,7 @@ extension MediaCardTests {
     enum AnyValues {
         static let button = CardButton(title: "Button", loadingTitle: "Loading", tapHandler: nil)
         static let link = CardLinkButton(title: "Button Link", tapHandler: nil)
+        @MainActor
         static var richMedia: UIImageView {
             let image = UIImageView(image: UIImage(color: .green))
 

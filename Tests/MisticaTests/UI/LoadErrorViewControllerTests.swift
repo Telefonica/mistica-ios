@@ -10,11 +10,12 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class LoadErrorViewControllerTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 }
 
@@ -28,21 +29,21 @@ extension LoadErrorViewControllerTests {
 
     func testNoTitle() {
         assertSnapshot(
-            matching: makeLoadErrorViewController(title: nil),
+            of: makeLoadErrorViewController(title: nil),
             as: .image
         )
     }
 
     func testNoAction() {
         assertSnapshot(
-            matching: makeLoadErrorViewController(showActionButton: false),
+            of: makeLoadErrorViewController(showActionButton: false),
             as: .image
         )
     }
 
     func testEmptyDescriptionAction() {
         assertSnapshot(
-            matching: makeLoadErrorViewController(descriptionText: ""),
+            of: makeLoadErrorViewController(descriptionText: ""),
             as: .image
         )
     }

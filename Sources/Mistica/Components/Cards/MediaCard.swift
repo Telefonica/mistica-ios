@@ -75,7 +75,7 @@ public class MediaCard: UIView {
             if let contentConfiguration = contentConfiguration {
                 configure(with: contentConfiguration)
             } else {
-                configure(with: .emptyConfiguration)
+                configure(with: .emptyConfiguration())
             }
         }
     }
@@ -201,5 +201,8 @@ private extension MediaCard {
 }
 
 private extension MediaCardConfiguration {
-    static let emptyConfiguration = MediaCardConfiguration(richMedia: UIView(), descriptionTitle: "")
+    @MainActor
+    static func emptyConfiguration() -> MediaCardConfiguration {
+        MediaCardConfiguration(richMedia: UIView(), descriptionTitle: "")
+    }
 }

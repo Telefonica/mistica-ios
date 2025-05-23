@@ -132,7 +132,7 @@ By default mistica uses the system font, but if you need to use a custom font (T
 	* [HighlightedCard](./Sources/Mistica/Components/Cards/#highlightedcard)
 * [Checkbox](./Sources/Mistica/Components/Checkbox/)
 * [Controls](./Sources/Mistica/Components/Controls/)
-* [Crouton](./Sources/Mistica/Components/Crouton/)
+* [Snackbar](./Sources/Mistica/Components/Snackbar/)
 * [EmptyState](./Sources/Mistica/Components/EmptyState/)
 * [Feedbacks](./Sources/Mistica/Components/Feedback/)
 * [Filter](./Sources/Mistica/Components/Filter/)
@@ -160,7 +160,7 @@ By default mistica uses the system font, but if you need to use a custom font (T
     * [Not Implemented] MediaCard
     * [Not Implemented] HighlightedCard
 * [Checkbox](./Sources/MisticaSwiftUI/Components/Checkbox/)
-* [Crouton](./Sources/MisticaSwiftUI/Components/Snackbar/)
+* [Snackbar](./Sources/MisticaSwiftUI/Components/Snackbar/)
 * [EmptyState](./Sources/MisticaSwiftUI/Components/EmptyState/)
 * [Feedbacks](./Sources/MisticaSwiftUI/Components/Feedback/)
 * [Not Implemented][Filter](./Sources/MisticaSwiftUI/Components/Filter/)
@@ -177,11 +177,7 @@ By default mistica uses the system font, but if you need to use a custom font (T
 * [Not Implemented][ViewStates](./Sources/MisticaSwiftUI/Components/ViewStates/)
 
 ## Demo app
-Included in this repository there's a demo app showcasing all implemented components. With each new release, a new version of the mistica catalog app is created. It can be installed with this [link](https://install.appcenter.ms/orgs/tuenti-organization/apps/mistica-ios/distribution_groups/public) or by using the following QR:
-
-<p align="center">
-<img height="175" align="center" alt="Mística Catalog for iOS" src="./doc/images/mistica-catalog-download-qr.png">
-</p>
+Included in this repository there's a demo app showcasing all implemented components. With each new release, a new version of the mistica catalog app is created. 
 
 ## Contributing
 

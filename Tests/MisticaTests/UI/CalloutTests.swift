@@ -10,11 +10,12 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class CalloutTests: XCTestCase {
-    override class func setUp() {
-        super.setUp()
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     // MARK: - Styles
@@ -36,7 +37,7 @@ final class CalloutTests: XCTestCase {
             title: "This is a title"
         )
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testMinimumContent() {
@@ -44,7 +45,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeBasicCallout()
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContent() {
@@ -52,7 +53,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons()
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutIcon() {
@@ -60,7 +61,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(asset: .none)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testFullContentWithoutTitle() {
@@ -68,7 +69,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(title: nil)
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryButtonOnly() {
@@ -76,7 +77,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(actions: CalloutConfiguration.CalloutActions.primary(AnyValues.primary))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryButtonOnlyWithoutAsset() {
@@ -84,7 +85,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(asset: .none, actions: CalloutConfiguration.CalloutActions.primary(AnyValues.primary))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryAndLinkButtonsOnly() {
@@ -92,7 +93,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(actions: CalloutConfiguration.CalloutActions.primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryAndLinkButtonsOnlyWithoutAsset() {
@@ -100,7 +101,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(asset: .none, actions: CalloutConfiguration.CalloutActions.primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryAndSecondaryButtonsOnly() {
@@ -108,7 +109,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(actions: CalloutConfiguration.CalloutActions.primaryAndSecondary(primary: AnyValues.primary, secondary: AnyValues.secondary))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testPrimaryAndSecondaryButtonsOnlyWithoutAsset() {
@@ -116,7 +117,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(asset: .none, actions: CalloutConfiguration.CalloutActions.primaryAndSecondary(primary: AnyValues.primary, secondary: AnyValues.secondary))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testSecondaryButtonOnly() {
@@ -124,7 +125,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(actions: CalloutConfiguration.CalloutActions.secondary(AnyValues.secondary))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testSecondaryButtonOnlyWithoutAsset() {
@@ -132,7 +133,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(asset: .none, actions: CalloutConfiguration.CalloutActions.secondary(AnyValues.secondary))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testSecondaryAndLinkButtonsOnly() {
@@ -140,7 +141,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(actions: CalloutConfiguration.CalloutActions.secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testSecondaryAndLinkButtonsOnlyWithoutAsset() {
@@ -148,7 +149,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(asset: .none, actions: CalloutConfiguration.CalloutActions.secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testLinkButtonOnly() {
@@ -156,7 +157,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(actions: CalloutConfiguration.CalloutActions.link(AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     func testLinkButtonOnlyWithoutAsset() {
@@ -164,7 +165,7 @@ final class CalloutTests: XCTestCase {
 
         let view = makeCalloutWithContentAndButtons(asset: .none, actions: CalloutConfiguration.CalloutActions.link(AnyValues.link))
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     // MARK: Behaviour
@@ -175,7 +176,7 @@ final class CalloutTests: XCTestCase {
         let view = makeCalloutWithContentAndButtons(actions: CalloutConfiguration.CalloutActions.primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
         view.primaryButton.isLoading = true
 
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(of: view, as: .image)
     }
 
     // MARK: XIB integration
@@ -193,7 +194,7 @@ final class CalloutTests: XCTestCase {
         view.callout.contentConfiguration = configurationWithActions
 
         assertSnapshot(
-            matching: view.asRootOfViewController(),
+            of: view.asRootOfViewController(),
             as: .image(on: .iPhoneX)
         )
     }

@@ -273,6 +273,30 @@ struct TuColors: MisticaColors {
 
     let tagBackgroundError = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
 
+    let tagTextPromoInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextActiveInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextInactiveInverse = TuColors.palette.grey5
+
+    let tagTextSuccessInverse = TuColors.palette.green75 | TuColors.palette.green40
+
+    let tagTextWarningInverse = TuColors.palette.orange70 | TuColors.palette.orange55
+
+    let tagTextErrorInverse = TuColors.palette.red70 | TuColors.palette.red40
+
+    let tagBackgroundPromoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [

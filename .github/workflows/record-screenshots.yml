@@ -70,7 +70,7 @@ jobs:
 
   set-commit-status:
     name: Set last commit status
-    if: always() && needs.record-screenshots.result != 'skipped'
+    if: always() && needs.execute-tests.result != 'skipped'
     needs: [record-screenshots, execute-tests]
     runs-on: ubuntu-latest
     steps:

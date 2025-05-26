@@ -5,7 +5,7 @@ const template = (prefix, themeVariants) => `
 import Foundation
 
 struct ${prefix}ThemeVariants: MisticaThemeVariants {
-${themeVariants.map(([name, themeVariant]) => `    var ${name}: MisticaThemeVariantType = ${themeVariant.value}`).join('\n')}
+${themeVariants.map(([name, themeVariant]) => `    var ${name}: MisticaThemeVariantType = .${themeVariant.value}`).join('\n')}
 }
 `;
 

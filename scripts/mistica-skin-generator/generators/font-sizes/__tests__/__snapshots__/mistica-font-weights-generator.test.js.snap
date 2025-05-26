@@ -7,7 +7,7 @@ exports[`generateMisticaFontSizes 1`] = `
 
 import Foundation
 
-public protocol MisticaFontSizes {
+public protocol MisticaFontSizes: Sendable {
     var tabsLabel: CGFloat { get }
     var title2: CGFloat { get }
 }

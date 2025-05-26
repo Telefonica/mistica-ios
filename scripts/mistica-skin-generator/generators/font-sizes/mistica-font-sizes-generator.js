@@ -4,7 +4,7 @@ const template = (props) => `
 
 import Foundation
 
-public protocol MisticaFontSizes {
+public protocol MisticaFontSizes: Sendable {
 ${props.map((prop) => `    var ${prop}: CGFloat { get }`).join('\n')}
 }
 `;

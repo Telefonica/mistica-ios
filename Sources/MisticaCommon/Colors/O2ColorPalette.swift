@@ -273,6 +273,30 @@ struct O2Colors: MisticaColors {
 
     let tagBackgroundError = O2Colors.palette.pepper10 | O2Colors.palette.darkModeGrey6
 
+    let tagTextPromoInverse = O2Colors.palette.o2Purple | O2Colors.palette.o2Purple30
+
+    let tagTextActiveInverse = O2Colors.palette.o2BluePrimary | O2Colors.palette.o2BluePrimary30
+
+    let tagTextInactiveInverse = O2Colors.palette.grey5
+
+    let tagTextSuccessInverse = O2Colors.palette.o2Green80 | O2Colors.palette.o2Green40
+
+    let tagTextWarningInverse = O2Colors.palette.o2Orange75 | O2Colors.palette.o2Orange40
+
+    let tagTextErrorInverse = O2Colors.palette.pepper60 | O2Colors.palette.pepper40
+
+    let tagBackgroundPromoInverse = O2Colors.palette.o2Purple10 | O2Colors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = O2Colors.palette.o2BluePrimary10 | O2Colors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = O2Colors.palette.grey1 | O2Colors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = O2Colors.palette.o2Green10 | O2Colors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = O2Colors.palette.o2Orange10 | O2Colors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = O2Colors.palette.pepper10 | O2Colors.palette.darkModeGrey6
+
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [

@@ -11,13 +11,13 @@ import UIKit
 struct VivoNewColors: MisticaColors {
     static let palette = VivoNewColorPalette()
 
+    let background = VivoNewColors.palette.white | VivoNewColors.palette.darkModeBlack
+
+    let backgroundAlternative = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeBlack
+
     let backgroundBrand = MisticaColor.solid(VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = VivoNewColors.palette.vivoPurpleLight80 | VivoNewColors.palette.darkModeBlack
-
-    let appBarBackground = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
-
-    let background = VivoNewColors.palette.white | VivoNewColors.palette.darkModeBlack
 
     let backgroundContainer = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
 
@@ -43,13 +43,13 @@ struct VivoNewColors: MisticaColors {
 
     let backgroundSkeletonInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.darkModeGrey6
 
-    let navigationBarBackground = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
-
-    let backgroundAlternative = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeBlack
-
     let backgroundBrandTop = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
 
     let backgroundBrandBottom = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
+
+    let appBarBackground = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
+
+    let navigationBarBackground = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
 
     let skeletonWave = VivoNewColors.palette.grey2 | VivoNewColors.palette.grey5
 
@@ -60,6 +60,10 @@ struct VivoNewColors: MisticaColors {
     let borderHigh = VivoNewColors.palette.grey5
 
     let borderSelected = VivoNewColors.palette.vivoPurple
+
+    let completedStep = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+
+    let completedStepInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.vivoPurpleLight80
 
     let coverBackgroundHover = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -267,7 +271,7 @@ struct VivoNewColors: MisticaColors {
 
     let tagBackgroundPromo = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
-    let tagBackgroundActive = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+    let tagBackgroundActive = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
 
     let tagBackgroundInactive = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
 
@@ -319,7 +323,7 @@ struct VivoNewColors: MisticaColors {
     ))
 }
 
-public struct VivoNewColorPalette {
+public struct VivoNewColorPalette: Sendable {
     public init() {}
     public let vivoPurple = UIColor(hex: "#660099")!
     public let vivoPurpleDark = UIColor(hex: "#461E5F")!

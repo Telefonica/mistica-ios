@@ -12,7 +12,7 @@ import Lottie
 import UIKit
 
 @frozen
-public enum FeedbackStyle: Equatable {
+public enum FeedbackStyle: Equatable, Sendable {
     case success
     case informative
     case error

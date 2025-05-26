@@ -9,16 +9,16 @@
 import UIKit
 
 public extension UIColor {
-    static var backgroundBrandSecondary: UIColor {
-        MisticaConfig.currentColors.backgroundBrandSecondary
-    }
-
-    static var appBarBackground: UIColor {
-        MisticaConfig.currentColors.appBarBackground
-    }
-
     static var background: UIColor {
         MisticaConfig.currentColors.background
+    }
+
+    static var backgroundAlternative: UIColor {
+        MisticaConfig.currentColors.backgroundAlternative
+    }
+
+    static var backgroundBrandSecondary: UIColor {
+        MisticaConfig.currentColors.backgroundBrandSecondary
     }
 
     static var backgroundContainer: UIColor {
@@ -65,20 +65,20 @@ public extension UIColor {
         MisticaConfig.currentColors.backgroundSkeletonInverse
     }
 
-    static var navigationBarBackground: UIColor {
-        MisticaConfig.currentColors.navigationBarBackground
-    }
-
-    static var backgroundAlternative: UIColor {
-        MisticaConfig.currentColors.backgroundAlternative
-    }
-
     static var backgroundBrandTop: UIColor {
         MisticaConfig.currentColors.backgroundBrandTop
     }
 
     static var backgroundBrandBottom: UIColor {
         MisticaConfig.currentColors.backgroundBrandBottom
+    }
+
+    static var appBarBackground: UIColor {
+        MisticaConfig.currentColors.appBarBackground
+    }
+
+    static var navigationBarBackground: UIColor {
+        MisticaConfig.currentColors.navigationBarBackground
     }
 
     static var skeletonWave: UIColor {
@@ -99,6 +99,14 @@ public extension UIColor {
 
     static var borderSelected: UIColor {
         MisticaConfig.currentColors.borderSelected
+    }
+
+    static var completedStep: UIColor {
+        MisticaConfig.currentColors.completedStep
+    }
+
+    static var completedStepInverse: UIColor {
+        MisticaConfig.currentColors.completedStepInverse
     }
 
     static var coverBackgroundHover: UIColor {

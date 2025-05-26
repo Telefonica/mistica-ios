@@ -67,8 +67,8 @@ public struct Tabs: View {
                         }
                     )
                     // Store the new value whenever it changes.
-                    .onPreferenceChange(CGFloatPreferenceKey.self) { width in
-                        self.itemWidth[index] = min(width, 208)
+                    .onPreferenceChange(CGFloatPreferenceKey.self) { [$itemWidth] width in
+                        $itemWidth[index].wrappedValue = min(width, 208)
                     }
                     .onTapGesture {
                         self.selection = index
@@ -130,7 +130,7 @@ public struct Tabs: View {
 
 struct CGFloatPreferenceKey: PreferenceKey {
     typealias Value = CGFloat
-    static var defaultValue: Value = 0
+    static let defaultValue: Value = 0
 
     static func reduce(value _: inout Value, nextValue: () -> Value) {
         _ = nextValue()

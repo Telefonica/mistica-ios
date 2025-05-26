@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@MainActor
 public protocol InputFieldDelegate: AnyObject {
     func inputFieldTextDidChange(_ field: InputField)
     func inputFieldShouldBeginEditing(_ field: InputField) -> Bool
@@ -24,6 +25,7 @@ public protocol InputFieldDelegate: AnyObject {
     func inputFieldShouldLayout(_ field: InputField)
 }
 
+@MainActor
 @objc public protocol InputFieldDataSource: AnyObject {
     func inputFieldPickerElements(_ inputField: InputField) -> [String]
     func inputField(_ inputField: InputField, didSelectPickerElementAt index: Int)

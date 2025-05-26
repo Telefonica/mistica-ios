@@ -11,9 +11,9 @@ import UIKit
 
 private enum Section: Int, CaseIterable {
     case content
+    case inverseSelector
     case tagsCatalog
     case tagsWithIconCatalog
-    case inverseTagsCatalog
 }
 
 private enum Constants {
@@ -33,16 +33,21 @@ private enum Constants {
 }
 
 class UICatalogTagsViewController: UIViewController {
-    private var tagViews: [TagView] {
-        [tagPromo, tagActive, tagInactive, tagSuccess, tagWarning, tagError]
+    private lazy var tagViews: [TagView] = TagStyle.allCases.map {
+        TagView(
+            text: $0.rawValue,
+            style: $0,
+            isInverse: inverseSelectorCell.isOn
+        )
     }
 
-    private var tagViewsWithImages: [TagView] {
-        [tagPromoWithIcon, tagActiveWithIcon, tagInactiveWithIcon, tagSuccessWithIcon, tagWarningWithIcon, tagErrorWithIcon]
-    }
-
-    private var tagViewsInverse: [TagView] {
-        [tagInverse]
+    private lazy var tagViewsWithImages: [TagView] = TagStyle.allCases.map {
+        TagView(
+            text: $0.rawValue,
+            style: $0,
+            isInverse: inverseSelectorCell.isOn,
+            icon: UIImage(systemName: Constants.defaultIconName)
+        )
     }
 
     private lazy var tableView: UITableView = {
@@ -65,21 +70,14 @@ class UICatalogTagsViewController: UIViewController {
         return cell
     }()
 
-    private lazy var tagPromo = TagView(text: "Promo", style: .promo)
-    private lazy var tagActive = TagView(text: "Active", style: .active)
-    private lazy var tagInactive = TagView(text: "Inactive", style: .inactive)
-    private lazy var tagSuccess = TagView(text: "Success", style: .success)
-    private lazy var tagWarning = TagView(text: "Warning", style: .warning)
-    private lazy var tagError = TagView(text: "Error", style: .error)
+    private lazy var inverseSelectorCell: UISwitchTableViewCell = {
+        let cell = UISwitchTableViewCell(reuseIdentifier: "inverseSelector")
+        cell.textLabel?.text = "Is inverse?"
 
-    private lazy var tagPromoWithIcon = TagView(text: "Promo", style: .promo, icon: UIImage(systemName: Constants.defaultIconName))
-    private lazy var tagActiveWithIcon = TagView(text: "Active", style: .active, icon: UIImage(systemName: Constants.defaultIconName))
-    private lazy var tagInactiveWithIcon = TagView(text: "Inactive", style: .inactive, icon: UIImage(systemName: Constants.defaultIconName))
-    private lazy var tagSuccessWithIcon = TagView(text: "Success", style: .success, icon: UIImage(systemName: Constants.defaultIconName))
-    private lazy var tagWarningWithIcon = TagView(text: "Warning", style: .warning, icon: UIImage(systemName: Constants.defaultIconName))
-    private lazy var tagErrorWithIcon = TagView(text: "Error", style: .error, icon: UIImage(systemName: Constants.defaultIconName))
+        cell.didValueChange = switchDidChange
 
-    private lazy var tagInverse = TagView(text: "Inverse", style: .inverse)
+        return cell
+    }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -114,14 +112,16 @@ extension UICatalogTagsViewController: UITableViewDataSource {
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.section == Section.content.rawValue {
             return contentCell
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == Section.inverseSelector.rawValue {
+            return inverseSelectorCell
+        } else if indexPath.section == Section.tagsCatalog.rawValue {
             return tagViewsCell(with: tagViews)
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == Section.tagsWithIconCatalog.rawValue {
             return tagViewsCell(with: tagViewsWithImages)
         } else {
-            return tagViewsCell(with: tagViewsInverse)
+            fatalError()
         }
     }
 }
@@ -137,28 +137,21 @@ extension UICatalogTagsViewController: UITextFieldDelegate {
 private extension UICatalogTagsViewController {
     private func tagViewsCell(with tags: [TagView]) -> UITableViewCell {
         let cell = UITableViewCell()
-        let hasInverseTags = tags.contains { $0.style == .inverse }
         cell.configure(with: tags)
-        cell.contentView.backgroundColor = hasInverseTags ? .navigationBarBackground : .backgroundContainer
+        cell.contentView.backgroundColor = inverseSelectorCell.isOn ? .navigationBarBackground : .backgroundContainer
         return cell
     }
 
     @objc func textDidChange(_ textField: UITextField) {
-        tagPromo.text = textField.text
-        tagActive.text = textField.text
-        tagInactive.text = textField.text
-        tagSuccess.text = textField.text
-        tagWarning.text = textField.text
-        tagError.text = textField.text
+        (tagViews + tagViewsWithImages).forEach { $0.text = textField.text }
+    }
 
-        tagPromoWithIcon.text = textField.text
-        tagActiveWithIcon.text = textField.text
-        tagInactiveWithIcon.text = textField.text
-        tagSuccessWithIcon.text = textField.text
-        tagWarningWithIcon.text = textField.text
-        tagErrorWithIcon.text = textField.text
-
-        tagInverse.text = textField.text
+    func switchDidChange(_ uiSwitch: UISwitch) {
+        (tagViews + tagViewsWithImages).forEach { $0.isInverse = uiSwitch.isOn }
+        tableView.reloadSections(
+            IndexSet([Section.tagsCatalog.rawValue, Section.tagsWithIconCatalog.rawValue]),
+            with: .automatic
+        )
     }
 }
 
@@ -177,9 +170,9 @@ private extension Section {
     var headerTitle: String? {
         switch self {
         case .content: return "Custom tag content"
+        case .inverseSelector: return "Default/Inverse mode"
         case .tagsCatalog: return "Tags catalog"
         case .tagsWithIconCatalog: return "Tags with icon catalog"
-        case .inverseTagsCatalog: return "Inverse tags catalog"
         }
     }
 }

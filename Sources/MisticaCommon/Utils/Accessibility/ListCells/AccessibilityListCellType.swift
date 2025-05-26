@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum AccessibilityListCellType {
+public enum AccessibilityListCellType: Sendable {
     case interactive(AccessibilityListCellInteractiveData)
     case doubleInteraction(AccessibilityListCellInteractiveData)
     case informative
     case customInformative(String)
 
-    public static var `default`: AccessibilityListCellType = .interactive(.default)
+    public static let `default`: AccessibilityListCellType = .interactive(.default)
 }

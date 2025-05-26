@@ -11,13 +11,13 @@ import UIKit
 struct MovistarColors: MisticaColors {
     static let palette = MovistarColorPalette()
 
+    let background = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
+
+    let backgroundAlternative = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeBlack
+
     let backgroundBrand = MisticaColor.solid(MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = MovistarColors.palette.movistarBlueDark | MovistarColors.palette.darkModeBlack
-
-    let appBarBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
-
-    let background = MovistarColors.palette.white | MovistarColors.palette.darkModeBlack
 
     let backgroundContainer = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
 
@@ -43,13 +43,13 @@ struct MovistarColors: MisticaColors {
 
     let backgroundSkeletonInverse = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.darkModeGrey6
 
-    let navigationBarBackground = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
-
-    let backgroundAlternative = MovistarColors.palette.grey1 | MovistarColors.palette.darkModeBlack
-
     let backgroundBrandTop = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
 
     let backgroundBrandBottom = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
+
+    let appBarBackground = MovistarColors.palette.white | MovistarColors.palette.darkModeGrey
+
+    let navigationBarBackground = MovistarColors.palette.movistarBlue | MovistarColors.palette.darkModeBlack
 
     let skeletonWave = MovistarColors.palette.grey2 | MovistarColors.palette.darkModeGrey6
 
@@ -60,6 +60,10 @@ struct MovistarColors: MisticaColors {
     let borderHigh = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey5
 
     let borderSelected = MovistarColors.palette.movistarBlue
+
+    let completedStep = MovistarColors.palette.movistarBlueHC
+
+    let completedStepInverse = MovistarColors.palette.movistarBlue55 | MovistarColors.palette.movistarBlueHC
 
     let coverBackgroundHover = MovistarColors.palette.black.withAlphaComponent(0.25) | MovistarColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -319,7 +323,7 @@ struct MovistarColors: MisticaColors {
     ))
 }
 
-public struct MovistarColorPalette {
+public struct MovistarColorPalette: Sendable {
     public init() {}
     public let movistarBlue = UIColor(hex: "#0B9CEA")!
     public let movistarBlue10 = UIColor(hex: "#E6F5FD")!

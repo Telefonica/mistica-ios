@@ -11,13 +11,13 @@ import UIKit
 struct TuColors: MisticaColors {
     static let palette = TuColorPalette()
 
+    let background = TuColors.palette.white | TuColors.palette.darkModeBlack
+
+    let backgroundAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeBlack
+
     let backgroundBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = TuColors.palette.blue | TuColors.palette.darkModeBlack
-
-    let appBarBackground = TuColors.palette.white | TuColors.palette.darkModeGrey
-
-    let background = TuColors.palette.white | TuColors.palette.darkModeBlack
 
     let backgroundContainer = TuColors.palette.white | TuColors.palette.darkModeGrey
 
@@ -43,13 +43,13 @@ struct TuColors: MisticaColors {
 
     let backgroundSkeletonInverse = TuColors.palette.primary65 | TuColors.palette.darkModeGrey6
 
-    let navigationBarBackground = TuColors.palette.primary | TuColors.palette.darkModeBlack
-
-    let backgroundAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeBlack
-
     let backgroundBrandTop = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
     let backgroundBrandBottom = TuColors.palette.primary | TuColors.palette.darkModeBlack
+
+    let appBarBackground = TuColors.palette.white | TuColors.palette.darkModeGrey
+
+    let navigationBarBackground = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
     let skeletonWave = TuColors.palette.grey2 | TuColors.palette.grey5
 
@@ -60,6 +60,10 @@ struct TuColors: MisticaColors {
     let borderHigh = TuColors.palette.grey5
 
     let borderSelected = TuColors.palette.blue | TuColors.palette.blue30
+
+    let completedStep = TuColors.palette.primary | TuColors.palette.grey2
+
+    let completedStepInverse = TuColors.palette.primary80 | TuColors.palette.grey2
 
     let coverBackgroundHover = TuColors.palette.grey9.withAlphaComponent(0.25) | TuColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -319,7 +323,7 @@ struct TuColors: MisticaColors {
     ))
 }
 
-public struct TuColorPalette {
+public struct TuColorPalette: Sendable {
     public init() {}
     public let primary = UIColor(hex: "#2B3447")!
     public let primary10 = UIColor(hex: "#EAEBED")!

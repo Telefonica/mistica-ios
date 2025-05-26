@@ -11,6 +11,10 @@ import UIKit
 struct O2NewColors: MisticaColors {
     static let palette = O2NewColorPalette()
 
+    let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
+
+    let backgroundAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
+
     let backgroundBrand = MisticaColor.gradient(MisticaGradient(
         colors:
         [
@@ -23,10 +27,6 @@ struct O2NewColors: MisticaColors {
     ))
 
     let backgroundBrandSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack
-
-    let appBarBackground = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
-
-    let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
 
     let backgroundContainer = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
 
@@ -61,13 +61,13 @@ struct O2NewColors: MisticaColors {
 
     let backgroundSkeletonInverse = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.darkModeGrey6
 
-    let navigationBarBackground = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
-
-    let backgroundAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
-
     let backgroundBrandTop = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
 
     let backgroundBrandBottom = O2NewColors.palette.beyondBlue45 | O2NewColors.palette.darkModeBlack
+
+    let appBarBackground = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
+
+    let navigationBarBackground = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
 
     let skeletonWave = O2NewColors.palette.grey30 | O2NewColors.palette.grey80
 
@@ -78,6 +78,10 @@ struct O2NewColors: MisticaColors {
     let borderHigh = O2NewColors.palette.grey80 | O2NewColors.palette.grey45
 
     let borderSelected = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
+
+    let completedStep = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
+
+    let completedStepInverse = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.darkModeBeyondBlue
 
     let coverBackgroundHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -337,7 +341,7 @@ struct O2NewColors: MisticaColors {
     ))
 }
 
-public struct O2NewColorPalette {
+public struct O2NewColorPalette: Sendable {
     public init() {}
     public let beyondBlue = UIColor(hex: "#0050FF")!
     public let beyondBlue10 = UIColor(hex: "#E5EDFF")!

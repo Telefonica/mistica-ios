@@ -11,6 +11,7 @@ import SnapshotTesting
 import SwiftUI
 import XCTest
 
+@MainActor
 final class FeedbackTests: XCTestCase {
     private enum Constants {
         static let singleLineTitle = "Title"
@@ -19,18 +20,17 @@ final class FeedbackTests: XCTestCase {
         static let multiLineSubtitle = "Nam non ipsum id metus cursus dictum. Praesent efficitur erat libero, vitae tempus orci iaculis id. Proin ipsum ante, auctor mattis rutrum sit amet, elementum vitae quam. Praesent velit lectus, lacinia ut accumsan sit amet, convallis non leo. Ut quis facilisis sapien. "
     }
 
-    override class func setUp() {
-        super.setUp()
-        UIView.setAnimationsEnabled(false)
-
-        isRecording = false
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
     func testInformative() {
         let feedback = makeTemplate(style: .informative)
 
-        assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+        assertSnapshotWithoutAnimations(
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -38,8 +38,8 @@ final class FeedbackTests: XCTestCase {
     func testError() {
         let feedback = makeTemplate(style: .error(reference: nil))
 
-        assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+        assertSnapshotWithoutAnimations(
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -47,8 +47,8 @@ final class FeedbackTests: XCTestCase {
     func testErrorReference() {
         let feedback = makeTemplate(style: .error(reference: "Error reference: #1992"))
 
-        assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+        assertSnapshotWithoutAnimations(
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -56,8 +56,8 @@ final class FeedbackTests: XCTestCase {
     func testSuccess() {
         let feedback = makeTemplate(style: .success)
 
-        assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+        assertSnapshotWithoutAnimations(
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -65,8 +65,8 @@ final class FeedbackTests: XCTestCase {
     func testFeedback() {
         let feedback = makeTemplate(style: .feedback(Image(systemName: "swift")))
 
-        assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+        assertSnapshotWithoutAnimations(
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -75,7 +75,7 @@ final class FeedbackTests: XCTestCase {
         let feedback = makeTemplate(style: .informative, title: Constants.multiLineTitle, message: Constants.multiLineSubtitle)
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -94,7 +94,7 @@ final class FeedbackTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -113,7 +113,7 @@ final class FeedbackTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -135,7 +135,7 @@ final class FeedbackTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -154,7 +154,7 @@ final class FeedbackTests: XCTestCase {
         )
 
         assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -172,8 +172,8 @@ final class FeedbackTests: XCTestCase {
             Button("Link", action: {})
         }
 
-        assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+        assertSnapshotWithoutAnimations(
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }
@@ -191,8 +191,8 @@ final class FeedbackTests: XCTestCase {
             Button("Link", action: {})
         }
 
-        assertSnapshot(
-            matching: UIHostingController(rootView: feedback),
+        assertSnapshotWithoutAnimations(
+            of: UIHostingController(rootView: feedback),
             as: .image(on: .iPhone8)
         )
     }

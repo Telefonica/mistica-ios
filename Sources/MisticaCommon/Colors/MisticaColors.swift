@@ -8,11 +8,11 @@
 
 import UIKit
 
-public protocol MisticaColors {
+public protocol MisticaColors: Sendable {
+    var background: UIColor { get }
+    var backgroundAlternative: UIColor { get }
     var backgroundBrand: MisticaColor { get }
     var backgroundBrandSecondary: UIColor { get }
-    var appBarBackground: UIColor { get }
-    var background: UIColor { get }
     var backgroundContainer: UIColor { get }
     var backgroundContainerError: UIColor { get }
     var backgroundContainerHover: UIColor { get }
@@ -25,15 +25,17 @@ public protocol MisticaColors {
     var backgroundOverlay: UIColor { get }
     var backgroundSkeleton: UIColor { get }
     var backgroundSkeletonInverse: UIColor { get }
-    var navigationBarBackground: UIColor { get }
-    var backgroundAlternative: UIColor { get }
     var backgroundBrandTop: UIColor { get }
     var backgroundBrandBottom: UIColor { get }
+    var appBarBackground: UIColor { get }
+    var navigationBarBackground: UIColor { get }
     var skeletonWave: UIColor { get }
     var borderLow: UIColor { get }
     var border: UIColor { get }
     var borderHigh: UIColor { get }
     var borderSelected: UIColor { get }
+    var completedStep: UIColor { get }
+    var completedStepInverse: UIColor { get }
     var coverBackgroundHover: UIColor { get }
     var coverBackgroundPressed: UIColor { get }
     var buttonDangerBackground: UIColor { get }

@@ -6,6 +6,7 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
+import MisticaCommon
 import UIKit
 
 public class TagView: UIView {
@@ -45,7 +46,13 @@ public class TagView: UIView {
         }
     }
 
-    public var style: TagViewStyle = .promo {
+    public var style: TagStyle = .promo {
+        didSet {
+            updateColors()
+        }
+    }
+
+    public var isInverse: Bool = false {
         didSet {
             updateColors()
         }
@@ -53,16 +60,16 @@ public class TagView: UIView {
 
     private var stackView: UIStackView?
     private var icon: UIImage?
-    private var iconImageView: UIImageView? {
+    private lazy var iconImageView: UIImageView? = {
         guard let icon = icon else { return nil }
         let iconView = UIImageView(image: icon.withRenderingMode(.alwaysTemplate))
-        iconView.tintColor = style.textColor
+        iconView.tintColor = style.textColor(isInverse)
         iconView.contentMode = .scaleAspectFit
         if let accessibilityIdentifier = label.accessibilityIdentifier {
             iconView.accessibilityIdentifier = "\(accessibilityIdentifier)-icon"
         }
         return iconView
-    }
+    }()
 
     private var labelLeadingMargin: CGFloat {
         if icon != nil {
@@ -100,11 +107,18 @@ public class TagView: UIView {
         commonInit()
     }
 
-    public init(text: String? = nil, style: TagViewStyle = .promo, icon: UIImage? = nil, accessibilityIdentifier: String? = nil) {
+    public init(
+        text: String? = nil,
+        style: TagStyle = .promo,
+        isInverse: Bool = false,
+        icon: UIImage? = nil,
+        accessibilityIdentifier: String? = nil
+    ) {
         super.init(frame: .zero)
 
         self.text = text
         self.style = style
+        self.isInverse = isInverse
         self.icon = icon
         label.accessibilityIdentifier = accessibilityIdentifier
 
@@ -211,8 +225,9 @@ private extension TagView {
     }
 
     func updateColors() {
-        backgroundColor = style.backgroundColor
-        label.textColor = style.textColor
+        backgroundColor = style.backgroundColor(isInverse)
+        label.textColor = style.textColor(isInverse)
+        iconImageView?.tintColor = style.textColor(isInverse)
     }
 
     func textDidSet() {

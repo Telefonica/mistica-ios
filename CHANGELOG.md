@@ -1,3 +1,36 @@
+## [35.1.1](https://github.com/Telefonica/mistica-ios/compare/v35.1.0...v35.1.1) (2025-05-07)
+
+
+### Bug Fixes
+
+* **Concurrency:** make SheetConfiguration and FeedbackConfiguration Sendable ([1e1941e](https://github.com/Telefonica/mistica-ios/commit/1e1941ee7dc0b4ae452a2d37041937024b6b88e7))
+
+# [35.1.0](https://github.com/Telefonica/mistica-ios/compare/v35.0.1...v35.1.0) (2025-05-05)
+
+
+### Features
+
+* **Package:** Update lottie sdk to 4.5.1 ([#447](https://github.com/Telefonica/mistica-ios/issues/447)) ([1e5718c](https://github.com/Telefonica/mistica-ios/commit/1e5718c774a2d87d62153b5f3076c229c6c1d088))
+
+## [35.0.1](https://github.com/Telefonica/mistica-ios/compare/v35.0.0...v35.0.1) (2025-04-23)
+
+
+### Bug Fixes
+
+* **Concurrency:** Fix Strict Concurrency in XCode 16.2 ([4d07d93](https://github.com/Telefonica/mistica-ios/commit/4d07d93fce0f520b731d4609c033e73a4dcfa3bd))
+
+# [35.0.0](https://github.com/Telefonica/mistica-ios/compare/v34.0.0...v35.0.0) (2025-04-11)
+
+
+### Features
+
+* **Swift6:** Migration to Swift 6.0 with Strict Concurrency ([ad0e4da](https://github.com/Telefonica/mistica-ios/commit/ad0e4dadf9605eb0b7856d58c0d87f5d82426f52))
+
+
+### BREAKING CHANGES
+
+* **Swift6:** Package as well as the Mistica Catalog have been migrated to Swift 6 with the Strict concurrency check enabled. It is still compatible with projects still running on Swift 5.
+
 # [34.0.0](https://github.com/Telefonica/mistica-ios/compare/v33.8.0...v34.0.0) (2025-03-19)
 
 

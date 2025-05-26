@@ -11,13 +11,13 @@ import UIKit
 struct O2Colors: MisticaColors {
     static let palette = O2ColorPalette()
 
+    let background = O2Colors.palette.white | O2Colors.palette.darkModeBlack
+
+    let backgroundAlternative = O2Colors.palette.grey1 | O2Colors.palette.darkModeBlack
+
     let backgroundBrand = MisticaColor.solid(O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
-
-    let appBarBackground = O2Colors.palette.white | O2Colors.palette.darkModeGrey
-
-    let background = O2Colors.palette.white | O2Colors.palette.darkModeBlack
 
     let backgroundContainer = O2Colors.palette.white | O2Colors.palette.darkModeGrey
 
@@ -43,13 +43,13 @@ struct O2Colors: MisticaColors {
 
     let backgroundSkeletonInverse = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.darkModeGrey6
 
-    let navigationBarBackground = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
-
-    let backgroundAlternative = O2Colors.palette.grey1 | O2Colors.palette.darkModeBlack
-
     let backgroundBrandTop = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
 
     let backgroundBrandBottom = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
+
+    let appBarBackground = O2Colors.palette.white | O2Colors.palette.darkModeGrey
+
+    let navigationBarBackground = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeBlack
 
     let skeletonWave = O2Colors.palette.grey2 | O2Colors.palette.grey5
 
@@ -60,6 +60,10 @@ struct O2Colors: MisticaColors {
     let borderHigh = O2Colors.palette.grey5
 
     let borderSelected = O2Colors.palette.o2BluePrimary | O2Colors.palette.o2BluePrimary30
+
+    let completedStep = O2Colors.palette.o2BluePrimary | O2Colors.palette.darkModeO2BluePrimary
+
+    let completedStepInverse = O2Colors.palette.o2BluePrimary70 | O2Colors.palette.darkModeO2BluePrimary
 
     let coverBackgroundHover = O2Colors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -319,7 +323,7 @@ struct O2Colors: MisticaColors {
     ))
 }
 
-public struct O2ColorPalette {
+public struct O2ColorPalette: Sendable {
     public init() {}
     public let o2BluePrimary = UIColor(hex: "#0019A5")!
     public let o2BluePrimary70 = UIColor(hex: "#000066")!

@@ -10,59 +10,39 @@
 import SnapshotTesting
 import XCTest
 
+@MainActor
 final class TagTests: XCTestCase {
     override func setUp() {
         super.setUp()
-        UIView.setAnimationsEnabled(false)
-        isRecording = false
+        Task { @MainActor in
+            UIView.setAnimationsEnabled(false)
+        }
     }
 
-    func testPromoTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Promo tag", style: .promo)
-        )
+    override func invokeTest() {
+        withSnapshotTesting(record: .never) {
+            super.invokeTest()
+        }
     }
 
-    func testActiveTagView() {
+    func testTagView() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Active tag", style: .active)
-        )
-    }
-
-    func testInactiveTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Inactive tag", style: .inactive)
-        )
-    }
-
-    func testSuccessTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Success tag", style: .success)
-        )
-    }
-
-    func testWarningTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Warning tag", style: .warning)
-        )
-    }
-
-    func testErrorTagView() {
-        assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 150.0, height: 33.0)),
-            viewBuilder: TagView(text: "Error tag", style: .error)
+            as: .tagContainer(),
+            viewBuilder: makeTemplateWithAllTags(isInverse: false)
         )
     }
 
     func testTagViewWithIcon() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 100.0, height: 33.0)),
-            viewBuilder: TagView(text: "Tag with icon", icon: .checkmarkIcon)
+            as: .tagContainer(),
+            viewBuilder: makeTemplateWithAllTags(isInverse: false, icon: .checkmarkIcon)
+        )
+    }
+
+    func testInverseTagViewWithIcon() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .tagContainer(),
+            viewBuilder: makeTemplateWithAllTags(isInverse: true, icon: .checkmarkIcon)
         )
     }
 
@@ -73,8 +53,34 @@ final class TagTests: XCTestCase {
         view.tagView.text = "Xib integration"
 
         assertSnapshot(
-            matching: view,
+            of: view,
             as: .image
         )
+    }
+}
+
+public extension Snapshotting where Value == UIView, Format == UIImage {
+    static func tagContainer() -> Snapshotting {
+        Self.image(size: CGSize(width: 150.0, height: 33.0 * Double(TagStyle.allCases.count)))
+    }
+}
+
+private extension TagTests {
+    func makeTemplateWithAllTags(isInverse: Bool, icon: UIImage? = nil) -> UIView {
+        let tags = TagStyle.allCases
+            .map { style in
+                TagView(
+                    text: style.rawValue,
+                    style: style,
+                    isInverse: isInverse,
+                    icon: icon
+                )
+            }
+        let stackView = UIStackView()
+        stackView.spacing = 8
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        tags.forEach { stackView.addArrangedSubview($0) }
+        return stackView
     }
 }

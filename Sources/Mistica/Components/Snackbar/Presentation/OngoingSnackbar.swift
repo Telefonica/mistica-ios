@@ -9,6 +9,7 @@
 import UIKit
 
 extension SnackbarController {
+    @MainActor
     struct OngoingSnackbar {
         let token: Token
         let snackbarView: SnackbarView

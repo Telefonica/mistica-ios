@@ -13,10 +13,10 @@ private extension DefaultAccessibilityIdentifier.Feature {
 }
 
 public enum DataCardAccessibilityIdentifiers {
-    public static var headline = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .tag)
-    public static var title = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .title)
-    public static var subtitle = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .subtitle)
-    public static var description = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .description)
-    public static var primaryButton = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .primaryButton)
-    public static var linkButton = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .linkButton)
+    public static let headline = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .tag)
+    public static let title = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .title)
+    public static let subtitle = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .subtitle)
+    public static let description = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .description)
+    public static let primaryButton = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .primaryButton)
+    public static let linkButton = DefaultAccessibilityIdentifier(feature: .dataCard, section: .item, elementType: .linkButton)
 }

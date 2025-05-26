@@ -11,7 +11,7 @@ import UIKit
 final class BottomSheetInteractiveDismissalTransition: NSObject {
     private enum Constants {
         static let maxBouncingHeight: CGFloat = 250
-        static let animationDuration: CGFloat = UIView.defaultAnimationDuration
+        @MainActor static let animationDuration: CGFloat = UIView.defaultAnimationDuration
         static let animationCurve: UIView.AnimationCurve = .easeOut
     }
 
@@ -29,6 +29,7 @@ final class BottomSheetInteractiveDismissalTransition: NSObject {
 // MARK: Public methods
 
 extension BottomSheetInteractiveDismissalTransition {
+    @MainActor
     func start(moving presentedView: UIView, interactiveDismissal: Bool) {
         self.interactiveDismissal = interactiveDismissal
 
@@ -42,6 +43,7 @@ extension BottomSheetInteractiveDismissalTransition {
         )
     }
 
+    @MainActor
     func move(_ presentedView: UIView, using translation: CGFloat) {
         let progress = translation / presentedView.frame.height
 
@@ -51,6 +53,7 @@ extension BottomSheetInteractiveDismissalTransition {
         transitionContext?.updateInteractiveTransition(progress)
     }
 
+    @MainActor
     func stop(
         moving presentedView: UIView,
         at translation: CGFloat,
@@ -171,6 +174,7 @@ extension BottomSheetInteractiveDismissalTransition: UIViewControllerInteractive
 // MARK: Private
 
 private extension BottomSheetInteractiveDismissalTransition {
+    @MainActor
     func createHeightAnimator(
         animating view: UIView,
         from height: CGFloat
@@ -198,6 +202,7 @@ private extension BottomSheetInteractiveDismissalTransition {
         return propertyAnimator
     }
 
+    @MainActor
     func createOffsetAnimator(
         animating view: UIView,
         to offset: CGFloat,

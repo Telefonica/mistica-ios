@@ -8,7 +8,7 @@ public enum MisticaRadiusConstants {
     static let roundedRadius: CGFloat = 999.0
 }
 
-public protocol MisticaCornerRadius {
+public protocol MisticaCornerRadius: Sendable {
 ${props.map((prop) => `    var ${prop}: CGFloat { get }`).join('\n')}
 }
 `;

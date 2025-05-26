@@ -36,7 +36,7 @@ jobs:
 
       - name: Enable screenshots recording
         run: |
-          find . -type f -name "*.swift" -exec sed -i '' 's/isRecording = false/isRecording = true/' {} +
+          find . -type f -name "*.swift" -exec sed -i '' 's/record: .never/record: .failed/' {} +
           
       - name: Launch tests and record screenshots
         run: make test
@@ -44,7 +44,7 @@ jobs:
         
       - name: Disable screenshots recording
         run: |
-          find . -type f -name "*.swift" -exec sed -i '' 's/isRecording = true/isRecording = false/' {} +
+          find . -type f -name "*.swift" -exec sed -i '' 's/record: .failed/record: .never/' {} +
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v5
@@ -70,7 +70,7 @@ jobs:
 
   set-commit-status:
     name: Set last commit status
-    if: always() && needs.record-screenshots.result != 'skipped'
+    if: always() && needs.execute-tests.result != 'skipped'
     needs: [record-screenshots, execute-tests]
     runs-on: ubuntu-latest
     steps:

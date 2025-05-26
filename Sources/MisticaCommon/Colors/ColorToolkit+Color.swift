@@ -9,16 +9,16 @@
 import SwiftUI
 
 public extension Color {
-    static var backgroundBrandSecondary: Color {
-        MisticaConfig.currentColors.backgroundBrandSecondary.color
-    }
-
-    static var appBarBackground: Color {
-        MisticaConfig.currentColors.appBarBackground.color
-    }
-
     static var background: Color {
         MisticaConfig.currentColors.background.color
+    }
+
+    static var backgroundAlternative: Color {
+        MisticaConfig.currentColors.backgroundAlternative.color
+    }
+
+    static var backgroundBrandSecondary: Color {
+        MisticaConfig.currentColors.backgroundBrandSecondary.color
     }
 
     static var backgroundContainer: Color {
@@ -65,20 +65,20 @@ public extension Color {
         MisticaConfig.currentColors.backgroundSkeletonInverse.color
     }
 
-    static var navigationBarBackground: Color {
-        MisticaConfig.currentColors.navigationBarBackground.color
-    }
-
-    static var backgroundAlternative: Color {
-        MisticaConfig.currentColors.backgroundAlternative.color
-    }
-
     static var backgroundBrandTop: Color {
         MisticaConfig.currentColors.backgroundBrandTop.color
     }
 
     static var backgroundBrandBottom: Color {
         MisticaConfig.currentColors.backgroundBrandBottom.color
+    }
+
+    static var appBarBackground: Color {
+        MisticaConfig.currentColors.appBarBackground.color
+    }
+
+    static var navigationBarBackground: Color {
+        MisticaConfig.currentColors.navigationBarBackground.color
     }
 
     static var skeletonWave: Color {
@@ -99,6 +99,14 @@ public extension Color {
 
     static var borderSelected: Color {
         MisticaConfig.currentColors.borderSelected.color
+    }
+
+    static var completedStep: Color {
+        MisticaConfig.currentColors.completedStep.color
+    }
+
+    static var completedStepInverse: Color {
+        MisticaConfig.currentColors.completedStepInverse.color
     }
 
     static var coverBackgroundHover: Color {

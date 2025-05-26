@@ -11,13 +11,13 @@ import UIKit
 struct VivoColors: MisticaColors {
     static let palette = VivoColorPalette()
 
+    let background = VivoColors.palette.white | VivoColors.palette.darkModeBlack
+
+    let backgroundAlternative = VivoColors.palette.grey1 | VivoColors.palette.darkModeBlack
+
     let backgroundBrand = MisticaColor.solid(VivoColors.palette.vivoPurple | VivoColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = VivoColors.palette.vivoPurple | VivoColors.palette.darkModeBlack
-
-    let appBarBackground = VivoColors.palette.white | VivoColors.palette.darkModeGrey
-
-    let background = VivoColors.palette.white | VivoColors.palette.darkModeBlack
 
     let backgroundContainer = VivoColors.palette.white | VivoColors.palette.darkModeGrey
 
@@ -43,13 +43,13 @@ struct VivoColors: MisticaColors {
 
     let backgroundSkeletonInverse = VivoColors.palette.vivoPurpleDark | VivoColors.palette.darkModeGrey6
 
-    let navigationBarBackground = VivoColors.palette.vivoPurple | VivoColors.palette.darkModeBlack
-
-    let backgroundAlternative = VivoColors.palette.grey1 | VivoColors.palette.darkModeBlack
-
     let backgroundBrandTop = VivoColors.palette.vivoPurple | VivoColors.palette.darkModeBlack
 
     let backgroundBrandBottom = VivoColors.palette.vivoPurple | VivoColors.palette.darkModeBlack
+
+    let appBarBackground = VivoColors.palette.white | VivoColors.palette.darkModeGrey
+
+    let navigationBarBackground = VivoColors.palette.vivoPurple | VivoColors.palette.darkModeBlack
 
     let skeletonWave = VivoColors.palette.grey2 | VivoColors.palette.grey5
 
@@ -60,6 +60,10 @@ struct VivoColors: MisticaColors {
     let borderHigh = VivoColors.palette.grey5
 
     let borderSelected = VivoColors.palette.vivoPurple
+
+    let completedStep = VivoColors.palette.vivoPurple | VivoColors.palette.vivoPurpleLight80
+
+    let completedStepInverse = VivoColors.palette.vivoPurpleDark | VivoColors.palette.vivoPurpleLight80
 
     let coverBackgroundHover = VivoColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -319,7 +323,7 @@ struct VivoColors: MisticaColors {
     ))
 }
 
-public struct VivoColorPalette {
+public struct VivoColorPalette: Sendable {
     public init() {}
     public let vivoPurple = UIColor(hex: "#660099")!
     public let vivoPurpleDark = UIColor(hex: "#461E5F")!

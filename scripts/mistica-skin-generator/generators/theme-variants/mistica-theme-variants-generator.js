@@ -5,7 +5,7 @@ const template = (props) => `
 import Foundation
 
 public protocol MisticaThemeVariants {
-${props.map((prop) => `    var ${prop}: CGFloat { get }`).join('\n')}
+${props.map((prop) => `    var ${prop}: MisticaThemeVariantType { get }`).join('\n')}
 }
 `;
 

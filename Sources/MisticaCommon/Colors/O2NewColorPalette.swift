@@ -11,10 +11,6 @@ import UIKit
 struct O2NewColors: MisticaColors {
     static let palette = O2NewColorPalette()
 
-    let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
-
-    let backgroundAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
-
     let backgroundBrand = MisticaColor.gradient(MisticaGradient(
         colors:
         [
@@ -27,6 +23,10 @@ struct O2NewColors: MisticaColors {
     ))
 
     let backgroundBrandSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack
+
+    let appBarBackground = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
+
+    let background = O2NewColors.palette.white | O2NewColors.palette.darkModeBlack
 
     let backgroundContainer = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
 
@@ -61,13 +61,13 @@ struct O2NewColors: MisticaColors {
 
     let backgroundSkeletonInverse = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.darkModeGrey6
 
+    let navigationBarBackground = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
+
+    let backgroundAlternative = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeBlack
+
     let backgroundBrandTop = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
 
     let backgroundBrandBottom = O2NewColors.palette.beyondBlue45 | O2NewColors.palette.darkModeBlack
-
-    let appBarBackground = O2NewColors.palette.white | O2NewColors.palette.darkModeGrey
-
-    let navigationBarBackground = O2NewColors.palette.darkBlue | O2NewColors.palette.darkModeBlack
 
     let skeletonWave = O2NewColors.palette.grey30 | O2NewColors.palette.grey80
 
@@ -78,10 +78,6 @@ struct O2NewColors: MisticaColors {
     let borderHigh = O2NewColors.palette.grey80 | O2NewColors.palette.grey45
 
     let borderSelected = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
-
-    let completedStep = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
-
-    let completedStepInverse = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.darkModeBeyondBlue
 
     let coverBackgroundHover = O2NewColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -155,8 +151,6 @@ struct O2NewColors: MisticaColors {
 
     let textBrand = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
 
-    let inputBorder = O2NewColors.palette.grey45
-
     let control = O2NewColors.palette.grey45
 
     let controlActivated = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
@@ -207,9 +201,9 @@ struct O2NewColors: MisticaColors {
 
     let neutralMediumInverse = O2NewColors.palette.grey60
 
-    let neutralLow = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
+    let neutralLow = O2NewColors.palette.grey20 | O2NewColors.palette.grey80
 
-    let neutralLowAlternative = O2NewColors.palette.grey30 | O2NewColors.palette.darkModeGrey6
+    let neutralLowAlternative = O2NewColors.palette.grey30 | O2NewColors.palette.grey80
 
     let textPrimary = O2NewColors.palette.black | O2NewColors.palette.grey30
 
@@ -279,8 +273,6 @@ struct O2NewColors: MisticaColors {
 
     let tagTextInactive = O2NewColors.palette.grey60 | O2NewColors.palette.grey40
 
-    let tagTextInfo = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
-
     let tagTextSuccess = O2NewColors.palette.o2Green80 | O2NewColors.palette.o2Green
 
     let tagTextWarning = O2NewColors.palette.o2Orange75 | O2NewColors.palette.o2Orange
@@ -292,8 +284,6 @@ struct O2NewColors: MisticaColors {
     let tagBackgroundActive = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
 
     let tagBackgroundInactive = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
-
-    let tagBackgroundInfo = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
 
     let tagBackgroundSuccess = O2NewColors.palette.o2Green10 | O2NewColors.palette.darkModeGrey6
 
@@ -307,8 +297,6 @@ struct O2NewColors: MisticaColors {
 
     let tagTextInactiveInverse = O2NewColors.palette.grey60 | O2NewColors.palette.grey40
 
-    let tagTextInfoInverse = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
-
     let tagTextSuccessInverse = O2NewColors.palette.o2Green80 | O2NewColors.palette.o2Green
 
     let tagTextWarningInverse = O2NewColors.palette.o2Orange75 | O2NewColors.palette.o2Orange
@@ -320,8 +308,6 @@ struct O2NewColors: MisticaColors {
     let tagBackgroundActiveInverse = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
 
     let tagBackgroundInactiveInverse = O2NewColors.palette.grey20 | O2NewColors.palette.darkModeGrey6
-
-    let tagBackgroundInfoInverse = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.darkModeGrey6
 
     let tagBackgroundSuccessInverse = O2NewColors.palette.o2Green10 | O2NewColors.palette.darkModeGrey6
 
@@ -380,7 +366,7 @@ public struct O2NewColorPalette: Sendable {
     public let grey20 = UIColor(hex: "#F3F3F5")!
     public let grey30 = UIColor(hex: "#D9D9DD")!
     public let grey40 = UIColor(hex: "#B4B4BE")!
-    public let grey45 = UIColor(hex: "#8A8A98")!
+    public let grey45 = UIColor(hex: "#8C8C9A")!
     public let grey60 = UIColor(hex: "#6E6E77")!
     public let grey80 = UIColor(hex: "#3C3C46")!
     public let black = UIColor(hex: "#00001E")!

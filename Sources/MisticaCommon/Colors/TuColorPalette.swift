@@ -11,13 +11,13 @@ import UIKit
 struct TuColors: MisticaColors {
     static let palette = TuColorPalette()
 
-    let background = TuColors.palette.white | TuColors.palette.darkModeBlack
-
-    let backgroundAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeBlack
-
     let backgroundBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = TuColors.palette.blue | TuColors.palette.darkModeBlack
+
+    let appBarBackground = TuColors.palette.white | TuColors.palette.darkModeGrey
+
+    let background = TuColors.palette.white | TuColors.palette.darkModeBlack
 
     let backgroundContainer = TuColors.palette.white | TuColors.palette.darkModeGrey
 
@@ -43,13 +43,13 @@ struct TuColors: MisticaColors {
 
     let backgroundSkeletonInverse = TuColors.palette.primary65 | TuColors.palette.darkModeGrey6
 
+    let navigationBarBackground = TuColors.palette.primary | TuColors.palette.darkModeBlack
+
+    let backgroundAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeBlack
+
     let backgroundBrandTop = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
     let backgroundBrandBottom = TuColors.palette.primary | TuColors.palette.darkModeBlack
-
-    let appBarBackground = TuColors.palette.white | TuColors.palette.darkModeGrey
-
-    let navigationBarBackground = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
     let skeletonWave = TuColors.palette.grey2 | TuColors.palette.grey5
 
@@ -60,10 +60,6 @@ struct TuColors: MisticaColors {
     let borderHigh = TuColors.palette.grey5
 
     let borderSelected = TuColors.palette.blue | TuColors.palette.blue30
-
-    let completedStep = TuColors.palette.primary | TuColors.palette.grey2
-
-    let completedStepInverse = TuColors.palette.primary80 | TuColors.palette.grey2
 
     let coverBackgroundHover = TuColors.palette.grey9.withAlphaComponent(0.25) | TuColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -137,8 +133,6 @@ struct TuColors: MisticaColors {
 
     let textBrand = TuColors.palette.blue | TuColors.palette.blue30
 
-    let inputBorder = TuColors.palette.grey5
-
     let control = TuColors.palette.grey5 | TuColors.palette.darkModeGrey6
 
     let controlActivated = TuColors.palette.primary | TuColors.palette.blue30
@@ -197,9 +191,9 @@ struct TuColors: MisticaColors {
 
     let textPrimaryInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let textSecondary = TuColors.palette.grey6 | TuColors.palette.grey3
+    let textSecondary = TuColors.palette.grey6 | TuColors.palette.grey4
 
-    let textSecondaryInverse = TuColors.palette.grey3
+    let textSecondaryInverse = TuColors.palette.grey3 | TuColors.palette.grey4
 
     let error = TuColors.palette.red
 
@@ -261,8 +255,6 @@ struct TuColors: MisticaColors {
 
     let tagTextInactive = TuColors.palette.grey5
 
-    let tagTextInfo = TuColors.palette.blue | TuColors.palette.blue30
-
     let tagTextSuccess = TuColors.palette.green75 | TuColors.palette.green40
 
     let tagTextWarning = TuColors.palette.orange70 | TuColors.palette.orange55
@@ -274,8 +266,6 @@ struct TuColors: MisticaColors {
     let tagBackgroundActive = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundInactive = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
-
-    let tagBackgroundInfo = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundSuccess = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
 
@@ -289,8 +279,6 @@ struct TuColors: MisticaColors {
 
     let tagTextInactiveInverse = TuColors.palette.grey5
 
-    let tagTextInfoInverse = TuColors.palette.blue | TuColors.palette.blue30
-
     let tagTextSuccessInverse = TuColors.palette.green75 | TuColors.palette.green40
 
     let tagTextWarningInverse = TuColors.palette.orange70 | TuColors.palette.orange55
@@ -302,8 +290,6 @@ struct TuColors: MisticaColors {
     let tagBackgroundActiveInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundInactiveInverse = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
-
-    let tagBackgroundInfoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundSuccessInverse = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
 

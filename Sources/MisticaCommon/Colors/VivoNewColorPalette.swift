@@ -11,13 +11,13 @@ import UIKit
 struct VivoNewColors: MisticaColors {
     static let palette = VivoNewColorPalette()
 
-    let background = VivoNewColors.palette.white | VivoNewColors.palette.darkModeBlack
-
-    let backgroundAlternative = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeBlack
-
     let backgroundBrand = MisticaColor.solid(VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = VivoNewColors.palette.vivoPurpleLight80 | VivoNewColors.palette.darkModeBlack
+
+    let appBarBackground = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
+
+    let background = VivoNewColors.palette.white | VivoNewColors.palette.darkModeBlack
 
     let backgroundContainer = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
 
@@ -43,13 +43,13 @@ struct VivoNewColors: MisticaColors {
 
     let backgroundSkeletonInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.darkModeGrey6
 
+    let navigationBarBackground = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
+
+    let backgroundAlternative = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeBlack
+
     let backgroundBrandTop = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
 
     let backgroundBrandBottom = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
-
-    let appBarBackground = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
-
-    let navigationBarBackground = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
 
     let skeletonWave = VivoNewColors.palette.grey2 | VivoNewColors.palette.grey5
 
@@ -60,10 +60,6 @@ struct VivoNewColors: MisticaColors {
     let borderHigh = VivoNewColors.palette.grey5
 
     let borderSelected = VivoNewColors.palette.vivoPurple
-
-    let completedStep = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
-
-    let completedStepInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.vivoPurpleLight80
 
     let coverBackgroundHover = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -137,8 +133,6 @@ struct VivoNewColors: MisticaColors {
 
     let textBrand = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let inputBorder = VivoNewColors.palette.grey4 | VivoNewColors.palette.darkModeGrey5
-
     let control = VivoNewColors.palette.grey4 | VivoNewColors.palette.darkModeGrey6
 
     let controlActivated = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
@@ -197,9 +191,9 @@ struct VivoNewColors: MisticaColors {
 
     let textPrimaryInverse = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let textSecondary = VivoNewColors.palette.grey5 | VivoNewColors.palette.grey3
+    let textSecondary = VivoNewColors.palette.grey5 | VivoNewColors.palette.grey4
 
-    let textSecondaryInverse = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.grey3
+    let textSecondaryInverse = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.grey4
 
     let error = VivoNewColors.palette.pepper
 
@@ -261,8 +255,6 @@ struct VivoNewColors: MisticaColors {
 
     let tagTextInactive = VivoNewColors.palette.grey5
 
-    let tagTextInfo = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
-
     let tagTextSuccess = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
 
     let tagTextWarning = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
@@ -271,11 +263,9 @@ struct VivoNewColors: MisticaColors {
 
     let tagBackgroundPromo = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
-    let tagBackgroundActive = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
+    let tagBackgroundActive = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
     let tagBackgroundInactive = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
-
-    let tagBackgroundInfo = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
     let tagBackgroundSuccess = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
 
@@ -289,8 +279,6 @@ struct VivoNewColors: MisticaColors {
 
     let tagTextInactiveInverse = VivoNewColors.palette.grey5
 
-    let tagTextInfoInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
-
     let tagTextSuccessInverse = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
 
     let tagTextWarningInverse = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
@@ -302,8 +290,6 @@ struct VivoNewColors: MisticaColors {
     let tagBackgroundActiveInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
     let tagBackgroundInactiveInverse = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
-
-    let tagBackgroundInfoInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
     let tagBackgroundSuccessInverse = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
 
@@ -353,12 +339,11 @@ public struct VivoNewColorPalette: Sendable {
     public let grey1 = UIColor(hex: "#F6F6F6")!
     public let grey2 = UIColor(hex: "#EEEEEE")!
     public let grey3 = UIColor(hex: "#DDDDDD")!
-    public let grey4 = UIColor(hex: "#8A8C90")!
+    public let grey4 = UIColor(hex: "#949494")!
     public let grey5 = UIColor(hex: "#666666")!
     public let grey6 = UIColor(hex: "#000000")!
     public let white = UIColor(hex: "#FFFFFF")!
     public let darkModeBlack = UIColor(hex: "#191919")!
     public let darkModeGrey = UIColor(hex: "#242424")!
-    public let darkModeGrey5 = UIColor(hex: "#6D7D88")!
     public let darkModeGrey6 = UIColor(hex: "#313235")!
 }

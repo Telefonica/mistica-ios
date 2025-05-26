@@ -9,10 +9,10 @@
 import UIKit
 
 public protocol MisticaColors: Sendable {
-    var background: UIColor { get }
-    var backgroundAlternative: UIColor { get }
     var backgroundBrand: MisticaColor { get }
     var backgroundBrandSecondary: UIColor { get }
+    var appBarBackground: UIColor { get }
+    var background: UIColor { get }
     var backgroundContainer: UIColor { get }
     var backgroundContainerError: UIColor { get }
     var backgroundContainerHover: UIColor { get }
@@ -25,17 +25,15 @@ public protocol MisticaColors: Sendable {
     var backgroundOverlay: UIColor { get }
     var backgroundSkeleton: UIColor { get }
     var backgroundSkeletonInverse: UIColor { get }
+    var navigationBarBackground: UIColor { get }
+    var backgroundAlternative: UIColor { get }
     var backgroundBrandTop: UIColor { get }
     var backgroundBrandBottom: UIColor { get }
-    var appBarBackground: UIColor { get }
-    var navigationBarBackground: UIColor { get }
     var skeletonWave: UIColor { get }
     var borderLow: UIColor { get }
     var border: UIColor { get }
     var borderHigh: UIColor { get }
     var borderSelected: UIColor { get }
-    var completedStep: UIColor { get }
-    var completedStepInverse: UIColor { get }
     var coverBackgroundHover: UIColor { get }
     var coverBackgroundPressed: UIColor { get }
     var buttonDangerBackground: UIColor { get }
@@ -72,7 +70,6 @@ public protocol MisticaColors: Sendable {
     var textLinkSnackbar: UIColor { get }
     var textActivated: UIColor { get }
     var textBrand: UIColor { get }
-    var inputBorder: UIColor { get }
     var control: UIColor { get }
     var controlActivated: UIColor { get }
     var controlInverse: UIColor { get }
@@ -134,28 +131,24 @@ public protocol MisticaColors: Sendable {
     var tagTextPromo: UIColor { get }
     var tagTextActive: UIColor { get }
     var tagTextInactive: UIColor { get }
-    var tagTextInfo: UIColor { get }
     var tagTextSuccess: UIColor { get }
     var tagTextWarning: UIColor { get }
     var tagTextError: UIColor { get }
     var tagBackgroundPromo: UIColor { get }
     var tagBackgroundActive: UIColor { get }
     var tagBackgroundInactive: UIColor { get }
-    var tagBackgroundInfo: UIColor { get }
     var tagBackgroundSuccess: UIColor { get }
     var tagBackgroundWarning: UIColor { get }
     var tagBackgroundError: UIColor { get }
     var tagTextPromoInverse: UIColor { get }
     var tagTextActiveInverse: UIColor { get }
     var tagTextInactiveInverse: UIColor { get }
-    var tagTextInfoInverse: UIColor { get }
     var tagTextSuccessInverse: UIColor { get }
     var tagTextWarningInverse: UIColor { get }
     var tagTextErrorInverse: UIColor { get }
     var tagBackgroundPromoInverse: UIColor { get }
     var tagBackgroundActiveInverse: UIColor { get }
     var tagBackgroundInactiveInverse: UIColor { get }
-    var tagBackgroundInfoInverse: UIColor { get }
     var tagBackgroundSuccessInverse: UIColor { get }
     var tagBackgroundWarningInverse: UIColor { get }
     var tagBackgroundErrorInverse: UIColor { get }

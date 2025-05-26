@@ -157,7 +157,7 @@ const run = async () => {
         const brandThemeVariants = generateBrandThemeVariants(brandWithTokens.brand, brandWithTokens.tokens);
         fs.writeFileSync(
             `../../Sources/MisticaCommon/ThemeVariants/Brands/${brandWithTokens.brand.prefix}ThemeVariants.swift`,
-                         brandThemeVariants
+            brandThemeVariants
         );
     });
 };

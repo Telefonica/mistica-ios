@@ -31,7 +31,7 @@ final class TagTests: XCTestCase {
             viewBuilder: makeTemplateWithAllTags(isInverse: false)
         )
     }
-    
+
     func testTagViewWithIcon() {
         assertSnapshotForAllBrandsAndStyles(
             as: .tagContainer(),
@@ -59,8 +59,8 @@ final class TagTests: XCTestCase {
     }
 }
 
-extension Snapshotting where Value == UIView, Format == UIImage {
-    public static func tagContainer() -> Snapshotting {
+public extension Snapshotting where Value == UIView, Format == UIImage {
+    static func tagContainer() -> Snapshotting {
         Self.image(size: CGSize(width: 150.0, height: 33.0 * Double(TagStyle.allCases.count)))
     }
 }

@@ -11,13 +11,13 @@ import UIKit
 struct TelefonicaColors: MisticaColors {
     static let palette = TelefonicaColorPalette()
 
+    let background = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeBlack
+
+    let backgroundAlternative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeBlack
+
     let backgroundBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack)
 
     let backgroundBrandSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
-
-    let appBarBackground = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
-
-    let background = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeBlack
 
     let backgroundContainer = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
 
@@ -43,13 +43,13 @@ struct TelefonicaColors: MisticaColors {
 
     let backgroundSkeletonInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey6
 
-    let navigationBarBackground = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
-
-    let backgroundAlternative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeBlack
-
     let backgroundBrandTop = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 
     let backgroundBrandBottom = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
+
+    let appBarBackground = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
+
+    let navigationBarBackground = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 
     let skeletonWave = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.grey5
 
@@ -60,6 +60,10 @@ struct TelefonicaColors: MisticaColors {
     let borderHigh = TelefonicaColors.palette.grey5
 
     let borderSelected = TelefonicaColors.palette.telefonicaBlue
+
+    let completedStep = TelefonicaColors.palette.telefonicaBlue
+
+    let completedStepInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue
 
     let coverBackgroundHover = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
@@ -133,6 +137,8 @@ struct TelefonicaColors: MisticaColors {
 
     let textBrand = TelefonicaColors.palette.telefonicaBlue
 
+    let inputBorder = TelefonicaColors.palette.grey4 | TelefonicaColors.palette.grey5
+
     let control = TelefonicaColors.palette.grey3 | TelefonicaColors.palette.darkModeGrey6
 
     let controlActivated = TelefonicaColors.palette.telefonicaBlue
@@ -191,9 +197,9 @@ struct TelefonicaColors: MisticaColors {
 
     let textPrimaryInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
 
-    let textSecondary = TelefonicaColors.palette.grey5 | TelefonicaColors.palette.grey4
+    let textSecondary = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
 
-    let textSecondaryInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.grey4
+    let textSecondaryInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.grey3
 
     let error = TelefonicaColors.palette.coral
 
@@ -255,6 +261,8 @@ struct TelefonicaColors: MisticaColors {
 
     let tagTextInactive = TelefonicaColors.palette.grey5
 
+    let tagTextInfo = TelefonicaColors.palette.telefonicaBlue
+
     let tagTextSuccess = TelefonicaColors.palette.turquoise70 | TelefonicaColors.palette.turquoise40
 
     let tagTextWarning = TelefonicaColors.palette.ambar70 | TelefonicaColors.palette.ambar40
@@ -266,6 +274,8 @@ struct TelefonicaColors: MisticaColors {
     let tagBackgroundActive = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
 
     let tagBackgroundInactive = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundInfo = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
 
     let tagBackgroundSuccess = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.darkModeGrey6
 
@@ -279,6 +289,8 @@ struct TelefonicaColors: MisticaColors {
 
     let tagTextInactiveInverse = TelefonicaColors.palette.grey5
 
+    let tagTextInfoInverse = TelefonicaColors.palette.telefonicaBlue
+
     let tagTextSuccessInverse = TelefonicaColors.palette.turquoise70 | TelefonicaColors.palette.turquoise40
 
     let tagTextWarningInverse = TelefonicaColors.palette.ambar70 | TelefonicaColors.palette.ambar40
@@ -290,6 +302,8 @@ struct TelefonicaColors: MisticaColors {
     let tagBackgroundActiveInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
 
     let tagBackgroundInactiveInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundInfoInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
 
     let tagBackgroundSuccessInverse = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.darkModeGrey6
 
@@ -336,7 +350,7 @@ public struct TelefonicaColorPalette: Sendable {
     public let grey1 = UIColor(hex: "#F2F4FF")!
     public let grey2 = UIColor(hex: "#D1D5E4")!
     public let grey3 = UIColor(hex: "#B0B6CA")!
-    public let grey4 = UIColor(hex: "#8F97AF")!
+    public let grey4 = UIColor(hex: "#848CA4")!
     public let grey5 = UIColor(hex: "#6E7894")!
     public let grey6 = UIColor(hex: "#58617A")!
     public let grey7 = UIColor(hex: "#414B61")!

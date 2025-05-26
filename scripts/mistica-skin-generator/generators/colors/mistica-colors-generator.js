@@ -4,7 +4,7 @@ const template = (props) => `
 
 import UIKit
 
-public protocol MisticaColors {
+public protocol MisticaColors: Sendable {
 ${props.map(([name, color]) => `    var ${name}: ${color.commonType} { get }`).join('\n')}
 }
 `;

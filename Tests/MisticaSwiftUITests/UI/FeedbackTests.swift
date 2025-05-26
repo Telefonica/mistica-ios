@@ -21,7 +21,7 @@ final class FeedbackTests: XCTestCase {
     }
 
     override func invokeTest() {
-        withSnapshotTesting(record: .failed) {
+        withSnapshotTesting(record: .never) {
             super.invokeTest()
         }
     }

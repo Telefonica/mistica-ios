@@ -273,6 +273,30 @@ struct TelefonicaColors: MisticaColors {
 
     let tagBackgroundError = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey6
 
+    let tagTextPromoInverse = TelefonicaColors.palette.orchid70 | TelefonicaColors.palette.orchid40
+
+    let tagTextActiveInverse = TelefonicaColors.palette.telefonicaBlue
+
+    let tagTextInactiveInverse = TelefonicaColors.palette.grey5
+
+    let tagTextSuccessInverse = TelefonicaColors.palette.turquoise70 | TelefonicaColors.palette.turquoise40
+
+    let tagTextWarningInverse = TelefonicaColors.palette.ambar70 | TelefonicaColors.palette.ambar40
+
+    let tagTextErrorInverse = TelefonicaColors.palette.coral70 | TelefonicaColors.palette.coral40
+
+    let tagBackgroundPromoInverse = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessInverse = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningInverse = TelefonicaColors.palette.ambar10 | TelefonicaColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorInverse = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey6
+
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [

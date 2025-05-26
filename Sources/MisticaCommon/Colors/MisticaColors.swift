@@ -140,5 +140,17 @@ public protocol MisticaColors: Sendable {
     var tagBackgroundSuccess: UIColor { get }
     var tagBackgroundWarning: UIColor { get }
     var tagBackgroundError: UIColor { get }
+    var tagTextPromoInverse: UIColor { get }
+    var tagTextActiveInverse: UIColor { get }
+    var tagTextInactiveInverse: UIColor { get }
+    var tagTextSuccessInverse: UIColor { get }
+    var tagTextWarningInverse: UIColor { get }
+    var tagTextErrorInverse: UIColor { get }
+    var tagBackgroundPromoInverse: UIColor { get }
+    var tagBackgroundActiveInverse: UIColor { get }
+    var tagBackgroundInactiveInverse: UIColor { get }
+    var tagBackgroundSuccessInverse: UIColor { get }
+    var tagBackgroundWarningInverse: UIColor { get }
+    var tagBackgroundErrorInverse: UIColor { get }
     var cardContentOverlay: MisticaColor { get }
 }

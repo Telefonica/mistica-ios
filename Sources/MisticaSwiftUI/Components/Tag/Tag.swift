@@ -6,6 +6,7 @@
 //  Copyright © Telefonica. All rights reserved.
 //
 
+import MisticaCommon
 import SwiftUI
 
 private enum Constants {
@@ -18,16 +19,7 @@ private enum Constants {
 }
 
 public struct Tag: View {
-    public enum Style: CaseIterable {
-        case promo
-        case active
-        case inactive
-        case success
-        case warning
-        case error
-    }
-
-    private let style: Style
+    private let style: TagStyle
     private let text: String
     private let icon: Image?
     private var isInverse = false
@@ -40,7 +32,7 @@ public struct Tag: View {
     }
 
     public init(
-        style: Style,
+        style: TagStyle,
         text: String,
         icon: Image? = nil
     ) {
@@ -58,56 +50,18 @@ public struct Tag: View {
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: Constants.iconSize, height: Constants.iconSize)
-                .foregroundColor(foregroundColor)
+                .foregroundColor(Color(style.textColor(isInverse)))
                 .accessibilityIdentifier(iconAccessibilityIdentifier)
             Text(text)
-                .foregroundColor(foregroundColor)
+                .foregroundColor(Color(style.textColor(isInverse)))
                 .font(.textPreset2(weight: .indicator))
         }
         .padding(.horizontal, Constants.horizontalInset)
         .padding(.vertical, Constants.verticalInset)
         .frame(minWidth: Constants.minWidth, minHeight: Constants.minHeight, alignment: .center)
-        .background(backgroundColor)
+        .background(Color(style.backgroundColor(isInverse)))
         .accessibilityIdentifier(textAccessibilityIdentifier)
         .round(radiusStyle: .indicator)
-    }
-
-    private var backgroundColor: Color {
-        if isInverse {
-            return .inverse
-        }
-
-        switch style {
-        case .promo:
-            return .promoLow
-        case .success:
-            return .successLow
-        case .active:
-            return .brandLow
-        case .inactive:
-            return .neutralLow
-        case .warning:
-            return .warningLow
-        case .error:
-            return .errorLow
-        }
-    }
-
-    private var foregroundColor: Color {
-        switch style {
-        case .promo:
-            return .promoHigh
-        case .success:
-            return .successHigh
-        case .active:
-            return .brand
-        case .inactive:
-            return .neutralMedium
-        case .warning:
-            return .warningHigh
-        case .error:
-            return .errorHigh
-        }
     }
 }
 
@@ -134,18 +88,18 @@ public extension Tag {
         static var previews: some View {
             Preview {
                 VStack {
-                    ForEach(0 ..< Tag.Style.allCases.count, id: \.self) { index in
+                    ForEach(0 ..< TagStyle.allCases.count, id: \.self) { index in
                         Tag(
-                            style: Tag.Style.allCases[index],
+                            style: TagStyle.allCases[index],
                             text: "TAG WITH ICON",
                             icon: Image(systemName: "star.fill")
                         )
                     }
-                    ForEach(0 ..< Tag.Style.allCases.count, id: \.self) { index in
-                        Tag(style: Tag.Style.allCases[index], text: "TAG CONTENT")
+                    ForEach(0 ..< TagStyle.allCases.count, id: \.self) { index in
+                        Tag(style: TagStyle.allCases[index], text: "TAG CONTENT")
                     }
-                    ForEach(0 ..< Tag.Style.allCases.count, id: \.self) { index in
-                        Tag(style: Tag.Style.allCases[index], text: "INVERSE TAG")
+                    ForEach(0 ..< TagStyle.allCases.count, id: \.self) { index in
+                        Tag(style: TagStyle.allCases[index], text: "INVERSE TAG")
                             .inverse(true)
                     }
                 }

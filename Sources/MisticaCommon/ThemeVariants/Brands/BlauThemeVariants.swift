@@ -9,6 +9,6 @@
 import Foundation
 
 struct BlauThemeVariants: MisticaThemeVariants {
-    var successFeedback: MisticaThemeVariantType = .inverse
+    var successFeedback: MisticaThemeVariantType = .default
     var brandLoadingScreen: MisticaThemeVariantType = .default
 }

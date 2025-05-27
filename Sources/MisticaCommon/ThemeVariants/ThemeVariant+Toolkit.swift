@@ -1,8 +1,9 @@
 //
 //  ThemeVariant+Toolkit.swift
-//  Mistica
 //
-//  Created by David Hidalgo Fadrique on 26/5/25.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 public extension MisticaThemeVariants {

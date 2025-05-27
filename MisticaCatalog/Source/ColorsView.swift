@@ -59,7 +59,7 @@ struct ColorsView: View {
             return TelefonicaColorPalette()
         case .tu:
             return TuColorPalette()
-        case .custom(let colors, _, _, _, _):
+        case .custom(let colors, _, _, _, _, _):
             return colors
         }
     }

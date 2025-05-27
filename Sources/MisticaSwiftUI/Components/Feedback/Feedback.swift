@@ -179,23 +179,75 @@ public struct Feedback<
     }
 
     private var backgroundColor: MisticaColor {
-        style.shouldUseInverseFeedbacks ? .backgroundBrand : MisticaColor.solid(.background)
+        switch style {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default:
+                return MisticaColor.solid(.background)
+            case .alternative:
+                return MisticaColor.solid(.backgroundAlternative)
+            case .inverse:
+                return .backgroundBrand
+            }
+        case .informative, .error, .feedback:
+            return MisticaColor.solid(.background)
+        }
     }
 
     private var footerBackgroundColor: MisticaColor {
-        style.shouldUseInverseFeedbacks ? MisticaColor.solid(.backgroundBrandBottom) : MisticaColor.solid(.background)
+        switch style {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return MisticaColor.solid(.background)
+            case .inverse:
+                return .backgroundBrand
+            }
+        case .informative, .error, .feedback:
+            return MisticaColor.solid(.background)
+        }
     }
 
     private var titleForegroundColor: Color {
-        style.shouldUseInverseFeedbacks ? .textPrimaryInverse : .textPrimary
+        switch style {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .textPrimary
+            case .inverse:
+                return .textPrimaryInverse
+            }
+        case .informative, .error, .feedback:
+            return .textPrimary
+        }
     }
 
     private var messageForegroundColor: Color {
-        style.shouldUseInverseFeedbacks ? .textPrimaryInverse : .textSecondary
+        switch style {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .textSecondary
+            case .inverse:
+                return .textSecondaryInverse
+            }
+        case .informative, .error, .feedback:
+            return .textPrimary
+        }
     }
 
     private var imageForegroundColor: MisticaColor {
-        style.shouldUseInverseFeedbacks ? .backgroundBrand : MisticaColor.solid(.textSecondary)
+        switch style {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return MisticaColor.solid(.textSecondary)
+            case .inverse:
+                return .backgroundBrand
+            }
+        case .informative, .error, .feedback:
+            return MisticaColor.solid(.textSecondary)
+        }
     }
 
     private var hasContent: Bool {

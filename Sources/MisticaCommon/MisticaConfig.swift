@@ -17,6 +17,7 @@ public enum MisticaConfig: @unchecked Sendable {
     nonisolated(unsafe) private static var _currentFontWeights: MisticaFontWeights = MovistarFontWeights()
     nonisolated(unsafe) private static var _currentCornerRadius: MisticaCornerRadius = MovistarCornerRadius()
     nonisolated(unsafe) private static var _currentFontSizes: MisticaFontSizes = MovistarFontSizes()
+    nonisolated(unsafe) private static var _currentThemeVariants: MisticaThemeVariants = MovistarThemeVariants()
 
     public static var currentColors: MisticaColors {
         get {
@@ -69,6 +70,15 @@ public enum MisticaConfig: @unchecked Sendable {
         }
         set {
             concurrentQueue.async { _currentFontSizes = newValue }
+        }
+    }
+
+    public static var currentThemeVariants: MisticaThemeVariants {
+        get {
+            concurrentQueue.sync { _currentThemeVariants }
+        }
+        set {
+            concurrentQueue.async { _currentThemeVariants = newValue }
         }
     }
 

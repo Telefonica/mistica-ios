@@ -1,8 +1,9 @@
 //
 //  MisticaThemeVariantType.swift
-//  Mistica
 //
-//  Created by David Hidalgo Fadrique on 26/5/25.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 import SwiftUI
@@ -11,5 +12,5 @@ import SwiftUI
 public enum MisticaThemeVariantType: Sendable {
     case `default`
     case inverse
-    case alternate
+    case alternative
 }

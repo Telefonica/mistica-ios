@@ -4,7 +4,7 @@ const template = (props) => `
 
 import Foundation
 
-public protocol MisticaThemeVariants {
+public protocol MisticaThemeVariants: Sendable {
 ${props.map((prop) => `    var ${prop}: MisticaThemeVariantType { get }`).join('\n')}
 }
 `;

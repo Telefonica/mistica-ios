@@ -378,7 +378,7 @@ private extension FeedbackView {
         }
 
         // Prepare
-        views.forEach(prepare(view:))
+        try? views.forEach(prepare(view:))
         // Generate animators
         animators = views.map(animation).map { animation in
             let animator = animator

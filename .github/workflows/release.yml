@@ -39,3 +39,5 @@ jobs:
         uses: ./.github/actions/microsoft-teams/notify
         with:
           channel: ios_releases
+          flow-token: ${{ secrets.NOVUM_FLOW_BEARER }}
+

@@ -1,3 +1,11 @@
+# [35.2.0](https://github.com/Telefonica/mistica-ios/compare/v35.1.1...v35.2.0) (2025-05-28)
+
+
+### Features
+
+* **skin:** Improve color contrast in Blau skin ([#449](https://github.com/Telefonica/mistica-ios/issues/449)) ([f52d04f](https://github.com/Telefonica/mistica-ios/commit/f52d04f765d9707e1629724c4fffc9280504a7f6))
+* **themeVariant:** Parsed new themeVariant token and apply it to success feedback views ([#450](https://github.com/Telefonica/mistica-ios/issues/450)) ([3d3f4a4](https://github.com/Telefonica/mistica-ios/commit/3d3f4a45441408b77e57b792542750fb753e7665))
+
 ## [35.1.1](https://github.com/Telefonica/mistica-ios/compare/v35.1.0...v35.1.1) (2025-05-07)
 
 

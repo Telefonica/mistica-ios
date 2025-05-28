@@ -201,7 +201,7 @@ public struct Feedback<
             case .default, .alternative:
                 return MisticaColor.solid(.background)
             case .inverse:
-                return .backgroundBrand
+                return MisticaColor.solid(.backgroundBrandBottom)
             }
         case .informative, .error, .feedback:
             return MisticaColor.solid(.background)

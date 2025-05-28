@@ -17,6 +17,7 @@ public enum MisticaConfig: @unchecked Sendable {
     nonisolated(unsafe) private static var _currentFontWeights: MisticaFontWeights = MovistarFontWeights()
     nonisolated(unsafe) private static var _currentCornerRadius: MisticaCornerRadius = MovistarCornerRadius()
     nonisolated(unsafe) private static var _currentFontSizes: MisticaFontSizes = MovistarFontSizes()
+    nonisolated(unsafe) private static var _currentThemeVariants: MisticaThemeVariants = MovistarThemeVariants()
 
     public static var currentColors: MisticaColors {
         get {
@@ -72,6 +73,15 @@ public enum MisticaConfig: @unchecked Sendable {
         }
     }
 
+    public static var currentThemeVariants: MisticaThemeVariants {
+        get {
+            concurrentQueue.sync { _currentThemeVariants }
+        }
+        set {
+            concurrentQueue.async { _currentThemeVariants = newValue }
+        }
+    }
+
     // MARK: Public Setup
 
     nonisolated(unsafe) public static var brandStyle: BrandStyle = .movistar {
@@ -98,54 +108,63 @@ private extension MisticaConfig {
             currentFontWeights = MovistarFontWeights()
             currentCornerRadius = MovistarCornerRadius()
             currentFontSizes = MovistarFontSizes()
+            currentThemeVariants = MovistarThemeVariants()
         case .vivo:
             currentColors = VivoColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = VivoFontWeights()
             currentCornerRadius = VivoCornerRadius()
             currentFontSizes = VivoFontSizes()
+            currentThemeVariants = VivoThemeVariants()
         case .o2:
             currentColors = O2Colors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = O2FontWeights()
             currentCornerRadius = O2CornerRadius()
             currentFontSizes = O2FontSizes()
+            currentThemeVariants = O2ThemeVariants()
         case .o2New:
             currentColors = O2NewColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = O2NewFontWeights()
             currentCornerRadius = O2NewCornerRadius()
             currentFontSizes = O2NewFontSizes()
+            currentThemeVariants = O2NewThemeVariants()
         case .blau:
             currentColors = BlauColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = BlauFontWeights()
             currentCornerRadius = BlauCornerRadius()
             currentFontSizes = BlauFontSizes()
+            currentThemeVariants = BlauThemeVariants()
         case .vivoNew:
             currentColors = VivoNewColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = VivoNewFontWeights()
             currentCornerRadius = VivoNewCornerRadius()
             currentFontSizes = VivoNewFontSizes()
+            currentThemeVariants = VivoNewThemeVariants()
         case .telefonica:
             currentColors = TelefonicaColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = TelefonicaFontWeights()
             currentCornerRadius = TelefonicaCornerRadius()
             currentFontSizes = TelefonicaFontSizes()
+            currentThemeVariants = TelefonicaThemeVariants()
         case .tu:
             currentColors = TuColors()
             currentBrandAssets = DefaultMisticaBrandAssets()
             currentFontWeights = TuFontWeights()
             currentCornerRadius = TuCornerRadius()
             currentFontSizes = TuFontSizes()
-        case .custom(let colors, let assets, let fontWeights, let cornerRadius, let fontSizes):
+            currentThemeVariants = TuThemeVariants()
+        case .custom(let colors, let assets, let fontWeights, let cornerRadius, let fontSizes, let themeVariants):
             currentColors = colors
             currentBrandAssets = assets
             currentFontWeights = fontWeights
             currentCornerRadius = cornerRadius
             currentFontSizes = fontSizes
+            currentThemeVariants = themeVariants
         }
     }
 }

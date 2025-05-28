@@ -12,6 +12,8 @@ import {reduceColors} from './generators/colors/reduce-colors.js';
 import {generateColorToolkit} from './generators/colors/color-toolkit-generator.js';
 import {generateUIColorToolkit} from './generators/colors/uicolor-toolkit-generator.js';
 import {generateBrandColors} from './generators/colors/brand-colors-generator.js';
+import {generateMisticaThemeVariants} from './generators/theme-variants/mistica-theme-variants-generator.js';
+import {generateBrandThemeVariants} from './generators/theme-variants/brand-theme-variants-generator.js';
 
 const BRANDS = [
     {
@@ -109,6 +111,10 @@ const run = async () => {
     const uicolorToolkit = generateUIColorToolkit(colors);
     fs.writeFileSync('../../Sources/MisticaCommon/Colors/ColorToolkit+UIColor.swift', uicolorToolkit);
 
+    console.log(`Generating MisticaThemeVariants.swift...`);
+    const misticaThemeVariants = generateMisticaThemeVariants(anyBrandTokens);
+    fs.writeFileSync('../../Sources/MisticaCommon/ThemeVariants/MisticaThemeVariants.swift', misticaThemeVariants);
+
     brandsWithTokens.forEach((brandWithTokens) => {
         // Font weights
         console.log(`Generating ${brandWithTokens.brand.prefix}FontWeights.swift...`);
@@ -144,6 +150,14 @@ const run = async () => {
         fs.writeFileSync(
             `../../Sources/MisticaCommon/Colors/${brandWithTokens.brand.prefix}ColorPalette.swift`,
             brandColors
+        );
+
+        // Theme variants
+        console.log(`Generating ${brandWithTokens.brand.prefix}ThemeVariants.swift...`);
+        const brandThemeVariants = generateBrandThemeVariants(brandWithTokens.brand, brandWithTokens.tokens);
+        fs.writeFileSync(
+            `../../Sources/MisticaCommon/ThemeVariants/Brands/${brandWithTokens.brand.prefix}ThemeVariants.swift`,
+            brandThemeVariants
         );
     });
 };

@@ -26,33 +26,74 @@ enum FeedbackIconStyle {
 }
 
 extension FeedbackStyle {
-    var shouldUseInverseFeedbacks: Bool {
+    var feedbackTextPrimary: UIColor {
         switch self {
         case .success:
-            return true
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .textPrimary
+            case .inverse:
+                return .textPrimaryInverse
+            }
         case .informative, .error, .feedback:
-            return false
+            return .textPrimary
         }
     }
 
-    var feedbackTextPrimary: UIColor {
-        shouldUseInverseFeedbacks ? .textPrimaryInverse : .textPrimary
-    }
-
     var feedbackTextSecondary: UIColor {
-        shouldUseInverseFeedbacks ? .textPrimaryInverse : .textSecondary
+        switch self {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .textSecondary
+            case .inverse:
+                return .textSecondaryInverse
+            }
+        case .informative, .error, .feedback:
+            return .textSecondary
+        }
     }
 
     var feedbackPrimary: Button.Style {
-        shouldUseInverseFeedbacks ? .primaryInverse : .primary
+        switch self {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .primary
+            case .inverse:
+                return .primaryInverse
+            }
+        case .informative, .error, .feedback:
+            return .primary
+        }
     }
 
     var feedbackSecondary: Button.Style {
-        shouldUseInverseFeedbacks ? .secondaryInverse : .secondary
+        switch self {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .secondary
+            case .inverse:
+                return .secondaryInverse
+            }
+        case .informative, .error, .feedback:
+            return .secondary
+        }
     }
 
     var feedbackLink: Button.Style {
-        shouldUseInverseFeedbacks ? .linkInverse : .link
+        switch self {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .link
+            case .inverse:
+                return .linkInverse
+            }
+        case .informative, .error, .feedback:
+            return .link
+        }
     }
 
     var shouldAnimate: Bool {

@@ -311,9 +311,17 @@ private extension FeedbackView {
     }
 
     func setupBackground() {
-        if style.shouldUseInverseFeedbacks {
-            setMisticaColorBackground(.backgroundBrand, ignoreSafeArea: true)
-        } else {
+        switch style {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default:
+                backgroundColor = .background
+            case .alternative:
+                backgroundColor = .backgroundAlternative
+            case .inverse:
+                setMisticaColorBackground(.backgroundBrand, ignoreSafeArea: true)
+            }
+        case .informative, .error, .feedback:
             backgroundColor = .background
         }
     }

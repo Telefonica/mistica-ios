@@ -22,25 +22,46 @@ public enum FeedbackStyle {
     case informative
     case feedback(Image)
 
-    var shouldUseInverseFeedbacks: Bool {
+    @MainActor var primaryButtonStyle: MisticaButtonStyle {
         switch self {
         case .success:
-            return true
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .misticaPrimary()
+            case .inverse:
+                return .misticaPrimaryInverse()
+            }
         case .informative, .error, .feedback:
-            return false
+            return .misticaPrimary()
         }
     }
 
-    @MainActor var primaryButtonStyle: MisticaButtonStyle {
-        shouldUseInverseFeedbacks ? .misticaPrimaryInverse() : .misticaPrimary()
-    }
-
     @MainActor var secondaryButtonStyle: MisticaButtonStyle {
-        shouldUseInverseFeedbacks ? .misticaSecondaryInverse() : .misticaSecondary()
+        switch self {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .misticaSecondary()
+            case .inverse:
+                return .misticaSecondaryInverse()
+            }
+        case .informative, .error, .feedback:
+            return .misticaSecondary()
+        }
     }
 
     @MainActor var linkButtonStyle: MisticaButtonStyle {
-        shouldUseInverseFeedbacks ? .misticaLinkInverse() : .misticaLink()
+        switch self {
+        case .success:
+            switch MisticaConfig.currentThemeVariants.successFeedback {
+            case .default, .alternative:
+                return .misticaLink()
+            case .inverse:
+                return .misticaLinkInverse()
+            }
+        case .informative, .error, .feedback:
+            return .misticaLink()
+        }
     }
 
     @MainActor var iconStyle: FeedbackIconStyle {

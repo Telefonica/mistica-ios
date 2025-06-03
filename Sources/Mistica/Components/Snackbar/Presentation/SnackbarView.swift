@@ -211,7 +211,7 @@ extension SnackbarView {
                 container.layoutIfNeeded()
             },
             completion: { _ in
-                AccessibilityHelper.post(self.text)
+                self.triggerAccessibilityAction()
 
                 container.clipsToBounds = previousClipsToBounds
 
@@ -267,6 +267,13 @@ extension SnackbarView {
 private extension SnackbarView {
     var shouldShowCloseButton: Bool {
         forceDismiss || (action == nil && config.overrideDismissInterval == .infinite(nil))
+    }
+    func triggerAccessibilityAction() {
+        if config.overrideDismissInterval.shouldAutoFocus {
+            UIAccessibility.post(notification: .layoutChanged, argument: self)
+        } else {
+            AccessibilityHelper.post(self.text)
+        }
     }
 
     func layoutViews() {

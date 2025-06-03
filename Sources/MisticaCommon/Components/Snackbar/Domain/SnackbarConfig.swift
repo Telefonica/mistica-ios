@@ -23,7 +23,7 @@ public struct SnackbarAction {
 public enum SnackbarDismissInterval: Equatable {
     case fiveSeconds
     case tenSeconds(SnackbarAction)
-    case infinite(SnackbarAction?)
+    case infinite(SnackbarAction?, autoFocus: Bool = false)
 
     public var timeInterval: TimeInterval? {
         switch self {
@@ -42,7 +42,7 @@ public enum SnackbarDismissInterval: Equatable {
             return nil
         case .tenSeconds(let action):
             return action
-        case .infinite(let action):
+        case .infinite(let action, _):
             return action
         }
     }
@@ -55,6 +55,16 @@ public enum SnackbarDismissInterval: Equatable {
             return true
         }
     }
+    
+    public var shouldAutoFocus: Bool {
+        switch self {
+        case .infinite(_, let autoFocus):
+            return autoFocus
+        case .fiveSeconds, .tenSeconds:
+            return false
+        }
+    }
+
 
     public static func == (lhs: SnackbarDismissInterval, rhs: SnackbarDismissInterval) -> Bool {
         switch (lhs, rhs) {
@@ -62,7 +72,7 @@ public enum SnackbarDismissInterval: Equatable {
             return true
         case (.tenSeconds(_), .tenSeconds(_)):
             return true
-        case (.infinite(_), .infinite(_)):
+        case (.infinite(_, _), .infinite(_, _)):
             return true
         default:
             return false

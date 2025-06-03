@@ -166,10 +166,10 @@ private extension UICatalogSnackbarViewController {
 
         case .infinite:
             guard let action = actionTitleCell.textField.text, !action.isEmpty else {
-                return .infinite(nil)
+                return .infinite(nil, autoFocus: false)
             }
 
-            return .infinite(SnackbarAction(title: action, handler: {}))
+            return .infinite(SnackbarAction(title: action, handler: {}), autoFocus: true)
         case .none:
             return .fiveSeconds
         }

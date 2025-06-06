@@ -55,7 +55,7 @@ public enum SnackbarDismissInterval: Equatable {
             return true
         }
     }
-    
+
     public var autoFocus: Bool {
         switch self {
         case .infinite(_, let autoFocus, _):
@@ -73,8 +73,6 @@ public enum SnackbarDismissInterval: Equatable {
             return nil
         }
     }
-
-
 
     public static func == (lhs: SnackbarDismissInterval, rhs: SnackbarDismissInterval) -> Bool {
         switch (lhs, rhs) {

@@ -183,11 +183,6 @@ class SnackbarView: UIView {
 
 extension SnackbarView {
     func show(in container: UIView) {
-    
-        guard Thread.isMainThread else {
-            DispatchQueue.main.async { self.show(in: container) }
-            return
-        }
 
         let previousClipsToBounds = container.clipsToBounds
         container.clipsToBounds = true
@@ -278,8 +273,13 @@ private extension SnackbarView {
     }
 
     func triggerAccessibilityAction() {
-        if config.overrideDismissInterval.shouldAutoFocus {
-            UIAccessibility.post(notification: .layoutChanged, argument: self)
+        
+        if config.overrideDismissInterval.autoFocus {
+            let delay = config.overrideDismissInterval.autoFocusDelay ?? 0.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                UIAccessibility.post(notification: .layoutChanged, argument: self)
+            }
+            
         } else {
             AccessibilityHelper.post(self.text)
         }

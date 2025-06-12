@@ -1,3 +1,10 @@
+# [35.3.0](https://github.com/Telefonica/mistica-ios/compare/v35.2.0...v35.3.0) (2025-06-12)
+
+
+### Features
+
+* **Snackbar:** add optional auto accessibility focus for persistent snackbars ([#452](https://github.com/Telefonica/mistica-ios/issues/452)) ([f43a55b](https://github.com/Telefonica/mistica-ios/commit/f43a55bacab46ffecc68faa2caed08d060e0312b))
+
 # [35.2.0](https://github.com/Telefonica/mistica-ios/compare/v35.1.1...v35.2.0) (2025-05-28)
 
 

@@ -79,15 +79,19 @@ extension BottomSheetInteractiveDismissalTransition {
 
         if progress < 0 {
             heightAnimator?.addCompletion { _ in
-                self.offsetAnimator?.stopAnimation(false)
-                self.offsetAnimator?.finishAnimation(at: .start)
+                Task { @MainActor in
+                    self.offsetAnimator?.stopAnimation(false)
+                    self.offsetAnimator?.finishAnimation(at: .start)
+                }
             }
 
             heightAnimator?.startAnimation()
         } else {
             offsetAnimator?.addCompletion { _ in
-                self.heightAnimator?.stopAnimation(false)
-                self.heightAnimator?.finishAnimation(at: .start)
+                Task { @MainActor in
+                    self.heightAnimator?.stopAnimation(false)
+                    self.heightAnimator?.finishAnimation(at: .start)
+                }
             }
 
             offsetAnimator?.startAnimation()
@@ -195,8 +199,10 @@ private extension BottomSheetInteractiveDismissalTransition {
         }
 
         propertyAnimator.addCompletion { position in
-            self.heightConstraint?.isActive = position == .end ? true : false
-            self.heightConstraint?.constant = position == .end ? finalHeight : height
+            Task { @MainActor in
+                self.heightConstraint?.isActive = position == .end ? true : false
+                self.heightConstraint?.constant = position == .end ? finalHeight : height
+            }
         }
 
         return propertyAnimator
@@ -219,11 +225,15 @@ private extension BottomSheetInteractiveDismissalTransition {
         }
 
         propertyAnimator.addCompletion { position in
-            self.bottomConstraint?.constant = position == .end ? offset : 0
+            Task { @MainActor in
+                self.bottomConstraint?.constant = position == .end ? offset : 0
+            }
         }
 
         propertyAnimator.addCompletion { _ in
-            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            Task { @MainActor in
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            }
         }
 
         return propertyAnimator

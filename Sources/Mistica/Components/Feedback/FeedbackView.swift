@@ -101,6 +101,7 @@ public class FeedbackView: UIView {
         label.numberOfLines = 0
         label.isAccessibilityElement = true
         label.accessibilityIdentifier = DefaultIdentifiers.Feedback.title
+        label.accessibilityTraits = .header
         return label
     }()
 
@@ -158,8 +159,10 @@ public class FeedbackView: UIView {
         switch primaryAction {
         case .button(let title, _):
             button = Button(style: style.feedbackPrimary, title: title)
+            button?.accessibilityTraits = .button
         case .retryButton(let title, let loadingTitle, _):
             button = Button(style: style.feedbackPrimary, title: title, loadingTitle: loadingTitle)
+            button?.accessibilityTraits = .button
         case .none:
             button = nil
         }
@@ -184,9 +187,11 @@ public class FeedbackView: UIView {
         case .button(let title, _):
             button = Button(style: style.feedbackSecondary, title: title)
             button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.secondButton
+            button?.accessibilityTraits = .button
         case .link(let title, _):
             button = Button(style: style.feedbackLink, title: title)
             button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.linkButton
+            button?.accessibilityTraits = .link
         case .none:
             button = nil
         }

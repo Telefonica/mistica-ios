@@ -1,3 +1,10 @@
+# [35.4.0](https://github.com/Telefonica/mistica-ios/compare/v35.3.0...v35.4.0) (2025-06-24)
+
+
+### Features
+
+* **Feedback:** Adding the missing accessibilityTraits in header and buttons ([5cd82e5](https://github.com/Telefonica/mistica-ios/commit/5cd82e59f93c81f44e0dcd8067751a79c10b8ee0)), closes [#454](https://github.com/Telefonica/mistica-ios/issues/454)
+
 # [35.3.0](https://github.com/Telefonica/mistica-ios/compare/v35.2.0...v35.3.0) (2025-06-12)
 
 

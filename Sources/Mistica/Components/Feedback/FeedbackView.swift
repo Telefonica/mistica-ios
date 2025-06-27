@@ -365,7 +365,7 @@ private extension FeedbackView {
         }
 
         guard UIView.areAnimationsEnabled, style.shouldAnimate else {
-            self.enableButtonsAccessibility()
+            enableButtonsAccessibility()
             return
         }
         animationFired = false
@@ -387,7 +387,7 @@ private extension FeedbackView {
 
         // Prepare
         views.forEach(prepare(view:))
-        
+
         // Generate animators
         animators = views.map(animation).map { animation in
             let animator = animator
@@ -425,7 +425,7 @@ private extension FeedbackView {
             self?.animate(remaining: animators)
         }
     }
-    
+
     func enableButtonsAccessibility() {
         primaryButton?.isAccessibilityElement = true
         secondaryButton?.isAccessibilityElement = true

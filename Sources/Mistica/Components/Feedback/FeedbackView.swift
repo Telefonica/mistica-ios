@@ -386,7 +386,9 @@ private extension FeedbackView {
         }
 
         // Prepare
-        views.forEach(prepare(view:))
+        for view in views {
+            prepare(view: view)
+        }
 
         // Generate animators
         animators = views.map(animation).map { animation in

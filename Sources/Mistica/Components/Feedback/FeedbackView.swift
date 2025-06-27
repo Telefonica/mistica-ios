@@ -167,7 +167,7 @@ public class FeedbackView: UIView {
             button = nil
         }
         button?.addTarget(self, action: #selector(primaryButtonTapped), for: .touchUpInside)
-        button?.isAccessibilityElement = true
+        button?.isAccessibilityElement = false
         button?.accessibilityIdentifier = DefaultIdentifiers.Feedback.firstButton
         return button
     }()
@@ -196,7 +196,7 @@ public class FeedbackView: UIView {
             button = nil
         }
         button?.addTarget(self, action: #selector(secondaryButtonTapped), for: .touchUpInside)
-        button?.isAccessibilityElement = true
+        button?.isAccessibilityElement = false
 
         return button
     }()
@@ -364,7 +364,10 @@ private extension FeedbackView {
             }
         }
 
-        guard UIView.areAnimationsEnabled, style.shouldAnimate else { return }
+        guard UIView.areAnimationsEnabled, style.shouldAnimate else {
+            self.enableButtonsAccessibility()
+            return
+        }
         animationFired = false
 
         // Views that should animate
@@ -383,7 +386,8 @@ private extension FeedbackView {
         }
 
         // Prepare
-        try? views.forEach(prepare(view:))
+        views.forEach(prepare(view:))
+        
         // Generate animators
         animators = views.map(animation).map { animation in
             let animator = animator
@@ -410,12 +414,21 @@ private extension FeedbackView {
 
         let animator = animators.removeFirst()
         animator.startAnimation()
+        animator.addCompletion { position in
+            guard position == .end else { return }
+            self.enableButtonsAccessibility()
+        }
 
         // Animate other views
         guard animators.isEmpty == false else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + Constants.Animation.Delay.small) { [weak self] in
             self?.animate(remaining: animators)
         }
+    }
+    
+    func enableButtonsAccessibility() {
+        primaryButton?.isAccessibilityElement = true
+        secondaryButton?.isAccessibilityElement = true
     }
 
     func prepareHapticFeedback() {

@@ -1,3 +1,10 @@
+## [35.4.1](https://github.com/Telefonica/mistica-ios/compare/v35.4.0...v35.4.1) (2025-06-30)
+
+
+### Bug Fixes
+
+* **FeedbackView:** make voiceOver be able to read title view first ([01f9225](https://github.com/Telefonica/mistica-ios/commit/01f9225c0e469aa3385f489e693c9f8a939f40b8))
+
 # [35.4.0](https://github.com/Telefonica/mistica-ios/compare/v35.3.0...v35.4.0) (2025-06-24)
 
 

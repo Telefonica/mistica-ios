@@ -32,11 +32,6 @@ const BRANDS = [
         misticaDesignFileName: 'o2-new',
     },
     {
-        id: 'o2',
-        prefix: 'O2',
-        misticaDesignFileName: 'o2',
-    },
-    {
         id: 'telefonica',
         prefix: 'Telefonica',
         misticaDesignFileName: 'telefonica',
@@ -113,7 +108,10 @@ const run = async () => {
 
     console.log(`Generating MisticaThemeVariants.swift...`);
     const misticaThemeVariants = generateMisticaThemeVariants(anyBrandTokens);
-    fs.writeFileSync('../../Sources/MisticaCommon/ThemeVariants/MisticaThemeVariants.swift', misticaThemeVariants);
+    fs.writeFileSync(
+        '../../Sources/MisticaCommon/ThemeVariants/MisticaThemeVariants.swift',
+        misticaThemeVariants
+    );
 
     brandsWithTokens.forEach((brandWithTokens) => {
         // Font weights

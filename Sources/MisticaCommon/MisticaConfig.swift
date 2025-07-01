@@ -116,13 +116,6 @@ private extension MisticaConfig {
             currentCornerRadius = VivoCornerRadius()
             currentFontSizes = VivoFontSizes()
             currentThemeVariants = VivoThemeVariants()
-        case .o2:
-            currentColors = O2Colors()
-            currentBrandAssets = DefaultMisticaBrandAssets()
-            currentFontWeights = O2FontWeights()
-            currentCornerRadius = O2CornerRadius()
-            currentFontSizes = O2FontSizes()
-            currentThemeVariants = O2ThemeVariants()
         case .o2New:
             currentColors = O2NewColors()
             currentBrandAssets = DefaultMisticaBrandAssets()

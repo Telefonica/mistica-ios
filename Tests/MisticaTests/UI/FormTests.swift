@@ -87,7 +87,7 @@ final class FormsTests: XCTestCase {
     // MARK: - Behaviour
 
     func testAddInputField() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let formView = makeFormView(
             inputFields: [
@@ -113,7 +113,7 @@ final class FormsTests: XCTestCase {
     }
 
     func testRemoveInputField() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let firstInputField = makeInputField()
         let secondInputField = makeInputFieldWithPasswordStyle()
@@ -144,7 +144,7 @@ final class FormsTests: XCTestCase {
     // MARK: - Validation
 
     func testInputFieldMandatoryValidationShowWarning() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let formView = makeFormView(
             inputFields: [
@@ -175,7 +175,7 @@ final class FormsTests: XCTestCase {
     }
 
     func testInputFieldIsOptionalValidationDoesNotShowWarning() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let formView = makeFormView(
             inputFields: [
@@ -207,7 +207,7 @@ final class FormsTests: XCTestCase {
     }
 
     func testInputFieldMandatoryAndFillInValidationDoesNotShowWarning() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let formView = makeFormView(
             inputFields: [
@@ -240,7 +240,7 @@ final class FormsTests: XCTestCase {
     // MARK: XIB integration
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let view = FormXIBIntegration.viewFromNib()
         guard let formView = view.formView else { fatalError("The view IBOutlet was not setup") }

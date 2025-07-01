@@ -73,7 +73,7 @@ final class ControlsTests: XCTestCase {
     // MARK: - UISegmentedControl Behaviour
 
     func testSegmentedControlChangeSelectedSegment() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
         MisticaConfig.styleControls([.segmentedControl])
 
         let segmentedControl = createSegmentControl()

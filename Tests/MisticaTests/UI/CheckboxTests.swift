@@ -37,7 +37,7 @@ final class CheckboxTests: XCTestCase {
     // MARK: Behaviour
 
     func testCheckboxIsChecked() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let checkbox = Checkbox()
         checkbox.isChecked = false

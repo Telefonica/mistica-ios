@@ -87,7 +87,7 @@ pod install
 By default the framework components are created with the Movistar's brand style, to select a different one, configure the brand style:
 
 ```swift
-MisticaConfig.brandStyle = .o2
+MisticaConfig.brandStyle = .o2New
 ```
 
 Remember to initialize Mistica with you desired brand style before the initialize the UI of your app.

@@ -27,7 +27,7 @@ final class BadgeTests: XCTestCase {
     }
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let view = BadgeXIBIntegration.viewFromNib()
         view.flagBadge.style = .flag

@@ -358,8 +358,10 @@ private extension Button {
             }
             animator.addCompletion { [weak self] _ in
                 guard let s = self else { return }
-                UIAccessibility.post(notification: .layoutChanged, argument: s.accessibilityLabel)
-                s.updateTraits()
+                Task { @MainActor in
+                    UIAccessibility.post(notification: .layoutChanged, argument: s.accessibilityLabel)
+                    s.updateTraits()
+                }
             }
             isShowingLoadingAnimation = false
             animator.startAnimation()

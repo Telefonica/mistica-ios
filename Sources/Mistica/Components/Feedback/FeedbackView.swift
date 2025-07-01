@@ -418,7 +418,9 @@ private extension FeedbackView {
         animator.startAnimation()
         animator.addCompletion { position in
             guard position == .end else { return }
-            self.enableButtonsAccessibility()
+            Task { @MainActor in
+                self.enableButtonsAccessibility()
+            }
         }
 
         // Animate other views

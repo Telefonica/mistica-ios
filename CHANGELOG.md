@@ -1,3 +1,10 @@
+## [35.4.3](https://github.com/Telefonica/mistica-ios/compare/v35.4.2...v35.4.3) (2025-07-03)
+
+
+### Bug Fixes
+
+* **Concurrency:** compilation problems with XCode 26 Beta 1 (part 2) ([fa671e2](https://github.com/Telefonica/mistica-ios/commit/fa671e2fca697c10b8745568eca081fb9f25b653))
+
 ## [35.4.2](https://github.com/Telefonica/mistica-ios/compare/v35.4.1...v35.4.2) (2025-07-03)
 
 

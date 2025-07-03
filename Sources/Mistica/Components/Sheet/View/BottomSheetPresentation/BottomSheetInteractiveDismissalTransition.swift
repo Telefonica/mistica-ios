@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class BottomSheetInteractiveDismissalTransition: NSObject {
+@MainActor final class BottomSheetInteractiveDismissalTransition: NSObject {
     private enum Constants {
         static let maxBouncingHeight: CGFloat = 250
         @MainActor static let animationDuration: CGFloat = UIView.defaultAnimationDuration
@@ -220,8 +220,10 @@ private extension BottomSheetInteractiveDismissalTransition {
         )
 
         propertyAnimator.addAnimations {
-            self.bottomConstraint?.constant = offset
-            view.superview?.layoutIfNeeded()
+            Task { @MainActor in
+                self.bottomConstraint?.constant = offset
+                view.superview?.layoutIfNeeded()
+            }
         }
 
         propertyAnimator.addCompletion { position in

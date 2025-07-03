@@ -7,7 +7,7 @@
 //
 
 // Versioning
-VERSION_NUMBER = 35.4.1
+VERSION_NUMBER = 35.4.2
 CURRENT_PROJECT_VERSION = 1 //Build
 
 // Build options

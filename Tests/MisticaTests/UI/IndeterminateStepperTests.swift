@@ -52,7 +52,7 @@ final class IndeterminateStepperTests: XCTestCase {
     // MARK: XIB integration
 
     func testIndeterminateStepperXIBIntegration() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let view = IndeterminateStepperXIBIntegration.viewFromNib()
 

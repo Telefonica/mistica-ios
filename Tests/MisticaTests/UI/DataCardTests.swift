@@ -134,7 +134,7 @@ final class DataCardTests: XCTestCase {
     // MARK: XIB integration
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let configurationWithActions = DataCardConfiguration(
             title: "Title",

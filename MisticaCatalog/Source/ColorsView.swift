@@ -49,8 +49,6 @@ struct ColorsView: View {
             return BlauColorPalette()
         case .o2New:
             return O2NewColorPalette()
-        case .vivo:
-            return VivoColorPalette()
         case .vivoNew:
             return VivoNewColorPalette()
         case .telefonica:

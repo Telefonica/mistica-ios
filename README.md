@@ -97,7 +97,7 @@ In applications before iOS 13, the initialziation should be done in the **UIAppl
 ```swift
 func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Set up Mistica
-    MisticaConfig.brandStyle = .vivo
+    MisticaConfig.brandStyle = .vivoNew
 
     return true
 }

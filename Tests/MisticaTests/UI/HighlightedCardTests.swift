@@ -90,7 +90,7 @@ final class HighlightedCardTests: XCTestCase {
     }
 
     func testRightImageWithFillStyle() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let card = makeCard(
             title: "Lorem",
@@ -108,7 +108,7 @@ final class HighlightedCardTests: XCTestCase {
     }
 
     func testRightImageWithFitStyle() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let card = makeCard(
             title: "Lorem",
@@ -126,7 +126,7 @@ final class HighlightedCardTests: XCTestCase {
     }
 
     func testBackgroundImage() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let card = makeCard(
             title: "Lorem",
@@ -143,7 +143,7 @@ final class HighlightedCardTests: XCTestCase {
     }
 
     func testWithoutButton() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let card = makeCard(
             title: "Lorem",
@@ -215,7 +215,7 @@ final class HighlightedCardTests: XCTestCase {
     // MARK: XIB integration
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let view = HighlightedCardXIBIntegration.viewFromNib()
         view.card.title = "Resolver problema técnico"

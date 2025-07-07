@@ -36,7 +36,7 @@ extension BrandStyle {
                 boldFont: "TeleSans-DemiBold",
                 defaultFont: "TeleSans-Regular"
             )
-        case .vivo, .blau, .custom:
+        case .blau, .custom:
             return nil
         }
     }

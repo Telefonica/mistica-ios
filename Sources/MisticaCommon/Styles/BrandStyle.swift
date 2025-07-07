@@ -11,7 +11,6 @@ import Foundation
 @frozen
 public enum BrandStyle {
     case movistar
-    case vivo
     case o2New
     case blau
     case vivoNew
@@ -23,8 +22,6 @@ public enum BrandStyle {
         switch self {
         case .movistar:
             return "movistar"
-        case .vivo:
-            return "vivo"
         case .o2New:
             return "o2New"
         case .blau:
@@ -44,8 +41,6 @@ public enum BrandStyle {
         switch self {
         case .movistar:
             return "Movistar"
-        case .vivo:
-            return "Vivo"
         case .o2New:
             return "O2New"
         case .blau:
@@ -62,6 +57,6 @@ public enum BrandStyle {
     }
 
     public static var allCases: [BrandStyle] {
-        [.movistar, .vivo, .o2New, .blau, .vivoNew, .telefonica, .tu]
+        [.movistar, .o2New, .blau, .vivoNew, .telefonica, .tu]
     }
 }

@@ -60,7 +60,7 @@ final class CheckboxTests: XCTestCase {
     // MARK: XIB integration
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let view = CheckboxXIBIntegration.viewFromNib()
 

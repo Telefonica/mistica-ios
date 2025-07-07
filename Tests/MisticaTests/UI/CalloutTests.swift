@@ -182,7 +182,7 @@ final class CalloutTests: XCTestCase {
     // MARK: XIB integration
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let configurationWithActions = CalloutConfiguration(
             title: "This is a title",

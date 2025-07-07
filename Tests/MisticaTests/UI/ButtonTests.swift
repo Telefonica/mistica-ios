@@ -261,7 +261,7 @@ final class ButtonTests: XCTestCase {
     }
 
     func testMinimumWidth() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         assertSnapshot(
             of: makeTemplateWithRegularAndSmallButtonsAndLinkButton(),

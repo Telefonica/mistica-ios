@@ -122,7 +122,7 @@ final class MediaCardTests: XCTestCase {
     // MARK: XIB integration
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let configurationWithActions = MediaCardConfiguration(
             richMedia: AnyValues.richMedia,

@@ -46,11 +46,6 @@ const BRANDS = [
         prefix: 'VivoNew',
         misticaDesignFileName: 'vivo-new',
     },
-    {
-        id: 'vivo',
-        prefix: 'Vivo',
-        misticaDesignFileName: 'vivo',
-    },
 ];
 
 const BRANCH = 'production';

@@ -168,7 +168,7 @@ final class EmptyStatesTests: XCTestCase {
     // MARK: XIB integration
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let configurationWithActions = EmptyStateConfiguration(
             type: .default(.fullWidthImage(AnyValues.fullImage)),

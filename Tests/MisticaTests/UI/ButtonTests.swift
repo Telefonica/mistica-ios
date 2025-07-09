@@ -261,7 +261,7 @@ final class ButtonTests: XCTestCase {
     }
 
     func testMinimumWidth() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         assertSnapshot(
             of: makeTemplateWithRegularAndSmallButtonsAndLinkButton(),
@@ -290,7 +290,7 @@ final class ButtonTests: XCTestCase {
     // MARK: Behaviour
 
     func testShowLoadingLabel() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let buttonNormalState = Button()
         buttonNormalState.title = "Regular"
@@ -381,7 +381,7 @@ final class ButtonTests: XCTestCase {
     // MARK: XIB integration
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let view = ButtonXIBIntegration.viewFromNib()
         view.buttonPinnedToSides.title = "Button pinned to sides"

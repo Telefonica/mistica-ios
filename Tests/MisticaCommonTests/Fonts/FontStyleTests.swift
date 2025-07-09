@@ -54,7 +54,7 @@ final class FontStyleTests: XCTestCase {
     }
 
     func testOtherCustomFonts() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
         XCTAssertEqual(UIFont.textPreset1(weight: .regular).fontName, "Telefonica-Regular")
         XCTAssertEqual(UIFont.textPreset1(weight: .medium).fontName, "Telefonica-Bold")
         XCTAssertEqual(UIFont.textPreset2(weight: .regular).fontName, "Telefonica-Regular")

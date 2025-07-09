@@ -73,7 +73,7 @@ final class ControlsTests: XCTestCase {
     // MARK: - UISegmentedControl Behaviour
 
     func testSegmentedControlChangeSelectedSegment() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
         MisticaConfig.styleControls([.segmentedControl])
 
         let segmentedControl = createSegmentControl()
@@ -97,7 +97,7 @@ final class ControlsTests: XCTestCase {
     // MARK: - UITabBarControl Behaviour
 
     func testTabBarControlChangeSelectedItem() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
         MisticaConfig.styleControls([.tabBar])
 
         let tabBarController = createTabBarController()

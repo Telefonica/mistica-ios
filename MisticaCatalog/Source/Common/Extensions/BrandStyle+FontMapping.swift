@@ -21,7 +21,7 @@ extension BrandStyle {
                 boldFont: "VivoTypeBold",
                 defaultFont: "VivoTypeRegular"
             )
-        case .o2, .o2New, .movistar:
+        case .o2New, .movistar:
             return FontMapping(
                 lightFont: "OnAir-Light",
                 mediumFont: "OnAir",
@@ -36,7 +36,7 @@ extension BrandStyle {
                 boldFont: "TeleSans-DemiBold",
                 defaultFont: "TeleSans-Regular"
             )
-        case .vivo, .blau, .custom:
+        case .blau, .custom:
             return nil
         }
     }

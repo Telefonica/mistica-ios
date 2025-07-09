@@ -37,7 +37,7 @@ final class CheckboxTests: XCTestCase {
     // MARK: Behaviour
 
     func testCheckboxIsChecked() {
-        MisticaConfig.brandStyle = .o2
+        MisticaConfig.brandStyle = .o2New
 
         let checkbox = Checkbox()
         checkbox.isChecked = false
@@ -60,7 +60,7 @@ final class CheckboxTests: XCTestCase {
     // MARK: XIB integration
 
     func testXIBIntegration() {
-        MisticaConfig.brandStyle = .vivo
+        MisticaConfig.brandStyle = .vivoNew
 
         let view = CheckboxXIBIntegration.viewFromNib()
 

@@ -1,3 +1,10 @@
+# [35.5.0](https://github.com/Telefonica/mistica-ios/compare/v35.4.3...v35.5.0) (2025-07-09)
+
+
+### Features
+
+* **Brands:** IOS-11577 remove old brands ([#459](https://github.com/Telefonica/mistica-ios/issues/459)) ([50a0033](https://github.com/Telefonica/mistica-ios/commit/50a003369e334e2222efbb785657624e33ff4e81))
+
 ## [35.4.3](https://github.com/Telefonica/mistica-ios/compare/v35.4.2...v35.4.3) (2025-07-03)
 
 

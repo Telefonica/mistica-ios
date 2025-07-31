@@ -235,9 +235,6 @@ extension SnackbarView {
         let previousClipsToBounds = superview.clipsToBounds
         superview.clipsToBounds = true
 
-        let snackbarHeight = frame.height
-        let temporaryHeightConstraint = heightAnchor.constraint(equalToConstant: snackbarHeight)
-        temporaryHeightConstraint.isActive = true
         let dismissalOffset = calculateDismissalOffset(in: superview)
 
         UIView.animate(
@@ -251,14 +248,11 @@ extension SnackbarView {
             },
             completion: { _ in
                 superview.clipsToBounds = previousClipsToBounds
-
                 self.removeFromSuperview()
-
-                temporaryHeightConstraint.isActive = false
-
                 completion?()
             }
         )
+
         fadeStackViewOut()
     }
 }

@@ -1,10 +1,6 @@
-//
-//  BlauFontSizes.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import Foundation
 

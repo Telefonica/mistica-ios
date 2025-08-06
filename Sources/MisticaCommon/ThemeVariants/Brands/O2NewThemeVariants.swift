@@ -1,6 +1,10 @@
-
-// Generated using Make
-// DO NOT EDIT
+//
+//  O2NewThemeVariants.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
 
 import Foundation
 

@@ -1,6 +1,10 @@
-
-// Generated using Make
-// DO NOT EDIT
+//
+//  MovistarCornerRadius.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
 
 import Foundation
 

@@ -1,6 +1,10 @@
-
-// Generated using Make
-// DO NOT EDIT
+//
+//  O2NewFontSizes.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
 
 import Foundation
 

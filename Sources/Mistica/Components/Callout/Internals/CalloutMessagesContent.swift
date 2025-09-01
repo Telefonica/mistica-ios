@@ -117,8 +117,6 @@ private extension CalloutMessagesContent {
     }
 
     func styleViews() {
-        backgroundColor = .backgroundAlternative
-
         titleLabel.font = .textPreset4(weight: .regular)
         titleLabel.textColor = .textPrimary
         titleLabel.minHeight = 24

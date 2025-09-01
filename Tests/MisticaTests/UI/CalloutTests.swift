@@ -168,6 +168,14 @@ final class CalloutTests: XCTestCase {
         assertSnapshot(of: view, as: .image)
     }
 
+    func testInverseBackground() {
+        MisticaConfig.brandStyle = .movistar
+
+        let view = makeInverseCallout()
+
+        assertSnapshot(of: view, as: .image)
+    }
+
     // MARK: Behaviour
 
     func testShowLoadingStateForButtons() {
@@ -211,6 +219,24 @@ extension CalloutTests {
 
     func makeBasicCallout() -> Callout {
         let configuration = CalloutConfiguration(asset: .none, title: nil, description: "This is a description", actions: nil, canClose: false)
+        let callout = Callout()
+        callout.contentConfiguration = configuration
+
+        let calloutSize = callout.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        callout.frame = CGRect(x: 0, y: 0, width: calloutSize.width, height: calloutSize.height)
+
+        return callout
+    }
+
+    func makeInverseCallout() -> Callout {
+        let configuration = CalloutConfiguration(
+            asset: .none,
+            title: nil,
+            description: "This is a description",
+            actions: nil,
+            canClose: false,
+            inverse: true
+        )
         let callout = Callout()
         callout.contentConfiguration = configuration
 

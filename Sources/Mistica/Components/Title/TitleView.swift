@@ -170,7 +170,7 @@ private extension TitleView {
 private extension TitleView.Style {
     static var `default`: Self {
         switch MisticaConfig.brandStyle {
-        case .movistar,.o2New:
+        case .movistar, .o2New:
             return .title3
         case .blau, .custom, .vivoNew, .telefonica, .tu:
             return .title1

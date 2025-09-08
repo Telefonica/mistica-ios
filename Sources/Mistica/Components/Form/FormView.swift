@@ -96,21 +96,21 @@ public extension FormView {
     }
 
     func addInputFields(_ inputFields: [InputField]) {
-        try? inputFields.forEach(addInputField)
+        inputFields.forEach(addInputField)
         arrangeViews()
     }
 
     func removeInputFields(_ inputFields: [InputField]) {
-        try? inputFields.forEach(removeInputField)
+        inputFields.forEach(removeInputField)
     }
 
     func addValidatableViews(_ views: [ValidatableView]) {
-        try? views.forEach(addValidatableView)
+        views.forEach(addValidatableView)
         arrangeViews()
     }
 
     func removeValidatableViews(_ views: [ValidatableView]) {
-        try? views.forEach(removeValidatableView)
+        views.forEach(removeValidatableView)
     }
 
     func addHeaderView(_ headerView: UIView) {

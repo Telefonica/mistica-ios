@@ -42,7 +42,7 @@ final class TagTests: XCTestCase {
 
     func testInverseTagContentWitchIcon() {
         assertSnapshot(
-            matching: makeTemplateWithAllTags(content: "Tag", icon: true, isInverse: true),
+            of: makeTemplateWithAllTags(content: "Tag", icon: true, isInverse: true),
             as: .image
         )
     }

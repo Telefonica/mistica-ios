@@ -1,3 +1,11 @@
+## [35.5.1](https://github.com/Telefonica/mistica-ios/compare/v35.5.0...v35.5.1) (2025-09-08)
+
+
+### Bug Fixes
+
+* **Callout:** Fix callout background for alternative ([#463](https://github.com/Telefonica/mistica-ios/issues/463)) ([b256d91](https://github.com/Telefonica/mistica-ios/commit/b256d918c170e30fc24aab5ed18d95bd90ac7022))
+* **Snackbar:** Fix snackbar constraint when dismiss ([90d45e3](https://github.com/Telefonica/mistica-ios/commit/90d45e3f4886cbe2cd453d0017dfadc84e816281))
+
 # [35.5.0](https://github.com/Telefonica/mistica-ios/compare/v35.4.3...v35.5.0) (2025-07-09)
 
 

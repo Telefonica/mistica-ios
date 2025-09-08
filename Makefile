@@ -1,7 +1,7 @@
 .PHONY: help setup format test simulator archive export clean  skin
 
 # Simulator
-OS_VERSION := 18.0
+OS_VERSION := 18.5
 DEVICE_NAME := iPhone 16
 SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)
@@ -27,7 +27,7 @@ MISTICA_DESIGN_URL := https://raw.githubusercontent.com/Telefonica/mistica-desig
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode_16.0.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode_16.4.app/Contents/Developer
 endif
 
 # Targets
@@ -78,7 +78,7 @@ extract_tests_attachments:
 simulator:
 	@echo "Installing simulator $(SIMULATOR_NAME)"
 ifneq ($(GET_INSTALLED_SIMULATOR_NAME), $(SIMULATOR_NAME))
-	@echo "Instaling simulator $(SIMULATOR_NAME)"
+	@echo "Installing simulator $(SIMULATOR_NAME)"
 	@xcrun simctl create "$(SIMULATOR_NAME)" "$(DEVICE_NAME)" iOS$(OS_VERSION)
 else
 	@echo "Simulator $(SIMULATOR_NAME) already exists"

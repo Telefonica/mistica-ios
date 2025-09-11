@@ -1,3 +1,15 @@
+# [35.6.0](https://github.com/Telefonica/mistica-ios/compare/v35.5.1...v35.6.0) (2025-09-11)
+
+
+### Bug Fixes
+
+* **XCode:** IOS-11775 Remove warnings using XCode 16.4 and update snapshot library ([#466](https://github.com/Telefonica/mistica-ios/issues/466)) ([1b026b7](https://github.com/Telefonica/mistica-ios/commit/1b026b7c6ebec704ada82013e76b77cf0f253f37))
+
+
+### Features
+
+* **Title:** update TitleView style to title3 in O2 ([#464](https://github.com/Telefonica/mistica-ios/issues/464)) ([7ef0150](https://github.com/Telefonica/mistica-ios/commit/7ef01504a84700c484fa48bf0de1a06d0902a842))
+
 ## [35.5.1](https://github.com/Telefonica/mistica-ios/compare/v35.5.0...v35.5.1) (2025-09-08)
 
 

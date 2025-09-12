@@ -12,6 +12,7 @@ import UIKit
 open class ListTableViewCell: UITableViewCell {
     public var listCellContentView = ListCellContentView()
     private lazy var cellSeparatorView = SeparatorView(axis: .horizontal)
+    private var shouldSetSelectedBeCalled = false
 
     public var isCellSeparatorHidden: Bool = true {
         didSet {
@@ -45,9 +46,10 @@ open class ListTableViewCell: UITableViewCell {
 
     // MARK: Initializers
 
-    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, shouldSetSelectedBeCalled: Bool = false) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
+        self.shouldSetSelectedBeCalled = shouldSetSelectedBeCalled
         commonInit()
     }
 
@@ -79,8 +81,9 @@ open class ListTableViewCell: UITableViewCell {
         }
     }
 
-    override public func setSelected(_: Bool, animated _: Bool) {
+    override public func setSelected(_ selected: Bool, animated _: Bool) {
         // Do nothing
+        super.setSelected(selected, animated: animated)
     }
 
     override open var isUserInteractionEnabled: Bool {

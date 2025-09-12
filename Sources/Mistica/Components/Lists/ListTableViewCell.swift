@@ -115,7 +115,10 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     func updateCellStyle() {
-        backgroundColor = .background
+//        backgroundColor = .background
+        let view = UIView()
+        view.backgroundColor = .background
+        backgroundView = view
     }
 
     override public func accessibilityActivate() -> Bool {

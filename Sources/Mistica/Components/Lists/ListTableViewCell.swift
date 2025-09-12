@@ -80,7 +80,7 @@ open class ListTableViewCell: UITableViewCell {
         }
     }
 
-    override public func setSelected(_ selected: Bool, animated _: Bool) {
+    override public func setSelected(_ selected: Bool, animated: Bool) {
         // Do nothing
         super.setSelected(selected, animated: animated)
     }

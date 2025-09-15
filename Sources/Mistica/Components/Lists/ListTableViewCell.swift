@@ -115,6 +115,7 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     func updateCellStyle() {
+
         backgroundColor = .background
     }
 
@@ -146,12 +147,7 @@ extension ListTableViewCell: ListCellContentTableViewDelegate {
 
 private extension ListTableViewCell {
     var highlightedView: UIView {
-        switch listCellContentView.cellStyle {
-        case .fullWidth, .boxedInverse:
-            return contentView
-        case .boxed:
-            return listCellContentView.cellBorderView
-        }
+        return listCellContentView.cellBorderView
     }
 
     func accessibilityTypeUpdated() {

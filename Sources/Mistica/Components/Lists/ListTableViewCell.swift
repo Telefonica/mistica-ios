@@ -75,7 +75,7 @@ open class ListTableViewCell: UITableViewCell {
         if highlighted {
             highlightedView.backgroundColor = .backgroundAlternative
         } else {
-            highlightedView.backgroundColor = .backgroundContainer
+            resetBackground()
         }
     }
 
@@ -147,8 +147,23 @@ extension ListTableViewCell: ListCellContentTableViewDelegate {
 
 private extension ListTableViewCell {
     var highlightedView: UIView {
-        return listCellContentView.cellBorderView
+        switch listCellContentView.cellStyle {
+        case .boxedInverse:
+            return contentView
+        case .fullWidth, .boxed:
+            return listCellContentView.cellBorderView
+        }
     }
+
+    private func resetBackground() {
+        switch listCellContentView.cellStyle {
+        case .boxedInverse:
+            contentView.backgroundColor = .backgroundContainer
+        case .fullWidth, .boxed:
+            listCellContentView.cellBorderView.setMisticaColorBackground(listCellContentView.cellStyle.backgroundColor)
+        }
+    }
+    
 
     func accessibilityTypeUpdated() {
         listCellContentView.accessibilityType = accessibilityType

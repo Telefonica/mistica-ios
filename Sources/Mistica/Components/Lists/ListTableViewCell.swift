@@ -115,7 +115,6 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     func updateCellStyle() {
-
         backgroundColor = .background
     }
 
@@ -163,7 +162,6 @@ private extension ListTableViewCell {
             listCellContentView.cellBorderView.setMisticaColorBackground(listCellContentView.cellStyle.backgroundColor)
         }
     }
-    
 
     func accessibilityTypeUpdated() {
         listCellContentView.accessibilityType = accessibilityType

@@ -55,7 +55,7 @@ open class ListCellContentView: UIView {
 
         return accessibilityComponents.compactMap { $0 }.joined(separator: ", ")
     }
-
+    
     // MARK: View Styles
 
     public enum ViewStyles {
@@ -105,6 +105,11 @@ open class ListCellContentView: UIView {
     var tableViewDelegate: ListCellContentTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
     lazy var centerSection = CellCenterSectionView()
+    private let highlightOverlay = UIView()
+
+    internal var isHighlighted: Bool = false {
+        didSet { updateHighlightAppearance() }
+    }
 
     // MARK: Public
 
@@ -399,6 +404,8 @@ private extension ListCellContentView {
 
         cellContentView.addArrangedSubview(centerSection)
         cellContentView.spacing = ViewStyles.horizontalPadding
+        
+        setupHighlightOverlay()
     }
 
     func updateCellStyle() {
@@ -414,11 +421,34 @@ private extension ListCellContentView {
         cellBorderView.layer.borderColor = cellStyle.borderColor
         cellBorderView.layer.borderWidth = cellStyle.borderWidth
 
+        highlightOverlay.layer.cornerRadius = cellBorderView.layer.cornerRadius
+        highlightOverlay.backgroundColor = cellStyle.highlightedColor
+        
         if cellStyle == .boxedInverse {
             controlView?.tintColor = .white
         }
 
         tableViewDelegate?.cellStyleChanged()
+    }
+
+    
+    func setupHighlightOverlay() {
+        cellBorderView.addSubview(highlightOverlay)
+        highlightOverlay.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            highlightOverlay.topAnchor.constraint(equalTo: cellBorderView.topAnchor),
+            highlightOverlay.bottomAnchor.constraint(equalTo: cellBorderView.bottomAnchor),
+            highlightOverlay.leadingAnchor.constraint(equalTo: cellBorderView.leadingAnchor),
+            highlightOverlay.trailingAnchor.constraint(equalTo: cellBorderView.trailingAnchor)
+        ])
+        
+        highlightOverlay.clipsToBounds = true
+        highlightOverlay.isUserInteractionEnabled = false
+        highlightOverlay.isHidden = true
+    }
+
+    private func updateHighlightAppearance() {
+        highlightOverlay.isHidden = !isHighlighted
     }
 
     func updateAssetView() {

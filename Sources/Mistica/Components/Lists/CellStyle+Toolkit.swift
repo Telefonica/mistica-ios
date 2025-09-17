@@ -89,6 +89,15 @@ extension ListCellContentView.CellStyle {
             return .backgroundContainerBrand
         }
     }
+    
+    var highlightedColor: UIColor {
+        switch self {
+        case .fullWidth, .boxed:
+            return .backgroundContainerPressed
+        case .boxedInverse:
+            return .backgroundContainerBrandPressed
+        }
+    }
 
     var titleTextColor: UIColor {
         switch self {

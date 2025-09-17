@@ -71,13 +71,11 @@ open class ListTableViewCell: UITableViewCell {
         return CGSize(width: size.width, height: max(size.height, listCellContentView.cellStyle.minHeight))
     }
 
-    override public func setHighlighted(_ highlighted: Bool, animated _: Bool) {
-        if highlighted {
-            highlightedView.backgroundColor = .backgroundAlternative
-        } else {
-            resetBackground()
-        }
+    override public func setHighlighted(_ highlighted: Bool, animated: Bool) {
+           listCellContentView.isHighlighted = highlighted
+        
     }
+
 
     override public func setSelected(_: Bool, animated _: Bool) {
         // Do nothing
@@ -145,23 +143,6 @@ extension ListTableViewCell: ListCellContentTableViewDelegate {
 // MARK: Private methods
 
 private extension ListTableViewCell {
-    var highlightedView: UIView {
-        switch listCellContentView.cellStyle {
-        case .boxedInverse:
-            return contentView
-        case .fullWidth, .boxed:
-            return listCellContentView.cellBorderView
-        }
-    }
-
-    private func resetBackground() {
-        switch listCellContentView.cellStyle {
-        case .boxedInverse:
-            contentView.backgroundColor = .backgroundContainer
-        case .fullWidth, .boxed:
-            listCellContentView.cellBorderView.setMisticaColorBackground(listCellContentView.cellStyle.backgroundColor)
-        }
-    }
 
     func accessibilityTypeUpdated() {
         listCellContentView.accessibilityType = accessibilityType

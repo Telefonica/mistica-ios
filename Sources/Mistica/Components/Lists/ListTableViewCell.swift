@@ -72,10 +72,8 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     override public func setHighlighted(_ highlighted: Bool, animated: Bool) {
-           listCellContentView.isHighlighted = highlighted
-        
+        listCellContentView.isHighlighted = highlighted
     }
-
 
     override public func setSelected(_: Bool, animated _: Bool) {
         // Do nothing
@@ -143,7 +141,6 @@ extension ListTableViewCell: ListCellContentTableViewDelegate {
 // MARK: Private methods
 
 private extension ListTableViewCell {
-
     func accessibilityTypeUpdated() {
         listCellContentView.accessibilityType = accessibilityType
 

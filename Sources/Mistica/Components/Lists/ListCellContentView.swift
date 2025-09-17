@@ -55,7 +55,7 @@ open class ListCellContentView: UIView {
 
         return accessibilityComponents.compactMap { $0 }.joined(separator: ", ")
     }
-    
+
     // MARK: View Styles
 
     public enum ViewStyles {
@@ -404,7 +404,7 @@ private extension ListCellContentView {
 
         cellContentView.addArrangedSubview(centerSection)
         cellContentView.spacing = ViewStyles.horizontalPadding
-        
+
         setupHighlightOverlay()
     }
 
@@ -423,7 +423,7 @@ private extension ListCellContentView {
 
         highlightOverlay.layer.cornerRadius = cellBorderView.layer.cornerRadius
         highlightOverlay.backgroundColor = cellStyle.highlightedColor
-        
+
         if cellStyle == .boxedInverse {
             controlView?.tintColor = .white
         }
@@ -431,7 +431,6 @@ private extension ListCellContentView {
         tableViewDelegate?.cellStyleChanged()
     }
 
-    
     func setupHighlightOverlay() {
         cellBorderView.addSubview(highlightOverlay)
         highlightOverlay.translatesAutoresizingMaskIntoConstraints = false
@@ -441,7 +440,7 @@ private extension ListCellContentView {
             highlightOverlay.leadingAnchor.constraint(equalTo: cellBorderView.leadingAnchor),
             highlightOverlay.trailingAnchor.constraint(equalTo: cellBorderView.trailingAnchor)
         ])
-        
+
         highlightOverlay.clipsToBounds = true
         highlightOverlay.isUserInteractionEnabled = false
         highlightOverlay.isHidden = true

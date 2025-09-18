@@ -275,10 +275,10 @@ open class ListCellContentView: UIView {
             }
         }
     }
-    
+
     public func setHighlighted(_ highlighted: Bool, animated: Bool) {
         guard isHighlighted != highlighted else { return }
-        self.isHighlighted = highlighted
+        isHighlighted = highlighted
     }
 
     public convenience init() {

@@ -72,7 +72,7 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     override public func setHighlighted(_ highlighted: Bool, animated: Bool) {
-           listCellContentView.setHighlighted(highlighted, animated: animated)
+        listCellContentView.setHighlighted(highlighted, animated: animated)
     }
 
     override public func setSelected(_: Bool, animated _: Bool) {

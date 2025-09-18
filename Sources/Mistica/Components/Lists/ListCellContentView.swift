@@ -105,10 +105,10 @@ open class ListCellContentView: UIView {
     var tableViewDelegate: ListCellContentTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
     lazy var centerSection = CellCenterSectionView()
-    private let highlightOverlay = UIView()
+    private let highlightedOverlay = UIView()
 
     private(set) var isHighlighted: Bool = false {
-        didSet { highlightOverlay.isHidden = !isHighlighted }
+        didSet { highlightedOverlay.isHidden = !isHighlighted }
     }
 
     // MARK: Public
@@ -276,9 +276,9 @@ open class ListCellContentView: UIView {
         }
     }
 
-    public func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        guard isHighlighted != highlighted else { return }
-        isHighlighted = highlighted
+    public func setHighlighted(_ isHighlighted: Bool, animated: Bool) {
+        guard isHighlighted != isHighlighted else { return }
+        self.isHighlighted = isHighlighted
     }
 
     public convenience init() {
@@ -410,7 +410,7 @@ private extension ListCellContentView {
         cellContentView.addArrangedSubview(centerSection)
         cellContentView.spacing = ViewStyles.horizontalPadding
 
-        setupHighlightOverlay()
+        setupHighlightedOverlay()
     }
 
     func updateCellStyle() {
@@ -426,8 +426,8 @@ private extension ListCellContentView {
         cellBorderView.layer.borderColor = cellStyle.borderColor
         cellBorderView.layer.borderWidth = cellStyle.borderWidth
 
-        highlightOverlay.layer.cornerRadius = cellBorderView.layer.cornerRadius
-        highlightOverlay.backgroundColor = cellStyle.highlightedColor
+        highlightedOverlay.layer.cornerRadius = cellBorderView.layer.cornerRadius
+        highlightedOverlay.backgroundColor = cellStyle.highlightedColor
 
         if cellStyle == .boxedInverse {
             controlView?.tintColor = .white
@@ -436,19 +436,19 @@ private extension ListCellContentView {
         tableViewDelegate?.cellStyleChanged()
     }
 
-    func setupHighlightOverlay() {
-        cellBorderView.addSubview(highlightOverlay)
-        highlightOverlay.translatesAutoresizingMaskIntoConstraints = false
+    func setupHighlightedOverlay() {
+        cellBorderView.addSubview(highlightedOverlay)
+        highlightedOverlay.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            highlightOverlay.topAnchor.constraint(equalTo: cellBorderView.topAnchor),
-            highlightOverlay.bottomAnchor.constraint(equalTo: cellBorderView.bottomAnchor),
-            highlightOverlay.leadingAnchor.constraint(equalTo: cellBorderView.leadingAnchor),
-            highlightOverlay.trailingAnchor.constraint(equalTo: cellBorderView.trailingAnchor)
+            highlightedOverlay.topAnchor.constraint(equalTo: cellBorderView.topAnchor),
+            highlightedOverlay.bottomAnchor.constraint(equalTo: cellBorderView.bottomAnchor),
+            highlightedOverlay.leadingAnchor.constraint(equalTo: cellBorderView.leadingAnchor),
+            highlightedOverlay.trailingAnchor.constraint(equalTo: cellBorderView.trailingAnchor)
         ])
 
-        highlightOverlay.clipsToBounds = true
-        highlightOverlay.isUserInteractionEnabled = false
-        highlightOverlay.isHidden = true
+        highlightedOverlay.clipsToBounds = true
+        highlightedOverlay.isUserInteractionEnabled = false
+        highlightedOverlay.isHidden = true
     }
 
     func updateAssetView() {

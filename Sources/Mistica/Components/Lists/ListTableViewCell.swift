@@ -72,7 +72,12 @@ open class ListTableViewCell: UITableViewCell {
     }
 
     override public func setHighlighted(_ highlighted: Bool, animated: Bool) {
+<<<<<<< Updated upstream
         listCellContentView.isHighlighted = highlighted
+=======
+           listCellContentView.setHighlighted(highlighted, animated: animated)
+        
+>>>>>>> Stashed changes
     }
 
     override public func setSelected(_: Bool, animated _: Bool) {

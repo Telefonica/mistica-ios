@@ -107,8 +107,8 @@ open class ListCellContentView: UIView {
     lazy var centerSection = CellCenterSectionView()
     private let highlightOverlay = UIView()
 
-    internal var isHighlighted: Bool = false {
-        didSet { updateHighlightAppearance() }
+    private(set) var isHighlighted: Bool = false {
+        didSet { highlightOverlay.isHidden = !isHighlighted }
     }
 
     // MARK: Public
@@ -274,6 +274,11 @@ open class ListCellContentView: UIView {
                 cellContentView.addArrangedSubview(view)
             }
         }
+    }
+    
+    public func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        guard isHighlighted != highlighted else { return }
+        self.isHighlighted = highlighted
     }
 
     public convenience init() {
@@ -444,10 +449,6 @@ private extension ListCellContentView {
         highlightOverlay.clipsToBounds = true
         highlightOverlay.isUserInteractionEnabled = false
         highlightOverlay.isHidden = true
-    }
-
-    private func updateHighlightAppearance() {
-        highlightOverlay.isHidden = !isHighlighted
     }
 
     func updateAssetView() {

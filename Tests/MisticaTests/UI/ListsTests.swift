@@ -785,6 +785,56 @@ final class ListsTests: XCTestCase {
         )
     }
 
+    // MARK: - Highlight Cell Tests
+
+    func testCellHighlightedFullWidthStyle() {
+        let cell = makeTestCell(title: AnyValues.title, cellStyle: .fullWidth)
+        cell.setHighlighted(true, animated: false)
+
+        assertSnapshot(
+            of: cell,
+            as: .image(size: CGSize(width: 375, height: 150))
+        )
+    }
+
+    func testCellHighlightedBoxedStyle() {
+        let cell = makeTestCell(title: AnyValues.title, cellStyle: .boxed)
+        cell.setHighlighted(true, animated: false)
+
+        assertSnapshot(
+            of: cell,
+            as: .image(size: CGSize(width: 375, height: 150))
+        )
+    }
+
+    func testCellHighlightedBoxedInverseStyle() {
+        let cell = makeTestCell(title: AnyValues.title, cellStyle: .boxedInverse)
+        cell.setHighlighted(true, animated: false)
+
+        assertSnapshot(
+            of: cell,
+            as: .image(size: CGSize(width: 375, height: 150))
+        )
+    }
+
+    // MARK: - Highlight with Complex Combinations
+
+    func testCellHighlightedWithMultilineAndAllFeatures() {
+        let cell = makeTestCell(
+            title: AnyValues.titleMultiline,
+            assetType: .custom(.image(AnyValues.image)),
+            customControl: .navigation(makeNavigationPresetViewWithoutBagde),
+            showHeadline: true,
+            cellStyle: .boxedInverse
+        )
+        cell.setHighlighted(true, animated: false)
+
+        assertSnapshot(
+            of: cell,
+            as: .image(size: CGSize(width: 375, height: 150))
+        )
+    }
+
     // MARK: - XIB integration
 
     func testXIBIntegration() {
@@ -870,6 +920,42 @@ extension ListsTests {
         listTestsViewController.numberOfRows = numberOfRows
 
         return listTestsViewController
+    }
+
+    private func makeTestCell(
+        title: String? = nil,
+        subtitle: String? = nil,
+        detailText: String? = nil,
+        assetType: ListCellContentView.CellAssetType = .none,
+        customControl: ListsTestsViewController.CustomControl = .none,
+        showHeadline: Bool = false,
+        cellStyle: ListCellContentView.CellStyle = .fullWidth
+    ) -> ListTableViewCell {
+        let cell = ListTableViewCell(style: .default, reuseIdentifier: "testCell")
+
+        cell.listCellContentView.title = title
+        cell.listCellContentView.subtitle = subtitle
+        cell.listCellContentView.detailText = detailText
+        cell.listCellContentView.assetType = assetType
+        cell.listCellContentView.cellStyle = cellStyle
+
+        if showHeadline {
+            cell.listCellContentView.headlineView = TagView(text: "HEADLINE")
+        }
+
+        switch customControl {
+        case .none:
+            cell.listCellContentView.controlView = nil
+        case .navigation(let makeNavigationPreset):
+            cell.listCellContentView.controlView = makeNavigationPreset()
+        case .custom(let makeCustomControl):
+            cell.listCellContentView.controlView = makeCustomControl()
+        }
+
+        cell.frame = CGRect(x: 0, y: 0, width: 375, height: 150)
+        cell.layoutIfNeeded()
+
+        return cell
     }
 
     func makeCustomControlView() -> UIView {

@@ -105,6 +105,11 @@ open class ListCellContentView: UIView {
     var tableViewDelegate: ListCellContentTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
     lazy var centerSection = CellCenterSectionView()
+    private let highlightedOverlay = UIView()
+
+    private(set) var isHighlighted: Bool = false {
+        didSet { highlightedOverlay.isHidden = !isHighlighted }
+    }
 
     // MARK: Public
 
@@ -271,6 +276,11 @@ open class ListCellContentView: UIView {
         }
     }
 
+    public func setHighlighted(_ isHighlighted: Bool, animated: Bool) {
+        guard self.isHighlighted != isHighlighted else { return }
+        self.isHighlighted = isHighlighted
+    }
+
     public convenience init() {
         self.init(frame: .zero)
     }
@@ -399,6 +409,8 @@ private extension ListCellContentView {
 
         cellContentView.addArrangedSubview(centerSection)
         cellContentView.spacing = ViewStyles.horizontalPadding
+
+        setupHighlightedOverlay()
     }
 
     func updateCellStyle() {
@@ -414,11 +426,29 @@ private extension ListCellContentView {
         cellBorderView.layer.borderColor = cellStyle.borderColor
         cellBorderView.layer.borderWidth = cellStyle.borderWidth
 
+        highlightedOverlay.layer.cornerRadius = cellBorderView.layer.cornerRadius
+        highlightedOverlay.backgroundColor = cellStyle.highlightedColor
+
         if cellStyle == .boxedInverse {
             controlView?.tintColor = .white
         }
 
         tableViewDelegate?.cellStyleChanged()
+    }
+
+    func setupHighlightedOverlay() {
+        cellBorderView.addSubview(highlightedOverlay)
+        highlightedOverlay.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            highlightedOverlay.topAnchor.constraint(equalTo: cellBorderView.topAnchor),
+            highlightedOverlay.bottomAnchor.constraint(equalTo: cellBorderView.bottomAnchor),
+            highlightedOverlay.leadingAnchor.constraint(equalTo: cellBorderView.leadingAnchor),
+            highlightedOverlay.trailingAnchor.constraint(equalTo: cellBorderView.trailingAnchor)
+        ])
+
+        highlightedOverlay.clipsToBounds = true
+        highlightedOverlay.isUserInteractionEnabled = false
+        highlightedOverlay.isHidden = true
     }
 
     func updateAssetView() {

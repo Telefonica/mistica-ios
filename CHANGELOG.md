@@ -1,3 +1,35 @@
+# [36.0.0](https://github.com/Telefonica/mistica-ios/compare/v35.6.0...v36.0.0) (2025-09-19)
+
+
+* feat(ListTableViewCell) Added tap highlight functionality to the default style of ListTableViewCell([#467](https://github.com/Telefonica/mistica-ios/issues/467)) ([4eb49e2](https://github.com/Telefonica/mistica-ios/commit/4eb49e20047becb87fdf432d49ea2837a2eba9ff))
+
+
+### BREAKING CHANGES
+
+* Visual behavior of ListTableViewCell has changed. Fixed an issue where the default (.fullWidth) style did not highlighted when tapped. Highlight behavior is now restored for all styles. Other styles had highlighted, but the .boxedInverse style was fixed to apply the proper highlighted view.
+
+* IOS-11798 ListTableViewCell is not hightlighted when is selected
+
+* IOS-11798 fic ListTableViewCell hightlighted
+
+* Run swiftformat
+
+* IOS-11798 add overlay to highlighted with color tokens per cell style
+
+* Run swiftformat
+
+* IOS-11798 improved logic and added tests
+
+* fix stash changes
+
+* Run swiftformat
+
+* IOS-11798 fix naming
+
+* IOS-11798 added selectionStyle handling in setHighlighted method to prevent highlighted if .none
+
+* fix comparasion
+
 # [35.6.0](https://github.com/Telefonica/mistica-ios/compare/v35.5.1...v35.6.0) (2025-09-11)
 
 

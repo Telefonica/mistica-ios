@@ -277,7 +277,7 @@ open class ListCellContentView: UIView {
     }
 
     public func setHighlighted(_ isHighlighted: Bool, animated: Bool) {
-        guard isHighlighted != isHighlighted else { return }
+        guard self.isHighlighted != isHighlighted else { return }
         self.isHighlighted = isHighlighted
     }
 

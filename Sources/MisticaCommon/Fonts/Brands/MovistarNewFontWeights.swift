@@ -1,6 +1,10 @@
-
-// Generated using Make
-// DO NOT EDIT
+//
+//  MovistarNewFontWeights.swift
+//
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
+//
 
 import Foundation
 

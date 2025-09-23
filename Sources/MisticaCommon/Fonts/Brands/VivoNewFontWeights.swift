@@ -1,15 +1,12 @@
-//
-//  VivoNewFontWeights.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import Foundation
 
 struct VivoNewFontWeights: MisticaFontWeights {
     public var cardTitle: MisticaFontWeightType = .medium
+    public var rowTitle: MisticaFontWeightType = .regular
     public var button: MisticaFontWeightType = .medium
     public var tabsLabel: MisticaFontWeightType = .medium
     public var link: MisticaFontWeightType = .medium

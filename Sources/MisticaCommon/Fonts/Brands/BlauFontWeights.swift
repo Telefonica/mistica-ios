@@ -1,15 +1,12 @@
-//
-//  BlauFontWeights.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import Foundation
 
 struct BlauFontWeights: MisticaFontWeights {
     public var cardTitle: MisticaFontWeightType = .regular
+    public var rowTitle: MisticaFontWeightType = .regular
     public var button: MisticaFontWeightType = .medium
     public var tabsLabel: MisticaFontWeightType = .medium
     public var link: MisticaFontWeightType = .medium

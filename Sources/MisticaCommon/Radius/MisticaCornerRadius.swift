@@ -1,10 +1,6 @@
-//
-//  MisticaCornerRadius.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import Foundation
 
@@ -19,6 +15,7 @@ public protocol MisticaCornerRadius: Sendable {
     var checkbox: CGFloat { get }
     var container: CGFloat { get }
     var indicator: CGFloat { get }
+    var chip: CGFloat { get }
     var input: CGFloat { get }
     var legacyDisplay: CGFloat { get }
     var popup: CGFloat { get }

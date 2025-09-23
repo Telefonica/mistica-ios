@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct BlauThemeVariants: MisticaThemeVariants {
+struct MovistarNewThemeVariants: MisticaThemeVariants {
     var successFeedback: MisticaThemeVariantType = .default
     var brandLoadingScreen: MisticaThemeVariantType = .default
 }

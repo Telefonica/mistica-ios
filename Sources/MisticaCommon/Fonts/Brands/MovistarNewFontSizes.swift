@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct O2NewFontSizes: MisticaFontSizes {
+struct MovistarNewFontSizes: MisticaFontSizes {
     public var tabsLabel: CGFloat = 16
     public var title3: CGFloat = 20
     public var text1: CGFloat = 12

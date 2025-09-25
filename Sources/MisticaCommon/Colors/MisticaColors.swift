@@ -41,38 +41,56 @@ public protocol MisticaColors: Sendable {
     var buttonDangerBackground: UIColor { get }
     var buttonDangerBackgroundPressed: UIColor { get }
     var buttonDangerBackgroundHover: UIColor { get }
-    var buttonLinkDangerBackgroundPressed: UIColor { get }
     var buttonLinkDangerBackgroundInverse: UIColor { get }
+    var buttonLinkDangerBackgroundMedia: UIColor { get }
+    var buttonLinkDangerBackgroundPressed: UIColor { get }
     var buttonLinkDangerBackgroundInversePressed: UIColor { get }
+    var buttonLinkDangerBackgroundMediaPressed: UIColor { get }
     var buttonLinkBackgroundPressed: UIColor { get }
     var buttonLinkBackgroundInversePressed: UIColor { get }
+    var buttonLinkBackgroundMediaPressed: UIColor { get }
     var buttonPrimaryBackground: UIColor { get }
     var buttonPrimaryBackgroundInverse: UIColor { get }
-    var buttonPrimaryBackgroundPressed: UIColor { get }
+    var buttonPrimaryBackgroundMedia: UIColor { get }
     var buttonPrimaryBackgroundHover: UIColor { get }
+    var buttonPrimaryBackgroundInverseHover: UIColor { get }
+    var buttonPrimaryBackgroundMediaHover: UIColor { get }
+    var buttonPrimaryBackgroundPressed: UIColor { get }
     var buttonPrimaryBackgroundInversePressed: UIColor { get }
+    var buttonPrimaryBackgroundMediaPressed: UIColor { get }
     var buttonSecondaryBorder: UIColor { get }
-    var buttonSecondaryBorderPressed: UIColor { get }
     var buttonSecondaryBorderInverse: UIColor { get }
-    var buttonSecondaryBackgroundHover: UIColor { get }
-    var buttonSecondaryBackgroundPressed: UIColor { get }
+    var buttonSecondaryBorderMedia: UIColor { get }
+    var buttonSecondaryBorderPressed: UIColor { get }
     var buttonSecondaryBorderInversePressed: UIColor { get }
+    var buttonSecondaryBorderMediaPressed: UIColor { get }
+    var buttonSecondaryBackgroundHover: UIColor { get }
     var buttonSecondaryBackgroundInverseHover: UIColor { get }
+    var buttonSecondaryBackgroundMediaHover: UIColor { get }
+    var buttonSecondaryBackgroundPressed: UIColor { get }
     var buttonSecondaryBackgroundInversePressed: UIColor { get }
+    var buttonSecondaryBackgroundMediaPressed: UIColor { get }
     var textButtonPrimary: UIColor { get }
     var textButtonPrimaryInverse: UIColor { get }
+    var textButtonPrimaryMedia: UIColor { get }
     var textButtonPrimaryInversePressed: UIColor { get }
+    var textButtonPrimaryMediaPressed: UIColor { get }
     var textButtonSecondary: UIColor { get }
-    var textButtonSecondaryPressed: UIColor { get }
     var textButtonSecondaryInverse: UIColor { get }
+    var textButtonSecondaryMedia: UIColor { get }
+    var textButtonSecondaryPressed: UIColor { get }
     var textButtonSecondaryInversePressed: UIColor { get }
+    var textButtonSecondaryMediaPressed: UIColor { get }
     var textLink: UIColor { get }
     var textLinkInverse: UIColor { get }
+    var textLinkMedia: UIColor { get }
     var textLinkDanger: UIColor { get }
+    var textLinkDangerMedia: UIColor { get }
     var textLinkSnackbar: UIColor { get }
     var textActivated: UIColor { get }
     var textBrand: UIColor { get }
     var inputBorder: UIColor { get }
+    var inputBorderInverse: UIColor { get }
     var control: UIColor { get }
     var controlActivated: UIColor { get }
     var controlInverse: UIColor { get }
@@ -102,8 +120,10 @@ public protocol MisticaColors: Sendable {
     var neutralLowAlternative: UIColor { get }
     var textPrimary: UIColor { get }
     var textPrimaryInverse: UIColor { get }
+    var textPrimaryMedia: UIColor { get }
     var textSecondary: UIColor { get }
     var textSecondaryInverse: UIColor { get }
+    var textSecondaryMedia: UIColor { get }
     var error: UIColor { get }
     var textError: UIColor { get }
     var textErrorInverse: UIColor { get }
@@ -160,4 +180,5 @@ public protocol MisticaColors: Sendable {
     var tagBackgroundWarningInverse: UIColor { get }
     var tagBackgroundErrorInverse: UIColor { get }
     var cardContentOverlay: MisticaColor { get }
+    var cardFooterOverlay: UIColor { get }
 }

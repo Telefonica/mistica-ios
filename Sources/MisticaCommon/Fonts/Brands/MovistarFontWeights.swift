@@ -10,6 +10,7 @@ import Foundation
 
 struct MovistarFontWeights: MisticaFontWeights {
     public var cardTitle: MisticaFontWeightType = .bold
+    public var rowTitle: MisticaFontWeightType = .regular
     public var button: MisticaFontWeightType = .medium
     public var tabsLabel: MisticaFontWeightType = .medium
     public var link: MisticaFontWeightType = .medium

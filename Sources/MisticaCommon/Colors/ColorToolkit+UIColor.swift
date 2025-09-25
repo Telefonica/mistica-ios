@@ -129,16 +129,24 @@ public extension UIColor {
         MisticaConfig.currentColors.buttonDangerBackgroundHover
     }
 
-    static var buttonLinkDangerBackgroundPressed: UIColor {
-        MisticaConfig.currentColors.buttonLinkDangerBackgroundPressed
-    }
-
     static var buttonLinkDangerBackgroundInverse: UIColor {
         MisticaConfig.currentColors.buttonLinkDangerBackgroundInverse
     }
 
+    static var buttonLinkDangerBackgroundMedia: UIColor {
+        MisticaConfig.currentColors.buttonLinkDangerBackgroundMedia
+    }
+
+    static var buttonLinkDangerBackgroundPressed: UIColor {
+        MisticaConfig.currentColors.buttonLinkDangerBackgroundPressed
+    }
+
     static var buttonLinkDangerBackgroundInversePressed: UIColor {
         MisticaConfig.currentColors.buttonLinkDangerBackgroundInversePressed
+    }
+
+    static var buttonLinkDangerBackgroundMediaPressed: UIColor {
+        MisticaConfig.currentColors.buttonLinkDangerBackgroundMediaPressed
     }
 
     static var buttonLinkBackgroundPressed: UIColor {
@@ -149,6 +157,10 @@ public extension UIColor {
         MisticaConfig.currentColors.buttonLinkBackgroundInversePressed
     }
 
+    static var buttonLinkBackgroundMediaPressed: UIColor {
+        MisticaConfig.currentColors.buttonLinkBackgroundMediaPressed
+    }
+
     static var buttonPrimaryBackground: UIColor {
         MisticaConfig.currentColors.buttonPrimaryBackground
     }
@@ -157,48 +169,80 @@ public extension UIColor {
         MisticaConfig.currentColors.buttonPrimaryBackgroundInverse
     }
 
-    static var buttonPrimaryBackgroundPressed: UIColor {
-        MisticaConfig.currentColors.buttonPrimaryBackgroundPressed
+    static var buttonPrimaryBackgroundMedia: UIColor {
+        MisticaConfig.currentColors.buttonPrimaryBackgroundMedia
     }
 
     static var buttonPrimaryBackgroundHover: UIColor {
         MisticaConfig.currentColors.buttonPrimaryBackgroundHover
     }
 
+    static var buttonPrimaryBackgroundInverseHover: UIColor {
+        MisticaConfig.currentColors.buttonPrimaryBackgroundInverseHover
+    }
+
+    static var buttonPrimaryBackgroundMediaHover: UIColor {
+        MisticaConfig.currentColors.buttonPrimaryBackgroundMediaHover
+    }
+
+    static var buttonPrimaryBackgroundPressed: UIColor {
+        MisticaConfig.currentColors.buttonPrimaryBackgroundPressed
+    }
+
     static var buttonPrimaryBackgroundInversePressed: UIColor {
         MisticaConfig.currentColors.buttonPrimaryBackgroundInversePressed
+    }
+
+    static var buttonPrimaryBackgroundMediaPressed: UIColor {
+        MisticaConfig.currentColors.buttonPrimaryBackgroundMediaPressed
     }
 
     static var buttonSecondaryBorder: UIColor {
         MisticaConfig.currentColors.buttonSecondaryBorder
     }
 
-    static var buttonSecondaryBorderPressed: UIColor {
-        MisticaConfig.currentColors.buttonSecondaryBorderPressed
-    }
-
     static var buttonSecondaryBorderInverse: UIColor {
         MisticaConfig.currentColors.buttonSecondaryBorderInverse
     }
 
-    static var buttonSecondaryBackgroundHover: UIColor {
-        MisticaConfig.currentColors.buttonSecondaryBackgroundHover
+    static var buttonSecondaryBorderMedia: UIColor {
+        MisticaConfig.currentColors.buttonSecondaryBorderMedia
     }
 
-    static var buttonSecondaryBackgroundPressed: UIColor {
-        MisticaConfig.currentColors.buttonSecondaryBackgroundPressed
+    static var buttonSecondaryBorderPressed: UIColor {
+        MisticaConfig.currentColors.buttonSecondaryBorderPressed
     }
 
     static var buttonSecondaryBorderInversePressed: UIColor {
         MisticaConfig.currentColors.buttonSecondaryBorderInversePressed
     }
 
+    static var buttonSecondaryBorderMediaPressed: UIColor {
+        MisticaConfig.currentColors.buttonSecondaryBorderMediaPressed
+    }
+
+    static var buttonSecondaryBackgroundHover: UIColor {
+        MisticaConfig.currentColors.buttonSecondaryBackgroundHover
+    }
+
     static var buttonSecondaryBackgroundInverseHover: UIColor {
         MisticaConfig.currentColors.buttonSecondaryBackgroundInverseHover
     }
 
+    static var buttonSecondaryBackgroundMediaHover: UIColor {
+        MisticaConfig.currentColors.buttonSecondaryBackgroundMediaHover
+    }
+
+    static var buttonSecondaryBackgroundPressed: UIColor {
+        MisticaConfig.currentColors.buttonSecondaryBackgroundPressed
+    }
+
     static var buttonSecondaryBackgroundInversePressed: UIColor {
         MisticaConfig.currentColors.buttonSecondaryBackgroundInversePressed
+    }
+
+    static var buttonSecondaryBackgroundMediaPressed: UIColor {
+        MisticaConfig.currentColors.buttonSecondaryBackgroundMediaPressed
     }
 
     static var textButtonPrimary: UIColor {
@@ -209,24 +253,40 @@ public extension UIColor {
         MisticaConfig.currentColors.textButtonPrimaryInverse
     }
 
+    static var textButtonPrimaryMedia: UIColor {
+        MisticaConfig.currentColors.textButtonPrimaryMedia
+    }
+
     static var textButtonPrimaryInversePressed: UIColor {
         MisticaConfig.currentColors.textButtonPrimaryInversePressed
+    }
+
+    static var textButtonPrimaryMediaPressed: UIColor {
+        MisticaConfig.currentColors.textButtonPrimaryMediaPressed
     }
 
     static var textButtonSecondary: UIColor {
         MisticaConfig.currentColors.textButtonSecondary
     }
 
-    static var textButtonSecondaryPressed: UIColor {
-        MisticaConfig.currentColors.textButtonSecondaryPressed
-    }
-
     static var textButtonSecondaryInverse: UIColor {
         MisticaConfig.currentColors.textButtonSecondaryInverse
     }
 
+    static var textButtonSecondaryMedia: UIColor {
+        MisticaConfig.currentColors.textButtonSecondaryMedia
+    }
+
+    static var textButtonSecondaryPressed: UIColor {
+        MisticaConfig.currentColors.textButtonSecondaryPressed
+    }
+
     static var textButtonSecondaryInversePressed: UIColor {
         MisticaConfig.currentColors.textButtonSecondaryInversePressed
+    }
+
+    static var textButtonSecondaryMediaPressed: UIColor {
+        MisticaConfig.currentColors.textButtonSecondaryMediaPressed
     }
 
     static var textLink: UIColor {
@@ -237,8 +297,16 @@ public extension UIColor {
         MisticaConfig.currentColors.textLinkInverse
     }
 
+    static var textLinkMedia: UIColor {
+        MisticaConfig.currentColors.textLinkMedia
+    }
+
     static var textLinkDanger: UIColor {
         MisticaConfig.currentColors.textLinkDanger
+    }
+
+    static var textLinkDangerMedia: UIColor {
+        MisticaConfig.currentColors.textLinkDangerMedia
     }
 
     static var textLinkSnackbar: UIColor {
@@ -255,6 +323,10 @@ public extension UIColor {
 
     static var inputBorder: UIColor {
         MisticaConfig.currentColors.inputBorder
+    }
+
+    static var inputBorderInverse: UIColor {
+        MisticaConfig.currentColors.inputBorderInverse
     }
 
     static var control: UIColor {
@@ -373,12 +445,20 @@ public extension UIColor {
         MisticaConfig.currentColors.textPrimaryInverse
     }
 
+    static var textPrimaryMedia: UIColor {
+        MisticaConfig.currentColors.textPrimaryMedia
+    }
+
     static var textSecondary: UIColor {
         MisticaConfig.currentColors.textSecondary
     }
 
     static var textSecondaryInverse: UIColor {
         MisticaConfig.currentColors.textSecondaryInverse
+    }
+
+    static var textSecondaryMedia: UIColor {
+        MisticaConfig.currentColors.textSecondaryMedia
     }
 
     static var error: UIColor {
@@ -599,5 +679,9 @@ public extension UIColor {
 
     static var tagBackgroundErrorInverse: UIColor {
         MisticaConfig.currentColors.tagBackgroundErrorInverse
+    }
+
+    static var cardFooterOverlay: UIColor {
+        MisticaConfig.currentColors.cardFooterOverlay
     }
 }

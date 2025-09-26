@@ -117,6 +117,6 @@ let package = Package(
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
             ]
-        ),
+        )
     ]
 )

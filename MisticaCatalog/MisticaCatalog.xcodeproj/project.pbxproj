@@ -7,10 +7,144 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F5A42C32E866B38003F99E0 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5F5A42C22E866B38003F99E0 /* SnapshotTesting */; };
+		5F5A5C5F2E8675C1003F99E0 /* ButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A56082E8675C0003F99E0 /* ButtonTests.swift */; };
+		5F5A5CF12E867CDB003F99E0 /* TabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CDF2E867CDB003F99E0 /* TabsTests.swift */; };
+		5F5A5CF32E867CDB003F99E0 /* CarouselTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CA92E867CDB003F99E0 /* CarouselTests.swift */; };
+		5F5A5CF42E867CDB003F99E0 /* ListsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CD72E867CDB003F99E0 /* ListsTests.swift */; };
+		5F5A5CF52E867CDB003F99E0 /* IndeterminateStepperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CD52E867CDB003F99E0 /* IndeterminateStepperTests.swift */; };
+		5F5A5CFA2E867CDB003F99E0 /* DataCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CAC2E867CDB003F99E0 /* DataCardTests.swift */; };
+		5F5A5CFB2E867CDB003F99E0 /* RadioButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CDB2E867CDB003F99E0 /* RadioButtonTests.swift */; };
+		5F5A5CFD2E867CDB003F99E0 /* PopoverViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CDA2E867CDB003F99E0 /* PopoverViewTests.swift */; };
+		5F5A5CFE2E867CDB003F99E0 /* MediaCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CD92E867CDB003F99E0 /* MediaCardTests.swift */; };
+		5F5A5CFF2E867CDB003F99E0 /* FormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CD12E867CDB003F99E0 /* FormTests.swift */; };
+		5F5A5D002E867CDB003F99E0 /* BadgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CA72E867CDB003F99E0 /* BadgeTests.swift */; };
+		5F5A5D032E867CDB003F99E0 /* EmptyStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CAE2E867CDB003F99E0 /* EmptyStatesTests.swift */; };
+		5F5A5D062E867CDB003F99E0 /* DeterminateStepperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CAD2E867CDB003F99E0 /* DeterminateStepperTests.swift */; };
+		5F5A5D082E867CDB003F99E0 /* HeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CD32E867CDB003F99E0 /* HeaderTests.swift */; };
+		5F5A5D092E867CDB003F99E0 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CE02E867CDB003F99E0 /* TagTests.swift */; };
+		5F5A5D0A2E867CDB003F99E0 /* HighlightedCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CD42E867CDB003F99E0 /* HighlightedCardTests.swift */; };
+		5F5A5D0B2E867CDB003F99E0 /* FilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CB02E867CDB003F99E0 /* FilterTests.swift */; };
+		5F5A5D0C2E867CDB003F99E0 /* CalloutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CA82E867CDB003F99E0 /* CalloutTests.swift */; };
+		5F5A5D0E2E867CDB003F99E0 /* GradientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CD22E867CDB003F99E0 /* GradientTests.swift */; };
+		5F5A5D0F2E867CDB003F99E0 /* SheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CDC2E867CDB003F99E0 /* SheetTests.swift */; };
+		5F5A5D102E867CDB003F99E0 /* TitleHeaderFooterViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CE12E867CDB003F99E0 /* TitleHeaderFooterViewTests.swift */; };
+		5F5A5D122E867CDB003F99E0 /* SkeletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CDD2E867CDB003F99E0 /* SkeletonTests.swift */; };
+		5F5A5D132E867CDB003F99E0 /* LoadErrorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CD82E867CDB003F99E0 /* LoadErrorViewControllerTests.swift */; };
+		5F5A5D142E867CDB003F99E0 /* CheckboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CAA2E867CDB003F99E0 /* CheckboxTests.swift */; };
+		5F5A5D152E867CDB003F99E0 /* InputFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CD62E867CDB003F99E0 /* InputFieldTests.swift */; };
+		5F5A5D162E867CDB003F99E0 /* SnackbarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CDE2E867CDB003F99E0 /* SnackbarTests.swift */; };
+		5F5A5D172E867CDB003F99E0 /* FeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CAF2E867CDB003F99E0 /* FeedbackTests.swift */; };
+		5F5A5D192E867CDB003F99E0 /* ControlsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5CAB2E867CDB003F99E0 /* ControlsTests.swift */; };
+		5F5A5EEF2E867F9E003F99E0 /* FontStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5EE62E867F9E003F99E0 /* FontStyleTests.swift */; };
+		5F5A5EF02E867F9E003F99E0 /* FontToolkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5EE72E867F9E003F99E0 /* FontToolkitTests.swift */; };
+		5F5A5EF12E867F9E003F99E0 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5EED2E867F9E003F99E0 /* TestHelpers.swift */; };
+		5F5A5FCB2E867FA4003F99E0 /* BadgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FB42E867FA4003F99E0 /* BadgeTests.swift */; };
+		5F5A5FCC2E867FA4003F99E0 /* ButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FB52E867FA4003F99E0 /* ButtonTests.swift */; };
+		5F5A5FCD2E867FA4003F99E0 /* CalloutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FB62E867FA4003F99E0 /* CalloutTests.swift */; };
+		5F5A5FCE2E867FA4003F99E0 /* CarouselTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FB72E867FA4003F99E0 /* CarouselTests.swift */; };
+		5F5A5FCF2E867FA4003F99E0 /* CheckboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FB82E867FA4003F99E0 /* CheckboxTests.swift */; };
+		5F5A5FD02E867FA4003F99E0 /* ChipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FB92E867FA4003F99E0 /* ChipTests.swift */; };
+		5F5A5FD12E867FA4003F99E0 /* CroutonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FBA2E867FA4003F99E0 /* CroutonTests.swift */; };
+		5F5A5FD22E867FA4003F99E0 /* DataCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FBB2E867FA4003F99E0 /* DataCardTests.swift */; };
+		5F5A5FD32E867FA4003F99E0 /* EmptyStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FBC2E867FA4003F99E0 /* EmptyStateTests.swift */; };
+		5F5A5FD42E867FA4003F99E0 /* FeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FBD2E867FA4003F99E0 /* FeedbackTests.swift */; };
+		5F5A5FD52E867FA4003F99E0 /* GradientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FBE2E867FA4003F99E0 /* GradientTests.swift */; };
+		5F5A5FD62E867FA4003F99E0 /* HeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FBF2E867FA4003F99E0 /* HeaderTests.swift */; };
+		5F5A5FD72E867FA4003F99E0 /* InputFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FC02E867FA4003F99E0 /* InputFieldTests.swift */; };
+		5F5A5FD82E867FA4003F99E0 /* ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FC12E867FA4003F99E0 /* ListTests.swift */; };
+		5F5A5FD92E867FA4003F99E0 /* RadioButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FC22E867FA4003F99E0 /* RadioButtonTests.swift */; };
+		5F5A5FDA2E867FA4003F99E0 /* SkeletonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FC32E867FA4003F99E0 /* SkeletonTests.swift */; };
+		5F5A5FDB2E867FA4003F99E0 /* SnackbarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FC42E867FA4003F99E0 /* SnackbarTests.swift */; };
+		5F5A5FDC2E867FA4003F99E0 /* StepperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FC52E867FA4003F99E0 /* StepperTests.swift */; };
+		5F5A5FDD2E867FA4003F99E0 /* TabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FC62E867FA4003F99E0 /* TabsTests.swift */; };
+		5F5A5FDE2E867FA4003F99E0 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FC72E867FA4003F99E0 /* TagTests.swift */; };
+		5F5A5FDF2E867FA4003F99E0 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A5FC92E867FA4003F99E0 /* TestHelpers.swift */; };
+		5F5A60862E868006003F99E0 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5F5A60852E868006003F99E0 /* SnapshotTesting */; };
+		5F5A60882E86800D003F99E0 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5F5A60872E86800D003F99E0 /* SnapshotTesting */; };
 		B8F990632546CAA500DFBFE9 /* Mistica in Frameworks */ = {isa = PBXBuildFile; productRef = B8F990622546CAA500DFBFE9 /* Mistica */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5F5A42032E866A83003F99E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8F98FE22546C95600DFBFE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8F98FE92546C95600DFBFE9;
+			remoteInfo = MisticaCatalog;
+		};
+		5F5A5D222E867EE7003F99E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8F98FE22546C95600DFBFE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8F98FE92546C95600DFBFE9;
+			remoteInfo = MisticaCatalog;
+		};
+		5F5A5D2F2E867EF8003F99E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8F98FE22546C95600DFBFE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B8F98FE92546C95600DFBFE9;
+			remoteInfo = MisticaCatalog;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5F5A41FF2E866A83003F99E0 /* MisticaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MisticaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5A56082E8675C0003F99E0 /* ButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTests.swift; sourceTree = "<group>"; };
+		5F5A5CA72E867CDB003F99E0 /* BadgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTests.swift; sourceTree = "<group>"; };
+		5F5A5CA82E867CDB003F99E0 /* CalloutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutTests.swift; sourceTree = "<group>"; };
+		5F5A5CA92E867CDB003F99E0 /* CarouselTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTests.swift; sourceTree = "<group>"; };
+		5F5A5CAA2E867CDB003F99E0 /* CheckboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTests.swift; sourceTree = "<group>"; };
+		5F5A5CAB2E867CDB003F99E0 /* ControlsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsTests.swift; sourceTree = "<group>"; };
+		5F5A5CAC2E867CDB003F99E0 /* DataCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardTests.swift; sourceTree = "<group>"; };
+		5F5A5CAD2E867CDB003F99E0 /* DeterminateStepperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeterminateStepperTests.swift; sourceTree = "<group>"; };
+		5F5A5CAE2E867CDB003F99E0 /* EmptyStatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStatesTests.swift; sourceTree = "<group>"; };
+		5F5A5CAF2E867CDB003F99E0 /* FeedbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTests.swift; sourceTree = "<group>"; };
+		5F5A5CB02E867CDB003F99E0 /* FilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTests.swift; sourceTree = "<group>"; };
+		5F5A5CD12E867CDB003F99E0 /* FormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTests.swift; sourceTree = "<group>"; };
+		5F5A5CD22E867CDB003F99E0 /* GradientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTests.swift; sourceTree = "<group>"; };
+		5F5A5CD32E867CDB003F99E0 /* HeaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTests.swift; sourceTree = "<group>"; };
+		5F5A5CD42E867CDB003F99E0 /* HighlightedCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedCardTests.swift; sourceTree = "<group>"; };
+		5F5A5CD52E867CDB003F99E0 /* IndeterminateStepperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndeterminateStepperTests.swift; sourceTree = "<group>"; };
+		5F5A5CD62E867CDB003F99E0 /* InputFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldTests.swift; sourceTree = "<group>"; };
+		5F5A5CD72E867CDB003F99E0 /* ListsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsTests.swift; sourceTree = "<group>"; };
+		5F5A5CD82E867CDB003F99E0 /* LoadErrorViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadErrorViewControllerTests.swift; sourceTree = "<group>"; };
+		5F5A5CD92E867CDB003F99E0 /* MediaCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCardTests.swift; sourceTree = "<group>"; };
+		5F5A5CDA2E867CDB003F99E0 /* PopoverViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewTests.swift; sourceTree = "<group>"; };
+		5F5A5CDB2E867CDB003F99E0 /* RadioButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonTests.swift; sourceTree = "<group>"; };
+		5F5A5CDC2E867CDB003F99E0 /* SheetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTests.swift; sourceTree = "<group>"; };
+		5F5A5CDD2E867CDB003F99E0 /* SkeletonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTests.swift; sourceTree = "<group>"; };
+		5F5A5CDE2E867CDB003F99E0 /* SnackbarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarTests.swift; sourceTree = "<group>"; };
+		5F5A5CDF2E867CDB003F99E0 /* TabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTests.swift; sourceTree = "<group>"; };
+		5F5A5CE02E867CDB003F99E0 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
+		5F5A5CE12E867CDB003F99E0 /* TitleHeaderFooterViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderFooterViewTests.swift; sourceTree = "<group>"; };
+		5F5A5D1E2E867EE7003F99E0 /* MisticaCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MisticaCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5A5D2B2E867EF8003F99E0 /* MisticaSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MisticaSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5A5EE62E867F9E003F99E0 /* FontStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyleTests.swift; sourceTree = "<group>"; };
+		5F5A5EE72E867F9E003F99E0 /* FontToolkitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontToolkitTests.swift; sourceTree = "<group>"; };
+		5F5A5EED2E867F9E003F99E0 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		5F5A5FB42E867FA4003F99E0 /* BadgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeTests.swift; sourceTree = "<group>"; };
+		5F5A5FB52E867FA4003F99E0 /* ButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTests.swift; sourceTree = "<group>"; };
+		5F5A5FB62E867FA4003F99E0 /* CalloutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutTests.swift; sourceTree = "<group>"; };
+		5F5A5FB72E867FA4003F99E0 /* CarouselTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTests.swift; sourceTree = "<group>"; };
+		5F5A5FB82E867FA4003F99E0 /* CheckboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxTests.swift; sourceTree = "<group>"; };
+		5F5A5FB92E867FA4003F99E0 /* ChipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipTests.swift; sourceTree = "<group>"; };
+		5F5A5FBA2E867FA4003F99E0 /* CroutonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroutonTests.swift; sourceTree = "<group>"; };
+		5F5A5FBB2E867FA4003F99E0 /* DataCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardTests.swift; sourceTree = "<group>"; };
+		5F5A5FBC2E867FA4003F99E0 /* EmptyStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateTests.swift; sourceTree = "<group>"; };
+		5F5A5FBD2E867FA4003F99E0 /* FeedbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTests.swift; sourceTree = "<group>"; };
+		5F5A5FBE2E867FA4003F99E0 /* GradientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTests.swift; sourceTree = "<group>"; };
+		5F5A5FBF2E867FA4003F99E0 /* HeaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTests.swift; sourceTree = "<group>"; };
+		5F5A5FC02E867FA4003F99E0 /* InputFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldTests.swift; sourceTree = "<group>"; };
+		5F5A5FC12E867FA4003F99E0 /* ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTests.swift; sourceTree = "<group>"; };
+		5F5A5FC22E867FA4003F99E0 /* RadioButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonTests.swift; sourceTree = "<group>"; };
+		5F5A5FC32E867FA4003F99E0 /* SkeletonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTests.swift; sourceTree = "<group>"; };
+		5F5A5FC42E867FA4003F99E0 /* SnackbarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarTests.swift; sourceTree = "<group>"; };
+		5F5A5FC52E867FA4003F99E0 /* StepperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTests.swift; sourceTree = "<group>"; };
+		5F5A5FC62E867FA4003F99E0 /* TabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsTests.swift; sourceTree = "<group>"; };
+		5F5A5FC72E867FA4003F99E0 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
+		5F5A5FC92E867FA4003F99E0 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		B8E161F92546EF9500DA3743 /* mistica-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mistica-ios"; path = ..; sourceTree = "<group>"; };
 		B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisticaCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -26,12 +160,39 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5F5A5C7F2E8675CB003F99E0 /* Fixtures */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Fixtures; sourceTree = "<group>"; };
+		5F5A5CA42E867C60003F99E0 /* Utils */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utils; sourceTree = "<group>"; };
+		5F5A60812E867FC0003F99E0 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
 		84AF0FB42D5F956200630E1B /* Source */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Source; sourceTree = "<group>"; };
 		84B6C4022D5E4341000BC0C9 /* SupportFiles */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84B6C4042D5E4342000BC0C9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = SupportFiles; sourceTree = "<group>"; };
 		84B6C4102D5E4349000BC0C9 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5F5A41FC2E866A83003F99E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5A42C32E866B38003F99E0 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5A5D1B2E867EE7003F99E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5A60862E868006003F99E0 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5A5D282E867EF8003F99E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5A60882E86800D003F99E0 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8F98FE72546C95600DFBFE9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,6 +204,106 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F5A56092E8675C0003F99E0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5F5A5CA72E867CDB003F99E0 /* BadgeTests.swift */,
+				5F5A5CA82E867CDB003F99E0 /* CalloutTests.swift */,
+				5F5A5CA92E867CDB003F99E0 /* CarouselTests.swift */,
+				5F5A5CAA2E867CDB003F99E0 /* CheckboxTests.swift */,
+				5F5A5CAB2E867CDB003F99E0 /* ControlsTests.swift */,
+				5F5A5CAC2E867CDB003F99E0 /* DataCardTests.swift */,
+				5F5A5CAD2E867CDB003F99E0 /* DeterminateStepperTests.swift */,
+				5F5A5CAE2E867CDB003F99E0 /* EmptyStatesTests.swift */,
+				5F5A5CAF2E867CDB003F99E0 /* FeedbackTests.swift */,
+				5F5A5CB02E867CDB003F99E0 /* FilterTests.swift */,
+				5F5A5CD12E867CDB003F99E0 /* FormTests.swift */,
+				5F5A5CD22E867CDB003F99E0 /* GradientTests.swift */,
+				5F5A5CD32E867CDB003F99E0 /* HeaderTests.swift */,
+				5F5A5CD42E867CDB003F99E0 /* HighlightedCardTests.swift */,
+				5F5A5CD52E867CDB003F99E0 /* IndeterminateStepperTests.swift */,
+				5F5A5CD62E867CDB003F99E0 /* InputFieldTests.swift */,
+				5F5A5CD72E867CDB003F99E0 /* ListsTests.swift */,
+				5F5A5CD82E867CDB003F99E0 /* LoadErrorViewControllerTests.swift */,
+				5F5A5CD92E867CDB003F99E0 /* MediaCardTests.swift */,
+				5F5A5CDA2E867CDB003F99E0 /* PopoverViewTests.swift */,
+				5F5A5CDB2E867CDB003F99E0 /* RadioButtonTests.swift */,
+				5F5A5CDC2E867CDB003F99E0 /* SheetTests.swift */,
+				5F5A5CDD2E867CDB003F99E0 /* SkeletonTests.swift */,
+				5F5A5CDE2E867CDB003F99E0 /* SnackbarTests.swift */,
+				5F5A5CDF2E867CDB003F99E0 /* TabsTests.swift */,
+				5F5A5CE02E867CDB003F99E0 /* TagTests.swift */,
+				5F5A5CE12E867CDB003F99E0 /* TitleHeaderFooterViewTests.swift */,
+				5F5A5C7F2E8675CB003F99E0 /* Fixtures */,
+				5F5A56082E8675C0003F99E0 /* ButtonTests.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5F5A560A2E8675C0003F99E0 /* MisticaTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F5A5CA42E867C60003F99E0 /* Utils */,
+				5F5A56092E8675C0003F99E0 /* UI */,
+			);
+			path = MisticaTests;
+			sourceTree = "<group>";
+		};
+		5F5A5EE82E867F9E003F99E0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5F5A5EE62E867F9E003F99E0 /* FontStyleTests.swift */,
+				5F5A5EE72E867F9E003F99E0 /* FontToolkitTests.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5F5A5EEE2E867F9E003F99E0 /* MisticaCommonTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F5A5EE82E867F9E003F99E0 /* Fonts */,
+				5F5A60812E867FC0003F99E0 /* Resources */,
+				5F5A5EED2E867F9E003F99E0 /* TestHelpers.swift */,
+			);
+			path = MisticaCommonTests;
+			sourceTree = "<group>";
+		};
+		5F5A5FC82E867FA4003F99E0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5F5A5FB42E867FA4003F99E0 /* BadgeTests.swift */,
+				5F5A5FB52E867FA4003F99E0 /* ButtonTests.swift */,
+				5F5A5FB62E867FA4003F99E0 /* CalloutTests.swift */,
+				5F5A5FB72E867FA4003F99E0 /* CarouselTests.swift */,
+				5F5A5FB82E867FA4003F99E0 /* CheckboxTests.swift */,
+				5F5A5FB92E867FA4003F99E0 /* ChipTests.swift */,
+				5F5A5FBA2E867FA4003F99E0 /* CroutonTests.swift */,
+				5F5A5FBB2E867FA4003F99E0 /* DataCardTests.swift */,
+				5F5A5FBC2E867FA4003F99E0 /* EmptyStateTests.swift */,
+				5F5A5FBD2E867FA4003F99E0 /* FeedbackTests.swift */,
+				5F5A5FBE2E867FA4003F99E0 /* GradientTests.swift */,
+				5F5A5FBF2E867FA4003F99E0 /* HeaderTests.swift */,
+				5F5A5FC02E867FA4003F99E0 /* InputFieldTests.swift */,
+				5F5A5FC12E867FA4003F99E0 /* ListTests.swift */,
+				5F5A5FC22E867FA4003F99E0 /* RadioButtonTests.swift */,
+				5F5A5FC32E867FA4003F99E0 /* SkeletonTests.swift */,
+				5F5A5FC42E867FA4003F99E0 /* SnackbarTests.swift */,
+				5F5A5FC52E867FA4003F99E0 /* StepperTests.swift */,
+				5F5A5FC62E867FA4003F99E0 /* TabsTests.swift */,
+				5F5A5FC72E867FA4003F99E0 /* TagTests.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5F5A5FCA2E867FA4003F99E0 /* MisticaSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5F5A5FC82E867FA4003F99E0 /* UI */,
+				5F5A5FC92E867FA4003F99E0 /* TestHelpers.swift */,
+			);
+			path = MisticaSwiftUITests;
+			sourceTree = "<group>";
+		};
 		B8E161F82546EF8300DA3743 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +319,9 @@
 				84B6C4022D5E4341000BC0C9 /* SupportFiles */,
 				84B6C4102D5E4349000BC0C9 /* Resources */,
 				B8E161F82546EF8300DA3743 /* Packages */,
+				5F5A560A2E8675C0003F99E0 /* MisticaTests */,
+				5F5A5EEE2E867F9E003F99E0 /* MisticaCommonTests */,
+				5F5A5FCA2E867FA4003F99E0 /* MisticaSwiftUITests */,
 				B8F98FEB2546C95600DFBFE9 /* Products */,
 				B8F990612546CAA500DFBFE9 /* Frameworks */,
 			);
@@ -67,6 +331,9 @@
 			isa = PBXGroup;
 			children = (
 				B8F98FEA2546C95600DFBFE9 /* MisticaCatalog.app */,
+				5F5A41FF2E866A83003F99E0 /* MisticaTests.xctest */,
+				5F5A5D1E2E867EE7003F99E0 /* MisticaCommonTests.xctest */,
+				5F5A5D2B2E867EF8003F99E0 /* MisticaSwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +348,76 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5F5A41FE2E866A83003F99E0 /* MisticaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F5A42072E866A83003F99E0 /* Build configuration list for PBXNativeTarget "MisticaTests" */;
+			buildPhases = (
+				5F5A41FB2E866A83003F99E0 /* Sources */,
+				5F5A41FC2E866A83003F99E0 /* Frameworks */,
+				5F5A41FD2E866A83003F99E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F5A42042E866A83003F99E0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5F5A5C7F2E8675CB003F99E0 /* Fixtures */,
+				5F5A5CA42E867C60003F99E0 /* Utils */,
+			);
+			name = MisticaTests;
+			packageProductDependencies = (
+				5F5A42C22E866B38003F99E0 /* SnapshotTesting */,
+			);
+			productName = MisticaTests;
+			productReference = 5F5A41FF2E866A83003F99E0 /* MisticaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5F5A5D1D2E867EE7003F99E0 /* MisticaCommonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F5A5D242E867EE7003F99E0 /* Build configuration list for PBXNativeTarget "MisticaCommonTests" */;
+			buildPhases = (
+				5F5A5D1A2E867EE7003F99E0 /* Sources */,
+				5F5A5D1B2E867EE7003F99E0 /* Frameworks */,
+				5F5A5D1C2E867EE7003F99E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F5A5D232E867EE7003F99E0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5F5A60812E867FC0003F99E0 /* Resources */,
+			);
+			name = MisticaCommonTests;
+			packageProductDependencies = (
+				5F5A60852E868006003F99E0 /* SnapshotTesting */,
+			);
+			productName = MisticaCommonTests;
+			productReference = 5F5A5D1E2E867EE7003F99E0 /* MisticaCommonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5F5A5D2A2E867EF8003F99E0 /* MisticaSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F5A5D312E867EF8003F99E0 /* Build configuration list for PBXNativeTarget "MisticaSwiftUITests" */;
+			buildPhases = (
+				5F5A5D272E867EF8003F99E0 /* Sources */,
+				5F5A5D282E867EF8003F99E0 /* Frameworks */,
+				5F5A5D292E867EF8003F99E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F5A5D302E867EF8003F99E0 /* PBXTargetDependency */,
+			);
+			name = MisticaSwiftUITests;
+			packageProductDependencies = (
+				5F5A60872E86800D003F99E0 /* SnapshotTesting */,
+			);
+			productName = MisticaSwiftUITests;
+			productReference = 5F5A5D2B2E867EF8003F99E0 /* MisticaSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B8F98FE92546C95600DFBFE9 /* MisticaCatalog */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8F98FF92546C95800DFBFE9 /* Build configuration list for PBXNativeTarget "MisticaCatalog" */;
@@ -114,9 +451,21 @@
 		B8F98FE22546C95600DFBFE9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					5F5A41FE2E866A83003F99E0 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = B8F98FE92546C95600DFBFE9;
+					};
+					5F5A5D1D2E867EE7003F99E0 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = B8F98FE92546C95600DFBFE9;
+					};
+					5F5A5D2A2E867EF8003F99E0 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = B8F98FE92546C95600DFBFE9;
+					};
 					B8F98FE92546C95600DFBFE9 = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -132,17 +481,42 @@
 			);
 			mainGroup = B8F98FE12546C95600DFBFE9;
 			packageReferences = (
+				5F5A42C12E866B38003F99E0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = B8F98FEB2546C95600DFBFE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B8F98FE92546C95600DFBFE9 /* MisticaCatalog */,
+				5F5A41FE2E866A83003F99E0 /* MisticaTests */,
+				5F5A5D1D2E867EE7003F99E0 /* MisticaCommonTests */,
+				5F5A5D2A2E867EF8003F99E0 /* MisticaSwiftUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5F5A41FD2E866A83003F99E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5A5D1C2E867EE7003F99E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5A5D292E867EF8003F99E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8F98FE82546C95600DFBFE9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +527,79 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5F5A41FB2E866A83003F99E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5A5C5F2E8675C1003F99E0 /* ButtonTests.swift in Sources */,
+				5F5A5CF12E867CDB003F99E0 /* TabsTests.swift in Sources */,
+				5F5A5CF32E867CDB003F99E0 /* CarouselTests.swift in Sources */,
+				5F5A5CF42E867CDB003F99E0 /* ListsTests.swift in Sources */,
+				5F5A5CF52E867CDB003F99E0 /* IndeterminateStepperTests.swift in Sources */,
+				5F5A5CFA2E867CDB003F99E0 /* DataCardTests.swift in Sources */,
+				5F5A5CFB2E867CDB003F99E0 /* RadioButtonTests.swift in Sources */,
+				5F5A5CFD2E867CDB003F99E0 /* PopoverViewTests.swift in Sources */,
+				5F5A5CFE2E867CDB003F99E0 /* MediaCardTests.swift in Sources */,
+				5F5A5CFF2E867CDB003F99E0 /* FormTests.swift in Sources */,
+				5F5A5D002E867CDB003F99E0 /* BadgeTests.swift in Sources */,
+				5F5A5D032E867CDB003F99E0 /* EmptyStatesTests.swift in Sources */,
+				5F5A5D062E867CDB003F99E0 /* DeterminateStepperTests.swift in Sources */,
+				5F5A5D082E867CDB003F99E0 /* HeaderTests.swift in Sources */,
+				5F5A5D092E867CDB003F99E0 /* TagTests.swift in Sources */,
+				5F5A5D0A2E867CDB003F99E0 /* HighlightedCardTests.swift in Sources */,
+				5F5A5D0B2E867CDB003F99E0 /* FilterTests.swift in Sources */,
+				5F5A5D0C2E867CDB003F99E0 /* CalloutTests.swift in Sources */,
+				5F5A5D0E2E867CDB003F99E0 /* GradientTests.swift in Sources */,
+				5F5A5D0F2E867CDB003F99E0 /* SheetTests.swift in Sources */,
+				5F5A5D102E867CDB003F99E0 /* TitleHeaderFooterViewTests.swift in Sources */,
+				5F5A5D122E867CDB003F99E0 /* SkeletonTests.swift in Sources */,
+				5F5A5D132E867CDB003F99E0 /* LoadErrorViewControllerTests.swift in Sources */,
+				5F5A5D142E867CDB003F99E0 /* CheckboxTests.swift in Sources */,
+				5F5A5D152E867CDB003F99E0 /* InputFieldTests.swift in Sources */,
+				5F5A5D162E867CDB003F99E0 /* SnackbarTests.swift in Sources */,
+				5F5A5D172E867CDB003F99E0 /* FeedbackTests.swift in Sources */,
+				5F5A5D192E867CDB003F99E0 /* ControlsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5A5D1A2E867EE7003F99E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5A5EEF2E867F9E003F99E0 /* FontStyleTests.swift in Sources */,
+				5F5A5EF02E867F9E003F99E0 /* FontToolkitTests.swift in Sources */,
+				5F5A5EF12E867F9E003F99E0 /* TestHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F5A5D272E867EF8003F99E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5A5FCB2E867FA4003F99E0 /* BadgeTests.swift in Sources */,
+				5F5A5FCC2E867FA4003F99E0 /* ButtonTests.swift in Sources */,
+				5F5A5FCD2E867FA4003F99E0 /* CalloutTests.swift in Sources */,
+				5F5A5FCE2E867FA4003F99E0 /* CarouselTests.swift in Sources */,
+				5F5A5FCF2E867FA4003F99E0 /* CheckboxTests.swift in Sources */,
+				5F5A5FD02E867FA4003F99E0 /* ChipTests.swift in Sources */,
+				5F5A5FD12E867FA4003F99E0 /* CroutonTests.swift in Sources */,
+				5F5A5FD22E867FA4003F99E0 /* DataCardTests.swift in Sources */,
+				5F5A5FD32E867FA4003F99E0 /* EmptyStateTests.swift in Sources */,
+				5F5A5FD42E867FA4003F99E0 /* FeedbackTests.swift in Sources */,
+				5F5A5FD52E867FA4003F99E0 /* GradientTests.swift in Sources */,
+				5F5A5FD62E867FA4003F99E0 /* HeaderTests.swift in Sources */,
+				5F5A5FD72E867FA4003F99E0 /* InputFieldTests.swift in Sources */,
+				5F5A5FD82E867FA4003F99E0 /* ListTests.swift in Sources */,
+				5F5A5FD92E867FA4003F99E0 /* RadioButtonTests.swift in Sources */,
+				5F5A5FDA2E867FA4003F99E0 /* SkeletonTests.swift in Sources */,
+				5F5A5FDB2E867FA4003F99E0 /* SnackbarTests.swift in Sources */,
+				5F5A5FDC2E867FA4003F99E0 /* StepperTests.swift in Sources */,
+				5F5A5FDD2E867FA4003F99E0 /* TabsTests.swift in Sources */,
+				5F5A5FDE2E867FA4003F99E0 /* TagTests.swift in Sources */,
+				5F5A5FDF2E867FA4003F99E0 /* TestHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8F98FE62546C95600DFBFE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,9 +622,177 @@
 			isa = PBXTargetDependency;
 			productRef = 18FB8A9C288067980043CA80 /* MisticaCommon */;
 		};
+		5F5A42042E866A83003F99E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8F98FE92546C95600DFBFE9 /* MisticaCatalog */;
+			targetProxy = 5F5A42032E866A83003F99E0 /* PBXContainerItemProxy */;
+		};
+		5F5A5D232E867EE7003F99E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8F98FE92546C95600DFBFE9 /* MisticaCatalog */;
+			targetProxy = 5F5A5D222E867EE7003F99E0 /* PBXContainerItemProxy */;
+		};
+		5F5A5D302E867EF8003F99E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B8F98FE92546C95600DFBFE9 /* MisticaCatalog */;
+			targetProxy = 5F5A5D2F2E867EF8003F99E0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		5F5A42052E866A83003F99E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.MisticaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MisticaCatalog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MisticaCatalog";
+			};
+			name = Debug;
+		};
+		5F5A42062E866A83003F99E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.MisticaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MisticaCatalog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MisticaCatalog";
+			};
+			name = Release;
+		};
+		5F5A5D252E867EE7003F99E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.MisticaCommonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MisticaCatalog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MisticaCatalog";
+			};
+			name = Debug;
+		};
+		5F5A5D262E867EE7003F99E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.MisticaCommonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MisticaCatalog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MisticaCatalog";
+			};
+			name = Release;
+		};
+		5F5A5D322E867EF8003F99E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.MisticaSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MisticaCatalog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MisticaCatalog";
+			};
+			name = Debug;
+		};
+		5F5A5D332E867EF8003F99E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tid.mistica.MisticaSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MisticaCatalog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MisticaCatalog";
+			};
+			name = Release;
+		};
 		B8F98FF72546C95800DFBFE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 84B6C4022D5E4341000BC0C9 /* SupportFiles */;
@@ -355,6 +970,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5F5A42072E866A83003F99E0 /* Build configuration list for PBXNativeTarget "MisticaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5A42052E866A83003F99E0 /* Debug */,
+				5F5A42062E866A83003F99E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F5A5D242E867EE7003F99E0 /* Build configuration list for PBXNativeTarget "MisticaCommonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5A5D252E867EE7003F99E0 /* Debug */,
+				5F5A5D262E867EE7003F99E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F5A5D312E867EF8003F99E0 /* Build configuration list for PBXNativeTarget "MisticaSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5A5D322E867EF8003F99E0 /* Debug */,
+				5F5A5D332E867EF8003F99E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B8F98FE52546C95600DFBFE9 /* Build configuration list for PBXProject "MisticaCatalog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -375,6 +1017,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		5F5A42C12E866B38003F99E0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.18.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		18E42D47287F181700BB7B39 /* Mistica */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -387,6 +1040,21 @@
 		18FB8A9C288067980043CA80 /* MisticaCommon */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MisticaCommon;
+		};
+		5F5A42C22E866B38003F99E0 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F5A42C12E866B38003F99E0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		5F5A60852E868006003F99E0 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F5A42C12E866B38003F99E0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		5F5A60872E86800D003F99E0 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F5A42C12E866B38003F99E0 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 		B8F990622546CAA500DFBFE9 /* Mistica */ = {
 			isa = XCSwiftPackageProductDependency;

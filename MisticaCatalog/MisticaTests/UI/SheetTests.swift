@@ -238,7 +238,7 @@ final class SheetTests: XCTestCase {
 
 private extension SheetTests {
     var iconPath: String {
-        guard let url = Bundle.module.url(forResource: "circleRed", withExtension: "png") else {
+        guard let url = Bundle(for: type(of: self)).url(forResource: "circleRed", withExtension: "png") else {
             fatalError("Asset named circleRed not found")
         }
 

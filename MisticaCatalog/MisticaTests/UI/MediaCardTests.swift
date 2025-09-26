@@ -125,7 +125,7 @@ final class MediaCardTests: XCTestCase {
         MisticaConfig.brandStyle = .vivoNew
 
         let configurationWithActions = MediaCardConfiguration(
-            richMedia: AnyValues.richMedia,
+            richMedia: AnyValues.richMedia(),
             headline: "headline",
             title: "Item title",
             pretitle: "Pretitle",
@@ -151,7 +151,7 @@ extension MediaCardTests {
         static let button = CardButton(title: "Button", loadingTitle: "Loading", tapHandler: nil)
         static let link = CardLinkButton(title: "Button Link", tapHandler: nil)
         @MainActor
-        static var richMedia: UIImageView {
+        static func richMedia() -> UIImageView {
             let image = UIImageView(image: UIImage(color: .green))
 
             image.heightAnchor.constraint(equalToConstant: 110).isActive = true
@@ -163,7 +163,7 @@ extension MediaCardTests {
     func makeBasicCard(primaryButton: CardButton? = nil,
                        linkButton: CardLinkButton? = nil) -> MediaCard {
         let configuration = MediaCardConfiguration(
-            richMedia: AnyValues.richMedia,
+            richMedia: AnyValues.richMedia(),
             descriptionTitle: "This is a description",
             button: primaryButton,
             link: linkButton
@@ -179,7 +179,7 @@ extension MediaCardTests {
     }
 
     func makeCardWithFullContentAndButtons(
-        richMedia: UIView = AnyValues.richMedia,
+        richMedia: UIView? = nil,
         headline: String? = "headline",
         title: String? = "Item title",
         pretitle: String? = "Pretitle",
@@ -189,7 +189,7 @@ extension MediaCardTests {
         hasFragment: Bool = true
     ) -> MediaCard {
         let configuration = MediaCardConfiguration(
-            richMedia: richMedia,
+            richMedia: richMedia ?? AnyValues.richMedia(),
             headline: headline,
             title: title,
             pretitle: pretitle,

@@ -68,7 +68,7 @@ final class TabsTests: XCTestCase {
 
     func testTabsDefaultState() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateView(tabItems: Constants.threeItem)
         )
     }
@@ -80,7 +80,7 @@ final class TabsTests: XCTestCase {
             of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItem)
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -91,7 +91,7 @@ final class TabsTests: XCTestCase {
             of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithoutIcon)
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -102,7 +102,7 @@ final class TabsTests: XCTestCase {
             of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongText)
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -113,7 +113,7 @@ final class TabsTests: XCTestCase {
             of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongTextAndNoIcon)
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -124,7 +124,7 @@ final class TabsTests: XCTestCase {
             of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.eightItem)
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -137,7 +137,7 @@ final class TabsTests: XCTestCase {
             of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItem)
             ),
-            as: .image(on: .iPadMini)
+            as: .image(on: .iPadMini, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -148,7 +148,7 @@ final class TabsTests: XCTestCase {
             of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.twoItem)
             ),
-            as: .image(on: .iPadMini)
+            as: .image(on: .iPadMini, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -159,7 +159,7 @@ final class TabsTests: XCTestCase {
             of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.threeItemWithLongText)
             ),
-            as: .image(on: .iPadMini)
+            as: .image(on: .iPadMini, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -170,7 +170,7 @@ final class TabsTests: XCTestCase {
             of: TabsTestsViewController(
                 tabsView: makeTemplateTabsView(tabItems: Constants.eightItem)
             ),
-            as: .image(on: .iPadMini)
+            as: .image(on: .iPadMini, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -184,7 +184,7 @@ final class TabsTests: XCTestCase {
 
         assertSnapshot(
             of: view.asRootOfViewController(),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 }

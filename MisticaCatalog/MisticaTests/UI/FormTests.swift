@@ -34,7 +34,7 @@ final class FormsTests: XCTestCase {
         }
 
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: FormTestsViewController(
                 formView: makeFormView(
                     withHeader: makeLabel(withText: Constants.headerTitle),
@@ -53,7 +53,7 @@ final class FormsTests: XCTestCase {
         }
 
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: FormTestsViewController(
                 formView: makeFormView(
                     withHeader: makeLabel(withText: Constants.headerTitle),
@@ -80,7 +80,7 @@ final class FormsTests: XCTestCase {
         let formTestsViewController = FormTestsViewController(formView: formView)
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -99,7 +99,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "assertInitialState"
         )
 
@@ -107,7 +107,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "finalState"
         )
     }
@@ -128,7 +128,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "assertInitialState"
         )
 
@@ -136,7 +136,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "finalState"
         )
     }
@@ -161,7 +161,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "assertInitialState"
         )
 
@@ -169,7 +169,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "finalState"
         )
     }
@@ -193,7 +193,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "assertInitialState"
         )
 
@@ -201,7 +201,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "finalState"
         )
     }
@@ -224,7 +224,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "assertInitialState"
         )
 
@@ -232,7 +232,7 @@ final class FormsTests: XCTestCase {
 
         assertSnapshot(
             of: formTestsViewController,
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             named: "finalState"
         )
     }
@@ -257,7 +257,7 @@ final class FormsTests: XCTestCase {
         formView.button.title = Constants.buttonTitle
         formView.addFooterView(makeLabel(withText: Constants.footerTitle))
 
-        assertSnapshot(of: view.asRootOfViewController(), as: .image(on: .iPhoneSe))
+        assertSnapshot(of: view.asRootOfViewController(), as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true))
     }
 }
 

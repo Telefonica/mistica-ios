@@ -27,56 +27,56 @@ final class TitleHeaderFooterViewTests: XCTestCase {
 
     func testTitle1() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "Title text", style: .title1)
         )
     }
 
     func testTitle1WithLink() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "Title text", linkTitle: "Link text", style: .title1)
         )
     }
 
     func testTitle1Multiline() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline text work fine", style: .title1)
         )
     }
 
     func testTitle1MultilineAndLink() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline text work fine", linkTitle: "Link text", style: .title1)
         )
     }
 
     func testTitle2() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "Title text", style: .title2)
         )
     }
 
     func testTitle2WithLink() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "Title text", linkTitle: "Link text", style: .title2)
         )
     }
 
     func testTitle2Multiline() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", style: .title2)
         )
     }
 
     func testTitle2MultilineAndLink() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", linkTitle: "Link text", style: .title2)
         )
     }
@@ -85,7 +85,7 @@ final class TitleHeaderFooterViewTests: XCTestCase {
         assertSnapshot(
             for: [.vivoNew, .movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "Title text", style: .title3)
         )
     }
@@ -94,7 +94,7 @@ final class TitleHeaderFooterViewTests: XCTestCase {
         assertSnapshot(
             for: [.vivoNew, .movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "Title text", linkTitle: "Link text", style: .title3)
         )
     }
@@ -103,7 +103,7 @@ final class TitleHeaderFooterViewTests: XCTestCase {
         assertSnapshot(
             for: [.vivoNew, .movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", style: .title3)
         )
     }
@@ -112,7 +112,7 @@ final class TitleHeaderFooterViewTests: XCTestCase {
         assertSnapshot(
             for: [.vivoNew, .movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", linkTitle: "Link text", style: .title3)
         )
     }
@@ -121,7 +121,7 @@ final class TitleHeaderFooterViewTests: XCTestCase {
         assertSnapshot(
             for: [.vivoNew],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "Title text", style: .title4)
         )
     }
@@ -130,7 +130,7 @@ final class TitleHeaderFooterViewTests: XCTestCase {
         assertSnapshot(
             for: [.vivoNew],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "Title text", linkTitle: "Link text", style: .title4)
         )
     }
@@ -139,7 +139,7 @@ final class TitleHeaderFooterViewTests: XCTestCase {
         assertSnapshot(
             for: [.vivoNew],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", style: .title4)
         )
     }
@@ -148,7 +148,7 @@ final class TitleHeaderFooterViewTests: XCTestCase {
         assertSnapshot(
             for: [.vivoNew],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSectionTitle(title: "This is a very long test text to check multiline", linkTitle: "Link text", style: .title4)
         )
     }

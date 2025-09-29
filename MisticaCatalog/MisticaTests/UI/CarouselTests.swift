@@ -34,7 +34,7 @@ final class CarouselTests: XCTestCase {
 
         assertSnapshot(
             of: carouselTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -46,7 +46,7 @@ final class CarouselTests: XCTestCase {
 
         assertSnapshot(
             of: carouselTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -58,7 +58,7 @@ final class CarouselTests: XCTestCase {
 
         assertSnapshot(
             of: carouselTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -71,7 +71,7 @@ final class CarouselTests: XCTestCase {
 
         assertSnapshot(
             of: carouselTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -85,7 +85,7 @@ final class CarouselTests: XCTestCase {
 
         assertSnapshot(
             of: carouselTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -100,7 +100,7 @@ final class CarouselTests: XCTestCase {
 
         assertSnapshot(
             of: carouselTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 

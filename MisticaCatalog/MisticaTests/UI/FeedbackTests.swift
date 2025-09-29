@@ -34,7 +34,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessTitle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.singleLineTitle,
@@ -47,7 +47,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativeTitleAndSubtitle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.singleLineTitle,
@@ -60,7 +60,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorTitleAndSubtitle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.singleLineTitle,
@@ -73,7 +73,7 @@ final class FeedbackTests: XCTestCase {
 
     func testFeedbackTitleAndSubtitle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .feedback(icon: UIImage(systemName: "swift")!),
                 title: Constants.singleLineTitle,
@@ -86,7 +86,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorTitleSubtitleAndErrorReference() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.singleLineTitle,
@@ -102,7 +102,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessMultiline() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -115,7 +115,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativeMultilineScroll() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -128,7 +128,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorMultilineScrollWithButtons() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,
@@ -141,7 +141,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorMultilineScrollWithErrorReference() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.singleLineTitle,
@@ -157,7 +157,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessPrimaryButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -170,7 +170,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativePrimaryButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -183,7 +183,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorPrimaryRetryButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,
@@ -202,7 +202,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessSecondaryButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -215,7 +215,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativeSecondaryButtonLink() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -228,7 +228,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorSecondaryButtonLink() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,
@@ -243,7 +243,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessPrimaryAndSecondaryButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -256,7 +256,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativePrimaryAndSecondaryButtonLink() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -269,7 +269,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorPrimaryRetryAndSecondaryButtonLink() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,
@@ -288,7 +288,7 @@ final class FeedbackTests: XCTestCase {
 
     func testSuccessPrimaryAndSecondaryButtonLinkCustomView() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .success,
                 title: Constants.multiLineTitle,
@@ -302,7 +302,7 @@ final class FeedbackTests: XCTestCase {
 
     func testInformativeSecondaryButtonLinkCustomView() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .informative,
                 title: Constants.multiLineTitle,
@@ -316,7 +316,7 @@ final class FeedbackTests: XCTestCase {
 
     func testErrorSecondaryPrimaryButtonCustomView() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: feedbackViewController(
                 style: .error,
                 title: Constants.multiLineTitle,

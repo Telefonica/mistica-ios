@@ -100,7 +100,7 @@ final class DataCardTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: dataCard),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 

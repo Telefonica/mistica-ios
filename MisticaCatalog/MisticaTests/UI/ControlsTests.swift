@@ -22,14 +22,14 @@ final class ControlsTests: XCTestCase {
 
     func testSwitchDefaultState() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeSwitchTemplate(isOn: false)
         )
     }
 
     func testSwitchOnState() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeSwitchTemplate(isOn: true)
         )
     }
@@ -38,7 +38,7 @@ final class ControlsTests: XCTestCase {
 
     func testSegmentedControl() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeSegmentedControlTemplate()
         )
     }
@@ -49,14 +49,14 @@ final class ControlsTests: XCTestCase {
         let tabView = makeTabBarTemplate()
         assertSnapshot(
             of: tabView,
-            as: .image(size: CGSize(width: 420, height: 60))
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 420, height: 60))
         )
 
         tabView.overrideUserInterfaceStyle = .dark
 
         assertSnapshot(
             of: tabView,
-            as: .image(size: CGSize(width: 420, height: 60)),
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 420, height: 60)),
             named: "with-dark-style"
         )
     }
@@ -65,7 +65,7 @@ final class ControlsTests: XCTestCase {
 
     func testPageControl() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makePageControlTemplate()
         )
     }
@@ -81,7 +81,7 @@ final class ControlsTests: XCTestCase {
 
         assertSnapshot(
             of: segmentedControl,
-            as: .image(size: segmentedControl.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: segmentedControl.intrinsicContentSize),
             named: "assertInitialState"
         )
 
@@ -89,7 +89,7 @@ final class ControlsTests: XCTestCase {
 
         assertSnapshot(
             of: segmentedControl,
-            as: .image(size: segmentedControl.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: segmentedControl.intrinsicContentSize),
             named: "finalState"
         )
     }
@@ -105,7 +105,7 @@ final class ControlsTests: XCTestCase {
 
         assertSnapshot(
             of: tabBarController,
-            as: .image(size: CGSize(width: 420, height: 60)),
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 420, height: 60)),
             named: "assertInitialState"
         )
 
@@ -113,7 +113,7 @@ final class ControlsTests: XCTestCase {
 
         assertSnapshot(
             of: tabBarController,
-            as: .image(size: CGSize(width: 420, height: 60)),
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 420, height: 60)),
             named: "finalState"
         )
     }
@@ -130,7 +130,7 @@ final class ControlsTests: XCTestCase {
 
         assertSnapshot(
             of: pageControl,
-            as: .image(size: pageControl.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: pageControl.intrinsicContentSize),
             named: "assertInitialState"
         )
 
@@ -138,7 +138,7 @@ final class ControlsTests: XCTestCase {
 
         assertSnapshot(
             of: pageControl,
-            as: .image(size: pageControl.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: pageControl.intrinsicContentSize),
             named: "finalState"
         )
     }

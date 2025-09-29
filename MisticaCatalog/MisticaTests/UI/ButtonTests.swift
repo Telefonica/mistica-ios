@@ -37,98 +37,98 @@ final class ButtonTests: XCTestCase {
 
     func testRegularSizeWithPrimaryStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: false)
         )
     }
 
     func testRegularSizeWithPrimaryClearStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .primaryClear, isSmall: false)
         )
     }
 
     func testRegularSizeWithPrimaryInverseStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .primaryInverse, isSmall: false)
         )
     }
 
     func testRegularSizeWithSecondaryStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .secondary, isSmall: false)
         )
     }
 
     func testRegularSizeWithSecondaryInverseStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .secondaryInverse, isSmall: false)
         )
     }
 
     func testRegularSizeWithDangerStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .danger, isSmall: false)
         )
     }
 
     func testRegularSizeWithLinkStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: false)
         )
     }
 
     func testRegularSizeWithLinkInverseStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: false)
         )
     }
 
     func testRegularSizeWithLinkDangerStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkDanger, isSmall: false)
         )
     }
 
     func testRegularSizeWithLinkDangerInverseStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkDangerInverse, isSmall: false)
         )
     }
 
     func testRegularSizeWithLinkWithChevronStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: false, rightImage: .chevron)
         )
     }
 
     func testRegularSizeWithLinkInverseWithChevronStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: false, rightImage: .chevron)
         )
     }
 
     func testRegularSizeWithLinkWithLeftImageStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: false, leftImage: true)
         )
     }
 
     func testRegularSizeWithLinkInverseWithLeftImageStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: false, leftImage: true)
         )
     }
@@ -137,84 +137,84 @@ final class ButtonTests: XCTestCase {
 
     func testSmallSizeWithPrimaryStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: true)
         )
     }
 
     func testSmallSizeWithPrimaryClearStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .primaryClear, isSmall: true)
         )
     }
 
     func testSmallSizeWithPrimaryInverseStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .primaryInverse, isSmall: true)
         )
     }
 
     func testSmallSizeWithSecondaryStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .secondary, isSmall: true)
         )
     }
 
     func testSmallSizeWithSecondaryInverseStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .secondaryInverse, isSmall: true)
         )
     }
 
     func testSmallSizeWithDangerStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .danger, isSmall: true)
         )
     }
 
     func testSmallSizeWithLinkStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: true)
         )
     }
 
     func testSmallSizeWithLinkInverseStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: true)
         )
     }
 
     func testSmallSizeWithLinkWithChevronStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: true, rightImage: .chevron)
         )
     }
 
     func testSmallSizeWithLinkInverseWithChevronStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: true, rightImage: .chevron)
         )
     }
 
     func testSmallSizeWithLinkWithLeftImageStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .link, isSmall: true, leftImage: true)
         )
     }
 
     func testSmallSizeWithLinkInverseWithLeftImageStyle() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .linkInverse, isSmall: true, leftImage: true)
         )
     }
@@ -229,7 +229,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: buttonNormalState,
-            as: .image(size: CGSize(width: 156, height: 48))
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 156, height: 48))
         )
     }
 
@@ -242,7 +242,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: buttonNormalState,
-            as: .image(size: CGSize(width: 156, height: 48))
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 156, height: 48))
         )
     }
 
@@ -256,7 +256,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: button,
-            as: .image(size: CGSize(width: 500, height: 48))
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 500, height: 48))
         )
     }
 
@@ -298,7 +298,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: buttonNormalState,
-            as: .image(size: buttonNormalState.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: buttonNormalState.intrinsicContentSize),
             named: "assertInitialState"
         )
 
@@ -306,7 +306,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: buttonNormalState,
-            as: .image(size: buttonNormalState.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: buttonNormalState.intrinsicContentSize),
             named: "finalState"
         )
     }
@@ -320,7 +320,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: button,
-            as: .image(size: button.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: button.intrinsicContentSize),
             named: "assertInitialState"
         )
 
@@ -329,7 +329,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: button,
-            as: .image(size: button.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: button.intrinsicContentSize),
             named: "finalState"
         )
     }
@@ -342,7 +342,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: button,
-            as: .image(size: button.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: button.intrinsicContentSize),
             named: "assertInitialState"
         )
 
@@ -351,7 +351,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: button,
-            as: .image(size: button.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: button.intrinsicContentSize),
             named: "finalState"
         )
     }
@@ -364,7 +364,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: button,
-            as: .image(size: button.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: button.intrinsicContentSize),
             named: "assertInitialState"
         )
 
@@ -373,7 +373,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: button,
-            as: .image(size: button.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: button.intrinsicContentSize),
             named: "finalState"
         )
     }
@@ -395,7 +395,7 @@ final class ButtonTests: XCTestCase {
 
         assertSnapshot(
             of: view.asRootOfViewController(),
-            as: .image(on: .iPhoneX) // We need a device with Safe Area
+            as: .image(on: .iPhoneX, drawHierarchyInKeyWindow: true) // We need a device with Safe Area
         )
     }
 
@@ -403,14 +403,14 @@ final class ButtonTests: XCTestCase {
 
     func testLeftAndRightImages() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: false, leftImage: true, rightImage: .custom(image: Constants.rightImage))
         )
     }
 
     func testLeftImageAndChevron() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithAllButtonStates(style: .primary, isSmall: false, leftImage: true, rightImage: .chevron)
         )
     }

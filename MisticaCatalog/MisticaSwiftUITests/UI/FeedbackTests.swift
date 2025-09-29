@@ -31,7 +31,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshotWithoutAnimations(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -40,7 +40,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshotWithoutAnimations(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -49,7 +49,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshotWithoutAnimations(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -58,7 +58,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshotWithoutAnimations(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -67,7 +67,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshotWithoutAnimations(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -76,7 +76,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -95,7 +95,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -114,7 +114,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -136,7 +136,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -155,7 +155,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -174,7 +174,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshotWithoutAnimations(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -193,7 +193,7 @@ final class FeedbackTests: XCTestCase {
 
         assertSnapshotWithoutAnimations(
             of: UIHostingController(rootView: feedback),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 }

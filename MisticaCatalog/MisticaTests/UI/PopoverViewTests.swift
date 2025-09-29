@@ -22,7 +22,7 @@ final class PopoverViewTests: XCTestCase {
 
     func testBrandStyles() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: .init(width: 200, height: 100)),
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 200, height: 100)),
             viewBuilder: makePopover(tipDirection: .down)
         )
     }
@@ -34,14 +34,14 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             of: downPopover,
-            as: .image(size: .init(width: 200, height: 100))
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 200, height: 100))
         )
 
         let upPopover = makePopover(tipDirection: .up)
 
         assertSnapshot(
             of: upPopover,
-            as: .image(size: .init(width: 200, height: 100))
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 200, height: 100))
         )
     }
 
@@ -52,7 +52,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             of: popover,
-            as: .image(size: .init(width: 400, height: 150))
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 400, height: 150))
         )
     }
 
@@ -61,7 +61,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             of: popover,
-            as: .image(size: .init(width: 200, height: 100))
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 200, height: 100))
         )
     }
 
@@ -72,7 +72,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             of: popover,
-            as: .image(size: .init(width: 400, height: 150))
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 400, height: 150))
         )
     }
 
@@ -81,7 +81,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             of: popover,
-            as: .image(size: .init(width: 500, height: 100))
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 500, height: 100))
         )
     }
 
@@ -93,7 +93,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             of: popover,
-            as: .image(size: .init(width: 400, height: 200))
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 400, height: 200))
         )
     }
 
@@ -104,7 +104,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             of: popover,
-            as: .image(size: .init(width: 200, height: 100))
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 200, height: 100))
         )
     }
 
@@ -115,7 +115,7 @@ final class PopoverViewTests: XCTestCase {
 
         assertSnapshot(
             of: popover,
-            as: .image(size: .init(width: 200, height: 100))
+            as: .image(drawHierarchyInKeyWindow: true, size: .init(width: 200, height: 100))
         )
     }
 }

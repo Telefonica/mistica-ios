@@ -22,14 +22,14 @@ final class CheckboxTests: XCTestCase {
 
     func testCheckboxDefaultState() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithCheckboxState(isChecked: false)
         )
     }
 
     func testCheckboxActiveCheckedState() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithCheckboxState(isChecked: true)
         )
     }
@@ -44,7 +44,7 @@ final class CheckboxTests: XCTestCase {
 
         assertSnapshot(
             of: checkbox,
-            as: .image(size: checkbox.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: checkbox.intrinsicContentSize),
             named: "assertInitialState"
         )
 
@@ -52,7 +52,7 @@ final class CheckboxTests: XCTestCase {
 
         assertSnapshot(
             of: checkbox,
-            as: .image(size: checkbox.intrinsicContentSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: checkbox.intrinsicContentSize),
             named: "finalState"
         )
     }

@@ -22,7 +22,7 @@ final class LoadErrorViewControllerTests: XCTestCase {
 extension LoadErrorViewControllerTests {
     func testStyles() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeLoadErrorViewController()
         )
     }

@@ -27,7 +27,7 @@ final class EmptyStatesTests: XCTestCase {
     func testBrandStyles() {
         MisticaConfig.brandStyle = .movistar
 
-        assertSnapshotForAllBrandsAndStyles(as: .image, viewBuilder: makeBasicEmptyState())
+        assertSnapshotForAllBrandsAndStyles(as: .image(drawHierarchyInKeyWindow: true), viewBuilder: makeBasicEmptyState())
     }
 
     // MARK: - Layout
@@ -37,7 +37,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeBasicEmptyState()
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testShowActions() {
@@ -50,7 +50,7 @@ final class EmptyStatesTests: XCTestCase {
             actions: .primary(AnyValues.primary)
         )
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testFullContentAsACard() {
@@ -63,7 +63,7 @@ final class EmptyStatesTests: XCTestCase {
             actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link)
         )
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testFullContentWithoutDescription() {
@@ -71,7 +71,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(description: nil)
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testPrimaryButtonOnly() {
@@ -79,7 +79,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .primary(AnyValues.primary))
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testPrimaryAndLinkButtonsOnly() {
@@ -87,7 +87,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testPrimaryAndLinkButtonsOnlyAsACard() {
@@ -95,7 +95,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testSecondaryAndLinkButtonsOnly() {
@@ -103,7 +103,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testSecondaryButtonOnly() {
@@ -111,7 +111,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .secondary(AnyValues.secondary))
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testSecondaryButtonOnlyAsACard() {
@@ -119,7 +119,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .secondary(AnyValues.secondary))
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testSecondaryAndLinkButtonsOnlyAsACard() {
@@ -127,7 +127,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .secondaryAndLink(secondary: AnyValues.secondary, link: AnyValues.link))
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testEmptyButtonOnly() {
@@ -135,7 +135,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(actions: .empty)
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testEmptyButtonOnlyAsACard() {
@@ -143,7 +143,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .empty)
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testLinkButtonOnlyAsACard() {
@@ -151,7 +151,7 @@ final class EmptyStatesTests: XCTestCase {
 
         let view = makeEmptyStateWithContentAndButtons(type: .card(.icon(AnyValues.iconImage)), actions: .link(AnyValues.link))
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     // MARK: Behaviour
@@ -162,7 +162,7 @@ final class EmptyStatesTests: XCTestCase {
         let view = makeEmptyStateWithContentAndButtons(actions: .primaryAndLink(primary: AnyValues.primary, link: AnyValues.link))
         view.primaryButton.isLoading = true
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     // MARK: XIB integration
@@ -182,7 +182,7 @@ final class EmptyStatesTests: XCTestCase {
 
         assertSnapshot(
             of: view.asRootOfViewController(),
-            as: .image(on: .iPhoneX)
+            as: .image(on: .iPhoneX, drawHierarchyInKeyWindow: true)
         )
     }
 }

@@ -20,14 +20,14 @@ final class FilterTests: XCTestCase {
 
     func testSegmentsInFilter() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 320, height: 49)),
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 320, height: 49)),
             viewBuilder: makeFilter(segments: 5, hasSelectedItem: false)
         )
     }
 
     func testSelectedSegmentsInFilter() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: CGSize(width: 320, height: 49)),
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 320, height: 49)),
             viewBuilder: makeFilter(segments: 5, hasSelectedItem: true)
         )
     }

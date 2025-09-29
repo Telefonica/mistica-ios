@@ -23,7 +23,7 @@ final class MediaCardTests: XCTestCase {
     func testBrandStyles() {
         MisticaConfig.brandStyle = .movistar
 
-        assertSnapshotForAllBrandsAndStyles(as: .image, viewBuilder: makeBasicCard())
+        assertSnapshotForAllBrandsAndStyles(as: .image(drawHierarchyInKeyWindow: true), viewBuilder: makeBasicCard())
     }
 
     // MARK: - Layout
@@ -33,7 +33,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeBasicCard()
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testFullContent() {
@@ -41,7 +41,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons()
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testFullContentWithoutFragment() {
@@ -49,7 +49,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(hasFragment: false)
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testFullContentWithoutHeadline() {
@@ -57,7 +57,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(headline: nil)
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testFullContentWithoutTitle() {
@@ -65,7 +65,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(title: nil)
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testFullContentWithoutPretitle() {
@@ -73,7 +73,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeCardWithFullContentAndButtons(pretitle: nil)
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testTextsWithMultiLine() {
@@ -85,7 +85,7 @@ final class MediaCardTests: XCTestCase {
             descriptionTitle: "Mauris vel nisi efficitur, fringilla urna at, gravida nunc. Sed eu dui sit amet est fringilla eleifend. Ut aliquam, tortor ac varius sodales"
         )
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testPrimaryButtonsOnly() {
@@ -93,7 +93,7 @@ final class MediaCardTests: XCTestCase {
 
         let view = makeBasicCard()
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testPrimaryAndLinkButtons() {
@@ -103,7 +103,7 @@ final class MediaCardTests: XCTestCase {
             primaryButton: AnyValues.button, linkButton: AnyValues.link
         )
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     // MARK: Behaviour
@@ -116,7 +116,7 @@ final class MediaCardTests: XCTestCase {
         )
         view.primaryButton.isLoading = true
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 
     // MARK: XIB integration
@@ -139,7 +139,7 @@ final class MediaCardTests: XCTestCase {
 
         assertSnapshot(
             of: view.asRootOfViewController(),
-            as: .image(on: .iPhoneX)
+            as: .image(on: .iPhoneX, drawHierarchyInKeyWindow: true)
         )
     }
 }

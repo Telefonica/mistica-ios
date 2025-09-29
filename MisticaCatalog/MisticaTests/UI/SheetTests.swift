@@ -22,14 +22,14 @@ final class SheetTests: XCTestCase {
 
     func testEmptyHeader() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(content: makeSingleSelectionContent())
         )
     }
 
     func testNoSubtitleAndDescription() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 content: makeSingleSelectionContent()
@@ -39,7 +39,7 @@ final class SheetTests: XCTestCase {
 
     func testNoDescription() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -52,7 +52,7 @@ final class SheetTests: XCTestCase {
 
     func testContentWithoutIcons() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -64,7 +64,7 @@ final class SheetTests: XCTestCase {
 
     func testContentWithoutIconsAndDescriptions() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -76,7 +76,7 @@ final class SheetTests: XCTestCase {
 
     func testContentWithIcons() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -88,7 +88,7 @@ final class SheetTests: XCTestCase {
 
     func testContentWithSmallIcons() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -100,7 +100,7 @@ final class SheetTests: XCTestCase {
 
     func testContentWithIconsAndWithoutDescriptions() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -114,7 +114,7 @@ final class SheetTests: XCTestCase {
 
     func testInformativeWithoutDescriptionAndBulletIcon() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -129,7 +129,7 @@ final class SheetTests: XCTestCase {
 
     func testInformativeWithoutDescriptionAndRegularIcon() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -144,7 +144,7 @@ final class SheetTests: XCTestCase {
 
     func testInformativeWithDescriptionAndRegularIcon() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -159,7 +159,7 @@ final class SheetTests: XCTestCase {
 
     func testInformativeWithoutDescriptionAndSmallIcon() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -174,7 +174,7 @@ final class SheetTests: XCTestCase {
 
     func testInformativeWithDescriptionAndSmallIcon() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -191,7 +191,7 @@ final class SheetTests: XCTestCase {
 
     func testActionListWithoutUrls() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -203,7 +203,7 @@ final class SheetTests: XCTestCase {
 
     func testActionListWithUrls() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: sheetView(
                 title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -221,7 +221,7 @@ final class SheetTests: XCTestCase {
             subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             content: makeSingleAction()
-        ), as: .image)
+        ), as: .image(drawHierarchyInKeyWindow: true))
     }
 
     func testActions() {
@@ -230,7 +230,7 @@ final class SheetTests: XCTestCase {
             subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             content: makeActionContent()
-        ), as: .image)
+        ), as: .image(drawHierarchyInKeyWindow: true))
     }
 }
 

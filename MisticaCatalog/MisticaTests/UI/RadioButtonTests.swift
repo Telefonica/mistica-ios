@@ -22,14 +22,14 @@ final class RadioButtonTests: XCTestCase {
 
     func testRadioButtonEnabled() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: buttonSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: buttonSize),
             viewBuilder: makeRadioButtonTemplate(active: true)
         )
     }
 
     func testRadioButtonDisabled() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(size: buttonSize),
+            as: .image(drawHierarchyInKeyWindow: true, size: buttonSize),
             viewBuilder: makeRadioButtonTemplate(active: false)
         )
     }

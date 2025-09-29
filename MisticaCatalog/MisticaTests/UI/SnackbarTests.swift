@@ -31,7 +31,7 @@ final class SnackbarTests: XCTestCase {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSnackbar(
                 withText: sampleText,
                 style: .info
@@ -43,7 +43,7 @@ final class SnackbarTests: XCTestCase {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSnackbar(
                 withText: sampleText,
                 actionTitle: "Nostrud",
@@ -56,7 +56,7 @@ final class SnackbarTests: XCTestCase {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSnackbar(
                 withText: sampleText,
                 actionTitle: "Excepteur sint occaecat cupidatat",
@@ -69,7 +69,7 @@ final class SnackbarTests: XCTestCase {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSnackbar(
                 withText: sampleText,
                 style: .critical
@@ -81,7 +81,7 @@ final class SnackbarTests: XCTestCase {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSnackbar(
                 withText: sampleText,
                 actionTitle: "Nostrud",
@@ -94,7 +94,7 @@ final class SnackbarTests: XCTestCase {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSnackbar(
                 withText: sampleText,
                 actionTitle: "Excepteur sint occaecat cupidatat",
@@ -108,7 +108,7 @@ final class SnackbarTests: XCTestCase {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSnackbarWithBottomTabBar(
                 withText: sampleText,
                 style: .info
@@ -121,7 +121,7 @@ final class SnackbarTests: XCTestCase {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSnackbarWithTopTabBar(
                 withText: sampleText,
                 style: .info
@@ -133,7 +133,7 @@ final class SnackbarTests: XCTestCase {
         assertSnapshot(
             for: [BrandStyle.movistar],
             and: [.light],
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeSnackbarWithScrollView(
                 withText: sampleText,
                 style: .info

@@ -30,7 +30,7 @@ extension HeaderTests {
     func testMinimalPretitleHeader() {
         assertSnapshot(
             of: makeHeader(pretitle: HeaderText(text: "Only a pretitle")),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -40,14 +40,14 @@ extension HeaderTests {
                 style: .inverse,
                 pretitle: HeaderText(text: "Only a pretitle")
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
     func testMinimalTitleHeader() {
         assertSnapshot(
             of: makeHeader(title: HeaderText(text: "Only a title")),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -57,14 +57,14 @@ extension HeaderTests {
                 style: .inverse,
                 title: HeaderText(text: "Only a title")
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
     func testMinimalDescriptionHeader() {
         assertSnapshot(
             of: makeHeader(descriptionValue: HeaderText(text: "Only a description")),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -74,7 +74,7 @@ extension HeaderTests {
                 style: .inverse,
                 descriptionValue: HeaderText(text: "Only a description")
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 }
@@ -87,7 +87,7 @@ extension HeaderTests {
                 title: HeaderText(text: "Title"),
                 descriptionValue: HeaderText(text: "Description")
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -98,7 +98,7 @@ extension HeaderTests {
                 title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"),
                 descriptionValue: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit")
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -109,7 +109,7 @@ extension HeaderTests {
                 title: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2),
                 descriptionValue: HeaderText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", lineLimit: 2)
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -121,7 +121,7 @@ extension HeaderTests {
                 title: HeaderText(text: "Title"),
                 descriptionValue: HeaderText(text: "Description")
             ),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 }

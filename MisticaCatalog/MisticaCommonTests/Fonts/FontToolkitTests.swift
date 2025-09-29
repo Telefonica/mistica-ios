@@ -21,7 +21,7 @@ final class FontToolkitTests: XCTestCase {
 
     func testFonts() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplate()
         )
     }

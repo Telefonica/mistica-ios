@@ -19,11 +19,11 @@ final class BadgeTests: XCTestCase {
     }
 
     func testFlagBadge() {
-        assertSnapshotForAllBrandsAndStyles(as: .image, viewBuilder: makeFlagBadge())
+        assertSnapshotForAllBrandsAndStyles(as: .image(drawHierarchyInKeyWindow: true), viewBuilder: makeFlagBadge())
     }
 
     func testNumericBadge() {
-        assertSnapshotForAllBrandsAndStyles(as: .image, viewBuilder: makeNumericBadge())
+        assertSnapshotForAllBrandsAndStyles(as: .image(drawHierarchyInKeyWindow: true), viewBuilder: makeNumericBadge())
     }
 
     func testXIBIntegration() {
@@ -36,7 +36,7 @@ final class BadgeTests: XCTestCase {
         view.secondNumericBadge.style = .numeric
         view.secondNumericBadge.value = 1_000
 
-        assertSnapshot(of: view, as: .image)
+        assertSnapshot(of: view, as: .image(drawHierarchyInKeyWindow: true))
     }
 }
 

@@ -33,7 +33,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -42,7 +42,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -51,7 +51,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -60,7 +60,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -72,7 +72,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -83,7 +83,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -95,7 +95,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -107,7 +107,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -119,7 +119,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -131,7 +131,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -144,7 +144,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -158,7 +158,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -171,7 +171,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -184,7 +184,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -197,7 +197,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -210,7 +210,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -224,7 +224,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -238,7 +238,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -251,7 +251,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -264,7 +264,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -277,7 +277,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -290,7 +290,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -304,7 +304,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -319,7 +319,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -333,7 +333,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -347,7 +347,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -361,7 +361,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -375,7 +375,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -390,7 +390,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -404,7 +404,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -418,7 +418,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -433,7 +433,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -448,7 +448,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -464,7 +464,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -480,7 +480,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -494,7 +494,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -508,7 +508,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -522,7 +522,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -536,7 +536,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -550,7 +550,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -564,7 +564,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -578,7 +578,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -592,7 +592,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -607,7 +607,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -622,7 +622,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -638,7 +638,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -655,7 +655,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -669,7 +669,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -684,7 +684,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -700,7 +700,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -718,7 +718,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -732,7 +732,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -747,7 +747,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -763,7 +763,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -781,7 +781,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -793,7 +793,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: cell,
-            as: .image(size: CGSize(width: 375, height: 150))
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 375, height: 150))
         )
     }
 
@@ -803,7 +803,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: cell,
-            as: .image(size: CGSize(width: 375, height: 150))
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 375, height: 150))
         )
     }
 
@@ -813,7 +813,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: cell,
-            as: .image(size: CGSize(width: 375, height: 150))
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 375, height: 150))
         )
     }
 
@@ -831,7 +831,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: cell,
-            as: .image(size: CGSize(width: 375, height: 150))
+            as: .image(drawHierarchyInKeyWindow: true, size: CGSize(width: 375, height: 150))
         )
     }
 
@@ -853,7 +853,7 @@ final class ListsTests: XCTestCase {
 
         assertSnapshot(
             of: listTestsViewController,
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -861,7 +861,7 @@ final class ListsTests: XCTestCase {
 
     func testAllLabelsFontColors() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image(on: .iPhoneSe),
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true),
             viewBuilder: makeListTestsViewController(
                 title: AnyValues.title,
                 subtitle: AnyValues.subtitle,

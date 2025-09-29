@@ -26,7 +26,7 @@ final class InputFieldTests: XCTestCase {
 
     func testInputFieldWithDefaultStyleAndAllStates() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeInputFieldWithAllStates(
                 withStyle: .default,
                 placeholderText: "Default"
@@ -36,42 +36,42 @@ final class InputFieldTests: XCTestCase {
 
     func testInputFieldWithEmailStyleAndAllStates() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeInputFieldWithEmailStyleAndAllStates()
         )
     }
 
     func testInputFieldWithPasswordStyleAndAllStates() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeInputFieldWithPasswordStyleAndAllStates()
         )
     }
 
     func testInputFieldWithPhoneNumberStyleAndAllStates() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeInputFieldWithPhoneNumberStyleAndAllStates()
         )
     }
 
     func testInputFieldWithDropdownStyleAndAllStates() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeInputFieldWithDropdownStyleAndAllStates()
         )
     }
 
     func testInputFieldWithMultilineStyleAndAllStates() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeInputFieldWithMultilineStyleAndAllStates()
         )
     }
 
     func testInputFieldWithInverseStyleAndAllStates() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeInputFieldWithInverseStyleAndAllStates()
         )
     }

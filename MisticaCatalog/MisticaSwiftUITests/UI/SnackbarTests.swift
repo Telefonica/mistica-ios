@@ -29,7 +29,7 @@ final class SnackbarTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: view),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -43,7 +43,7 @@ final class SnackbarTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: view),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -57,7 +57,7 @@ final class SnackbarTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: view),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -72,7 +72,7 @@ final class SnackbarTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: view),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -87,7 +87,7 @@ final class SnackbarTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: view),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -101,7 +101,7 @@ final class SnackbarTests: XCTestCase {
 
         assertSnapshot(
             of: UIHostingController(rootView: view),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -114,7 +114,7 @@ final class SnackbarTests: XCTestCase {
             )
         assertSnapshot(
             of: UIHostingController(rootView: view),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -127,7 +127,7 @@ final class SnackbarTests: XCTestCase {
             )
         assertSnapshot(
             of: UIHostingController(rootView: view),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -141,7 +141,7 @@ final class SnackbarTests: XCTestCase {
             )
         assertSnapshot(
             of: UIHostingController(rootView: view),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 }

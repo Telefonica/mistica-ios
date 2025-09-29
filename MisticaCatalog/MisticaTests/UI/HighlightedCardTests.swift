@@ -23,28 +23,28 @@ final class HighlightedCardTests: XCTestCase {
 
     func testNormalStyleAndLinkButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeCard(actionButtonStyle: .link)
         )
     }
 
     func testNormalStyleAndPrimaryButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeCard(actionButtonStyle: .primary)
         )
     }
 
     func testNormalStyleAndSecondaryButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeCard(actionButtonStyle: .secondary)
         )
     }
 
     func testInverseStyleAndLinkButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeCard(
                 style: .inverse,
                 actionButtonStyle: .link
@@ -54,7 +54,7 @@ final class HighlightedCardTests: XCTestCase {
 
     func testInverseStyleAndPrimaryButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeCard(
                 style: .inverse,
                 actionButtonStyle: .primary
@@ -64,7 +64,7 @@ final class HighlightedCardTests: XCTestCase {
 
     func testInverseStyleAndSecondaryButton() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeCard(
                 style: .inverse,
                 actionButtonStyle: .secondary
@@ -224,7 +224,7 @@ final class HighlightedCardTests: XCTestCase {
 
         assertSnapshot(
             of: view.asRootOfViewController(),
-            as: .image(on: .iPhoneSe)
+            as: .image(on: .iPhoneSe, drawHierarchyInKeyWindow: true)
         )
     }
 }

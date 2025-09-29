@@ -31,7 +31,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -43,7 +43,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -55,7 +55,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -67,7 +67,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -79,7 +79,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -91,7 +91,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 }
@@ -107,7 +107,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -121,7 +121,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -135,7 +135,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -149,7 +149,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 }
@@ -167,7 +167,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -181,7 +181,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 
@@ -195,7 +195,7 @@ extension HeaderTests {
 
         assertSnapshot(
             of: UIHostingController(rootView: header),
-            as: .image(on: .iPhone8)
+            as: .image(on: .iPhone8, drawHierarchyInKeyWindow: true)
         )
     }
 }

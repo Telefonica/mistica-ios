@@ -22,7 +22,7 @@ final class DeterminateStepperTests: XCTestCase {
 
     func testDeterminateStepperDefaultState() {
         assertSnapshotForAllBrandsAndStyles(
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             viewBuilder: makeTemplateWithStepperState(currentStep: 2, numberOfSteps: 3)
         )
     }
@@ -36,7 +36,7 @@ final class DeterminateStepperTests: XCTestCase {
 
         assertSnapshot(
             of: stepper,
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             named: "assertInitialState"
         )
 
@@ -44,7 +44,7 @@ final class DeterminateStepperTests: XCTestCase {
 
         assertSnapshot(
             of: stepper,
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             named: "finalState"
         )
     }
@@ -56,7 +56,7 @@ final class DeterminateStepperTests: XCTestCase {
 
         assertSnapshot(
             of: stepper,
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             named: "assertInitialState"
         )
 
@@ -64,7 +64,7 @@ final class DeterminateStepperTests: XCTestCase {
 
         assertSnapshot(
             of: stepper,
-            as: .image,
+            as: .image(drawHierarchyInKeyWindow: true),
             named: "finalState"
         )
     }

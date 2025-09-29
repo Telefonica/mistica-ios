@@ -20,7 +20,7 @@ private enum Constants {
 public class Callout: UIView {
     private lazy var calloutAccessibilityElement = UIAccessibilityElement(accessibilityContainer: self)
     private lazy var calloutContentBase = CalloutContentBase()
-    
+
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -173,7 +173,7 @@ private extension Callout {
         insetsLayoutMarginsFromSafeArea = false
 
         addSubview(constrainedToLayoutMarginsGuideOf: calloutContentBase)
-        
+
         addSubview(closeButton, constraints: [
             closeButton.topAnchor.constraint(equalTo: topAnchor, constant: Constants.closeButtonTopMargin),
             closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.closeButtonTrailingMargin),
@@ -186,7 +186,7 @@ private extension Callout {
         calloutContentBase.configure(withConfiguration: configuration)
 
         closeButton.isHidden = !configuration.canClose
-        
+
         if configuration.inverse {
             backgroundColor = .backgroundContainer
         } else {
@@ -198,7 +198,7 @@ private extension Callout {
             configuration.description
         ].compactMap { $0 }.joined(separator: " ")
     }
-    
+
     @objc func closeButtonTapped() {
         onCloseButtonAction?()
         dismiss(animated: animated)

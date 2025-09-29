@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import UIKit
 
 private enum Constants {
@@ -21,7 +20,16 @@ private enum Constants {
 public class Callout: UIView {
     private lazy var calloutAccessibilityElement = UIAccessibilityElement(accessibilityContainer: self)
     private lazy var calloutContentBase = CalloutContentBase()
-    private let closeImageView = IntrinsictImageView()
+    
+    private lazy var closeButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage.closeButtonBlackSmallIcon.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .neutralHigh
+        button.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        button.accessibilityIdentifier = CalloutAccessibilityIdentifiers.closeButton.rawValue
+        return button
+    }()
 
     public var onCloseButtonAction: (() -> Void)?
     private var animated = true
@@ -42,7 +50,8 @@ public class Callout: UIView {
             calloutAccessibilityElement.accessibilityFrameInContainerSpace = bounds
             return [
                 calloutAccessibilityElement,
-                calloutContentBase
+                calloutContentBase,
+                closeButton
             ].compactMap { $0 }
         }
         set {}
@@ -128,10 +137,10 @@ public extension Callout {
 
     var closeIdentifier: String? {
         get {
-            closeImageView.accessibilityIdentifier
+            closeButton.accessibilityIdentifier
         }
         set {
-            closeImageView.accessibilityIdentifier = newValue ?? CalloutAccessibilityIdentifiers.closeButton.rawValue
+            closeButton.accessibilityIdentifier = newValue ?? CalloutAccessibilityIdentifiers.closeButton.rawValue
         }
     }
 
@@ -157,7 +166,6 @@ public extension Callout {
 private extension Callout {
     func commomInit() {
         layoutViews()
-        configureCloseImageView()
     }
 
     func layoutViews() {
@@ -165,19 +173,20 @@ private extension Callout {
         insetsLayoutMarginsFromSafeArea = false
 
         addSubview(constrainedToLayoutMarginsGuideOf: calloutContentBase)
-        addSubview(closeImageView, constraints: [
-            closeImageView.topAnchor.constraint(equalTo: topAnchor, constant: Constants.closeButtonTopMargin),
-            closeImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.closeButtonTrailingMargin)
+        
+        addSubview(closeButton, constraints: [
+            closeButton.topAnchor.constraint(equalTo: topAnchor, constant: Constants.closeButtonTopMargin),
+            closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.closeButtonTrailingMargin),
+            closeButton.widthAnchor.constraint(equalToConstant: Constants.closeButtonWidthAndHeight),
+            closeButton.heightAnchor.constraint(equalToConstant: Constants.closeButtonWidthAndHeight)
         ])
     }
 
     func configure(withConfiguration configuration: CalloutConfiguration) {
         calloutContentBase.configure(withConfiguration: configuration)
 
-        if !configuration.canClose {
-            closeImageView.removeFromSuperview()
-        }
-
+        closeButton.isHidden = !configuration.canClose
+        
         if configuration.inverse {
             backgroundColor = .backgroundContainer
         } else {
@@ -189,22 +198,7 @@ private extension Callout {
             configuration.description
         ].compactMap { $0 }.joined(separator: " ")
     }
-
-    func configureCloseImageView() {
-        closeImageView.intrinsicHeight = Constants.closeButtonWidthAndHeight
-        closeImageView.intrinsicWidth = Constants.closeButtonWidthAndHeight
-        closeImageView.image = UIImage.closeButtonBlackSmallIcon.withRenderingMode(.alwaysTemplate)
-        closeImageView.tintColor = .neutralHigh
-
-        let tapGesture = UITapGestureRecognizer()
-        tapGesture.addTarget(self, action: #selector(closeButtonTapped))
-
-        closeImageView.isUserInteractionEnabled = true
-        closeImageView.addGestureRecognizer(tapGesture)
-
-        closeImageView.accessibilityIdentifier = CalloutAccessibilityIdentifiers.closeButton.rawValue
-    }
-
+    
     @objc func closeButtonTapped() {
         onCloseButtonAction?()
         dismiss(animated: animated)

@@ -69,7 +69,7 @@ final class ChipTests: XCTestCase {
 
         assertSnapshot(
             of: fixedContainer { chip },
-            as: .image(drawHierarchyInKeyWindow: true)
+            as: .image
         )
     }
 

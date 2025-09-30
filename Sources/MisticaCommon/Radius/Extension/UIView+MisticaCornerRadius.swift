@@ -38,7 +38,12 @@ public extension UIView {
         if cornerRadiusValue >= MisticaRadiusConstants.roundedRadius {
             layer.cornerRadius = min(frame.size.width, frame.size.height) / 2
         } else {
-            layer.cornerRadius = cornerRadiusValue
+            let normalizedNormalized = min(minSide / 2, cornerRadiusValue)
+            layer.cornerRadius = normalizedNormalized
         }
+    }
+    
+    private var minSide: CGFloat {
+        min(frame.size.width, frame.size.height)
     }
 }

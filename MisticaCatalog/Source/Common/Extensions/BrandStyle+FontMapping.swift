@@ -28,7 +28,13 @@ extension BrandStyle {
                 boldFont: "OnAir-Bold",
                 defaultFont: "OnAir-Regular"
             )
-
+        case .movistarNew:
+            return FontMapping(
+                lightFont: "MovistarSansTT-Light",
+                mediumFont: "MovistarSansTT-Medium",
+                boldFont: "MovistarSansTT-Bold",
+                defaultFont: "MovistarSansTT-Regular"
+            )
         case .telefonica, .tu:
             return FontMapping(
                 lightFont: "TeleSans-Light",

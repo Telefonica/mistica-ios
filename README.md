@@ -71,7 +71,7 @@ Add Mistica to your `Podfile`:
 ```
 pod 'MisticaSwiftUI', :git => 'git@github.com:Telefonica/mistica-ios.git'
 ```
-or 
+or
 ```
 pod 'Mistica', :git => 'git@github.com:Telefonica/mistica-ios.git'
 ```
@@ -122,7 +122,7 @@ By default mistica uses the system font, but if you need to use a custom font (T
 
 ## Components
 
-### UIKit 
+### UIKit
 * [Badge](./Sources/Mistica/Components/Badge/)
 * [Button](./Sources/Mistica/Components/Button/)
 * [Cards](./Sources/Mistica/Components/Cards/)
@@ -177,7 +177,7 @@ By default mistica uses the system font, but if you need to use a custom font (T
 * [Not Implemented][ViewStates](./Sources/MisticaSwiftUI/Components/ViewStates/)
 
 ## Demo app
-Included in this repository there's a demo app showcasing all implemented components. With each new release, a new version of the mistica catalog app is created. 
+Included in this repository there's a demo app showcasing all implemented components. With each new release, a new version of the mistica catalog app is created.
 
 ## Contributing
 

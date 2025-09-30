@@ -42,7 +42,7 @@ public extension UIView {
             layer.cornerRadius = normalizedNormalized
         }
     }
-    
+
     private var minSide: CGFloat {
         min(frame.size.width, frame.size.height)
     }

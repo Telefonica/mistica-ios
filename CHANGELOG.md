@@ -1,3 +1,10 @@
+## [36.0.1](https://github.com/Telefonica/mistica-ios/compare/v36.0.0...v36.0.1) (2025-09-30)
+
+
+### Bug Fixes
+
+* **Accessibility:** IOS-11847 Add accessibility to Callout's close button ([3fec770](https://github.com/Telefonica/mistica-ios/commit/3fec7703e27fa4662c330c68bac29467ce133ff0))
+
 # [36.0.0](https://github.com/Telefonica/mistica-ios/compare/v35.6.0...v36.0.0) (2025-09-19)
 
 

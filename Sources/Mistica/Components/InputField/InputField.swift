@@ -98,7 +98,7 @@ public class InputField: UIView {
     private lazy var verticalTextInputStackView = UIStackView(arrangedSubviews: [backingPlaceholderLabel, horizontalTextInputStackView])
     private lazy var horizontalTextInputStackView = UIStackView()
     private lazy var borderedView: UIView = {
-        let view = UIView()
+        let view = DynamicRoundedView()
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.inputBorder.cgColor
         view.backgroundColor = .backgroundContainer
@@ -408,11 +408,6 @@ public class InputField: UIView {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         borderColor = UIColor.border.cgColor
-    }
-
-    override public func layoutSublayers(of layer: CALayer) {
-        super.layoutSublayers(of: layer)
-        borderedView.setMisticaRadius(.input)
     }
 }
 
@@ -1008,5 +1003,12 @@ public extension InputField {
 
     func objc_setDropdownStyle() {
         style = .dropdown
+    }
+}
+
+private class DynamicRoundedView: UIView {
+    override public func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        setMisticaRadius(.input)
     }
 }

@@ -45,6 +45,8 @@ struct ColorsView: View {
         switch MisticaConfig.brandStyle {
         case .movistar:
             return MovistarColorPalette()
+        case .movistarNew:
+            return MovistarNewColorPalette()
         case .blau:
             return BlauColorPalette()
         case .o2New:

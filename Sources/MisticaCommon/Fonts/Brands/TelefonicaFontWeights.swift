@@ -10,6 +10,7 @@ import Foundation
 
 struct TelefonicaFontWeights: MisticaFontWeights {
     public var cardTitle: MisticaFontWeightType = .regular
+    public var rowTitle: MisticaFontWeightType = .regular
     public var button: MisticaFontWeightType = .medium
     public var tabsLabel: MisticaFontWeightType = .medium
     public var link: MisticaFontWeightType = .medium

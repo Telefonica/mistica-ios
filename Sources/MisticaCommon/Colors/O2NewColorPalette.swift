@@ -93,61 +93,95 @@ struct O2NewColors: MisticaColors {
 
     let buttonDangerBackgroundHover = O2NewColors.palette.o2Red65
 
-    let buttonLinkDangerBackgroundPressed = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
-
     let buttonLinkDangerBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.white.withAlphaComponent(0)
 
+    let buttonLinkDangerBackgroundMedia = O2NewColors.palette.white
+
+    let buttonLinkDangerBackgroundPressed = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
+
     let buttonLinkDangerBackgroundInversePressed = O2NewColors.palette.o2Red10 | O2NewColors.palette.white.withAlphaComponent(0.08)
+
+    let buttonLinkDangerBackgroundMediaPressed = O2NewColors.palette.o2Red10
 
     let buttonLinkBackgroundPressed = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.08)
 
     let buttonLinkBackgroundInversePressed = O2NewColors.palette.white.withAlphaComponent(0.08)
 
+    let buttonLinkBackgroundMediaPressed = O2NewColors.palette.white.withAlphaComponent(0.08)
+
     let buttonPrimaryBackground = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBeyondBlue
 
     let buttonPrimaryBackgroundInverse = O2NewColors.palette.white | O2NewColors.palette.darkModeBeyondBlue
 
-    let buttonPrimaryBackgroundPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
+    let buttonPrimaryBackgroundMedia = O2NewColors.palette.white
 
     let buttonPrimaryBackgroundHover = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
 
+    let buttonPrimaryBackgroundInverseHover = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.beyondBlue55
+
+    let buttonPrimaryBackgroundMediaHover = O2NewColors.palette.beyondBlue30
+
+    let buttonPrimaryBackgroundPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.beyondBlue55
+
     let buttonPrimaryBackgroundInversePressed = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.beyondBlue55
+
+    let buttonPrimaryBackgroundMediaPressed = O2NewColors.palette.beyondBlue30
 
     let buttonSecondaryBorder = O2NewColors.palette.beyondBlue | O2NewColors.palette.white
 
-    let buttonSecondaryBorderPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
-
     let buttonSecondaryBorderInverse = O2NewColors.palette.white
 
-    let buttonSecondaryBackgroundHover = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBorderMedia = O2NewColors.palette.white
 
-    let buttonSecondaryBackgroundPressed = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBorderPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
 
     let buttonSecondaryBorderInversePressed = O2NewColors.palette.beyondBlue30 | O2NewColors.palette.white
 
+    let buttonSecondaryBorderMediaPressed = O2NewColors.palette.beyondBlue30
+
+    let buttonSecondaryBackgroundHover = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
+
     let buttonSecondaryBackgroundInverseHover = O2NewColors.palette.white.withAlphaComponent(0.15)
 
+    let buttonSecondaryBackgroundMediaHover = O2NewColors.palette.white.withAlphaComponent(0.15)
+
+    let buttonSecondaryBackgroundPressed = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.white.withAlphaComponent(0.15)
+
     let buttonSecondaryBackgroundInversePressed = O2NewColors.palette.white.withAlphaComponent(0.15)
+
+    let buttonSecondaryBackgroundMediaPressed = O2NewColors.palette.white.withAlphaComponent(0.15)
 
     let textButtonPrimary = O2NewColors.palette.white
 
     let textButtonPrimaryInverse = O2NewColors.palette.beyondBlue | O2NewColors.palette.white
 
+    let textButtonPrimaryMedia = O2NewColors.palette.white
+
     let textButtonPrimaryInversePressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.white
+
+    let textButtonPrimaryMediaPressed = O2NewColors.palette.beyondBlue70
 
     let textButtonSecondary = O2NewColors.palette.beyondBlue | O2NewColors.palette.grey30
 
-    let textButtonSecondaryPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.grey30
-
     let textButtonSecondaryInverse = O2NewColors.palette.white | O2NewColors.palette.grey30
 
+    let textButtonSecondaryMedia = O2NewColors.palette.white
+
+    let textButtonSecondaryPressed = O2NewColors.palette.beyondBlue70 | O2NewColors.palette.grey30
+
     let textButtonSecondaryInversePressed = O2NewColors.palette.white | O2NewColors.palette.grey30
+
+    let textButtonSecondaryMediaPressed = O2NewColors.palette.white
 
     let textLink = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue40
 
     let textLinkInverse = O2NewColors.palette.white | O2NewColors.palette.beyondBlue40
 
+    let textLinkMedia = O2NewColors.palette.white
+
     let textLinkDanger = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
+
+    let textLinkDangerMedia = O2NewColors.palette.o2Red65
 
     let textLinkSnackbar = O2NewColors.palette.beyondBlue30
 
@@ -156,6 +190,8 @@ struct O2NewColors: MisticaColors {
     let textBrand = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue30
 
     let inputBorder = O2NewColors.palette.grey45
+
+    let inputBorderInverse = O2NewColors.palette.white | O2NewColors.palette.grey45
 
     let control = O2NewColors.palette.grey45
 
@@ -215,9 +251,13 @@ struct O2NewColors: MisticaColors {
 
     let textPrimaryInverse = O2NewColors.palette.white | O2NewColors.palette.grey30
 
+    let textPrimaryMedia = O2NewColors.palette.white
+
     let textSecondary = O2NewColors.palette.grey60 | O2NewColors.palette.grey45
 
     let textSecondaryInverse = O2NewColors.palette.beyondBlue10 | O2NewColors.palette.grey45
+
+    let textSecondaryMedia = O2NewColors.palette.white
 
     let error = O2NewColors.palette.o2Red65 | O2NewColors.palette.o2Red45
 
@@ -332,13 +372,15 @@ struct O2NewColors: MisticaColors {
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [
-            O2NewColors.palette.beyondBlue.withAlphaComponent(0) | O2NewColors.palette.black.withAlphaComponent(0),
-            O2NewColors.palette.beyondBlue.withAlphaComponent(0.4) | O2NewColors.palette.black.withAlphaComponent(0.4),
-            O2NewColors.palette.beyondBlue.withAlphaComponent(1) | O2NewColors.palette.black.withAlphaComponent(0.7)
+            O2NewColors.palette.black.withAlphaComponent(0),
+            O2NewColors.palette.black.withAlphaComponent(0.4),
+            O2NewColors.palette.black.withAlphaComponent(0.7)
         ],
         stops: [0, 0.3, 1],
         angle: 180
     ))
+
+    let cardFooterOverlay = O2NewColors.palette.black.withAlphaComponent(0.7)
 }
 
 public struct O2NewColorPalette: Sendable {

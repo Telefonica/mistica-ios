@@ -1,326 +1,364 @@
-//
-//  VivoNewColorPalette.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
 struct VivoNewColors: MisticaColors {
     static let palette = VivoNewColorPalette()
 
-    let background = VivoNewColors.palette.white | VivoNewColors.palette.darkModeBlack
+     let background = VivoNewColors.palette.white | VivoNewColors.palette.darkModeBlack
 
-    let backgroundAlternative = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeBlack
+     let backgroundAlternative = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeBlack
 
-    let backgroundBrand = MisticaColor.solid(VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack)
+     let backgroundBrand = MisticaColor.solid(VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack)
 
-    let backgroundBrandSecondary = VivoNewColors.palette.vivoPurpleLight80 | VivoNewColors.palette.darkModeBlack
+     let backgroundBrandSecondary = VivoNewColors.palette.vivoPurpleLight80 | VivoNewColors.palette.darkModeBlack
 
-    let backgroundContainer = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
+     let backgroundContainer = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
 
-    let backgroundContainerError = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey
+     let backgroundContainerError = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey
 
-    let backgroundContainerHover = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.05) | VivoNewColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerHover = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.05) | VivoNewColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerPressed = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.08) | VivoNewColors.palette.white.withAlphaComponent(0.08)
+     let backgroundContainerPressed = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.08) | VivoNewColors.palette.white.withAlphaComponent(0.08)
 
-    let backgroundContainerBrand = MisticaColor.solid(VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeGrey)
+     let backgroundContainerBrand = MisticaColor.solid(VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeGrey)
 
-    let backgroundContainerBrandHover = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.2) | VivoNewColors.palette.white.withAlphaComponent(0.03)
+     let backgroundContainerBrandHover = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.2) | VivoNewColors.palette.white.withAlphaComponent(0.03)
 
-    let backgroundContainerBrandPressed = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.4) | VivoNewColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerBrandPressed = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.4) | VivoNewColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrandOverInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.darkModeGrey
+     let backgroundContainerBrandOverInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.darkModeGrey
 
-    let backgroundContainerAlternative = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey
+     let backgroundContainerAlternative = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey
 
-    let backgroundOverlay = VivoNewColors.palette.grey6.withAlphaComponent(0.6) | VivoNewColors.palette.darkModeGrey.withAlphaComponent(0.8)
+     let backgroundOverlay = VivoNewColors.palette.grey6.withAlphaComponent(0.6) | VivoNewColors.palette.darkModeGrey.withAlphaComponent(0.8)
 
-    let backgroundSkeleton = VivoNewColors.palette.grey3 | VivoNewColors.palette.darkModeGrey6
+     let backgroundSkeleton = VivoNewColors.palette.grey3 | VivoNewColors.palette.darkModeGrey6
 
-    let backgroundSkeletonInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.darkModeGrey6
+     let backgroundSkeletonInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.darkModeGrey6
 
-    let backgroundBrandTop = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
+     let backgroundBrandTop = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
 
-    let backgroundBrandBottom = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
+     let backgroundBrandBottom = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
 
-    let appBarBackground = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
+     let appBarBackground = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey
 
-    let navigationBarBackground = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
+     let navigationBarBackground = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
 
-    let skeletonWave = VivoNewColors.palette.grey2 | VivoNewColors.palette.grey5
+     let skeletonWave = VivoNewColors.palette.grey2 | VivoNewColors.palette.grey5
 
-    let borderLow = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeBlack
+     let borderLow = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeBlack
 
-    let border = VivoNewColors.palette.grey3 | VivoNewColors.palette.darkModeGrey
+     let border = VivoNewColors.palette.grey3 | VivoNewColors.palette.darkModeGrey
 
-    let borderHigh = VivoNewColors.palette.grey5
+     let borderHigh = VivoNewColors.palette.grey5
 
-    let borderSelected = VivoNewColors.palette.vivoPurple
+     let borderSelected = VivoNewColors.palette.vivoPurple
 
-    let completedStep = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let completedStep = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let completedStepInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.vivoPurpleLight80
+     let completedStepInverse = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.vivoPurpleLight80
 
-    let coverBackgroundHover = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.25)
+     let coverBackgroundHover = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
-    let coverBackgroundPressed = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.35)
+     let coverBackgroundPressed = VivoNewColors.palette.darkModeBlack.withAlphaComponent(0.35)
 
-    let buttonDangerBackground = VivoNewColors.palette.pepper
+     let buttonDangerBackground = VivoNewColors.palette.pepper
 
-    let buttonDangerBackgroundPressed = VivoNewColors.palette.pepperDark
+     let buttonDangerBackgroundPressed = VivoNewColors.palette.pepperDark
 
-    let buttonDangerBackgroundHover = VivoNewColors.palette.pepperDark
+     let buttonDangerBackgroundHover = VivoNewColors.palette.pepperDark
 
-    let buttonLinkDangerBackgroundPressed = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundInverse = VivoNewColors.palette.white | VivoNewColors.palette.white.withAlphaComponent(0)
 
-    let buttonLinkDangerBackgroundInverse = VivoNewColors.palette.white | VivoNewColors.palette.white.withAlphaComponent(0)
+     let buttonLinkDangerBackgroundMedia = VivoNewColors.palette.white
 
-    let buttonLinkDangerBackgroundInversePressed = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundPressed = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundPressed = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundInversePressed = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonLinkBackgroundInversePressed = VivoNewColors.palette.white.withAlphaComponent(0.1) | VivoNewColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundMediaPressed = VivoNewColors.palette.pepperLight10
 
-    let buttonPrimaryBackground = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let buttonLinkBackgroundPressed = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonPrimaryBackgroundInverse = VivoNewColors.palette.white | VivoNewColors.palette.vivoPurpleLight80
+     let buttonLinkBackgroundInversePressed = VivoNewColors.palette.white.withAlphaComponent(0.1) | VivoNewColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonPrimaryBackgroundPressed = VivoNewColors.palette.vivoPurpleDark
+     let buttonLinkBackgroundMediaPressed = VivoNewColors.palette.white.withAlphaComponent(0.1)
 
-    let buttonPrimaryBackgroundHover = VivoNewColors.palette.vivoPurpleDark
+     let buttonPrimaryBackground = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let buttonPrimaryBackgroundInversePressed = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.vivoPurpleDark
+     let buttonPrimaryBackgroundInverse = VivoNewColors.palette.white | VivoNewColors.palette.vivoPurpleLight80
 
-    let buttonSecondaryBorder = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.white
+     let buttonPrimaryBackgroundMedia = VivoNewColors.palette.white
 
-    let buttonSecondaryBorderPressed = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.white
+     let buttonPrimaryBackgroundHover = VivoNewColors.palette.vivoPurpleDark
 
-    let buttonSecondaryBorderInverse = VivoNewColors.palette.white
+     let buttonPrimaryBackgroundInverseHover = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.vivoPurpleDark
 
-    let buttonSecondaryBackgroundHover = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.white.withAlphaComponent(0.15)
+     let buttonPrimaryBackgroundMediaHover = VivoNewColors.palette.vivoPurpleLight50
 
-    let buttonSecondaryBackgroundPressed = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.white.withAlphaComponent(0.15)
+     let buttonPrimaryBackgroundPressed = VivoNewColors.palette.vivoPurpleDark
 
-    let buttonSecondaryBorderInversePressed = VivoNewColors.palette.white
+     let buttonPrimaryBackgroundInversePressed = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.vivoPurpleDark
 
-    let buttonSecondaryBackgroundInverseHover = VivoNewColors.palette.white.withAlphaComponent(0.15)
+     let buttonPrimaryBackgroundMediaPressed = VivoNewColors.palette.vivoPurpleLight50
 
-    let buttonSecondaryBackgroundInversePressed = VivoNewColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBorder = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.white
 
-    let textButtonPrimary = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+     let buttonSecondaryBorderInverse = VivoNewColors.palette.white
 
-    let textButtonPrimaryInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
+     let buttonSecondaryBorderMedia = VivoNewColors.palette.white
 
-    let textButtonPrimaryInversePressed = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
+     let buttonSecondaryBorderPressed = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.white
 
-    let textButtonSecondary = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
+     let buttonSecondaryBorderInversePressed = VivoNewColors.palette.white
 
-    let textButtonSecondaryPressed = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.grey2
+     let buttonSecondaryBorderMediaPressed = VivoNewColors.palette.white
 
-    let textButtonSecondaryInverse = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+     let buttonSecondaryBackgroundHover = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.white.withAlphaComponent(0.15)
 
-    let textButtonSecondaryInversePressed = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+     let buttonSecondaryBackgroundInverseHover = VivoNewColors.palette.white.withAlphaComponent(0.15)
 
-    let textLink = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight50
+     let buttonSecondaryBackgroundMediaHover = VivoNewColors.palette.white.withAlphaComponent(0.15)
 
-    let textLinkInverse = VivoNewColors.palette.white | VivoNewColors.palette.vivoPurpleLight50
+     let buttonSecondaryBackgroundPressed = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.white.withAlphaComponent(0.15)
 
-    let textLinkDanger = VivoNewColors.palette.pepper
+     let buttonSecondaryBackgroundInversePressed = VivoNewColors.palette.white.withAlphaComponent(0.15)
 
-    let textLinkSnackbar = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.vivoPurpleLight50
+     let buttonSecondaryBackgroundMediaPressed = VivoNewColors.palette.white.withAlphaComponent(0.15)
 
-    let textActivated = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let textButtonPrimary = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let textBrand = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let textButtonPrimaryInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
 
-    let inputBorder = VivoNewColors.palette.grey4 | VivoNewColors.palette.darkModeGrey5
+     let textButtonPrimaryMedia = VivoNewColors.palette.vivoPurple
 
-    let control = VivoNewColors.palette.grey4 | VivoNewColors.palette.darkModeGrey6
+     let textButtonPrimaryInversePressed = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
 
-    let controlActivated = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let textButtonPrimaryMediaPressed = VivoNewColors.palette.vivoPurple
 
-    let controlInverse = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.darkModeGrey6
+     let textButtonSecondary = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
 
-    let controlActivatedInverse = VivoNewColors.palette.white | VivoNewColors.palette.vivoPurpleLight80
+     let textButtonSecondaryInverse = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let controlError = VivoNewColors.palette.pepper
+     let textButtonSecondaryMedia = VivoNewColors.palette.white
 
-    let barTrack = VivoNewColors.palette.grey3 | VivoNewColors.palette.darkModeGrey6
+     let textButtonSecondaryPressed = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.grey2
 
-    let barTrackInverse = VivoNewColors.palette.white.withAlphaComponent(0.5) | VivoNewColors.palette.darkModeGrey6
+     let textButtonSecondaryInversePressed = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let loadingBar = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let textButtonSecondaryMediaPressed = VivoNewColors.palette.white
 
-    let loadingBarBackground = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+     let textLink = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight50
 
-    let toggleAndroidInactive = VivoNewColors.palette.grey2 | VivoNewColors.palette.grey4
+     let textLinkInverse = VivoNewColors.palette.white | VivoNewColors.palette.vivoPurpleLight50
 
-    let toggleAndroidBackgroundActive = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.vivoPurpleLight50
+     let textLinkMedia = VivoNewColors.palette.white
 
-    let iosControlKnob = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+     let textLinkDanger = VivoNewColors.palette.pepper
 
-    let controlKnobInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
+     let textLinkDangerMedia = VivoNewColors.palette.pepper
 
-    let divider = VivoNewColors.palette.grey3 | VivoNewColors.palette.white.withAlphaComponent(0.05)
+     let textLinkSnackbar = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.vivoPurpleLight50
 
-    let dividerInverse = VivoNewColors.palette.white.withAlphaComponent(0.2) | VivoNewColors.palette.white.withAlphaComponent(0.05)
+     let textActivated = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let navigationBarDivider = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
+     let textBrand = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let badge = VivoNewColors.palette.pepperDark
+     let inputBorder = VivoNewColors.palette.grey4 | VivoNewColors.palette.darkModeGrey5
 
-    let feedbackErrorBackground = VivoNewColors.palette.pepper
+     let inputBorderInverse = VivoNewColors.palette.white | VivoNewColors.palette.darkModeGrey5
 
-    let feedbackInfoBackground = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.grey6
+     let control = VivoNewColors.palette.grey4 | VivoNewColors.palette.darkModeGrey6
 
-    let brand = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let controlActivated = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let brandHigh = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.white.withAlphaComponent(0.05)
+     let controlInverse = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.darkModeGrey6
 
-    let inverse = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+     let controlActivatedInverse = VivoNewColors.palette.white | VivoNewColors.palette.vivoPurpleLight80
 
-    let neutralHigh = VivoNewColors.palette.grey6 | VivoNewColors.palette.grey2
+     let controlError = VivoNewColors.palette.pepper
 
-    let neutralMedium = VivoNewColors.palette.grey5
+     let barTrack = VivoNewColors.palette.grey3 | VivoNewColors.palette.darkModeGrey6
 
-    let neutralMediumInverse = VivoNewColors.palette.grey5
+     let barTrackInverse = VivoNewColors.palette.white.withAlphaComponent(0.5) | VivoNewColors.palette.darkModeGrey6
 
-    let neutralLow = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
+     let loadingBar = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let neutralLowAlternative = VivoNewColors.palette.grey2 | VivoNewColors.palette.darkModeGrey6
+     let loadingBarBackground = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
-    let textPrimary = VivoNewColors.palette.grey6 | VivoNewColors.palette.grey2
+     let toggleAndroidInactive = VivoNewColors.palette.grey2 | VivoNewColors.palette.grey4
 
-    let textPrimaryInverse = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+     let toggleAndroidBackgroundActive = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.vivoPurpleLight50
 
-    let textSecondary = VivoNewColors.palette.grey5 | VivoNewColors.palette.grey3
+     let iosControlKnob = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let textSecondaryInverse = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.grey3
+     let controlKnobInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
 
-    let error = VivoNewColors.palette.pepper
+     let divider = VivoNewColors.palette.grey3 | VivoNewColors.palette.white.withAlphaComponent(0.05)
 
-    let textError = VivoNewColors.palette.pepper
+     let dividerInverse = VivoNewColors.palette.white.withAlphaComponent(0.2) | VivoNewColors.palette.white.withAlphaComponent(0.05)
 
-    let textErrorInverse = VivoNewColors.palette.white | VivoNewColors.palette.pepper
+     let navigationBarDivider = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.darkModeBlack
 
-    let success = VivoNewColors.palette.vivoGreen
+     let badge = VivoNewColors.palette.pepperDark
 
-    let warning = VivoNewColors.palette.orange
+     let feedbackErrorBackground = VivoNewColors.palette.pepper
 
-    let promo = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let feedbackInfoBackground = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.grey6
 
-    let highlight = VivoNewColors.palette.pink
+     let brand = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let successLow = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
+     let brandHigh = VivoNewColors.palette.vivoPurpleDark | VivoNewColors.palette.white.withAlphaComponent(0.05)
 
-    let warningLow = VivoNewColors.palette.orangeLight10 | VivoNewColors.palette.darkModeGrey6
+     let inverse = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let errorLow = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey6
+     let neutralHigh = VivoNewColors.palette.grey6 | VivoNewColors.palette.grey2
 
-    let promoLow = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+     let neutralMedium = VivoNewColors.palette.grey5
 
-    let brandLow = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+     let neutralMediumInverse = VivoNewColors.palette.grey5
 
-    let successHigh = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
+     let neutralLow = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
 
-    let warningHigh = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
+     let neutralLowAlternative = VivoNewColors.palette.grey2 | VivoNewColors.palette.darkModeGrey6
 
-    let errorHigh = VivoNewColors.palette.pepperDark80 | VivoNewColors.palette.pepperLight40
+     let textPrimary = VivoNewColors.palette.grey6 | VivoNewColors.palette.grey2
 
-    let promoHigh = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight50
+     let textPrimaryInverse = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let successHighInverse = VivoNewColors.palette.vivoGreenDark
+     let textPrimaryMedia = VivoNewColors.palette.white
 
-    let warningHighInverse = VivoNewColors.palette.orangeDark
+     let textSecondary = VivoNewColors.palette.grey5 | VivoNewColors.palette.grey3
 
-    let errorHighInverse = VivoNewColors.palette.pepperDark80
+     let textSecondaryInverse = VivoNewColors.palette.vivoPurpleLight20 | VivoNewColors.palette.grey3
 
-    let promoHighInverse = VivoNewColors.palette.vivoPurple
+     let textSecondaryMedia = VivoNewColors.palette.white
 
-    let textNavigationBarPrimary = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+     let error = VivoNewColors.palette.pepper
 
-    let textNavigationBarSecondary = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.grey4
+     let textError = VivoNewColors.palette.pepper
 
-    let textNavigationSearchBarHint = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.grey4
+     let textErrorInverse = VivoNewColors.palette.white | VivoNewColors.palette.pepper
 
-    let textNavigationSearchBarText = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+     let success = VivoNewColors.palette.vivoGreen
 
-    let textAppBar = VivoNewColors.palette.grey5
+     let warning = VivoNewColors.palette.orange
 
-    let textAppBarSelected = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
+     let promo = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let customTabsBackground = VivoNewColors.palette.white | VivoNewColors.palette.darkModeBlack
+     let highlight = VivoNewColors.palette.pink
 
-    let tagTextPromo = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight50
+     let successLow = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
 
-    let tagTextActive = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let warningLow = VivoNewColors.palette.orangeLight10 | VivoNewColors.palette.darkModeGrey6
 
-    let tagTextInactive = VivoNewColors.palette.grey5
+     let errorLow = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey6
 
-    let tagTextInfo = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let promoLow = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
-    let tagTextSuccess = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
+     let brandLow = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
-    let tagTextWarning = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
+     let successHigh = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
 
-    let tagTextError = VivoNewColors.palette.pepperDark80 | VivoNewColors.palette.pepperLight40
+     let warningHigh = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
 
-    let tagBackgroundPromo = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+     let errorHigh = VivoNewColors.palette.pepperDark80 | VivoNewColors.palette.pepperLight40
 
-    let tagBackgroundActive = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
+     let promoHigh = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight50
 
-    let tagBackgroundInactive = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
+     let successHighInverse = VivoNewColors.palette.vivoGreenDark
 
-    let tagBackgroundInfo = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+     let warningHighInverse = VivoNewColors.palette.orangeDark
 
-    let tagBackgroundSuccess = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
+     let errorHighInverse = VivoNewColors.palette.pepperDark80
 
-    let tagBackgroundWarning = VivoNewColors.palette.orangeLight10 | VivoNewColors.palette.darkModeGrey6
+     let promoHighInverse = VivoNewColors.palette.vivoPurple
 
-    let tagBackgroundError = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey6
+     let textNavigationBarPrimary = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let tagTextPromoInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight50
+     let textNavigationBarSecondary = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.grey4
 
-    let tagTextActiveInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let textNavigationSearchBarHint = VivoNewColors.palette.vivoPurpleLight50 | VivoNewColors.palette.grey4
 
-    let tagTextInactiveInverse = VivoNewColors.palette.grey5
+     let textNavigationSearchBarText = VivoNewColors.palette.white | VivoNewColors.palette.grey2
 
-    let tagTextInfoInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+     let textAppBar = VivoNewColors.palette.grey5
 
-    let tagTextSuccessInverse = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
+     let textAppBarSelected = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
 
-    let tagTextWarningInverse = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
+     let customTabsBackground = VivoNewColors.palette.white | VivoNewColors.palette.darkModeBlack
 
-    let tagTextErrorInverse = VivoNewColors.palette.pepperDark80 | VivoNewColors.palette.pepperLight40
+     let tagTextPromo = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight50
 
-    let tagBackgroundPromoInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+     let tagTextActive = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let tagBackgroundActiveInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+     let tagTextInactive = VivoNewColors.palette.grey5
 
-    let tagBackgroundInactiveInverse = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
+     let tagTextInfo = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
 
-    let tagBackgroundInfoInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+     let tagTextSuccess = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
 
-    let tagBackgroundSuccessInverse = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
+     let tagTextWarning = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
 
-    let tagBackgroundWarningInverse = VivoNewColors.palette.orangeLight10 | VivoNewColors.palette.darkModeGrey6
+     let tagTextError = VivoNewColors.palette.pepperDark80 | VivoNewColors.palette.pepperLight40
 
-    let tagBackgroundErrorInverse = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey6
+     let tagBackgroundPromo = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
 
-    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+     let tagBackgroundActive = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundInactive = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundInfo = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundSuccess = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundWarning = VivoNewColors.palette.orangeLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundError = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let tagTextPromoInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight50
+
+     let tagTextActiveInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+
+     let tagTextInactiveInverse = VivoNewColors.palette.grey5
+
+     let tagTextInfoInverse = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight80
+
+     let tagTextSuccessInverse = VivoNewColors.palette.vivoGreenDark | VivoNewColors.palette.vivoGreenLight30
+
+     let tagTextWarningInverse = VivoNewColors.palette.orangeDark | VivoNewColors.palette.orangeLight40
+
+     let tagTextErrorInverse = VivoNewColors.palette.pepperDark80 | VivoNewColors.palette.pepperLight40
+
+     let tagBackgroundPromoInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundActiveInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundInactiveInverse = VivoNewColors.palette.grey1 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundInfoInverse = VivoNewColors.palette.vivoPurpleLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundSuccessInverse = VivoNewColors.palette.vivoGreenLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundWarningInverse = VivoNewColors.palette.orangeLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let tagBackgroundErrorInverse = VivoNewColors.palette.pepperLight10 | VivoNewColors.palette.darkModeGrey6
+
+     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [
             VivoNewColors.palette.grey6.withAlphaComponent(0),
             VivoNewColors.palette.grey6.withAlphaComponent(0.4),
             VivoNewColors.palette.grey6.withAlphaComponent(0.7)
         ],
-        stops: [0, 0.3, 1],
+        stops: [0,0.3,1],
         angle: 180
     ))
+
+     let cardFooterOverlay = VivoNewColors.palette.grey6.withAlphaComponent(0.7)
 }
 
 public struct VivoNewColorPalette: Sendable {

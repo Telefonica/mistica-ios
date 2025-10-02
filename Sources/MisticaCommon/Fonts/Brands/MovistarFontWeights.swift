@@ -1,15 +1,12 @@
-//
-//  MovistarFontWeights.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import Foundation
 
 struct MovistarFontWeights: MisticaFontWeights {
     public var cardTitle: MisticaFontWeightType = .bold
+    public var rowTitle: MisticaFontWeightType = .regular
     public var button: MisticaFontWeightType = .medium
     public var tabsLabel: MisticaFontWeightType = .medium
     public var link: MisticaFontWeightType = .medium

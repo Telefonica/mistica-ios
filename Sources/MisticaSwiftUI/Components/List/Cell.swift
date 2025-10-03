@@ -115,7 +115,7 @@ public struct Cell<PresetView: View, HeadlineView: View, Destination: View>: Vie
                     headlineView
 
                     Text(title)
-                        .font(.textPreset3(weight: .regular))
+                        .font(.textPreset3(weight: .rowTitle))
                         .foregroundColor(.textPrimary)
                         .lineLimit(titleLineLimit)
                         .accessibilityLabel(titleAccessibilityLabel)

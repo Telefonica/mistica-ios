@@ -62,6 +62,14 @@ private struct CornerRadiusModifier: ViewModifier {
             content
                 .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.sheet))
                 .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.sheet).stroke(borderColor, lineWidth: lineWidth))
+        case .tag:
+            content
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.tag))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.tag).stroke(borderColor, lineWidth: lineWidth))
+        case .chip:
+            content
+                .clipShape(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.chip))
+                .overlay(RoundedRectangle(cornerRadius: MisticaConfig.currentCornerRadius.chip).stroke(borderColor, lineWidth: lineWidth))
         }
     }
 }

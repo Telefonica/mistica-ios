@@ -242,6 +242,7 @@ open class Button: UIControl {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         applyStyleColors()
+        container.font = style.font(isSmall: isSmall)
     }
 
     override open func layoutSublayers(of layer: CALayer) {

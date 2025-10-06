@@ -29,33 +29,36 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MisticaCommonTests"
-               BuildableName = "MisticaCommonTests"
-               BlueprintName = "MisticaCommonTests"
-               ReferencedContainer = "container:..">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MisticaSwiftUITests"
-               BuildableName = "MisticaSwiftUITests"
-               BlueprintName = "MisticaSwiftUITests"
-               ReferencedContainer = "container:..">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MisticaTests"
-               BuildableName = "MisticaTests"
+               BlueprintIdentifier = "5F5A41FE2E866A83003F99E0"
+               BuildableName = "MisticaTests.xctest"
                BlueprintName = "MisticaTests"
-               ReferencedContainer = "container:..">
+               ReferencedContainer = "container:MisticaCatalog.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5F5A5D1D2E867EE7003F99E0"
+               BuildableName = "MisticaCommonTests.xctest"
+               BlueprintName = "MisticaCommonTests"
+               ReferencedContainer = "container:MisticaCatalog.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5F5A5D2A2E867EF8003F99E0"
+               BuildableName = "MisticaSwiftUITests.xctest"
+               BlueprintName = "MisticaSwiftUITests"
+               ReferencedContainer = "container:MisticaCatalog.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

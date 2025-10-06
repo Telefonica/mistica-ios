@@ -15,7 +15,6 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-spm.git", exact: "4.5.1"),
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", exact: "1.18.6"),
         .package(url: "https://github.com/SDWebImage/SDWebImage.git", exact: "5.19.1"),
         .package(url: "https://github.com/SDWebImage/SDWebImageSVGCoder.git", exact: "1.7.0")
     ],
@@ -28,25 +27,6 @@ let package = Package(
             exclude: [
                 "Fonts/README.md",
                 "Controls/README.md"
-            ],
-            swiftSettings: [
-                .define("SWIFT_PACKAGE")
-            ]
-        ),
-
-        .testTarget(
-            name: "MisticaCommonTests",
-            dependencies: [
-                "MisticaCommon",
-                .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
-            ],
-            exclude: [
-                "Fonts/__Snapshots__"
-            ],
-            resources: [
-                .process("Resources/Telefonica-Bold.otf"),
-                .process("Resources/Telefonica-Light.otf"),
-                .process("Resources/Telefonica-Regular.otf")
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")
@@ -83,21 +63,6 @@ let package = Package(
                 .define("SWIFT_PACKAGE")
             ]
         ),
-
-        .testTarget(
-            name: "MisticaSwiftUITests",
-            dependencies: [
-                "MisticaSwiftUI",
-                .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
-            ],
-            exclude: [
-                "UI/__Snapshots__"
-            ],
-            swiftSettings: [
-                .define("SWIFT_PACKAGE")
-            ]
-        ),
-
         .target(
             name: "Mistica",
             dependencies: [
@@ -148,22 +113,6 @@ let package = Package(
                 "Components/EmptyState/README.md",
                 "Components/EmptyState/docs",
                 "Components/Sheet/docs"
-            ],
-            swiftSettings: [
-                .define("SWIFT_PACKAGE")
-            ]
-        ),
-        .testTarget(
-            name: "MisticaTests",
-            dependencies: [
-                "Mistica",
-                .product(name: "SnapshotTesting", package: "swift-snapshot-testing")
-            ],
-            exclude: [
-                "UI/__Snapshots__"
-            ],
-            resources: [
-                .process("UI/Fixtures/Icons")
             ],
             swiftSettings: [
                 .define("SWIFT_PACKAGE")

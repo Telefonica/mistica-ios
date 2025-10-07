@@ -31,6 +31,10 @@ public extension UIView {
             setMisticaConfigValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.popup)
         case .sheet:
             setMisticaConfigValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.sheet)
+        case .tag:
+            setMisticaConfigValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.tag)
+        case .chip:
+            setMisticaConfigValue(cornerRadiusValue: MisticaConfig.currentCornerRadius.chip)
         }
     }
 

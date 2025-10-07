@@ -109,7 +109,7 @@ private extension Chip {
         .background(
             Rectangle()
                 .fill(backgroundColor(isSelected))
-                .border(radiusStyle: .indicator, borderColor: borderColor(isSelected), lineWidth: Constants.strokeWidth)
+                .border(radiusStyle: .chip, borderColor: borderColor(isSelected), lineWidth: Constants.strokeWidth)
         )
     }
 

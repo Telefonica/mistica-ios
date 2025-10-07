@@ -170,7 +170,7 @@ public class TagView: UIView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        setMisticaRadius(.indicator)
+        setMisticaRadius(.tag)
         clipsToBounds = true
     }
 }

@@ -42,8 +42,8 @@ public extension UIView {
         if cornerRadiusValue >= MisticaRadiusConstants.roundedRadius {
             layer.cornerRadius = min(frame.size.width, frame.size.height) / 2
         } else {
-            let normalizedNormalized = min(minSide / 2, cornerRadiusValue)
-            layer.cornerRadius = normalizedNormalized
+            let normalizedCornerRadiusValue = min(minSide / 2, cornerRadiusValue)
+            layer.cornerRadius = normalizedCornerRadiusValue
         }
     }
 

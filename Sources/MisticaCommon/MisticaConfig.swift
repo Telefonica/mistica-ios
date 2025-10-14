@@ -109,6 +109,13 @@ private extension MisticaConfig {
             currentCornerRadius = MovistarCornerRadius()
             currentFontSizes = MovistarFontSizes()
             currentThemeVariants = MovistarThemeVariants()
+        case .movistarNew:
+            currentColors = MovistarNewColors()
+            currentBrandAssets = DefaultMisticaBrandAssets()
+            currentFontWeights = MovistarNewFontWeights()
+            currentCornerRadius = MovistarNewCornerRadius()
+            currentFontSizes = MovistarNewFontSizes()
+            currentThemeVariants = MovistarNewThemeVariants()
         case .o2New:
             currentColors = O2NewColors()
             currentBrandAssets = DefaultMisticaBrandAssets()

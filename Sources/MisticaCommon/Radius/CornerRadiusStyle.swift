@@ -20,4 +20,6 @@ import Foundation
     case legacyDisplay
     case popup
     case sheet
+    case tag
+    case chip
 }

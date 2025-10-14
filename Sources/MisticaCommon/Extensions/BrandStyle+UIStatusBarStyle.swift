@@ -11,7 +11,7 @@ import UIKit
 public extension BrandStyle {
     var preferredStatusBarStyle: UIStatusBarStyle {
         switch self {
-        case .movistar, .o2New, .blau, .custom, .vivoNew, .tu, .telefonica:
+        case .movistar, .movistarNew, .o2New, .blau, .custom, .vivoNew, .tu, .telefonica:
             return .lightContent
         }
     }

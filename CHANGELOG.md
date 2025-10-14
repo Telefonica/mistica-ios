@@ -1,3 +1,11 @@
+# [36.1.0](https://github.com/Telefonica/mistica-ios/compare/v36.0.1...v36.1.0) (2025-10-06)
+
+
+### Features
+
+* **Button:** Add button accessibility size ([#479](https://github.com/Telefonica/mistica-ios/issues/479)) ([b9bf961](https://github.com/Telefonica/mistica-ios/commit/b9bf96196bad59302e05d7b3782e4a6bcbed4775))
+* **CornerRadius:** IOS-11839 Avoid weird corner radius from mistica-design (tokens) ([#475](https://github.com/Telefonica/mistica-ios/issues/475)) ([28a4979](https://github.com/Telefonica/mistica-ios/commit/28a4979cfe1404a38b417e7dbe0ead1c29f62c25))
+
 ## [36.0.1](https://github.com/Telefonica/mistica-ios/compare/v36.0.0...v36.0.1) (2025-09-30)
 
 

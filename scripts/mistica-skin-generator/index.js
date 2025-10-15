@@ -27,6 +27,11 @@ const BRANDS = [
         misticaDesignFileName: 'movistar',
     },
     {
+        id: 'movistarNew',
+        prefix: 'MovistarNew',
+        misticaDesignFileName: 'movistar-new',
+    },
+    {
         id: 'o2new',
         prefix: 'O2New',
         misticaDesignFileName: 'o2-new',

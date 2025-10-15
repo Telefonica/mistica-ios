@@ -61,7 +61,7 @@ public struct Tag: View {
         .frame(minWidth: Constants.minWidth, minHeight: Constants.minHeight, alignment: .center)
         .background(Color(style.backgroundColor(isInverse)))
         .accessibilityIdentifier(textAccessibilityIdentifier)
-        .round(radiusStyle: .indicator)
+        .round(radiusStyle: .tag)
     }
 }
 

@@ -75,61 +75,95 @@ struct TuColors: MisticaColors {
 
     let buttonDangerBackgroundHover = TuColors.palette.red55 | TuColors.palette.red80
 
-    let buttonLinkDangerBackgroundPressed = TuColors.palette.red10
-
     let buttonLinkDangerBackgroundInverse = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
 
+    let buttonLinkDangerBackgroundMedia = TuColors.palette.white
+
+    let buttonLinkDangerBackgroundPressed = TuColors.palette.red10
+
     let buttonLinkDangerBackgroundInversePressed = TuColors.palette.red10
+
+    let buttonLinkDangerBackgroundMediaPressed = TuColors.palette.red10
 
     let buttonLinkBackgroundPressed = TuColors.palette.blue10 | TuColors.palette.white.withAlphaComponent(0.08)
 
     let buttonLinkBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.08)
 
+    let buttonLinkBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.08)
+
     let buttonPrimaryBackground = TuColors.palette.primary | TuColors.palette.grey2
 
     let buttonPrimaryBackgroundInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let buttonPrimaryBackgroundPressed = TuColors.palette.primary45 | TuColors.palette.grey3
+    let buttonPrimaryBackgroundMedia = TuColors.palette.white
 
     let buttonPrimaryBackgroundHover = TuColors.palette.primary45 | TuColors.palette.grey3
 
+    let buttonPrimaryBackgroundInverseHover = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
+
+    let buttonPrimaryBackgroundMediaHover = TuColors.palette.white.withAlphaComponent(0.8)
+
+    let buttonPrimaryBackgroundPressed = TuColors.palette.primary45 | TuColors.palette.grey3
+
     let buttonPrimaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
+
+    let buttonPrimaryBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.8)
 
     let buttonSecondaryBorder = TuColors.palette.blue | TuColors.palette.grey2
 
-    let buttonSecondaryBorderPressed = TuColors.palette.blue70 | TuColors.palette.grey2
-
     let buttonSecondaryBorderInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let buttonSecondaryBackgroundHover = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
+    let buttonSecondaryBorderMedia = TuColors.palette.white
 
-    let buttonSecondaryBackgroundPressed = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
+    let buttonSecondaryBorderPressed = TuColors.palette.blue70 | TuColors.palette.grey2
 
     let buttonSecondaryBorderInversePressed = TuColors.palette.white | TuColors.palette.grey2
 
+    let buttonSecondaryBorderMediaPressed = TuColors.palette.white
+
+    let buttonSecondaryBackgroundHover = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
+
     let buttonSecondaryBackgroundInverseHover = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
+    let buttonSecondaryBackgroundMediaHover = TuColors.palette.white.withAlphaComponent(0.1)
+
+    let buttonSecondaryBackgroundPressed = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
+
     let buttonSecondaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
+
+    let buttonSecondaryBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.1)
 
     let textButtonPrimary = TuColors.palette.white | TuColors.palette.primary
 
     let textButtonPrimaryInverse = TuColors.palette.primary
 
+    let textButtonPrimaryMedia = TuColors.palette.primary
+
     let textButtonPrimaryInversePressed = TuColors.palette.primary
+
+    let textButtonPrimaryMediaPressed = TuColors.palette.primary
 
     let textButtonSecondary = TuColors.palette.blue | TuColors.palette.grey2
 
-    let textButtonSecondaryPressed = TuColors.palette.blue70 | TuColors.palette.grey2
-
     let textButtonSecondaryInverse = TuColors.palette.white | TuColors.palette.grey2
 
+    let textButtonSecondaryMedia = TuColors.palette.white
+
+    let textButtonSecondaryPressed = TuColors.palette.blue70 | TuColors.palette.grey2
+
     let textButtonSecondaryInversePressed = TuColors.palette.white | TuColors.palette.grey2
+
+    let textButtonSecondaryMediaPressed = TuColors.palette.white
 
     let textLink = TuColors.palette.blue | TuColors.palette.blue30
 
     let textLinkInverse = TuColors.palette.white | TuColors.palette.blue30
 
+    let textLinkMedia = TuColors.palette.white
+
     let textLinkDanger = TuColors.palette.red
+
+    let textLinkDangerMedia = TuColors.palette.red
 
     let textLinkSnackbar = TuColors.palette.white | TuColors.palette.blue30
 
@@ -138,6 +172,8 @@ struct TuColors: MisticaColors {
     let textBrand = TuColors.palette.blue | TuColors.palette.blue30
 
     let inputBorder = TuColors.palette.grey5
+
+    let inputBorderInverse = TuColors.palette.white | TuColors.palette.grey5
 
     let control = TuColors.palette.grey5 | TuColors.palette.darkModeGrey6
 
@@ -197,9 +233,13 @@ struct TuColors: MisticaColors {
 
     let textPrimaryInverse = TuColors.palette.white | TuColors.palette.grey2
 
+    let textPrimaryMedia = TuColors.palette.white
+
     let textSecondary = TuColors.palette.grey6 | TuColors.palette.grey3
 
     let textSecondaryInverse = TuColors.palette.grey3
+
+    let textSecondaryMedia = TuColors.palette.white
 
     let error = TuColors.palette.red
 
@@ -321,6 +361,8 @@ struct TuColors: MisticaColors {
         stops: [0, 0.3, 1],
         angle: 180
     ))
+
+    let cardFooterOverlay = TuColors.palette.black.withAlphaComponent(0.7)
 }
 
 public struct TuColorPalette: Sendable {

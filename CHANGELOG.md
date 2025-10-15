@@ -1,3 +1,10 @@
+# [36.2.0](https://github.com/Telefonica/mistica-ios/compare/v36.1.0...v36.2.0) (2025-10-15)
+
+
+### Features
+
+* **MovistarNewBrand:** IOS-11839 Created new Movistar brand ([#477](https://github.com/Telefonica/mistica-ios/issues/477)) ([fe694db](https://github.com/Telefonica/mistica-ios/commit/fe694db3aed22a8423dd7b1ed16793af5bb8b37b)), closes [#478](https://github.com/Telefonica/mistica-ios/issues/478)
+
 # [36.1.0](https://github.com/Telefonica/mistica-ios/compare/v36.0.1...v36.1.0) (2025-10-06)
 
 

@@ -105,7 +105,7 @@ final class MediaCardTests: XCTestCase {
 
         assertSnapshot(of: view, as: .image)
     }
-    
+
     func testTagStyles() {
         for tagStyle in TagStyle.allCases + [nil] {
             MisticaConfig.brandStyle = .movistar

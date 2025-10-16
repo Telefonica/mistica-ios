@@ -196,7 +196,7 @@ private extension MediaCard {
         if let tagStyle = configuration.tagStyle {
             baseCardView.configureTagStyle(tagStyle)
         }
-        
+
         cardAccessibilityElement.accessibilityLabel = [
             baseCardView.headline,
             baseCardView.title,

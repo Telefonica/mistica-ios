@@ -75,7 +75,7 @@ class UICatalogMediaCardViewController: UIViewController {
 
         return cell
     }()
-    
+
     private lazy var tagStylesCell: UISegmentedControlTableViewCell = {
         let cell = UISegmentedControlTableViewCell(reuseIdentifier: "TagStyleCell")
         for state in [.normal, .highlighted, .selected] as [UIControl.State] {
@@ -203,7 +203,7 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
         default:
             fatalError("Case not implemented")
         }
-        
+
         let tagStyle = TagStyle.allCases.enumerated().first {
             $0.offset == tagStylesCell.segmentedControl.selectedSegmentIndex
         }?.element

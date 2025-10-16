@@ -27,7 +27,7 @@ MISTICA_DESIGN_URL := https://raw.githubusercontent.com/Telefonica/mistica-desig
 
 # Xcode
 ifneq ($(origin GITHUB_ACTION),undefined)
-export DEVELOPER_DIR=/Applications/Xcode_16.4.app/Contents/Developer
+export DEVELOPER_DIR=/Applications/Xcode_26.0.1.app/Contents/Developer
 endif
 
 # Targets

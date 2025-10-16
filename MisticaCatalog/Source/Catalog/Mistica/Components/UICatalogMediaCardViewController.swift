@@ -86,7 +86,7 @@ class UICatalogMediaCardViewController: UIViewController {
         }
 
         for (index, tagStyle) in TagStyle.allCases.enumerated() {
-            cell.segmentedControl.insertSegment(withTitle: String(describing: tagStyle), at: index, animated: false)
+            cell.segmentedControl.insertSegment(withTitle: String(describing: tagStyle).capitalized, at: index, animated: false)
         }
         cell.segmentedControl.insertSegment(withTitle: "Default", at: TagStyle.allCases.count, animated: false)
         cell.segmentedControl.selectedSegmentIndex = TagStyle.allCases.count

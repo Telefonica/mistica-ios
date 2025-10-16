@@ -131,7 +131,8 @@ final class MediaCardTests: XCTestCase {
             pretitle: "Pretitle",
             descriptionTitle: "This is a description",
             button: AnyValues.button,
-            link: AnyValues.link
+            link: AnyValues.link,
+            tagStyle: nil
         )
 
         let view = MediaCardXIBIntegration.viewFromNib()

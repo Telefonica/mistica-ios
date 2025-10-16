@@ -9,7 +9,7 @@ jobs:
     name: Record screenshots
     # Only if it is a PR and the comment contains /record-screenshots
     if: github.event.issue.pull_request && contains(github.event.comment.body, '/record-screenshots')
-    runs-on: macos-15
+    runs-on: macos-latest
     steps:
       - name: Update the comment on PR with link to the job
         uses: actions/github-script@v7
@@ -24,7 +24,7 @@ jobs:
               repo: context.repo.repo,
               body: body
             })
-            
+
       - name: Get branch of PR
         uses: xt0rted/pull-request-comment-branch@v2
         id: comment-branch
@@ -37,11 +37,11 @@ jobs:
       - name: Enable screenshots recording
         run: |
           find . -type f -name "*.swift" -exec sed -i '' 's/record: .never/record: .failed/' {} +
-          
+
       - name: Launch tests and record screenshots
         run: make test
         continue-on-error: true
-        
+
       - name: Disable screenshots recording
         run: |
           find . -type f -name "*.swift" -exec sed -i '' 's/record: .failed/record: .never/' {} +

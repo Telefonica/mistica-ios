@@ -97,6 +97,10 @@ extension CardBase {
             addArrangedSubview(buttonsView)
         }
     }
+
+    func configureTagStyle(_ style: TagStyle) {
+        contentView.headlineTagView.item.style = style
+    }
 }
 
 // MARK: Private

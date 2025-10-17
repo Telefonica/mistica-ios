@@ -106,6 +106,17 @@ final class MediaCardTests: XCTestCase {
         assertSnapshot(of: view, as: .image)
     }
 
+    func testTagStyles() {
+        for tagStyle in TagStyle.allCases + [nil] {
+            MisticaConfig.brandStyle = .movistar
+
+            let name = tagStyle.map { String(describing: $0) } ?? "default"
+            let view = makeBasicCard(headline: name, tagStyle: tagStyle)
+
+            assertSnapshot(of: view, as: .image, named: name)
+        }
+    }
+
     // MARK: Behaviour
 
     func testShowLoadingStateForButtons() {
@@ -131,7 +142,8 @@ final class MediaCardTests: XCTestCase {
             pretitle: "Pretitle",
             descriptionTitle: "This is a description",
             button: AnyValues.button,
-            link: AnyValues.link
+            link: AnyValues.link,
+            tagStyle: nil
         )
 
         let view = MediaCardXIBIntegration.viewFromNib()
@@ -160,13 +172,19 @@ extension MediaCardTests {
         }
     }
 
-    func makeBasicCard(primaryButton: CardButton? = nil,
-                       linkButton: CardLinkButton? = nil) -> MediaCard {
+    func makeBasicCard(
+        primaryButton: CardButton? = nil,
+        linkButton: CardLinkButton? = nil,
+        headline: String? = nil,
+        tagStyle: TagStyle? = nil
+    ) -> MediaCard {
         let configuration = MediaCardConfiguration(
             richMedia: AnyValues.richMedia,
+            headline: headline,
             descriptionTitle: "This is a description",
             button: primaryButton,
-            link: linkButton
+            link: linkButton,
+            tagStyle: tagStyle
         )
 
         let view = MediaCard()

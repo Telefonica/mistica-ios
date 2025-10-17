@@ -17,6 +17,7 @@ private enum Section: Int, CaseIterable {
     case title
     case description
     case buttons
+    case tagStyle
     case show
 }
 
@@ -75,6 +76,24 @@ class UICatalogMediaCardViewController: UIViewController {
         return cell
     }()
 
+    private lazy var tagStylesCell: UISegmentedControlTableViewCell = {
+        let cell = UISegmentedControlTableViewCell(reuseIdentifier: "TagStyleCell")
+        for state in [.normal, .highlighted, .selected] as [UIControl.State] {
+            cell.segmentedControl.setTitleTextAttributes([
+                .font: UIFont.systemFont(ofSize: 9),
+                .foregroundColor: state == .normal ? UIColor.brand : UIColor.white
+            ], for: state)
+        }
+
+        for (index, tagStyle) in TagStyle.allCases.enumerated() {
+            cell.segmentedControl.insertSegment(withTitle: String(describing: tagStyle).capitalized, at: index, animated: false)
+        }
+        cell.segmentedControl.insertSegment(withTitle: "Default", at: TagStyle.allCases.count, animated: false)
+        cell.segmentedControl.selectedSegmentIndex = TagStyle.allCases.count
+
+        return cell
+    }()
+
     private lazy var showCardCell: UITableViewCell = {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "ShowCardCell")
         cell.textLabel?.textColor = .textLink
@@ -89,6 +108,7 @@ class UICatalogMediaCardViewController: UIViewController {
         [titleCell],
         [descriptionCell],
         [buttonsCell],
+        [tagStylesCell],
         [showCardCell]
     ]
 
@@ -184,6 +204,10 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
             fatalError("Case not implemented")
         }
 
+        let tagStyle = TagStyle.allCases.enumerated().first {
+            $0.offset == tagStylesCell.segmentedControl.selectedSegmentIndex
+        }?.element
+
         let configuration = MediaCardConfiguration(
             richMedia: richMedia,
             headline: headlineCell.textField.text.valueOrNil,
@@ -191,7 +215,8 @@ extension UICatalogMediaCardViewController: UITableViewDataSource, UITableViewDe
             pretitle: pretitleCell.textField.text.valueOrNil,
             descriptionTitle: descriptionCell.textField.text.valueOrNil ?? "Mandatory field",
             button: button,
-            link: linkButton
+            link: linkButton,
+            tagStyle: tagStyle
         )
 
         vc.card.contentConfiguration = configuration
@@ -238,6 +263,8 @@ private extension Section {
             return "Description"
         case .buttons:
             return "Buttons"
+        case .tagStyle:
+            return "Tag Style"
         case .show:
             return "Show"
         }

@@ -20,6 +20,7 @@ public struct MediaCardConfiguration {
     let descriptionTitle: String
     let button: CardButton?
     let link: CardLinkButton?
+    let tagStyle: TagStyle?
 
     public init(
         richMedia: UIView,
@@ -28,7 +29,8 @@ public struct MediaCardConfiguration {
         pretitle: String? = nil,
         descriptionTitle: String,
         button: CardButton? = nil,
-        link: CardLinkButton? = nil
+        link: CardLinkButton? = nil,
+        tagStyle: TagStyle? = nil
     ) {
         self.richMedia = richMedia
         self.headline = headline
@@ -37,6 +39,7 @@ public struct MediaCardConfiguration {
         self.descriptionTitle = descriptionTitle
         self.button = button
         self.link = link
+        self.tagStyle = tagStyle
     }
 }
 
@@ -190,6 +193,9 @@ private extension MediaCard {
         baseCardView.descriptionTitle = configuration.descriptionTitle
 
         baseCardView.configureButtons(primaryButton: configuration.button, linkButton: configuration.link)
+        if let tagStyle = configuration.tagStyle {
+            baseCardView.configureTagStyle(tagStyle)
+        }
 
         cardAccessibilityElement.accessibilityLabel = [
             baseCardView.headline,

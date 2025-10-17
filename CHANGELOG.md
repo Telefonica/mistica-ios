@@ -1,3 +1,10 @@
+# [36.3.0](https://github.com/Telefonica/mistica-ios/compare/v36.2.0...v36.3.0) (2025-10-17)
+
+
+### Features
+
+* **MediaCard:** IOS-11913 Add tag style to media card ([a650050](https://github.com/Telefonica/mistica-ios/commit/a650050d8b1d3ed8b9b749695dfc4742c72778d7))
+
 # [36.2.0](https://github.com/Telefonica/mistica-ios/compare/v36.1.0...v36.2.0) (2025-10-15)
 
 

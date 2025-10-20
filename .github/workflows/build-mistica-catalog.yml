@@ -22,9 +22,24 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Telefonica/ios-github-workflows
-          ref: test-mistica-catalog
           token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
           path: .ios-github-workflows
+
+      - name: Checkout Telefonica/github-actions repo
+        uses: actions/checkout@v4
+        with:
+          repository: Telefonica/github-actions
+          token: "${{ secrets.NOVUM_PRIVATE_REPOS }}"
+          path: .github-actions
+
+      - name: Setup .netrc for Nexus (local action)
+        if: ${{ secrets.NEXUS_USER != '' && secrets.NEXUS_PASS != '' }}
+        uses: ./.github-actions/novum/setup-env
+        with:
+          nexus_user: ${{ secrets.NEXUS_USER }}
+          nexus_pass: ${{ secrets.NEXUS_PASS }}
+          login_docker: false
+          setup_devtools: false
 
       - name: Setup
         id: setup
@@ -52,7 +67,7 @@ jobs:
           release-notes: "Mistica Catalog"
           tester-groups: "tid-internal-testers, mistica-internal-testers"
           google-application-credentials: ${{ secrets.FIREBASE_DIST_CREDENTIALS_RC }}
-      
+
       - name: Clean up keychain and provisioning profile
         if: ${{ always() }}
         run: |

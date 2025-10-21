@@ -36,8 +36,11 @@ public class GradientSwiftUIViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .clear
+
         let gradientView = GradientView(colors: colors, stops: stops, angle: angle)
         let hostingController = UIHostingController(rootView: gradientView, ignoreSafeArea: ignoreSafeArea)
+        hostingController.view.backgroundColor = .clear
         addChild(hostingController)
         view.addSubview(hostingController.view)
         hostingController.didMove(toParent: self)

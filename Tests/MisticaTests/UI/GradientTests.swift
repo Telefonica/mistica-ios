@@ -17,7 +17,7 @@ final class GradientTests: XCTestCase {
     }
 
     override func invokeTest() {
-        withSnapshotTesting(record: .missing) {
+        withSnapshotTesting(record: .never) {
             super.invokeTest()
         }
     }

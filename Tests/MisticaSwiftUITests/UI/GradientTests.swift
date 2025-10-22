@@ -17,6 +17,7 @@ final class GradientTests: XCTestCase {
         static let templateWidth: CGFloat = 300
         static let templateHeight: CGFloat = 450
     }
+
     override func invokeTest() {
         withSnapshotTesting(record: .never) {
             super.invokeTest()

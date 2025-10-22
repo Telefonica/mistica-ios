@@ -1,3 +1,10 @@
+## [36.3.1](https://github.com/Telefonica/mistica-ios/compare/v36.3.0...v36.3.1) (2025-10-22)
+
+
+### Bug Fixes
+
+* **GradientView:** IOS-11935 [Mistica] Allow transparent gradient color in MisticaGradient ([#483](https://github.com/Telefonica/mistica-ios/issues/483)) ([141773c](https://github.com/Telefonica/mistica-ios/commit/141773cc26974c76e11fdda8243aa7b73e38c596))
+
 # [36.3.0](https://github.com/Telefonica/mistica-ios/compare/v36.2.0...v36.3.0) (2025-10-17)
 
 

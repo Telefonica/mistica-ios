@@ -1,10 +1,6 @@
-//
-//  MisticaColors.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
@@ -12,6 +8,7 @@ public protocol MisticaColors: Sendable {
     var background: UIColor { get }
     var backgroundAlternative: UIColor { get }
     var backgroundBrand: MisticaColor { get }
+    var backgroundNegative: UIColor { get }
     var backgroundBrandSecondary: UIColor { get }
     var backgroundContainer: UIColor { get }
     var backgroundContainerError: UIColor { get }
@@ -21,10 +18,14 @@ public protocol MisticaColors: Sendable {
     var backgroundContainerBrandHover: UIColor { get }
     var backgroundContainerBrandPressed: UIColor { get }
     var backgroundContainerBrandOverInverse: UIColor { get }
+    var backgroundContainerNegative: UIColor { get }
+    var backgroundContainerBrandOverBrand: UIColor { get }
     var backgroundContainerAlternative: UIColor { get }
     var backgroundOverlay: UIColor { get }
     var backgroundSkeleton: UIColor { get }
     var backgroundSkeletonInverse: UIColor { get }
+    var backgroundSkeletonNegative: UIColor { get }
+    var backgroundSkeletonBrand: UIColor { get }
     var backgroundBrandTop: UIColor { get }
     var backgroundBrandBottom: UIColor { get }
     var appBarBackground: UIColor { get }
@@ -36,53 +37,86 @@ public protocol MisticaColors: Sendable {
     var borderSelected: UIColor { get }
     var completedStep: UIColor { get }
     var completedStepInverse: UIColor { get }
+    var completedStepNegative: UIColor { get }
+    var completedStepBrand: UIColor { get }
     var coverBackgroundHover: UIColor { get }
     var coverBackgroundPressed: UIColor { get }
     var buttonDangerBackground: UIColor { get }
     var buttonDangerBackgroundPressed: UIColor { get }
     var buttonDangerBackgroundHover: UIColor { get }
     var buttonLinkDangerBackgroundInverse: UIColor { get }
+    var buttonLinkDangerBackgroundNegative: UIColor { get }
+    var buttonLinkDangerBackgroundBrand: UIColor { get }
     var buttonLinkDangerBackgroundMedia: UIColor { get }
     var buttonLinkDangerBackgroundPressed: UIColor { get }
     var buttonLinkDangerBackgroundInversePressed: UIColor { get }
+    var buttonLinkDangerBackgroundNegativePressed: UIColor { get }
+    var buttonLinkDangerBackgroundBrandPressed: UIColor { get }
     var buttonLinkDangerBackgroundMediaPressed: UIColor { get }
     var buttonLinkBackgroundPressed: UIColor { get }
     var buttonLinkBackgroundInversePressed: UIColor { get }
+    var buttonLinkBackgroundNegativePressed: UIColor { get }
+    var buttonLinkBackgroundBrandPressed: UIColor { get }
     var buttonLinkBackgroundMediaPressed: UIColor { get }
     var buttonPrimaryBackground: UIColor { get }
     var buttonPrimaryBackgroundInverse: UIColor { get }
+    var buttonPrimaryBackgroundNegative: UIColor { get }
+    var buttonPrimaryBackgroundBrand: UIColor { get }
     var buttonPrimaryBackgroundMedia: UIColor { get }
     var buttonPrimaryBackgroundHover: UIColor { get }
     var buttonPrimaryBackgroundInverseHover: UIColor { get }
+    var buttonPrimaryBackgroundNegativeHover: UIColor { get }
+    var buttonPrimaryBackgroundBrandHover: UIColor { get }
     var buttonPrimaryBackgroundMediaHover: UIColor { get }
     var buttonPrimaryBackgroundPressed: UIColor { get }
     var buttonPrimaryBackgroundInversePressed: UIColor { get }
+    var buttonPrimaryBackgroundNegativePressed: UIColor { get }
+    var buttonPrimaryBackgroundBrandPressed: UIColor { get }
     var buttonPrimaryBackgroundMediaPressed: UIColor { get }
+    var buttonSecondaryBackgroundBrand: UIColor { get }
     var buttonSecondaryBorder: UIColor { get }
     var buttonSecondaryBorderInverse: UIColor { get }
+    var buttonSecondaryBorderNegative: UIColor { get }
+    var buttonSecondaryBorderBrand: UIColor { get }
     var buttonSecondaryBorderMedia: UIColor { get }
     var buttonSecondaryBorderPressed: UIColor { get }
     var buttonSecondaryBorderInversePressed: UIColor { get }
+    var buttonSecondaryBorderNegativePressed: UIColor { get }
+    var buttonSecondaryBorderBrandPressed: UIColor { get }
     var buttonSecondaryBorderMediaPressed: UIColor { get }
     var buttonSecondaryBackgroundHover: UIColor { get }
     var buttonSecondaryBackgroundInverseHover: UIColor { get }
+    var buttonSecondaryBackgroundNegativeHover: UIColor { get }
+    var buttonSecondaryBackgroundBrandHover: UIColor { get }
     var buttonSecondaryBackgroundMediaHover: UIColor { get }
     var buttonSecondaryBackgroundPressed: UIColor { get }
     var buttonSecondaryBackgroundInversePressed: UIColor { get }
+    var buttonSecondaryBackgroundNegativePressed: UIColor { get }
+    var buttonSecondaryBackgroundBrandPressed: UIColor { get }
     var buttonSecondaryBackgroundMediaPressed: UIColor { get }
     var textButtonPrimary: UIColor { get }
     var textButtonPrimaryInverse: UIColor { get }
+    var textButtonPrimaryNegative: UIColor { get }
+    var textButtonPrimaryBrand: UIColor { get }
     var textButtonPrimaryMedia: UIColor { get }
     var textButtonPrimaryInversePressed: UIColor { get }
+    var textButtonPrimaryNegativePressed: UIColor { get }
+    var textButtonPrimaryBrandPressed: UIColor { get }
     var textButtonPrimaryMediaPressed: UIColor { get }
     var textButtonSecondary: UIColor { get }
     var textButtonSecondaryInverse: UIColor { get }
+    var textButtonSecondaryNegative: UIColor { get }
+    var textButtonSecondaryBrand: UIColor { get }
     var textButtonSecondaryMedia: UIColor { get }
     var textButtonSecondaryPressed: UIColor { get }
     var textButtonSecondaryInversePressed: UIColor { get }
+    var textButtonSecondaryNegativePressed: UIColor { get }
+    var textButtonSecondaryBrandPressed: UIColor { get }
     var textButtonSecondaryMediaPressed: UIColor { get }
     var textLink: UIColor { get }
     var textLinkInverse: UIColor { get }
+    var textLinkNegative: UIColor { get }
+    var textLinkBrand: UIColor { get }
     var textLinkMedia: UIColor { get }
     var textLinkDanger: UIColor { get }
     var textLinkDangerMedia: UIColor { get }
@@ -91,21 +125,37 @@ public protocol MisticaColors: Sendable {
     var textBrand: UIColor { get }
     var inputBorder: UIColor { get }
     var inputBorderInverse: UIColor { get }
+    var inputBorderNegative: UIColor { get }
+    var inputBorderBrand: UIColor { get }
     var control: UIColor { get }
     var controlActivated: UIColor { get }
     var controlInverse: UIColor { get }
+    var controlNegative: UIColor { get }
+    var controlBrand: UIColor { get }
     var controlActivatedInverse: UIColor { get }
+    var controlActivatedNegative: UIColor { get }
+    var controlActivatedBrand: UIColor { get }
     var controlError: UIColor { get }
     var barTrack: UIColor { get }
     var barTrackInverse: UIColor { get }
+    var barTrackNegative: UIColor { get }
+    var barTrackBrand: UIColor { get }
     var loadingBar: UIColor { get }
     var loadingBarBackground: UIColor { get }
     var toggleAndroidInactive: UIColor { get }
     var toggleAndroidBackgroundActive: UIColor { get }
+    var toggleAndroidActiveBrand: UIColor { get }
+    var toggleAndroidInactiveBrand: UIColor { get }
+    var toggleAndroidBackgroundActiveBrand: UIColor { get }
+    var toggleAndroidBackgroundInactiveBrand: UIColor { get }
     var iosControlKnob: UIColor { get }
     var controlKnobInverse: UIColor { get }
+    var controlKnobNegative: UIColor { get }
+    var controlKnobBrand: UIColor { get }
     var divider: UIColor { get }
     var dividerInverse: UIColor { get }
+    var dividerNegative: UIColor { get }
+    var dividerBrand: UIColor { get }
     var navigationBarDivider: UIColor { get }
     var badge: UIColor { get }
     var feedbackErrorBackground: UIColor { get }
@@ -113,20 +163,29 @@ public protocol MisticaColors: Sendable {
     var brand: UIColor { get }
     var brandHigh: UIColor { get }
     var inverse: UIColor { get }
+    var negative: UIColor { get }
     var neutralHigh: UIColor { get }
     var neutralMedium: UIColor { get }
     var neutralMediumInverse: UIColor { get }
+    var neutralMediumNegative: UIColor { get }
+    var neutralMediumBrand: UIColor { get }
     var neutralLow: UIColor { get }
     var neutralLowAlternative: UIColor { get }
     var textPrimary: UIColor { get }
     var textPrimaryInverse: UIColor { get }
+    var textPrimaryNegative: UIColor { get }
+    var textPrimaryBrand: UIColor { get }
     var textPrimaryMedia: UIColor { get }
     var textSecondary: UIColor { get }
     var textSecondaryInverse: UIColor { get }
+    var textSecondaryNegative: UIColor { get }
+    var textSecondaryBrand: UIColor { get }
     var textSecondaryMedia: UIColor { get }
     var error: UIColor { get }
     var textError: UIColor { get }
     var textErrorInverse: UIColor { get }
+    var textErrorNegative: UIColor { get }
+    var textErrorBrand: UIColor { get }
     var success: UIColor { get }
     var warning: UIColor { get }
     var promo: UIColor { get }
@@ -141,9 +200,17 @@ public protocol MisticaColors: Sendable {
     var errorHigh: UIColor { get }
     var promoHigh: UIColor { get }
     var successHighInverse: UIColor { get }
+    var successHighNegative: UIColor { get }
+    var successHighBrand: UIColor { get }
     var warningHighInverse: UIColor { get }
+    var warningHighNegative: UIColor { get }
+    var warningHighBrand: UIColor { get }
     var errorHighInverse: UIColor { get }
+    var errorHighNegative: UIColor { get }
+    var errorHighBrand: UIColor { get }
     var promoHighInverse: UIColor { get }
+    var promoHighNegative: UIColor { get }
+    var promoHighBrand: UIColor { get }
     var textNavigationBarPrimary: UIColor { get }
     var textNavigationBarSecondary: UIColor { get }
     var textNavigationSearchBarHint: UIColor { get }
@@ -166,19 +233,47 @@ public protocol MisticaColors: Sendable {
     var tagBackgroundWarning: UIColor { get }
     var tagBackgroundError: UIColor { get }
     var tagTextPromoInverse: UIColor { get }
+    var tagTextPromoNegative: UIColor { get }
+    var tagTextPromoBrand: UIColor { get }
     var tagTextActiveInverse: UIColor { get }
+    var tagTextActiveNegative: UIColor { get }
+    var tagTextActiveBrand: UIColor { get }
     var tagTextInactiveInverse: UIColor { get }
+    var tagTextInactiveNegative: UIColor { get }
+    var tagTextInactiveBrand: UIColor { get }
     var tagTextInfoInverse: UIColor { get }
+    var tagTextInfoNegative: UIColor { get }
+    var tagTextInfoBrand: UIColor { get }
     var tagTextSuccessInverse: UIColor { get }
+    var tagTextSuccessNegative: UIColor { get }
+    var tagTextSuccessBrand: UIColor { get }
     var tagTextWarningInverse: UIColor { get }
+    var tagTextWarningNegative: UIColor { get }
+    var tagTextWarningBrand: UIColor { get }
     var tagTextErrorInverse: UIColor { get }
+    var tagTextErrorNegative: UIColor { get }
+    var tagTextErrorBrand: UIColor { get }
     var tagBackgroundPromoInverse: UIColor { get }
+    var tagBackgroundPromoNegative: UIColor { get }
+    var tagBackgroundPromoBrand: UIColor { get }
     var tagBackgroundActiveInverse: UIColor { get }
+    var tagBackgroundActiveNegative: UIColor { get }
+    var tagBackgroundActiveBrand: UIColor { get }
     var tagBackgroundInactiveInverse: UIColor { get }
+    var tagBackgroundInactiveNegative: UIColor { get }
+    var tagBackgroundInactiveBrand: UIColor { get }
     var tagBackgroundInfoInverse: UIColor { get }
+    var tagBackgroundInfoNegative: UIColor { get }
+    var tagBackgroundInfoBrand: UIColor { get }
     var tagBackgroundSuccessInverse: UIColor { get }
+    var tagBackgroundSuccessNegative: UIColor { get }
+    var tagBackgroundSuccessBrand: UIColor { get }
     var tagBackgroundWarningInverse: UIColor { get }
+    var tagBackgroundWarningNegative: UIColor { get }
+    var tagBackgroundWarningBrand: UIColor { get }
     var tagBackgroundErrorInverse: UIColor { get }
+    var tagBackgroundErrorNegative: UIColor { get }
+    var tagBackgroundErrorBrand: UIColor { get }
     var cardContentOverlay: MisticaColor { get }
     var cardFooterOverlay: UIColor { get }
 }

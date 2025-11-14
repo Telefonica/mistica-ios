@@ -1,368 +1,562 @@
-//
-//  TuColorPalette.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
 struct TuColors: MisticaColors {
     static let palette = TuColorPalette()
 
-    let background = TuColors.palette.white | TuColors.palette.darkModeBlack
+     let background = TuColors.palette.white | TuColors.palette.darkModeBlack
 
-    let backgroundAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeBlack
+     let backgroundAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeBlack
 
-    let backgroundBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeBlack)
+     let backgroundBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeBlack)
 
-    let backgroundBrandSecondary = TuColors.palette.blue | TuColors.palette.darkModeBlack
+     let backgroundNegative = TuColors.palette.primary80 | TuColors.palette.darkModeBlack
 
-    let backgroundContainer = TuColors.palette.white | TuColors.palette.darkModeGrey
+     let backgroundBrandSecondary = TuColors.palette.blue | TuColors.palette.darkModeBlack
 
-    let backgroundContainerError = TuColors.palette.red10 | TuColors.palette.darkModeGrey
+     let backgroundContainer = TuColors.palette.white | TuColors.palette.darkModeGrey
 
-    let backgroundContainerHover = TuColors.palette.grey9.withAlphaComponent(0.05) | TuColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerError = TuColors.palette.red10 | TuColors.palette.darkModeGrey
 
-    let backgroundContainerPressed = TuColors.palette.grey9.withAlphaComponent(0.08) | TuColors.palette.white.withAlphaComponent(0.08)
+     let backgroundContainerHover = TuColors.palette.grey9.withAlphaComponent(0.05) | TuColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeGrey)
+     let backgroundContainerPressed = TuColors.palette.grey9.withAlphaComponent(0.08) | TuColors.palette.white.withAlphaComponent(0.08)
 
-    let backgroundContainerBrandHover = TuColors.palette.grey9.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.03)
+     let backgroundContainerBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeGrey)
 
-    let backgroundContainerBrandPressed = TuColors.palette.grey9.withAlphaComponent(0.4) | TuColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerBrandHover = TuColors.palette.grey9.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.03)
 
-    let backgroundContainerBrandOverInverse = TuColors.palette.primary80 | TuColors.palette.darkModeGrey
+     let backgroundContainerBrandPressed = TuColors.palette.grey9.withAlphaComponent(0.4) | TuColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeGrey
+     let backgroundContainerBrandOverInverse = TuColors.palette.primary80 | TuColors.palette.darkModeGrey
 
-    let backgroundOverlay = TuColors.palette.primary.withAlphaComponent(0.8) | TuColors.palette.darkModeGrey.withAlphaComponent(0.8)
+     let backgroundContainerNegative = TuColors.palette.grey1.withAlphaComponent(0.2) | TuColors.palette.darkModeGrey
 
-    let backgroundSkeleton = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
+     let backgroundContainerBrandOverBrand = TuColors.palette.primary80 | TuColors.palette.darkModeGrey
 
-    let backgroundSkeletonInverse = TuColors.palette.primary65 | TuColors.palette.darkModeGrey6
+     let backgroundContainerAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeGrey
 
-    let backgroundBrandTop = TuColors.palette.primary | TuColors.palette.darkModeBlack
+     let backgroundOverlay = TuColors.palette.primary.withAlphaComponent(0.8) | TuColors.palette.darkModeGrey.withAlphaComponent(0.8)
 
-    let backgroundBrandBottom = TuColors.palette.primary | TuColors.palette.darkModeBlack
+     let backgroundSkeleton = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
 
-    let appBarBackground = TuColors.palette.white | TuColors.palette.darkModeGrey
+     let backgroundSkeletonInverse = TuColors.palette.primary65 | TuColors.palette.darkModeGrey6
 
-    let navigationBarBackground = TuColors.palette.primary | TuColors.palette.darkModeBlack
+     let backgroundSkeletonNegative = TuColors.palette.primary65 | TuColors.palette.darkModeGrey6
 
-    let skeletonWave = TuColors.palette.grey2 | TuColors.palette.grey5
+     let backgroundSkeletonBrand = TuColors.palette.primary65 | TuColors.palette.darkModeGrey6
 
-    let borderLow = TuColors.palette.grey1 | TuColors.palette.darkModeBlack
+     let backgroundBrandTop = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
-    let border = TuColors.palette.grey2 | TuColors.palette.darkModeGrey
+     let backgroundBrandBottom = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
-    let borderHigh = TuColors.palette.grey5
+     let appBarBackground = TuColors.palette.white | TuColors.palette.darkModeGrey
 
-    let borderSelected = TuColors.palette.blue | TuColors.palette.blue30
+     let navigationBarBackground = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
-    let completedStep = TuColors.palette.primary | TuColors.palette.grey2
+     let skeletonWave = TuColors.palette.grey2 | TuColors.palette.grey5
 
-    let completedStepInverse = TuColors.palette.primary80 | TuColors.palette.grey2
+     let borderLow = TuColors.palette.grey1 | TuColors.palette.darkModeBlack
 
-    let coverBackgroundHover = TuColors.palette.grey9.withAlphaComponent(0.25) | TuColors.palette.darkModeBlack.withAlphaComponent(0.25)
+     let border = TuColors.palette.grey2 | TuColors.palette.darkModeGrey
 
-    let coverBackgroundPressed = TuColors.palette.grey9.withAlphaComponent(0.35) | TuColors.palette.darkModeBlack.withAlphaComponent(0.35)
+     let borderHigh = TuColors.palette.grey5
 
-    let buttonDangerBackground = TuColors.palette.red
+     let borderSelected = TuColors.palette.blue | TuColors.palette.blue30
 
-    let buttonDangerBackgroundPressed = TuColors.palette.red55 | TuColors.palette.red80
+     let completedStep = TuColors.palette.primary | TuColors.palette.grey2
 
-    let buttonDangerBackgroundHover = TuColors.palette.red55 | TuColors.palette.red80
+     let completedStepInverse = TuColors.palette.primary80 | TuColors.palette.grey2
 
-    let buttonLinkDangerBackgroundInverse = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
+     let completedStepNegative = TuColors.palette.primary80 | TuColors.palette.grey2
 
-    let buttonLinkDangerBackgroundMedia = TuColors.palette.white
+     let completedStepBrand = TuColors.palette.primary80 | TuColors.palette.grey2
 
-    let buttonLinkDangerBackgroundPressed = TuColors.palette.red10
+     let coverBackgroundHover = TuColors.palette.grey9.withAlphaComponent(0.25) | TuColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
-    let buttonLinkDangerBackgroundInversePressed = TuColors.palette.red10
+     let coverBackgroundPressed = TuColors.palette.grey9.withAlphaComponent(0.35) | TuColors.palette.darkModeBlack.withAlphaComponent(0.35)
 
-    let buttonLinkDangerBackgroundMediaPressed = TuColors.palette.red10
+     let buttonDangerBackground = TuColors.palette.red
 
-    let buttonLinkBackgroundPressed = TuColors.palette.blue10 | TuColors.palette.white.withAlphaComponent(0.08)
+     let buttonDangerBackgroundPressed = TuColors.palette.red55 | TuColors.palette.red80
 
-    let buttonLinkBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.08)
+     let buttonDangerBackgroundHover = TuColors.palette.red55 | TuColors.palette.red80
 
-    let buttonLinkBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkDangerBackgroundInverse = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
 
-    let buttonPrimaryBackground = TuColors.palette.primary | TuColors.palette.grey2
+     let buttonLinkDangerBackgroundNegative = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
 
-    let buttonPrimaryBackgroundInverse = TuColors.palette.white | TuColors.palette.grey2
+     let buttonLinkDangerBackgroundBrand = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
 
-    let buttonPrimaryBackgroundMedia = TuColors.palette.white
+     let buttonLinkDangerBackgroundMedia = TuColors.palette.white
 
-    let buttonPrimaryBackgroundHover = TuColors.palette.primary45 | TuColors.palette.grey3
+     let buttonLinkDangerBackgroundPressed = TuColors.palette.red10
 
-    let buttonPrimaryBackgroundInverseHover = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
+     let buttonLinkDangerBackgroundInversePressed = TuColors.palette.red10
 
-    let buttonPrimaryBackgroundMediaHover = TuColors.palette.white.withAlphaComponent(0.8)
+     let buttonLinkDangerBackgroundNegativePressed = TuColors.palette.red10
 
-    let buttonPrimaryBackgroundPressed = TuColors.palette.primary45 | TuColors.palette.grey3
+     let buttonLinkDangerBackgroundBrandPressed = TuColors.palette.red10
 
-    let buttonPrimaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
+     let buttonLinkDangerBackgroundMediaPressed = TuColors.palette.red10
 
-    let buttonPrimaryBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.8)
+     let buttonLinkBackgroundPressed = TuColors.palette.blue10 | TuColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonSecondaryBorder = TuColors.palette.blue | TuColors.palette.grey2
+     let buttonLinkBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonSecondaryBorderInverse = TuColors.palette.white | TuColors.palette.grey2
+     let buttonLinkBackgroundNegativePressed = TuColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonSecondaryBorderMedia = TuColors.palette.white
+     let buttonLinkBackgroundBrandPressed = TuColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonSecondaryBorderPressed = TuColors.palette.blue70 | TuColors.palette.grey2
+     let buttonLinkBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonSecondaryBorderInversePressed = TuColors.palette.white | TuColors.palette.grey2
+     let buttonPrimaryBackground = TuColors.palette.primary | TuColors.palette.grey2
 
-    let buttonSecondaryBorderMediaPressed = TuColors.palette.white
+     let buttonPrimaryBackgroundInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let buttonSecondaryBackgroundHover = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
+     let buttonPrimaryBackgroundNegative = TuColors.palette.white | TuColors.palette.grey2
 
-    let buttonSecondaryBackgroundInverseHover = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
+     let buttonPrimaryBackgroundBrand = TuColors.palette.white | TuColors.palette.grey2
 
-    let buttonSecondaryBackgroundMediaHover = TuColors.palette.white.withAlphaComponent(0.1)
+     let buttonPrimaryBackgroundMedia = TuColors.palette.white
 
-    let buttonSecondaryBackgroundPressed = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
+     let buttonPrimaryBackgroundHover = TuColors.palette.primary45 | TuColors.palette.grey3
 
-    let buttonSecondaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
+     let buttonPrimaryBackgroundInverseHover = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
 
-    let buttonSecondaryBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.1)
+     let buttonPrimaryBackgroundNegativeHover = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
 
-    let textButtonPrimary = TuColors.palette.white | TuColors.palette.primary
+     let buttonPrimaryBackgroundBrandHover = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
 
-    let textButtonPrimaryInverse = TuColors.palette.primary
+     let buttonPrimaryBackgroundMediaHover = TuColors.palette.white.withAlphaComponent(0.8)
 
-    let textButtonPrimaryMedia = TuColors.palette.primary
+     let buttonPrimaryBackgroundPressed = TuColors.palette.primary45 | TuColors.palette.grey3
 
-    let textButtonPrimaryInversePressed = TuColors.palette.primary
+     let buttonPrimaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
 
-    let textButtonPrimaryMediaPressed = TuColors.palette.primary
+     let buttonPrimaryBackgroundNegativePressed = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
 
-    let textButtonSecondary = TuColors.palette.blue | TuColors.palette.grey2
+     let buttonPrimaryBackgroundBrandPressed = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
 
-    let textButtonSecondaryInverse = TuColors.palette.white | TuColors.palette.grey2
+     let buttonPrimaryBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.8)
 
-    let textButtonSecondaryMedia = TuColors.palette.white
+     let buttonSecondaryBackgroundBrand = TuColors.palette.white.withAlphaComponent(0)
 
-    let textButtonSecondaryPressed = TuColors.palette.blue70 | TuColors.palette.grey2
+     let buttonSecondaryBorder = TuColors.palette.blue | TuColors.palette.grey2
 
-    let textButtonSecondaryInversePressed = TuColors.palette.white | TuColors.palette.grey2
+     let buttonSecondaryBorderInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let textButtonSecondaryMediaPressed = TuColors.palette.white
+     let buttonSecondaryBorderNegative = TuColors.palette.white | TuColors.palette.grey2
 
-    let textLink = TuColors.palette.blue | TuColors.palette.blue30
+     let buttonSecondaryBorderBrand = TuColors.palette.white | TuColors.palette.grey2
 
-    let textLinkInverse = TuColors.palette.white | TuColors.palette.blue30
+     let buttonSecondaryBorderMedia = TuColors.palette.white
 
-    let textLinkMedia = TuColors.palette.white
+     let buttonSecondaryBorderPressed = TuColors.palette.blue70 | TuColors.palette.grey2
 
-    let textLinkDanger = TuColors.palette.red
+     let buttonSecondaryBorderInversePressed = TuColors.palette.white | TuColors.palette.grey2
 
-    let textLinkDangerMedia = TuColors.palette.red
+     let buttonSecondaryBorderNegativePressed = TuColors.palette.white | TuColors.palette.grey2
 
-    let textLinkSnackbar = TuColors.palette.white | TuColors.palette.blue30
+     let buttonSecondaryBorderBrandPressed = TuColors.palette.white | TuColors.palette.grey2
 
-    let textActivated = TuColors.palette.primary | TuColors.palette.blue30
+     let buttonSecondaryBorderMediaPressed = TuColors.palette.white
 
-    let textBrand = TuColors.palette.blue | TuColors.palette.blue30
+     let buttonSecondaryBackgroundHover = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let inputBorder = TuColors.palette.grey5
+     let buttonSecondaryBackgroundInverseHover = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let inputBorderInverse = TuColors.palette.white | TuColors.palette.grey5
+     let buttonSecondaryBackgroundNegativeHover = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let control = TuColors.palette.grey5 | TuColors.palette.darkModeGrey6
+     let buttonSecondaryBackgroundBrandHover = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let controlActivated = TuColors.palette.primary | TuColors.palette.blue30
+     let buttonSecondaryBackgroundMediaHover = TuColors.palette.white.withAlphaComponent(0.1)
 
-    let controlInverse = TuColors.palette.white | TuColors.palette.darkModeGrey6
+     let buttonSecondaryBackgroundPressed = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let controlActivatedInverse = TuColors.palette.white | TuColors.palette.blue30
+     let buttonSecondaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let controlError = TuColors.palette.red
+     let buttonSecondaryBackgroundNegativePressed = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let barTrack = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
+     let buttonSecondaryBackgroundBrandPressed = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
-    let barTrackInverse = TuColors.palette.white.withAlphaComponent(0.36) | TuColors.palette.darkModeGrey6
+     let buttonSecondaryBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.1)
 
-    let loadingBar = TuColors.palette.green40
+     let textButtonPrimary = TuColors.palette.white | TuColors.palette.primary
 
-    let loadingBarBackground = TuColors.palette.green
+     let textButtonPrimaryInverse = TuColors.palette.primary
 
-    let toggleAndroidInactive = TuColors.palette.grey2 | TuColors.palette.grey4
+     let textButtonPrimaryNegative = TuColors.palette.primary
 
-    let toggleAndroidBackgroundActive = TuColors.palette.primary15 | TuColors.palette.blue20
+     let textButtonPrimaryBrand = TuColors.palette.primary
 
-    let iosControlKnob = TuColors.palette.white | TuColors.palette.grey2
+     let textButtonPrimaryMedia = TuColors.palette.primary
 
-    let controlKnobInverse = TuColors.palette.primary | TuColors.palette.grey2
+     let textButtonPrimaryInversePressed = TuColors.palette.primary
 
-    let divider = TuColors.palette.grey2 | TuColors.palette.white.withAlphaComponent(0.05)
+     let textButtonPrimaryNegativePressed = TuColors.palette.primary
 
-    let dividerInverse = TuColors.palette.white.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.05)
+     let textButtonPrimaryBrandPressed = TuColors.palette.primary
 
-    let navigationBarDivider = TuColors.palette.primary | TuColors.palette.darkModeBlack
+     let textButtonPrimaryMediaPressed = TuColors.palette.primary
 
-    let badge = TuColors.palette.blue | TuColors.palette.blue30
+     let textButtonSecondary = TuColors.palette.blue | TuColors.palette.grey2
 
-    let feedbackErrorBackground = TuColors.palette.red
+     let textButtonSecondaryInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let feedbackInfoBackground = TuColors.palette.primary | TuColors.palette.darkModeGrey
+     let textButtonSecondaryNegative = TuColors.palette.white | TuColors.palette.grey2
 
-    let brand = TuColors.palette.blue | TuColors.palette.blue30
+     let textButtonSecondaryBrand = TuColors.palette.white | TuColors.palette.grey2
 
-    let brandHigh = TuColors.palette.blue70 | TuColors.palette.white.withAlphaComponent(0.05)
+     let textButtonSecondaryMedia = TuColors.palette.white
 
-    let inverse = TuColors.palette.white | TuColors.palette.grey2
+     let textButtonSecondaryPressed = TuColors.palette.blue70 | TuColors.palette.grey2
 
-    let neutralHigh = TuColors.palette.grey9 | TuColors.palette.grey2
+     let textButtonSecondaryInversePressed = TuColors.palette.white | TuColors.palette.grey2
 
-    let neutralMedium = TuColors.palette.grey5
+     let textButtonSecondaryNegativePressed = TuColors.palette.white | TuColors.palette.grey2
 
-    let neutralMediumInverse = TuColors.palette.grey5
+     let textButtonSecondaryBrandPressed = TuColors.palette.white | TuColors.palette.grey2
 
-    let neutralLow = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+     let textButtonSecondaryMediaPressed = TuColors.palette.white
 
-    let neutralLowAlternative = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
+     let textLink = TuColors.palette.blue | TuColors.palette.blue30
 
-    let textPrimary = TuColors.palette.grey9 | TuColors.palette.grey2
+     let textLinkInverse = TuColors.palette.white | TuColors.palette.blue30
 
-    let textPrimaryInverse = TuColors.palette.white | TuColors.palette.grey2
+     let textLinkNegative = TuColors.palette.white | TuColors.palette.blue30
 
-    let textPrimaryMedia = TuColors.palette.white
+     let textLinkBrand = TuColors.palette.white | TuColors.palette.blue30
 
-    let textSecondary = TuColors.palette.grey6 | TuColors.palette.grey3
+     let textLinkMedia = TuColors.palette.white
 
-    let textSecondaryInverse = TuColors.palette.grey3
+     let textLinkDanger = TuColors.palette.red
 
-    let textSecondaryMedia = TuColors.palette.white
+     let textLinkDangerMedia = TuColors.palette.red
 
-    let error = TuColors.palette.red
+     let textLinkSnackbar = TuColors.palette.white | TuColors.palette.blue30
 
-    let textError = TuColors.palette.red
+     let textActivated = TuColors.palette.primary | TuColors.palette.blue30
 
-    let textErrorInverse = TuColors.palette.white | TuColors.palette.red
+     let textBrand = TuColors.palette.blue | TuColors.palette.blue30
 
-    let success = TuColors.palette.green
+     let inputBorder = TuColors.palette.grey5
 
-    let warning = TuColors.palette.orange
+     let inputBorderInverse = TuColors.palette.white | TuColors.palette.grey5
 
-    let promo = TuColors.palette.blue
+     let inputBorderNegative = TuColors.palette.white | TuColors.palette.grey5
 
-    let highlight = TuColors.palette.red40
+     let inputBorderBrand = TuColors.palette.white | TuColors.palette.grey5
 
-    let successLow = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+     let control = TuColors.palette.grey5 | TuColors.palette.darkModeGrey6
 
-    let warningLow = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+     let controlActivated = TuColors.palette.primary | TuColors.palette.blue30
 
-    let errorLow = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+     let controlInverse = TuColors.palette.white | TuColors.palette.darkModeGrey6
 
-    let promoLow = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+     let controlNegative = TuColors.palette.white | TuColors.palette.darkModeGrey6
 
-    let brandLow = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+     let controlBrand = TuColors.palette.white | TuColors.palette.darkModeGrey6
 
-    let successHigh = TuColors.palette.green75 | TuColors.palette.green40
+     let controlActivatedInverse = TuColors.palette.white | TuColors.palette.blue30
 
-    let warningHigh = TuColors.palette.orange70 | TuColors.palette.orange55
+     let controlActivatedNegative = TuColors.palette.white | TuColors.palette.blue30
 
-    let errorHigh = TuColors.palette.red70 | TuColors.palette.red40
+     let controlActivatedBrand = TuColors.palette.white | TuColors.palette.blue30
 
-    let promoHigh = TuColors.palette.blue | TuColors.palette.blue30
+     let controlError = TuColors.palette.red
 
-    let successHighInverse = TuColors.palette.green75
+     let barTrack = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
 
-    let warningHighInverse = TuColors.palette.orange70
+     let barTrackInverse = TuColors.palette.white.withAlphaComponent(0.36) | TuColors.palette.darkModeGrey6
 
-    let errorHighInverse = TuColors.palette.red70
+     let barTrackNegative = TuColors.palette.white.withAlphaComponent(0.36) | TuColors.palette.darkModeGrey6
 
-    let promoHighInverse = TuColors.palette.blue | TuColors.palette.blue70
+     let barTrackBrand = TuColors.palette.white.withAlphaComponent(0.36) | TuColors.palette.darkModeGrey6
 
-    let textNavigationBarPrimary = TuColors.palette.white | TuColors.palette.grey2
+     let loadingBar = TuColors.palette.green40
 
-    let textNavigationBarSecondary = TuColors.palette.grey1 | TuColors.palette.grey4
+     let loadingBarBackground = TuColors.palette.green
 
-    let textNavigationSearchBarHint = TuColors.palette.grey1 | TuColors.palette.grey4
+     let toggleAndroidInactive = TuColors.palette.grey2 | TuColors.palette.grey4
 
-    let textNavigationSearchBarText = TuColors.palette.white | TuColors.palette.grey2
+     let toggleAndroidBackgroundActive = TuColors.palette.primary15 | TuColors.palette.blue20
 
-    let textAppBar = TuColors.palette.grey6 | TuColors.palette.grey5
+     let toggleAndroidActiveBrand = TuColors.palette.white | TuColors.palette.blue30
 
-    let textAppBarSelected = TuColors.palette.primary | TuColors.palette.grey2
+     let toggleAndroidInactiveBrand = TuColors.palette.grey2 | TuColors.palette.grey4
 
-    let customTabsBackground = TuColors.palette.white | TuColors.palette.darkModeBlack
+     let toggleAndroidBackgroundActiveBrand = TuColors.palette.primary15 | TuColors.palette.blue20
 
-    let tagTextPromo = TuColors.palette.blue | TuColors.palette.blue30
+     let toggleAndroidBackgroundInactiveBrand = TuColors.palette.white | TuColors.palette.darkModeGrey6
 
-    let tagTextActive = TuColors.palette.blue | TuColors.palette.blue30
+     let iosControlKnob = TuColors.palette.white | TuColors.palette.grey2
 
-    let tagTextInactive = TuColors.palette.grey5
+     let controlKnobInverse = TuColors.palette.primary | TuColors.palette.grey2
 
-    let tagTextInfo = TuColors.palette.blue | TuColors.palette.blue30
+     let controlKnobNegative = TuColors.palette.primary | TuColors.palette.grey2
 
-    let tagTextSuccess = TuColors.palette.green75 | TuColors.palette.green40
+     let controlKnobBrand = TuColors.palette.primary | TuColors.palette.grey2
 
-    let tagTextWarning = TuColors.palette.orange70 | TuColors.palette.orange55
+     let divider = TuColors.palette.grey2 | TuColors.palette.white.withAlphaComponent(0.05)
 
-    let tagTextError = TuColors.palette.red70 | TuColors.palette.red40
+     let dividerInverse = TuColors.palette.white.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.05)
 
-    let tagBackgroundPromo = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+     let dividerNegative = TuColors.palette.white.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.05)
 
-    let tagBackgroundActive = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+     let dividerBrand = TuColors.palette.white.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.05)
 
-    let tagBackgroundInactive = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+     let navigationBarDivider = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
-    let tagBackgroundInfo = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+     let badge = TuColors.palette.blue | TuColors.palette.blue30
 
-    let tagBackgroundSuccess = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+     let feedbackErrorBackground = TuColors.palette.red
 
-    let tagBackgroundWarning = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+     let feedbackInfoBackground = TuColors.palette.primary | TuColors.palette.darkModeGrey
 
-    let tagBackgroundError = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+     let brand = TuColors.palette.blue | TuColors.palette.blue30
 
-    let tagTextPromoInverse = TuColors.palette.blue | TuColors.palette.blue30
+     let brandHigh = TuColors.palette.blue70 | TuColors.palette.white.withAlphaComponent(0.05)
 
-    let tagTextActiveInverse = TuColors.palette.blue | TuColors.palette.blue30
+     let inverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let tagTextInactiveInverse = TuColors.palette.grey5
+     let negative = TuColors.palette.white | TuColors.palette.grey2
 
-    let tagTextInfoInverse = TuColors.palette.blue | TuColors.palette.blue30
+     let neutralHigh = TuColors.palette.grey9 | TuColors.palette.grey2
 
-    let tagTextSuccessInverse = TuColors.palette.green75 | TuColors.palette.green40
+     let neutralMedium = TuColors.palette.grey5
 
-    let tagTextWarningInverse = TuColors.palette.orange70 | TuColors.palette.orange55
+     let neutralMediumInverse = TuColors.palette.grey5
 
-    let tagTextErrorInverse = TuColors.palette.red70 | TuColors.palette.red40
+     let neutralMediumNegative = TuColors.palette.grey5
 
-    let tagBackgroundPromoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+     let neutralMediumBrand = TuColors.palette.grey5
 
-    let tagBackgroundActiveInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+     let neutralLow = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
 
-    let tagBackgroundInactiveInverse = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+     let neutralLowAlternative = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
 
-    let tagBackgroundInfoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+     let textPrimary = TuColors.palette.grey9 | TuColors.palette.grey2
 
-    let tagBackgroundSuccessInverse = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+     let textPrimaryInverse = TuColors.palette.white | TuColors.palette.grey2
 
-    let tagBackgroundWarningInverse = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+     let textPrimaryNegative = TuColors.palette.white | TuColors.palette.grey2
 
-    let tagBackgroundErrorInverse = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+     let textPrimaryBrand = TuColors.palette.white | TuColors.palette.grey2
 
-    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+     let textPrimaryMedia = TuColors.palette.white
+
+     let textSecondary = TuColors.palette.grey6 | TuColors.palette.grey3
+
+     let textSecondaryInverse = TuColors.palette.grey3
+
+     let textSecondaryNegative = TuColors.palette.grey3
+
+     let textSecondaryBrand = TuColors.palette.grey3
+
+     let textSecondaryMedia = TuColors.palette.white
+
+     let error = TuColors.palette.red
+
+     let textError = TuColors.palette.red
+
+     let textErrorInverse = TuColors.palette.white | TuColors.palette.red
+
+     let textErrorNegative = TuColors.palette.white | TuColors.palette.red
+
+     let textErrorBrand = TuColors.palette.white | TuColors.palette.red
+
+     let success = TuColors.palette.green
+
+     let warning = TuColors.palette.orange
+
+     let promo = TuColors.palette.blue
+
+     let highlight = TuColors.palette.red40
+
+     let successLow = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+
+     let warningLow = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+
+     let errorLow = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+
+     let promoLow = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let brandLow = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let successHigh = TuColors.palette.green75 | TuColors.palette.green40
+
+     let warningHigh = TuColors.palette.orange70 | TuColors.palette.orange55
+
+     let errorHigh = TuColors.palette.red70 | TuColors.palette.red40
+
+     let promoHigh = TuColors.palette.blue | TuColors.palette.blue30
+
+     let successHighInverse = TuColors.palette.green75
+
+     let successHighNegative = TuColors.palette.green75
+
+     let successHighBrand = TuColors.palette.green75
+
+     let warningHighInverse = TuColors.palette.orange70
+
+     let warningHighNegative = TuColors.palette.orange70
+
+     let warningHighBrand = TuColors.palette.orange70
+
+     let errorHighInverse = TuColors.palette.red70
+
+     let errorHighNegative = TuColors.palette.red70
+
+     let errorHighBrand = TuColors.palette.red70
+
+     let promoHighInverse = TuColors.palette.blue | TuColors.palette.blue70
+
+     let promoHighNegative = TuColors.palette.blue | TuColors.palette.blue70
+
+     let promoHighBrand = TuColors.palette.blue | TuColors.palette.blue70
+
+     let textNavigationBarPrimary = TuColors.palette.white | TuColors.palette.grey2
+
+     let textNavigationBarSecondary = TuColors.palette.grey1 | TuColors.palette.grey4
+
+     let textNavigationSearchBarHint = TuColors.palette.grey1 | TuColors.palette.grey4
+
+     let textNavigationSearchBarText = TuColors.palette.white | TuColors.palette.grey2
+
+     let textAppBar = TuColors.palette.grey6 | TuColors.palette.grey5
+
+     let textAppBarSelected = TuColors.palette.primary | TuColors.palette.grey2
+
+     let customTabsBackground = TuColors.palette.white | TuColors.palette.darkModeBlack
+
+     let tagTextPromo = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextActive = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextInactive = TuColors.palette.grey5
+
+     let tagTextInfo = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextSuccess = TuColors.palette.green75 | TuColors.palette.green40
+
+     let tagTextWarning = TuColors.palette.orange70 | TuColors.palette.orange55
+
+     let tagTextError = TuColors.palette.red70 | TuColors.palette.red40
+
+     let tagBackgroundPromo = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundActive = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundInactive = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundInfo = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundSuccess = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundWarning = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundError = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+
+     let tagTextPromoInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextPromoNegative = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextPromoBrand = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextActiveInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextActiveNegative = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextActiveBrand = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextInactiveInverse = TuColors.palette.grey5
+
+     let tagTextInactiveNegative = TuColors.palette.grey5
+
+     let tagTextInactiveBrand = TuColors.palette.grey5
+
+     let tagTextInfoInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextInfoNegative = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextInfoBrand = TuColors.palette.blue | TuColors.palette.blue30
+
+     let tagTextSuccessInverse = TuColors.palette.green75 | TuColors.palette.green40
+
+     let tagTextSuccessNegative = TuColors.palette.green75 | TuColors.palette.green40
+
+     let tagTextSuccessBrand = TuColors.palette.green75 | TuColors.palette.green40
+
+     let tagTextWarningInverse = TuColors.palette.orange70 | TuColors.palette.orange55
+
+     let tagTextWarningNegative = TuColors.palette.orange70 | TuColors.palette.orange55
+
+     let tagTextWarningBrand = TuColors.palette.orange70 | TuColors.palette.orange55
+
+     let tagTextErrorInverse = TuColors.palette.red70 | TuColors.palette.red40
+
+     let tagTextErrorNegative = TuColors.palette.red70 | TuColors.palette.red40
+
+     let tagTextErrorBrand = TuColors.palette.red70 | TuColors.palette.red40
+
+     let tagBackgroundPromoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundPromoNegative = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundPromoBrand = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundActiveInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundActiveNegative = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundActiveBrand = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundInactiveInverse = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundInactiveNegative = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundInactiveBrand = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundInfoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundInfoNegative = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundInfoBrand = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundSuccessInverse = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundSuccessNegative = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundSuccessBrand = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundWarningInverse = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundWarningNegative = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundWarningBrand = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundErrorInverse = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundErrorNegative = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+
+     let tagBackgroundErrorBrand = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+
+     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [
             TuColors.palette.black.withAlphaComponent(0),
             TuColors.palette.black.withAlphaComponent(0.4),
             TuColors.palette.black.withAlphaComponent(0.7)
         ],
-        stops: [0, 0.3, 1],
+        stops: [0,0.3,1],
         angle: 180
     ))
 
-    let cardFooterOverlay = TuColors.palette.black.withAlphaComponent(0.7)
+     let cardFooterOverlay = TuColors.palette.black.withAlphaComponent(0.7)
 }
 
 public struct TuColorPalette: Sendable {

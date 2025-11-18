@@ -220,10 +220,8 @@ private extension BottomSheetInteractiveDismissalTransition {
         )
 
         propertyAnimator.addAnimations {
-            Task { @MainActor in
-                self.bottomConstraint?.constant = offset
-                view.superview?.layoutIfNeeded()
-            }
+            self.bottomConstraint?.constant = offset
+            view.superview?.layoutIfNeeded()
         }
 
         propertyAnimator.addCompletion { position in

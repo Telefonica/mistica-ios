@@ -1,3 +1,10 @@
+## [36.3.2](https://github.com/Telefonica/mistica-ios/compare/v36.3.1...v36.3.2) (2025-11-19)
+
+
+### Bug Fixes
+
+* **Sheet:** IOS-11959 remove Task from animation ([#486](https://github.com/Telefonica/mistica-ios/issues/486)) ([fb2ff24](https://github.com/Telefonica/mistica-ios/commit/fb2ff2417a2ffe8b11323bdb3809daeef01d91ab))
+
 ## [36.3.1](https://github.com/Telefonica/mistica-ios/compare/v36.3.0...v36.3.1) (2025-10-22)
 
 

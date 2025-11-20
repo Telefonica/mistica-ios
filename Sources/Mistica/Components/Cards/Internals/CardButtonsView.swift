@@ -42,11 +42,12 @@ class CardButtons: UIStackView {
 
 extension CardButtons {
     func configureButtons(primaryButton: CardButton?, linkButton: CardLinkButton?) {
-        if let primaryAction = primaryButton {
-            self.primaryButton.title = primaryAction.title
-            self.primaryButton.loadingTitle = primaryAction.loadingTitle
+        if let primaryButton = primaryButton {
+            self.primaryButton.title = primaryButton.title
+            self.primaryButton.accessibilityIdentifier = primaryButton.accessibilityIdentifier
+            self.primaryButton.loadingTitle = primaryButton.loadingTitle
 
-            primaryActionHandler = primaryAction.tapHandler
+            primaryActionHandler = primaryButton.tapHandler
 
             if self.primaryButton.superview == nil {
                 addArrangedSubview(self.primaryButton)
@@ -57,6 +58,7 @@ extension CardButtons {
 
         if let linkButton = linkButton {
             self.linkButton.title = linkButton.title
+            self.linkButton.accessibilityIdentifier = linkButton.accessibilityIdentifier
             self.linkButton.contentMode = .left
 
             linkActionHandler = linkButton.tapHandler

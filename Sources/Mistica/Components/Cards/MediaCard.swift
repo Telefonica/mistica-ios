@@ -206,7 +206,7 @@ private extension MediaCard {
     }
     
     func addDefaultAccessibilityIdentfiers() {
-        baseCardView.contentView.headlineTagView.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.tag.rawValue
+        baseCardView.contentView.headlineTagView.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.headline.rawValue
         baseCardView.contentView.titleLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.pretitle.rawValue
         baseCardView.contentView.subtitleLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.title.rawValue
         baseCardView.contentView.descriptionLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.description.rawValue

@@ -133,6 +133,13 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testRegularSizeWithSecondaryBrandStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .secondaryBrand, isSmall: false, leftImage: false)
+        )
+    }
+
     // MARK: Small Buttons
 
     func testSmallSizeWithPrimaryStyle() {

@@ -52,6 +52,26 @@ public extension Button.Style {
         )
     }
 
+    static var secondaryBrand: Button.Style {
+        return Button.Style(
+            allowsBleedingAlignment: false,
+            stateStyleByState: [
+				.normal: Button.StateStyle(textColor: .textButtonSecondaryInverse,
+										   backgroundColor: .buttonSecondaryBackgroundBrand,
+										   borderColor: .buttonSecondaryBorderInverse),
+                .selected: Button.StateStyle(textColor: .textButtonSecondaryInversePressed,
+											 backgroundColor: .buttonSecondaryBackgroundBrandPressed,
+											 borderColor: .buttonSecondaryBorderInversePressed),
+				.disabled: Button.StateStyle(textColor: .textButtonSecondaryInverse.withAlphaComponent(0.5),
+											 backgroundColor: .buttonSecondaryBackgroundBrand.withAlphaComponent(0.5),
+											 borderColor: .buttonSecondaryBorderInverse.withAlphaComponent(0.5)),
+                .loading: Button.StateStyle(textColor: .textButtonSecondaryInverse,
+											backgroundColor: .buttonSecondaryBackgroundBrand,
+											borderColor: .buttonSecondaryBorderInverse)
+            ]
+        )
+    }
+
     static var danger: Button.Style {
         let textColor: UIColor = .textButtonPrimary
 

@@ -133,7 +133,7 @@ private extension MediaCard {
     func commomInit() {
         layoutViews()
         styleViews()
-        addDefaultAccessibilityIdentfiers()
+        addDefaultAccessibilityIdentifiers()
     }
 
     func layoutViews() {

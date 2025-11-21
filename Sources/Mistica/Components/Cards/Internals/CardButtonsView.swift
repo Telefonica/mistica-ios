@@ -42,7 +42,7 @@ class CardButtons: UIStackView {
 
 extension CardButtons {
     func configureButtons(primaryButton: CardButton?, linkButton: CardLinkButton?) {
-        if let primaryButton = primaryButton {
+        if let primaryButton {
             self.primaryButton.title = primaryButton.title
             self.primaryButton.accessibilityIdentifier = primaryButton.accessibilityIdentifier
             self.primaryButton.loadingTitle = primaryButton.loadingTitle

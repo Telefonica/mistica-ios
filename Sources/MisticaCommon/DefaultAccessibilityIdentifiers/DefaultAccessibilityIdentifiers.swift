@@ -59,6 +59,7 @@ public extension DefaultAccessibilityIdentifier.ElementType {
     static let chevron = DefaultAccessibilityIdentifier.ElementType("chevron")
     static let icon = DefaultAccessibilityIdentifier.ElementType("icon")
     static let title = DefaultAccessibilityIdentifier.ElementType("title")
+    static let pretitle = DefaultAccessibilityIdentifier.ElementType("pretitle")
     static let subtitle = DefaultAccessibilityIdentifier.ElementType("subtitle")
     static let errorLabel = DefaultAccessibilityIdentifier.ElementType("error_reference")
     static let primaryButton = DefaultAccessibilityIdentifier.ElementType("primary_button")
@@ -69,4 +70,5 @@ public extension DefaultAccessibilityIdentifier.ElementType {
     static let description = DefaultAccessibilityIdentifier.ElementType("description")
     static let tag = DefaultAccessibilityIdentifier.ElementType("tag")
     static let action = DefaultAccessibilityIdentifier.ElementType("action")
+    static let reachMedia = DefaultAccessibilityIdentifier.ElementType("reachMedia")
 }

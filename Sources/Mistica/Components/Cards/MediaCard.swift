@@ -133,6 +133,7 @@ private extension MediaCard {
     func commomInit() {
         layoutViews()
         styleViews()
+        addDefaultAccessibilityIdentifiers()
     }
 
     func layoutViews() {
@@ -203,6 +204,15 @@ private extension MediaCard {
             baseCardView.subtitle,
             baseCardView.descriptionTitle
         ].compactMap { $0 }.joined(separator: " ")
+    }
+
+    func addDefaultAccessibilityIdentifiers() {
+        baseCardView.contentView.headlineTagView.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.headline.rawValue
+        baseCardView.contentView.titleLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.pretitle.rawValue
+        baseCardView.contentView.subtitleLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.title.rawValue
+        baseCardView.contentView.descriptionLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.description.rawValue
+
+        richMediaContainerView.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.richMedia.rawValue
     }
 }
 

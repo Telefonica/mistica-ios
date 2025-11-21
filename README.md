@@ -92,7 +92,7 @@ MisticaConfig.brandStyle = .o2New
 
 Remember to initialize Mistica with you desired brand style before the initialize the UI of your app.
 
-In applications before iOS 13, the initialziation should be done in the **UIApplicationDelegate**,
+In applications before iOS 13, the initialization should be done in the **UIApplicationDelegate**,
 
 ```swift
 func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

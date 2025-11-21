@@ -206,7 +206,7 @@ private extension MediaCard {
         ].compactMap { $0 }.joined(separator: " ")
     }
 
-    func addDefaultAccessibilityIdentfiers() {
+    func addDefaultAccessibilityIdentifiers() {
         baseCardView.contentView.headlineTagView.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.headline.rawValue
         baseCardView.contentView.titleLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.pretitle.rawValue
         baseCardView.contentView.subtitleLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.title.rawValue

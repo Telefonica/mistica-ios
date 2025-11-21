@@ -1,8 +1,9 @@
 //
 //  MediaCardAccessibilityIdentifiers.swift
-//  Mistica
 //
-//  Created by Celia Maria Barrera Comendador on 20/11/25.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 private extension DefaultAccessibilityIdentifier.Feature {

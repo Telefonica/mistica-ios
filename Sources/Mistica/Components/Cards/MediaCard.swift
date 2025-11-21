@@ -177,9 +177,9 @@ private extension MediaCard {
         baseCardView.contentView.descriptionLabel.minHeight = 20
         baseCardView.contentView.descriptionLabel.numberOfLines = 0
         baseCardView.contentView.descriptionTitleTopSpacing = 8
-        
+
         richMediaContainerView.clipsToBounds = true
-        
+
         addBorder(color: .border)
     }
 
@@ -205,13 +205,13 @@ private extension MediaCard {
             baseCardView.descriptionTitle
         ].compactMap { $0 }.joined(separator: " ")
     }
-    
+
     func addDefaultAccessibilityIdentfiers() {
         baseCardView.contentView.headlineTagView.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.headline.rawValue
         baseCardView.contentView.titleLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.pretitle.rawValue
         baseCardView.contentView.subtitleLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.title.rawValue
         baseCardView.contentView.descriptionLabel.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.description.rawValue
-        
+
         richMediaContainerView.accessibilityIdentifier = MediaCardAccessibilityIdentifiers.richMedia.rawValue
     }
 }

@@ -1,3 +1,10 @@
+## [36.3.3](https://github.com/Telefonica/mistica-ios/compare/v36.3.2...v36.3.3) (2025-11-24)
+
+
+### Bug Fixes
+
+* **AccessibilityIdentifiers:** IOS-12057 - Add Medicard accessibility identifiers  ([#487](https://github.com/Telefonica/mistica-ios/issues/487)) ([803f741](https://github.com/Telefonica/mistica-ios/commit/803f741556625062de926bba492179db98ebff8b))
+
 ## [36.3.2](https://github.com/Telefonica/mistica-ios/compare/v36.3.1...v36.3.2) (2025-11-19)
 
 

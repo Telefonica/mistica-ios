@@ -17,6 +17,7 @@ struct ButtonsCatalogView: View {
             [
                 Style(buttonStyle: .misticaPrimary(), title: "Primary", inverse: false),
                 Style(buttonStyle: .misticaSecondary(), title: "Secondary", inverse: false),
+				Style(buttonStyle: .misticaSecondaryBrand(), title: "Secondary Brand", inverse: true),
                 Style(buttonStyle: .misticaDanger(), title: "Danger", inverse: false),
                 Style(buttonStyle: .misticaLink(), title: "Link", inverse: false),
                 Style(buttonStyle: .misticaPrimaryInverse(), title: "Primary Inverse", inverse: true),

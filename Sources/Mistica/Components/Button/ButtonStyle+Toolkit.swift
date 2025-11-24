@@ -62,9 +62,9 @@ public extension Button.Style {
                 .selected: Button.StateStyle(textColor: .textButtonSecondaryInversePressed,
 											 backgroundColor: .buttonSecondaryBackgroundBrandPressed,
 											 borderColor: .buttonSecondaryBorderInversePressed),
-				.disabled: Button.StateStyle(textColor: .textButtonSecondaryInverse.withAlphaComponent(0.5),
-											 backgroundColor: .buttonSecondaryBackgroundBrand.withAlphaComponent(0.5),
-											 borderColor: .buttonSecondaryBorderInverse.withAlphaComponent(0.5)),
+				.disabled: Button.StateStyle(textColor: .textButtonSecondaryInverse,
+											 backgroundColor: .buttonSecondaryBackgroundBrand,
+											 borderColor: .buttonSecondaryBorderInverse),
                 .loading: Button.StateStyle(textColor: .textButtonSecondaryInverse,
 											backgroundColor: .buttonSecondaryBackgroundBrand,
 											borderColor: .buttonSecondaryBorderInverse)

@@ -49,6 +49,13 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testRegularSizeWithSecondaryBrandStyle() {
+        assertSnapshot(
+            of: makeTemplateWithAllButtonStates(style: .misticaSecondaryBrand(small: false), inverse: true),
+            as: .image
+        )
+    }
+
     func testRegularSizeWithDangerStyle() {
         assertSnapshot(
             of: makeTemplateWithAllButtonStates(style: .misticaDanger(small: false)),

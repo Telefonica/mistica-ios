@@ -141,6 +141,41 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
         )
     }
 
+	static func misticaSecondaryBrand(
+		small: Bool = false,
+		bleedingAlignment: ButtonBleedingAlignment = .none
+	) -> Self {
+		Self(
+			style: MisticaButton.Style(
+				bleedingAlignment: bleedingAlignment,
+				styleByState: [
+					.normal: MisticaButton.StateStyle(
+						textColor: .textButtonSecondaryInverse,
+						backgroundColor: .buttonSecondaryBackgroundBrand,
+						borderColor: .buttonSecondaryBorderInverse
+					),
+					.selected: MisticaButton.StateStyle(
+						textColor: .textButtonSecondaryInversePressed,
+						backgroundColor: .buttonSecondaryBackgroundBrandPressed,
+						borderColor: .buttonSecondaryBorderInversePressed
+					),
+					.disabled: MisticaButton.StateStyle(
+						textColor: .textButtonSecondaryInverse.opacity(opacity),
+						backgroundColor: .buttonSecondaryBackgroundBrand.opacity(opacity),
+						borderColor: .buttonSecondaryBorderInverse.opacity(opacity)
+					),
+					.loading: MisticaButton.StateStyle(
+						textColor: .textButtonSecondaryInverse,
+						backgroundColor: .buttonSecondaryBackgroundBrand,
+						borderColor: .buttonSecondaryBorderInverse
+					)
+				]
+			),
+			small: small,
+			rightImage: nil
+		)
+	}
+
     static func misticaSecondaryInverse(
         small: Bool = false,
         bleedingAlignment: ButtonBleedingAlignment = .none

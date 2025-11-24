@@ -20,7 +20,7 @@ public struct CardButton: Sendable {
                 tapHandler: (@Sendable() -> Void)?) {
         self.title = title
         self.loadingTitle = loadingTitle
-        self.accessibilityIdentifier = accessibilityIdentifier
+        self.accessibilityIdentifier = accessibilityIdentifier ?? MediaCardAccessibilityIdentifiers.primaryButton.rawValue
         self.tapHandler = tapHandler
     }
 }
@@ -34,7 +34,7 @@ public struct CardLinkButton: Sendable {
                 accessibilityIdentifier: String? = nil,
                 tapHandler: (@Sendable() -> Void)?) {
         self.title = title
-        self.accessibilityIdentifier = accessibilityIdentifier
+        self.accessibilityIdentifier = accessibilityIdentifier ?? MediaCardAccessibilityIdentifiers.linkButton.rawValue
         self.tapHandler = tapHandler
     }
 }

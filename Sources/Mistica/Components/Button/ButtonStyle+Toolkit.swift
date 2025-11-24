@@ -52,34 +52,6 @@ public extension Button.Style {
         )
     }
 
-    static var secondaryBrand: Button.Style {
-        Button.Style(
-            allowsBleedingAlignment: false,
-            stateStyleByState: [
-                .normal: Button.StateStyle(
-                    textColor: .textButtonSecondaryInverse,
-                    backgroundColor: .buttonSecondaryBackgroundBrand,
-                    borderColor: .buttonSecondaryBorderInverse
-                ),
-                .selected: Button.StateStyle(
-                    textColor: .textButtonSecondaryInversePressed,
-                    backgroundColor: .buttonSecondaryBackgroundBrandPressed,
-                    borderColor: .buttonSecondaryBorderInversePressed
-                ),
-                .disabled: Button.StateStyle(
-                    textColor: .textButtonSecondaryInverse,
-                    backgroundColor: .buttonSecondaryBackgroundBrand,
-                    borderColor: .buttonSecondaryBorderInverse
-                ),
-                .loading: Button.StateStyle(
-                    textColor: .textButtonSecondaryInverse,
-                    backgroundColor: .buttonSecondaryBackgroundBrand,
-                    borderColor: .buttonSecondaryBorderInverse
-                )
-            ]
-        )
-    }
-
     static var danger: Button.Style {
         let textColor: UIColor = .textButtonPrimary
 
@@ -184,6 +156,62 @@ public extension Button.Style {
 
         return style
     }
+
+	static var primaryBrand: Button.Style {
+		Button.Style(
+			allowsBleedingAlignment: false,
+			stateStyleByState: [
+				.normal: Button.StateStyle(
+					textColor: .textButtonPrimaryBrand,
+					backgroundColor: .buttonPrimaryBackgroundBrand,
+					borderColor: .clear
+				),
+				.selected: Button.StateStyle(
+					textColor: .textButtonPrimaryBrandPressed,
+					backgroundColor: .buttonPrimaryBackgroundBrandPressed,
+					borderColor: .clear
+				),
+				.disabled: Button.StateStyle(
+					textColor: .textButtonPrimaryBrand,
+					backgroundColor: .buttonPrimaryBackgroundBrand,
+					borderColor: .clear
+				),
+				.loading: Button.StateStyle(
+					textColor: .textButtonPrimaryBrand,
+					backgroundColor: .buttonPrimaryBackgroundBrand,
+					borderColor: .clear
+				)
+			]
+		)
+	}
+
+	static var secondaryBrand: Button.Style {
+		Button.Style(
+			allowsBleedingAlignment: false,
+			stateStyleByState: [
+				.normal: Button.StateStyle(
+					textColor: .textButtonSecondaryBrand,
+					backgroundColor: .buttonSecondaryBackgroundBrand,
+					borderColor: .buttonSecondaryBorderBrand
+				),
+				.selected: Button.StateStyle(
+					textColor: .textButtonSecondaryBrandPressed,
+					backgroundColor: .buttonSecondaryBackgroundBrandPressed,
+					borderColor: .buttonSecondaryBorderBrandPressed
+				),
+				.disabled: Button.StateStyle(
+					textColor: .textButtonSecondaryBrand,
+					backgroundColor: .buttonSecondaryBackgroundBrand,
+					borderColor: .buttonSecondaryBorderBrand
+				),
+				.loading: Button.StateStyle(
+					textColor: .textButtonSecondaryBrand,
+					backgroundColor: .buttonSecondaryBackgroundBrand,
+					borderColor: .buttonSecondaryBorderBrand
+				)
+			]
+		)
+	}
 
     func insets(isSmall: Bool) -> UIEdgeInsets {
         if let overriddenSizes = overriddenSizes {

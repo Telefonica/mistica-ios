@@ -17,12 +17,13 @@ struct ButtonsCatalogView: View {
             [
                 Style(buttonStyle: .misticaPrimary(), title: "Primary", inverse: false),
                 Style(buttonStyle: .misticaSecondary(), title: "Secondary", inverse: false),
-                Style(buttonStyle: .misticaSecondaryBrand(), title: "Secondary Brand", inverse: true),
                 Style(buttonStyle: .misticaDanger(), title: "Danger", inverse: false),
                 Style(buttonStyle: .misticaLink(), title: "Link", inverse: false),
                 Style(buttonStyle: .misticaPrimaryInverse(), title: "Primary Inverse", inverse: true),
                 Style(buttonStyle: .misticaSecondaryInverse(), title: "Secondary Inverse", inverse: true),
                 Style(buttonStyle: .misticaLinkInverse(), title: "Link Inverse", inverse: true),
+				Style(buttonStyle: .misticaPrimaryBrand(), title: "Primary Brand", inverse: true),
+				Style(buttonStyle: .misticaSecondaryBrand(), title: "Secondary Brand", inverse: true),
 
                 Style(buttonStyle: .misticaPrimary(small: true), title: "Primary Small", inverse: false),
                 Style(buttonStyle: .misticaSecondary(small: true), title: "Secondary Small", inverse: false),

@@ -17,12 +17,13 @@ class UICatalogButtonsViewController: UITableViewController {
             [
                 Style(buttonStyle: .primary, title: "Primary", isInverse: false, isSmall: false),
                 Style(buttonStyle: .secondary, title: "Secondary", isInverse: false, isSmall: false),
-                Style(buttonStyle: .secondaryBrand, title: "Secondary Brand", isInverse: true, isSmall: false),
                 Style(buttonStyle: .danger, title: "Danger", isInverse: false, isSmall: false),
                 Style(buttonStyle: .link, title: "Link", isInverse: false, isSmall: false),
                 Style(buttonStyle: .linkDanger, title: "Link Danger", isInverse: false, isSmall: false),
                 Style(buttonStyle: .primaryInverse, title: "Primary Inverse", isInverse: true, isSmall: false),
                 Style(buttonStyle: .secondaryInverse, title: "Secondary Inverse", isInverse: true, isSmall: false),
+				Style(buttonStyle: .primaryBrand, title: "Primary Brand", isInverse: true, isSmall: false),
+				Style(buttonStyle: .secondaryBrand, title: "Secondary Brand", isInverse: true, isSmall: false),
                 Style(buttonStyle: .linkInverse, title: "Link Inverse", isInverse: true, isSmall: false),
                 Style(buttonStyle: .linkDangerInverse, title: "Link Danger Inverse", isInverse: true, isSmall: false),
 

@@ -53,21 +53,29 @@ public extension Button.Style {
     }
 
     static var secondaryBrand: Button.Style {
-        return Button.Style(
+        Button.Style(
             allowsBleedingAlignment: false,
             stateStyleByState: [
-				.normal: Button.StateStyle(textColor: .textButtonSecondaryInverse,
-										   backgroundColor: .buttonSecondaryBackgroundBrand,
-										   borderColor: .buttonSecondaryBorderInverse),
-                .selected: Button.StateStyle(textColor: .textButtonSecondaryInversePressed,
-											 backgroundColor: .buttonSecondaryBackgroundBrandPressed,
-											 borderColor: .buttonSecondaryBorderInversePressed),
-				.disabled: Button.StateStyle(textColor: .textButtonSecondaryInverse,
-											 backgroundColor: .buttonSecondaryBackgroundBrand,
-											 borderColor: .buttonSecondaryBorderInverse),
-                .loading: Button.StateStyle(textColor: .textButtonSecondaryInverse,
-											backgroundColor: .buttonSecondaryBackgroundBrand,
-											borderColor: .buttonSecondaryBorderInverse)
+                .normal: Button.StateStyle(
+                    textColor: .textButtonSecondaryInverse,
+                    backgroundColor: .buttonSecondaryBackgroundBrand,
+                    borderColor: .buttonSecondaryBorderInverse
+                ),
+                .selected: Button.StateStyle(
+                    textColor: .textButtonSecondaryInversePressed,
+                    backgroundColor: .buttonSecondaryBackgroundBrandPressed,
+                    borderColor: .buttonSecondaryBorderInversePressed
+                ),
+                .disabled: Button.StateStyle(
+                    textColor: .textButtonSecondaryInverse,
+                    backgroundColor: .buttonSecondaryBackgroundBrand,
+                    borderColor: .buttonSecondaryBorderInverse
+                ),
+                .loading: Button.StateStyle(
+                    textColor: .textButtonSecondaryInverse,
+                    backgroundColor: .buttonSecondaryBackgroundBrand,
+                    borderColor: .buttonSecondaryBorderInverse
+                )
             ]
         )
     }

@@ -150,22 +150,22 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
                 bleedingAlignment: bleedingAlignment,
                 styleByState: [
                     .normal: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInverse,
+                        textColor: .textButtonSecondaryBrand,
                         backgroundColor: .buttonSecondaryBackgroundBrand,
                         borderColor: .buttonSecondaryBorderInverse
                     ),
                     .selected: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInversePressed,
+                        textColor: .textButtonSecondaryBrandPressed,
                         backgroundColor: .buttonSecondaryBackgroundBrandPressed,
                         borderColor: .buttonSecondaryBorderInversePressed
                     ),
                     .disabled: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInverse.opacity(opacity),
+                        textColor: .textButtonSecondaryBrand.opacity(opacity),
                         backgroundColor: .buttonSecondaryBackgroundBrand.opacity(opacity),
                         borderColor: .buttonSecondaryBorderInverse.opacity(opacity)
                     ),
                     .loading: MisticaButton.StateStyle(
-                        textColor: .textButtonSecondaryInverse,
+                        textColor: .textButtonSecondaryBrand,
                         backgroundColor: .buttonSecondaryBackgroundBrand,
                         borderColor: .buttonSecondaryBorderInverse
                     )

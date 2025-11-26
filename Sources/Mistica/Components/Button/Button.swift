@@ -240,7 +240,6 @@ open class Button: UIControl {
 
     override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
         applyStyleColors()
         container.font = style.font(isSmall: isSmall)
     }

@@ -140,6 +140,7 @@ public protocol MisticaColors: Sendable {
     var controlActivatedNegative: UIColor { get }
     var controlActivatedBrand: UIColor { get }
     var controlError: UIColor { get }
+    var chevronIndicator: UIColor { get }
     var barTrack: UIColor { get }
     var barTrackInverse: UIColor { get }
     var barTrackNegative: UIColor { get }

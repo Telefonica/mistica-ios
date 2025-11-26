@@ -273,6 +273,8 @@ struct VivoNewColors: MisticaColors {
 
     let controlError = VivoNewColors.palette.pepper
 
+    let chevronIndicator = VivoNewColors.palette.grey5
+
     let barTrack = VivoNewColors.palette.grey3 | VivoNewColors.palette.darkModeGrey6
 
     let barTrackInverse = VivoNewColors.palette.white.withAlphaComponent(0.5) | VivoNewColors.palette.darkModeGrey6

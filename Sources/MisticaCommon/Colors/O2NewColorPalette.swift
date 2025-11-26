@@ -291,6 +291,8 @@ struct O2NewColors: MisticaColors {
 
     let controlError = O2NewColors.palette.o2Red60 | O2NewColors.palette.o2Red45
 
+    let chevronIndicator = O2NewColors.palette.grey60
+
     let barTrack = O2NewColors.palette.grey30 | O2NewColors.palette.darkModeGrey6
 
     let barTrackInverse = O2NewColors.palette.white.withAlphaComponent(0.3) | O2NewColors.palette.darkModeGrey6

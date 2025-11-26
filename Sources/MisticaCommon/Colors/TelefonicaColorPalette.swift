@@ -273,6 +273,8 @@ struct TelefonicaColors: MisticaColors {
 
     let controlError = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral
 
+    let chevronIndicator = TelefonicaColors.palette.grey5
+
     let barTrack = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.darkModeGrey6
 
     let barTrackInverse = TelefonicaColors.palette.white.withAlphaComponent(0.3) | TelefonicaColors.palette.darkModeGrey6

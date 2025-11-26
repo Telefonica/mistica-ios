@@ -107,7 +107,7 @@ struct MovistarNewColors: MisticaColors {
 
     let buttonLinkDangerBackgroundMediaPressed = MovistarNewColors.palette.salmon100
 
-    let buttonLinkBackgroundPressed = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.white.withAlphaComponent(0.08)
+    let buttonLinkBackgroundPressed = MovistarNewColors.palette.blue200 | MovistarNewColors.palette.white.withAlphaComponent(0.08)
 
     let buttonLinkBackgroundInversePressed = MovistarNewColors.palette.white.withAlphaComponent(0.3) | MovistarNewColors.palette.white.withAlphaComponent(0.08)
 
@@ -129,23 +129,23 @@ struct MovistarNewColors: MisticaColors {
 
     let buttonPrimaryBackgroundHover = MovistarNewColors.palette.blueHigh
 
-    let buttonPrimaryBackgroundInverseHover = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.blue800
+    let buttonPrimaryBackgroundInverseHover = MovistarNewColors.palette.blue200 | MovistarNewColors.palette.blue800
 
     let buttonPrimaryBackgroundNegativeHover = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.blue800
 
     let buttonPrimaryBackgroundBrandHover = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.blue800
 
-    let buttonPrimaryBackgroundMediaHover = MovistarNewColors.palette.blue100
+    let buttonPrimaryBackgroundMediaHover = MovistarNewColors.palette.blue200
 
     let buttonPrimaryBackgroundPressed = MovistarNewColors.palette.blueHigh | MovistarNewColors.palette.blue800
 
-    let buttonPrimaryBackgroundInversePressed = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.blue800
+    let buttonPrimaryBackgroundInversePressed = MovistarNewColors.palette.blue200 | MovistarNewColors.palette.blue800
 
     let buttonPrimaryBackgroundNegativePressed = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.blue800
 
     let buttonPrimaryBackgroundBrandPressed = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.blue800
 
-    let buttonPrimaryBackgroundMediaPressed = MovistarNewColors.palette.blue100
+    let buttonPrimaryBackgroundMediaPressed = MovistarNewColors.palette.blue200
 
     let buttonSecondaryBackgroundBrand = MovistarNewColors.palette.white.withAlphaComponent(0)
 
@@ -169,7 +169,7 @@ struct MovistarNewColors: MisticaColors {
 
     let buttonSecondaryBorderMediaPressed = MovistarNewColors.palette.white
 
-    let buttonSecondaryBackgroundHover = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundHover = MovistarNewColors.palette.blue200 | MovistarNewColors.palette.white.withAlphaComponent(0.15)
 
     let buttonSecondaryBackgroundInverseHover = MovistarNewColors.palette.white.withAlphaComponent(0.2) | MovistarNewColors.palette.white.withAlphaComponent(0.15)
 
@@ -179,7 +179,7 @@ struct MovistarNewColors: MisticaColors {
 
     let buttonSecondaryBackgroundMediaHover = MovistarNewColors.palette.white.withAlphaComponent(0.2)
 
-    let buttonSecondaryBackgroundPressed = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.white.withAlphaComponent(0.25)
+    let buttonSecondaryBackgroundPressed = MovistarNewColors.palette.blue200 | MovistarNewColors.palette.white.withAlphaComponent(0.25)
 
     let buttonSecondaryBackgroundInversePressed = MovistarNewColors.palette.white.withAlphaComponent(0.3) | MovistarNewColors.palette.white.withAlphaComponent(0.25)
 
@@ -273,6 +273,8 @@ struct MovistarNewColors: MisticaColors {
 
     let controlError = MovistarNewColors.palette.red
 
+    let chevronIndicator = MovistarNewColors.palette.movistarBlue | MovistarNewColors.palette.darkModeMovistarBlue
+
     let barTrack = MovistarNewColors.palette.grey300 | MovistarNewColors.palette.grey600
 
     let barTrackInverse = MovistarNewColors.palette.movistarBlack.withAlphaComponent(0.14) | MovistarNewColors.palette.grey600
@@ -305,7 +307,7 @@ struct MovistarNewColors: MisticaColors {
 
     let controlKnobBrand = MovistarNewColors.palette.movistarBlue | MovistarNewColors.palette.grey200
 
-    let divider = MovistarNewColors.palette.grey300 | MovistarNewColors.palette.movistarWhite.withAlphaComponent(0.1)
+    let divider = MovistarNewColors.palette.grey200 | MovistarNewColors.palette.movistarWhite.withAlphaComponent(0.1)
 
     let dividerInverse = MovistarNewColors.palette.white.withAlphaComponent(0.2) | MovistarNewColors.palette.movistarWhite.withAlphaComponent(0.1)
 
@@ -453,11 +455,11 @@ struct MovistarNewColors: MisticaColors {
 
     let tagBackgroundPromo = MovistarNewColors.palette.redHigh
 
-    let tagBackgroundActive = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.grey700
+    let tagBackgroundActive = MovistarNewColors.palette.blue200 | MovistarNewColors.palette.grey700
 
     let tagBackgroundInactive = MovistarNewColors.palette.grey200 | MovistarNewColors.palette.grey700
 
-    let tagBackgroundInfo = MovistarNewColors.palette.blue100 | MovistarNewColors.palette.grey700
+    let tagBackgroundInfo = MovistarNewColors.palette.blue200 | MovistarNewColors.palette.grey700
 
     let tagBackgroundSuccess = MovistarNewColors.palette.green200 | MovistarNewColors.palette.grey700
 

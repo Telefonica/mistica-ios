@@ -273,6 +273,8 @@ struct TuColors: MisticaColors {
 
     let controlError = TuColors.palette.red
 
+    let chevronIndicator = TuColors.palette.grey5
+
     let barTrack = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
 
     let barTrackInverse = TuColors.palette.white.withAlphaComponent(0.36) | TuColors.palette.darkModeGrey6

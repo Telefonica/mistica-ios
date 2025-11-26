@@ -273,6 +273,8 @@ struct MovistarColors: MisticaColors {
 
     let controlError = MovistarColors.palette.pepper55 | MovistarColors.palette.pepper45
 
+    let chevronIndicator = MovistarColors.palette.grey5 | MovistarColors.palette.darkModeGrey5
+
     let barTrack = MovistarColors.palette.grey3 | MovistarColors.palette.darkModeGrey6
 
     let barTrackInverse = MovistarColors.palette.black.withAlphaComponent(0.14) | MovistarColors.palette.darkModeGrey6

@@ -273,6 +273,8 @@ struct BlauColors: MisticaColors {
 
     let controlError = BlauColors.palette.blauRed
 
+    let chevronIndicator = BlauColors.palette.grey5 | BlauColors.palette.grey4
+
     let barTrack = BlauColors.palette.grey3 | BlauColors.palette.grey5
 
     let barTrackInverse = BlauColors.palette.grey6.withAlphaComponent(0.2) | BlauColors.palette.grey5

@@ -525,6 +525,10 @@ public extension Color {
         MisticaConfig.currentColors.controlError.color
     }
 
+    static var chevronIndicator: Color {
+        MisticaConfig.currentColors.chevronIndicator.color
+    }
+
     static var barTrack: Color {
         MisticaConfig.currentColors.barTrack.color
     }

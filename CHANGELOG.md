@@ -1,3 +1,10 @@
+# [36.4.0](https://github.com/Telefonica/mistica-ios/compare/v36.3.3...v36.4.0) (2025-11-27)
+
+
+### Features
+
+* **Button:** IOS-11703-Button does not increase the text size ([7042c43](https://github.com/Telefonica/mistica-ios/commit/7042c43c89348de662a4c98b8a613138723d46da))
+
 ## [36.3.3](https://github.com/Telefonica/mistica-ios/compare/v36.3.2...v36.3.3) (2025-11-24)
 
 

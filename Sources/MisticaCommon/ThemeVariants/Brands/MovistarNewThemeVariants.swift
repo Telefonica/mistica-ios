@@ -9,6 +9,6 @@
 import Foundation
 
 struct MovistarNewThemeVariants: MisticaThemeVariants {
-    var successFeedback: MisticaThemeVariantType = .default
+    var successFeedback: MisticaThemeVariantType = .inverse
     var brandLoadingScreen: MisticaThemeVariantType = .default
 }

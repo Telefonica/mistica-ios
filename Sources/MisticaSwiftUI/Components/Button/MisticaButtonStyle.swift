@@ -320,4 +320,74 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
             rightImage: nil
         )
     }
+
+    static func misticaPrimaryBrand(
+        small: Bool = false,
+        bleedingAlignment: ButtonBleedingAlignment = .none
+    ) -> Self {
+        Self(
+            style: MisticaButton.Style(
+                bleedingAlignment: bleedingAlignment,
+                styleByState: [
+                    .normal: MisticaButton.StateStyle(
+                        textColor: .textButtonPrimaryBrand,
+                        backgroundColor: .buttonPrimaryBackgroundBrand,
+                        borderColor: .clear
+                    ),
+                    .selected: MisticaButton.StateStyle(
+                        textColor: .textButtonPrimaryBrandPressed,
+                        backgroundColor: .buttonPrimaryBackgroundBrandPressed,
+                        borderColor: .clear
+                    ),
+                    .disabled: MisticaButton.StateStyle(
+                        textColor: .textButtonPrimaryBrand.opacity(opacity),
+                        backgroundColor: .buttonPrimaryBackgroundBrand.opacity(opacity),
+                        borderColor: .clear
+                    ),
+                    .loading: MisticaButton.StateStyle(
+                        textColor: .textButtonPrimaryBrand,
+                        backgroundColor: .buttonPrimaryBackgroundBrand,
+                        borderColor: .clear
+                    )
+                ]
+            ),
+            small: small,
+            rightImage: nil
+        )
+    }
+
+    static func misticaSecondaryBrand(
+        small: Bool = false,
+        bleedingAlignment: ButtonBleedingAlignment = .none
+    ) -> Self {
+        Self(
+            style: MisticaButton.Style(
+                bleedingAlignment: bleedingAlignment,
+                styleByState: [
+                    .normal: MisticaButton.StateStyle(
+                        textColor: .textButtonSecondaryBrand,
+                        backgroundColor: .buttonSecondaryBackgroundBrand,
+                        borderColor: .buttonSecondaryBorderBrand
+                    ),
+                    .selected: MisticaButton.StateStyle(
+                        textColor: .textButtonSecondaryBrandPressed,
+                        backgroundColor: .buttonSecondaryBackgroundBrandPressed,
+                        borderColor: .buttonSecondaryBorderBrandPressed
+                    ),
+                    .disabled: MisticaButton.StateStyle(
+                        textColor: .textButtonSecondaryBrand.opacity(opacity),
+                        backgroundColor: .buttonSecondaryBackgroundBrand.opacity(opacity),
+                        borderColor: .buttonSecondaryBorderBrand.opacity(opacity)
+                    ),
+                    .loading: MisticaButton.StateStyle(
+                        textColor: .textButtonSecondaryBrand,
+                        backgroundColor: .buttonSecondaryBackgroundBrand,
+                        borderColor: .buttonSecondaryBorderBrand
+                    )
+                ]
+            ),
+            small: small,
+            rightImage: nil
+        )
+    }
 }

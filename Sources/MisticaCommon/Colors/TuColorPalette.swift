@@ -17,6 +17,8 @@ struct TuColors: MisticaColors {
 
     let backgroundBrand = MisticaColor.solid(TuColors.palette.primary | TuColors.palette.darkModeBlack)
 
+    let backgroundNegative = TuColors.palette.primary80 | TuColors.palette.darkModeBlack
+
     let backgroundBrandSecondary = TuColors.palette.blue | TuColors.palette.darkModeBlack
 
     let backgroundContainer = TuColors.palette.white | TuColors.palette.darkModeGrey
@@ -35,6 +37,10 @@ struct TuColors: MisticaColors {
 
     let backgroundContainerBrandOverInverse = TuColors.palette.primary80 | TuColors.palette.darkModeGrey
 
+    let backgroundContainerNegative = TuColors.palette.grey1.withAlphaComponent(0.2) | TuColors.palette.darkModeGrey
+
+    let backgroundContainerBrandOverBrand = TuColors.palette.primary80 | TuColors.palette.darkModeGrey
+
     let backgroundContainerAlternative = TuColors.palette.grey1 | TuColors.palette.darkModeGrey
 
     let backgroundOverlay = TuColors.palette.primary.withAlphaComponent(0.8) | TuColors.palette.darkModeGrey.withAlphaComponent(0.8)
@@ -42,6 +48,10 @@ struct TuColors: MisticaColors {
     let backgroundSkeleton = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
 
     let backgroundSkeletonInverse = TuColors.palette.primary65 | TuColors.palette.darkModeGrey6
+
+    let backgroundSkeletonNegative = TuColors.palette.primary65 | TuColors.palette.darkModeGrey6
+
+    let backgroundSkeletonBrand = TuColors.palette.primary65 | TuColors.palette.darkModeGrey6
 
     let backgroundBrandTop = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
@@ -65,6 +75,10 @@ struct TuColors: MisticaColors {
 
     let completedStepInverse = TuColors.palette.primary80 | TuColors.palette.grey2
 
+    let completedStepNegative = TuColors.palette.primary80 | TuColors.palette.grey2
+
+    let completedStepBrand = TuColors.palette.primary80 | TuColors.palette.grey2
+
     let coverBackgroundHover = TuColors.palette.grey9.withAlphaComponent(0.25) | TuColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
     let coverBackgroundPressed = TuColors.palette.grey9.withAlphaComponent(0.35) | TuColors.palette.darkModeBlack.withAlphaComponent(0.35)
@@ -77,11 +91,19 @@ struct TuColors: MisticaColors {
 
     let buttonLinkDangerBackgroundInverse = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
 
+    let buttonLinkDangerBackgroundNegative = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
+
+    let buttonLinkDangerBackgroundBrand = TuColors.palette.white | TuColors.palette.white.withAlphaComponent(0)
+
     let buttonLinkDangerBackgroundMedia = TuColors.palette.white
 
     let buttonLinkDangerBackgroundPressed = TuColors.palette.red10
 
     let buttonLinkDangerBackgroundInversePressed = TuColors.palette.red10
+
+    let buttonLinkDangerBackgroundNegativePressed = TuColors.palette.red10
+
+    let buttonLinkDangerBackgroundBrandPressed = TuColors.palette.red10
 
     let buttonLinkDangerBackgroundMediaPressed = TuColors.palette.red10
 
@@ -89,11 +111,19 @@ struct TuColors: MisticaColors {
 
     let buttonLinkBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.08)
 
+    let buttonLinkBackgroundNegativePressed = TuColors.palette.white.withAlphaComponent(0.08)
+
+    let buttonLinkBackgroundBrandPressed = TuColors.palette.white.withAlphaComponent(0.08)
+
     let buttonLinkBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.08)
 
     let buttonPrimaryBackground = TuColors.palette.primary | TuColors.palette.grey2
 
     let buttonPrimaryBackgroundInverse = TuColors.palette.white | TuColors.palette.grey2
+
+    let buttonPrimaryBackgroundNegative = TuColors.palette.white | TuColors.palette.grey2
+
+    let buttonPrimaryBackgroundBrand = TuColors.palette.white | TuColors.palette.grey2
 
     let buttonPrimaryBackgroundMedia = TuColors.palette.white
 
@@ -101,17 +131,31 @@ struct TuColors: MisticaColors {
 
     let buttonPrimaryBackgroundInverseHover = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
 
+    let buttonPrimaryBackgroundNegativeHover = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
+
+    let buttonPrimaryBackgroundBrandHover = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
+
     let buttonPrimaryBackgroundMediaHover = TuColors.palette.white.withAlphaComponent(0.8)
 
     let buttonPrimaryBackgroundPressed = TuColors.palette.primary45 | TuColors.palette.grey3
 
     let buttonPrimaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
 
+    let buttonPrimaryBackgroundNegativePressed = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
+
+    let buttonPrimaryBackgroundBrandPressed = TuColors.palette.white.withAlphaComponent(0.8) | TuColors.palette.grey3
+
     let buttonPrimaryBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.8)
+
+    let buttonSecondaryBackgroundBrand = TuColors.palette.white.withAlphaComponent(0)
 
     let buttonSecondaryBorder = TuColors.palette.blue | TuColors.palette.grey2
 
     let buttonSecondaryBorderInverse = TuColors.palette.white | TuColors.palette.grey2
+
+    let buttonSecondaryBorderNegative = TuColors.palette.white | TuColors.palette.grey2
+
+    let buttonSecondaryBorderBrand = TuColors.palette.white | TuColors.palette.grey2
 
     let buttonSecondaryBorderMedia = TuColors.palette.white
 
@@ -119,11 +163,19 @@ struct TuColors: MisticaColors {
 
     let buttonSecondaryBorderInversePressed = TuColors.palette.white | TuColors.palette.grey2
 
+    let buttonSecondaryBorderNegativePressed = TuColors.palette.white | TuColors.palette.grey2
+
+    let buttonSecondaryBorderBrandPressed = TuColors.palette.white | TuColors.palette.grey2
+
     let buttonSecondaryBorderMediaPressed = TuColors.palette.white
 
     let buttonSecondaryBackgroundHover = TuColors.palette.blue10 | TuColors.palette.grey2.withAlphaComponent(0.15)
 
     let buttonSecondaryBackgroundInverseHover = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
+
+    let buttonSecondaryBackgroundNegativeHover = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
+
+    let buttonSecondaryBackgroundBrandHover = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
     let buttonSecondaryBackgroundMediaHover = TuColors.palette.white.withAlphaComponent(0.1)
 
@@ -131,15 +183,27 @@ struct TuColors: MisticaColors {
 
     let buttonSecondaryBackgroundInversePressed = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
 
+    let buttonSecondaryBackgroundNegativePressed = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
+
+    let buttonSecondaryBackgroundBrandPressed = TuColors.palette.white.withAlphaComponent(0.1) | TuColors.palette.grey2.withAlphaComponent(0.15)
+
     let buttonSecondaryBackgroundMediaPressed = TuColors.palette.white.withAlphaComponent(0.1)
 
     let textButtonPrimary = TuColors.palette.white | TuColors.palette.primary
 
     let textButtonPrimaryInverse = TuColors.palette.primary
 
+    let textButtonPrimaryNegative = TuColors.palette.primary
+
+    let textButtonPrimaryBrand = TuColors.palette.primary
+
     let textButtonPrimaryMedia = TuColors.palette.primary
 
     let textButtonPrimaryInversePressed = TuColors.palette.primary
+
+    let textButtonPrimaryNegativePressed = TuColors.palette.primary
+
+    let textButtonPrimaryBrandPressed = TuColors.palette.primary
 
     let textButtonPrimaryMediaPressed = TuColors.palette.primary
 
@@ -147,17 +211,29 @@ struct TuColors: MisticaColors {
 
     let textButtonSecondaryInverse = TuColors.palette.white | TuColors.palette.grey2
 
+    let textButtonSecondaryNegative = TuColors.palette.white | TuColors.palette.grey2
+
+    let textButtonSecondaryBrand = TuColors.palette.white | TuColors.palette.grey2
+
     let textButtonSecondaryMedia = TuColors.palette.white
 
     let textButtonSecondaryPressed = TuColors.palette.blue70 | TuColors.palette.grey2
 
     let textButtonSecondaryInversePressed = TuColors.palette.white | TuColors.palette.grey2
 
+    let textButtonSecondaryNegativePressed = TuColors.palette.white | TuColors.palette.grey2
+
+    let textButtonSecondaryBrandPressed = TuColors.palette.white | TuColors.palette.grey2
+
     let textButtonSecondaryMediaPressed = TuColors.palette.white
 
     let textLink = TuColors.palette.blue | TuColors.palette.blue30
 
     let textLinkInverse = TuColors.palette.white | TuColors.palette.blue30
+
+    let textLinkNegative = TuColors.palette.white | TuColors.palette.blue30
+
+    let textLinkBrand = TuColors.palette.white | TuColors.palette.blue30
 
     let textLinkMedia = TuColors.palette.white
 
@@ -175,19 +251,37 @@ struct TuColors: MisticaColors {
 
     let inputBorderInverse = TuColors.palette.white | TuColors.palette.grey5
 
+    let inputBorderNegative = TuColors.palette.white | TuColors.palette.grey5
+
+    let inputBorderBrand = TuColors.palette.white | TuColors.palette.grey5
+
     let control = TuColors.palette.grey5 | TuColors.palette.darkModeGrey6
 
     let controlActivated = TuColors.palette.primary | TuColors.palette.blue30
 
     let controlInverse = TuColors.palette.white | TuColors.palette.darkModeGrey6
 
+    let controlNegative = TuColors.palette.white | TuColors.palette.darkModeGrey6
+
+    let controlBrand = TuColors.palette.white | TuColors.palette.darkModeGrey6
+
     let controlActivatedInverse = TuColors.palette.white | TuColors.palette.blue30
 
+    let controlActivatedNegative = TuColors.palette.white | TuColors.palette.blue30
+
+    let controlActivatedBrand = TuColors.palette.white | TuColors.palette.blue30
+
     let controlError = TuColors.palette.red
+
+    let chevronIndicator = TuColors.palette.grey5
 
     let barTrack = TuColors.palette.grey2 | TuColors.palette.darkModeGrey6
 
     let barTrackInverse = TuColors.palette.white.withAlphaComponent(0.36) | TuColors.palette.darkModeGrey6
+
+    let barTrackNegative = TuColors.palette.white.withAlphaComponent(0.36) | TuColors.palette.darkModeGrey6
+
+    let barTrackBrand = TuColors.palette.white.withAlphaComponent(0.36) | TuColors.palette.darkModeGrey6
 
     let loadingBar = TuColors.palette.green40
 
@@ -197,13 +291,29 @@ struct TuColors: MisticaColors {
 
     let toggleAndroidBackgroundActive = TuColors.palette.primary15 | TuColors.palette.blue20
 
+    let toggleAndroidActiveBrand = TuColors.palette.white | TuColors.palette.blue30
+
+    let toggleAndroidInactiveBrand = TuColors.palette.grey2 | TuColors.palette.grey4
+
+    let toggleAndroidBackgroundActiveBrand = TuColors.palette.primary15 | TuColors.palette.blue20
+
+    let toggleAndroidBackgroundInactiveBrand = TuColors.palette.white | TuColors.palette.darkModeGrey6
+
     let iosControlKnob = TuColors.palette.white | TuColors.palette.grey2
 
     let controlKnobInverse = TuColors.palette.primary | TuColors.palette.grey2
 
+    let controlKnobNegative = TuColors.palette.primary | TuColors.palette.grey2
+
+    let controlKnobBrand = TuColors.palette.primary | TuColors.palette.grey2
+
     let divider = TuColors.palette.grey2 | TuColors.palette.white.withAlphaComponent(0.05)
 
     let dividerInverse = TuColors.palette.white.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.05)
+
+    let dividerNegative = TuColors.palette.white.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.05)
+
+    let dividerBrand = TuColors.palette.white.withAlphaComponent(0.2) | TuColors.palette.white.withAlphaComponent(0.05)
 
     let navigationBarDivider = TuColors.palette.primary | TuColors.palette.darkModeBlack
 
@@ -219,11 +329,17 @@ struct TuColors: MisticaColors {
 
     let inverse = TuColors.palette.white | TuColors.palette.grey2
 
+    let negative = TuColors.palette.white | TuColors.palette.grey2
+
     let neutralHigh = TuColors.palette.grey9 | TuColors.palette.grey2
 
     let neutralMedium = TuColors.palette.grey5
 
     let neutralMediumInverse = TuColors.palette.grey5
+
+    let neutralMediumNegative = TuColors.palette.grey5
+
+    let neutralMediumBrand = TuColors.palette.grey5
 
     let neutralLow = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
 
@@ -233,11 +349,19 @@ struct TuColors: MisticaColors {
 
     let textPrimaryInverse = TuColors.palette.white | TuColors.palette.grey2
 
+    let textPrimaryNegative = TuColors.palette.white | TuColors.palette.grey2
+
+    let textPrimaryBrand = TuColors.palette.white | TuColors.palette.grey2
+
     let textPrimaryMedia = TuColors.palette.white
 
     let textSecondary = TuColors.palette.grey6 | TuColors.palette.grey3
 
     let textSecondaryInverse = TuColors.palette.grey3
+
+    let textSecondaryNegative = TuColors.palette.grey3
+
+    let textSecondaryBrand = TuColors.palette.grey3
 
     let textSecondaryMedia = TuColors.palette.white
 
@@ -246,6 +370,10 @@ struct TuColors: MisticaColors {
     let textError = TuColors.palette.red
 
     let textErrorInverse = TuColors.palette.white | TuColors.palette.red
+
+    let textErrorNegative = TuColors.palette.white | TuColors.palette.red
+
+    let textErrorBrand = TuColors.palette.white | TuColors.palette.red
 
     let success = TuColors.palette.green
 
@@ -275,11 +403,27 @@ struct TuColors: MisticaColors {
 
     let successHighInverse = TuColors.palette.green75
 
+    let successHighNegative = TuColors.palette.green75
+
+    let successHighBrand = TuColors.palette.green75
+
     let warningHighInverse = TuColors.palette.orange70
+
+    let warningHighNegative = TuColors.palette.orange70
+
+    let warningHighBrand = TuColors.palette.orange70
 
     let errorHighInverse = TuColors.palette.red70
 
+    let errorHighNegative = TuColors.palette.red70
+
+    let errorHighBrand = TuColors.palette.red70
+
     let promoHighInverse = TuColors.palette.blue | TuColors.palette.blue70
+
+    let promoHighNegative = TuColors.palette.blue | TuColors.palette.blue70
+
+    let promoHighBrand = TuColors.palette.blue | TuColors.palette.blue70
 
     let textNavigationBarPrimary = TuColors.palette.white | TuColors.palette.grey2
 
@@ -325,31 +469,87 @@ struct TuColors: MisticaColors {
 
     let tagTextPromoInverse = TuColors.palette.blue | TuColors.palette.blue30
 
+    let tagTextPromoNegative = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextPromoBrand = TuColors.palette.blue | TuColors.palette.blue30
+
     let tagTextActiveInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextActiveNegative = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextActiveBrand = TuColors.palette.blue | TuColors.palette.blue30
 
     let tagTextInactiveInverse = TuColors.palette.grey5
 
+    let tagTextInactiveNegative = TuColors.palette.grey5
+
+    let tagTextInactiveBrand = TuColors.palette.grey5
+
     let tagTextInfoInverse = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextInfoNegative = TuColors.palette.blue | TuColors.palette.blue30
+
+    let tagTextInfoBrand = TuColors.palette.blue | TuColors.palette.blue30
 
     let tagTextSuccessInverse = TuColors.palette.green75 | TuColors.palette.green40
 
+    let tagTextSuccessNegative = TuColors.palette.green75 | TuColors.palette.green40
+
+    let tagTextSuccessBrand = TuColors.palette.green75 | TuColors.palette.green40
+
     let tagTextWarningInverse = TuColors.palette.orange70 | TuColors.palette.orange55
+
+    let tagTextWarningNegative = TuColors.palette.orange70 | TuColors.palette.orange55
+
+    let tagTextWarningBrand = TuColors.palette.orange70 | TuColors.palette.orange55
 
     let tagTextErrorInverse = TuColors.palette.red70 | TuColors.palette.red40
 
+    let tagTextErrorNegative = TuColors.palette.red70 | TuColors.palette.red40
+
+    let tagTextErrorBrand = TuColors.palette.red70 | TuColors.palette.red40
+
     let tagBackgroundPromoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundPromoNegative = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundPromoBrand = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundActiveInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
 
+    let tagBackgroundActiveNegative = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundActiveBrand = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
     let tagBackgroundInactiveInverse = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveNegative = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundInactiveBrand = TuColors.palette.grey1 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundInfoInverse = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
 
+    let tagBackgroundInfoNegative = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundInfoBrand = TuColors.palette.blue10 | TuColors.palette.darkModeGrey6
+
     let tagBackgroundSuccessInverse = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessNegative = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundSuccessBrand = TuColors.palette.green10 | TuColors.palette.darkModeGrey6
 
     let tagBackgroundWarningInverse = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
 
+    let tagBackgroundWarningNegative = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundWarningBrand = TuColors.palette.orange20 | TuColors.palette.darkModeGrey6
+
     let tagBackgroundErrorInverse = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorNegative = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
+
+    let tagBackgroundErrorBrand = TuColors.palette.red10 | TuColors.palette.darkModeGrey6
 
     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:

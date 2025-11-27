@@ -22,6 +22,8 @@ class UICatalogButtonsViewController: UITableViewController {
                 Style(buttonStyle: .linkDanger, title: "Link Danger", isInverse: false, isSmall: false),
                 Style(buttonStyle: .primaryInverse, title: "Primary Inverse", isInverse: true, isSmall: false),
                 Style(buttonStyle: .secondaryInverse, title: "Secondary Inverse", isInverse: true, isSmall: false),
+                Style(buttonStyle: .primaryBrand, title: "Primary Brand", isInverse: true, isSmall: false),
+                Style(buttonStyle: .secondaryBrand, title: "Secondary Brand", isInverse: true, isSmall: false),
                 Style(buttonStyle: .linkInverse, title: "Link Inverse", isInverse: true, isSmall: false),
                 Style(buttonStyle: .linkDangerInverse, title: "Link Danger Inverse", isInverse: true, isSmall: false),
 

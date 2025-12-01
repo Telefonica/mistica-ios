@@ -219,6 +219,13 @@ final class ButtonTests: XCTestCase {
         )
     }
 
+    func testSmallSizeWithLinkBrandWithChevronStyle() {
+        assertSnapshotForAllBrandsAndStyles(
+            as: .image,
+            viewBuilder: makeTemplateWithAllButtonStates(style: .linkBrand, isSmall: true, rightImage: .chevron)
+        )
+    }
+
     func testSmallSizeWithLinkWithLeftImageStyle() {
         assertSnapshotForAllBrandsAndStyles(
             as: .image,

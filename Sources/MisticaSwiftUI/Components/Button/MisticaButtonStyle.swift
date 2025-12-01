@@ -285,6 +285,43 @@ public extension ButtonStyle where Self == MisticaButtonStyle {
         )
     }
 
+    static func misticaLinkBrand(
+        small: Bool = false,
+        bleedingAlignment: ButtonBleedingAlignment = .none,
+        withChevron: Bool = false
+    ) -> Self {
+        Self(
+            style: MisticaButton.Style(
+                bleedingAlignment: bleedingAlignment,
+                hasMinWidth: false,
+                styleByState: [
+                    .normal: MisticaButton.StateStyle(
+                        textColor: .textLinkBrand,
+                        backgroundColor: .clear,
+                        borderColor: .clear
+                    ),
+                    .selected: MisticaButton.StateStyle(
+                        textColor: .textLinkBrand,
+                        backgroundColor: .buttonLinkBackgroundBrandPressed,
+                        borderColor: .clear
+                    ),
+                    .disabled: MisticaButton.StateStyle(
+                        textColor: .textLinkBrand.opacity(opacity),
+                        backgroundColor: .clear,
+                        borderColor: .clear
+                    ),
+                    .loading: MisticaButton.StateStyle(
+                        textColor: .textLinkBrand,
+                        backgroundColor: .clear,
+                        borderColor: .clear
+                    )
+                ]
+            ),
+            small: small,
+            rightImage: withChevron ? .chevron : nil
+        )
+    }
+
     static func misticaSnackbar(
         small: Bool = false,
         bleedingAlignment: ButtonBleedingAlignment = .none

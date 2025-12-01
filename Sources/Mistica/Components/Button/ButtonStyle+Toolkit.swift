@@ -213,6 +213,23 @@ public extension Button.Style {
         )
     }
 
+    static var linkBrand: Button.Style {
+        let backgroundColor: UIColor = .clear
+        var style = Button.Style(
+            allowsBleedingAlignment: true,
+            stateStyleByState: [
+                .normal: Button.StateStyle(textColor: .textLinkBrand, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .selected: Button.StateStyle(textColor: .textLinkBrand, backgroundColor: .buttonLinkBackgroundBrandPressed, borderColor: backgroundColor),
+                .disabled: Button.StateStyle(textColor: .textLinkBrand, backgroundColor: backgroundColor, borderColor: backgroundColor),
+                .loading: Button.StateStyle(textColor: .textLinkBrand, backgroundColor: backgroundColor, borderColor: backgroundColor)
+            ]
+        )
+
+        style.overriddenSizes = linkOverriddenSizes
+
+        return style
+    }
+
     func insets(isSmall: Bool) -> UIEdgeInsets {
         if let overriddenSizes = overriddenSizes {
             return overriddenSizes.insets

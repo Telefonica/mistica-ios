@@ -24,6 +24,7 @@ struct ButtonsCatalogView: View {
                 Style(buttonStyle: .misticaLinkInverse(), title: "Link Inverse", inverse: true),
                 Style(buttonStyle: .misticaPrimaryBrand(), title: "Primary Brand", inverse: true),
                 Style(buttonStyle: .misticaSecondaryBrand(), title: "Secondary Brand", inverse: true),
+                Style(buttonStyle: .misticaLinkBrand(), title: "Link Brand", inverse: true),
 
                 Style(buttonStyle: .misticaPrimary(small: true), title: "Primary Small", inverse: false),
                 Style(buttonStyle: .misticaSecondary(small: true), title: "Secondary Small", inverse: false),

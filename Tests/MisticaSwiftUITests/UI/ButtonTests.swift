@@ -162,6 +162,13 @@ final class ButtonTests: XCTestCase {
             as: .image
         )
     }
+
+    func testSmallSizeWithLinkBrandWithChevron() {
+        assertSnapshot(
+            of: makeTemplateWithAllButtonStates(style: .misticaLinkBrand(small: true, withChevron: true), inverse: true),
+            as: .image
+        )
+    }
 }
 
 // MARK: - Helpers

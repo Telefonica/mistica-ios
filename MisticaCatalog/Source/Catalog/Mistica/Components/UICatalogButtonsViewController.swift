@@ -24,6 +24,7 @@ class UICatalogButtonsViewController: UITableViewController {
                 Style(buttonStyle: .secondaryInverse, title: "Secondary Inverse", isInverse: true, isSmall: false),
                 Style(buttonStyle: .primaryBrand, title: "Primary Brand", isInverse: true, isSmall: false),
                 Style(buttonStyle: .secondaryBrand, title: "Secondary Brand", isInverse: true, isSmall: false),
+                Style(buttonStyle: .linkBrand, title: "Link Brand", isInverse: true, isSmall: false),
                 Style(buttonStyle: .linkInverse, title: "Link Inverse", isInverse: true, isSmall: false),
                 Style(buttonStyle: .linkDangerInverse, title: "Link Danger Inverse", isInverse: true, isSmall: false),
 
@@ -139,6 +140,7 @@ class UICatalogButtonsViewController: UITableViewController {
         let state = Constants.states[indexPath.row]
 
         let cell = UITableViewCell()
+        cell.contentView.setMisticaColorBackground(style.isInverse ? .backgroundBrand : .solid(.backgroundContainer))
 
         let button = state.makeButton(
             style: style.buttonStyle,
@@ -149,7 +151,6 @@ class UICatalogButtonsViewController: UITableViewController {
             rightImage: style.rightImage
         )
         cell.configure(with: button)
-        cell.contentView.setMisticaColorBackground(style.isInverse ? .backgroundBrand : .solid(.backgroundContainer))
 
         return cell
     }

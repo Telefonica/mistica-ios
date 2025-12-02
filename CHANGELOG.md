@@ -1,3 +1,11 @@
+# [36.5.0](https://github.com/Telefonica/mistica-ios/compare/v36.4.0...v36.5.0) (2025-12-02)
+
+
+### Features
+
+* **Button:** Add linkBrand style ([#489](https://github.com/Telefonica/mistica-ios/issues/489)) ([4c83ed3](https://github.com/Telefonica/mistica-ios/commit/4c83ed3f0996fed1f987aa7ed2764db03406e09a))
+* **skin:** update design tokens from mistica-design ([#485](https://github.com/Telefonica/mistica-ios/issues/485)) ([4019066](https://github.com/Telefonica/mistica-ios/commit/4019066502687cba9ae8190a7e6e8ab65434b084))
+
 # [36.4.0](https://github.com/Telefonica/mistica-ios/compare/v36.3.3...v36.4.0) (2025-11-27)
 
 

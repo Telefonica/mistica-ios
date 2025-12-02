@@ -140,6 +140,7 @@ class UICatalogButtonsViewController: UITableViewController {
         let state = Constants.states[indexPath.row]
 
         let cell = UITableViewCell()
+        cell.contentView.setMisticaColorBackground(style.isInverse ? .backgroundBrand : .solid(.backgroundContainer))
 
         let button = state.makeButton(
             style: style.buttonStyle,
@@ -150,7 +151,6 @@ class UICatalogButtonsViewController: UITableViewController {
             rightImage: style.rightImage
         )
         cell.configure(with: button)
-        cell.contentView.setMisticaColorBackground(style.isInverse ? .backgroundBrand : .solid(.backgroundContainer))
 
         return cell
     }

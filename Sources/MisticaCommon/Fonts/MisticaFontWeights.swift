@@ -17,6 +17,7 @@ public protocol MisticaFontWeights: Sendable {
     var title1: MisticaFontWeightType { get }
     var title2: MisticaFontWeightType { get }
     var title3: MisticaFontWeightType { get }
+    var title4: MisticaFontWeightType { get }
     var indicator: MisticaFontWeightType { get }
     var navigationBar: MisticaFontWeightType { get }
     var text5: MisticaFontWeightType { get }
@@ -25,4 +26,5 @@ public protocol MisticaFontWeights: Sendable {
     var text8: MisticaFontWeightType { get }
     var text9: MisticaFontWeightType { get }
     var text10: MisticaFontWeightType { get }
+    var chipLabel: MisticaFontWeightType { get }
 }

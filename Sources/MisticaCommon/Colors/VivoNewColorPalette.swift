@@ -333,6 +333,10 @@ struct VivoNewColors: MisticaColors {
 
     let neutralHigh = VivoNewColors.palette.grey6 | VivoNewColors.palette.grey2
 
+    let neutralHighNegative = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+
+    let neutralHighBrand = VivoNewColors.palette.white | VivoNewColors.palette.grey2
+
     let neutralMedium = VivoNewColors.palette.grey5
 
     let neutralMediumInverse = VivoNewColors.palette.grey5
@@ -436,6 +440,8 @@ struct VivoNewColors: MisticaColors {
     let textAppBar = VivoNewColors.palette.grey5
 
     let textAppBarSelected = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.grey2
+
+    let iosGlassAppBarSelected = VivoNewColors.palette.vivoPurple | VivoNewColors.palette.vivoPurpleLight20
 
     let customTabsBackground = VivoNewColors.palette.white | VivoNewColors.palette.darkModeBlack
 

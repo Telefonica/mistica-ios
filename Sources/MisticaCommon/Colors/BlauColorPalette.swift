@@ -333,6 +333,10 @@ struct BlauColors: MisticaColors {
 
     let neutralHigh = BlauColors.palette.grey6 | BlauColors.palette.grey2
 
+    let neutralHighNegative = BlauColors.palette.white | BlauColors.palette.grey2
+
+    let neutralHighBrand = BlauColors.palette.grey6 | BlauColors.palette.grey2
+
     let neutralMedium = BlauColors.palette.grey5 | BlauColors.palette.grey4
 
     let neutralMediumInverse = BlauColors.palette.grey5 | BlauColors.palette.grey4
@@ -436,6 +440,8 @@ struct BlauColors: MisticaColors {
     let textAppBar = BlauColors.palette.grey5
 
     let textAppBarSelected = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
+
+    let iosGlassAppBarSelected = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.white
 
     let customTabsBackground = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeBlack
 

@@ -645,6 +645,14 @@ public extension UIColor {
         MisticaConfig.currentColors.neutralHigh
     }
 
+    static var neutralHighNegative: UIColor {
+        MisticaConfig.currentColors.neutralHighNegative
+    }
+
+    static var neutralHighBrand: UIColor {
+        MisticaConfig.currentColors.neutralHighBrand
+    }
+
     static var neutralMedium: UIColor {
         MisticaConfig.currentColors.neutralMedium
     }
@@ -851,6 +859,10 @@ public extension UIColor {
 
     static var textAppBarSelected: UIColor {
         MisticaConfig.currentColors.textAppBarSelected
+    }
+
+    static var iosGlassAppBarSelected: UIColor {
+        MisticaConfig.currentColors.iosGlassAppBarSelected
     }
 
     static var customTabsBackground: UIColor {

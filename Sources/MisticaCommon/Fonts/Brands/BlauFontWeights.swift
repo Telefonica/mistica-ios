@@ -17,6 +17,7 @@ struct BlauFontWeights: MisticaFontWeights {
     public var title1: MisticaFontWeightType = .medium
     public var title2: MisticaFontWeightType = .light
     public var title3: MisticaFontWeightType = .light
+    public var title4: MisticaFontWeightType = .light
     public var indicator: MisticaFontWeightType = .medium
     public var navigationBar: MisticaFontWeightType = .medium
     public var text5: MisticaFontWeightType = .light
@@ -25,4 +26,5 @@ struct BlauFontWeights: MisticaFontWeights {
     public var text8: MisticaFontWeightType = .light
     public var text9: MisticaFontWeightType = .light
     public var text10: MisticaFontWeightType = .light
+    public var chipLabel: MisticaFontWeightType = .medium
 }

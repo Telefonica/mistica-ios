@@ -333,6 +333,10 @@ struct TuColors: MisticaColors {
 
     let neutralHigh = TuColors.palette.grey9 | TuColors.palette.grey2
 
+    let neutralHighNegative = TuColors.palette.white | TuColors.palette.grey2
+
+    let neutralHighBrand = TuColors.palette.white | TuColors.palette.grey2
+
     let neutralMedium = TuColors.palette.grey5
 
     let neutralMediumInverse = TuColors.palette.grey5
@@ -436,6 +440,8 @@ struct TuColors: MisticaColors {
     let textAppBar = TuColors.palette.grey6 | TuColors.palette.grey5
 
     let textAppBarSelected = TuColors.palette.primary | TuColors.palette.grey2
+
+    let iosGlassAppBarSelected = TuColors.palette.primary | TuColors.palette.blue30
 
     let customTabsBackground = TuColors.palette.white | TuColors.palette.darkModeBlack
 

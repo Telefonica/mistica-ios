@@ -10,7 +10,10 @@ import Foundation
 
 public protocol MisticaFontSizes: Sendable {
     var tabsLabel: CGFloat { get }
+    var title1: CGFloat { get }
+    var title2: CGFloat { get }
     var title3: CGFloat { get }
+    var title4: CGFloat { get }
     var text1: CGFloat { get }
     var text2: CGFloat { get }
     var text3: CGFloat { get }
@@ -21,4 +24,10 @@ public protocol MisticaFontSizes: Sendable {
     var text8: CGFloat { get }
     var text9: CGFloat { get }
     var text10: CGFloat { get }
+    var chipLabel: CGFloat { get }
+    var inputLabel: CGFloat { get }
+    var inputValue: CGFloat { get }
+    var inputHelperText: CGFloat { get }
+    var stepperStepLabel: CGFloat { get }
+    var loadingScreenTitle: CGFloat { get }
 }

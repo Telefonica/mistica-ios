@@ -351,6 +351,10 @@ struct O2NewColors: MisticaColors {
 
     let neutralHigh = O2NewColors.palette.black | O2NewColors.palette.grey30
 
+    let neutralHighNegative = O2NewColors.palette.white | O2NewColors.palette.grey30
+
+    let neutralHighBrand = O2NewColors.palette.white | O2NewColors.palette.grey30
+
     let neutralMedium = O2NewColors.palette.grey60
 
     let neutralMediumInverse = O2NewColors.palette.grey60
@@ -454,6 +458,8 @@ struct O2NewColors: MisticaColors {
     let textAppBar = O2NewColors.palette.grey60 | O2NewColors.palette.grey45
 
     let textAppBarSelected = O2NewColors.palette.beyondBlue | O2NewColors.palette.beyondBlue40
+
+    let iosGlassAppBarSelected = O2NewColors.palette.beyondBlue55 | O2NewColors.palette.beyondBlue15
 
     let customTabsBackground = O2NewColors.palette.beyondBlue | O2NewColors.palette.darkModeBlack
 

@@ -333,6 +333,10 @@ struct MovistarNewColors: MisticaColors {
 
     let neutralHigh = MovistarNewColors.palette.movistarBlack | MovistarNewColors.palette.grey200
 
+    let neutralHighNegative = MovistarNewColors.palette.white | MovistarNewColors.palette.grey200
+
+    let neutralHighBrand = MovistarNewColors.palette.white | MovistarNewColors.palette.grey200
+
     let neutralMedium = MovistarNewColors.palette.grey600 | MovistarNewColors.palette.grey500
 
     let neutralMediumInverse = MovistarNewColors.palette.grey600 | MovistarNewColors.palette.grey500
@@ -436,6 +440,8 @@ struct MovistarNewColors: MisticaColors {
     let textAppBar = MovistarNewColors.palette.grey600 | MovistarNewColors.palette.grey400
 
     let textAppBarSelected = MovistarNewColors.palette.blue800 | MovistarNewColors.palette.movistarBlue
+
+    let iosGlassAppBarSelected = MovistarNewColors.palette.blue800 | MovistarNewColors.palette.blue200
 
     let customTabsBackground = MovistarNewColors.palette.white | MovistarNewColors.palette.darkModeBlack
 

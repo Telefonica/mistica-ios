@@ -170,6 +170,8 @@ public protocol MisticaColors: Sendable {
     var inverse: UIColor { get }
     var negative: UIColor { get }
     var neutralHigh: UIColor { get }
+    var neutralHighNegative: UIColor { get }
+    var neutralHighBrand: UIColor { get }
     var neutralMedium: UIColor { get }
     var neutralMediumInverse: UIColor { get }
     var neutralMediumNegative: UIColor { get }
@@ -222,6 +224,7 @@ public protocol MisticaColors: Sendable {
     var textNavigationSearchBarText: UIColor { get }
     var textAppBar: UIColor { get }
     var textAppBarSelected: UIColor { get }
+    var iosGlassAppBarSelected: UIColor { get }
     var customTabsBackground: UIColor { get }
     var tagTextPromo: UIColor { get }
     var tagTextActive: UIColor { get }

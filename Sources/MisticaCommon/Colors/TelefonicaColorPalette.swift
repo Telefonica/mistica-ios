@@ -333,6 +333,10 @@ struct TelefonicaColors: MisticaColors {
 
     let neutralHigh = TelefonicaColors.palette.grey9 | TelefonicaColors.palette.grey2
 
+    let neutralHighNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
+
+    let neutralHighBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
+
     let neutralMedium = TelefonicaColors.palette.grey5
 
     let neutralMediumInverse = TelefonicaColors.palette.grey5
@@ -436,6 +440,8 @@ struct TelefonicaColors: MisticaColors {
     let textAppBar = TelefonicaColors.palette.grey4 | TelefonicaColors.palette.grey2
 
     let textAppBarSelected = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
+
+    let iosGlassAppBarSelected = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
 
     let customTabsBackground = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.darkModeBlack
 

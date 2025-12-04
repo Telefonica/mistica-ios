@@ -35,7 +35,7 @@ struct BlauColors: MisticaColors {
 
     let backgroundContainerBrandPressed = BlauColors.palette.darkModeBlack.withAlphaComponent(0.08) | BlauColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrandOverInverse = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.darkModeGrey
+    let backgroundContainerBrandOverInverse = BlauColors.palette.blauBluePrimary | BlauColors.palette.darkModeGrey
 
     let backgroundContainerNegative = BlauColors.palette.darkModeBlack.withAlphaComponent(0.4) | BlauColors.palette.darkModeGrey
 
@@ -119,7 +119,7 @@ struct BlauColors: MisticaColors {
 
     let buttonPrimaryBackground = BlauColors.palette.blauBlueSecondary
 
-    let buttonPrimaryBackgroundInverse = BlauColors.palette.blauBlueSecondary
+    let buttonPrimaryBackgroundInverse = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
 
     let buttonPrimaryBackgroundNegative = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
 
@@ -129,7 +129,7 @@ struct BlauColors: MisticaColors {
 
     let buttonPrimaryBackgroundHover = BlauColors.palette.blauBlueSecondary60
 
-    let buttonPrimaryBackgroundInverseHover = BlauColors.palette.blauBlueSecondary60
+    let buttonPrimaryBackgroundInverseHover = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.blauBlueSecondary60
 
     let buttonPrimaryBackgroundNegativeHover = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.blauBlueSecondary60
 
@@ -139,7 +139,7 @@ struct BlauColors: MisticaColors {
 
     let buttonPrimaryBackgroundPressed = BlauColors.palette.blauBlueSecondary60
 
-    let buttonPrimaryBackgroundInversePressed = BlauColors.palette.blauBlueSecondary60
+    let buttonPrimaryBackgroundInversePressed = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.blauBlueSecondary60
 
     let buttonPrimaryBackgroundNegativePressed = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.blauBlueSecondary60
 
@@ -151,7 +151,7 @@ struct BlauColors: MisticaColors {
 
     let buttonSecondaryBorder = BlauColors.palette.blauBlueSecondary | BlauColors.palette.white
 
-    let buttonSecondaryBorderInverse = BlauColors.palette.white.withAlphaComponent(0) | BlauColors.palette.white
+    let buttonSecondaryBorderInverse = BlauColors.palette.white
 
     let buttonSecondaryBorderNegative = BlauColors.palette.white
 
@@ -161,7 +161,7 @@ struct BlauColors: MisticaColors {
 
     let buttonSecondaryBorderPressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.white
 
-    let buttonSecondaryBorderInversePressed = BlauColors.palette.white.withAlphaComponent(0) | BlauColors.palette.white
+    let buttonSecondaryBorderInversePressed = BlauColors.palette.white
 
     let buttonSecondaryBorderNegativePressed = BlauColors.palette.white
 
@@ -171,7 +171,7 @@ struct BlauColors: MisticaColors {
 
     let buttonSecondaryBackgroundHover = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInverseHover = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundInverseHover = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
 
     let buttonSecondaryBackgroundNegativeHover = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
 
@@ -181,7 +181,7 @@ struct BlauColors: MisticaColors {
 
     let buttonSecondaryBackgroundPressed = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInversePressed = BlauColors.palette.blauBlueSecondary10 | BlauColors.palette.white.withAlphaComponent(0.15)
+    let buttonSecondaryBackgroundInversePressed = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
 
     let buttonSecondaryBackgroundNegativePressed = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.15)
 
@@ -191,7 +191,7 @@ struct BlauColors: MisticaColors {
 
     let textButtonPrimary = BlauColors.palette.white | BlauColors.palette.grey2
 
-    let textButtonPrimaryInverse = BlauColors.palette.white | BlauColors.palette.grey2
+    let textButtonPrimaryInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
 
     let textButtonPrimaryNegative = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
 
@@ -199,7 +199,7 @@ struct BlauColors: MisticaColors {
 
     let textButtonPrimaryMedia = BlauColors.palette.blauBlueSecondary
 
-    let textButtonPrimaryInversePressed = BlauColors.palette.white | BlauColors.palette.grey2
+    let textButtonPrimaryInversePressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
 
     let textButtonPrimaryNegativePressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
 
@@ -209,7 +209,7 @@ struct BlauColors: MisticaColors {
 
     let textButtonSecondary = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
 
-    let textButtonSecondaryInverse = BlauColors.palette.blauBlueSecondary | BlauColors.palette.grey2
+    let textButtonSecondaryInverse = BlauColors.palette.white | BlauColors.palette.grey2
 
     let textButtonSecondaryNegative = BlauColors.palette.white | BlauColors.palette.grey2
 
@@ -219,7 +219,7 @@ struct BlauColors: MisticaColors {
 
     let textButtonSecondaryPressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
 
-    let textButtonSecondaryInversePressed = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey2
+    let textButtonSecondaryInversePressed = BlauColors.palette.white | BlauColors.palette.grey2
 
     let textButtonSecondaryNegativePressed = BlauColors.palette.white | BlauColors.palette.grey2
 
@@ -229,7 +229,7 @@ struct BlauColors: MisticaColors {
 
     let textLink = BlauColors.palette.blauPurple | BlauColors.palette.blauPurple30
 
-    let textLinkInverse = BlauColors.palette.grey6 | BlauColors.palette.blauPurple30
+    let textLinkInverse = BlauColors.palette.white | BlauColors.palette.blauPurple30
 
     let textLinkNegative = BlauColors.palette.white | BlauColors.palette.blauPurple30
 
@@ -249,7 +249,7 @@ struct BlauColors: MisticaColors {
 
     let inputBorder = BlauColors.palette.grey4 | BlauColors.palette.darkModeGrey5
 
-    let inputBorderInverse = BlauColors.palette.grey6 | BlauColors.palette.darkModeGrey5
+    let inputBorderInverse = BlauColors.palette.white | BlauColors.palette.darkModeGrey5
 
     let inputBorderNegative = BlauColors.palette.white | BlauColors.palette.darkModeGrey5
 
@@ -259,13 +259,13 @@ struct BlauColors: MisticaColors {
 
     let controlActivated = BlauColors.palette.blauBlueSecondary
 
-    let controlInverse = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey4
+    let controlInverse = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.grey4
 
     let controlNegative = BlauColors.palette.blauBluePrimary30 | BlauColors.palette.grey4
 
     let controlBrand = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.grey4
 
-    let controlActivatedInverse = BlauColors.palette.blauBlueSecondary60 | BlauColors.palette.blauBlueSecondary
+    let controlActivatedInverse = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
 
     let controlActivatedNegative = BlauColors.palette.white | BlauColors.palette.blauBlueSecondary
 
@@ -309,7 +309,7 @@ struct BlauColors: MisticaColors {
 
     let divider = BlauColors.palette.grey3 | BlauColors.palette.white.withAlphaComponent(0.09)
 
-    let dividerInverse = BlauColors.palette.grey6.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.05)
+    let dividerInverse = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.05)
 
     let dividerNegative = BlauColors.palette.white.withAlphaComponent(0.2) | BlauColors.palette.white.withAlphaComponent(0.05)
 
@@ -351,7 +351,7 @@ struct BlauColors: MisticaColors {
 
     let textPrimary = BlauColors.palette.grey6 | BlauColors.palette.grey2
 
-    let textPrimaryInverse = BlauColors.palette.grey6 | BlauColors.palette.grey2
+    let textPrimaryInverse = BlauColors.palette.white | BlauColors.palette.grey2
 
     let textPrimaryNegative = BlauColors.palette.white | BlauColors.palette.grey2
 
@@ -361,7 +361,7 @@ struct BlauColors: MisticaColors {
 
     let textSecondary = BlauColors.palette.grey5 | BlauColors.palette.grey4
 
-    let textSecondaryInverse = BlauColors.palette.grey6 | BlauColors.palette.grey4
+    let textSecondaryInverse = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.grey4
 
     let textSecondaryNegative = BlauColors.palette.blauBluePrimary20 | BlauColors.palette.grey4
 
@@ -373,7 +373,7 @@ struct BlauColors: MisticaColors {
 
     let textError = BlauColors.palette.blauRed | BlauColors.palette.blauRed40
 
-    let textErrorInverse = BlauColors.palette.grey6 | BlauColors.palette.blauRed40
+    let textErrorInverse = BlauColors.palette.white | BlauColors.palette.blauRed40
 
     let textErrorNegative = BlauColors.palette.white | BlauColors.palette.blauRed40
 

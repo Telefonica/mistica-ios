@@ -1,568 +1,570 @@
-//
-//  TelefonicaColorPalette.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import UIKit
 
 struct TelefonicaColors: MisticaColors {
     static let palette = TelefonicaColorPalette()
 
-    let background = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeBlack
+     let background = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeBlack
 
-    let backgroundAlternative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeBlack
+     let backgroundAlternative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeBlack
 
-    let backgroundBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack)
+     let backgroundBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack)
 
-    let backgroundNegative = TelefonicaColors.palette.grey9 | TelefonicaColors.palette.darkModeBlack
+     let backgroundNegative = TelefonicaColors.palette.grey9 | TelefonicaColors.palette.darkModeBlack
 
-    let backgroundBrandSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
+     let backgroundBrandSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 
-    let backgroundContainer = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
+     let backgroundContainer = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
 
-    let backgroundContainerError = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey
+     let backgroundContainerError = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey
 
-    let backgroundContainerHover = TelefonicaColors.palette.telefonicaBlue70.withAlphaComponent(0.05)
+     let backgroundContainerHover = TelefonicaColors.palette.telefonicaBlue70.withAlphaComponent(0.05)
 
-    let backgroundContainerPressed = TelefonicaColors.palette.telefonicaBlue70.withAlphaComponent(0.08)
+     let backgroundContainerPressed = TelefonicaColors.palette.telefonicaBlue70.withAlphaComponent(0.08)
 
-    let backgroundContainerBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeGrey)
+     let backgroundContainerBrand = MisticaColor.solid(TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeGrey)
 
-    let backgroundContainerBrandHover = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.03)
+     let backgroundContainerBrandHover = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.03)
 
-    let backgroundContainerBrandPressed = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.4) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
+     let backgroundContainerBrandPressed = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.4) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
 
-    let backgroundContainerBrandOverInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.darkModeGrey
+     let backgroundContainerBrandOverInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.darkModeGrey
 
-    let backgroundContainerNegative = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.darkModeGrey
+     let backgroundContainerNegative = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.darkModeGrey
 
-    let backgroundContainerBrandOverBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.darkModeGrey
+     let backgroundContainerBrandOverBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.darkModeGrey
 
-    let backgroundContainerAlternative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey
+     let backgroundContainerAlternative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey
 
-    let backgroundOverlay = TelefonicaColors.palette.grey6.withAlphaComponent(0.8) | TelefonicaColors.palette.darkModeGrey.withAlphaComponent(0.8)
+     let backgroundOverlay = TelefonicaColors.palette.grey6.withAlphaComponent(0.8) | TelefonicaColors.palette.darkModeGrey.withAlphaComponent(0.8)
 
-    let backgroundSkeleton = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.grey8
+     let backgroundSkeleton = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.grey8
 
-    let backgroundSkeletonInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey8
+     let backgroundSkeletonInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey8
 
-    let backgroundSkeletonNegative = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey8
+     let backgroundSkeletonNegative = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey8
 
-    let backgroundSkeletonBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey8
+     let backgroundSkeletonBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey8
 
-    let backgroundBrandTop = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
+     let backgroundBrandTop = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 
-    let backgroundBrandBottom = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
+     let backgroundBrandBottom = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 
-    let appBarBackground = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
+     let appBarBackground = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeGrey
 
-    let navigationBarBackground = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
+     let navigationBarBackground = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 
-    let skeletonWave = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.grey8
+     let skeletonWave = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.grey8
 
-    let borderLow = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeBlack
+     let borderLow = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeBlack
 
-    let border = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.darkModeGrey
+     let border = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.darkModeGrey
 
-    let borderHigh = TelefonicaColors.palette.grey5
+     let borderHigh = TelefonicaColors.palette.grey5
 
-    let borderSelected = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let borderSelected = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let completedStep = TelefonicaColors.palette.telefonicaBlue
+     let completedStep = TelefonicaColors.palette.telefonicaBlue
 
-    let completedStepInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue
+     let completedStepInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue
 
-    let completedStepNegative = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue
+     let completedStepNegative = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue
 
-    let completedStepBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue
+     let completedStepBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue
 
-    let coverBackgroundHover = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.25)
+     let coverBackgroundHover = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.25)
 
-    let coverBackgroundPressed = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.35)
+     let coverBackgroundPressed = TelefonicaColors.palette.darkModeBlack.withAlphaComponent(0.35)
 
-    let buttonDangerBackground = TelefonicaColors.palette.coral60
+     let buttonDangerBackground = TelefonicaColors.palette.coral60
 
-    let buttonDangerBackgroundPressed = TelefonicaColors.palette.coral65
+     let buttonDangerBackgroundPressed = TelefonicaColors.palette.coral65
 
-    let buttonDangerBackgroundHover = TelefonicaColors.palette.coral65
+     let buttonDangerBackgroundHover = TelefonicaColors.palette.coral65
 
-    let buttonLinkDangerBackgroundInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
+     let buttonLinkDangerBackgroundInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
 
-    let buttonLinkDangerBackgroundNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
+     let buttonLinkDangerBackgroundNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
 
-    let buttonLinkDangerBackgroundBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
+     let buttonLinkDangerBackgroundBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
 
-    let buttonLinkDangerBackgroundMedia = TelefonicaColors.palette.white
+     let buttonLinkDangerBackgroundMedia = TelefonicaColors.palette.white
 
-    let buttonLinkDangerBackgroundPressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
+     let buttonLinkDangerBackgroundPressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
 
-    let buttonLinkDangerBackgroundInversePressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
+     let buttonLinkDangerBackgroundInversePressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
 
-    let buttonLinkDangerBackgroundNegativePressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
+     let buttonLinkDangerBackgroundNegativePressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
 
-    let buttonLinkDangerBackgroundBrandPressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
+     let buttonLinkDangerBackgroundBrandPressed = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral60.withAlphaComponent(0.16)
 
-    let buttonLinkDangerBackgroundMediaPressed = TelefonicaColors.palette.coral10
+     let buttonLinkDangerBackgroundMediaPressed = TelefonicaColors.palette.coral10
 
-    let buttonLinkBackgroundPressed = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue30.withAlphaComponent(0.16)
+     let buttonLinkBackgroundPressed = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue30.withAlphaComponent(0.16)
 
-    let buttonLinkBackgroundInversePressed = TelefonicaColors.palette.white.withAlphaComponent(0.08) | TelefonicaColors.palette.telefonicaBlue30.withAlphaComponent(0.16)
+     let buttonLinkBackgroundInversePressed = TelefonicaColors.palette.white.withAlphaComponent(0.08) | TelefonicaColors.palette.telefonicaBlue30.withAlphaComponent(0.16)
 
-    let buttonLinkBackgroundNegativePressed = TelefonicaColors.palette.white.withAlphaComponent(0.08) | TelefonicaColors.palette.telefonicaBlue30.withAlphaComponent(0.16)
+     let buttonLinkBackgroundNegativePressed = TelefonicaColors.palette.white.withAlphaComponent(0.08) | TelefonicaColors.palette.telefonicaBlue30.withAlphaComponent(0.16)
 
-    let buttonLinkBackgroundBrandPressed = TelefonicaColors.palette.white.withAlphaComponent(0.08) | TelefonicaColors.palette.telefonicaBlue30.withAlphaComponent(0.16)
+     let buttonLinkBackgroundBrandPressed = TelefonicaColors.palette.white.withAlphaComponent(0.08) | TelefonicaColors.palette.telefonicaBlue30.withAlphaComponent(0.16)
 
-    let buttonLinkBackgroundMediaPressed = TelefonicaColors.palette.white.withAlphaComponent(0.08)
+     let buttonLinkBackgroundMediaPressed = TelefonicaColors.palette.white.withAlphaComponent(0.08)
 
-    let buttonPrimaryBackground = TelefonicaColors.palette.telefonicaBlue
+     let buttonPrimaryBackground = TelefonicaColors.palette.telefonicaBlue
 
-    let buttonPrimaryBackgroundInverse = TelefonicaColors.palette.white
+     let buttonPrimaryBackgroundInverse = TelefonicaColors.palette.white
 
-    let buttonPrimaryBackgroundNegative = TelefonicaColors.palette.white
+     let buttonPrimaryBackgroundNegative = TelefonicaColors.palette.white
 
-    let buttonPrimaryBackgroundBrand = TelefonicaColors.palette.white
+     let buttonPrimaryBackgroundBrand = TelefonicaColors.palette.white
 
-    let buttonPrimaryBackgroundMedia = TelefonicaColors.palette.white
+     let buttonPrimaryBackgroundMedia = TelefonicaColors.palette.white
 
-    let buttonPrimaryBackgroundHover = TelefonicaColors.palette.telefonicaBlue70
+     let buttonPrimaryBackgroundHover = TelefonicaColors.palette.telefonicaBlue70
 
-    let buttonPrimaryBackgroundInverseHover = TelefonicaColors.palette.telefonicaBlue10
+     let buttonPrimaryBackgroundInverseHover = TelefonicaColors.palette.telefonicaBlue10
 
-    let buttonPrimaryBackgroundNegativeHover = TelefonicaColors.palette.telefonicaBlue10
+     let buttonPrimaryBackgroundNegativeHover = TelefonicaColors.palette.telefonicaBlue10
 
-    let buttonPrimaryBackgroundBrandHover = TelefonicaColors.palette.telefonicaBlue10
+     let buttonPrimaryBackgroundBrandHover = TelefonicaColors.palette.telefonicaBlue10
 
-    let buttonPrimaryBackgroundMediaHover = TelefonicaColors.palette.telefonicaBlue10
+     let buttonPrimaryBackgroundMediaHover = TelefonicaColors.palette.telefonicaBlue10
 
-    let buttonPrimaryBackgroundPressed = TelefonicaColors.palette.telefonicaBlue70
+     let buttonPrimaryBackgroundPressed = TelefonicaColors.palette.telefonicaBlue70
 
-    let buttonPrimaryBackgroundInversePressed = TelefonicaColors.palette.telefonicaBlue10
+     let buttonPrimaryBackgroundInversePressed = TelefonicaColors.palette.telefonicaBlue10
 
-    let buttonPrimaryBackgroundNegativePressed = TelefonicaColors.palette.telefonicaBlue10
+     let buttonPrimaryBackgroundNegativePressed = TelefonicaColors.palette.telefonicaBlue10
 
-    let buttonPrimaryBackgroundBrandPressed = TelefonicaColors.palette.telefonicaBlue10
+     let buttonPrimaryBackgroundBrandPressed = TelefonicaColors.palette.telefonicaBlue10
 
-    let buttonPrimaryBackgroundMediaPressed = TelefonicaColors.palette.telefonicaBlue10
+     let buttonPrimaryBackgroundMediaPressed = TelefonicaColors.palette.telefonicaBlue10
 
-    let buttonSecondaryBackgroundBrand = TelefonicaColors.palette.white.withAlphaComponent(0)
+     let buttonSecondaryBackgroundBrand = TelefonicaColors.palette.white.withAlphaComponent(0)
 
-    let buttonSecondaryBorder = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.white
+     let buttonSecondaryBorder = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderInverse = TelefonicaColors.palette.white
+     let buttonSecondaryBorderInverse = TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderNegative = TelefonicaColors.palette.white
+     let buttonSecondaryBorderNegative = TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderBrand = TelefonicaColors.palette.white
+     let buttonSecondaryBorderBrand = TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderMedia = TelefonicaColors.palette.white
+     let buttonSecondaryBorderMedia = TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderPressed = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
+     let buttonSecondaryBorderPressed = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderInversePressed = TelefonicaColors.palette.white
+     let buttonSecondaryBorderInversePressed = TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderNegativePressed = TelefonicaColors.palette.white
+     let buttonSecondaryBorderNegativePressed = TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderBrandPressed = TelefonicaColors.palette.white
+     let buttonSecondaryBorderBrandPressed = TelefonicaColors.palette.white
 
-    let buttonSecondaryBorderMediaPressed = TelefonicaColors.palette.white
+     let buttonSecondaryBorderMediaPressed = TelefonicaColors.palette.white
 
-    let buttonSecondaryBackgroundHover = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundHover = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInverseHover = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundInverseHover = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundNegativeHover = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundNegativeHover = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundBrandHover = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundBrandHover = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundMediaHover = TelefonicaColors.palette.white.withAlphaComponent(0.1)
+     let buttonSecondaryBackgroundMediaHover = TelefonicaColors.palette.white.withAlphaComponent(0.1)
 
-    let buttonSecondaryBackgroundPressed = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundPressed = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundInversePressed = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundInversePressed = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundNegativePressed = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundNegativePressed = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundBrandPressed = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
+     let buttonSecondaryBackgroundBrandPressed = TelefonicaColors.palette.white.withAlphaComponent(0.1) | TelefonicaColors.palette.white.withAlphaComponent(0.15)
 
-    let buttonSecondaryBackgroundMediaPressed = TelefonicaColors.palette.white.withAlphaComponent(0.1)
+     let buttonSecondaryBackgroundMediaPressed = TelefonicaColors.palette.white.withAlphaComponent(0.1)
 
-    let textButtonPrimary = TelefonicaColors.palette.white
+     let textButtonPrimary = TelefonicaColors.palette.white
 
-    let textButtonPrimaryInverse = TelefonicaColors.palette.telefonicaBlue
+     let textButtonPrimaryInverse = TelefonicaColors.palette.telefonicaBlue
 
-    let textButtonPrimaryNegative = TelefonicaColors.palette.telefonicaBlue
+     let textButtonPrimaryNegative = TelefonicaColors.palette.telefonicaBlue
 
-    let textButtonPrimaryBrand = TelefonicaColors.palette.telefonicaBlue
+     let textButtonPrimaryBrand = TelefonicaColors.palette.telefonicaBlue
 
-    let textButtonPrimaryMedia = TelefonicaColors.palette.telefonicaBlue
+     let textButtonPrimaryMedia = TelefonicaColors.palette.telefonicaBlue
 
-    let textButtonPrimaryInversePressed = TelefonicaColors.palette.telefonicaBlue70
+     let textButtonPrimaryInversePressed = TelefonicaColors.palette.telefonicaBlue70
 
-    let textButtonPrimaryNegativePressed = TelefonicaColors.palette.telefonicaBlue70
+     let textButtonPrimaryNegativePressed = TelefonicaColors.palette.telefonicaBlue70
 
-    let textButtonPrimaryBrandPressed = TelefonicaColors.palette.telefonicaBlue70
+     let textButtonPrimaryBrandPressed = TelefonicaColors.palette.telefonicaBlue70
 
-    let textButtonPrimaryMediaPressed = TelefonicaColors.palette.telefonicaBlue70
+     let textButtonPrimaryMediaPressed = TelefonicaColors.palette.telefonicaBlue70
 
-    let textButtonSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.white
+     let textButtonSecondary = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.white
 
-    let textButtonSecondaryInverse = TelefonicaColors.palette.white
+     let textButtonSecondaryInverse = TelefonicaColors.palette.white
 
-    let textButtonSecondaryNegative = TelefonicaColors.palette.white
+     let textButtonSecondaryNegative = TelefonicaColors.palette.white
 
-    let textButtonSecondaryBrand = TelefonicaColors.palette.white
+     let textButtonSecondaryBrand = TelefonicaColors.palette.white
 
-    let textButtonSecondaryMedia = TelefonicaColors.palette.white
+     let textButtonSecondaryMedia = TelefonicaColors.palette.white
 
-    let textButtonSecondaryPressed = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
+     let textButtonSecondaryPressed = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
 
-    let textButtonSecondaryInversePressed = TelefonicaColors.palette.white
+     let textButtonSecondaryInversePressed = TelefonicaColors.palette.white
 
-    let textButtonSecondaryNegativePressed = TelefonicaColors.palette.white
+     let textButtonSecondaryNegativePressed = TelefonicaColors.palette.white
 
-    let textButtonSecondaryBrandPressed = TelefonicaColors.palette.white
+     let textButtonSecondaryBrandPressed = TelefonicaColors.palette.white
 
-    let textButtonSecondaryMediaPressed = TelefonicaColors.palette.white
+     let textButtonSecondaryMediaPressed = TelefonicaColors.palette.white
 
-    let textLink = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let textLink = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let textLinkInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let textLinkInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let textLinkNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let textLinkNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let textLinkBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let textLinkBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let textLinkMedia = TelefonicaColors.palette.white
+     let textLinkMedia = TelefonicaColors.palette.white
 
-    let textLinkDanger = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral
+     let textLinkDanger = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral
 
-    let textLinkDangerMedia = TelefonicaColors.palette.coral60
+     let textLinkDangerMedia = TelefonicaColors.palette.coral60
 
-    let textLinkSnackbar = TelefonicaColors.palette.telefonicaBlue30 | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let textLinkSnackbar = TelefonicaColors.palette.telefonicaBlue30 | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let textActivated = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue30
+     let textActivated = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue30
 
-    let textBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue30
+     let textBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue30
 
-    let inputBorder = TelefonicaColors.palette.grey5
+     let inputBorder = TelefonicaColors.palette.grey5
 
-    let inputBorderInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey5
+     let inputBorderInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey5
 
-    let inputBorderNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey5
+     let inputBorderNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey5
 
-    let inputBorderBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.grey5
+     let inputBorderBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.grey5
 
-    let control = TelefonicaColors.palette.grey5
+     let control = TelefonicaColors.palette.grey5
 
-    let controlActivated = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let controlActivated = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let controlInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey5
+     let controlInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey5
 
-    let controlNegative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey5
+     let controlNegative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey5
 
-    let controlBrand = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey5
+     let controlBrand = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey5
 
-    let controlActivatedInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let controlActivatedInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let controlActivatedNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let controlActivatedNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let controlActivatedBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let controlActivatedBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let controlError = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral
+     let controlError = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral
 
-    let chevronIndicator = TelefonicaColors.palette.grey5
+     let chevronIndicator = TelefonicaColors.palette.grey5
 
-    let barTrack = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.darkModeGrey6
+     let barTrack = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.darkModeGrey6
 
-    let barTrackInverse = TelefonicaColors.palette.white.withAlphaComponent(0.3) | TelefonicaColors.palette.darkModeGrey6
+     let barTrackInverse = TelefonicaColors.palette.white.withAlphaComponent(0.3) | TelefonicaColors.palette.darkModeGrey6
 
-    let barTrackNegative = TelefonicaColors.palette.white.withAlphaComponent(0.3) | TelefonicaColors.palette.darkModeGrey6
+     let barTrackNegative = TelefonicaColors.palette.white.withAlphaComponent(0.3) | TelefonicaColors.palette.darkModeGrey6
 
-    let barTrackBrand = TelefonicaColors.palette.white.withAlphaComponent(0.3) | TelefonicaColors.palette.darkModeGrey6
+     let barTrackBrand = TelefonicaColors.palette.white.withAlphaComponent(0.3) | TelefonicaColors.palette.darkModeGrey6
 
-    let loadingBar = TelefonicaColors.palette.telefonicaBlue30 | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let loadingBar = TelefonicaColors.palette.telefonicaBlue30 | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let loadingBarBackground = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey6
+     let loadingBarBackground = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.grey6
 
-    let toggleAndroidInactive = TelefonicaColors.palette.grey2
+     let toggleAndroidInactive = TelefonicaColors.palette.grey2
 
-    let toggleAndroidBackgroundActive = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.telefonicaBlue20
+     let toggleAndroidBackgroundActive = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.telefonicaBlue20
 
-    let toggleAndroidActiveBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let toggleAndroidActiveBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let toggleAndroidInactiveBrand = TelefonicaColors.palette.grey2
+     let toggleAndroidInactiveBrand = TelefonicaColors.palette.grey2
 
-    let toggleAndroidBackgroundActiveBrand = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.telefonicaBlue20
+     let toggleAndroidBackgroundActiveBrand = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.telefonicaBlue20
 
-    let toggleAndroidBackgroundInactiveBrand = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey5
+     let toggleAndroidBackgroundInactiveBrand = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey5
 
-    let iosControlKnob = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
+     let iosControlKnob = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
 
-    let controlKnobInverse = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey1
+     let controlKnobInverse = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey1
 
-    let controlKnobNegative = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey1
+     let controlKnobNegative = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey1
 
-    let controlKnobBrand = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey1
+     let controlKnobBrand = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.grey1
 
-    let divider = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.white.withAlphaComponent(0.2)
+     let divider = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.white.withAlphaComponent(0.2)
 
-    let dividerInverse = TelefonicaColors.palette.white.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
+     let dividerInverse = TelefonicaColors.palette.white.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
 
-    let dividerNegative = TelefonicaColors.palette.white.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
+     let dividerNegative = TelefonicaColors.palette.white.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
 
-    let dividerBrand = TelefonicaColors.palette.white.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
+     let dividerBrand = TelefonicaColors.palette.white.withAlphaComponent(0.2) | TelefonicaColors.palette.white.withAlphaComponent(0.05)
 
-    let navigationBarDivider = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
+     let navigationBarDivider = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeBlack
 
-    let badge = TelefonicaColors.palette.coral60
+     let badge = TelefonicaColors.palette.coral60
 
-    let feedbackErrorBackground = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral65
+     let feedbackErrorBackground = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral65
 
-    let feedbackInfoBackground = TelefonicaColors.palette.grey9 | TelefonicaColors.palette.darkModeGrey
+     let feedbackInfoBackground = TelefonicaColors.palette.grey9 | TelefonicaColors.palette.darkModeGrey
 
-    let brand = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeTelefonicaBlue
+     let brand = TelefonicaColors.palette.telefonicaBlue | TelefonicaColors.palette.darkModeTelefonicaBlue
 
-    let brandHigh = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white.withAlphaComponent(0.05)
+     let brandHigh = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white.withAlphaComponent(0.05)
 
-    let inverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
+     let inverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
 
-    let negative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
+     let negative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
 
-    let neutralHigh = TelefonicaColors.palette.grey9 | TelefonicaColors.palette.grey2
+     let neutralHigh = TelefonicaColors.palette.grey9 | TelefonicaColors.palette.grey2
 
-    let neutralMedium = TelefonicaColors.palette.grey5
+     let neutralHighNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
 
-    let neutralMediumInverse = TelefonicaColors.palette.grey5
+     let neutralHighBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.grey2
 
-    let neutralMediumNegative = TelefonicaColors.palette.grey5
+     let neutralMedium = TelefonicaColors.palette.grey5
 
-    let neutralMediumBrand = TelefonicaColors.palette.grey5
+     let neutralMediumInverse = TelefonicaColors.palette.grey5
 
-    let neutralLow = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey6
+     let neutralMediumNegative = TelefonicaColors.palette.grey5
 
-    let neutralLowAlternative = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.darkModeGrey6
+     let neutralMediumBrand = TelefonicaColors.palette.grey5
 
-    let textPrimary = TelefonicaColors.palette.grey9 | TelefonicaColors.palette.grey1
+     let neutralLow = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.darkModeGrey6
 
-    let textPrimaryInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
+     let neutralLowAlternative = TelefonicaColors.palette.grey2 | TelefonicaColors.palette.darkModeGrey6
 
-    let textPrimaryNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
+     let textPrimary = TelefonicaColors.palette.grey9 | TelefonicaColors.palette.grey1
 
-    let textPrimaryBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
+     let textPrimaryInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
 
-    let textPrimaryMedia = TelefonicaColors.palette.white
+     let textPrimaryNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
 
-    let textSecondary = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
+     let textPrimaryBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.grey1
 
-    let textSecondaryInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey3
+     let textPrimaryMedia = TelefonicaColors.palette.white
 
-    let textSecondaryNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey3
+     let textSecondary = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
 
-    let textSecondaryBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.grey3
+     let textSecondaryInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.grey3
 
-    let textSecondaryMedia = TelefonicaColors.palette.white
+     let textSecondaryNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.grey3
 
-    let error = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral
+     let textSecondaryBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.grey3
 
-    let textError = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral
+     let textSecondaryMedia = TelefonicaColors.palette.white
 
-    let textErrorInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.coral
+     let error = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral
 
-    let textErrorNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.coral
+     let textError = TelefonicaColors.palette.coral60 | TelefonicaColors.palette.coral
 
-    let textErrorBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.coral
+     let textErrorInverse = TelefonicaColors.palette.white | TelefonicaColors.palette.coral
 
-    let success = TelefonicaColors.palette.turquoise
+     let textErrorNegative = TelefonicaColors.palette.white | TelefonicaColors.palette.coral
 
-    let warning = TelefonicaColors.palette.yellow70 | TelefonicaColors.palette.yellow
+     let textErrorBrand = TelefonicaColors.palette.white | TelefonicaColors.palette.coral
 
-    let promo = TelefonicaColors.palette.orchid
+     let success = TelefonicaColors.palette.turquoise
 
-    let highlight = TelefonicaColors.palette.coral30
+     let warning = TelefonicaColors.palette.yellow70 | TelefonicaColors.palette.yellow
 
-    let successLow = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.darkModeGrey6
+     let promo = TelefonicaColors.palette.orchid
 
-    let warningLow = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.darkModeGrey6
+     let highlight = TelefonicaColors.palette.coral30
 
-    let errorLow = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey6
+     let successLow = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.darkModeGrey6
 
-    let promoLow = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.darkModeGrey6
+     let warningLow = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.darkModeGrey6
 
-    let brandLow = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
+     let errorLow = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.darkModeGrey6
 
-    let successHigh = TelefonicaColors.palette.turquoise70 | TelefonicaColors.palette.turquoise40
+     let promoLow = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.darkModeGrey6
 
-    let warningHigh = TelefonicaColors.palette.yellow70 | TelefonicaColors.palette.yellow40
+     let brandLow = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.darkModeGrey6
 
-    let errorHigh = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
+     let successHigh = TelefonicaColors.palette.turquoise70 | TelefonicaColors.palette.turquoise40
 
-    let promoHigh = TelefonicaColors.palette.orchid70 | TelefonicaColors.palette.orchid40
+     let warningHigh = TelefonicaColors.palette.yellow70 | TelefonicaColors.palette.yellow40
 
-    let successHighInverse = TelefonicaColors.palette.turquoise70
+     let errorHigh = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
 
-    let successHighNegative = TelefonicaColors.palette.turquoise70
+     let promoHigh = TelefonicaColors.palette.orchid70 | TelefonicaColors.palette.orchid40
 
-    let successHighBrand = TelefonicaColors.palette.turquoise70
+     let successHighInverse = TelefonicaColors.palette.turquoise70
 
-    let warningHighInverse = TelefonicaColors.palette.yellow70
+     let successHighNegative = TelefonicaColors.palette.turquoise70
 
-    let warningHighNegative = TelefonicaColors.palette.yellow70
+     let successHighBrand = TelefonicaColors.palette.turquoise70
 
-    let warningHighBrand = TelefonicaColors.palette.yellow70
+     let warningHighInverse = TelefonicaColors.palette.yellow70
 
-    let errorHighInverse = TelefonicaColors.palette.coral65
+     let warningHighNegative = TelefonicaColors.palette.yellow70
 
-    let errorHighNegative = TelefonicaColors.palette.coral65
+     let warningHighBrand = TelefonicaColors.palette.yellow70
 
-    let errorHighBrand = TelefonicaColors.palette.coral65
+     let errorHighInverse = TelefonicaColors.palette.coral65
 
-    let promoHighInverse = TelefonicaColors.palette.orchid70
+     let errorHighNegative = TelefonicaColors.palette.coral65
 
-    let promoHighNegative = TelefonicaColors.palette.orchid70
+     let errorHighBrand = TelefonicaColors.palette.coral65
 
-    let promoHighBrand = TelefonicaColors.palette.orchid70
+     let promoHighInverse = TelefonicaColors.palette.orchid70
 
-    let textNavigationBarPrimary = TelefonicaColors.palette.white
+     let promoHighNegative = TelefonicaColors.palette.orchid70
 
-    let textNavigationBarSecondary = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey4
+     let promoHighBrand = TelefonicaColors.palette.orchid70
 
-    let textNavigationSearchBarHint = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey4
+     let textNavigationBarPrimary = TelefonicaColors.palette.white
 
-    let textNavigationSearchBarText = TelefonicaColors.palette.white
+     let textNavigationBarSecondary = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey4
 
-    let textAppBar = TelefonicaColors.palette.grey4 | TelefonicaColors.palette.grey2
+     let textNavigationSearchBarHint = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey4
 
-    let textAppBarSelected = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
+     let textNavigationSearchBarText = TelefonicaColors.palette.white
 
-    let customTabsBackground = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.darkModeBlack
+     let textAppBar = TelefonicaColors.palette.grey4 | TelefonicaColors.palette.grey2
 
-    let tagTextPromo = TelefonicaColors.palette.orchid80 | TelefonicaColors.palette.orchid40
+     let textAppBarSelected = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
 
-    let tagTextActive = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
+     let iosGlassAppBarSelected = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.white
 
-    let tagTextInactive = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
+     let customTabsBackground = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.darkModeBlack
 
-    let tagTextInfo = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
+     let tagTextPromo = TelefonicaColors.palette.orchid80 | TelefonicaColors.palette.orchid40
 
-    let tagTextSuccess = TelefonicaColors.palette.turquoise80 | TelefonicaColors.palette.turquoise40
+     let tagTextActive = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
 
-    let tagTextWarning = TelefonicaColors.palette.yellow80 | TelefonicaColors.palette.yellow40
+     let tagTextInactive = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
 
-    let tagTextError = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
+     let tagTextInfo = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
 
-    let tagBackgroundPromo = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.orchid80
+     let tagTextSuccess = TelefonicaColors.palette.turquoise80 | TelefonicaColors.palette.turquoise40
 
-    let tagBackgroundActive = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue80
+     let tagTextWarning = TelefonicaColors.palette.yellow80 | TelefonicaColors.palette.yellow40
 
-    let tagBackgroundInactive = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey8
+     let tagTextError = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
 
-    let tagBackgroundInfo = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.telefonicaBlue80
+     let tagBackgroundPromo = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.orchid80
 
-    let tagBackgroundSuccess = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.turquoise80
+     let tagBackgroundActive = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue80
 
-    let tagBackgroundWarning = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.yellow80
+     let tagBackgroundInactive = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey8
 
-    let tagBackgroundError = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral90
+     let tagBackgroundInfo = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.telefonicaBlue80
 
-    let tagTextPromoInverse = TelefonicaColors.palette.orchid80 | TelefonicaColors.palette.orchid40
+     let tagBackgroundSuccess = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.turquoise80
 
-    let tagTextPromoNegative = TelefonicaColors.palette.orchid80 | TelefonicaColors.palette.orchid40
+     let tagBackgroundWarning = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.yellow80
 
-    let tagTextPromoBrand = TelefonicaColors.palette.orchid80 | TelefonicaColors.palette.orchid40
+     let tagBackgroundError = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral90
 
-    let tagTextActiveInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
+     let tagTextPromoInverse = TelefonicaColors.palette.orchid80 | TelefonicaColors.palette.orchid40
 
-    let tagTextActiveNegative = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
+     let tagTextPromoNegative = TelefonicaColors.palette.orchid80 | TelefonicaColors.palette.orchid40
 
-    let tagTextActiveBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
+     let tagTextPromoBrand = TelefonicaColors.palette.orchid80 | TelefonicaColors.palette.orchid40
 
-    let tagTextInactiveInverse = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
+     let tagTextActiveInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
 
-    let tagTextInactiveNegative = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
+     let tagTextActiveNegative = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
 
-    let tagTextInactiveBrand = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
+     let tagTextActiveBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
 
-    let tagTextInfoInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
+     let tagTextInactiveInverse = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
 
-    let tagTextInfoNegative = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
+     let tagTextInactiveNegative = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
 
-    let tagTextInfoBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
+     let tagTextInactiveBrand = TelefonicaColors.palette.grey6 | TelefonicaColors.palette.grey3
 
-    let tagTextSuccessInverse = TelefonicaColors.palette.turquoise80 | TelefonicaColors.palette.turquoise40
+     let tagTextInfoInverse = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
 
-    let tagTextSuccessNegative = TelefonicaColors.palette.turquoise80 | TelefonicaColors.palette.turquoise40
+     let tagTextInfoNegative = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
 
-    let tagTextSuccessBrand = TelefonicaColors.palette.turquoise80 | TelefonicaColors.palette.turquoise40
+     let tagTextInfoBrand = TelefonicaColors.palette.telefonicaBlue70 | TelefonicaColors.palette.telefonicaBlue20
 
-    let tagTextWarningInverse = TelefonicaColors.palette.yellow80 | TelefonicaColors.palette.yellow40
+     let tagTextSuccessInverse = TelefonicaColors.palette.turquoise80 | TelefonicaColors.palette.turquoise40
 
-    let tagTextWarningNegative = TelefonicaColors.palette.yellow80 | TelefonicaColors.palette.yellow40
+     let tagTextSuccessNegative = TelefonicaColors.palette.turquoise80 | TelefonicaColors.palette.turquoise40
 
-    let tagTextWarningBrand = TelefonicaColors.palette.yellow80 | TelefonicaColors.palette.yellow40
+     let tagTextSuccessBrand = TelefonicaColors.palette.turquoise80 | TelefonicaColors.palette.turquoise40
 
-    let tagTextErrorInverse = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
+     let tagTextWarningInverse = TelefonicaColors.palette.yellow80 | TelefonicaColors.palette.yellow40
 
-    let tagTextErrorNegative = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
+     let tagTextWarningNegative = TelefonicaColors.palette.yellow80 | TelefonicaColors.palette.yellow40
 
-    let tagTextErrorBrand = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
+     let tagTextWarningBrand = TelefonicaColors.palette.yellow80 | TelefonicaColors.palette.yellow40
 
-    let tagBackgroundPromoInverse = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.orchid80
+     let tagTextErrorInverse = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
 
-    let tagBackgroundPromoNegative = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.orchid80
+     let tagTextErrorNegative = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
 
-    let tagBackgroundPromoBrand = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.orchid80
+     let tagTextErrorBrand = TelefonicaColors.palette.coral65 | TelefonicaColors.palette.coral30
 
-    let tagBackgroundActiveInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue80
+     let tagBackgroundPromoInverse = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.orchid80
 
-    let tagBackgroundActiveNegative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue80
+     let tagBackgroundPromoNegative = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.orchid80
 
-    let tagBackgroundActiveBrand = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue80
+     let tagBackgroundPromoBrand = TelefonicaColors.palette.orchid10 | TelefonicaColors.palette.orchid80
 
-    let tagBackgroundInactiveInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey8
+     let tagBackgroundActiveInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue80
 
-    let tagBackgroundInactiveNegative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey8
+     let tagBackgroundActiveNegative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue80
 
-    let tagBackgroundInactiveBrand = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey8
+     let tagBackgroundActiveBrand = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.telefonicaBlue80
 
-    let tagBackgroundInfoInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.telefonicaBlue80
+     let tagBackgroundInactiveInverse = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey8
 
-    let tagBackgroundInfoNegative = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.telefonicaBlue80
+     let tagBackgroundInactiveNegative = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey8
 
-    let tagBackgroundInfoBrand = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.telefonicaBlue80
+     let tagBackgroundInactiveBrand = TelefonicaColors.palette.grey1 | TelefonicaColors.palette.grey8
 
-    let tagBackgroundSuccessInverse = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.turquoise80
+     let tagBackgroundInfoInverse = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.telefonicaBlue80
 
-    let tagBackgroundSuccessNegative = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.turquoise80
+     let tagBackgroundInfoNegative = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.telefonicaBlue80
 
-    let tagBackgroundSuccessBrand = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.turquoise80
+     let tagBackgroundInfoBrand = TelefonicaColors.palette.telefonicaBlue10 | TelefonicaColors.palette.telefonicaBlue80
 
-    let tagBackgroundWarningInverse = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.yellow80
+     let tagBackgroundSuccessInverse = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.turquoise80
 
-    let tagBackgroundWarningNegative = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.yellow80
+     let tagBackgroundSuccessNegative = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.turquoise80
 
-    let tagBackgroundWarningBrand = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.yellow80
+     let tagBackgroundSuccessBrand = TelefonicaColors.palette.turquoise10 | TelefonicaColors.palette.turquoise80
 
-    let tagBackgroundErrorInverse = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral90
+     let tagBackgroundWarningInverse = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.yellow80
 
-    let tagBackgroundErrorNegative = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral90
+     let tagBackgroundWarningNegative = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.yellow80
 
-    let tagBackgroundErrorBrand = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral90
+     let tagBackgroundWarningBrand = TelefonicaColors.palette.yellow15 | TelefonicaColors.palette.yellow80
 
-    let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
+     let tagBackgroundErrorInverse = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral90
+
+     let tagBackgroundErrorNegative = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral90
+
+     let tagBackgroundErrorBrand = TelefonicaColors.palette.coral10 | TelefonicaColors.palette.coral90
+
+     let cardContentOverlay = MisticaColor.gradient(MisticaGradient(
         colors:
         [
             TelefonicaColors.palette.black.withAlphaComponent(0),
             TelefonicaColors.palette.black.withAlphaComponent(0.4),
             TelefonicaColors.palette.black.withAlphaComponent(0.7)
         ],
-        stops: [0, 0.3, 1],
+        stops: [0,0.3,1],
         angle: 180
     ))
 
-    let cardFooterOverlay = TelefonicaColors.palette.black.withAlphaComponent(0.7)
+     let cardFooterOverlay = TelefonicaColors.palette.black.withAlphaComponent(0.7)
 }
 
 public struct TelefonicaColorPalette: Sendable {

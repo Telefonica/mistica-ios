@@ -1,10 +1,6 @@
-//
-//  VivoNewFontWeights.swift
-//
-//  Made with ❤️ by Novum
-//
-//  Copyright © Telefonica. All rights reserved.
-//
+
+// Generated using Make
+// DO NOT EDIT
 
 import Foundation
 
@@ -17,6 +13,7 @@ struct VivoNewFontWeights: MisticaFontWeights {
     public var title1: MisticaFontWeightType = .medium
     public var title2: MisticaFontWeightType = .medium
     public var title3: MisticaFontWeightType = .medium
+    public var title4: MisticaFontWeightType = .medium
     public var indicator: MisticaFontWeightType = .medium
     public var navigationBar: MisticaFontWeightType = .regular
     public var text5: MisticaFontWeightType = .medium
@@ -25,4 +22,5 @@ struct VivoNewFontWeights: MisticaFontWeights {
     public var text8: MisticaFontWeightType = .regular
     public var text9: MisticaFontWeightType = .regular
     public var text10: MisticaFontWeightType = .regular
+    public var chipLabel: MisticaFontWeightType = .medium
 }

@@ -1,3 +1,10 @@
+## [36.6.1](https://github.com/Telefonica/mistica-ios/compare/v36.6.0...v36.6.1) (2025-12-16)
+
+
+### Bug Fixes
+
+* **Package:** IOS-12099 update Lottie SDK to v4.5.2 ([#491](https://github.com/Telefonica/mistica-ios/issues/491)) ([2fa2bff](https://github.com/Telefonica/mistica-ios/commit/2fa2bffe1f14157d51f7371c7a94fefc0de97974))
+
 # [36.6.0](https://github.com/Telefonica/mistica-ios/compare/v36.5.0...v36.6.0) (2025-12-04)
 
 

@@ -9,7 +9,7 @@ jobs:
     name: Record screenshots
     # Only if it is a PR and the comment contains /record-screenshots
     if: github.event.issue.pull_request && contains(github.event.comment.body, '/record-screenshots')
-    runs-on: macos-latest
+    runs-on: macos-26
     steps:
       - name: Update the comment on PR with link to the job
         uses: actions/github-script@v7
@@ -51,7 +51,7 @@ jobs:
         id: commit-changes
         with:
           branch: ${{ steps.comment-branch.outputs.head_ref }}
-          file_pattern: '*.png'
+          file_pattern: "*.png"
           commit_message: Record screenshots automatically launched from GH action
         env:
           GITHUB_TOKEN: ${{ secrets.NOVUM_PRIVATE_REPOS }}

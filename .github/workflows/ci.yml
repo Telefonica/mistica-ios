@@ -3,7 +3,7 @@ name: CI
 on:
   workflow_dispatch:
   pull_request:
-        branches: [main]
+    branches: [main]
   workflow_call:
     inputs:
       # The branch, tag or SHA to checkout
@@ -14,7 +14,7 @@ on:
 jobs:
   test:
     name: Run Tests
-    runs-on: macos-latest
+    runs-on: macos-26
 
     steps:
       - name: Checkout
@@ -44,7 +44,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           azure-account-name: ${{ secrets.AZURE_ACCOUNT_NAME }}
           azure-account-key: ${{ secrets.AZURE_ACCOUNT_KEY }}
-          glob: 'tmp/test_output/diff_output/**/difference*.png'
+          glob: "tmp/test_output/diff_output/**/difference*.png"
           test-suite-and-test-name-regex: '(?<=diff_output\/)(.*)(?=\/difference)'
-          test-suite-and-test-name-separator: '/'
-          ci-container-name: 'mistica-ios-ci-container'
+          test-suite-and-test-name-separator: "/"
+          ci-container-name: "mistica-ios-ci-container"

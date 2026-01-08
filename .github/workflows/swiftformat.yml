@@ -2,11 +2,11 @@ name: SwiftFormat
 on:
   pull_request:
     branches:
-      - '*'
+      - "*"
 jobs:
   format:
     name: SwiftFormat
-    runs-on: macos-latest
+    runs-on: macos-26
 
     steps:
       - name: Checkout

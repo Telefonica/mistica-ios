@@ -1,7 +1,7 @@
 .PHONY: help setup format test simulator archive export clean  skin
 
 # Simulator
-OS_VERSION := 18.5
+OS_VERSION := 26.2
 DEVICE_NAME := iPhone 16
 SIMULATOR_NAME := $(DEVICE_NAME) ($(OS_VERSION))
 GET_INSTALLED_SIMULATOR_NAME := $(shell xcrun simctl list | grep -o "$(SIMULATOR_NAME)" | head -1)

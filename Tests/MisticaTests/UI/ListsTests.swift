@@ -34,7 +34,7 @@ final class ListsTests: XCTestCase {
         assertSnapshot(
             of: listTestsViewController,
             as: .image(on: .iPhoneSe),
-            named: "Before reloading"
+            named: "1"
         )
         
         listTestsViewController.listView.reloadData()
@@ -42,7 +42,7 @@ final class ListsTests: XCTestCase {
         assertSnapshot(
             of: listTestsViewController,
             as: .image(on: .iPhoneSe),
-            named: "After reloading"
+            named: "1"
         )
     }
     

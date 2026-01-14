@@ -19,13 +19,32 @@ final class MultiSectionListTests: XCTestCase {
     }
 
     override func invokeTest() {
-        withSnapshotTesting(record: .never) {
+        withSnapshotTesting(record: .all) {
             super.invokeTest()
         }
     }
 
     func testCellWithTextAndImage() {
         let listTestsViewController = makeMultiSectionListTestsViewController(numberOfRows: 2)
+        listTestsViewController.rowInfoForIndexPath = { indexPath in
+            switch indexPath.section {
+            case 0:
+                RowInfo(
+                    cellAssetType: .smallIcon(UIImage(color: .green)),
+                    title: "Aaa",
+                    subtitle: "Bbb",
+                    detailText: "Ccc"
+                )
+            case 1:
+                RowInfo(
+                    cellAssetType: .smallIcon(UIImage(color: .red)),
+                    title: "Aaa",
+                    subtitle: "Bbb",
+                    detailText: "Ccc"
+                )
+            default: fatalError()
+            }
+        }
 
         assertSnapshot(
             of: listTestsViewController,
@@ -41,6 +60,57 @@ final class MultiSectionListTests: XCTestCase {
             named: "1"
         )
     }
+    
+    func testCellWithTextAndBigImage() {
+        let listTestsViewController = makeMultiSectionListTestsViewController(numberOfRows: 4)
+        listTestsViewController.rowInfoForIndexPath = { indexPath in
+            switch indexPath.row {
+            case 0:
+                RowInfo(
+                    cellAssetType: .custom(.image(UIImage(color: .green)), size: CGSize(width: 64, height: 64)),
+                    title: "Aaa",
+                    subtitle: "Bbb",
+                    detailText: "Ccc"
+                )
+            case 1:
+                RowInfo(
+                    cellAssetType: .custom(.image(UIImage(color: .red)), size: CGSize(width: 64, height: 64)),
+                    title: "Aaa",
+                    subtitle: "Bbb",
+                    detailText: nil
+                )
+            case 2:
+                RowInfo(
+                    cellAssetType: .custom(.image(UIImage(color: .red)), size: CGSize(width: 64, height: 64)),
+                    title: "Aaa",
+                    subtitle: nil,
+                    detailText: nil
+                )
+            case 3:
+                RowInfo(
+                    cellAssetType: .custom(.image(UIImage(color: .red)), size: CGSize(width: 64, height: 64)),
+                    title: nil,
+                    subtitle: nil,
+                    detailText: nil
+                )
+            default: fatalError()
+            }
+        }
+        
+        assertSnapshot(
+            of: listTestsViewController,
+            as: .image(on: .iPhoneSe),
+            named: "1"
+        )
+
+//        listTestsViewController.listView.reloadData()
+//
+//        assertSnapshot(
+//            of: listTestsViewController,
+//            as: .image(on: .iPhoneSe),
+//            named: "1"
+//        )
+    }
 }
 
 private extension MultiSectionListTests {
@@ -54,9 +124,24 @@ private extension MultiSectionListTests {
     }
 }
 
+private struct RowInfo {
+    let cellAssetType: ListCellContentView.CellAssetType
+    let title: String?
+    let subtitle: String?
+    let detailText: String?
+}
+
 private class MultiSectionListsTestsViewController: UIViewController, UITableViewDataSource {
     let listView: ListTableView
-    var numberOfRows = 1
+    var numberOfRows = 2
+    var rowInfoForIndexPath: ((IndexPath) -> RowInfo) = { _ in
+        RowInfo(
+            cellAssetType: .smallIcon(UIImage(color: .green)),
+            title: "Aaa",
+            subtitle: "Bbb",
+            detailText: "Ccc"
+        )
+    }
 
     init(listView: ListTableView) {
         self.listView = listView
@@ -88,20 +173,11 @@ private class MultiSectionListsTestsViewController: UIViewController, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ListTableViewCell.dequeueReusableCell(for: indexPath, from: tableView)
 
-        switch indexPath.section {
-        case 0:
-            cell.listCellContentView.title = "Aaa"
-            cell.listCellContentView.subtitle = nil
-            cell.listCellContentView.detailText = nil
-            cell.listCellContentView.assetType = .smallIcon(UIImage(color: .green))
-        case 1:
-            cell.listCellContentView.title = "Aaa"
-            cell.listCellContentView.subtitle = "Bbb"
-            cell.listCellContentView.detailText = "Ccc"
-            cell.listCellContentView.assetType = .smallIcon(UIImage(color: .red))
-        default:
-            fatalError()
-        }
+        let rowInfo = rowInfoForIndexPath(indexPath)
+        cell.listCellContentView.title = rowInfo.title
+        cell.listCellContentView.subtitle = rowInfo.subtitle
+        cell.listCellContentView.detailText = rowInfo.detailText
+        cell.listCellContentView.assetType = rowInfo.cellAssetType
 
         return cell
     }

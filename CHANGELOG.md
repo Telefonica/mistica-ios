@@ -1,3 +1,10 @@
+## [36.6.2](https://github.com/Telefonica/mistica-ios/compare/v36.6.1...v36.6.2) (2026-01-14)
+
+
+### Bug Fixes
+
+* **CellLeftSectionView:** IOS-12176 Fix list cell layout bug ([#493](https://github.com/Telefonica/mistica-ios/issues/493)) ([a0aa838](https://github.com/Telefonica/mistica-ios/commit/a0aa838ec0c10a106d26f1e2f06adbd81076bdf7))
+
 ## [36.6.1](https://github.com/Telefonica/mistica-ios/compare/v36.6.0...v36.6.1) (2025-12-16)
 
 

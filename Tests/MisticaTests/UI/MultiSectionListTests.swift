@@ -19,7 +19,7 @@ final class MultiSectionListTests: XCTestCase {
     }
 
     override func invokeTest() {
-        withSnapshotTesting(record: .all) {
+        withSnapshotTesting(record: .never) {
             super.invokeTest()
         }
     }
@@ -32,8 +32,8 @@ final class MultiSectionListTests: XCTestCase {
                 RowInfo(
                     cellAssetType: .smallIcon(UIImage(color: .green)),
                     title: "Aaa",
-                    subtitle: "Bbb",
-                    detailText: "Ccc"
+                    subtitle: nil,
+                    detailText: nil
                 )
             case 1:
                 RowInfo(
@@ -103,13 +103,13 @@ final class MultiSectionListTests: XCTestCase {
             named: "1"
         )
 
-//        listTestsViewController.listView.reloadData()
-//
-//        assertSnapshot(
-//            of: listTestsViewController,
-//            as: .image(on: .iPhoneSe),
-//            named: "1"
-//        )
+        listTestsViewController.listView.reloadData()
+
+        assertSnapshot(
+            of: listTestsViewController,
+            as: .image(on: .iPhoneSe),
+            named: "1"
+        )
     }
 }
 

@@ -18,19 +18,14 @@ public protocol ListCellContentAssetDelegate: AnyObject {
 }
 
 class CellLeftSectionView: UIView {
-    private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize.height)
-    private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize.width)
-    private lazy var topConstraint = containerView.topAnchor.constraint(equalTo: topAnchor, constant: 4)
-    private lazy var centerConstraint = containerView.centerYAnchor.constraint(equalTo: centerYAnchor)
+    private lazy var heightConstraint = imageView.heightAnchor.constraint(equalToConstant: assetType.viewSize.height)
+    private lazy var widthConstraint = imageView.widthAnchor.constraint(equalToConstant: assetType.viewSize.width)
+    
+    private lazy var topConstraintForTopAlignment = imageView.topAnchor.constraint(equalTo: topAnchor, constant: 4)
+    
+    private lazy var centerConstraint = imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
 
-    private lazy var containerView: UIView = {
-        let view = UIView()
-        view.addSubview(withCenterConstraints: imageView)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    private let imageView = IntrinsictImageView()
+    private let imageView = UIImageView()
 
     weak var delegate: ListCellContentAssetDelegate? {
         didSet {
@@ -42,11 +37,9 @@ class CellLeftSectionView: UIView {
         didSet {
             heightConstraint.constant = assetType.viewSize.height
             widthConstraint.constant = assetType.viewSize.width
-            imageView.intrinsicWidth = assetType.assetSize.width
-            imageView.intrinsicHeight = assetType.assetSize.height
             imageView.contentMode = assetType.contentMode
-            containerView.makeRounded(cornerRadius: assetType.cornerRadius)
-            containerView.backgroundColor = assetType.backgroundColor
+            imageView.makeRounded(cornerRadius: assetType.cornerRadius)
+            imageView.backgroundColor = assetType.backgroundColor
 
             load()
         }
@@ -93,24 +86,36 @@ class CellLeftSectionView: UIView {
     }
 
     func centerAlignment() {
-        centerConstraint.isActive = true
-        topConstraint.isActive = false
+        NSLayoutConstraint.deactivate([
+            topConstraintForTopAlignment
+        ])
+
+        NSLayoutConstraint.activate([
+            centerConstraint
+        ])
     }
 
     func topAlignment() {
-        centerConstraint.isActive = false
-        topConstraint.isActive = true
+        NSLayoutConstraint.deactivate([
+            centerConstraint,
+        ])
+        
+        NSLayoutConstraint.activate([
+            topConstraintForTopAlignment
+        ])
     }
 }
 
 private extension CellLeftSectionView {
     func commonInit() {
-        addSubview(containerView)
+        addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             heightConstraint,
             widthConstraint,
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+            bottomAnchor.constraint(greaterThanOrEqualTo: imageView.bottomAnchor, constant: 4),
         ])
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapAsset))

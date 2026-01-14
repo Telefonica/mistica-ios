@@ -104,6 +104,7 @@ open class ListCellContentView: UIView {
     private lazy var cellContentView = UIStackView()
     var tableViewDelegate: ListCellContentTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
+    private lazy var centerSectionContainer = UIView()
     lazy var centerSection = CellCenterSectionView()
     private let highlightedOverlay = UIView()
 
@@ -407,7 +408,17 @@ private extension ListCellContentView {
         addSubview(constrainedToLayoutMarginsGuideOf: cellBorderView)
         addSubview(constrainedToLayoutMarginsGuideOf: cellContentView)
 
-        cellContentView.addArrangedSubview(centerSection)
+        centerSectionContainer.addSubview(centerSection)
+        centerSection.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            centerSection.leadingAnchor.constraint(equalTo: centerSectionContainer.leadingAnchor),
+            centerSection.trailingAnchor.constraint(equalTo: centerSectionContainer.trailingAnchor),
+            centerSection.centerYAnchor.constraint(equalTo: centerSectionContainer.centerYAnchor),
+            centerSection.topAnchor.constraint(greaterThanOrEqualTo: centerSectionContainer.topAnchor),
+            centerSection.bottomAnchor.constraint(lessThanOrEqualTo: centerSectionContainer.bottomAnchor)
+        ])
+
+        cellContentView.addArrangedSubview(centerSectionContainer)
         cellContentView.spacing = ViewStyles.horizontalPadding
 
         setupHighlightedOverlay()
@@ -473,7 +484,7 @@ private extension ListCellContentView {
     }
 
     func updateAssetAlignment() {
-        cellContentView.alignment = .center
+        cellContentView.alignment = .fill
 
         if centerSection.headlineView == nil, !centerSection.hasSubtitleText, !centerSection.hasDetailText {
             leftSection.centerAlignment()

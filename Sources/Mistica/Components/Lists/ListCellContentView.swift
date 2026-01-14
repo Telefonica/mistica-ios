@@ -464,10 +464,17 @@ private extension ListCellContentView {
 
         if leftSection.superview == nil {
             cellContentView.insertArrangedSubview(leftSection, at: 0)
+            
+            NSLayoutConstraint.activate([
+                leftSection.topAnchor.constraint(equalTo: cellContentView.layoutMarginsGuide.topAnchor),
+                leftSection.bottomAnchor.constraint(equalTo: cellContentView.layoutMarginsGuide.bottomAnchor)
+            ])
         }
     }
 
     func updateAssetAlignment() {
+        cellContentView.alignment = .center
+        
         if centerSection.headlineView == nil, !centerSection.hasSubtitleText, !centerSection.hasDetailText {
             leftSection.centerAlignment()
         } else {

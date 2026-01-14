@@ -113,6 +113,7 @@ private extension CellLeftSectionView {
         NSLayoutConstraint.activate([
             heightConstraint,
             widthConstraint,
+            imageView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 4),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
             bottomAnchor.constraint(greaterThanOrEqualTo: imageView.bottomAnchor, constant: 4),

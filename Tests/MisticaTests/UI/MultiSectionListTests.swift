@@ -60,7 +60,7 @@ final class MultiSectionListTests: XCTestCase {
             named: "1"
         )
     }
-    
+
     func testCellWithTextAndBigImage() {
         let listTestsViewController = makeMultiSectionListTestsViewController(numberOfRows: 4)
         listTestsViewController.rowInfoForIndexPath = { indexPath in
@@ -96,7 +96,7 @@ final class MultiSectionListTests: XCTestCase {
             default: fatalError()
             }
         }
-        
+
         assertSnapshot(
             of: listTestsViewController,
             as: .image(on: .iPhoneSe),

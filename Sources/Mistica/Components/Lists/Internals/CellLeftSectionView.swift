@@ -20,9 +20,9 @@ public protocol ListCellContentAssetDelegate: AnyObject {
 class CellLeftSectionView: UIView {
     private lazy var heightConstraint = imageView.heightAnchor.constraint(equalToConstant: assetType.viewSize.height)
     private lazy var widthConstraint = imageView.widthAnchor.constraint(equalToConstant: assetType.viewSize.width)
-    
+
     private lazy var topConstraintForTopAlignment = imageView.topAnchor.constraint(equalTo: topAnchor, constant: 4)
-    
+
     private lazy var centerConstraint = imageView.centerYAnchor.constraint(equalTo: centerYAnchor)
 
     private let imageView = UIImageView()
@@ -97,9 +97,9 @@ class CellLeftSectionView: UIView {
 
     func topAlignment() {
         NSLayoutConstraint.deactivate([
-            centerConstraint,
+            centerConstraint
         ])
-        
+
         NSLayoutConstraint.activate([
             topConstraintForTopAlignment
         ])
@@ -116,7 +116,7 @@ private extension CellLeftSectionView {
             imageView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 4),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
-            bottomAnchor.constraint(greaterThanOrEqualTo: imageView.bottomAnchor, constant: 4),
+            bottomAnchor.constraint(greaterThanOrEqualTo: imageView.bottomAnchor, constant: 4)
         ])
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapAsset))

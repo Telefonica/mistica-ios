@@ -27,7 +27,7 @@ final class ListsTests: XCTestCase {
     // MARK: - Layout
 
     // MARK: - Default config
-    
+
     func testCellDefaultConfigAndImage() {
         let listTestsViewController = makeListTestsViewController(assetType: .custom(.image(AnyValues.image)))
 

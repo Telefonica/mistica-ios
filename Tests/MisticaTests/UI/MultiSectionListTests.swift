@@ -1,8 +1,9 @@
 //
 //  MultiSectionListTests.swift
-//  Mistica
 //
-//  Created by Daniel Illescas Romero-local on 13/1/26.
+//  Made with ❤️ by Novum
+//
+//  Copyright © Telefonica. All rights reserved.
 //
 
 @testable import Mistica
@@ -31,9 +32,9 @@ final class MultiSectionListTests: XCTestCase {
             as: .image(on: .iPhoneSe),
             named: "1"
         )
-        
+
         listTestsViewController.listView.reloadData()
-        
+
         assertSnapshot(
             of: listTestsViewController,
             as: .image(on: .iPhoneSe),
@@ -79,7 +80,7 @@ private class MultiSectionListsTestsViewController: UIViewController, UITableVie
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         numberOfRows
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
@@ -105,4 +106,3 @@ private class MultiSectionListsTestsViewController: UIViewController, UITableVie
         return cell
     }
 }
-

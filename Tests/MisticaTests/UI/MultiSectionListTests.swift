@@ -51,15 +51,15 @@ final class MultiSectionListTests: XCTestCase {
                 default: fatalError()
                 }
             }
-            
+
             assertSnapshot(
                 of: listTestsViewController,
                 as: .image(on: .iPhoneSe),
                 named: "1-\(alignment)"
             )
-            
+
             listTestsViewController.listView.reloadData()
-            
+
             assertSnapshot(
                 of: listTestsViewController,
                 as: .image(on: .iPhoneSe),
@@ -111,15 +111,15 @@ final class MultiSectionListTests: XCTestCase {
                 default: fatalError()
                 }
             }
-            
+
             assertSnapshot(
                 of: listTestsViewController,
                 as: .image(on: .iPhoneSe),
                 named: "1-\(alignment)"
             )
-            
+
             listTestsViewController.listView.reloadData()
-            
+
             assertSnapshot(
                 of: listTestsViewController,
                 as: .image(on: .iPhoneSe),

@@ -18,7 +18,10 @@ class CellCenterSectionView: UIStackView {
 
     var headlineView: AccessibleTextualView? {
         didSet {
-            oldValue?.removeFromSuperview()
+            if let oldValue {
+                oldValue.removeFromSuperview()
+                removeArrangedSubview(oldValue)
+            }
 
             if let view = headlineView {
                 insertArrangedSubview(view, at: 0)
@@ -92,6 +95,7 @@ class CellCenterSectionView: UIStackView {
 
     func didSetTextToSubtitleLabel() {
         if !hasSubtitleText {
+            removeArrangedSubview(subtitleLabel)
             subtitleLabel.removeFromSuperview()
             updateSpacing()
         } else if subtitleLabel.superview == nil {
@@ -102,6 +106,7 @@ class CellCenterSectionView: UIStackView {
 
     func didSetTexToDetailText() {
         if !hasDetailText {
+            removeArrangedSubview(detailLabel)
             detailLabel.removeFromSuperview()
             updateSpacing()
         } else if detailLabel.superview == nil {

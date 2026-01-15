@@ -107,6 +107,19 @@ open class ListCellContentView: UIView {
     private lazy var centerSectionContainer = UIView()
     lazy var centerSection = CellCenterSectionView()
     private let highlightedOverlay = UIView()
+    private lazy var centerSectionYConstraint = centerSection.centerYAnchor.constraint(equalTo: centerSectionContainer.centerYAnchor)
+    private lazy var centerSectionTopConstraintForCenter = centerSection.topAnchor.constraint(greaterThanOrEqualTo: centerSectionContainer.topAnchor)
+    private lazy var centerSectionTopConstraintForTop = centerSection.topAnchor.constraint(equalTo: centerSectionContainer.topAnchor)
+    public enum VerticalContentAlignment {
+        case auto
+        case center
+        case top
+    }
+    public var verticalContentAlignment: VerticalContentAlignment = .auto {
+        didSet {
+            updateAlignment()
+        }
+    }
 
     private(set) var isHighlighted: Bool = false {
         didSet { highlightedOverlay.isHidden = !isHighlighted }
@@ -128,7 +141,7 @@ open class ListCellContentView: UIView {
         }
         set {
             centerSection.titleLabel.text = newValue
-            updateAssetAlignment()
+            updateAlignment()
             updateAccessibility()
         }
     }
@@ -413,9 +426,9 @@ private extension ListCellContentView {
         NSLayoutConstraint.activate([
             centerSection.leadingAnchor.constraint(equalTo: centerSectionContainer.leadingAnchor),
             centerSection.trailingAnchor.constraint(equalTo: centerSectionContainer.trailingAnchor),
-            centerSection.centerYAnchor.constraint(equalTo: centerSectionContainer.centerYAnchor),
-            centerSection.topAnchor.constraint(greaterThanOrEqualTo: centerSectionContainer.topAnchor),
-            centerSection.bottomAnchor.constraint(lessThanOrEqualTo: centerSectionContainer.bottomAnchor)
+            centerSection.bottomAnchor.constraint(lessThanOrEqualTo: centerSectionContainer.bottomAnchor),
+            centerSectionTopConstraintForCenter,
+            centerSectionYConstraint
         ])
 
         cellContentView.addArrangedSubview(centerSectionContainer)
@@ -469,7 +482,7 @@ private extension ListCellContentView {
             return
         }
 
-        updateAssetAlignment()
+        updateAlignment()
 
         leftSection.assetType = assetType
 
@@ -483,14 +496,41 @@ private extension ListCellContentView {
         }
     }
 
-    func updateAssetAlignment() {
-        cellContentView.alignment = .fill
-
-        if centerSection.headlineView == nil, !centerSection.hasSubtitleText, !centerSection.hasDetailText {
-            leftSection.centerAlignment()
-        } else {
-            leftSection.topAlignment()
+    func updateAlignment() {
+        switch verticalContentAlignment {
+        case .auto:
+            if (self.headlineView == nil) && (self.subtitle ?? "").isEmpty && (self.detailText ?? "").isEmpty {
+                alignCenter()
+            } else {
+                alignTop()
+            }
+        case .center:
+            alignCenter()
+        case .top:
+            alignTop()
         }
+    }
+    
+    func alignCenter() {
+        leftSection.centerAlignment()
+        NSLayoutConstraint.activate([
+            centerSectionTopConstraintForCenter,
+            centerSectionYConstraint
+        ])
+        NSLayoutConstraint.deactivate([
+            centerSectionTopConstraintForTop
+        ])
+    }
+    
+    func alignTop() {
+        leftSection.topAlignment()
+        NSLayoutConstraint.activate([
+            centerSectionTopConstraintForTop
+        ])
+        NSLayoutConstraint.deactivate([
+            centerSectionTopConstraintForCenter,
+            centerSectionYConstraint
+        ])
     }
 
     func updateAccessibility() {

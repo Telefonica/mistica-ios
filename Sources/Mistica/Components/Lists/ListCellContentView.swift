@@ -115,6 +115,7 @@ open class ListCellContentView: UIView {
         case center
         case top
     }
+
     public var verticalContentAlignment: VerticalContentAlignment = .auto {
         didSet {
             updateAlignment()
@@ -501,7 +502,7 @@ private extension ListCellContentView {
         case .auto:
             switch assetType {
             case .largeIcon, .smallIcon:
-                if (self.headlineView == nil) && (self.subtitle ?? "").isEmpty && (self.detailText ?? "").isEmpty {
+                if (headlineView == nil) && (subtitle ?? "").isEmpty && (detailText ?? "").isEmpty {
                     alignCenter()
                 } else {
                     alignTop()
@@ -515,7 +516,7 @@ private extension ListCellContentView {
             alignTop()
         }
     }
-    
+
     func alignCenter() {
         leftSection.centerAlignment()
         NSLayoutConstraint.activate([
@@ -526,7 +527,7 @@ private extension ListCellContentView {
             centerSectionTopConstraintForTop
         ])
     }
-    
+
     func alignTop() {
         leftSection.topAlignment()
         NSLayoutConstraint.activate([

@@ -499,10 +499,15 @@ private extension ListCellContentView {
     func updateAlignment() {
         switch verticalContentAlignment {
         case .auto:
-            if (self.headlineView == nil) && (self.subtitle ?? "").isEmpty && (self.detailText ?? "").isEmpty {
+            switch assetType {
+            case .largeIcon, .smallIcon:
+                if (self.headlineView == nil) && (self.subtitle ?? "").isEmpty && (self.detailText ?? "").isEmpty {
+                    alignCenter()
+                } else {
+                    alignTop()
+                }
+            case .custom, .none:
                 alignCenter()
-            } else {
-                alignTop()
             }
         case .center:
             alignCenter()

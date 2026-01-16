@@ -104,8 +104,23 @@ open class ListCellContentView: UIView {
     private lazy var cellContentView = UIStackView()
     var tableViewDelegate: ListCellContentTableViewDelegate?
     private lazy var leftSection = CellLeftSectionView()
+    private lazy var centerSectionContainer = UIView()
     lazy var centerSection = CellCenterSectionView()
     private let highlightedOverlay = UIView()
+    private lazy var centerSectionYConstraint = centerSection.centerYAnchor.constraint(equalTo: centerSectionContainer.centerYAnchor)
+    private lazy var centerSectionTopConstraintForCenter = centerSection.topAnchor.constraint(greaterThanOrEqualTo: centerSectionContainer.topAnchor)
+    private lazy var centerSectionTopConstraintForTop = centerSection.topAnchor.constraint(equalTo: centerSectionContainer.topAnchor)
+    public enum VerticalContentAlignment {
+        case auto
+        case center
+        case top
+    }
+
+    public var verticalContentAlignment: VerticalContentAlignment = .auto {
+        didSet {
+            updateAlignment()
+        }
+    }
 
     private(set) var isHighlighted: Bool = false {
         didSet { highlightedOverlay.isHidden = !isHighlighted }
@@ -127,7 +142,7 @@ open class ListCellContentView: UIView {
         }
         set {
             centerSection.titleLabel.text = newValue
-            updateAssetAlignment()
+            updateAlignment()
             updateAccessibility()
         }
     }
@@ -407,7 +422,17 @@ private extension ListCellContentView {
         addSubview(constrainedToLayoutMarginsGuideOf: cellBorderView)
         addSubview(constrainedToLayoutMarginsGuideOf: cellContentView)
 
-        cellContentView.addArrangedSubview(centerSection)
+        centerSectionContainer.addSubview(centerSection)
+        centerSection.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            centerSection.leadingAnchor.constraint(equalTo: centerSectionContainer.leadingAnchor),
+            centerSection.trailingAnchor.constraint(equalTo: centerSectionContainer.trailingAnchor),
+            centerSection.bottomAnchor.constraint(lessThanOrEqualTo: centerSectionContainer.bottomAnchor),
+            centerSectionTopConstraintForCenter,
+            centerSectionYConstraint
+        ])
+
+        cellContentView.addArrangedSubview(centerSectionContainer)
         cellContentView.spacing = ViewStyles.horizontalPadding
 
         setupHighlightedOverlay()
@@ -420,6 +445,7 @@ private extension ListCellContentView {
 
         cellContentView.isLayoutMarginsRelativeArrangement = true
         cellContentView.directionalLayoutMargins = cellStyle.mainStackViewLayoutMargins
+        cellContentView.alignment = .fill
 
         cellBorderView.setMisticaColorBackground(cellStyle.backgroundColor)
         cellBorderView.layer.cornerRadius = cellStyle.cornerRadius
@@ -457,21 +483,61 @@ private extension ListCellContentView {
             return
         }
 
-        updateAssetAlignment()
+        updateAlignment()
 
         leftSection.assetType = assetType
 
         if leftSection.superview == nil {
             cellContentView.insertArrangedSubview(leftSection, at: 0)
+
+            NSLayoutConstraint.activate([
+                leftSection.topAnchor.constraint(equalTo: cellContentView.layoutMarginsGuide.topAnchor),
+                leftSection.bottomAnchor.constraint(equalTo: cellContentView.layoutMarginsGuide.bottomAnchor)
+            ])
         }
     }
 
-    func updateAssetAlignment() {
-        if centerSection.headlineView == nil, !centerSection.hasSubtitleText, !centerSection.hasDetailText {
-            leftSection.centerAlignment()
-        } else {
-            leftSection.topAlignment()
+    func updateAlignment() {
+        switch verticalContentAlignment {
+        case .auto:
+            let activeElements: [Bool] = [
+                headlineView != nil,
+                title?.isEmpty == false,
+                subtitle?.isEmpty == false,
+                detailText?.isEmpty == false
+            ]
+            if activeElements.count(where: { $0 }) > 1 {
+                alignTop()
+            } else {
+                alignCenter()
+            }
+        case .center:
+            alignCenter()
+        case .top:
+            alignTop()
         }
+    }
+
+    func alignCenter() {
+        leftSection.centerAlignment()
+        NSLayoutConstraint.activate([
+            centerSectionTopConstraintForCenter,
+            centerSectionYConstraint
+        ])
+        NSLayoutConstraint.deactivate([
+            centerSectionTopConstraintForTop
+        ])
+    }
+
+    func alignTop() {
+        leftSection.topAlignment()
+        NSLayoutConstraint.activate([
+            centerSectionTopConstraintForTop
+        ])
+        NSLayoutConstraint.deactivate([
+            centerSectionTopConstraintForCenter,
+            centerSectionYConstraint
+        ])
     }
 
     func updateAccessibility() {

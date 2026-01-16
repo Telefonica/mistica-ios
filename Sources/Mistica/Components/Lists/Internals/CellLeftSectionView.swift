@@ -20,21 +20,17 @@ public protocol ListCellContentAssetDelegate: AnyObject {
 class CellLeftSectionView: UIView {
     private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize.height)
     private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize.width)
-    private lazy var topConstraint = containerView.topAnchor.constraint(equalTo: topAnchor, constant: 4)
+
+    private lazy var topConstraintForTopAlignment = containerView.topAnchor.constraint(equalTo: topAnchor, constant: 4)
+
     private lazy var centerConstraint = containerView.centerYAnchor.constraint(equalTo: centerYAnchor)
 
-    private lazy var containerView: UIView = {
-        let view = UIView()
-        view.addSubview(withCenterConstraints: imageView)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    private let imageView = IntrinsictImageView()
+    private let containerView = UIView()
+    private let imageView = UIImageView()
 
     weak var delegate: ListCellContentAssetDelegate? {
         didSet {
-            imageView.isUserInteractionEnabled = delegate != nil
+            containerView.isUserInteractionEnabled = delegate != nil
         }
     }
 
@@ -42,11 +38,11 @@ class CellLeftSectionView: UIView {
         didSet {
             heightConstraint.constant = assetType.viewSize.height
             widthConstraint.constant = assetType.viewSize.width
-            imageView.intrinsicWidth = assetType.assetSize.width
-            imageView.intrinsicHeight = assetType.assetSize.height
             imageView.contentMode = assetType.contentMode
             containerView.makeRounded(cornerRadius: assetType.cornerRadius)
             containerView.backgroundColor = assetType.backgroundColor
+
+            updateImageViewConstraints()
 
             load()
         }
@@ -93,29 +89,59 @@ class CellLeftSectionView: UIView {
     }
 
     func centerAlignment() {
-        centerConstraint.isActive = true
-        topConstraint.isActive = false
+        NSLayoutConstraint.deactivate([
+            topConstraintForTopAlignment
+        ])
+
+        NSLayoutConstraint.activate([
+            centerConstraint
+        ])
     }
 
     func topAlignment() {
-        centerConstraint.isActive = false
-        topConstraint.isActive = true
+        NSLayoutConstraint.deactivate([
+            centerConstraint
+        ])
+
+        NSLayoutConstraint.activate([
+            topConstraintForTopAlignment
+        ])
     }
 }
 
 private extension CellLeftSectionView {
     func commonInit() {
         addSubview(containerView)
+        containerView.addSubview(imageView)
+
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
             heightConstraint,
             widthConstraint,
+            containerView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 4),
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            bottomAnchor.constraint(greaterThanOrEqualTo: containerView.bottomAnchor, constant: 4)
         ])
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapAsset))
-        imageView.addGestureRecognizer(gesture)
-        imageView.isUserInteractionEnabled = delegate != nil
+        containerView.addGestureRecognizer(gesture)
+        containerView.isUserInteractionEnabled = delegate != nil
+    }
+
+    func updateImageViewConstraints() {
+        imageView.removeFromSuperview()
+        containerView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: assetType.assetSize.width),
+            imageView.heightAnchor.constraint(equalToConstant: assetType.assetSize.height),
+            imageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
+        ])
     }
 
     @objc

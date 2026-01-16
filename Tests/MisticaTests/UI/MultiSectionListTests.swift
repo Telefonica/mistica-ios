@@ -25,21 +25,107 @@ final class MultiSectionListTests: XCTestCase {
     }
 
     func testCellWithTextAndImage() {
-        let listTestsViewController = makeMultiSectionListTestsViewController(numberOfRows: 2)
+        let alignments: [ListCellContentView.VerticalContentAlignment] = [
+            .auto, .top, .center
+        ]
+        for alignment in alignments {
+            let listTestsViewController = makeMultiSectionListTestsViewController(numberOfRows: 2)
+            listTestsViewController.rowInfoForIndexPath = { indexPath in
+                switch indexPath.section {
+                case 0:
+                    RowInfo(
+                        cellAssetType: .smallIcon(UIImage(color: .green)),
+                        title: "Aaa",
+                        subtitle: nil,
+                        detailText: nil,
+                        verticalContentAlignment: alignment
+                    )
+                case 1:
+                    RowInfo(
+                        cellAssetType: .smallIcon(UIImage(color: .red)),
+                        title: "Aaa",
+                        subtitle: "Bbb",
+                        detailText: "Ccc",
+                        verticalContentAlignment: alignment
+                    )
+                default: fatalError()
+                }
+            }
 
-        assertSnapshot(
-            of: listTestsViewController,
-            as: .image(on: .iPhoneSe),
-            named: "1"
-        )
+            assertSnapshot(
+                of: listTestsViewController,
+                as: .image(on: .iPhoneSe),
+                named: "1-\(alignment)"
+            )
 
-        listTestsViewController.listView.reloadData()
+            listTestsViewController.listView.reloadData()
 
-        assertSnapshot(
-            of: listTestsViewController,
-            as: .image(on: .iPhoneSe),
-            named: "1"
-        )
+            assertSnapshot(
+                of: listTestsViewController,
+                as: .image(on: .iPhoneSe),
+                named: "1-\(alignment)"
+            )
+        }
+    }
+
+    func testCellWithTextAndBigImage() {
+        let alignments: [ListCellContentView.VerticalContentAlignment] = [
+            .auto, .top, .center
+        ]
+        for alignment in alignments {
+            let listTestsViewController = makeMultiSectionListTestsViewController(numberOfRows: 4)
+            listTestsViewController.rowInfoForIndexPath = { indexPath in
+                switch indexPath.row {
+                case 0:
+                    RowInfo(
+                        cellAssetType: .custom(.image(UIImage(color: .green)), size: CGSize(width: 64, height: 64)),
+                        title: "Aaa",
+                        subtitle: "Bbb",
+                        detailText: "Ccc",
+                        verticalContentAlignment: alignment
+                    )
+                case 1:
+                    RowInfo(
+                        cellAssetType: .custom(.image(UIImage(color: .red)), size: CGSize(width: 64, height: 64)),
+                        title: "Aaa",
+                        subtitle: "Bbb",
+                        detailText: nil,
+                        verticalContentAlignment: alignment
+                    )
+                case 2:
+                    RowInfo(
+                        cellAssetType: .custom(.image(UIImage(color: .red)), size: CGSize(width: 64, height: 64)),
+                        title: "Aaa",
+                        subtitle: nil,
+                        detailText: nil,
+                        verticalContentAlignment: alignment
+                    )
+                case 3:
+                    RowInfo(
+                        cellAssetType: .custom(.image(UIImage(color: .red)), size: CGSize(width: 64, height: 64)),
+                        title: nil,
+                        subtitle: nil,
+                        detailText: nil,
+                        verticalContentAlignment: alignment
+                    )
+                default: fatalError()
+                }
+            }
+
+            assertSnapshot(
+                of: listTestsViewController,
+                as: .image(on: .iPhoneSe),
+                named: "1-\(alignment)"
+            )
+
+            listTestsViewController.listView.reloadData()
+
+            assertSnapshot(
+                of: listTestsViewController,
+                as: .image(on: .iPhoneSe),
+                named: "1-\(alignment)"
+            )
+        }
     }
 }
 
@@ -54,9 +140,26 @@ private extension MultiSectionListTests {
     }
 }
 
+private struct RowInfo {
+    let cellAssetType: ListCellContentView.CellAssetType
+    let title: String?
+    let subtitle: String?
+    let detailText: String?
+    let verticalContentAlignment: ListCellContentView.VerticalContentAlignment
+}
+
 private class MultiSectionListsTestsViewController: UIViewController, UITableViewDataSource {
     let listView: ListTableView
-    var numberOfRows = 1
+    var numberOfRows = 2
+    var rowInfoForIndexPath: ((IndexPath) -> RowInfo) = { _ in
+        RowInfo(
+            cellAssetType: .smallIcon(UIImage(color: .green)),
+            title: "Aaa",
+            subtitle: "Bbb",
+            detailText: "Ccc",
+            verticalContentAlignment: .auto
+        )
+    }
 
     init(listView: ListTableView) {
         self.listView = listView
@@ -88,20 +191,12 @@ private class MultiSectionListsTestsViewController: UIViewController, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ListTableViewCell.dequeueReusableCell(for: indexPath, from: tableView)
 
-        switch indexPath.section {
-        case 0:
-            cell.listCellContentView.title = "Aaa"
-            cell.listCellContentView.subtitle = nil
-            cell.listCellContentView.detailText = nil
-            cell.listCellContentView.assetType = .smallIcon(UIImage(color: .green))
-        case 1:
-            cell.listCellContentView.title = "Aaa"
-            cell.listCellContentView.subtitle = "Bbb"
-            cell.listCellContentView.detailText = "Ccc"
-            cell.listCellContentView.assetType = .smallIcon(UIImage(color: .red))
-        default:
-            fatalError()
-        }
+        let rowInfo = rowInfoForIndexPath(indexPath)
+        cell.listCellContentView.title = rowInfo.title
+        cell.listCellContentView.subtitle = rowInfo.subtitle
+        cell.listCellContentView.detailText = rowInfo.detailText
+        cell.listCellContentView.assetType = rowInfo.cellAssetType
+        cell.listCellContentView.verticalContentAlignment = rowInfo.verticalContentAlignment
 
         return cell
     }

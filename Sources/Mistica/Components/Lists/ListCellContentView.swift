@@ -500,8 +500,13 @@ private extension ListCellContentView {
     func updateAlignment() {
         switch verticalContentAlignment {
         case .auto:
-            let textElementsCount = ((headlineView != nil) ? 1 : 0) + (title?.isEmpty == false ? 1 : 0) + ((subtitle?.isEmpty == false ? 1 : 0)) + ((detailText?.isEmpty == false ? 1 : 0))
-            if textElementsCount > 1 {
+            let activeElements: [Bool] = [
+                headlineView != nil,
+                title?.isEmpty == false,
+                subtitle?.isEmpty == false,
+                detailText?.isEmpty == false
+            ]
+            if activeElements.count(where: { $0 }) > 1 {
                 alignTop()
             } else {
                 alignCenter()

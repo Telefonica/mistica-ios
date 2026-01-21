@@ -36,8 +36,7 @@ public extension UITabBarAppearance {
             appearance.shadowImage = UIImage(color: .divider)
             UITabBar.appearance().backgroundColor = .appBarBackground
         }
-        
-        
+
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().isTranslucent = true
     }

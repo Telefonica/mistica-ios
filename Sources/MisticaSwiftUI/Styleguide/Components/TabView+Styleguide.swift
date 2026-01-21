@@ -29,9 +29,15 @@ private struct MisticaTabViewStyle: ViewModifier {
 public extension UITabBarAppearance {
     static func applyMisticaStyle() {
         let appearance = UITabBarAppearance()
-        appearance.configureWithTransparentBackground()
-        appearance.shadowImage = UIImage(color: .divider)
-        UITabBar.appearance().backgroundColor = .appBarBackground
+        if #available(iOS 26, *) {
+            appearance.configureWithDefaultBackground()
+        } else {
+            appearance.configureWithTransparentBackground()
+            appearance.shadowImage = UIImage(color: .divider)
+            UITabBar.appearance().backgroundColor = .appBarBackground
+        }
+        
+        
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().isTranslucent = true
     }

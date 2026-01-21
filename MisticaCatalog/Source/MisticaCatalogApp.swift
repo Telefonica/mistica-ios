@@ -89,16 +89,21 @@ struct MisticaCatalogApp: App {
     func setUpAppearance() {
         let buttonAppearance = UIBarButtonItemAppearance(style: .plain)
         buttonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
-
+        
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
+        if #available(iOS 26, *) {
+            appearance.configureWithTransparentBackground()
+        } else {
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .background
+        }
+        
         appearance.buttonAppearance = buttonAppearance
         appearance.shadowColor = nil
         appearance.shadowImage = nil
         appearance.largeTitleTextAttributes[.font] = UIFont.systemFont(ofSize: 28, weight: .light)
         appearance.titleTextAttributes[.font] = UIFont.systemFont(ofSize: 18, weight: .regular)
-        appearance.backgroundColor = .background
-
+        
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().tintColor = .misticaCatalogTint | .white

@@ -17,21 +17,20 @@ public protocol ListCellContentAssetDelegate: AnyObject {
     func listCellContentDidTapOnAsset()
 }
 
-class CellLeftSectionView: UIStackView {
+class CellLeftSectionView: UIView {
     private lazy var heightConstraint = containerView.heightAnchor.constraint(equalToConstant: assetType.viewSize.height)
     private lazy var widthConstraint = containerView.widthAnchor.constraint(equalToConstant: assetType.viewSize.width)
 
-    private lazy var containerView: UIView = {
-        let view = UIView()
-        view.addSubview(withCenterConstraints: imageView)
-        return view
-    }()
+    private lazy var topConstraintForTopAlignment = containerView.topAnchor.constraint(equalTo: topAnchor, constant: 4)
 
-    private let imageView = IntrinsictImageView()
+    private lazy var centerConstraint = containerView.centerYAnchor.constraint(equalTo: centerYAnchor)
+
+    private let containerView = UIView()
+    private let imageView = UIImageView()
 
     weak var delegate: ListCellContentAssetDelegate? {
         didSet {
-            imageView.isUserInteractionEnabled = delegate != nil
+            containerView.isUserInteractionEnabled = delegate != nil
         }
     }
 
@@ -39,11 +38,11 @@ class CellLeftSectionView: UIStackView {
         didSet {
             heightConstraint.constant = assetType.viewSize.height
             widthConstraint.constant = assetType.viewSize.width
-            imageView.intrinsicWidth = assetType.assetSize.width
-            imageView.intrinsicHeight = assetType.assetSize.height
             imageView.contentMode = assetType.contentMode
             containerView.makeRounded(cornerRadius: assetType.cornerRadius)
             containerView.backgroundColor = assetType.backgroundColor
+
+            updateImageViewConstraints()
 
             load()
         }
@@ -65,7 +64,7 @@ class CellLeftSectionView: UIStackView {
     }
 
     @available(*, unavailable)
-    required init(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -90,31 +89,59 @@ class CellLeftSectionView: UIStackView {
     }
 
     func centerAlignment() {
-        alignment = .center
-        isLayoutMarginsRelativeArrangement = false
-        directionalLayoutMargins = .zero
+        NSLayoutConstraint.deactivate([
+            topConstraintForTopAlignment
+        ])
+
+        NSLayoutConstraint.activate([
+            centerConstraint
+        ])
     }
 
     func topAlignment() {
-        alignment = .top
-        isLayoutMarginsRelativeArrangement = true
-        directionalLayoutMargins = NSDirectionalEdgeInsets(
-            top: 4,
-            leading: 0,
-            bottom: 0,
-            trailing: 0
-        )
+        NSLayoutConstraint.deactivate([
+            centerConstraint
+        ])
+
+        NSLayoutConstraint.activate([
+            topConstraintForTopAlignment
+        ])
     }
 }
 
 private extension CellLeftSectionView {
     func commonInit() {
-        addArrangedSubview(containerView)
-        NSLayoutConstraint.activate([heightConstraint, widthConstraint])
+        addSubview(containerView)
+        containerView.addSubview(imageView)
+
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            heightConstraint,
+            widthConstraint,
+            containerView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 4),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            bottomAnchor.constraint(greaterThanOrEqualTo: containerView.bottomAnchor, constant: 4)
+        ])
 
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapAsset))
-        imageView.addGestureRecognizer(gesture)
-        imageView.isUserInteractionEnabled = delegate != nil
+        containerView.addGestureRecognizer(gesture)
+        containerView.isUserInteractionEnabled = delegate != nil
+    }
+
+    func updateImageViewConstraints() {
+        imageView.removeFromSuperview()
+        containerView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: assetType.assetSize.width),
+            imageView.heightAnchor.constraint(equalToConstant: assetType.assetSize.height),
+            imageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
+        ])
     }
 
     @objc

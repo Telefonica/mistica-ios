@@ -79,7 +79,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>UIDesignRequiresCompatibility</key>
-    <true/>
+	<key>UIDesignRequiresCompatibility</key>
+	<false/>
 </dict>
 </plist>

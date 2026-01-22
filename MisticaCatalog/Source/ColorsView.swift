@@ -16,6 +16,7 @@ struct ColorsView: View {
 
     var body: some View {
         List {
+            let last = colors.last?.name ?? ""
             ForEach(colors, id: \.name) { item in
                 Cell(
                     style: .fullwidth,
@@ -24,7 +25,7 @@ struct ColorsView: View {
                     description: item.color.hexString.uppercased(),
                     assetType: .roundImage(circle(with: item.color))
                 )
-                .shouldShowDivider(item.name != colors.last?.name)
+                .shouldShowDivider(item.name != last)
             }
         }
         .misticaListStyle()

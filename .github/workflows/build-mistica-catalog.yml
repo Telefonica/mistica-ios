@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
     inputs:
       # The branch, tag or SHA to checkout
-      ref:
+      branch:
+        description: 'Branch to build'
         required: false
         type: string
 
@@ -17,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch || github.ref }}
 
       - name: Checkout Telefonica/ios-github-workflows repo
         uses: actions/checkout@v4

@@ -68,7 +68,7 @@ format:
 	Scripts/swiftformat .
 
 test: clean setup simulator
-	@echo "Testing with simulator $(SIMULATOR_NAME)"
+	@echo "Testing with simulator $(SIMULATOR_NAME) --bh"
 	$(XCODEBUILD) build-for-testing -scheme $(TEST_SCHEMA) -destination "$(DESTINATION)" | xcbeautify
 	$(XCODEBUILD) test-without-building -scheme $(TEST_SCHEMA) -resultBundlePath $(XCRESULT_FILE_PATH) -destination "$(DESTINATION)" | xcbeautify
 
